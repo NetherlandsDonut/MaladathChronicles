@@ -49,7 +49,7 @@ public class Talent
                     if (currentSave.player.unspentTalentPoints > 0 && currentSave.player.CanPickTalent(spec, talent))
                     {
                         currentSave.player.unspentTalentPoints--;
-                        PlaySound("DesktopTalentAcquired", 0.2f);
+                        PlaySound("DesktopTalentAcquired", 0.4f);
                         if (currentSave.player.abilities.ContainsKey(talent.ability))
                             currentSave.player.abilities[talent.ability]++;
                         else currentSave.player.abilities.Add(talent.ability, 0);

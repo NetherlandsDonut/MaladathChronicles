@@ -753,7 +753,7 @@ public class InputLine : MonoBehaviour
                     if (!currentSave.siteVisits.ContainsKey(site.name))
                     {
                         currentSave.siteVisits.Add(site.name, 0);
-                        Sound.PlaySound("DesktopZoneDiscovered", 0.3f);
+                        Sound.PlaySound("DesktopZoneDiscovered", 0.5f);
                         currentSave.player.ReceiveExperience(defines.expForExploration);
                     }
                     Respawn("Site: " + site.name);

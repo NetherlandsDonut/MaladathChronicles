@@ -154,6 +154,7 @@ public class Event
                     var source = powerSource == "Effector" ? effector : other;
                     var target = affect == "Effector" ? effector : other;
                     var amount = (int)Math.Round(source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale);
+                    if (amount > 0 && target == board.enemy) PlayEnemyLine(board.enemy.EnemyLine("Wound"));
                     target.Damage(amount, trigger["Trigger"] == "Damage");
                     AddBigButtonOverlay(new Vector2(target == board.player ? -148 : 148, 141), "OtherDamaged", 1f, -1);
                     SpawnFallingText(new Vector2(target == board.player ? -148 : 148, 141), "" + amount, "White");

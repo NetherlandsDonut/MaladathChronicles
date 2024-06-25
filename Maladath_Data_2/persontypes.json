@@ -80,6 +80,21 @@
     "category": "Vendor"
   },
   {
+    "type": "Cloth & Leather Armor Merchant",
+    "icon": "ItemChestCloth05",
+    "category": "Vendor"
+  },
+  {
+    "type": "Clothier",
+    "icon": "ItemChestCloth18",
+    "category": "Vendor"
+  },
+  {
+    "type": "Light Armor Merchant",
+    "icon": "ItemChestLeather02",
+    "category": "Vendor"
+  },
+  {
     "type": "Leather Armor Merchant",
     "icon": "ItemChestLeather02",
     "category": "Vendor"
@@ -117,6 +132,11 @@
   {
     "type": "Armorer",
     "icon": "ItemChestPlate01",
+    "category": "Vendor"
+  },
+  {
+    "type": "Fishing Supplies",
+    "icon": "TradeFishing",
     "category": "Vendor"
   },
   {

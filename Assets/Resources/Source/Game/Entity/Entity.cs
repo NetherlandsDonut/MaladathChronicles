@@ -410,7 +410,7 @@ public class Entity
             level++;
             unspentTalentPoints++;
             if (soundsPlayedThisFrame < 3)
-                PlaySound("DesktopLevelUp", 0.3f);
+                PlaySound("DesktopLevelUp", 0.5f);
         }
         Respawn("ExperienceBarBorder", true);
         Respawn("ExperienceBar", true);
@@ -759,7 +759,7 @@ public class Entity
         if (itemAbilities != null)
             foreach (var ability in itemAbilities)
                 abilities.Remove(ability.Key);
-        PlaySound(inventory.bags[index].ItemSound("PutDown"), 0.6f);
+        PlaySound(inventory.bags[index].ItemSound("PutDown"), 0.8f);
         inventory.items.Add(inventory.bags[index]);
         inventory.bags.RemoveAt(index);
     }
@@ -1087,6 +1087,26 @@ public class Entity
     #endregion
 
     #region Combat
+
+    //Play a sound by this vendor
+    public string EnemyLine(string type)
+    {
+        var foo = Race().subcategory.Clean();
+        if (foo == "Cat") foo = "Tiger";
+        else if (foo == "Worg") foo = "Wolf";
+        else if (foo == "Coyote") foo = "Wolf";
+        else if (foo == "Chimaera") foo = "Hydra";
+        else if (foo == "Scorpid") foo = "Silithid";
+        else if (foo == "Larva") foo = "Borer";
+        else if (foo == "Ooze") foo = "Slime";
+        else if (foo == "Qiraji Construct") foo = "Anubisath";
+        else if (foo == "Naga Siren") foo = "NagaFemale";
+        else if (foo == "Naga") foo = "NagaMale";
+        else if (foo == "Sayaad") foo = "Succubus";
+        else if (foo == "Imp") foo = "Grell";
+        else if (foo == "Fel Guard") foo = "DoomGuard";
+        return foo + gender + type;
+    }
 
     //Prepares this entity for combat
     public void InitialiseCombat(bool fullReset = true)

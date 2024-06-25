@@ -496,7 +496,7 @@ public class Item
                         {
                             var amount = int.Parse(String.splitAmount.value == "" ? "0" : String.splitAmount.value);
                             if (amount <= 0) return;
-                            PlaySound(item.ItemSound("PickUp"), 0.6f);
+                            PlaySound(item.ItemSound("PickUp"), 0.8f);
                             if (amount >= item.amount)
                             {
                                 currentSave.player.inventory.AddItem(item);
@@ -513,7 +513,7 @@ public class Item
                     }
                     else
                     {
-                        PlaySound(item.ItemSound("PickUp"), 0.6f);
+                        PlaySound(item.ItemSound("PickUp"), 0.8f);
                         currentSave.player.inventory.AddItem(item);
                         currentSave.banks[town.name].items.Remove(item);
                         Respawn("Inventory");
@@ -644,7 +644,7 @@ public class Item
                 {
                     Item.item = item;
                     Cursor.cursor.ResetColor();
-                    PlaySound("DesktopMenuOpen", 0.4f);
+                    PlaySound("DesktopMenuOpen", 0.6f);
                     Respawn("PlayerEquipmentInfo");
                     SpawnWindowBlueprint("ConfirmItemDisenchant");
                 }
@@ -717,7 +717,7 @@ public class Item
                             {
                                 var amount = int.Parse(String.splitAmount.value == "" ? "0" : String.splitAmount.value);
                                 if (amount <= 0) return;
-                                PlaySound(item.ItemSound("PutDown"), 0.6f);
+                                PlaySound(item.ItemSound("PutDown"), 0.8f);
                                 if (amount > item.amount) amount = item.amount;
                                 if (amount == item.amount)
                                 {
@@ -737,7 +737,7 @@ public class Item
                         }
                         else
                         {
-                            PlaySound(item.ItemSound("PutDown"), 0.6f);
+                            PlaySound(item.ItemSound("PutDown"), 0.8f);
                             currentSave.banks[town.name].AddItem(item);
                             currentSave.player.inventory.items.Remove(item);
                             Respawn("Inventory");
@@ -748,14 +748,14 @@ public class Item
                 {
                     if (item.CanEquip(currentSave.player, true))
                     {
-                        PlaySound(item.ItemSound("PickUp"), 0.6f);
+                        PlaySound(item.ItemSound("PickUp"), 0.8f);
                         item.Equip(currentSave.player);
                         Respawn("Inventory");
                         Respawn("PlayerEquipmentInfo");
                     }
                     else if (item.CanUse(currentSave.player))
                     {
-                        PlaySound(item.ItemSound("Use"), 0.6f);
+                        PlaySound(item.ItemSound("Use"), 0.8f);
                         item.Use(currentSave.player);
                         Respawn("Inventory");
                         Respawn("PlayerEquipmentInfo");
@@ -772,7 +772,7 @@ public class Item
             {
                 if (item.indestructible) return;
                 Item.item = item;
-                PlaySound("DesktopMenuOpen", 0.4f);
+                PlaySound("DesktopMenuOpen", 0.6f);
                 SpawnWindowBlueprint("ConfirmItemDestroy");
             }
         );
@@ -794,7 +794,7 @@ public class Item
             {
                 if (currentSave.player.inventory.CanAddItem(item))
                 {
-                    PlaySound(item.ItemSound("PutDown"), 0.6f);
+                    PlaySound(item.ItemSound("PutDown"), 0.8f);
                     if (CDesktop.title == "CombatResultsLoot")
                     {
                         currentSave.player.inventory.AddItem(item);

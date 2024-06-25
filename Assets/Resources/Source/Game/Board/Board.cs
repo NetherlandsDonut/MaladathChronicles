@@ -67,6 +67,7 @@ public class Board
 
     public static void NewBoard(Entity entity, SiteHostileArea area)
     {
+        PlayEnemyLine(entity.EnemyLine("Aggro"));
         board = new Board(6, 6, entity, area);
         bufferBoard = new BufferBoard();
         board.CallEvents(board.player, new() { { "Trigger", "CombatBegin" } });
@@ -254,6 +255,7 @@ public class Board
         results = new CombatResults(result, area.zone, area.recommendedLevel);
         if (result == "Won")
         {
+            PlayEnemyLine(enemy.EnemyLine("Death"));
             var enemyRace = Race.races.Find(x => x.name == enemy.race);
             if (currentSave.player.WillGetExperience(enemy.level) && currentSave.player.level < defines.maxPlayerLevel)
             {
@@ -653,11 +655,11 @@ public class Board
     //DESTROYS ALL ELEMENTS OF THE SAME KIND THAT ARE NEARBY OF THE TARGETED ONE
     public void FloodDestroy(List<(int, int, int)> list)
     {
-        PlaySound(collectSoundDictionary[list[0].Item3].ToString(), 0.3f);
+        PlaySound(collectSoundDictionary[list[0].Item3].ToString(), 0.5f);
         if (list.Count > 3)
         {
             bonusTurnStreak++;
-            PlaySound("BonusMove" + (bonusTurnStreak > 4 ? 4 : bonusTurnStreak), 0.4f);
+            PlaySound("BonusMove" + (bonusTurnStreak > 4 ? 4 : bonusTurnStreak), 0.6f);
             SpawnFallingText(new Vector2(0, 34), "Bonus Move", "White");
         }
         var types = list.Select(x => x.Item3 % 10).Distinct();

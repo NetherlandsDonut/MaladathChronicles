@@ -63,8 +63,8 @@
   {
     "name": "Teldrassil",
     "continent": "Kalimdor",
-    "ambienceDay": "AmbienceMarshDay",
-    "ambienceNight": "AmbienceMarshNight",
+    "ambienceDay": "AmbienceForestNormalDay",
+    "ambienceNight": "AmbienceForestNormalNight",
     "herbs": [
       "Earthroot",
       "Mageroyal",
@@ -207,7 +207,7 @@
   {
     "name": "Dustwallow Marsh",
     "continent": "Kalimdor",
-    "ambienceDay": "AmbienceMarshDay",
+    "ambienceDay": "AmbienceSwampDay",
     "ambienceNight": "AmbienceMarshNight",
     "miningNodes": [
       "Iron Vein",
@@ -736,7 +736,7 @@
   {
     "name": "Alcaz Island",
     "continent": "Kalimdor",
-    "ambienceDay": "AmbienceMarshDay",
+    "ambienceDay": "AmbienceSwampDay",
     "ambienceNight": "AmbienceMarshNight"
   },
   {

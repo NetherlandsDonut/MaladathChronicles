@@ -19,7 +19,7 @@ public class Tooltip
         SpawnWindowBlueprint(new Blueprint("Tooltip", () => { DisableCollisions(); tooltip(caller())(); }, true));
         if (CDesktop.LBWindow.LBRegionGroup != null)
         {
-            Sound.PlaySound("DesktopTooltipShow", 0.2f);
+            Sound.PlaySound("DesktopTooltipShow", 0.4f);
             window = CDesktop.LBWindow;
             //window.FadeIn();
         }

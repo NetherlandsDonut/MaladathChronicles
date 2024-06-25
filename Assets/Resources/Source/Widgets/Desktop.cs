@@ -109,6 +109,10 @@ public class Desktop : MonoBehaviour
 
     public void Update()
     {
+        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.S))
+            GameSettings.settings.soundEffects.Invert();
+        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.M))
+            GameSettings.settings.music.Invert();
         if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyUp(KeyCode.LeftControl))
             CloseWindow("Tooltip");
         if (mouseOver != null)
@@ -261,7 +265,7 @@ public class Desktop : MonoBehaviour
                             if (queuedPath[0].Item2.Count % 2 == 0 && queuedPath[0].Item1.means == "Land")
                             {
                                 var what = groundData[Math.Abs((int)queuedPath[0].Item2[0].position.x / 19), Math.Abs((int)queuedPath[0].Item2[0].position.y / 19)];
-                                PlaySound("Step" + what + random.Next(1, 6), what == "Sand" ? 0.4f : 0.5f);
+                                PlaySound("Step" + what + random.Next(1, 6), what == "Sand" ? 0.6f : 0.7f);
                             }
                             currentSave.AddTime(queuedPath[0].Item1.fixedDuration != 0 ? queuedPath[0].Item1.fixedDuration : currentSave.player.TravelPassTime());
                             Destroy(queuedPath[0].Item2.First(x => x.name == "PathDot").gameObject);
@@ -269,13 +273,13 @@ public class Desktop : MonoBehaviour
                             if (queuedPath[0].Item2.Count == 0)
                             {
                                 if (queuedPath[0].Item1.means == "Tram")
-                                    PlaySound("TramStop", 0.4f);
+                                    PlaySound("TramStop", 0.6f);
                                 else if (queuedPath[0].Item1.means == "Zeppelin")
-                                    PlaySound("ZeppelinStop", 0.25f);
+                                    PlaySound("ZeppelinStop", 0.45f);
                                 else if (queuedPath[0].Item1.means == "Ship")
-                                    PlaySound("ShipStop", 0.25f);
+                                    PlaySound("ShipStop", 0.45f);
                                 else if (queuedPath[0].Item1.means == "Darnassus")
-                                    PlaySound("TeleportStop", 0.3f);
+                                    PlaySound("TeleportStop", 0.5f);
                                 queuedPath.RemoveAt(0);
                             }
                         }

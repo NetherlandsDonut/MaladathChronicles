@@ -60,10 +60,11 @@ public class Race
             else if (portrait.ToLower().Contains("hippo")) subcategory = "Hippogryph";
             else if (portrait.ToLower().Contains("gryph")) subcategory = "Gryphon";
             else if (portrait.ToLower().Contains("tallstrider")) subcategory = "Tallstrider";
-            else if (portrait.ToLower().Contains("darkhound")) subcategory = "Darkhound";
+            else if (portrait.ToLower().Contains("darkhound")) subcategory = "Dark Hound";
             else if (portrait.ToLower().Contains("worgen")) { category = "Humanoid"; subcategory = "Worgen"; }
             else if (portrait.ToLower().Contains("quil")) { category = "Humanoid"; subcategory = "Quilboar"; }
             else if (portrait.ToLower().Contains("kodo")) subcategory = "Kodo";
+            else if (portrait.ToLower().Contains("thunderlizard")) subcategory = "Thunder Lizard";
             else if (portrait.ToLower().Contains("core")) subcategory = "Core Hound";
             else if (portrait.ToLower().Contains("hound")) subcategory = "Hound";
             else if (portrait.ToLower().Contains("cheetah")) subcategory = "Cat";
@@ -71,7 +72,7 @@ public class Race
             else if (portrait.ToLower().Contains("humar")) subcategory = "Cat";
             else if (portrait.ToLower().Contains("saber")) subcategory = "Cat";
             else if (portrait.ToLower().Contains("panther")) subcategory = "Cat";
-            else if (portrait.ToLower().Contains("coyote")) subcategory = "Cat";
+            else if (portrait.ToLower().Contains("coyote")) subcategory = "Coyote";
         }
         else if (category == "Humanoid")
         {
@@ -85,6 +86,7 @@ public class Race
             else if (portrait.ToLower().Contains("blackhand")) subcategory = "Orc";
             else if (portrait.ToLower().Contains("blackwing")) subcategory = "Orc";
             else if (portrait.ToLower().Contains("dragonmaw")) subcategory = "Orc";
+            else if (portrait.ToLower().Contains("nagafemale")) subcategory = "Naga Siren";
             else if (portrait.ToLower().Contains("naga")) subcategory = "Naga";
             else if (portrait.ToLower().Contains("centaur")) subcategory = "Centaur";
             else if (portrait.ToLower().Contains("darkiron")) subcategory = "Dwarf";
@@ -113,12 +115,13 @@ public class Race
         else if (category == "Undead")
         {
             if (portrait.ToLower().Contains("abomination")) subcategory = "Abomination";
+            else if (portrait.ToLower().Contains("skeletalwarrior")) subcategory = "Armored Skeleton";
             else if (portrait.ToLower().Contains("skele")) subcategory = "Skeleton";
             else if (portrait.ToLower().Contains("wraith")) subcategory = "Ghost";
-            else if (portrait.ToLower().Contains("banshee")) subcategory = "Ghost";
+            else if (portrait.ToLower().Contains("banshee")) subcategory = "Banshee";
             else if (portrait.ToLower().Contains("zombie")) subcategory = "Zombie";
             else if (portrait.ToLower().Contains("ghoul")) subcategory = "Ghoul";
-            else if (portrait.ToLower().Contains("crypt")) subcategory = "Nerubian";
+            else if (portrait.ToLower().Contains("crypt")) subcategory = "Crypt Fiend";
             else if (portrait.ToLower().Contains("wight")) subcategory = "Wight";
             else subcategory = "Undead";
         }
@@ -126,6 +129,7 @@ public class Race
         {
             if (portrait.ToLower().Contains("spawn")) subcategory = "Dragonspawn";
             else if (portrait.ToLower().Contains("draconid")) subcategory = "Draconid";
+            else if (portrait.ToLower().Contains("faerie")) subcategory = "Faerie Dragon";
             else subcategory = "Dragon";
         }
         else if (category == "Elemental")
@@ -143,7 +147,7 @@ public class Race
         {
             if (portrait.ToLower().Contains("qiraji")) subcategory = "Qiraji";
             else if (portrait.ToLower().Contains("queen")) subcategory = "Qiraji";
-            else if (portrait.ToLower().Contains("larva")) subcategory = "Carrion";
+            else if (portrait.ToLower().Contains("larva")) subcategory = "Larva";
             else subcategory = "Silithid";
         }
         else if (category == "Demon")

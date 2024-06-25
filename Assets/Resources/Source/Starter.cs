@@ -82,8 +82,8 @@ public class Starter : MonoBehaviour
         //This is audio source for all quick and single sound effects.
         //Audio played through this medium cannot be stopped or changed in volume
         soundEffects = sources.First(x => x.name == "SFX");
-
         voiceLines = sources.First(x => x.name == "Voice");
+        enemyLines = sources.First(x => x.name == "Enemy");
 
         //All sound effects loaded up
         sounds = Resources.LoadAll<AudioClip>("Sounds/").ToDictionary(x => x.name, x => x);

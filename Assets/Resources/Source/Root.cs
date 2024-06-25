@@ -488,7 +488,7 @@ public static class Root
             {
                 if (group.pagination() < group.maxPagination() - 1)
                 {
-                    PlaySound("DesktopChangePage", 0.4f);
+                    PlaySound("DesktopChangePage", 0.6f);
                     group.IncrementPagination();
                 }
             });
@@ -496,7 +496,7 @@ public static class Root
             {
                 if (group.pagination() > 0)
                 {
-                    PlaySound("DesktopChangePage", 0.4f);
+                    PlaySound("DesktopChangePage", 0.6f);
                     group.DecrementPagination();
                 }
             });

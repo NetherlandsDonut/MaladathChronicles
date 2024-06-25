@@ -100,17 +100,17 @@ public class Highlightable : MonoBehaviour
         if (pressedState == "Left" && pressEvent != null)
         {
             if (GetComponent<LineSmallButton>()?.buttonType == "OtherClose") PlaySound("DesktopButtonClose");
-            else PlaySound("DesktopButtonPress", 0.6f);
+            else PlaySound("DesktopButtonPress", 0.8f);
             pressEvent(this);
         }
         else if (pressedState == "Right" && rightPressEvent != null)
         {
-            PlaySound("DesktopButtonPressRight", 0.3f);
+            PlaySound("DesktopButtonPressRight", 0.5f);
             rightPressEvent(this);
         }
         else if (pressedState == "Middle" && middlePressEvent != null)
         {
-            PlaySound("DesktopButtonPressRight", 0.3f);
+            PlaySound("DesktopButtonPressRight", 0.5f);
             middlePressEvent(this);
         }
         pressedState = "None";

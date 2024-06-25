@@ -34,10 +34,10 @@ public class FallingElement : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, destination, timeAlive * 0.8f / (float)System.Math.Sqrt(howFar) * (GameSettings.settings.fastCascading.Value() ? 0.9f : 0.6f));
         if (Mathf.Abs(transform.position.x - destination.x) + Mathf.Abs(transform.position.y - destination.y) < 0.4f)
         {
-            if (soundsPlayedThisFrame == 0)
+            if (soundsPlayedThisFrame < 2)
             {
                 soundsPlayedThisFrame++;
-                PlaySound("PutDownWoodSmall", 0.8f);
+                PlaySound("PutDownWoodSmall", 1f);
             }
             fallingElements.Remove(this);
             Destroy(this);

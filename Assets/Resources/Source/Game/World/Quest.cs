@@ -150,7 +150,7 @@ public class Quest
                     });
                     AddSmallButton("OtherTrash", (h) =>
                     {
-                        PlaySound("DesktopMenuOpen", 0.4f);
+                        PlaySound("DesktopMenuOpen", 0.6f);
                         Respawn("QuestConfirmAbandon");
                         Respawn("QuestList");
                     });
@@ -222,7 +222,7 @@ public class Quest
             {
                 if (currentSave.player.CanAddQuest(this))
                 {
-                    PlaySound("QuestAdd", 0.2f);
+                    PlaySound("QuestAdd", 0.4f);
                     currentSave.player.AddQuest(quest);
                     CloseWindow(h.window);
                     var find = CDesktop.windows.Find(x => x.title.Contains("QuestAvailable"));
@@ -231,7 +231,7 @@ public class Quest
                     if (find != null) find.Respawn();
                     Respawn("PlayerMoney", true);
                 }
-                else PlaySound("QuestFailed", 0.2f);
+                else PlaySound("QuestFailed", 0.4f);
             });
         }
     }

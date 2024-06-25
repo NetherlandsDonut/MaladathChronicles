@@ -10,7 +10,7 @@ public static class Sound
     public static Dictionary<string, AudioClip> sounds;
 
     //Plays a singular sound effect
-    public static void PlaySound(string path, float volume = 0.5f)
+    public static void PlaySound(string path, float volume = 0.7f)
     {
         if (!settings.soundEffects.Value() || soundsPlayedThisFrame > 5) return;
         if (!sounds.ContainsKey(path)) return;
@@ -19,7 +19,7 @@ public static class Sound
     }
 
     //Plays a singular sound effect
-    public static void PlayVoice(string path, float volume = 0.5f)
+    public static void PlayVoiceLine(string path, float volume = 0.4f)
     {
         if (!settings.soundEffects.Value()) return;
         var find = sounds.Where(x => x.Key.StartsWith(path));
@@ -29,9 +29,20 @@ public static class Sound
         voiceLines.Play();
     }
 
+    //Plays a singular sound effect
+    public static void PlayEnemyLine(string path, float volume = 0.3f)
+    {
+        if (!settings.soundEffects.Value()) return;
+        var find = sounds.Where(x => x.Key.StartsWith(path));
+        if (find.Count() == 0) return;
+        enemyLines.clip = find.ToList()[Root.random.Next(find.Count())].Value;
+        enemyLines.volume = volume;
+        enemyLines.Play();
+    }
+
     //Plays new background ambience, in case of one already playing we queue them.
     //Then application slowly lowers the volume of the current one and then softly starts the new one
-    public static void PlayAmbience(string path, float volume = 0.5f, bool instant = false)
+    public static void PlayAmbience(string path, float volume = 0.2f, bool instant = false)
     {
         var temp = Resources.Load<AudioClip>("Ambience/" + path);
         if (temp == null) return;
@@ -50,6 +61,9 @@ public static class Sound
 
     //Sound effect controller that plays sound effects
     public static AudioSource voiceLines;
+
+    //Sound effect controller that plays sound effects
+    public static AudioSource enemyLines;
 
     //Amount of falling element sounds played this frame
     //It is used to ensure that user's headphones are not
