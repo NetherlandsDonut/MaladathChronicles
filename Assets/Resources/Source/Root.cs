@@ -965,13 +965,13 @@ public static class Root
                 CloseWindow("Complex");
                 if (f == "Add")
                 {
-                    if (!Respawn("QuestAdd"))
-                        PlaySound("DesktopWriteQuest" + random.Next(1, 4));
+                    if (!Respawn("QuestAdd")) PlaySound("DesktopWriteQuest" + random.Next(1, 4));
                 }
                 else if (f == "Turn")
                 {
-                    if (!Respawn("QuestTurn"))
-                        PlaySound("DesktopWriteQuest" + random.Next(1, 4));
+                    if (quest.rewards != null && quest.rewards.Count == 1) Quest.chosenReward = quest.rewards.ToList()[0].Key;
+                    else Quest.chosenReward = null;
+                    if (!Respawn("QuestTurn")) PlaySound("DesktopWriteQuest" + random.Next(1, 4));
                 }
                 Respawn("PlayerMoney", true);
             });

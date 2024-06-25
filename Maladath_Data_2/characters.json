@@ -1719,36 +1719,6 @@
       "player": {
         "currentQuests": [
           {
-            "questID": 9,
-            "requiredLevel": 8,
-            "questLevel": 15,
-            "name": "The Killing Fields",
-            "description": "Farmer Saldean wants you to kill 5 Harvest Watchers.",
-            "siteStart": "Saldean's Farm",
-            "siteEnd": "Saldean's Farm",
-            "zone": "Westfall",
-            "races": [
-              "Gnome",
-              "Night Elf",
-              "Dwarf",
-              "Human"
-            ],
-            "rewards": {
-              "Harvester's Pants": 1,
-              "Harvester's Robe": 1
-            },
-            "reputationGain": {
-              "Stormwind": 250
-            },
-            "conditions": [
-              {
-                "type": "Kill",
-                "name": "Harvest Watcher",
-                "amount": 5
-              }
-            ]
-          },
-          {
             "questID": 22,
             "requiredLevel": 9,
             "questLevel": 12,
@@ -1915,7 +1885,8 @@
         ],
         "completedQuests": [
           40,
-          783
+          783,
+          9
         ],
         "level": 20,
         "experience": 9678,
@@ -1999,7 +1970,7 @@
             ]
           },
           "Mining": {
-            "Item1": 6,
+            "Item1": 11,
             "Item2": [
               "Apprentice"
             ]
@@ -2170,7 +2141,7 @@
               "source": "RareDrop",
               "ilvl": 5,
               "lvl": 1,
-              "amount": 4,
+              "amount": 10,
               "maxStack": 20,
               "price": 2,
               "stats": {
@@ -2186,7 +2157,7 @@
               "source": "RareDrop",
               "ilvl": 10,
               "lvl": 1,
-              "amount": 2,
+              "amount": 10,
               "maxStack": 10,
               "price": 5,
               "stats": {
@@ -2292,6 +2263,134 @@
               "stats": {
                 "stats": {}
               }
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Journeyman's Pants",
+              "icon": "itempants10",
+              "type": "Legs",
+              "armorClass": "Cloth",
+              "source": "RareDrop",
+              "ilvl": 10,
+              "lvl": 5,
+              "armor": 17,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 94,
+              "stats": {
+                "stats": {
+                  "Spirit": 1
+                }
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Bruiseweed",
+              "icon": "itemmischerb01",
+              "detailedType": "Flowers",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 20,
+              "lvl": 1,
+              "amount": 3,
+              "maxStack": 20,
+              "price": 25,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Malachite",
+              "icon": "itemmiscgememerald03",
+              "detailedType": "Gem",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 7,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 20,
+              "price": 15,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Minor Healing Potion",
+              "icon": "itempotion49",
+              "detailedType": "Potion",
+              "type": "Miscellaneous",
+              "source": "Profession",
+              "ilvl": 5,
+              "amount": 1,
+              "maxStack": 5,
+              "price": 5,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Small Blue Pouch",
+              "icon": "itemmiscbag09blue",
+              "type": "Bag",
+              "source": "GeneralDrop",
+              "ilvl": 5,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 250,
+              "bagSpace": 2,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Journeyman's Cloak",
+              "icon": "itemmisccape15",
+              "type": "Back",
+              "source": "RareDrop",
+              "ilvl": 8,
+              "lvl": 3,
+              "armor": 7,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 24,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Apprentice's Boots",
+              "icon": "itemboots09",
+              "type": "Feet",
+              "ilvl": 1,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 1,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Poor",
+              "name": "Apprentice's Robe",
+              "icon": "itemchestcloth23",
+              "type": "Chest",
+              "armorClass": "Cloth",
+              "ilvl": 1,
+              "lvl": 1,
+              "armor": 3,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 1,
+              "stats": {
+                "stats": {}
+              }
             }
           ],
           "bags": [
@@ -2366,76 +2465,91 @@
             }
           },
           "Feet": {
-            "rarity": "Common",
-            "name": "Apprentice's Boots",
-            "icon": "itemboots09",
+            "rarity": "Uncommon",
+            "name": "Seer's Boots",
+            "icon": "itemboots05",
             "type": "Feet",
-            "ilvl": 1,
-            "lvl": 1,
+            "armorClass": "Cloth",
+            "source": "RareDrop",
+            "ilvl": 17,
+            "lvl": 12,
+            "armor": 21,
             "amount": 1,
             "maxStack": 1,
-            "price": 1,
+            "price": 280,
             "stats": {
-              "stats": {}
+              "stats": {
+                "Intellect": 1,
+                "Stamina": 3
+              }
             }
           },
           "Legs": {
             "rarity": "Uncommon",
-            "name": "Journeyman's Pants",
-            "icon": "itempants10",
+            "name": "Barbaric Loincloth",
+            "icon": "itempantswolf",
             "type": "Legs",
             "armorClass": "Cloth",
             "source": "RareDrop",
-            "ilvl": 10,
-            "lvl": 5,
-            "armor": 17,
+            "ilvl": 16,
+            "lvl": 11,
+            "armor": 25,
             "amount": 1,
             "maxStack": 1,
-            "price": 94,
+            "price": 333,
             "stats": {
               "stats": {
-                "Spirit": 1
+                "Strength": 3,
+                "Intellect": 2
               }
             }
           },
           "Chest": {
-            "rarity": "Poor",
-            "name": "Apprentice's Robe",
-            "icon": "itemchestcloth23",
+            "rarity": "Uncommon",
+            "name": "Harvester's Robe",
+            "icon": "itemchestcloth13",
             "type": "Chest",
             "armorClass": "Cloth",
-            "ilvl": 1,
+            "source": "Quest",
+            "ilvl": 15,
             "lvl": 1,
-            "armor": 3,
+            "armor": 28,
             "amount": 1,
             "maxStack": 1,
-            "price": 1,
+            "price": 268,
             "stats": {
-              "stats": {}
+              "stats": {
+                "Stamina": 2,
+                "Spirit": 2
+              }
             }
           },
           "Back": {
-            "rarity": "Common",
-            "name": "Journeyman's Cloak",
-            "icon": "itemmisccape15",
+            "rarity": "Uncommon",
+            "name": "Outrunner's Cloak of the Whale",
+            "icon": "itemmisccape13",
+            "randomEnchantment": true,
             "type": "Back",
             "source": "RareDrop",
-            "ilvl": 8,
-            "lvl": 3,
-            "armor": 7,
+            "ilvl": 17,
+            "lvl": 12,
+            "armor": 15,
             "amount": 1,
             "maxStack": 1,
-            "price": 24,
+            "price": 269,
             "stats": {
-              "stats": {}
+              "stats": {
+                "Stamina": 4,
+                "Spirit": 4
+              }
             }
           }
         }
       },
       "hour": 11,
-      "minute": 45,
-      "second": 22,
-      "currentSite": "Northshire Vineyards",
+      "minute": 58,
+      "second": 26,
+      "currentSite": "Saldean's Farm",
       "openedChests": {
         "Gnomeregan Outskirts": {
           "area": "Gnomeregan Outskirts",
@@ -2596,6 +2710,14 @@
             "bags": [],
             "ignoreSpaceChecks": true
           }
+        },
+        "Saldean's Farm": {
+          "area": "Saldean's Farm",
+          "inventory": {
+            "items": [],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
         }
       },
       "siteProgress": {
@@ -2618,7 +2740,8 @@
         "The Riverbed": 3,
         "The Den of Flame": 3,
         "Echo Ridge Mine": 1,
-        "Northshire Vineyards": 3
+        "Northshire Vineyards": 3,
+        "Saldean's Farm": 10
       },
       "commonsKilled": {
         "Deeprot Tangler": 1,
@@ -2644,7 +2767,9 @@
         "Firemane Scalebane": 2,
         "Firemane Ash Tail": 1,
         "Kobold Laborer": 1,
-        "Defias Thug": 4
+        "Defias Thug": 4,
+        "Coyote": 5,
+        "Harvest Watcher": 5
       },
       "raresKilled": {
         "Gibblewilt": 1
@@ -3466,7 +3591,7 @@
         "Stendel's Pond": 1,
         "Demont's Place": 1,
         "Moonbrook": 1,
-        "Saldean's Farm": 3,
+        "Saldean's Farm": 5,
         "The Dagger Hills": 1,
         "The Dead Acre": 1,
         "Westfall Crossing": 1,
@@ -4646,9 +4771,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2024-06-09T14:12:27.0144066+02:00",
-      "lastLoaded": "2024-06-25T15:58:03.4000275+02:00",
-      "lastPlayed": "2024-06-25T15:58:53.9982375+02:00",
-      "timePlayed": "13:55:14.2928098",
+      "lastLoaded": "2024-06-25T16:40:16.4118824+02:00",
+      "lastPlayed": "2024-06-25T16:43:38.889203+02:00",
+      "timePlayed": "13:58:36.7701304",
       "lastVisitedTalents": 1
     },
     {

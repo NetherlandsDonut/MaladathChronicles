@@ -93,15 +93,15 @@ public class Blueprint
                 AddLine("Elites killed: " + elites.Count(x => currentSave.elitesKilled.ContainsKey(x)) + " / " + elites.Count, "DarkGray", "Center");
                 SetRegionAsGroupExtender();
             });
-            AddButtonRegion(() =>
-            {
-                AddLine("Explore", "", "Center");
-            },
-            (h) =>
-            {
-                //PlaySound("DesktopInstanceOpen");
-                //SpawnDesktopBlueprint("Bestiary");
-            });
+            //AddButtonRegion(() =>
+            //{
+            //    AddLine("Explore", "", "Center");
+            //},
+            //(h) =>
+            //{
+            //    //PlaySound("DesktopInstanceOpen");
+            //    //SpawnDesktopBlueprint("Bestiary");
+            //});
         }),
         new("BestiaryEasternKingdoms", () => {
             SetAnchor(9, 142);
@@ -142,15 +142,15 @@ public class Blueprint
                 AddLine("Elites killed: " + elites.Count(x => currentSave.elitesKilled.ContainsKey(x)) + " / " + elites.Count, "DarkGray", "Center");
                 SetRegionAsGroupExtender();
             });
-            AddButtonRegion(() =>
-            {
-                AddLine("Explore", "", "Center");
-            },
-            (h) =>
-            {
-                //PlaySound("DesktopInstanceOpen");
-                //SpawnDesktopBlueprint("Bestiary");
-            });
+            //AddButtonRegion(() =>
+            //{
+            //    AddLine("Explore", "", "Center");
+            //},
+            //(h) =>
+            //{
+            //    //PlaySound("DesktopInstanceOpen");
+            //    //SpawnDesktopBlueprint("Bestiary");
+            //});
         }),
 
         //Game
@@ -3815,7 +3815,7 @@ public class Blueprint
                                     currentSave.player.mount = mount.name;
                                     Respawn("MountCollection");
                                     Respawn("CurrentMount");
-                                    PlaySound("DesktopActionbarAdd", 0.9f);
+                                    PlaySound("DesktopActionBarAdd", 0.9f);
                                 }
                             },
                             null,
@@ -5056,7 +5056,7 @@ public class Blueprint
                                     currentSave.player.actionBars.Add(key.Key.name);
                                     Respawn("PlayerSpellbookInfo");
                                     Respawn("SpellbookAbilityListActivated", true);
-                                    PlaySound("DesktopActionbarAdd", 0.9f);
+                                    PlaySound("DesktopActionBarAdd", 0.9f);
                                 }
                             },
                             null,
@@ -5243,7 +5243,7 @@ public class Blueprint
                             Respawn("SpellbookAbilityListActivated", true);
                             Respawn("SpellbookAbilityListPassive", true);
                             Respawn("PlayerSpellbookInfo");
-                            PlaySound("DesktopActionbarRemove", 0.9f);
+                            PlaySound("DesktopActionBarRemove", 0.9f);
                         },
                         null,
                         (h) => () =>

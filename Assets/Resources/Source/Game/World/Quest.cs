@@ -99,6 +99,9 @@ public class Quest
         else r += "Sealed";
         return r;
     }
+    
+    //Currently chosen quest reward by player
+    public static string chosenReward;
 
     //Currently selected quest
     public static Quest quest;
@@ -192,28 +195,69 @@ public class Quest
             foreach (var item in rewards)
             {
                 var find = Item.items.Find(x => x.name == item.Key);
-                AddBigButton(find.icon, null, null, (h) => () =>
+                AddBigButton(find.icon, (h) => { chosenReward = find.name; }, null, (h) => () =>
                 {
                     if (CDesktop.windows.Exists(x => x.title == "CraftingSort")) return;
                     if (CDesktop.windows.Exists(x => x.title == "CraftingSettings")) return;
                     Item.PrintItemTooltip(find, Input.GetKey(KeyCode.LeftShift));
                 });
-                //if (find.type != "Miscellaneous" && find.type != "Trade Good" && find.type != "Recipe" && find.CanEquip(currentSave.player)) { SetBigButtonToRed(); AddBigButtonOverlay("OtherGridBlurred"); }
+                if (find.type != "Miscellaneous" && find.type != "Trade Good" && find.type != "Recipe" && !find.CanEquip(currentSave.player)) { SetBigButtonToRed(); AddBigButtonOverlay("OtherGridBlurred"); }
                 if (find.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (rewards.Keys.ToList().IndexOf(item.Key) % 5), item.Value + "", "", "Right");
+                if (find.name == chosenReward && rewards.Count > 1) AddBigButtonOverlay("OtherGlowChosen");
             }
         }
         if (f == "Turn")
         {
             AddButtonRegion(() => { AddLine("Complete the Quest"); }, (h) =>
             {
-                currentSave.player.TurnQuest(this);
-                PlaySound("QuestTurn");
-                CloseWindow(h.window);
-                var find = CDesktop.windows.Find(x => x.title.Contains("QuestAvailable"));
-                if (find != null) find.Respawn();
-                find = CDesktop.windows.Find(x => x.title.Contains("QuestDone"));
-                if (find != null) find.Respawn();
-                Respawn("PlayerMoney", true);
+                if (rewards != null && rewards.Count == 1)
+                {
+                    var item = Item.items.Find(x => x.name == chosenReward).CopyItem(rewards[chosenReward]);
+                    if (!currentSave.player.inventory.CanAddItem(item))
+                    {
+                        PlaySound("QuestFailed");
+                        SpawnFallingText(new Vector2(0, 34), "Inventory full", "Red");
+                    }
+                    else
+                    {
+                        PlaySound(item.ItemSound("PutDown"), 0.8f);
+                        currentSave.player.inventory.AddItem(item);
+                        Foo();
+                    }
+                }
+                else if (rewards != null && rewards.Count > 1)
+                {
+                    var item = chosenReward == null ? null : Item.items.Find(x => x.name == chosenReward).CopyItem(rewards[chosenReward]);
+                    if (item == null)
+                    {
+                        PlaySound("QuestFailed");
+                        SpawnFallingText(new Vector2(0, 34), "No reward chosen", "Red");
+                    }
+                    else if (!currentSave.player.inventory.CanAddItem(item))
+                    {
+                        PlaySound("QuestFailed");
+                        SpawnFallingText(new Vector2(0, 34), "Inventory full", "Red");
+                    }
+                    else
+                    {
+                        PlaySound(item.ItemSound("PutDown"), 0.8f);
+                        currentSave.player.inventory.AddItem(item);
+                        Foo();
+                    }
+                }
+                else Foo();
+
+                void Foo()
+                {
+                    currentSave.player.TurnQuest(this);
+                    PlaySound("QuestTurn");
+                    CloseWindow(h.window);
+                    var find = CDesktop.windows.Find(x => x.title.Contains("QuestAvailable"));
+                    if (find != null) find.Respawn();
+                    find = CDesktop.windows.Find(x => x.title.Contains("QuestDone"));
+                    if (find != null) find.Respawn();
+                    Respawn("PlayerMoney", true);
+                }
             });
         }
         if (f == "Add")

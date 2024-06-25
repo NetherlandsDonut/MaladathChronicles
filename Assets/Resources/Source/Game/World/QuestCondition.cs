@@ -40,7 +40,7 @@ public class QuestCondition
         else if (type == "Item")
         {
             var races = Item.items.Find(x => x.name == name).droppedBy;
-            list = SiteHostileArea.areas.FindAll(x => x.commonEncounters != null && x.commonEncounters.Any(x => races.Contains(x.who)) || x.rareEncounters != null && x.rareEncounters.Any(x => races.Contains(x.who)) || x.eliteEncounters != null && x.eliteEncounters.Any(x => races.Contains(x.who))).Select(x => (Site)x).ToList();
+            if (races != null) list = SiteHostileArea.areas.FindAll(x => x.commonEncounters != null && x.commonEncounters.Any(x => races.Contains(x.who)) || x.rareEncounters != null && x.rareEncounters.Any(x => races.Contains(x.who)) || x.eliteEncounters != null && x.eliteEncounters.Any(x => races.Contains(x.who))).Select(x => (Site)x).ToList();
         }
         else if (type == "Visit")
         {
