@@ -680,6 +680,35 @@ v0.5.49
 ```
 v0.6.0
     18.06 Added disenchanting items
+          Loaded up all sound effects into memory on start
+v0.6.1
+    19.06 Added screen backgrounds for instance wings
+          Separated areas in instances with wings
+v0.6.2
+    20.06 Fixed disappearing paths from the game
+          Added all backgrounds for instance wings
+          Added player money to towns in the bottom right corner
+          Tweaked tooltips for recipes and profession levels
+          Polished the profession screens
+          Item comparison now includes armor, block and damage
+          Changed how damage is displayed on weapons
+          Made it possible to equip a lower armor class items
+          Expanded item sounds system
+v0.6.3
+    21.06 Fixed learning recipes from items
+          Fixed infinite money bug using buyback screen
+v0.6.4
+    22.06 Added a lot of NPC's
+          Fixed recipes displaying how many bag slots they have
+v0.6.5
+    23.06 Added friendly NPC sounds
+          Added skinning prompt and special skinning loot
+          Made it so that only one voice line can play at a time
+          Added stock to all innkeepers
+          Added two missing innkeepers to towns
+v0.6.6
+    24.06 Added enemy voice lines
+          Added keybinds for disabling music and sounds
 ```
 
 </details>
