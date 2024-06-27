@@ -3318,6 +3318,8 @@ public class Blueprint
                                     Person.person = person;
                                     CloseWindow(h.window.title);
                                     Respawn("Person");
+                                    CloseWindow("TownQuestAvailable");
+                                    CloseWindow("TownQuestDone");
                                     PlayVoiceLine(person.VoiceLine("Greeting"));
                                     PlaySound("DesktopInstanceOpen");
                                 });
@@ -3337,6 +3339,8 @@ public class Blueprint
                                 Person.person = person;
                                 CloseWindow(h.window.title);
                                 Respawn("Person");
+                                CloseWindow("TownQuestAvailable");
+                                CloseWindow("TownQuestDone");
                                 PlayVoiceLine(person.VoiceLine("Greeting"));
                                 PlaySound("DesktopInstanceOpen");
                             });
@@ -3622,6 +3626,8 @@ public class Blueprint
                 if (personCategory != null) Respawn("Persons");
                 Respawn("Town");
                 Respawn("Persons", true);
+                Respawn("TownQuestAvailable");
+                Respawn("TownQuestDone");
             });
         }, true),
         new("Persons", () => {
@@ -3655,6 +3661,8 @@ public class Blueprint
                     Respawn("Person");
                     CloseWindow("Persons");
                     CloseWindow("Town");
+                    CloseWindow("TownQuestAvailable");
+                    CloseWindow("TownQuestDone");
                     PlayVoiceLine(person.VoiceLine("Greeting"));
                     PlaySound("DesktopInstanceOpen");
                 });
@@ -5859,6 +5867,8 @@ public class Blueprint
                         if (personCategory != null) Respawn("Persons");
                         Respawn("Town");
                         Respawn("Persons", true);
+                        Respawn("TownQuestAvailable");
+                        Respawn("TownQuestDone");
                     }
                     else if (CloseWindow("Persons"))
                     {

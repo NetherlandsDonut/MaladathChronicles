@@ -36,27 +36,27 @@
   },
   {
     "type": "Engineering Supplies & General Goods",
-    "icon": "TradeEngineering",
+    "icon": "ItemMiscGear08",
     "category": "Vendor"
   },
   {
     "type": "Engineering & Mining Supplies",
-    "icon": "TradeEngineering",
+    "icon": "ItemMiscGear08",
     "category": "Vendor"
   },
   {
     "type": "Engineering Supplies",
-    "icon": "TradeEngineering",
+    "icon": "ItemMiscGear08",
     "category": "Vendor"
   },
   {
     "type": "Leatherworking Supplies",
-    "icon": "TradeLeatherworking",
+    "icon": "ItemMiscPeltBear02",
     "category": "Vendor"
   },
   {
     "type": "Enchanting Supplies",
-    "icon": "TradeEnchanting",
+    "icon": "ItemMiscBagEnchantedRunecloth",
     "category": "Vendor"
   },
   {
@@ -91,12 +91,12 @@
   },
   {
     "type": "Leatherworking & Tailoring Supplies",
-    "icon": "ItemBox01",
+    "icon": "ItemMiscPeltBear02",
     "category": "Vendor"
   },
   {
     "type": "Tailoring Supplies",
-    "icon": "TradeTailoring",
+    "icon": "ItemFabricLinen03",
     "category": "Vendor"
   },
   {
@@ -176,7 +176,12 @@
   },
   {
     "type": "Fishing Supplies",
-    "icon": "TradeFishing",
+    "icon": "ItemFishingpole02",
+    "category": "Vendor"
+  },
+  {
+    "type": "Fish Merchant & Supplies",
+    "icon": "ItemMiscFish04",
     "category": "Vendor"
   },
   {

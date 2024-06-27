@@ -2546,10 +2546,10 @@
           }
         }
       },
-      "hour": 11,
-      "minute": 58,
-      "second": 26,
-      "currentSite": "Saldean's Farm",
+      "hour": 12,
+      "minute": 6,
+      "second": 50,
+      "currentSite": "Goldshire",
       "openedChests": {
         "Gnomeregan Outskirts": {
           "area": "Gnomeregan Outskirts",
@@ -3645,14 +3645,14 @@
         "Caer Darrow": 1,
         "Ravenholdt Manor": 1,
         "Misty Reed Post": 1,
-        "Stormwind City": 13,
+        "Stormwind City": 15,
         "Grove of the Ancients": 3,
         "Go'Shek Farm": 1,
         "Hillsbrad": 1,
         "Dabyrie's Farmstead": 1,
         "Azurelode Mine": 1,
         "Westbrook Garrison": 1,
-        "Goldshire": 10,
+        "Goldshire": 11,
         "Lakeshire": 1,
         "Southshore": 1,
         "Darkshire": 1,
@@ -3684,12 +3684,12 @@
         "Thalanaar": 1,
         "Stonetalon Peak": 1,
         "Aerie Peak": 1,
-        "Ironforge": 12,
+        "Ironforge": 15,
         "Thelsamar": 1,
         "Farstrider Lodge": 1,
         "Dun Garok": 1,
         "Brewnall Village": 1,
-        "Kharanos": 3,
+        "Kharanos": 5,
         "Amberstill Ranch": 1,
         "Anvilmar": 1,
         "Algaz Station": 1,
@@ -4636,6 +4636,74 @@
             "maxAmount": 2,
             "restockSpeed": 40
           }
+        ],
+        "Ironforge:Tilli Thistlefuzz": [
+          {
+            "item": "Simple Wood",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Copper Rod",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Formula: Enchant Chest - Minor Mana",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Formula: Enchant 2H Weapon - Lesser Intellect",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Lesser Magic Essence",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Strange Dust",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Star Wood",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Formula: Minor Mana Oil",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Formula: Lesser Wizard Oil",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Formula: Minor Wizard Oil",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pattern: Enchanted Mageweave Pouch",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       },
       "banks": {
@@ -4771,9 +4839,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2024-06-09T14:12:27.0144066+02:00",
-      "lastLoaded": "2024-06-25T16:49:13.7227964+02:00",
-      "lastPlayed": "2024-06-25T16:49:18.5304196+02:00",
-      "timePlayed": "13:58:41.5777536",
+      "lastLoaded": "2024-06-27T19:06:49.1427842+02:00",
+      "lastPlayed": "2024-06-27T19:08:20.9624654+02:00",
+      "timePlayed": "14:07:48.8128709",
       "lastVisitedTalents": 1
     },
     {

@@ -7222,7 +7222,7 @@
         "gender": "Female",
         "voiceVariant": 3,
         "race": "Night Elf",
-        "type": "Night Elf Armorer",
+        "type": "Armorer",
         "itemsSold": [
           {
             "item": "Knitted Sandals",
@@ -14433,7 +14433,7 @@
         "gender": "Female",
         "voiceVariant": 1,
         "race": "Dwarf",
-        "type": "Fisherman Supplies",
+        "type": "Fishing Supplies",
         "itemsSold": [
           {
             "item": "Fishing Pole",
