@@ -60,6 +60,36 @@
     "category": "Vendor"
   },
   {
+    "type": "Food & Drink Vendor",
+    "icon": "ItemDrink02",
+    "category": "Vendor"
+  },
+  {
+    "type": "Ale & Wine Vendor",
+    "icon": "ItemDrink05",
+    "category": "Vendor"
+  },
+  {
+    "type": "Bowyer & Gunsmith",
+    "icon": "ItemRifle07",
+    "category": "Vendor"
+  },
+  {
+    "type": "Weaponsmith & Gunsmith",
+    "icon": "ItemRifle03",
+    "category": "Vendor"
+  },
+  {
+    "type": "Gunsmith",
+    "icon": "ItemRifle01",
+    "category": "Vendor"
+  },
+  {
+    "type": "Bowyer",
+    "icon": "ItemBow02",
+    "category": "Vendor"
+  },
+  {
     "type": "Leatherworking & Tailoring Supplies",
     "icon": "ItemBox01",
     "category": "Vendor"
@@ -115,6 +145,16 @@
     "category": "Vendor"
   },
   {
+    "type": "Armorer & Shieldcrafter",
+    "icon": "ItemShield04",
+    "category": "Vendor"
+  },
+  {
+    "type": "Shieldcrafter",
+    "icon": "ItemShield04",
+    "category": "Vendor"
+  },
+  {
     "type": "Shield Merchant",
     "icon": "ItemShield04",
     "category": "Vendor"
@@ -137,6 +177,16 @@
   {
     "type": "Fishing Supplies",
     "icon": "TradeFishing",
+    "category": "Vendor"
+  },
+  {
+    "type": "Apprentice Weaponsmith",
+    "icon": "ItemHammer17",
+    "category": "Vendor"
+  },
+  {
+    "type": "Apprentice Armorer",
+    "icon": "ItemHammer17",
     "category": "Vendor"
   },
   {
