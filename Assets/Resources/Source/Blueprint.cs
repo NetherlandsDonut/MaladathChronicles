@@ -3318,6 +3318,8 @@ public class Blueprint
                                     Person.person = person;
                                     CloseWindow(h.window.title);
                                     Respawn("Person");
+                                    CloseWindow("QuestAdd");
+                                    CloseWindow("QuestTurn");
                                     CloseWindow("TownQuestAvailable");
                                     CloseWindow("TownQuestDone");
                                     PlayVoiceLine(person.VoiceLine("Greeting"));
@@ -3339,6 +3341,8 @@ public class Blueprint
                                 Person.person = person;
                                 CloseWindow(h.window.title);
                                 Respawn("Person");
+                                CloseWindow("QuestAdd");
+                                CloseWindow("QuestTurn");
                                 CloseWindow("TownQuestAvailable");
                                 CloseWindow("TownQuestDone");
                                 PlayVoiceLine(person.VoiceLine("Greeting"));
@@ -3661,6 +3665,8 @@ public class Blueprint
                     Respawn("Person");
                     CloseWindow("Persons");
                     CloseWindow("Town");
+                    CloseWindow("QuestAdd");
+                    CloseWindow("QuestTurn");
                     CloseWindow("TownQuestAvailable");
                     CloseWindow("TownQuestDone");
                     PlayVoiceLine(person.VoiceLine("Greeting"));

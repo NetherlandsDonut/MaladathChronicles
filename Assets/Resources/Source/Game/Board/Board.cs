@@ -280,6 +280,26 @@ public class Board
                 else currentSave.siteProgress[area.name]++;
             }
 
+            var output = enemy.name + ": ";
+            if (results.result == "Won")
+            {
+                foreach (var quest in player.currentQuests)
+                    foreach (var con in quest.conditions)
+                        if (con.type == "Kill" && con.name == enemy.name)
+                        {
+                            foreach (var site in con.Where())
+                                if (!Quest.sitesToRespawn.Contains(site))
+                                    Quest.sitesToRespawn.Add(site);
+                            if (con.amountDone < con.amount)
+                            {
+                                if (output.EndsWith(" ")) output += con.amountDone + 1 + "/" + con.amount;
+                                else output += ", " + con.amountDone + 1 + "/" + con.amount;
+                            }
+                            var end = Site.FindSite(x => x.name == quest.siteEnd);
+                            if (!Quest.sitesToRespawn.Contains(end)) Quest.sitesToRespawn.Add(end);
+                        }
+            }
+
             //Make progress on quests requiring you to kill certain enemies
             player.QuestKill(enemy.name);
 
@@ -402,6 +422,8 @@ public class Board
             chartPage = "Damage Dealt";
             currentSave.player.ReceiveExperience(board.results.experience);
             SpawnDesktopBlueprint("CombatResults");
+            if (!output.EndsWith(" "))
+                SpawnFallingText(new Vector2(0, -72), output, "Yellow");
         }
         else if (result == "Lost")
         {
