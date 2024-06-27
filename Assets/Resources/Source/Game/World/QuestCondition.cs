@@ -81,6 +81,9 @@ public class QuestCondition
             if (markerButton && where.Count > 0)
                 AddSmallButton("ItemMiscMap01", (h) =>
                 {
+                    CloseDesktop("HostileArea");
+                    CloseDesktop("Instance");
+                    CloseDesktop("Complex");
                     SwitchDesktop("Map");
                     CloseDesktop("QuestLog");
                     CDesktop.cameraDestination = new Vector2(where[0].x, where[0].y);

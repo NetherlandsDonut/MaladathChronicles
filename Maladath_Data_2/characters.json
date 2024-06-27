@@ -3591,7 +3591,7 @@
         "Stendel's Pond": 1,
         "Demont's Place": 1,
         "Moonbrook": 1,
-        "Saldean's Farm": 5,
+        "Saldean's Farm": 6,
         "The Dagger Hills": 1,
         "The Dead Acre": 1,
         "Westfall Crossing": 1,
@@ -4771,9 +4771,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2024-06-09T14:12:27.0144066+02:00",
-      "lastLoaded": "2024-06-25T16:40:16.4118824+02:00",
-      "lastPlayed": "2024-06-25T16:43:38.889203+02:00",
-      "timePlayed": "13:58:36.7701304",
+      "lastLoaded": "2024-06-25T16:49:13.7227964+02:00",
+      "lastPlayed": "2024-06-25T16:49:18.5304196+02:00",
+      "timePlayed": "13:58:41.5777536",
       "lastVisitedTalents": 1
     },
     {
@@ -6650,40 +6650,6 @@
       "player": {
         "currentQuests": [
           {
-            "questID": 18,
-            "previous": 783,
-            "requiredLevel": 2,
-            "questLevel": 4,
-            "name": "Brotherhood of Thieves",
-            "description": "Bring a Red Burlap Bandana to Deputy Willem outside the Northshire Abbey.",
-            "siteStart": "Northshire Abbey",
-            "siteEnd": "Northshire Abbey",
-            "zone": "Elwynn Forest",
-            "races": [
-              "Gnome",
-              "Night Elf",
-              "Dwarf",
-              "Human"
-            ],
-            "rewards": {
-              "Militia Dagger": 1,
-              "Militia Hammer": 1,
-              "Militia Shortsword": 1,
-              "Militia Warhammer": 1,
-              "Militia Quarterstaff": 1
-            },
-            "reputationGain": {
-              "Stormwind": 250
-            },
-            "conditions": [
-              {
-                "type": "Item",
-                "name": "Red Burlap Bandana",
-                "amount": 1
-              }
-            ]
-          },
-          {
             "questID": 15,
             "previous": 7,
             "requiredLevel": 1,
@@ -6738,14 +6704,72 @@
                 "amount": 4
               }
             ]
+          },
+          {
+            "questID": 6,
+            "previous": 18,
+            "requiredLevel": 2,
+            "questLevel": 5,
+            "name": "Bounty on Garrick Padfoot",
+            "description": "Kill Garrick Padfoot and bring his head to Deputy Willem at Northshire Abbey.",
+            "siteStart": "Northshire Abbey",
+            "siteEnd": "Northshire Abbey",
+            "zone": "Elwynn Forest",
+            "races": [
+              "Gnome",
+              "Night Elf",
+              "Dwarf",
+              "Human"
+            ],
+            "rewards": {
+              "Tapered Pants": 1,
+              "Layered Tunic": 1,
+              "Ensign Cloak": 1
+            },
+            "reputationGain": {
+              "Stormwind": 150
+            },
+            "conditions": [
+              {
+                "type": "Item",
+                "name": "Garrick's Head",
+                "amount": 1
+              }
+            ]
+          },
+          {
+            "questID": 62,
+            "requiredLevel": 4,
+            "questLevel": 7,
+            "name": "The Fargodeep Mine",
+            "description": "Explore the Fargodeep Mine, then return to Marshal Dughan in Goldshire.",
+            "siteStart": "Goldshire",
+            "siteEnd": "Goldshire",
+            "zone": "Elwynn Forest",
+            "races": [
+              "Gnome",
+              "Night Elf",
+              "Dwarf",
+              "Human"
+            ],
+            "reputationGain": {
+              "Stormwind": 150
+            },
+            "conditions": [
+              {
+                "type": "Visit",
+                "name": "Fargodeep Mine"
+              }
+            ]
           }
         ],
         "completedQuests": [
           783,
-          7
+          7,
+          18
         ],
         "level": 5,
-        "experience": 257,
+        "experience": 1250,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -6874,7 +6898,7 @@
           }
         },
         "inventory": {
-          "money": 222,
+          "money": 230,
           "items": [
             {
               "rarity": "Common",
@@ -6916,27 +6940,6 @@
               "stats": {
                 "stats": {}
               }
-            },
-            {
-              "rarity": "Uncommon",
-              "name": "Beaded Britches of the Owl",
-              "icon": "itempants02",
-              "randomEnchantment": true,
-              "type": "Legs",
-              "armorClass": "Cloth",
-              "source": "RareDrop",
-              "ilvl": 11,
-              "lvl": 6,
-              "armor": 18,
-              "amount": 1,
-              "maxStack": 1,
-              "price": 119,
-              "stats": {
-                "stats": {
-                  "Intellect": 3,
-                  "Spirit": 3
-                }
-              }
             }
           ],
           "bags": []
@@ -6945,18 +6948,19 @@
         "equipment": {
           "Main Hand": {
             "rarity": "Common",
-            "name": "Worn Dagger",
-            "icon": "itemshortblade05",
-            "detailedType": "Dagger",
-            "type": "One Handed",
-            "ilvl": 2,
+            "name": "Militia Quarterstaff",
+            "icon": "itemstaff08",
+            "detailedType": "Staff",
+            "type": "Two Handed",
+            "source": "Quest",
+            "ilvl": 5,
             "lvl": 1,
-            "minDamage": 1,
-            "maxDamage": 2,
+            "minDamage": 6,
+            "maxDamage": 9,
             "amount": 1,
             "maxStack": 1,
-            "price": 7,
-            "speed": 1.6,
+            "price": 32,
+            "speed": 2.8,
             "stats": {
               "stats": {}
             }
@@ -6976,19 +6980,24 @@
             }
           },
           "Legs": {
-            "rarity": "Poor",
-            "name": "Acolyte's Pants",
-            "icon": "itempants01",
+            "rarity": "Uncommon",
+            "name": "Beaded Britches of the Owl",
+            "icon": "itempants02",
+            "randomEnchantment": true,
             "type": "Legs",
             "armorClass": "Cloth",
-            "ilvl": 1,
-            "lvl": 1,
-            "armor": 2,
+            "source": "RareDrop",
+            "ilvl": 11,
+            "lvl": 6,
+            "armor": 18,
             "amount": 1,
             "maxStack": 1,
-            "price": 1,
+            "price": 119,
             "stats": {
-              "stats": {}
+              "stats": {
+                "Intellect": 3,
+                "Spirit": 3
+              }
             }
           },
           "Chest": {
@@ -7027,8 +7036,9 @@
         }
       },
       "hour": 8,
-      "second": 26,
-      "currentSite": "Ironforge",
+      "minute": 28,
+      "second": 54,
+      "currentSite": "Plaguewood Gate",
       "ringOfLaw": "Eviscerator",
       "forlornCloister": "Azshir the Sleepless",
       "openedChests": {
@@ -7086,7 +7096,8 @@
         "Northshire Valley": 5,
         "Saldean's Farm": 2,
         "Defias Hideout": 2,
-        "Crystal Lake": 3
+        "Crystal Lake": 3,
+        "Northshire Vineyards": 1
       },
       "commonsKilled": {
         "Young Wolf": 2,
@@ -7095,16 +7106,17 @@
         "Harvest Watcher": 1,
         "Defias Overseer": 1,
         "Defias Watchman": 1,
-        "Murloc Steamrunner": 3
+        "Murloc Steamrunner": 3,
+        "Defias Thug": 1
       },
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
-        "Northshire Abbey": 3,
+        "Northshire Abbey": 4,
         "Northshire Valley": 2,
         "Echo Ridge Mine": 0,
-        "Northshire Vineyards": 1,
-        "Goldshire": 10,
+        "Northshire Vineyards": 3,
+        "Goldshire": 11,
         "Jansen Stead": 0,
         "Saldean's Farm": 2,
         "Stendel's Pond": 0,
@@ -7114,7 +7126,11 @@
         "Zoram'gar Outpost": 1,
         "Crystal Lake": 1,
         "Stormwind City": 1,
-        "Ironforge": 1
+        "Ironforge": 1,
+        "Sentinel Hill": 1,
+        "Westfall Crossing": 1,
+        "The Stockade": 1,
+        "Plaguewood Gate": 3
       },
       "unlockedAreas": [],
       "vendorStock": {
@@ -7175,29 +7191,28 @@
           },
           {
             "item": "Pattern: Blue Linen Vest",
+            "amount": 1,
             "maxAmount": 1,
-            "minutesLeft": 22,
             "restockSpeed": 30
           },
           {
             "item": "Recipe: Brilliant Smallfish",
+            "amount": 1,
             "maxAmount": 1,
-            "minutesLeft": 22,
             "restockSpeed": 30
           },
           {
             "item": "Recipe: Longjaw Mud Snapper",
+            "amount": 1,
             "maxAmount": 1,
-            "minutesLeft": 22,
             "restockSpeed": 30
           }
         ],
         "Goldshire:Toddrick": [
           {
             "item": "Tough Jerky",
-            "amount": 4,
+            "amount": 5,
             "maxAmount": 5,
-            "minutesLeft": 22,
             "restockSpeed": 30
           },
           {
@@ -7364,97 +7379,93 @@
             "maxAmount": 2,
             "restockSpeed": 40
           }
+        ],
+        "Goldshire:Andrew Krighton": [
+          {
+            "item": "Light Mail Armor",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Light Mail Leggings",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Light Mail Bracers",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Light Mail Belt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Light Mail Boots",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Light Mail Gloves",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Small Targe",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Dull Heater Shield",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       },
       "banks": {},
       "buyback": {
         "items": [
           {
-            "rarity": "Uncommon",
-            "name": "Defias Rapier",
-            "icon": "itemsword30",
-            "detailedType": "Sword",
+            "rarity": "Common",
+            "name": "Worn Dagger",
+            "icon": "itemshortblade05",
+            "detailedType": "Dagger",
             "type": "One Handed",
-            "source": "DirectDrop",
-            "ilvl": 16,
-            "lvl": 11,
-            "minDamage": 9,
-            "maxDamage": 17,
+            "ilvl": 2,
+            "lvl": 1,
+            "minDamage": 1,
+            "maxDamage": 2,
             "amount": 1,
-            "minutesLeft": 22,
+            "minutesLeft": 11,
             "maxStack": 1,
-            "price": 787,
+            "price": 7,
             "speed": 1.6,
             "stats": {
-              "stats": {
-                "Agility": 2
-              }
-            },
-            "droppedBy": [
-              "Defias Watchman"
-            ]
-          },
-          {
-            "rarity": "Common",
-            "name": "Scroll of Spirit",
-            "icon": "itemscroll01",
-            "detailedType": "Scroll",
-            "type": "Miscellaneous",
-            "source": "RareDrop",
-            "ilvl": 10,
-            "amount": 1,
-            "minutesLeft": 26,
-            "maxStack": 5,
-            "price": 25,
-            "stats": {
               "stats": {}
             }
           },
           {
-            "rarity": "Common",
-            "name": "Tough Jerky",
-            "icon": "itemmiscfood16",
-            "detailedType": "Food",
-            "type": "Miscellaneous",
-            "source": "Quest",
-            "ilvl": 5,
-            "amount": 1,
-            "minutesLeft": 26,
-            "maxStack": 20,
-            "price": 1,
-            "stats": {
-              "stats": {}
-            }
-          },
-          {
-            "rarity": "Common",
-            "name": "Linen Cloth",
-            "icon": "itemfabriclinen01",
-            "detailedType": "Cloth",
-            "type": "Trade Good",
-            "source": "RareDrop",
-            "ilvl": 5,
+            "rarity": "Poor",
+            "name": "Acolyte's Pants",
+            "icon": "itempants01",
+            "type": "Legs",
+            "armorClass": "Cloth",
+            "ilvl": 1,
             "lvl": 1,
+            "armor": 2,
             "amount": 1,
-            "minutesLeft": 26,
-            "maxStack": 20,
-            "price": 13,
-            "stats": {
-              "stats": {}
-            }
-          },
-          {
-            "rarity": "Common",
-            "name": "Scroll of Stamina",
-            "icon": "itemscroll07",
-            "detailedType": "Scroll",
-            "type": "Miscellaneous",
-            "source": "Quest",
-            "ilvl": 15,
-            "amount": 1,
-            "minutesLeft": 26,
-            "maxStack": 5,
-            "price": 37,
+            "minutesLeft": 11,
+            "maxStack": 1,
+            "price": 1,
             "stats": {
               "stats": {}
             }
@@ -7464,16 +7475,22 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2024-06-21T03:00:56.9557934+02:00",
-      "lastLoaded": "2024-06-21T22:11:30.5982115+02:00",
-      "lastPlayed": "2024-06-21T22:12:12.3897886+02:00",
-      "timePlayed": "00:24:50.1847709"
+      "lastLoaded": "2024-06-25T17:39:42.3921146+02:00",
+      "lastPlayed": "2024-06-25T17:45:33.3493194+02:00",
+      "timePlayed": "00:31:39.7876280",
+      "deathInfo": {
+        "source": "Scourge Warder",
+        "commonSource": true,
+        "area": "Plaguewood Gate"
+      },
+      "playerDead": true
     },
     {
       "player": {
         "currentQuests": [],
         "completedQuests": [],
         "level": 1,
-        "experience": 60,
+        "experience": 80,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -7676,9 +7693,9 @@
         }
       },
       "hour": 7,
-      "minute": 12,
-      "second": 36,
-      "currentSite": "Brill",
+      "minute": 14,
+      "second": 56,
+      "currentSite": "Plaguewood Gate",
       "ringOfLaw": "Ok'thor the Breaker",
       "forlornCloister": "Ironspine",
       "openedChests": {},
@@ -7691,7 +7708,9 @@
         "Undercity": 10,
         "The Ruins of Lordaeron": 0,
         "Capital City Gates": 0,
-        "Brill": 5
+        "Brill": 5,
+        "Cold Hearth Manor": 1,
+        "Plaguewood Gate": 3
       },
       "unlockedAreas": [],
       "vendorStock": {
@@ -8670,9 +8689,971 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2024-06-21T22:12:22.0553053+02:00",
-      "lastLoaded": "2024-06-23T15:11:59.2701622+02:00",
-      "lastPlayed": "2024-06-23T15:12:15.1625768+02:00",
-      "timePlayed": "00:07:09.3466103",
+      "lastLoaded": "2024-06-25T18:10:18.9034486+02:00",
+      "lastPlayed": "2024-06-25T18:11:49.0960473+02:00",
+      "timePlayed": "00:08:39.5392090",
+      "lastVisitedTalents": 2,
+      "deathInfo": {
+        "source": "Cannibal Ghoul",
+        "commonSource": true,
+        "area": "Plaguewood Gate"
+      },
+      "playerDead": true
+    },
+    {
+      "player": {
+        "currentQuests": [],
+        "completedQuests": [],
+        "level": 1,
+        "uniquesGotten": [],
+        "reputation": {
+          "Southsea Pirates": 0,
+          "Razormane Tribe": 0,
+          "Pandaren": 0,
+          "Grimtotem Tribe": 0,
+          "Woodpaw Tribe": 0,
+          "The Burning Legion": 0,
+          "Darkspear Tribe": 0,
+          "Stormwind": 4600,
+          "Magram Clan": 0,
+          "Gelkis Clan": 0,
+          "Kolkar Clan": 0,
+          "Orgrimmar": 0,
+          "Frostwolf Clan": 0,
+          "The Defiler's": 0,
+          "Thunder Bluff": 0,
+          "Undercity": 0,
+          "Ironforge": 4250,
+          "Dark Iron Clan": 0,
+          "Wildhammer Clan": 4250,
+          "Winterfall Tribe": 0,
+          "Gnomeregan": 4250,
+          "Darnassus": 4250,
+          "Bloodsail Buccaneers": 0,
+          "Syndicate": 0,
+          "Warsong Outriders": 0,
+          "Stormpike Guard": 4250,
+          "Silverwing Sentinels": 4250,
+          "The League of Arathor": 4250,
+          "Defias Brotherhood": 0,
+          "Dalaran": 4250,
+          "Burning Blade Clan": 0,
+          "Burning Legion": 0,
+          "Shadow Council": 0,
+          "Gordunni Ogres": 0,
+          "Blackrock Clan": 0,
+          "Dragonmaw Clan": 0,
+          "Black Tooth Grin Clan": 0,
+          "Gurubashi Tribe": 0,
+          "Sandfury Tribe": 0,
+          "Twilight's Hammer": 0,
+          "Grimtotem Clan": 0,
+          "Razorfen Tribe": 0,
+          "Stonemaul Ogres": 0,
+          "Dustbelcher Ogres": 0,
+          "Deadwind Ogres": 0,
+          "Venture Co.": 0,
+          "Southsea Freebooters": 0,
+          "Atal'ai Tribe": 0,
+          "Qiraji Empire": 0,
+          "Scarlet Crusade": 0,
+          "Vilebranch Tribe": 0,
+          "Witherbark Tribe": 0,
+          "Mossflayer Tribe": 0,
+          "Frostmane Tribe": 0,
+          "Bloodscalp Tribe": 0,
+          "Skullsplitter Tribe": 0,
+          "Shatterspear Tribe": 0,
+          "Rot Hide Tribe": 0,
+          "Scourge": 0,
+          "Smolderthorn Tribe": 0,
+          "Revantusk Tribe": 0,
+          "Blackpaw Tribe": 0,
+          "Maraudine Clan": 0,
+          "Mosshide Tribe": 0,
+          "Deadwood Tribe": 0,
+          "Bloodtooth Tribe": 0,
+          "Bristleback Tribe": 0
+        },
+        "professionSkills": {},
+        "learnedRecipes": {},
+        "faction": "Stormwind",
+        "name": "Nicollete",
+        "race": "Human",
+        "spec": "Warrior",
+        "gender": "Female",
+        "abilities": {
+          "Dual Wielding Proficiency": 1,
+          "Two Handed Axe Proficiency": 1,
+          "Two Handed Mace Proficiency": 1,
+          "Two Handed Sword Proficiency": 1,
+          "Polearm Proficiency": 1,
+          "Shield Proficiency": 1,
+          "Mail Proficiency": 1,
+          "Plate Proficiency": 1,
+          "One Handed Axe Proficiency": 1,
+          "One Handed Mace Proficiency": 1,
+          "One Handed Sword Proficiency": 1,
+          "Fist Weapon Proficiency": 1,
+          "Off Hand Proficiency": 1,
+          "Heroic Strike": 0,
+          "Battle Shout": 0,
+          "Bloodthirst": 0,
+          "Revenge": 0
+        },
+        "actionBars": [
+          "Heroic Strike"
+        ],
+        "stats": {
+          "stats": {
+            "Stamina": 22,
+            "Strength": 23,
+            "Agility": 20,
+            "Intellect": 20,
+            "Spirit": 21,
+            "Earth Mastery": 1,
+            "Fire Mastery": 3,
+            "Air Mastery": 2,
+            "Water Mastery": 1,
+            "Frost Mastery": 2,
+            "Lightning Mastery": 1,
+            "Arcane Mastery": 3,
+            "Decay Mastery": 1,
+            "Shadow Mastery": 2,
+            "Order Mastery": 3
+          }
+        },
+        "inventory": {
+          "items": [
+            {
+              "rarity": "Common",
+              "name": "Hearthstone",
+              "icon": "itemmiscrune01",
+              "detailedType": "Rune",
+              "type": "Miscellaneous",
+              "ilvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "indestructible": true,
+              "unique": true,
+              "stats": {
+                "stats": {}
+              }
+            }
+          ],
+          "bags": []
+        },
+        "mounts": [],
+        "equipment": {
+          "Off Hand": {
+            "rarity": "Poor",
+            "name": "Worn Wooden Shield",
+            "icon": "itemshield09",
+            "detailedType": "Shield",
+            "type": "Off Hand",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 5,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Main Hand": {
+            "rarity": "Common",
+            "name": "Worn Shortsword",
+            "icon": "itemsword04",
+            "detailedType": "Sword",
+            "type": "One Handed",
+            "ilvl": 2,
+            "lvl": 1,
+            "minDamage": 1,
+            "maxDamage": 3,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 7,
+            "speed": 1.9,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Feet": {
+            "rarity": "Common",
+            "name": "Recruit's Boots",
+            "icon": "itemboots06",
+            "type": "Feet",
+            "ilvl": 1,
+            "lvl": 1,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Legs": {
+            "rarity": "Poor",
+            "name": "Recruit's Pants",
+            "icon": "itempants02",
+            "type": "Legs",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 2,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Chest": {
+            "rarity": "Common",
+            "name": "Recruit's Shirt",
+            "icon": "itemshirt05",
+            "type": "Chest",
+            "ilvl": 1,
+            "lvl": 1,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          }
+        }
+      },
+      "hour": 7,
+      "currentSite": "Northshire Abbey",
+      "ringOfLaw": "Anub'shiah",
+      "forlornCloister": "Azshir the Sleepless",
+      "openedChests": {},
+      "siteProgress": {},
+      "commonsKilled": {},
+      "raresKilled": {},
+      "elitesKilled": {},
+      "siteVisits": {
+        "Northshire Abbey": 1
+      },
+      "unlockedAreas": [],
+      "vendorStock": {},
+      "banks": {},
+      "startDate": "2024-06-25T18:14:54.7222923+02:00"
+    },
+    {
+      "player": {
+        "currentQuests": [],
+        "completedQuests": [],
+        "level": 1,
+        "uniquesGotten": [],
+        "reputation": {
+          "Southsea Pirates": 0,
+          "Razormane Tribe": 0,
+          "Pandaren": 0,
+          "Grimtotem Tribe": 0,
+          "Woodpaw Tribe": 0,
+          "The Burning Legion": 0,
+          "Darkspear Tribe": 0,
+          "Stormwind": 4250,
+          "Magram Clan": 0,
+          "Gelkis Clan": 0,
+          "Kolkar Clan": 0,
+          "Orgrimmar": 0,
+          "Frostwolf Clan": 0,
+          "The Defiler's": 0,
+          "Thunder Bluff": 0,
+          "Undercity": 0,
+          "Ironforge": 4600,
+          "Dark Iron Clan": 0,
+          "Wildhammer Clan": 4250,
+          "Winterfall Tribe": 0,
+          "Gnomeregan": 4250,
+          "Darnassus": 4250,
+          "Bloodsail Buccaneers": 0,
+          "Syndicate": 0,
+          "Warsong Outriders": 0,
+          "Stormpike Guard": 4250,
+          "Silverwing Sentinels": 4250,
+          "The League of Arathor": 4250,
+          "Defias Brotherhood": 0,
+          "Dalaran": 4250,
+          "Burning Blade Clan": 0,
+          "Burning Legion": 0,
+          "Shadow Council": 0,
+          "Gordunni Ogres": 0,
+          "Blackrock Clan": 0,
+          "Dragonmaw Clan": 0,
+          "Black Tooth Grin Clan": 0,
+          "Gurubashi Tribe": 0,
+          "Sandfury Tribe": 0,
+          "Twilight's Hammer": 0,
+          "Grimtotem Clan": 0,
+          "Razorfen Tribe": 0,
+          "Stonemaul Ogres": 0,
+          "Dustbelcher Ogres": 0,
+          "Deadwind Ogres": 0,
+          "Venture Co.": 0,
+          "Southsea Freebooters": 0,
+          "Atal'ai Tribe": 0,
+          "Qiraji Empire": 0,
+          "Scarlet Crusade": 0,
+          "Vilebranch Tribe": 0,
+          "Witherbark Tribe": 0,
+          "Mossflayer Tribe": 0,
+          "Frostmane Tribe": 0,
+          "Bloodscalp Tribe": 0,
+          "Skullsplitter Tribe": 0,
+          "Shatterspear Tribe": 0,
+          "Rot Hide Tribe": 0,
+          "Scourge": 0,
+          "Smolderthorn Tribe": 0,
+          "Revantusk Tribe": 0,
+          "Blackpaw Tribe": 0,
+          "Maraudine Clan": 0,
+          "Mosshide Tribe": 0,
+          "Deadwood Tribe": 0,
+          "Bloodtooth Tribe": 0,
+          "Bristleback Tribe": 0
+        },
+        "professionSkills": {},
+        "learnedRecipes": {},
+        "faction": "Ironforge",
+        "name": "Ohdol",
+        "race": "Dwarf",
+        "spec": "Paladin",
+        "gender": "Female",
+        "abilities": {
+          "Stoneform": 0,
+          "Two Handed Axe Proficiency": 1,
+          "Two Handed Mace Proficiency": 1,
+          "Two Handed Sword Proficiency": 1,
+          "Polearm Proficiency": 1,
+          "Shield Proficiency": 1,
+          "Mail Proficiency": 1,
+          "Plate Proficiency": 1,
+          "One Handed Axe Proficiency": 1,
+          "One Handed Mace Proficiency": 1,
+          "One Handed Sword Proficiency": 1,
+          "Off Hand Proficiency": 1,
+          "Libram Proficiency": 1,
+          "Holy Light": 0,
+          "Judgement": 0,
+          "Consecration": 0
+        },
+        "actionBars": [
+          "Judgement",
+          "Consecration",
+          "Stoneform"
+        ],
+        "stats": {
+          "stats": {
+            "Stamina": 24,
+            "Strength": 24,
+            "Agility": 16,
+            "Intellect": 20,
+            "Spirit": 20,
+            "Earth Mastery": 3,
+            "Fire Mastery": 2,
+            "Air Mastery": 3,
+            "Water Mastery": 1,
+            "Frost Mastery": 2,
+            "Lightning Mastery": 2,
+            "Arcane Mastery": 1,
+            "Decay Mastery": 1,
+            "Shadow Mastery": 1,
+            "Order Mastery": 3
+          }
+        },
+        "inventory": {
+          "items": [
+            {
+              "rarity": "Common",
+              "name": "Hearthstone",
+              "icon": "itemmiscrune01",
+              "detailedType": "Rune",
+              "type": "Miscellaneous",
+              "ilvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "indestructible": true,
+              "unique": true,
+              "stats": {
+                "stats": {}
+              }
+            }
+          ],
+          "bags": []
+        },
+        "mounts": [],
+        "equipment": {
+          "Main Hand": {
+            "rarity": "Common",
+            "name": "Battleworn Hammer",
+            "icon": "itemhammer15",
+            "detailedType": "Mace",
+            "type": "Two Handed",
+            "ilvl": 2,
+            "lvl": 1,
+            "minDamage": 3,
+            "maxDamage": 5,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 9,
+            "speed": 2.9,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Feet": {
+            "rarity": "Common",
+            "name": "Squire's Boots",
+            "icon": "itemboots01",
+            "type": "Feet",
+            "ilvl": 1,
+            "lvl": 1,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Legs": {
+            "rarity": "Poor",
+            "name": "Squire's Pants",
+            "icon": "itempants02",
+            "type": "Legs",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 2,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Chest": {
+            "rarity": "Common",
+            "name": "Squire's Shirt",
+            "icon": "itemshirt01",
+            "type": "Chest",
+            "ilvl": 1,
+            "lvl": 1,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          }
+        }
+      },
+      "hour": 7,
+      "currentSite": "Anvilmar",
+      "ringOfLaw": "Eviscerator",
+      "forlornCloister": "Azshir the Sleepless",
+      "openedChests": {},
+      "siteProgress": {},
+      "commonsKilled": {},
+      "raresKilled": {},
+      "elitesKilled": {},
+      "siteVisits": {
+        "Anvilmar": 1
+      },
+      "unlockedAreas": [],
+      "vendorStock": {},
+      "banks": {},
+      "startDate": "2024-06-25T18:14:56.2701786+02:00"
+    },
+    {
+      "player": {
+        "currentQuests": [],
+        "completedQuests": [],
+        "level": 1,
+        "uniquesGotten": [],
+        "reputation": {
+          "Southsea Pirates": 0,
+          "Razormane Tribe": 0,
+          "Pandaren": 0,
+          "Grimtotem Tribe": 0,
+          "Woodpaw Tribe": 0,
+          "The Burning Legion": 0,
+          "Darkspear Tribe": 4250,
+          "Stormwind": 0,
+          "Magram Clan": 0,
+          "Gelkis Clan": 0,
+          "Kolkar Clan": 0,
+          "Orgrimmar": 4250,
+          "Frostwolf Clan": 4250,
+          "The Defiler's": 4250,
+          "Thunder Bluff": 4600,
+          "Undercity": 4250,
+          "Ironforge": 0,
+          "Dark Iron Clan": 0,
+          "Wildhammer Clan": 0,
+          "Winterfall Tribe": 0,
+          "Gnomeregan": 0,
+          "Darnassus": 0,
+          "Bloodsail Buccaneers": 0,
+          "Syndicate": 0,
+          "Warsong Outriders": 4250,
+          "Stormpike Guard": 0,
+          "Silverwing Sentinels": 0,
+          "The League of Arathor": 0,
+          "Defias Brotherhood": 0,
+          "Dalaran": 0,
+          "Burning Blade Clan": 0,
+          "Burning Legion": 0,
+          "Shadow Council": 0,
+          "Gordunni Ogres": 0,
+          "Blackrock Clan": 0,
+          "Dragonmaw Clan": 0,
+          "Black Tooth Grin Clan": 0,
+          "Gurubashi Tribe": 0,
+          "Sandfury Tribe": 0,
+          "Twilight's Hammer": 0,
+          "Grimtotem Clan": 0,
+          "Razorfen Tribe": 0,
+          "Stonemaul Ogres": 4250,
+          "Dustbelcher Ogres": 0,
+          "Deadwind Ogres": 0,
+          "Venture Co.": 0,
+          "Southsea Freebooters": 0,
+          "Atal'ai Tribe": 0,
+          "Qiraji Empire": 0,
+          "Scarlet Crusade": 0,
+          "Vilebranch Tribe": 0,
+          "Witherbark Tribe": 0,
+          "Mossflayer Tribe": 0,
+          "Frostmane Tribe": 0,
+          "Bloodscalp Tribe": 0,
+          "Skullsplitter Tribe": 0,
+          "Shatterspear Tribe": 0,
+          "Rot Hide Tribe": 0,
+          "Scourge": 0,
+          "Smolderthorn Tribe": 0,
+          "Revantusk Tribe": 4250,
+          "Blackpaw Tribe": 0,
+          "Maraudine Clan": 0,
+          "Mosshide Tribe": 0,
+          "Deadwood Tribe": 0,
+          "Bloodtooth Tribe": 0,
+          "Bristleback Tribe": 0
+        },
+        "professionSkills": {},
+        "learnedRecipes": {},
+        "faction": "Thunder Bluff",
+        "name": "Harnor",
+        "race": "Tauren",
+        "spec": "Shaman",
+        "gender": "Male",
+        "abilities": {
+          "Dual Wielding Proficiency": 1,
+          "Two Handed Axe Proficiency": 1,
+          "Polearm Proficiency": 1,
+          "Leather Proficiency": 1,
+          "Mail Proficiency": 0,
+          "One Handed Axe Proficiency": 1,
+          "One Handed Mace Proficiency": 1,
+          "Fist Weapon Proficiency": 1,
+          "Off Hand Proficiency": 1,
+          "Dagger Proficiency": 1,
+          "Lightning Bolt": 0,
+          "Stormstrike": 0,
+          "Healing Wave": 0
+        },
+        "actionBars": [
+          "Lightning Bolt",
+          "Healing Wave"
+        ],
+        "stats": {
+          "stats": {
+            "Stamina": 23,
+            "Strength": 26,
+            "Agility": 15,
+            "Intellect": 16,
+            "Spirit": 23,
+            "Earth Mastery": 3,
+            "Fire Mastery": 2,
+            "Air Mastery": 3,
+            "Water Mastery": 3,
+            "Frost Mastery": 1,
+            "Lightning Mastery": 1,
+            "Arcane Mastery": 2,
+            "Decay Mastery": 1,
+            "Shadow Mastery": 1,
+            "Order Mastery": 2
+          }
+        },
+        "inventory": {
+          "items": [
+            {
+              "rarity": "Common",
+              "name": "Hearthstone",
+              "icon": "itemmiscrune01",
+              "detailedType": "Rune",
+              "type": "Miscellaneous",
+              "ilvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "indestructible": true,
+              "unique": true,
+              "stats": {
+                "stats": {}
+              }
+            }
+          ],
+          "bags": []
+        },
+        "mounts": [],
+        "equipment": {
+          "Main Hand": {
+            "rarity": "Common",
+            "name": "Worn Mace",
+            "icon": "itemmace03",
+            "detailedType": "Mace",
+            "type": "One Handed",
+            "ilvl": 2,
+            "lvl": 1,
+            "minDamage": 1,
+            "maxDamage": 3,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 7,
+            "speed": 1.9,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Legs": {
+            "rarity": "Poor",
+            "name": "Primitive Kilt",
+            "icon": "itempants02",
+            "type": "Legs",
+            "armorClass": "Leather",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 14,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Chest": {
+            "rarity": "Common",
+            "name": "Primitive Mantle",
+            "icon": "itemmisccape14",
+            "type": "Chest",
+            "ilvl": 1,
+            "lvl": 1,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          }
+        }
+      },
+      "hour": 7,
+      "currentSite": "Camp Narache",
+      "ringOfLaw": "Grizzle",
+      "forlornCloister": "Azshir the Sleepless",
+      "openedChests": {},
+      "siteProgress": {},
+      "commonsKilled": {},
+      "raresKilled": {},
+      "elitesKilled": {},
+      "siteVisits": {
+        "Camp Narache": 1
+      },
+      "unlockedAreas": [],
+      "vendorStock": {},
+      "banks": {},
+      "startDate": "2024-06-25T18:14:57.5286322+02:00"
+    },
+    {
+      "player": {
+        "currentQuests": [
+          {
+            "questID": 8,
+            "requiredLevel": 1,
+            "questLevel": 5,
+            "name": "A Rogue's Deal",
+            "description": "Deliver the Nondescript Letter to Innkeeper Renee in Tirisfal Glades.",
+            "siteStart": "Deathknell",
+            "siteEnd": "Brill",
+            "zone": "Tirisfal Glades",
+            "rewards": {
+              "Forest Mushroom Cap": 1,
+              "Refreshing Spring Water": 1
+            },
+            "reputationGain": {
+              "Undercity": 25
+            },
+            "conditions": [
+              {
+                "type": "Item",
+                "name": "Nondescript Letter",
+                "amount": 1
+              }
+            ]
+          }
+        ],
+        "completedQuests": [],
+        "level": 1,
+        "experience": 173,
+        "uniquesGotten": [],
+        "reputation": {
+          "Southsea Pirates": 0,
+          "Razormane Tribe": 0,
+          "Pandaren": 0,
+          "Grimtotem Tribe": 0,
+          "Woodpaw Tribe": 0,
+          "The Burning Legion": 0,
+          "Darkspear Tribe": 4250,
+          "Stormwind": 0,
+          "Magram Clan": 0,
+          "Gelkis Clan": 0,
+          "Kolkar Clan": 0,
+          "Orgrimmar": 4250,
+          "Frostwolf Clan": 4250,
+          "The Defiler's": 4250,
+          "Thunder Bluff": 4250,
+          "Undercity": 4600,
+          "Ironforge": 0,
+          "Dark Iron Clan": 0,
+          "Wildhammer Clan": 0,
+          "Winterfall Tribe": 0,
+          "Gnomeregan": 0,
+          "Darnassus": 0,
+          "Bloodsail Buccaneers": 0,
+          "Syndicate": 0,
+          "Warsong Outriders": 4250,
+          "Stormpike Guard": 0,
+          "Silverwing Sentinels": 0,
+          "The League of Arathor": 0,
+          "Defias Brotherhood": 0,
+          "Dalaran": 0,
+          "Burning Blade Clan": 0,
+          "Burning Legion": 0,
+          "Shadow Council": 0,
+          "Gordunni Ogres": 0,
+          "Blackrock Clan": 0,
+          "Dragonmaw Clan": 0,
+          "Black Tooth Grin Clan": 0,
+          "Gurubashi Tribe": 0,
+          "Sandfury Tribe": 0,
+          "Twilight's Hammer": 0,
+          "Grimtotem Clan": 0,
+          "Razorfen Tribe": 0,
+          "Stonemaul Ogres": 4250,
+          "Dustbelcher Ogres": 0,
+          "Deadwind Ogres": 0,
+          "Venture Co.": 0,
+          "Southsea Freebooters": 0,
+          "Atal'ai Tribe": 0,
+          "Qiraji Empire": 0,
+          "Scarlet Crusade": 0,
+          "Vilebranch Tribe": 0,
+          "Witherbark Tribe": 0,
+          "Mossflayer Tribe": 0,
+          "Frostmane Tribe": 0,
+          "Bloodscalp Tribe": 0,
+          "Skullsplitter Tribe": 0,
+          "Shatterspear Tribe": 0,
+          "Rot Hide Tribe": 0,
+          "Scourge": 0,
+          "Smolderthorn Tribe": 0,
+          "Revantusk Tribe": 4250,
+          "Blackpaw Tribe": 0,
+          "Maraudine Clan": 0,
+          "Mosshide Tribe": 0,
+          "Deadwood Tribe": 0,
+          "Bloodtooth Tribe": 0,
+          "Bristleback Tribe": 0
+        },
+        "professionSkills": {},
+        "learnedRecipes": {},
+        "faction": "Undercity",
+        "name": "Ivona",
+        "race": "Forsaken",
+        "spec": "Warlock",
+        "gender": "Female",
+        "homeLocation": "Shadow Grave",
+        "abilities": {
+          "Staff Proficiency": 1,
+          "Cloth Proficiency": 1,
+          "One Handed Sword Proficiency": 1,
+          "Off Hand Proficiency": 1,
+          "Dagger Proficiency": 1,
+          "Wand Proficiency": 1,
+          "Corruption": 0,
+          "Summon Imp": 0,
+          "Shadow Bolt": 0
+        },
+        "actionBars": [
+          "Shadow Bolt",
+          "Corruption",
+          "Summon Imp"
+        ],
+        "stats": {
+          "stats": {
+            "Stamina": 22,
+            "Strength": 19,
+            "Agility": 18,
+            "Intellect": 20,
+            "Spirit": 27,
+            "Earth Mastery": 2,
+            "Fire Mastery": 2,
+            "Air Mastery": 2,
+            "Water Mastery": 1,
+            "Frost Mastery": 3,
+            "Lightning Mastery": 1,
+            "Arcane Mastery": 1,
+            "Decay Mastery": 3,
+            "Shadow Mastery": 3,
+            "Order Mastery": 1
+          }
+        },
+        "inventory": {
+          "items": [
+            {
+              "rarity": "Common",
+              "name": "Hearthstone",
+              "icon": "itemmiscrune01",
+              "detailedType": "Rune",
+              "type": "Miscellaneous",
+              "ilvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "indestructible": true,
+              "unique": true,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Rattlecage Skull",
+              "icon": "itemmiscbonehumanskull01",
+              "detailedType": "Bones",
+              "type": "Miscellaneous",
+              "source": "DirectDrop",
+              "ilvl": 1,
+              "amount": 1,
+              "maxStack": 20,
+              "stats": {
+                "stats": {}
+              },
+              "droppedBy": [
+                "Rattlecage Skeleton"
+              ]
+            }
+          ],
+          "bags": []
+        },
+        "mounts": [],
+        "equipment": {
+          "Main Hand": {
+            "rarity": "Common",
+            "name": "Worn Dagger",
+            "icon": "itemshortblade05",
+            "detailedType": "Dagger",
+            "type": "One Handed",
+            "ilvl": 2,
+            "lvl": 1,
+            "minDamage": 1,
+            "maxDamage": 2,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 7,
+            "speed": 1.6,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Feet": {
+            "rarity": "Common",
+            "name": "Acolyte's Shoes",
+            "icon": "itemboots01",
+            "type": "Feet",
+            "ilvl": 1,
+            "lvl": 1,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Legs": {
+            "rarity": "Poor",
+            "name": "Acolyte's Pants",
+            "icon": "itempants01",
+            "type": "Legs",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 2,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Chest": {
+            "rarity": "Poor",
+            "name": "Acolyte's Robe",
+            "icon": "itemchestcloth24",
+            "type": "Chest",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 3,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          }
+        }
+      },
+      "hour": 7,
+      "minute": 8,
+      "second": 24,
+      "currentSite": "Night Web's Hollow",
+      "ringOfLaw": "Eviscerator",
+      "forlornCloister": "Fallen Champion",
+      "openedChests": {},
+      "siteProgress": {
+        "Deathknell": 1
+      },
+      "commonsKilled": {
+        "Rattlecage Skeleton": 1
+      },
+      "raresKilled": {},
+      "elitesKilled": {},
+      "siteVisits": {
+        "Shadow Grave": 3,
+        "Deathknell": 2,
+        "Night Web's Hollow": 0
+      },
+      "unlockedAreas": [],
+      "vendorStock": {},
+      "banks": {},
+      "startDate": "2024-06-25T18:14:58.7354816+02:00",
+      "lastLoaded": "2024-06-26T20:30:14.7060842+02:00",
+      "lastPlayed": "2024-06-26T20:35:38.8022616+02:00",
+      "timePlayed": "00:05:32.4968658",
       "lastVisitedTalents": 2
     }
   ]

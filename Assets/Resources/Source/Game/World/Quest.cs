@@ -195,7 +195,7 @@ public class Quest
             foreach (var item in rewards)
             {
                 var find = Item.items.Find(x => x.name == item.Key);
-                AddBigButton(find.icon, (h) => { chosenReward = find.name; }, null, (h) => () =>
+                AddBigButton(find.icon, f == "Turn" ? (h) => { chosenReward = find.name; } : null, null, (h) => () =>
                 {
                     if (CDesktop.windows.Exists(x => x.title == "CraftingSort")) return;
                     if (CDesktop.windows.Exists(x => x.title == "CraftingSettings")) return;

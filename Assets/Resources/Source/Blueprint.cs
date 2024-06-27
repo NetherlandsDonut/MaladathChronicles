@@ -2396,39 +2396,40 @@ public class Blueprint
             AddHeaderRegion(() =>
             {
                 AddLine("Combat Results", "", "Center");
-                AddSmallButton("OtherClose", (h) =>
-                {
-                    var hard = Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore;
-                    if (hard && board.results.result == "Lost")
+                if (board.results.result == "Won")
+                    AddSmallButton("OtherClose", (h) =>
                     {
-                        CloseSave();
-                        SaveGames();
-                        CloseDesktop("CombatResults");
-                        CloseDesktop("Map");
-                        CloseDesktop("TitleScreen");
-                        SpawnDesktopBlueprint("TitleScreen");
-                    }
-                    else
-                    {
-                        if (area.instancePart)
+                        var hard = Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore;
+                        if (hard && board.results.result == "Lost")
                         {
-                            CloseDesktop("Instance");
-                            SpawnDesktopBlueprint("Instance");
-                            Respawn("HostileArea");
-                            Respawn("HostileAreaProgress");
-                            Respawn("HostileAreaDenizens");
-                            Respawn("HostileAreaElites");
-                            Respawn("Chest");
-                            SetDesktopBackground(area.Background());
+                            CloseSave();
+                            SaveGames();
+                            CloseDesktop("CombatResults");
+                            CloseDesktop("Map");
+                            CloseDesktop("TitleScreen");
+                            SpawnDesktopBlueprint("TitleScreen");
                         }
                         else
                         {
-                            CloseDesktop("HostileArea");
-                            SpawnDesktopBlueprint("HostileArea");
+                            if (area.instancePart)
+                            {
+                                CloseDesktop("Instance");
+                                SpawnDesktopBlueprint("Instance");
+                                Respawn("HostileArea");
+                                Respawn("HostileAreaProgress");
+                                Respawn("HostileAreaDenizens");
+                                Respawn("HostileAreaElites");
+                                Respawn("Chest");
+                                SetDesktopBackground(area.Background());
+                            }
+                            else
+                            {
+                                CloseDesktop("HostileArea");
+                                SpawnDesktopBlueprint("HostileArea");
+                            }
+                            CloseDesktop("CombatResults");
                         }
-                        CloseDesktop("CombatResults");
-                    }
-                });
+                    });
             });
             AddPaddingRegion(() =>
             {
@@ -3083,6 +3084,14 @@ public class Blueprint
             {
                 AddLine("Recommended level: ", "DarkGray");
                 AddText(area.recommendedLevel + "", ColorEntityLevel(area.recommendedLevel));
+                if (CDesktop.windows.Exists(x => x.title == "HostileAreaQuestTracker"))
+                    AddSmallButton("OtherQuestClose", (h) => CloseWindow("HostileAreaQuestTracker"));
+                else if (currentSave.player.QuestsAt(area).Count > 0)
+                    AddSmallButton("OtherQuestOpen", (h) =>
+                    {
+                        CloseWindow("HostileAreaQuestAvailable");
+                        Respawn("HostileAreaQuestTracker");
+                    });
             });
             AddButtonRegion(() => { AddLine("Explore", "Black"); },
             (h) =>
@@ -3091,6 +3100,33 @@ public class Blueprint
                 SpawnDesktopBlueprint("Game");
                 SwitchDesktop("Game");
             });
+        }),
+        new("HostileAreaQuestTracker", () => 
+        {
+            SetAnchor(Top, 0, -38);
+            AddRegionGroup();
+            SetRegionGroupWidth(182);
+            var q = currentSave.player.QuestsAt(area);
+            foreach (var quest in q)
+            {
+                var con = quest.conditions.FindAll(x => !x.IsDone() && x.Where().Contains(area));
+                AddButtonRegion(() =>
+                {
+                    AddLine(quest.name, "Black");
+                    AddSmallButton(quest.ZoneIcon());
+                },
+                (h) =>
+                {
+                    SpawnDesktopBlueprint("QuestLog");
+                    Quest.quest = quest;
+                    Respawn("Quest");
+                });
+                var color = ColorQuestLevel(quest.questLevel);
+                if (color != null) SetRegionBackgroundAsImage("SkillUp" + color);
+                if (con.Count > 0)
+                    foreach (var condition in con)
+                        condition.Print(false);
+            }
         }),
         new("HostileAreaProgress", () => 
         {
@@ -3152,6 +3188,7 @@ public class Blueprint
                     AddLine(encounter.who, "DarkGray", "Right");
                     var race = races.Find(x => x.name == encounter.who);
                     AddSmallButton(race == null ? "OtherUnknown" : race.portrait);
+                    //AddSmallButtonOverlay("QuestMarkerOneSided");
                 });
         }),
         new("HostileAreaElites", () =>
@@ -5530,7 +5567,13 @@ public class Blueprint
             SpawnWindowBlueprint("Chest");
             AddHotkey(Escape, () =>
             {
-                if (area.complexPart)
+                if (CloseWindow("HostileAreaQuestTracker"))
+                {
+                    PlaySound("DesktopButtonClose");
+                    Respawn("HostileArea");
+                    Respawn("HostileAreaQuestAvailable");
+                }
+                else if (area.complexPart)
                 {
                     CloseDesktop("HostileArea");
                     SpawnDesktopBlueprint("Complex");
@@ -5560,8 +5603,11 @@ public class Blueprint
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(Escape, () =>
             {
-                PlaySound("DesktopInstanceClose");
-                CloseDesktop("CombatResults");
+                if (board.results.result == "Won")
+                {
+                    PlaySound("DesktopInstanceClose");
+                    CloseDesktop("CombatResults");
+                }
             });
         }),
         new("CombatLog", () => 
@@ -5857,7 +5903,13 @@ public class Blueprint
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(Escape, () =>
             {
-                if (CloseWindow("HostileArea"))
+                if (CloseWindow("HostileAreaQuestTracker"))
+                {
+                    PlaySound("DesktopButtonClose");
+                    Respawn("HostileArea");
+                    Respawn("HostileAreaQuestAvailable");
+                }
+                else if (CloseWindow("HostileArea"))
                 {
                     area = null;
                     CloseWindow("HostileAreaQuestAvailable");
@@ -5906,7 +5958,13 @@ public class Blueprint
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(Escape, () =>
             {
-                if (CloseWindow("HostileArea"))
+                if (CloseWindow("HostileAreaQuestTracker"))
+                {
+                    PlaySound("DesktopButtonClose");
+                    Respawn("HostileArea");
+                    Respawn("HostileAreaQuestAvailable");
+                }
+                else if (CloseWindow("HostileArea"))
                 {
                     area = null;
                     PlaySound("DesktopButtonClose");

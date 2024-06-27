@@ -242,6 +242,11 @@ public static class Root
             Cursor.cursor.transform.position += (Vector3)CDesktop.cameraDestination - CDesktop.screen.transform.localPosition;
             CDesktop.screen.transform.localPosition = (Vector3)CDesktop.cameraDestination;
         }
+        if (CDesktop.windows.Exists(x => x.title == "HostileArea"))
+        {
+            CloseWindow("HostileAreaQuestTracker");
+            Respawn("HostileArea");
+        }
         if (windows != null)
             foreach (var window in windows)
                 Respawn(window, true);
