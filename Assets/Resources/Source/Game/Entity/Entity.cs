@@ -166,6 +166,8 @@ public class Entity
             inventory.money += quest.money;
             PlaySound("DesktopTransportPay");
         }
+        if (quest.experience > 0)
+            SaveGame.currentSave.player.ReceiveExperience(experience);
         currentQuests.Remove(quest);
         completedQuests.Add(quest.questID);
         foreach (var item in quest.conditions.Where(x => x.type == "Item"))

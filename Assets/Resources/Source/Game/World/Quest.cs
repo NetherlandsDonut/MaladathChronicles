@@ -188,7 +188,7 @@ public class Quest
                 } } }
             }.Print(null, null, 190, null);
         }
-        else if (f == "Turn" && completion != null)
+        if (f == "Turn" && completion != null)
         {
             AddHeaderRegion(() => AddLine("Description:"));
             new Description()
@@ -201,7 +201,7 @@ public class Quest
                 } } }
             }.Print(null, null, 190, null);
         }
-        if (objective != null)
+        if (f != "Turn" && objective != null)
         {
             AddHeaderRegion(() => AddLine("Objective:"));
             new Description()
@@ -214,7 +214,7 @@ public class Quest
                 } } }
             }.Print(null, null, 190, null);
         }
-        if (conditions != null)
+        if (f == "Log" && conditions != null)
         {
             AddHeaderRegion(() => AddLine("Details:"));
             foreach (var condition in conditions)
@@ -223,20 +223,31 @@ public class Quest
         if (rewards != null)
         {
             AddHeaderRegion(() => AddLine("Rewards:"));
-            AddPaddingRegion(() => { });
-            foreach (var item in rewards)
-            {
-                var find = Item.items.Find(x => x.name == item.Key);
-                AddBigButton(find.icon, f == "Turn" ? (h) => { chosenReward = find.name; } : null, null, (h) => () =>
+            if (experience > 0)
+                AddPaddingRegion(() =>
                 {
-                    if (CDesktop.windows.Exists(x => x.title == "CraftingSort")) return;
-                    if (CDesktop.windows.Exists(x => x.title == "CraftingSettings")) return;
-                    Item.PrintItemTooltip(find, Input.GetKey(KeyCode.LeftShift));
+                    if (experience > 0)
+                    {
+                        AddLine("XP: ", "HalfGray");
+                        AddText(experience + "", "Gray");
+                    }
                 });
-                if (find.type != "Miscellaneous" && find.type != "Trade Good" && find.type != "Recipe" && !find.CanEquip(currentSave.player)) { SetBigButtonToRed(); AddBigButtonOverlay("OtherGridBlurred"); }
-                if (find.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (rewards.Keys.ToList().IndexOf(item.Key) % 5), item.Value + "", "", "Right");
-                if (find.name == chosenReward && rewards.Count > 1) AddBigButtonOverlay("OtherGlowChosen");
-            }
+            AddPaddingRegion(() =>
+            {
+                foreach (var item in rewards)
+                {
+                    var find = Item.items.Find(x => x.name == item.Key);
+                    AddBigButton(find.icon, f == "Turn" ? (h) => { chosenReward = find.name; } : null, null, (h) => () =>
+                    {
+                        if (CDesktop.windows.Exists(x => x.title == "CraftingSort")) return;
+                        if (CDesktop.windows.Exists(x => x.title == "CraftingSettings")) return;
+                        Item.PrintItemTooltip(find, Input.GetKey(KeyCode.LeftShift));
+                    });
+                    if (find.type != "Miscellaneous" && find.type != "Trade Good" && find.type != "Recipe" && !find.CanEquip(currentSave.player)) { SetBigButtonToRed(); AddBigButtonOverlay("OtherGridBlurred"); }
+                    if (find.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (rewards.Keys.ToList().IndexOf(item.Key) % 5), item.Value + "", "", "Right");
+                    if (find.name == chosenReward && rewards.Count > 1) AddBigButtonOverlay("OtherGlowChosen");
+                }
+            });
         }
         if (f == "Turn")
         {
@@ -329,6 +340,8 @@ public class Quest
         if (reputationGain != null)
             newQuest.reputationGain = reputationGain.ToDictionary(x => x.Key, x => x.Value);
         newQuest.description = description;
+        newQuest.objective = objective;
+        newQuest.completion = completion;
         newQuest.conditions = new();
         if (conditions != null)
             foreach (var condition in conditions)

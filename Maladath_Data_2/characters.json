@@ -1717,208 +1717,12 @@
   "Whitemane": [
     {
       "player": {
-        "currentQuests": [
-          {
-            "questID": 22,
-            "requiredLevel": 9,
-            "questLevel": 12,
-            "name": "Goretusk Liver Pie",
-            "description": "Salma Saldean needs 3 Goretusk livers to make a Goretusk Liver Pie.",
-            "siteStart": "Saldean's Farm",
-            "siteEnd": "Saldean's Farm",
-            "zone": "Westfall",
-            "races": [
-              "Gnome",
-              "Night Elf",
-              "Dwarf",
-              "Human"
-            ],
-            "rewards": {
-              "Goretusk Liver Pie": 1,
-              "Recipe: Goretusk Liver Pie": 1
-            },
-            "reputationGain": {
-              "Stormwind": 250
-            },
-            "conditions": [
-              {
-                "type": "Item",
-                "name": "Goretusk Liver",
-                "amount": 3
-              }
-            ]
-          },
-          {
-            "questID": 36,
-            "requiredLevel": 9,
-            "questLevel": 10,
-            "name": "Westfall Stew",
-            "description": "Verna Furlbrow wants you to deliver her recipe for Westfall Stew to Salma Saldean.",
-            "siteStart": "Jansen Stead",
-            "siteEnd": "Saldean's Farm",
-            "zone": "Westfall",
-            "races": [
-              "Gnome",
-              "Night Elf",
-              "Dwarf",
-              "Human"
-            ],
-            "reputationGain": {
-              "Stormwind": 75
-            },
-            "conditions": [
-              {
-                "type": "Item",
-                "name": "Verna's Westfall Stew Recipe",
-                "amount": 1
-              }
-            ]
-          },
-          {
-            "questID": 47,
-            "requiredLevel": 4,
-            "questLevel": 7,
-            "name": "Gold Dust Exchange",
-            "description": "Bring 4 Gold Dust to Remy \"Two Times\" in Goldshire. Gold Dust is gathered from Kobolds in Elwynn Forest.",
-            "siteStart": "Goldshire",
-            "siteEnd": "Goldshire",
-            "zone": "Elwynn Forest",
-            "races": [
-              "Gnome",
-              "Night Elf",
-              "Dwarf",
-              "Human"
-            ],
-            "reputationGain": {
-              "Stormwind": 250
-            },
-            "conditions": [
-              {
-                "type": "Item",
-                "name": "Gold Dust",
-                "amount": 4
-              }
-            ]
-          },
-          {
-            "questID": 35,
-            "previous": 40,
-            "requiredLevel": 7,
-            "questLevel": 10,
-            "name": "Further Concerns",
-            "description": "Marshal Dughan wants you to speak with Guard Thomas.",
-            "siteStart": "Goldshire",
-            "siteEnd": "East Elwynn Bridge",
-            "zone": "Elwynn Forest",
-            "races": [
-              "Gnome",
-              "Night Elf",
-              "Dwarf",
-              "Human"
-            ],
-            "reputationGain": {
-              "Stormwind": 75
-            },
-            "conditions": []
-          },
-          {
-            "questID": 7,
-            "previous": 783,
-            "requiredLevel": 1,
-            "questLevel": 2,
-            "name": "Kobold Camp Cleanup",
-            "description": "Kill 3 Kobold Vermin, then return to Marshal McBride.",
-            "siteStart": "Northshire Abbey",
-            "siteEnd": "Northshire Abbey",
-            "zone": "Elwynn Forest",
-            "races": [
-              "Gnome",
-              "Night Elf",
-              "Dwarf",
-              "Human"
-            ],
-            "reputationGain": {
-              "Stormwind": 250
-            },
-            "conditions": [
-              {
-                "type": "Kill",
-                "name": "Kobold Vermin",
-                "amount": 3
-              }
-            ]
-          },
-          {
-            "questID": 18,
-            "previous": 783,
-            "requiredLevel": 2,
-            "questLevel": 4,
-            "name": "Brotherhood of Thieves",
-            "description": "Bring a Red Burlap Bandana to Deputy Willem outside the Northshire Abbey.",
-            "siteStart": "Northshire Abbey",
-            "siteEnd": "Northshire Abbey",
-            "zone": "Elwynn Forest",
-            "races": [
-              "Gnome",
-              "Night Elf",
-              "Dwarf",
-              "Human"
-            ],
-            "rewards": {
-              "Militia Dagger": 1,
-              "Militia Hammer": 1,
-              "Militia Shortsword": 1,
-              "Militia Warhammer": 1,
-              "Militia Quarterstaff": 1
-            },
-            "reputationGain": {
-              "Stormwind": 250
-            },
-            "conditions": [
-              {
-                "type": "Item",
-                "name": "Red Burlap Bandana",
-                "amount": 1
-              }
-            ]
-          },
-          {
-            "questID": 12,
-            "requiredLevel": 9,
-            "questLevel": 12,
-            "name": "The People's Militia",
-            "description": "Gryan Stoutmantle wants you to kill 3 Defias Trappers and 3 Defias Smugglers then return to him on Sentinel Hill.",
-            "siteStart": "Sentinel Hill",
-            "siteEnd": "Sentinel Hill",
-            "zone": "Westfall",
-            "races": [
-              "Gnome",
-              "Night Elf",
-              "Dwarf",
-              "Human"
-            ],
-            "reputationGain": {
-              "Stormwind": 250
-            },
-            "conditions": [
-              {
-                "type": "Kill",
-                "name": "Defias Trapper",
-                "amount": 3
-              },
-              {
-                "type": "Kill",
-                "name": "Defias Smuggler",
-                "amount": 3,
-                "amountDone": 1
-              }
-            ]
-          }
-        ],
+        "currentQuests": [],
         "completedQuests": [
           40,
           783,
-          9
+          9,
+          35
         ],
         "level": 20,
         "experience": 9678,
@@ -2579,9 +2383,9 @@
         }
       },
       "hour": 12,
-      "minute": 20,
-      "second": 36,
-      "currentSite": "Molsen Farm",
+      "minute": 45,
+      "second": 20,
+      "currentSite": "Goldshire",
       "openedChests": {
         "Gnomeregan Outskirts": {
           "area": "Gnomeregan Outskirts",
@@ -3151,7 +2955,7 @@
         "Stonefield Farm": 1,
         "The Maclure Vineyards": 1,
         "Jerod's Landing": 1,
-        "East Elwynn Bridge": 3,
+        "East Elwynn Bridge": 4,
         "Tower of Azora": 1,
         "Bloodvenom Falls": 1,
         "Bloodvenom River": 1,
@@ -3625,7 +3429,7 @@
         "Stendel's Pond": 1,
         "Demont's Place": 1,
         "Moonbrook": 1,
-        "Saldean's Farm": 6,
+        "Saldean's Farm": 8,
         "The Dagger Hills": 1,
         "The Dead Acre": 1,
         "Westfall Crossing": 1,
@@ -3686,7 +3490,7 @@
         "Dabyrie's Farmstead": 1,
         "Azurelode Mine": 1,
         "Westbrook Garrison": 1,
-        "Goldshire": 11,
+        "Goldshire": 14,
         "Lakeshire": 1,
         "Southshore": 1,
         "Darkshire": 1,
@@ -4873,9 +4677,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2024-06-09T14:12:27.0144066+02:00",
-      "lastLoaded": "2024-06-27T19:29:27.2340113+02:00",
-      "lastPlayed": "2024-06-27T19:32:07.5046952+02:00",
-      "timePlayed": "14:10:29.0835548",
+      "lastLoaded": "2024-06-28T03:41:34.6318908+02:00",
+      "lastPlayed": "2024-06-28T03:43:34.1969658+02:00",
+      "timePlayed": "14:16:08.9212858",
       "lastVisitedTalents": 1
     },
     {
