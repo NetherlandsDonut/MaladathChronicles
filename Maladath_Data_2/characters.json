@@ -1881,6 +1881,38 @@
                 "amount": 1
               }
             ]
+          },
+          {
+            "questID": 12,
+            "requiredLevel": 9,
+            "questLevel": 12,
+            "name": "The People's Militia",
+            "description": "Gryan Stoutmantle wants you to kill 3 Defias Trappers and 3 Defias Smugglers then return to him on Sentinel Hill.",
+            "siteStart": "Sentinel Hill",
+            "siteEnd": "Sentinel Hill",
+            "zone": "Westfall",
+            "races": [
+              "Gnome",
+              "Night Elf",
+              "Dwarf",
+              "Human"
+            ],
+            "reputationGain": {
+              "Stormwind": 250
+            },
+            "conditions": [
+              {
+                "type": "Kill",
+                "name": "Defias Trapper",
+                "amount": 3
+              },
+              {
+                "type": "Kill",
+                "name": "Defias Smuggler",
+                "amount": 3,
+                "amountDone": 1
+              }
+            ]
           }
         ],
         "completedQuests": [
@@ -2547,9 +2579,9 @@
         }
       },
       "hour": 12,
-      "minute": 6,
-      "second": 50,
-      "currentSite": "Goldshire",
+      "minute": 20,
+      "second": 36,
+      "currentSite": "Molsen Farm",
       "openedChests": {
         "Gnomeregan Outskirts": {
           "area": "Gnomeregan Outskirts",
@@ -2741,7 +2773,8 @@
         "The Den of Flame": 3,
         "Echo Ridge Mine": 1,
         "Northshire Vineyards": 3,
-        "Saldean's Farm": 10
+        "Saldean's Farm": 10,
+        "Molsen Farm": 1
       },
       "commonsKilled": {
         "Deeprot Tangler": 1,
@@ -2769,7 +2802,8 @@
         "Kobold Laborer": 1,
         "Defias Thug": 4,
         "Coyote": 5,
-        "Harvest Watcher": 5
+        "Harvest Watcher": 5,
+        "Defias Smuggler": 1
       },
       "raresKilled": {
         "Gibblewilt": 1
@@ -3587,7 +3621,7 @@
         "Alexton Farmstead": 1,
         "Jansen Stead": 2,
         "Longshore": 1,
-        "Molsen Farm": 1,
+        "Molsen Farm": 3,
         "Stendel's Pond": 1,
         "Demont's Place": 1,
         "Moonbrook": 1,
@@ -3657,7 +3691,7 @@
         "Southshore": 1,
         "Darkshire": 1,
         "Rebel Camp": 1,
-        "Sentinel Hill": 1,
+        "Sentinel Hill": 2,
         "Theramore Isle": 1,
         "Menethil Harbor": 3,
         "Nethergarde Keep": 1,
@@ -4839,9 +4873,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2024-06-09T14:12:27.0144066+02:00",
-      "lastLoaded": "2024-06-27T19:06:49.1427842+02:00",
-      "lastPlayed": "2024-06-27T19:08:20.9624654+02:00",
-      "timePlayed": "14:07:48.8128709",
+      "lastLoaded": "2024-06-27T19:29:27.2340113+02:00",
+      "lastPlayed": "2024-06-27T19:32:07.5046952+02:00",
+      "timePlayed": "14:10:29.0835548",
       "lastVisitedTalents": 1
     },
     {

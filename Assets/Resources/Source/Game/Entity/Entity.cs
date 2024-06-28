@@ -161,6 +161,11 @@ public class Entity
     //Adds new quest to the quest log
     public void TurnQuest(Quest quest)
     {
+        if (quest.money > 0)
+        {
+            inventory.money += quest.money;
+            PlaySound("DesktopTransportPay");
+        }
         currentQuests.Remove(quest);
         completedQuests.Add(quest.questID);
         foreach (var item in quest.conditions.Where(x => x.type == "Item"))

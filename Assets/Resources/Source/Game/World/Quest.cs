@@ -42,6 +42,12 @@ public class Quest
     //Description of the quest
     public string description;
 
+    //Objective of the quest
+    public string objective;
+
+    //Objective of the quest
+    public string completion;
+
     //Site where the quest is available for pickup
     public string siteStart;
 
@@ -169,7 +175,7 @@ public class Quest
                 });
         });
         if (color != null) SetRegionBackgroundAsImage("SkillUp" + color + "Long");
-        if (description != null)
+        if (f == "Add" && description != null)
         {
             AddHeaderRegion(() => AddLine("Description:"));
             new Description()
@@ -178,6 +184,32 @@ public class Quest
                     {
                         { "Color", "DarkGray" },
                         { "Text", description }
+                    }
+                } } }
+            }.Print(null, null, 190, null);
+        }
+        else if (f == "Turn" && completion != null)
+        {
+            AddHeaderRegion(() => AddLine("Description:"));
+            new Description()
+            {
+                regions = new() { new() { regionType = "Padding", contents = new() { new ()
+                    {
+                        { "Color", "DarkGray" },
+                        { "Text", completion }
+                    }
+                } } }
+            }.Print(null, null, 190, null);
+        }
+        if (objective != null)
+        {
+            AddHeaderRegion(() => AddLine("Objective:"));
+            new Description()
+            {
+                regions = new() { new() { regionType = "Padding", contents = new() { new ()
+                    {
+                        { "Color", "DarkGray" },
+                        { "Text", objective }
                     }
                 } } }
             }.Print(null, null, 190, null);
