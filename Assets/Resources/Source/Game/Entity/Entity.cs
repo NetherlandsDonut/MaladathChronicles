@@ -198,6 +198,14 @@ public class Entity
         return true;
     }
 
+    //Check if this entity can pick up a specific quest
+    public bool CanSeeItemQuest(Quest quest)
+    {
+        if (quest.races != null && !quest.races.Contains(race)) return false;
+        if (quest.classes != null && !quest.classes.Contains(spec)) return false;
+        return true;
+    }
+
     //Checks if entity has high enough rank with a faction
     //Used for quest availability and reputation locked items
     public bool IsRankHighEnough(string current, string required)

@@ -173,7 +173,10 @@ public class Item
     //Spec restrictions for this item
     //Specs listed in it are the specs that exclusively can use this item
     public List<string> specs;
-    
+
+    //List of quests that can be started by using this item
+    public List<int> questsStarted;
+
     //Price of the item for it to be bought, the sell price is 1/4 of that
     public int price;
 
@@ -381,7 +384,9 @@ public class Item
 
     public bool CanUse(Entity entity)
     {
-        if (type == "Miscellaneous")
+        if (questsStarted != null && questsStarted.Count > 0)
+            return true;
+        else if (type == "Miscellaneous")
             return worldAbilities != null;
         else if (type == "Recipe")
         {
@@ -450,7 +455,44 @@ public class Item
 
     public void Use(Entity entity)
     {
-        if (type == "Recipe")
+        if (questsStarted != null)
+        {
+            var all = Quest.quests.FindAll(x => questsStarted.Contains(x.questID)).ToList();
+            var quest = all.Find(x => currentSave.player.CanSeeItemQuest(x));
+            if (quest == null)
+            {
+                PlaySound("QuestFailed");
+                SpawnFallingText(new Vector2(0, 34), "Requirements not met", "Red");
+            }
+            else
+            {
+                var message = "";
+                if (currentSave.player.completedQuests.Contains(quest.questID)) message = "Already completed";
+                else if (quest.requiredLevel > currentSave.player.level) message = "Requires level " + quest.requiredLevel;
+                else if (quest.faction != null && !currentSave.player.IsRankHighEnough(currentSave.player.ReputationRank(quest.faction), quest.requiredRank)) message = "Requires " + quest.requiredRank + " with " + quest.faction;
+                if (message != "")
+                {
+                    PlaySound("QuestFailed");
+                    SpawnFallingText(new Vector2(0, 34), message, "Red");
+                }
+                else
+                {
+                    SpawnDesktopBlueprint("QuestLog");
+                    CloseDesktop("EquipmentScreen");
+                    if (currentSave.player.currentQuests.Exists(x => x.questID == quest.questID))
+                    {
+                        Quest.quest = currentSave.player.currentQuests.Find(x => x.questID == quest.questID);
+                        SpawnWindowBlueprint("Quest");
+                    }
+                    else
+                    {
+                        Quest.quest = quest;
+                        SpawnWindowBlueprint("QuestAdd");
+                    }
+                }
+            }
+        }
+        else if (type == "Recipe")
         {
             var recipe = Recipe.recipes.Find(x => name.Contains(x.name));
             entity.LearnRecipe(recipe);
@@ -629,6 +671,20 @@ public class Item
         );
         if (settings.rarityIndicators.Value())
             AddBigButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 2);
+        if (item.questsStarted != null)
+        {
+            var all = Quest.quests.FindAll(x => item.questsStarted.Contains(x.questID)).ToList();
+            var status = "Cant";
+            foreach (var quest in all)
+            {
+                if (currentSave.player.completedQuests.Contains(quest.questID)) continue;
+                if (quest.requiredLevel > currentSave.player.level) continue;
+                if (currentSave.player.currentQuests.Exists(x => x.questID == quest.questID))
+                { status = "Active"; break; }
+                status = "Can"; break;
+            }
+            AddBigButtonOverlay("QuestStarter" + (status == "Can" ? "" : (status == "Active" ? "Active" : "Off")), 0, 4);
+        }
         if (item.amount == 0) SetBigButtonToGrayscale();
         if (stockItem != null || item.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * ((buyback != null ? currentSave.buyback.items.IndexOf(buyback) : currentSave.vendorStock[town.name + ":" + Person.person.name].FindIndex(x => x.item == item.name)) % 5), item.amount + (false && buyback == null ?  "/" + currentSave.vendorStock[town.name + ":" + Person.person.name].Find(x => x.item == item.name).maxAmount : ""), "", "Right");
         if (stockItem != null && stockItem.minutesLeft > 0) AddBigButtonCooldownOverlay(stockItem.minutesLeft / (double)stockItem.restockSpeed);
@@ -687,8 +743,6 @@ public class Item
                                 Respawn("Inventory");
                                 CloseWindow("Vendor");
                                 Respawn("VendorBuyback");
-                                Respawn("ExperienceBarBorder");
-                                Respawn("ExperienceBar");
                             };
                         }
                         else
@@ -731,8 +785,6 @@ public class Item
                                 }
                                 Respawn("Inventory");
                                 Respawn("Bank");
-                                Respawn("ExperienceBarBorder");
-                                Respawn("ExperienceBar");
                             };
                         }
                         else
@@ -750,15 +802,15 @@ public class Item
                     {
                         PlaySound(item.ItemSound("PickUp"), 0.8f);
                         item.Equip(currentSave.player);
-                        Respawn("Inventory");
-                        Respawn("PlayerEquipmentInfo");
+                        Respawn("Inventory", true);
+                        Respawn("PlayerEquipmentInfo", true);
                     }
                     else if (item.CanUse(currentSave.player))
                     {
                         PlaySound(item.ItemSound("Use"), 0.8f);
                         item.Use(currentSave.player);
-                        Respawn("Inventory");
-                        Respawn("PlayerEquipmentInfo");
+                        Respawn("Inventory", true);
+                        Respawn("PlayerEquipmentInfo", true);
                     }
                 }
             },
@@ -778,6 +830,20 @@ public class Item
         );
         if (settings.rarityIndicators.Value())
             AddBigButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 2);
+        if (item.questsStarted != null)
+        {
+            var all = Quest.quests.FindAll(x => item.questsStarted.Contains(x.questID)).ToList();
+            var status = "Cant";
+            foreach (var quest in all)
+            {
+                if (currentSave.player.completedQuests.Contains(quest.questID)) continue;
+                if (quest.requiredLevel > currentSave.player.level) continue;
+                if (currentSave.player.currentQuests.Exists(x => x.questID == quest.questID))
+                { status = "Active"; break; }
+                status = "Can"; break;
+            }
+            AddBigButtonOverlay("QuestStarter" + (status == "Can" ? "" : (status == "Active" ? "Active" : "Off")), 0, 4);
+        }
         if (item.CanEquip(currentSave.player) && currentSave.player.IsItemNewSlot(item) && (settings.upgradeIndicators.Value() || settings.newSlotIndicators.Value()))
             AddBigButtonOverlay(settings.newSlotIndicators.Value() ? "OtherItemNewSlot" : "OtherItemUpgrade", 0, 2);
         else if (settings.upgradeIndicators.Value() && item.CanEquip(currentSave.player) && currentSave.player.IsItemAnUpgrade(item))
@@ -910,10 +976,19 @@ public class Item
             AddBigButtonOverlay("OtherItemExclusive", 0, 2);
         if (settings.rarityIndicators.Value())
             AddBigButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 2);
-        if (currentSave.player.HasItemEquipped(item.name))
+        if (item.questsStarted != null)
         {
-            SetBigButtonToGrayscale();
-            AddBigButtonOverlay("OtherGridBlurred", 0, 2);
+            var all = Quest.quests.FindAll(x => item.questsStarted.Contains(x.questID)).ToList();
+            var status = "Cant";
+            foreach (var quest in all)
+            {
+                if (currentSave.player.completedQuests.Contains(quest.questID)) continue;
+                if (quest.requiredLevel > currentSave.player.level) continue;
+                if (currentSave.player.currentQuests.Exists(x => x.questID == quest.questID))
+                { status = "Active"; break; }
+                status = "Can"; break;
+            }
+            AddBigButtonOverlay("QuestStarter" + (status == "Can" ? "" : (status == "Active" ? "Active" : "Off")), 0, 4);
         }
         if (item.CanEquip(currentSave.player) && currentSave.player.IsItemNewSlot(item) && (settings.upgradeIndicators.Value() || settings.newSlotIndicators.Value()))
             AddBigButtonOverlay(settings.newSlotIndicators.Value() ? "OtherItemNewSlot" : "OtherItemUpgrade", 0, 2);
@@ -1048,6 +1123,13 @@ public class Item
             foreach (var ability in item.worldAbilities)
                 ability.PrintDescription(currentSave.player, 182, true);
         }
+        if (item.questsStarted != null)
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("Starts a quest", "HalfGray");
+            });
+        }
         if (item.set != null)
         {
             var set = itemSets.Find(x => x.name == item.set);
@@ -1168,6 +1250,7 @@ public class Item
         newItem.indestructible = indestructible;
         newItem.unique = unique;
         newItem.specs = specs?.ToList();
+        newItem.questsStarted = questsStarted?.ToList();
         newItem.speed = speed;
         newItem.stats = new Stats(stats.stats?.ToDictionary(x => x.Key, x => x.Value));
         newItem.type = type;

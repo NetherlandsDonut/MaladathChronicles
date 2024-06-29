@@ -5,6 +5,7 @@ using static SaveGame;
 
 public static class Coloring
 {
+    //Returns color red if current player's level is lower than provided
     public static string ColorRequiredLevel(int level)
     {
         if (currentSave != null && currentSave.player != null && level > currentSave.player.level) return "DangerousRed";
@@ -17,45 +18,39 @@ public static class Coloring
         else return "DangerousRed";
     }
 
-    public static string ColorProgress(int progress)
-    {
-        if (progress == 0) return "DarkGray";
-        else if (progress <= 20) return "Red";
-        else if (progress <= 40) return "Orange";
-        else if (progress <= 60) return "Yellow";
-        else return "Green";
-    }
-
+    //Returns color based around player's reputation with a faction
     public static string ColorReputation(int progress)
     {
-        if (progress >= 8400) return "Exalted";
+             if (progress >= 8400) return "Exalted";
         else if (progress >= 6300) return "Revered";
         else if (progress >= 5100) return "Honored";
         else if (progress >= 4500) return "Friendly";
         else if (progress >= 4200) return "Neutral";
         else if (progress >= 3900) return "Unfriendly";
         else if (progress >= 3600) return "Hostile";
-        else return "Hated";
+        else                       return "Hated";
     }
 
     public static string ColorQuestLevel(int level)
     {
-        if (currentSave == null) return null;
-        if (level - 4 > currentSave.player.level) return "Red";
-        else if (level - 2 > currentSave.player.level) return "Orange";
-        else if (level + 2 < currentSave.player.level && currentSave.player.WillGetExperience(level)) return "Green";
-        else if (!currentSave.player.WillGetExperience(level)) return "Gray";
-        else return "Yellow";
+        if (currentSave == null)                               return "DarkGray";
+        var will = currentSave.player.WillGetExperience(level);
+        if (level - 4 > currentSave.player.level)              return "Red";
+        else if (level - 2 > currentSave.player.level)         return "Orange";
+        else if (level + 2 < currentSave.player.level && will) return "Green";
+        else if (!will)                                        return "Gray";
+        else                                                   return "Yellow";
     }
 
     public static string ColorEntityLevel(int level)
     {
-        if (currentSave == null) return "DarkGray";
-        if (level - 4 > currentSave.player.level) return "DangerousRed";
-        else if (level - 2 > currentSave.player.level) return "Orange";
-        else if (level + 2 < currentSave.player.level && currentSave.player.WillGetExperience(level)) return "Green";
-        else if (!currentSave.player.WillGetExperience(level)) return "DarkGray";
-        else return "Yellow";
+        if (currentSave == null)                               return "DarkGray";
+        var will = currentSave.player.WillGetExperience(level);
+        if (level - 4 > currentSave.player.level)              return "DangerousRed";
+        else if (level - 2 > currentSave.player.level)         return "Orange";
+        else if (level + 2 < currentSave.player.level && will) return "Green";
+        else if (!will)                                        return "DarkGray";
+        else                                                   return "Yellow";
     }
 
     //Color pallete of the UI

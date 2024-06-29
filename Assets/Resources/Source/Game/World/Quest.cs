@@ -22,6 +22,16 @@ public class Quest
             }
             else Debug.Log("ERROR 014: Starting site for quest was not found: \"" + siteStart + "\"");
         }
+        if (itemStart != null)
+        {
+            var find = Item.items.Find(x => x.name == itemStart);
+            if (find != null)
+            {
+                find.questsStarted ??= new();
+                find.questsStarted.Add(questID);
+            }
+            else Debug.Log("ERROR 016: Quest starting item was not found: \"" + itemStart + "\"");
+        }
     }
 
     //ID of the quest
@@ -320,6 +330,7 @@ public class Quest
                     find = CDesktop.windows.Find(x => x.title.Contains("QuestDone"));
                     if (find != null) find.Respawn();
                     Respawn("PlayerMoney", true);
+                    Respawn("QuestList", true);
                 }
                 else PlaySound("QuestFailed", 0.4f);
             });

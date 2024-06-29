@@ -1,5 +1,15 @@
 [
   {
+    "name": "Goggeroc",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Elite",
+    "portrait": "PortraitCow",
+    "vitality": 3.0,
+    "abilities": {}
+  },
+  {
     "name": "Blindlight Murloc",
     "category": "Humanoid",
     "subcategory": "Murloc",

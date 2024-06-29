@@ -2216,16 +2216,26 @@
             },
             {
               "rarity": "Common",
-              "name": "Pattern: Glacial Cloak",
+              "name": "Small Scroll",
               "icon": "itemscroll03",
               "detailedType": "Scroll",
-              "type": "Recipe",
+              "type": "Miscellaneous",
+              "source": "DirectDrop",
+              "ilvl": 28,
               "amount": 1,
               "maxStack": 1,
-              "price": 30000,
+              "indestructible": true,
+              "unique": true,
+              "questsStarted": [
+                6522,
+                6522
+              ],
               "stats": {
                 "stats": {}
-              }
+              },
+              "droppedBy": [
+                "Charlga Razorflank"
+              ]
             }
           ],
           "bags": [
@@ -4678,9 +4688,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2024-06-09T14:12:27.0144066+02:00",
-      "lastLoaded": "2024-06-28T11:05:02.5260569+02:00",
-      "lastPlayed": "2024-06-28T11:13:37.9761543+02:00",
-      "timePlayed": "14:24:44.3713832",
+      "lastLoaded": "2024-06-29T15:01:21.3809007+02:00",
+      "lastPlayed": "2024-06-29T15:01:42.550366+02:00",
+      "timePlayed": "14:25:05.5408485",
       "lastVisitedTalents": 2
     },
     {
@@ -9678,8 +9688,8 @@
           }
         ],
         "completedQuests": [],
-        "level": 1,
-        "experience": 173,
+        "level": 30,
+        "experience": 1173,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -9752,6 +9762,7 @@
         },
         "professionSkills": {},
         "learnedRecipes": {},
+        "unspentTalentPoints": 29,
         "faction": "Undercity",
         "name": "Ivona",
         "race": "Forsaken",
@@ -9825,6 +9836,29 @@
               },
               "droppedBy": [
                 "Rattlecage Skeleton"
+              ]
+            },
+            {
+              "rarity": "Common",
+              "name": "Small Scroll",
+              "icon": "itemscroll03",
+              "detailedType": "Scroll",
+              "type": "Miscellaneous",
+              "source": "DirectDrop",
+              "ilvl": 28,
+              "amount": 1,
+              "maxStack": 1,
+              "indestructible": true,
+              "unique": true,
+              "questsStarted": [
+                6522,
+                6522
+              ],
+              "stats": {
+                "stats": {}
+              },
+              "droppedBy": [
+                "Charlga Razorflank"
               ]
             }
           ],
@@ -9922,9 +9956,9 @@
       "vendorStock": {},
       "banks": {},
       "startDate": "2024-06-25T18:14:58.7354816+02:00",
-      "lastLoaded": "2024-06-26T20:30:14.7060842+02:00",
-      "lastPlayed": "2024-06-26T20:35:38.8022616+02:00",
-      "timePlayed": "00:05:32.4968658",
+      "lastLoaded": "2024-06-29T15:02:44.4160911+02:00",
+      "lastPlayed": "2024-06-29T15:04:05.098889+02:00",
+      "timePlayed": "00:06:53.1796637",
       "lastVisitedTalents": 2
     }
   ]
