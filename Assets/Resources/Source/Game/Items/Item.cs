@@ -1094,8 +1094,11 @@ public class Item
                 {
                     statsRecorded.Add(stat.Key);
                     var balance = current != null && current.stats != null && current.stats.stats.ContainsKey(stat.Key) ? stat.Value - current.stats.stats[stat.Key] : stat.Value;
-                    AddLine((balance > 0 ? "+" : "") + balance, balance > 0 ? "Uncommon" : "DangerousRed");
-                    AddText(" " + stat.Key);
+                    if (balance != 0)
+                    {
+                        AddLine((balance > 0 ? "+" : "") + balance, balance > 0 ? "Uncommon" : "DangerousRed");
+                        AddText(" " + stat.Key);
+                    }
                 }
                 if (current != null && current.stats != null)
                     foreach (var stat in current.stats.stats)

@@ -39,6 +39,6 @@
     "value": "False"
   },
   "autoCloseLoot": {
-    "value": "False"
+    "value": "True"
   }
 }

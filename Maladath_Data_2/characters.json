@@ -9688,9 +9688,15 @@
           }
         ],
         "completedQuests": [],
-        "level": 30,
-        "experience": 1173,
-        "uniquesGotten": [],
+        "level": 34,
+        "experience": 14946,
+        "uniquesGotten": [
+          "Swinetusk Shank",
+          "Agamaggan's Clutch",
+          "Small Scroll",
+          "Razorflank's Heart",
+          "Razorflank's Medallion"
+        ],
         "reputation": {
           "Southsea Pirates": 0,
           "Razormane Tribe": 0,
@@ -9762,7 +9768,7 @@
         },
         "professionSkills": {},
         "learnedRecipes": {},
-        "unspentTalentPoints": 29,
+        "unspentTalentPoints": 33,
         "faction": "Undercity",
         "name": "Ivona",
         "race": "Forsaken",
@@ -9823,23 +9829,6 @@
             },
             {
               "rarity": "Common",
-              "name": "Rattlecage Skull",
-              "icon": "itemmiscbonehumanskull01",
-              "detailedType": "Bones",
-              "type": "Miscellaneous",
-              "source": "DirectDrop",
-              "ilvl": 1,
-              "amount": 1,
-              "maxStack": 20,
-              "stats": {
-                "stats": {}
-              },
-              "droppedBy": [
-                "Rattlecage Skeleton"
-              ]
-            },
-            {
-              "rarity": "Common",
               "name": "Small Scroll",
               "icon": "itemscroll03",
               "detailedType": "Scroll",
@@ -9860,29 +9849,271 @@
               "droppedBy": [
                 "Charlga Razorflank"
               ]
+            },
+            {
+              "rarity": "Common",
+              "name": "Wool Cloth",
+              "icon": "itemfabricwool01",
+              "detailedType": "Cloth",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 15,
+              "lvl": 1,
+              "amount": 12,
+              "maxStack": 20,
+              "price": 33,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Worn Dagger",
+              "icon": "itemshortblade05",
+              "detailedType": "Dagger",
+              "type": "One Handed",
+              "ilvl": 2,
+              "lvl": 1,
+              "minDamage": 1,
+              "maxDamage": 2,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 7,
+              "speed": 1.6,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Silk Cloth",
+              "icon": "itemfabricsilk01",
+              "detailedType": "Cloth",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 30,
+              "lvl": 1,
+              "amount": 9,
+              "maxStack": 20,
+              "price": 150,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Poor",
+              "name": "Acolyte's Robe",
+              "icon": "itemchestcloth24",
+              "type": "Chest",
+              "armorClass": "Cloth",
+              "ilvl": 1,
+              "lvl": 1,
+              "armor": 3,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 1,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Raincaller Vest of the Whale",
+              "icon": "itemshirt10",
+              "randomEnchantment": true,
+              "type": "Chest",
+              "armorClass": "Cloth",
+              "source": "RareDrop",
+              "ilvl": 31,
+              "lvl": 26,
+              "armor": 44,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 1932,
+              "stats": {
+                "stats": {
+                  "Stamina": 6,
+                  "Spirit": 6
+                }
+              }
+            },
+            {
+              "rarity": "Rare",
+              "name": "Corpsemaker",
+              "icon": "itemhalbard01",
+              "detailedType": "Axe",
+              "type": "Two Handed",
+              "source": "DirectDrop",
+              "ilvl": 34,
+              "lvl": 29,
+              "minDamage": 88,
+              "maxDamage": 132,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 9930,
+              "speed": 3.8,
+              "stats": {
+                "stats": {
+                  "Strength": 15,
+                  "Stamina": 8
+                }
+              },
+              "droppedBy": [
+                "Overlord Ramtusk"
+              ]
+            },
+            {
+              "rarity": "Common",
+              "name": "Thornspike",
+              "icon": "itemshortblade10",
+              "detailedType": "Dagger",
+              "type": "One Handed",
+              "source": "DirectDrop",
+              "ilvl": 32,
+              "lvl": 27,
+              "minDamage": 18,
+              "maxDamage": 35,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 3124,
+              "speed": 1.7,
+              "stats": {
+                "stats": {}
+              },
+              "droppedBy": [
+                "Aggem Thorncurse"
+              ]
+            },
+            {
+              "rarity": "Common",
+              "name": "Razorflank's Medallion",
+              "icon": "itemjewelrytalisman01",
+              "detailedType": "Talisman",
+              "type": "Miscellaneous",
+              "source": "DirectDrop",
+              "ilvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "indestructible": true,
+              "unique": true,
+              "stats": {
+                "stats": {}
+              },
+              "droppedBy": [
+                "Charlga Razorflank"
+              ]
+            },
+            {
+              "rarity": "Common",
+              "name": "Razorflank's Heart",
+              "icon": "itemmiscorgan01",
+              "detailedType": "Organ",
+              "type": "Miscellaneous",
+              "source": "DirectDrop",
+              "ilvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "indestructible": true,
+              "unique": true,
+              "stats": {
+                "stats": {}
+              },
+              "droppedBy": [
+                "Charlga Razorflank"
+              ]
+            },
+            {
+              "rarity": "Common",
+              "name": "Small Scroll",
+              "icon": "itemscroll03",
+              "detailedType": "Scroll",
+              "type": "Miscellaneous",
+              "source": "DirectDrop",
+              "ilvl": 28,
+              "amount": 1,
+              "maxStack": 1,
+              "indestructible": true,
+              "unique": true,
+              "questsStarted": [
+                6522,
+                6522,
+                6522
+              ],
+              "stats": {
+                "stats": {}
+              },
+              "droppedBy": [
+                "Charlga Razorflank"
+              ]
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Durable Tunic of the Monkey",
+              "icon": "itemchestcloth05",
+              "randomEnchantment": true,
+              "type": "Chest",
+              "armorClass": "Cloth",
+              "source": "RareDrop",
+              "ilvl": 34,
+              "lvl": 29,
+              "armor": 46,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 2726,
+              "stats": {
+                "stats": {
+                  "Stamina": 7,
+                  "Agility": 7
+                }
+              }
             }
           ],
-          "bags": []
+          "bags": [
+            {
+              "rarity": "Common",
+              "name": "Large Knapsack",
+              "icon": "itemmiscbag07red",
+              "type": "Bag",
+              "source": "GeneralDrop",
+              "ilvl": 35,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 5000,
+              "bagSpace": 5,
+              "stats": {
+                "stats": {}
+              }
+            }
+          ]
         },
         "mounts": [],
         "equipment": {
           "Main Hand": {
-            "rarity": "Common",
-            "name": "Worn Dagger",
-            "icon": "itemshortblade05",
+            "rarity": "Rare",
+            "name": "Swinetusk Shank",
+            "icon": "itemmiscbone06",
             "detailedType": "Dagger",
             "type": "One Handed",
-            "ilvl": 2,
-            "lvl": 1,
-            "minDamage": 1,
-            "maxDamage": 2,
+            "source": "DirectDrop",
+            "ilvl": 35,
+            "lvl": 30,
+            "minDamage": 24,
+            "maxDamage": 45,
             "amount": 1,
             "maxStack": 1,
-            "price": 7,
-            "speed": 1.6,
+            "unique": true,
+            "price": 8866,
+            "speed": 1.5,
             "stats": {
-              "stats": {}
-            }
+              "stats": {
+                "Stamina": 6,
+                "Spirit": 4
+              }
+            },
+            "droppedBy": [
+              "Agathelos the Raging"
+            ]
           },
           "Feet": {
             "rarity": "Common",
@@ -9915,50 +10146,216 @@
             }
           },
           "Chest": {
-            "rarity": "Poor",
-            "name": "Acolyte's Robe",
-            "icon": "itemchestcloth24",
+            "rarity": "Uncommon",
+            "name": "Death Speaker Robes",
+            "icon": "itemchestcloth20",
             "type": "Chest",
             "armorClass": "Cloth",
-            "ilvl": 1,
-            "lvl": 1,
-            "armor": 3,
+            "source": "DirectDrop",
+            "ilvl": 31,
+            "lvl": 26,
+            "armor": 44,
             "amount": 1,
             "maxStack": 1,
-            "price": 1,
+            "price": 1900,
             "stats": {
-              "stats": {}
+              "stats": {
+                "Intellect": 8,
+                "Stamina": 3,
+                "Spirit": 6
+              }
+            },
+            "droppedBy": [
+              "Death Speaker Jargba"
+            ]
+          },
+          "Wrists": {
+            "rarity": "Uncommon",
+            "name": "Silver-thread Cuffs",
+            "icon": "itembracer07",
+            "type": "Wrists",
+            "armorClass": "Cloth",
+            "source": "RareDrop",
+            "ilvl": 27,
+            "lvl": 22,
+            "armor": 18,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 681,
+            "stats": {
+              "stats": {
+                "Intellect": 5,
+                "Stamina": 2
+              }
             }
+          },
+          "Off Hand": {
+            "rarity": "Rare",
+            "name": "Orb of Mistmantle",
+            "icon": "itemmiscorb01",
+            "detailedType": "Orb",
+            "type": "Off Hand",
+            "source": "RareDrop",
+            "ilvl": 28,
+            "lvl": 23,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1401,
+            "stats": {
+              "stats": {
+                "Spirit": 4
+              }
+            }
+          },
+          "Shoulders": {
+            "rarity": "Rare",
+            "name": "Batwing Mantle",
+            "icon": "itemshoulder05",
+            "type": "Shoulders",
+            "armorClass": "Cloth",
+            "source": "DirectDrop",
+            "ilvl": 32,
+            "lvl": 27,
+            "armor": 37,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 2041,
+            "stats": {
+              "stats": {
+                "Agility": 3,
+                "Intellect": 10,
+                "Spirit": 5
+              }
+            },
+            "droppedBy": [
+              "Blind Hunter"
+            ]
+          },
+          "Finger": {
+            "rarity": "Rare",
+            "name": "Agamaggan's Clutch",
+            "icon": "itemmiscbone05",
+            "type": "Finger",
+            "source": "DirectDrop",
+            "ilvl": 36,
+            "lvl": 31,
+            "amount": 1,
+            "maxStack": 1,
+            "unique": true,
+            "price": 1816,
+            "stats": {
+              "stats": {
+                "Stamina": 5,
+                "Spirit": 9
+              }
+            },
+            "droppedBy": [
+              "Charlga Razorflank"
+            ]
           }
         }
       },
       "hour": 7,
       "minute": 8,
       "second": 24,
-      "currentSite": "Night Web's Hollow",
+      "currentSite": "Shadow Grave",
       "ringOfLaw": "Eviscerator",
       "forlornCloister": "Fallen Champion",
-      "openedChests": {},
+      "openedChests": {
+        "Charlga's Seat": {
+          "area": "Charlga's Seat",
+          "inventory": {
+            "items": [
+              {
+                "rarity": "Common",
+                "name": "Wildvine",
+                "icon": "itemmischerb03",
+                "detailedType": "Flowers",
+                "type": "Trade Good",
+                "source": "RareDrop",
+                "ilvl": 40,
+                "lvl": 1,
+                "amount": 2,
+                "maxStack": 20,
+                "price": 5,
+                "stats": {
+                  "stats": {}
+                }
+              },
+              {
+                "rarity": "Common",
+                "name": "Gromsblood",
+                "icon": "itemmischerb16",
+                "detailedType": "Flowers",
+                "type": "Trade Good",
+                "ilvl": 50,
+                "lvl": 1,
+                "amount": 3,
+                "maxStack": 20,
+                "price": 250,
+                "stats": {
+                  "stats": {}
+                }
+              }
+            ],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
+        }
+      },
       "siteProgress": {
-        "Deathknell": 1
+        "Deathknell": 1,
+        "Kraul Pantry": 2,
+        "Kraul Commons": 4,
+        "Central Grounds": 2,
+        "Agathelos's Prison": 2,
+        "Bat Caves": 2,
+        "Charlga's Seat": 3
       },
       "commonsKilled": {
-        "Rattlecage Skeleton": 1
+        "Rattlecage Skeleton": 1,
+        "Death's Head Adept": 1,
+        "Razorfen Groundshaker": 1,
+        "Razorfen Defender": 2,
+        "Razorfen Beast Trainer": 2,
+        "Razorfen Spearhead": 1,
+        "Razorfen Earthbraker": 1,
+        "Death's Head Seer": 2,
+        "Greater Kraul Bat": 1,
+        "Kraul Bat": 1,
+        "Quilguard Champion": 1,
+        "Razorfen Stalker": 1,
+        "Death's Head Sage": 1
       },
       "raresKilled": {},
-      "elitesKilled": {},
+      "elitesKilled": {
+        "Roogug": 1,
+        "Aggem Thorncurse": 1,
+        "Death Speaker Jargba": 1,
+        "Overlord Ramtusk": 1,
+        "Agathelos the Raging": 1,
+        "Blind Hunter": 1,
+        "Charlga Razorflank": 1
+      },
       "siteVisits": {
         "Shadow Grave": 3,
         "Deathknell": 2,
-        "Night Web's Hollow": 0
+        "Night Web's Hollow": 0,
+        "Razorfen Kraul": 5
       },
-      "unlockedAreas": [],
+      "unlockedAreas": [
+        "Kraul Commons",
+        "Central Grounds",
+        "Agathelos's Prison",
+        "Bat Caves",
+        "Charlga's Seat"
+      ],
       "vendorStock": {},
       "banks": {},
       "startDate": "2024-06-25T18:14:58.7354816+02:00",
-      "lastLoaded": "2024-06-29T15:02:44.4160911+02:00",
-      "lastPlayed": "2024-06-29T15:04:05.098889+02:00",
-      "timePlayed": "00:06:53.1796637",
+      "lastLoaded": "2024-06-29T15:42:57.380586+02:00",
+      "lastPlayed": "2024-06-29T15:46:53.1259234+02:00",
+      "timePlayed": "00:13:10.3608594",
       "lastVisitedTalents": 2
     }
   ]
