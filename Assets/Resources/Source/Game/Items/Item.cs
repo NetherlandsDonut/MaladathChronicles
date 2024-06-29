@@ -72,6 +72,7 @@ public class Item
             var key = "";
             if (type == "One Handed" || type == "Two Handed") key = type + " " + detailedType;
             else if (armorClass != null) key = armorClass + " Armor";
+            else if (type == "Off Hand") key = type;
             else if (detailedType != null) key = detailedType;
             else key = type;
             containing = pEnchants.FindAll(x => x.commonlyOn != null && x.commonlyOn.Contains(key) || x.rarelyOn != null && x.rarelyOn.Contains(key));

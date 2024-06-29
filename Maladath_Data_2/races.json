@@ -5,7 +5,7 @@
     "subcategory": "Human",
     "side": "Neutral",
     "kind": "Elite",
-    "portrait": "PortraitCow",
+    "portrait": "PortraitEarthen",
     "vitality": 3.0,
     "abilities": {}
   },
@@ -16765,7 +16765,7 @@
     "abilities": {}
   },
   {
-    "name": "Roogog",
+    "name": "Roogug",
     "category": "Humanoid",
     "subcategory": "Quilboar",
     "side": "Neutral",

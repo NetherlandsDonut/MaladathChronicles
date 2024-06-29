@@ -182,8 +182,9 @@ public class Quest
                 {
                     CloseWindow("Quest" + f);
                     Respawn("PlayerMoney", true);
-                    if (SiteComplex.complex != null) Respawn("Complex");
-                    else if (SiteInstance.instance != null) Respawn("Instance");
+                    if (CDesktop.title != "QuestLog")
+                        if (SiteComplex.complex != null) Respawn("Complex");
+                        else if (SiteInstance.instance != null) Respawn("Instance");
                     PlaySound("DesktopInstanceClose");
                 });
         });

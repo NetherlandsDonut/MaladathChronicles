@@ -6349,7 +6349,16 @@
       "Damage"
     ],
     "cost": {
-      "Shadow": 4
+      "Shadow": 4,
+      "Fire": 0,
+      "Earth": 0,
+      "Water": 0,
+      "Air": 0,
+      "Frost": 0,
+      "Decay": 0,
+      "Order": 0,
+      "Arcane": 0,
+      "Lightning": 0
     },
     "ranks": [
       {}
@@ -6358,16 +6367,18 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector"
           }
         ],
         "effects": [
           {
-            "SoundEffect": "AbilityShadowboltCast",
+            "SoundEffect": "AbilityShadowBoltCast",
             "Await": "0",
-            "ShatterType": "Directional",
+            "ShatterType": "Central",
             "ShatterTarget": "Effector",
-            "ShatterDegree": "4"
+            "ShatterDegree": "6",
+            "ShatterSpeed": "3"
           },
           {
             "Effect": "Damage",
@@ -6380,7 +6391,7 @@
             "ShatterDensity": "1",
             "ShatterSpeed": "20",
             "ShatterDegree": "40",
-            "SoundEffect": "AbilityShadowboltImpact",
+            "SoundEffect": "AbilityShadowBoltImpact",
             "Await": "5",
             "AnimationType": "Missile",
             "TrailStrength": "10",

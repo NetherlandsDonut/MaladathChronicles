@@ -358,7 +358,7 @@ public class Board
                 var item = equipableDirect[random.Next(equipableDirect.Count)];
                 results.inventory.AddItem(item.CopyItem());
             }
-            if (wearableDirect.Count > 0)
+            else if (wearableDirect.Count > 0)
             {
                 var item = wearableDirect[random.Next(wearableDirect.Count)];
                 results.inventory.AddItem(item.CopyItem());
@@ -378,11 +378,11 @@ public class Board
                     results.inventory.AddItem(dropPurple[random.Next(dropPurple.Count)].CopyItem());
                 else if (dropBlue.Count > 0 && Roll(1))
                     results.inventory.AddItem(dropBlue[random.Next(dropBlue.Count)].CopyItem());
-                else if (dropGreen.Count > 0 && Roll(8))
+                else if (dropGreen.Count > 0 && (enemy.kind != "Common" || Roll(8)))
                     results.inventory.AddItem(dropGreen[random.Next(dropGreen.Count)].CopyItem());
-                else if (dropWhite.Count > 0 && Roll(5))
+                else if (dropWhite.Count > 0 && (enemy.kind != "Common" || Roll(5)))
                     results.inventory.AddItem(dropWhite[random.Next(dropWhite.Count)].CopyItem());
-                else if (dropGray.Count > 0 && Roll(3))
+                else if (dropGray.Count > 0 && (enemy.kind != "Common" || Roll(3)))
                     results.inventory.AddItem(dropGray[random.Next(dropGray.Count)].CopyItem());
             }
 

@@ -16772,7 +16772,7 @@
     ],
     "eliteEncounters": [
       {
-        "who": "Roogog",
+        "who": "Roogug",
         "levelMin": 28
       }
     ],
@@ -16780,7 +16780,7 @@
     "progression": [
       {
         "type": "Boss",
-        "bossName": "Roogog",
+        "bossName": "Roogug",
         "point": 2
       },
       {
