@@ -48,6 +48,9 @@ public class Quest
     //Objective of the quest
     public string completion;
 
+    //Item required to start quest
+    public string itemStart;
+
     //Site where the quest is available for pickup
     public string siteStart;
 

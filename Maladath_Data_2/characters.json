@@ -1806,7 +1806,7 @@
             ]
           },
           "Mining": {
-            "Item1": 11,
+            "Item1": 12,
             "Item2": [
               "Apprentice"
             ]
@@ -1977,7 +1977,7 @@
               "source": "RareDrop",
               "ilvl": 5,
               "lvl": 1,
-              "amount": 10,
+              "amount": 11,
               "maxStack": 20,
               "price": 2,
               "stats": {
@@ -2061,7 +2061,7 @@
               "source": "RareDrop",
               "ilvl": 5,
               "lvl": 1,
-              "amount": 2,
+              "amount": 4,
               "maxStack": 20,
               "price": 13,
               "stats": {
@@ -2199,20 +2199,6 @@
               }
             },
             {
-              "rarity": "Common",
-              "name": "Apprentice's Boots",
-              "icon": "itemboots09",
-              "type": "Feet",
-              "ilvl": 1,
-              "lvl": 1,
-              "amount": 1,
-              "maxStack": 1,
-              "price": 1,
-              "stats": {
-                "stats": {}
-              }
-            },
-            {
               "rarity": "Poor",
               "name": "Apprentice's Robe",
               "icon": "itemchestcloth23",
@@ -2224,6 +2210,19 @@
               "amount": 1,
               "maxStack": 1,
               "price": 1,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Pattern: Glacial Cloak",
+              "icon": "itemscroll03",
+              "detailedType": "Scroll",
+              "type": "Recipe",
+              "amount": 1,
+              "maxStack": 1,
+              "price": 30000,
               "stats": {
                 "stats": {}
               }
@@ -2383,9 +2382,9 @@
         }
       },
       "hour": 12,
-      "minute": 45,
-      "second": 20,
-      "currentSite": "Goldshire",
+      "minute": 46,
+      "second": 58,
+      "currentSite": "Crystal Lake",
       "openedChests": {
         "Gnomeregan Outskirts": {
           "area": "Gnomeregan Outskirts",
@@ -2578,7 +2577,8 @@
         "Echo Ridge Mine": 1,
         "Northshire Vineyards": 3,
         "Saldean's Farm": 10,
-        "Molsen Farm": 1
+        "Molsen Farm": 1,
+        "Crystal Lake": 1
       },
       "commonsKilled": {
         "Deeprot Tangler": 1,
@@ -2607,7 +2607,8 @@
         "Defias Thug": 4,
         "Coyote": 5,
         "Harvest Watcher": 5,
-        "Defias Smuggler": 1
+        "Defias Smuggler": 1,
+        "Murloc Steamrunner": 1
       },
       "raresKilled": {
         "Gibblewilt": 1
@@ -2941,7 +2942,7 @@
         "Eastvale Logging Camp": 1,
         "Echo Ridge Mine": 2,
         "Fargodeep Mine": 1,
-        "Crystal Lake": 2,
+        "Crystal Lake": 4,
         "Forest's Edge": 1,
         "Stone Cairn Lake": 3,
         "Southern Stone Cairn Lake": 2,
@@ -3490,7 +3491,7 @@
         "Dabyrie's Farmstead": 1,
         "Azurelode Mine": 1,
         "Westbrook Garrison": 1,
-        "Goldshire": 14,
+        "Goldshire": 15,
         "Lakeshire": 1,
         "Southshore": 1,
         "Darkshire": 1,
@@ -4677,10 +4678,10 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2024-06-09T14:12:27.0144066+02:00",
-      "lastLoaded": "2024-06-28T03:41:34.6318908+02:00",
-      "lastPlayed": "2024-06-28T03:43:34.1969658+02:00",
-      "timePlayed": "14:16:08.9212858",
-      "lastVisitedTalents": 1
+      "lastLoaded": "2024-06-28T11:05:02.5260569+02:00",
+      "lastPlayed": "2024-06-28T11:13:37.9761543+02:00",
+      "timePlayed": "14:24:44.3713832",
+      "lastVisitedTalents": 2
     },
     {
       "player": {
@@ -5306,7 +5307,7 @@
         "currentQuests": [],
         "completedQuests": [],
         "level": 24,
-        "experience": 10640,
+        "experience": 10660,
         "uniquesGotten": [
           "Murloc Skin Bag"
         ],
@@ -5387,7 +5388,7 @@
             ]
           },
           "Enchanting": {
-            "Item1": 3,
+            "Item1": 4,
             "Item2": [
               "Apprentice"
             ]
@@ -5457,6 +5458,7 @@
           }
         },
         "inventory": {
+          "money": 31400,
           "items": [
             {
               "rarity": "Common",
@@ -5550,26 +5552,6 @@
             },
             {
               "rarity": "Rare",
-              "name": "Tortoise Armor",
-              "icon": "itemshirt06",
-              "type": "Chest",
-              "armorClass": "Mail",
-              "source": "DirectDrop",
-              "ilvl": 25,
-              "lvl": 20,
-              "armor": 311,
-              "amount": 1,
-              "maxStack": 1,
-              "price": 1872,
-              "stats": {
-                "stats": {}
-              },
-              "droppedBy": [
-                "Ghamoo-ra"
-              ]
-            },
-            {
-              "rarity": "Rare",
               "name": "Large Glimmering Shard",
               "icon": "itemenchantshardglimmeringlarge",
               "type": "Trade Good",
@@ -5583,25 +5565,33 @@
               }
             },
             {
-              "rarity": "Rare",
-              "name": "Dark Advisor's Pendant",
-              "icon": "itemjewelrynecklace06",
-              "type": "Neck",
-              "source": "DirectDrop",
-              "ilvl": 61,
-              "lvl": 56,
-              "amount": 1,
-              "maxStack": 1,
-              "price": 31400,
+              "rarity": "Common",
+              "name": "Strange Dust",
+              "icon": "itemenchantduststrange",
+              "detailedType": "Dust",
+              "type": "Trade Good",
+              "ilvl": 10,
+              "lvl": 1,
+              "amount": 5,
+              "maxStack": 20,
               "stats": {
-                "stats": {
-                  "Intellect": 7,
-                  "Stamina": 8
-                }
-              },
-              "droppedBy": [
-                "Vectus"
-              ]
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Greater Magic Essence",
+              "icon": "itemenchantessencemagiclarge",
+              "detailedType": "Essence",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 15,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 10,
+              "stats": {
+                "stats": {}
+              }
             }
           ],
           "bags": []
@@ -5629,9 +5619,9 @@
         }
       },
       "hour": 7,
-      "minute": 26,
-      "second": 50,
-      "currentSite": "Grove of the Ancients",
+      "minute": 28,
+      "second": 14,
+      "currentSite": "Northshire Abbey",
       "ringOfLaw": "Grizzle",
       "forlornCloister": "Ironspine",
       "openedChests": {
@@ -5913,7 +5903,9 @@
         "Razorfen Kraul": 2,
         "Rut'theran Village": 1,
         "Auberdine": 1,
-        "Grove of the Ancients": 4
+        "Grove of the Ancients": 4,
+        "Northshire Vineyards": 2,
+        "Northshire Abbey": 1
       },
       "unlockedAreas": [
         "Shrine of Gelihast",
@@ -6538,18 +6530,79 @@
             "maxAmount": 2,
             "restockSpeed": 40
           }
+        ],
+        "Northshire Abbey:Brother Danil": [
+          {
+            "item": "Refreshing Spring Water",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Rough Arrow",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Light Shot",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Small Throwing Knife",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Crude Throwing Axe",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Tough Hunk of Bread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       },
       "banks": {},
       "buyback": {
-        "items": [],
+        "items": [
+          {
+            "rarity": "Rare",
+            "name": "Dark Advisor's Pendant",
+            "icon": "itemjewelrynecklace06",
+            "type": "Neck",
+            "source": "DirectDrop",
+            "ilvl": 61,
+            "lvl": 56,
+            "amount": 1,
+            "minutesLeft": 30,
+            "maxStack": 1,
+            "price": 31400,
+            "stats": {
+              "stats": {
+                "Intellect": 7,
+                "Stamina": 8
+              }
+            },
+            "droppedBy": [
+              "Vectus"
+            ]
+          }
+        ],
         "bags": [],
         "ignoreSpaceChecks": true
       },
       "startDate": "2024-06-15T19:17:11.4512344+02:00",
-      "lastLoaded": "2024-06-22T04:19:24.0523881+02:00",
-      "lastPlayed": "2024-06-22T04:19:31.66462+02:00",
-      "timePlayed": "01:22:40.2474393",
+      "lastLoaded": "2024-06-28T03:54:40.1862049+02:00",
+      "lastPlayed": "2024-06-28T03:55:55.2431446+02:00",
+      "timePlayed": "01:23:55.3043790",
       "lastVisitedTalents": 2
     },
     {

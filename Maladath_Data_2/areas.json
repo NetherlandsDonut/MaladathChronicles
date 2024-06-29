@@ -21186,8 +21186,19 @@
         "levelMax": 17
       }
     ],
-    "areaSize": 3,
+    "eliteEncounters": [
+      {
+        "who": "Goggeroc",
+        "levelMin": 20
+      }
+    ],
+    "areaSize": 2,
     "progression": [
+      {
+        "type": "Boss",
+        "bossName": "Goggeroc",
+        "point": 2
+      },
       {
         "type": "Treasure",
         "point": 3
