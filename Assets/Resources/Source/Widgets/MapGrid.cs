@@ -8,6 +8,7 @@ using static Sound;
 using static Cursor;
 using static SaveGame;
 using static SitePath;
+using NUnit.Framework;
 
 //Map grid is a class responsible for direct
 //interactions with the map of the world in the scene
@@ -64,7 +65,17 @@ public class MapGrid : MonoBehaviour
     {
         CDesktop.windows.FindAll(x => x.title.StartsWith("Site: ")).ForEach(x => x.gameObject.SetActive(!x.title.Contains("SpiritHealer") ^ deadOn));
         if (deadOn) PlayAmbience("AmbienceGhost");
-        else if (ambience.clip != null && ambience.clip.name == "AmbienceGhost") StopAmbience();
+        else if (ambience.clip != null && ambience.clip.name == "AmbienceGhost")
+        {
+            StopAmbience();
+            var area = FindSite(x => x.name == currentSave.currentSite);
+            if (area.ambience == null)
+            {
+                var zone = Zone.zones.Find(x => x.name == area.zone);
+                if (zone != null) PlayAmbience(currentSave.IsNight() ? zone.ambienceNight : zone.ambienceDay);
+            }
+            else PlayAmbience(area.ambience);
+        }
         texture.gameObject.SetActive(!deadOn);
         textureDead.gameObject.SetActive(deadOn);
     }

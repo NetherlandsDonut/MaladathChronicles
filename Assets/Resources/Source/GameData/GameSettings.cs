@@ -20,7 +20,6 @@ public class GameSettings
         onlySkillUp ??= new Bool(false);
         questLevel ??= new Bool(false);
         autoCloseLoot ??= new Bool(false);
-
         rarityIndicators ??= new Bool(false);
         bigRarityIndicators ??= new Bool(false);
         upgradeIndicators ??= new Bool(false);
@@ -66,13 +65,13 @@ public class GameSettings
     //Tells whether the cascading process in boards will be fast or slow
     public Bool fastCascading;
 
-    //Tells whether the cascading process in boards will be fast or slow
+    //Tells whether player sees only recipes that player has all the required materials for
     public Bool onlyHavingMaterials;
 
-    //Tells whether the cascading process in boards will be fast or slow
+    //Tells whether player sees only recipes that can improve their skill in the profession
     public Bool onlySkillUp;
 
-    //Tells whether the cascading process in boards will be fast or slow
+    //Tells whether the loot windows will close automatically after taking all the items
     public Bool autoCloseLoot;
 
     //EXTERNAL FILE: Collection of all settings in game

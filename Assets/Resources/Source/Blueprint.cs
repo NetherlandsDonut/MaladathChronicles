@@ -1504,7 +1504,7 @@ public class Blueprint
                         AddText(amountPossible > 0 ? " [" + amountPossible + "]" : "", "Black");
                         AddSmallButton(recipe.Icon());
                         if (settings.rarityIndicators.Value() && recipe.results.Count > 0)
-                            AddSmallButtonOverlay("OtherRarity" + items.Find(x => x.name == recipe.results.ToList()[0].Key) + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 2);
+                            AddSmallButtonOverlay("OtherRarity" + items.Find(x => x.name == recipe.results.ToList()[0].Key), 0, 2);
                     },
                     (h) =>
                     {
@@ -2077,7 +2077,7 @@ public class Blueprint
                                     PrintItemTooltip(item);
                             });
                             if (settings.rarityIndicators.Value())
-                                AddSmallButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 2);
+                                AddSmallButtonOverlay("OtherRarity" + item.rarity, 0, 2);
                             if (Cursor.cursor.color == "Pink")
                                 if (!item.IsDisenchantable()) SetSmallButtonToGrayscale();
                                 else SetSmallButtonToRed();
@@ -2468,28 +2468,46 @@ public class Blueprint
                 }
                 else
                 {
-                    if (area.instancePart)
+                    if (board.results.result == "Won")
                     {
-                        CloseDesktop("Instance");
-                        SpawnDesktopBlueprint("Instance");
-                        Respawn("HostileArea");
-                        Respawn("HostileAreaProgress");
-                        Respawn("HostileAreaDenizens");
-                        Respawn("HostileAreaElites");
-                        Respawn("Chest");
-                        SetDesktopBackground(area.Background());
+                        if (area.instancePart)
+                        {
+                            CloseDesktop("Instance");
+                            SpawnDesktopBlueprint("Instance");
+                            Respawn("HostileArea");
+                            Respawn("HostileAreaProgress");
+                            Respawn("HostileAreaDenizens");
+                            Respawn("HostileAreaElites");
+                            Respawn("Chest");
+                            SetDesktopBackground(area.Background());
+                        }
+                        else
+                        {
+                            CloseDesktop("HostileArea");
+                            SpawnDesktopBlueprint("HostileArea");
+                        }
+                        if (board.results.inventory.items.Count > 0)
+                        {
+                            PlaySound("DesktopInventoryOpen");
+                            SpawnDesktopBlueprint("CombatResultsLoot");
+                        }
+                        else CloseDesktop("CombatResults");
                     }
                     else
                     {
-                        CloseDesktop("HostileArea");
-                        SpawnDesktopBlueprint("HostileArea");
+                        CloseDesktop("CombatResults");
+                        if (board.results.result == "Lost")
+                        {
+                            if (area.instancePart) CloseDesktop("Instance");
+                            else CloseDesktop("HostileArea");
+                            var curr = FindSite(x => x.name == currentSave.currentSite);
+                            var vect = new Vector2(curr.x, curr.y);
+                            var distances = SiteSpiritHealer.spiritHealers.Select(x => (x, Vector2.Distance(new Vector2(x.x, x.y), vect))).OrderBy(x => x.Item2).ToList();
+                            var sites = distances.Select(y => FindSite(x => x.name == y.x.name)).ToList();
+                            var top = sites.Take(5).OrderBy(x => FindPath(x, curr, true).Count).ToList();
+                            distances.Find(x => x.x.name == top[0].name).x.QueueSiteOpen("SpiritHealer");
+                        }
                     }
-                    if (board.results.result == "Won" && board.results.inventory.items.Count > 0)
-                    {
-                        PlaySound("DesktopInventoryOpen");
-                        SpawnDesktopBlueprint("CombatResultsLoot");
-                    }
-                    else CloseDesktop("CombatResults");
                 }
             });
         }),
@@ -6059,6 +6077,7 @@ public class Blueprint
             });
             AddHotkey(BackQuote, () => { SpawnDesktopBlueprint("DevPanel"); });
             AddHotkey(KeypadMultiply, () => { board.EndCombat("Won"); });
+            AddHotkey(KeypadDivide, () => { board.EndCombat("Lost"); });
         }),
         new("FishingGame", () => 
         {

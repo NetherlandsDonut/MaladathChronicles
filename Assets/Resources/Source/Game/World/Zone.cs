@@ -13,7 +13,11 @@ public class Zone
     //site-specific ambience tracks
     public string ambienceDay, ambienceNight;
 
-    public List<string> miningNodes, herbs;
+    //List of mining nodes that can be found while exploring the zone
+    public List<string> miningNodes;
+
+    //List of herbs that can be found while exploring the zone
+    public List<string> herbs;
 
     //Currently opened zone
     public static Zone zone;

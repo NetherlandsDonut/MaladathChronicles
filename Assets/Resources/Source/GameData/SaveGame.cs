@@ -116,7 +116,7 @@ public class SaveGame
     //Indicates whether it is night at the moment or not
     public bool IsNight() => hour >= 20 || hour < 6;
 
-    //Adds time to the world ing-game clock
+    //Adds time to the world in-game clock
     public void AddTime(int seconds, int minutes = 0, int hours = 0, int days = 0)
     {
         var prev = minute + ":" + hour + ":" + day;

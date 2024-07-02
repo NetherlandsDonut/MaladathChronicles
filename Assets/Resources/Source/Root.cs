@@ -106,6 +106,7 @@ public static class Root
         else return default;
     }
 
+    //Converts a number into the roman notation
     public static string ToRoman(int number)
     {
         if (number < 0 || number > 3999) return "";
@@ -140,7 +141,7 @@ public static class Root
         return find;
     }
 
-    public static T Copy<T>(this object obj) => Newtonsoft.Json.JsonConvert.DeserializeObject<T>(Newtonsoft.Json.JsonConvert.SerializeObject(obj));
+    //public static T Copy<T>(this object obj) => Newtonsoft.Json.JsonConvert.DeserializeObject<T>(Newtonsoft.Json.JsonConvert.SerializeObject(obj));
 
     public static List<(string, string, string)> TrimLast(this List<(string, string, string)> list, bool should)
     {
@@ -149,10 +150,13 @@ public static class Root
         return list;
     }
 
+    //Rolls a chance with a provided % of something happening [0 - 100]
     public static bool Roll(double chance) => random.Next(0, 100000) < chance * 1000;
 
+    //Removes all nasty characters from a string (Usually used for accessing files with names based of something)
     public static string Clean(this string text) => text?.Replace("'", "").Replace(".", "").Replace(" ", "");
 
+    //Set what highlightible object mouse is currently hovering over
     public static void SetMouseOver(Highlightable highlightable) => mouseOver = highlightable;
 
     #region Desktop

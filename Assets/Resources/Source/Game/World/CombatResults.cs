@@ -21,12 +21,25 @@ public class CombatResults
     //Amount of experience awarded to the player
     public int experience;
 
+    //Dropped items from the enemy
+    public Inventory inventory;
+
+    //List of items that partake in the exclusive list
+    //If any of the items from this list is taken, the rest disappear
+    public List<string> exclusiveItems;
+
+    #region Skinning
+
+    //Found skinning node in the area after combat (node name, skill required)
     public (string, int) skinningNode;
 
+    //Generated skinning loot based on player skill in skinning and the node found
     public Inventory skinningLoot;
 
+    //Stores whether the player skill was already modified after a successful gathering
     public bool skinningSkillChange;
 
+    //Generates a skinning node and asignes it a generated loot based on the node
     public void GenerateSkinningNode(int level)
     {
         if (!new List<string> { "Beast", "Dragonkin" }.Contains(Board.board.enemy.Race().category)) return;
@@ -54,12 +67,20 @@ public class CombatResults
         }
     }
 
+    #endregion
+
+    #region Mining
+
+    //Found mining node in the area after combat (node name, skill required)
     public (string, int) miningNode;
 
+    //Generated mining loot based on player skill in mining and the node found
     public Inventory miningLoot;
 
+    //Stores whether the player skill was already modified after a successful gathering
     public bool miningSkillChange;
 
+    //Generates a mining node and asignes it a generated loot based on the node
     public void GenerateMiningNode(string zone, int level)
     {
         var find = Zone.zones.Find(x => x.name == zone);
@@ -87,12 +108,20 @@ public class CombatResults
         }
     }
 
+    #endregion
+
+    #region Herbalism
+
+    //Found herbalism node in the area after combat (node name, skill required)
     public (string, int) herb;
 
+    //Generated herbalism loot based on player skill in herbalism and the node found
     public Inventory herbalismLoot;
 
+    //Stores whether the player skill was already modified after a successful gathering
     public bool herbalismSkillChange;
 
+    //Generates a herbalism node and asignes it a generated loot based on the node
     public void GenerateHerb(string zone, int level)
     {
         var find = Zone.zones.Find(x => x.name == zone);
@@ -120,9 +149,5 @@ public class CombatResults
         }
     }
 
-    //Dropped items from the enemy
-    public Inventory inventory;
-
-    //?
-    public List<string> exclusiveItems;
+    #endregion
 }

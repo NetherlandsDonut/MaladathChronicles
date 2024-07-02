@@ -1,6 +1,7 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
+
 using UnityEngine;
 
 public class Person
@@ -50,16 +51,10 @@ public class Person
     //General type of the person that is used for grouping npc's in towns
     [NonSerialized] public PersonCategory category;
 
-    public List<StockItem> ExportStock()
-    {
-        return itemsSold.Select(x => x.Copy<StockItem>()).ToList();
-    }
+    public List<StockItem> ExportStock() => itemsSold.Select(x => x.Copy()).ToList();
 
     //Play a sound by this vendor
-    public string VoiceLine(string type)
-    {
-        return race.Clean() + gender + voiceVariant + type;
-    }
+    public string VoiceLine(string type) => race.Clean() + gender + voiceVariant + type;
 
     //Currently opened person
     public static Person person;
@@ -88,6 +83,17 @@ public class StockItem
 
     //Speed of this item being restocked
     public int restockSpeed;
+
+    public StockItem Copy()
+    {
+        var newItem = new StockItem();
+        newItem.item = item;
+        newItem.amount = amount;
+        newItem.maxAmount = maxAmount;
+        newItem.minutesLeft = minutesLeft;
+        newItem.restockSpeed = restockSpeed;
+        return newItem;
+    }
 }
 
 public class PersonType

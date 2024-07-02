@@ -68,6 +68,7 @@ public class Chest
         return chest;
     }
 
+    //Spawns a clickable chest object that leads the user to the chest loot screen
     public static GameObject SpawnChestObject(Vector3 position, string chestTexture)
     {
         var chest = Object.Instantiate(Resources.Load<GameObject>("Prefabs/PrefabChest"));

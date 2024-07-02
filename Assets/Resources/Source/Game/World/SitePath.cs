@@ -144,11 +144,11 @@ public class SitePath
     public static List<SitePath> paths;
 
     //Finds the path with the least points in between the two given sites
-    public static List<SitePath> FindPath(Site from, Site to)
+    public static List<SitePath> FindPath(Site from, Site to, bool ignoreProgress = false)
     {
         List<SitePath> bestPath = null;
         var possiblePaths = new List<List<SitePath>>();
-        if (!pathsConnectedToSite.ContainsKey(from.name)) return null;
+        if (!pathsConnectedToSite.ContainsKey(from.name)) return new();
         possiblePaths = pathsConnectedToSite[from.name].Select(x => new List<SitePath> { x }).ToList();
         while (bestPath == null && possiblePaths.Count > 0) ContinuePaths();
         return bestPath;
@@ -169,7 +169,7 @@ public class SitePath
                 }
                 var visitedSites = path.SelectMany(x => x.sites).ToList();
                 var newestSite = path.Last().sites[from.name == path.Last().sites[0] || visitedSites.Count(x => x == path.Last().sites[0]) == 2 ? 1 : 0];
-                if (!currentSave.siteVisits.ContainsKey(newestSite)) continue;
+                if (!ignoreProgress && !currentSave.siteVisits.ContainsKey(newestSite)) continue;
                 var newPaths = pathsConnectedToSite[newestSite];
                 foreach (var newPath in newPaths)
                     if (!allVisitedSites.Contains(newPath.sites.Find(x => x != newestSite)))

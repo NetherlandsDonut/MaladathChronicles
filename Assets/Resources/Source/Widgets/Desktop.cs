@@ -324,12 +324,31 @@ public class Desktop : MonoBehaviour
                     if (screenLocked && Vector3.Distance(screen.transform.localPosition, cameraDestination) <= 5)
                     {
                         currentSave.siteVisits ??= new();
-                        if (currentSave.siteVisits.ContainsKey(currentSave.currentSite))
+                        if (queuedSiteOpen != "SpiritHealer")
                         {
-                            currentSave.siteVisits[currentSave.currentSite]++;
-                            currentSave.player.QuestVisit(currentSave.currentSite);
+                            if (currentSave.siteVisits.ContainsKey(currentSave.currentSite))
+                            {
+                                currentSave.siteVisits[currentSave.currentSite]++;
+                                currentSave.player.QuestVisit(currentSave.currentSite);
+                            }
+                            else currentSave.siteVisits.Add(currentSave.currentSite, 1);
                         }
-                        else currentSave.siteVisits.Add(currentSave.currentSite, 1);
+                        else
+                        {
+                            if (!currentSave.siteVisits.ContainsKey(currentSave.currentSite))
+                            {
+                                currentSave.siteVisits.Add(currentSave.currentSite, 0);
+                                PlaySound("DesktopZoneDiscovered", 1f);
+                                currentSave.player.ReceiveExperience(defines.expForExploration);
+                            }
+                            foreach (var connection in paths.FindAll(x => x.sites.Contains(currentSave.currentSite)))
+                            {
+                                var site = connection.sites.Find(x => x != currentSave.currentSite);
+                                if (!CDesktop.windows.Exists(x => x.title == "Site: " + site))
+                                    if (!Respawn("Site: " + connection.sites.Find(x => x != currentSave.currentSite)))
+                                        LBWindow.GetComponentsInChildren<Renderer>().ToList().ForEach(x => x.gameObject.AddComponent<FadeIn>());
+                            }
+                        }
                         Respawn("Site: " + currentSave.currentSite);
                         UnlockScreen();
                         if (queuedSiteOpen == "Instance")

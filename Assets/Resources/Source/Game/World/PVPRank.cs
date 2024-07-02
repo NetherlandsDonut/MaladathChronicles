@@ -5,7 +5,7 @@ public class PVPRank
     //Tier of the ranking, the higher the better
     public int rank;
 
-    //Name of the rank for alliance and horde characters
+    //Names of the rank for alliance and horde characters
     public string nameAlliance, nameHorde;
 
     //Amount of honor required to achieve this rank

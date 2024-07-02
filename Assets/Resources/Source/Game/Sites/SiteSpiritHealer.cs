@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-
+using UnityEngine;
 using static Root;
 
 public class SiteSpiritHealer : Site
@@ -28,8 +28,7 @@ public class SiteSpiritHealer : Site
         AddRegionGroup();
         AddPaddingRegion(() =>
         {
-            AddSmallButton("SiteSpiritHealer",
-            (h) => { QueueSiteOpen("SpiritHealer"); });
+            AddSmallButton("MapSpiritHealer");
         });
     }
 
