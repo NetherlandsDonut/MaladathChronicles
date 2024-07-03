@@ -27,8 +27,6 @@ public class Window : MonoBehaviour
         this.title = title;
         if (title == "Board") Board.board.window = this;
         else if (title == "BufferBoard") BufferBoard.bufferBoard.window = this;
-        else if (title == "FishingBoard") FishingBoard.fishingBoard.window = this;
-        else if (title == "FishingBufferBoard") FishingBufferBoard.fishingBufferBoard.window = this;
         this.desktop = desktop;
         anchor = new WindowAnchor(Center);
         regionGroups = new();

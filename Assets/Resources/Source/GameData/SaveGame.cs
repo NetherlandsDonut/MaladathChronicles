@@ -27,6 +27,8 @@ public class SaveGame
         var newSlot = new SaveGame
         {
             siteProgress = new(),
+            fishingSpots = new(),
+            fishingSpoils = new(),
             commonsKilled = new(),
             raresKilled = new(),
             elitesKilled = new(),
@@ -185,6 +187,12 @@ public class SaveGame
 
     //All chests opened in the game are saved here
     public Dictionary<string, Chest> openedChests;
+
+    //Stores progress done while exploring sites in the world
+    public Dictionary<string, int> fishingSpots;
+
+    //Stores progress done while exploring sites in the world
+    public Dictionary<string, int> fishingSpoils;
 
     //Stores progress done while exploring sites in the world
     public Dictionary<string, int> siteProgress;

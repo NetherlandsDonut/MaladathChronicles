@@ -30,8 +30,8 @@ using static SaveGame;
 using static Coloring;
 using static PersonType;
 using static Profession;
+using static FishingSpot;
 using static GameSettings;
-using static FishingBoard;
 using static PersonCategory;
 using static SiteHostileArea;
 using static SiteInstance;
@@ -3097,6 +3097,17 @@ public class Blueprint
                     }
                     else CloseDesktop("HostileArea");
                 });
+                if (area.fishing)
+                    AddSmallButton("OtherFish" + (!currentSave.player.professionSkills.ContainsKey("Fishing") ? "Off" : ""),
+                    (h) =>
+                    {
+                        if (currentSave.player.professionSkills.ContainsKey("Fishing"))
+                        {
+                            PlaySound("FishingCast");
+                            fishingSpot = fishingSpots.Find(x => x.name == area.name);
+                            SpawnDesktopBlueprint("FishingGame");
+                        }
+                    });
             });
             AddPaddingRegion(() =>
             {
@@ -3116,7 +3127,6 @@ public class Blueprint
             {
                 NewBoard(area.RollEncounter(), area);
                 SpawnDesktopBlueprint("Game");
-                SwitchDesktop("Game");
             });
         }),
         new("HostileAreaQuestTracker", () => 
@@ -3232,7 +3242,6 @@ public class Blueprint
                     {
                         NewBoard(area.RollEncounter(encounter), area);
                         SpawnDesktopBlueprint("Game");
-                        SwitchDesktop("Game");
                     }
                 );
             });
@@ -3270,6 +3279,17 @@ public class Blueprint
                     PlaySound("DesktopInstanceClose");
                     SwitchDesktop("Map");
                 });
+                if (town.fishing)
+                    AddSmallButton("OtherFish" + (!currentSave.player.professionSkills.ContainsKey("Fishing") ? "Off" : ""),
+                    (h) =>
+                    {
+                        if (currentSave.player.professionSkills.ContainsKey("Fishing"))
+                        {
+                            PlaySound("FishingCast");
+                            fishingSpot = fishingSpots.Find(x => x.name == town.name);
+                            SpawnDesktopBlueprint("FishingGame");
+                        }
+                    });
             });
             if (CDesktop.windows.Exists(x => x.title == "Persons")) return;
             if (transportationConnectedToSite.ContainsKey(town.name))
@@ -4459,77 +4479,77 @@ public class Blueprint
         }),
 
         //Fishing
-        new("FishingAnchor", () => {
-            SetAnchor(BottomLeft, 19, 35);
-            AddHeaderGroup();
-            AddPaddingRegion(() =>
-            {
-                AddBigButton("TradeFishing",
-                (h) =>
-                {
-                    NewFishingBoard(FindSite(x => x.name == currentSave.currentSite));
-                    SpawnDesktopBlueprint("FishingGame");
-                });
-            });
-        }),
-        new("BoardFrame", () => {
+        new("FishingBoardFrame", () => {
             SetAnchor(-115, 146);
             var boardBackground = new GameObject("BoardBackground", typeof(SpriteRenderer), typeof(SpriteMask));
             boardBackground.transform.parent = CDesktop.LBWindow.transform;
             boardBackground.transform.localPosition = new Vector2(-17, 17);
-            boardBackground.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/BoardFrames/BoardBackground" + fishingBoard.field.GetLength(0) + "x" + fishingBoard.field.GetLength(1));
+            boardBackground.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/BoardFrames/BoardBackground6x6Simple");
             var mask = boardBackground.GetComponent<SpriteMask>();
-            mask.sprite = Resources.Load<Sprite>("Sprites/BoardFrames/BoardMask" + fishingBoard.field.GetLength(0) + "x" + fishingBoard.field.GetLength(1));
+            mask.sprite = Resources.Load<Sprite>("Sprites/BoardFrames/BoardMask6x6");
             mask.isCustomRangeActive = true;
             mask.frontSortingLayerID = SortingLayer.NameToID("Missile");
             mask.backSortingLayerID = SortingLayer.NameToID("Default");
             boardBackground = new GameObject("BoardInShadow", typeof(SpriteRenderer));
             boardBackground.transform.parent = CDesktop.LBWindow.transform;
             boardBackground.transform.localPosition = new Vector2(-17, 17);
-            boardBackground.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/BoardFrames/BoardShadow" + fishingBoard.field.GetLength(0) + "x" + fishingBoard.field.GetLength(1));
+            boardBackground.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/BoardFrames/BoardShadow6x6Water1");
             boardBackground.GetComponent<SpriteRenderer>().sortingLayerName = "CameraShadow";
         }),
-        new("FishingBoard", () => {
-            SetAnchor(Top, 0, -15 + 19 * (fishingBoard.field.GetLength(1) - 7));
-            DisableGeneralSprites();
+        new("FishingInfo", () => {
+            SetAnchor(TopRight);
             AddRegionGroup();
-            for (int i = 0; i < fishingBoard.field.GetLength(1); i++)
-            {
-                AddPaddingRegion(() =>
+            SetRegionGroupWidth(190);
+            AddButtonRegion(
+                () =>
                 {
-                    for (int j = 0; j < fishingBoard.field.GetLength(0); j++)
+                    AddLine(board.enemy.name, "Black");
+                    AddSmallButton("OtherSettings", (h) =>
                     {
-                        AddBigButton(fishingBoard.GetFieldButton(),
-                        (h) =>
-                        {
-                            var list = fishingBoard.FloodCount(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h), h.region.regionGroup.regions.IndexOf(h.region));
-                            //fishingBoard.FloodDestroy(list);
-                        });
-                    }
-                });
-            }
-        }),
-        new("FishingBufferBoard", () => {
-            SetAnchor(Top, 0, 213 + 19 * (FishingBufferBoard.fishingBufferBoard.field.GetLength(1) - 7));
-            MaskWindow();
-            DisableGeneralSprites();
-            DisableCollisions();
-            AddRegionGroup();
-            for (int i = 0; i < FishingBufferBoard.fishingBufferBoard.field.GetLength(1); i++)
-            {
-                AddPaddingRegion(() =>
+                        PlaySound("DesktopMenuOpen", 0.6f);
+                        SpawnDesktopBlueprint("GameMenu");
+                    });
+                },
+                (h) =>
                 {
-                    for (int j = 0; j < FishingBufferBoard.fishingBufferBoard.field.GetLength(0); j++)
-                    {
-                        AddBigButton(FishingBufferBoard.fishingBufferBoard.GetFieldButton(),
-                        (h) =>
-                        {
 
-                        });
-                    }
-                });
-            }
-        }, true),
+                }
+            );
+            AddHeaderRegion(() =>
+            {
+                AddBigButton("OtherUnknown");
+                AddLine("Level: ", "DarkGray");
+                AddText(board.enemy.level - 10 > board.player.level ? "??" : "" + board.enemy.level, ColorEntityLevel(board.enemy.level));
+            });
+        }),
+        new("FisherInfo", () => {
+            SetAnchor(TopLeft);
+            AddRegionGroup();
+            SetRegionGroupWidth(190);
+            AddButtonRegion(
+                () =>
+                {
+                    AddLine(board.player.name, "Black");
+                    AddSmallButton("MenuFlee", (h) =>
+                    {
+                        board.EndCombat("Fled");
+                    });
+                }
+            );
+            AddHeaderRegion(() =>
+            {
+                ReverseButtons();
+                if (board.player.spec != null)
+                    AddBigButton(board.player.Spec().icon);
+                else
+                {
+                    var race = races.Find(x => x.name == board.enemy.race);
+                    AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? board.enemy.gender : ""));
+                }
+                AddLine("Level: " , "DarkGray");
+                AddText("" + board.player.level, "Gray");
+            });
+        }),
 
         //Map
         new("MapToolbarShadow", () => {
@@ -5587,7 +5607,6 @@ public class Blueprint
             SpawnWindowBlueprint("HostileAreaElites");
             SpawnWindowBlueprint("HostileAreaQuestAvailable");
             SpawnWindowBlueprint("HostileAreaQuestDone");
-            //if (area.fishing) SpawnWindowBlueprint("FishingAnchor");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
@@ -6081,24 +6100,19 @@ public class Blueprint
         }),
         new("FishingGame", () => 
         {
-            locationName = fishingBoard.site.name;
+            SpawnTransition();
+            locationName = fishingSpot.name;
             PlaySound("DesktopEnterCombat");
-            SetDesktopBackground(fishingBoard.site.Background());
+            SetDesktopBackground(FindSite(x => x.name == fishingSpot.name).Background());
             SpawnWindowBlueprint("FishingBoardFrame");
-            SpawnWindowBlueprint("FishingBoard");
-            SpawnWindowBlueprint("FishingBufferBoard");
-            //SpawnWindowBlueprint("PlayerBattleInfo");
             SpawnWindowBlueprint("LocationInfo");
-            //SpawnWindowBlueprint("EnemyBattleInfo");
-            //SpawnWindowBlueprint("PlayerResources");
-            //SpawnWindowBlueprint("EnemyResources");
-            fishingBoard.Reset();
             AddHotkey(Escape, () =>
             {
                 PlaySound("DesktopMenuOpen", 0.6f);
-                CloseDesktop("FishingGame");
+                SpawnDesktopBlueprint("GameMenu");
             });
-            //AddHotkey(KeypadMultiply, () => { board.EndCombat("Won"); });
+            AddHotkey(KeypadMultiply, () => { fishingSpot.EndFishing("Won"); });
+            AddHotkey(KeypadDivide, () => { fishingSpot.EndFishing("Lost"); });
         }),
         new("CharacterSheet", () => 
         {

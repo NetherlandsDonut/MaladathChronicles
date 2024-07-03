@@ -197,6 +197,8 @@ public class Starter : MonoBehaviour
         quests ??= new();
         Deserialize(ref paths, "paths", false, prefix);
         paths ??= new();
+        Deserialize(ref FishingSpot.fishingSpots, "fishingspots", false, prefix);
+        FishingSpot.fishingSpots ??= new();
         Deserialize(ref defines, "defines", false, prefix);
         defines ??= new();
         var file = Resources.Load<Sprite>("Sprites/Map/Ground").texture;

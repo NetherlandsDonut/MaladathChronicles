@@ -405,24 +405,6 @@ public class Desktop : MonoBehaviour
                     }
                 }
             }
-            if (screenLocked)
-            {
-                if (title == "FishingGame")
-                {
-                    if (animationTime > 0)
-                        animationTime -= Time.deltaTime;
-                    if (animationTime <= 0 && fallingElements.Count == 0)
-                    {
-                        if (fallingElements.Count == 0)
-                        {
-                            Respawn("FishingBoard");
-                            Respawn("FishingBufferBoard");
-                        }
-                        if (canUnlockScreen) UnlockScreen();
-                        else FishingBoard.fishingBoard.AnimateBoard();
-                    }
-                }
-            }
             else
             {
                 if (tooltip != null && !CDesktop.windows.Exists(x => x.title == "Tooltip"))

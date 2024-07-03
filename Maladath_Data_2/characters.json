@@ -9680,7 +9680,7 @@
         ],
         "completedQuests": [],
         "level": 34,
-        "experience": 14946,
+        "experience": 15046,
         "uniquesGotten": [
           "Swinetusk Shank",
           "Agamaggan's Clutch",
@@ -9757,8 +9757,17 @@
           "Bloodtooth Tribe": 0,
           "Bristleback Tribe": 0
         },
-        "professionSkills": {},
-        "learnedRecipes": {},
+        "professionSkills": {
+          "Fishing": {
+            "Item1": 1,
+            "Item2": [
+              "Apprentice"
+            ]
+          }
+        },
+        "learnedRecipes": {
+          "Fishing": []
+        },
         "unspentTalentPoints": 33,
         "faction": "Undercity",
         "name": "Ivona",
@@ -9802,6 +9811,7 @@
           }
         },
         "inventory": {
+          "money": 14977,
           "items": [
             {
               "rarity": "Common",
@@ -9890,90 +9900,6 @@
               "stats": {
                 "stats": {}
               }
-            },
-            {
-              "rarity": "Poor",
-              "name": "Acolyte's Robe",
-              "icon": "itemchestcloth24",
-              "type": "Chest",
-              "armorClass": "Cloth",
-              "ilvl": 1,
-              "lvl": 1,
-              "armor": 3,
-              "amount": 1,
-              "maxStack": 1,
-              "price": 1,
-              "stats": {
-                "stats": {}
-              }
-            },
-            {
-              "rarity": "Uncommon",
-              "name": "Raincaller Vest of the Whale",
-              "icon": "itemshirt10",
-              "randomEnchantment": true,
-              "type": "Chest",
-              "armorClass": "Cloth",
-              "source": "RareDrop",
-              "ilvl": 31,
-              "lvl": 26,
-              "armor": 44,
-              "amount": 1,
-              "maxStack": 1,
-              "price": 1932,
-              "stats": {
-                "stats": {
-                  "Stamina": 6,
-                  "Spirit": 6
-                }
-              }
-            },
-            {
-              "rarity": "Rare",
-              "name": "Corpsemaker",
-              "icon": "itemhalbard01",
-              "detailedType": "Axe",
-              "type": "Two Handed",
-              "source": "DirectDrop",
-              "ilvl": 34,
-              "lvl": 29,
-              "minDamage": 88,
-              "maxDamage": 132,
-              "amount": 1,
-              "maxStack": 1,
-              "price": 9930,
-              "speed": 3.8,
-              "stats": {
-                "stats": {
-                  "Strength": 15,
-                  "Stamina": 8
-                }
-              },
-              "droppedBy": [
-                "Overlord Ramtusk"
-              ]
-            },
-            {
-              "rarity": "Common",
-              "name": "Thornspike",
-              "icon": "itemshortblade10",
-              "detailedType": "Dagger",
-              "type": "One Handed",
-              "source": "DirectDrop",
-              "ilvl": 32,
-              "lvl": 27,
-              "minDamage": 18,
-              "maxDamage": 35,
-              "amount": 1,
-              "maxStack": 1,
-              "price": 3124,
-              "speed": 1.7,
-              "stats": {
-                "stats": {}
-              },
-              "droppedBy": [
-                "Aggem Thorncurse"
-              ]
             },
             {
               "rarity": "Common",
@@ -10247,9 +10173,9 @@
         }
       },
       "hour": 7,
-      "minute": 8,
-      "second": 24,
-      "currentSite": "Shadow Grave",
+      "minute": 25,
+      "second": 12,
+      "currentSite": "Brightwater Lake",
       "ringOfLaw": "Eviscerator",
       "forlornCloister": "Fallen Champion",
       "openedChests": {
@@ -10332,7 +10258,12 @@
         "Shadow Grave": 3,
         "Deathknell": 2,
         "Night Web's Hollow": 0,
-        "Razorfen Kraul": 5
+        "Razorfen Kraul": 5,
+        "Solliden Farmstead": 0,
+        "Whispering Shore": 1,
+        "Cold Hearth Manor": 1,
+        "Brill": 2,
+        "Brightwater Lake": 1
       },
       "unlockedAreas": [
         "Kraul Commons",
@@ -10341,12 +10272,199 @@
         "Bat Caves",
         "Charlga's Seat"
       ],
-      "vendorStock": {},
+      "vendorStock": {
+        "Brill:Abigail Shiel": [
+          {
+            "item": "Coarse Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Bleach",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Red Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mild Spices",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Weak Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mining Pick",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Empty Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Salt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Blacksmith Hammer",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Copper Rod",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Fishing Pole",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Blue Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Shiny Bauble",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Skinning Knife",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Crispy Bat Wing",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
+        ]
+      },
       "banks": {},
+      "buyback": {
+        "items": [
+          {
+            "rarity": "Common",
+            "name": "Thornspike",
+            "icon": "itemshortblade10",
+            "detailedType": "Dagger",
+            "type": "One Handed",
+            "source": "DirectDrop",
+            "ilvl": 32,
+            "lvl": 27,
+            "minDamage": 18,
+            "maxDamage": 35,
+            "amount": 1,
+            "minutesLeft": 27,
+            "maxStack": 1,
+            "price": 3124,
+            "speed": 1.7,
+            "stats": {
+              "stats": {}
+            },
+            "droppedBy": [
+              "Aggem Thorncurse"
+            ]
+          },
+          {
+            "rarity": "Rare",
+            "name": "Corpsemaker",
+            "icon": "itemhalbard01",
+            "detailedType": "Axe",
+            "type": "Two Handed",
+            "source": "DirectDrop",
+            "ilvl": 34,
+            "lvl": 29,
+            "minDamage": 88,
+            "maxDamage": 132,
+            "amount": 1,
+            "minutesLeft": 27,
+            "maxStack": 1,
+            "price": 9930,
+            "speed": 3.8,
+            "stats": {
+              "stats": {
+                "Strength": 15,
+                "Stamina": 8
+              }
+            },
+            "droppedBy": [
+              "Overlord Ramtusk"
+            ]
+          },
+          {
+            "rarity": "Uncommon",
+            "name": "Raincaller Vest of the Whale",
+            "icon": "itemshirt10",
+            "randomEnchantment": true,
+            "type": "Chest",
+            "armorClass": "Cloth",
+            "source": "RareDrop",
+            "ilvl": 31,
+            "lvl": 26,
+            "armor": 44,
+            "amount": 1,
+            "minutesLeft": 27,
+            "maxStack": 1,
+            "price": 1932,
+            "stats": {
+              "stats": {
+                "Stamina": 6,
+                "Spirit": 6
+              }
+            }
+          },
+          {
+            "rarity": "Poor",
+            "name": "Acolyte's Robe",
+            "icon": "itemchestcloth24",
+            "type": "Chest",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 3,
+            "amount": 1,
+            "minutesLeft": 27,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          }
+        ],
+        "bags": [],
+        "ignoreSpaceChecks": true
+      },
       "startDate": "2024-06-25T18:14:58.7354816+02:00",
-      "lastLoaded": "2024-07-02T16:25:03.2386308+02:00",
-      "lastPlayed": "2024-07-02T16:26:28.0204877+02:00",
-      "timePlayed": "00:14:35.1427163",
+      "lastLoaded": "2024-07-02T17:51:03.5554283+02:00",
+      "lastPlayed": "2024-07-02T17:51:40.757012+02:00",
+      "timePlayed": "00:15:12.3443000",
       "lastVisitedTalents": 2
     }
   ]

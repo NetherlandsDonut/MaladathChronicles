@@ -19,6 +19,26 @@ public class SiteHostileArea : Site
     //and remove empty collections to avoid serialising them later
     public override void Initialise()
     {
+        if (fishing && !FishingSpot.fishingSpots.Exists(x => x.name == name))
+        {
+            var fs = new FishingSpot();
+            fs.name = name;
+            fs.waterType = "Normal";
+            if (new List<string>() { "Durotar", "Mulgore", "Teldrassil", "Tirisfal Glades", "Elwynn Forest" }.Contains(zone))
+                (fs.skillToFish, fs.difficulty) = (001, 025);
+            else if (new List<string>() { "Shadowfang Keep", "Ragefire Chasm", "Wailing Caverns", "The Deadmines", "The Barrens", "Darkshore", "Silverpine Forest", "Westfall", "Loch Modan" }.Contains(zone))
+                (fs.skillToFish, fs.difficulty) = (001, 075);
+            else if (new List<string>() { "Blackfathom Deeps", "Razorfen Kraul", "Duskwood", "Ashenvale", "Stonetalon Mountains", "Hillsbrad Foothills", "Wetlands", "Redridge Mountains" }.Contains(zone))
+                (fs.skillToFish, fs.difficulty) = (055, 150);
+            else if (new List<string>() { "Temple of Atal'Hakkar", "Ruins of Stromgarde", "Ruins of Alterac", "Alcaz Island", "Razorfen Downs", "Maraudon", "Swamp of Sorrows", "Stranglethorn Vale", "Desolace", "Dustwallow Marsh", "Thousand Needles", "Alterac Mountains", "Arathi Highlands" }.Contains(zone))
+                (fs.skillToFish, fs.difficulty) = (130, 225);
+            else if (new List<string>() { "Hearthglen", "Jintha'Alor", "Dire Maul", "Shadow Hold", "Zul'Farrak", "Azshara", "Felwood", "Feralas", "Un'Goro Crater", "Tanaris", "Moonglade", "Western Plaguelands", "Hinterlands" }.Contains(zone))
+                (fs.skillToFish, fs.difficulty) = (205, 300);
+            else if (new List<string>() { "Upper Blackrock Spire", "Scholomance", "Stratholme", "Lower Blackrock Spire", "Tyr's Hand", "Blackrock Mountain", "Blackrock Depths", "Blackwing Lair", "Molten Core", "Temple of Ahn'Qiraj", "Ruins of Ahn'Qiraj", "Zul'Gurub", "Winterspring", "Silithus", "Eastern Plaguelands", "Deadwind Pass", "Burning Steppes" }.Contains(zone))
+                (fs.skillToFish, fs.difficulty) = (330, 425);
+            fs.possibleLoot = new() { };
+            FishingSpot.fishingSpots.Add(fs);
+        }
         if (areaSize < 1) areaSize = 3;
         type ??= "HostileArea";
         if (faction != null)

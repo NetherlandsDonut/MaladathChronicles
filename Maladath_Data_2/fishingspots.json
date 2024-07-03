@@ -1,0 +1,1069 @@
+[
+  {
+    "name": "Stormwind City",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 25,
+    "possibleLoot": []
+  },
+  {
+    "name": "Southshore",
+    "waterType": "Normal",
+    "skillToFish": 55,
+    "difficulty": 150,
+    "possibleLoot": []
+  },
+  {
+    "name": "Faldir's Cove",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "Darnassus",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 25,
+    "possibleLoot": []
+  },
+  {
+    "name": "Rut'theran Village",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 25,
+    "possibleLoot": []
+  },
+  {
+    "name": "Auberdine",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 75,
+    "possibleLoot": []
+  },
+  {
+    "name": "Shadowprey Village",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "Revantusk Village",
+    "waterType": "Normal",
+    "skillToFish": 205,
+    "difficulty": 300,
+    "possibleLoot": []
+  },
+  {
+    "name": "Undercity",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 25,
+    "possibleLoot": []
+  },
+  {
+    "name": "Ratchet",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 75,
+    "possibleLoot": []
+  },
+  {
+    "name": "Booty Bay",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "Dandred's Fold",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "Misty Shore",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "Thandol Span",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "Falfarren River",
+    "waterType": "Normal",
+    "skillToFish": 55,
+    "difficulty": 150,
+    "possibleLoot": []
+  },
+  {
+    "name": "Fallen Sky Lake",
+    "waterType": "Normal",
+    "skillToFish": 55,
+    "difficulty": 150,
+    "possibleLoot": []
+  },
+  {
+    "name": "Iris Lake",
+    "waterType": "Normal",
+    "skillToFish": 55,
+    "difficulty": 150,
+    "possibleLoot": []
+  },
+  {
+    "name": "Lake Falathim",
+    "waterType": "Normal",
+    "skillToFish": 55,
+    "difficulty": 150,
+    "possibleLoot": []
+  },
+  {
+    "name": "Mystral Lake",
+    "waterType": "Normal",
+    "skillToFish": 55,
+    "difficulty": 150,
+    "possibleLoot": []
+  },
+  {
+    "name": "The Zoram Strand",
+    "waterType": "Normal",
+    "skillToFish": 55,
+    "difficulty": 150,
+    "possibleLoot": []
+  },
+  {
+    "name": "Bay of Storms",
+    "waterType": "Normal",
+    "skillToFish": 205,
+    "difficulty": 300,
+    "possibleLoot": []
+  },
+  {
+    "name": "Hetaera's Clutch",
+    "waterType": "Normal",
+    "skillToFish": 205,
+    "difficulty": 300,
+    "possibleLoot": []
+  },
+  {
+    "name": "Jagged Reef",
+    "waterType": "Normal",
+    "skillToFish": 205,
+    "difficulty": 300,
+    "possibleLoot": []
+  },
+  {
+    "name": "Lake Mennar",
+    "waterType": "Normal",
+    "skillToFish": 205,
+    "difficulty": 300,
+    "possibleLoot": []
+  },
+  {
+    "name": "Rethress Sanctum",
+    "waterType": "Normal",
+    "skillToFish": 205,
+    "difficulty": 300,
+    "possibleLoot": []
+  },
+  {
+    "name": "Southridge Beach",
+    "waterType": "Normal",
+    "skillToFish": 205,
+    "difficulty": 300,
+    "possibleLoot": []
+  },
+  {
+    "name": "Temple of Arkkoran",
+    "waterType": "Normal",
+    "skillToFish": 205,
+    "difficulty": 300,
+    "possibleLoot": []
+  },
+  {
+    "name": "The Ruined Reaches",
+    "waterType": "Normal",
+    "skillToFish": 205,
+    "difficulty": 300,
+    "possibleLoot": []
+  },
+  {
+    "name": "The Shattered Strand",
+    "waterType": "Normal",
+    "skillToFish": 205,
+    "difficulty": 300,
+    "possibleLoot": []
+  },
+  {
+    "name": "Tower of Eldara",
+    "waterType": "Normal",
+    "skillToFish": 205,
+    "difficulty": 300,
+    "possibleLoot": []
+  },
+  {
+    "name": "Moonshrine Ruins",
+    "waterType": "Normal",
+    "skillToFish": 55,
+    "difficulty": 150,
+    "possibleLoot": []
+  },
+  {
+    "name": "Pool of Ask'ar",
+    "waterType": "Normal",
+    "skillToFish": 55,
+    "difficulty": 150,
+    "possibleLoot": []
+  },
+  {
+    "name": "The Drowned Sacellum",
+    "waterType": "Normal",
+    "skillToFish": 55,
+    "difficulty": 150,
+    "possibleLoot": []
+  },
+  {
+    "name": "Cliffspring River",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 75,
+    "possibleLoot": []
+  },
+  {
+    "name": "Mist's Edge",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 75,
+    "possibleLoot": []
+  },
+  {
+    "name": "The Long Wash",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 75,
+    "possibleLoot": []
+  },
+  {
+    "name": "Twilight Shore",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 75,
+    "possibleLoot": []
+  },
+  {
+    "name": "Karazhan",
+    "waterType": "Normal",
+    "skillToFish": 330,
+    "difficulty": 425,
+    "possibleLoot": []
+  },
+  {
+    "name": "Magram Village",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "Mannoroc Coven",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "Ranazjar Isle",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "Sar'theris Strand",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "Helm's Bed Lake",
+    "waterType": "Normal",
+    "possibleLoot": []
+  },
+  {
+    "name": "Ice Flow Lake",
+    "waterType": "Normal",
+    "possibleLoot": []
+  },
+  {
+    "name": "Bladefist Bay",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 25,
+    "possibleLoot": []
+  },
+  {
+    "name": "Darkspear Strand",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 25,
+    "possibleLoot": []
+  },
+  {
+    "name": "Echo Isles",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 25,
+    "possibleLoot": []
+  },
+  {
+    "name": "Scuttle Coast",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 25,
+    "possibleLoot": []
+  },
+  {
+    "name": "Gloom Reach",
+    "waterType": "Normal",
+    "skillToFish": 55,
+    "difficulty": 150,
+    "possibleLoot": []
+  },
+  {
+    "name": "The Hushed Bank",
+    "waterType": "Normal",
+    "skillToFish": 55,
+    "difficulty": 150,
+    "possibleLoot": []
+  },
+  {
+    "name": "The Darkened Bank",
+    "waterType": "Normal",
+    "skillToFish": 55,
+    "difficulty": 150,
+    "possibleLoot": []
+  },
+  {
+    "name": "Bluefen",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "Dreadmurk Shore",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "Dustwallow Bay",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "Northern Quagmire",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "Southern Quagmire",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "Tidefury Cove",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "Swamplight Manor",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "Blackwood Lake",
+    "waterType": "Normal",
+    "skillToFish": 330,
+    "difficulty": 425,
+    "possibleLoot": []
+  },
+  {
+    "name": "Lake Mereldar",
+    "waterType": "Normal",
+    "skillToFish": 330,
+    "difficulty": 425,
+    "possibleLoot": []
+  },
+  {
+    "name": "Thondroril River",
+    "waterType": "Normal",
+    "skillToFish": 330,
+    "difficulty": 425,
+    "possibleLoot": []
+  },
+  {
+    "name": "Crystal Lake",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 25,
+    "possibleLoot": []
+  },
+  {
+    "name": "Stone Cairn Lake",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 25,
+    "possibleLoot": []
+  },
+  {
+    "name": "Southern Stone Cairn Lake",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 25,
+    "possibleLoot": []
+  },
+  {
+    "name": "Mirror Lake",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 25,
+    "possibleLoot": []
+  },
+  {
+    "name": "Bloodvenom Falls",
+    "waterType": "Normal",
+    "skillToFish": 205,
+    "difficulty": 300,
+    "possibleLoot": []
+  },
+  {
+    "name": "Bloodvenom River",
+    "waterType": "Normal",
+    "skillToFish": 205,
+    "difficulty": 300,
+    "possibleLoot": []
+  },
+  {
+    "name": "Irontree Woods",
+    "waterType": "Normal",
+    "skillToFish": 205,
+    "difficulty": 300,
+    "possibleLoot": []
+  },
+  {
+    "name": "Isle of Dread",
+    "waterType": "Normal",
+    "skillToFish": 205,
+    "difficulty": 300,
+    "possibleLoot": []
+  },
+  {
+    "name": "The Forgotten Coast",
+    "waterType": "Normal",
+    "skillToFish": 205,
+    "difficulty": 300,
+    "possibleLoot": []
+  },
+  {
+    "name": "The Twin Colossals",
+    "waterType": "Normal",
+    "skillToFish": 205,
+    "difficulty": 300,
+    "possibleLoot": []
+  },
+  {
+    "name": "Verdantis River",
+    "waterType": "Normal",
+    "skillToFish": 205,
+    "difficulty": 300,
+    "possibleLoot": []
+  },
+  {
+    "name": "Wildwind Lake",
+    "waterType": "Normal",
+    "skillToFish": 205,
+    "difficulty": 300,
+    "possibleLoot": []
+  },
+  {
+    "name": "Eastern Strand",
+    "waterType": "Normal",
+    "skillToFish": 55,
+    "difficulty": 150,
+    "possibleLoot": []
+  },
+  {
+    "name": "Darrowmere Crossing",
+    "waterType": "Normal",
+    "skillToFish": 55,
+    "difficulty": 150,
+    "possibleLoot": []
+  },
+  {
+    "name": "Purgation Isle",
+    "waterType": "Normal",
+    "skillToFish": 55,
+    "difficulty": 150,
+    "possibleLoot": []
+  },
+  {
+    "name": "Western Strand",
+    "waterType": "Normal",
+    "skillToFish": 55,
+    "difficulty": 150,
+    "possibleLoot": []
+  },
+  {
+    "name": "Quel'Danil Lodge",
+    "waterType": "Normal",
+    "skillToFish": 205,
+    "difficulty": 300,
+    "possibleLoot": []
+  },
+  {
+    "name": "The Overlook Cliffs",
+    "waterType": "Normal",
+    "skillToFish": 205,
+    "difficulty": 300,
+    "possibleLoot": []
+  },
+  {
+    "name": "Valorwind Lake",
+    "waterType": "Normal",
+    "skillToFish": 205,
+    "difficulty": 300,
+    "possibleLoot": []
+  },
+  {
+    "name": "Loch Shore",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 75,
+    "possibleLoot": []
+  },
+  {
+    "name": "The Loch",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 75,
+    "possibleLoot": []
+  },
+  {
+    "name": "Earth Song Falls",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "Poison Falls",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "Wicked Grotto",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "Zaetar's Grave",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "Stonebull Lake",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 25,
+    "possibleLoot": []
+  },
+  {
+    "name": "Lake Everstill",
+    "waterType": "Normal",
+    "skillToFish": 55,
+    "difficulty": 150,
+    "possibleLoot": []
+  },
+  {
+    "name": "Stonewatch Falls",
+    "waterType": "Normal",
+    "skillToFish": 55,
+    "difficulty": 150,
+    "possibleLoot": []
+  },
+  {
+    "name": "The Reservoir",
+    "waterType": "Normal",
+    "skillToFish": 330,
+    "difficulty": 425,
+    "possibleLoot": []
+  },
+  {
+    "name": "Hive'Regal",
+    "waterType": "Normal",
+    "skillToFish": 330,
+    "difficulty": 425,
+    "possibleLoot": []
+  },
+  {
+    "name": "Vile Fin Village",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 75,
+    "possibleLoot": []
+  },
+  {
+    "name": "North Tide's Run",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 75,
+    "possibleLoot": []
+  },
+  {
+    "name": "The Dawning Isles",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 75,
+    "possibleLoot": []
+  },
+  {
+    "name": "The Decrepit Ferry",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 75,
+    "possibleLoot": []
+  },
+  {
+    "name": "The Shining Strand",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 75,
+    "possibleLoot": []
+  },
+  {
+    "name": "Cragpool Lake",
+    "waterType": "Normal",
+    "skillToFish": 55,
+    "difficulty": 150,
+    "possibleLoot": []
+  },
+  {
+    "name": "Mirkfallon Lake",
+    "waterType": "Normal",
+    "skillToFish": 55,
+    "difficulty": 150,
+    "possibleLoot": []
+  },
+  {
+    "name": "Bloodsail Compound",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "Crystal Shore",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "Jaguero Isle",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "Lake Nazferiti",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "Mizjah Ruins",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "Janeiro's Point",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "Nek'mani Wellspring",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "The Savage Coast",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "Southern Savage Coast",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "Venture Co. Base Camp",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "Wild Shore",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "Southern Misty Reed Strand",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "Northern Misty Reed Strand",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "Pool of Tears",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "Sorrowmurk",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "The Shifting Mire",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "Land's End Beach",
+    "waterType": "Normal",
+    "skillToFish": 205,
+    "difficulty": 300,
+    "possibleLoot": []
+  },
+  {
+    "name": "Lost Rigger Cove",
+    "waterType": "Normal",
+    "skillToFish": 205,
+    "difficulty": 300,
+    "possibleLoot": []
+  },
+  {
+    "name": "Southbreak Shore",
+    "waterType": "Normal",
+    "skillToFish": 205,
+    "difficulty": 300,
+    "possibleLoot": []
+  },
+  {
+    "name": "Steamwheedle Port",
+    "waterType": "Normal",
+    "skillToFish": 205,
+    "difficulty": 300,
+    "possibleLoot": []
+  },
+  {
+    "name": "Wavestrider Beach",
+    "waterType": "Normal",
+    "skillToFish": 205,
+    "difficulty": 300,
+    "possibleLoot": []
+  },
+  {
+    "name": "Lake Al'Ameth",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 25,
+    "possibleLoot": []
+  },
+  {
+    "name": "Pools of Arlithrien",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 25,
+    "possibleLoot": []
+  },
+  {
+    "name": "Wellspring Lake",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 25,
+    "possibleLoot": []
+  },
+  {
+    "name": "Wellspring River",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 25,
+    "possibleLoot": []
+  },
+  {
+    "name": "The Hive Undergrounds",
+    "waterType": "Normal",
+    "skillToFish": 330,
+    "difficulty": 425,
+    "possibleLoot": []
+  },
+  {
+    "name": "Pit of Refuse",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": []
+  },
+  {
+    "name": "Fray Island",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 75,
+    "possibleLoot": []
+  },
+  {
+    "name": "Lushwater Oasis",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 75,
+    "possibleLoot": []
+  },
+  {
+    "name": "Southfury River",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 75,
+    "possibleLoot": []
+  },
+  {
+    "name": "The Forgotten Pools",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 75,
+    "possibleLoot": []
+  },
+  {
+    "name": "The Merchant Coast",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 75,
+    "possibleLoot": []
+  },
+  {
+    "name": "The Tidus Stair",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 75,
+    "possibleLoot": []
+  },
+  {
+    "name": "The Sludge Fen",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 75,
+    "possibleLoot": []
+  },
+  {
+    "name": "The Stagnant Oasis",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 75,
+    "possibleLoot": []
+  },
+  {
+    "name": "Ironclad Cove",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 75,
+    "possibleLoot": []
+  },
+  {
+    "name": "Brightwater Lake",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 25,
+    "possibleLoot": []
+  },
+  {
+    "name": "Stillwater Pond",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 25,
+    "possibleLoot": []
+  },
+  {
+    "name": "The North Coast",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 25,
+    "possibleLoot": []
+  },
+  {
+    "name": "The Ruins of Lordaeron",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 25,
+    "possibleLoot": []
+  },
+  {
+    "name": "Whispering Shore",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 25,
+    "possibleLoot": []
+  },
+  {
+    "name": "Golakka Hot Springs",
+    "waterType": "Normal",
+    "skillToFish": 205,
+    "difficulty": 300,
+    "possibleLoot": []
+  },
+  {
+    "name": "Lakkari Tar Pits",
+    "waterType": "Normal",
+    "skillToFish": 205,
+    "difficulty": 300,
+    "possibleLoot": []
+  },
+  {
+    "name": "The Marshlands",
+    "waterType": "Normal",
+    "skillToFish": 205,
+    "difficulty": 300,
+    "possibleLoot": []
+  },
+  {
+    "name": "Longshore",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 75,
+    "possibleLoot": []
+  },
+  {
+    "name": "Stendel's Pond",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 75,
+    "possibleLoot": []
+  },
+  {
+    "name": "Westfall Crossing",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 75,
+    "possibleLoot": []
+  },
+  {
+    "name": "Westfall Lighthouse",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 75,
+    "possibleLoot": []
+  },
+  {
+    "name": "Black Channel Marsh",
+    "waterType": "Normal",
+    "skillToFish": 55,
+    "difficulty": 150,
+    "possibleLoot": []
+  },
+  {
+    "name": "Dam Waterfalls",
+    "waterType": "Normal",
+    "skillToFish": 55,
+    "difficulty": 150,
+    "possibleLoot": []
+  },
+  {
+    "name": "Saltspray Glen",
+    "waterType": "Normal",
+    "skillToFish": 55,
+    "difficulty": 150,
+    "possibleLoot": []
+  },
+  {
+    "name": "Sundown Marsh",
+    "waterType": "Normal",
+    "skillToFish": 55,
+    "difficulty": 150,
+    "possibleLoot": []
+  },
+  {
+    "name": "The Green Belt",
+    "waterType": "Normal",
+    "skillToFish": 55,
+    "difficulty": 150,
+    "possibleLoot": []
+  },
+  {
+    "name": "Frostfire Hot Springs",
+    "waterType": "Normal",
+    "skillToFish": 330,
+    "difficulty": 425,
+    "possibleLoot": []
+  },
+  {
+    "name": "Pagle's Pointe",
+    "waterType": "Normal",
+    "skillToFish": 330,
+    "difficulty": 425,
+    "possibleLoot": []
+  }
+]

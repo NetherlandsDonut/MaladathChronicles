@@ -144,6 +144,7 @@ public static class BlueprintDev
                 Serialize(zones, "zones", false, false, prefix);
                 Serialize(quests, "quests", false, false, prefix);
                 Serialize(paths, "paths", false, false, prefix);
+                Serialize(FishingSpot.fishingSpots, "fishingspots", false, false, prefix);
                 Serialize(defines, "defines", false, false, prefix);
             });
             AddPaddingRegion(() => { });
