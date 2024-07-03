@@ -55,7 +55,7 @@ public class FishingSpot
         {
 
         }
-        else if (result == "Fled")
+        else if (result == "Left")
         {
 
         }

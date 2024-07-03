@@ -1061,7 +1061,7 @@
   },
   {
     "name": "Pagle's Pointe",
-    "waterType": "Normal",
+    "waterType": "Tropical",
     "skillToFish": 330,
     "difficulty": 425,
     "possibleLoot": []

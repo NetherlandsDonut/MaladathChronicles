@@ -284,8 +284,8 @@ public class Blueprint
                     AddBigButton(board.player.Spec().icon);
                 else
                 {
-                    var race = races.Find(x => x.name == board.enemy.race);
-                    AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? board.enemy.gender : ""));
+                    var race = races.Find(x => x.name == currentSave.player.race);
+                    AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? currentSave.player.gender : ""));
                 }
                 AddLine("Level: " , "DarkGray");
                 AddText("" + board.player.level, "Gray");
@@ -4493,17 +4493,18 @@ public class Blueprint
             boardBackground = new GameObject("BoardInShadow", typeof(SpriteRenderer));
             boardBackground.transform.parent = CDesktop.LBWindow.transform;
             boardBackground.transform.localPosition = new Vector2(-17, 17);
-            boardBackground.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/BoardFrames/BoardShadow6x6Water1");
+            boardBackground.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/BoardFrames/BoardShadow6x6Water" + fishingSpot.waterType);
             boardBackground.GetComponent<SpriteRenderer>().sortingLayerName = "CameraShadow";
         }),
-        new("FishingInfo", () => {
+        new("FishingSpotInfo", () => {
             SetAnchor(TopRight);
             AddRegionGroup();
             SetRegionGroupWidth(190);
+            var site = FindSite(x => x.name == fishingSpot.name);
             AddButtonRegion(
                 () =>
                 {
-                    AddLine(board.enemy.name, "Black");
+                    AddLine(site.zone, "Black");
                     AddSmallButton("OtherSettings", (h) =>
                     {
                         PlaySound("DesktopMenuOpen", 0.6f);
@@ -4517,9 +4518,9 @@ public class Blueprint
             );
             AddHeaderRegion(() =>
             {
-                AddBigButton("OtherUnknown");
-                AddLine("Level: ", "DarkGray");
-                AddText(board.enemy.level - 10 > board.player.level ? "??" : "" + board.enemy.level, ColorEntityLevel(board.enemy.level));
+                AddBigButton("Zone" + site.zone.Clean());
+                AddLine("Skill to fish: ", "DarkGray");
+                AddText(fishingSpot.skillToFish + "", currentSave.player.professionSkills["Fishing"].Item1 < fishingSpot.skillToFish ? "DangerousRed" : "HalfGray");
             });
         }),
         new("FisherInfo", () => {
@@ -4529,25 +4530,25 @@ public class Blueprint
             AddButtonRegion(
                 () =>
                 {
-                    AddLine(board.player.name, "Black");
+                    AddLine(currentSave.player.name, "Black");
                     AddSmallButton("MenuFlee", (h) =>
                     {
-                        board.EndCombat("Fled");
+                        fishingSpot.EndFishing("Left");
                     });
                 }
             );
             AddHeaderRegion(() =>
             {
                 ReverseButtons();
-                if (board.player.spec != null)
-                    AddBigButton(board.player.Spec().icon);
+                if (currentSave.player.spec != null)
+                    AddBigButton(currentSave.player.Spec().icon);
                 else
                 {
-                    var race = races.Find(x => x.name == board.enemy.race);
-                    AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? board.enemy.gender : ""));
+                    var race = races.Find(x => x.name == currentSave.player.race);
+                    AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? currentSave.player.gender : ""));
                 }
                 AddLine("Level: " , "DarkGray");
-                AddText("" + board.player.level, "Gray");
+                AddText("" + currentSave.player.level, "Gray");
             });
         }),
 
@@ -6105,6 +6106,8 @@ public class Blueprint
             PlaySound("DesktopEnterCombat");
             SetDesktopBackground(FindSite(x => x.name == fishingSpot.name).Background());
             SpawnWindowBlueprint("FishingBoardFrame");
+            SpawnWindowBlueprint("FishingSpotInfo");
+            SpawnWindowBlueprint("FisherInfo");
             SpawnWindowBlueprint("LocationInfo");
             AddHotkey(Escape, () =>
             {
