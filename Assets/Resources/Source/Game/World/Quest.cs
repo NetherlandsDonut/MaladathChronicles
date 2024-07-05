@@ -139,7 +139,7 @@ public class Quest
 
     public void Print(string f = "Log")
     {
-        AddRegionGroup();
+        AddRegionGroup(f == "Add" && description != null ? () => description.Split("$B$B").Length : (f == "Turn" && completion != null ? () => completion.Split("$B$B").Length : () => 1), 1);
         SetRegionGroupWidth(190);
         SetRegionGroupHeight(281);
         var color = ColorQuestLevel(questLevel);
@@ -189,31 +189,79 @@ public class Quest
                 });
         });
         if (color != null) SetRegionBackgroundAsImage("SkillUp" + color + "Long");
+        var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+        Root.PreparePagination(regionGroup);
         if (f == "Add" && description != null)
         {
-            AddHeaderRegion(() => AddLine("Description:"));
+            AddHeaderRegion(() =>
+            {
+                AddLine("Description: ", "Gray");
+                AddText(regionGroup.pagination() + 1 + "", "HalfGray");
+                AddText(" / ", "DarkGray");
+                AddText(regionGroup.maxPagination() + "", "HalfGray");
+                AddSmallButton("OtherNextPage", (h) =>
+                {
+                    if (regionGroup.pagination() < regionGroup.maxPagination() - 1)
+                    {
+                        PlaySound("DesktopChangePage", 0.6f);
+                        regionGroup.IncrementPagination();
+                    }
+                });
+                AddSmallButton("OtherPreviousPage", (h) =>
+                {
+                    if (regionGroup.pagination() > 0)
+                    {
+                        PlaySound("DesktopChangePage", 0.6f);
+                        regionGroup.DecrementPagination();
+                    }
+                });
+            });
             new Description()
             {
                 regions = new() { new() { regionType = "Padding", contents = new() { new ()
                     {
                         { "Color", "DarkGray" },
-                        { "Text", description }
+                        { "Text", description.Split("$B$B")[staticPagination["QuestAdd"][0]] }
                     }
                 } } }
-            }.Print(null, null, 190, null);
+            }.Print(currentSave.player, null, 190, null);
+            SetRegionAsGroupExtender();
         }
         if (f == "Turn" && completion != null)
         {
-            AddHeaderRegion(() => AddLine("Description:"));
+            AddHeaderRegion(() =>
+            {
+                AddLine("Description: ", "Gray");
+                AddText(regionGroup.pagination() + 1 + "", "HalfGray");
+                AddText(" / ", "DarkGray");
+                AddText(regionGroup.maxPagination() + "", "HalfGray");
+                AddSmallButton("OtherNextPage", (h) =>
+                {
+                    if (regionGroup.pagination() < regionGroup.maxPagination() - 1)
+                    {
+                        PlaySound("DesktopChangePage", 0.6f);
+                        regionGroup.IncrementPagination();
+                    }
+                });
+                AddSmallButton("OtherPreviousPage", (h) =>
+                {
+                    if (regionGroup.pagination() > 0)
+                    {
+                        PlaySound("DesktopChangePage", 0.6f);
+                        regionGroup.DecrementPagination();
+                    }
+                });
+            });
             new Description()
             {
                 regions = new() { new() { regionType = "Padding", contents = new() { new ()
                     {
                         { "Color", "DarkGray" },
-                        { "Text", completion }
+                        { "Text", completion.Split("$B$B")[staticPagination["QuestTurn"][0]] }
                     }
                 } } }
-            }.Print(null, null, 190, null);
+            }.Print(currentSave.player, null, 190, null);
+            SetRegionAsGroupExtender();
         }
         if (f != "Turn" && objective != null)
         {
@@ -226,7 +274,8 @@ public class Quest
                         { "Text", objective }
                     }
                 } } }
-            }.Print(null, null, 190, null);
+            }.Print(currentSave.player, null, 190, null, false);
+            if (f == "Log") SetRegionAsGroupExtender();
         }
         if (f == "Log" && conditions != null)
         {

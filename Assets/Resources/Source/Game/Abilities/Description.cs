@@ -6,10 +6,10 @@ using static Root;
 using static Font;
 
 public class Description
-{
-    public void Print(Entity effector, Entity other, int width, Dictionary<string, string> variables)
+{   
+    public void Print(Entity effector, Entity other, int width, Dictionary<string, string> variables, bool extend = true)
     {
-        if (regions.Count(x => x.isExtender) != 1)
+        if (extend && regions.Count(x => x.isExtender) != 1)
         {
             regions.ForEach(x => x.isExtender = false);
             regions.Last().isExtender = true;
@@ -89,9 +89,43 @@ public class DescriptionRegion
                 if (effector == null) return "?";
                 return effector.homeLocation;
             }
+            else if (text.Contains("$")) return FnDollar(text);
             return text;
 
             bool Fn(string functionName) => text.StartsWith(functionName + "(");
+
+            string FnDollar(string text)
+            {
+                var split = text.Split(" ");
+                var output = "";
+                foreach (var splitty in split)
+                {
+                    if (splitty.Contains("$C"))
+                    {
+                        if (effector == null) output += "?";
+                        output += splitty.Replace("$C", effector.spec.ToLower()) + " ";
+                    }
+                    else if (splitty.Contains("$N"))
+                    {
+                        if (effector == null) output += "?";
+                        output += splitty.Replace("$N", effector.name) + " ";
+                    }
+                    else if (splitty.Contains("$R"))
+                    {
+                        if (effector == null) output += "?";
+                        output += splitty.Replace("$R", effector.race.ToLower()) + " ";
+                    }
+                    else if (splitty.Contains("$G"))
+                    {
+                        if (effector == null) output += "?";
+                        var temp1 = text[2..].Split(";");
+                        var temp2 = temp1[0].Split(":");
+                        output += (effector.gender == "Male" ? temp2[0] : temp2[1]) + temp1[1] + " ";
+                    }
+                    else output += splitty + " ";
+                }
+                return output.TrimEnd();
+            }
         }
     }
 }

@@ -2896,7 +2896,7 @@ public class Blueprint
         {
             var quests = currentSave.player.QuestsDoneAt(complex).OrderBy(x => x.questLevel).ToList();
             if (quests.Count == 0) return;
-            SetAnchor(Bottom, 0, 34);
+            SetAnchor(Bottom, 0, 35);
             AddQuestList(quests, "Turn");
         }),
 
@@ -3054,7 +3054,7 @@ public class Blueprint
         {
             var quests = currentSave.player.QuestsDoneAt(instance).OrderBy(x => x.questLevel).ToList();
             if (quests.Count == 0) return;
-            SetAnchor(Bottom, 0, 34);
+            SetAnchor(Bottom, 0, 35);
             AddQuestList(quests, "Turn");
         }),
 
@@ -3257,7 +3257,7 @@ public class Blueprint
         {
             var quests = currentSave.player.QuestsDoneAt(area).OrderBy(x => x.questLevel).ToList();
             if (quests.Count == 0) return;
-            SetAnchor(Bottom, 0, 34);
+            SetAnchor(Bottom, 0, 35);
             AddQuestList(quests, "Turn");
         }),
 
@@ -3456,7 +3456,7 @@ public class Blueprint
         {
             var quests = currentSave.player.QuestsDoneAt(town).OrderBy(x => x.questLevel).ToList();
             if (quests.Count == 0) return;
-            SetAnchor(Bottom, 0, 34);
+            SetAnchor(Bottom, 0, 35);
             AddQuestList(quests, "Turn");
         }),
         new("Person", () => {

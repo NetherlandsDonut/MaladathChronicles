@@ -56,7 +56,7 @@ public class QuestCondition
             instances.RemoveAll(x => x.complexPart);
             list.RemoveAll(x => com.Contains(x) || ins.Contains(x));
             list = list.Concat(complexes).Concat(instances).ToList();
-            return list.FindAll(x => x != null && currentSave.siteVisits.ContainsKey(x.name));
+            return list.FindAll(x => x != null);
         }
         else return list;
     }

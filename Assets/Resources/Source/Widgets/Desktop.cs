@@ -238,7 +238,7 @@ public class Desktop : MonoBehaviour
                     for (int i = sitesToRespawn.Count - 1; i >= 0; i--)
                     {
                         if (sitesToRespawn[i] != null)
-                            Respawn("Site: " + sitesToRespawn[i].name);
+                            Respawn("Site: " + sitesToRespawn[i].name, true);
                         sitesToRespawn.RemoveAt(i);
                     }
                 var temp = screen.transform.localPosition;
