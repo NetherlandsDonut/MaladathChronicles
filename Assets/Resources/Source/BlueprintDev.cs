@@ -3560,7 +3560,7 @@ public static class BlueprintDev
                         SetRegionBackground(Button);
                         var foo = abilitiesSearch[index + 10 * regionGroup.pagination()];
                         AddLine(foo.name);
-                        AddSmallButton(foo.icon);
+                        AddSmallButton(foo.icon == null ? "OtherUnknown" : foo.icon);
                     }
                     else
                     {
@@ -3651,27 +3651,30 @@ public static class BlueprintDev
                 });
             });
             AddPaddingRegion(() => { AddInputLine(String.objectName, ability.name); });
-            AddPaddingRegion(() => { AddLine("Icon:", "DarkGray"); });
-            AddButtonRegion(() =>
+            if (ability.icon != null)
             {
-                AddLine(ability.icon.Substring(7) + ".png");
-                AddSmallButton(ability.icon);
-            },
-            (h) =>
-            {
-                if (CDesktop.windows.Find(x => x.title == "ObjectManagerAbilityIconList") == null)
+                AddPaddingRegion(() => { AddLine("Icon:", "DarkGray"); });
+                AddButtonRegion(() =>
                 {
-                    CloseWindow("ObjectManagerAbilities");
-                    CloseWindow("ObjectManagerEventTriggers");
-                    CloseWindow("ObjectManagerEventTrigger");
-                    CloseWindow("ObjectManagerEventTriggerList");
-                    CloseWindow("ObjectManagerEventEffects");
-                    CloseWindow("ObjectManagerEventEffect");
-                    CloseWindow("ObjectManagerEventEffectList");
-                    Assets.assets.abilityIconsSearch = Assets.assets.abilityIcons;
-                    SpawnWindowBlueprint("ObjectManagerAbilityIconList");
-                }
-            });
+                    AddLine(ability.icon.Substring(7) + ".png");
+                    AddSmallButton(ability.icon);
+                },
+                (h) =>
+                {
+                    if (CDesktop.windows.Find(x => x.title == "ObjectManagerAbilityIconList") == null)
+                    {
+                        CloseWindow("ObjectManagerAbilities");
+                        CloseWindow("ObjectManagerEventTriggers");
+                        CloseWindow("ObjectManagerEventTrigger");
+                        CloseWindow("ObjectManagerEventTriggerList");
+                        CloseWindow("ObjectManagerEventEffects");
+                        CloseWindow("ObjectManagerEventEffect");
+                        CloseWindow("ObjectManagerEventEffectList");
+                        Assets.assets.abilityIconsSearch = Assets.assets.abilityIcons;
+                        SpawnWindowBlueprint("ObjectManagerAbilityIconList");
+                    }
+                });
+            }
             AddPaddingRegion(() => { AddLine("Events:", "DarkGray"); });
             foreach (var foo in ability.events)
             {
@@ -5117,7 +5120,6 @@ public static class BlueprintDev
             Serialize(enchants, "enchants", true, false, prefix);
             Serialize(zones, "zones", true, false, prefix);
             Serialize(professions, "professions", true, false, prefix);
-            Serialize(worldAbilities, "worldabilities", true, false, prefix);
             Serialize(pEnchants, "permanentenchants", true, false, prefix);
             Serialize(pvpRanks, "pvpranks", true, false, prefix);
             Serialize(personCategories, "personcategories", true, false, prefix);

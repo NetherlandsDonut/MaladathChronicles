@@ -37,6 +37,7 @@ public class Entity
         learnedRecipes = new();
         professionSkills = new();
         uniquesGotten = new();
+        worldBuffs = new();
         reputation = new();
         var side = Side();
         foreach (var faction in Faction.factions)
@@ -1051,6 +1052,15 @@ public class Entity
                 if (itemPair.Value.stats != null)
                     foreach (var stat in itemPair.Value.stats.stats)
                         stats[stat.Key] += stat.Value;
+        foreach (var worldBuff in worldBuffs)
+            if (worldBuff.buff.gains != null)
+                foreach (var stat in worldBuff.buff.gains)
+                    stats[stat.Key] += stat.Value;
+        if (buffs != null)
+            foreach (var buff in buffs)
+                if (buff.Item1 != null && buff.Item1.gains != null)
+                    foreach (var stat in buff.Item1.gains)
+                        stats[stat.Key] += stat.Value;
         return stats;
     }
 
@@ -1199,6 +1209,23 @@ public class Entity
         }
     }
 
+    //Adds a world buff to this entity
+    public void AddWorldBuff(Buff buff, int duration, int rank)
+    {
+        if (!buff.stackable)
+        {
+            var list = worldBuffs.FindAll(x => x.buff.name.OnlyNameCategory() == buff.name.OnlyNameCategory()).ToList();
+            for (int i = list.Count - 1; i >= 0; i--) RemoveWorldBuff(list[i]);
+        }
+        worldBuffs.Add(new WorldBuff(buff, rank, duration));
+    }
+
+    //Removes a world buff from this entity
+    public void RemoveWorldBuff(WorldBuff worldBuff)
+    {
+        worldBuffs.Remove(worldBuff);
+    }
+
     //Adds a buff to this entity
     public void AddBuff(Buff buff, int duration, GameObject buffObject, int rank)
     {
@@ -1308,6 +1335,9 @@ public class Entity
     //Currently equipped items
     //Equipped items are not present in the inventory!
     public Dictionary<string, Item> equipment;
+
+    //List of active world buffs and world debuffs on this entity
+    public List<WorldBuff> worldBuffs;
 
     //Current health of the entity
     [NonSerialized] public int health;

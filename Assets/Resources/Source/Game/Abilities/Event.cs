@@ -38,8 +38,9 @@ public class Event
             //Collect all effect data from object
             string type = effect.ContainsKey("Effect") ? effect["Effect"] : "None";
             string affect = effect.ContainsKey("Affect") ? effect["Affect"] : "None";
-            string buffName = effect.ContainsKey("BuffName") ? effect["BuffName"] : "None";
-            int buffDuration = effect.ContainsKey("BuffDuration") ? int.Parse(effect["BuffDuration"]) : 1;
+            string worldBuffName = effect.ContainsKey("WorldBuffName") ? effect["WorldBuffName"] : "None";
+            int worldBuffDuration = effect.ContainsKey("WorldBuffDuration") ? int.Parse(effect["WorldBuffDuration"]) : 1;
+            int worldBuffRank = effect.ContainsKey("WorldBuffRank") ? int.Parse(effect["WorldBuffRank"]) : 0;
             string powerSource = effect.ContainsKey("PowerSource") ? effect["PowerSource"] : "Effector";
             string powerType = effect.ContainsKey("PowerType") ? effect["PowerType"] : "None";
             double powerScale = effect.ContainsKey("PowerScale") ? double.Parse(effect["PowerScale"].StartsWith("#") ? variables[effect["PowerScale"]] : effect["PowerScale"].Replace(".", ",")) : 1;
@@ -70,9 +71,7 @@ public class Event
             void ExecuteEffect()
             {
                 //Execute a specific effect
-                if (type == "Damage") EffectDamage();
-                else if (type == "Heal") EffectHeal();
-                else if (type == "ConsumeItem") EffectConsumeItem();
+                if (type == "ConsumeItem") EffectConsumeItem();
                 else if (type == "AddWorldBuff") EffectAddWorldBuff();
                 else if (type == "RemoveWorldBuff") EffectRemoveWorldBuff();
                 else if (type == "TeleportPlayer") EffectTeleportPlayer();
@@ -88,30 +87,6 @@ public class Event
                 }
             }
 
-            //This effect detracts a specific amount of a resource from the targetted entity
-            void EffectDamage()
-            {
-                var source = effector;
-                var target = effector;
-                var amount = (int)Math.Round(source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale);
-                target.Damage(amount, trigger["Trigger"] == "Damage");
-                //AddBigButtonOverlay(new Vector2(target == board.player ? -148 : 167, 141), "OtherDamaged", 0.1f, 5);
-                //SpawnFallingText(new Vector2(target == board.player ? -148 : 167, 141), "" + amount, "White");
-                //board.UpdateHealthBars();
-            }
-
-            //This effect detracts a specific amount of a resource from the targetted entity
-            void EffectHeal()
-            {
-                var source = effector;
-                var target = effector;
-                var amount = (int)Math.Round(source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale);
-                target.Heal(amount, trigger["Trigger"] == "Heal");
-                //AddBigButtonOverlay(new Vector2(target == board.player ? -148 : 167, 141), "OtherHealed", 0.1f, 5);
-                //SpawnFallingText(new Vector2(target == board.player ? -148 : 167, 141), "" + amount, "Uncommon");
-                //board.UpdateHealthBars();
-            }
-
             //This effect consumes one stack of the item
             void EffectConsumeItem()
             {
@@ -125,40 +100,25 @@ public class Event
             void EffectAddWorldBuff()
             {
                 var target = effector;
-                //var pos = new Vector3(affect == "Other" ? (board.playerTurn ? 166 : -302) : (board.playerTurn ? -302 : 166), 142);
-                //target.AddBuff(buffs.Find(x => x.name == worldBuffName), worldBuffDuration, SpawnBuffObject(pos, icon, target), sourceRank);
-                //board.CallEvents(target, new()
-                //{
-                //    { "Trigger", "BuffAdd" },
-                //    { "Triggerer", "Effector" },
-                //    { "BuffName", worldBuffName }
-                //});
-                //board.CallEvents(target == effector ? other : effector, new()
-                //{
-                //    { "Trigger", "BuffAdd" },
-                //    { "Triggerer", "Other" },
-                //    { "BuffName", worldBuffName }
-                //});
-                //SpawnFallingText(new Vector2(target == board.player ? -148 : 167, 141), worldBuffDuration + " turn" + (worldBuffDuration > 1 ? "s" : ""), "White");
+                target.AddWorldBuff(buffs.Find(x => x.name == worldBuffName), worldBuffDuration, worldBuffRank);
+                save.CallEvents(new()
+                {
+                    { "Trigger", "BuffAdd" },
+                    { "WorldBuffName", worldBuffName }
+                });
+                SpawnFallingText(new Vector2(0, 34), worldBuffDuration + " minute" + (worldBuffDuration > 1 ? "s" : ""), "White");
             }
 
             //This effect removes a buff from the targetted entity
             void EffectRemoveWorldBuff()
             {
                 var target = effector;
-                //target.RemoveBuff(target.buffs.Find(x => x.Item1 == buffs.Find(x => x.name == worldBuffName)));
-                //board.CallEvents(target, new()
-                //{
-                //    { "Trigger", "BuffRemove" },
-                //    { "Triggerer", "Effector" },
-                //    { "BuffName", worldBuffName }
-                //});
-                //board.CallEvents(target == effector ? other : effector, new()
-                //{
-                //    { "Trigger", "BuffRemove" },
-                //    { "Triggerer", "Other" },
-                //    { "BuffName", worldBuffName }
-                //});
+                target.RemoveWorldBuff(target.worldBuffs.Find(x => x.buff.name == worldBuffName));
+                save.CallEvents(new()
+                {
+                    { "Trigger", "BuffRemove" },
+                    { "WorldBuffName", worldBuffName }
+                });
             }
 
             //This effect consumes one stack of the item
@@ -168,7 +128,7 @@ public class Event
                 //currentSave.currentSite = currentSave.player.homeLocation;
             }
 
-            //This effect consumes one stack of the item
+            //This effect returns player to their home location
             void EffectHearthstonePlayer()
             {
                 CloseDesktop("EquipmentScreen");

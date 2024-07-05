@@ -41,6 +41,84 @@
     }
   },
   {
+    "name": "Roasted Kodo Meat",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Roasted Kodo Meat",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 2 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Runn Tum Tuber Surprise",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Runn Tum Tuber Surprise",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "SoundEffect": "DesktopFoodEat"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 10 Intellect for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "name": "Prismatic Light",
     "icon": "AbilityPrismaticLight",
     "tags": [],

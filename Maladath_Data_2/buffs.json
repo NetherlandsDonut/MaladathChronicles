@@ -1,5 +1,34 @@
 [
   {
+    "name": "Well Fed @ Roasted Kodo Meat",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 2,
+      "Spirit": 2
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Runn Tum Tuber Surprise",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Intellect": 10
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
     "name": "Blizzard",
     "icon": "AbilityBlizzard",
     "dispelType": "None",

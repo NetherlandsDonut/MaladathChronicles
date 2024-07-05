@@ -156,6 +156,9 @@ public static class Root
     //Removes all nasty characters from a string (Usually used for accessing files with names based of something)
     public static string Clean(this string text) => text?.Replace("'", "").Replace(".", "").Replace(" ", "");
 
+    //Removes all nasty characters from a string (Usually used for accessing files with names based of something)
+    public static string OnlyNameCategory(this string text) => text != null && text.Contains(" @ ") ? text[..text.IndexOf(" @ ")] : text;
+
     //Set what highlightible object mouse is currently hovering over
     public static void SetMouseOver(Highlightable highlightable) => mouseOver = highlightable;
 
@@ -669,7 +672,7 @@ public static class Root
     public static void AddSmallButton(string type, Action<Highlightable> pressEvent = null, Action<Highlightable> rightPressEvent = null, Func<Highlightable, Action> tooltip = null, Action<Highlightable> middlePressEvent = null)
     {
         var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
-        var newObject = new GameObject("SmallButton: " + type.ToString(), typeof(LineSmallButton), typeof(SpriteRenderer));
+        var newObject = new GameObject("SmallButton: " + type, typeof(LineSmallButton), typeof(SpriteRenderer));
         newObject.transform.parent = region.transform;
         newObject.GetComponent<LineSmallButton>().Initialise(region, type);
         if (pressEvent != null || rightPressEvent != null || tooltip != null)
@@ -772,7 +775,7 @@ public static class Root
     public static void AddBigButton(string type, Action<Highlightable> pressEvent = null, Action<Highlightable> rightPressEvent = null, Func<Highlightable, Action> tooltip = null, Action<Highlightable> middlePressEvent = null)
     {
         var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
-        var newObject = new GameObject("BigButton: " + (type == null ? "Empty" : type.ToString()), typeof(LineBigButton), typeof(SpriteRenderer));
+        var newObject = new GameObject("BigButton: " + (type == null ? "Empty" : type), typeof(LineBigButton), typeof(SpriteRenderer));
         newObject.transform.parent = region.transform;
         newObject.GetComponent<LineBigButton>().Initialise(region, type);
         if (pressEvent != null || rightPressEvent != null || tooltip != null)

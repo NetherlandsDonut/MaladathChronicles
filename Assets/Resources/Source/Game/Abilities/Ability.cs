@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using static Root;
 using static Root.Anchor;
+using UnityEngine.Rendering.PostProcessing;
 
 public class Ability
 {
@@ -172,10 +173,7 @@ public class Ability
         SetRegionGroupWidth(width);
         if (ability == null)
         {
-            AddHeaderRegion(() =>
-            {
-                AddLine("Ability not found.", "Red");
-            });
+            AddHeaderRegion(() => AddLine("Ability not found.", "Red"));
             AddRegionGroup();
             SetRegionGroupWidth(width);
             AddPaddingRegion(() => { AddLine(); });
@@ -189,7 +187,7 @@ public class Ability
             });
             AddPaddingRegion(() =>
             {
-                AddBigButton(ability.icon);
+                AddBigButton(ability.icon == null ? "OtherUnknown" : ability.icon);
                 AddLine("Cooldown: ", "DarkGray");
                 AddText(ability.cooldown == 0 ? "None" : ability.cooldown + (ability.cooldown == 1 ? " turn" : " turns"), "Gray");
                 if (CDesktop.title == "Game" || CDesktop.title == "GameSimulation")

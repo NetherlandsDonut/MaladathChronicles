@@ -124,6 +124,7 @@ public class SaveGame
         var prev = minute + ":" + hour + ":" + day;
         second += seconds;
         minute += minutes + second / 60;
+        DecayWorldBuffs(minutes + second / 60);
         DecayItems(minutes + second / 60);
         Restock(minutes + second / 60);
         second %= 60;
@@ -147,6 +148,17 @@ public class SaveGame
     {
         buyback?.DecayItems(minutes);
         player.inventory.DecayItems(minutes);
+    }
+
+    //Restocks items to vendors
+    public void DecayWorldBuffs(int minutes)
+    {
+        for (int i = player.worldBuffs.Count - 1; i >= 0; i--)
+        {
+            player.worldBuffs[i].minutesLeft -= minutes;
+            if (player.worldBuffs[i].minutesLeft <= 0)
+                player.worldBuffs.RemoveAt(i);
+        }
     }
 
     //Restocks items to vendors
@@ -331,7 +343,7 @@ public class SaveGame
         //foreach (var ability in player.abilities.Select(x => (Ability.abilities.Find(y => y.name == x.Key), x.Value)))
         //    ability.Item1.ExecuteEvents(this, trigger, ability.Value);
 
-        foreach (var item in player.inventory.items)
+        foreach (var item in player.inventory.items.ToList())
             foreach (var ability in item.abilities.Select(x => (Ability.abilities.Find(y => y.name == x.Key), x.Value)))
                 ability.Item1.ExecuteEvents(this, trigger, item, ability.Value);
 
