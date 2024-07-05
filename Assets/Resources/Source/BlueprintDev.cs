@@ -30,7 +30,6 @@ using static Blueprint;
 using static PersonType;
 using static Profession;
 using static GeneralDrop;
-using static WorldAbility;
 using static Serialization;
 using static PersonCategory;
 using static PermanentEnchant;
@@ -122,7 +121,6 @@ public static class BlueprintDev
                 Serialize(races, "races", false, false, prefix);
                 Serialize(specs, "Specs", false, false, prefix);
                 Serialize(abilities, "abilities", false, false, prefix);
-                Serialize(worldAbilities, "worldabilities", false, false, prefix);
                 Serialize(buffs, "buffs", false, false, prefix);
                 Serialize(areas, "areas", false, false, prefix);
                 Serialize(instances, "instances", false, false, prefix);

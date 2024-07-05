@@ -175,19 +175,5 @@ public class Inventory
     //If true, functions don't look at empty space in bags
     public bool ignoreSpaceChecks;
 
-    //Relinks references to static lists for items loaded from saved games
-    public void RelinkReferences()
-    {
-        foreach (var item in items)
-            item.RelinkReferences();
-    }
-
-    //Relinks references to static lists for items loaded from saved games
-    public void DelinkReferences()
-    {
-        foreach (var item in items)
-            item.RelinkReferences();
-    }
-
     #endregion
 }

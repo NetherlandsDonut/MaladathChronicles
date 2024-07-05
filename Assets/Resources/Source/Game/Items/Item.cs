@@ -17,21 +17,6 @@ using static PermanentEnchant;
 
 public class Item
 {
-    //Relinks references to static lists for items loaded from saved games
-    public void RelinkReferences()
-    {
-        if (items == null) return;
-        var origin = items.Find(x => x.name == name);
-        if (origin != null && origin != this && origin.worldAbilities != null)
-            worldAbilities = origin.worldAbilities.ToList();
-    }
-
-    //Delinks references to static lists for items loaded from saved games
-    public void DelinkReferences()
-    {
-        worldAbilities = null;
-    }
-
     //Initialisation method to fill automatic values
     //and remove empty collections to avoid serialising them later
     public void Initialise()
@@ -167,9 +152,6 @@ public class Item
 
     //List of abilities provided to the wearer of this item
     public Dictionary<string, int> abilities;
-
-    //List of world abilities of this item
-    [NonSerialized] public List<WorldAbility> worldAbilities;
 
     //Spec restrictions for this item
     //Specs listed in it are the specs that exclusively can use this item
@@ -388,7 +370,7 @@ public class Item
         if (questsStarted != null && questsStarted.Count > 0)
             return true;
         else if (type == "Miscellaneous")
-            return worldAbilities != null;
+            return abilities != null;
         else if (type == "Recipe")
         {
             var recipe = Recipe.recipes.Find(x => name.Contains(x.name));
@@ -501,7 +483,7 @@ public class Item
             if (amount > 1) amount--;
             else entity.inventory.items.Remove(this);
         }
-        else currentSave.CallEvents(currentSave.player, new() { { "Trigger", "ItemUsed" }, { "ItemName", name } });
+        else currentSave.CallEvents(new() { { "Trigger", "ItemUsed" }, { "ItemHash", GetHashCode() + "" } });
     }
 
     public Inventory GenerateDisenchantLoot()
@@ -1122,18 +1104,13 @@ public class Item
                         AddText(", ", "DarkGray");
                 }
             });
-        if (item.worldAbilities != null)
-        {
-            foreach (var ability in item.worldAbilities)
-                ability.PrintDescription(currentSave.player, 182, true);
-        }
-        if (item.questsStarted != null)
-        {
-            AddPaddingRegion(() =>
+        if (item.abilities != null)
+            foreach (var ability in item.abilities)
             {
-                AddLine("Starts a quest", "HalfGray");
-            });
-        }
+                var foo = Ability.abilities.Find(x => x.name == ability.Key);
+                foo?.PrintDescription(currentSave.player, null, 182, ability.Value);
+            }
+        if (item.questsStarted != null) AddPaddingRegion(() => AddLine("Starts a quest", "HalfGray"));
         if (item.set != null)
         {
             var set = itemSets.Find(x => x.name == item.set);
@@ -1258,7 +1235,6 @@ public class Item
         newItem.speed = speed;
         newItem.stats = new Stats(stats.stats?.ToDictionary(x => x.Key, x => x.Value));
         newItem.type = type;
-        newItem.worldAbilities = worldAbilities?.ToList();
         return newItem;
     }
 

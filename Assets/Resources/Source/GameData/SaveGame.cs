@@ -256,19 +256,6 @@ public class SaveGame
         if (currentSite != null && Site.FindSite(x => x.name == currentSite) == null) currentSite = null;
         currentSite ??= player.Race().startingSite;
         player.homeLocation ??= player.Race().startingSite;
-        if (banks != null)
-            foreach (var bank in banks)
-                bank.Value.RelinkReferences();
-        player.inventory.RelinkReferences();
-    }
-
-    //Delinks references to static lists for items loaded from saved games
-    public void Flush()
-    {
-        if (banks != null)
-            foreach (var bank in banks)
-                bank.Value.DelinkReferences();
-        player.inventory.DelinkReferences();
     }
 
     //Provides information which background should be used for character
@@ -283,9 +270,7 @@ public class SaveGame
     public static void CloseSave()
     {
         if (currentSave == null) return;
-        currentSave.Flush();
-        if (currentSave.playerDead)
-            settings.selectedCharacter = "";
+        if (currentSave.playerDead) settings.selectedCharacter = "";
         Save();
         grid.SwitchMapTexture(false);
         currentSave = null;
@@ -340,19 +325,19 @@ public class SaveGame
         SpawnTransition();
     }
 
-    #endregion
-
-    #region World Events
-
-    public void CallEvents(Entity entity, Dictionary<string, string> trigger)
+    public void CallEvents(Dictionary<string, string> trigger)
     {
-        var items = entity.inventory.items.ToList();
-        foreach (var item in items) 
-            if (item.worldAbilities != null)
-                foreach (var ability in item.worldAbilities)
-                    ability.ExecuteEvents(item, trigger);
-        //foreach (var worldBuff in entity.worldCooldowns)
-        //    buff.Item1.ExecuteEvents(this, null, trigger, buff);
+        //Callinig events on player abilities seems useless at the moment, maybe in the future
+        //foreach (var ability in player.abilities.Select(x => (Ability.abilities.Find(y => y.name == x.Key), x.Value)))
+        //    ability.Item1.ExecuteEvents(this, trigger, ability.Value);
+
+        foreach (var item in player.inventory.items)
+            foreach (var ability in item.abilities.Select(x => (Ability.abilities.Find(y => y.name == x.Key), x.Value)))
+                ability.Item1.ExecuteEvents(this, trigger, item, ability.Value);
+
+        //Calling events on player buffs is not done yet
+        //foreach (var buff in player.buffs)
+        //    buff.Item1.ExecuteEvents(this, trigger);
     }
 
     #endregion

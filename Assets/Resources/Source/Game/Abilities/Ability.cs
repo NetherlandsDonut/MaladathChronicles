@@ -31,6 +31,26 @@ public class Ability
 
     #region Execution
 
+    public void ExecuteEvents(SaveGame save, Dictionary<string, string> trigger, Item item, int abilityRank)
+    {
+        //In case of this ability having no events just return
+        if (events == null) return;
+        foreach (var eve in events)
+        {
+            bool execute = false;
+            foreach (var triggerData in eve.triggers)
+                if (triggerData.ContainsKey("Trigger") && triggerData["Trigger"] == trigger["Trigger"])
+                {
+                    if (trigger["Trigger"] == "ItemUsed")
+                    {
+                        string itemHash = trigger.ContainsKey("ItemHash") ? trigger["ItemHash"] : "";
+                        execute = item != null && item.GetHashCode() + "" == itemHash;
+                    }
+                }
+            if (execute) eve.ExecuteEffects(save, item, trigger, RankVariables(abilityRank), this, abilityRank);
+        }
+    }
+
     public void ExecuteEvents(Board board, FutureBoard futureBoard, Dictionary<string, string> trigger, int abilityRank, bool sourcedFromPlayer)
     {
         //In case of this ability having no events just return

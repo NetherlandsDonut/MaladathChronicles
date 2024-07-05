@@ -27,6 +27,162 @@ public class Event
 
     #region Execution
 
+    public void ExecuteEffects(SaveGame save, Item itemUsed, Dictionary<string, string> triggerBase, Dictionary<string, string> variables, Ability abilityUsed, int abilityRank)
+    {
+        //Define entities that take place in the event's effects
+        var effector = save.player;
+
+        //Main loop of executing effects, each effect is calculated here separately
+        foreach (var effect in effects)
+        {
+            //Collect all effect data from object
+            string type = effect.ContainsKey("Effect") ? effect["Effect"] : "None";
+            string affect = effect.ContainsKey("Affect") ? effect["Affect"] : "None";
+            string buffName = effect.ContainsKey("BuffName") ? effect["BuffName"] : "None";
+            int buffDuration = effect.ContainsKey("BuffDuration") ? int.Parse(effect["BuffDuration"]) : 1;
+            string powerSource = effect.ContainsKey("PowerSource") ? effect["PowerSource"] : "Effector";
+            string powerType = effect.ContainsKey("PowerType") ? effect["PowerType"] : "None";
+            double powerScale = effect.ContainsKey("PowerScale") ? double.Parse(effect["PowerScale"].StartsWith("#") ? variables[effect["PowerScale"]] : effect["PowerScale"].Replace(".", ",")) : 1;
+            double chance = effect.ContainsKey("Chance") ? double.Parse(effect["Chance"].Replace(".", ",")) : 0;
+            double chanceBase = effect.ContainsKey("ChanceBase") ? double.Parse(effect["ChanceBase"].Replace(".", ",")) : 100;
+            string chanceSource = effect.ContainsKey("ChanceSource") ? effect["ChanceSource"] : powerSource;
+            string chanceScale = effect.ContainsKey("ChanceScale") ? effect["ChanceScale"] : "None";
+            string animationType = effect.ContainsKey("AnimationType") ? effect["AnimationType"] : "None";
+            string shatterType = effect.ContainsKey("ShatterType") ? effect["ShatterType"] : "None";
+            float await = effect.ContainsKey("Await") ? float.Parse(effect["Await"]) : 0;
+
+            //On a failed chance check of an effect program continues to the next effect
+            if (CheckFailChance()) continue;
+
+            //Copy trigger base to make unique object for each effect
+            var trigger = triggerBase.ToDictionary(x => x.Key, x => x.Value);
+
+            //Execute the effect
+            ExecuteEffect();
+
+            bool CheckFailChance()
+            {
+                var randomRange = random.Next(0, 100);
+                return randomRange >= chanceBase + chance * (chanceScale == "None" ? 1 : (chanceSource != "None" ? effector.Stats()[chanceScale] : 1));
+            }
+
+            //Executes a single effect from the list
+            void ExecuteEffect()
+            {
+                //Execute a specific effect
+                if (type == "Damage") EffectDamage();
+                else if (type == "Heal") EffectHeal();
+                else if (type == "ConsumeItem") EffectConsumeItem();
+                else if (type == "AddWorldBuff") EffectAddWorldBuff();
+                else if (type == "RemoveWorldBuff") EffectRemoveWorldBuff();
+                else if (type == "TeleportPlayer") EffectTeleportPlayer();
+                else if (type == "HearthstonePlayer") EffectHearthstonePlayer();
+
+                ExecuteSoundEffect();
+
+                //Plays a sound effect if it was specified in the effect
+                void ExecuteSoundEffect()
+                {
+                    if (!effect.ContainsKey("SoundEffect")) return;
+                    PlaySound(effect["SoundEffect"]);
+                }
+            }
+
+            //This effect detracts a specific amount of a resource from the targetted entity
+            void EffectDamage()
+            {
+                var source = effector;
+                var target = effector;
+                var amount = (int)Math.Round(source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale);
+                target.Damage(amount, trigger["Trigger"] == "Damage");
+                //AddBigButtonOverlay(new Vector2(target == board.player ? -148 : 167, 141), "OtherDamaged", 0.1f, 5);
+                //SpawnFallingText(new Vector2(target == board.player ? -148 : 167, 141), "" + amount, "White");
+                //board.UpdateHealthBars();
+            }
+
+            //This effect detracts a specific amount of a resource from the targetted entity
+            void EffectHeal()
+            {
+                var source = effector;
+                var target = effector;
+                var amount = (int)Math.Round(source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale);
+                target.Heal(amount, trigger["Trigger"] == "Heal");
+                //AddBigButtonOverlay(new Vector2(target == board.player ? -148 : 167, 141), "OtherHealed", 0.1f, 5);
+                //SpawnFallingText(new Vector2(target == board.player ? -148 : 167, 141), "" + amount, "Uncommon");
+                //board.UpdateHealthBars();
+            }
+
+            //This effect consumes one stack of the item
+            void EffectConsumeItem()
+            {
+                var target = effector;
+                itemUsed.amount--;
+                if (itemUsed.amount == 0)
+                    target.inventory.items.Remove(itemUsed);
+            }
+
+            //This effect gives a buff to the targetted entity
+            void EffectAddWorldBuff()
+            {
+                var target = effector;
+                //var pos = new Vector3(affect == "Other" ? (board.playerTurn ? 166 : -302) : (board.playerTurn ? -302 : 166), 142);
+                //target.AddBuff(buffs.Find(x => x.name == worldBuffName), worldBuffDuration, SpawnBuffObject(pos, icon, target), sourceRank);
+                //board.CallEvents(target, new()
+                //{
+                //    { "Trigger", "BuffAdd" },
+                //    { "Triggerer", "Effector" },
+                //    { "BuffName", worldBuffName }
+                //});
+                //board.CallEvents(target == effector ? other : effector, new()
+                //{
+                //    { "Trigger", "BuffAdd" },
+                //    { "Triggerer", "Other" },
+                //    { "BuffName", worldBuffName }
+                //});
+                //SpawnFallingText(new Vector2(target == board.player ? -148 : 167, 141), worldBuffDuration + " turn" + (worldBuffDuration > 1 ? "s" : ""), "White");
+            }
+
+            //This effect removes a buff from the targetted entity
+            void EffectRemoveWorldBuff()
+            {
+                var target = effector;
+                //target.RemoveBuff(target.buffs.Find(x => x.Item1 == buffs.Find(x => x.name == worldBuffName)));
+                //board.CallEvents(target, new()
+                //{
+                //    { "Trigger", "BuffRemove" },
+                //    { "Triggerer", "Effector" },
+                //    { "BuffName", worldBuffName }
+                //});
+                //board.CallEvents(target == effector ? other : effector, new()
+                //{
+                //    { "Trigger", "BuffRemove" },
+                //    { "Triggerer", "Other" },
+                //    { "BuffName", worldBuffName }
+                //});
+            }
+
+            //This effect consumes one stack of the item
+            void EffectTeleportPlayer()
+            {
+                //CloseDesktop("EquipmentScreen");
+                //currentSave.currentSite = currentSave.player.homeLocation;
+            }
+
+            //This effect consumes one stack of the item
+            void EffectHearthstonePlayer()
+            {
+                CloseDesktop("EquipmentScreen");
+                SwitchDesktop("Map");
+                var prevSite = save.currentSite;
+                save.currentSite = save.player.homeLocation;
+                SiteTown.town = (SiteTown)Site.FindSite(x => x.name == save.currentSite);
+                Respawn("Site: " + prevSite);
+                Respawn("Site: " + save.currentSite);
+                CDesktop.cameraDestination = new Vector2(SiteTown.town.x, SiteTown.town.y);
+            }
+        }
+    }
+
     public void ExecuteEffects(Board board, FutureBoard futureBoard, string icon, Dictionary<string, string> triggerBase, Dictionary<string, string> variables, string sourceName, int sourceRank)
     {
         //Define entities that take place in the event's effects
