@@ -1,5 +1,46 @@
 [
   {
+    "name": "Hearthstone",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "HearthstonePlayer",
+            "SoundEffect": "AbilityTeleport"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "isExtender": true,
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Returns you to"
+            },
+            {
+              "Color": "Uncommon",
+              "Text": "Hearthstone()",
+              "Spacing": "No"
+            },
+            {
+              "Color": "Uncommon",
+              "Text": ". Speak to an Innkeeper in a different place to change your home location."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "name": "Prismatic Light",
     "icon": "AbilityPrismaticLight",
     "tags": [],
@@ -4504,11 +4545,39 @@
   {
     "name": "Immolate",
     "icon": "AbilityImmolate",
+    "cooldown": 4,
     "tags": [],
+    "cost": {
+      "Fire": 6,
+      "Air": 2
+    },
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddBuff",
+            "Affect": "Other",
+            "BuffName": "Immolate",
+            "BuffDuration": "7",
+            "AnimationType": "None",
+            "ShatterType": "Central",
+            "ShatterTarget": "Other",
+            "SoundEffect": "AbilityFlameShockCast",
+            "ShatterDegree": "25",
+            "ShatterSpeed": "7"
+          }
+        ]
+      }
+    ]
   },
   {
     "name": "Incapacitating Roar",

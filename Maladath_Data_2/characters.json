@@ -9680,7 +9680,7 @@
         ],
         "completedQuests": [],
         "level": 34,
-        "experience": 15046,
+        "experience": 15546,
         "uniquesGotten": [
           "Swinetusk Shank",
           "Agamaggan's Clutch",
@@ -9768,13 +9768,13 @@
         "learnedRecipes": {
           "Fishing": []
         },
-        "unspentTalentPoints": 33,
+        "unspentTalentPoints": 32,
         "faction": "Undercity",
         "name": "Ivona",
         "race": "Forsaken",
         "spec": "Warlock",
         "gender": "Female",
-        "homeLocation": "Shadow Grave",
+        "homeLocation": "Tarren Mill",
         "abilities": {
           "Staff Proficiency": 1,
           "Cloth Proficiency": 1,
@@ -9784,7 +9784,8 @@
           "Wand Proficiency": 1,
           "Corruption": 0,
           "Summon Imp": 0,
-          "Shadow Bolt": 0
+          "Shadow Bolt": 0,
+          "Immolate": 0
         },
         "actionBars": [
           "Shadow Bolt",
@@ -9811,7 +9812,7 @@
           }
         },
         "inventory": {
-          "money": 14977,
+          "money": 14984,
           "items": [
             {
               "rarity": "Common",
@@ -9863,24 +9864,6 @@
               "amount": 12,
               "maxStack": 20,
               "price": 33,
-              "stats": {
-                "stats": {}
-              }
-            },
-            {
-              "rarity": "Common",
-              "name": "Worn Dagger",
-              "icon": "itemshortblade05",
-              "detailedType": "Dagger",
-              "type": "One Handed",
-              "ilvl": 2,
-              "lvl": 1,
-              "minDamage": 1,
-              "maxDamage": 2,
-              "amount": 1,
-              "maxStack": 1,
-              "price": 7,
-              "speed": 1.6,
               "stats": {
                 "stats": {}
               }
@@ -10172,10 +10155,10 @@
           }
         }
       },
-      "hour": 7,
-      "minute": 25,
-      "second": 12,
-      "currentSite": "Brightwater Lake",
+      "hour": 8,
+      "minute": 51,
+      "second": 32,
+      "currentSite": "Aerie Peak",
       "ringOfLaw": "Eviscerator",
       "forlornCloister": "Fallen Champion",
       "openedChests": {
@@ -10263,7 +10246,32 @@
         "Whispering Shore": 1,
         "Cold Hearth Manor": 1,
         "Brill": 2,
-        "Brightwater Lake": 1
+        "Brightwater Lake": 1,
+        "Capital City Gates": 0,
+        "The Ruins of Lordaeron": 0,
+        "Eastern Woods": 0,
+        "Scarlet Monastery Grounds": 3,
+        "The Bulwark": 0,
+        "Dalson's Tears": 0,
+        "The Writhing Haunt": 0,
+        "Ruins of Andorhal": 0,
+        "Chillwind Camp": 0,
+        "Chillwind Pass": 0,
+        "Ruins of Strahnbrad": 0,
+        "Gallows' Corner": 0,
+        "Crushridge Hold": 0,
+        "Slaughter Hollow": 0,
+        "Ruins of Alterac": 0,
+        "Sofera's Naze": 0,
+        "Tarren Mill": 1,
+        "Alterac Junction": 2,
+        "Darrowmere Crossing": 1,
+        "Thoradin's Wall": 0,
+        "Dun Garok": 0,
+        "Nethander Stead": 1,
+        "Ravenholdt Manor": 1,
+        "Wildhammer Mountain Pass": 0,
+        "Aerie Peak": 1
       },
       "unlockedAreas": [
         "Kraul Commons",
@@ -10364,6 +10372,452 @@
             "maxAmount": 2,
             "restockSpeed": 40
           }
+        ],
+        "Tarren Mill:Mallen Swain": [
+          {
+            "item": "Coarse Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Fine Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Bleach",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Black Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Red Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Green Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Silken Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Gray Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Yellow Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Purple Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Blue Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Orange Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pattern: Blue Overalls",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pattern: Dark Silk Shirt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Heavy Silken Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pink Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Rune Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
+        ],
+        "Tarren Mill:Christoph Jeffcoat": [
+          {
+            "item": "Coarse Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Fine Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Bleach",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mild Spices",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Hot Spices",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Weak Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mining Pick",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Empty Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Leaded Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Strong Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Soothing Spices",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Coal",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Salt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Silken Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Wooden Stock",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Heavy Stock",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pattern: Thick Murloc Armor",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Blacksmith Hammer",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Shadow Protection Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Copper Rod",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Nightcrawlers",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Bright Baubles",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Crystal Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
+        ],
+        "Tarren Mill:Shay": [
+          {
+            "item": "Tough Jerky",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Refreshing Spring Water",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Ice Cold Milk",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Melon Juice",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Moonberry Juice",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Sweet Nectar",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Haunch of Meat",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Southshore Stout",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mutton Chop",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Wild Hog Shank",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Cured Ham Steak",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Morning Glory Dew",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Roasted Quail",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Love Token",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Perfume Bottle",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Cologne Bottle",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
+        ],
+        "Ravenholdt Manor:Zan Shivsproket": [
+          {
+            "item": "Weak Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mining Pick",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Strong Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Rough Blasting Powder",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Copper Tube",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Copper Modulator",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Coarse Blasting Powder",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Bronze Tube",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Bronze Framework",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Gyrochronatom",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Wooden Stock",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Heavy Stock",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Silver Contact",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Blacksmith Hammer",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Schematic: Gnomish Cloaking Device",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Engineer's Ink",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Blank Parchment",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       },
       "banks": {},
@@ -10371,88 +10825,19 @@
         "items": [
           {
             "rarity": "Common",
-            "name": "Thornspike",
-            "icon": "itemshortblade10",
+            "name": "Worn Dagger",
+            "icon": "itemshortblade05",
             "detailedType": "Dagger",
             "type": "One Handed",
-            "source": "DirectDrop",
-            "ilvl": 32,
-            "lvl": 27,
-            "minDamage": 18,
-            "maxDamage": 35,
-            "amount": 1,
-            "minutesLeft": 27,
-            "maxStack": 1,
-            "price": 3124,
-            "speed": 1.7,
-            "stats": {
-              "stats": {}
-            },
-            "droppedBy": [
-              "Aggem Thorncurse"
-            ]
-          },
-          {
-            "rarity": "Rare",
-            "name": "Corpsemaker",
-            "icon": "itemhalbard01",
-            "detailedType": "Axe",
-            "type": "Two Handed",
-            "source": "DirectDrop",
-            "ilvl": 34,
-            "lvl": 29,
-            "minDamage": 88,
-            "maxDamage": 132,
-            "amount": 1,
-            "minutesLeft": 27,
-            "maxStack": 1,
-            "price": 9930,
-            "speed": 3.8,
-            "stats": {
-              "stats": {
-                "Strength": 15,
-                "Stamina": 8
-              }
-            },
-            "droppedBy": [
-              "Overlord Ramtusk"
-            ]
-          },
-          {
-            "rarity": "Uncommon",
-            "name": "Raincaller Vest of the Whale",
-            "icon": "itemshirt10",
-            "randomEnchantment": true,
-            "type": "Chest",
-            "armorClass": "Cloth",
-            "source": "RareDrop",
-            "ilvl": 31,
-            "lvl": 26,
-            "armor": 44,
-            "amount": 1,
-            "minutesLeft": 27,
-            "maxStack": 1,
-            "price": 1932,
-            "stats": {
-              "stats": {
-                "Stamina": 6,
-                "Spirit": 6
-              }
-            }
-          },
-          {
-            "rarity": "Poor",
-            "name": "Acolyte's Robe",
-            "icon": "itemchestcloth24",
-            "type": "Chest",
-            "armorClass": "Cloth",
-            "ilvl": 1,
+            "ilvl": 2,
             "lvl": 1,
-            "armor": 3,
+            "minDamage": 1,
+            "maxDamage": 2,
             "amount": 1,
-            "minutesLeft": 27,
+            "minutesLeft": 22,
             "maxStack": 1,
-            "price": 1,
+            "price": 7,
+            "speed": 1.6,
             "stats": {
               "stats": {}
             }
@@ -10462,10 +10847,10 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2024-06-25T18:14:58.7354816+02:00",
-      "lastLoaded": "2024-07-02T17:51:03.5554283+02:00",
-      "lastPlayed": "2024-07-02T17:51:40.757012+02:00",
-      "timePlayed": "00:15:12.3443000",
-      "lastVisitedTalents": 2
+      "lastLoaded": "2024-07-04T18:04:31.2585584+02:00",
+      "lastPlayed": "2024-07-04T18:07:31.4637385+02:00",
+      "timePlayed": "00:29:05.2306946",
+      "lastVisitedTalents": 1
     }
   ]
 }

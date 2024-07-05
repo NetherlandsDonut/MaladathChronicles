@@ -707,9 +707,10 @@ public class Blueprint
             {
                 AddPaddingRegion(() =>
                 {
-                    AddLine(saves[realm.name].Count + "", saves[realm.name].Count == 7 ? "DangerousRed" : "Gray");
+                    var countAlive = saves[realm.name].Count(x => !x.playerDead);
+                    AddLine(countAlive + "", countAlive == 7 ? "DangerousRed" : "Gray");
                     AddText(" / ", "DarkGray");
-                    AddText("7", saves[realm.name].Count == 7 ? "DangerousRed" : "Gray");
+                    AddText("7", countAlive == 7 ? "DangerousRed" : "Gray");
                     AddText(" chars", "DarkGray");
                 });
             }
@@ -3103,7 +3104,6 @@ public class Blueprint
                     {
                         if (currentSave.player.professionSkills.ContainsKey("Fishing"))
                         {
-                            PlaySound("FishingCast");
                             fishingSpot = fishingSpots.Find(x => x.name == area.name);
                             SpawnDesktopBlueprint("FishingGame");
                         }
@@ -3285,7 +3285,6 @@ public class Blueprint
                     {
                         if (currentSave.player.professionSkills.ContainsKey("Fishing"))
                         {
-                            PlaySound("FishingCast");
                             fishingSpot = fishingSpots.Find(x => x.name == town.name);
                             SpawnDesktopBlueprint("FishingGame");
                         }
@@ -4490,11 +4489,19 @@ public class Blueprint
             mask.isCustomRangeActive = true;
             mask.frontSortingLayerID = SortingLayer.NameToID("Missile");
             mask.backSortingLayerID = SortingLayer.NameToID("Default");
-            boardBackground = new GameObject("BoardInShadow", typeof(SpriteRenderer));
+            boardBackground = new GameObject("FishingPool", typeof(SpriteRenderer), typeof(Highlightable), typeof(BoxCollider2D));
             boardBackground.transform.parent = CDesktop.LBWindow.transform;
             boardBackground.transform.localPosition = new Vector2(-17, 17);
             boardBackground.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/BoardFrames/BoardShadow6x6Water" + fishingSpot.waterType);
             boardBackground.GetComponent<SpriteRenderer>().sortingLayerName = "CameraShadow";
+            boardBackground.GetComponent<BoxCollider2D>().offset = new Vector2(132, -132);
+            boardBackground.GetComponent<BoxCollider2D>().size = new Vector2(226, 226);
+            boardBackground.GetComponent<Highlightable>().Initialise(null, (h) =>
+            {
+                Cursor.cursor.SetCursor(CursorType.None);
+                PlaySound("FishingCast");
+            },
+            null, null, null);
         }),
         new("FishingSpotInfo", () => {
             SetAnchor(TopRight);

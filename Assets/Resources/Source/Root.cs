@@ -1177,7 +1177,8 @@ public static class Root
         Click,
         Grab,
         Await,
-        Write
+        Write,
+        Hook
     }
 
     #endregion

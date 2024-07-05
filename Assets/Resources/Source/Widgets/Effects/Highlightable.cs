@@ -50,6 +50,7 @@ public class Highlightable : MonoBehaviour
         if (GetComponent<InputCharacter>() != null)
             cursor.SetCursor(Write);
         else if (pressedState != "None") cursor.SetCursor(Click);
+        else if (gameObject.name == "FishingPool") cursor.SetCursor(Hook);
         render.color = defaultColor - new Color(0.1f, 0.1f, 0.1f, 0);
         if (window != null && window.title.StartsWith("Site: "))
         {
@@ -69,7 +70,7 @@ public class Highlightable : MonoBehaviour
         SetMouseOver(null);
         CloseWindow("Tooltip");
         CDesktop.tooltip = null;
-        if (cursor.IsNow(Click) || cursor.IsNow(Write))
+        if (cursor.IsNow(Click) || cursor.IsNow(Write) || cursor.IsNow(Hook))
             cursor.SetCursor(Default);
         render.color = defaultColor;
         pressedState = "None";

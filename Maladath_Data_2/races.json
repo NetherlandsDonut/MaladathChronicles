@@ -18206,7 +18206,7 @@
     "faction": "Scarlet Crusade",
     "side": "Hostile",
     "kind": "Common",
-    "portrait": "PortraitScarletAdept",
+    "portrait": "PortraitScarletSentry",
     "vitality": 1.0,
     "abilities": {}
   },
@@ -18570,7 +18570,7 @@
     "subcategory": "Human",
     "side": "Neutral",
     "kind": "Common",
-    "portrait": "PortraitScarletSentry",
+    "portrait": "PortraitScarletWarder",
     "vitality": 1.0,
     "abilities": {}
   },

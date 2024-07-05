@@ -903,5 +903,30 @@
       {}
     ],
     "events": []
+  },
+  {
+    "name": "Immolate",
+    "icon": "AbilityImmolate",
+    "tags": [],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "TurnBegin",
+            "Triggerer": "Effector"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Effector",
+            "PowerSource": "Other",
+            "PowerType": "Spell",
+            "ShatterType": "Central",
+            "SoundEffect": "AbilityFlameShockImpact"
+          }
+        ]
+      }
+    ]
   }
 ]
