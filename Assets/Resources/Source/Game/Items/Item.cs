@@ -369,14 +369,14 @@ public class Item
     {
         if (questsStarted != null && questsStarted.Count > 0)
             return true;
-        else if (type == "Miscellaneous")
-            return abilities != null;
         else if (type == "Recipe")
         {
             var recipe = Recipe.recipes.Find(x => name.Contains(x.name));
             if (recipe != null) return entity.professionSkills.ContainsKey(recipe.profession) && entity.professionSkills[recipe.profession].Item1 >= recipe.learnedAt && !entity.learnedRecipes.ContainsKey(recipe.name);
             else Debug.Log("ERROR 007: Did not find a dedicated recipe to item: \"" + name + "\"");
         }
+        else if (abilities != null)
+            return true;
         return false;
     }
 

@@ -124,8 +124,28 @@ public class Event
             //This effect consumes one stack of the item
             void EffectTeleportPlayer()
             {
-                //CloseDesktop("EquipmentScreen");
-                //currentSave.currentSite = currentSave.player.homeLocation;
+                string destination = effect.ContainsKey("TeleportDestinaton") ? effect["TeleportDestinaton"] : "None";
+                if (destination == "None") return;
+                CloseDesktop("EquipmentScreen");
+                SwitchDesktop("Map");
+                var prevSite = save.currentSite;
+                save.currentSite = destination;
+                if (!save.siteVisits.ContainsKey(destination))
+                {
+                    save.siteVisits.Add(destination, 0);
+                    PlaySound("DesktopZoneDiscovered", 0.5f);
+                    save.player.ReceiveExperience(defines.expForExploration);
+                }
+                Respawn("Site: " + destination);
+                foreach (var connection in SitePath.paths.FindAll(x => x.sites.Contains(destination)))
+                {
+                    var didRespawn = Respawn("Site: " + connection.sites.Find(x => x != destination));
+                    if (!didRespawn) CDesktop.LBWindow.GetComponentsInChildren<Renderer>().ToList().ForEach(x => x.gameObject.AddComponent<FadeIn>());
+                }
+                Respawn("Site: " + prevSite);
+                Respawn("Site: " + save.currentSite);
+                var site = Site.FindSite(x => x.name == save.currentSite);
+                CDesktop.cameraDestination = new Vector2(site.x, site.y);
             }
 
             //This effect returns player to their home location

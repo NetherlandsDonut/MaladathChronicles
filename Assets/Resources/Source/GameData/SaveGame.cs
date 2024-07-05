@@ -1,16 +1,14 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
-
+using System.Linq;
 using UnityEditor;
-
-using static Root;
 using static Defines;
-using static SiteTown;
-using static SiteComplex;
-using static SiteInstance;
-using static SiteHostileArea;
 using static GameSettings;
+using static Root;
+using static SiteComplex;
+using static SiteHostileArea;
+using static SiteInstance;
+using static SiteTown;
 
 public class SaveGame
 {
@@ -343,9 +341,10 @@ public class SaveGame
         //foreach (var ability in player.abilities.Select(x => (Ability.abilities.Find(y => y.name == x.Key), x.Value)))
         //    ability.Item1.ExecuteEvents(this, trigger, ability.Value);
 
-        foreach (var item in player.inventory.items.ToList())
-            foreach (var ability in item.abilities.Select(x => (Ability.abilities.Find(y => y.name == x.Key), x.Value)))
-                ability.Item1.ExecuteEvents(this, trigger, item, ability.Value);
+        foreach (var item in player.inventory.items.Concat(player.equipment.Select(x => x.Value)).ToList())
+            if (item.abilities != null)
+                foreach (var ability in item.abilities.Select(x => (Ability.abilities.Find(y => y.name == x.Key), x.Value)))
+                    ability.Item1.ExecuteEvents(this, trigger, item, ability.Value);
 
         //Calling events on player buffs is not done yet
         //foreach (var buff in player.buffs)

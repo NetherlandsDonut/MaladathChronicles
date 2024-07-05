@@ -93,7 +93,8 @@
           "Wand Proficiency": 1,
           "Fireball": 0,
           "Frostbolt": 0,
-          "Arcane Missiles": 0
+          "Arcane Missiles": 0,
+          "Ultrasafe Transporter: Gadgetzan": 1
         },
         "actionBars": [
           "Fireball",
@@ -243,6 +244,24 @@
             "stats": {
               "stats": {}
             }
+          },
+          "Trinket": {
+            "rarity": "Uncommon",
+            "name": "Ultrasafe Transporter: Gadgetzan",
+            "icon": "itemmiscenggizmos12",
+            "type": "Trinket",
+            "source": "Profession",
+            "ilvl": 52,
+            "lvl": 1,
+            "amount": 1,
+            "maxStack": 1,
+            "abilities": {
+              "Ultrasafe Transporter: Gadgetzan": 1
+            },
+            "price": 5000,
+            "stats": {
+              "stats": {}
+            }
           }
         },
         "worldBuffs": []
@@ -259,15 +278,15 @@
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
-        "Northshire Abbey": 2
+        "Northshire Abbey": 3
       },
       "unlockedAreas": [],
       "vendorStock": {},
       "banks": {},
       "startDate": "2024-07-05T16:19:54.6032939+02:00",
-      "lastLoaded": "2024-07-05T16:35:05.4460434+02:00",
-      "lastPlayed": "2024-07-05T16:35:16.9351092+02:00",
-      "timePlayed": "00:05:59.9980315"
+      "lastLoaded": "2024-07-05T20:24:04.701205+02:00",
+      "lastPlayed": "2024-07-05T20:24:49.6499408+02:00",
+      "timePlayed": "00:07:15.7149106"
     }
   ],
   "Gehennas": [],

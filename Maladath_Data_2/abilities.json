@@ -41,6 +41,39 @@
     }
   },
   {
+    "name": "Ultrasafe Transporter: Gadgetzan",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "TeleportPlayer",
+            "TeleportDestinaton": "Gadgetzan",
+            "SoundEffect": "AbilityTeleport"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "isExtender": true,
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Safely transport yourself to Gadgetzan in Tanaris! Emphasis on Safe! Yup, nothing bad could ever happen while using this device!"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "name": "Roasted Kodo Meat",
     "events": [
       {

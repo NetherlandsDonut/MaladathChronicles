@@ -2071,7 +2071,16 @@ public class Blueprint
                                     Respawn("Inventory");
                                 }
                             },
-                            null,
+                            (h) =>
+                            {
+                                if (item.CanUse(currentSave.player))
+                                {
+                                    PlaySound(item.ItemSound("Use"), 0.8f);
+                                    item.Use(currentSave.player);
+                                    Respawn("Inventory", true);
+                                    Respawn("PlayerEquipmentInfo", true);
+                                }
+                            },
                             (h) => () =>
                             {
                                 if (CDesktop.windows.Exists(x => x.title == "Inventory"))
