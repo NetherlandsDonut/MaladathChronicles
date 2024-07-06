@@ -85,6 +85,9 @@ public class Item
     //Icon of the item in the inventory
     public string icon;
 
+    //Icon of the item in the inventory
+    public bool combatUse;
+
     //Determines wether instances of this item get a random enchant
     public bool randomEnchantment;
 
@@ -376,7 +379,7 @@ public class Item
             else Debug.Log("ERROR 007: Did not find a dedicated recipe to item: \"" + name + "\"");
         }
         else if (abilities != null)
-            return true;
+            return CDesktop.title == "Game" == combatUse;
         return false;
     }
 
@@ -1214,6 +1217,7 @@ public class Item
         newItem.droppedBy = droppedBy;
         newItem.dropRange = dropRange;
         newItem.faction = faction;
+        newItem.combatUse = combatUse;
         newItem.icon = icon;
         newItem.ilvl = ilvl;
         newItem.lvl = lvl;

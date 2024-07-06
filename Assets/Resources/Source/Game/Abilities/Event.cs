@@ -143,7 +143,6 @@ public class Event
                     if (!didRespawn) CDesktop.LBWindow.GetComponentsInChildren<Renderer>().ToList().ForEach(x => x.gameObject.AddComponent<FadeIn>());
                 }
                 Respawn("Site: " + prevSite);
-                Respawn("Site: " + save.currentSite);
                 var site = Site.FindSite(x => x.name == save.currentSite);
                 CDesktop.cameraDestination = new Vector2(site.x, site.y);
             }
@@ -283,13 +282,16 @@ public class Event
                 {
                     var source = powerSource == "Effector" ? futureEffector : futureOther;
                     var target = affect == "Effector" ? futureEffector : futureOther;
-                    target.Damage(futureBoard, source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale, trigger["Trigger"] == "Damage");
+                    string damageAmount = effect.ContainsKey("DamageAmount") ? effect["DamageAmount"] : "None";
+                    var amount = damageAmount != "None" ? int.Parse(damageAmount) : source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale;
+                    target.Damage(futureBoard, amount, trigger["Trigger"] == "Damage");
                 }
                 else if (board != null)
                 {
                     var source = powerSource == "Effector" ? effector : other;
                     var target = affect == "Effector" ? effector : other;
-                    var amount = (int)Math.Round(source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale);
+                    string damageAmount = effect.ContainsKey("DamageAmount") ? effect["DamageAmount"] : "None";
+                    var amount = damageAmount != "None" ? int.Parse(damageAmount) : (int)Math.Round(source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale);
                     if (amount > 0 && target == board.enemy) PlayEnemyLine(board.enemy.EnemyLine("Wound"));
                     target.Damage(amount, trigger["Trigger"] == "Damage");
                     AddBigButtonOverlay(new Vector2(target == board.player ? -148 : 148, 141), "OtherDamaged", 1f, -1);
@@ -308,13 +310,16 @@ public class Event
                 {
                     var source = powerSource == "Effector" ? futureEffector : futureOther;
                     var target = affect == "Effector" ? futureEffector : futureOther;
-                    target.Heal(futureBoard, source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale, trigger["Trigger"] == "Heal");
+                    string healAmount = effect.ContainsKey("HealAmount") ? effect["HealAmount"] : "None";
+                    var amount = healAmount != "None" ? int.Parse(healAmount) : source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale;
+                    target.Heal(futureBoard, amount, trigger["Trigger"] == "Heal");
                 }
                 else if (board != null)
                 {
                     var source = powerSource == "Effector" ? effector : other;
                     var target = affect == "Effector" ? effector : other;
-                    var amount = (int)Math.Round(source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale);
+                    string healAmount = effect.ContainsKey("HealAmount") ? effect["HealAmount"] : "None";
+                    var amount = healAmount != "None" ? int.Parse(healAmount) : (int)Math.Round(source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale);
                     target.Heal(amount, trigger["Trigger"] == "Heal");
                     AddBigButtonOverlay(new Vector2(target == board.player ? -148 : 148, 141), "OtherHealed", 1f, 5);
                     SpawnFallingText(new Vector2(target == board.player ? -148 : 148, 141), "" + amount, "Uncommon");

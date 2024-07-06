@@ -193,8 +193,13 @@ public class Board
 
     public void CallEvents(Entity entity, Dictionary<string, string> trigger)
     {
+        if (entity == player)
+            foreach (var item in player.inventory.items.Concat(player.equipment.Select(x => x.Value)).ToList())
+                if (item.abilities != null)
+                    foreach (var ability in item.abilities.Select(x => (Ability.abilities.Find(y => y.name == x.Key), x.Value)))
+                        ability.Item1.ExecuteEvents(this, null, trigger, item, ability.Value, true);
         foreach (var ability in entity == player ? playerCombatAbilities : enemyCombatAbilities)
-            ability.Key.ExecuteEvents(this, null, trigger, ability.Value, entity == player);
+            ability.Key.ExecuteEvents(this, null, trigger, null, ability.Value, entity == player);
         foreach (var buff in entity.buffs)
             buff.Item1.ExecuteEvents(this, null, trigger, buff);
     }

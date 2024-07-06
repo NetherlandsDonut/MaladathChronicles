@@ -191,8 +191,13 @@ public class FutureBoard
     //Call all events in combat that can be triggered by a specified trigger
     public void CallEvents(FutureEntity entity, Dictionary<string, string> triggerData)
     {
+        if (entity == player)
+            foreach (var item in player.inventory.items.Concat(player.equipment.Select(x => x.Value)).ToList())
+                if (item.abilities != null)
+                    foreach (var ability in item.abilities.Select(x => (Ability.abilities.Find(y => y.name == x.Key), x.Value)))
+                        ability.Item1.ExecuteEvents(null, this, triggerData, item, ability.Value, true);
         foreach (var ability in entity == player ? Board.board.playerCombatAbilities : Board.board.enemyCombatAbilities)
-            ability.Key.ExecuteEvents(null, this, triggerData, ability.Value, entity == player);
+            ability.Key.ExecuteEvents(null, this, triggerData, null, ability.Value, entity == player);
         foreach (var buff in entity.buffs)
             buff.Item1.ExecuteEvents(null, this, triggerData, (buff.Item1, buff.Item2, null, buff.Item3));
     }

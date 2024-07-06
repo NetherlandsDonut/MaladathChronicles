@@ -175,6 +175,25 @@
               "stats": {
                 "stats": {}
               }
+            },
+            {
+              "rarity": "Common",
+              "name": "Greater Healing Potion",
+              "icon": "itempotion52",
+              "combatUse": true,
+              "detailedType": "Potion",
+              "type": "Miscellaneous",
+              "source": "Profession",
+              "ilvl": 31,
+              "amount": 1,
+              "maxStack": 5,
+              "abilities": {
+                "Greater Healing Potion": 1
+              },
+              "price": 125,
+              "stats": {
+                "stats": {}
+              }
             }
           ],
           "bags": []
@@ -284,9 +303,9 @@
       "vendorStock": {},
       "banks": {},
       "startDate": "2024-07-05T16:19:54.6032939+02:00",
-      "lastLoaded": "2024-07-05T20:24:04.701205+02:00",
-      "lastPlayed": "2024-07-05T20:24:49.6499408+02:00",
-      "timePlayed": "00:07:15.7149106"
+      "lastLoaded": "2024-07-06T18:10:29.0396391+02:00",
+      "lastPlayed": "2024-07-06T18:10:54.4800159+02:00",
+      "timePlayed": "00:08:33.4139281"
     }
   ],
   "Gehennas": [],

@@ -74,6 +74,222 @@
     }
   },
   {
+    "name": "Minor Healing Potion",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Heal",
+            "HealAmount": "80",
+            "SoundEffect": "AbilityDrink"
+          },
+          {
+            "Effect": "ConsumeItem",
+            "SoundEffect": "AbilityHeal"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Combat-Use: Restores 80 health."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Lesser Healing Potion",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Heal",
+            "HealAmount": "160",
+            "SoundEffect": "AbilityDrink"
+          },
+          {
+            "Effect": "ConsumeItem",
+            "SoundEffect": "AbilityHeal"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Combat-Use: Restores 160 health."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Healing Potion",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Heal",
+            "HealAmount": "320",
+            "SoundEffect": "AbilityDrink"
+          },
+          {
+            "Effect": "ConsumeItem",
+            "SoundEffect": "AbilityHeal"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Combat-Use: Restores 320 health."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Greater Healing Potion",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Heal",
+            "HealAmount": "520",
+            "SoundEffect": "AbilityDrink"
+          },
+          {
+            "Effect": "ConsumeItem",
+            "SoundEffect": "AbilityHeal"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Combat-Use: Restores 520 health."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Superior Healing Potion",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Heal",
+            "HealAmount": "800",
+            "SoundEffect": "AbilityDrink"
+          },
+          {
+            "Effect": "ConsumeItem",
+            "SoundEffect": "AbilityHeal"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Combat-Use: Restores 800 health."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Major Healing Potion",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Heal",
+            "HealAmount": "1400",
+            "SoundEffect": "AbilityDrink"
+          },
+          {
+            "Effect": "ConsumeItem",
+            "SoundEffect": "AbilityHeal"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Combat-Use: Restores 1400 health."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "name": "Roasted Kodo Meat",
     "events": [
       {

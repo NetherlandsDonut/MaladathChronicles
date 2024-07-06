@@ -1052,10 +1052,11 @@ public class Entity
                 if (itemPair.Value.stats != null)
                     foreach (var stat in itemPair.Value.stats.stats)
                         stats[stat.Key] += stat.Value;
-        foreach (var worldBuff in worldBuffs)
-            if (worldBuff.buff.gains != null)
-                foreach (var stat in worldBuff.buff.gains)
-                    stats[stat.Key] += stat.Value;
+        if (worldBuffs != null)
+            foreach (var worldBuff in worldBuffs)
+                if (worldBuff.buff.gains != null)
+                    foreach (var stat in worldBuff.buff.gains)
+                        stats[stat.Key] += stat.Value;
         if (buffs != null)
             foreach (var buff in buffs)
                 if (buff.Item1 != null && buff.Item1.gains != null)

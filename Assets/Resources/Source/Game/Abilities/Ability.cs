@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using static Root;
 using static Root.Anchor;
-using UnityEngine.Rendering.PostProcessing;
+using static UnityEditor.Progress;
 
 public class Ability
 {
@@ -52,7 +52,7 @@ public class Ability
         }
     }
 
-    public void ExecuteEvents(Board board, FutureBoard futureBoard, Dictionary<string, string> trigger, int abilityRank, bool sourcedFromPlayer)
+    public void ExecuteEvents(Board board, FutureBoard futureBoard, Dictionary<string, string> trigger, Item item, int abilityRank, bool sourcedFromPlayer)
     {
         //In case of this ability having no events just return
         if (events == null) return;
@@ -124,6 +124,11 @@ public class Ability
                     else if (trigger["Trigger"] == "CombatBegin") execute = true;
                     else if (trigger["Trigger"] == "TurnBegin") execute = true;
                     else if (trigger["Trigger"] == "TurnEnd") execute = true;
+                    else if (trigger["Trigger"] == "ItemUsedCombat")
+                    {
+                        string itemHash = trigger.ContainsKey("ItemHash") ? trigger["ItemHash"] : "";
+                        execute = item != null && item.GetHashCode() + "" == itemHash;
+                    }
                 }
             if (execute && (board != null ? board.CooldownOn(sourcedFromPlayer, name) : futureBoard.CooldownOn(sourcedFromPlayer, name)) <= 0)
             {
