@@ -332,6 +332,48 @@ public class Blueprint
                     }
                 );
             }
+            var item = currentSave.player.equipment.ContainsKey("Trinket") ? currentSave.player.equipment["Trinket"] : null;
+            if (item.abilities != null && item.combatUse)
+            {
+                var ability = item.abilities.ToList()[0];
+                var abilityObj = abilities.Find(x => x.name == ability.Key);
+                AddButtonRegion(
+                    () =>
+                    {
+                        if (board.playerCooldowns.ContainsKey(ability.Key))
+                        {
+                            AddLine("" + board.playerCooldowns[ability.Key] + " / ", "DimGray", "Right");
+                            AddText(ability.Key, "Black");
+                        }
+                        else AddLine(ability.Key, "", "Right");
+                        AddSmallButton(item.icon);
+                        if (!abilityObj.EnoughResources(board.player))
+                        {
+                            SetSmallButtonToGrayscale();
+                            AddSmallButtonOverlay("OtherGridBlurred");
+                        }
+                        if (board.CooldownOn(true, ability.Key) > 0)
+                            AddSmallButtonOverlay("AutoCast");
+                    },
+                    (h) =>
+                    {
+                        if (abilityObj.EnoughResources(board.player) && board.CooldownOn(true, ability.Key) <= 0)
+                        {
+                            board.CallEvents(board.player, new() { { "Trigger", "AbilityCast" }, {"Triggerer", "Effector" }, { "AbilityName", abilityObj.name } });
+                            board.CallEvents(board.enemy, new() { { "Trigger", "AbilityCast" }, {"Triggerer", "Other" }, { "AbilityName", abilityObj.name } });
+                            board.player.DetractResources(abilityObj.cost);
+                            foreach (var element in abilityObj.cost)
+                                board.log.elementsUsed.Inc(element.Key, element.Value);
+                            board.temporaryElementsPlayer = new();
+                        }
+                    },
+                    null,
+                    (h) => () =>
+                    {
+                        PrintAbilityTooltip(board.player, board.enemy, abilityObj, board.player.abilities[abilityObj.name], item);
+                    }
+                );
+            }
         }),
 
         //Character
@@ -5118,8 +5160,8 @@ public class Blueprint
         //Spellbook
         new("SpellbookAbilityListActivated", () => {
             SetAnchor(TopRight, -19, -38);
-            var activeAbilities = abilities.FindAll(x => !x.hide && x.cost != null && currentSave.player.abilities.ContainsKey(x.name)).ToDictionary(x => x, x => currentSave.player.abilities[x.name]);
-            AddHeaderGroup(() => abilities.Count(x => !x.hide && x.cost != null && currentSave.player.abilities.ContainsKey(x.name)), 7);
+            var activeAbilities = abilities.FindAll(x => x.icon != null && !x.hide && x.events.Any(y => y.triggers.Any(z => z["Trigger"] == "AbilityCast")) && x.cost != null && currentSave.player.abilities.ContainsKey(x.name)).ToDictionary(x => x, x => currentSave.player.abilities[x.name]);
+            AddHeaderGroup(() => abilities.Count(x => x.icon != null && !x.hide && x.events.Any(y => y.triggers.Any(z => z["Trigger"] == "AbilityCast")) && x.cost != null && currentSave.player.abilities.ContainsKey(x.name)), 7);
             SetRegionGroupWidth(171);
             SetRegionGroupHeight(288);
             AddHeaderRegion(() =>
@@ -5197,8 +5239,8 @@ public class Blueprint
         }),
         new("SpellbookAbilityListPassive", () => {
             SetAnchor(TopRight, -19, -38);
-            var passiveAbilities = abilities.FindAll(x => !x.hide && x.cost == null && currentSave.player.abilities.ContainsKey(x.name)).ToDictionary(x => x, x => currentSave.player.abilities[x.name]);
-            AddHeaderGroup(() => abilities.Count(x => !x.hide && x.cost == null && currentSave.player.abilities.ContainsKey(x.name)), 7);
+            var passiveAbilities = abilities.FindAll(x => x.icon != null && !x.hide && x.cost == null && currentSave.player.abilities.ContainsKey(x.name)).ToDictionary(x => x, x => currentSave.player.abilities[x.name]);
+            AddHeaderGroup(() => abilities.Count(x => x.icon != null && !x.hide && x.cost == null && currentSave.player.abilities.ContainsKey(x.name)), 7);
             SetRegionGroupWidth(171);
             SetRegionGroupHeight(288);
             AddHeaderRegion(() =>

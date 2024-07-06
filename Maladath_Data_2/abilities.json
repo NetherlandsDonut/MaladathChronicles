@@ -41,6 +41,47 @@
     }
   },
   {
+    "name": "Hearthstone",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "HearthstonePlayer",
+            "SoundEffect": "AbilityTeleport"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "isExtender": true,
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Returns you to"
+            },
+            {
+              "Color": "Uncommon",
+              "Text": "Hearthstone()",
+              "Spacing": "No"
+            },
+            {
+              "Color": "Uncommon",
+              "Text": ". Speak to an Innkeeper in a different place to change your home location."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "name": "Ultrasafe Transporter: Gadgetzan",
     "events": [
       {
@@ -3524,6 +3565,90 @@
             {
               "Color": "Fire",
               "Text": "PowerRange(Effector, Spell, #1, 1)",
+              "Split": "No"
+            },
+            {
+              "Color": "Gray",
+              "Text": "damage."
+            }
+          ]
+        },
+        {
+          "regionType": "Padding",
+          "isExtender": true,
+          "contents": [
+            {
+              "Color": "Gray",
+              "Text": "This ability ends caster's turn."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Jom Gabbar",
+    "icon": "AbilityFireball",
+    "cooldown": 10,
+    "hide": true,
+    "tags": [
+      "Damage"
+    ],
+    "cost": {
+      "Fire": 2
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "SoundEffect": "AbilityFireballCast",
+            "ShatterType": "Directional",
+            "ShatterTarget": "Effector",
+            "ShatterDensity": "1",
+            "ShatterSpeed": "3",
+            "ShatterDegree": "5",
+            "Await": "0"
+          },
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "1.1",
+            "ShatterTarget": "Other",
+            "ShatterType": "Central",
+            "ShatterDensity": "1",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40",
+            "SoundEffect": "AbilityFireballImpact",
+            "Await": "5",
+            "AnimationType": "Missile",
+            "TrailStrength": "13",
+            "AnimationSpeed": "1,1"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Gray",
+              "Text": "Hurls a fiery ball that causes"
+            },
+            {
+              "Color": "Fire",
+              "Text": "PowerRange(Effector, Spell, 1.1, 1)",
               "Split": "No"
             },
             {

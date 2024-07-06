@@ -6,6 +6,7 @@
         "currentQuests": [],
         "completedQuests": [],
         "level": 1,
+        "experience": 20,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -194,6 +195,29 @@
               "stats": {
                 "stats": {}
               }
+            },
+            {
+              "rarity": "Epic",
+              "name": "Jom Gabbar",
+              "icon": "itemmiscenggizmos19",
+              "combatUse": true,
+              "type": "Trinket",
+              "source": "DirectDrop",
+              "ilvl": 81,
+              "lvl": 60,
+              "amount": 1,
+              "maxStack": 1,
+              "unique": true,
+              "abilities": {
+                "Jom Gabbar": 1
+              },
+              "price": 1807,
+              "stats": {
+                "stats": {}
+              },
+              "droppedBy": [
+                "Ouro"
+              ]
             }
           ],
           "bags": []
@@ -286,7 +310,9 @@
         "worldBuffs": []
       },
       "hour": 7,
-      "currentSite": "Northshire Abbey",
+      "minute": 1,
+      "second": 24,
+      "currentSite": "Northshire Valley",
       "ringOfLaw": "Eviscerator",
       "forlornCloister": "Fallen Champion",
       "openedChests": {},
@@ -297,15 +323,16 @@
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
-        "Northshire Abbey": 3
+        "Northshire Abbey": 3,
+        "Northshire Valley": 1
       },
       "unlockedAreas": [],
       "vendorStock": {},
       "banks": {},
       "startDate": "2024-07-05T16:19:54.6032939+02:00",
-      "lastLoaded": "2024-07-06T18:10:29.0396391+02:00",
-      "lastPlayed": "2024-07-06T18:10:54.4800159+02:00",
-      "timePlayed": "00:08:33.4139281"
+      "lastLoaded": "2024-07-06T20:48:35.4318246+02:00",
+      "lastPlayed": "2024-07-06T20:48:55.2080337+02:00",
+      "timePlayed": "00:09:23.3027453"
     }
   ],
   "Gehennas": [],

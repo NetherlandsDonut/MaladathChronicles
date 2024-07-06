@@ -154,7 +154,7 @@ public class Ability
 
     #region Description
 
-    public static void PrintAbilityTooltip(Entity effector, Entity other, Ability ability, int rank)
+    public static void PrintAbilityTooltip(Entity effector, Entity other, Ability ability, int rank, Item item = null)
     {
         AddHeaderGroup();
         var width = 220;
@@ -188,11 +188,11 @@ public class Ability
             AddHeaderRegion(() =>
             {
                 AddLine(ability.name, "Gray");
-                AddText(" " + ToRoman(rank + 1));
+                if (item == null) AddText(" " + ToRoman(rank + 1));
             });
             AddPaddingRegion(() =>
             {
-                AddBigButton(ability.icon == null ? "OtherUnknown" : ability.icon);
+                AddBigButton(item != null ? (item.icon == null ? "OtherUnknown" : item.icon) : (ability.icon == null ? "OtherUnknown" : ability.icon));
                 AddLine("Cooldown: ", "DarkGray");
                 AddText(ability.cooldown == 0 ? "None" : ability.cooldown + (ability.cooldown == 1 ? " turn" : " turns"), "Gray");
                 if (CDesktop.title == "Game" || CDesktop.title == "GameSimulation")
