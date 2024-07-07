@@ -6,7 +6,7 @@
   "aiDepth": 7,
   "aiManualBranches": 1,
   "textPaddingLeft": 4,
-  "textPaddingRight": 12,
+  "textPaddingRight": 4,
   "shadowSystem": 1,
   "adeptTreeRequirement": 10,
   "buybackDecay": 30,

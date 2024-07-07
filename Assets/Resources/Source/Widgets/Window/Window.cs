@@ -41,8 +41,7 @@ public class Window : MonoBehaviour
     public void FadeIn()
     {
         var rs = GetComponentsInChildren<SpriteRenderer>().ToList();
-        foreach (var r in rs)
-            r.gameObject.AddComponent<FadeIn>().random = false;
+        foreach (var r in rs) r.gameObject.AddComponent<FadeIn>().random = false;
     }
 
     public int PlannedHeight(bool includeHeader = false)
@@ -159,19 +158,19 @@ public class Window : MonoBehaviour
                         text.Erase();
                         var split = new List<string>();
                         foreach (var character in text.text)
-                            if (split.Count > 0 && split[^1] == " ")
+                            if (split.Count > 0 && split[^1][^1] != ' ')
                                 split[^1] += character;
                             else split.Add(character + "");
                         foreach (var part in split)
                             if (regionGroup.setWidth == 0)
                                 foreach (var character in part)
                                     length = text.SpawnCharacter(character, length);
-                            else if (9 + (line.align == "Right" ? defines.textPaddingLeft : (line.align == "Right" ? defines.textPaddingRight : 0)) + length + (split.Last() == part ? 0 : Font.fonts["Tahoma Bold"].Length(defines.textWrapEnding)) + Font.fonts["Tahoma Bold"].Length(part) + objectOffset < regionGroup.setWidth - (region.reverseButtons ? region.bigButtons.Count * 19 : region.smallButtons.Count * 19))
+                            else if (defines.textPaddingLeft + defines.textPaddingRight + length + (split.Last() == part ? 0 : Font.fonts["Tahoma Bold"].Length(defines.textWrapEnding) + 2) + Font.fonts["Tahoma Bold"].Length(part) + objectOffset < regionGroup.setWidth - (region.reverseButtons ? region.bigButtons.Count * 19 : region.smallButtons.Count * 19))
                                 foreach (var character in part)
                                     length = text.SpawnCharacter(character, length);
                             else
                             {
-                                if (9 + (line.align == "Right" ? defines.textPaddingLeft : (line.align == "Right" ? defines.textPaddingRight : 0)) + length + objectOffset < regionGroup.setWidth - region.smallButtons.Count * 19)
+                                if (defines.textPaddingLeft + defines.textPaddingRight + length + objectOffset < regionGroup.setWidth - region.smallButtons.Count * 19)
                                     for (int i = 0; i < defines.textWrapEnding.Length; i++)
                                         length = text.SpawnCharacter(defines.textWrapEnding[i], length);
                                 break;
