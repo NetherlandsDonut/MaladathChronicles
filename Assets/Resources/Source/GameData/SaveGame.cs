@@ -151,12 +151,15 @@ public class SaveGame
     //Restocks items to vendors
     public void DecayWorldBuffs(int minutes)
     {
+        var count = player.worldBuffs.Count;
         for (int i = player.worldBuffs.Count - 1; i >= 0; i--)
         {
             player.worldBuffs[i].minutesLeft -= minutes;
             if (player.worldBuffs[i].minutesLeft <= 0)
                 player.worldBuffs.RemoveAt(i);
         }
+        if (player.worldBuffs.Count != count)
+            Respawn("WorldBuffs");
     }
 
     //Restocks items to vendors

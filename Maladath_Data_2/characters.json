@@ -6,7 +6,7 @@
         "currentQuests": [],
         "completedQuests": [],
         "level": 1,
-        "experience": 20,
+        "experience": 80,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -310,9 +310,9 @@
         "worldBuffs": []
       },
       "hour": 7,
-      "minute": 1,
-      "second": 24,
-      "currentSite": "Northshire Valley",
+      "minute": 11,
+      "second": 12,
+      "currentSite": "The Stockade",
       "ringOfLaw": "Eviscerator",
       "forlornCloister": "Fallen Champion",
       "openedChests": {},
@@ -324,15 +324,540 @@
       "elitesKilled": {},
       "siteVisits": {
         "Northshire Abbey": 3,
-        "Northshire Valley": 2
+        "Northshire Valley": 2,
+        "Goldshire": 1,
+        "Stormwind City": 0,
+        "The Stockade": 3
+      },
+      "unlockedAreas": [],
+      "vendorStock": {
+        "Goldshire:Andrew Krighton": [
+          {
+            "item": "Light Mail Armor",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Light Mail Leggings",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Light Mail Bracers",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Light Mail Belt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Light Mail Boots",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Light Mail Gloves",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Small Targe",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Dull Heater Shield",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
+        ],
+        "Goldshire:Rallic Finn": [
+          {
+            "item": "Hornwood Recurve Bow",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Laminated Recurve Bow",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Rough Arrow",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Sharp Arrow",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Small Quiver",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Fine Shortbow",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Medium Quiver",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
+        ],
+        "Goldshire:Tharynn Bouden": [
+          {
+            "item": "Coarse Thread",
+            "amount": 20,
+            "maxAmount": 20,
+            "restockSpeed": 10
+          },
+          {
+            "item": "Bleach",
+            "amount": 10,
+            "maxAmount": 10,
+            "restockSpeed": 20
+          },
+          {
+            "item": "Red Dye",
+            "amount": 10,
+            "maxAmount": 10,
+            "restockSpeed": 20
+          },
+          {
+            "item": "Blue Dye",
+            "amount": 10,
+            "maxAmount": 10,
+            "restockSpeed": 20
+          },
+          {
+            "item": "Mild Spices",
+            "amount": 20,
+            "maxAmount": 20,
+            "restockSpeed": 10
+          },
+          {
+            "item": "Weak Flux",
+            "amount": 10,
+            "maxAmount": 10,
+            "restockSpeed": 10
+          },
+          {
+            "item": "Empty Vial",
+            "amount": 20,
+            "maxAmount": 20,
+            "restockSpeed": 10
+          },
+          {
+            "item": "Salt",
+            "amount": 10,
+            "maxAmount": 10,
+            "restockSpeed": 10
+          },
+          {
+            "item": "Copper Rod",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 20
+          },
+          {
+            "item": "Pattern: Blue Linen Vest",
+            "amount": 1,
+            "maxAmount": 1,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Recipe: Brilliant Smallfish",
+            "amount": 1,
+            "maxAmount": 1,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Recipe: Longjaw Mud Snapper",
+            "amount": 1,
+            "maxAmount": 1,
+            "restockSpeed": 30
+          }
+        ],
+        "Goldshire:Corina Steele": [
+          {
+            "item": "Gladius",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Tomahawk",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Cudgel",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Stiletto",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Two-handed Sword",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Large Axe",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Wooden Mallet",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Walking Stick",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
+        ],
+        "Goldshire:Toddrick": [
+          {
+            "item": "Tough Jerky",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Haunch of Meat",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Mutton Chop",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Wild Hog Shank",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Cured Ham Steak",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Roasted Quail",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 30
+          }
+        ]
+      },
+      "banks": {},
+      "buyback": {
+        "items": [],
+        "bags": [],
+        "ignoreSpaceChecks": true
+      },
+      "startDate": "2024-07-05T16:19:54.6032939+02:00",
+      "lastLoaded": "2024-07-07T16:43:53.2777383+02:00",
+      "lastPlayed": "2024-07-07T16:44:01.3830189+02:00",
+      "timePlayed": "00:24:53.6013730"
+    },
+    {
+      "player": {
+        "currentQuests": [],
+        "completedQuests": [],
+        "level": 1,
+        "experience": 40,
+        "uniquesGotten": [],
+        "reputation": {
+          "Southsea Pirates": 0,
+          "Razormane Tribe": 0,
+          "Pandaren": 0,
+          "Grimtotem Tribe": 0,
+          "Woodpaw Tribe": 0,
+          "The Burning Legion": 0,
+          "Darkspear Tribe": 0,
+          "Stormwind": 4600,
+          "Magram Clan": 0,
+          "Gelkis Clan": 0,
+          "Kolkar Clan": 0,
+          "Orgrimmar": 0,
+          "Frostwolf Clan": 0,
+          "The Defiler's": 0,
+          "Thunder Bluff": 0,
+          "Undercity": 0,
+          "Ironforge": 4250,
+          "Dark Iron Clan": 0,
+          "Wildhammer Clan": 4250,
+          "Winterfall Tribe": 0,
+          "Gnomeregan": 4250,
+          "Darnassus": 4250,
+          "Bloodsail Buccaneers": 0,
+          "Syndicate": 0,
+          "Warsong Outriders": 0,
+          "Stormpike Guard": 4250,
+          "Silverwing Sentinels": 4250,
+          "The League of Arathor": 4250,
+          "Defias Brotherhood": 0,
+          "Dalaran": 4250,
+          "Burning Blade Clan": 0,
+          "Burning Legion": 0,
+          "Shadow Council": 0,
+          "Gordunni Ogres": 0,
+          "Blackrock Clan": 0,
+          "Dragonmaw Clan": 0,
+          "Black Tooth Grin Clan": 0,
+          "Gurubashi Tribe": 0,
+          "Sandfury Tribe": 0,
+          "Twilight's Hammer": 0,
+          "Grimtotem Clan": 0,
+          "Razorfen Tribe": 0,
+          "Stonemaul Ogres": 0,
+          "Dustbelcher Ogres": 0,
+          "Deadwind Ogres": 0,
+          "Venture Co.": 0,
+          "Southsea Freebooters": 0,
+          "Atal'ai Tribe": 0,
+          "Qiraji Empire": 0,
+          "Scarlet Crusade": 0,
+          "Vilebranch Tribe": 0,
+          "Witherbark Tribe": 0,
+          "Mossflayer Tribe": 0,
+          "Frostmane Tribe": 0,
+          "Bloodscalp Tribe": 0,
+          "Skullsplitter Tribe": 0,
+          "Shatterspear Tribe": 0,
+          "Rot Hide Tribe": 0,
+          "Scourge": 0,
+          "Smolderthorn Tribe": 0,
+          "Revantusk Tribe": 0,
+          "Blackpaw Tribe": 0,
+          "Maraudine Clan": 0,
+          "Mosshide Tribe": 0,
+          "Deadwood Tribe": 0,
+          "Bloodtooth Tribe": 0,
+          "Bristleback Tribe": 0
+        },
+        "professionSkills": {},
+        "learnedRecipes": {},
+        "faction": "Stormwind",
+        "name": "Lisette",
+        "race": "Human",
+        "spec": "Paladin",
+        "gender": "Female",
+        "homeLocation": "Northshire Abbey",
+        "abilities": {
+          "Two Handed Axe Proficiency": 1,
+          "Two Handed Mace Proficiency": 1,
+          "Two Handed Sword Proficiency": 1,
+          "Polearm Proficiency": 1,
+          "Shield Proficiency": 1,
+          "Mail Proficiency": 1,
+          "Plate Proficiency": 1,
+          "One Handed Axe Proficiency": 1,
+          "One Handed Mace Proficiency": 1,
+          "One Handed Sword Proficiency": 1,
+          "Off Hand Proficiency": 1,
+          "Libram Proficiency": 1,
+          "Holy Light": 0,
+          "Judgement": 0,
+          "Consecration": 0
+        },
+        "actionBars": [
+          "Judgement",
+          "Consecration"
+        ],
+        "stats": {
+          "stats": {
+            "Stamina": 21,
+            "Strength": 22,
+            "Agility": 20,
+            "Intellect": 21,
+            "Spirit": 22,
+            "Earth Mastery": 1,
+            "Fire Mastery": 3,
+            "Air Mastery": 2,
+            "Water Mastery": 1,
+            "Frost Mastery": 2,
+            "Lightning Mastery": 1,
+            "Arcane Mastery": 3,
+            "Decay Mastery": 1,
+            "Shadow Mastery": 2,
+            "Order Mastery": 3
+          }
+        },
+        "inventory": {
+          "items": [
+            {
+              "rarity": "Common",
+              "name": "Hearthstone",
+              "icon": "itemmiscrune01",
+              "detailedType": "Rune",
+              "type": "Miscellaneous",
+              "ilvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "indestructible": true,
+              "unique": true,
+              "abilities": {
+                "Hearthstone": 1
+              },
+              "stats": {
+                "stats": {}
+              }
+            }
+          ],
+          "bags": []
+        },
+        "mounts": [],
+        "equipment": {
+          "Main Hand": {
+            "rarity": "Common",
+            "name": "Battleworn Hammer",
+            "icon": "itemhammer15",
+            "detailedType": "Mace",
+            "type": "Two Handed",
+            "ilvl": 2,
+            "lvl": 1,
+            "minDamage": 3,
+            "maxDamage": 5,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 9,
+            "speed": 2.9,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Feet": {
+            "rarity": "Common",
+            "name": "Squire's Boots",
+            "icon": "itemboots01",
+            "type": "Feet",
+            "ilvl": 1,
+            "lvl": 1,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Legs": {
+            "rarity": "Poor",
+            "name": "Squire's Pants",
+            "icon": "itempants02",
+            "type": "Legs",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 2,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Chest": {
+            "rarity": "Common",
+            "name": "Squire's Shirt",
+            "icon": "itemshirt01",
+            "type": "Chest",
+            "ilvl": 1,
+            "lvl": 1,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          }
+        },
+        "worldBuffs": [
+          {
+            "buff": {
+              "name": "Well Fed @ Roasted Kodo Meat",
+              "icon": "AbilityFood",
+              "dispelType": "None",
+              "tags": [
+                "Food"
+              ],
+              "ranks": [
+                {}
+              ],
+              "gains": {
+                "Stamina": 2,
+                "Spirit": 2
+              },
+              "events": []
+            },
+            "minutesLeft": 4
+          }
+        ]
+      },
+      "hour": 7,
+      "minute": 6,
+      "second": 32,
+      "currentSite": "Goldshire",
+      "ringOfLaw": "Anub'shiah",
+      "forlornCloister": "Azshir the Sleepless",
+      "openedChests": {},
+      "fishingSpots": {},
+      "fishingSpoils": {},
+      "siteProgress": {},
+      "commonsKilled": {},
+      "raresKilled": {},
+      "elitesKilled": {},
+      "siteVisits": {
+        "Northshire Abbey": 1,
+        "Northshire Vineyards": 0,
+        "Goldshire": 0
       },
       "unlockedAreas": [],
       "vendorStock": {},
       "banks": {},
-      "startDate": "2024-07-05T16:19:54.6032939+02:00",
-      "lastLoaded": "2024-07-06T23:49:49.2195116+02:00",
-      "lastPlayed": "2024-07-06T23:50:00.9689732+02:00",
-      "timePlayed": "00:09:35.0522069"
+      "startDate": "2024-07-07T16:44:07.9353364+02:00",
+      "lastLoaded": "2024-07-07T18:06:49.6759423+02:00",
+      "lastPlayed": "2024-07-07T18:08:04.2238967+02:00",
+      "timePlayed": "00:01:14.5479544"
     }
   ],
   "Gehennas": [],

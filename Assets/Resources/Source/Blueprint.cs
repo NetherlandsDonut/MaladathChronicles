@@ -37,6 +37,7 @@ using static SiteHostileArea;
 using static SiteInstance;
 using static SiteComplex;
 using static SiteTown;
+using System.Reflection;
 
 public class Blueprint
 {
@@ -333,7 +334,7 @@ public class Blueprint
                 );
             }
             var item = currentSave.player.equipment.ContainsKey("Trinket") ? currentSave.player.equipment["Trinket"] : null;
-            if (item.abilities != null && item.combatUse)
+            if (item != null && item.abilities != null && item.combatUse)
             {
                 var ability = item.abilities.ToList()[0];
                 var abilityObj = abilities.Find(x => x.name == ability.Key);
@@ -4905,6 +4906,16 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddLine(currentSave.hour + (currentSave.minute < 10 ? ":0" : ":") + currentSave.minute, "", "Left");
+            });
+        }, true),
+        new("WorldBuffs", () => {
+            if (currentSave == null || currentSave.player.worldBuffs == null || currentSave.player.worldBuffs.Count == 0) return;
+            SetAnchor(TopRight, -9, -28);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                foreach (var buff in currentSave.player.worldBuffs)
+                    AddSmallButton(buff.buff.icon, null, null, (h) => () => { Buff.PrintBuffTooltip(currentSave.player, null, (buff.buff, buff.minutesLeft, null, buff.rank)); });
             });
         }, true),
 

@@ -1,12 +1,12 @@
 {
   "selectedRealm": "Mograine",
   "selectedRealmRanking": "Whitemane",
-  "selectedCharacter": "Meyo",
+  "selectedCharacter": "Lisette",
   "pixelPerfectVision": {
     "value": "True"
   },
   "music": {
-    "value": "False"
+    "value": "True"
   },
   "soundEffects": {
     "value": "True"

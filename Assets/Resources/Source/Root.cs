@@ -11,6 +11,7 @@ using static GameSettings;
 
 using static Root.Anchor;
 using static Root.RegionBackgroundType;
+using System.Xml.Linq;
 
 public static class Root
 {
@@ -254,6 +255,8 @@ public static class Root
             CloseWindow("HostileAreaQuestTracker");
             Respawn("HostileArea");
         }
+        if (CDesktop.title == "Map")
+            Respawn("WorldBuffs");
         if (windows != null)
             foreach (var window in windows)
                 Respawn(window, true);

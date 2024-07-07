@@ -331,7 +331,7 @@ public class Starter : MonoBehaviour
             Blueprint.windowBlueprints.Add(new Blueprint("Player" + element + "Resource", () =>
             {
                 var item = currentSave.player.equipment.ContainsKey("Trinket") ? currentSave.player.equipment["Trinket"] : null;
-                var addTrinket = item.abilities != null && item.combatUse;
+                var addTrinket = item != null && item.abilities != null && item.combatUse;
                 SetAnchor(-320 + 19 * elements.IndexOf(element), 123 - 19 * (Board.board.player.actionBars.Count + (addTrinket ? 1 : 0)));
                 AddRegionGroup();
                 SetRegionGroupHeight(Board.board.player.MaxResource(element) * 8);
