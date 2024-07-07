@@ -604,7 +604,7 @@
         "currentQuests": [],
         "completedQuests": [],
         "level": 1,
-        "experience": 40,
+        "experience": 60,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -829,14 +829,14 @@
               },
               "events": []
             },
-            "minutesLeft": 4
+            "minutesLeft": 8
           }
         ]
       },
       "hour": 7,
-      "minute": 6,
-      "second": 32,
-      "currentSite": "Goldshire",
+      "minute": 8,
+      "second": 10,
+      "currentSite": "Northshire Abbey",
       "ringOfLaw": "Anub'shiah",
       "forlornCloister": "Azshir the Sleepless",
       "openedChests": {},
@@ -849,15 +849,16 @@
       "siteVisits": {
         "Northshire Abbey": 1,
         "Northshire Vineyards": 0,
-        "Goldshire": 0
+        "Goldshire": 1,
+        "Crystal Lake": 1
       },
       "unlockedAreas": [],
       "vendorStock": {},
       "banks": {},
       "startDate": "2024-07-07T16:44:07.9353364+02:00",
-      "lastLoaded": "2024-07-07T18:06:49.6759423+02:00",
-      "lastPlayed": "2024-07-07T18:08:04.2238967+02:00",
-      "timePlayed": "00:01:14.5479544"
+      "lastLoaded": "2024-07-07T18:21:40.4198704+02:00",
+      "lastPlayed": "2024-07-07T18:22:50.4382706+02:00",
+      "timePlayed": "00:02:24.5663546"
     }
   ],
   "Gehennas": [],

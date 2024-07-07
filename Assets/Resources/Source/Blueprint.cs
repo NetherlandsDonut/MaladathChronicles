@@ -4915,7 +4915,7 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 foreach (var buff in currentSave.player.worldBuffs)
-                    AddSmallButton(buff.buff.icon, null, null, (h) => () => { Buff.PrintBuffTooltip(currentSave.player, null, (buff.buff, buff.minutesLeft, null, buff.rank)); });
+                    AddSmallButton(buff.buff.icon, null, null, (h) => () => Buff.PrintWorldBuffTooltip(buff));
             });
         }, true),
 
@@ -5026,6 +5026,7 @@ public class Blueprint
         new("GameMenu", () => {
             SetAnchor(Center);
             AddHeaderGroup();
+            SetRegionGroupWidth(182);
             AddHeaderRegion(() =>
             {
                 AddLine("Menu", "Gray");
@@ -5076,6 +5077,7 @@ public class Blueprint
         new("GameSettings", () => {
             SetAnchor(Center);
             AddHeaderGroup();
+            SetRegionGroupWidth(182);
             AddHeaderRegion(() =>
             {
                 AddLine("Settings:", "Gray");

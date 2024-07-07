@@ -146,6 +146,25 @@ public class Buff
 
     #region Description
 
+    public static void PrintWorldBuffTooltip(WorldBuff worldBuff)
+    {
+        SetAnchor(Top, 0, -34);
+        AddHeaderGroup();
+        SetRegionGroupWidth(228);
+        SetRegionGroupHeight(195);
+        AddHeaderRegion(() => { AddLine(worldBuff.buff.name.OnlyNameCategory()); });
+        AddPaddingRegion(() =>
+        {
+            AddBigButton(worldBuff.buff.icon);
+            AddLine("Minutes left: ", "DarkGray");
+            AddText(worldBuff.minutesLeft + "");
+        });
+        worldBuff.buff.PrintDescription(SaveGame.currentSave.player, null, worldBuff.rank);
+        AddRegionGroup();
+        SetRegionGroupWidth(228);
+        AddPaddingRegion(() => { AddLine(); });
+    }
+
     public static void PrintBuffTooltip(Entity Effector, Entity other, (Buff, int, GameObject, int) buff)
     {
         SetAnchor(Top, 0, -34);
