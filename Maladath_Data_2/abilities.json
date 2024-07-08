@@ -276,6 +276,9 @@
           {
             "Effect": "ConsumeItem",
             "SoundEffect": "AbilityHeal"
+          },
+          {
+            "Effect": "EndTurn"
           }
         ]
       }

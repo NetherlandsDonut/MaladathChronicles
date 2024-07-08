@@ -618,9 +618,8 @@ public class Board
                     board.actions.Add(() =>
                     {
                         cursorEnemy.SetCursor(CursorType.Default);
-                        AddRegionOverlay(CDesktop.windows.Find(x => x.title == "EnemyBattleInfo").regionGroups[0].regions[enemy.actionBars.IndexOf(abilityObj.name) + 2], "Black", 0.1f);
+                        AddRegionOverlay(CDesktop.windows.Find(x => x.title == "EnemyBattleInfo").regionGroups[0].regions[enemy.actionBars.IndexOf(abilityObj.name) + 2], "Window", 10f);
                         animationTime += defines.frameTime;
-                        //PutOnCooldown(false, abilityObj);
                         board.CallEvents(board.enemy, new() { { "Trigger", "AbilityCast" }, {"Triggerer", "Effector" }, { "AbilityName", abilityObj.name } });
                         board.CallEvents(board.player, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Other" }, { "AbilityName", abilityObj.name } });
                         board.enemy.DetractResources(abilityObj.cost);

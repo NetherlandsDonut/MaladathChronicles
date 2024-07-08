@@ -37,7 +37,6 @@ using static SiteHostileArea;
 using static SiteInstance;
 using static SiteComplex;
 using static SiteTown;
-using System.Reflection;
 
 public class Blueprint
 {
@@ -237,12 +236,13 @@ public class Blueprint
                 AddButtonRegion(
                     () =>
                     {
+                        ReverseButtons();
                         if (board.enemyCooldowns.ContainsKey(actionBar))
                         {
-                            AddLine("" + board.enemyCooldowns[actionBar] + " / ", "DimGray", "Right");
-                            AddText(actionBar, "Black");
+                            AddLine(actionBar, "Black");
+                            AddText(" \\ " + board.enemyCooldowns[actionBar], "DimGray");
                         }
-                        else AddLine(actionBar, "", "Right");
+                        else AddLine(actionBar);
                         AddSmallButton(abilityObj.icon);
                         if (!abilityObj.EnoughResources(board.enemy))
                         {
@@ -271,7 +271,8 @@ public class Blueprint
             AddButtonRegion(
                 () =>
                 {
-                    AddLine(board.player.name, "Black");
+                    ReverseButtons();
+                    AddLine(board.player.name, "Black", "Right");
                     AddSmallButton("MenuFlee", (h) =>
                     {
                         board.EndCombat("Fled");
@@ -301,7 +302,7 @@ public class Blueprint
                     {
                         if (board.playerCooldowns.ContainsKey(actionBar))
                         {
-                            AddLine("" + board.playerCooldowns[actionBar] + " / ", "DimGray", "Right");
+                            AddLine(board.playerCooldowns[actionBar] + " / ", "DimGray", "Right");
                             AddText(actionBar, "Black");
                         }
                         else AddLine(actionBar, "", "Right");
@@ -374,6 +375,33 @@ public class Blueprint
                         PrintAbilityTooltip(board.player, board.enemy, abilityObj, board.player.abilities[abilityObj.name], item);
                     }
                 );
+            }
+        }),
+        new("PlayerQuickUse", () => {
+            SetAnchor(Bottom, 0, 9);
+            if (currentSave.player.inventory.items.FindAll(x => x.combatUse && !x.CanEquip(currentSave.player)).Count == 0) return;
+            else
+            {
+                AddRegionGroup();
+                AddPaddingRegion(() =>
+                {
+                    foreach (var item in currentSave.player.inventory.items.FindAll(x => x.combatUse && !x.CanEquip(currentSave.player)))
+                        if (item != null && item.abilities != null && item.combatUse)
+                        {
+                            var ability = item.abilities.ToList()[0];
+                            var abilityObj = abilities.Find(x => x.name == ability.Key);
+                            AddSmallButton(item.icon,
+                            (h) =>
+                            {
+                                board.CallEvents(board.player, new() { { "Trigger", "ItemUsed" }, { "Triggerer", "Effector" }, { "ItemHash", item.GetHashCode() + "" } });
+                                board.CallEvents(board.enemy, new() { { "Trigger", "ItemUsed" }, { "Triggerer", "Other" }, { "ItemHash", item.GetHashCode() + "" } });
+                            },
+                            null,
+                            (h) => () => PrintItemTooltip(item));
+                            if (board.CooldownOn(true, ability.Key) > 0)
+                                AddSmallButtonOverlay("AutoCast");
+                        }
+                });
             }
         }),
 
@@ -5026,7 +5054,7 @@ public class Blueprint
         new("GameMenu", () => {
             SetAnchor(Center);
             AddHeaderGroup();
-            SetRegionGroupWidth(182);
+            SetRegionGroupWidth(190);
             AddHeaderRegion(() =>
             {
                 AddLine("Menu", "Gray");
@@ -5042,6 +5070,7 @@ public class Blueprint
                 });
             });
             AddRegionGroup();
+            SetRegionGroupWidth(190);
             AddButtonRegion(() =>
             {
                 AddLine("Settings", "Black");
@@ -5077,7 +5106,7 @@ public class Blueprint
         new("GameSettings", () => {
             SetAnchor(Center);
             AddHeaderGroup();
-            SetRegionGroupWidth(182);
+            SetRegionGroupWidth(190);
             AddHeaderRegion(() =>
             {
                 AddLine("Settings:", "Gray");
@@ -5088,6 +5117,7 @@ public class Blueprint
                 });
             });
             AddRegionGroup();
+            SetRegionGroupWidth(190);
             AddPaddingRegion(() =>
             {
                 AddLine("Visuals", "HalfGray");
@@ -6121,6 +6151,7 @@ public class Blueprint
             SpawnWindowBlueprint("PlayerBattleInfo");
             SpawnWindowBlueprint("LocationInfo");
             SpawnWindowBlueprint("EnemyBattleInfo");
+            SpawnWindowBlueprint("PlayerQuickUse");
             var elements = new List<string> { "Fire", "Water", "Earth", "Air", "Frost", "Lightning", "Arcane", "Decay", "Order", "Shadow" };
             foreach (var element in elements)
             {

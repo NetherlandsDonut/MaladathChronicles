@@ -123,7 +123,7 @@ public class Ability
                     else if (trigger["Trigger"] == "CombatBegin") execute = true;
                     else if (trigger["Trigger"] == "TurnBegin") execute = true;
                     else if (trigger["Trigger"] == "TurnEnd") execute = true;
-                    else if (trigger["Trigger"] == "ItemUsedCombat")
+                    else if (trigger["Trigger"] == "ItemUsed")
                     {
                         string itemHash = trigger.ContainsKey("ItemHash") ? trigger["ItemHash"] : "";
                         execute = item != null && item.GetHashCode() + "" == itemHash;

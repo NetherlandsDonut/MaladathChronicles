@@ -985,7 +985,8 @@ public class Item
 
     public static void PrintItemTooltip(Item item, bool compare = false, double priceMultiplier = 1)
     {
-        SetAnchor(-92, 142);
+        if (CDesktop.title == "Game") SetAnchor(Anchor.Bottom, 0, 37);
+        else SetAnchor(-92, 142);
         AddHeaderGroup();
         SetRegionGroupWidth(182);
         if (Input.GetKey(KeyCode.LeftControl) && item.type == "Recipe")

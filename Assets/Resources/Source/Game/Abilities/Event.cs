@@ -249,6 +249,7 @@ public class Event
                 else if (type == "RemoveBuff") EffectRemoveBuff();
                 else if (type == "EndTurn") EffectEndTurn();
                 else if (type == "ChangeElements") EffectChangeElements();
+                else if (type == "ConsumeItem") EffectConsumeItem();
 
                 ExecuteShatter();
                 ExecuteSoundEffect();
@@ -474,6 +475,20 @@ public class Event
                 {
                     if (board.playerTurn) board.playerFinishedMoving = true;
                     else board.enemyFinishedMoving = true;
+                }
+            }
+
+            //This effect consumes one stack of the item
+            void EffectConsumeItem()
+            {
+                if (board != null)
+                {
+                    var target = effector;
+                    var itemUsed = target.inventory.items.Find(x => x.GetHashCode() + "" == trigger["ItemHash"]);
+                    itemUsed.amount--;
+                    if (itemUsed.amount == 0)
+                        target.inventory.items.Remove(itemUsed);
+                    Respawn("PlayerQuickUse", true);
                 }
             }
 

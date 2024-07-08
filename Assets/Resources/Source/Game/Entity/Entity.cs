@@ -427,6 +427,9 @@ public class Entity
         }
         Respawn("ExperienceBarBorder", true);
         Respawn("ExperienceBar", true);
+        Respawn("MapToolbarStatusLeft", true);
+        Respawn("MapToolbarStatusRight", true);
+
     }
 
     //Provides amount of experience needed to level up

@@ -462,7 +462,8 @@ public static class Root
         var newObject = new GameObject("RegionOverlay", typeof(SpriteRenderer));
         newObject.transform.parent = onWhat.transform;
         newObject.transform.localPosition = onWhat.background.transform.localPosition - new Vector3(0, 0, 0.1f);
-        newObject.transform.localScale = onWhat.background.transform.localScale - new Vector3(19 * onWhat.smallButtons.Count, 0);
+        newObject.transform.parent = CDesktop.transform;
+        newObject.transform.localScale = onWhat.background.transform.localScale;
         newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fills/" + overlay);
         if (time > 0)
         {
