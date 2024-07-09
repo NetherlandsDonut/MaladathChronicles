@@ -41,47 +41,6 @@
     }
   },
   {
-    "name": "Hearthstone",
-    "events": [
-      {
-        "triggers": [
-          {
-            "Trigger": "ItemUsed"
-          }
-        ],
-        "effects": [
-          {
-            "Effect": "HearthstonePlayer",
-            "SoundEffect": "AbilityTeleport"
-          }
-        ]
-      }
-    ],
-    "description": {
-      "regions": [
-        {
-          "regionType": "Padding",
-          "isExtender": true,
-          "contents": [
-            {
-              "Color": "Uncommon",
-              "Text": "Use: Returns you to"
-            },
-            {
-              "Color": "Uncommon",
-              "Text": "Hearthstone()",
-              "Spacing": "No"
-            },
-            {
-              "Color": "Uncommon",
-              "Text": ". Speak to an Innkeeper in a different place to change your home location."
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
     "name": "Ultrasafe Transporter: Gadgetzan",
     "events": [
       {
@@ -115,6 +74,894 @@
     }
   },
   {
+    "name": "Scroll of Spirit I",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Scroll of Spirit I",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "720",
+            "SoundEffect": "ItemScroll"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Spirit by 3 for 12 hours."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Scroll of Spirit II",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Scroll of Spirit II",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "720",
+            "SoundEffect": "ItemScroll"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Spirit by 7 for 12 hours."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Scroll of Spirit III",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Scroll of Spirit III",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "720",
+            "SoundEffect": "ItemScroll"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Spirit by 11 for 12 hours."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Scroll of Spirit IV",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Scroll of Spirit IV",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "720",
+            "SoundEffect": "ItemScroll"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Spirit by 15 for 12 hours."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Scroll of Agility I",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Scroll of Agility I",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "720",
+            "SoundEffect": "ItemScroll"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Agility by 5 for 12 hours."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Scroll of Agility II",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Scroll of Agility II",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "720",
+            "SoundEffect": "ItemScroll"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Agility by 9 for 12 hours."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Scroll of Agility III",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Scroll of Agility III",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "720",
+            "SoundEffect": "ItemScroll"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Agility by 13 for 12 hours."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Scroll of Agility IV",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Scroll of Agility IV",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "720",
+            "SoundEffect": "ItemScroll"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Agility by 17 for 12 hours."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Scroll of Strength I",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Scroll of Strength I",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "720",
+            "SoundEffect": "ItemScroll"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Strength by 5 for 12 hours."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Scroll of Strength II",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Scroll of Strength II",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "720",
+            "SoundEffect": "ItemScroll"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Strength by 9 for 12 hours."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Scroll of Strength III",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Scroll of Strength III",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "720",
+            "SoundEffect": "ItemScroll"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Strength by 13 for 12 hours."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Scroll of Strength IV",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Scroll of Strength IV",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "720",
+            "SoundEffect": "ItemScroll"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Strength by 17 for 12 hours."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Scroll of Stamina I",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Scroll of Stamina I",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "720",
+            "SoundEffect": "ItemScroll"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Stamina by 4 for 12 hours."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Scroll of Stamina II",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Scroll of Stamina II",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "720",
+            "SoundEffect": "ItemScroll"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Stamina by 8 for 12 hours."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Scroll of Stamina III",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Scroll of Stamina III",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "720",
+            "SoundEffect": "ItemScroll"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Stamina by 12 for 12 hours."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Scroll of Stamina IV",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Scroll of Stamina IV",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "720",
+            "SoundEffect": "ItemScroll"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Stamina by 16 for 12 hours."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Scroll of Protection I",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Scroll of Protection I",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "720",
+            "SoundEffect": "ItemScroll"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Armor by 60 for 12 hours."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Scroll of Protection II",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Scroll of Protection II",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "720",
+            "SoundEffect": "ItemScroll"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Armor by 120 for 12 hours."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Scroll of Protection III",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Scroll of Protection III",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "720",
+            "SoundEffect": "ItemScroll"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Armor by 180 for 12 hours."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Scroll of Protection IV",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Scroll of Protection IV",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "720",
+            "SoundEffect": "ItemScroll"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Armor by 240 for 12 hours."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Scroll of Intellect I",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Scroll of Intellect I",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "720",
+            "SoundEffect": "ItemScroll"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Intellect by 4 for 12 hours."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Scroll of Intellect II",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Scroll of Intellect II",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "720",
+            "SoundEffect": "ItemScroll"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Intellect by 8 for 12 hours."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Scroll of Intellect III",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Scroll of Intellect III",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "720",
+            "SoundEffect": "ItemScroll"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Intellect by 12 for 12 hours."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Scroll of Intellect IV",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Scroll of Intellect IV",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "720",
+            "SoundEffect": "ItemScroll"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Intellect by 16 for 12 hours."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "name": "Minor Healing Potion",
     "events": [
       {
@@ -132,6 +979,9 @@
           {
             "Effect": "ConsumeItem",
             "SoundEffect": "AbilityHeal"
+          },
+          {
+            "Effect": "EndTurn"
           }
         ]
       }
@@ -168,6 +1018,9 @@
           {
             "Effect": "ConsumeItem",
             "SoundEffect": "AbilityHeal"
+          },
+          {
+            "Effect": "EndTurn"
           }
         ]
       }
@@ -204,6 +1057,9 @@
           {
             "Effect": "ConsumeItem",
             "SoundEffect": "AbilityHeal"
+          },
+          {
+            "Effect": "EndTurn"
           }
         ]
       }
@@ -240,6 +1096,9 @@
           {
             "Effect": "ConsumeItem",
             "SoundEffect": "AbilityHeal"
+          },
+          {
+            "Effect": "EndTurn"
           }
         ]
       }
@@ -315,6 +1174,9 @@
           {
             "Effect": "ConsumeItem",
             "SoundEffect": "AbilityHeal"
+          },
+          {
+            "Effect": "EndTurn"
           }
         ]
       }
@@ -327,6 +1189,2138 @@
             {
               "Color": "Uncommon",
               "Text": "Combat-Use: Restores 1400 health."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Mightfish Steak",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Mightfish Steak",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 10 Stamina for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Grilled Squid",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Grilled Squid",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 10 Agility for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Dirge's Kickin' Chimaerok Chops",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Dirge's Kickin' Chimaerok Chops",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 25 Stamina for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Clamlette Surprise",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Clamlette Surprise",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 12 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Tender Wolf Steak",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Tender Wolf Steak",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 12 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Monster Omelet",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Monster Omelet",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 12 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Spiced Chili Crab",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Spiced Chili Crab",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 12 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Hot Smoked Bass",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Hot Smoked Bass",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 10 Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Cooked Glossy Mightfish",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Cooked Glossy Mightfish",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 10 Stamina for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Spider Sausage",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Spider Sausage",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 12 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Sagefish Delight",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Sagefish Delight",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 14 Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Heavy Kodo Stew",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Heavy Kodo Stew",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 12 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Barbecued Buzzard Wing",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Barbecued Buzzard Wing",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 8 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Roast Raptor",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Roast Raptor",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 8 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Mystery Stew",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Mystery Stew",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 8 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Soothing Turtle Bisque",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Soothing Turtle Bisque",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 8 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Hot Wolf Ribs",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Hot Wolf Ribs",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 8 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Giant Clam Scorcho",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Giant Clam Scorcho",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 8 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Spiced Wolf Ribs",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Spiced Wolf Ribs",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 8 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Heavy Crocolisk Stew",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Heavy Crocolisk Stew",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 8 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Tasty Lion Steak",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Tasty Lion Steak",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 8 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Goblin Deviled Clams",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Goblin Deviled Clams",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 6 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Lean Venison",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Lean Venison",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 6 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Seasoned Wolf Kabob",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Seasoned Wolf Kabob",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 6 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Curiously Tasty Omelet",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Curiously Tasty Omelet",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 6 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Murloc Fin Soup",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Murloc Fin Soup",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 6 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Big Bear Steak",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Big Bear Steak",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 6 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Crocolisk Gumbo",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Crocolisk Gumbo",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 6 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Gooey Spider Cake",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Gooey Spider Cake",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 6 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Lean Wolf Steak",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Lean Wolf Steak",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 6 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Hot Lion Chops",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Hot Lion Chops",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 6 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Crispy Lizard Tail",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Crispy Lizard Tail",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 6 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Smoked Sagefish",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Smoked Sagefish",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 6 Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Redridge Goulash",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Redridge Goulash",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 6 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Dry Pork Ribs",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Dry Pork Ribs",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 4 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Boiled Clams",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Boiled Clams",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 4 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Coyote Steak",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Coyote Steak",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 4 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Crab Cake",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Crab Cake",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 4 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Blood Sausage",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Blood Sausage",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 4 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Strider Stew",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Strider Stew",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 4 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Fillet of Frenzy",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Fillet of Frenzy",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 4 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Crocolisk Steak",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Crocolisk Steak",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 4 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Goretusk Liver Pie",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Goretusk Liver Pie",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 4 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Bad Egg Nog",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Bad Egg Nog",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 2 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Beer Basted Boar Ribs",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Beer Basted Boar Ribs",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 2 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Spiced Wolf Meat",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Spiced Wolf Meat",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 2 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Herb Baked Egg",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Herb Baked Egg",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 2 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Kaldorei Spider Kabob",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Kaldorei Spider Kabob",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 2 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Crispy Bat Wing",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Crispy Bat Wing",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 2 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Jungle Stew",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Jungle Stew",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 8 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Carrion Surprise",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Carrion Surprise",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 8 Stamina and Spirit for the next 10 fights."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Blessed Sunfruit",
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Well Fed @ Blessed Sunfruit",
+            "WorldBuffDurationUnits": "Combat",
+            "WorldBuffDuration": "10",
+            "ShatterDensity": "1",
+            "SoundEffect": "DesktopFoodEat",
+            "Await": "5",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Gain 10 Strength for the next 10 fights."
             }
           ]
         }

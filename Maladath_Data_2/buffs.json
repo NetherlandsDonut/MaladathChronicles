@@ -1,5 +1,1011 @@
 [
   {
+    "name": "Scroll of Intellect I",
+    "icon": "ItemScroll01",
+    "dispelType": "None",
+    "tags": [
+      "Scroll"
+    ],
+    "gains": {
+      "Intellect": 4
+    }
+  },
+  {
+    "name": "Scroll of Intellect II",
+    "icon": "ItemScroll01",
+    "dispelType": "None",
+    "tags": [
+      "Scroll"
+    ],
+    "gains": {
+      "Intellect": 8
+    }
+  },
+  {
+    "name": "Scroll of Intellect III",
+    "icon": "ItemScroll01",
+    "dispelType": "None",
+    "tags": [
+      "Scroll"
+    ],
+    "gains": {
+      "Intellect": 12
+    }
+  },
+  {
+    "name": "Scroll of Intellect IV",
+    "icon": "ItemScroll01",
+    "dispelType": "None",
+    "tags": [
+      "Scroll"
+    ],
+    "gains": {
+      "Intellect": 16
+    }
+  },
+  {
+    "name": "Scroll of Strength I",
+    "icon": "ItemScroll02",
+    "dispelType": "None",
+    "tags": [
+      "Scroll"
+    ],
+    "gains": {
+      "Strength": 5
+    }
+  },
+  {
+    "name": "Scroll of Strength II",
+    "icon": "ItemScroll02",
+    "dispelType": "None",
+    "tags": [
+      "Scroll"
+    ],
+    "gains": {
+      "Strength": 9
+    }
+  },
+  {
+    "name": "Scroll of Strength III",
+    "icon": "ItemScroll02",
+    "dispelType": "None",
+    "tags": [
+      "Scroll"
+    ],
+    "gains": {
+      "Strength": 13
+    }
+  },
+  {
+    "name": "Scroll of Strength IV",
+    "icon": "ItemScroll02",
+    "dispelType": "None",
+    "tags": [
+      "Scroll"
+    ],
+    "gains": {
+      "Strength": 17
+    }
+  },
+  {
+    "name": "Scroll of Agility I",
+    "icon": "ItemScroll02",
+    "dispelType": "None",
+    "tags": [
+      "Scroll"
+    ],
+    "gains": {
+      "Agility": 5
+    }
+  },
+  {
+    "name": "Scroll of Agility II",
+    "icon": "ItemScroll02",
+    "dispelType": "None",
+    "tags": [
+      "Scroll"
+    ],
+    "gains": {
+      "Agility": 9
+    }
+  },
+  {
+    "name": "Scroll of Agility III",
+    "icon": "ItemScroll02",
+    "dispelType": "None",
+    "tags": [
+      "Scroll"
+    ],
+    "gains": {
+      "Agility": 13
+    }
+  },
+  {
+    "name": "Scroll of Agility IV",
+    "icon": "ItemScroll02",
+    "dispelType": "None",
+    "tags": [
+      "Scroll"
+    ],
+    "gains": {
+      "Agility": 17
+    }
+  },
+  {
+    "name": "Scroll of Stamina I",
+    "icon": "ItemScroll07",
+    "dispelType": "None",
+    "tags": [
+      "Scroll"
+    ],
+    "gains": {
+      "Stamina": 4
+    }
+  },
+  {
+    "name": "Scroll of Stamina II",
+    "icon": "ItemScroll07",
+    "dispelType": "None",
+    "tags": [
+      "Scroll"
+    ],
+    "gains": {
+      "Stamina": 8
+    }
+  },
+  {
+    "name": "Scroll of Stamina III",
+    "icon": "ItemScroll07",
+    "dispelType": "None",
+    "tags": [
+      "Scroll"
+    ],
+    "gains": {
+      "Stamina": 12
+    }
+  },
+  {
+    "name": "Scroll of Stamina IV",
+    "icon": "ItemScroll07",
+    "dispelType": "None",
+    "tags": [
+      "Scroll"
+    ],
+    "gains": {
+      "Stamina": 16
+    }
+  },
+  {
+    "name": "Scroll of Protection I",
+    "icon": "ItemScroll07",
+    "dispelType": "None",
+    "tags": [
+      "Scroll"
+    ],
+    "gains": {
+      "Armor": 60
+    }
+  },
+  {
+    "name": "Scroll of Protection II",
+    "icon": "ItemScroll07",
+    "dispelType": "None",
+    "tags": [
+      "Scroll"
+    ],
+    "gains": {
+      "Armor": 120
+    }
+  },
+  {
+    "name": "Scroll of Protection III",
+    "icon": "ItemScroll07",
+    "dispelType": "None",
+    "tags": [
+      "Scroll"
+    ],
+    "gains": {
+      "Armor": 180
+    }
+  },
+  {
+    "name": "Scroll of Protection IV",
+    "icon": "ItemScroll07",
+    "dispelType": "None",
+    "tags": [
+      "Scroll"
+    ],
+    "gains": {
+      "Armor": 240
+    }
+  },
+  {
+    "name": "Scroll of Spirit I",
+    "icon": "ItemScroll01",
+    "dispelType": "None",
+    "tags": [
+      "Scroll"
+    ],
+    "gains": {
+      "Spirit": 3
+    }
+  },
+  {
+    "name": "Scroll of Spirit II",
+    "icon": "ItemScroll01",
+    "dispelType": "None",
+    "tags": [
+      "Scroll"
+    ],
+    "gains": {
+      "Spirit": 7
+    }
+  },
+  {
+    "name": "Scroll of Spirit III",
+    "icon": "ItemScroll01",
+    "dispelType": "None",
+    "tags": [
+      "Scroll"
+    ],
+    "gains": {
+      "Spirit": 11
+    }
+  },
+  {
+    "name": "Scroll of Spirit IV",
+    "icon": "ItemScroll01",
+    "dispelType": "None",
+    "tags": [
+      "Scroll"
+    ],
+    "gains": {
+      "Spirit": 15
+    }
+  },
+  {
+    "name": "Well Fed @ Mightfish Steak",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 10
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Grilled Squid",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Agility": 10
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Dirge's Kickin' Chimaerok Chops",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 25
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Clamlette Surprise",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 12,
+      "Spirit": 12
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Tender Wolf Steak",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 12,
+      "Spirit": 12
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Monster Omelet",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 12,
+      "Spirit": 12
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Spiced Chili Crab",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 12,
+      "Spirit": 12
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Hot Smoked Bass",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Spirit": 10
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Cooked Glossy Mightfish",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 10
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Spider Sausage",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 12,
+      "Spirit": 12
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Sagefish Delight",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Spirit": 14
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Heavy Kodo Stew",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 12,
+      "Spirit": 12
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Barbecued Buzzard Wing",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 8,
+      "Spirit": 8
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Roast Raptor",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 8,
+      "Spirit": 8
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Mystery Stew",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 8,
+      "Spirit": 8
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Soothing Turtle Bisque",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 8,
+      "Spirit": 8
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Hot Wolf Ribs",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 8,
+      "Spirit": 8
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Giant Clam Scorcho",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 8,
+      "Spirit": 8
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Spiced Wolf Ribs",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 8,
+      "Spirit": 8
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Heavy Crocolisk Stew",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 8,
+      "Spirit": 8
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Tasty Lion Steak",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 8,
+      "Spirit": 8
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Goblin Deviled Clams",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 6,
+      "Spirit": 6
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Lean Venison",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 6,
+      "Spirit": 6
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Seasoned Wolf Kabob",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 6,
+      "Spirit": 6
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Curiously Tasty Omelet",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 6,
+      "Spirit": 6
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Murloc Fin Soup",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 6,
+      "Spirit": 6
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Big Bear Steak",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 6,
+      "Spirit": 6
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Crocolisk Gumbo",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 6,
+      "Spirit": 6
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Gooey Spider Cake",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 6,
+      "Spirit": 6
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Lean Wolf Steak",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 6,
+      "Spirit": 6
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Hot Lion Chops",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 6,
+      "Spirit": 6
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Crispy Lizard Tail",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 6,
+      "Spirit": 6
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Smoked Sagefish",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Spirit": 8
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Redridge Goulash",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 6,
+      "Spirit": 6
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Dry Pork Ribs",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 4,
+      "Spirit": 4
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Boiled Clams",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 4,
+      "Spirit": 4
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Coyote Steak",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 4,
+      "Spirit": 4
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Crab Cake",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 4,
+      "Spirit": 4
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Blood Sausage",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 4,
+      "Spirit": 4
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Strider Stew",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 4,
+      "Spirit": 4
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Fillet of Frenzy",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 4,
+      "Spirit": 4
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Crocolisk Steak",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 4,
+      "Spirit": 4
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Goretusk Liver Pie",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 4,
+      "Spirit": 4
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Bad Egg Nog",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 2,
+      "Spirit": 2
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Beer Basted Boar Ribs",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 2,
+      "Spirit": 2
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Spiced Wolf Meat",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 2,
+      "Spirit": 2
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Herb Baked Egg",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 2,
+      "Spirit": 2
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Jungle Stew",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 8,
+      "Spirit": 8
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Kaldorei Spider Kabob",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Stamina": 2,
+      "Spirit": 2
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
+    "name": "Well Fed @ Blessed Sunfruit",
+    "icon": "AbilityFood",
+    "dispelType": "None",
+    "tags": [
+      "Food"
+    ],
+    "gains": {
+      "Strength": 10
+    },
+    "ranks": [
+      {}
+    ]
+  },
+  {
     "name": "Well Fed @ Roasted Kodo Meat",
     "icon": "AbilityFood",
     "dispelType": "None",
@@ -88,7 +1094,7 @@
             "ShatterSpeed": "20",
             "ShatterDegree": "40",
             "SoundEffect": "AbilityCorruptionFlare",
-            "Await": "5"
+            "Await": 5
           }
         ]
       }
@@ -124,7 +1130,7 @@
             "ShatterSpeed": "20",
             "ShatterDegree": "40",
             "SoundEffect": "AbilityCurseOfAgonyFlare",
-            "Await": "4"
+            "Await": 4
           }
         ]
       }
@@ -215,11 +1221,11 @@
             "ShatterTarget": "Other",
             "ShatterType": "Central",
             "ShatterDensity": "1",
-            "ShatterSpeed": "4",
+            "ShatterSpeed": 4,
             "ShatterDegree": "0.6",
             "FlyingResources": "Yes",
             "SoundEffect": "AbilityForesightFlare",
-            "Await": "4"
+            "Await": 4
           }
         ]
       }
@@ -282,7 +1288,7 @@
             "SoundEffect": "AbilityHolyFireFlare",
             "ShatterType": "Central",
             "ShatterTarget": "Effector",
-            "Await": "5"
+            "Await": 5
           }
         ]
       }
@@ -456,10 +1462,10 @@
             "ShatterTarget": "Effector",
             "ShatterType": "Central",
             "ShatterDensity": "2",
-            "ShatterSpeed": "5",
+            "ShatterSpeed": 5,
             "ShatterDegree": "0.7",
             "SoundEffect": "AbilityShadowWordPainFlare",
-            "Await": "4"
+            "Await": 4
           }
         ]
       }

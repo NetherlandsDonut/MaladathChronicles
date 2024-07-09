@@ -100,13 +100,18 @@ public class Event
             void EffectAddWorldBuff()
             {
                 var target = effector;
-                target.AddWorldBuff(buffs.Find(x => x.name == worldBuffName), worldBuffDuration, worldBuffRank);
-                save.CallEvents(new()
+                var buff = buffs.Find(x => x.name == worldBuffName);
+                if (buff == null) Debug.Log("ERROR 017: World buff named \"" + worldBuffName + "\" was not found");
+                else
                 {
-                    { "Trigger", "BuffAdd" },
-                    { "WorldBuffName", worldBuffName }
-                });
-                SpawnFallingText(new Vector2(0, 34), worldBuffDuration + " minute" + (worldBuffDuration > 1 ? "s" : ""), "White");
+                    target.AddWorldBuff(buff, worldBuffDuration, worldBuffRank);
+                    save.CallEvents(new()
+                    {
+                        { "Trigger", "BuffAdd" },
+                        { "WorldBuffName", worldBuffName }
+                    });
+                    SpawnFallingText(new Vector2(0, 34), worldBuffDuration + " minute" + (worldBuffDuration > 1 ? "s" : ""), "White");
+                }
             }
 
             //This effect removes a buff from the targetted entity

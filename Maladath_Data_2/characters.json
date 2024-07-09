@@ -5,8 +5,8 @@
       "player": {
         "currentQuests": [],
         "completedQuests": [],
-        "level": 2,
-        "experience": 240,
+        "level": 3,
+        "experience": 1006,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -79,7 +79,7 @@
         },
         "professionSkills": {},
         "learnedRecipes": {},
-        "unspentTalentPoints": 1,
+        "unspentTalentPoints": 2,
         "faction": "Stormwind",
         "name": "Meyo",
         "race": "Human",
@@ -96,7 +96,7 @@
           "Fireball": 0,
           "Frostbolt": 0,
           "Arcane Missiles": 0,
-          "Ultrasafe Transporter: Gadgetzan": 1
+          "Jom Gabbar": 1
         },
         "actionBars": [
           "Fireball",
@@ -143,27 +143,57 @@
               }
             },
             {
-              "rarity": "Epic",
-              "name": "Jom Gabbar",
-              "icon": "itemmiscenggizmos19",
-              "combatUse": true,
+              "rarity": "Uncommon",
+              "name": "Ultrasafe Transporter: Gadgetzan",
+              "icon": "itemmiscenggizmos12",
               "type": "Trinket",
-              "source": "DirectDrop",
-              "ilvl": 81,
-              "lvl": 60,
+              "source": "Profession",
+              "ilvl": 52,
+              "lvl": 1,
               "amount": 1,
               "maxStack": 1,
-              "unique": true,
               "abilities": {
-                "Jom Gabbar": 1
+                "Ultrasafe Transporter: Gadgetzan": 1
               },
-              "price": 1807,
+              "price": 5000,
+              "stats": {
+                "stats": {}
+              }
+            },
+            {
+              "rarity": "Rare",
+              "name": "Plans: Thick Obsidian Breastplate",
+              "icon": "itemscroll05",
+              "detailedType": "Scroll",
+              "type": "Recipe",
+              "source": "DirectDrop",
+              "amount": 1,
+              "maxStack": 1,
+              "price": 20000,
               "stats": {
                 "stats": {}
               },
               "droppedBy": [
-                "Ouro"
+                "The Prophet Skeram"
               ]
+            },
+            {
+              "rarity": "Common",
+              "name": "Scroll of Protection IV",
+              "icon": "itemscroll07",
+              "detailedType": "Scroll",
+              "type": "Miscellaneous",
+              "source": "RareDrop",
+              "ilvl": 55,
+              "amount": 1,
+              "maxStack": 5,
+              "abilities": {
+                "Scroll of Protection IV": 1
+              },
+              "price": 100,
+              "stats": {
+                "stats": {}
+              }
             }
           ],
           "bags": []
@@ -235,40 +265,156 @@
             }
           },
           "Trinket": {
-            "rarity": "Uncommon",
-            "name": "Ultrasafe Transporter: Gadgetzan",
-            "icon": "itemmiscenggizmos12",
+            "rarity": "Epic",
+            "name": "Jom Gabbar",
+            "icon": "itemmiscenggizmos19",
+            "combatUse": true,
             "type": "Trinket",
-            "source": "Profession",
-            "ilvl": 52,
-            "lvl": 1,
+            "source": "DirectDrop",
+            "ilvl": 81,
+            "lvl": 60,
             "amount": 1,
             "maxStack": 1,
+            "unique": true,
             "abilities": {
-              "Ultrasafe Transporter: Gadgetzan": 1
+              "Jom Gabbar": 1
             },
-            "price": 5000,
+            "price": 1807,
             "stats": {
               "stats": {}
-            }
+            },
+            "droppedBy": [
+              "Ouro"
+            ]
+          },
+          "Back": {
+            "rarity": "Epic",
+            "name": "Cloak of Concentrated Hatred",
+            "icon": "itemmisccape02",
+            "type": "Back",
+            "source": "DirectDrop",
+            "ilvl": 73,
+            "lvl": 60,
+            "armor": 56,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 38677,
+            "stats": {
+              "stats": {
+                "Strength": 11,
+                "Agility": 16,
+                "Stamina": 15
+              }
+            },
+            "droppedBy": [
+              "The Prophet Skeram"
+            ]
           }
         },
-        "worldBuffs": []
+        "worldBuffs": [
+          {
+            "buff": {
+              "name": "Scroll of Agility IV",
+              "icon": "ItemScroll02",
+              "dispelType": "None",
+              "tags": [
+                "Scroll"
+              ],
+              "ranks": [
+                {}
+              ],
+              "gains": {
+                "Agility": 17
+              },
+              "events": []
+            },
+            "minutesLeft": 714
+          }
+        ]
       },
       "day": 1,
       "hour": 22,
-      "minute": 4,
-      "second": 8,
-      "currentSite": "Temple of Ahn'Qiraj",
+      "minute": 10,
+      "second": 40,
+      "currentSite": "The Scarab Wall",
       "ringOfLaw": "Eviscerator",
       "forlornCloister": "Fallen Champion",
-      "openedChests": {},
+      "openedChests": {
+        "The Temple Gates": {
+          "area": "The Temple Gates",
+          "inventory": {
+            "items": [
+              {
+                "rarity": "Uncommon",
+                "name": "Eternal Sarong of the Owl",
+                "icon": "itempants13",
+                "randomEnchantment": true,
+                "type": "Legs",
+                "armorClass": "Cloth",
+                "source": "RareDrop",
+                "ilvl": 63,
+                "lvl": 58,
+                "armor": 71,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 20044,
+                "stats": {
+                  "stats": {
+                    "Intellect": 18,
+                    "Spirit": 18
+                  }
+                }
+              },
+              {
+                "rarity": "Common",
+                "name": "Plaguebloom",
+                "icon": "itemmischerbplaguebloom",
+                "detailedType": "Flowers",
+                "type": "Trade Good",
+                "source": "ZoneDrop",
+                "ilvl": 57,
+                "lvl": 1,
+                "amount": 1,
+                "maxStack": 20,
+                "price": 250,
+                "stats": {
+                  "stats": {}
+                }
+              },
+              {
+                "rarity": "Uncommon",
+                "name": "Huge Emerald",
+                "icon": "itemmiscgememerald01",
+                "detailedType": "Gem",
+                "type": "Trade Good",
+                "ilvl": 60,
+                "lvl": 1,
+                "amount": 1,
+                "maxStack": 20,
+                "price": 10000,
+                "stats": {
+                  "stats": {}
+                }
+              }
+            ],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
+        }
+      },
       "fishingSpots": {},
       "fishingSpoils": {},
-      "siteProgress": {},
-      "commonsKilled": {},
+      "siteProgress": {
+        "The Temple Gates": 3
+      },
+      "commonsKilled": {
+        "Obsidian Eradicator": 2,
+        "Anubisath Sentinel": 1
+      },
       "raresKilled": {},
-      "elitesKilled": {},
+      "elitesKilled": {
+        "The Prophet Skeram": 1
+      },
       "siteVisits": {
         "Northshire Abbey": 3,
         "Northshire Valley": 2,
@@ -302,9 +448,11 @@
         "Hive'Regal": 0,
         "Bronzebeard Encampment": 0,
         "The Scarab Wall": 0,
-        "Temple of Ahn'Qiraj": 1
+        "Temple of Ahn'Qiraj": 2
       },
-      "unlockedAreas": [],
+      "unlockedAreas": [
+        "The Hive Undergrounds"
+      ],
       "vendorStock": {
         "Goldshire:Andrew Krighton": [
           {
@@ -712,9 +860,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2024-07-05T16:19:54.6032939+02:00",
-      "lastLoaded": "2024-07-08T18:50:25.8011917+02:00",
-      "lastPlayed": "2024-07-08T19:00:11.2238866+02:00",
-      "timePlayed": "01:05:56.5971226",
+      "lastLoaded": "2024-07-09T13:45:40.2631445+02:00",
+      "lastPlayed": "2024-07-09T13:47:31.5202545+02:00",
+      "timePlayed": "01:09:55.0449767",
       "lastVisitedTalents": 2
     },
     {
@@ -979,6 +1127,221 @@
       "lastLoaded": "2024-07-08T17:01:10.234627+02:00",
       "lastPlayed": "2024-07-08T18:01:35.8199169+02:00",
       "timePlayed": "01:05:21.1971448"
+    },
+    {
+      "player": {
+        "currentQuests": [],
+        "completedQuests": [],
+        "level": 1,
+        "uniquesGotten": [],
+        "reputation": {
+          "Southsea Pirates": 0,
+          "Razormane Tribe": 0,
+          "Pandaren": 0,
+          "Grimtotem Tribe": 0,
+          "Woodpaw Tribe": 0,
+          "The Burning Legion": 0,
+          "Darkspear Tribe": 4250,
+          "Stormwind": 0,
+          "Magram Clan": 0,
+          "Gelkis Clan": 0,
+          "Kolkar Clan": 0,
+          "Orgrimmar": 4250,
+          "Frostwolf Clan": 4250,
+          "The Defiler's": 4250,
+          "Thunder Bluff": 4600,
+          "Undercity": 4250,
+          "Ironforge": 0,
+          "Dark Iron Clan": 0,
+          "Wildhammer Clan": 0,
+          "Winterfall Tribe": 0,
+          "Gnomeregan": 0,
+          "Darnassus": 0,
+          "Bloodsail Buccaneers": 0,
+          "Syndicate": 0,
+          "Warsong Outriders": 4250,
+          "Stormpike Guard": 0,
+          "Silverwing Sentinels": 0,
+          "The League of Arathor": 0,
+          "Defias Brotherhood": 0,
+          "Dalaran": 0,
+          "Burning Blade Clan": 0,
+          "Burning Legion": 0,
+          "Shadow Council": 0,
+          "Gordunni Ogres": 0,
+          "Blackrock Clan": 0,
+          "Dragonmaw Clan": 0,
+          "Black Tooth Grin Clan": 0,
+          "Gurubashi Tribe": 0,
+          "Sandfury Tribe": 0,
+          "Twilight's Hammer": 0,
+          "Grimtotem Clan": 0,
+          "Razorfen Tribe": 0,
+          "Stonemaul Ogres": 4250,
+          "Dustbelcher Ogres": 0,
+          "Deadwind Ogres": 0,
+          "Venture Co.": 0,
+          "Southsea Freebooters": 0,
+          "Atal'ai Tribe": 0,
+          "Qiraji Empire": 0,
+          "Scarlet Crusade": 0,
+          "Vilebranch Tribe": 0,
+          "Witherbark Tribe": 0,
+          "Mossflayer Tribe": 0,
+          "Frostmane Tribe": 0,
+          "Bloodscalp Tribe": 0,
+          "Skullsplitter Tribe": 0,
+          "Shatterspear Tribe": 0,
+          "Rot Hide Tribe": 0,
+          "Scourge": 0,
+          "Smolderthorn Tribe": 0,
+          "Revantusk Tribe": 4250,
+          "Blackpaw Tribe": 0,
+          "Maraudine Clan": 0,
+          "Mosshide Tribe": 0,
+          "Deadwood Tribe": 0,
+          "Bloodtooth Tribe": 0,
+          "Bristleback Tribe": 0
+        },
+        "professionSkills": {},
+        "learnedRecipes": {},
+        "faction": "Thunder Bluff",
+        "name": "Hannaya",
+        "race": "Tauren",
+        "spec": "Shaman",
+        "gender": "Female",
+        "abilities": {
+          "Dual Wielding Proficiency": 1,
+          "Two Handed Axe Proficiency": 1,
+          "Polearm Proficiency": 1,
+          "Leather Proficiency": 1,
+          "Mail Proficiency": 0,
+          "One Handed Axe Proficiency": 1,
+          "One Handed Mace Proficiency": 1,
+          "Fist Weapon Proficiency": 1,
+          "Off Hand Proficiency": 1,
+          "Dagger Proficiency": 1,
+          "Lightning Bolt": 0,
+          "Stormstrike": 0,
+          "Healing Wave": 0
+        },
+        "actionBars": [
+          "Lightning Bolt",
+          "Healing Wave"
+        ],
+        "stats": {
+          "stats": {
+            "Stamina": 23,
+            "Strength": 26,
+            "Agility": 15,
+            "Intellect": 16,
+            "Spirit": 23,
+            "Earth Mastery": 3,
+            "Fire Mastery": 2,
+            "Air Mastery": 3,
+            "Water Mastery": 3,
+            "Frost Mastery": 1,
+            "Lightning Mastery": 1,
+            "Arcane Mastery": 2,
+            "Decay Mastery": 1,
+            "Shadow Mastery": 1,
+            "Order Mastery": 2
+          }
+        },
+        "inventory": {
+          "items": [
+            {
+              "rarity": "Common",
+              "name": "Hearthstone",
+              "icon": "itemmiscrune01",
+              "detailedType": "Rune",
+              "type": "Miscellaneous",
+              "ilvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "indestructible": true,
+              "unique": true,
+              "abilities": {
+                "Hearthstone": 1
+              },
+              "stats": {
+                "stats": {}
+              }
+            }
+          ],
+          "bags": []
+        },
+        "mounts": [],
+        "equipment": {
+          "Main Hand": {
+            "rarity": "Common",
+            "name": "Worn Mace",
+            "icon": "itemmace03",
+            "detailedType": "Mace",
+            "type": "One Handed",
+            "ilvl": 2,
+            "lvl": 1,
+            "minDamage": 1,
+            "maxDamage": 3,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 7,
+            "speed": 1.9,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Legs": {
+            "rarity": "Poor",
+            "name": "Primitive Kilt",
+            "icon": "itempants02",
+            "type": "Legs",
+            "armorClass": "Leather",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 14,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          },
+          "Chest": {
+            "rarity": "Common",
+            "name": "Primitive Mantle",
+            "icon": "itemmisccape14",
+            "type": "Chest",
+            "ilvl": 1,
+            "lvl": 1,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1,
+            "stats": {
+              "stats": {}
+            }
+          }
+        },
+        "worldBuffs": []
+      },
+      "hour": 7,
+      "currentSite": "Camp Narache",
+      "ringOfLaw": "Anub'shiah",
+      "forlornCloister": "Azshir the Sleepless",
+      "openedChests": {},
+      "fishingSpots": {},
+      "fishingSpoils": {},
+      "siteProgress": {},
+      "commonsKilled": {},
+      "raresKilled": {},
+      "elitesKilled": {},
+      "siteVisits": {
+        "Camp Narache": 1
+      },
+      "unlockedAreas": [],
+      "vendorStock": {},
+      "banks": {},
+      "startDate": "2024-07-09T17:02:16.5198001+02:00"
     }
   ],
   "Gehennas": [],
