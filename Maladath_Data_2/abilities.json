@@ -1,6 +1,10 @@
 [
   {
     "name": "Hearthstone",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -42,6 +46,10 @@
   },
   {
     "name": "Ultrasafe Transporter: Gadgetzan",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -75,6 +83,10 @@
   },
   {
     "name": "Scroll of Spirit I",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -112,6 +124,10 @@
   },
   {
     "name": "Scroll of Spirit II",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -149,6 +165,10 @@
   },
   {
     "name": "Scroll of Spirit III",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -186,6 +206,10 @@
   },
   {
     "name": "Scroll of Spirit IV",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -223,6 +247,10 @@
   },
   {
     "name": "Scroll of Agility I",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -260,6 +288,10 @@
   },
   {
     "name": "Scroll of Agility II",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -297,6 +329,10 @@
   },
   {
     "name": "Scroll of Agility III",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -334,6 +370,10 @@
   },
   {
     "name": "Scroll of Agility IV",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -371,6 +411,10 @@
   },
   {
     "name": "Scroll of Strength I",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -408,6 +452,10 @@
   },
   {
     "name": "Scroll of Strength II",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -445,6 +493,10 @@
   },
   {
     "name": "Scroll of Strength III",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -482,6 +534,10 @@
   },
   {
     "name": "Scroll of Strength IV",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -519,6 +575,10 @@
   },
   {
     "name": "Scroll of Stamina I",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -556,6 +616,10 @@
   },
   {
     "name": "Scroll of Stamina II",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -593,6 +657,10 @@
   },
   {
     "name": "Scroll of Stamina III",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -630,6 +698,10 @@
   },
   {
     "name": "Scroll of Stamina IV",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -667,6 +739,10 @@
   },
   {
     "name": "Scroll of Protection I",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -704,6 +780,10 @@
   },
   {
     "name": "Scroll of Protection II",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -741,6 +821,10 @@
   },
   {
     "name": "Scroll of Protection III",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -778,6 +862,10 @@
   },
   {
     "name": "Scroll of Protection IV",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -815,6 +903,10 @@
   },
   {
     "name": "Scroll of Intellect I",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -852,6 +944,10 @@
   },
   {
     "name": "Scroll of Intellect II",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -889,6 +985,10 @@
   },
   {
     "name": "Scroll of Intellect III",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -926,6 +1026,10 @@
   },
   {
     "name": "Scroll of Intellect IV",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -963,6 +1067,10 @@
   },
   {
     "name": "Minor Healing Potion",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1002,6 +1110,10 @@
   },
   {
     "name": "Lesser Healing Potion",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1041,6 +1153,10 @@
   },
   {
     "name": "Healing Potion",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1080,6 +1196,10 @@
   },
   {
     "name": "Greater Healing Potion",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1119,6 +1239,10 @@
   },
   {
     "name": "Superior Healing Potion",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1158,6 +1282,10 @@
   },
   {
     "name": "Major Healing Potion",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1197,6 +1325,10 @@
   },
   {
     "name": "Mightfish Steak",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1238,6 +1370,10 @@
   },
   {
     "name": "Grilled Squid",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1279,6 +1415,10 @@
   },
   {
     "name": "Dirge's Kickin' Chimaerok Chops",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1320,6 +1460,10 @@
   },
   {
     "name": "Clamlette Surprise",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1361,6 +1505,10 @@
   },
   {
     "name": "Tender Wolf Steak",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1402,6 +1550,10 @@
   },
   {
     "name": "Monster Omelet",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1443,6 +1595,10 @@
   },
   {
     "name": "Spiced Chili Crab",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1484,6 +1640,10 @@
   },
   {
     "name": "Hot Smoked Bass",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1525,6 +1685,10 @@
   },
   {
     "name": "Cooked Glossy Mightfish",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1566,6 +1730,10 @@
   },
   {
     "name": "Spider Sausage",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1607,6 +1775,10 @@
   },
   {
     "name": "Sagefish Delight",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1648,6 +1820,10 @@
   },
   {
     "name": "Heavy Kodo Stew",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1689,6 +1865,10 @@
   },
   {
     "name": "Barbecued Buzzard Wing",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1730,6 +1910,10 @@
   },
   {
     "name": "Roast Raptor",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1771,6 +1955,10 @@
   },
   {
     "name": "Mystery Stew",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1812,6 +2000,10 @@
   },
   {
     "name": "Soothing Turtle Bisque",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1853,6 +2045,10 @@
   },
   {
     "name": "Hot Wolf Ribs",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1894,6 +2090,10 @@
   },
   {
     "name": "Giant Clam Scorcho",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1935,6 +2135,10 @@
   },
   {
     "name": "Spiced Wolf Ribs",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -1976,6 +2180,10 @@
   },
   {
     "name": "Heavy Crocolisk Stew",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2017,6 +2225,10 @@
   },
   {
     "name": "Tasty Lion Steak",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2058,6 +2270,10 @@
   },
   {
     "name": "Goblin Deviled Clams",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2099,6 +2315,10 @@
   },
   {
     "name": "Lean Venison",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2140,6 +2360,10 @@
   },
   {
     "name": "Seasoned Wolf Kabob",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2181,6 +2405,10 @@
   },
   {
     "name": "Curiously Tasty Omelet",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2222,6 +2450,10 @@
   },
   {
     "name": "Murloc Fin Soup",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2263,6 +2495,10 @@
   },
   {
     "name": "Big Bear Steak",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2304,6 +2540,10 @@
   },
   {
     "name": "Crocolisk Gumbo",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2345,6 +2585,10 @@
   },
   {
     "name": "Gooey Spider Cake",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2386,6 +2630,10 @@
   },
   {
     "name": "Lean Wolf Steak",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2427,6 +2675,10 @@
   },
   {
     "name": "Hot Lion Chops",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2468,6 +2720,10 @@
   },
   {
     "name": "Crispy Lizard Tail",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2509,6 +2765,10 @@
   },
   {
     "name": "Smoked Sagefish",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2550,6 +2810,10 @@
   },
   {
     "name": "Redridge Goulash",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2591,6 +2855,10 @@
   },
   {
     "name": "Dry Pork Ribs",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2632,6 +2900,10 @@
   },
   {
     "name": "Boiled Clams",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2673,6 +2945,10 @@
   },
   {
     "name": "Coyote Steak",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2714,6 +2990,10 @@
   },
   {
     "name": "Crab Cake",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2755,6 +3035,10 @@
   },
   {
     "name": "Blood Sausage",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2796,6 +3080,10 @@
   },
   {
     "name": "Strider Stew",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2837,6 +3125,10 @@
   },
   {
     "name": "Fillet of Frenzy",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2878,6 +3170,10 @@
   },
   {
     "name": "Crocolisk Steak",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2919,6 +3215,10 @@
   },
   {
     "name": "Goretusk Liver Pie",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -2960,6 +3260,10 @@
   },
   {
     "name": "Bad Egg Nog",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -3001,6 +3305,10 @@
   },
   {
     "name": "Beer Basted Boar Ribs",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -3042,6 +3350,10 @@
   },
   {
     "name": "Spiced Wolf Meat",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -3083,6 +3395,10 @@
   },
   {
     "name": "Herb Baked Egg",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -3124,6 +3440,10 @@
   },
   {
     "name": "Kaldorei Spider Kabob",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -3165,6 +3485,10 @@
   },
   {
     "name": "Crispy Bat Wing",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -3206,6 +3530,10 @@
   },
   {
     "name": "Jungle Stew",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -3247,6 +3575,10 @@
   },
   {
     "name": "Carrion Surprise",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -3288,6 +3620,10 @@
   },
   {
     "name": "Blessed Sunfruit",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -3329,6 +3665,10 @@
   },
   {
     "name": "Roasted Kodo Meat",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -3370,6 +3710,10 @@
   },
   {
     "name": "Runn Tum Tuber Surprise",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -6594,6 +6938,9 @@
     "cost": {
       "Fire": 2
     },
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [

@@ -10,6 +10,9 @@ public class FishingSpot
     //Site where this fishing spot was started
     public string name;
 
+    //Zone where this fishing spot is at
+    public string zone;
+
     //Type of the water used for visual representation
     public string waterType;
 
@@ -21,6 +24,9 @@ public class FishingSpot
 
     //Fished up item
     public List<string> possibleLoot;
+
+    //Fished up item
+    public List<string> rareLoot;
 
     //Checks wether the fisher can get skill from fishing in this spot
     public bool ShouldImproveSkill() => currentSave.player.professionSkills["Fishing"].Item1 - 20 <= difficulty; 

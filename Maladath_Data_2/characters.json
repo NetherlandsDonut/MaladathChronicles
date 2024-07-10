@@ -1133,6 +1133,7 @@
         "currentQuests": [],
         "completedQuests": [],
         "level": 1,
+        "experience": 20,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -1210,6 +1211,7 @@
         "race": "Tauren",
         "spec": "Shaman",
         "gender": "Female",
+        "homeLocation": "Camp Narache",
         "abilities": {
           "Dual Wielding Proficiency": 1,
           "Two Handed Axe Proficiency": 1,
@@ -1322,10 +1324,32 @@
             }
           }
         },
-        "worldBuffs": []
+        "worldBuffs": [
+          {
+            "buff": {
+              "name": "Well Fed @ Jungle Stew",
+              "icon": "AbilityFood",
+              "dispelType": "None",
+              "tags": [
+                "Food"
+              ],
+              "ranks": [
+                {}
+              ],
+              "gains": {
+                "Stamina": 8,
+                "Spirit": 8
+              },
+              "events": []
+            },
+            "minutesLeft": 9
+          }
+        ]
       },
       "hour": 7,
-      "currentSite": "Camp Narache",
+      "minute": 1,
+      "second": 52,
+      "currentSite": "Red Cloud Mesa",
       "ringOfLaw": "Anub'shiah",
       "forlornCloister": "Azshir the Sleepless",
       "openedChests": {},
@@ -1336,12 +1360,16 @@
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
-        "Camp Narache": 1
+        "Camp Narache": 1,
+        "Red Cloud Mesa": 1
       },
       "unlockedAreas": [],
       "vendorStock": {},
       "banks": {},
-      "startDate": "2024-07-09T17:02:16.5198001+02:00"
+      "startDate": "2024-07-09T17:02:16.5198001+02:00",
+      "lastLoaded": "2024-07-10T14:48:22.8549443+02:00",
+      "lastPlayed": "2024-07-10T14:49:00.1973201+02:00",
+      "timePlayed": "00:04:08.9293545"
     }
   ],
   "Gehennas": [],

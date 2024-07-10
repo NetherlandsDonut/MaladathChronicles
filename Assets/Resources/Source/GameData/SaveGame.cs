@@ -159,7 +159,7 @@ public class SaveGame
                 player.worldBuffs.RemoveAt(i);
         }
         if (player.worldBuffs.Count != count)
-            Respawn("WorldBuffs");
+            Respawn("WorldBuffs", true);
     }
 
     //Restocks items to vendors

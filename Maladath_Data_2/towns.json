@@ -44,7 +44,7 @@
       {
         "name": "Magnus Frostwake",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Dwarf",
         "type": "Vendor",
         "itemsSold": [
@@ -224,14 +224,14 @@
       {
         "name": "Ander Germaine",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Human",
         "type": "Warrior Trainer"
       },
       {
         "name": "Catherine Leland",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Human",
         "type": "Fishing Supplies",
         "itemsSold": [
@@ -301,35 +301,35 @@
       {
         "name": "Lord Grayson Shadowbreaker",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Human",
         "type": "Paladin Trainer"
       },
       {
         "name": "Lord Tony Romano",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Human",
         "type": "Rogue Trainer"
       },
       {
         "name": "High Priestess Laurena",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Human",
         "type": "Priest Trainer"
       },
       {
         "name": "Einris Brightspear",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Dwarf",
         "type": "Hunter Trainer"
       },
       {
         "name": "Demisette Cloyce",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Human",
         "type": "Warlock Trainer"
       },
@@ -343,7 +343,7 @@
       {
         "name": "Larimaine Purdue",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Human",
         "type": "Portal Trainer"
       },
@@ -357,7 +357,7 @@
       {
         "name": "Dungar Longdrink",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Human",
         "type": "Flight Master"
       },
@@ -491,14 +491,14 @@
       {
         "name": "Stephen Ryback",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Human",
         "type": "Cook"
       },
       {
         "name": "Gelman Stonehand",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Dwarf",
         "type": "Miner"
       },
@@ -512,21 +512,21 @@
       {
         "name": "Lilliam Sparkspindle",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Gnome",
         "type": "Expert Engineer"
       },
       {
         "name": "Lucan Cordell",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Human",
         "type": "Expert Enchanter"
       },
       {
         "name": "Simon Tanner",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Human",
         "type": "Expert Leatherworker"
       },
@@ -548,14 +548,14 @@
       {
         "name": "Lilyssia Nightbreeze",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Night Elf",
         "type": "Expert Alchemist"
       },
       {
         "name": "Jalane Ayrole",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Human",
         "type": "Master Shadoweave Tailor"
       },
@@ -570,7 +570,7 @@
       {
         "name": "Dane Lindgren",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Human",
         "type": "Journeyman Blacksmith",
         "hidden": true
@@ -578,14 +578,14 @@
       {
         "name": "Therum Deepforge",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Dwarf",
         "type": "Expert Blacksmith"
       },
       {
         "name": "Sprite Jumpsprocket",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Gnome",
         "type": "Journeyman Engineer",
         "hidden": true
@@ -593,7 +593,7 @@
       {
         "name": "Betty Quin",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Human",
         "type": "Journeyman Enchanter",
         "hidden": true
@@ -601,7 +601,7 @@
       {
         "name": "Shylamiir",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Night Elf",
         "type": "Herbalist",
         "hidden": true
@@ -609,7 +609,7 @@
       {
         "name": "Randal Worth",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Human",
         "type": "Journeyman Leatherworker",
         "hidden": true
@@ -617,7 +617,7 @@
       {
         "name": "Lawrence Schneider",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Human",
         "type": "Journeyman Tailor",
         "hidden": true
@@ -625,7 +625,7 @@
       {
         "name": "Tannysa",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Night Elf",
         "type": "Herbalist"
       },
@@ -639,7 +639,7 @@
       {
         "name": "Carla Granger",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Human",
         "type": "Cloth Armor Merchant",
         "itemsSold": [
@@ -774,7 +774,7 @@
       {
         "name": "Billibub Cogspinner",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Gnome",
         "type": "Engineering Supplies",
         "itemsSold": [
@@ -879,7 +879,7 @@
       {
         "name": "Jessara Cordell",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Human",
         "type": "Enchanting Supplies",
         "itemsSold": [
@@ -948,7 +948,7 @@
       {
         "name": "Alexandra Bolero",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Human",
         "type": "Tailoring Supplies",
         "itemsSold": [
@@ -1266,7 +1266,7 @@
       {
         "name": "Jillian Tanner",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Human",
         "type": "Leatherworking Supplies",
         "itemsSold": [
@@ -1371,7 +1371,7 @@
       {
         "name": "Osric Strang",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Human",
         "type": "Heavy Armor Merchant",
         "itemsSold": [
@@ -1578,7 +1578,7 @@
       {
         "name": "Agustus Moulaine",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Human",
         "type": "Mail Armor Merchant",
         "itemsSold": [
@@ -1853,7 +1853,7 @@
       {
         "name": "Ullanna",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Night Elf",
         "type": "Trade Supplies",
         "itemsSold": [
@@ -2007,7 +2007,7 @@
       {
         "name": "Quartermaster Hudson",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Human",
         "type": "Armorer",
         "itemsSold": [
@@ -2073,7 +2073,7 @@
       {
         "name": "Lyria Du Lac",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Human",
         "type": "Warrior Trainer"
       },
@@ -2087,21 +2087,21 @@
       {
         "name": "Keryn Sylvius",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Human",
         "type": "Rogue Trainer"
       },
       {
         "name": "Priestess Josetta",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Human",
         "type": "Priest Trainer"
       },
       {
         "name": "Maximillian Crowe",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Human",
         "type": "Warlock Trainer"
       },
@@ -2115,7 +2115,7 @@
       {
         "name": "Farley",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Human",
         "type": "Innkeeper",
         "itemsSold": [
@@ -2214,49 +2214,49 @@
       {
         "name": "Erma",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Human",
         "type": "Stable Master"
       },
       {
         "name": "Kitta Firewind",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Human",
         "type": "Artisan Enchanter"
       },
       {
         "name": "Herbalist Pomeroy",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Human",
         "type": "Herbalist"
       },
       {
         "name": "Lee Brown",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Human",
         "type": "Fisherman"
       },
       {
         "name": "Tomas",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Human",
         "type": "Cook"
       },
       {
         "name": "Helene Peltskinner",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Human",
         "type": "Skinner"
       },
       {
         "name": "Michelle Belle",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Human",
         "type": "Physician"
       },
@@ -2277,14 +2277,14 @@
       {
         "name": "Adele Fielder",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Human",
         "type": "Journeyman Leatherworker"
       },
       {
         "name": "Rallic Finn",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Human",
         "type": "Bowyer",
         "itemsSold": [
@@ -2335,7 +2335,7 @@
       {
         "name": "Tharynn Bouden",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Human",
         "type": "Trade Supplies",
         "itemsSold": [
@@ -2416,7 +2416,7 @@
       {
         "name": "Andrew Krighton",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Human",
         "type": "Armorer",
         "itemsSold": [
@@ -2473,7 +2473,7 @@
       {
         "name": "Corina Steele",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Human",
         "type": "Weaponsmith",
         "itemsSold": [
@@ -2530,7 +2530,7 @@
       {
         "name": "Toddrick",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Human",
         "type": "Meat Vendor",
         "itemsSold": [
@@ -2584,14 +2584,14 @@
       {
         "name": "Ariena Stormfeather",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Human",
         "type": "Flight Master"
       },
       {
         "name": "Brianna",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Human",
         "type": "Innkeeper",
         "itemsSold": [
@@ -2704,21 +2704,21 @@
       {
         "name": "Matthew Hooper",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Human",
         "type": "Fisherman"
       },
       {
         "name": "Alma Jainrose",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Human",
         "type": "Herbalist"
       },
       {
         "name": "Henry Chapal",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Human",
         "type": "Gunsmith",
         "itemsSold": [
@@ -2763,7 +2763,7 @@
       {
         "name": "Vernon Hale",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Human",
         "type": "Fishing Supplies",
         "itemsSold": [
@@ -2844,7 +2844,7 @@
       {
         "name": "Franklin Hamar",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Human",
         "type": "Tailoring Supplies",
         "itemsSold": [
@@ -3093,7 +3093,7 @@
       {
         "name": "Brother Danil",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Human",
         "type": "General Goods",
         "itemsSold": [
@@ -3138,7 +3138,7 @@
       {
         "name": "Dermot Johns",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Human",
         "type": "Cloth & Leather Armor Merchant",
         "itemsSold": [
@@ -3219,7 +3219,7 @@
       {
         "name": "Janos Hammerknuckle",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Human",
         "type": "Weaponsmith",
         "itemsSold": [
@@ -3276,7 +3276,7 @@
       {
         "name": "Godric Rothgar",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Human",
         "type": "Armorer & Shieldcrafter",
         "itemsSold": [
@@ -3342,14 +3342,14 @@
       {
         "name": "Darla Harris",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Human",
         "type": "Flight Master"
       },
       {
         "name": "Anderson",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Human",
         "type": "Innkeeper",
         "itemsSold": [
@@ -3484,21 +3484,21 @@
       {
         "name": "Wesley",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Human",
         "type": "Stable Master"
       },
       {
         "name": "Donald Rabonne",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Human",
         "type": "Fisherman"
       },
       {
         "name": "Lindea Rabonne",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Human",
         "type": "Fishing Supplies",
         "itemsSold": [
@@ -3742,14 +3742,14 @@
       {
         "name": "Felicia Maline",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Human",
         "type": "Flight Master"
       },
       {
         "name": "Trelayne",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Human",
         "type": "Innkeeper",
         "itemsSold": [
@@ -3855,14 +3855,14 @@
       {
         "name": "Finbus Geargrind",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Gnome",
         "type": "Expert Engineer"
       },
       {
         "name": "Matt Johnson",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Human",
         "type": "Miner"
       },
@@ -3876,7 +3876,7 @@
       {
         "name": "Avette Fellwood",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Human",
         "type": "Bowyer",
         "itemsSold": [
@@ -3939,7 +3939,7 @@
       {
         "name": "Herble Baubbletump",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Gnome",
         "type": "Engineering & Mining Supplies",
         "itemsSold": [
@@ -4050,7 +4050,7 @@
       {
         "name": "Sheri Zipstitch",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Human",
         "type": "Tailoring Supplies",
         "itemsSold": [
@@ -4318,7 +4318,7 @@
       {
         "name": "Thor",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Human",
         "type": "Flight Master"
       },
@@ -4424,14 +4424,14 @@
       {
         "name": "Kirk Maxwell",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Human",
         "type": "Stable Master"
       },
       {
         "name": "William MacGregor",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Human",
         "type": "Bowyer",
         "itemsSold": [
@@ -4600,7 +4600,7 @@
       {
         "name": "Christopher Hewen",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Human",
         "type": "Trade Supplies",
         "itemsSold": [
@@ -4840,21 +4840,21 @@
       {
         "name": "Captain Evencane",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Human",
         "type": "Warrior Trainer"
       },
       {
         "name": "Brother Karman",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Human",
         "type": "Paladin Trainer"
       },
       {
         "name": "Baldruc",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Human",
         "type": "Flight Master"
       },
@@ -4967,7 +4967,7 @@
       {
         "name": "Timothy Worthington",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Human",
         "type": "Master Tailor"
       },
@@ -5096,7 +5096,7 @@
       {
         "name": "Helenia Olden",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Human",
         "type": "Trade Supplies",
         "itemsSold": [
@@ -5306,7 +5306,7 @@
       {
         "name": "Shellei Brondil",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Human",
         "type": "Flight Master"
       },
@@ -5418,7 +5418,7 @@
       {
         "name": "Bethaine Flinthammer",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Dwarf",
         "type": "Stable Master"
       },
@@ -5446,7 +5446,7 @@
       {
         "name": "Naela Trance",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Human",
         "type": "Bowyer",
         "itemsSold": [
@@ -5497,7 +5497,7 @@
       {
         "name": "Murndan Derth",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Dwarf",
         "type": "Gunsmith",
         "itemsSold": [
@@ -5884,7 +5884,7 @@
       {
         "name": "Kersok Prond",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Dwarf",
         "type": "Trade Supplies",
         "itemsSold": [
@@ -6028,14 +6028,14 @@
       {
         "name": "Alexandra Constantine",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Human",
         "type": "Flight Master"
       },
       {
         "name": "Strumner Flintheel",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Dwarf",
         "type": "Armor Crafter",
         "itemsSold": [
@@ -6300,7 +6300,7 @@
       {
         "name": "Cedrik Prose",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Human",
         "type": "Flight Master"
       },
@@ -6496,7 +6496,7 @@
       {
         "name": "Androd Fadran",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Human",
         "type": "Leatherworking Supplies",
         "itemsSold": [
@@ -6616,28 +6616,28 @@
       {
         "name": "Darnath Bladesinger",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Night Elf",
         "type": "Warrior Trainer"
       },
       {
         "name": "Fylerian Nightwing",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Night Elf",
         "type": "Druid Trainer"
       },
       {
         "name": "Erion Shadewhisper",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Night Elf",
         "type": "Rogue Trainer"
       },
       {
         "name": "Astarii Starseeker",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Night Elf",
         "type": "Priest Trainer"
       },
@@ -6651,7 +6651,7 @@
       {
         "name": "Elissa Dumas",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Human",
         "type": "Portal Trainer"
       },
@@ -6764,21 +6764,21 @@
       {
         "name": "Alassin",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Night Elf",
         "type": "Stable Master"
       },
       {
         "name": "Idriana",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Night Elf",
         "type": "Banker"
       },
       {
         "name": "Ainethil",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Night Elf",
         "type": "Artisan Alchemist"
       },
@@ -6806,14 +6806,14 @@
       {
         "name": "Astaia",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Night Elf",
         "type": "Fisherman"
       },
       {
         "name": "Firodren Mooncaller",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Night Elf",
         "type": "Herbalist"
       },
@@ -6827,21 +6827,21 @@
       {
         "name": "Taladan",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Night Elf",
         "type": "Expert Enchanter"
       },
       {
         "name": "Me'lynn",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Night Elf",
         "type": "Expert Tailor"
       },
       {
         "name": "Milla Fairancora",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Night Elf",
         "type": "Journeyman Alchemist",
         "hidden": true
@@ -6849,7 +6849,7 @@
       {
         "name": "Darianna",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Night Elf",
         "type": "Journeyman Leatherworker",
         "hidden": true
@@ -6873,7 +6873,7 @@
       {
         "name": "Sylvanna Forestmoon",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Night Elf",
         "type": "Expert Alchemist",
         "hidden": true
@@ -6889,14 +6889,14 @@
       {
         "name": "Tolon",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Night Elf",
         "type": "Auctioneer"
       },
       {
         "name": "Voloren",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Night Elf",
         "type": "Fishing Supplies",
         "itemsSold": [
@@ -6941,7 +6941,7 @@
       {
         "name": "Vinasia",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Night Elf",
         "type": "Cloth Armor Merchant",
         "itemsSold": [
@@ -7220,7 +7220,7 @@
       {
         "name": "Cylania",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Night Elf",
         "type": "Armorer",
         "itemsSold": [
@@ -7445,7 +7445,7 @@
       {
         "name": "Vaean",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Night Elf",
         "type": "Enchanting Supplies",
         "itemsSold": [
@@ -7733,7 +7733,7 @@
       {
         "name": "Melea",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Night Elf",
         "type": "Mail Armor Merchant",
         "itemsSold": [
@@ -8072,7 +8072,7 @@
       {
         "name": "Saenorion",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Night Elf",
         "type": "Leatherworking Supplies",
         "itemsSold": [
@@ -8189,7 +8189,7 @@
       {
         "name": "Caynrus",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Night Elf",
         "type": "Shield Merchant",
         "itemsSold": [
@@ -8281,7 +8281,7 @@
       {
         "name": "Janna Brightmoon",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Night Elf",
         "type": "Clothier",
         "itemsSold": [
@@ -8371,7 +8371,7 @@
       {
         "name": "Freja Nightwing",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Night Elf",
         "type": "Leather Armor Merchant",
         "itemsSold": [
@@ -8416,7 +8416,7 @@
       {
         "name": "Khardan Proudblade",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Night Elf",
         "type": "Weaponsmith",
         "itemsSold": [
@@ -8473,7 +8473,7 @@
       {
         "name": "Andiss",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Night Elf",
         "type": "Armorer & Shieldcrafter",
         "itemsSold": [
@@ -8677,14 +8677,14 @@
       {
         "name": "Vesprystus",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Night Elf",
         "type": "Flight Master"
       },
       {
         "name": "Nessa Shadowsong",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Night Elf",
         "type": "Fishing Supplies",
         "itemsSold": [
@@ -8758,7 +8758,7 @@
       {
         "name": "Kal",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Night Elf",
         "type": "Druid Trainer"
       },
@@ -8772,21 +8772,21 @@
       {
         "name": "Laurna Morninglight",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Night Elf",
         "type": "Priest Trainer"
       },
       {
         "name": "Dazalar",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Night Elf",
         "type": "Hunter Trainer"
       },
       {
         "name": "Keldamyr",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Night Elf",
         "type": "Innkeeper",
         "itemsSold": [
@@ -8885,7 +8885,7 @@
       {
         "name": "Seriadne",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Night Elf",
         "type": "Stable Master"
       },
@@ -8899,14 +8899,14 @@
       {
         "name": "Byancie",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Night Elf",
         "type": "Physician"
       },
       {
         "name": "Androl Oakhand",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Night Elf",
         "type": "Fisherman"
       },
@@ -8920,28 +8920,28 @@
       {
         "name": "Zarrin",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Night Elf",
         "type": "Cook"
       },
       {
         "name": "Radnaal Maneweaver",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Night Elf",
         "type": "Skinner"
       },
       {
         "name": "Nadyia Maneweaver",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Night Elf",
         "type": "Journeyman Leatherworker"
       },
       {
         "name": "Jeena Featherbow",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Night Elf",
         "type": "Bowyer",
         "itemsSold": [
@@ -8986,7 +8986,7 @@
       {
         "name": "Narret Shadowgrove",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Night Elf",
         "type": "Trade Supplies",
         "itemsSold": [
@@ -9152,14 +9152,14 @@
       {
         "name": "Daelyshia",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Night Elf",
         "type": "Flight Master"
       },
       {
         "name": "Kimlya",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Night Elf",
         "type": "Innkeeper",
         "itemsSold": [
@@ -9258,21 +9258,21 @@
       {
         "name": "Maluressian",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Night Elf",
         "type": "Stable Master"
       },
       {
         "name": "Aayndia Floralwind",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Night Elf",
         "type": "Expert Leatherworker"
       },
       {
         "name": "Aeolynn",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Night Elf",
         "type": "Clothier",
         "itemsSold": [
@@ -9425,7 +9425,7 @@
       {
         "name": "Dalria",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Night Elf",
         "type": "Trade Supplies",
         "itemsSold": [
@@ -9734,7 +9734,7 @@
       {
         "name": "Syurana",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Night Elf",
         "type": "Trade Supplies",
         "itemsSold": [
@@ -9927,7 +9927,7 @@
       {
         "name": "Danlaar Nightstride",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Night Elf",
         "type": "Warrior Trainer"
       },
@@ -9955,7 +9955,7 @@
       {
         "name": "Bhaldaran Ravenshade",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Night Elf",
         "type": "Bowyer",
         "itemsSold": [
@@ -10006,7 +10006,7 @@
       {
         "name": "Shandrina",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Night Elf",
         "type": "Trade Supplies",
         "itemsSold": [
@@ -10219,7 +10219,7 @@
       {
         "name": "Shaussiy",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Night Elf",
         "type": "Innkeeper",
         "itemsSold": [
@@ -10318,21 +10318,21 @@
       {
         "name": "Jaelysia",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Night Elf",
         "type": "Stable Master"
       },
       {
         "name": "Kurdram Stonehammer",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Dwarf",
         "type": "Miner"
       },
       {
         "name": "Grondal Moonbreeze",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Night Elf",
         "type": "Journeyman Tailor"
       },
@@ -10346,7 +10346,7 @@
       {
         "name": "Shaldyn",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Night Elf",
         "type": "Clothier",
         "itemsSold": [
@@ -10526,7 +10526,7 @@
       {
         "name": "Gorbold Steelhand",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Dwarf",
         "type": "Trade Supplies",
         "itemsSold": [
@@ -10743,21 +10743,21 @@
       {
         "name": "Jarrodenus",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Night Elf",
         "type": "Flight Master"
       },
       {
         "name": "Peter Galen",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Human",
         "type": "Master Dragonscale Leatherworker"
       },
       {
         "name": "Brinna Valanaar",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Night Elf",
         "type": "Bowyer",
         "itemsSold": [
@@ -10859,14 +10859,14 @@
       {
         "name": "Fyldren Moonfeather",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Night Elf",
         "type": "Flight Master"
       },
       {
         "name": "Shyria",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Night Elf",
         "type": "Innkeeper",
         "itemsSold": [
@@ -10965,7 +10965,7 @@
       {
         "name": "Antarius",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Night Elf",
         "type": "Stable Master"
       },
@@ -10986,7 +10986,7 @@
       {
         "name": "Brannock",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Night Elf",
         "type": "Fisherman"
       },
@@ -11251,7 +11251,7 @@
       {
         "name": "Pratt McGrubben",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Human",
         "type": "Leatherworking Supplies",
         "itemsSold": [
@@ -11389,7 +11389,7 @@
       {
         "name": "Baritanas Skyriver",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Night Elf",
         "type": "Flight Master"
       },
@@ -11495,7 +11495,7 @@
       {
         "name": "Shelgrayn",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Night Elf",
         "type": "Stable Master"
       }
@@ -11518,14 +11518,14 @@
       {
         "name": "Caryssia Moonhunter",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Night Elf",
         "type": "Tribal Leatherworking Trainer"
       },
       {
         "name": "Brienna Starglow",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Night Elf",
         "type": "Tailoring Supplies",
         "itemsSold": [
@@ -11639,7 +11639,7 @@
       {
         "name": "Teloren",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Night Elf",
         "type": "Flight Master"
       },
@@ -11727,7 +11727,7 @@
       {
         "name": "Faralia",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Night Elf",
         "type": "Innkeeper",
         "itemsSold": [
@@ -11835,7 +11835,7 @@
       {
         "name": "Guthrum Thunderfist",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Dwarf",
         "type": "Flight Master"
       },
@@ -11953,21 +11953,21 @@
       {
         "name": "Killium Bouldertoe",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Dwarf",
         "type": "Stable Master"
       },
       {
         "name": "Drakk Stonehand",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Dwarf",
         "type": "Master Leatherworker"
       },
       {
         "name": "Nioma",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Dwarf",
         "type": "Leatherworking Supplies",
         "itemsSold": [
@@ -12087,14 +12087,14 @@
       {
         "name": "Kelstrum Stonebreaker",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Dwarf",
         "type": "Warrior Trainer"
       },
       {
         "name": "Tansy Puddlefizz",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Gnome",
         "type": "Fishing Supplies",
         "itemsSold": [
@@ -12163,7 +12163,7 @@
       {
         "name": "Valgar Highforge",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Dwarf",
         "type": "Paladin Trainer"
       },
@@ -12191,7 +12191,7 @@
       {
         "name": "Alexander Calder",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Human",
         "type": "Warlock Trainer"
       },
@@ -12212,21 +12212,21 @@
       {
         "name": "Glordrum Steelbeard",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Dwarf",
         "type": "Battlemaster"
       },
       {
         "name": "Gryth Thurden",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Dwarf",
         "type": "Flight Master"
       },
       {
         "name": "Firebrew",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Dwarf",
         "type": "Innkeeper",
         "itemsSold": [
@@ -12362,7 +12362,7 @@
       {
         "name": "Bailey Stonemantle",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Dwarf",
         "type": "Banker"
       },
@@ -12376,14 +12376,14 @@
       {
         "name": "Springspindle Fizzlegear",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Gnome",
         "type": "Artisan Engineer"
       },
       {
         "name": "Tinkmaster Overspark",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Gnome",
         "type": "Master Gnome Engineer"
       },
@@ -12397,7 +12397,7 @@
       {
         "name": "Balthus Stoneflayer",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Dwarf",
         "type": "Skinner"
       },
@@ -12418,21 +12418,21 @@
       {
         "name": "Fimble Finespindle",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Gnome",
         "type": "Expert Leatherworker"
       },
       {
         "name": "Gimble Thistlefuzz",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Gnome",
         "type": "Expert Enchanter"
       },
       {
         "name": "Tally Berryfizz",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Gnome",
         "type": "Expert Alchemist"
       },
@@ -12446,21 +12446,21 @@
       {
         "name": "Reyna Stonebranch",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Dwarf",
         "type": "Herbalist"
       },
       {
         "name": "Jormund Stonebrow",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Dwarf",
         "type": "Expert Tailor"
       },
       {
         "name": "Groum Stonebeard",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Dwarf",
         "type": "Journeyman Blacksmith",
         "hidden": true
@@ -12468,7 +12468,7 @@
       {
         "name": "Trixie Quikswitch",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Dwarf",
         "type": "Expert Engineer",
         "hidden": true
@@ -12476,7 +12476,7 @@
       {
         "name": "Thonys Pillarstone",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Dwarf",
         "type": "Journeyman Enchanter",
         "hidden": true
@@ -12492,7 +12492,7 @@
       {
         "name": "Jemma Quikswitch",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Gnome",
         "type": "Journeyman Engineer",
         "hidden": true
@@ -12508,7 +12508,7 @@
       {
         "name": "Vosur Brakthel",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Dwarf",
         "type": "Journeyman Alchemist",
         "hidden": true
@@ -12516,14 +12516,14 @@
       {
         "name": "Redmuse",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Dwarf",
         "type": "Auctioneer"
       },
       {
         "name": "Raena Flinthammer",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Dwarf",
         "type": "Light Armor Merchant",
         "itemsSold": [
@@ -12751,7 +12751,7 @@
       {
         "name": "Gearcutter Cogspinner",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Gnome",
         "type": "Engineering Supplies",
         "itemsSold": [
@@ -12955,7 +12955,7 @@
       {
         "name": "Poranna Snowbraid",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Dwarf",
         "type": "Tailoring Supplies",
         "itemsSold": [
@@ -13084,7 +13084,7 @@
       {
         "name": "Bombus Finespindle",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Gnome",
         "type": "Leatherworking Supplies",
         "itemsSold": [
@@ -13388,7 +13388,7 @@
       {
         "name": "Burbik Gearspanner",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Gnome",
         "type": "Trade Supplies",
         "itemsSold": [
@@ -13523,7 +13523,7 @@
       {
         "name": "Olthran Craghelm",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Dwarf",
         "type": "Shield Merchant",
         "itemsSold": [
@@ -13674,7 +13674,7 @@
       {
         "name": "Thorgrum Borrelson",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Dwarf",
         "type": "Flight Master"
       },
@@ -13780,7 +13780,7 @@
       {
         "name": "Lina Hearthstove",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Dwarf",
         "type": "Stable Master"
       },
@@ -13801,7 +13801,7 @@
       {
         "name": "Kali Healtouch",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Dwarf",
         "type": "Herbalist"
       },
@@ -13815,14 +13815,14 @@
       {
         "name": "Deek Fizzlebizz",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Gnome",
         "type": "Journeyman Engineer"
       },
       {
         "name": "Vrok Blunderblast",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Dwarf",
         "type": "Gunsmith",
         "itemsSold": [
@@ -13972,7 +13972,7 @@
       {
         "name": "Drac Roughcut",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Dwarf",
         "type": "Trade Supplies",
         "itemsSold": [
@@ -14311,7 +14311,7 @@
       {
         "name": "Keeg Gibn",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Dwarf",
         "type": "Ale & Wine Vendor",
         "itemsSold": [
@@ -14386,7 +14386,7 @@
       {
         "name": "Burdrak Harglhelm",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Dwarf",
         "type": "Leather Armor Merchant",
         "itemsSold": [
@@ -14431,7 +14431,7 @@
       {
         "name": "Gretta Ganter",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Dwarf",
         "type": "Fishing Supplies",
         "itemsSold": [
@@ -14491,7 +14491,7 @@
       {
         "name": "Granis Swiftaxe",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Dwarf",
         "type": "Warrior Trainer"
       },
@@ -14512,7 +14512,7 @@
       {
         "name": "Maxal Anvon",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Dwarf",
         "type": "Priest Trainer"
       },
@@ -14526,7 +14526,7 @@
       {
         "name": "Gimrizz Shadowcog",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Gnome",
         "type": "Warlock Trainer"
       },
@@ -14665,7 +14665,7 @@
       {
         "name": "Yarr Hammerstone",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Dwarf",
         "type": "Miner"
       },
@@ -14686,7 +14686,7 @@
       {
         "name": "Bronk Guzzlegear",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Dwarf",
         "type": "Journeyman Engineer"
       },
@@ -14732,7 +14732,7 @@
       {
         "name": "Loslor Rudge",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Dwarf",
         "type": "Engineering Supplies",
         "itemsSold": [
@@ -14981,7 +14981,7 @@
       {
         "name": "Adlin Pridedrift",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Dwarf",
         "type": "General Goods",
         "itemsSold": [
@@ -15230,7 +15230,7 @@
       {
         "name": "Gothor Brumn",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Dwarf",
         "type": "Armorer",
         "itemsSold": [
@@ -15291,21 +15291,21 @@
       {
         "name": "Ormok",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Orc",
         "type": "Rogue Trainer"
       },
       {
         "name": "Kardris Dreamseeker",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Orc",
         "type": "Shaman Trainer"
       },
       {
         "name": "X'yera",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Troll",
         "type": "Priest Trainer"
       },
@@ -15319,42 +15319,42 @@
       {
         "name": "Grol'dar",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Orc",
         "type": "Warlock Trainer"
       },
       {
         "name": "Deino",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Troll",
         "type": "Mage Trainer"
       },
       {
         "name": "Thuul",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Troll",
         "type": "Portal Trainer"
       },
       {
         "name": "Brakgul Deathbringer",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Orc",
         "type": "Battlemaster"
       },
       {
         "name": "Doras",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Orc",
         "type": "Flight Master"
       },
       {
         "name": "Borstan",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Orc",
         "type": "Meat Vendor",
         "itemsSold": [
@@ -15498,7 +15498,7 @@
       {
         "name": "Xon'cha",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Troll",
         "type": "Stable Master"
       },
@@ -15519,14 +15519,14 @@
       {
         "name": "Arnok",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Orc",
         "type": "Physician"
       },
       {
         "name": "Roxxik",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Goblin",
         "type": "Artisan Engineer"
       },
@@ -15541,14 +15541,14 @@
       {
         "name": "Saru Steelfury",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Orc",
         "type": "Artisan Blacksmith"
       },
       {
         "name": "Makaru",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Orc",
         "type": "Miner"
       },
@@ -15562,7 +15562,7 @@
       {
         "name": "Magar",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Orc",
         "type": "Expert Tailor"
       },
@@ -15583,7 +15583,7 @@
       {
         "name": "Thuwd",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Orc",
         "type": "Skinner"
       },
@@ -15597,7 +15597,7 @@
       {
         "name": "Karolek",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Orc",
         "type": "Expert Leatherworker"
       },
@@ -15628,7 +15628,7 @@
       {
         "name": "Ug'thok",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Orc",
         "type": "Journeyman Blacksmith",
         "hidden": true
@@ -15636,7 +15636,7 @@
       {
         "name": "Whuut",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Orc",
         "type": "Journeyman Alchemist",
         "hidden": true
@@ -15644,7 +15644,7 @@
       {
         "name": "Jhag",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Orc",
         "type": "Journeyman Enchanter",
         "hidden": true
@@ -15652,14 +15652,14 @@
       {
         "name": "Wabang",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Orc",
         "type": "Auctioneer"
       },
       {
         "name": "Ollanus",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Orc",
         "type": "Light Armor Merchant",
         "itemsSold": [
@@ -15794,7 +15794,7 @@
       {
         "name": "Sovik",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Orc",
         "type": "Engineering Supplies",
         "itemsSold": [
@@ -15917,7 +15917,7 @@
       {
         "name": "Kithas",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Orc",
         "type": "Enchanting Supplies",
         "itemsSold": [
@@ -15998,7 +15998,7 @@
       {
         "name": "Borya",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Orc",
         "type": "Tailoring Supplies",
         "itemsSold": [
@@ -16250,7 +16250,7 @@
       {
         "name": "Felika",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Orc",
         "type": "Trade Supplies",
         "itemsSold": [
@@ -16782,7 +16782,7 @@
       {
         "name": "Zlagk",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Orc",
         "type": "Butcher",
         "itemsSold": [
@@ -16863,7 +16863,7 @@
       {
         "name": "Kzan Thornslash",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Orc",
         "type": "Weaponsmith",
         "itemsSold": [
@@ -16920,7 +16920,7 @@
       {
         "name": "Rarc",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Orc",
         "type": "Armorer & Shieldcrafter",
         "itemsSold": [
@@ -16977,7 +16977,7 @@
       {
         "name": "Huklah",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Orc",
         "type": "Cloth & Leather Armor Merchant",
         "itemsSold": [
@@ -17058,7 +17058,7 @@
       {
         "name": "Duokna",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Orc",
         "type": "General Goods",
         "itemsSold": [
@@ -17112,49 +17112,49 @@
       {
         "name": "Tarshaw Jaggedscar",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Orc",
         "type": "Warrior Trainer"
       },
       {
         "name": "Kaplak",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Orc",
         "type": "Rogue Trainer"
       },
       {
         "name": "Tai'Jin",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Troll",
         "type": "Priest Trainer"
       },
       {
         "name": "Swart",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Orc",
         "type": "Shaman Trainer"
       },
       {
         "name": "Thotar",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Orc",
         "type": "Hunter Trainer"
       },
       {
         "name": "Dhugru Gorelust",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Orc",
         "type": "Warlock Trainer"
       },
       {
         "name": "Grosk",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Orc",
         "type": "Innkeeper",
         "itemsSold": [
@@ -17253,21 +17253,21 @@
       {
         "name": "Shoja'my",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Troll",
         "type": "Stable Master"
       },
       {
         "name": "Rawrk",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Orc",
         "type": "Physician"
       },
       {
         "name": "Krunn",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Orc",
         "type": "Miner"
       },
@@ -17281,14 +17281,14 @@
       {
         "name": "Mukdrak",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Orc",
         "type": "Journeyman Engineer"
       },
       {
         "name": "Ghrawt",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Orc",
         "type": "Bowyer",
         "itemsSold": [
@@ -17435,7 +17435,7 @@
       {
         "name": "Andruk",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Orc",
         "type": "Flight Master"
       },
@@ -17449,7 +17449,7 @@
       {
         "name": "Wik'Tar",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Troll",
         "type": "Fish Merchant & Supplies",
         "itemsSold": [
@@ -17551,7 +17551,7 @@
       {
         "name": "Boorand Plainswind",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Tauren",
         "type": "Innkeeper",
         "itemsSold": [
@@ -17650,42 +17650,42 @@
       {
         "name": "Devrak",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Orc",
         "type": "Flight Master"
       },
       {
         "name": "Sikwa",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Tauren",
         "type": "Stable Master"
       },
       {
         "name": "Kil'hala",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Troll",
         "type": "Journeyman Tailor"
       },
       {
         "name": "Traugh",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Orc",
         "type": "Expert Blacksmith"
       },
       {
         "name": "Duhng",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Orc",
         "type": "Cook"
       },
       {
         "name": "Uthrok",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Orc",
         "type": "Bowyer & Gunsmith",
         "itemsSold": [
@@ -17865,7 +17865,7 @@
       {
         "name": "Wrahk",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Orc",
         "type": "Tailoring Supplies",
         "itemsSold": [
@@ -17982,7 +17982,7 @@
       {
         "name": "Tari'qa",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Troll",
         "type": "Trade Supplies",
         "itemsSold": [
@@ -18120,7 +18120,7 @@
       {
         "name": "Brakkar",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Orc",
         "type": "Flight Master"
       }
@@ -18136,7 +18136,7 @@
       {
         "name": "Kroum",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Orc",
         "type": "Flight Master"
       }
@@ -18166,7 +18166,7 @@
       {
         "name": "Thulbek",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Orc",
         "type": "Innkeeper",
         "itemsSold": [
@@ -18301,14 +18301,14 @@
       {
         "name": "Durik",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Orc",
         "type": "Stable Master"
       },
       {
         "name": "Se'Jib",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Troll",
         "type": "Master Tribal Leatherworker"
       },
@@ -18322,7 +18322,7 @@
       {
         "name": "Angrun",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Orc",
         "type": "Herbalist"
       },
@@ -18540,7 +18540,7 @@
       {
         "name": "Vhulgra",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Orc",
         "type": "Flight Master"
       },
@@ -18662,14 +18662,14 @@
       {
         "name": "Gorrik",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Orc",
         "type": "Flight Master"
       },
       {
         "name": "Shul'kar",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Orc",
         "type": "Innkeeper",
         "itemsSold": [
@@ -18768,14 +18768,14 @@
       {
         "name": "Greth",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Orc",
         "type": "Stable Master"
       },
       {
         "name": "Thorkaf Dragoneye",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Orc",
         "type": "Master Dragonscale Leatherworker"
       }
@@ -18791,28 +18791,28 @@
       {
         "name": "Malosh",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Orc",
         "type": "Warrior Trainer"
       },
       {
         "name": "Haromm",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Orc",
         "type": "Shaman Trainer"
       },
       {
         "name": "Ogromm",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Orc",
         "type": "Hunter Trainer"
       },
       {
         "name": "Kartosh",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Orc",
         "type": "Warlock Trainer"
       },
@@ -18826,7 +18826,7 @@
       {
         "name": "Karakul",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Orc",
         "type": "Innkeeper",
         "itemsSold": [
@@ -18925,14 +18925,14 @@
       {
         "name": "Hekkru",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Orc",
         "type": "Stable Master"
       },
       {
         "name": "Rogvar",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Orc",
         "type": "Master Alchemist"
       },
@@ -19146,7 +19146,7 @@
       {
         "name": "Grimnal",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Orc",
         "type": "Mail & Plate Merchant",
         "itemsSold": [
@@ -19267,7 +19267,7 @@
       {
         "name": "Zanara",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Orc",
         "type": "Bowyer",
         "itemsSold": [
@@ -19330,7 +19330,7 @@
       {
         "name": "Ghok'kah",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Orc",
         "type": "Tailoring Supplies",
         "itemsSold": [
@@ -19451,28 +19451,28 @@
       {
         "name": "Mishiki",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Troll",
         "type": "Herbalist"
       },
       {
         "name": "Lau'Tiki",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Troll",
         "type": "Fisherman"
       },
       {
         "name": "Miao'zan",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Troll",
         "type": "Journeyman Alchemist"
       },
       {
         "name": "Trayexir",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Troll",
         "type": "Weapon Merchant",
         "itemsSold": [
@@ -19565,7 +19565,7 @@
       {
         "name": "Hai'zan",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Troll",
         "type": "Butcher",
         "itemsSold": [
@@ -19610,7 +19610,7 @@
       {
         "name": "Zansoa",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Troll",
         "type": "Fishing Supplies",
         "itemsSold": [
@@ -19667,7 +19667,7 @@
       {
         "name": "Tai'tasi",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Troll",
         "type": "Trade Supplies",
         "itemsSold": [
@@ -19769,14 +19769,14 @@
       {
         "name": "Thalon",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Tauren",
         "type": "Flight Master"
       },
       {
         "name": "Sikewa",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Tauren",
         "type": "Innkeeper",
         "itemsSold": [
@@ -19882,14 +19882,14 @@
       {
         "name": "Malux",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Troll",
         "type": "Skinner"
       },
       {
         "name": "Lui'Mala",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Troll",
         "type": "Fisherman"
       },
@@ -20252,7 +20252,7 @@
       {
         "name": "Katoom the Angler",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Troll",
         "type": "Fisherman",
         "itemsSold": [
@@ -20314,14 +20314,14 @@
       {
         "name": "Torm Ragetotem",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Tauren",
         "type": "Warrior Trainer"
       },
       {
         "name": "Kuna Thunderhorn",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Tauren",
         "type": "Bowyer",
         "itemsSold": [
@@ -20453,7 +20453,7 @@
       {
         "name": "Kym Wildmane",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Tauren",
         "type": "Druid Trainer"
       },
@@ -20474,35 +20474,35 @@
       {
         "name": "Archmage Shymm",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Forsaken",
         "type": "Mage Trainer"
       },
       {
         "name": "Birgitte Cranston",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Forsaken",
         "type": "Portal Trainer"
       },
       {
         "name": "Taim Ragetotem",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Tauren",
         "type": "Battlemaster"
       },
       {
         "name": "Tal",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Tauren",
         "type": "Flight Master"
       },
       {
         "name": "Pala",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Tauren",
         "type": "Innkeeper",
         "itemsSold": [
@@ -20601,7 +20601,7 @@
       {
         "name": "Bulrug",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Tauren",
         "type": "Stable Master"
       },
@@ -20615,7 +20615,7 @@
       {
         "name": "Thrag Stonehoof",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Tauren",
         "type": "Journeyman Blacksmith",
         "hidden": true
@@ -20631,7 +20631,7 @@
       {
         "name": "Vhan",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Tauren",
         "type": "Journeyman Tailor",
         "hidden": true
@@ -20639,7 +20639,7 @@
       {
         "name": "Tarn",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Tauren",
         "type": "Expert Leatherworker",
         "hidden": true
@@ -20654,7 +20654,7 @@
       {
         "name": "Mak",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Tauren",
         "type": "Journeyman Leatherworker",
         "hidden": true
@@ -20662,14 +20662,14 @@
       {
         "name": "Teg Dawnstrider",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Tauren",
         "type": "Expert Enchanter"
       },
       {
         "name": "Tepa",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Tauren",
         "type": "Expert Tailor"
       },
@@ -20683,7 +20683,7 @@
       {
         "name": "Komin Winterhoof",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Tauren",
         "type": "Herbalist"
       },
@@ -20711,21 +20711,21 @@
       {
         "name": "Una",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Tauren",
         "type": "Artisan Leatherworker"
       },
       {
         "name": "Gullem",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Tauren",
         "type": "Auctioneer"
       },
       {
         "name": "Hewa",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Tauren",
         "type": "Cloth Armor Merchant",
         "hidden": true,
@@ -21104,7 +21104,7 @@
       {
         "name": "Nata Dawnstrider",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Tauren",
         "type": "Enchanting Supplies",
         "itemsSold": [
@@ -21527,7 +21527,7 @@
       {
         "name": "Fela",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Tauren",
         "type": "Heavy Armor Merchant",
         "itemsSold": [
@@ -21744,21 +21744,21 @@
       {
         "name": "Krang Stonehoof",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Tauren",
         "type": "Warrior Trainer"
       },
       {
         "name": "Gennia Runetotem",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Tauren",
         "type": "Druid Trainer"
       },
       {
         "name": "Narm Skychaser",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Tauren",
         "type": "Shaman Trainer"
       },
@@ -21772,7 +21772,7 @@
       {
         "name": "Kauth",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Tauren",
         "type": "Innkeeper",
         "itemsSold": [
@@ -21871,28 +21871,28 @@
       {
         "name": "Seikwa",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Tauren",
         "type": "Stable Master"
       },
       {
         "name": "Uthan Stillwater",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Tauren",
         "type": "Fisherman"
       },
       {
         "name": "Pyall Silentstride",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Tauren",
         "type": "Cook"
       },
       {
         "name": "Vira Younghoof",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Tauren",
         "type": "Physician"
       },
@@ -21913,7 +21913,7 @@
       {
         "name": "Kennah Hawkseye",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Tauren",
         "type": "Gunsmith",
         "itemsSold": [
@@ -22009,7 +22009,7 @@
       {
         "name": "Wunna Darkmane",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Tauren",
         "type": "Trade Supplies",
         "itemsSold": [
@@ -22117,7 +22117,7 @@
       {
         "name": "Kawnie Softbreeze",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Tauren",
         "type": "General Goods",
         "itemsSold": [
@@ -22264,7 +22264,7 @@
       {
         "name": "Bronk Steelrage",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Tauren",
         "type": "Armorer & Shieldcrafter",
         "itemsSold": [
@@ -22321,7 +22321,7 @@
       {
         "name": "Moodan Sungrain",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Tauren",
         "type": "Baker",
         "itemsSold": [
@@ -22411,14 +22411,14 @@
       {
         "name": "Jannos Lighthoof",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Tauren",
         "type": "Druid Trainer"
       },
       {
         "name": "Shyn",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Tauren",
         "type": "Flight Master"
       },
@@ -22524,21 +22524,21 @@
       {
         "name": "Shyrka Wolfrunner",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Orc",
         "type": "Stable Master"
       },
       {
         "name": "Hahrana Ironhide",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Tauren",
         "type": "Master Leatherworker"
       },
       {
         "name": "Ruw",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Tauren",
         "type": "Herbalist"
       },
@@ -22552,7 +22552,7 @@
       {
         "name": "Cawind Trueaim",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Tauren",
         "type": "Bowyer & Gunsmith",
         "itemsSold": [
@@ -22657,7 +22657,7 @@
       {
         "name": "Sheendra Tallgrass",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Tauren",
         "type": "Trade Supplies",
         "itemsSold": [
@@ -22870,7 +22870,7 @@
       {
         "name": "Jangdor Swiftstrider",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Tauren",
         "type": "Leatherworking Supplies",
         "itemsSold": [
@@ -23021,7 +23021,7 @@
       {
         "name": "Byula",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Tauren",
         "type": "Innkeeper",
         "itemsSold": [
@@ -23127,7 +23127,7 @@
       {
         "name": "Krulmoo Fullmoon",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Tauren",
         "type": "Expert Leatherworker"
       },
@@ -23141,7 +23141,7 @@
       {
         "name": "Dranh",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Orc",
         "type": "Skinner"
       },
@@ -23386,14 +23386,14 @@
       {
         "name": "Awenasa",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Tauren",
         "type": "Stable Master"
       },
       {
         "name": "Starn",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Tauren",
         "type": "Bowyer & Gunsmith",
         "itemsSold": [
@@ -23516,7 +23516,7 @@
       {
         "name": "Jandia",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Tauren",
         "type": "Trade Supplies",
         "itemsSold": [
@@ -23666,14 +23666,14 @@
       {
         "name": "Tharm",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Tauren",
         "type": "Flight Master"
       },
       {
         "name": "Jayka",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Orc",
         "type": "Innkeeper",
         "itemsSold": [
@@ -23772,14 +23772,14 @@
       {
         "name": "Gereck",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Orc",
         "type": "Stable Master"
       },
       {
         "name": "Hgarth",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Orc",
         "type": "Artisan Enchanter"
       },
@@ -23969,7 +23969,7 @@
       {
         "name": "Narv Hidecrafter",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Tauren",
         "type": "Expert Leatherworker"
       },
@@ -24198,49 +24198,49 @@
       {
         "name": "Cristoph Walker",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Forsaken",
         "type": "Warrior Trainer"
       },
       {
         "name": "Gregory Charles",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Forsaken",
         "type": "Rogue Trainer"
       },
       {
         "name": "Father Cobb",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Forsaken",
         "type": "Priest Trainer"
       },
       {
         "name": "Richard Kerwin",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Forsaken",
         "type": "Warlock Trainer"
       },
       {
         "name": "Anastasia Hartwell",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Forsaken",
         "type": "Mage Trainer"
       },
       {
         "name": "Lexington Mortaim",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Forsaken",
         "type": "Portal Trainer"
       },
       {
         "name": "Sir Malory Wheeler",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Tauren",
         "type": "Battlemaster"
       },
@@ -24254,7 +24254,7 @@
       {
         "name": "Norman",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Forsaken",
         "type": "Innkeeper",
         "itemsSold": [
@@ -24353,14 +24353,14 @@
       {
         "name": "Anya Maulray",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Forsaken",
         "type": "Stable Master"
       },
       {
         "name": "William Montague",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Forsaken",
         "type": "Banker"
       },
@@ -24382,7 +24382,7 @@
       {
         "name": "Malcomb Wynn",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Forsaken",
         "type": "Journeyman Enchanter",
         "hidden": true
@@ -24414,7 +24414,7 @@
       {
         "name": "Victor Ward",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Forsaken",
         "type": "Journeyman Tailor",
         "hidden": true
@@ -24422,7 +24422,7 @@
       {
         "name": "Lavinia Crowe",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Forsaken",
         "type": "Expert Enchanter"
       },
@@ -24436,7 +24436,7 @@
       {
         "name": "James Van Brunt",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Forsaken",
         "type": "Expert Blacksmith"
       },
@@ -24450,14 +24450,14 @@
       {
         "name": "Franklin Lloyd",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Forsaken",
         "type": "Expert Engineer"
       },
       {
         "name": "Brom Killian",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Forsaken",
         "type": "Miner"
       },
@@ -24479,14 +24479,14 @@
       {
         "name": "Martha Alliestar",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Forsaken",
         "type": "Herbalist"
       },
       {
         "name": "Rhiannon Davis",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Forsaken",
         "type": "Expert Tailor",
         "hidden": true
@@ -24501,21 +24501,21 @@
       {
         "name": "Mary Edras",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Forsaken",
         "type": "Physician"
       },
       {
         "name": "Josephine Lister",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Forsaken",
         "type": "Master Shadoweave Tailor"
       },
       {
         "name": "Doctor Herbert Halsey",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Forsaken",
         "type": "Artisan Alchemist"
       },
@@ -24598,7 +24598,7 @@
       {
         "name": "Lauren Newcomb",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Forsaken",
         "type": "Light Armor Merchant",
         "itemsSold": [
@@ -24841,7 +24841,7 @@
       {
         "name": "Sheldon Von Croy",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Forsaken",
         "type": "Cloth Armor Merchant",
         "itemsSold": [
@@ -25096,7 +25096,7 @@
       {
         "name": "Elizabeth Van Talen",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Forsaken",
         "type": "Engineering Supplies",
         "itemsSold": [
@@ -25576,7 +25576,7 @@
       {
         "name": "Joseph Moore",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Forsaken",
         "type": "Leatherworking Supplies",
         "itemsSold": [
@@ -25693,7 +25693,7 @@
       {
         "name": "Mirelle Tremayne",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Forsaken",
         "type": "Heavy Armor Merchant",
         "itemsSold": [
@@ -26146,7 +26146,7 @@
       {
         "name": "Joshua Kien",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Forsaken",
         "type": "General Goods",
         "itemsSold": [
@@ -26191,7 +26191,7 @@
       {
         "name": "Archibald Kava",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Forsaken",
         "type": "Cloth & Leather Armor Merchant",
         "itemsSold": [
@@ -26272,7 +26272,7 @@
       {
         "name": "Blacksmith Rand",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Forsaken",
         "type": "Apprentice Armorer",
         "itemsSold": [
@@ -26402,7 +26402,7 @@
       {
         "name": "Marion Call",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Forsaken",
         "type": "Rogue Trainer"
       },
@@ -26423,7 +26423,7 @@
       {
         "name": "Cain Firesong",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Forsaken",
         "type": "Mage Trainer"
       },
@@ -26529,28 +26529,28 @@
       {
         "name": "Morganus",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Forsaken",
         "type": "Stable Master"
       },
       {
         "name": "Shelene Rhobart",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Forsaken",
         "type": "Journeyman Leatherworker"
       },
       {
         "name": "Nurse Neela",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Forsaken",
         "type": "Physician"
       },
       {
         "name": "Faruza",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Forsaken",
         "type": "Herbalist"
       },
@@ -26564,21 +26564,21 @@
       {
         "name": "Clyde Kellen",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Forsaken",
         "type": "Fisherman"
       },
       {
         "name": "Carolai Anise",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Forsaken",
         "type": "Journeyman Alchemist"
       },
       {
         "name": "Bowen Brisboise",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Forsaken",
         "type": "Journeyman Tailor"
       },
@@ -26649,7 +26649,7 @@
       {
         "name": "Abigail Shiel",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Forsaken",
         "type": "Trade Supplies",
         "itemsSold": [
@@ -26757,14 +26757,14 @@
       {
         "name": "Urda",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Orc",
         "type": "Flight Master"
       },
       {
         "name": "Adegwa",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Tauren",
         "type": "Innkeeper",
         "itemsSold": [
@@ -26877,7 +26877,7 @@
       {
         "name": "Mu'uta",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Orc",
         "type": "Bowyer",
         "itemsSold": [
@@ -26940,7 +26940,7 @@
       {
         "name": "Jun'ha",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Orc",
         "type": "Tailoring Supplies",
         "itemsSold": [
@@ -27246,7 +27246,7 @@
       {
         "name": "Tunkk",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Orc",
         "type": "Leatherworking Supplies",
         "itemsSold": [
@@ -27366,7 +27366,7 @@
       {
         "name": "Zarise",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Forsaken",
         "type": "Flight Master"
       },
@@ -27492,7 +27492,7 @@
       {
         "name": "Serge Hinott",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Forsaken",
         "type": "Expert Alchemist"
       },
@@ -27506,7 +27506,7 @@
       {
         "name": "Mallen Swain",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Forsaken",
         "type": "Tailoring Supplies",
         "itemsSold": [
@@ -27773,14 +27773,14 @@
       {
         "name": "Karos Razok",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Forsaken",
         "type": "Flight Master"
       },
       {
         "name": "Bates",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Forsaken",
         "type": "Innkeeper",
         "itemsSold": [
@@ -27879,7 +27879,7 @@
       {
         "name": "Sarah Goode",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Forsaken",
         "type": "Stable Master"
       },
@@ -27893,14 +27893,14 @@
       {
         "name": "Guillaume Sorouy",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Forsaken",
         "type": "Journeyman Blacksmith"
       },
       {
         "name": "Nadia Vernon",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Forsaken",
         "type": "Bowyer",
         "itemsSold": [
@@ -27951,7 +27951,7 @@
       {
         "name": "Andrea Boynton",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Forsaken",
         "type": "Clothier",
         "itemsSold": [
@@ -28032,7 +28032,7 @@
       {
         "name": "Lilly",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Forsaken",
         "type": "Enchanting Supplies",
         "itemsSold": [
@@ -28270,14 +28270,14 @@
       {
         "name": "Runk Windtamer",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Tauren",
         "type": "Flight Master"
       },
       {
         "name": "Calandrath",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Night Elf",
         "type": "Innkeeper",
         "itemsSold": [
@@ -28472,14 +28472,14 @@
       {
         "name": "Squire Leoren Mal'derath",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Night Elf",
         "type": "Stable Master"
       },
       {
         "name": "Kania",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Night Elf",
         "type": "Enchanting Supplies",
         "itemsSold": [
@@ -28578,7 +28578,7 @@
       {
         "name": "Mishta",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Night Elf",
         "type": "Trade Supplies",
         "itemsSold": [
@@ -28807,7 +28807,7 @@
       {
         "name": "Loganaar",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Night Elf",
         "type": "Druid Trainer"
       },
@@ -28821,7 +28821,7 @@
       {
         "name": "Faustron",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Orc",
         "type": "Flight Master"
       },
@@ -28835,7 +28835,7 @@
       {
         "name": "Narianna",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Night Elf",
         "type": "Bowyer",
         "itemsSold": [
@@ -29344,7 +29344,7 @@
       {
         "name": "Jase Farlane",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Human",
         "type": "Trade Supplies",
         "itemsSold": [
@@ -29536,7 +29536,7 @@
       {
         "name": "Bibilfaz Featherwhistle",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Gnome",
         "type": "Flight Master"
       },
@@ -29669,7 +29669,7 @@
       {
         "name": "Sarah Tanner",
         "gender": "Female",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Human",
         "type": "Master Elemental Leatherworker"
       }
@@ -29685,14 +29685,14 @@
       {
         "name": "Lanie Reed",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Dwarf",
         "type": "Flight Master"
       },
       {
         "name": "Grisha",
         "gender": "Female",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Orc",
         "type": "Flight Master"
       }
@@ -29708,7 +29708,7 @@
       {
         "name": "Maethrya",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Night Elf",
         "type": "Flight Master"
       },
@@ -29827,14 +29827,14 @@
       {
         "name": "Azzleby",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Goblin",
         "type": "Stable Master"
       },
       {
         "name": "Izzy Coppergrab",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Goblin",
         "type": "Banker"
       },
@@ -29947,7 +29947,7 @@
       {
         "name": "Xizzer Fizzbolt",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Goblin",
         "type": "Engineering Supplies",
         "itemsSold": [
@@ -30515,14 +30515,14 @@
       {
         "name": "Laziphus",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Goblin",
         "type": "Stable Master"
       },
       {
         "name": "Qizzik",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Goblin",
         "type": "Banker"
       },
@@ -30536,28 +30536,28 @@
       {
         "name": "Nixx Sprocketspring",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Goblin",
         "type": "Master Goblin Engineer"
       },
       {
         "name": "Pikkle",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Goblin",
         "type": "Miner"
       },
       {
         "name": "Beardo",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Goblin",
         "type": "Auctioneer"
       },
       {
         "name": "Blizrik Buckshot",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Goblin",
         "type": "Gunsmith",
         "itemsSold": [
@@ -30614,7 +30614,7 @@
       {
         "name": "Vizzklick",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Goblin",
         "type": "Tailoring Supplies",
         "itemsSold": [
@@ -30731,7 +30731,7 @@
       {
         "name": "Wrinkle Goodsteel",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Goblin",
         "type": "Armor Crafter",
         "itemsSold": [
@@ -30906,7 +30906,7 @@
       {
         "name": "Wiley",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Goblin",
         "type": "Innkeeper",
         "itemsSold": [
@@ -31005,14 +31005,14 @@
       {
         "name": "Reggifuz",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Goblin",
         "type": "Stable Master"
       },
       {
         "name": "Fuzruckle",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Goblin",
         "type": "Banker"
       },
@@ -31026,7 +31026,7 @@
       {
         "name": "Vazario Linkgrease",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Goblin",
         "type": "Master Goblin Engineer"
       },
@@ -31126,7 +31126,7 @@
       {
         "name": "Zizzek",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Goblin",
         "type": "Fishing Supplies",
         "hidden": true,
@@ -31172,7 +31172,7 @@
       {
         "name": "Vexspindle",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 1,
         "race": "Goblin",
         "type": "Cloth & Leather Armor Merchant",
         "itemsSold": [
@@ -31528,7 +31528,7 @@
       {
         "name": "Gringer",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Orc",
         "type": "Flight Master"
       },
@@ -31704,7 +31704,7 @@
       {
         "name": "Grimestack",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 2,
         "race": "Goblin",
         "type": "Stable Master"
       },
@@ -31725,21 +31725,21 @@
       {
         "name": "Oglethorpe Obnoticus",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Gnome",
         "type": "Master Engineer"
       },
       {
         "name": "Grarnik Goodstitch",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Goblin",
         "type": "Expert Tailor"
       },
       {
         "name": "Flora Silverwind",
         "gender": "Female",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Human",
         "type": "Herbalist"
       },
@@ -31753,7 +31753,7 @@
       {
         "name": "Jaxin Chong",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Goblin",
         "type": "Expert Alchemist"
       },
@@ -31767,7 +31767,7 @@
       {
         "name": "Old Man Heming",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Human",
         "type": "Fishing Supplies",
         "itemsSold": [
@@ -31818,7 +31818,7 @@
       {
         "name": "Qixdi Goodstitch",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 2,
         "race": "Goblin",
         "type": "Cloth Armor Merchant",
         "itemsSold": [
@@ -32100,7 +32100,7 @@
       {
         "name": "Xizk Goodstitch",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Goblin",
         "type": "Tailoring Supplies",
         "itemsSold": [
@@ -32223,7 +32223,7 @@
       {
         "name": "Blixrez Goodstitch",
         "gender": "Male",
-        "voiceVariant": 2,
+        "voiceVariant": 3,
         "race": "Goblin",
         "type": "Leatherworking Supplies",
         "itemsSold": [
@@ -32362,7 +32362,7 @@
       {
         "name": "Gryfe",
         "gender": "Male",
-        "voiceVariant": 3,
+        "voiceVariant": 1,
         "race": "Goblin",
         "type": "Flight Master"
       }
@@ -32407,7 +32407,7 @@
       {
         "name": "Zannok Hidepiercer",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Night Elf",
         "type": "Leatherworking Supplies",
         "itemsSold": [
@@ -32678,7 +32678,7 @@
       {
         "name": "Short John Mithril",
         "gender": "Male",
-        "voiceVariant": 1,
+        "voiceVariant": 3,
         "race": "Goblin",
         "type": "Arena Master"
       }

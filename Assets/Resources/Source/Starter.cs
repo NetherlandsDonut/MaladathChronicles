@@ -197,6 +197,7 @@ public class Starter : MonoBehaviour
         paths ??= new();
         Deserialize(ref FishingSpot.fishingSpots, "fishingspots", false, prefix);
         FishingSpot.fishingSpots ??= new();
+        FishingSpot.fishingSpots.ForEach(x => x.zone = Site.FindSite(y => y.name == x.name).zone);
         Deserialize(ref defines, "defines", false, prefix);
         defines ??= new();
         var file = Resources.Load<Sprite>("Sprites/Map/Ground").texture;

@@ -256,7 +256,7 @@ public static class Root
             Respawn("HostileArea");
         }
         if (CDesktop.title == "Map")
-            Respawn("WorldBuffs");
+            Respawn("WorldBuffs", true);
         if (windows != null)
             foreach (var window in windows)
                 Respawn(window, true);

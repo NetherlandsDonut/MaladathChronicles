@@ -6,9 +6,13 @@
     "tags": [
       "Scroll"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Intellect": 4
-    }
+    },
+    "events": []
   },
   {
     "name": "Scroll of Intellect II",
@@ -17,9 +21,13 @@
     "tags": [
       "Scroll"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Intellect": 8
-    }
+    },
+    "events": []
   },
   {
     "name": "Scroll of Intellect III",
@@ -28,9 +36,13 @@
     "tags": [
       "Scroll"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Intellect": 12
-    }
+    },
+    "events": []
   },
   {
     "name": "Scroll of Intellect IV",
@@ -39,9 +51,13 @@
     "tags": [
       "Scroll"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Intellect": 16
-    }
+    },
+    "events": []
   },
   {
     "name": "Scroll of Strength I",
@@ -50,9 +66,13 @@
     "tags": [
       "Scroll"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Strength": 5
-    }
+    },
+    "events": []
   },
   {
     "name": "Scroll of Strength II",
@@ -61,9 +81,13 @@
     "tags": [
       "Scroll"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Strength": 9
-    }
+    },
+    "events": []
   },
   {
     "name": "Scroll of Strength III",
@@ -72,9 +96,13 @@
     "tags": [
       "Scroll"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Strength": 13
-    }
+    },
+    "events": []
   },
   {
     "name": "Scroll of Strength IV",
@@ -83,9 +111,13 @@
     "tags": [
       "Scroll"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Strength": 17
-    }
+    },
+    "events": []
   },
   {
     "name": "Scroll of Agility I",
@@ -94,9 +126,13 @@
     "tags": [
       "Scroll"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Agility": 5
-    }
+    },
+    "events": []
   },
   {
     "name": "Scroll of Agility II",
@@ -105,9 +141,13 @@
     "tags": [
       "Scroll"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Agility": 9
-    }
+    },
+    "events": []
   },
   {
     "name": "Scroll of Agility III",
@@ -116,9 +156,13 @@
     "tags": [
       "Scroll"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Agility": 13
-    }
+    },
+    "events": []
   },
   {
     "name": "Scroll of Agility IV",
@@ -127,9 +171,13 @@
     "tags": [
       "Scroll"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Agility": 17
-    }
+    },
+    "events": []
   },
   {
     "name": "Scroll of Stamina I",
@@ -138,9 +186,13 @@
     "tags": [
       "Scroll"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 4
-    }
+    },
+    "events": []
   },
   {
     "name": "Scroll of Stamina II",
@@ -149,9 +201,13 @@
     "tags": [
       "Scroll"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 8
-    }
+    },
+    "events": []
   },
   {
     "name": "Scroll of Stamina III",
@@ -160,9 +216,13 @@
     "tags": [
       "Scroll"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 12
-    }
+    },
+    "events": []
   },
   {
     "name": "Scroll of Stamina IV",
@@ -171,9 +231,13 @@
     "tags": [
       "Scroll"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 16
-    }
+    },
+    "events": []
   },
   {
     "name": "Scroll of Protection I",
@@ -182,9 +246,13 @@
     "tags": [
       "Scroll"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Armor": 60
-    }
+    },
+    "events": []
   },
   {
     "name": "Scroll of Protection II",
@@ -193,9 +261,13 @@
     "tags": [
       "Scroll"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Armor": 120
-    }
+    },
+    "events": []
   },
   {
     "name": "Scroll of Protection III",
@@ -204,9 +276,13 @@
     "tags": [
       "Scroll"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Armor": 180
-    }
+    },
+    "events": []
   },
   {
     "name": "Scroll of Protection IV",
@@ -215,9 +291,13 @@
     "tags": [
       "Scroll"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Armor": 240
-    }
+    },
+    "events": []
   },
   {
     "name": "Scroll of Spirit I",
@@ -226,9 +306,13 @@
     "tags": [
       "Scroll"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Spirit": 3
-    }
+    },
+    "events": []
   },
   {
     "name": "Scroll of Spirit II",
@@ -237,9 +321,13 @@
     "tags": [
       "Scroll"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Spirit": 7
-    }
+    },
+    "events": []
   },
   {
     "name": "Scroll of Spirit III",
@@ -248,9 +336,13 @@
     "tags": [
       "Scroll"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Spirit": 11
-    }
+    },
+    "events": []
   },
   {
     "name": "Scroll of Spirit IV",
@@ -259,9 +351,13 @@
     "tags": [
       "Scroll"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Spirit": 15
-    }
+    },
+    "events": []
   },
   {
     "name": "Well Fed @ Mightfish Steak",
@@ -270,12 +366,13 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 10
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Grilled Squid",
@@ -284,12 +381,13 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Agility": 10
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Dirge's Kickin' Chimaerok Chops",
@@ -298,12 +396,13 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 25
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Clamlette Surprise",
@@ -312,13 +411,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 12,
       "Spirit": 12
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Tender Wolf Steak",
@@ -327,13 +427,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 12,
       "Spirit": 12
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Monster Omelet",
@@ -342,13 +443,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 12,
       "Spirit": 12
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Spiced Chili Crab",
@@ -357,13 +459,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 12,
       "Spirit": 12
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Hot Smoked Bass",
@@ -372,12 +475,13 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Spirit": 10
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Cooked Glossy Mightfish",
@@ -386,12 +490,13 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 10
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Spider Sausage",
@@ -400,13 +505,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 12,
       "Spirit": 12
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Sagefish Delight",
@@ -415,12 +521,13 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Spirit": 14
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Heavy Kodo Stew",
@@ -429,13 +536,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 12,
       "Spirit": 12
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Barbecued Buzzard Wing",
@@ -444,13 +552,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 8,
       "Spirit": 8
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Roast Raptor",
@@ -459,13 +568,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 8,
       "Spirit": 8
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Mystery Stew",
@@ -474,13 +584,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 8,
       "Spirit": 8
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Soothing Turtle Bisque",
@@ -489,13 +600,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 8,
       "Spirit": 8
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Hot Wolf Ribs",
@@ -504,13 +616,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 8,
       "Spirit": 8
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Giant Clam Scorcho",
@@ -519,13 +632,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 8,
       "Spirit": 8
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Spiced Wolf Ribs",
@@ -534,13 +648,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 8,
       "Spirit": 8
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Heavy Crocolisk Stew",
@@ -549,13 +664,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 8,
       "Spirit": 8
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Tasty Lion Steak",
@@ -564,13 +680,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 8,
       "Spirit": 8
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Goblin Deviled Clams",
@@ -579,13 +696,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 6,
       "Spirit": 6
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Lean Venison",
@@ -594,13 +712,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 6,
       "Spirit": 6
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Seasoned Wolf Kabob",
@@ -609,13 +728,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 6,
       "Spirit": 6
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Curiously Tasty Omelet",
@@ -624,13 +744,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 6,
       "Spirit": 6
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Murloc Fin Soup",
@@ -639,13 +760,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 6,
       "Spirit": 6
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Big Bear Steak",
@@ -654,13 +776,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 6,
       "Spirit": 6
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Crocolisk Gumbo",
@@ -669,13 +792,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 6,
       "Spirit": 6
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Gooey Spider Cake",
@@ -684,13 +808,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 6,
       "Spirit": 6
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Lean Wolf Steak",
@@ -699,13 +824,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 6,
       "Spirit": 6
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Hot Lion Chops",
@@ -714,13 +840,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 6,
       "Spirit": 6
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Crispy Lizard Tail",
@@ -729,13 +856,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 6,
       "Spirit": 6
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Smoked Sagefish",
@@ -744,12 +872,13 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Spirit": 8
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Redridge Goulash",
@@ -758,13 +887,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 6,
       "Spirit": 6
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Dry Pork Ribs",
@@ -773,13 +903,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 4,
       "Spirit": 4
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Boiled Clams",
@@ -788,13 +919,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 4,
       "Spirit": 4
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Coyote Steak",
@@ -803,13 +935,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 4,
       "Spirit": 4
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Crab Cake",
@@ -818,13 +951,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 4,
       "Spirit": 4
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Blood Sausage",
@@ -833,13 +967,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 4,
       "Spirit": 4
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Strider Stew",
@@ -848,13 +983,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 4,
       "Spirit": 4
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Fillet of Frenzy",
@@ -863,13 +999,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 4,
       "Spirit": 4
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Crocolisk Steak",
@@ -878,13 +1015,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 4,
       "Spirit": 4
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Goretusk Liver Pie",
@@ -893,13 +1031,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 4,
       "Spirit": 4
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Bad Egg Nog",
@@ -908,13 +1047,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 2,
       "Spirit": 2
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Beer Basted Boar Ribs",
@@ -923,13 +1063,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 2,
       "Spirit": 2
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Spiced Wolf Meat",
@@ -938,13 +1079,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 2,
       "Spirit": 2
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Herb Baked Egg",
@@ -953,13 +1095,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 2,
       "Spirit": 2
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Jungle Stew",
@@ -968,13 +1111,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 8,
       "Spirit": 8
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Kaldorei Spider Kabob",
@@ -983,13 +1127,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 2,
       "Spirit": 2
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Blessed Sunfruit",
@@ -998,12 +1143,13 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Strength": 10
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Roasted Kodo Meat",
@@ -1012,13 +1158,14 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Stamina": 2,
       "Spirit": 2
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Well Fed @ Runn Tum Tuber Surprise",
@@ -1027,12 +1174,13 @@
     "tags": [
       "Food"
     ],
+    "ranks": [
+      {}
+    ],
     "gains": {
       "Intellect": 10
     },
-    "ranks": [
-      {}
-    ]
+    "events": []
   },
   {
     "name": "Blizzard",
@@ -1094,7 +1242,7 @@
             "ShatterSpeed": "20",
             "ShatterDegree": "40",
             "SoundEffect": "AbilityCorruptionFlare",
-            "Await": 5
+            "Await": "5"
           }
         ]
       }
@@ -1130,7 +1278,7 @@
             "ShatterSpeed": "20",
             "ShatterDegree": "40",
             "SoundEffect": "AbilityCurseOfAgonyFlare",
-            "Await": 4
+            "Await": "4"
           }
         ]
       }
@@ -1221,11 +1369,11 @@
             "ShatterTarget": "Other",
             "ShatterType": "Central",
             "ShatterDensity": "1",
-            "ShatterSpeed": 4,
+            "ShatterSpeed": "4",
             "ShatterDegree": "0.6",
             "FlyingResources": "Yes",
             "SoundEffect": "AbilityForesightFlare",
-            "Await": 4
+            "Await": "4"
           }
         ]
       }
@@ -1288,7 +1436,7 @@
             "SoundEffect": "AbilityHolyFireFlare",
             "ShatterType": "Central",
             "ShatterTarget": "Effector",
-            "Await": 5
+            "Await": "5"
           }
         ]
       }
@@ -1462,10 +1610,10 @@
             "ShatterTarget": "Effector",
             "ShatterType": "Central",
             "ShatterDensity": "2",
-            "ShatterSpeed": 5,
+            "ShatterSpeed": "5",
             "ShatterDegree": "0.7",
             "SoundEffect": "AbilityShadowWordPainFlare",
-            "Await": 4
+            "Await": "4"
           }
         ]
       }
@@ -1943,6 +2091,9 @@
     "name": "Immolate",
     "icon": "AbilityImmolate",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [

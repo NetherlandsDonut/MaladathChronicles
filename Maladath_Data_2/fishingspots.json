@@ -1,576 +1,1126 @@
 [
   {
     "name": "Stormwind City",
+    "zone": "Elwynn Forest",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 25,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Raw Brilliant Smallfish"
+    ]
   },
   {
     "name": "Southshore",
+    "zone": "Hillsbrad Foothills",
     "waterType": "Normal",
     "skillToFish": 55,
     "difficulty": 150,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rainbow Fin Albacore"
+    ]
   },
   {
     "name": "Faldir's Cove",
+    "zone": "Arathi Highlands",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rockscale Cod",
+      "Raw Spotted Yellowtail"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth",
+      "Firefin Snapper"
+    ]
   },
   {
     "name": "Darnassus",
+    "zone": "Teldrassil",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 25,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Raw Brilliant Smallfish"
+    ]
   },
   {
     "name": "Rut'theran Village",
+    "zone": "Teldrassil",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 25,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Slitherskin Mackerel"
+    ]
   },
   {
     "name": "Auberdine",
+    "zone": "Darkshore",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 75,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Slitherskin Mackerel",
+      "Raw Rainbow Fin Albacore"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth"
+    ]
   },
   {
     "name": "Shadowprey Village",
+    "zone": "Desolace",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rockscale Cod",
+      "Raw Spotted Yellowtail"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth"
+    ]
   },
   {
     "name": "Revantusk Village",
+    "zone": "Hinterlands",
     "waterType": "Normal",
     "skillToFish": 205,
     "difficulty": 300,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rockscale Cod",
+      "Raw Spotted Yellowtail",
+      "Raw Glossy Mightfish"
+    ]
   },
   {
     "name": "Undercity",
+    "zone": "Tirisfal Glades",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 25,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Raw Brilliant Smallfish",
+      "Sickly Looking Fish"
+    ]
   },
   {
     "name": "Ratchet",
+    "zone": "The Barrens",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 75,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Slitherskin Mackerel",
+      "Raw Rainbow Fin Albacore"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth"
+    ]
   },
   {
     "name": "Booty Bay",
+    "zone": "Stranglethorn Vale",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rockscale Cod"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth"
+    ]
   },
   {
     "name": "Dandred's Fold",
+    "zone": "Alterac Mountains",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Mithril Head Trout",
+      "Raw Bristle Whisker Catfish",
+      "Raw Greater Sagefish"
+    ]
   },
   {
     "name": "Misty Shore",
+    "zone": "Alterac Mountains",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Mithril Head Trout",
+      "Raw Bristle Whisker Catfish",
+      "Raw Greater Sagefish"
+    ]
   },
   {
     "name": "Thandol Span",
+    "zone": "Arathi Highlands",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rockscale Cod",
+      "Raw Spotted Yellowtail"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth"
+    ]
+  },
+  {
+    "name": "Devyr's Hill",
+    "zone": "Arathi Highlands",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": [
+      "Raw Mithril Head Trout",
+      "Raw Bristle Whisker Catfish"
+    ]
+  },
+  {
+    "name": "Witherbark Village",
+    "zone": "Arathi Highlands",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": [
+      "Raw Mithril Head Trout",
+      "Raw Bristle Whisker Catfish"
+    ]
   },
   {
     "name": "Falfarren River",
+    "zone": "Ashenvale",
     "waterType": "Normal",
     "skillToFish": 55,
     "difficulty": 150,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Raw Sagefish"
+    ]
+  },
+  {
+    "name": "Astranaar",
+    "zone": "Ashenvale",
+    "waterType": "Normal",
+    "skillToFish": 55,
+    "difficulty": 150,
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Raw Sagefish"
+    ]
+  },
+  {
+    "name": "Silverwind Refuge",
+    "zone": "Ashenvale",
+    "waterType": "Normal",
+    "skillToFish": 55,
+    "difficulty": 150,
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Raw Sagefish"
+    ]
   },
   {
     "name": "Fallen Sky Lake",
+    "zone": "Ashenvale",
     "waterType": "Normal",
     "skillToFish": 55,
     "difficulty": 150,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish"
+    ]
   },
   {
     "name": "Iris Lake",
+    "zone": "Ashenvale",
     "waterType": "Normal",
     "skillToFish": 55,
     "difficulty": 150,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish"
+
+    ]
   },
   {
     "name": "Lake Falathim",
+    "zone": "Ashenvale",
     "waterType": "Normal",
     "skillToFish": 55,
     "difficulty": 150,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish"
+
+    ]
   },
   {
     "name": "Mystral Lake",
+    "zone": "Ashenvale",
     "waterType": "Normal",
     "skillToFish": 55,
     "difficulty": 150,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish"
+
+    ]
   },
   {
     "name": "The Zoram Strand",
+    "zone": "Ashenvale",
     "waterType": "Normal",
     "skillToFish": 55,
     "difficulty": 150,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rainbow Fin Albacore"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth"
+    ]
+  },
+  {
+    "name": "Zoram'gar Outpost",
+    "zone": "Ashenvale",
+    "waterType": "Normal",
+    "skillToFish": 55,
+    "difficulty": 150,
+    "possibleLoot": [
+      "Raw Rainbow Fin Albacore"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth"
+    ]
   },
   {
     "name": "Bay of Storms",
+    "zone": "Azshara",
     "waterType": "Normal",
     "skillToFish": 205,
     "difficulty": 300,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rockscale Cod",
+      "Darkclaw Lobster",
+      "Large Raw Mightfish",
+      "Raw Spotted Yellowtail"
+    ]
   },
   {
     "name": "Hetaera's Clutch",
+    "zone": "Azshara",
     "waterType": "Normal",
     "skillToFish": 205,
     "difficulty": 300,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rockscale Cod",
+      "Darkclaw Lobster",
+      "Large Raw Mightfish",
+      "Raw Spotted Yellowtail"
+    ]
   },
   {
     "name": "Jagged Reef",
+    "zone": "Azshara",
     "waterType": "Normal",
     "skillToFish": 205,
     "difficulty": 300,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rockscale Cod",
+      "Raw Spotted Yellowtail",
+      "Raw Glossy Mightfish"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth"
+    ]
   },
   {
     "name": "Lake Mennar",
+    "zone": "Azshara",
     "waterType": "Normal",
     "skillToFish": 205,
     "difficulty": 300,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Mithril Head Trout",
+      "Raw Sunscale Salmon",
+      "Raw Glossy Mightfish"
+    ],
+    "rareLoot": [
+      "Lightning Eel"
+    ]
   },
   {
     "name": "Rethress Sanctum",
+    "zone": "Azshara",
     "waterType": "Normal",
     "skillToFish": 205,
     "difficulty": 300,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rockscale Cod",
+      "Raw Spotted Yellowtail",
+      "Raw Glossy Mightfish"
+    ]
   },
   {
     "name": "Southridge Beach",
+    "zone": "Azshara",
     "waterType": "Normal",
     "skillToFish": 205,
     "difficulty": 300,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rockscale Cod",
+      "Raw Spotted Yellowtail",
+      "Raw Glossy Mightfish"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth"
+    ]
   },
   {
     "name": "Temple of Arkkoran",
+    "zone": "Azshara",
     "waterType": "Normal",
     "skillToFish": 205,
     "difficulty": 300,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rockscale Cod",
+      "Raw Spotted Yellowtail",
+      "Raw Glossy Mightfish"
+    ]
   },
   {
     "name": "The Ruined Reaches",
+    "zone": "Azshara",
     "waterType": "Normal",
     "skillToFish": 205,
     "difficulty": 300,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rockscale Cod",
+      "Raw Spotted Yellowtail",
+      "Raw Glossy Mightfish"
+    ]
   },
   {
     "name": "The Shattered Strand",
+    "zone": "Azshara",
     "waterType": "Normal",
     "skillToFish": 205,
     "difficulty": 300,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rockscale Cod",
+      "Raw Spotted Yellowtail",
+      "Raw Glossy Mightfish"
+    ]
   },
   {
     "name": "Tower of Eldara",
+    "zone": "Azshara",
     "waterType": "Normal",
     "skillToFish": 205,
     "difficulty": 300,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rockscale Cod",
+      "Raw Spotted Yellowtail",
+      "Raw Glossy Mightfish"
+    ]
   },
   {
     "name": "Moonshrine Ruins",
+    "zone": "Blackfathom Deeps",
     "waterType": "Normal",
     "skillToFish": 55,
     "difficulty": 150,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish"
+    ]
   },
   {
     "name": "Pool of Ask'ar",
+    "zone": "Blackfathom Deeps",
     "waterType": "Normal",
     "skillToFish": 55,
     "difficulty": 150,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish"
+    ]
   },
   {
     "name": "The Drowned Sacellum",
+    "zone": "Blackfathom Deeps",
     "waterType": "Normal",
     "skillToFish": 55,
     "difficulty": 150,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish"
+    ]
   },
   {
     "name": "Cliffspring River",
+    "zone": "Darkshore",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 75,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Raw Brilliant Smallfish"
+    ]
   },
   {
     "name": "Mist's Edge",
+    "zone": "Darkshore",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 75,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Slitherskin Mackerel",
+      "Raw Rainbow Fin Albacore"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth"
+    ]
   },
   {
     "name": "The Long Wash",
+    "zone": "Darkshore",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 75,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Slitherskin Mackerel",
+      "Raw Rainbow Fin Albacore"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth"
+    ]
   },
   {
     "name": "Twilight Shore",
+    "zone": "Darkshore",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 75,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Slitherskin Mackerel",
+      "Raw Rainbow Fin Albacore"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth"
+    ]
   },
   {
     "name": "Karazhan",
+    "zone": "Deadwind Pass",
     "waterType": "Normal",
     "skillToFish": 330,
     "difficulty": 425,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Sunscale Salmon",
+      "Raw Whitescale Salmon"
+    ],
+    "rareLoot": [
+      "Lightning Eel"
+    ]
   },
   {
     "name": "Magram Village",
+    "zone": "Desolace",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Raw Mithril Head Trout"
+    ]
   },
   {
     "name": "Mannoroc Coven",
+    "zone": "Desolace",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Mithril Head Trout",
+      "Raw Bristle Whisker Catfish"
+    ]
   },
   {
     "name": "Ranazjar Isle",
+    "zone": "Desolace",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rockscale Cod",
+      "Raw Spotted Yellowtail"
+    ]
   },
   {
     "name": "Sar'theris Strand",
+    "zone": "Desolace",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rockscale Cod",
+      "Raw Spotted Yellowtail"
+    ]
   },
   {
     "name": "Helm's Bed Lake",
+    "zone": "Dun Morogh",
     "waterType": "Normal",
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Brilliant Smallfish"
+    ]
   },
   {
     "name": "Ice Flow Lake",
+    "zone": "Dun Morogh",
     "waterType": "Normal",
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Brilliant Smallfish"
+    ]
+  },
+  {
+    "name": "Orgrimmar",
+    "zone": "Durotar",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 25,
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Raw Brilliant Smallfish"
+    ]
   },
   {
     "name": "Bladefist Bay",
+    "zone": "Durotar",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 25,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Slitherskin Mackerel"
+    ]
   },
   {
     "name": "Darkspear Strand",
+    "zone": "Durotar",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 25,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Slitherskin Mackerel"
+    ]
   },
   {
     "name": "Echo Isles",
+    "zone": "Durotar",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 25,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Slitherskin Mackerel"
+    ]
   },
   {
     "name": "Scuttle Coast",
+    "zone": "Durotar",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 25,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Slitherskin Mackerel"
+    ]
   },
   {
     "name": "Gloom Reach",
+    "zone": "Duskwood",
     "waterType": "Normal",
     "skillToFish": 55,
     "difficulty": 150,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Raw Brilliant Smallfish"
+    ]
   },
   {
     "name": "The Hushed Bank",
+    "zone": "Duskwood",
     "waterType": "Normal",
     "skillToFish": 55,
     "difficulty": 150,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish"
+    ]
   },
   {
     "name": "The Darkened Bank",
+    "zone": "Duskwood",
     "waterType": "Normal",
     "skillToFish": 55,
     "difficulty": 150,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish"
+    ]
   },
   {
     "name": "Bluefen",
+    "zone": "Dustwallow Marsh",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Raw Mithril Head Trout"
+    ]
   },
   {
     "name": "Dreadmurk Shore",
+    "zone": "Dustwallow Marsh",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rockscale Cod",
+      "Raw Spotted Yellowtail"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth",
+      "Firefin Snapper"
+    ]
   },
   {
     "name": "Dustwallow Bay",
+    "zone": "Dustwallow Marsh",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rockscale Cod",
+      "Raw Spotted Yellowtail"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth",
+      "Firefin Snapper"
+    ]
   },
   {
     "name": "Northern Quagmire",
+    "zone": "Dustwallow Marsh",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Raw Mithril Head Trout"
+    ]
   },
   {
     "name": "Southern Quagmire",
+    "zone": "Dustwallow Marsh",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Raw Mithril Head Trout"
+    ]
   },
   {
     "name": "Tidefury Cove",
+    "zone": "Dustwallow Marsh",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rockscale Cod",
+      "Raw Spotted Yellowtail"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth"
+    ]
   },
   {
     "name": "Swamplight Manor",
+    "zone": "Dustwallow Marsh",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Raw Mithril Head Trout"
+    ]
   },
   {
     "name": "Blackwood Lake",
+    "zone": "Eastern Plaguelands",
     "waterType": "Normal",
     "skillToFish": 330,
     "difficulty": 425,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Sunscale Salmon",
+      "Raw Whitescale Salmon"
+    ]
+  },
+  {
+    "name": "Caer Darrow",
+    "zone": "Western Plaguelands",
+    "waterType": "Normal",
+    "skillToFish": 205,
+    "difficulty": 300,
+    "possibleLoot": [
+      "Raw Mithril Head Trout",
+      "Raw Sunscale Salmon"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth"
+    ]
   },
   {
     "name": "Lake Mereldar",
+    "zone": "Eastern Plaguelands",
     "waterType": "Normal",
     "skillToFish": 330,
     "difficulty": 425,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Sunscale Salmon",
+      "Raw Whitescale Salmon"
+    ]
   },
   {
     "name": "Thondroril River",
+    "zone": "Eastern Plaguelands",
     "waterType": "Normal",
     "skillToFish": 330,
     "difficulty": 425,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Mithril Head Trout",
+      "Raw Sunscale Salmon"
+    ]
   },
   {
     "name": "Crystal Lake",
+    "zone": "Elwynn Forest",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 25,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Brilliant Smallfish"
+  ]
   },
   {
     "name": "Stone Cairn Lake",
+    "zone": "Elwynn Forest",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 25,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Brilliant Smallfish"
+    ]
   },
   {
     "name": "Southern Stone Cairn Lake",
+    "zone": "Elwynn Forest",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 25,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Brilliant Smallfish"
+    ]
   },
   {
     "name": "Mirror Lake",
+    "zone": "Elwynn Forest",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 25,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Brilliant Smallfish"
+    ]
   },
   {
     "name": "Bloodvenom Falls",
+    "zone": "Felwood",
     "waterType": "Normal",
     "skillToFish": 205,
     "difficulty": 300,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Mithril Head Trout",
+      "Raw Sunscale Salmon"
+    ],
+    "rareLoot": [
+      "Lightning Eel",
+      "Oily Blackmouth"
+    ]
   },
   {
     "name": "Bloodvenom River",
+    "zone": "Felwood",
     "waterType": "Normal",
     "skillToFish": 205,
     "difficulty": 300,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Mithril Head Trout",
+      "Raw Sunscale Salmon"
+    ],
+    "rareLoot": [
+      "Lightning Eel",
+      "Oily Blackmouth"
+    ]
   },
   {
     "name": "Irontree Woods",
+    "zone": "Felwood",
     "waterType": "Normal",
     "skillToFish": 205,
     "difficulty": 300,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Mithril Head Trout",
+      "Raw Sunscale Salmon"
+    ],
+    "rareLoot": [
+      "Lightning Eel"
+    ]
   },
   {
     "name": "Isle of Dread",
+    "zone": "Feralas",
     "waterType": "Normal",
     "skillToFish": 205,
     "difficulty": 300,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rockscale Cod",
+      "Raw Spotted Yellowtail",
+      "Raw Glossy Mightfish"
+    ]
   },
   {
     "name": "The Forgotten Coast",
+    "zone": "Feralas",
     "waterType": "Normal",
     "skillToFish": 205,
     "difficulty": 300,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rockscale Cod",
+      "Raw Spotted Yellowtail",
+      "Raw Glossy Mightfish"
+    ]
+  },
+  {
+    "name": "Feathermoon Stronghold",
+    "zone": "Feralas",
+    "waterType": "Normal",
+    "skillToFish": 205,
+    "difficulty": 300,
+    "possibleLoot": [
+      "Raw Rockscale Cod",
+      "Raw Spotted Yellowtail",
+      "Raw Glossy Mightfish",
+      "Firefin Snapper"
+    ]
+  },
+  {
+    "name": "Nighthaven",
+    "zone": "Moonglade",
+    "waterType": "Normal",
+    "skillToFish": 205,
+    "difficulty": 300,
+    "possibleLoot": [
+      "Raw Mithril Head Trout",
+      "Raw Sunscale Salmon"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth"
+    ]
   },
   {
     "name": "The Twin Colossals",
+    "zone": "Feralas",
     "waterType": "Normal",
     "skillToFish": 205,
     "difficulty": 300,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Mithril Head Trout",
+      "Raw Sunscale Salmon"
+    ],
+    "rareLoot": [
+      "Lightning Eel"
+    ]
   },
   {
     "name": "Verdantis River",
+    "zone": "Feralas",
     "waterType": "Normal",
     "skillToFish": 205,
     "difficulty": 300,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Mithril Head Trout",
+      "Raw Sunscale Salmon"
+    ],
+    "rareLoot": [
+      "Lightning Eel"
+    ]
   },
   {
     "name": "Wildwind Lake",
+    "zone": "Feralas",
     "waterType": "Normal",
     "skillToFish": 205,
     "difficulty": 300,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Mithril Head Trout",
+      "Raw Sunscale Salmon"
+    ],
+    "rareLoot": [
+      "Lightning Eel"
+    ]
   },
   {
     "name": "Eastern Strand",
+    "zone": "Hillsbrad Foothills",
     "waterType": "Normal",
     "skillToFish": 55,
     "difficulty": 150,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rainbow Fin Albacore"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth"
+    ]
   },
   {
     "name": "Darrowmere Crossing",
+    "zone": "Hillsbrad Foothills",
     "waterType": "Normal",
     "skillToFish": 55,
     "difficulty": 150,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Raw Sagefish"
+    ]
   },
   {
     "name": "Purgation Isle",
+    "zone": "Hillsbrad Foothills",
     "waterType": "Normal",
     "skillToFish": 55,
     "difficulty": 150,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rainbow Fin Albacore"
+    ]
   },
   {
     "name": "Western Strand",
+    "zone": "Hillsbrad Foothills",
     "waterType": "Normal",
     "skillToFish": 55,
     "difficulty": 150,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rainbow Fin Albacore"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth"
+    ]
+  },
+  {
+    "name": "Chillwind Point",
+    "zone": "Hillsbrad Foothills",
+    "waterType": "Normal",
+    "skillToFish": 55,
+    "difficulty": 150,
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Raw Sagefish"
+    ]
   },
   {
     "name": "Quel'Danil Lodge",
+    "zone": "Hinterlands",
     "waterType": "Normal",
     "skillToFish": 205,
     "difficulty": 300,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Mithril Head Trout",
+      "Raw Sunscale Salmon"
+    ],
+    "rareLoot": [
+      "Lightning Eel",
+      "Oily Blackmouth"
+    ]
   },
   {
     "name": "The Overlook Cliffs",
+    "zone": "Hinterlands",
     "waterType": "Normal",
     "skillToFish": 205,
     "difficulty": 300,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rockscale Cod",
+      "Raw Spotted Yellowtail",
+      "Raw Glossy Mightfish"
+    ]
   },
   {
     "name": "Valorwind Lake",
+    "zone": "Hinterlands",
     "waterType": "Normal",
     "skillToFish": 205,
     "difficulty": 300,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Mithril Head Trout",
+      "Raw Sunscale Salmon"
+    ],
+    "rareLoot": [
+      "Lightning Eel",
+      "Oily Blackmouth"
+    ]
   },
   {
     "name": "Loch Shore",
+    "zone": "Loch Modan",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 75,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Raw Sagefish",
+      "Raw Loch Frenzy",
+      "Raw Brilliant Smallfish"
+    ]
+  },
+  {
+    "name": "Isle Ruins",
+    "zone": "Loch Modan",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 75,
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Raw Sagefish",
+      "Raw Loch Frenzy",
+      "Raw Brilliant Smallfish"
+    ]
   },
   {
     "name": "The Loch",
+    "zone": "Loch Modan",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 75,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Raw Sagefish",
+      "Raw Loch Frenzy",
+      "Raw Brilliant Smallfish"
+    ]
   },
   {
     "name": "Earth Song Falls",
+    "zone": "Maraudon",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
@@ -578,6 +1128,7 @@
   },
   {
     "name": "Poison Falls",
+    "zone": "Maraudon",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
@@ -585,6 +1136,7 @@
   },
   {
     "name": "Wicked Grotto",
+    "zone": "Maraudon",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
@@ -592,6 +1144,7 @@
   },
   {
     "name": "Zaetar's Grave",
+    "zone": "Maraudon",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
@@ -599,27 +1152,60 @@
   },
   {
     "name": "Stonebull Lake",
+    "zone": "Mulgore",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 25,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Brilliant Smallfish"
+    ]
+  },
+  {
+    "name": "Thunder Bluff",
+    "zone": "Mulgore",
+    "waterType": "Normal",
+    "skillToFish": 1,
+    "difficulty": 25,
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Raw Brilliant Smallfish"
+    ]
   },
   {
     "name": "Lake Everstill",
+    "zone": "Redridge Mountains",
     "waterType": "Normal",
     "skillToFish": 55,
     "difficulty": 150,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish"
+
+    ]
+  },
+  {
+    "name": "Lakeshire",
+    "zone": "Redridge Mountains",
+    "waterType": "Normal",
+    "skillToFish": 55,
+    "difficulty": 150,
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish"
+    ]
   },
   {
     "name": "Stonewatch Falls",
+    "zone": "Redridge Mountains",
     "waterType": "Normal",
     "skillToFish": 55,
     "difficulty": 150,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish"
+
+    ]
   },
   {
     "name": "The Reservoir",
+    "zone": "Ruins of Ahn'Qiraj",
     "waterType": "Normal",
     "skillToFish": 330,
     "difficulty": 425,
@@ -627,6 +1213,7 @@
   },
   {
     "name": "Hive'Regal",
+    "zone": "Silithus",
     "waterType": "Normal",
     "skillToFish": 330,
     "difficulty": 425,
@@ -634,230 +1221,437 @@
   },
   {
     "name": "Vile Fin Village",
+    "zone": "Silverpine Forest",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 75,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Raw Sagefish"
+    ]
   },
   {
     "name": "North Tide's Run",
+    "zone": "Silverpine Forest",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 75,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Slitherskin Mackerel",
+      "Raw Rainbow Fin Albacore"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth"
+    ]
   },
   {
     "name": "The Dawning Isles",
+    "zone": "Silverpine Forest",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 75,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Raw Sagefish"
+    ]
   },
   {
     "name": "The Decrepit Ferry",
+    "zone": "Silverpine Forest",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 75,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Raw Sagefish",
+      "Raw Brilliant Smallfish"
+    ]
   },
   {
     "name": "The Shining Strand",
+    "zone": "Silverpine Forest",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 75,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Raw Sagefish"
+    ]
   },
   {
     "name": "Cragpool Lake",
+    "zone": "Stonetalon Mountains",
     "waterType": "Normal",
     "skillToFish": 55,
     "difficulty": 150,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Oil Covered Fish"
+    ]
+  },
+  {
+    "name": "Sun Rock Retreat",
+    "zone": "Stonetalon Mountains",
+    "waterType": "Normal",
+    "skillToFish": 55,
+    "difficulty": 150,
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish"
+    ]
   },
   {
     "name": "Mirkfallon Lake",
+    "zone": "Stonetalon Mountains",
     "waterType": "Normal",
     "skillToFish": 55,
     "difficulty": 150,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Raw Sagefish"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth"
+    ]
   },
   {
     "name": "Bloodsail Compound",
+    "zone": "Stranglethorn Vale",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rockscale Cod",
+      "Raw Spotted Yellowtail"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth"
+    ]
   },
   {
     "name": "Crystal Shore",
+    "zone": "Stranglethorn Vale",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rockscale Cod",
+      "Raw Spotted Yellowtail"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth"
+    ]
   },
   {
     "name": "Jaguero Isle",
+    "zone": "Stranglethorn Vale",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rockscale Cod",
+      "Raw Spotted Yellowtail",
+      "Raw Glossy Mightfish"
+    ]
   },
   {
     "name": "Lake Nazferiti",
+    "zone": "Stranglethorn Vale",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Raw Mithril Head Trout",
+      "Raw Greater Sagefish"
+    ]
   },
   {
     "name": "Mizjah Ruins",
+    "zone": "Stranglethorn Vale",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Raw Mithril Head Trout",
+      "Raw Greater Sagefish"
+    ]
+  },
+  {
+    "name": "Nesingwary's Expedition",
+    "zone": "Stranglethorn Vale",
+    "waterType": "Normal",
+    "skillToFish": 130,
+    "difficulty": 225,
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Raw Mithril Head Trout",
+      "Raw Greater Sagefish"
+    ]
   },
   {
     "name": "Janeiro's Point",
+    "zone": "Stranglethorn Vale",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rockscale Cod",
+      "Raw Spotted Yellowtail"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth"
+    ]
   },
   {
     "name": "Nek'mani Wellspring",
+    "zone": "Stranglethorn Vale",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rockscale Cod",
+      "Raw Spotted Yellowtail"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth"
+    ]
   },
   {
     "name": "The Savage Coast",
+    "zone": "Stranglethorn Vale",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rockscale Cod",
+      "Raw Spotted Yellowtail"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth"
+    ]
   },
   {
     "name": "Southern Savage Coast",
+    "zone": "Stranglethorn Vale",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rockscale Cod",
+      "Raw Spotted Yellowtail"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth"
+    ]
   },
   {
     "name": "Venture Co. Base Camp",
+    "zone": "Stranglethorn Vale",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Raw Mithril Head Trout",
+      "Raw Greater Sagefish"
+    ]
   },
   {
     "name": "Wild Shore",
+    "zone": "Stranglethorn Vale",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rockscale Cod",
+      "Raw Spotted Yellowtail"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth"
+    ]
   },
   {
     "name": "Southern Misty Reed Strand",
+    "zone": "Swamp of Sorrows",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rockscale Cod",
+      "Raw Spotted Yellowtail"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth",
+      "Firefin Snapper"
+    ]
   },
   {
     "name": "Northern Misty Reed Strand",
+    "zone": "Swamp of Sorrows",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rockscale Cod",
+      "Raw Spotted Yellowtail"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth",
+      "Firefin Snapper"
+    ]
   },
   {
     "name": "Pool of Tears",
+    "zone": "Swamp of Sorrows",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Raw Mithril Head Trout"
+    ]
   },
   {
     "name": "Sorrowmurk",
+    "zone": "Swamp of Sorrows",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Raw Mithril Head Trout"
+    ]
   },
   {
     "name": "The Shifting Mire",
+    "zone": "Swamp of Sorrows",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Raw Mithril Head Trout"
+    ]
   },
   {
     "name": "Land's End Beach",
+    "zone": "Tanaris",
     "waterType": "Normal",
     "skillToFish": 205,
     "difficulty": 300,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rockscale Cod",
+      "Raw Spotted Yellowtail",
+      "Raw Glossy Mightfish"
+    ]
   },
   {
     "name": "Lost Rigger Cove",
+    "zone": "Tanaris",
     "waterType": "Normal",
     "skillToFish": 205,
     "difficulty": 300,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rockscale Cod",
+      "Raw Spotted Yellowtail",
+      "Raw Glossy Mightfish"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth"
+    ]
   },
   {
     "name": "Southbreak Shore",
+    "zone": "Tanaris",
     "waterType": "Normal",
     "skillToFish": 205,
     "difficulty": 300,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rockscale Cod",
+      "Raw Spotted Yellowtail",
+      "Raw Glossy Mightfish"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth",
+      "Firefin Snapper"
+    ]
   },
   {
     "name": "Steamwheedle Port",
+    "zone": "Tanaris",
     "waterType": "Normal",
     "skillToFish": 205,
     "difficulty": 300,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rockscale Cod",
+      "Raw Spotted Yellowtail",
+      "Raw Glossy Mightfish"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth",
+      "Firefin Snapper"
+    ]
   },
   {
     "name": "Wavestrider Beach",
+    "zone": "Tanaris",
     "waterType": "Normal",
     "skillToFish": 205,
     "difficulty": 300,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rockscale Cod",
+      "Raw Spotted Yellowtail",
+      "Raw Glossy Mightfish"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth",
+      "Firefin Snapper"
+    ]
   },
   {
     "name": "Lake Al'Ameth",
+    "zone": "Teldrassil",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 25,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Brilliant Smallfish"
+    ]
   },
   {
     "name": "Pools of Arlithrien",
+    "zone": "Teldrassil",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 25,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Brilliant Smallfish"
+    ]
   },
   {
     "name": "Wellspring Lake",
+    "zone": "Teldrassil",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 25,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Brilliant Smallfish"
+    ]
   },
   {
     "name": "Wellspring River",
+    "zone": "Teldrassil",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 25,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Brilliant Smallfish"
+    ]
   },
   {
     "name": "The Hive Undergrounds",
+    "zone": "Temple of Ahn'Qiraj",
     "waterType": "Normal",
     "skillToFish": 330,
     "difficulty": 425,
@@ -865,6 +1659,7 @@
   },
   {
     "name": "Pit of Refuse",
+    "zone": "Temple of Atal'Hakkar",
     "waterType": "Normal",
     "skillToFish": 130,
     "difficulty": 225,
@@ -872,62 +1667,97 @@
   },
   {
     "name": "Fray Island",
+    "zone": "The Barrens",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 75,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Slitherskin Mackerel",
+      "Raw Rainbow Fin Albacore"
+    ]
   },
   {
     "name": "Lushwater Oasis",
+    "zone": "The Barrens",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 75,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Raw Brilliant Smallfish"
+    ]
   },
   {
     "name": "Southfury River",
+    "zone": "The Barrens",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 75,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Raw Brilliant Smallfish"
+    ]
   },
   {
     "name": "The Forgotten Pools",
+    "zone": "The Barrens",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 75,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Raw Brilliant Smallfish"
+    ]
   },
   {
     "name": "The Merchant Coast",
+    "zone": "The Barrens",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 75,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Slitherskin Mackerel",
+      "Raw Rainbow Fin Albacore"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth"
+    ]
   },
   {
     "name": "The Tidus Stair",
+    "zone": "The Barrens",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 75,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Slitherskin Mackerel",
+      "Raw Rainbow Fin Albacore"
+    ]
   },
   {
     "name": "The Sludge Fen",
+    "zone": "The Barrens",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 75,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Oil Covered Fish"
+    ]
   },
   {
     "name": "The Stagnant Oasis",
+    "zone": "The Barrens",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 75,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Raw Brilliant Smallfish"
+    ]
   },
   {
     "name": "Ironclad Cove",
+    "zone": "The Deadmines",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 75,
@@ -935,132 +1765,210 @@
   },
   {
     "name": "Brightwater Lake",
+    "zone": "Tirisfal Glades",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 25,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Brilliant Smallfish"
+  ]
   },
   {
     "name": "Stillwater Pond",
+    "zone": "Tirisfal Glades",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 25,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Brilliant Smallfish"
+    ]
   },
   {
     "name": "The North Coast",
+    "zone": "Tirisfal Glades",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 25,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Slitherskin Mackerel"
+    ]
   },
   {
     "name": "The Ruins of Lordaeron",
+    "zone": "Tirisfal Glades",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 25,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Brilliant Smallfish",
+      "Sickly Looking Fish"
+    ]
   },
   {
     "name": "Whispering Shore",
+    "zone": "Tirisfal Glades",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 25,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Slitherskin Mackerel"
+    ]
   },
   {
     "name": "Golakka Hot Springs",
+    "zone": "Un'Goro Crater",
     "waterType": "Normal",
     "skillToFish": 205,
     "difficulty": 300,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Mithril Head Trout",
+      "Raw Sunscale Salmon"
+    ],
+    "rareLoot": [
+      "Lightning Eel"
+    ]
   },
   {
     "name": "Lakkari Tar Pits",
+    "zone": "Un'Goro Crater",
     "waterType": "Normal",
     "skillToFish": 205,
     "difficulty": 300,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Mithril Head Trout",
+      "Raw Sunscale Salmon"
+    ]
   },
   {
     "name": "The Marshlands",
+    "zone": "Un'Goro Crater",
     "waterType": "Normal",
     "skillToFish": 205,
     "difficulty": 300,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Mithril Head Trout",
+      "Raw Sunscale Salmon"
+    ]
   },
   {
     "name": "Longshore",
+    "zone": "Westfall",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 75,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Slitherskin Mackerel",
+      "Raw Rainbow Fin Albacore"
+    ]
   },
   {
     "name": "Stendel's Pond",
+    "zone": "Westfall",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 75,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish",
+      "Raw Brilliant Smallfish"
+    ]
   },
   {
     "name": "Westfall Crossing",
+    "zone": "Westfall",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 75,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish"
+    ]
   },
   {
     "name": "Westfall Lighthouse",
+    "zone": "Westfall",
     "waterType": "Normal",
     "skillToFish": 1,
     "difficulty": 75,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Slitherskin Mackerel",
+      "Raw Rainbow Fin Albacore"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth"
+    ]
   },
   {
     "name": "Black Channel Marsh",
+    "zone": "Wetlands",
     "waterType": "Normal",
     "skillToFish": 55,
     "difficulty": 150,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rainbow Fin Albacore"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth"
+    ]
   },
   {
     "name": "Dam Waterfalls",
+    "zone": "Wetlands",
     "waterType": "Normal",
     "skillToFish": 55,
     "difficulty": 150,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish"
+    ]
   },
   {
     "name": "Saltspray Glen",
+    "zone": "Wetlands",
     "waterType": "Normal",
     "skillToFish": 55,
     "difficulty": 150,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Rainbow Fin Albacore"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth"
+    ]
   },
   {
     "name": "Sundown Marsh",
+    "zone": "Wetlands",
     "waterType": "Normal",
     "skillToFish": 55,
     "difficulty": 150,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish"
+    ]
   },
   {
     "name": "The Green Belt",
+    "zone": "Wetlands",
     "waterType": "Normal",
     "skillToFish": 55,
     "difficulty": 150,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Bristle Whisker Catfish"
+    ]
   },
   {
     "name": "Frostfire Hot Springs",
+    "zone": "Winterspring",
     "waterType": "Normal",
     "skillToFish": 330,
     "difficulty": 425,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Sunscale Salmon",
+      "Raw Whitescale Salmon"
+    ],
+    "rareLoot": [
+      "Lightning Eel"
+    ]
   },
   {
     "name": "Pagle's Pointe",
+    "zone": "Zul'Gurub",
     "waterType": "Tropical",
     "skillToFish": 330,
     "difficulty": 425,

@@ -174,15 +174,16 @@ public class Desktop : MonoBehaviour
                 if (loadSites.Count == 0)
                 {
                     RemoveDesktopBackground();
-                    SpawnWindowBlueprint("MapToolbarShadow");
-                    SpawnWindowBlueprint("MapToolbarClockLeft");
-                    SpawnWindowBlueprint("MapToolbar");
-                    SpawnWindowBlueprint("MapToolbarClockRight");
-                    SpawnWindowBlueprint("MapToolbarStatusLeft");
-                    SpawnWindowBlueprint("MapToolbarStatusRight");
-                    SpawnWindowBlueprint("MapLocationInfo");
-                    SpawnWindowBlueprint("ExperienceBarBorder");
-                    SpawnWindowBlueprint("ExperienceBar");
+                    Respawn("MapToolbarShadow");
+                    Respawn("MapToolbarClockLeft");
+                    Respawn("MapToolbar");
+                    Respawn("MapToolbarClockRight");
+                    Respawn("MapToolbarStatusLeft");
+                    Respawn("MapToolbarStatusRight");
+                    Respawn("MapLocationInfo");
+                    Respawn("ExperienceBarBorder");
+                    Respawn("ExperienceBar");
+                    Respawn("WorldBuffs");
                     grid.SwitchMapTexture(currentSave.playerDead);
                     SpawnTransition(false);
                     SpawnTransition(false);
