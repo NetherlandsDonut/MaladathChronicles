@@ -44,7 +44,8 @@ public class Ability
                     if (trigger["Trigger"] == "ItemUsed")
                     {
                         string itemHash = trigger.ContainsKey("ItemHash") ? trigger["ItemHash"] : "";
-                        execute = item != null && item.GetHashCode() + "" == itemHash;
+                        string sitePresence = triggerData.ContainsKey("SitePresence") ? triggerData["SitePresence"] : "";
+                        execute = item != null && item.GetHashCode() + "" == itemHash && (sitePresence == "" || save.currentSite == sitePresence);
                     }
                 }
             if (execute) eve.ExecuteEffects(save, item, trigger, RankVariables(abilityRank), this, abilityRank);

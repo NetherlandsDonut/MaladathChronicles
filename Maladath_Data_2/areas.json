@@ -23131,7 +23131,10 @@
         "type": "Treasure",
         "point": 3
       }
-    ]
+    ],
+    "chestBonus": {
+      "Khadgar's Essays on Dimensional Convergence": 1
+    }
   },
   {
     "x": 5811,
@@ -26734,8 +26737,8 @@
     ]
   },
   {
-    "x": 1725,
-    "y": -3502,
+    "x": 1744,
+    "y": -3483,
     "name": "Camp Ethok",
     "zone": "Thousand Needles",
     "type": "HostileArea",
@@ -27121,7 +27124,10 @@
         "type": "Treasure",
         "point": 3
       }
-    ]
+    ],
+    "chestBonus": {
+      "Alien Egg": 1
+    }
   },
   {
     "x": 4925,
@@ -30704,7 +30710,10 @@
         "type": "Treasure",
         "point": 3
       }
-    ]
+    ],
+    "chestBonus": {
+      "Winterfall Crate": 1
+    }
   },
   {
     "x": 2485,

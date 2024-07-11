@@ -23475,6 +23475,16 @@
     "abilities": {}
   },
   {
+    "name": "Arikara",
+    "category": "Beast",
+    "subcategory": "Wind Serpent",
+    "side": "Neutral",
+    "kind": "Elite",
+    "portrait": "PortraitWindSerpentRed",
+    "vitality": 3.0,
+    "abilities": {}
+  },
+  {
     "name": "Hayoc",
     "category": "Beast",
     "subcategory": "Wind Serpent",

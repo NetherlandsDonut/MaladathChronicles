@@ -17,7 +17,7 @@ public class Board
 {
     #region Initialisation
 
-    public Board(int x, int y, Entity enemy, SiteHostileArea area = null)
+    public Board(int x, int y, Entity enemy, Site area = null)
     {
         field = new int[x, y];
         player = currentSave.player;
@@ -65,7 +65,7 @@ public class Board
         Reset();
     }
 
-    public static void NewBoard(Entity entity, SiteHostileArea area)
+    public static void NewBoard(Entity entity, Site area)
     {
         PlayEnemyLine(entity.EnemyLine("Aggro"));
         board = new Board(6, 6, entity, area);
@@ -157,7 +157,7 @@ public class Board
     public List<Action> actions;
 
     //Are where the combat takes place
-    public SiteHostileArea area;
+    public Site area;
 
     public void PutOnCooldown(bool player, Ability ability)
     {

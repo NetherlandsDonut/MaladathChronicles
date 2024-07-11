@@ -1,5 +1,44 @@
 [
   {
+    "name": "Incendia Powder",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed",
+            "SitePresence": "Darkcloud Pinnacle"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Combat",
+            "CombatEnemy": "Arikara",
+            "CombatEnemyLevel": "28",
+            "CombatKillCap": "1"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "isExtender": true,
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Toss the Incendia Powder into the sacred fire of life at the Darkcloud Pinnacle"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "name": "Hearthstone",
     "tags": [],
     "ranks": [

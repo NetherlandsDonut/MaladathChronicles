@@ -7,7 +7,8 @@
     "difficulty": 25,
     "possibleLoot": [
       "Raw Bristle Whisker Catfish",
-      "Raw Brilliant Smallfish"
+      "Raw Brilliant Smallfish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -18,6 +19,9 @@
     "difficulty": 150,
     "possibleLoot": [
       "Raw Rainbow Fin Albacore"
+    ],
+    "rareLoot": [
+      "Firefin Snapper"
     ]
   },
   {
@@ -43,7 +47,8 @@
     "difficulty": 25,
     "possibleLoot": [
       "Raw Bristle Whisker Catfish",
-      "Raw Brilliant Smallfish"
+      "Raw Brilliant Smallfish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -81,7 +86,8 @@
       "Raw Spotted Yellowtail"
     ],
     "rareLoot": [
-      "Oily Blackmouth"
+      "Oily Blackmouth",
+      "Firefin Snapper"
     ]
   },
   {
@@ -93,7 +99,12 @@
     "possibleLoot": [
       "Raw Rockscale Cod",
       "Raw Spotted Yellowtail",
-      "Raw Glossy Mightfish"
+      "Raw Glossy Mightfish",
+      "Raw Redgill"
+    ],
+    "rareLoot": [
+      "Firefin Snapper",
+      "Stonescale Eel"
     ]
   },
   {
@@ -105,7 +116,8 @@
     "possibleLoot": [
       "Raw Bristle Whisker Catfish",
       "Raw Brilliant Smallfish",
-      "Sickly Looking Fish"
+      "Sickly Looking Fish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -132,7 +144,9 @@
       "Raw Rockscale Cod"
     ],
     "rareLoot": [
-      "Oily Blackmouth"
+      "Oily Blackmouth",
+      "Firefin Snapper",
+      "Stonescale Eel"
     ]
   },
   {
@@ -203,7 +217,8 @@
     "difficulty": 150,
     "possibleLoot": [
       "Raw Bristle Whisker Catfish",
-      "Raw Sagefish"
+      "Raw Sagefish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -214,7 +229,8 @@
     "difficulty": 150,
     "possibleLoot": [
       "Raw Bristle Whisker Catfish",
-      "Raw Sagefish"
+      "Raw Sagefish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -225,7 +241,8 @@
     "difficulty": 150,
     "possibleLoot": [
       "Raw Bristle Whisker Catfish",
-      "Raw Sagefish"
+      "Raw Sagefish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -235,7 +252,8 @@
     "skillToFish": 55,
     "difficulty": 150,
     "possibleLoot": [
-      "Raw Bristle Whisker Catfish"
+      "Raw Bristle Whisker Catfish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -245,8 +263,8 @@
     "skillToFish": 55,
     "difficulty": 150,
     "possibleLoot": [
-      "Raw Bristle Whisker Catfish"
-
+      "Raw Bristle Whisker Catfish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -256,8 +274,8 @@
     "skillToFish": 55,
     "difficulty": 150,
     "possibleLoot": [
-      "Raw Bristle Whisker Catfish"
-
+      "Raw Bristle Whisker Catfish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -267,8 +285,8 @@
     "skillToFish": 55,
     "difficulty": 150,
     "possibleLoot": [
-      "Raw Bristle Whisker Catfish"
-
+      "Raw Bristle Whisker Catfish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -308,6 +326,9 @@
       "Darkclaw Lobster",
       "Large Raw Mightfish",
       "Raw Spotted Yellowtail"
+    ],
+    "rareLoot": [
+      "Stonescale Eel"
     ]
   },
   {
@@ -321,6 +342,9 @@
       "Darkclaw Lobster",
       "Large Raw Mightfish",
       "Raw Spotted Yellowtail"
+    ],
+    "rareLoot": [
+      "Stonescale Eel"
     ]
   },
   {
@@ -335,7 +359,8 @@
       "Raw Glossy Mightfish"
     ],
     "rareLoot": [
-      "Oily Blackmouth"
+      "Oily Blackmouth",
+      "Stonescale Eel"
     ]
   },
   {
@@ -347,7 +372,9 @@
     "possibleLoot": [
       "Raw Mithril Head Trout",
       "Raw Sunscale Salmon",
-      "Raw Glossy Mightfish"
+      "Raw Glossy Mightfish",
+      "Raw Redgill",
+      "Raw Nightfin Snapper"
     ],
     "rareLoot": [
       "Lightning Eel"
@@ -363,6 +390,9 @@
       "Raw Rockscale Cod",
       "Raw Spotted Yellowtail",
       "Raw Glossy Mightfish"
+    ],
+    "rareLoot": [
+      "Stonescale Eel"
     ]
   },
   {
@@ -377,7 +407,8 @@
       "Raw Glossy Mightfish"
     ],
     "rareLoot": [
-      "Oily Blackmouth"
+      "Oily Blackmouth",
+      "Stonescale Eel"
     ]
   },
   {
@@ -390,6 +421,9 @@
       "Raw Rockscale Cod",
       "Raw Spotted Yellowtail",
       "Raw Glossy Mightfish"
+    ],
+    "rareLoot": [
+      "Stonescale Eel"
     ]
   },
   {
@@ -402,6 +436,9 @@
       "Raw Rockscale Cod",
       "Raw Spotted Yellowtail",
       "Raw Glossy Mightfish"
+    ],
+    "rareLoot": [
+      "Stonescale Eel"
     ]
   },
   {
@@ -414,6 +451,9 @@
       "Raw Rockscale Cod",
       "Raw Spotted Yellowtail",
       "Raw Glossy Mightfish"
+    ],
+    "rareLoot": [
+      "Stonescale Eel"
     ]
   },
   {
@@ -426,6 +466,9 @@
       "Raw Rockscale Cod",
       "Raw Spotted Yellowtail",
       "Raw Glossy Mightfish"
+    ],
+    "rareLoot": [
+      "Stonescale Eel"
     ]
   },
   {
@@ -466,7 +509,8 @@
     "difficulty": 75,
     "possibleLoot": [
       "Raw Bristle Whisker Catfish",
-      "Raw Brilliant Smallfish"
+      "Raw Brilliant Smallfish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -519,7 +563,9 @@
     "difficulty": 425,
     "possibleLoot": [
       "Raw Sunscale Salmon",
-      "Raw Whitescale Salmon"
+      "Raw Whitescale Salmon",
+      "Raw Redgill",
+      "Raw Nightfin Snapper"
     ],
     "rareLoot": [
       "Lightning Eel"
@@ -567,6 +613,10 @@
     "possibleLoot": [
       "Raw Rockscale Cod",
       "Raw Spotted Yellowtail"
+    ],
+    "rareLoot": [
+      "Oily Blackmouth",
+      "Firefin Snapper"
     ]
   },
   {
@@ -574,7 +624,8 @@
     "zone": "Dun Morogh",
     "waterType": "Normal",
     "possibleLoot": [
-      "Raw Brilliant Smallfish"
+      "Raw Brilliant Smallfish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -582,7 +633,8 @@
     "zone": "Dun Morogh",
     "waterType": "Normal",
     "possibleLoot": [
-      "Raw Brilliant Smallfish"
+      "Raw Brilliant Smallfish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -593,7 +645,8 @@
     "difficulty": 25,
     "possibleLoot": [
       "Raw Bristle Whisker Catfish",
-      "Raw Brilliant Smallfish"
+      "Raw Brilliant Smallfish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -644,7 +697,8 @@
     "difficulty": 150,
     "possibleLoot": [
       "Raw Bristle Whisker Catfish",
-      "Raw Brilliant Smallfish"
+      "Raw Brilliant Smallfish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -654,7 +708,8 @@
     "skillToFish": 55,
     "difficulty": 150,
     "possibleLoot": [
-      "Raw Bristle Whisker Catfish"
+      "Raw Bristle Whisker Catfish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -664,7 +719,8 @@
     "skillToFish": 55,
     "difficulty": 150,
     "possibleLoot": [
-      "Raw Bristle Whisker Catfish"
+      "Raw Bristle Whisker Catfish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -763,7 +819,9 @@
     "difficulty": 425,
     "possibleLoot": [
       "Raw Sunscale Salmon",
-      "Raw Whitescale Salmon"
+      "Raw Whitescale Salmon",
+      "Raw Redgill",
+      "Raw Nightfin Snapper"
     ]
   },
   {
@@ -774,7 +832,9 @@
     "difficulty": 300,
     "possibleLoot": [
       "Raw Mithril Head Trout",
-      "Raw Sunscale Salmon"
+      "Raw Sunscale Salmon",
+      "Raw Redgill",
+      "Raw Nightfin Snapper"
     ],
     "rareLoot": [
       "Oily Blackmouth"
@@ -788,7 +848,9 @@
     "difficulty": 425,
     "possibleLoot": [
       "Raw Sunscale Salmon",
-      "Raw Whitescale Salmon"
+      "Raw Whitescale Salmon",
+      "Raw Redgill",
+      "Raw Nightfin Snapper"
     ]
   },
   {
@@ -799,7 +861,8 @@
     "difficulty": 425,
     "possibleLoot": [
       "Raw Mithril Head Trout",
-      "Raw Sunscale Salmon"
+      "Raw Sunscale Salmon",
+      "Raw Nightfin Snapper"
     ]
   },
   {
@@ -809,8 +872,9 @@
     "skillToFish": 1,
     "difficulty": 25,
     "possibleLoot": [
-      "Raw Brilliant Smallfish"
-  ]
+      "Raw Brilliant Smallfish",
+      "Raw Longjaw Mud Snapper"
+    ]
   },
   {
     "name": "Stone Cairn Lake",
@@ -819,7 +883,8 @@
     "skillToFish": 1,
     "difficulty": 25,
     "possibleLoot": [
-      "Raw Brilliant Smallfish"
+      "Raw Brilliant Smallfish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -829,7 +894,8 @@
     "skillToFish": 1,
     "difficulty": 25,
     "possibleLoot": [
-      "Raw Brilliant Smallfish"
+      "Raw Brilliant Smallfish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -839,7 +905,8 @@
     "skillToFish": 1,
     "difficulty": 25,
     "possibleLoot": [
-      "Raw Brilliant Smallfish"
+      "Raw Brilliant Smallfish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -850,7 +917,9 @@
     "difficulty": 300,
     "possibleLoot": [
       "Raw Mithril Head Trout",
-      "Raw Sunscale Salmon"
+      "Raw Sunscale Salmon",
+      "Raw Redgill",
+      "Raw Nightfin Snapper"
     ],
     "rareLoot": [
       "Lightning Eel",
@@ -865,7 +934,9 @@
     "difficulty": 300,
     "possibleLoot": [
       "Raw Mithril Head Trout",
-      "Raw Sunscale Salmon"
+      "Raw Sunscale Salmon",
+      "Raw Redgill",
+      "Raw Nightfin Snapper"
     ],
     "rareLoot": [
       "Lightning Eel",
@@ -880,7 +951,9 @@
     "difficulty": 300,
     "possibleLoot": [
       "Raw Mithril Head Trout",
-      "Raw Sunscale Salmon"
+      "Raw Sunscale Salmon",
+      "Raw Redgill",
+      "Raw Nightfin Snapper"
     ],
     "rareLoot": [
       "Lightning Eel"
@@ -896,6 +969,10 @@
       "Raw Rockscale Cod",
       "Raw Spotted Yellowtail",
       "Raw Glossy Mightfish"
+    ],
+    "rareLoot": [
+      "Firefin Snapper",
+      "Stonescale Eel"
     ]
   },
   {
@@ -908,6 +985,10 @@
       "Raw Rockscale Cod",
       "Raw Spotted Yellowtail",
       "Raw Glossy Mightfish"
+    ],
+    "rareLoot": [
+      "Firefin Snapper",
+      "Stonescale Eel"
     ]
   },
   {
@@ -919,8 +1000,11 @@
     "possibleLoot": [
       "Raw Rockscale Cod",
       "Raw Spotted Yellowtail",
-      "Raw Glossy Mightfish",
-      "Firefin Snapper"
+      "Raw Glossy Mightfish"
+    ],
+    "rareLoot": [
+      "Firefin Snapper",
+      "Stonescale Eel"
     ]
   },
   {
@@ -931,7 +1015,9 @@
     "difficulty": 300,
     "possibleLoot": [
       "Raw Mithril Head Trout",
-      "Raw Sunscale Salmon"
+      "Raw Sunscale Salmon",
+      "Raw Redgill",
+      "Raw Nightfin Snapper"
     ],
     "rareLoot": [
       "Oily Blackmouth"
@@ -945,7 +1031,9 @@
     "difficulty": 300,
     "possibleLoot": [
       "Raw Mithril Head Trout",
-      "Raw Sunscale Salmon"
+      "Raw Sunscale Salmon",
+      "Raw Redgill",
+      "Raw Nightfin Snapper"
     ],
     "rareLoot": [
       "Lightning Eel"
@@ -959,7 +1047,9 @@
     "difficulty": 300,
     "possibleLoot": [
       "Raw Mithril Head Trout",
-      "Raw Sunscale Salmon"
+      "Raw Sunscale Salmon",
+      "Raw Redgill",
+      "Raw Nightfin Snapper"
     ],
     "rareLoot": [
       "Lightning Eel"
@@ -973,7 +1063,9 @@
     "difficulty": 300,
     "possibleLoot": [
       "Raw Mithril Head Trout",
-      "Raw Sunscale Salmon"
+      "Raw Sunscale Salmon",
+      "Raw Redgill",
+      "Raw Nightfin Snapper"
     ],
     "rareLoot": [
       "Lightning Eel"
@@ -989,7 +1081,8 @@
       "Raw Rainbow Fin Albacore"
     ],
     "rareLoot": [
-      "Oily Blackmouth"
+      "Oily Blackmouth",
+      "Firefin Snapper"
     ]
   },
   {
@@ -1000,7 +1093,8 @@
     "difficulty": 150,
     "possibleLoot": [
       "Raw Bristle Whisker Catfish",
-      "Raw Sagefish"
+      "Raw Sagefish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -1023,7 +1117,8 @@
       "Raw Rainbow Fin Albacore"
     ],
     "rareLoot": [
-      "Oily Blackmouth"
+      "Oily Blackmouth",
+      "Firefin Snapper"
     ]
   },
   {
@@ -1034,7 +1129,8 @@
     "difficulty": 150,
     "possibleLoot": [
       "Raw Bristle Whisker Catfish",
-      "Raw Sagefish"
+      "Raw Sagefish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -1045,7 +1141,9 @@
     "difficulty": 300,
     "possibleLoot": [
       "Raw Mithril Head Trout",
-      "Raw Sunscale Salmon"
+      "Raw Sunscale Salmon",
+      "Raw Redgill",
+      "Raw Nightfin Snapper"
     ],
     "rareLoot": [
       "Lightning Eel",
@@ -1062,6 +1160,10 @@
       "Raw Rockscale Cod",
       "Raw Spotted Yellowtail",
       "Raw Glossy Mightfish"
+    ],
+    "rareLoot": [
+      "Firefin Snapper",
+      "Stonescale Eel"
     ]
   },
   {
@@ -1072,7 +1174,8 @@
     "difficulty": 300,
     "possibleLoot": [
       "Raw Mithril Head Trout",
-      "Raw Sunscale Salmon"
+      "Raw Sunscale Salmon",
+      "Raw Nightfin Snapper"
     ],
     "rareLoot": [
       "Lightning Eel",
@@ -1089,7 +1192,8 @@
       "Raw Bristle Whisker Catfish",
       "Raw Sagefish",
       "Raw Loch Frenzy",
-      "Raw Brilliant Smallfish"
+      "Raw Brilliant Smallfish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -1102,7 +1206,8 @@
       "Raw Bristle Whisker Catfish",
       "Raw Sagefish",
       "Raw Loch Frenzy",
-      "Raw Brilliant Smallfish"
+      "Raw Brilliant Smallfish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -1115,7 +1220,8 @@
       "Raw Bristle Whisker Catfish",
       "Raw Sagefish",
       "Raw Loch Frenzy",
-      "Raw Brilliant Smallfish"
+      "Raw Brilliant Smallfish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -1157,7 +1263,8 @@
     "skillToFish": 1,
     "difficulty": 25,
     "possibleLoot": [
-      "Raw Brilliant Smallfish"
+      "Raw Brilliant Smallfish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -1168,7 +1275,8 @@
     "difficulty": 25,
     "possibleLoot": [
       "Raw Bristle Whisker Catfish",
-      "Raw Brilliant Smallfish"
+      "Raw Brilliant Smallfish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -1178,8 +1286,8 @@
     "skillToFish": 55,
     "difficulty": 150,
     "possibleLoot": [
-      "Raw Bristle Whisker Catfish"
-
+      "Raw Bristle Whisker Catfish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -1189,7 +1297,8 @@
     "skillToFish": 55,
     "difficulty": 150,
     "possibleLoot": [
-      "Raw Bristle Whisker Catfish"
+      "Raw Bristle Whisker Catfish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -1199,8 +1308,8 @@
     "skillToFish": 55,
     "difficulty": 150,
     "possibleLoot": [
-      "Raw Bristle Whisker Catfish"
-
+      "Raw Bristle Whisker Catfish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -1227,7 +1336,8 @@
     "difficulty": 75,
     "possibleLoot": [
       "Raw Bristle Whisker Catfish",
-      "Raw Sagefish"
+      "Raw Sagefish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -1252,7 +1362,8 @@
     "difficulty": 75,
     "possibleLoot": [
       "Raw Bristle Whisker Catfish",
-      "Raw Sagefish"
+      "Raw Sagefish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -1264,7 +1375,8 @@
     "possibleLoot": [
       "Raw Bristle Whisker Catfish",
       "Raw Sagefish",
-      "Raw Brilliant Smallfish"
+      "Raw Brilliant Smallfish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -1275,7 +1387,8 @@
     "difficulty": 75,
     "possibleLoot": [
       "Raw Bristle Whisker Catfish",
-      "Raw Sagefish"
+      "Raw Sagefish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -1296,7 +1409,8 @@
     "skillToFish": 55,
     "difficulty": 150,
     "possibleLoot": [
-      "Raw Bristle Whisker Catfish"
+      "Raw Bristle Whisker Catfish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -1307,7 +1421,8 @@
     "difficulty": 150,
     "possibleLoot": [
       "Raw Bristle Whisker Catfish",
-      "Raw Sagefish"
+      "Raw Sagefish",
+      "Raw Longjaw Mud Snapper"
     ],
     "rareLoot": [
       "Oily Blackmouth"
@@ -1324,7 +1439,8 @@
       "Raw Spotted Yellowtail"
     ],
     "rareLoot": [
-      "Oily Blackmouth"
+      "Oily Blackmouth",
+      "Stonescale Eel"
     ]
   },
   {
@@ -1338,7 +1454,8 @@
       "Raw Spotted Yellowtail"
     ],
     "rareLoot": [
-      "Oily Blackmouth"
+      "Oily Blackmouth",
+      "Stonescale Eel"
     ]
   },
   {
@@ -1351,6 +1468,9 @@
       "Raw Rockscale Cod",
       "Raw Spotted Yellowtail",
       "Raw Glossy Mightfish"
+    ],
+    "rareLoot": [
+      "Stonescale Eel"
     ]
   },
   {
@@ -1400,7 +1520,8 @@
       "Raw Spotted Yellowtail"
     ],
     "rareLoot": [
-      "Oily Blackmouth"
+      "Oily Blackmouth",
+      "Firefin Snapper"
     ]
   },
   {
@@ -1428,7 +1549,8 @@
       "Raw Spotted Yellowtail"
     ],
     "rareLoot": [
-      "Oily Blackmouth"
+      "Oily Blackmouth",
+      "Firefin Snapper"
     ]
   },
   {
@@ -1442,7 +1564,8 @@
       "Raw Spotted Yellowtail"
     ],
     "rareLoot": [
-      "Oily Blackmouth"
+      "Oily Blackmouth",
+      "Firefin Snapper"
     ]
   },
   {
@@ -1468,7 +1591,9 @@
       "Raw Spotted Yellowtail"
     ],
     "rareLoot": [
-      "Oily Blackmouth"
+      "Oily Blackmouth",
+      "Firefin Snapper",
+      "Stonescale Eel"
     ]
   },
   {
@@ -1544,6 +1669,9 @@
       "Raw Rockscale Cod",
       "Raw Spotted Yellowtail",
       "Raw Glossy Mightfish"
+    ],
+    "rareLoot": [
+      "Stonescale Eel"
     ]
   },
   {
@@ -1558,7 +1686,8 @@
       "Raw Glossy Mightfish"
     ],
     "rareLoot": [
-      "Oily Blackmouth"
+      "Oily Blackmouth",
+      "Stonescale Eel"
     ]
   },
   {
@@ -1616,7 +1745,8 @@
     "skillToFish": 1,
     "difficulty": 25,
     "possibleLoot": [
-      "Raw Brilliant Smallfish"
+      "Raw Brilliant Smallfish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -1626,7 +1756,8 @@
     "skillToFish": 1,
     "difficulty": 25,
     "possibleLoot": [
-      "Raw Brilliant Smallfish"
+      "Raw Brilliant Smallfish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -1636,7 +1767,8 @@
     "skillToFish": 1,
     "difficulty": 25,
     "possibleLoot": [
-      "Raw Brilliant Smallfish"
+      "Raw Brilliant Smallfish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -1646,7 +1778,8 @@
     "skillToFish": 1,
     "difficulty": 25,
     "possibleLoot": [
-      "Raw Brilliant Smallfish"
+      "Raw Brilliant Smallfish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -1684,7 +1817,11 @@
     "difficulty": 75,
     "possibleLoot": [
       "Raw Bristle Whisker Catfish",
-      "Raw Brilliant Smallfish"
+      "Raw Brilliant Smallfish",
+      "Raw Longjaw Mud Snapper"
+    ],
+    "rareLoot": [
+      "Deviate Fish"
     ]
   },
   {
@@ -1695,7 +1832,8 @@
     "difficulty": 75,
     "possibleLoot": [
       "Raw Bristle Whisker Catfish",
-      "Raw Brilliant Smallfish"
+      "Raw Brilliant Smallfish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -1706,7 +1844,11 @@
     "difficulty": 75,
     "possibleLoot": [
       "Raw Bristle Whisker Catfish",
-      "Raw Brilliant Smallfish"
+      "Raw Brilliant Smallfish",
+      "Raw Longjaw Mud Snapper"
+    ],
+    "rareLoot": [
+      "Deviate Fish"
     ]
   },
   {
@@ -1752,7 +1894,11 @@
     "difficulty": 75,
     "possibleLoot": [
       "Raw Bristle Whisker Catfish",
-      "Raw Brilliant Smallfish"
+      "Raw Brilliant Smallfish",
+      "Raw Longjaw Mud Snapper"
+    ],
+    "rareLoot": [
+      "Deviate Fish"
     ]
   },
   {
@@ -1770,8 +1916,9 @@
     "skillToFish": 1,
     "difficulty": 25,
     "possibleLoot": [
-      "Raw Brilliant Smallfish"
-  ]
+      "Raw Brilliant Smallfish",
+      "Raw Longjaw Mud Snapper"
+    ]
   },
   {
     "name": "Stillwater Pond",
@@ -1780,7 +1927,8 @@
     "skillToFish": 1,
     "difficulty": 25,
     "possibleLoot": [
-      "Raw Brilliant Smallfish"
+      "Raw Brilliant Smallfish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -1822,7 +1970,9 @@
     "difficulty": 300,
     "possibleLoot": [
       "Raw Mithril Head Trout",
-      "Raw Sunscale Salmon"
+      "Raw Sunscale Salmon",
+      "Raw Redgill",
+      "Raw Nightfin Snapper"
     ],
     "rareLoot": [
       "Lightning Eel"
@@ -1836,7 +1986,9 @@
     "difficulty": 300,
     "possibleLoot": [
       "Raw Mithril Head Trout",
-      "Raw Sunscale Salmon"
+      "Raw Sunscale Salmon",
+      "Raw Redgill",
+      "Raw Nightfin Snapper"
     ]
   },
   {
@@ -1847,7 +1999,8 @@
     "difficulty": 300,
     "possibleLoot": [
       "Raw Mithril Head Trout",
-      "Raw Sunscale Salmon"
+      "Raw Sunscale Salmon",
+      "Raw Redgill"
     ]
   },
   {
@@ -1869,7 +2022,8 @@
     "difficulty": 75,
     "possibleLoot": [
       "Raw Bristle Whisker Catfish",
-      "Raw Brilliant Smallfish"
+      "Raw Brilliant Smallfish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -1879,7 +2033,8 @@
     "skillToFish": 1,
     "difficulty": 75,
     "possibleLoot": [
-      "Raw Bristle Whisker Catfish"
+      "Raw Bristle Whisker Catfish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -1916,7 +2071,8 @@
     "skillToFish": 55,
     "difficulty": 150,
     "possibleLoot": [
-      "Raw Bristle Whisker Catfish"
+      "Raw Bristle Whisker Catfish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -1939,7 +2095,8 @@
     "skillToFish": 55,
     "difficulty": 150,
     "possibleLoot": [
-      "Raw Bristle Whisker Catfish"
+      "Raw Bristle Whisker Catfish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -1949,7 +2106,8 @@
     "skillToFish": 55,
     "difficulty": 150,
     "possibleLoot": [
-      "Raw Bristle Whisker Catfish"
+      "Raw Bristle Whisker Catfish",
+      "Raw Longjaw Mud Snapper"
     ]
   },
   {
@@ -1960,7 +2118,9 @@
     "difficulty": 425,
     "possibleLoot": [
       "Raw Sunscale Salmon",
-      "Raw Whitescale Salmon"
+      "Raw Whitescale Salmon",
+      "Raw Redgill",
+      "Raw Nightfin Snapper"
     ],
     "rareLoot": [
       "Lightning Eel"

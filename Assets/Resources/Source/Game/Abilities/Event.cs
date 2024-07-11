@@ -76,6 +76,7 @@ public class Event
                 else if (type == "RemoveWorldBuff") EffectRemoveWorldBuff();
                 else if (type == "TeleportPlayer") EffectTeleportPlayer();
                 else if (type == "HearthstonePlayer") EffectHearthstonePlayer();
+                else if (type == "Combat") EffectCombat();
 
                 ExecuteSoundEffect();
 
@@ -94,6 +95,28 @@ public class Event
                 itemUsed.amount--;
                 if (itemUsed.amount == 0)
                     target.inventory.items.Remove(itemUsed);
+            }
+
+            //This effect starts a combat with a specific enemy
+            void EffectCombat()
+            {
+                var target = effector;
+                string enemy = effect.ContainsKey("CombatEnemy") ? effect["CombatEnemy"] : "None";
+                int level = effect.ContainsKey("CombatEnemyLevel") ? int.Parse(effect["CombatEnemyLevel"]) : 1;
+                int killCap = effect.ContainsKey("CombatKillCap") ? int.Parse(effect["CombatKillCap"]) : 999;
+                var race = Race.races.Find(x => x.name == enemy);
+                if (race != null)
+                {
+                    var can = false;
+                    if (race.kind == "Common" && (save.commonsKilled.ContainsKey(race.name) ? save.commonsKilled[race.name] : 0) < killCap) can = true;
+                    else if (race.kind == "Rare" && (save.raresKilled.ContainsKey(race.name) ? save.raresKilled[race.name] : 0) < killCap) can = true;
+                    else if (race.kind == "Elite" && (save.elitesKilled.ContainsKey(race.name) ? save.elitesKilled[race.name] : 0) < killCap) can = true;
+                    if (can)
+                    {
+                        Board.NewBoard(new Entity(level, race), Site.FindSite(x => x.name == save.currentSite));
+                        SpawnDesktopBlueprint("Game");
+                    }
+                }
             }
 
             //This effect gives a buff to the targetted entity
