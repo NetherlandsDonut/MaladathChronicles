@@ -2551,7 +2551,7 @@ public class Blueprint
                 {
                     if (board.results.result == "Won")
                     {
-                        if (area.instancePart)
+                        if (board.area.instancePart)
                         {
                             CloseDesktop("Instance");
                             SpawnDesktopBlueprint("Instance");

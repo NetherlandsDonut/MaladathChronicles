@@ -115,6 +115,7 @@ public class Event
                     {
                         Board.NewBoard(new Entity(level, race), Site.FindSite(x => x.name == save.currentSite));
                         SpawnDesktopBlueprint("Game");
+                        CloseDesktop("EquipmentScreen");
                     }
                 }
             }

@@ -169,6 +169,9 @@ public class Entity
         }
         if (quest.experience > 0)
             SaveGame.currentSave.player.ReceiveExperience(experience);
+        if (quest.reputationGain != null)
+            foreach (var rep in quest.reputationGain)
+                AddReputation(rep.Key, rep.Value);
         currentQuests.Remove(quest);
         completedQuests.Add(quest.questID);
         foreach (var item in quest.conditions.Where(x => x.type == "Item"))
@@ -179,9 +182,8 @@ public class Entity
         var nextQuests = quests.FindAll(x => x.previous == quest.questID);
         foreach (var nextQuest in nextQuests)
         {
-            find = Site.FindSite(x => x.name == quest.siteStart);
-            if (!sitesToRespawn.Contains(find))
-                sitesToRespawn.Add(find);
+            find = Site.FindSite(x => x.name == nextQuest.siteStart);
+            if (!sitesToRespawn.Contains(find)) sitesToRespawn.Add(find);
         }
     }
 
@@ -422,8 +424,13 @@ public class Entity
             experience -= ExperienceNeeded();
             level++;
             unspentTalentPoints++;
-            if (soundsPlayedThisFrame < 3)
-                PlaySound("DesktopLevelUp", 0.5f);
+            if (soundsPlayedThisFrame < 3) PlaySound("DesktopLevelUp", 0.5f);
+            var newLevelQuests = quests.FindAll(x => x.requiredLevel == level);
+            foreach (var newQuest in newLevelQuests)
+            {
+                var find = Site.FindSite(x => x.name == newQuest.siteStart);
+                if (!sitesToRespawn.Contains(find)) sitesToRespawn.Add(find);
+            }
         }
         Respawn("ExperienceBarBorder", true);
         Respawn("ExperienceBar", true);
@@ -798,6 +805,24 @@ public class Entity
     }
 
     public int Reputation(string faction) => faction != null && reputation.ContainsKey(faction) ? reputation[faction] : defines.defaultStanding;
+
+    public void AddReputation(string faction, int amount)
+    {
+        if (!reputation.ContainsKey(faction))
+            reputation.Add(faction, defines.defaultStanding);
+        var rank = ReputationRank(faction);
+        reputation[faction] += amount;
+        var newRank = ReputationRank(faction);
+        if (rank != newRank)
+        {
+            var newRankQuests = quests.FindAll(x => x.faction == faction && x.requiredRank == newRank);
+            foreach (var newQuest in newRankQuests)
+            {
+                var find = Site.FindSite(x => x.name == newQuest.siteStart);
+                if (!sitesToRespawn.Contains(find)) sitesToRespawn.Add(find);
+            }
+        }
+    }
 
     public Dictionary<string, int> reputation;
 
