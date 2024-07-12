@@ -17789,9 +17789,9 @@
     "category": "Demon",
     "subcategory": "Satyr",
     "side": "Neutral",
-    "kind": "Rare",
+    "kind": "Elite",
     "portrait": "PortraitSatyrPink",
-    "vitality": 2.0,
+    "vitality": 3.0,
     "abilities": {}
   },
   {

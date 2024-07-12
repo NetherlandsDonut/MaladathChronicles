@@ -7452,7 +7452,10 @@
         "type": "Treasure",
         "point": 3
       }
-    ]
+    ],
+    "chestBonus": {
+      "Infernal Orb": 1
+    }
   },
   {
     "x": 1096,
@@ -12495,7 +12498,7 @@
         "levelMax": 54
       }
     ],
-    "rareEncounters": [
+    "eliteEncounters": [
       {
         "who": "Xavaric",
         "levelMin": 55
@@ -12503,6 +12506,11 @@
     ],
     "areaSize": 3,
     "progression": [
+      {
+        "type": "Boss",
+        "bossName": "Xavaric",
+        "point": 2
+      },
       {
         "type": "Treasure",
         "point": 3

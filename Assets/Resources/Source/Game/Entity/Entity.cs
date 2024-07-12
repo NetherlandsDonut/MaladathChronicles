@@ -179,7 +179,7 @@ public class Entity
         var find = Site.FindSite(x => x.name == quest.siteEnd);
         if (!sitesToRespawn.Contains(find))
             sitesToRespawn.Add(find);
-        var nextQuests = quests.FindAll(x => x.previous == quest.questID);
+        var nextQuests = quests.FindAll(x => x.previous != null && x.previous.Contains(quest.questID));
         foreach (var nextQuest in nextQuests)
         {
             find = Site.FindSite(x => x.name == nextQuest.siteStart);
@@ -193,7 +193,7 @@ public class Entity
         if (currentQuests.Exists(x => x.questID == quest.questID)) return false;
         if (completedQuests.Contains(quest.questID)) return false;
         if (quest.requiredLevel > level) return false;
-        if (quest.previous != 0 && !completedQuests.Contains(quest.previous)) return false;
+        if (quest.previous != null && quest.previous.All(x => !completedQuests.Contains(x))) return false;
         if (quest.races != null && !quest.races.Contains(race)) return false;
         if (quest.classes != null && !quest.classes.Contains(spec)) return false;
         if (quest.faction != null && !IsRankHighEnough(ReputationRank(quest.faction), quest.requiredRank)) return false;

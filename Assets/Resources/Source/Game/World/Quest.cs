@@ -37,8 +37,8 @@ public class Quest
     //ID of the quest
     public int questID;
 
-    //Prerequisite quest needed to be done before this becomes available
-    public int previous;
+    //Prerequisite quests needed to be done before this becomes available
+    public List<int> previous;
 
     //Required level to have this quest
     public int requiredLevel;

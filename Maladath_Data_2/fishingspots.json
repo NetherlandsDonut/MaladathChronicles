@@ -2132,6 +2132,10 @@
     "waterType": "Tropical",
     "skillToFish": 330,
     "difficulty": 425,
-    "possibleLoot": []
+    "possibleLoot": [
+      "Raw Mithril Head Trout",
+      "Raw Bristle Whisker Catfish",
+      "Raw Greater Sagefish"
+    ]
   }
 ]
