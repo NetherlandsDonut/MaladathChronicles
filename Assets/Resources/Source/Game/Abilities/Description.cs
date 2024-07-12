@@ -103,7 +103,7 @@ public class DescriptionRegion
                     if (splitty.Contains("$C"))
                     {
                         if (effector == null) output += "?";
-                        output += splitty.Replace("$C", effector.spec.ToLower()) + " ";
+                        output += splitty.Replace("$C", effector.spec.ToFirstUpper()) + " ";
                     }
                     else if (splitty.Contains("$N"))
                     {

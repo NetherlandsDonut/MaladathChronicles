@@ -158,6 +158,9 @@ public static class Root
     public static string Clean(this string text) => text?.Replace("'", "").Replace(".", "").Replace(" ", "");
 
     //Removes all nasty characters from a string (Usually used for accessing files with names based of something)
+    public static string ToFirstUpper(this string text) => text == null ? text : text[..1].ToUpper() + text[1..].ToLower();
+
+    //Removes all nasty characters from a string (Usually used for accessing files with names based of something)
     public static string OnlyNameCategory(this string text) => text != null && text.Contains(" @ ") ? text[..text.IndexOf(" @ ")] : text;
 
     //Set what highlightible object mouse is currently hovering over
@@ -981,10 +984,14 @@ public static class Root
                 CloseWindow("Complex");
                 if (f == "Add")
                 {
+                    if (staticPagination.ContainsKey("QuestAdd"))
+                        staticPagination.Remove("QuestAdd");
                     if (!Respawn("QuestAdd")) PlaySound("DesktopWriteQuest" + random.Next(1, 4));
                 }
                 else if (f == "Turn")
                 {
+                    if (staticPagination.ContainsKey("QuestTurn"))
+                        staticPagination.Remove("QuestTurn");
                     if (quest.rewards != null && quest.rewards.Count == 1) Quest.chosenReward = quest.rewards.ToList()[0].Key;
                     else Quest.chosenReward = null;
                     if (!Respawn("QuestTurn")) PlaySound("DesktopWriteQuest" + random.Next(1, 4));

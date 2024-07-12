@@ -157,7 +157,7 @@ public class Entity
     }
 
     //Check if a specific quest is done
-    public void CanTurnQuest(Quest quest) => quest.conditions.All(x => x.IsDone());
+    public bool CanTurnQuest(Quest quest) => quest.conditions.All(x => x.IsDone());
 
     //Adds new quest to the quest log
     public void TurnQuest(Quest quest)

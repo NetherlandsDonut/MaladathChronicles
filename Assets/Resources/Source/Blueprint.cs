@@ -1952,6 +1952,8 @@ public class Blueprint
                     (h) =>
                     {
                         quest = quests[index + 11 * regionGroup.pagination()];
+                        if (staticPagination.ContainsKey("Quest"))
+                            staticPagination.Remove("Quest");
                         Respawn("Quest");
                         PlaySound("DesktopInstanceOpen");
                     });
@@ -2915,7 +2917,7 @@ public class Blueprint
         }),
         
         //Complex
-        new("Complex", () =>
+        new("Complex", () => 
         {
             if (complex.ambience == null)
             {
@@ -2965,14 +2967,14 @@ public class Blueprint
             foreach (var site in complex.sites)
                 PrintComplexSite(site);
         }),
-        new("ComplexQuestAvailable", () =>
+        new("ComplexQuestAvailable", () => 
         {
             var quests = currentSave.player.AvailableQuestsAt(complex).OrderBy(x => x.questLevel).ToList();
             if (quests.Count == 0) return;
             SetAnchor(Top, 0, -38);
             AddQuestList(quests);
         }),
-        new("ComplexQuestDone", () =>
+        new("ComplexQuestDone", () => 
         {
             var quests = currentSave.player.QuestsDoneAt(complex).OrderBy(x => x.questLevel).ToList();
             if (quests.Count == 0) return;
@@ -2981,7 +2983,7 @@ public class Blueprint
         }),
 
         //Instance
-        new("Instance", () =>
+        new("Instance", () => 
         {
             if (instance.ambience == null)
             {
@@ -3067,7 +3069,7 @@ public class Blueprint
                     else AddHeaderRegion(() => AddLine("?", "DimGray"));
                 }
         }),
-        new("InstanceWing", () =>
+        new("InstanceWing", () => 
         {
             SetAnchor(TopRight, -19, -57);
             AddRegionGroup();
@@ -3123,14 +3125,14 @@ public class Blueprint
                 else AddHeaderRegion(() => AddLine("?", "DimGray"));
             }
         }),
-        new("InstanceQuestAvailable", () =>
+        new("InstanceQuestAvailable", () => 
         {
             var quests = currentSave.player.AvailableQuestsAt(instance).OrderBy(x => x.questLevel).ToList();
             if (quests.Count == 0) return;
             SetAnchor(Top, 0, -38);
             AddQuestList(quests);
         }),
-        new("InstanceQuestDone", () =>
+        new("InstanceQuestDone", () => 
         {
             var quests = currentSave.player.QuestsDoneAt(instance).OrderBy(x => x.questLevel).ToList();
             if (quests.Count == 0) return;
@@ -3150,7 +3152,7 @@ public class Blueprint
             SetAnchor(TopLeft, 19, -38);
             AddHeaderGroup();
             SetRegionGroupWidth(190);
-            AddHeaderRegion(() =>
+            AddHeaderRegion(() => 
             {
                 AddLine(area.name, "Gray");
                 AddSmallButton("OtherClose",
@@ -3189,7 +3191,7 @@ public class Blueprint
                         }
                     });
             });
-            AddPaddingRegion(() =>
+            AddPaddingRegion(() => 
             {
                 AddLine("Recommended level: ", "DarkGray");
                 AddText(area.recommendedLevel + "", ColorEntityLevel(area.recommendedLevel));
@@ -3227,6 +3229,8 @@ public class Blueprint
                 {
                     SpawnDesktopBlueprint("QuestLog");
                     Quest.quest = quest;
+                    if (staticPagination.ContainsKey("Quest"))
+                        staticPagination.Remove("Quest");
                     Respawn("Quest");
                 });
                 var color = ColorQuestLevel(quest.questLevel);
@@ -3284,7 +3288,7 @@ public class Blueprint
                     }
                 }
         }),
-        new("HostileAreaDenizens", () =>
+        new("HostileAreaDenizens", () => 
         {
             if (area.commonEncounters == null || area.commonEncounters.Count == 0) return;
             SetAnchor(TopLeft, 19, -95);
@@ -3299,7 +3303,7 @@ public class Blueprint
                     //AddSmallButtonOverlay("QuestMarkerOneSided");
                 });
         }),
-        new("HostileAreaElites", () =>
+        new("HostileAreaElites", () => 
         {
             if (area.eliteEncounters == null || area.eliteEncounters.Count == 0) return;
             var boss = area.progression.Find(x => x.type == "Boss" && currentSave.siteProgress.ContainsKey(area.name) && x.point == currentSave.siteProgress[area.name]);
@@ -3326,14 +3330,14 @@ public class Blueprint
                 );
             });
         }),
-        new("HostileAreaQuestAvailable", () =>
+        new("HostileAreaQuestAvailable", () => 
         {
             var quests = currentSave.player.AvailableQuestsAt(area).OrderBy(x => x.questLevel).ToList();
             if (quests.Count == 0) return;
             SetAnchor(Top, 0, -38);
             AddQuestList(quests);
         }),
-        new("HostileAreaQuestDone", () =>
+        new("HostileAreaQuestDone", () => 
         {
             var quests = currentSave.player.QuestsDoneAt(area).OrderBy(x => x.questLevel).ToList();
             if (quests.Count == 0) return;
@@ -3525,14 +3529,14 @@ public class Blueprint
                 }
             });
         }),
-        new("TownQuestAvailable", () =>
+        new("TownQuestAvailable", () => 
         {
             var quests = currentSave.player.AvailableQuestsAt(town).OrderBy(x => x.questLevel).ToList();
             if (quests.Count == 0) return;
             SetAnchor(Top, 0, -38);
             AddQuestList(quests);
         }),
-        new("TownQuestDone", () =>
+        new("TownQuestDone", () => 
         {
             var quests = currentSave.player.QuestsDoneAt(town).OrderBy(x => x.questLevel).ToList();
             if (quests.Count == 0) return;

@@ -47,9 +47,12 @@ public class Item
         var enchantment = GenerateEnchantment();
         if (enchantment == null) return;
         name += " " + enchantment.suffix;
-        foreach (var stat in enchantment.stats)
-            if (stats.stats.ContainsKey(stat.Key)) stats.stats[stat.Key] += EnchantmentStatGrowth(ilvl, stat.Value.Length);
-            else stats.stats.Add(stat.Key, EnchantmentStatGrowth(ilvl, stat.Value.Length));
+        if (enchantment.stats.Count > 0)
+        {
+            stats = new(new());
+            foreach (var stat in enchantment.stats)
+                stats.stats.Inc(stat.Key, EnchantmentStatGrowth(ilvl, stat.Value.Length));
+        }
             
         PermanentEnchant GenerateEnchantment()
         {
@@ -1076,16 +1079,17 @@ public class Item
                     AddLine((balance > 0 ? "+" : "") + balance, balance > 0 ? "Uncommon" : "DangerousRed");
                     AddText(" Block");
                 }
-                foreach (var stat in item.stats.stats)
-                {
-                    statsRecorded.Add(stat.Key);
-                    var balance = current != null && current.stats != null && current.stats.stats.ContainsKey(stat.Key) ? stat.Value - current.stats.stats[stat.Key] : stat.Value;
-                    if (balance != 0)
+                if (item.stats != null)
+                    foreach (var stat in item.stats.stats)
                     {
-                        AddLine((balance > 0 ? "+" : "") + balance, balance > 0 ? "Uncommon" : "DangerousRed");
-                        AddText(" " + stat.Key);
+                        statsRecorded.Add(stat.Key);
+                        var balance = current != null && current.stats != null && current.stats.stats.ContainsKey(stat.Key) ? stat.Value - current.stats.stats[stat.Key] : stat.Value;
+                        if (balance != 0)
+                        {
+                            AddLine((balance > 0 ? "+" : "") + balance, balance > 0 ? "Uncommon" : "DangerousRed");
+                            AddText(" " + stat.Key);
+                        }
                     }
-                }
                 if (current != null && current.stats != null)
                     foreach (var stat in current.stats.stats)
                         if (!statsRecorded.Contains(stat.Key))
@@ -1238,7 +1242,7 @@ public class Item
         newItem.specs = specs?.ToList();
         newItem.questsStarted = questsStarted?.ToList();
         newItem.speed = speed;
-        newItem.stats = new Stats(stats.stats?.ToDictionary(x => x.Key, x => x.Value));
+        newItem.stats = stats != null ? new Stats(stats.stats?.ToDictionary(x => x.Key, x => x.Value)) : null;
         newItem.type = type;
         return newItem;
     }

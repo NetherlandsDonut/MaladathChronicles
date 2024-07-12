@@ -191,7 +191,7 @@ public class Quest
         if (color != null) SetRegionBackgroundAsImage("SkillUp" + color + "Long");
         var regionGroup = CDesktop.LBWindow.LBRegionGroup;
         Root.PreparePagination(regionGroup);
-        if (f == "Add" && description != null)
+        if (f == "Add")
         {
             AddHeaderRegion(() =>
             {
@@ -221,13 +221,13 @@ public class Quest
                 regions = new() { new() { regionType = "Padding", contents = new() { new ()
                     {
                         { "Color", "DarkGray" },
-                        { "Text", description.Split("$B$B")[staticPagination["QuestAdd"][0]] }
+                        { "Text", description != null ? description.Split("$B$B")[staticPagination["QuestAdd"][0]] : "" }
                     }
                 } } }
             }.Print(currentSave.player, null, 190, null);
             SetRegionAsGroupExtender();
         }
-        if (f == "Turn" && completion != null)
+        if (f == "Turn")
         {
             AddHeaderRegion(() =>
             {
@@ -257,7 +257,7 @@ public class Quest
                 regions = new() { new() { regionType = "Padding", contents = new() { new ()
                     {
                         { "Color", "DarkGray" },
-                        { "Text", completion.Split("$B$B")[staticPagination["QuestTurn"][0]] }
+                        { "Text", completion != null ? completion.Split("$B$B")[staticPagination["QuestTurn"][0]] : "" }
                     }
                 } } }
             }.Print(currentSave.player, null, 190, null);
@@ -279,9 +279,30 @@ public class Quest
         }
         if (f == "Log" && conditions != null)
         {
-            AddHeaderRegion(() => AddLine("Details:"));
-            foreach (var condition in conditions)
-                condition.Print(CDesktop.title == "QuestLog");
+            if (conditions.Count == 0 || currentSave.player.CanTurnQuest(this))
+            {
+                AddHeaderRegion(() => AddLine("Turn in at:"));
+                AddPaddingRegion(() =>
+                {
+                    AddLine(siteEnd, "HalfGray");
+                    AddSmallButton("ItemMiscMap01", (h) =>
+                    {
+                        CloseDesktop("HostileArea");
+                        CloseDesktop("Instance");
+                        CloseDesktop("Complex");
+                        SwitchDesktop("Map");
+                        CloseDesktop("QuestLog");
+                        var where = Site.FindSite(x => x.name == siteEnd);
+                        CDesktop.cameraDestination = new Vector2(where.x, where.y);
+                    });
+                });
+            }
+            else
+            {
+                AddHeaderRegion(() => AddLine("Details:"));
+                foreach (var condition in conditions)
+                    condition.Print(CDesktop.title == "QuestLog");
+            }
         }
         if (rewards != null)
         {
