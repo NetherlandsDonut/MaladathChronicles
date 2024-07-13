@@ -335,11 +335,11 @@ public class Item
             else if (detailedType == "Staff")
                 return entity.abilities.ContainsKey("Staff Proficiency");
             else if (detailedType == "Bow")
-                return entity.abilities.ContainsKey("Bow");
+                return entity.abilities.ContainsKey("Bow Proficiency");
             else if (detailedType == "Crossbow")
-                return entity.abilities.ContainsKey("Crossbow");
+                return entity.abilities.ContainsKey("Crossbow Proficiency");
             else if (detailedType == "Gun")
-                return entity.abilities.ContainsKey("Gun");
+                return entity.abilities.ContainsKey("Gun Proficiency");
             else
                 return true;
         }

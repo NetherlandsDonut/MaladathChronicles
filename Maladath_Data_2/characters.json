@@ -5,9 +5,45 @@
   "Whitemane": [
     {
       "player": {
-        "currentQuests": [],
-        "completedQuests": [],
-        "level": 1,
+        "currentQuests": [
+          {
+            "questID": 788,
+            "previous": [
+              4641
+            ],
+            "requiredLevel": 1,
+            "questLevel": 2,
+            "name": "Cutting Teeth",
+            "description": "The first order of business will be to put a little strength in your backbone.$B$BI could send you out to the Barrens to hunt kodo, but well, in all honesty, you're more useful to us alive than dead.$B$BI believe you would find a good match with the mottled boars you'll find to the north of here.",
+            "objective": "Kill 10 Mottled Boars then return to Gornek at the Den.",
+            "completion": "Hmmm, not bad, $N. But don't let it get to your head...you'll fight tougher than boars in your career.$B$BNonetheless, you've proven yourself well, and your next trial will be against a considerably more dangerous opponent, so you'll need some extra protection.",
+            "siteStart": "The Den",
+            "siteEnd": "The Den",
+            "zone": "Durotar",
+            "experience": 170,
+            "rewards": {
+              "Soft Wool Boots": 1,
+              "Battleworn Leather Gloves": 1
+            },
+            "reputationGain": {
+              "Darkspear Trolls": 250,
+              "Orgrimmar": 250
+            },
+            "conditions": [
+              {
+                "type": "Kill",
+                "name": "Mottled Boar",
+                "amount": 3,
+                "amountDone": 1
+              }
+            ]
+          }
+        ],
+        "completedQuests": [
+          4641
+        ],
+        "level": 2,
+        "experience": 19,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -21,7 +57,7 @@
           "Magram Clan": 0,
           "Gelkis Clan": 0,
           "Kolkar Clan": 0,
-          "Orgrimmar": 4600,
+          "Orgrimmar": 4675,
           "Frostwolf Clan": 4250,
           "The Defiler's": 4250,
           "Thunder Bluff": 4250,
@@ -76,10 +112,12 @@
           "Mosshide Tribe": 0,
           "Deadwood Tribe": 0,
           "Bloodtooth Tribe": 0,
-          "Bristleback Tribe": 0
+          "Bristleback Tribe": 0,
+          "Darkspear Trolls": 4275
         },
         "professionSkills": {},
         "learnedRecipes": {},
+        "unspentTalentPoints": 1,
         "faction": "Orgrimmar",
         "name": "Horn",
         "race": "Orc",
@@ -216,26 +254,34 @@
         "worldBuffs": []
       },
       "hour": 7,
-      "currentSite": "The Den",
+      "minute": 1,
+      "second": 24,
+      "currentSite": "Valley of Trials",
       "ringOfLaw": "Hedrum the Creeper",
       "forlornCloister": "Fallen Champion",
       "openedChests": {},
       "fishingSpots": {},
       "fishingSpoils": {},
-      "siteProgress": {},
-      "commonsKilled": {},
+      "siteProgress": {
+        "Valley of Trials": 3
+      },
+      "commonsKilled": {
+        "Scorpid Worker": 2,
+        "Mottled Boar": 1
+      },
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
-        "The Den": 2
+        "The Den": 4,
+        "Valley of Trials": 2
       },
       "unlockedAreas": [],
       "vendorStock": {},
       "banks": {},
       "startDate": "2024-07-12T14:57:27.1366987+02:00",
-      "lastLoaded": "2024-07-12T15:44:47.8862519+02:00",
-      "lastPlayed": "2024-07-12T15:44:57.7556992+02:00",
-      "timePlayed": "00:00:09.8694473"
+      "lastLoaded": "2024-07-13T13:20:57.4260249+02:00",
+      "lastPlayed": "2024-07-13T13:26:30.1242925+02:00",
+      "timePlayed": "00:10:49.9758827"
     }
   ]
 }

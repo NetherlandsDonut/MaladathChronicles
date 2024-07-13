@@ -39,6 +39,45 @@
     }
   },
   {
+    "name": "Encased Corrupt Ooze",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed",
+            "SitePresence": "Lakkari Tar Pits"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Combat",
+            "CombatEnemy": "Gargantuan Ooze",
+            "CombatEnemyLevel": "56",
+            "CombatKillCap": "1"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "isExtender": true,
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Toss the Incendia Powder into the sacred fire of life at the Darkcloud Pinnacle"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "name": "Hearthstone",
     "tags": [],
     "ranks": [

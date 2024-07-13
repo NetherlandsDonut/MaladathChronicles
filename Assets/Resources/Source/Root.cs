@@ -996,6 +996,7 @@ public static class Root
                     else Quest.chosenReward = null;
                     if (!Respawn("QuestTurn")) PlaySound("DesktopWriteQuest" + random.Next(1, 4));
                 }
+                Respawn("Chest", true);
                 Respawn("PlayerMoney", true);
             });
             var color = ColorQuestLevel(quest.questLevel);

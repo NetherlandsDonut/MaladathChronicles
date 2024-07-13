@@ -71,6 +71,16 @@
     "abilities": {}
   },
   {
+    "name": "Gargantuan Ooze",
+    "category": "Elemental",
+    "subcategory": "Ooze",
+    "side": "Neutral",
+    "kind": "Elite",
+    "portrait": "PortraitOozeBlack",
+    "vitality": 2.8,
+    "abilities": {}
+  },
+  {
     "name": "Abomination",
     "category": "Undead",
     "subcategory": "Abomination",

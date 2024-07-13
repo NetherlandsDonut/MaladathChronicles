@@ -157,6 +157,7 @@ public class Quest
                     AddSmallButton("OtherClose", (h) =>
                     {
                         CloseWindow("Quest");
+                        Respawn("Chest", true);
                         Respawn("PlayerMoney", true);
                         PlaySound("DesktopInstanceClose");
                     });
@@ -167,6 +168,7 @@ public class Quest
                     AddSmallButton("OtherClose", (h) =>
                     {
                         CloseWindow("Quest");
+                        Respawn("Chest", true);
                         Respawn("PlayerMoney", true);
                         PlaySound("DesktopInstanceClose");
                     });
@@ -181,6 +183,7 @@ public class Quest
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseWindow("Quest" + f);
+                    Respawn("Chest", true);
                     Respawn("PlayerMoney", true);
                     if (CDesktop.title != "QuestLog")
                         if (SiteComplex.complex != null) Respawn("Complex");
@@ -327,7 +330,7 @@ public class Quest
                         if (CDesktop.windows.Exists(x => x.title == "CraftingSettings")) return;
                         Item.PrintItemTooltip(find, Input.GetKey(KeyCode.LeftShift));
                     });
-                    if (find.type != "Miscellaneous" && find.type != "Trade Good" && find.type != "Recipe" && !find.CanEquip(currentSave.player)) { SetBigButtonToRed(); AddBigButtonOverlay("OtherGridBlurred"); }
+                    if (find.type != "Miscellaneous" && find.type != "Trade Good" && find.type != "Recipe" && !find.CanEquip(currentSave.player, true)) { SetBigButtonToRed(); AddBigButtonOverlay("OtherGridBlurred"); }
                     if (find.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (rewards.Keys.ToList().IndexOf(item.Key) % 5), item.Value + "", "", "Right");
                     if (find.name == chosenReward && rewards.Count > 1) AddBigButtonOverlay("OtherGlowChosen");
                 }
@@ -383,6 +386,7 @@ public class Quest
                     if (find != null) find.Respawn();
                     find = CDesktop.windows.Find(x => x.title.Contains("QuestDone"));
                     if (find != null) find.Respawn();
+                    Respawn("Chest", true);
                     Respawn("PlayerMoney", true);
                 }
             });
@@ -400,6 +404,7 @@ public class Quest
                     if (find != null) find.Respawn();
                     find = CDesktop.windows.Find(x => x.title.Contains("QuestDone"));
                     if (find != null) find.Respawn();
+                    Respawn("Chest", true);
                     Respawn("PlayerMoney", true);
                     Respawn("QuestList", true);
                 }

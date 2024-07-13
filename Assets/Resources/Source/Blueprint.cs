@@ -585,6 +585,10 @@ public class Blueprint
 
         //Chest
         new("Chest", () => {
+            if (CDesktop.windows.Exists(x => x.title == "Inventory")) return;
+            if (CDesktop.windows.Exists(x => x.title == "Quest")) return;
+            if (CDesktop.windows.Exists(x => x.title == "QuestAdd")) return;
+            if (CDesktop.windows.Exists(x => x.title == "QuestTurn")) return;
             if (area == null || !currentSave.siteProgress.ContainsKey(area.name) || !area.progression.Any(x => x.type == "Treasure")) return;
             if (area.progression.First(x => x.type == "Treasure").point > currentSave.siteProgress[area.name] || currentSave.openedChests.ContainsKey(area.name) && currentSave.openedChests[area.name].inventory.items.Count == 0) return;
             SetAnchor(259, -111);
@@ -3577,8 +3581,6 @@ public class Blueprint
                     CloseWindow(h.window);
                     CloseWindow("Town");
                     SpawnWindowBlueprint("ProfessionLevelTrainer");
-                    Respawn("ExperienceBarBorder");
-                    Respawn("ExperienceBar");
                 });
                 var pr = professions.Find(x => x.name == type.profession);
                 if (pr == null) Debug.Log("ERROR 013: Profession was not found: \"" + type.profession + "\"");
@@ -3695,8 +3697,6 @@ public class Blueprint
                         CloseWindow(h.window);
                         CloseWindow("Town");
                         SpawnWindowBlueprint("MountVendor");
-                        Respawn("ExperienceBarBorder");
-                        Respawn("ExperienceBar");
                     });
             }
             else if (type.category == "Flight Master")
@@ -3713,8 +3713,6 @@ public class Blueprint
                     SpawnWindowBlueprint("FlightMaster");
                     if (mounts.Find(x => x.name == currentSave.player.mount) != null)
                         SpawnWindowBlueprint("CurrentMount");
-                    Respawn("ExperienceBarBorder");
-                    Respawn("ExperienceBar");
                 });
             }
             if (person.itemsSold != null && person.itemsSold.Count > 0)
