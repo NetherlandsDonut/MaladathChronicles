@@ -257,210 +257,214 @@ public class Board
     {
         cursorEnemy.fadeOut = true;
         CloseDesktop("Game");
-        results = new CombatResults(result, area.zone, area.recommendedLevel);
-        if (result == "Won")
+        CloseDesktop("GameSimulation");
+        if (result != "Quit")
         {
-            PlayEnemyLine(enemy.EnemyLine("Death"));
-            var enemyRace = Race.races.Find(x => x.name == enemy.race);
-            if (currentSave.player.WillGetExperience(enemy.level) && currentSave.player.level < defines.maxPlayerLevel)
+            results = new CombatResults(result, area.zone, area.recommendedLevel);
+            if (result == "Won")
             {
-                float amount = currentSave.player.ExperienceForEqualEnemy();
-                if (Coloring.ColorEntityLevel(enemy.level) == "Green") amount *= 0.5f;
-                else if (Coloring.ColorEntityLevel(enemy.level) == "DarkGray") amount *= 0;
-                if (enemyRace.kind == "Elite") amount *= 2;
-                else if (enemyRace.kind == "Rare") amount *= 1.5f;
-                results.experience = (int)amount;
-            }
-            var progression = area.progression.FindAll(x => x.point == (currentSave.siteProgress.ContainsKey(area.name) ? currentSave.siteProgress[area.name] : 0));
-            var nextProgression = area.progression.FindAll(x => x.point - 1 == (currentSave.siteProgress.ContainsKey(area.name) ? currentSave.siteProgress[area.name] : 0));
-            var progBosses = progression.FindAll(x => x.type == "Boss");
-            var nextProgBosses = nextProgression.FindAll(x => x.type == "Boss");
-
-            //If you just defeated an enemy that wasn't a boss and none bosses block your way
-            //in progression then increase your progression in the area by one point
-            if (area != null && enemy.kind != "Elite" && progBosses.Count > 0 && progBosses.All(x => currentSave.elitesKilled.ContainsKey(x.bossName)) || progBosses.Count == 0)
-            {
-                if (!currentSave.siteProgress.ContainsKey(area.name))
-                    currentSave.siteProgress.Add(area.name, 1);
-                else currentSave.siteProgress[area.name]++;
-            }
-
-            var output = enemy.name + ": ";
-            if (results.result == "Won")
-            {
-                foreach (var quest in player.currentQuests)
-                    foreach (var con in quest.conditions)
-                        if (con.type == "Kill" && con.name == enemy.name)
-                        {
-                            foreach (var site in con.Where())
-                                if (!Quest.sitesToRespawn.Contains(site))
-                                    Quest.sitesToRespawn.Add(site);
-                            if (con.amountDone < con.amount)
-                            {
-                                if (output.EndsWith(" ")) output += con.amountDone + 1 + "/" + con.amount;
-                                else output += ", " + con.amountDone + 1 + "/" + con.amount;
-                            }
-                            var end = Site.FindSite(x => x.name == quest.siteEnd);
-                            if (!Quest.sitesToRespawn.Contains(end)) Quest.sitesToRespawn.Add(end);
-                        }
-            }
-
-            //Make progress on quests requiring you to kill certain enemies
-            player.QuestKill(enemy.name);
-
-            //Add +1 to the amount of times you defeated this enemy
-            //Depending on the rarity of the enemy add +1 to the right list
-            switch (enemy.kind)
-            {
-                case "Common": currentSave.commonsKilled.Inc(enemy.name); break;
-                case "Rare": currentSave.raresKilled.Inc(enemy.name); break;
-                case "Elite": currentSave.elitesKilled.Inc(enemy.name); break;
-            }
-
-            //Unlock new areas
-            foreach (var unlockArea in progression.FindAll(x => x.type == "Area"))
-                if (!currentSave.unlockedAreas.Contains(unlockArea.areaName) && progBosses.Count > 0 && progBosses.All(x => currentSave.elitesKilled.ContainsKey(x.bossName)))
-                    if (!unlockArea.all)
-                        currentSave.unlockedAreas.Add(unlockArea.areaName);
-                    else Foo(unlockArea);
-            foreach (var unlockArea in nextProgression.FindAll(x => x.type == "Area"))
-                if (!currentSave.unlockedAreas.Contains(unlockArea.areaName) && nextProgBosses.Count == 0)
-                    if (!unlockArea.all)
-                        currentSave.unlockedAreas.Add(unlockArea.areaName);
-                    else Foo(unlockArea);
-
-            void Foo(AreaProgression unlockArea)
-            {
-                var temp = SiteInstance.instance.wings.SelectMany(x => x.areas).Select(x => areas.Find(y => y.name == x["AreaName"]));
-                var foo = temp.Select(x => (x.name, x.progression.Find(y => y.areaName == unlockArea.areaName))).ToList();
-                foo.RemoveAll(x => x.Item2 == null);
-                bool unlock = true;
-                foreach (var a in foo)
+                PlayEnemyLine(enemy.EnemyLine("Death"));
+                var enemyRace = Race.races.Find(x => x.name == enemy.race);
+                if (currentSave.player.WillGetExperience(enemy.level) && currentSave.player.level < defines.maxPlayerLevel)
                 {
-                    var elite = temp.First(y => y.name == a.name).progression.Find(x => x.type == "Boss" && x.point == a.Item2.point);
-                    if (!currentSave.siteProgress.ContainsKey(a.name)) unlock = false;
-                    else if (elite != null) { if (elite != null && (a.Item2.point > currentSave.siteProgress[a.name] || a.Item2.point == currentSave.siteProgress[a.name] && !currentSave.elitesKilled.ContainsKey(elite.bossName))) unlock = false; }
-                    else if (elite == null) if (a.Item2.point > currentSave.siteProgress[a.name]) unlock = false;
-                    if (!unlock) break;
+                    float amount = currentSave.player.ExperienceForEqualEnemy();
+                    if (Coloring.ColorEntityLevel(enemy.level) == "Green") amount *= 0.5f;
+                    else if (Coloring.ColorEntityLevel(enemy.level) == "DarkGray") amount *= 0;
+                    if (enemyRace.kind == "Elite") amount *= 2;
+                    else if (enemyRace.kind == "Rare") amount *= 1.5f;
+                    results.experience = (int)amount;
                 }
-                if (unlock) currentSave.unlockedAreas.Add(unlockArea.areaName);
-            }
+                var progression = area.progression.FindAll(x => x.point == (currentSave.siteProgress.ContainsKey(area.name) ? currentSave.siteProgress[area.name] : 0));
+                var nextProgression = area.progression.FindAll(x => x.point - 1 == (currentSave.siteProgress.ContainsKey(area.name) ? currentSave.siteProgress[area.name] : 0));
+                var progBosses = progression.FindAll(x => x.type == "Boss");
+                var nextProgBosses = nextProgression.FindAll(x => x.type == "Boss");
 
-            //Exit board view
-            if (area != null && area.instancePart) SwitchDesktop("Instance");
-            else if (area != null && area.complexPart) SwitchDesktop("Complex");
-            else SwitchDesktop("HostileArea");
-            CDesktop.RespawnAll();
+                //If you just defeated an enemy that wasn't a boss and none bosses block your way
+                //in progression then increase your progression in the area by one point
+                if (area != null && enemy.kind != "Elite" && progBosses.Count > 0 && progBosses.All(x => currentSave.elitesKilled.ContainsKey(x.bossName)) || progBosses.Count == 0)
+                {
+                    if (!currentSave.siteProgress.ContainsKey(area.name))
+                        currentSave.siteProgress.Add(area.name, 1);
+                    else currentSave.siteProgress[area.name]++;
+                }
 
-            //Drop items
-            var directDrop = enemyRace.droppedItems.Select(x => Item.items.Find(y => y.name == x)).Where(x => !x.unique || !currentSave.player.uniquesGotten.Contains(x.name)).ToList();
-            var wearableDirect = directDrop.Where(x => x.IsWearable()).ToList();
-            var equipableDirect = wearableDirect.Where(x => x.CanEquip(currentSave.player)).ToList();
+                var output = enemy.name + ": ";
+                if (results.result == "Won")
+                {
+                    foreach (var quest in player.currentQuests)
+                        foreach (var con in quest.conditions)
+                            if (con.type == "Kill" && con.name == enemy.name)
+                            {
+                                foreach (var site in con.Where())
+                                    if (!Quest.sitesToRespawn.Contains(site))
+                                        Quest.sitesToRespawn.Add(site);
+                                if (con.amountDone < con.amount)
+                                {
+                                    if (output.EndsWith(" ")) output += con.amountDone + 1 + "/" + con.amount;
+                                    else output += ", " + con.amountDone + 1 + "/" + con.amount;
+                                }
+                                var end = Site.FindSite(x => x.name == quest.siteEnd);
+                                if (!Quest.sitesToRespawn.Contains(end)) Quest.sitesToRespawn.Add(end);
+                            }
+                }
 
-            //One wearable item drop with priority on something you can equip
-            if (equipableDirect.Count > 0)
-            {
-                var item = equipableDirect[random.Next(equipableDirect.Count)];
-                results.inventory.AddItem(item.CopyItem());
-            }
-            else if (wearableDirect.Count > 0)
-            {
-                var item = wearableDirect[random.Next(wearableDirect.Count)];
-                results.inventory.AddItem(item.CopyItem());
-            }
-            else
-            {
-                var worldDrop = Item.items.FindAll(x => (x.dropRange == null && x.lvl >= enemy.level - 6 && x.lvl <= enemy.level || x.dropRange != null && enemy.level >= int.Parse(x.dropRange.Split('-')[0]) && enemy.level <= int.Parse(x.dropRange.Split('-')[1])) && x.source == "RareDrop");
-                var instance = area.instancePart ? SiteInstance.instances.Find(x => x.wings.Any(y => y.areas.Any(z => z["AreaName"] == area.name))) : null;
-                var zoneDrop = instance == null || instance.zoneDrop == null ? new() : Item.items.FindAll(x => instance.zoneDrop.Contains(x.name));
-                var everything = zoneDrop.Concat(worldDrop).Where(x => x.CanEquip(currentSave.player) && (!x.unique || !currentSave.player.uniquesGotten.Contains(x.name)));
-                var dropGray = everything.Where(x => x.rarity == "Poor").ToList();
-                var dropWhite = everything.Where(x => x.rarity == "Common").ToList();
-                var dropGreen = everything.Where(x => x.rarity == "Uncommon").ToList();
-                var dropBlue = everything.Where(x => x.rarity == "Rare").ToList();
-                var dropPurple = everything.Where(x => x.rarity == "Epic").ToList();
-                if (dropPurple.Count > 0 && Roll(0.05))
-                    results.inventory.AddItem(dropPurple[random.Next(dropPurple.Count)].CopyItem());
-                else if (dropBlue.Count > 0 && Roll(1))
-                    results.inventory.AddItem(dropBlue[random.Next(dropBlue.Count)].CopyItem());
-                else if (dropGreen.Count > 0 && (enemy.kind != "Common" || Roll(8)))
-                    results.inventory.AddItem(dropGreen[random.Next(dropGreen.Count)].CopyItem());
-                else if (dropWhite.Count > 0 && (enemy.kind != "Common" || Roll(5)))
-                    results.inventory.AddItem(dropWhite[random.Next(dropWhite.Count)].CopyItem());
-                else if (dropGray.Count > 0 && (enemy.kind != "Common" || Roll(3)))
-                    results.inventory.AddItem(dropGray[random.Next(dropGray.Count)].CopyItem());
-            }
+                //Make progress on quests requiring you to kill certain enemies
+                player.QuestKill(enemy.name);
 
-            //All the other guaranteed items
-            var otherDirect = directDrop.Except(wearableDirect).ToList();
-            if (otherDirect.Count > 0)
-            {
-                foreach (var item in otherDirect)
+                //Add +1 to the amount of times you defeated this enemy
+                //Depending on the rarity of the enemy add +1 to the right list
+                switch (enemy.kind)
+                {
+                    case "Common": currentSave.commonsKilled.Inc(enemy.name); break;
+                    case "Rare": currentSave.raresKilled.Inc(enemy.name); break;
+                    case "Elite": currentSave.elitesKilled.Inc(enemy.name); break;
+                }
+
+                //Unlock new areas
+                foreach (var unlockArea in progression.FindAll(x => x.type == "Area"))
+                    if (!currentSave.unlockedAreas.Contains(unlockArea.areaName) && progBosses.Count > 0 && progBosses.All(x => currentSave.elitesKilled.ContainsKey(x.bossName)))
+                        if (!unlockArea.all)
+                            currentSave.unlockedAreas.Add(unlockArea.areaName);
+                        else Foo(unlockArea);
+                foreach (var unlockArea in nextProgression.FindAll(x => x.type == "Area"))
+                    if (!currentSave.unlockedAreas.Contains(unlockArea.areaName) && nextProgBosses.Count == 0)
+                        if (!unlockArea.all)
+                            currentSave.unlockedAreas.Add(unlockArea.areaName);
+                        else Foo(unlockArea);
+
+                void Foo(AreaProgression unlockArea)
+                {
+                    var temp = SiteInstance.instance.wings.SelectMany(x => x.areas).Select(x => areas.Find(y => y.name == x["AreaName"]));
+                    var foo = temp.Select(x => (x.name, x.progression.Find(y => y.areaName == unlockArea.areaName))).ToList();
+                    foo.RemoveAll(x => x.Item2 == null);
+                    bool unlock = true;
+                    foreach (var a in foo)
+                    {
+                        var elite = temp.First(y => y.name == a.name).progression.Find(x => x.type == "Boss" && x.point == a.Item2.point);
+                        if (!currentSave.siteProgress.ContainsKey(a.name)) unlock = false;
+                        else if (elite != null) { if (elite != null && (a.Item2.point > currentSave.siteProgress[a.name] || a.Item2.point == currentSave.siteProgress[a.name] && !currentSave.elitesKilled.ContainsKey(elite.bossName))) unlock = false; }
+                        else if (elite == null) if (a.Item2.point > currentSave.siteProgress[a.name]) unlock = false;
+                        if (!unlock) break;
+                    }
+                    if (unlock) currentSave.unlockedAreas.Add(unlockArea.areaName);
+                }
+
+                //Exit board view
+                if (area != null && area.instancePart) SwitchDesktop("Instance");
+                else if (area != null && area.complexPart) SwitchDesktop("Complex");
+                else SwitchDesktop("HostileArea");
+                CDesktop.RespawnAll();
+
+                //Drop items
+                var directDrop = enemyRace.droppedItems.Select(x => Item.items.Find(y => y.name == x)).Where(x => !x.unique || !currentSave.player.uniquesGotten.Contains(x.name)).ToList();
+                var wearableDirect = directDrop.Where(x => x.IsWearable()).ToList();
+                var equipableDirect = wearableDirect.Where(x => x.CanEquip(currentSave.player)).ToList();
+
+                //One wearable item drop with priority on something you can equip
+                if (equipableDirect.Count > 0)
+                {
+                    var item = equipableDirect[random.Next(equipableDirect.Count)];
                     results.inventory.AddItem(item.CopyItem());
-            }
+                }
+                else if (wearableDirect.Count > 0)
+                {
+                    var item = wearableDirect[random.Next(wearableDirect.Count)];
+                    results.inventory.AddItem(item.CopyItem());
+                }
+                else
+                {
+                    var worldDrop = Item.items.FindAll(x => (x.dropRange == null && x.lvl >= enemy.level - 6 && x.lvl <= enemy.level || x.dropRange != null && enemy.level >= int.Parse(x.dropRange.Split('-')[0]) && enemy.level <= int.Parse(x.dropRange.Split('-')[1])) && x.source == "RareDrop");
+                    var instance = area.instancePart ? SiteInstance.instances.Find(x => x.wings.Any(y => y.areas.Any(z => z["AreaName"] == area.name))) : null;
+                    var zoneDrop = instance == null || instance.zoneDrop == null ? new() : Item.items.FindAll(x => instance.zoneDrop.Contains(x.name));
+                    var everything = zoneDrop.Concat(worldDrop).Where(x => x.CanEquip(currentSave.player) && (!x.unique || !currentSave.player.uniquesGotten.Contains(x.name)));
+                    var dropGray = everything.Where(x => x.rarity == "Poor").ToList();
+                    var dropWhite = everything.Where(x => x.rarity == "Common").ToList();
+                    var dropGreen = everything.Where(x => x.rarity == "Uncommon").ToList();
+                    var dropBlue = everything.Where(x => x.rarity == "Rare").ToList();
+                    var dropPurple = everything.Where(x => x.rarity == "Epic").ToList();
+                    if (dropPurple.Count > 0 && Roll(0.05))
+                        results.inventory.AddItem(dropPurple[random.Next(dropPurple.Count)].CopyItem());
+                    else if (dropBlue.Count > 0 && Roll(1))
+                        results.inventory.AddItem(dropBlue[random.Next(dropBlue.Count)].CopyItem());
+                    else if (dropGreen.Count > 0 && (enemy.kind != "Common" || Roll(8)))
+                        results.inventory.AddItem(dropGreen[random.Next(dropGreen.Count)].CopyItem());
+                    else if (dropWhite.Count > 0 && (enemy.kind != "Common" || Roll(5)))
+                        results.inventory.AddItem(dropWhite[random.Next(dropWhite.Count)].CopyItem());
+                    else if (dropGray.Count > 0 && (enemy.kind != "Common" || Roll(3)))
+                        results.inventory.AddItem(dropGray[random.Next(dropGray.Count)].CopyItem());
+                }
 
-            //General drops
-            var generalDrops = GeneralDrop.generalDrops.FindAll(x => x.DoesLevelFit(enemy.level) && (x.requiredProfession == null || (player.professionSkills.ContainsKey(x.requiredProfession) && (x.requiredSkill == 0 || x.requiredSkill <= player.professionSkills[x.requiredProfession].Item1))) && (x.category == null || x.category == enemy.Race().category) && x.inclusive);
-            if (generalDrops.Count > 0)
-                foreach (var drop in generalDrops)
-                    if (Roll(drop.rarity))
-                    {
-                        int amount = 1;
-                        for (int i = 1; i < drop.dropCount; i++) amount += Roll(10) ? 1 : 0;
-                        results.inventory.AddItem(Item.items.Find(x => x.name == drop.item).CopyItem(amount));
-                    }
-            var possibleGeneralDrops = GeneralDrop.generalDrops.FindAll(x => x.DoesLevelFit(enemy.level) && (x.requiredProfession == null || (player.professionSkills.ContainsKey(x.requiredProfession) && (x.requiredSkill == 0 || x.requiredSkill <= player.professionSkills[x.requiredProfession].Item1))) && (x.category == null || x.category == enemy.Race().category) && !x.inclusive);
-            possibleGeneralDrops.Shuffle();
-            if (possibleGeneralDrops.Count > 0)
-                foreach (var drop in possibleGeneralDrops.OrderBy(x => x.rarity))
-                    if (Roll(drop.rarity))
-                    {
-                        int amount = 1;
-                        for (int i = 1; i < drop.dropCount; i++) amount += Roll(50) ? 1 : 0;
-                        results.inventory.AddItem(Item.items.Find(x => x.name == drop.item).CopyItem(amount));
-                        break;
-                    }
-            results.inventory.items.ForEach(x => x.SetRandomEnchantment());
-            foreach (var item in results.inventory.items)
-                if (item.unique && !currentSave.player.uniquesGotten.Contains(item.name))
-                    currentSave.player.uniquesGotten.Add(item.name);
-            chartPage = "Damage Dealt";
-            currentSave.player.ReceiveExperience(board.results.experience);
-            SpawnDesktopBlueprint("CombatResults");
-            if (!output.EndsWith(" "))
-                SpawnFallingText(new Vector2(0, -72), output, "Yellow");
-        }
-        else if (result == "Lost")
-        {
-            currentSave.playerDead = true;
-            PlaySound("Death");
-            StopAmbience();
-            if (Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore)
-            {
-                currentSave.deathInfo = new(enemy.name, enemy.Race().kind == "Common", area.name);
+                //All the other guaranteed items
+                var otherDirect = directDrop.Except(wearableDirect).ToList();
+                if (otherDirect.Count > 0)
+                {
+                    foreach (var item in otherDirect)
+                        results.inventory.AddItem(item.CopyItem());
+                }
+
+                //General drops
+                var generalDrops = GeneralDrop.generalDrops.FindAll(x => x.DoesLevelFit(enemy.level) && (x.requiredProfession == null || (player.professionSkills.ContainsKey(x.requiredProfession) && (x.requiredSkill == 0 || x.requiredSkill <= player.professionSkills[x.requiredProfession].Item1))) && (x.category == null || x.category == enemy.Race().category) && x.inclusive);
+                if (generalDrops.Count > 0)
+                    foreach (var drop in generalDrops)
+                        if (Roll(drop.rarity))
+                        {
+                            int amount = 1;
+                            for (int i = 1; i < drop.dropCount; i++) amount += Roll(10) ? 1 : 0;
+                            results.inventory.AddItem(Item.items.Find(x => x.name == drop.item).CopyItem(amount));
+                        }
+                var possibleGeneralDrops = GeneralDrop.generalDrops.FindAll(x => x.DoesLevelFit(enemy.level) && (x.requiredProfession == null || (player.professionSkills.ContainsKey(x.requiredProfession) && (x.requiredSkill == 0 || x.requiredSkill <= player.professionSkills[x.requiredProfession].Item1))) && (x.category == null || x.category == enemy.Race().category) && !x.inclusive);
+                possibleGeneralDrops.Shuffle();
+                if (possibleGeneralDrops.Count > 0)
+                    foreach (var drop in possibleGeneralDrops.OrderBy(x => x.rarity))
+                        if (Roll(drop.rarity))
+                        {
+                            int amount = 1;
+                            for (int i = 1; i < drop.dropCount; i++) amount += Roll(50) ? 1 : 0;
+                            results.inventory.AddItem(Item.items.Find(x => x.name == drop.item).CopyItem(amount));
+                            break;
+                        }
+                results.inventory.items.ForEach(x => x.SetRandomEnchantment());
+                foreach (var item in results.inventory.items)
+                    if (item.unique && !currentSave.player.uniquesGotten.Contains(item.name))
+                        currentSave.player.uniquesGotten.Add(item.name);
+                chartPage = "Damage Dealt";
+                currentSave.player.ReceiveExperience(board.results.experience);
+                SpawnDesktopBlueprint("CombatResults");
+                if (!output.EndsWith(" "))
+                    SpawnFallingText(new Vector2(0, -72), output, "Yellow");
             }
-            else
+            else if (result == "Lost")
             {
-                SwitchDesktop("Map");
-                grid.SwitchMapTexture(true);
-                SpawnTransition();
-                SpawnTransition();
-                SpawnTransition();
-                SpawnTransition();
-                SpawnTransition();
+                currentSave.playerDead = true;
+                PlaySound("Death");
+                StopAmbience();
+                if (Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore)
+                {
+                    currentSave.deathInfo = new(enemy.name, enemy.Race().kind == "Common", area.name);
+                }
+                else
+                {
+                    SwitchDesktop("Map");
+                    grid.SwitchMapTexture(true);
+                    SpawnTransition();
+                    SpawnTransition();
+                    SpawnTransition();
+                    SpawnTransition();
+                    SpawnTransition();
+                }
+                chartPage = "Damage Dealt";
+                SpawnDesktopBlueprint("CombatResults");
             }
-            chartPage = "Damage Dealt";
-            SpawnDesktopBlueprint("CombatResults");
-        }
-        else if (result == "Fled")
-        {
-            PlaySound("RunAwayBitch");
-            if (area != null && area.instancePart)
-                SwitchDesktop("Instance");
-            else if (area != null && area.complexPart)
-                SwitchDesktop("Complex");
-            else
-                SwitchDesktop("HostileArea");
+            else if (result == "Fled")
+            {
+                PlaySound("RunAwayBitch");
+                if (area != null && area.instancePart)
+                    SwitchDesktop("Instance");
+                else if (area != null && area.complexPart)
+                    SwitchDesktop("Complex");
+                else
+                    SwitchDesktop("HostileArea");
+            }
         }
         if (CDesktop.screenLocked)
             CDesktop.UnlockScreen();
@@ -477,7 +481,7 @@ public class Board
                     for (int q = 0; q + j < field.GetLength(1); q++)
                         if (field[i, j + q] == -1) empty++;
                     (field[i, j], field[i, j + empty]) = (-1, field[i, j]);
-                    if (empty > 0) window.LBRegionGroup.regions[j].bigButtons[i].gameObject.AddComponent<FallingElement>().Initiate(empty);
+                    if (empty > 0) window.LBRegionGroup.regions[j].bigButtons[i].gameObject.AddComponent<FallingElement>().Initiate(empty, 0);
                 }
 
         //IF BOARD IS NOT YET FULL RETURN AND DO PREVIOUS STEPS AGAIN

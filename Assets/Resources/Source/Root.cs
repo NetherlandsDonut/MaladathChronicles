@@ -11,7 +11,6 @@ using static GameSettings;
 
 using static Root.Anchor;
 using static Root.RegionBackgroundType;
-using System.Xml.Linq;
 
 public static class Root
 {
@@ -65,18 +64,48 @@ public static class Root
     public static bool enchantingSkillChange;
     public static Inventory disenchantLoot;
 
-    public static void Shuffle<T>(this IList<T> list)
+    public static Blueprint FindWindowBlueprint(string name)
     {
-        for (int i = list.Count; i > 1;)
-        {
-            int rnd = random.Next(i--);
-            T value = list[rnd];
-            list[rnd] = list[i];
-            list[i] = value;
-        }
+        var find = windowBlueprints.Find(x => x.title == name);
+        find ??= BlueprintDev.windowBlueprints.Find(x => x.title == name);
+        return find;
     }
 
-    public static float Grayscale(this Color32 color) => (0.299f * color.r) + (0.587f * color.g) + (0.114f * color.b);
+    public static Blueprint FindDesktopBlueprint(string name)
+    {
+        var find = desktopBlueprints.Find(x => x.title == name);
+        find ??= BlueprintDev.desktopBlueprints.Find(x => x.title == name);
+        return find;
+    }
+
+    #region Extension Methods
+
+    //Removes all nasty characters from a string (Usually used for accessing files with names based of something)
+    public static string Clean(this string text) => text?.Replace("'", "").Replace(".", "").Replace(" ", "");
+
+    //Removes all nasty characters from a string (Usually used for accessing files with names based of something)
+    public static string ToFirstUpper(this string text) => text == null ? text : text[..1].ToUpper() + text[1..].ToLower();
+
+    //Removes all nasty characters from a string (Usually used for accessing files with names based of something)
+    public static string OnlyNameCategory(this string text) => text != null && text.Contains(" @ ") ? text[..text.IndexOf(" @ ")] : text;
+
+    public static void Shuffle<T>(this IList<T> list)
+    {
+        for (int i = list.Count, rnd = random.Next(i--); i >= 1; rnd = random.Next(i--))
+            (list[i], list[rnd]) = (list[rnd], list[i]);
+    }
+
+    public static float Grayscale(this Color32 color)
+    {
+        return (0.299f * color.r) + (0.587f * color.g) + (0.114f * color.b);
+    }
+
+    public static List<(string, string, string)> TrimLast(this List<(string, string, string)> list, bool should)
+    {
+        if (should == false) return list;
+        list[^1] = (list[^1].Item1.TrimEnd(), list[^1].Item2, list[^1].Item3);
+        return list;
+    }
 
     public static List<Item> Multilate(this List<Item> list, int times)
     {
@@ -107,64 +136,7 @@ public static class Root
         else return default;
     }
 
-    //Converts a number into the roman notation
-    public static string ToRoman(int number)
-    {
-        if (number < 0 || number > 3999) return "";
-        if (number < 1) return string.Empty;
-        if (number >= 1000) return "M" + ToRoman(number - 1000);
-        if (number >= 900) return "CM" + ToRoman(number - 900);
-        if (number >= 500) return "D" + ToRoman(number - 500);
-        if (number >= 400) return "CD" + ToRoman(number - 400);
-        if (number >= 100) return "C" + ToRoman(number - 100);
-        if (number >= 90) return "XC" + ToRoman(number - 90);
-        if (number >= 50) return "L" + ToRoman(number - 50);
-        if (number >= 40) return "XL" + ToRoman(number - 40);
-        if (number >= 10) return "X" + ToRoman(number - 10);
-        if (number >= 9) return "IX" + ToRoman(number - 9);
-        if (number >= 5) return "V" + ToRoman(number - 5);
-        if (number >= 4) return "IV" + ToRoman(number - 4);
-        if (number >= 1) return "I" + ToRoman(number - 1);
-        return "";
-    }
-
-    public static Blueprint FindWindowBlueprint(string name)
-    {
-        var find = windowBlueprints.Find(x => x.title == name);
-        find ??= BlueprintDev.windowBlueprints.Find(x => x.title == name);
-        return find;
-    }
-
-    public static Blueprint FindDesktopBlueprint(string name)
-    {
-        var find = desktopBlueprints.Find(x => x.title == name);
-        find ??= BlueprintDev.desktopBlueprints.Find(x => x.title == name);
-        return find;
-    }
-
-    //public static T Copy<T>(this object obj) => Newtonsoft.Json.JsonConvert.DeserializeObject<T>(Newtonsoft.Json.JsonConvert.SerializeObject(obj));
-
-    public static List<(string, string, string)> TrimLast(this List<(string, string, string)> list, bool should)
-    {
-        if (should == false) return list;
-        list[^1] = (list[^1].Item1.TrimEnd(), list[^1].Item2, list[^1].Item3);
-        return list;
-    }
-
-    //Rolls a chance with a provided % of something happening [0 - 100]
-    public static bool Roll(double chance) => random.Next(0, 100000) < chance * 1000;
-
-    //Removes all nasty characters from a string (Usually used for accessing files with names based of something)
-    public static string Clean(this string text) => text?.Replace("'", "").Replace(".", "").Replace(" ", "");
-
-    //Removes all nasty characters from a string (Usually used for accessing files with names based of something)
-    public static string ToFirstUpper(this string text) => text == null ? text : text[..1].ToUpper() + text[1..].ToLower();
-
-    //Removes all nasty characters from a string (Usually used for accessing files with names based of something)
-    public static string OnlyNameCategory(this string text) => text != null && text.Contains(" @ ") ? text[..text.IndexOf(" @ ")] : text;
-
-    //Set what highlightible object mouse is currently hovering over
-    public static void SetMouseOver(Highlightable highlightable) => mouseOver = highlightable;
+    #endregion
 
     #region Desktop
 
@@ -959,6 +931,8 @@ public static class Root
 
     #endregion
 
+    #region QuestLists
+
     public static void AddQuestList(List<Quest> quests, string f = "Add")
     {
         AddHeaderGroup();
@@ -1003,6 +977,8 @@ public static class Root
             if (color != null) SetRegionBackgroundAsImage("SkillUp" + color);
         }
     }
+
+    #endregion
 
     #region FluidBar
 
@@ -1118,15 +1094,21 @@ public static class Root
 
     #endregion
 
-    #region Enumerations
-
     #region General
 
+    //Rolls a chance with a provided % of something happening [0 - 100]
+    public static bool Roll(double chance) => random.Next(0, 100000) < chance * 1000;
+
+    //Set what highlightible object mouse is currently hovering over
+    public static void SetMouseOver(Highlightable highlightable) => mouseOver = highlightable;
+
+    //Bezier function
     public static Vector3 Bezier(Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3, float t)
     {
         return (((-p0 + 3 * (p1 - p2) + p3) * t + (3 * (p0 + p2) - 6 * p1)) * t + 3 * (p1 - p0)) * t + p0;
     }
 
+    //Compares values with a operator provided in the form of a string
     public static bool CompareValues(double x, double y, string compare)
     {
         if (compare == ">=") return x >= y;
@@ -1139,7 +1121,30 @@ public static class Root
         return false;
     }
 
+    //Converts a number into the roman notation
+    public static string ToRoman(int number)
+    {
+        if (number < 0 || number > 3999) return "";
+        if (number < 1) return string.Empty;
+        if (number >= 1000) return "M" + ToRoman(number - 1000);
+        if (number >= 900) return "CM" + ToRoman(number - 900);
+        if (number >= 500) return "D" + ToRoman(number - 500);
+        if (number >= 400) return "CD" + ToRoman(number - 400);
+        if (number >= 100) return "C" + ToRoman(number - 100);
+        if (number >= 90) return "XC" + ToRoman(number - 90);
+        if (number >= 50) return "L" + ToRoman(number - 50);
+        if (number >= 40) return "XL" + ToRoman(number - 40);
+        if (number >= 10) return "X" + ToRoman(number - 10);
+        if (number >= 9) return "IX" + ToRoman(number - 9);
+        if (number >= 5) return "V" + ToRoman(number - 5);
+        if (number >= 4) return "IV" + ToRoman(number - 4);
+        if (number >= 1) return "I" + ToRoman(number - 1);
+        return "";
+    }
+
     #endregion
+
+    #region Enumerations
 
     public enum InputType
     {

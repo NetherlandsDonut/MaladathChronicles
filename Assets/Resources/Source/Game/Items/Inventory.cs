@@ -113,7 +113,7 @@ public class Inventory
         }
         if (item.amount > 0 && (ignoreSpaceChecks || items.Count < BagSpace()))
             items.Add(item.CopyItem(item.amount));
-        if (SaveGame.currentSave.player.inventory == this)
+        if (SaveGame.currentSave != null && SaveGame.currentSave.player.inventory == this)
         {
             var output = item.name + ": ";
             foreach (var quest in SaveGame.currentSave.player.currentQuests)

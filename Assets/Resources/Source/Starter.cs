@@ -15,6 +15,7 @@ using static Defines;
 using static Enchant;
 using static SaveGame;
 using static SitePath;
+using static FishingSpot;
 using static GameSettings;
 using static CursorRemote;
 using static SiteSpiritHealer;
@@ -195,9 +196,8 @@ public class Starter : MonoBehaviour
         quests ??= new();
         Deserialize(ref paths, "paths", false, prefix);
         paths ??= new();
-        Deserialize(ref FishingSpot.fishingSpots, "fishingspots", false, prefix);
-        FishingSpot.fishingSpots ??= new();
-        FishingSpot.fishingSpots.ForEach(x => x.zone = Site.FindSite(y => y.name == x.name).zone);
+        Deserialize(ref fishingSpots, "fishingspots", false, prefix);
+        fishingSpots ??= new();
         Deserialize(ref defines, "defines", false, prefix);
         defines ??= new();
         var file = Resources.Load<Sprite>("Sprites/Map/Ground").texture;
@@ -321,17 +321,12 @@ public class Starter : MonoBehaviour
             spiritHealers[i].Initialise();
         for (int i = 0; i < paths.Count; i++)
             paths[i].Initialise();
-        //var deb = "";
-        //var groups = quests.GroupBy(x => x.zone).Where(x => Resources.Load<Sprite>("Sprites/Buttons/Zone" + x.Key.Clean()) == null).OrderByDescending(x => x.Count()).ToList();
-        //for (int i = 0; i < groups.Count; i++)
-        //    deb += groups[i].Key + " (" + groups[i].Count() + ")\n";
-        //Debug.Log(deb);
         var elements = new List<string> { "Fire", "Water", "Earth", "Air", "Frost", "Lightning", "Arcane", "Decay", "Order", "Shadow" };
         foreach (var element in elements)
         {
             Blueprint.windowBlueprints.Add(new Blueprint("Player" + element + "Resource", () =>
             {
-                var item = currentSave.player.equipment.ContainsKey("Trinket") ? currentSave.player.equipment["Trinket"] : null;
+                var item = Board.board.player.equipment.ContainsKey("Trinket") ? Board.board.player.equipment["Trinket"] : null;
                 var addTrinket = item != null && item.abilities != null && item.combatUse;
                 SetAnchor(-320 + 19 * elements.IndexOf(element), 123 - 19 * (Board.board.player.actionBars.Count + (addTrinket ? 1 : 0)));
                 AddRegionGroup();

@@ -60,15 +60,17 @@ public class BufferBoard
     //with this buffer board generated beforehand
     public void FillBoard(int[,] field)
     {
+        var delay = 0;
         for (int i = 0; i < field.GetLength(0); i++)
         {
             var empty = 0;
             for (int q = 0; q < field.GetLength(1); q++)
                 if (field[i, q] == -1) empty++;
+            if (empty > 0) delay++;
             for (int j = 0; j < empty; j++)
             {
                 field[i, j] = this.field[i, j + field.GetLength(1) - empty];
-                window.LBRegionGroup.regions[j + field.GetLength(1) - empty].bigButtons[i].gameObject.AddComponent<FallingElement>().Initiate(empty);
+                window.LBRegionGroup.regions[j + field.GetLength(1) - empty].bigButtons[i].gameObject.AddComponent<FallingElement>().Initiate(empty, delay);
             }
         }
     }

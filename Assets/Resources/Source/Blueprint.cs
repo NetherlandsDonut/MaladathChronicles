@@ -275,7 +275,7 @@ public class Blueprint
                     AddLine(board.player.name, "Black", "Right");
                     AddSmallButton("MenuFlee", (h) =>
                     {
-                        board.EndCombat("Fled");
+                        board.EndCombat("Quit");
                     });
                 }
             );
@@ -286,8 +286,8 @@ public class Blueprint
                     AddBigButton(board.player.Spec().icon);
                 else
                 {
-                    var race = races.Find(x => x.name == currentSave.player.race);
-                    AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? currentSave.player.gender : ""));
+                    var race = races.Find(x => x.name == board.player.race);
+                    AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? board.player.gender : ""));
                 }
                 AddLine("Level: " , "DarkGray");
                 AddText("" + board.player.level, "Gray");
@@ -334,7 +334,7 @@ public class Blueprint
                     }
                 );
             }
-            var item = currentSave.player.equipment.ContainsKey("Trinket") ? currentSave.player.equipment["Trinket"] : null;
+            var item = board.player.equipment.ContainsKey("Trinket") ? board.player.equipment["Trinket"] : null;
             if (item != null && item.abilities != null && item.combatUse)
             {
                 var ability = item.abilities.ToList()[0];
@@ -379,7 +379,7 @@ public class Blueprint
         }),
         new("PlayerQuickUse", () => {
             SetAnchor(Bottom, 0, 9);
-            if (currentSave.player.inventory.items.FindAll(x => x.combatUse && !x.CanEquip(currentSave.player)).Count == 0) return;
+            if (board.player.inventory.items.FindAll(x => x.combatUse && !x.CanEquip(board.player)).Count == 0) return;
             else
             {
                 AddRegionGroup();

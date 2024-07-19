@@ -25,6 +25,7 @@ public class Font
     //Provides information on how many pixels does specific text take up to be printed.
     //This is the basic way to calculate the width of regions and overally of UI
     public int Length(string text) => text.Sum(x => charset.IndexOf(x) == -1 ? 0 : widths[charset.IndexOf(x)]) + text.Length - 1;
+    public int Length(char character) => charset.IndexOf(character) == -1 ? 0 : widths[charset.IndexOf(character)];
 
     //Set of all characters available to print in UI
     public string charset;

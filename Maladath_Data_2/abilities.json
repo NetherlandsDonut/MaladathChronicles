@@ -6641,11 +6641,41 @@
   {
     "name": "Execute",
     "icon": "AbilityExecute",
+    "cooldown": 10,
     "tags": [],
+    "cost": {
+      "Fire": 2,
+      "Earth": 2,
+      "Air": 6
+    },
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "PowerSource": "Effector",
+            "PowerType": "Melee",
+            "Affect": "Other",
+            "ShatterType": "Central",
+            "ShatterTarget": "Other",
+            "PowerScale": "3",
+            "Await": "5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
   },
   {
     "name": "Executioner's Will",
@@ -6912,6 +6942,7 @@
   {
     "name": "Fireball",
     "icon": "AbilityFireball",
+    "cooldown": 1,
     "tags": [
       "Damage"
     ],
@@ -6936,7 +6967,8 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector"
           }
         ],
         "effects": [

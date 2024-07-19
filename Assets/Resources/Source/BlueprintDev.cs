@@ -29,6 +29,7 @@ using static SaveGame;
 using static Blueprint;
 using static PersonType;
 using static Profession;
+using static FishingSpot;
 using static GeneralDrop;
 using static Serialization;
 using static PersonCategory;
@@ -69,7 +70,11 @@ public static class BlueprintDev
                 townsSearch = towns;
                 SpawnDesktopBlueprint("ObjectManagerTowns");
             });
-            AddButtonRegion(() => { AddLine("Races"); }, (h) => { SpawnDesktopBlueprint("ObjectManagerRaces"); });
+            AddButtonRegion(() => { AddLine("Races"); }, (h) =>
+            {
+                racesSearch = races;
+                SpawnDesktopBlueprint("ObjectManagerRaces");
+            });
             AddButtonRegion(() => { AddLine("Specs"); }, (h) =>
             {
                 specsSearch = specs;
@@ -105,10 +110,10 @@ public static class BlueprintDev
                 recipesSearch = recipes;
                 SpawnDesktopBlueprint("ObjectManagerRecipes");
             });
-            AddButtonRegion(() => { AddLine("Cloth types"); }, (h) =>
+            AddButtonRegion(() => { AddLine("General drops"); }, (h) =>
             {
                 generalDropsSearch = generalDrops;
-                SpawnDesktopBlueprint("ObjectManagerClothTypes");
+                SpawnDesktopBlueprint("ObjectManagerGeneralDrops");
             });
             AddButtonRegion(() => { AddLine("Factions"); }, (h) =>
             {
@@ -142,7 +147,7 @@ public static class BlueprintDev
                 Serialize(zones, "zones", false, false, prefix);
                 Serialize(quests, "quests", false, false, prefix);
                 Serialize(paths, "paths", false, false, prefix);
-                Serialize(FishingSpot.fishingSpots, "fishingspots", false, false, prefix);
+                Serialize(fishingSpots, "fishingspots", false, false, prefix);
                 Serialize(defines, "defines", false, false, prefix);
             });
             AddPaddingRegion(() => { });
@@ -225,13 +230,13 @@ public static class BlueprintDev
             SetAnchor(TopLeft);
             AddRegionGroup(() => areasSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
-            if (area != null)
-            {
-                var index = areas.IndexOf(area);
-                if (index >= 10)
-                    CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
-            }
+            SetRegionGroupHeight(354);
+            //if (area != null)
+            //{
+            //    var index = areas.IndexOf(area);
+            //    if (index >= 10)
+            //        CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //}
             AddHeaderRegion(() =>
             {
                 AddLine("Areas:");
@@ -377,12 +382,12 @@ public static class BlueprintDev
             SetAnchor(TopLeft);
             AddRegionGroup(() => towns.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
-            if (town != null)
-            {
-                var index = towns.IndexOf(town);
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
-            }
+            SetRegionGroupHeight(354);
+            //if (town != null)
+            //{
+            //    var index = towns.IndexOf(town);
+            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //}
             AddHeaderRegion(() =>
             {
                 AddLine("Towns:");
@@ -565,13 +570,13 @@ public static class BlueprintDev
             SetAnchor(TopLeft);
             AddRegionGroup(() => instancesSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
-            if (instance != null)
-            {
-                var index = instances.IndexOf(instance);
-                if (index >= 10)
-                    CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
-            }
+            SetRegionGroupHeight(354);
+            //if (instance != null)
+            //{
+            //    var index = instances.IndexOf(instance);
+            //    if (index >= 10)
+            //        CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //}
             AddHeaderRegion(() =>
             {
                 AddLine("Instances:");
@@ -721,13 +726,13 @@ public static class BlueprintDev
             SetAnchor(TopLeft);
             AddRegionGroup(() => complexesSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
-            if (complex != null)
-            {
-                var index = complexes.IndexOf(complex);
-                if (index >= 10)
-                    CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
-            }
+            SetRegionGroupHeight(354);
+            //if (complex != null)
+            //{
+            //    var index = complexes.IndexOf(complex);
+            //    if (index >= 10)
+            //        CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //}
             AddHeaderRegion(() =>
             {
                 AddLine("Complexes:");
@@ -826,22 +831,22 @@ public static class BlueprintDev
             SetAnchor(TopLeft);
             AddRegionGroup(() => Assets.assets.ambienceSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
-            if (area != null)
-            {
-                var index = Assets.assets.ambienceSearch.IndexOf(area.ambience + ".ogg");
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
-            }
-            else if (instance != null)
-            {
-                var index = Assets.assets.ambienceSearch.IndexOf(instance.ambience + ".ogg");
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
-            }
-            else if (complex != null)
-            {
-                var index = Assets.assets.ambienceSearch.IndexOf(complex.ambience + ".ogg");
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
-            }
+            SetRegionGroupHeight(354);
+            //if (area != null)
+            //{
+            //    var index = Assets.assets.ambienceSearch.IndexOf(area.ambience + ".ogg");
+            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //}
+            //else if (instance != null)
+            //{
+            //    var index = Assets.assets.ambienceSearch.IndexOf(instance.ambience + ".ogg");
+            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //}
+            //else if (complex != null)
+            //{
+            //    var index = Assets.assets.ambienceSearch.IndexOf(complex.ambience + ".ogg");
+            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //}
             AddHeaderRegion(() =>
             {
                 AddLine("Ambience tracks:");
@@ -925,13 +930,13 @@ public static class BlueprintDev
             SetAnchor(TopLeft);
             AddRegionGroup(() => Assets.assets.soundsSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
-            if (eventEdit != null)
-            {
-                var temp = eventEdit.effects[selectedEffect];
-                var index = temp.ContainsKey("SoundEffect") && temp["SoundEffect"] != "None" ? Assets.assets.soundsSearch.IndexOf(temp["SoundEffect"] + ".ogg") : 0;
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
-            }
+            SetRegionGroupHeight(354);
+            //if (eventEdit != null)
+            //{
+            //    var temp = eventEdit.effects[selectedEffect];
+            //    var index = temp.ContainsKey("SoundEffect") && temp["SoundEffect"] != "None" ? Assets.assets.soundsSearch.IndexOf(temp["SoundEffect"] + ".ogg") : 0;
+            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //}
             AddHeaderRegion(() =>
             {
                 AddLine("Sound effects:");
@@ -1002,12 +1007,12 @@ public static class BlueprintDev
             SetAnchor(TopLeft);
             AddRegionGroup(() => Assets.assets.itemIconsSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
-            if (item != null)
-            {
-                var index = Assets.assets.itemIconsSearch.IndexOf(item.icon + ".png");
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
-            }
+            SetRegionGroupHeight(354);
+            //if (item != null)
+            //{
+            //    var index = Assets.assets.itemIconsSearch.IndexOf(item.icon + ".png");
+            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //}
             AddHeaderRegion(() =>
             {
                 AddLine("Item icons:");
@@ -1074,17 +1079,17 @@ public static class BlueprintDev
             SetAnchor(TopLeft);
             AddRegionGroup(() => Assets.assets.abilityIconsSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
-            if (ability != null)
-            {
-                var index = Assets.assets.abilityIconsSearch.IndexOf(ability.icon + ".png");
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
-            }
-            else if (buff != null)
-            {
-                var index = Assets.assets.abilityIconsSearch.IndexOf(buff.icon + ".png");
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
-            }
+            SetRegionGroupHeight(354);
+            //if (ability != null)
+            //{
+            //    var index = Assets.assets.abilityIconsSearch.IndexOf(ability.icon + ".png");
+            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //}
+            //else if (buff != null)
+            //{
+            //    var index = Assets.assets.abilityIconsSearch.IndexOf(buff.icon + ".png");
+            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //}
             AddHeaderRegion(() =>
             {
                 AddLine("Ability icons:");
@@ -1155,12 +1160,12 @@ public static class BlueprintDev
             SetAnchor(TopLeft);
             AddRegionGroup(() => Assets.assets.factionIconsSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
-            if (faction != null)
-            {
-                var index = Assets.assets.factionIconsSearch.IndexOf(faction.icon + ".png");
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
-            }
+            SetRegionGroupHeight(354);
+            //if (faction != null)
+            //{
+            //    var index = Assets.assets.factionIconsSearch.IndexOf(faction.icon + ".png");
+            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //}
             AddHeaderRegion(() =>
             {
                 AddLine("Faction icons:");
@@ -1224,12 +1229,12 @@ public static class BlueprintDev
             SetAnchor(TopLeft);
             AddRegionGroup(() => Assets.assets.mountIconsSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
-            if (mount != null)
-            {
-                var index = Assets.assets.mountIconsSearch.IndexOf(mount.icon + ".png");
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
-            }
+            SetRegionGroupHeight(354);
+            //if (mount != null)
+            //{
+            //    var index = Assets.assets.mountIconsSearch.IndexOf(mount.icon + ".png");
+            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //}
             AddHeaderRegion(() =>
             {
                 AddLine("Mount icons:");
@@ -1293,12 +1298,12 @@ public static class BlueprintDev
             SetAnchor(TopLeft);
             AddRegionGroup(() => Assets.assets.portraitsSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
-            if (race != null)
-            {
-                var index = Assets.assets.portraitsSearch.IndexOf(race.portrait + ".png");
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
-            }
+            SetRegionGroupHeight(354);
+            //if (race != null)
+            //{
+            //    var index = Assets.assets.portraitsSearch.IndexOf(race.portrait + ".png");
+            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //}
             AddHeaderRegion(() =>
             {
                 AddLine("Portraits:");
@@ -1362,7 +1367,7 @@ public static class BlueprintDev
             SetAnchor(TopLeft);
             AddRegionGroup(() => possibleEffects.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
+            SetRegionGroupHeight(354);
             AddHeaderRegion(() =>
             {
                 AddLine("Effects:");
@@ -1422,7 +1427,7 @@ public static class BlueprintDev
             SetAnchor(TopLeft);
             AddRegionGroup(() => possibleTriggers.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
+            SetRegionGroupHeight(354);
             AddHeaderRegion(() =>
             {
                 AddLine("Triggers:");
@@ -1773,7 +1778,7 @@ public static class BlueprintDev
                     {
                         PlaySound("DesktopWeirdClick3", 0.6f);
                         eventEdit.effects.AddRange(effectsCopy.Select(x => x.ToDictionary(y => y.Key, y => y.Value)).ToList());
-                        }
+                    }
                 });
             });
             foreach (var effect in eventEdit.effects)
@@ -2717,7 +2722,7 @@ public static class BlueprintDev
             SetAnchor(TopLeft);
             AddRegionGroup();
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
+            SetRegionGroupHeight(354);
             AddHeaderRegion(() =>
             {
                 AddLine("Area types:");
@@ -2770,7 +2775,7 @@ public static class BlueprintDev
             SetAnchor(TopLeft);
             AddRegionGroup();
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
+            SetRegionGroupHeight(354);
             AddHeaderRegion(() =>
             {
                 AddLine("Rarities:");
@@ -2939,12 +2944,12 @@ public static class BlueprintDev
             SetAnchor(TopLeft);
             AddRegionGroup(() => itemsSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
-            if (item != null)
-            {
-                var index = itemsSearch.IndexOf(item);
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
-            }
+            SetRegionGroupHeight(354);
+            //if (item != null)
+            //{
+            //    var index = itemsSearch.IndexOf(item);
+            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //}
             AddHeaderRegion(() =>
             {
                 AddLine("Items:");
@@ -3168,12 +3173,12 @@ public static class BlueprintDev
             SetAnchor(TopLeft);
             AddRegionGroup(() => itemSetsSearch.Count, 5);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
-            if (itemSet != null)
-            {
-                var index = itemSetsSearch.IndexOf(itemSet);
-                if (index >= 5) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 5);
-            }
+            SetRegionGroupHeight(354);
+            //if (itemSet != null)
+            //{
+            //    var index = itemSetsSearch.IndexOf(itemSet);
+            //    if (index >= 5) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 5);
+            //}
             AddHeaderRegion(() =>
             {
                 AddLine("Item sets:");
@@ -3353,7 +3358,7 @@ public static class BlueprintDev
             SetAnchor(TopLeft);
             AddRegionGroup();
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
+            SetRegionGroupHeight(354);
             AddHeaderRegion(() =>
             {
                 AddLine("Ability cost:", "Gray");
@@ -3441,7 +3446,7 @@ public static class BlueprintDev
             SetAnchor(TopLeft);
             AddRegionGroup();
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
+            SetRegionGroupHeight(354);
             AddHeaderRegion(() =>
             {
                 AddLine("Stats:", "Gray");
@@ -3489,26 +3494,26 @@ public static class BlueprintDev
             SetAnchor(TopLeft);
             AddRegionGroup(() => abilitiesSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
-            if (ability != null)
-            {
-                var index = abilitiesSearch.IndexOf(ability);
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
-            }
-            if (eventEdit != null)
-            {
-                var editingEffects = CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect");
-                if (editingEffects)
-                {
-                    var index = abilitiesSearch.IndexOf(eventEdit.effects[selectedEffect].ContainsKey("AbilityName") ? abilities.Find(x => x.name == eventEdit.effects[selectedEffect]["AbilityName"]) : null);
-                    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
-                }
-                else
-                {
-                    var index = abilitiesSearch.IndexOf(eventEdit.triggers[selectedTrigger].ContainsKey("AbilityName") ? abilities.Find(x => x.name == eventEdit.triggers[selectedTrigger]["AbilityName"]) : null);
-                    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
-                }
-            }
+            SetRegionGroupHeight(354);
+            //if (ability != null)
+            //{
+            //    var index = abilitiesSearch.IndexOf(ability);
+            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //}
+            //if (eventEdit != null)
+            //{
+            //    var editingEffects = CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect");
+            //    if (editingEffects)
+            //    {
+            //        var index = abilitiesSearch.IndexOf(eventEdit.effects[selectedEffect].ContainsKey("AbilityName") ? abilities.Find(x => x.name == eventEdit.effects[selectedEffect]["AbilityName"]) : null);
+            //        if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //    }
+            //    else
+            //    {
+            //        var index = abilitiesSearch.IndexOf(eventEdit.triggers[selectedTrigger].ContainsKey("AbilityName") ? abilities.Find(x => x.name == eventEdit.triggers[selectedTrigger]["AbilityName"]) : null);
+            //        if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //    }
+            //}
             AddHeaderRegion(() =>
             {
                 AddLine("Abilities:");
@@ -3819,12 +3824,12 @@ public static class BlueprintDev
             SetAnchor(TopLeft);
             AddRegionGroup(() => buffsSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
-            if (buff != null)
-            {
-                var index = buffsSearch.IndexOf(buff);
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
-            }
+            SetRegionGroupHeight(354);
+            //if (buff != null)
+            //{
+            //    var index = buffsSearch.IndexOf(buff);
+            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //}
             if (eventEdit != null)
             {
                 var editingEffects = CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect");
@@ -4174,12 +4179,12 @@ public static class BlueprintDev
             SetAnchor(TopLeft);
             AddRegionGroup(() => racesSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
-            if (race != null)
-            {
-                var index = racesSearch.IndexOf(race);
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
-            }
+            SetRegionGroupHeight(354);
+            //if (race != null)
+            //{
+            //    var index = racesSearch.IndexOf(race);
+            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //}
             AddHeaderRegion(() =>
             {
                 AddLine("Races:");
@@ -4455,12 +4460,12 @@ public static class BlueprintDev
             SetAnchor(TopLeft);
             AddRegionGroup(() => mountsSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
-            if (mount != null)
-            {
-                var index = mountsSearch.IndexOf(mount);
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
-            }
+            SetRegionGroupHeight(354);
+            //if (mount != null)
+            //{
+            //    var index = mountsSearch.IndexOf(mount);
+            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //}
             AddHeaderRegion(() =>
             {
                 AddLine("Mounts:");
@@ -4654,12 +4659,12 @@ public static class BlueprintDev
             SetAnchor(TopLeft);
             AddRegionGroup(() => recipesSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
-            if (recipe != null)
-            {
-                var index = recipesSearch.IndexOf(recipe);
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
-            }
+            SetRegionGroupHeight(354);
+            //if (recipe != null)
+            //{
+            //    var index = recipesSearch.IndexOf(recipe);
+            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //}
             AddHeaderRegion(() =>
             {
                 AddLine("Recipes:");
@@ -4790,22 +4795,22 @@ public static class BlueprintDev
             SetAnchor(TopLeft);
             AddRegionGroup(() => factionsSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
-            if (faction != null)
-            {
-                var index = factionsSearch.IndexOf(faction);
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
-            }
-            else if (town != null)
-            {
-                var index = factionsSearch.FindIndex(x => x.name == town.faction);
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
-            }
-            else if (race != null)
-            {
-                var index = factionsSearch.FindIndex(x => x.name == race.faction);
-                if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
-            }
+            SetRegionGroupHeight(354);
+            //if (faction != null)
+            //{
+            //    var index = factionsSearch.IndexOf(faction);
+            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //}
+            //else if (town != null)
+            //{
+            //    var index = factionsSearch.FindIndex(x => x.name == town.faction);
+            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //}
+            //else if (race != null)
+            //{
+            //    var index = factionsSearch.FindIndex(x => x.name == race.faction);
+            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //}
             AddHeaderRegion(() =>
             {
                 AddLine("Factions:");
@@ -4962,13 +4967,13 @@ public static class BlueprintDev
             SetAnchor(TopLeft);
             AddRegionGroup(() => specsSearch.Count);
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(358);
-            if (spec != null)
-            {
-                var index = specs.IndexOf(spec);
-                if (index >= 10)
-                    CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
-            }
+            SetRegionGroupHeight(354);
+            //if (spec != null)
+            //{
+            //    var index = specs.IndexOf(spec);
+            //    if (index >= 10)
+            //        CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //}
             AddHeaderRegion(() =>
             {
                 AddLine("Specs:");
@@ -5259,11 +5264,11 @@ public static class BlueprintDev
             AddHotkey(Escape, () => { recipe = null; recipesSearch = null; CloseDesktop("ObjectManagerRecipes"); });
             AddPaginationHotkeys();
         }),
-        new("ObjectManagerClothTypes", () =>
+        new("ObjectManagerGeneralDrops", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
-            SpawnWindowBlueprint("ObjectManagerClothTypes");
-            AddHotkey(Escape, () => { generalDrop = null; generalDropsSearch = null; CloseDesktop("ObjectManagerClothTypes"); });
+            SpawnWindowBlueprint("ObjectManagerGeneralDrops");
+            AddHotkey(Escape, () => { generalDrop = null; generalDropsSearch = null; CloseDesktop("ObjectManagerGeneralDrops"); });
             AddPaginationHotkeys();
         }),
         new("ObjectManagerFactions", () =>

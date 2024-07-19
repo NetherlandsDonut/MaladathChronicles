@@ -68,6 +68,8 @@ public class Entity
         kind = race.kind;
         this.race = name = race.name;
         abilities = race.abilities.ToDictionary(x => x.Key, x => x.Value);
+        equipment = new();
+        inventory = new Inventory(new List<string>());
         actionBars = Ability.abilities.FindAll(x => abilities.ContainsKey(x.name) && x.cost != null).OrderBy(x => x.cost.Sum(y => y.Value)).OrderBy(x => x.putOnEnd).Select(x => x.name).ToList();
         stats = new Stats(
             new()

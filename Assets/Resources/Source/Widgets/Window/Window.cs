@@ -153,28 +153,49 @@ public class Window : MonoBehaviour
                 {
                     var objectOffset = (region.checkbox != null ? 15 : 0) + (region.reverseButtons ? region.smallButtons.Count * 19 : region.bigButtons.Count * 38);
                     int length = 0;
-                    foreach (var text in line.texts)
+                    if (regionGroup.setWidth == 0)
+                        foreach (var text in line.texts)
+                        {
+                            text.Erase();
+                            foreach (var character in text.text)
+                                length = text.SpawnCharacter(character, length);
+                        }
+                    else
                     {
-                        text.Erase();
-                        var split = new List<string>();
-                        foreach (var character in text.text)
-                            if (split.Count > 0 && split[^1][^1] != ' ')
-                                split[^1] += character;
-                            else split.Add(character + "");
-                        foreach (var part in split)
-                            if (regionGroup.setWidth == 0)
-                                foreach (var character in part)
-                                    length = text.SpawnCharacter(character, length);
-                            else if (defines.textPaddingLeft + defines.textPaddingRight + length + (split.Last() == part ? 0 : Font.fonts["Tahoma Bold"].Length(defines.textWrapEnding) + 2) + Font.fonts["Tahoma Bold"].Length(part) + objectOffset < regionGroup.setWidth - (region.reverseButtons ? region.bigButtons.Count * 19 : region.smallButtons.Count * 19))
-                                foreach (var character in part)
-                                    length = text.SpawnCharacter(character, length);
-                            else
+                        var emptySpace = regionGroup.setWidth - (defines.textPaddingLeft + defines.textPaddingRight + objectOffset + (region.reverseButtons ? region.bigButtons.Count * 38 : region.smallButtons.Count * 19));
+                        var fullText = string.Join("", line.texts.Select(x => x.text));
+                        var toPrint = 0;
+                        var useWrapper = false;
+                        var currentLength = 0;
+                        var wrapperLength = Font.fonts["Tahoma Bold"].Length(defines.textWrapEnding);
+                        for (int i = 0; i < fullText.Length; i++)
+                        {
+                            var newCharLength = Font.fonts["Tahoma Bold"].Length(fullText[i]) + 1;
+                            if (currentLength + newCharLength + wrapperLength + 1 > emptySpace)
                             {
-                                if (defines.textPaddingLeft + defines.textPaddingRight + length + objectOffset < regionGroup.setWidth - region.smallButtons.Count * 19)
-                                    for (int i = 0; i < defines.textWrapEnding.Length; i++)
-                                        length = text.SpawnCharacter(defines.textWrapEnding[i], length);
+                                useWrapper = true;
                                 break;
                             }
+                            else if (currentLength + newCharLength + wrapperLength <= emptySpace)
+                            {
+                                currentLength += newCharLength;
+                                toPrint++;
+                            }
+                        }
+                        var printed = 0;
+                        foreach (var text in line.texts)
+                        {
+                            foreach (var character in text.text)
+                                if (++printed <= toPrint)
+                                    length = text.SpawnCharacter(character, length);
+                            if (printed > toPrint && useWrapper)
+                            {
+                                for (int i = 0; i < defines.textWrapEnding.Length; i++)
+                                    length = text.SpawnCharacter(defines.textWrapEnding[i], length);
+                                length = text.SpawnCharacter(' ', length);
+                                break;
+                            }
+                        }
                     }
                     if (line.align == "Left")
                         line.transform.localPosition = new Vector3(2 + defines.textPaddingLeft + objectOffset, -region.currentHeight - 3, 0);

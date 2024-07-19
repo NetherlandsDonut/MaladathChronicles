@@ -3,10 +3,10 @@
   "selectedRealmRanking": "Whitemane",
   "selectedCharacter": "Horn",
   "pixelPerfectVision": {
-    "value": "True"
+    "value": "False"
   },
   "music": {
-    "value": "True"
+    "value": "False"
   },
   "soundEffects": {
     "value": "True"
