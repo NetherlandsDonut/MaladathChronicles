@@ -6661,6 +6661,13 @@
         ],
         "effects": [
           {
+            "SoundEffect": "AbilityExecuteCast",
+            "Await": "4",
+            "ShatterType": "None",
+            "ShatterTarget": "Effector",
+            "ShatterSpeed": "5"
+          },
+          {
             "Effect": "Damage",
             "PowerSource": "Effector",
             "PowerType": "Melee",
@@ -6668,7 +6675,11 @@
             "ShatterType": "Central",
             "ShatterTarget": "Other",
             "PowerScale": "3",
-            "Await": "5"
+            "Await": "5",
+            "SoundEffect": "AbilityExecuteImpact",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40",
+            "AnimationType": "None"
           },
           {
             "Effect": "EndTurn"

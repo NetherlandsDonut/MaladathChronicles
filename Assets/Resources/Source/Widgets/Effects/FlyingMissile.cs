@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 using UnityEngine;
 
 using static Root;
@@ -72,4 +74,7 @@ public class FlyingMissile : MonoBehaviour
         missile.GetComponent<FlyingMissile>().Initiate(fromPlayer, (float)arc, flySpeed, trailStrength, sprite);
         return missile;
     }
+
+    //List of active missiles
+    public static List<FlyingMissile> flyingMissiles;
 }

@@ -6,10 +6,12 @@ using System.Collections.Generic;
 using static Root;
 using static Sound;
 using static Defines;
+using static MapGrid;
 using static SaveGame;
 using static BufferBoard;
 using static GameSettings;
 using static CursorRemote;
+using static FlyingMissile;
 using static FlyingElement;
 using static SiteHostileArea;
 
@@ -445,7 +447,6 @@ public class Board
                 else
                 {
                     SwitchDesktop("Map");
-                    grid.SwitchMapTexture(true);
                     SpawnTransition();
                     SpawnTransition();
                     SpawnTransition();

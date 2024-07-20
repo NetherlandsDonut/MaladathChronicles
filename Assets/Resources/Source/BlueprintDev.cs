@@ -1819,6 +1819,7 @@ public static class BlueprintDev
                     String.resourceAmount.Set(effect.ContainsKey("ResourceAmount") ? effect["ResourceAmount"] : "1");
                     String.changeAmount.Set(effect.ContainsKey("ChangeAmount") ? effect["ChangeAmount"] : "1");
                     String.buffDuration.Set(effect.ContainsKey("BuffDuration") ? effect["BuffDuration"] : "3");
+                    String.soundVolume.Set(effect.ContainsKey("SoundEffectVolume") ? effect["SoundEffectVolume"] : "0,7");
                     Respawn("ObjectManagerEventEffects");
                     Respawn("ObjectManagerEventEffect");
                 });
@@ -2264,7 +2265,7 @@ public static class BlueprintDev
                 {
                     if (effect.ContainsKey("SoundEffect"))
                         effect["SoundEffect"] = "None";
-                    });
+                });
             });
             AddButtonRegion(() =>
             {
@@ -2272,7 +2273,8 @@ public static class BlueprintDev
                 if (effect.ContainsKey("SoundEffect"))
                     AddSmallButton("OtherSound", (h) =>
                     {
-                        PlaySound(effect["SoundEffect"]);
+                        var volume = effect.ContainsKey("SoundEffectVolume") ? float.Parse(effect["SoundEffectVolume"]) : 0.7f;
+                        PlaySound(effect["SoundEffect"], volume);
                     });
             },
             (h) =>
@@ -2284,6 +2286,17 @@ public static class BlueprintDev
                     CloseWindow("ObjectManagerBuffs");
                     Respawn("ObjectManagerSoundsList");
                 }
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Sound volume:", "DarkGray");
+                AddInputLine(String.soundVolume);
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    if (effect.ContainsKey("SoundEffectVolume"))
+                        effect["SoundEffectVolume"] = "0,7";
+                    String.soundVolume.Set("0,7");
+                    });
             });
             AddPaddingRegion(() =>
             {
@@ -5279,4 +5292,6 @@ public static class BlueprintDev
             AddPaginationHotkeys();
         }),
     };
+
+    public static List<Dictionary<string, string>> triggersCopy, effectsCopy;
 }

@@ -84,7 +84,8 @@ public class Event
                 void ExecuteSoundEffect()
                 {
                     if (!effect.ContainsKey("SoundEffect")) return;
-                    PlaySound(effect["SoundEffect"]);
+                    var volume = effect.ContainsKey("SoundEffectVolume") ? float.Parse(effect["SoundEffectVolume"]) : 0.7f;
+                    PlaySound(effect["SoundEffect"], volume);
                 }
             }
 
@@ -300,7 +301,8 @@ public class Event
                 void ExecuteSoundEffect()
                 {
                     if (board == null || !effect.ContainsKey("SoundEffect")) return;
-                    PlaySound(effect["SoundEffect"]);
+                    var volume = effect.ContainsKey("SoundEffectVolume") ? float.Parse(effect["SoundEffectVolume"]) : 0.7f;
+                    PlaySound(effect["SoundEffect"], volume);
                 }
             }
 

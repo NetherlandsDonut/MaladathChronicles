@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using static Sound;
+using static MapGrid;
 using static Coloring;
 using static Blueprint;
 using static GameSettings;
@@ -18,13 +19,9 @@ public static class Root
     public static int screenX = 640;
     public static int screenY = 360;
 
-    public static MapGrid grid;
-    public static List<Vector2> cameraBoundaryPoints;
-    public static List<FallingElement> fallingElements;
-    public static List<FlyingMissile> flyingMissiles;
-    public static bool canUnlockScreen;
     public static bool useUnityData = true;
-    public static bool showSitesUnconditional;
+
+    public static bool canUnlockScreen;
     public static bool showAreasUnconditional;
     public static bool disableCameraBounds;
     public static int builderSpacing;
@@ -44,32 +41,23 @@ public static class Root
     public static int loadingScreenObjectLoadAim;
     public static List<Blueprint> loadSites;
 
-    public static Color32 dayColor = new(255, 255, 255, 255);
-    public static Color32 nightColor = new(185, 185, 202, 255);
-
     public static Action splitDelegate;
-    public static string[,] groundData;
     public static System.Random random;
     public static int inputLineMarker;
-    public static int keyStack;
     public static float lastFunnyEffectTime;
     public static Vector3 lastFunnyEffectPosition;
     public static List<(int, int)> titleScreenFunnyEffect = new();
+
+    public static int keyStack;
     public static float heldKeyTime;
     public static float animationTime;
     public static float animatedSpriteTime;
-    public static List<Desktop> desktops;
-    public static Desktop CDesktop, LBDesktop;
-    public static List<Dictionary<string, string>> triggersCopy, effectsCopy;
-    public static bool enchantingSkillChange;
-    public static Inventory disenchantLoot;
 
-    public static Blueprint FindWindowBlueprint(string name)
-    {
-        var find = windowBlueprints.Find(x => x.title == name);
-        find ??= BlueprintDev.windowBlueprints.Find(x => x.title == name);
-        return find;
-    }
+    public static Desktop CDesktop, LBDesktop;
+
+    public static List<Desktop> desktops;
+
+    #region Desktop
 
     public static Blueprint FindDesktopBlueprint(string name)
     {
@@ -77,68 +65,6 @@ public static class Root
         find ??= BlueprintDev.desktopBlueprints.Find(x => x.title == name);
         return find;
     }
-
-    #region Extension Methods
-
-    //Removes all nasty characters from a string (Usually used for accessing files with names based of something)
-    public static string Clean(this string text) => text?.Replace("'", "").Replace(".", "").Replace(" ", "");
-
-    //Removes all nasty characters from a string (Usually used for accessing files with names based of something)
-    public static string ToFirstUpper(this string text) => text == null ? text : text[..1].ToUpper() + text[1..].ToLower();
-
-    //Removes all nasty characters from a string (Usually used for accessing files with names based of something)
-    public static string OnlyNameCategory(this string text) => text != null && text.Contains(" @ ") ? text[..text.IndexOf(" @ ")] : text;
-
-    public static void Shuffle<T>(this IList<T> list)
-    {
-        for (int i = list.Count, rnd = random.Next(i--); i >= 1; rnd = random.Next(i--))
-            (list[i], list[rnd]) = (list[rnd], list[i]);
-    }
-
-    public static float Grayscale(this Color32 color)
-    {
-        return (0.299f * color.r) + (0.587f * color.g) + (0.114f * color.b);
-    }
-
-    public static List<(string, string, string)> TrimLast(this List<(string, string, string)> list, bool should)
-    {
-        if (should == false) return list;
-        list[^1] = (list[^1].Item1.TrimEnd(), list[^1].Item2, list[^1].Item3);
-        return list;
-    }
-
-    public static List<Item> Multilate(this List<Item> list, int times)
-    {
-        var output = list.ToList();
-        for (int i = 0; i < times - 1; i++)
-            output.AddRange(list.Select(x => x.CopyItem(x.amount)));
-        return output;
-    }
-
-    public static Dictionary<T, U> Merge<T, U>(this Dictionary<T, U> A, Dictionary<T, U> B)
-    {
-        var temp = A.ToDictionary(x => x.Key, x => x.Value);
-        foreach (var pair in B)
-            if (temp.ContainsKey(pair.Key)) continue;
-            else temp.Add(pair.Key, pair.Value);
-        return temp;
-    }
-
-    public static void Inc<TKey>(this Dictionary<TKey, int> dic, TKey source, int amount = 1)
-    {
-        if (dic.ContainsKey(source)) dic[source] += amount;
-        else dic.Add(source, amount);
-    }
-
-    public static TValue Get<TKey, TValue>(this Dictionary<TKey, TValue> dic, TKey source)
-    {
-        if (dic.ContainsKey(source)) return dic[source];
-        else return default;
-    }
-
-    #endregion
-
-    #region Desktop
 
     public static void SpawnDesktopBlueprint(string blueprintTitle, bool autoSwitch = true)
     {
@@ -214,7 +140,7 @@ public static class Root
         if (find != null) CDesktop = find;
         if (CDesktop != null)
         {
-            if (name == "Map") grid.UpdateTextureColors(true);
+            if (name == "Map") mapGrid.UpdateTextureColors(true);
             CDesktop.gameObject.SetActive(true);
             desktops.Remove(CDesktop);
             desktops.Insert(0, CDesktop);
@@ -230,8 +156,7 @@ public static class Root
             CloseWindow("HostileAreaQuestTracker");
             Respawn("HostileArea");
         }
-        if (CDesktop.title == "Map")
-            Respawn("WorldBuffs", true);
+        if (CDesktop.title == "Map") Respawn("WorldBuffs", true);
         if (windows != null)
             foreach (var window in windows)
                 Respawn(window, true);
@@ -243,18 +168,17 @@ public static class Root
     {
         Quest.sitesToRespawn = new();
         Quest.sitesWithQuestMarkers = new();
-        cameraBoundaryPoints = new();
+        mapGrid.cameraBoundaryPoints = new();
         loadSites = windowBlueprints.FindAll(x => x.title.StartsWith("Site: "));
-        if (!showSitesUnconditional)
-            for (int i = loadSites.Count - 1; i >= 0; i--)
+        for (int i = loadSites.Count - 1; i >= 0; i--)
+        {
+            var site = Site.FindSite(x => "Site: " + x.name == loadSites[i].title);
+            if (site != null)
             {
-                var site = Site.FindSite(x => "Site: " + x.name == loadSites[i].title);
-                if (site != null && !site.CanBeSeen())
-                {
-                    cameraBoundaryPoints.Add(new Vector2(site.x, site.y));
-                    loadSites.RemoveAt(i);
-                }
+                mapGrid.cameraBoundaryPoints.Add(new Vector2(site.x, site.y));
+                if (!site.CanBeSeen()) loadSites.RemoveAt(i);
             }
+        }
         loadingScreenObjectLoad = 0;
         loadingScreenObjectLoadAim = loadSites.Count;
     }
@@ -296,14 +220,16 @@ public static class Root
         LBDesktop.hotkeys.Add(new Hotkey(key, action, keyDown));
     }
 
-    public static float EuelerGrowth()
-    {
-        return (float)Math.Pow(keyStack / 150.0 + 1.0, Math.E);
-    }
-
     #endregion
 
     #region Windows
+
+    public static Blueprint FindWindowBlueprint(string name)
+    {
+        var find = windowBlueprints.Find(x => x.title == name);
+        find ??= BlueprintDev.windowBlueprints.Find(x => x.title == name);
+        return find;
+    }
 
     public static Window SpawnWindowBlueprint(string blueprintTitle, bool resetSearch = true)
     {
@@ -1106,6 +1032,12 @@ public static class Root
     public static Vector3 Bezier(Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3, float t)
     {
         return (((-p0 + 3 * (p1 - p2) + p3) * t + (3 * (p0 + p2) - 6 * p1)) * t + 3 * (p1 - p0)) * t + p0;
+    }
+
+    //Euler function
+    public static float EuelerGrowth()
+    {
+        return (float)Math.Pow(keyStack / 150.0 + 1.0, Math.E);
     }
 
     //Compares values with a operator provided in the form of a string

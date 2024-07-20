@@ -14,6 +14,8 @@ using static MapGrid;
 using static SaveGame;
 using static SitePath;
 using static InputLine;
+using static FlyingMissile;
+using static FallingElement;
 
 public class Desktop : MonoBehaviour
 {
@@ -167,8 +169,8 @@ public class Desktop : MonoBehaviour
                 var site = loadSites[0];
                 loadingScreenObjectLoad++;
                 var spawn = SpawnWindowBlueprint(site);
-                if (spawn != null && !cameraBoundaryPoints.Contains(spawn.transform.position))
-                    cameraBoundaryPoints.Add(spawn.transform.position);
+                if (spawn != null && !mapGrid.cameraBoundaryPoints.Contains(spawn.transform.position))
+                    mapGrid.cameraBoundaryPoints.Add(spawn.transform.position);
                 loadSites.RemoveAt(0);
                 loadingBar[1].transform.localScale = new Vector3((int)(357.0 / loadingScreenObjectLoadAim * loadingScreenObjectLoad), 1, 1);
                 if (loadSites.Count == 0)
@@ -184,7 +186,7 @@ public class Desktop : MonoBehaviour
                     Respawn("ExperienceBarBorder");
                     Respawn("ExperienceBar");
                     Respawn("WorldBuffs");
-                    grid.SwitchMapTexture(currentSave.playerDead);
+                    mapGrid.SwitchMapTexture(currentSave.playerDead);
                     SpawnTransition(false);
                     SpawnTransition(false);
                     SpawnTransition(false);
@@ -265,7 +267,7 @@ public class Desktop : MonoBehaviour
                         {
                             if (queuedPath[0].Item2.Count % 2 == 0 && queuedPath[0].Item1.means == "Land")
                             {
-                                var what = groundData[Math.Abs((int)queuedPath[0].Item2[0].position.x / 19), Math.Abs((int)queuedPath[0].Item2[0].position.y / 19)];
+                                var what = mapGrid.groundData[Math.Abs((int)queuedPath[0].Item2[0].position.x / 19), Math.Abs((int)queuedPath[0].Item2[0].position.y / 19)];
                                 PlaySound("Step" + what + random.Next(1, 6), what == "Sand" ? 0.6f : 0.7f);
                             }
                             currentSave.AddTime(queuedPath[0].Item1.fixedDuration != 0 ? queuedPath[0].Item1.fixedDuration : currentSave.player.TravelPassTime());
@@ -318,7 +320,7 @@ public class Desktop : MonoBehaviour
                 }
                 else
                 {
-                    if (!disableCameraBounds) EnforceBoundary();
+                    if (!disableCameraBounds) mapGrid.EnforceBoundary();
                     var newPosition = Vector3.Lerp(temp, cameraDestination, Time.deltaTime * 5);
                     cursor.transform.position += newPosition - temp;
                     screen.transform.localPosition = newPosition;

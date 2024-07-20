@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 using static Shatter;
@@ -7,9 +8,6 @@ public class FlyingElement : MonoBehaviour
     public bool turn;
     public int index;
     public SpriteRenderer render;
-
-    public static int flySpeed = 4;
-    public static int rowAmount = 2;
 
     public void Initiate(bool forPlayer)
     {
@@ -44,4 +42,8 @@ public class FlyingElement : MonoBehaviour
         element.GetComponent<FlyingElement>().Initiate(forPlayer);
         return element;
     }
+
+    public static int flySpeed = 4;
+
+    public static int rowAmount = 2;
 }

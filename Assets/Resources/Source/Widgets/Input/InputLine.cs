@@ -463,6 +463,16 @@ public class InputLine : MonoBehaviour
                 Race.race.vitality = double.Parse(foo.Value());
             }
         }
+        else if (foo == soundVolume)
+        {
+            if (CDesktop.windows.Exists(x => x.title == "ObjectManagerEventEffect"))
+            {
+                if (double.Parse(foo.Value()) > 1) eventEdit.effects[selectedEffect]["SoundEffectVolume"] = "1";
+                else if (double.Parse(foo.Value()) < 0) eventEdit.effects[selectedEffect]["SoundEffectVolume"] = "0";
+                else eventEdit.effects[selectedEffect]["SoundEffectVolume"] = foo.Value();
+                Respawn("ObjectManagerEventEffect");
+            }
+        }
         else if (foo == price)
         {
             if (CDesktop.title == "ObjectManagerItems")
@@ -534,16 +544,6 @@ public class InputLine : MonoBehaviour
             {
                 Debug.Log(string.Join('\n', SiteHostileArea.areas.FindAll(x => x.recommendedLevel > 0).GroupBy(x => x.zone).Select(x => (x.Key, x.Average(y => y.recommendedLevel))).OrderBy(x => x.Item2).Select(x => x.Key + ": " + System.Math.Round(x.Item2))));
             }
-            else if (foo.Value() == "showsites")
-            {
-                showSitesUnconditional = true;
-                CDesktop.ReloadAssets();
-            }
-            else if (foo.Value() == "hidesites")
-            {
-                showSitesUnconditional = false;
-                CDesktop.ReloadAssets();
-            }
             else if (foo.Value() == "showlockedareas")
             {
                 showAreasUnconditional = true;
@@ -551,6 +551,10 @@ public class InputLine : MonoBehaviour
             else if (foo.Value() == "hidelockedareas")
             {
                 showAreasUnconditional = false;
+            }
+            else if (foo.Value() == "respec")
+            {
+                currentSave.player.ResetTalents();
             }
             else if (foo.Value() == "disablebounds")
             {

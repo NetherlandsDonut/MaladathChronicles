@@ -5,1098 +5,6 @@
   "Whitemane": [
     {
       "player": {
-        "currentQuests": [
-          {
-            "questID": 788,
-            "previous": [
-              4641
-            ],
-            "requiredLevel": 1,
-            "questLevel": 2,
-            "name": "Cutting Teeth",
-            "description": "The first order of business will be to put a little strength in your backbone.$B$BI could send you out to the Barrens to hunt kodo, but well, in all honesty, you're more useful to us alive than dead.$B$BI believe you would find a good match with the mottled boars you'll find to the north of here.",
-            "objective": "Kill 10 Mottled Boars then return to Gornek at the Den.",
-            "completion": "Hmmm, not bad, $N. But don't let it get to your head...you'll fight tougher than boars in your career.$B$BNonetheless, you've proven yourself well, and your next trial will be against a considerably more dangerous opponent, so you'll need some extra protection.",
-            "siteStart": "The Den",
-            "siteEnd": "The Den",
-            "zone": "Durotar",
-            "experience": 170,
-            "rewards": {
-              "Soft Wool Boots": 1,
-              "Battleworn Leather Gloves": 1
-            },
-            "reputationGain": {
-              "Darkspear Trolls": 250,
-              "Orgrimmar": 250
-            },
-            "conditions": [
-              {
-                "type": "Kill",
-                "name": "Mottled Boar",
-                "amount": 3,
-                "amountDone": 1
-              }
-            ]
-          },
-          {
-            "questID": 790,
-            "requiredLevel": 2,
-            "questLevel": 5,
-            "name": "Sarkoth",
-            "description": "$C! I thought I would die out here with none to know of it. While I was hunting the scorpids of the Valley, I came across a particularly vicious-looking one. Hurling myself at it, I managed to inflict a massive blow to its claw before it closed around my leg.$B$BI wasn't ready for its stinger though, and it sliced down and into my chest, cutting into my flesh and letting my blood. Please, you must kill the scorpid for me! My honor must be upheld! I fought it up on the plateau to the south.",
-            "objective": "Kill Sarkoth and bring his claw back to Hana'zua.",
-            "completion": "My blow was not enough to kill him, but looking at the damage I inflicted gives me some small measure of pride. That small measure will be all I have to sustain myself if I die, and in that light, the short list of my life's accomplishments fills me with anger.",
-            "siteStart": "Valley of Trials",
-            "siteEnd": "Valley of Trials",
-            "zone": "Durotar",
-            "experience": 450,
-            "reputationGain": {
-              "Darkspear Trolls": 250,
-              "Orgrimmar": 250
-            },
-            "conditions": [
-              {
-                "type": "Item",
-                "name": "Sarkoth's Mangled Claw",
-                "amount": 1
-              }
-            ]
-          }
-        ],
-        "completedQuests": [
-          4641
-        ],
-        "level": 2,
-        "experience": 419,
-        "uniquesGotten": [],
-        "reputation": {
-          "Southsea Pirates": 0,
-          "Razormane Tribe": 0,
-          "Pandaren": 0,
-          "Grimtotem Tribe": 0,
-          "Woodpaw Tribe": 0,
-          "The Burning Legion": 0,
-          "Darkspear Tribe": 4250,
-          "Stormwind": 0,
-          "Magram Clan": 0,
-          "Gelkis Clan": 0,
-          "Kolkar Clan": 0,
-          "Orgrimmar": 4675,
-          "Frostwolf Clan": 4250,
-          "The Defiler's": 4250,
-          "Thunder Bluff": 4250,
-          "Undercity": 4250,
-          "Ironforge": 0,
-          "Dark Iron Clan": 0,
-          "Wildhammer Clan": 0,
-          "Winterfall Tribe": 0,
-          "Gnomeregan": 0,
-          "Darnassus": 0,
-          "Bloodsail Buccaneers": 0,
-          "Syndicate": 0,
-          "Warsong Outriders": 4250,
-          "Stormpike Guard": 0,
-          "Silverwing Sentinels": 0,
-          "The League of Arathor": 0,
-          "Defias Brotherhood": 0,
-          "Dalaran": 0,
-          "Burning Blade Clan": 0,
-          "Burning Legion": 0,
-          "Shadow Council": 0,
-          "Gordunni Ogres": 0,
-          "Blackrock Clan": 0,
-          "Dragonmaw Clan": 0,
-          "Black Tooth Grin Clan": 0,
-          "Gurubashi Tribe": 0,
-          "Sandfury Tribe": 0,
-          "Twilight's Hammer": 0,
-          "Grimtotem Clan": 0,
-          "Razorfen Tribe": 0,
-          "Stonemaul Ogres": 4250,
-          "Dustbelcher Ogres": 0,
-          "Deadwind Ogres": 0,
-          "Venture Co.": 0,
-          "Southsea Freebooters": 0,
-          "Atal'ai Tribe": 0,
-          "Qiraji Empire": 0,
-          "Scarlet Crusade": 0,
-          "Vilebranch Tribe": 0,
-          "Witherbark Tribe": 0,
-          "Mossflayer Tribe": 0,
-          "Frostmane Tribe": 0,
-          "Bloodscalp Tribe": 0,
-          "Skullsplitter Tribe": 0,
-          "Shatterspear Tribe": 0,
-          "Rot Hide Tribe": 0,
-          "Scourge": 0,
-          "Smolderthorn Tribe": 0,
-          "Revantusk Tribe": 4250,
-          "Blackpaw Tribe": 0,
-          "Maraudine Clan": 0,
-          "Mosshide Tribe": 0,
-          "Deadwood Tribe": 0,
-          "Bloodtooth Tribe": 0,
-          "Bristleback Tribe": 0,
-          "Darkspear Trolls": 4275
-        },
-        "professionSkills": {},
-        "learnedRecipes": {},
-        "unspentTalentPoints": 1,
-        "faction": "Orgrimmar",
-        "name": "Horn",
-        "race": "Orc",
-        "spec": "Hunter",
-        "gender": "Male",
-        "homeLocation": "Razor Hill",
-        "abilities": {
-          "Dual Wielding Proficiency": 1,
-          "Two Handed Axe Proficiency": 1,
-          "Two Handed Sword Proficiency": 1,
-          "Polearm Proficiency": 1,
-          "Quiver Proficiency": 1,
-          "Pouch Proficiency": 1,
-          "Bow Proficiency": 1,
-          "Crossbow Proficiency": 1,
-          "Gun Proficiency": 1,
-          "Leather Proficiency": 1,
-          "Mail Proficiency": 0,
-          "One Handed Axe Proficiency": 1,
-          "One Handed Mace Proficiency": 1,
-          "One Handed Sword Proficiency": 1,
-          "Fist Weapon Proficiency": 1,
-          "Off Hand Proficiency": 1,
-          "Dagger Proficiency": 1
-        },
-        "actionBars": [],
-        "stats": {
-          "stats": {
-            "Stamina": 23,
-            "Strength": 23,
-            "Agility": 20,
-            "Intellect": 17,
-            "Spirit": 24,
-            "Earth Mastery": 3,
-            "Fire Mastery": 3,
-            "Air Mastery": 2,
-            "Water Mastery": 1,
-            "Frost Mastery": 1,
-            "Lightning Mastery": 3,
-            "Arcane Mastery": 1,
-            "Decay Mastery": 2,
-            "Shadow Mastery": 2,
-            "Order Mastery": 1
-          }
-        },
-        "inventory": {
-          "money": 145,
-          "items": [
-            {
-              "rarity": "Common",
-              "name": "Hearthstone",
-              "icon": "itemmiscrune01",
-              "detailedType": "Rune",
-              "type": "Miscellaneous",
-              "ilvl": 1,
-              "amount": 1,
-              "maxStack": 1,
-              "indestructible": true,
-              "unique": true,
-              "abilities": {
-                "Hearthstone": 1
-              }
-            }
-          ],
-          "bags": []
-        },
-        "mounts": [],
-        "equipment": {
-          "Main Hand": {
-            "rarity": "Common",
-            "name": "Worn Axe",
-            "icon": "itemaxe11",
-            "detailedType": "Axe",
-            "type": "One Handed",
-            "ilvl": 2,
-            "lvl": 1,
-            "minDamage": 1,
-            "maxDamage": 3,
-            "amount": 1,
-            "maxStack": 1,
-            "price": 7,
-            "speed": 2.0
-          },
-          "Feet": {
-            "rarity": "Common",
-            "name": "Trapper's Boots",
-            "icon": "itemboots06",
-            "type": "Feet",
-            "ilvl": 1,
-            "lvl": 1,
-            "amount": 1,
-            "maxStack": 1,
-            "price": 1
-          },
-          "Legs": {
-            "rarity": "Poor",
-            "name": "Trapper's Pants",
-            "icon": "itempants02",
-            "type": "Legs",
-            "armorClass": "Cloth",
-            "ilvl": 1,
-            "lvl": 1,
-            "armor": 2,
-            "amount": 1,
-            "maxStack": 1,
-            "price": 1
-          },
-          "Chest": {
-            "rarity": "Common",
-            "name": "Trapper's Shirt",
-            "icon": "itemshirt07",
-            "type": "Chest",
-            "ilvl": 1,
-            "lvl": 1,
-            "amount": 1,
-            "maxStack": 1,
-            "price": 1
-          }
-        },
-        "worldBuffs": []
-      },
-      "hour": 9,
-      "minute": 1,
-      "second": 6,
-      "currentSite": "Thunder Bluff",
-      "ringOfLaw": "Hedrum the Creeper",
-      "forlornCloister": "Fallen Champion",
-      "openedChests": {
-        "Valley of Trials": {
-          "area": "Valley of Trials",
-          "inventory": {
-            "items": [],
-            "bags": [],
-            "ignoreSpaceChecks": true
-          }
-        }
-      },
-      "fishingSpots": {},
-      "fishingSpoils": {},
-      "siteProgress": {
-        "Valley of Trials": 3
-      },
-      "commonsKilled": {
-        "Scorpid Worker": 2,
-        "Mottled Boar": 1
-      },
-      "raresKilled": {},
-      "elitesKilled": {},
-      "siteVisits": {
-        "The Den": 4,
-        "Valley of Trials": 4,
-        "Rocky Desert": 2,
-        "Razor Hill": 2,
-        "Razormane Grounds": 2,
-        "Far Watch Post": 0,
-        "The Crossroads": 0,
-        "Central Gold Road": 0,
-        "Wailing Caverns": 1,
-        "Lushwater Oasis": 1,
-        "The Riverbed": 0,
-        "Camp Taurajo": 0,
-        "The Rolling Plains": 0,
-        "Stonebull Lake": 1,
-        "Thunderhorn Water Well": 2,
-        "Thunder Bluff": 3,
-        "Baeldun Digsite": 0,
-        "The Golden Plains": 5,
-        "Palemane Rock": 2,
-        "The Washed Hillside": 0,
-        "Bloodhoof Village": 2,
-        "The Venture Co. Mine": 2
-      },
-      "unlockedAreas": [],
-      "vendorStock": {
-        "Razor Hill:Ghrawt": [
-          {
-            "item": "Hornwood Recurve Bow",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Laminated Recurve Bow",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Rough Arrow",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Sharp Arrow",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Small Quiver",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Medium Quiver",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          }
-        ],
-        "Thunder Bluff:Nata Dawnstrider": [
-          {
-            "item": "Simple Wood",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Copper Rod",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Formula: Enchant Chest - Minor Mana",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Formula: Enchant 2H Weapon - Lesser Intellect",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Formula: Enchant Boots - Minor Agility",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Lesser Magic Essence",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Strange Dust",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Star Wood",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Formula: Minor Mana Oil",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Formula: Lesser Wizard Oil",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Formula: Minor Wizard Oil",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Pattern: Enchanted Mageweave Pouch",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          }
-        ],
-        "Thunder Bluff:Sewa Mistrunner": [
-          {
-            "item": "Fishing Pole",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Recipe: Brilliant Smallfish",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Recipe: Bristle Whisker Catfish",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Strong Fishing Pole",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Shiny Bauble",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Nightcrawlers",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Bright Baubles",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Aquadynamic Fish Attractor",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          }
-        ],
-        "Thunder Bluff:Tagain": [
-          {
-            "item": "Thick Cloth Vest",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Thick Cloth Pants",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Thick Cloth Shoes",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Thick Cloth Gloves",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Knitted Sandals",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Knitted Gloves",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Knitted Pants",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Knitted Tunic",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Heavy Weave Armor",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Heavy Weave Pants",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Heavy Weave Gloves",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Heavy Weave Shoes",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Padded Boots",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Padded Gloves",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Padded Pants",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Padded Armor",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Russet Vest",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Russet Pants",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Russet Boots",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Russet Gloves",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Embroidered Armor",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Embroidered Pants",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Embroidered Boots",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Embroidered Gloves",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Plain Robe",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Double-stitched Robes",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Robe of Apprenticeship",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Chromatic Robe",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Shimmering Silk Robes",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Burning Robes",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Silver Dress Robes",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Embroidered Belt",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Embroidered Bracers",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Heavy Weave Belt",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Heavy Weave Bracers",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Padded Belt",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Padded Bracers",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Russet Belt",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Russet Bracers",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Thick Cloth Belt",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Thick Cloth Bracers",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Knitted Belt",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Knitted Bracers",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Russet Hat",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Embroidered Hat",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          }
-        ],
-        "Thunder Bluff:Fela": [
-          {
-            "item": "Polished Scale Belt",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Polished Scale Boots",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Polished Scale Bracers",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Polished Scale Gloves",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Polished Scale Leggings",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Polished Scale Vest",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Augmented Chain Vest",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Augmented Chain Leggings",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Augmented Chain Belt",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Augmented Chain Boots",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Augmented Chain Bracers",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Augmented Chain Gloves",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Brigandine Vest",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Brigandine Belt",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Brigandine Leggings",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Brigandine Boots",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Brigandine Bracers",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Brigandine Gloves",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Kite Shield",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Heavy Pavise",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Crested Heater Shield",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Augmented Chain Helm",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Brigandine Helm",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Platemail Belt",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Platemail Boots",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Platemail Bracers",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Platemail Gloves",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Platemail Helm",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Platemail Leggings",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Platemail Armor",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Metal Buckler",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Ornate Buckler",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Reinforced Targe",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          }
-        ],
-        "Thunder Bluff:Mahu": [
-          {
-            "item": "Coarse Thread",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Fine Thread",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Bleach",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Black Dye",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Red Dye",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Green Dye",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Salt",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Silken Thread",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Gray Dye",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Yellow Dye",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Purple Dye",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Pattern: Red Linen Bag",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Pattern: Red Woolen Bag",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Blue Dye",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Orange Dye",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Skinning Knife",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Heavy Silken Thread",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Pink Dye",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Pattern: Orange Martial Shirt",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Pattern: White Wedding Dress",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Rune Thread",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          }
-        ]
-      },
-      "banks": {
-        "Thunder Bluff": {
-          "items": [],
-          "bags": []
-        }
-      },
-      "buyback": {
-        "items": [],
-        "bags": [],
-        "ignoreSpaceChecks": true
-      },
-      "startDate": "2024-07-12T14:57:27.1366987+02:00",
-      "lastLoaded": "2024-07-19T17:18:08.0194866+02:00",
-      "lastPlayed": "2024-07-19T17:18:34.4950959+02:00",
-      "timePlayed": "01:00:17.3616785"
-    },
-    {
-      "player": {
         "currentQuests": [],
         "completedQuests": [],
         "level": 10,
@@ -2348,10 +1256,46 @@
     },
     {
       "player": {
-        "currentQuests": [],
-        "completedQuests": [],
-        "level": 1,
-        "experience": 240,
+        "currentQuests": [
+          {
+            "questID": 7,
+            "previous": [
+              783
+            ],
+            "requiredLevel": 1,
+            "questLevel": 2,
+            "name": "Kobold Camp Cleanup",
+            "description": "Your first task is one of cleansing, $N. A clan of kobolds have infested the woods to the north. Go there and fight the kobold vermin you find. Reduce their numbers so that we may one day drive them from Northshire.",
+            "objective": "Kill 10 Kobold Vermin, then return to Marshal McBride.",
+            "completion": "Well done, citizen. Those kobolds are thieves and cowards, but in large numbers they pose a threat to us. And the humans of Stormwind do not need another threat.$B$BFor defeating them, you have my gratitude.",
+            "siteStart": "Northshire Abbey",
+            "siteEnd": "Northshire Abbey",
+            "zone": "Elwynn Forest",
+            "money": 25,
+            "experience": 170,
+            "races": [
+              "Gnome",
+              "Night Elf",
+              "Dwarf",
+              "Human"
+            ],
+            "reputationGain": {
+              "Stormwind": 250
+            },
+            "conditions": [
+              {
+                "type": "Kill",
+                "name": "Kobold Vermin",
+                "amount": 3
+              }
+            ]
+          }
+        ],
+        "completedQuests": [
+          783
+        ],
+        "level": 40,
+        "experience": 78763,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -2361,7 +1305,7 @@
           "Woodpaw Tribe": 0,
           "The Burning Legion": 0,
           "Darkspear Tribe": 0,
-          "Stormwind": 4250,
+          "Stormwind": 4675,
           "Magram Clan": 0,
           "Gelkis Clan": 0,
           "Kolkar Clan": 0,
@@ -2374,7 +1318,7 @@
           "Dark Iron Clan": 0,
           "Wildhammer Clan": 4250,
           "Winterfall Tribe": 0,
-          "Gnomeregan": 4600,
+          "Gnomeregan": 4250,
           "Darnassus": 4250,
           "Bloodsail Buccaneers": 0,
           "Syndicate": 0,
@@ -2424,12 +1368,236 @@
         },
         "professionSkills": {},
         "learnedRecipes": {},
-        "faction": "Gnomeregan",
-        "name": "Hyllin",
-        "race": "Gnome",
+        "unspentTalentPoints": 39,
+        "faction": "Stormwind",
+        "name": "Lisette",
+        "race": "Human",
+        "spec": "Mage",
+        "gender": "Female",
+        "homeLocation": "Northshire Abbey",
+        "abilities": {
+          "Staff Proficiency": 1,
+          "Cloth Proficiency": 1,
+          "One Handed Sword Proficiency": 1,
+          "Off Hand Proficiency": 1,
+          "Dagger Proficiency": 1,
+          "Wand Proficiency": 1,
+          "Fireball": 0,
+          "Frostbolt": 0,
+          "Arcane Missiles": 0
+        },
+        "actionBars": [
+          "Arcane Missiles",
+          "Fireball",
+          "Frostbolt"
+        ],
+        "stats": {
+          "stats": {
+            "Stamina": 20,
+            "Strength": 20,
+            "Agility": 20,
+            "Intellect": 23,
+            "Spirit": 23,
+            "Earth Mastery": 1,
+            "Fire Mastery": 3,
+            "Air Mastery": 2,
+            "Water Mastery": 1,
+            "Frost Mastery": 2,
+            "Lightning Mastery": 1,
+            "Arcane Mastery": 3,
+            "Decay Mastery": 1,
+            "Shadow Mastery": 2,
+            "Order Mastery": 3
+          }
+        },
+        "inventory": {
+          "items": [
+            {
+              "rarity": "Common",
+              "name": "Hearthstone",
+              "icon": "itemmiscrune01",
+              "detailedType": "Rune",
+              "type": "Miscellaneous",
+              "ilvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "indestructible": true,
+              "unique": true,
+              "abilities": {
+                "Hearthstone": 1
+              }
+            }
+          ],
+          "bags": []
+        },
+        "mounts": [],
+        "equipment": {
+          "Main Hand": {
+            "rarity": "Common",
+            "name": "Bent Staff",
+            "icon": "itemstaff08",
+            "detailedType": "Staff",
+            "type": "Two Handed",
+            "ilvl": 2,
+            "lvl": 1,
+            "minDamage": 3,
+            "maxDamage": 5,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 9,
+            "speed": 2.9
+          },
+          "Feet": {
+            "rarity": "Common",
+            "name": "Apprentice's Boots",
+            "icon": "itemboots09",
+            "type": "Feet",
+            "ilvl": 1,
+            "lvl": 1,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1
+          },
+          "Legs": {
+            "rarity": "Poor",
+            "name": "Apprentice's Pants",
+            "icon": "itempants01",
+            "type": "Legs",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 2,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1
+          },
+          "Chest": {
+            "rarity": "Poor",
+            "name": "Apprentice's Robe",
+            "icon": "itemchestcloth23",
+            "type": "Chest",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 3,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1
+          }
+        },
+        "worldBuffs": []
+      },
+      "hour": 7,
+      "minute": 5,
+      "second": 8,
+      "currentSite": "Goldshire",
+      "ringOfLaw": "Anub'shiah",
+      "forlornCloister": "Azshir the Sleepless",
+      "openedChests": {},
+      "fishingSpots": {},
+      "fishingSpoils": {},
+      "siteProgress": {},
+      "commonsKilled": {},
+      "raresKilled": {},
+      "elitesKilled": {},
+      "siteVisits": {
+        "Northshire Abbey": 2,
+        "Northshire Valley": 0,
+        "Goldshire": 2
+      },
+      "unlockedAreas": [],
+      "vendorStock": {},
+      "banks": {},
+      "startDate": "2024-07-19T22:07:51.22381+02:00",
+      "lastLoaded": "2024-07-19T23:08:15.8680353+02:00",
+      "lastPlayed": "2024-07-19T23:08:47.2077105+02:00",
+      "timePlayed": "00:01:20.2510792",
+      "lastVisitedTalents": 1
+    },
+    {
+      "player": {
+        "currentQuests": [],
+        "completedQuests": [],
+        "level": 17,
+        "experience": 14383,
+        "uniquesGotten": [],
+        "reputation": {
+          "Southsea Pirates": 0,
+          "Razormane Tribe": 0,
+          "Pandaren": 0,
+          "Grimtotem Tribe": 0,
+          "Woodpaw Tribe": 0,
+          "The Burning Legion": 0,
+          "Darkspear Tribe": 0,
+          "Stormwind": 4600,
+          "Magram Clan": 0,
+          "Gelkis Clan": 0,
+          "Kolkar Clan": 0,
+          "Orgrimmar": 0,
+          "Frostwolf Clan": 0,
+          "The Defiler's": 0,
+          "Thunder Bluff": 0,
+          "Undercity": 0,
+          "Ironforge": 4250,
+          "Dark Iron Clan": 0,
+          "Wildhammer Clan": 4250,
+          "Winterfall Tribe": 0,
+          "Gnomeregan": 4250,
+          "Darnassus": 4250,
+          "Bloodsail Buccaneers": 0,
+          "Syndicate": 0,
+          "Warsong Outriders": 0,
+          "Stormpike Guard": 4250,
+          "Silverwing Sentinels": 4250,
+          "The League of Arathor": 4250,
+          "Defias Brotherhood": 0,
+          "Dalaran": 4250,
+          "Burning Blade Clan": 0,
+          "Burning Legion": 0,
+          "Shadow Council": 0,
+          "Gordunni Ogres": 0,
+          "Blackrock Clan": 0,
+          "Dragonmaw Clan": 0,
+          "Black Tooth Grin Clan": 0,
+          "Gurubashi Tribe": 0,
+          "Sandfury Tribe": 0,
+          "Twilight's Hammer": 0,
+          "Grimtotem Clan": 0,
+          "Razorfen Tribe": 0,
+          "Stonemaul Ogres": 0,
+          "Dustbelcher Ogres": 0,
+          "Deadwind Ogres": 0,
+          "Venture Co.": 0,
+          "Southsea Freebooters": 0,
+          "Atal'ai Tribe": 0,
+          "Qiraji Empire": 0,
+          "Scarlet Crusade": 0,
+          "Vilebranch Tribe": 0,
+          "Witherbark Tribe": 0,
+          "Mossflayer Tribe": 0,
+          "Frostmane Tribe": 0,
+          "Bloodscalp Tribe": 0,
+          "Skullsplitter Tribe": 0,
+          "Shatterspear Tribe": 0,
+          "Rot Hide Tribe": 0,
+          "Scourge": 0,
+          "Smolderthorn Tribe": 0,
+          "Revantusk Tribe": 0,
+          "Blackpaw Tribe": 0,
+          "Maraudine Clan": 0,
+          "Mosshide Tribe": 0,
+          "Deadwood Tribe": 0,
+          "Bloodtooth Tribe": 0,
+          "Bristleback Tribe": 0
+        },
+        "professionSkills": {},
+        "learnedRecipes": {},
+        "faction": "Stormwind",
+        "name": "Jennine",
+        "race": "Human",
         "spec": "Warrior",
         "gender": "Female",
-        "homeLocation": "Anvilmar",
+        "homeLocation": "Northshire Abbey",
         "abilities": {
           "Dual Wielding Proficiency": 1,
           "Two Handed Axe Proficiency": 1,
@@ -2447,18 +1615,36 @@
           "Heroic Strike": 0,
           "Battle Shout": 0,
           "Bloodthirst": 0,
-          "Revenge": 0
+          "Revenge": 0,
+          "Charge": 0,
+          "Deflection": 0,
+          "Rend": 0,
+          "Overpower": 0,
+          "Hamstring": 0,
+          "Thunder Clap": 0,
+          "Cruelty": 0,
+          "Bloodcraze": 0,
+          "Demoralizing Shout": 0,
+          "Slam": 0,
+          "War Machine": 0,
+          "Immense Strength": 0,
+          "Fresh Meat": 0,
+          "Whirlwind": 0,
+          "Pummel": 0,
+          "Execute": 0
         },
         "actionBars": [
-          "Heroic Strike"
+          "Heroic Strike",
+          "Execute",
+          "Thunder Clap"
         ],
         "stats": {
           "stats": {
-            "Stamina": 21,
-            "Strength": 18,
-            "Agility": 23,
-            "Intellect": 24,
-            "Spirit": 20,
+            "Stamina": 22,
+            "Strength": 23,
+            "Agility": 20,
+            "Intellect": 20,
+            "Spirit": 21,
             "Earth Mastery": 1,
             "Fire Mastery": 3,
             "Air Mastery": 2,
@@ -2466,9 +1652,9 @@
             "Frost Mastery": 2,
             "Lightning Mastery": 1,
             "Arcane Mastery": 3,
-            "Decay Mastery": 2,
-            "Shadow Mastery": 3,
-            "Order Mastery": 1
+            "Decay Mastery": 1,
+            "Shadow Mastery": 2,
+            "Order Mastery": 3
           }
         },
         "inventory": {
@@ -2560,121 +1746,37 @@
         "worldBuffs": []
       },
       "hour": 7,
-      "minute": 45,
-      "second": 44,
-      "currentSite": "Manor Mistmantle",
-      "ringOfLaw": "Ok'thor the Breaker",
+      "minute": 10,
+      "second": 58,
+      "currentSite": "Jansen Stead",
+      "ringOfLaw": "Anub'shiah",
       "forlornCloister": "Azshir the Sleepless",
       "openedChests": {},
       "fishingSpots": {},
       "fishingSpoils": {},
-      "siteProgress": {},
-      "commonsKilled": {},
+      "siteProgress": {
+        "Northshire Valley": 1,
+        "Jansen Stead": 1
+      },
+      "commonsKilled": {
+        "Young Wolf": 1,
+        "Rusty Harvest Golem": 1
+      },
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
-        "Anvilmar": 2,
-        "Sentinel Hill": 3,
-        "Jansen Stead": 0,
-        "Westfall Crossing": 0,
-        "The Dead Acre": 0,
-        "Stendel's Pond": 0,
-        "Moonbrook": 0,
-        "The Deadmines": 0,
-        "The Dust Plains": 0,
-        "Raven Hill": 0,
-        "Dawning Wood Catacombs": 0,
-        "The Hushed Bank": 1,
-        "The Darkened Bank": 1,
-        "Manor Mistmantle": 4
+        "Northshire Abbey": 1,
+        "Northshire Valley": 1,
+        "Goldshire": 0,
+        "Jansen Stead": 2
       },
       "unlockedAreas": [],
-      "vendorStock": {
-        "Anvilmar:Durnan Furcutter": [
-          {
-            "item": "Thin Cloth Shoes",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Thin Cloth Gloves",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Thin Cloth Pants",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Thin Cloth Armor",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Cracked Leather Belt",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Cracked Leather Boots",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Cracked Leather Bracers",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Cracked Leather Gloves",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Cracked Leather Pants",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Cracked Leather Vest",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Thin Cloth Belt",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Thin Cloth Bracers",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          }
-        ]
-      },
+      "vendorStock": {},
       "banks": {},
-      "buyback": {
-        "items": [],
-        "bags": [],
-        "ignoreSpaceChecks": true
-      },
-      "startDate": "2024-07-17T14:07:50.0095323+02:00",
-      "lastLoaded": "2024-07-19T15:29:09.3089438+02:00",
-      "lastPlayed": "2024-07-19T15:29:18.2234481+02:00",
-      "timePlayed": "00:50:17.8649888",
+      "startDate": "2024-07-19T23:41:17.8673886+02:00",
+      "lastLoaded": "2024-07-20T20:16:20.8088204+02:00",
+      "lastPlayed": "2024-07-20T20:16:22.2044606+02:00",
+      "timePlayed": "00:44:42.9005347",
       "lastVisitedTalents": 1
     }
   ]

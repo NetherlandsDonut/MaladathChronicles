@@ -7,8 +7,6 @@ using static Font;
 
 public class FloatingText : MonoBehaviour
 {
-    public static string floatingTextFont = "Tahoma Bold";
-
     public void Initialise(string text, string color, string align, bool fall = true)
     {
         var pixelList = new List<(int, int)>();
@@ -104,4 +102,6 @@ public class FloatingText : MonoBehaviour
         textBorder.GetComponent<SpriteRenderer>().sprite = sprite;
         textBorder.GetComponent<SpriteRenderer>().sortingLayerName = fall ? "FallingText" : transform.parent.GetComponent<Region>().regionGroup.window.layer;
     }
+
+    public static string floatingTextFont = "Tahoma Bold";
 }

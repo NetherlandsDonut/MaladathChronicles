@@ -65,6 +65,7 @@ public class String
     public static String shatterDegree = new() { inputType = Numbers };
     public static String shatterDensity = new() { inputType = Numbers };
     public static String shatterSpeed = new() { inputType = Numbers };
+    public static String soundVolume = new() { inputType = Decimal };
     public static String elementShatterDegree = new() { inputType = Numbers };
     public static String elementShatterDensity = new() { inputType = Numbers };
     public static String elementShatterSpeed = new() { inputType = Numbers };

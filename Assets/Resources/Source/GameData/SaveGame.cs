@@ -1,10 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
+
 using UnityEditor;
-using static Defines;
-using static GameSettings;
+
 using static Root;
+using static Defines;
+using static MapGrid;
+using static GameSettings;
 using static SiteComplex;
 using static SiteHostileArea;
 using static SiteInstance;
@@ -131,7 +134,7 @@ public class SaveGame
         day += days + hour / 24;
         hour %= 24;
         if (prev == minute + ":" + hour + ":" + day) return;
-        grid.updateTextureColors = true;
+        mapGrid.updateTextureColors = true;
         Respawn("MapToolbarShadow", true);
         Respawn("MapToolbar", true);
         Respawn("MapToolbarClockLeft", true);
@@ -285,7 +288,7 @@ public class SaveGame
         if (currentSave == null) return;
         if (currentSave.playerDead) settings.selectedCharacter = "";
         Save();
-        grid.SwitchMapTexture(false);
+        mapGrid.SwitchMapTexture(false);
         currentSave = null;
     }
 
@@ -330,7 +333,7 @@ public class SaveGame
     {
         if (!playerDead) return;
         playerDead = false;
-        grid.SwitchMapTexture(false);
+        mapGrid.SwitchMapTexture(false);
         SpawnTransition();
         SpawnTransition();
         SpawnTransition();

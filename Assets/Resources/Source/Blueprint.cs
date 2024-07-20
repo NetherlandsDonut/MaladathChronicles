@@ -28,6 +28,7 @@ using static Enchant;
 using static SitePath;
 using static SaveGame;
 using static Coloring;
+using static Inventory;
 using static PersonType;
 using static Profession;
 using static FishingSpot;
@@ -2443,7 +2444,6 @@ public class Blueprint
                 currentSave.player.inventory.items.Remove(item);
                 CloseWindow("ConfirmItemDisenchant");
                 Respawn("Inventory");
-                enchantingSkillChange = false;
                 disenchantLoot = item.GenerateDisenchantLoot();
                 SpawnDesktopBlueprint("DisenchantLoot");
             });
@@ -2902,6 +2902,8 @@ public class Blueprint
                         AddLine("Disenchant spoils" + ":");
                         AddSmallButton("OtherClose", (h) =>
                         {
+                            disenchantLoot = null;
+                            enchantingSkillChange = false;
                             CloseDesktop("DisenchantLoot");
                         });
                     }
@@ -3558,16 +3560,19 @@ public class Blueprint
                 AddText(person.name);
                 AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == town.faction).side : ""));
             });
-            if (type.category == "Trainer")
+            if (type.category == "Class Trainer")
             {
-                AddButtonRegion(() =>
-                {
-                    AddLine("I seek training.");
-                });
-                AddButtonRegion(() =>
-                {
-                    AddLine("I want to reset my talents.");
-                });
+                if (person.type.ToLower().Contains(currentSave.player.spec.ToLower()))
+                    AddButtonRegion(() =>
+                    {
+                        AddLine("I want to reset my talents.");
+                    },
+                    (h) =>
+                    {
+                        PlaySound("DesktopInstanceOpen");
+                        CloseWindow(h.window);
+                        Respawn("ResetTalents");
+                    });
             }
             else if (type.category == "Profession Trainer")
             {
@@ -3580,7 +3585,7 @@ public class Blueprint
                     PlaySound("DesktopInstanceOpen", 0.4f);
                     CloseWindow(h.window);
                     CloseWindow("Town");
-                    SpawnWindowBlueprint("ProfessionLevelTrainer");
+                    Respawn("ProfessionLevelTrainer");
                 });
                 var pr = professions.Find(x => x.name == type.profession);
                 if (pr == null) Debug.Log("ERROR 013: Profession was not found: \"" + type.profession + "\"");
@@ -3637,9 +3642,7 @@ public class Blueprint
                     {
                         PlaySound("DesktopInstanceOpen");
                         CloseWindow(h.window);
-                        SpawnWindowBlueprint("MakeInnHome");
-                        Respawn("ExperienceBarBorder");
-                        Respawn("ExperienceBar");
+                        Respawn("MakeInnHome");
                     });
                 if (!currentSave.player.inventory.items.Exists(x => x.name == "Hearthstone"))
                     AddButtonRegion(() =>
@@ -3879,6 +3882,50 @@ public class Blueprint
             SetRegionGroupWidth(95);
             AddPaddingRegion(() => AddLine("Buyback", "", "Center"));
         }, true),
+        new("ResetTalents", () => {
+            SetAnchor(TopLeft, 19, -38);
+            AddHeaderGroup();
+            SetRegionGroupWidth(190);
+            var type = personTypes.Find(x => x.type == person.type);
+            AddHeaderRegion(() =>
+            {
+                AddLine(person.type + " ", "Gray");
+                AddText(person.name);
+                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == town.faction).side : ""));
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Do you want to reset your", "DarkGray");
+                AddLine("talents and regain all", "DarkGray");
+                AddLine("spent points?", "DarkGray");
+            });
+            AddRegionGroup();
+            SetRegionGroupWidth(95);
+            AddButtonRegion(() =>
+            {
+                AddLine("Cancel", "", "Center");
+            },
+            (h) =>
+            {
+                PlaySound("DesktopInstanceClose");
+                CloseWindow("ResetTalents");
+                Respawn("Person");
+            });
+            AddRegionGroup();
+            SetRegionGroupWidth(95);
+            AddButtonRegion(() =>
+            {
+                AddLine("Yes", "", "Center");
+            },
+            (h) =>
+            {
+                PlaySound("DesktopHomeLocation");
+                currentSave.player.ResetTalents();
+                CloseWindow("ResetTalents");
+                Respawn("Person");
+                Respawn("MapToolbarStatusRight", true);
+            });
+        }),
         new("MakeInnHome", () => {
             SetAnchor(TopLeft, 19, -38);
             AddHeaderGroup();
@@ -3955,7 +4002,7 @@ public class Blueprint
                 if (!CDesktop.windows.Exists(x => x.title == "MountsSort"))
                     AddSmallButton("OtherSort", (h) =>
                     {
-                        SpawnWindowBlueprint("MountsSort");
+                        Respawn("MountsSort");
                         Respawn("MountCollection");
                     });
                 else
@@ -4175,7 +4222,7 @@ public class Blueprint
                 if (!CDesktop.windows.Exists(x => x.title == "InventorySettings") && !CDesktop.windows.Exists(x => x.title == "InventorySort") && !CDesktop.windows.Exists(x => x.title == "BankSort"))
                     AddSmallButton("OtherSort", (h) =>
                     {
-                        SpawnWindowBlueprint("BankSort");
+                        Respawn("BankSort");
                         Respawn("Bank");
                         Respawn("Inventory");
                     });
@@ -4978,10 +5025,10 @@ public class Blueprint
             (h) =>
             {
                 if (settings.selectedRealm == "")
-                    SpawnWindowBlueprint("RealmRoster");
-                SpawnWindowBlueprint("CharacterRoster");
-                SpawnWindowBlueprint("CharacterInfo");
-                SpawnWindowBlueprint("TitleScreenSingleplayer");
+                    Respawn("RealmRoster");
+                Respawn("CharacterRoster");
+                Respawn("CharacterInfo");
+                Respawn("TitleScreenSingleplayer");
                 CloseWindow(h.window);
             });
             AddButtonRegion(() =>
@@ -4990,7 +5037,7 @@ public class Blueprint
             },
             (h) =>
             {
-                SpawnWindowBlueprint("GameSettings");
+                Respawn("GameSettings");
                 CloseWindow(h.window);
             });
             AddButtonRegion(() =>
@@ -5079,7 +5126,7 @@ public class Blueprint
             },
             (h) =>
             {
-                SpawnWindowBlueprint("GameSettings");
+                Respawn("GameSettings");
                 CloseWindow(h.window);
             });
             AddButtonRegion(() =>
@@ -5115,7 +5162,7 @@ public class Blueprint
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseWindow(h.window);
-                    SpawnWindowBlueprint(CDesktop.title == "GameMenu" ? "GameMenu" : "TitleScreenMenu");
+                    Respawn(CDesktop.title == "GameMenu" ? "GameMenu" : "TitleScreenMenu");
                 });
             });
             AddRegionGroup();
@@ -5221,7 +5268,7 @@ public class Blueprint
                 if (!CDesktop.windows.Exists(x => x.title == "AbilitiesSort"))
                     AddSmallButton("OtherSort", (h) =>
                     {
-                        SpawnWindowBlueprint("AbilitiesSort");
+                        Respawn("AbilitiesSort");
                         Respawn("SpellbookAbilityListActivated");
                     });
                 else
@@ -5280,7 +5327,11 @@ public class Blueprint
             AddPaddingRegion(() => AddLine("Activated", "", "Center"));
             AddRegionGroup();
             SetRegionGroupWidth(85);
-            AddButtonRegion(() => AddLine("Passive", "", "Center"), (h) => { CloseWindow("SpellbookAbilityListActivated"); SpawnWindowBlueprint("SpellbookAbilityListPassive"); });
+            AddButtonRegion(() => AddLine("Passive", "", "Center"), (h) =>
+            {
+                CloseWindow("SpellbookAbilityListActivated");
+                Respawn("SpellbookAbilityListPassive");
+            });
         }),
         new("SpellbookAbilityListPassive", () => {
             SetAnchor(TopRight, -19, -38);
@@ -5300,7 +5351,7 @@ public class Blueprint
                 if (!CDesktop.windows.Exists(x => x.title == "AbilitiesSort"))
                     AddSmallButton("OtherSort", (h) =>
                     {
-                        SpawnWindowBlueprint("AbilitiesSort");
+                        Respawn("AbilitiesSort");
                         Respawn("SpellbookAbilityListPassive");
                     });
                 else
@@ -5344,7 +5395,11 @@ public class Blueprint
             }
             AddRegionGroup();
             SetRegionGroupWidth(86);
-            AddButtonRegion(() => AddLine("Activated", "", "Center"), (h) => { CloseWindow("SpellbookAbilityListPassive"); SpawnWindowBlueprint("SpellbookAbilityListActivated"); });
+            AddButtonRegion(() => AddLine("Activated", "", "Center"), (h) =>
+            {
+                CloseWindow("SpellbookAbilityListPassive");
+                Respawn("SpellbookAbilityListActivated");
+            });
             AddRegionGroup();
             SetRegionGroupWidth(85);
             AddPaddingRegion(() => AddLine("Passive", "", "Center"));
@@ -5933,6 +5988,8 @@ public class Blueprint
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(Escape, () =>
             {
+                disenchantLoot = null;
+                enchantingSkillChange = false;
                 CloseDesktop("DisenchantLoot");
             });
         }),
@@ -5988,6 +6045,12 @@ public class Blueprint
                     {
                         PlaySound("DesktopInstanceClose");
                         CloseWindow("MakeInnHome");
+                        Respawn("Person");
+                    }
+                    else if (CloseWindow("ResetTalents"))
+                    {
+                        PlaySound("DesktopInstanceClose");
+                        CloseWindow("ResetTalents");
                         Respawn("Person");
                     }
                     else if (CloseWindow("FlightMaster"))

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 
 using static Root;
+using static FallingElement;
 
 public class BufferBoard
 {

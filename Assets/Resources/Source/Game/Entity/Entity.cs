@@ -14,6 +14,8 @@ using static Defines;
 
 public class Entity
 {
+    #region Creation
+
     public Entity() { }
 
     public Entity(string name, string creationGender, Race race, Spec spec, List<string> items)
@@ -94,6 +96,8 @@ public class Entity
         );
         InitialiseCombat();
     }
+
+    #endregion
 
     #region Questing
 
@@ -923,6 +927,23 @@ public class Entity
     {
         var temp = Spec().talentTrees[spec].talents.FindAll(x => x.tree == tree).Select(x => x.ability);
         return abilities.Sum(x => temp.Contains(x.Key) ? x.Value + 1 : 0);
+    }
+
+    //Resets all talents so you can spend them again
+    public void ResetTalents()
+    {
+        var trees = specs.Find(x => x.name == spec);
+        foreach (var tree in trees.talentTrees)
+            foreach (var talent in tree.talents)
+                if (abilities.ContainsKey(talent.ability))
+                {
+                    unspentTalentPoints += abilities[talent.ability] + (talent.defaultTaken ? 0 : 1);
+                    if (talent.defaultTaken) abilities[talent.ability] = 0;
+                    else abilities.Remove(talent.ability);
+                }
+        for (int i = actionBars.Count - 1; i >= 0; i--)
+            if (!abilities.ContainsKey(actionBars[i]))
+                actionBars.RemoveAt(i);
     }
 
     #endregion

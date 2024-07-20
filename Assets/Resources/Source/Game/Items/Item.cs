@@ -12,6 +12,7 @@ using static Defines;
 using static SaveGame;
 using static SiteTown;
 using static Coloring;
+using static Inventory;
 using static GameSettings;
 using static PermanentEnchant;
 
@@ -38,45 +39,6 @@ public class Item
                         events = new(),
                         tags = new()
                     });
-    }
-
-    //Sets a random permanent enchant for the item
-    public void SetRandomEnchantment()
-    {
-        if (!randomEnchantment) return;
-        var enchantment = GenerateEnchantment();
-        if (enchantment == null) return;
-        name += " " + enchantment.suffix;
-        if (enchantment.stats.Count > 0)
-        {
-            stats = new(new());
-            foreach (var stat in enchantment.stats)
-                stats.stats.Inc(stat.Key, EnchantmentStatGrowth(ilvl, stat.Value.Length));
-        }
-            
-        PermanentEnchant GenerateEnchantment()
-        {
-            var containing = new List<PermanentEnchant>();
-            var key = "";
-            if (type == "One Handed" || type == "Two Handed") key = type + " " + detailedType;
-            else if (armorClass != null) key = armorClass + " Armor";
-            else if (type == "Off Hand") key = type;
-            else if (detailedType != null) key = detailedType;
-            else key = type;
-            containing = pEnchants.FindAll(x => x.commonlyOn != null && x.commonlyOn.Contains(key) || x.rarelyOn != null && x.rarelyOn.Contains(key));
-            if (Roll(10))
-            {
-                var rare = containing.FindAll(x => x.rarelyOn != null && x.rarelyOn.Contains(key));
-                if (rare.Count > 0) return rare[random.Next(0, rare.Count)];
-            }
-            else
-            {
-                var common = containing.FindAll(x => x.commonlyOn != null && x.commonlyOn.Contains(key));
-                if (common.Count > 0) return common[random.Next(0, common.Count)];
-            }
-            if (containing.Count == 0) return null;
-            return containing[random.Next(0, containing.Count)];
-        }
     }
 
     //Rarity of this item which can range from Poor to Legendary
@@ -181,81 +143,7 @@ public class Item
     //This is a list of races that are eligible to drop this item
     public List<string> droppedBy;
 
-    //This function returns the type of sound that this item makes when it is being manipulated
-    public string ItemSound(string soundType)
-    {
-        string result;
-        if (detailedType == "Staff") result = "WoodLarge";
-        else if (detailedType == "Wand") result = "Wand";
-        else if (detailedType == "Totem") result = "WoodLarge";
-        else if (detailedType == "Libram") result = "Ring";
-        else if (detailedType == "Idol") result = "Ring";
-        else if (detailedType == "Gem") result = "Gems";
-        else if (detailedType == "Fish") result = "Meat";
-        else if (detailedType == "Book") result = "Book";
-        else if (detailedType == "Scepter") result = "Wand";
-        else if (detailedType == "Lantern") result = "Wand";
-        else if (detailedType == "Orb") result = "Wand";
-        else if (detailedType == "Pouch") result = "Bag";
-        else if (detailedType == "Potion") result = "Liquid";
-        else if (detailedType == "Flowers") result = "Herb";
-        else if (detailedType == "Torch") result = "WoodSmall";
-        else if (detailedType == "Tool") result = "MetalSmall";
-        else if (detailedType == "Quiver") result = "ClothLeather";
-        else if (detailedType == "Shield") result = "MetalLarge";
-        else if (detailedType == "Scroll") result = "ParchmentPaper";
-        else if (detailedType == "Beak") result = "FoodGeneric";
-        else if (detailedType == "Scale") result = "FoodGeneric";
-        else if (detailedType == "Egg") result = "FoodGeneric";
-        else if (detailedType == "Shell") result = "FoodGeneric";
-        else if (detailedType == "Rune") result = "MetalSmall";
-        else if (detailedType == "Dust") result = "Herb";
-        else if (detailedType == "Rock") result = "RocksOre";
-        else if (detailedType == "Ore") result = "RocksOre";
-        else if (detailedType == "Bullet") result = "RocksOre";
-        else if (detailedType == "Arrow") result = "WoodSmall";
-        else if (detailedType == "Ingot") result = "MetalSmall";
-        else if (detailedType == "Claw") result = "Meat";
-        else if (detailedType == "Organ") result = "Meat";
-        else if (detailedType == "Leather") result = "ClothLeather";
-        else if (detailedType == "Essence") result = "Herb";
-        else if (detailedType == "Box") result = "WoodSmall";
-        else if (detailedType == "Cask") result = "WoodSmall";
-        else if (detailedType == "Crate") result = "WoodSmall";
-        else if (detailedType == "Crown") result = "MetalSmall";
-        else if (detailedType == "Shard") result = "Gem";
-        else if (detailedType == "Cloth") result = "ClothLeather";
-        else if (detailedType == "Feather") result = "WoodSmall";
-        else if (detailedType == "Letter") result = "ParchmentPaper";
-        else if (detailedType == "Note") result = "ParchmentPaper";
-        else if (detailedType == "Bandage") result = "ClothLeather";
-        else if (detailedType == "Candle") result = "WoodSmall";
-        else if (detailedType == "Drum") result = "WoodSmall";
-        else if (detailedType == "Coin") result = "";
-        else if (detailedType == "Key") result = "MetalSmall";
-        else if (detailedType == "Horn") result = "MetalSmall";
-        else if (detailedType == "Pick") result = "MetalLarge";
-        else if (type == "Recipe") result = "ParchmentPaper";
-        else if (type == "Bag") result = "Bag";
-        else if (type == "Back") result = "ClothLeather";
-        else if (type == "Neck") result = "Ring";
-        else if (type == "Finger") result = "Ring";
-        else if (type == "Trinket") result = "Ring";
-        else if (type == "Off Hand") result = "Book";
-        else if (type == "One Handed") result = "MetalSmall";
-        else if (type == "Two Handed") result = "MetalLarge";
-        else if (armorClass == "Cloth") result = "ClothLeather";
-        else if (armorClass == "Leather") result = "ClothLeather";
-        else if (armorClass == "Mail") result = "ChainLarge";
-        else if (armorClass == "Plate") result = "ChainLarge";
-        else result = "ClothLeather";
-        return soundType + result;
-    }
-
-    public bool CanBuy(Entity entity)
-    {
-        return entity.inventory.money >= price && (faction == null || true); //true = rep
-    }
+    #region Equipping
 
     public bool IsWearable()
     {
@@ -263,11 +151,56 @@ public class Item
         return true;
     }
 
-    public bool IsDisenchantable()
+    public void Equip(Entity entity, string slot)
     {
-        if (new List<string> { "Miscellaneous", "Trade Good", "Recipe", "Bag" }.Contains(type)) return false;
-        if (rarity != "Uncommon" && rarity != "Rare" && rarity != "Epic") return false;
-        return true;
+        if (slot == "Bag") entity.inventory.bags.Add(this);
+        else entity.equipment[slot] = this;
+        if (entity.inventory.items.Contains(this))
+            entity.inventory.items.Remove(this);
+        if (abilities == null) return;
+        entity.abilities = entity.abilities.Concat(abilities).ToDictionary(x => x.Key, x => x.Value);
+    }
+
+    public void Equip(Entity entity)
+    {
+        var index = entity.inventory.items.IndexOf(this);
+        if (type == "Two Handed")
+        {
+            entity.Unequip(new() { "Off Hand", "Main Hand" }, index);
+            Equip(entity, "Main Hand");
+        }
+        else if (type == "Off Hand")
+        {
+            var mainHand = entity.GetItemInSlot("Main Hand");
+            if (mainHand != null && mainHand.type == "Two Handed")
+                entity.Unequip(new() { "Main Hand" }, index);
+            entity.Unequip(new() { "Off Hand" }, index);
+            Equip(entity, "Off Hand");
+        }
+        else if (type == "One Handed")
+        {
+            var mainHand = entity.GetItemInSlot("Main Hand");
+            var offHand = entity.GetItemInSlot("Off Hand");
+            if (mainHand != null && mainHand.type != "Two Handed" && entity.abilities.ContainsKey("Dual Wielding Proficiency") && (offHand == null || offHand.ilvl <= mainHand.ilvl))
+            {
+                if (mainHand != null && mainHand.type == "Two Handed")
+                    entity.Unequip(new() { "Main Hand" }, index);
+                entity.Unequip(new() { "Off Hand" }, index);
+                Equip(entity, "Off Hand");
+            }
+            else
+            {
+                entity.Unequip(new() { "Main Hand" }, index);
+                Equip(entity, "Main Hand");
+            }
+        }
+        else if (type == "Bag") Equip(entity, "Bag");
+        else
+        {
+            if (type == null) Debug.Log(name);
+            entity.Unequip(new() { type }, index);
+            Equip(entity, type);
+        }
     }
 
     public bool CanEquip(Entity entity, bool downgradeArmor = false)
@@ -371,6 +304,10 @@ public class Item
             return true;
     }
 
+    #endregion
+
+    #region Using
+
     public bool CanUse(Entity entity)
     {
         if (questsStarted != null && questsStarted.Count > 0)
@@ -384,62 +321,6 @@ public class Item
         else if (abilities != null)
             return CDesktop.title == "Game" == combatUse;
         return false;
-    }
-
-    private void Equip(Entity entity, string slot)
-    {
-        if (slot == "Bag") entity.inventory.bags.Add(this);
-        else entity.equipment[slot] = this;
-        if (entity.inventory.items.Contains(this))
-            entity.inventory.items.Remove(this);
-        if (abilities == null) return;
-        entity.abilities = entity.abilities.Concat(abilities).ToDictionary(x => x.Key, x => x.Value);
-    }
-
-    public void Equip(Entity entity, bool secondSlot = false)
-    {
-        var index = entity.inventory.items.IndexOf(this);
-        if (type == "Two Handed")
-        {
-            entity.Unequip(new() { "Off Hand", "Main Hand" }, index);
-            Equip(entity, "Main Hand");
-        }
-        else if (type == "Off Hand")
-        {
-            var mainHand = entity.GetItemInSlot("Main Hand");
-            if (mainHand != null && mainHand.type == "Two Handed")
-                entity.Unequip(new() { "Main Hand" }, index);
-            entity.Unequip(new() { "Off Hand" }, index);
-            Equip(entity, "Off Hand");
-        }
-        else if (type == "One Handed")
-        {
-            var mainHand = entity.GetItemInSlot("Main Hand");
-            var offHand = entity.GetItemInSlot("Off Hand");
-            secondSlot = mainHand != null && mainHand.type != "Two Handed" && entity.abilities.ContainsKey("Dual Wielding Proficiency") && (offHand == null || offHand.ilvl <= mainHand.ilvl);
-            if (secondSlot)
-            {
-                if (mainHand != null && mainHand.type == "Two Handed")
-                    entity.Unequip(new() { "Main Hand" }, index);
-                entity.Unequip(new() { "Off Hand" }, index);
-                Equip(entity, "Off Hand");
-            }
-            else
-            {
-                entity.Unequip(new() { "Main Hand" }, index);
-                Equip(entity, "Main Hand");
-            }
-        }
-        else if (type == "Bag")
-        {
-            Equip(entity, "Bag");
-        }
-        else
-        {
-            if (type == null) Debug.Log(name);
-            entity.Unequip(new() { type }, index);
-            Equip(entity, type);
-        }
     }
 
     public void Use(Entity entity)
@@ -492,6 +373,22 @@ public class Item
         else currentSave.CallEvents(new() { { "Trigger", "ItemUsed" }, { "ItemHash", GetHashCode() + "" } });
     }
 
+    public bool CanBuy(Entity entity)
+    {
+        return entity.inventory.money >= price && (faction == null || currentSave.player.IsRankHighEnough(currentSave.player.ReputationRank(faction), reputationRequired));
+    }
+
+    #endregion
+
+    #region Professions
+
+    public bool IsDisenchantable()
+    {
+        if (new List<string> { "Miscellaneous", "Trade Good", "Recipe", "Bag" }.Contains(type)) return false;
+        if (rarity != "Uncommon" && rarity != "Rare" && rarity != "Epic") return false;
+        return true;
+    }
+
     public Inventory GenerateDisenchantLoot()
     {
         var rarities = new List<string>() { "Uncommon" };
@@ -509,6 +406,11 @@ public class Item
                 }
         return inv;
     }
+
+
+    #endregion
+
+    #region Print
 
     public static void PrintBankItem(Item item)
     {
@@ -1209,6 +1111,121 @@ public class Item
             PrintPriceRegion((int)(item.price * priceMultiplier));
     }
 
+    #endregion
+
+    #region Other
+
+    //This function returns the type of sound that this item makes when it is being manipulated
+    public string ItemSound(string soundType)
+    {
+        string result;
+        if (detailedType == "Staff") result = "WoodLarge";
+        else if (detailedType == "Wand") result = "Wand";
+        else if (detailedType == "Totem") result = "WoodLarge";
+        else if (detailedType == "Libram") result = "Ring";
+        else if (detailedType == "Idol") result = "Ring";
+        else if (detailedType == "Gem") result = "Gems";
+        else if (detailedType == "Fish") result = "Meat";
+        else if (detailedType == "Book") result = "Book";
+        else if (detailedType == "Scepter") result = "Wand";
+        else if (detailedType == "Lantern") result = "Wand";
+        else if (detailedType == "Orb") result = "Wand";
+        else if (detailedType == "Pouch") result = "Bag";
+        else if (detailedType == "Potion") result = "Liquid";
+        else if (detailedType == "Flowers") result = "Herb";
+        else if (detailedType == "Torch") result = "WoodSmall";
+        else if (detailedType == "Tool") result = "MetalSmall";
+        else if (detailedType == "Quiver") result = "ClothLeather";
+        else if (detailedType == "Shield") result = "MetalLarge";
+        else if (detailedType == "Scroll") result = "ParchmentPaper";
+        else if (detailedType == "Beak") result = "FoodGeneric";
+        else if (detailedType == "Scale") result = "FoodGeneric";
+        else if (detailedType == "Egg") result = "FoodGeneric";
+        else if (detailedType == "Shell") result = "FoodGeneric";
+        else if (detailedType == "Rune") result = "MetalSmall";
+        else if (detailedType == "Dust") result = "Herb";
+        else if (detailedType == "Rock") result = "RocksOre";
+        else if (detailedType == "Ore") result = "RocksOre";
+        else if (detailedType == "Bullet") result = "RocksOre";
+        else if (detailedType == "Arrow") result = "WoodSmall";
+        else if (detailedType == "Ingot") result = "MetalSmall";
+        else if (detailedType == "Claw") result = "Meat";
+        else if (detailedType == "Organ") result = "Meat";
+        else if (detailedType == "Leather") result = "ClothLeather";
+        else if (detailedType == "Essence") result = "Herb";
+        else if (detailedType == "Box") result = "WoodSmall";
+        else if (detailedType == "Cask") result = "WoodSmall";
+        else if (detailedType == "Crate") result = "WoodSmall";
+        else if (detailedType == "Crown") result = "MetalSmall";
+        else if (detailedType == "Shard") result = "Gem";
+        else if (detailedType == "Cloth") result = "ClothLeather";
+        else if (detailedType == "Feather") result = "WoodSmall";
+        else if (detailedType == "Letter") result = "ParchmentPaper";
+        else if (detailedType == "Note") result = "ParchmentPaper";
+        else if (detailedType == "Bandage") result = "ClothLeather";
+        else if (detailedType == "Candle") result = "WoodSmall";
+        else if (detailedType == "Drum") result = "WoodSmall";
+        else if (detailedType == "Coin") result = "";
+        else if (detailedType == "Key") result = "MetalSmall";
+        else if (detailedType == "Horn") result = "MetalSmall";
+        else if (detailedType == "Pick") result = "MetalLarge";
+        else if (type == "Recipe") result = "ParchmentPaper";
+        else if (type == "Bag") result = "Bag";
+        else if (type == "Back") result = "ClothLeather";
+        else if (type == "Neck") result = "Ring";
+        else if (type == "Finger") result = "Ring";
+        else if (type == "Trinket") result = "Ring";
+        else if (type == "Off Hand") result = "Book";
+        else if (type == "One Handed") result = "MetalSmall";
+        else if (type == "Two Handed") result = "MetalLarge";
+        else if (armorClass == "Cloth") result = "ClothLeather";
+        else if (armorClass == "Leather") result = "ClothLeather";
+        else if (armorClass == "Mail") result = "ChainLarge";
+        else if (armorClass == "Plate") result = "ChainLarge";
+        else result = "ClothLeather";
+        return soundType + result;
+    }
+
+    //Sets a random permanent enchant for the item
+    public void SetRandomEnchantment()
+    {
+        if (!randomEnchantment) return;
+        var enchantment = GenerateEnchantment();
+        if (enchantment == null) return;
+        name += " " + enchantment.suffix;
+        if (enchantment.stats.Count > 0)
+        {
+            stats = new(new());
+            foreach (var stat in enchantment.stats)
+                stats.stats.Inc(stat.Key, EnchantmentStatGrowth(ilvl, stat.Value.Length));
+        }
+
+        PermanentEnchant GenerateEnchantment()
+        {
+            var containing = new List<PermanentEnchant>();
+            var key = "";
+            if (type == "One Handed" || type == "Two Handed") key = type + " " + detailedType;
+            else if (armorClass != null) key = armorClass + " Armor";
+            else if (type == "Off Hand") key = type;
+            else if (detailedType != null) key = detailedType;
+            else key = type;
+            containing = pEnchants.FindAll(x => x.commonlyOn != null && x.commonlyOn.Contains(key) || x.rarelyOn != null && x.rarelyOn.Contains(key));
+            if (Roll(10))
+            {
+                var rare = containing.FindAll(x => x.rarelyOn != null && x.rarelyOn.Contains(key));
+                if (rare.Count > 0) return rare[random.Next(0, rare.Count)];
+            }
+            else
+            {
+                var common = containing.FindAll(x => x.commonlyOn != null && x.commonlyOn.Contains(key));
+                if (common.Count > 0) return common[random.Next(0, common.Count)];
+            }
+            if (containing.Count == 0) return null;
+            return containing[random.Next(0, containing.Count)];
+        }
+    }
+
+    //Copies this item with a specific amount
     public Item CopyItem(int amount = 1)
     {
         var newItem = new Item();
@@ -1246,6 +1263,8 @@ public class Item
         newItem.type = type;
         return newItem;
     }
+
+    #endregion
 
     //Currently opened item
     public static Item item;

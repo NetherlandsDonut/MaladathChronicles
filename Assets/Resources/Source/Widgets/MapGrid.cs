@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Collections.Generic;
 
 using UnityEngine;
 
@@ -8,7 +9,6 @@ using static Sound;
 using static Cursor;
 using static SaveGame;
 using static SitePath;
-using NUnit.Framework;
 
 //Map grid is a class responsible for direct
 //interactions with the map of the world in the scene
@@ -22,6 +22,12 @@ public class MapGrid : MonoBehaviour
 
     //When this is true desktop on update will try to change map color slowly
     public bool updateTextureColors;
+
+    //Points where camera has access to
+    public List<Vector2> cameraBoundaryPoints;
+
+    //Sound data for player walking on adventure map
+    public string[,] groundData;
 
     //On mouse down pan the camera to the pressed square on the map
     void OnMouseDown()
@@ -82,7 +88,7 @@ public class MapGrid : MonoBehaviour
 
     //Bounds camera to be in a specified proximity of any sites in reach
     //Whenever camera is close enough to detect sites it will be dragged to their proximity
-    public static void EnforceBoundary(int detectionRange = 700, int maxDistanceWhileMoving = 225, float harshness = 0.0001f)
+    public void EnforceBoundary(int detectionRange = 700, int maxDistanceWhileMoving = 225, float harshness = 0.0001f)
     {
         var cameraDestinationScaled = CDesktop.cameraDestination;
         var nearbySites = cameraBoundaryPoints.Select(x => (x, Vector2.Distance(new Vector2(x.x, x.y), cameraDestinationScaled))).ToList().FindAll(x => x.Item2 < detectionRange).OrderBy(x => x.Item2).ToList();
@@ -93,4 +99,13 @@ public class MapGrid : MonoBehaviour
             CDesktop.cameraDestination = cameraDestinationScaled;
         }
     }
+
+    //Map grid currently active
+    public static MapGrid mapGrid;
+
+    //Color of the map texture during the day
+    public static Color32 dayColor = new(255, 255, 255, 255);
+
+    //Color of the map texture during the night
+    public static Color32 nightColor = new(185, 185, 202, 255);
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 using static Root;
@@ -57,4 +58,7 @@ public class FallingElement : MonoBehaviour
                 }
         }
     }
+
+    //Currently falling elements on the board
+    public static List<FallingElement> fallingElements;
 }

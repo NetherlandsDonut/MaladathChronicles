@@ -13,11 +13,13 @@ using static Cursor;
 using static Talent;
 using static Defines;
 using static Enchant;
+using static MapGrid;
 using static SaveGame;
 using static SitePath;
 using static FishingSpot;
 using static GameSettings;
 using static CursorRemote;
+using static FallingElement;
 using static SiteSpiritHealer;
 using static PermanentEnchant;
 using static FlightPathGroup;
@@ -69,7 +71,7 @@ public class Starter : MonoBehaviour
         //This object contains data on the map grid on which the camera
         //will be moving around. The map grid size is set to the size of icons
         //of sites on it so in this example game it's 19px
-        grid = FindAnyObjectByType<MapGrid>();
+        mapGrid = FindAnyObjectByType<MapGrid>();
 
         //This is the player cursor that follows the hidden system cursor
         cursor = FindAnyObjectByType<Cursor>();
@@ -201,35 +203,35 @@ public class Starter : MonoBehaviour
         Deserialize(ref defines, "defines", false, prefix);
         defines ??= new();
         var file = Resources.Load<Sprite>("Sprites/Map/Ground").texture;
-        groundData = new string[file.width, file.height];
+        mapGrid.groundData = new string[file.width, file.height];
         for (int i = 0; i < file.width; i++)
             for (int j = 0; j < file.height; j++)
             {
                 var color = (Color32)file.GetPixel(i, file.height - 1 - j);
                 if (color.r == 127 && color.g == 51 && color.b == 0)
-                    groundData[i, j] = "Dirt";
+                    mapGrid.groundData[i, j] = "Dirt";
                 else if (color.r == 64 && color.g == 64 && color.b == 64)
-                    groundData[i, j] = "Stone";
+                    mapGrid.groundData[i, j] = "Stone";
                 else if (color.r == 10 && color.g == 124 && color.b == 0)
-                    groundData[i, j] = "Grass";
+                    mapGrid.groundData[i, j] = "Grass";
                 else if (color.r == 124 && color.g == 85 && color.b == 0)
-                    groundData[i, j] = "Wood";
+                    mapGrid.groundData[i, j] = "Wood";
                 else if (color.r == 0 && color.g == 24 && color.b == 124)
-                    groundData[i, j] = "Water";
+                    mapGrid.groundData[i, j] = "Water";
                 else if (color.r == 128 && color.g == 128 && color.b == 128)
-                    groundData[i, j] = "Snow";
+                    mapGrid.groundData[i, j] = "Snow";
                 else if (color.r == 0 && color.g == 122 && color.b == 122)
-                    groundData[i, j] = "Ice";
+                    mapGrid.groundData[i, j] = "Ice";
                 else if (color.r == 114 && color.g == 88 && color.b == 88)
-                    groundData[i, j] = "Metal";
+                    mapGrid.groundData[i, j] = "Metal";
                 else if (color.r == 84 && color.g == 64 && color.b == 64)
-                    groundData[i, j] = "MetalGrate";
+                    mapGrid.groundData[i, j] = "MetalGrate";
                 else if (color.r == 178 && color.g == 140 && color.b == 0)
-                    groundData[i, j] = "Sand";
+                    mapGrid.groundData[i, j] = "Sand";
                 else if (color.r == 60 && color.g == 79 && color.b == 42)
-                    groundData[i, j] = "Swamp";
+                    mapGrid.groundData[i, j] = "Swamp";
                 else
-                    groundData[i, j] = "None";
+                    mapGrid.groundData[i, j] = "None";
             }
 
         #endregion
