@@ -118,9 +118,9 @@ public class DescriptionRegion
                     else if (splitty.Contains("$G"))
                     {
                         if (effector == null) output += "?";
-                        var temp1 = text[2..].Split(";");
+                        var temp1 = text[(text.IndexOf("$") + 2)..].Split(";");
                         var temp2 = temp1[0].Split(":");
-                        output += (effector.gender == "Male" ? temp2[0] : temp2[1]) + temp1[1] + " ";
+                        output += ((effector.gender == "Male" ? temp2[0] : temp2[1]) + temp1[1].Split(' ')[0] + " ").Replace("_", " ");
                     }
                     else output += splitty + " ";
                 }

@@ -4405,7 +4405,7 @@ public class Blueprint
             SetAnchor(TopLeft, 19, -38);
             var type = personTypes.Find(x => x.type == person.type);
             var profession = professions.Find(x => x.name == type.profession);
-            var levels = profession.levels.OrderBy(x => x.requiredSkill).ToList();
+            var levels = profession.levels.FindAll(x => x.requiredSkill <= type.skillCap).OrderBy(x => x.requiredSkill).ToList();
             if (currentSave.player.professionSkills.ContainsKey(profession.name))
                 levels = levels.FindAll(x => !currentSave.player.professionSkills[profession.name].Item2.Contains(x.name));
             AddHeaderGroup(() => levels.Count, 6);

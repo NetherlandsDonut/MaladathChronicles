@@ -30,6 +30,11 @@
     "category": "Vendor"
   },
   {
+    "type": "Zandalar Supplies",
+    "icon": "ItemMiscBag11",
+    "category": "Vendor"
+  },
+  {
     "type": "Trade Supplies",
     "icon": "ItemCrate05",
     "category": "Vendor"

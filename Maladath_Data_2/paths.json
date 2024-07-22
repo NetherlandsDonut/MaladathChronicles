@@ -52826,44 +52826,6 @@
   },
   {
     "sites": [
-      "Nesingwary's Expedition",
-      "Ruins of Zul'Kunda"
-    ],
-    "means": "Land",
-    "spacing": 10,
-    "points": [
-      {
-        "Item1": 5020,
-        "Item2": -4034
-      },
-      {
-        "Item1": 5031,
-        "Item2": -4032
-      },
-      {
-        "Item1": 5039,
-        "Item2": -4039
-      },
-      {
-        "Item1": 5048,
-        "Item2": -4043
-      },
-      {
-        "Item1": 5058,
-        "Item2": -4044
-      },
-      {
-        "Item1": 5068,
-        "Item2": -4042
-      },
-      {
-        "Item1": 5073,
-        "Item2": -4039
-      }
-    ]
-  },
-  {
-    "sites": [
       "Lake Nazferiti",
       "Nesingwary's Expedition"
     ],
@@ -153950,6 +153912,166 @@
       {
         "Item1": 4800,
         "Item2": -4078
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Nesingwary's Expedition",
+      "Ruins of Zul'Kunda"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 4932,
+        "Item2": -4040
+      },
+      {
+        "Item1": 4941,
+        "Item2": -4042
+      },
+      {
+        "Item1": 4952,
+        "Item2": -4043
+      },
+      {
+        "Item1": 4962,
+        "Item2": -4044
+      },
+      {
+        "Item1": 4972,
+        "Item2": -4046
+      },
+      {
+        "Item1": 4982,
+        "Item2": -4049
+      },
+      {
+        "Item1": 4991,
+        "Item2": -4045
+      },
+      {
+        "Item1": 4998,
+        "Item2": -4038
+      },
+      {
+        "Item1": 5008,
+        "Item2": -4037
+      },
+      {
+        "Item1": 5018,
+        "Item2": -4034
+      },
+      {
+        "Item1": 5028,
+        "Item2": -4033
+      },
+      {
+        "Item1": 5037,
+        "Item2": -4039
+      },
+      {
+        "Item1": 5046,
+        "Item2": -4045
+      },
+      {
+        "Item1": 5056,
+        "Item2": -4046
+      },
+      {
+        "Item1": 5066,
+        "Item2": -4044
+      },
+      {
+        "Item1": 5073,
+        "Item2": -4039
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Nesingwary's Expedition",
+      "The Savage Coast"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 5073,
+        "Item2": -4039
+      },
+      {
+        "Item1": 5064,
+        "Item2": -4044
+      },
+      {
+        "Item1": 5054,
+        "Item2": -4045
+      },
+      {
+        "Item1": 5044,
+        "Item2": -4044
+      },
+      {
+        "Item1": 5035,
+        "Item2": -4038
+      },
+      {
+        "Item1": 5026,
+        "Item2": -4036
+      },
+      {
+        "Item1": 5015,
+        "Item2": -4036
+      },
+      {
+        "Item1": 5004,
+        "Item2": -4040
+      },
+      {
+        "Item1": 4993,
+        "Item2": -4044
+      },
+      {
+        "Item1": 4984,
+        "Item2": -4047
+      },
+      {
+        "Item1": 4979,
+        "Item2": -4055
+      },
+      {
+        "Item1": 4973,
+        "Item2": -4064
+      },
+      {
+        "Item1": 4965,
+        "Item2": -4071
+      },
+      {
+        "Item1": 4957,
+        "Item2": -4077
+      },
+      {
+        "Item1": 4948,
+        "Item2": -4082
+      },
+      {
+        "Item1": 4938,
+        "Item2": -4084
+      },
+      {
+        "Item1": 4928,
+        "Item2": -4084
+      },
+      {
+        "Item1": 4918,
+        "Item2": -4081
+      },
+      {
+        "Item1": 4904,
+        "Item2": -4082
       }
     ]
   }

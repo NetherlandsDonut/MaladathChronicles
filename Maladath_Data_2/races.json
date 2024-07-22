@@ -22,7 +22,7 @@
   {
     "name": "Razorfen Thornweaver",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Quilboar",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitQuilboarMale",
@@ -32,7 +32,7 @@
   {
     "name": "Razorfen Battleguard",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Quilboar",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitQuilboarArmoredGreen",
@@ -42,7 +42,7 @@
   {
     "name": "Death's Head Cultist",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Quilboar",
     "side": "Neutral",
     "kind": "Common",
     "portrait": "PortraitQuilboarBlue",

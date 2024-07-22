@@ -171,9 +171,9 @@ public class Window : MonoBehaviour
                         for (int i = 0; i < fullText.Length; i++)
                         {
                             var newCharLength = Font.fonts["Tahoma Bold"].Length(fullText[i]) + 1;
-                            if (currentLength + newCharLength + wrapperLength + 1 > emptySpace)
+                            if (fullText.Length > i + 1 && fullText[i + 1] != ' ' && currentLength + newCharLength + wrapperLength + 1 > emptySpace)
                             {
-                                useWrapper = true;
+                                useWrapper = fullText[i] != ' ';
                                 break;
                             }
                             else if (currentLength + newCharLength + wrapperLength <= emptySpace)
