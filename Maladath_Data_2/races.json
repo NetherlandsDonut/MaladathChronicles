@@ -1,5 +1,55 @@
 [
   {
+    "name": "Ambassador Malcin",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Elite",
+    "portrait": "PortraitAmbassadorMalcin",
+    "vitality": 3.0,
+    "abilities": {}
+  },
+  {
+    "name": "Ambassador Bloodrage",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitAmbassadorBloodrage",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
+    "name": "Razorfen Thornweaver",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarMale",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Razorfen Battleguard",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarArmoredGreen",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Death's Head Cultist",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitQuilboarBlue",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Goggeroc",
     "category": "Humanoid",
     "subcategory": "Human",

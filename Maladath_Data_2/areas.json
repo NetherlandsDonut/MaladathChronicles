@@ -27051,6 +27051,54 @@
     ]
   },
   {
+    "x": 1873,
+    "y": -3441,
+    "name": "Razorfen Outskirts",
+    "zone": "The Barrens",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Death's Head Cultist",
+        "levelMin": 33,
+        "levelMax": 34
+      },
+      {
+        "who": "Razorfen Battleguard",
+        "levelMin": 33,
+        "levelMax": 34
+      },
+      {
+        "who": "Razorfen Thornweaver",
+        "levelMin": 33,
+        "levelMax": 34
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Ambassador Bloodrage",
+        "levelMin": 36
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Ambassador Malcin",
+        "levelMin": 36
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      },
+      {
+        "type": "Boss",
+        "bossName": "Ambassador Malcin",
+        "point": 2
+      }
+    ]
+  },
+  {
     "x": 2246,
     "y": -3711,
     "name": "Weazel's Crater",
