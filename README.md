@@ -709,6 +709,71 @@ v0.6.5
 v0.6.6
     24.06 Added enemy voice lines
           Added keybinds for disabling music and sounds
+v0.6.7
+    25.06 Added hotkeys for toogling music and sound effects
+          Added most of the enemy voice lines
+          Added quest tracker for items
+          Quest log now tracks the amount of items player currently has
+          Added a setting to stop loot windows from closing automatically
+          Added picking quest rewards
+v0.6.8
+    27.06 Added local quest tracker inside of an area
+          Added popup text indicating progress on killing enemies
+          Added a lot of vendors including ranged weapon vendors
+          Fixed items that have " in their names
+v0.6.9
+    28.06 Added experience rewards to quests
+          Added money rewards to quests tho not yet displayed
+          Expanded quest description
+v0.6.10
+    29.06 Stopped displaying stat changes equal to zero
+          Added guarranteed green drop to rares and elites
+          Added accepting quests from items
+          Fixed bug causing enemies to sometimes drop two items instead of one
+v0.6.11
+    02.07 Adjusted spirit healer positions
+          Redid algorithm for finding nearest spirit healer
+          Redrawed rarity indicators
+v0.6.12
+    03.07 Added side panels to fishing
+          Added fishing spots with difficulty
+v0.6.13
+    05.07 Added teleportation effect for items
+          Quest text is now formatted and paginated
+          Added working world buffs
+          Added passive gains for buffs
+          Fixed that shown but not explored sites do not show quest markers
+          Removed world events and unified them into normal events
+v0.6.14
+    06.07 Trinkets are now usable in combat
+          Separated combat use items from the rest
+v0.6.15
+    07.07 Fixed world buff tooltip
+          World buffs are now visible in adventure map
+          Adjusted word wrap
+v0.6.16
+    08.07 Enemy again visually clicks on abilities when casting
+          Fixed quick use items updating after use
+v0.6.17
+    09.07 Added scroll buffs
+          Added all standard food buffs
+v0.6.18
+    10.07 Fixed world buffs appearing on loading screen
+v0.6.19
+    11.07 Quests now change reputation and respawn sites on changed ranks
+          Added combat start effect for items
+v0.6.20
+    12.07 Added turn in map pointer to quest log
+          Quests no longer glitch out when they lack description
+          Quests now can have alternate previous quest requirement
+v0.6.21
+    13.07 Fixed ranged weapons not being able to be equipped
+          Made chest disappear when opening quest panels
+v0.6.22
+    19.07 Finalised the text wrapping method
+v0.6.23
+    21.07 Added respecing at class trainers
+          Added sound effect volume to effects
 ```
 
 </details>
