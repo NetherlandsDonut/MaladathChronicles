@@ -978,6 +978,11 @@ public class Entity
         return mount == null ? 5 : mount.speed;
     }
 
+    public int Armor()
+    {
+        return Stats()["Armor"];
+    }
+
     public int MaxHealth()
     {
         return Stats()["Stamina"] * 5;
@@ -1100,19 +1105,23 @@ public class Entity
         }
         if (equipment != null)
             foreach (var itemPair in equipment)
+            {
                 if (itemPair.Value.stats != null)
                     foreach (var stat in itemPair.Value.stats.stats)
-                        stats[stat.Key] += stat.Value;
+                        stats.Inc(stat.Key, stat.Value);
+                if (itemPair.Value.armor > 0)
+                    stats.Inc("Armor", itemPair.Value.armor);
+            }
         if (worldBuffs != null)
             foreach (var worldBuff in worldBuffs)
                 if (worldBuff.buff.gains != null)
                     foreach (var stat in worldBuff.buff.gains)
-                        stats[stat.Key] += stat.Value;
+                        stats.Inc(stat.Key, stat.Value);
         if (buffs != null)
             foreach (var buff in buffs)
                 if (buff.Item1 != null && buff.Item1.gains != null)
                     foreach (var stat in buff.Item1.gains)
-                        stats[stat.Key] += stat.Value;
+                        stats.Inc(stat.Key, stat.Value);
         return stats;
     }
 

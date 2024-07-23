@@ -1,5 +1,25 @@
 [
   {
+    "name": "Lethlas",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Elite",
+    "portrait": "PortraitGreenDrake",
+    "vitality": 3.0,
+    "abilities": {}
+  },
+  {
+    "name": "Dreamroarer",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Elite",
+    "portrait": "PortraitGreenDrake",
+    "vitality": 3.0,
+    "abilities": {}
+  },
+  {
     "name": "Ambassador Malcin",
     "category": "Humanoid",
     "subcategory": "Human",

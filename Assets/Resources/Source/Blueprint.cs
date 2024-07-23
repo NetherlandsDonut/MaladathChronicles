@@ -420,7 +420,7 @@ public class Blueprint
             AddHeaderRegion(() =>
             {
                 foreach (var foo in stats)
-                    if (!foo.Key.Contains("Mastery"))
+                    if (!foo.Key.Contains("Mastery") && foo.Key != "Armor")
                     {
                         AddLine(foo.Key + ": ", "Gray", "Right");
                         AddText(foo.Value + "", "Uncommon");
@@ -428,6 +428,8 @@ public class Blueprint
             });
             AddHeaderRegion(() =>
             {
+                AddLine("Armor: ", "Gray", "Right");
+                AddText(currentSave.player.Armor() + "", "Uncommon");
                 AddLine("Max health: ", "Gray", "Right");
                 AddText(currentSave.player.MaxHealth() + "", "Uncommon");
                 AddLine("Melee attack power: ", "Gray", "Right");
@@ -2441,6 +2443,7 @@ public class Blueprint
             (h) =>
             {
                 PlaySound("Disenchant");
+                currentSave.AddTime(30);
                 currentSave.player.inventory.items.Remove(item);
                 CloseWindow("ConfirmItemDisenchant");
                 Respawn("Inventory");
@@ -2473,6 +2476,19 @@ public class Blueprint
                 AddInputLine(String.splitAmount);
             });
         }, true),
+        new("ContainerLoot", () => {
+            SetAnchor(-92, -105);
+            AddRegionGroup();
+            SetRegionGroupHeight(34);
+            SetRegionGroupWidth(182);
+            AddPaddingRegion(
+                () =>
+                {
+                    for (int j = 0; j < 4 && j < item.itemsInside.Count; j++)
+                        PrintLootItem(item.itemsInside[j]);
+                }
+            );
+        }),
 
         //Combat Results
         new("CombatResults", () => {
@@ -2694,11 +2710,15 @@ public class Blueprint
                 }
             );
             var s = currentSave.player.professionSkills["Mining"];
-            if (!board.results.miningSkillChange && board.results.miningNode.Item2 + 50 >= s.Item1 && s.Item1 < professions.Find(x => x.name == "Mining").levels.FindAll(x => s.Item2.Contains(x.name)).Max(x => x.maxSkill))
+            if (!board.results.miningSkillChange)
             {
+                currentSave.AddTime(30);
                 board.results.miningSkillChange = true;
-                currentSave.player.professionSkills["Mining"] = (s.Item1 + 1, s.Item2);
-                SpawnFallingText(new Vector2(0, 34), "Mining increased to " + (s.Item1 + 1), "Blue");
+                if (board.results.miningNode.Item2 + 50 >= s.Item1 && s.Item1 < professions.Find(x => x.name == "Mining").levels.FindAll(x => s.Item2.Contains(x.name)).Max(x => x.maxSkill))
+                {
+                    currentSave.player.professionSkills["Mining"] = (s.Item1 + 1, s.Item2);
+                    SpawnFallingText(new Vector2(0, 34), "Mining increased to " + (s.Item1 + 1), "Blue");
+                }
             }
         }),
         new("CombatResultsHerbalism", () => {
@@ -2748,11 +2768,15 @@ public class Blueprint
                 }
             );
             var s = currentSave.player.professionSkills["Herbalism"];
-            if (!board.results.herbalismSkillChange && board.results.herb.Item2 + 50 >= s.Item1 && s.Item1 < professions.Find(x => x.name == "Herbalism").levels.FindAll(x => s.Item2.Contains(x.name)).Max(x => x.maxSkill))
+            if (!board.results.herbalismSkillChange)
             {
+                currentSave.AddTime(30);
                 board.results.herbalismSkillChange = true;
-                currentSave.player.professionSkills["Herbalism"] = (s.Item1 + 1, s.Item2);
-                SpawnFallingText(new Vector2(0, 34), "Herbalism increased to " + (s.Item1 + 1), "Blue");
+                if (board.results.herb.Item2 + 50 >= s.Item1 && s.Item1 < professions.Find(x => x.name == "Herbalism").levels.FindAll(x => s.Item2.Contains(x.name)).Max(x => x.maxSkill))
+                {
+                    currentSave.player.professionSkills["Herbalism"] = (s.Item1 + 1, s.Item2);
+                    SpawnFallingText(new Vector2(0, 34), "Herbalism increased to " + (s.Item1 + 1), "Blue");
+                }
             }
         }),
         new("SkinningLoot", () => {
@@ -2768,11 +2792,15 @@ public class Blueprint
                 }
             );
             var s = currentSave.player.professionSkills["Skinning"];
-            if (!board.results.skinningSkillChange && board.results.skinningNode.Item2 + 50 >= s.Item1 && s.Item1 < professions.Find(x => x.name == "Skinning").levels.FindAll(x => s.Item2.Contains(x.name)).Max(x => x.maxSkill))
+            if (!board.results.skinningSkillChange)
             {
+                currentSave.AddTime(30);
                 board.results.skinningSkillChange = true;
-                currentSave.player.professionSkills["Skinning"] = (s.Item1 + 1, s.Item2);
-                SpawnFallingText(new Vector2(0, 34), "Skinning increased to " + (s.Item1 + 1), "Blue");
+                if (board.results.skinningNode.Item2 + 50 >= s.Item1 && s.Item1 < professions.Find(x => x.name == "Skinning").levels.FindAll(x => s.Item2.Contains(x.name)).Max(x => x.maxSkill))
+                {
+                    currentSave.player.professionSkills["Skinning"] = (s.Item1 + 1, s.Item2);
+                    SpawnFallingText(new Vector2(0, 34), "Skinning increased to " + (s.Item1 + 1), "Blue");
+                }
             }
         }),
         new("DisenchantLoot", () => {
@@ -2895,6 +2923,18 @@ public class Blueprint
                             PlaySound("DesktopInventoryClose");
                             CloseDesktop("SkinningLoot");
                             Respawn("CombatResultsSkinning");
+                        });
+                    }
+                    else if (CDesktop.title == "ContainerLoot")
+                    {
+                        AddLine(item.name + ":");
+                        AddSmallButton("OtherClose", (h) =>
+                        {
+                            if (item.itemsInside.Count == 0)
+                                currentSave.player.inventory.items.Remove(item);
+                            item = null;
+                            PlaySound("DesktopInventoryClose");
+                            CloseDesktop("ContainerLoot");
                         });
                     }
                     else if (CDesktop.title == "DisenchantLoot")
@@ -5884,6 +5924,30 @@ public class Blueprint
                 Respawn("CombatResults");
             });
         }),
+        new("ContainerLoot", () =>
+        {
+            SetDesktopBackground("Backgrounds/Leather");
+            SpawnWindowBlueprint("MapToolbarShadow");
+            SpawnWindowBlueprint("MapToolbarClockLeft");
+            SpawnWindowBlueprint("MapToolbar");
+            SpawnWindowBlueprint("MapToolbarClockRight");
+            SpawnWindowBlueprint("MapToolbarStatusLeft");
+            SpawnWindowBlueprint("MapToolbarStatusRight");
+            SpawnWindowBlueprint("PlayerEquipmentInfo");
+            SpawnWindowBlueprint("LootInfo");
+            SpawnWindowBlueprint("ContainerLoot");
+            SpawnWindowBlueprint("Inventory");
+            SpawnWindowBlueprint("ExperienceBarBorder");
+            SpawnWindowBlueprint("ExperienceBar");
+            AddHotkey(Escape, () =>
+            {
+                if (item.itemsInside.Count == 0)
+                    currentSave.player.inventory.items.Remove(item);
+                item = null;
+                PlaySound("DesktopInventoryClose");
+                CloseDesktop("ContainerLoot");
+            });
+        }),
         new("MiningLoot", () =>
         {
             SetDesktopBackground(board.area.Background());
@@ -5971,7 +6035,7 @@ public class Blueprint
                 CloseDesktop("ChestLoot");
             });
         }),
-        new("DisenchantLoot", () =>
+        new("DisenchantLoot", () => 
         {
             SetDesktopBackground("Backgrounds/Leather");
             SpawnWindowBlueprint("MapToolbarShadow");

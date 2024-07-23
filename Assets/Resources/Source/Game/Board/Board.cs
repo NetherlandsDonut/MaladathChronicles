@@ -21,6 +21,7 @@ public class Board
 
     public Board(int x, int y, Entity enemy, Site area = null)
     {
+        turn = 1;
         field = new int[x, y];
         player = currentSave.player;
         player.InitialiseCombat();
@@ -45,6 +46,7 @@ public class Board
 
     public Board(int x, int y, Dictionary<Ability, int> abilities)
     {
+        turn = 1;
         field = new int[x, y];
         player = new Entity(60, null);
         player.InitialiseCombat();
@@ -94,6 +96,9 @@ public class Board
     //STATIC REFERENCE TO THE BOARD
     //THERE CAN BE ONLY ONE AT A TIME THANKS TO STATIC REF
     public static Board board;
+
+    //Turn counter
+    public int turn;
 
     //Stores the results of the combat
     public CombatResults results;
@@ -209,6 +214,7 @@ public class Board
     //ENDS THE CURRENT PLAYER'S TURN
     public void EndTurn()
     {
+        turn++;
         if (playerTurn)
         {
             CallEvents(player, new() { { "Trigger", "TurnEnd" } });
@@ -258,6 +264,7 @@ public class Board
     public void EndCombat(string result)
     {
         cursorEnemy.fadeOut = true;
+        currentSave.AddTime(turn * 15);
         CloseDesktop("Game");
         CloseDesktop("GameSimulation");
         if (result != "Quit")

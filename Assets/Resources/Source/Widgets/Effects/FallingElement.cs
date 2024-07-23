@@ -45,11 +45,12 @@ public class FallingElement : MonoBehaviour
             timeAlive += Time.deltaTime;
             transform.position = Vector3.Lerp(transform.position, destination, timeAlive * 0.8f / (float)Math.Sqrt(howFar) * (GameSettings.settings.fastCascading.Value() ? 0.9f : 0.6f));
             var temp = Vector3.Distance(transform.position, destination);
-            if (temp < 2f)
+            if (temp <= 0.5f)
                 if (!playedSound)
                 {
                     playedSound = true;
-                    PlaySound("PutDownWoodSmall", 1f);
+                    if (soundsPlayedThisFrame < 3)
+                        PlaySound("PutDownWoodSmall", 1f);
                 }
                 else if (temp < 0.05f)
                 {

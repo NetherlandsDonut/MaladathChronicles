@@ -12,6 +12,7 @@ using static Shatter;
 using static FlyingBuff;
 using static FlyingElement;
 using static FlyingMissile;
+using NUnit.Framework;
 
 public class Event
 {
@@ -77,6 +78,7 @@ public class Event
                 else if (type == "TeleportPlayer") EffectTeleportPlayer();
                 else if (type == "HearthstonePlayer") EffectHearthstonePlayer();
                 else if (type == "Combat") EffectCombat();
+                else if (type == "Loot") EffectLoot();
 
                 ExecuteSoundEffect();
 
@@ -119,6 +121,37 @@ public class Event
                         CloseDesktop("EquipmentScreen");
                     }
                 }
+            }
+
+            //This effect generates loot and opens it
+            void EffectLoot()
+            {
+                var target = effector;
+                if (itemUsed.itemsInside == null)
+                {
+                    itemUsed.itemsInside = new();
+                    string generalDrop = effect.ContainsKey("GeneralDrop") ? effect["GeneralDrop"] : "None";
+                    int minMoney = effect.ContainsKey("MinMoney") ? int.Parse(effect["MinMoney"]) : 0;
+                    int maxMoney = effect.ContainsKey("MaxMoney") ? int.Parse(effect["MaxMoney"]) : 0;
+                    if (maxMoney > 0 && minMoney >= 0)
+                    {
+                        var amount = random.Next(minMoney, maxMoney + 1);
+                        if (amount / 10000 > 0) itemUsed.itemsInside.Add(Item.items.Find(x => x.name == "Gold").CopyItem(amount));
+                        else if (amount / 100 > 0) itemUsed.itemsInside.Add(Item.items.Find(x => x.name == "Silver").CopyItem(amount));
+                        else itemUsed.itemsInside.Add(Item.items.Find(x => x.name == "Copper").CopyItem(amount));
+                    }
+                    var drops = GeneralDrop.generalDrops.FindAll(x => x.category == generalDrop);
+                    if (drops != null && drops.Count > 0)
+                        foreach (var drop in drops)
+                            if (Roll(drop.rarity))
+                            {
+                                int amount = 1;
+                                for (int i = 1; i < drop.dropCount; i++) amount += Roll(50) ? 1 : 0;
+                                itemUsed.itemsInside.Add(Item.items.Find(x => x.name == drop.item).CopyItem(amount));
+                            }
+                }
+                Item.item = itemUsed;
+                SpawnDesktopBlueprint("ContainerLoot");
             }
 
             //This effect gives a buff to the targetted entity

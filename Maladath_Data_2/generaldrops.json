@@ -2422,5 +2422,11 @@
     "tags": [
       "Shard"
     ]
+  },
+  {
+    "item": "Old Moneybag",
+    "rarity": 100.0,
+    "category": "A Sack of Coins",
+    "dropCount": 1
   }
 ]

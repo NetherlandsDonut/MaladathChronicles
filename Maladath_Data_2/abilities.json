@@ -1,5 +1,40 @@
 [
   {
+    "name": "A Sack of Coins",
+    "tags": [],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Loot",
+            "GeneralDrop": "A Sack of Coins",
+            "MinMoney": "1400",
+            "MaxMoney": "1800"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "isExtender": true,
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: See what's inside"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "name": "Incendia Powder",
     "tags": [],
     "ranks": [

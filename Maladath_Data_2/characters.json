@@ -1516,11 +1516,146 @@
     },
     {
       "player": {
-        "currentQuests": [],
-        "completedQuests": [],
-        "level": 18,
-        "experience": 16763,
-        "uniquesGotten": [],
+        "currentQuests": [
+          {
+            "questID": 47,
+            "requiredLevel": 4,
+            "questLevel": 7,
+            "name": "Gold Dust Exchange",
+            "description": "The Kobolds in these parts sometimes carry Gold Dust on them. I could really use the stuff - bring me a load of it and I'll give you the best price in town...$B$BYou can find kobolds in the Fargodeep Mine to the south, and around the Jasperlode Mine to the northeast.",
+            "objective": "Bring 10 Gold Dust to Remy \"Two Times\" in Goldshire.",
+            "completion": "Thanks for the dust, $N. Here's your cash, and...here is a token from associates of mine. You might find it useful...useful.",
+            "siteStart": "Goldshire",
+            "siteEnd": "Goldshire",
+            "zone": "Elwynn Forest",
+            "money": 175,
+            "experience": 630,
+            "races": [
+              "Gnome",
+              "Night Elf",
+              "Dwarf",
+              "Human"
+            ],
+            "rewards": {
+              "Bag of Marbles": 1
+            },
+            "reputationGain": {
+              "Stormwind": 250
+            },
+            "conditions": [
+              {
+                "type": "Item",
+                "name": "Gold Dust",
+                "amount": 4
+              }
+            ]
+          },
+          {
+            "questID": 60,
+            "requiredLevel": 3,
+            "questLevel": 7,
+            "name": "Kobold Candles",
+            "description": "Hello, $Ggood_sir:my_lady;! Do you have a moment?$B$BMy brother and I run an apothecary in Stormwind, and I'm here to gather large candles for their wax. Can you help me?$B$BYou can get large candles from kobolds, and I hear rumors that kobolds are infesting the Elwynn mines.$B$BThe Fargodeep mine to the south and Jasperlode Mine to the east. I suggest looking for candles in one of those places.",
+            "objective": "Bring 3 Large Candles to William Pestle in Goldshire.",
+            "completion": "You were busy hunting kobolds, were you? Thanks for the candles, $N, and here's your reward...",
+            "siteStart": "Goldshire",
+            "siteEnd": "Goldshire",
+            "zone": "Elwynn Forest",
+            "money": 125,
+            "experience": 475,
+            "races": [
+              "Gnome",
+              "Night Elf",
+              "Dwarf",
+              "Human"
+            ],
+            "rewards": {
+              "Glowing Wax Stick": 1
+            },
+            "reputationGain": {
+              "Stormwind": 150
+            },
+            "conditions": [
+              {
+                "type": "Item",
+                "name": "Large Candle",
+                "amount": 3
+              }
+            ]
+          },
+          {
+            "questID": 35,
+            "previous": [
+              40
+            ],
+            "requiredLevel": 7,
+            "questLevel": 10,
+            "name": "Further Concerns",
+            "description": "If you are concerned that the rumors of murlocs are true, then do this -- travel to the eastern Elwynn bridge and speak with Guard Thomas. He has been stationed at the bridge for the past week and will know the state of the area.$B$BBring me his report.",
+            "objective": "Marshal Dughan wants you to speak with Guard Thomas.",
+            "completion": "Yes, murlocs have settled in and around the streams of eastern Elwynn. We don't know why they are here, but they are aggressive and at least semi-intelligent.",
+            "siteStart": "Goldshire",
+            "siteEnd": "East Elwynn Bridge",
+            "zone": "Elwynn Forest",
+            "experience": 420,
+            "races": [
+              "Gnome",
+              "Night Elf",
+              "Dwarf",
+              "Human"
+            ],
+            "reputationGain": {
+              "Stormwind": 75
+            },
+            "conditions": []
+          },
+          {
+            "questID": 7,
+            "previous": [
+              783
+            ],
+            "requiredLevel": 1,
+            "questLevel": 2,
+            "name": "Kobold Camp Cleanup",
+            "description": "Your first task is one of cleansing, $N. A clan of kobolds have infested the woods to the north. Go there and fight the kobold vermin you find. Reduce their numbers so that we may one day drive them from Northshire.",
+            "objective": "Kill 10 Kobold Vermin, then return to Marshal McBride.",
+            "completion": "Well done, citizen. Those kobolds are thieves and cowards, but in large numbers they pose a threat to us. And the humans of Stormwind do not need another threat.$B$BFor defeating them, you have my gratitude.",
+            "siteStart": "Northshire Abbey",
+            "siteEnd": "Northshire Abbey",
+            "zone": "Elwynn Forest",
+            "money": 25,
+            "experience": 170,
+            "races": [
+              "Gnome",
+              "Night Elf",
+              "Dwarf",
+              "Human"
+            ],
+            "reputationGain": {
+              "Stormwind": 250
+            },
+            "conditions": [
+              {
+                "type": "Kill",
+                "name": "Kobold Vermin",
+                "amount": 3,
+                "amountDone": 1
+              }
+            ]
+          }
+        ],
+        "completedQuests": [
+          40,
+          62,
+          783,
+          18,
+          6
+        ],
+        "level": 21,
+        "experience": 19296,
+        "uniquesGotten": [
+          "Garrick's Head"
+        ],
         "reputation": {
           "Southsea Pirates": 0,
           "Razormane Tribe": 0,
@@ -1529,7 +1664,7 @@
           "Woodpaw Tribe": 0,
           "The Burning Legion": 0,
           "Darkspear Tribe": 0,
-          "Stormwind": 4600,
+          "Stormwind": 5235,
           "Magram Clan": 0,
           "Gelkis Clan": 0,
           "Kolkar Clan": 0,
@@ -1632,7 +1767,10 @@
           "Fresh Meat": 0,
           "Whirlwind": 0,
           "Pummel": 0,
-          "Execute": 0
+          "Execute": 0,
+          "Berserker Rage": 0,
+          "Enraged Regeneration": 0,
+          "Blood Frenzy": 0
         },
         "actionBars": [
           "Heroic Strike",
@@ -1659,6 +1797,7 @@
           }
         },
         "inventory": {
+          "money": 6653,
           "items": [
             {
               "rarity": "Common",
@@ -1674,6 +1813,75 @@
               "abilities": {
                 "Hearthstone": 1
               }
+            },
+            {
+              "rarity": "Common",
+              "name": "Red Burlap Bandana",
+              "icon": "itemmiscbandana03",
+              "detailedType": "Cloth",
+              "type": "Miscellaneous",
+              "source": "DirectDrop",
+              "ilvl": 1,
+              "amount": 1,
+              "maxStack": 20,
+              "droppedBy": [
+                "Defias Thug"
+              ]
+            },
+            {
+              "rarity": "Rare",
+              "name": "Killmaim",
+              "icon": "itemaxe10",
+              "detailedType": "Axe",
+              "type": "Two Handed",
+              "source": "RareDrop",
+              "ilvl": 26,
+              "lvl": 21,
+              "minDamage": 55,
+              "maxDamage": 84,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 4771,
+              "speed": 3.2
+            },
+            {
+              "rarity": "Rare",
+              "name": "Serathil",
+              "icon": "itemaxe08",
+              "detailedType": "Axe",
+              "type": "One Handed",
+              "source": "RareDrop",
+              "ilvl": 61,
+              "lvl": 56,
+              "minDamage": 53,
+              "maxDamage": 99,
+              "armor": 100,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 53957,
+              "speed": 1.9,
+              "stats": {
+                "stats": {
+                  "Strength": 9
+                }
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Old Moneybag",
+              "icon": "itemmiscbag10",
+              "type": "Bag",
+              "source": "DirectDrop",
+              "ilvl": 5,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "unique": true,
+              "price": 250,
+              "bagSpace": 2,
+              "droppedBy": [
+                "Tharm"
+              ]
             }
           ],
           "bags": []
@@ -1681,17 +1889,22 @@
         "mounts": [],
         "equipment": {
           "Off Hand": {
-            "rarity": "Poor",
-            "name": "Worn Wooden Shield",
-            "icon": "itemshield09",
-            "detailedType": "Shield",
+            "rarity": "Uncommon",
+            "name": "Journeyman's Stave",
+            "icon": "itemstaff20",
+            "detailedType": "Scepter",
             "type": "Off Hand",
-            "ilvl": 1,
-            "lvl": 1,
-            "armor": 5,
+            "source": "RareDrop",
+            "ilvl": 10,
+            "lvl": 5,
             "amount": 1,
             "maxStack": 1,
-            "price": 1
+            "price": 439,
+            "stats": {
+              "stats": {
+                "Stamina": 1
+              }
+            }
           },
           "Main Hand": {
             "rarity": "Common",
@@ -1734,41 +1947,60 @@
           },
           "Chest": {
             "rarity": "Common",
-            "name": "Recruit's Shirt",
-            "icon": "itemshirt05",
+            "name": "Layered Tunic",
+            "icon": "itemchestleather09",
             "type": "Chest",
-            "ilvl": 1,
+            "armorClass": "Leather",
+            "source": "Quest",
+            "ilvl": 5,
             "lvl": 1,
+            "armor": 33,
             "amount": 1,
             "maxStack": 1,
-            "price": 1
+            "price": 12
           }
         },
         "worldBuffs": []
       },
-      "hour": 7,
-      "minute": 10,
-      "second": 58,
-      "currentSite": "Goldshire",
+      "hour": 8,
+      "minute": 8,
+      "second": 53,
+      "currentSite": "Talrendis Point",
       "ringOfLaw": "Anub'shiah",
       "forlornCloister": "Azshir the Sleepless",
-      "openedChests": {},
+      "openedChests": {
+        "Northshire Valley": {
+          "area": "Northshire Valley",
+          "inventory": {
+            "items": [],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
+        }
+      },
       "fishingSpots": {},
       "fishingSpoils": {},
       "siteProgress": {
-        "Northshire Valley": 1,
-        "Jansen Stead": 1
+        "Northshire Valley": 4,
+        "Jansen Stead": 1,
+        "Northshire Vineyards": 2,
+        "Dream Bough": 2
       },
       "commonsKilled": {
-        "Young Wolf": 1,
-        "Rusty Harvest Golem": 1
+        "Young Wolf": 3,
+        "Rusty Harvest Golem": 1,
+        "Defias Thug": 2,
+        "Kobold Vermin": 1,
+        "Jademir Oracle": 2
       },
       "raresKilled": {},
-      "elitesKilled": {},
+      "elitesKilled": {
+        "Garrick Padfoot": 1
+      },
       "siteVisits": {
-        "Northshire Abbey": 1,
-        "Northshire Valley": 1,
-        "Goldshire": 2,
+        "Northshire Abbey": 6,
+        "Northshire Valley": 3,
+        "Goldshire": 5,
         "Jansen Stead": 2,
         "Direforge Hill": 2,
         "Dire Maul": 2,
@@ -1833,7 +2065,7 @@
         "Bathran's Haunt": 1,
         "Orendil's Retreat": 1,
         "Bloodtooth Camp": 1,
-        "Bough Shadow": 1,
+        "Bough Shadow": 3,
         "Demon Fall Canyon": 1,
         "Demon Fall Ridge": 1,
         "Falfarren River": 1,
@@ -1980,7 +2212,7 @@
         "Northern Wastes": 1,
         "Thunder Axe Fortress": 1,
         "Valley of Bones": 1,
-        "Valley of Spears": 1,
+        "Valley of Spears": 2,
         "Capital Gardens": 1,
         "Court of the Highborne": 1,
         "Gordok Commons": 1,
@@ -2097,7 +2329,7 @@
         "Brackwell Pumpkin Patch": 1,
         "Eastvale Logging Camp": 1,
         "Echo Ridge Mine": 1,
-        "Fargodeep Mine": 1,
+        "Fargodeep Mine": 2,
         "Crystal Lake": 1,
         "Forest's Edge": 1,
         "Stone Cairn Lake": 1,
@@ -2106,7 +2338,7 @@
         "Jasperlode Mine": 1,
         "Mirror Lake": 1,
         "Mirror Lake Orchard": 1,
-        "Northshire Vineyards": 1,
+        "Northshire Vineyards": 3,
         "Ridgepoint Tower": 1,
         "Stonefield Farm": 1,
         "The Maclure Vineyards": 1,
@@ -2130,7 +2362,7 @@
         "Ruins of Constellas": 1,
         "Shatter Scar Vale": 1,
         "Shrine of the Deceiver": 1,
-        "Dream Bough": 1,
+        "Dream Bough": 5,
         "Feral Scar Vale": 1,
         "Frayfeather Highlands": 1,
         "Gordunni Outpost": 1,
@@ -2139,7 +2371,7 @@
         "Isle of Dread": 1,
         "Lariss Pavillion": 1,
         "Lower Wilds": 1,
-        "Oneiros": 1,
+        "Oneiros": 2,
         "Rage Scar Hold": 1,
         "Ruins of Isildien": 1,
         "Ruins of Ravenwind": 1,
@@ -2147,7 +2379,7 @@
         "Ruins of Solarsal": 1,
         "Shalzaru's Lair": 1,
         "The Forgotten Coast": 1,
-        "The Twin Colossals": 1,
+        "The Twin Colossals": 2,
         "The Writhing Deep": 1,
         "Verdantis River": 1,
         "Wildwind Lake": 1,
@@ -2184,7 +2416,7 @@
         "Sacrifice Terrace": 1,
         "Plaguemist Ravine": 1,
         "Quel'Danil Lodge": 1,
-        "Seradane": 1,
+        "Seradane": 4,
         "Shadra'Alor": 1,
         "Shaol'watha": 1,
         "Skulk Rock": 1,
@@ -2670,10 +2902,10 @@
         "Silverwing Grove": 1,
         "Forest Song": 1,
         "Auberdine": 1,
-        "Talrendis Point": 1,
+        "Talrendis Point": 2,
         "Talonbranch Glade": 1,
         "Feathermoon Stronghold": 1,
-        "Nijel's Point": 1,
+        "Nijel's Point": 3,
         "Thalanaar": 1,
         "Stonetalon Peak": 1,
         "Aerie Peak": 1,
@@ -2700,7 +2932,7 @@
         "Stonard": 1,
         "Brackenwall Village": 1,
         "Sen'jin Village": 1,
-        "Shadowprey Village": 1,
+        "Shadowprey Village": 3,
         "Revantusk Village": 1,
         "Malaka'jin": 1,
         "Thunder Bluff": 1,
@@ -2748,7 +2980,7 @@
         "Shadowfang Keep": 1,
         "Shadow Hold": 1,
         "Scholomance": 1,
-        "Maraudon": 1,
+        "Maraudon": 2,
         "Stratholme": 1,
         "Wailing Caverns": 1,
         "Uldaman": 1,
@@ -2912,18 +3144,250 @@
             "maxAmount": 2,
             "restockSpeed": 40
           }
+        ],
+        "Goldshire:Tharynn Bouden": [
+          {
+            "item": "Coarse Thread",
+            "amount": 20,
+            "maxAmount": 20,
+            "restockSpeed": 10
+          },
+          {
+            "item": "Bleach",
+            "amount": 10,
+            "maxAmount": 10,
+            "restockSpeed": 20
+          },
+          {
+            "item": "Red Dye",
+            "amount": 10,
+            "maxAmount": 10,
+            "restockSpeed": 20
+          },
+          {
+            "item": "Blue Dye",
+            "amount": 10,
+            "maxAmount": 10,
+            "restockSpeed": 20
+          },
+          {
+            "item": "Mild Spices",
+            "amount": 20,
+            "maxAmount": 20,
+            "restockSpeed": 10
+          },
+          {
+            "item": "Weak Flux",
+            "amount": 10,
+            "maxAmount": 10,
+            "restockSpeed": 10
+          },
+          {
+            "item": "Empty Vial",
+            "amount": 20,
+            "maxAmount": 20,
+            "restockSpeed": 10
+          },
+          {
+            "item": "Salt",
+            "amount": 10,
+            "maxAmount": 10,
+            "restockSpeed": 10
+          },
+          {
+            "item": "Copper Rod",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 20
+          },
+          {
+            "item": "Pattern: Blue Linen Vest",
+            "amount": 1,
+            "maxAmount": 1,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Recipe: Brilliant Smallfish",
+            "amount": 1,
+            "maxAmount": 1,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Recipe: Longjaw Mud Snapper",
+            "amount": 1,
+            "maxAmount": 1,
+            "restockSpeed": 30
+          }
+        ],
+        "Talrendis Point:Brinna Valanaar": [
+          {
+            "item": "Rough Arrow",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Sharp Arrow",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Reinforced Bow",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Heavy Recurve Bow",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Razor Arrow",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Small Quiver",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Jagged Arrow",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Dense Shortbow",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Medium Quiver",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       },
       "banks": {},
       "buyback": {
-        "items": [],
+        "items": [
+          {
+            "rarity": "Common",
+            "name": "Pitted Defias Shortsword",
+            "icon": "itemsword04",
+            "detailedType": "Sword",
+            "type": "One Handed",
+            "source": "RareDrop",
+            "ilvl": 4,
+            "lvl": 1,
+            "minDamage": 2,
+            "maxDamage": 4,
+            "amount": 1,
+            "minutesLeft": 30,
+            "maxStack": 1,
+            "price": 16,
+            "speed": 2.0
+          },
+          {
+            "rarity": "Common",
+            "name": "Earthroot",
+            "icon": "itemmischerb07",
+            "detailedType": "Flowers",
+            "type": "Trade Good",
+            "source": "Quest",
+            "ilvl": 5,
+            "lvl": 1,
+            "amount": 2,
+            "minutesLeft": 30,
+            "maxStack": 20,
+            "price": 20
+          },
+          {
+            "rarity": "Common",
+            "name": "Silverleaf",
+            "icon": "itemmischerb10",
+            "detailedType": "Flowers",
+            "type": "Trade Good",
+            "source": "RareDrop",
+            "ilvl": 5,
+            "lvl": 1,
+            "amount": 3,
+            "minutesLeft": 30,
+            "maxStack": 20,
+            "price": 10
+          },
+          {
+            "rarity": "Uncommon",
+            "name": "Blue Sack of Gems",
+            "icon": "itemmiscbag10blue",
+            "detailedType": "Pouch",
+            "type": "Miscellaneous",
+            "source": "RareDrop",
+            "ilvl": 1,
+            "amount": 1,
+            "minutesLeft": 30,
+            "maxStack": 1,
+            "price": 4762
+          },
+          {
+            "rarity": "Common",
+            "name": "Recruit's Shirt",
+            "icon": "itemshirt05",
+            "type": "Chest",
+            "ilvl": 1,
+            "lvl": 1,
+            "amount": 1,
+            "minutesLeft": 30,
+            "maxStack": 1,
+            "price": 1
+          },
+          {
+            "rarity": "Poor",
+            "name": "Worn Wooden Shield",
+            "icon": "itemshield09",
+            "detailedType": "Shield",
+            "type": "Off Hand",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 5,
+            "amount": 1,
+            "minutesLeft": 30,
+            "maxStack": 1,
+            "price": 1
+          },
+          {
+            "rarity": "Common",
+            "name": "Militia Warhammer",
+            "icon": "itemhammer15",
+            "detailedType": "Mace",
+            "type": "Two Handed",
+            "source": "Quest",
+            "ilvl": 5,
+            "lvl": 1,
+            "minDamage": 6,
+            "maxDamage": 9,
+            "amount": 1,
+            "minutesLeft": 30,
+            "maxStack": 1,
+            "price": 32,
+            "speed": 2.9
+          }
+        ],
         "bags": [],
         "ignoreSpaceChecks": true
       },
       "startDate": "2024-07-19T23:41:17.8673886+02:00",
-      "lastLoaded": "2024-07-22T16:17:49.7341628+02:00",
-      "lastPlayed": "2024-07-22T16:21:42.3454631+02:00",
-      "timePlayed": "01:48:24.2020755",
+      "lastLoaded": "2024-07-23T16:55:40.3412647+02:00",
+      "lastPlayed": "2024-07-23T16:57:24.466677+02:00",
+      "timePlayed": "02:20:52.2535196",
       "lastVisitedTalents": 1
     }
   ]

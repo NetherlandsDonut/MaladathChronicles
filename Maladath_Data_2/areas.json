@@ -12711,22 +12711,54 @@
     "name": "Dream Bough",
     "zone": "Feralas",
     "type": "EmeraldBough",
+    "commonEncounters": [
+      {
+        "who": "Jademir Oracle",
+        "levelMin": 60
+      },
+      {
+        "who": "Jademir Tree Watcher",
+        "levelMin": 60
+      },
+      {
+        "who": "Jademir Boughguard",
+        "levelMin": 60
+      }
+    ],
     "eliteEncounters": [
       {
         "who": "Lethon",
         "levelMin": 60
+      },
+      {
+        "who": "Dreamroarer",
+        "levelMin": 60
+      },
+      {
+        "who": "Lethlas",
+        "levelMin": 60
       }
     ],
-    "areaSize": 3,
+    "areaSize": 7,
     "progression": [
       {
         "type": "Boss",
         "bossName": "Lethon",
+        "point": 6
+      },
+      {
+        "type": "Boss",
+        "bossName": "Lethlas",
+        "point": 4
+      },
+      {
+        "type": "Boss",
+        "bossName": "Dreamroarer",
         "point": 2
       },
       {
         "type": "Treasure",
-        "point": 3
+        "point": 7
       }
     ]
   },
@@ -13009,18 +13041,15 @@
     "commonEncounters": [
       {
         "who": "Jademir Oracle",
-        "levelMin": 60,
-        "levelMax": 61
+        "levelMin": 60
       },
       {
         "who": "Jademir Tree Watcher",
-        "levelMin": 60,
-        "levelMax": 61
+        "levelMin": 60
       },
       {
         "who": "Jademir Boughguard",
-        "levelMin": 60,
-        "levelMax": 61
+        "levelMin": 60
       }
     ],
     "areaSize": 3,

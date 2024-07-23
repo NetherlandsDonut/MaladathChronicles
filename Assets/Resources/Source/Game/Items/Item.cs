@@ -118,6 +118,9 @@ public class Item
     //Can player have more than one of these items
     public bool unique;
 
+    //Items contained inside of the item
+    public List<Item> itemsInside;
+
     //List of abilities provided to the wearer of this item
     public Dictionary<string, int> abilities;
 
@@ -598,6 +601,7 @@ public class Item
             },
             (h) =>
             {
+                if (item == null || Item.item == item) return;
                 if (Cursor.cursor.color == "Pink") return;
                 if (CDesktop.windows.Exists(x => x.title.StartsWith("Vendor")))
                 {
@@ -707,13 +711,13 @@ public class Item
             },
             (h) => () =>
             {
-                if (item == null) return;
+                if (item == null || Item.item == item) return;
                 if (CDesktop.windows.Exists(x => x.title == "ConfirmItemDestroy")) return;
                 PrintItemTooltip(item, Input.GetKey(KeyCode.LeftShift));
             },
             (h) =>
             {
-                if (item.indestructible) return;
+                if (item.indestructible || Item.item == item) return;
                 Item.item = item;
                 PlaySound("DesktopMenuOpen", 0.6f);
                 SpawnWindowBlueprint("ConfirmItemDestroy");
@@ -741,6 +745,7 @@ public class Item
             AddBigButtonOverlay("OtherItemUpgrade", 0, 2);
         if (Cursor.cursor.color == "Pink" && !item.IsDisenchantable()) SetBigButtonToGrayscale();
         else if (Cursor.cursor.color == "Pink") AddBigButtonOverlay("OtherGlowDisenchantable" + item.rarity, 0, 2);
+        if (Item.item == item) { AddBigButtonOverlay("OtherGridBlurred", 0, 3); SetBigButtonToGrayscale(); }
         if (item.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (currentSave.player.inventory.items.IndexOf(item) % 5), item.amount + "", "", "Right");
     }
 
@@ -853,6 +858,22 @@ public class Item
                             Respawn("ChestLoot");
                         }
                     }
+                    else if (CDesktop.title == "ContainerLoot")
+                    {
+                        currentSave.player.inventory.AddItem(item);
+                        Item.item.itemsInside.Remove(item);
+                        if (settings.autoCloseLoot.Value() && Item.item.itemsInside.Count == 0)
+                        {
+                            currentSave.player.inventory.items.Remove(Item.item);
+                            Item.item = null;
+                            CloseDesktop("ContainerLoot");
+                        }
+                        else
+                        {
+                            Respawn("Inventory");
+                            Respawn("ContainerLoot");
+                        }
+                    }
                 }
             },
             null,
@@ -885,7 +906,7 @@ public class Item
             AddBigButtonOverlay(settings.newSlotIndicators.Value() ? "OtherItemNewSlot" : "OtherItemUpgrade", 0, 2);
         else if (settings.upgradeIndicators.Value() && item.CanEquip(currentSave.player) && currentSave.player.IsItemAnUpgrade(item))
             AddBigButtonOverlay("OtherItemUpgrade", 0, 2);
-        if (item.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (CDesktop.title == "ChestLoot" ? currentSave.openedChests[SiteHostileArea.area.name].inventory : (CDesktop.title == "MiningLoot" ? Board.board.results.miningLoot : (CDesktop.title == "HerbalismLoot" ? Board.board.results.herbalismLoot : (CDesktop.title == "DisenchantLoot" ? disenchantLoot : (CDesktop.title == "SkinningLoot" ? Board.board.results.skinningLoot : Board.board.results.inventory))))).items.IndexOf(item), item.amount + "", "", "Right");
+        if (item.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (CDesktop.title == "ContainerLoot" ? Item.item.itemsInside : (CDesktop.title == "ChestLoot" ? currentSave.openedChests[SiteHostileArea.area.name].inventory : (CDesktop.title == "MiningLoot" ? Board.board.results.miningLoot : (CDesktop.title == "HerbalismLoot" ? Board.board.results.herbalismLoot : (CDesktop.title == "DisenchantLoot" ? disenchantLoot : (CDesktop.title == "SkinningLoot" ? Board.board.results.skinningLoot : Board.board.results.inventory))))).items).IndexOf(item), item.amount + "", "", "Right");
     }
 
     public static void PrintItemTooltip(Item item, bool compare = false, double priceMultiplier = 1)

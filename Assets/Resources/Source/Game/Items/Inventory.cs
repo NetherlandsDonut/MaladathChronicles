@@ -53,6 +53,7 @@ public class Inventory
     //Tells whether the player can fit the item in the inventory
     public bool CanAddItem(Item item)
     {
+        if (item.type == "Currency") return true;
         if (ignoreSpaceChecks) return true;
         if (items.Count < BagSpace()) return true;
         var find = items.FindAll(x => x.name == item.name);
@@ -70,6 +71,7 @@ public class Inventory
         var copyInventory = items.Select(x => x.CopyItem(x.amount)).ToList();
         foreach (var item in copyList)
         {
+            if (item.type == "Currency") continue;
             var slots = copyInventory.FindAll(x => x.name == item.name);
             foreach (var depositSlot in slots)
                 if (depositSlot.amount < depositSlot.maxStack)
@@ -100,6 +102,13 @@ public class Inventory
     //Adds item to the inventory and automatically fills stacks
     public void AddItem(Item item)
     {
+        if (item.type == "Currency")
+            if (item.name == "Gold" || item.name == "Silver" || item.name == "Copper")
+            {
+                Sound.PlaySound("DesktopTransportPay");
+                money += item.price * item.amount;
+                return;
+            }
         var sumBefore = items.Sum(x => x.name == item.name ? x.amount : 0);
         var added = item.amount;
         var find = items.FindAll(x => x.name == item.name);
