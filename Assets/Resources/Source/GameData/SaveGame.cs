@@ -318,6 +318,13 @@ public class SaveGame
         Serialization.Serialize(settings, "settings", false, false, prefix);
     }
 
+    //Can you save at the moment
+    public static bool CanSave()
+    {
+        var blockedDesktops = new List<string> { "ChestLoot", "ContainerLoot", "CombatResults", "CombatLog", "MiningLoot", "CombatResultsLoot", "HerbalismLoot", "SkinningLoot", "FishingGame", "Game" };
+        return !desktops.Any(x => blockedDesktops.Contains(x.title));
+    }
+
     #endregion
 
     #region Death

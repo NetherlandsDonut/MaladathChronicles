@@ -5169,28 +5169,30 @@ public class Blueprint
                 Respawn("GameSettings");
                 CloseWindow(h.window);
             });
-            AddButtonRegion(() =>
+            if (CanSave())
             {
-                AddLine("Save and return to main menu", "Black");
-            },
-            (h) =>
+                AddButtonRegion(() => AddLine("Save and return to main menu", "Black"),
+                (h) =>
+                {
+                    CloseSave();
+                    SaveGames();
+                    CloseDesktop("GameMenu");
+                    CloseDesktop("Map");
+                    SpawnDesktopBlueprint("TitleScreen");
+                });
+                AddButtonRegion(() => AddLine("Save and exit", "Black"),
+                (h) =>
+                {
+                    CloseSave();
+                    SaveGames();
+                    Application.Quit();
+                });
+            }
+            else
             {
-                CloseSave();
-                SaveGames();
-                CloseDesktop("GameMenu");
-                CloseDesktop("Map");
-                SpawnDesktopBlueprint("TitleScreen");
-            });
-            AddButtonRegion(() =>
-            {
-                AddLine("Save and exit", "Black");
-            },
-            (h) =>
-            {
-                CloseSave();
-                SaveGames();
-                Application.Quit();
-            });
+                AddPaddingRegion(() => AddLine("Save and return to main menu", "DarkGray"));
+                AddPaddingRegion(() => AddLine("Save and exit", "DarkGray"));
+            }
         }, true),
         new("GameSettings", () => {
             SetAnchor(Center);
