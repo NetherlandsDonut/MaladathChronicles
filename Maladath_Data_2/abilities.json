@@ -1,7 +1,205 @@
 [
   {
+    "name": "Shadowform",
+    "icon": "AbilityShadowform",
+    "cooldown": 6,
+    "tags": [],
+    "cost": {
+      "Shadow": 6
+    },
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddBuff",
+            "BuffDuration": "0",
+            "ShatterType": "Central",
+            "ShatterTarget": "Effector",
+            "Affect": "Effector",
+            "BuffName": "Shadowform",
+            "AnimationType": "None"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Leave Shadowform",
+    "icon": "AbilityShadowform",
+    "cooldown": 1,
+    "hide": true,
+    "tags": [],
+    "cost": {
+      "Shadow": 6
+    },
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "RemoveBuff",
+            "BuffName": "Shadowform",
+            "Affect": "Effector",
+            "ShatterType": "Central",
+            "ShatterTarget": "Effector"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Moonkin Form",
+    "icon": "AbilityMoonkinForm",
+    "cooldown": 1,
+    "tags": [],
+    "cost": {
+      "Arcane": 2
+    },
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddBuff",
+            "BuffDuration": "0",
+            "ShatterType": "Central",
+            "ShatterTarget": "Effector",
+            "Affect": "Effector",
+            "BuffName": "Moonkin Form",
+            "AnimationType": "None"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Leave Moonkin Form",
+    "icon": "AbilityMoonkinForm",
+    "cooldown": 1,
+    "hide": true,
+    "tags": [],
+    "cost": {
+      "Arcane": 2
+    },
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "RemoveBuff",
+            "BuffName": "Moonkin Form",
+            "Affect": "Effector",
+            "ShatterType": "Central",
+            "ShatterTarget": "Effector"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Bear Form",
+    "icon": "AbilityBearForm",
+    "cooldown": 1,
+    "tags": [],
+    "cost": {
+      "Earth": 2
+    },
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddBuff",
+            "BuffDuration": "0",
+            "ShatterType": "Central",
+            "ShatterTarget": "Effector",
+            "Affect": "Effector",
+            "BuffName": "Bear Form",
+            "AnimationType": "None"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Leave Bear Form",
+    "icon": "AbilityBearForm",
+    "cooldown": 1,
+    "hide": true,
+    "tags": [],
+    "cost": {
+      "Earth": 2
+    },
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "RemoveBuff",
+            "BuffName": "Bear Form",
+            "ShatterType": "Central",
+            "Affect": "Effector",
+            "ShatterTarget": "Effector"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "name": "A Sack of Coins",
     "tags": [],
+    "ranks": [
+      {}
+    ],
     "events": [
       {
         "triggers": [
@@ -9113,20 +9311,34 @@
   {
     "name": "Moonfire",
     "icon": "AbilityMoonfire",
+    "cooldown": 3,
     "tags": [],
+    "cost": {
+      "Arcane": 4
+    },
     "ranks": [
       {}
     ],
-    "events": []
-  },
-  {
-    "name": "Moonkin Form",
-    "icon": "AbilityMoonkinForm",
-    "tags": [],
-    "ranks": [
-      {}
-    ],
-    "events": []
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerSource": "Effector",
+            "PowerType": "Spell",
+            "ShatterType": "Central",
+            "ShatterTarget": "Other"
+          }
+        ]
+      }
+    ]
   },
   {
     "name": "Mortal Strike",
@@ -10586,15 +10798,6 @@
     ]
   },
   {
-    "name": "Shadowform",
-    "icon": "AbilityShadowform",
-    "tags": [],
-    "ranks": [
-      {}
-    ],
-    "events": []
-  },
-  {
     "name": "Shield Bash",
     "icon": "AbilityShieldBash",
     "tags": [],
@@ -10907,11 +11110,43 @@
   {
     "name": "Starfall",
     "icon": "AbilityStarfall",
+    "cooldown": 7,
     "tags": [],
+    "cost": {
+      "Shadow": 4,
+      "Arcane": 10,
+      "Fire": 0,
+      "Earth": 0,
+      "Water": 0,
+      "Air": 0,
+      "Frost": 0,
+      "Decay": 0,
+      "Order": 0,
+      "Lightning": 0
+    },
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "ShatterType": "Central",
+            "ShatterTarget": "Other",
+            "Affect": "Other",
+            "PowerSource": "Effector",
+            "PowerType": "Spell"
+          }
+        ]
+      }
+    ]
   },
   {
     "name": "Starweaver",
@@ -12012,11 +12247,43 @@
   {
     "name": "Wrath",
     "icon": "AbilityWrath",
+    "cooldown": 1,
     "tags": [],
+    "cost": {
+      "Order": 1,
+      "Arcane": 2,
+      "Fire": 0,
+      "Earth": 0,
+      "Water": 0,
+      "Air": 0,
+      "Frost": 0,
+      "Decay": 0,
+      "Shadow": 0,
+      "Lightning": 0
+    },
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerSource": "Effector",
+            "PowerType": "Spell",
+            "ShatterType": "Central",
+            "ShatterTarget": "Other"
+          }
+        ]
+      }
+    ]
   },
   {
     "name": "Xavius Gambit",

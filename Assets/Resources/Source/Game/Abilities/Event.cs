@@ -12,7 +12,6 @@ using static Shatter;
 using static FlyingBuff;
 using static FlyingElement;
 using static FlyingMissile;
-using NUnit.Framework;
 
 public class Event
 {
@@ -273,7 +272,6 @@ public class Event
                 CDesktop.LockScreen();
             }
 
-
             bool CheckFailChance()
             {
                 var randomRange = random.Next(0, 100);
@@ -313,6 +311,7 @@ public class Event
                 else if (type == "EndTurn") EffectEndTurn();
                 else if (type == "ChangeElements") EffectChangeElements();
                 else if (type == "ConsumeItem") EffectConsumeItem();
+                else if (type == "ChangeActionSet") EffectChangeActionSet();
 
                 ExecuteShatter();
                 ExecuteSoundEffect();
@@ -494,36 +493,44 @@ public class Event
                 else if (futureBoard != null)
                 {
                     var target = affect == "Effector" ? futureEffector : futureOther;
-                    target.RemoveBuff(target.buffs.Find(x => x.Item1.name == buffName));
-                    futureBoard.CallEvents(target, new()
+                    var buff = target.buffs.Find(x => x.Item1.name == buffName);
+                    if (buff.Item1 != null)
                     {
-                        { "Trigger", "BuffRemove" },
-                        { "Triggerer", "Effector" },
-                        { "BuffName", buffName }
-                    });
-                    futureBoard.CallEvents(target == futureEffector ? futureOther : futureEffector, new()
-                    {
-                        { "Trigger", "BuffRemove" },
-                        { "Triggerer", "Other" },
-                        { "BuffName", buffName }
-                    });
+                        futureBoard.CallEvents(target, new()
+                        {
+                            { "Trigger", "BuffRemove" },
+                            { "Triggerer", "Effector" },
+                            { "BuffName", buffName }
+                        });
+                        futureBoard.CallEvents(target == futureEffector ? futureOther : futureEffector, new()
+                        {
+                            { "Trigger", "BuffRemove" },
+                            { "Triggerer", "Other" },
+                            { "BuffName", buffName }
+                        });
+                        target.RemoveBuff(buff);
+                    }
                 }
                 else if (board != null)
                 {
                     var target = affect == "Effector" ? effector : other;
-                    target.RemoveBuff(target.buffs.Find(x => x.Item1 == buffs.Find(x => x.name == buffName)));
-                    board.CallEvents(target, new()
+                    var buff = target.buffs.Find(x => x.Item1 == buffs.Find(x => x.name == buffName));
+                    if (buff.Item1 != null)
                     {
-                        { "Trigger", "BuffRemove" },
-                        { "Triggerer", "Effector" },
-                        { "BuffName", buffName }
-                    });
-                    board.CallEvents(target == effector ? other : effector, new()
-                    {
-                        { "Trigger", "BuffRemove" },
-                        { "Triggerer", "Other" },
-                        { "BuffName", buffName }
-                    });
+                        board.CallEvents(target, new()
+                        {
+                            { "Trigger", "BuffRemove" },
+                            { "Triggerer", "Effector" },
+                            { "BuffName", buffName }
+                        });
+                        board.CallEvents(target == effector ? other : effector, new()
+                        {
+                            { "Trigger", "BuffRemove" },
+                            { "Triggerer", "Other" },
+                            { "BuffName", buffName }
+                        });
+                        target.RemoveBuff(buff);
+                    }
                 }
             }
 
@@ -553,6 +560,33 @@ public class Event
                     if (itemUsed.amount == 0)
                         target.inventory.items.Remove(itemUsed);
                     Respawn("PlayerQuickUse", true);
+                }
+            }
+
+            //This effect changes the action set that the entity has in combat
+            void EffectChangeActionSet()
+            {
+                if (futureBoard != null)
+                {
+                    var target = affect == "Effector" ? futureEffector : futureOther;
+                    string to = effect.ContainsKey("ActionSet") ? effect["ActionSet"] : "Default";
+                    target.currentActionSet = to;
+                }
+                else if (board != null)
+                {
+                    var target = affect == "Effector" ? effector : other;
+                    string to = effect.ContainsKey("ActionSet") ? effect["ActionSet"] : "Default";
+                    target.currentActionSet = to;
+                    if (target == board.enemy)
+                    {
+                        CloseWindow("EnemyBattleInfo");
+                        Respawn("PlayerBattleInfo");
+                    }
+                    else if (target == board.player)
+                    {
+                        CloseWindow("PlayerBattleInfo");
+                        Respawn("PlayerBattleInfo");
+                    }
                 }
             }
 
@@ -667,6 +701,7 @@ public class Event
         "DestroyRows",
         "DestroyColumns",
         "DestroyRegion",
-        "ChangeElements"
+        "ChangeElements",
+        "ChangeActionSet"
     };
 }

@@ -330,7 +330,8 @@ public class Starter : MonoBehaviour
             {
                 var item = Board.board.player.equipment.ContainsKey("Trinket") ? Board.board.player.equipment["Trinket"] : null;
                 var addTrinket = item != null && item.abilities != null && item.combatUse;
-                SetAnchor(-320 + 19 * elements.IndexOf(element), 123 - 19 * (Board.board.player.actionBars.Count + (addTrinket ? 1 : 0)));
+                var length = Board.board.player.actionBars.Max(x => x.Value.Count()) + (addTrinket ? 1 : 0);
+                SetAnchor(-320 + 19 * elements.IndexOf(element), 123 - 19 * length);
                 AddRegionGroup();
                 SetRegionGroupHeight(Board.board.player.MaxResource(element) * 8);
                 SetRegionGroupWidth(19);
@@ -342,7 +343,10 @@ public class Starter : MonoBehaviour
             }));
             Blueprint.windowBlueprints.Add(new Blueprint("Enemy" + element + "Resource", () =>
             {
-                SetAnchor(299 - 19 * elements.IndexOf(element), 123 - 19 * Board.board.enemy.actionBars.Count);
+                var item = Board.board.enemy.equipment.ContainsKey("Trinket") ? Board.board.enemy.equipment["Trinket"] : null;
+                var addTrinket = item != null && item.abilities != null && item.combatUse;
+                var length = Board.board.enemy.actionBars.Max(x => x.Value.Count()) + (addTrinket ? 1 : 0);
+                SetAnchor(299 - 19 * elements.IndexOf(element), 123 - 19 * length);
                 AddRegionGroup();
                 SetRegionGroupHeight(Board.board.enemy.MaxResource(element) * 8);
                 SetRegionGroupWidth(19);

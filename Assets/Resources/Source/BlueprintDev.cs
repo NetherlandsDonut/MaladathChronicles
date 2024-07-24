@@ -2003,7 +2003,7 @@ public static class BlueprintDev
                 {
                     AddLine(effect.ContainsKey("BuffName") ? effect["BuffName"] : "None");
                     if (effect.ContainsKey("BuffName") && effect["BuffName"] != "None")
-                        AddSmallButton(buffs.Find(x => x.name == effect["BuffName"]).icon);
+                        AddSmallButton(buffs.Find(x => x.name == effect["BuffName"])?.icon);
                 },
                 (h) =>
                 {
@@ -3328,7 +3328,7 @@ public static class BlueprintDev
             },
             (h) =>
             {
-                abilities = abilities.OrderBy(x => currentSave.player.actionBars.Contains(x.name)).ToList();
+                abilities = abilities.OrderBy(x => currentSave.player.actionBars[currentSave.player.currentActionSet].Contains(x.name)).ToList();
                 CloseWindow("AbilitiesSort");
                 CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.4f);

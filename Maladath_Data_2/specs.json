@@ -87,14 +87,14 @@
       "Spirit per Level": 0.0
     },
     "abilities": {
-      "Dual Wielding Proficiency": 1,
-      "One Handed Axe Proficiency": 1,
-      "One Handed Mace Proficiency": 1,
-      "One Handed Sword Proficiency": 1,
-      "Fist Weapon Proficiency": 1,
-      "Off Hand Proficiency": 1,
-      "Dagger Proficiency": 1,
-      "Leather Proficiency": 1
+      "Dual Wielding Proficiency": 0,
+      "One Handed Axe Proficiency": 0,
+      "One Handed Mace Proficiency": 0,
+      "One Handed Sword Proficiency": 0,
+      "Fist Weapon Proficiency": 0,
+      "Off Hand Proficiency": 0,
+      "Dagger Proficiency": 0,
+      "Leather Proficiency": 0
     },
     "talentTrees": [
       {
@@ -187,23 +187,23 @@
       "Spirit per Level": 0.0
     },
     "abilities": {
-      "Dual Wielding Proficiency": 1,
-      "Two Handed Axe Proficiency": 1,
-      "Two Handed Sword Proficiency": 1,
-      "Polearm Proficiency": 1,
-      "Quiver Proficiency": 1,
-      "Pouch Proficiency": 1,
-      "Bow Proficiency": 1,
-      "Crossbow Proficiency": 1,
-      "Gun Proficiency": 1,
-      "Leather Proficiency": 1,
+      "Dual Wielding Proficiency": 0,
+      "Two Handed Axe Proficiency": 0,
+      "Two Handed Sword Proficiency": 0,
+      "Polearm Proficiency": 0,
+      "Quiver Proficiency": 0,
+      "Pouch Proficiency": 0,
+      "Bow Proficiency": 0,
+      "Crossbow Proficiency": 0,
+      "Gun Proficiency": 0,
+      "Leather Proficiency": 0,
       "Mail Proficiency": 0,
-      "One Handed Axe Proficiency": 1,
-      "One Handed Mace Proficiency": 1,
-      "One Handed Sword Proficiency": 1,
-      "Fist Weapon Proficiency": 1,
-      "Off Hand Proficiency": 1,
-      "Dagger Proficiency": 1
+      "One Handed Axe Proficiency": 0,
+      "One Handed Mace Proficiency": 0,
+      "One Handed Sword Proficiency": 0,
+      "Fist Weapon Proficiency": 0,
+      "Off Hand Proficiency": 0,
+      "Dagger Proficiency": 0
     },
     "talentTrees": [
       {
@@ -268,16 +268,16 @@
       "Spirit per Level": 0.0
     },
     "abilities": {
-      "Dual Wielding Proficiency": 1,
-      "Two Handed Axe Proficiency": 1,
-      "Polearm Proficiency": 1,
-      "Leather Proficiency": 1,
+      "Dual Wielding Proficiency": 0,
+      "Two Handed Axe Proficiency": 0,
+      "Polearm Proficiency": 0,
+      "Leather Proficiency": 0,
       "Mail Proficiency": 0,
-      "One Handed Axe Proficiency": 1,
-      "One Handed Mace Proficiency": 1,
-      "Fist Weapon Proficiency": 1,
-      "Off Hand Proficiency": 1,
-      "Dagger Proficiency": 1
+      "One Handed Axe Proficiency": 0,
+      "One Handed Mace Proficiency": 0,
+      "Fist Weapon Proficiency": 0,
+      "Off Hand Proficiency": 0,
+      "Dagger Proficiency": 0
     },
     "talentTrees": [
       {
@@ -697,19 +697,19 @@
       "Spirit per Level": 0.0
     },
     "abilities": {
-      "Dual Wielding Proficiency": 1,
-      "Two Handed Axe Proficiency": 1,
-      "Two Handed Mace Proficiency": 1,
-      "Two Handed Sword Proficiency": 1,
-      "Polearm Proficiency": 1,
-      "Shield Proficiency": 1,
-      "Mail Proficiency": 1,
-      "Plate Proficiency": 1,
-      "One Handed Axe Proficiency": 1,
-      "One Handed Mace Proficiency": 1,
-      "One Handed Sword Proficiency": 1,
-      "Fist Weapon Proficiency": 1,
-      "Off Hand Proficiency": 1
+      "Dual Wielding Proficiency": 0,
+      "Two Handed Axe Proficiency": 0,
+      "Two Handed Mace Proficiency": 0,
+      "Two Handed Sword Proficiency": 0,
+      "Polearm Proficiency": 0,
+      "Shield Proficiency": 0,
+      "Mail Proficiency": 0,
+      "Plate Proficiency": 0,
+      "One Handed Axe Proficiency": 0,
+      "One Handed Mace Proficiency": 0,
+      "One Handed Sword Proficiency": 0,
+      "Fist Weapon Proficiency": 0,
+      "Off Hand Proficiency": 0
     },
     "talentTrees": [
       {
@@ -1007,18 +1007,18 @@
       "Spirit per Level": 0.0
     },
     "abilities": {
-      "Two Handed Axe Proficiency": 1,
-      "Two Handed Mace Proficiency": 1,
-      "Two Handed Sword Proficiency": 1,
-      "Polearm Proficiency": 1,
-      "Shield Proficiency": 1,
-      "Mail Proficiency": 1,
-      "Plate Proficiency": 1,
-      "One Handed Axe Proficiency": 1,
-      "One Handed Mace Proficiency": 1,
-      "One Handed Sword Proficiency": 1,
-      "Off Hand Proficiency": 1,
-      "Libram Proficiency": 1
+      "Two Handed Axe Proficiency": 0,
+      "Two Handed Mace Proficiency": 0,
+      "Two Handed Sword Proficiency": 0,
+      "Polearm Proficiency": 0,
+      "Shield Proficiency": 0,
+      "Mail Proficiency": 0,
+      "Plate Proficiency": 0,
+      "One Handed Axe Proficiency": 0,
+      "One Handed Mace Proficiency": 0,
+      "One Handed Sword Proficiency": 0,
+      "Off Hand Proficiency": 0,
+      "Libram Proficiency": 0
     },
     "talentTrees": [
       {
@@ -1382,14 +1382,14 @@
       "Spirit per Level": 0.0
     },
     "abilities": {
-      "Two Handed Mace Proficiency": 1,
-      "Staff Proficiency": 1,
-      "Leather Proficiency": 1,
-      "One Handed Mace Proficiency": 1,
-      "Off Hand Proficiency": 1,
-      "Fist Weapon Proficiency": 1,
-      "Dagger Proficiency": 1,
-      "Idol Proficiency": 1
+      "Two Handed Mace Proficiency": 0,
+      "Staff Proficiency": 0,
+      "Leather Proficiency": 0,
+      "One Handed Mace Proficiency": 0,
+      "Off Hand Proficiency": 0,
+      "Fist Weapon Proficiency": 0,
+      "Dagger Proficiency": 0,
+      "Idol Proficiency": 0
     },
     "talentTrees": [
       {
@@ -1541,7 +1541,7 @@
           },
           {
             "row": 4,
-            "ability": "Swipe"
+            "ability": "Bear Form"
           },
           {
             "row": 4,
@@ -1786,12 +1786,12 @@
       "Spirit per Level": 0.0
     },
     "abilities": {
-      "Staff Proficiency": 1,
-      "Cloth Proficiency": 1,
-      "One Handed Mace Proficiency": 1,
-      "Off Hand Proficiency": 1,
-      "Dagger Proficiency": 1,
-      "Wand Proficiency": 1
+      "Staff Proficiency": 0,
+      "Cloth Proficiency": 0,
+      "One Handed Mace Proficiency": 0,
+      "Off Hand Proficiency": 0,
+      "Dagger Proficiency": 0,
+      "Wand Proficiency": 0
     },
     "talentTrees": [
       {
@@ -2077,12 +2077,12 @@
       "Spirit per Level": 0.0
     },
     "abilities": {
-      "Staff Proficiency": 1,
-      "Cloth Proficiency": 1,
-      "One Handed Sword Proficiency": 1,
-      "Off Hand Proficiency": 1,
-      "Dagger Proficiency": 1,
-      "Wand Proficiency": 1
+      "Staff Proficiency": 0,
+      "Cloth Proficiency": 0,
+      "One Handed Sword Proficiency": 0,
+      "Off Hand Proficiency": 0,
+      "Dagger Proficiency": 0,
+      "Wand Proficiency": 0
     },
     "talentTrees": [
       {
@@ -2369,12 +2369,12 @@
       "Spirit per Level": 0.0
     },
     "abilities": {
-      "Staff Proficiency": 1,
-      "Cloth Proficiency": 1,
-      "One Handed Sword Proficiency": 1,
-      "Off Hand Proficiency": 1,
-      "Dagger Proficiency": 1,
-      "Wand Proficiency": 1
+      "Staff Proficiency": 0,
+      "Cloth Proficiency": 0,
+      "One Handed Sword Proficiency": 0,
+      "Off Hand Proficiency": 0,
+      "Dagger Proficiency": 0,
+      "Wand Proficiency": 0
     },
     "talentTrees": [
       {
@@ -2749,12 +2749,12 @@
       "Spirit per Level": 0.0
     },
     "abilities": {
-      "Staff Proficiency": 1,
-      "Polearm Proficiency": 1,
-      "Leather Proficiency": 1,
-      "One Handed Mace Proficiency": 1,
-      "Off Hand Proficiency": 1,
-      "Fist Weapon Proficiency": 1
+      "Staff Proficiency": 0,
+      "Polearm Proficiency": 0,
+      "Leather Proficiency": 0,
+      "One Handed Mace Proficiency": 0,
+      "Off Hand Proficiency": 0,
+      "Fist Weapon Proficiency": 0
     },
     "talentTrees": []
   }

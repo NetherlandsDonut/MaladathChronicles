@@ -179,7 +179,7 @@ public class Buff
             AddBigButton(buff.Item1.icon);
             AddLine("Dispellable: ", "DarkGray");
             AddText(buff.Item1.dispelType != "None" ? "Yes" : "No");
-            if (buff.Item3 != null)
+            if (buff.Item3 != null && buff.Item2 > 0)
             {
                 AddLine("Turns left: ", "DarkGray");
                 AddText(buff.Item2 + "");

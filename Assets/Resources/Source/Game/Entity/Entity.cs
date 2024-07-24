@@ -59,7 +59,7 @@ public class Entity
         }
         equipment = new Dictionary<string, Item>();
         EquipAllItems();
-        actionBars = Ability.abilities.FindAll(x => abilities.ContainsKey(x.name) && x.cost != null).OrderBy(x => x.cost.Sum(y => y.Value)).OrderBy(x => x.putOnEnd).Select(x => x.name).Take(ActionBarsAmount()).ToList();
+        actionBars = new() { { "Default", Ability.abilities.FindAll(x => abilities.ContainsKey(x.name) && x.cost != null).OrderBy(x => x.cost.Sum(y => y.Value)).OrderBy(x => x.putOnEnd).Select(x => x.name).Take(ActionBarsAmount()).ToList() } };
         InitialiseCombat();
     }
 
@@ -72,7 +72,7 @@ public class Entity
         abilities = race.abilities.ToDictionary(x => x.Key, x => x.Value);
         equipment = new();
         inventory = new Inventory(new List<string>());
-        actionBars = Ability.abilities.FindAll(x => abilities.ContainsKey(x.name) && x.cost != null).OrderBy(x => x.cost.Sum(y => y.Value)).OrderBy(x => x.putOnEnd).Select(x => x.name).ToList();
+        actionBars = new() { { "Default", Ability.abilities.FindAll(x => abilities.ContainsKey(x.name) && x.cost != null).OrderBy(x => x.cost.Sum(y => y.Value)).OrderBy(x => x.putOnEnd).Select(x => x.name).ToList() } };
         stats = new Stats(
             new()
             {
@@ -941,9 +941,10 @@ public class Entity
                     if (talent.defaultTaken) abilities[talent.ability] = 0;
                     else abilities.Remove(talent.ability);
                 }
-        for (int i = actionBars.Count - 1; i >= 0; i--)
-            if (!abilities.ContainsKey(actionBars[i]))
-                actionBars.RemoveAt(i);
+        foreach (var actionSet in actionBars)
+            for (int i = actionSet.Value.Count - 1; i >= 0; i--)
+                if (!abilities.ContainsKey(actionSet.Value[i]))
+                    actionSet.Value.RemoveAt(i);
     }
 
     #endregion
@@ -1245,8 +1246,8 @@ public class Entity
 
     public Dictionary<Ability, int> AbilitiesInCombat()
     {
-        var temp = Ability.abilities.FindAll(x => abilities.ContainsKey(x.name) && (x.cost == null || actionBars.Contains(x.name)));
-        return temp.ToDictionary(x => x, x => abilities[x.name]);
+        var temp = Ability.abilities.FindAll(x => abilities.ContainsKey(x.name) && (x.cost == null || actionBars.Any(y => y.Value.Contains(x.name))) || actionBars.Any(y => y.Value.Contains(x.name)) && x.cost != null && !abilities.ContainsKey(x.name));
+        return temp.ToDictionary(x => x, x => abilities.ContainsKey(x.name) ? abilities[x.name] : 0);
     }
 
     //Pops all buffs on this entity activating
@@ -1265,7 +1266,7 @@ public class Entity
             Board.board.actions.Add(() =>
             {
                 buffs[index] = (buffs[index].Item1, buffs[index].Item2 - 1, buffs[index].Item3, buffs[index].Item4);
-                if (buffs[index].Item2 <= 0) RemoveBuff(buffs[index]);
+                if (buffs[index].Item2 == 0) RemoveBuff(buffs[index]);
             });
         }
     }
@@ -1378,8 +1379,11 @@ public class Entity
     //This can be abilities from items, class or race
     public Dictionary<string, int> abilities;
 
+    //Current action set
+    public string currentActionSet;
+
     //Set action bars in spellbook
-    public List<string> actionBars;
+    public Dictionary<string, List<string>> actionBars;
 
     //"Naked" stats of the entity
     public Stats stats;

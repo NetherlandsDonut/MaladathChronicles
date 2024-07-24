@@ -16,7 +16,8 @@ public class FutureEntity
         inventory = entity.inventory;
         equipment = entity.equipment;
         stats = entity.stats;
-        actionBars = entity.actionBars.ToList();
+        currentActionSet = entity.currentActionSet;
+        actionBars = entity.actionBars.ToDictionary(x => x.Key, x => x.Value.ToList());
         buffs = new();
         foreach (var buff in entity.buffs)
             buffs.Add((buff.Item1, buff.Item2, buff.Item3));
@@ -34,7 +35,8 @@ public class FutureEntity
         inventory = entity.inventory;
         equipment = entity.equipment;
         stats = entity.stats;
-        actionBars = entity.actionBars.ToList();
+        currentActionSet = entity.currentActionSet;
+        actionBars = entity.actionBars.ToDictionary(x => x.Key, x => x.Value.ToList());
         buffs = new();
         foreach (var buff in entity.buffs)
             buffs.Add((buff.Item1, buff.Item2, buff.Item4));
@@ -51,7 +53,9 @@ public class FutureEntity
 
     public Spec Spec() => global::Spec.specs.Find(x => x.name == spec);
 
-    public List<string> actionBars;
+    public string currentActionSet;
+
+    public Dictionary<string, List<string>> actionBars;
 
     public Stats stats;
 
@@ -67,7 +71,7 @@ public class FutureEntity
 
     public Dictionary<string, double> ElementImportance(double healthPerc, double otherHealthPerc)
     {
-        var abilities = Ability.abilities.FindAll(x => actionBars.Exists(y => y == x.name));
+        var abilities = Ability.abilities.FindAll(x => actionBars[currentActionSet].Exists(y => y == x.name));
         var elementCostsSeparate = abilities.SelectMany(x => x.cost.ToList()).GroupBy(x => x.Key, x => x.Value).ToDictionary(x => x.Key, x => x.Sum(x => x));
         double elementCosts = elementCostsSeparate.Sum(x => x.Value);
         var sheet = new Dictionary<string, double>();
@@ -341,7 +345,7 @@ public class FutureEntity
                 futureBoard.CallEvents(futureBoard.player == this ? futureBoard.enemy : futureBoard.player, new() { { "Trigger", "BuffRemove" }, { "Triggerer", "Other" }, { "BuffName", buffs[index].Item1.name } });
             }
             buffs[index] = (buffs[index].Item1, buffs[index].Item2 - 1, buffs[index].Item3);
-            if (buffs[index].Item2 <= 0) RemoveBuff(buffs[index]);
+            if (buffs[index].Item2 == 0) RemoveBuff(buffs[index]);
         }
     }
 

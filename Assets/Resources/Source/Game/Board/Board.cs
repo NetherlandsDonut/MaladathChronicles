@@ -28,8 +28,10 @@ public class Board
         this.enemy = enemy;
         playerTurn = true;
         this.area = area;
+        player.currentActionSet = "Default";
         playerCombatAbilities = player.AbilitiesInCombat();
         playerCooldowns = new();
+        this.enemy.currentActionSet = "Default";
         enemyCombatAbilities = this.enemy.AbilitiesInCombat();
         enemyCooldowns = new();
         temporaryElementsPlayer = new();
@@ -53,8 +55,10 @@ public class Board
         enemy = new Entity(60, null);
         playerTurn = true;
         area = areas[random.Next(areas.Count)];
+        player.currentActionSet = "Default";
         playerCombatAbilities = abilities;
         playerCooldowns = new();
+        enemy.currentActionSet = "Default";
         enemyCombatAbilities = abilities;
         enemyCooldowns = new();
         temporaryElementsPlayer = new();
@@ -466,12 +470,11 @@ public class Board
             else if (result == "Fled")
             {
                 PlaySound("RunAwayBitch");
-                if (area != null && area.instancePart)
-                    SwitchDesktop("Instance");
-                else if (area != null && area.complexPart)
-                    SwitchDesktop("Complex");
-                else
-                    SwitchDesktop("HostileArea");
+                if (area != null && area.instancePart) SwitchDesktop("Instance");
+                else if (area != null && area.complexPart) SwitchDesktop("Complex");
+                else SwitchDesktop("HostileArea");
+                Respawn("MapToolbarClockLeft");
+                Respawn("MapToolbarClockRight");
             }
         }
         if (CDesktop.screenLocked)
@@ -623,14 +626,14 @@ public class Board
                     var abilityObj = Ability.abilities.Find(x => x.name == bestMove.ability);
                     board.actions.Add(() =>
                     {
-                        cursorEnemy.Move(CDesktop.windows.Find(x => x.title == "EnemyBattleInfo").regionGroups[0].regions[enemy.actionBars.IndexOf(abilityObj.name) + 2].transform.position + new Vector3(139, -10));
+                        cursorEnemy.Move(CDesktop.windows.Find(x => x.title == "EnemyBattleInfo").regionGroups[0].regions[enemy.actionBars[enemy.currentActionSet].IndexOf(abilityObj.name) + 2].transform.position + new Vector3(139, -10));
                         animationTime += defines.frameTime * 9;
                     });
                     board.actions.Add(() => { cursorEnemy.SetCursor(CursorType.Click); });
                     board.actions.Add(() =>
                     {
                         cursorEnemy.SetCursor(CursorType.Default);
-                        AddRegionOverlay(CDesktop.windows.Find(x => x.title == "EnemyBattleInfo").regionGroups[0].regions[enemy.actionBars.IndexOf(abilityObj.name) + 2], "Window", 10f);
+                        AddRegionOverlay(CDesktop.windows.Find(x => x.title == "EnemyBattleInfo").regionGroups[0].regions[enemy.actionBars[enemy.currentActionSet].IndexOf(abilityObj.name) + 2], "Window", 10f);
                         animationTime += defines.frameTime;
                         board.CallEvents(board.enemy, new() { { "Trigger", "AbilityCast" }, {"Triggerer", "Effector" }, { "AbilityName", abilityObj.name } });
                         board.CallEvents(board.player, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Other" }, { "AbilityName", abilityObj.name } });
