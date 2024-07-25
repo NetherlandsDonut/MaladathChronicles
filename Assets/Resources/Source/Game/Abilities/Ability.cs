@@ -31,6 +31,10 @@ public class Ability
 
     #region Execution
 
+    public bool AreAnyConditionsMet(string trigger, SaveGame save, Board board, FutureBoard futureBoard) => events.FindAll(x => x.triggers.Any(y => y["Trigger"] == trigger)).Any(x => AreConditionsMet(x, save, board, futureBoard));
+
+    public bool AreConditionsMet(Event eve, SaveGame save, Board board, FutureBoard futureBoard) => eve.conditions == null || eve.conditions.Count == 0 || eve.conditions.All(x => x.IsMet(SaveGame.currentSave, board, futureBoard));
+
     public void ExecuteEvents(SaveGame save, Dictionary<string, string> trigger, Item item, int abilityRank)
     {
         //In case of this ability having no events just return
@@ -48,7 +52,8 @@ public class Ability
                         execute = item != null && item.GetHashCode() + "" == itemHash && (sitePresence == "" || save.currentSite == sitePresence);
                     }
                 }
-            if (execute) eve.ExecuteEffects(save, item, trigger, RankVariables(abilityRank), this, abilityRank);
+            if (execute && AreConditionsMet(eve, save, null, null))
+                eve.ExecuteEffects(save, item, trigger, RankVariables(abilityRank), this, abilityRank);
         }
     }
 
@@ -131,11 +136,12 @@ public class Ability
                     }
                 }
             if (execute && (board != null ? board.CooldownOn(sourcedFromPlayer, name) : futureBoard.CooldownOn(sourcedFromPlayer, name)) <= 0)
-            {
-                if (board != null) board.PutOnCooldown(sourcedFromPlayer, this);
-                else futureBoard.PutOnCooldown(sourcedFromPlayer, this);
-                eve.ExecuteEffects(board, futureBoard, icon, trigger, RankVariables(abilityRank), name, abilityRank);
-            }
+                if (AreConditionsMet(eve, null, board, futureBoard))
+                {
+                    if (board != null) board.PutOnCooldown(sourcedFromPlayer, this);
+                    else futureBoard.PutOnCooldown(sourcedFromPlayer, this);
+                    eve.ExecuteEffects(board, futureBoard, icon, trigger, RankVariables(abilityRank), name, abilityRank);
+                }
         }
     }
 

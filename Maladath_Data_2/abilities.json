@@ -6917,6 +6917,11 @@
           {
             "Effect": "EndTurn"
           }
+        ],
+        "conditions": [
+          {
+            "content": "@enemyhealth% < @playerhealth%"
+          }
         ]
       }
     ]

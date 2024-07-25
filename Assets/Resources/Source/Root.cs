@@ -1053,6 +1053,15 @@ public static class Root
         return false;
     }
 
+    //Compares values with a operator provided in the form of a string
+    public static bool CompareValues(string x, string y, string compare)
+    {
+        if (compare == "==") return x == y;
+        if (compare == "!=") return x != y;
+        if (compare == "<>") return x != y;
+        return false;
+    }
+
     //Converts a number into the roman notation
     public static string ToRoman(int number)
     {

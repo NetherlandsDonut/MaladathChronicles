@@ -154,7 +154,7 @@ public class FutureBoard
             var abilities = entity.actionBars[entity.currentActionSet].Select(x => Ability.abilities.Find(y => y.name == x)).ToList();
             if (!temp.playerTurn) //THIS PREVENTS ENEMY FROM CALCULATING PLAYER ABILITIES
                 foreach (var ability in abilities)
-                    if (CooldownOn(false, ability.name) <= 0 && ability.EnoughResources(entity))
+                    if (CooldownOn(false, ability.name) <= 0 && ability.EnoughResources(entity) && ability.AreAnyConditionsMet("AbilityCast", SaveGame.currentSave, null, temp))
                     {
                         var futureBoard = new FutureBoard(this);
                         entity = futureBoard.playerTurn ? futureBoard.player : futureBoard.enemy;

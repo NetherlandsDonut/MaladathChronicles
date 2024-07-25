@@ -246,7 +246,7 @@ public class Blueprint
                         }
                         else AddLine(actionBar);
                         AddSmallButton(abilityObj.icon);
-                        if (!abilityObj.EnoughResources(board.enemy))
+                        if (!abilityObj.EnoughResources(board.enemy) || !abilityObj.AreAnyConditionsMet("AbilityCast", currentSave, board, null))
                         {
                             SetSmallButtonToGrayscale();
                             AddSmallButtonOverlay("OtherGridBlurred");
@@ -313,7 +313,7 @@ public class Blueprint
                         }
                         else AddLine(actionBar, "", "Right");
                         AddSmallButton(abilityObj.icon);
-                        if (!abilityObj.EnoughResources(board.player))
+                        if (!abilityObj.EnoughResources(board.player) || !abilityObj.AreAnyConditionsMet("AbilityCast", currentSave, board, null))
                         {
                             SetSmallButtonToGrayscale();
                             AddSmallButtonOverlay("OtherGridBlurred");
@@ -323,7 +323,7 @@ public class Blueprint
                     },
                     (h) =>
                     {
-                        if (abilityObj.EnoughResources(board.player) && board.CooldownOn(true, actionBar) <= 0)
+                        if (abilityObj.EnoughResources(board.player) && board.CooldownOn(true, actionBar) <= 0 && abilityObj.AreAnyConditionsMet("AbilityCast", currentSave, board, null))
                         {
                             board.CallEvents(board.player, new() { { "Trigger", "AbilityCast" }, {"Triggerer", "Effector" }, { "AbilityName", abilityObj.name } });
                             board.CallEvents(board.enemy, new() { { "Trigger", "AbilityCast" }, {"Triggerer", "Other" }, { "AbilityName", abilityObj.name } });
@@ -4788,12 +4788,15 @@ public class Blueprint
                 CloseDesktop("CraftingScreen");
                 CloseDesktop("CharacterSheet");
                 CloseDesktop("QuestLog");
-                if (CDesktop.title != "EquipmentScreen")
-                    SpawnDesktopBlueprint("EquipmentScreen");
-                else
+                if (CDesktop.title != "ContainerLoot")
                 {
-                    CloseDesktop(CDesktop.title);
-                    PlaySound("DesktopInventoryClose");
+                    if (CDesktop.title != "EquipmentScreen")
+                        SpawnDesktopBlueprint("EquipmentScreen");
+                    else
+                    {
+                        CloseDesktop(CDesktop.title);
+                        PlaySound("DesktopInventoryClose");
+                    }
                 }
             });
             AddHotkey(T, () =>
@@ -4881,22 +4884,25 @@ public class Blueprint
                         PlaySound("DesktopCharacterSheetClose");
                     }
                 });
-                AddSmallButton(CDesktop.title == "EquipmentScreen" ? "OtherClose" : "MenuInventory", (h) =>
-                {
-                    CloseDesktop("BestiaryScreen");
-                    CloseDesktop("SpellbookScreen");
-                    CloseDesktop("TalentScreen");
-                    CloseDesktop("CraftingScreen");
-                    CloseDesktop("CharacterSheet");
-                    CloseDesktop("QuestLog");
-                    if (CDesktop.title != "EquipmentScreen")
-                        SpawnDesktopBlueprint("EquipmentScreen");
-                    else
+                if (CDesktop.title != "ContainerLoot")
+                    AddSmallButton(CDesktop.title == "EquipmentScreen" ? "OtherClose" : "MenuInventory", (h) =>
                     {
-                        CloseDesktop(CDesktop.title);
-                        PlaySound("DesktopInventoryClose");
-                    }
-                });
+                        CloseDesktop("BestiaryScreen");
+                        CloseDesktop("SpellbookScreen");
+                        CloseDesktop("TalentScreen");
+                        CloseDesktop("CraftingScreen");
+                        CloseDesktop("CharacterSheet");
+                        CloseDesktop("QuestLog");
+                        if (desktops.All(x => x.title != "ContainerLoot"))
+                            if (CDesktop.title != "EquipmentScreen")
+                                SpawnDesktopBlueprint("EquipmentScreen");
+                            else
+                            {
+                                CloseDesktop(CDesktop.title);
+                                PlaySound("DesktopInventoryClose");
+                            }
+                    });
+                else AddSmallButton("OtherCloseOff");
                 AddSmallButton(CDesktop.title == "SpellbookScreen" ? "OtherClose" : "MenuSpellbook", (h) =>
                 {
                     CloseDesktop("BestiaryScreen");
@@ -5499,8 +5505,10 @@ public class Blueprint
                             SpawnWindowBlueprint("SwitchActionBars");
                             CloseWindow("PlayerSpellbookInfo");
                             Respawn("PlayerSpellbookInfo");
-                            if (CloseWindow("SpellbookAbilityListActive")) Respawn("SpellbookAbilityListActive");
-                            if (CloseWindow("SpellbookAbilityListPassive")) Respawn("SpellbookAbilityListPassive");
+                            if (CloseWindow("SpellbookAbilityListActivated"))
+                                Respawn("SpellbookAbilityListActivated");
+                            if (CloseWindow("SpellbookAbilityListPassive"))
+                                Respawn("SpellbookAbilityListPassive");
                         });
                     else
                         AddSmallButton("OtherSwitchOff");
@@ -5988,6 +5996,7 @@ public class Blueprint
                 item = null;
                 PlaySound("DesktopInventoryClose");
                 CloseDesktop("ContainerLoot");
+                SpawnDesktopBlueprint("EquipmentScreen");
             });
         }),
         new("MiningLoot", () =>
@@ -6512,7 +6521,7 @@ public class Blueprint
             SpawnWindowBlueprint("SpellbookResources");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
-            AddHotkey(Escape, () => { SwitchDesktop("Map"); CloseDesktop("SpellbookScreen"); PlaySound("DesktopSpellbookClose"); });
+            AddHotkey(Escape, () => { CloseDesktop("SpellbookScreen"); PlaySound("DesktopSpellbookClose"); });
             AddPaginationHotkeys();
         }),
         new("EquipmentScreen", () => 
@@ -6625,7 +6634,7 @@ public class Blueprint
                 PlaySound("DesktopButtonClose");
                 CloseDesktop("RankingScreen");
             });
-        }),
+        })
     };
 
     public static void AddPaginationHotkeys()

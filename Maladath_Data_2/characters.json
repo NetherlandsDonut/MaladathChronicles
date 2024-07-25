@@ -8,7 +8,7 @@
         "currentQuests": [],
         "completedQuests": [],
         "level": 17,
-        "experience": 14343,
+        "experience": 14543,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -81,7 +81,7 @@
         },
         "professionSkills": {},
         "learnedRecipes": {},
-        "unspentTalentPoints": 2,
+        "unspentTalentPoints": 1,
         "faction": "Thunder Bluff",
         "name": "Quana",
         "race": "Tauren",
@@ -113,9 +113,10 @@
           "Star Surge": 0,
           "Lunar Shrapnel": 0,
           "Cosmic Rapidity": 0,
-          "Faerie Fire": 0
+          "Faerie Fire": 0,
+          "Cyclone": 0
         },
-        "currentActionSet": "Default",
+        "currentActionSet": "Bear Form",
         "actionBars": {
           "Default": [
             "Wrath",
@@ -124,8 +125,8 @@
           ],
           "Bear Form": [
             "Leave Bear Form",
-            "Moonfire",
-            "Wrath"
+            "Wrath",
+            "Moonfire"
           ]
         },
         "stats": {
@@ -148,6 +149,7 @@
           }
         },
         "inventory": {
+          "money": 1423,
           "items": [
             {
               "rarity": "Common",
@@ -165,7 +167,25 @@
               }
             }
           ],
-          "bags": []
+          "bags": [
+            {
+              "rarity": "Common",
+              "name": "Old Moneybag",
+              "icon": "itemmiscbag10",
+              "type": "Bag",
+              "source": "DirectDrop",
+              "ilvl": 5,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "unique": true,
+              "price": 250,
+              "bagSpace": 2,
+              "droppedBy": [
+                "Tharm"
+              ]
+            }
+          ]
         },
         "mounts": [],
         "equipment": {
@@ -214,9 +234,9 @@
         "worldBuffs": []
       },
       "hour": 7,
-      "minute": 3,
-      "second": 7,
-      "currentSite": "Red Cloud Mesa",
+      "minute": 51,
+      "second": 18,
+      "currentSite": "The Dragonmurk",
       "ringOfLaw": "Hedrum the Creeper",
       "forlornCloister": "Ironspine",
       "openedChests": {},
@@ -227,16 +247,323 @@
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
-        "Camp Narache": 1,
-        "Red Cloud Mesa": 4
+        "Camp Narache": 2,
+        "Red Cloud Mesa": 7,
+        "The Washed Hillside": 1,
+        "Bloodhoof Village": 1,
+        "The Rolling Plains": 1,
+        "Field of Giants": 1,
+        "Southern Gold Road": 0,
+        "Shady Rest Inn": 1,
+        "Lost Point": 1,
+        "Bloodfen Burrow": 1,
+        "The Den of Flame": 1,
+        "The Dragonmurk": 4
       },
       "unlockedAreas": [],
       "vendorStock": {},
       "banks": {},
       "startDate": "2024-07-24T17:02:59.9048011+02:00",
-      "lastLoaded": "2024-07-24T19:55:04.8108697+02:00",
-      "lastPlayed": "2024-07-24T19:56:01.309145+02:00",
-      "timePlayed": "00:07:55.2159756"
+      "lastLoaded": "2024-07-25T21:10:14.4190285+02:00",
+      "lastPlayed": "2024-07-25T21:10:40.4477965+02:00",
+      "timePlayed": "01:04:14.5603704"
+    },
+    {
+      "player": {
+        "currentQuests": [],
+        "completedQuests": [],
+        "level": 22,
+        "experience": 15652,
+        "uniquesGotten": [],
+        "reputation": {
+          "Southsea Pirates": 0,
+          "Razormane Tribe": 0,
+          "Pandaren": 0,
+          "Grimtotem Tribe": 0,
+          "Woodpaw Tribe": 0,
+          "The Burning Legion": 0,
+          "Darkspear Tribe": 4250,
+          "Stormwind": 0,
+          "Magram Clan": 0,
+          "Gelkis Clan": 0,
+          "Kolkar Clan": 0,
+          "Orgrimmar": 4250,
+          "Frostwolf Clan": 4250,
+          "The Defiler's": 4250,
+          "Thunder Bluff": 4600,
+          "Undercity": 4250,
+          "Ironforge": 0,
+          "Dark Iron Clan": 0,
+          "Wildhammer Clan": 0,
+          "Winterfall Tribe": 0,
+          "Gnomeregan": 0,
+          "Darnassus": 0,
+          "Bloodsail Buccaneers": 0,
+          "Syndicate": 0,
+          "Warsong Outriders": 4250,
+          "Stormpike Guard": 0,
+          "Silverwing Sentinels": 0,
+          "The League of Arathor": 0,
+          "Defias Brotherhood": 0,
+          "Dalaran": 0,
+          "Burning Blade Clan": 0,
+          "Burning Legion": 0,
+          "Shadow Council": 0,
+          "Gordunni Ogres": 0,
+          "Blackrock Clan": 0,
+          "Dragonmaw Clan": 0,
+          "Black Tooth Grin Clan": 0,
+          "Gurubashi Tribe": 0,
+          "Sandfury Tribe": 0,
+          "Twilight's Hammer": 0,
+          "Grimtotem Clan": 0,
+          "Razorfen Tribe": 0,
+          "Stonemaul Ogres": 4250,
+          "Dustbelcher Ogres": 0,
+          "Deadwind Ogres": 0,
+          "Venture Co.": 0,
+          "Southsea Freebooters": 0,
+          "Atal'ai Tribe": 0,
+          "Qiraji Empire": 0,
+          "Scarlet Crusade": 0,
+          "Vilebranch Tribe": 0,
+          "Witherbark Tribe": 0,
+          "Mossflayer Tribe": 0,
+          "Frostmane Tribe": 0,
+          "Bloodscalp Tribe": 0,
+          "Skullsplitter Tribe": 0,
+          "Shatterspear Tribe": 0,
+          "Rot Hide Tribe": 0,
+          "Scourge": 0,
+          "Smolderthorn Tribe": 0,
+          "Revantusk Tribe": 4250,
+          "Blackpaw Tribe": 0,
+          "Maraudine Clan": 0,
+          "Mosshide Tribe": 0,
+          "Deadwood Tribe": 0,
+          "Bloodtooth Tribe": 0,
+          "Bristleback Tribe": 0
+        },
+        "professionSkills": {},
+        "learnedRecipes": {},
+        "unspentTalentPoints": 5,
+        "faction": "Thunder Bluff",
+        "name": "Hannaya",
+        "race": "Tauren",
+        "spec": "Warrior",
+        "gender": "Female",
+        "homeLocation": "Camp Narache",
+        "abilities": {
+          "Dual Wielding Proficiency": 0,
+          "Two Handed Axe Proficiency": 0,
+          "Two Handed Mace Proficiency": 0,
+          "Two Handed Sword Proficiency": 0,
+          "Polearm Proficiency": 0,
+          "Shield Proficiency": 0,
+          "Mail Proficiency": 0,
+          "Plate Proficiency": 0,
+          "One Handed Axe Proficiency": 0,
+          "One Handed Mace Proficiency": 0,
+          "One Handed Sword Proficiency": 0,
+          "Fist Weapon Proficiency": 0,
+          "Off Hand Proficiency": 0,
+          "Heroic Strike": 0,
+          "Battle Shout": 0,
+          "Bloodthirst": 0,
+          "Revenge": 0,
+          "Charge": 0,
+          "Deflection": 0,
+          "Rend": 0,
+          "Overpower": 0,
+          "Thunder Clap": 0,
+          "Cruelty": 0,
+          "Bloodcraze": 0,
+          "Demoralizing Shout": 0,
+          "Slam": 0,
+          "War Machine": 0,
+          "Immense Strength": 0,
+          "Whirlwind": 0,
+          "Fresh Meat": 0,
+          "Blind Rage": 0,
+          "Execute": 0,
+          "Enrage": 0
+        },
+        "currentActionSet": "Default",
+        "actionBars": {
+          "Default": [
+            "Heroic Strike",
+            "Thunder Clap",
+            "Execute"
+          ]
+        },
+        "stats": {
+          "stats": {
+            "Stamina": 24,
+            "Strength": 28,
+            "Agility": 15,
+            "Intellect": 15,
+            "Spirit": 22,
+            "Earth Mastery": 3,
+            "Fire Mastery": 2,
+            "Air Mastery": 3,
+            "Water Mastery": 3,
+            "Frost Mastery": 1,
+            "Lightning Mastery": 1,
+            "Arcane Mastery": 2,
+            "Decay Mastery": 1,
+            "Shadow Mastery": 1,
+            "Order Mastery": 2
+          }
+        },
+        "inventory": {
+          "items": [
+            {
+              "rarity": "Common",
+              "name": "Hearthstone",
+              "icon": "itemmiscrune01",
+              "detailedType": "Rune",
+              "type": "Miscellaneous",
+              "ilvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "indestructible": true,
+              "unique": true,
+              "abilities": {
+                "Hearthstone": 1
+              }
+            },
+            {
+              "rarity": "Common",
+              "name": "Plainstrider Meat",
+              "icon": "itemmiscfood14",
+              "detailedType": "Food",
+              "type": "Miscellaneous",
+              "source": "DirectDrop",
+              "ilvl": 1,
+              "amount": 1,
+              "maxStack": 20,
+              "droppedBy": [
+                "Plainstrider"
+              ]
+            },
+            {
+              "rarity": "Common",
+              "name": "Plainstrider Feather",
+              "icon": "itemfeather05",
+              "detailedType": "Feather",
+              "type": "Miscellaneous",
+              "source": "DirectDrop",
+              "ilvl": 1,
+              "amount": 1,
+              "maxStack": 20,
+              "droppedBy": [
+                "Plainstrider"
+              ]
+            },
+            {
+              "rarity": "Poor",
+              "name": "Patchwork Cloak",
+              "icon": "itemmisccape11",
+              "type": "Back",
+              "source": "RareDrop",
+              "ilvl": 6,
+              "lvl": 1,
+              "armor": 5,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 7
+            },
+            {
+              "rarity": "Common",
+              "name": "Mountain Cougar Pelt",
+              "icon": "itemmiscpeltbear01",
+              "detailedType": "Organ",
+              "type": "Miscellaneous",
+              "source": "DirectDrop",
+              "ilvl": 1,
+              "amount": 1,
+              "maxStack": 20,
+              "droppedBy": [
+                "Mountain Cougar"
+              ]
+            }
+          ],
+          "bags": []
+        },
+        "mounts": [],
+        "equipment": {
+          "Main Hand": {
+            "rarity": "Common",
+            "name": "Battleworn Hammer",
+            "icon": "itemhammer15",
+            "detailedType": "Mace",
+            "type": "Two Handed",
+            "ilvl": 2,
+            "lvl": 1,
+            "minDamage": 3,
+            "maxDamage": 5,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 9,
+            "speed": 2.9
+          },
+          "Legs": {
+            "rarity": "Poor",
+            "name": "Brawler's Pants",
+            "icon": "itempants02",
+            "type": "Legs",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 2,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1
+          },
+          "Chest": {
+            "rarity": "Common",
+            "name": "Brawler's Harness",
+            "icon": "itemchestleather04",
+            "type": "Chest",
+            "ilvl": 1,
+            "lvl": 1,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1
+          }
+        },
+        "worldBuffs": []
+      },
+      "hour": 7,
+      "minute": 3,
+      "second": 37,
+      "currentSite": "Red Cloud Mesa",
+      "ringOfLaw": "Eviscerator",
+      "forlornCloister": "Ironspine",
+      "openedChests": {},
+      "fishingSpots": {},
+      "fishingSpoils": {},
+      "siteProgress": {
+        "Red Cloud Mesa": 2
+      },
+      "commonsKilled": {
+        "Plainstrider": 1,
+        "Mountain Cougar": 1
+      },
+      "raresKilled": {},
+      "elitesKilled": {},
+      "siteVisits": {
+        "Camp Narache": 1,
+        "Red Cloud Mesa": 1
+      },
+      "unlockedAreas": [],
+      "vendorStock": {},
+      "banks": {},
+      "startDate": "2024-07-25T21:10:47.9718315+02:00",
+      "lastLoaded": "2024-07-25T21:29:20.5823426+02:00",
+      "lastPlayed": "2024-07-25T21:30:10.929069+02:00",
+      "timePlayed": "00:01:12.2452196",
+      "lastVisitedTalents": 1
     }
   ]
 }

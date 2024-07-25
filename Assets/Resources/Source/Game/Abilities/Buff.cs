@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Collections.Generic;
 
 using UnityEngine;
@@ -124,10 +125,11 @@ public class Buff
                     else if (trigger["Trigger"] == "TurnBegin") execute = true;
                     else if (trigger["Trigger"] == "TurnEnd") execute = true;
                     if (execute)
-                    {
-                        if (entityBuff.Item3 != null) board.actions.Add(() => { AddSmallButtonOverlay(entityBuff.Item3, "OtherBlack", 1, 5); });
-                        eve.ExecuteEffects(board, futureBoard, icon, trigger, RankVariables(entityBuff.Item4), name, entityBuff.Item4);
-                    }
+                        if (eve.conditions == null || eve.conditions.Count == 0 || eve.conditions.All(x => x.IsMet(SaveGame.currentSave, board, futureBoard)))
+                        {
+                            if (entityBuff.Item3 != null) board.actions.Add(() => { AddSmallButtonOverlay(entityBuff.Item3, "OtherBlack", 1, 5); });
+                            eve.ExecuteEffects(board, futureBoard, icon, trigger, RankVariables(entityBuff.Item4), name, entityBuff.Item4);
+                        }
                 }
     }
 
