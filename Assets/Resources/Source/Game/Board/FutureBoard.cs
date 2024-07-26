@@ -10,6 +10,7 @@ public class FutureBoard
         field = board.field.Clone() as int[,];
         player = new FutureEntity(board.player);
         enemy = new FutureEntity(board.enemy);
+        turn = board.turn;
         playerTurn = board.playerTurn;
         enemyFinishedMoving = board.enemyFinishedMoving;
         playerFinishedMoving = board.playerFinishedMoving;
@@ -23,12 +24,16 @@ public class FutureBoard
         field = board.field.Clone() as int[,];
         player = new FutureEntity(board.player);
         enemy = new FutureEntity(board.enemy);
+        turn = board.turn;
         playerTurn = board.playerTurn;
         enemyFinishedMoving = board.enemyFinishedMoving;
         playerFinishedMoving = board.playerFinishedMoving;
         playerCooldowns = board.playerCooldowns.ToDictionary(x => x.Key, x => x.Value);
         enemyCooldowns = board.enemyCooldowns.ToDictionary(x => x.Key, x => x.Value);
     }
+
+    //Turn counter
+    public int turn;
 
     public int bonusTurnStreak;
     public int[,] field;
