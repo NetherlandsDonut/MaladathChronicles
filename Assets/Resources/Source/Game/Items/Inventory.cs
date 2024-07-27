@@ -8,186 +8,186 @@ using static Defines;
 //It's used by entities and banks
 public class Inventory
 {
-    #region Creation
+   #region Creation
 
-    public Inventory()
-    {
-        bags ??= new();
-        items ??= new();
-    }
+   public Inventory()
+   {
+      bags ??= new();
+      items ??= new();
+   }
 
-    public Inventory(bool ignoreSpaceChecks)
-    {
-        this.ignoreSpaceChecks = ignoreSpaceChecks;
-        bags = new();
-        items = new();
-    }
+   public Inventory(bool ignoreSpaceChecks)
+   {
+      this.ignoreSpaceChecks = ignoreSpaceChecks;
+      bags = new();
+      items = new();
+   }
 
-    public Inventory(List<string> items)
-    {
-        bags = new();
-        this.items = items.Select(x => Item.items.Find(y => y.name == x).CopyItem(1)).ToList();
-    }
+   public Inventory(List<string> items)
+   {
+      bags = new();
+      this.items = items.Select(x => Item.items.Find(y => y.name == x).CopyItem(1)).ToList();
+   }
 
-    #endregion
+   #endregion
 
-    #region Manipulation
+   #region Manipulation
 
-    public void RemoveItem(string name, int amount)
-    {
-        int left = amount;
-        var matching = items.FindAll(x => x.name == name);
-        for (int i = matching.Count - 1; i >= 0 && left > 0; i--)
-        {
-            var temp = matching[i].amount;
-            matching[i].amount -= matching[i].amount >= left ? left : matching[i].amount;
-            if (matching[i].amount == 0)
+   public void RemoveItem(string name, int amount)
+   {
+      int left = amount;
+      var matching = items.FindAll(x => x.name == name);
+      for (int i = matching.Count - 1; i >= 0 && left > 0; i--)
+      {
+         var temp = matching[i].amount;
+         matching[i].amount -= matching[i].amount >= left ? left : matching[i].amount;
+         if (matching[i].amount == 0)
+         {
+            items.Remove(matching[i]);
+            matching.Remove(matching[i]);
+         }
+         left -= temp;
+      }
+   }
+
+   //Tells whether the player can fit the item in the inventory
+   public bool CanAddItem(Item item)
+   {
+      if (item.type == "Currency") return true;
+      if (ignoreSpaceChecks) return true;
+      if (items.Count < BagSpace()) return true;
+      var find = items.FindAll(x => x.name == item.name);
+      if (find.Count > 0) return find.Sum(x => x.maxStack - x.amount) > 0;
+      else return false;
+   }
+
+   //Tells whether the player can fit specific items in the inventory
+   public bool CanAddItems(List<Item> list)
+   {
+      if (ignoreSpaceChecks) return true;
+      int emptySlots = BagSpace() - items.Count;
+      if (items.Count + list.Count < emptySlots) return true;
+      var copyList = list.Select(x => x.CopyItem(x.amount)).ToList();
+      var copyInventory = items.Select(x => x.CopyItem(x.amount)).ToList();
+      foreach (var item in copyList)
+      {
+         if (item.type == "Currency") continue;
+         var slots = copyInventory.FindAll(x => x.name == item.name);
+         foreach (var depositSlot in slots)
+            if (depositSlot.amount < depositSlot.maxStack)
             {
-                items.Remove(matching[i]);
-                matching.Remove(matching[i]);
+               var howMuch = depositSlot.maxStack - depositSlot.amount;
+               if (howMuch <= item.amount)
+               {
+                  depositSlot.amount += howMuch;
+                  item.amount -= howMuch;
+               }
+               else
+               {
+                  depositSlot.amount += item.amount;
+                  item.amount = 0;
+                  break;
+               }
             }
-            left -= temp;
-        }
-    }
+         if (item.amount > 0)
+         {
+            copyInventory.Add(item);
+            if (--emptySlots < 0)
+               return false;
+         }
+      }
+      return true;
+   }
 
-    //Tells whether the player can fit the item in the inventory
-    public bool CanAddItem(Item item)
-    {
-        if (item.type == "Currency") return true;
-        if (ignoreSpaceChecks) return true;
-        if (items.Count < BagSpace()) return true;
-        var find = items.FindAll(x => x.name == item.name);
-        if (find.Count > 0) return find.Sum(x => x.maxStack - x.amount) > 0;
-        else return false;
-    }
+   //Adds item to the inventory and automatically fills stacks
+   public void AddItem(Item item)
+   {
+      if (item.type == "Currency")
+         if (item.name == "Gold" || item.name == "Silver" || item.name == "Copper")
+         {
+            Sound.PlaySound("DesktopTransportPay");
+            money += item.price * item.amount;
+            return;
+         }
+      var sumBefore = items.Sum(x => x.name == item.name ? x.amount : 0);
+      var added = item.amount;
+      var find = items.FindAll(x => x.name == item.name);
+      foreach (var stack in find)
+      {
+         var free = stack.maxStack - stack.amount;
+         if (free > 0)
+            if (item.amount > free) (item.amount, stack.amount) = (item.amount - free, stack.maxStack);
+            else { (item.amount, stack.amount) = (0, stack.amount + item.amount); break; }
+      }
+      if (item.amount > 0 && (ignoreSpaceChecks || items.Count < BagSpace()))
+         items.Add(item.CopyItem(item.amount));
+      if (SaveGame.currentSave != null && SaveGame.currentSave.player.inventory == this)
+      {
+         var output = item.name + ": ";
+         foreach (var quest in SaveGame.currentSave.player.currentQuests)
+            foreach (var con in quest.conditions)
+               if (con.type == "Item" && con.name == item.name)
+               {
+                  foreach (var site in con.Where())
+                     if (!sitesToRespawn.Contains(site))
+                        sitesToRespawn.Add(site);
+                  if (sumBefore < con.amount)
+                  {
+                     if (output.EndsWith(" ")) output += sumBefore + added + "/" + con.amount;
+                     else output += ", " + sumBefore + added + "/" + con.amount;
+                  }
+                  var end = Site.FindSite(x => x.name == quest.siteEnd);
+                  if (!sitesToRespawn.Contains(end)) sitesToRespawn.Add(end);
+               }
+         if (!output.EndsWith(" "))
+            Root.SpawnFallingText(new UnityEngine.Vector2(0, 34), output, "Yellow");
+      }
+   }
 
-    //Tells whether the player can fit specific items in the inventory
-    public bool CanAddItems(List<Item> list)
-    {
-        if (ignoreSpaceChecks) return true;
-        int emptySlots = BagSpace() - items.Count;
-        if (items.Count + list.Count < emptySlots) return true;
-        var copyList = list.Select(x => x.CopyItem(x.amount)).ToList();
-        var copyInventory = items.Select(x => x.CopyItem(x.amount)).ToList();
-        foreach (var item in copyList)
-        {
-            if (item.type == "Currency") continue;
-            var slots = copyInventory.FindAll(x => x.name == item.name);
-            foreach (var depositSlot in slots)
-                if (depositSlot.amount < depositSlot.maxStack)
-                {
-                    var howMuch = depositSlot.maxStack - depositSlot.amount;
-                    if (howMuch <= item.amount)
-                    {
-                        depositSlot.amount += howMuch;
-                        item.amount -= howMuch;
-                    }
-                    else
-                    {
-                        depositSlot.amount += item.amount;
-                        item.amount = 0;
-                        break;
-                    }
-                }
-            if (item.amount > 0)
-            {
-                copyInventory.Add(item);
-                if (--emptySlots < 0)
-                    return false;
-            }
-        }
-        return true;
-    }
+   //Decays items that have duration left of their existance
+   //This is used mainly for buyback items from vendors
+   public void DecayItems(int minutes)
+   {
+      for (int i = items.Count - 1; i >= 0; i--)
+         if (items[i].minutesLeft > 0)
+         {
+            items[i].minutesLeft -= minutes;
+            if (items[i].minutesLeft <= 0)
+               items.RemoveAt(i);
+         }
+   }
 
-    //Adds item to the inventory and automatically fills stacks
-    public void AddItem(Item item)
-    {
-        if (item.type == "Currency")
-            if (item.name == "Gold" || item.name == "Silver" || item.name == "Copper")
-            {
-                Sound.PlaySound("DesktopTransportPay");
-                money += item.price * item.amount;
-                return;
-            }
-        var sumBefore = items.Sum(x => x.name == item.name ? x.amount : 0);
-        var added = item.amount;
-        var find = items.FindAll(x => x.name == item.name);
-        foreach (var stack in find)
-        {
-            var free = stack.maxStack - stack.amount;
-            if (free > 0)
-                if (item.amount > free) (item.amount, stack.amount) = (item.amount - free, stack.maxStack);
-                else { (item.amount, stack.amount) = (0, stack.amount + item.amount); break; }
-        }
-        if (item.amount > 0 && (ignoreSpaceChecks || items.Count < BagSpace()))
-            items.Add(item.CopyItem(item.amount));
-        if (SaveGame.currentSave != null && SaveGame.currentSave.player.inventory == this)
-        {
-            var output = item.name + ": ";
-            foreach (var quest in SaveGame.currentSave.player.currentQuests)
-                foreach (var con in quest.conditions)
-                    if (con.type == "Item" && con.name == item.name)
-                    {
-                        foreach (var site in con.Where())
-                            if (!sitesToRespawn.Contains(site))
-                                sitesToRespawn.Add(site);
-                        if (sumBefore < con.amount)
-                        {
-                            if (output.EndsWith(" ")) output += sumBefore + added + "/" + con.amount;
-                            else output += ", " + sumBefore + added + "/" + con.amount;
-                        }
-                        var end = Site.FindSite(x => x.name == quest.siteEnd);
-                        if (!sitesToRespawn.Contains(end)) sitesToRespawn.Add(end);
-                    }
-            if (!output.EndsWith(" "))
-                Root.SpawnFallingText(new UnityEngine.Vector2(0, 34), output, "Yellow");
-        }
-    }
+   #endregion
 
-    //Decays items that have duration left of their existance
-    //This is used mainly for buyback items from vendors
-    public void DecayItems(int minutes)
-    {
-        for (int i = items.Count - 1; i >= 0; i--)
-            if (items[i].minutesLeft > 0)
-            {
-                items[i].minutesLeft -= minutes;
-                if (items[i].minutesLeft <= 0)
-                    items.RemoveAt(i);
-            }
-    }
+   #region Storage
 
-    #endregion
+   //Amount of money in the bags
+   public int money;
 
-    #region Storage
+   //List of all items contained in the bags
+   public List<Item> items;
 
-    //Amount of money in the bags
-    public int money;
+   //Bags equipped in this inventory
+   public List<Item> bags;
 
-    //List of all items contained in the bags
-    public List<Item> items;
+   #endregion
 
-    //Bags equipped in this inventory
-    public List<Item> bags;
+   #region Management
 
-    #endregion
+   //Returns the amount of bag space inventory has
+   public int BagSpace()
+   {
+      return bags.Sum(x => x.bagSpace) + defines.backpackSpace;
+   }
 
-    #region Management
+   //If true, functions don't look at empty space in bags
+   public bool ignoreSpaceChecks;
 
-    //Returns the amount of bag space inventory has
-    public int BagSpace()
-    {
-        return bags.Sum(x => x.bagSpace) + defines.backpackSpace;
-    }
+   #endregion
 
-    //If true, functions don't look at empty space in bags
-    public bool ignoreSpaceChecks;
+   //Loot generated by disenchanting
+   public static Inventory disenchantLoot;
 
-    #endregion
-
-    //Loot generated by disenchanting
-    public static Inventory disenchantLoot;
-
-    //Did player already receive change in skill after disenchanting
-    public static bool enchantingSkillChange;
+   //Did player already receive change in skill after disenchanting
+   public static bool enchantingSkillChange;
 }

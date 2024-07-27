@@ -270,10 +270,69 @@
     },
     {
       "player": {
-        "currentQuests": [],
-        "completedQuests": [],
-        "level": 22,
-        "experience": 15652,
+        "currentQuests": [
+          {
+            "questID": 6561,
+            "requiredLevel": 18,
+            "questLevel": 27,
+            "name": "Blackfathom Villainy",
+            "description": "Strength has left me. Your help is needed!$B$BLong ago this site was a great temple of Elune. But misfortune led to ruin when the corruption of an Old God seeped up from beneath the earth and tainted the sacred Moon Well.$B$BAku'Mai, servant of the Old God, rose from the waters.$B$BThe Twilight's Hammer cultists have allied with the naga to occupy these grounds. The cultists, led by Kelris, sacrifice innocents to Aku'Mai for power.$B$BSlay Kelris and bring his head to Bashana in Thunder Bluff, $N, please.",
+            "objective": "Bring the head of Twilight Lord Kelris to Bashana Runetotem in Thunder Bluff.",
+            "completion": "Kelris has eluded the Argent Dawn for some time.$B$BFor some time they considered him dead or missing.$B$BBy ending his reign you have spared the lives of many innocent people, $N.$B$BEarthmother be praised! To sacrifice another to a servant of an Old God for personal gain is beyond disgusting!$B$BYou have done a great thing this day. Kelris was a creature of evil and sought to bring the world back to a time of chaos by worshipping such creatures as the Old Gods. Thank you, $N.",
+            "siteStart": "Thunder Bluff",
+            "siteEnd": "Thunder Bluff",
+            "zone": "Blackfathom Deeps",
+            "money": 6500,
+            "experience": 3300,
+            "races": [
+              "Troll",
+              "Tauren",
+              "Forsaken",
+              "Orc"
+            ],
+            "rewards": {
+              "Gravestone Scepter": 1,
+              "Arctic Buckler": 1
+            },
+            "reputationGain": {
+              "Argent Dawn": 200,
+              "Thunder Bluff": 500
+            },
+            "conditions": [
+              {
+                "type": "Item",
+                "name": "Head of Kelris",
+                "amount": 1
+              }
+            ]
+          },
+          {
+            "questID": 6541,
+            "requiredLevel": 17,
+            "questLevel": 19,
+            "name": "Report to Kadrak",
+            "description": "Have you ever been to Ashenvale, to the north? The horde has recently set up an outpost on the Zoram Strand there, and we can always use some new recruits to help defend our new fronts.$B$BIf you think you are up to it, see Kadrak in the northern Barrens, at the watch tower. He is heading up the Ashenvale campaign and can give you further orders.",
+            "objective": "Report to Kadrak at the watch tower in northern Barrens.",
+            "completion": "Ashenvale is a divided land, but our most recent efforts have been very successful. We not only have an outpost at the Zoram Strand, but another just north of here called Splintertree.",
+            "siteStart": "The Crossroads",
+            "siteEnd": "The Mor'shan Rampart",
+            "zone": "The Barrens",
+            "experience": 145,
+            "races": [
+              "Troll",
+              "Tauren",
+              "Forsaken",
+              "Orc"
+            ],
+            "conditions": []
+          }
+        ],
+        "completedQuests": [
+          4921,
+          6548
+        ],
+        "level": 23,
+        "experience": 8928,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -287,10 +346,10 @@
           "Magram Clan": 0,
           "Gelkis Clan": 0,
           "Kolkar Clan": 0,
-          "Orgrimmar": 4250,
+          "Orgrimmar": 4400,
           "Frostwolf Clan": 4250,
           "The Defiler's": 4250,
-          "Thunder Bluff": 4600,
+          "Thunder Bluff": 4850,
           "Undercity": 4250,
           "Ironforge": 0,
           "Dark Iron Clan": 0,
@@ -386,7 +445,8 @@
           "Fresh Meat": 0,
           "Blind Rage": 0,
           "Execute": 0,
-          "Enrage": 0
+          "Enrage": 0,
+          "Berserker Rage": 0
         },
         "currentActionSet": "Default",
         "actionBars": {
@@ -416,6 +476,7 @@
           }
         },
         "inventory": {
+          "money": 1907,
           "items": [
             {
               "rarity": "Common",
@@ -461,19 +522,6 @@
               ]
             },
             {
-              "rarity": "Poor",
-              "name": "Patchwork Cloak",
-              "icon": "itemmisccape11",
-              "type": "Back",
-              "source": "RareDrop",
-              "ilvl": 6,
-              "lvl": 1,
-              "armor": 5,
-              "amount": 1,
-              "maxStack": 1,
-              "price": 7
-            },
-            {
               "rarity": "Common",
               "name": "Mountain Cougar Pelt",
               "icon": "itemmiscpeltbear01",
@@ -486,6 +534,45 @@
               "droppedBy": [
                 "Mountain Cougar"
               ]
+            },
+            {
+              "rarity": "Common",
+              "name": "Ritual Salve",
+              "icon": "itempotion01",
+              "detailedType": "Potion",
+              "type": "Miscellaneous",
+              "source": "DirectDrop",
+              "ilvl": 1,
+              "amount": 1,
+              "maxStack": 20,
+              "droppedBy": [
+                "Bristleback Shaman"
+              ]
+            },
+            {
+              "rarity": "Common",
+              "name": "Small Throwing Knife",
+              "icon": "itemthrowingknife02",
+              "type": "Miscellaneous",
+              "ilvl": 3,
+              "minDamage": 1,
+              "maxDamage": 3,
+              "amount": 2,
+              "maxStack": 200,
+              "speed": 2.0
+            },
+            {
+              "rarity": "Common",
+              "name": "Linen Cloth",
+              "icon": "itemfabriclinen01",
+              "detailedType": "Cloth",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 5,
+              "lvl": 1,
+              "amount": 3,
+              "maxStack": 20,
+              "price": 13
             }
           ],
           "bags": []
@@ -493,19 +580,26 @@
         "mounts": [],
         "equipment": {
           "Main Hand": {
-            "rarity": "Common",
-            "name": "Battleworn Hammer",
-            "icon": "itemhammer15",
-            "detailedType": "Mace",
-            "type": "Two Handed",
-            "ilvl": 2,
-            "lvl": 1,
-            "minDamage": 3,
-            "maxDamage": 5,
+            "rarity": "Rare",
+            "name": "Ironpatch Blade",
+            "icon": "itemsword26",
+            "detailedType": "Sword",
+            "type": "One Handed",
+            "source": "RareDrop",
+            "ilvl": 20,
+            "lvl": 15,
+            "minDamage": 24,
+            "maxDamage": 46,
             "amount": 1,
             "maxStack": 1,
-            "price": 9,
-            "speed": 2.9
+            "price": 1770,
+            "speed": 2.6,
+            "stats": {
+              "stats": {
+                "Strength": 4,
+                "Stamina": 2
+              }
+            }
           },
           "Legs": {
             "rarity": "Poor",
@@ -530,39 +624,447 @@
             "amount": 1,
             "maxStack": 1,
             "price": 1
+          },
+          "Back": {
+            "rarity": "Common",
+            "name": "Bloodspattered Cloak",
+            "icon": "itemmisccape22",
+            "type": "Back",
+            "source": "RareDrop",
+            "ilvl": 14,
+            "lvl": 9,
+            "armor": 12,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 105
           }
         },
         "worldBuffs": []
       },
-      "hour": 7,
-      "minute": 3,
-      "second": 37,
-      "currentSite": "Red Cloud Mesa",
+      "hour": 8,
+      "minute": 57,
+      "second": 39,
+      "currentSite": "Orgrimmar",
       "ringOfLaw": "Eviscerator",
       "forlornCloister": "Ironspine",
       "openedChests": {},
       "fishingSpots": {},
       "fishingSpoils": {},
       "siteProgress": {
-        "Red Cloud Mesa": 2
+        "Red Cloud Mesa": 2,
+        "Brambleblade Ravine": 1,
+        "Camp Aparaje": 2
       },
       "commonsKilled": {
         "Plainstrider": 1,
-        "Mountain Cougar": 1
+        "Mountain Cougar": 1,
+        "Bristleback Shaman": 1,
+        "Grimtotem Mercenary": 1,
+        "Grimtotem Ruffian": 1
       },
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
-        "Camp Narache": 1,
-        "Red Cloud Mesa": 1
+        "Camp Narache": 4,
+        "Red Cloud Mesa": 2,
+        "Brambleblade Ravine": 1,
+        "The Washed Hillside": 1,
+        "Bloodhoof Village": 2,
+        "Stonebull Lake": 0,
+        "Thunder Bluff": 5,
+        "The Rolling Plains": 0,
+        "Camp Taurajo": 1,
+        "The Riverbed": 1,
+        "Central Gold Road": 0,
+        "The Crossroads": 2,
+        "Honor's Stand": 2,
+        "Camp Aparaje": 1,
+        "Far Watch Post": 0,
+        "Orgrimmar": 5
       },
       "unlockedAreas": [],
-      "vendorStock": {},
-      "banks": {},
+      "vendorStock": {
+        "Camp Narache:Kawnie Softbreeze": [
+          {
+            "item": "Refreshing Spring Water",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Rough Arrow",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Light Shot",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Small Throwing Knife",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Crude Throwing Axe",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Tough Hunk of Bread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
+        ],
+        "Camp Narache:Marjak Keenblade": [
+          {
+            "item": "Bastard Sword",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Club",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Shortsword",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Short Staff",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Hand Axe",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Dirk",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Broad Axe",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Large Club",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
+        ],
+        "Orgrimmar:Sovik": [
+          {
+            "item": "Weak Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mining Pick",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Strong Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Rough Blasting Powder",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Copper Tube",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Copper Modulator",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Coarse Blasting Powder",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Bronze Tube",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Bronze Framework",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Gyrochronatom",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Wooden Stock",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Heavy Stock",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Silver Contact",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Blacksmith Hammer",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Engineer's Ink",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Blank Parchment",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Schematic: Thorium Grenade",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Schematic: Thorium Widget",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Schematic: Red Firework",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
+        ],
+        "Orgrimmar:Ollanus": [
+          {
+            "item": "Thick Cloth Vest",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Thick Cloth Pants",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Thick Cloth Shoes",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Thick Cloth Gloves",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Heavy Weave Armor",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Heavy Weave Pants",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Heavy Weave Gloves",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Heavy Weave Shoes",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Woven Vest",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Woven Pants",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Woven Boots",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Woven Gloves",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Common Gray Shirt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Heavy Weave Belt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Heavy Weave Bracers",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Thick Cloth Belt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Thick Cloth Bracers",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Woven Belt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Woven Bracers",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Common Brown Shirt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Common White Shirt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
+        ]
+      },
+      "banks": {
+        "Thunder Bluff": {
+          "items": [
+            {
+              "rarity": "Common",
+              "name": "Crude Throwing Axe",
+              "icon": "itemaxe19",
+              "type": "Miscellaneous",
+              "ilvl": 3,
+              "minDamage": 1,
+              "maxDamage": 3,
+              "amount": 2,
+              "maxStack": 200,
+              "speed": 2.0
+            }
+          ],
+          "bags": []
+        },
+        "Orgrimmar": {
+          "items": [
+            {
+              "rarity": "Common",
+              "name": "Battleworn Hammer",
+              "icon": "itemhammer15",
+              "detailedType": "Mace",
+              "type": "Two Handed",
+              "ilvl": 2,
+              "lvl": 1,
+              "minDamage": 3,
+              "maxDamage": 5,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 9,
+              "speed": 2.9
+            }
+          ],
+          "bags": []
+        }
+      },
+      "buyback": {
+        "items": [],
+        "bags": [],
+        "ignoreSpaceChecks": true
+      },
       "startDate": "2024-07-25T21:10:47.9718315+02:00",
-      "lastLoaded": "2024-07-25T21:29:20.5823426+02:00",
-      "lastPlayed": "2024-07-25T21:30:10.929069+02:00",
-      "timePlayed": "00:01:12.2452196",
+      "lastLoaded": "2024-07-27T18:32:19.6863776+02:00",
+      "lastPlayed": "2024-07-27T18:45:24.3964059+02:00",
+      "timePlayed": "00:15:18.4771074",
       "lastVisitedTalents": 1
     }
   ]
