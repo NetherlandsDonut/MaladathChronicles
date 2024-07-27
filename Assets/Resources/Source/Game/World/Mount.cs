@@ -26,7 +26,7 @@ public class Mount
    //Tooltip window when hovered over a mount button
    public static void PrintMountTooltip(Entity rider, Mount mount)
    {
-      SetAnchor(-92, CDesktop.windows.Exists(x => x.title == "CurrentMount") ? 47 : 142);
+      SetAnchor(-92, WindowUp("CurrentMount") ? 47 : 142);
       AddHeaderGroup();
       SetRegionGroupWidth(182);
       AddHeaderRegion(() =>

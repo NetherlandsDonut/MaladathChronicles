@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using static Root;
-
 using static Sound;
 using static ItemSet;
 using static Defines;
@@ -654,7 +653,7 @@ public class Item
                      Respawn("VendorBuyback");
                   }
             }
-            else if (CDesktop.windows.Exists(x => x.title == "Bank"))
+            else if (WindowUp("Bank"))
             {
                if (currentSave.banks[town.name].CanAddItem(item))
                   if (item.amount > 1 && Input.GetKey(KeyCode.LeftShift))
@@ -712,7 +711,7 @@ public class Item
          (h) => () =>
          {
             if (item == null || Item.item == item) return;
-            if (CDesktop.windows.Exists(x => x.title == "ConfirmItemDestroy")) return;
+            if (WindowUp("ConfirmItemDestroy")) return;
             PrintItemTooltip(item, Input.GetKey(KeyCode.LeftShift));
          },
          (h) =>
@@ -880,7 +879,7 @@ public class Item
          (h) => () =>
          {
             if (item == null) return;
-            if (CDesktop.windows.Exists(x => x.title == "ConfirmItemDestroy")) return;
+            if (WindowUp("ConfirmItemDestroy")) return;
             PrintItemTooltip(item, Input.GetKey(KeyCode.LeftShift));
          }
       );

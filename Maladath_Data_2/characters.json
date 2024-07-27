@@ -680,7 +680,7 @@
         "Honor's Stand": 2,
         "Camp Aparaje": 1,
         "Far Watch Post": 0,
-        "Orgrimmar": 5
+        "Orgrimmar": 6
       },
       "unlockedAreas": [],
       "vendorStock": {
@@ -1062,9 +1062,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2024-07-25T21:10:47.9718315+02:00",
-      "lastLoaded": "2024-07-27T18:32:19.6863776+02:00",
-      "lastPlayed": "2024-07-27T18:45:24.3964059+02:00",
-      "timePlayed": "00:15:18.4771074",
+      "lastLoaded": "2024-07-27T22:56:24.7741091+02:00",
+      "lastPlayed": "2024-07-27T22:56:29.5508525+02:00",
+      "timePlayed": "00:15:58.5010380",
       "lastVisitedTalents": 1
     }
   ]

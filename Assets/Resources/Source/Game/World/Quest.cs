@@ -147,12 +147,12 @@ public class Quest
       {
          AddLine(name, color != null ? "Black" : "Gray");
          if (f == "Log")
-            if (CDesktop.windows.Exists(x => x.title == "QuestConfirmAbandon"))
+            if (WindowUp("QuestConfirmAbandon"))
             {
                AddSmallButton("OtherCloseOff");
                AddSmallButton("OtherTrashOff");
             }
-            else if (CDesktop.windows.Exists(x => x.title == "QuestConfirmAbandon") || CDesktop.windows.Exists(x => x.title == "QuestSort") || CDesktop.windows.Exists(x => x.title == "QuestSettings"))
+            else if (WindowUp("QuestConfirmAbandon") || WindowUp("QuestSort") || WindowUp("QuestSettings"))
             {
                AddSmallButton("OtherClose", (h) =>
                {
@@ -328,8 +328,8 @@ public class Quest
                var find = Item.items.Find(x => x.name == item.Key);
                AddBigButton(find.icon, f == "Turn" ? (h) => { chosenReward = find.name; } : null, null, (h) => () =>
                {
-                  if (CDesktop.windows.Exists(x => x.title == "CraftingSort")) return;
-                  if (CDesktop.windows.Exists(x => x.title == "CraftingSettings")) return;
+                  if (WindowUp("CraftingSort")) return;
+                  if (WindowUp("CraftingSettings")) return;
                   Item.PrintItemTooltip(find, Input.GetKey(KeyCode.LeftShift));
                });
                if (find.type != "Miscellaneous" && find.type != "Trade Good" && find.type != "Recipe" && !find.CanEquip(currentSave.player, true)) { SetBigButtonToRed(); AddBigButtonOverlay("OtherGridBlurred"); }
