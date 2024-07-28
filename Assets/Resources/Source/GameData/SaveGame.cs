@@ -91,7 +91,7 @@ public class SaveGame
         for (int i = 0; i < complexes.Count; i++) allSites.Add(complexes[i]);
         for (int i = 0; i < instances.Count; i++) allSites.Add(instances[i]);
         allSites.RemoveAll(x => x.x == 0 && x.y == 0);
-        sum += defines.scoreForExploredSite * allSites.Count(x => siteVisits.ContainsKey(x.name) || maxScore);
+        sum += defines.scoreForExploredSite * allSites.Count(x => Visited(x.name) || maxScore);
         var commons = areas.SelectMany(x => x.commonEncounters ?? new()).Select(x => x.who).Distinct().ToList();
         sum += defines.scoreForKilledCommon * commons.Count(x => commonsKilled.ContainsKey(x) || maxScore);
         var rares = areas.SelectMany(x => x.rareEncounters ?? new()).Select(x => x.who).Distinct().ToList();
@@ -195,6 +195,9 @@ public class SaveGame
     #endregion
 
     #region Progress
+
+    //Checks if player ever visited a site
+    public bool Visited(string site) => siteVisits.ContainsKey(site);
 
     //Site at which player currently resides
     public string currentSite;

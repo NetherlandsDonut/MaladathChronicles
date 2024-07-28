@@ -2,14 +2,16 @@
 
 public class LineBigButton : MonoBehaviour
 {
-    public Region region;
-    public GameObject frame;
-    public string buttonType;
+    //Sprite appearing as the button
+    public string texture;
 
-    public void Initialise(Region region, string buttonType)
+    //Frame of the button
+    public GameObject frame;
+
+    //Initialisation method
+    public void Initialise(Region region, string texture)
     {
-        this.region = region;
-        this.buttonType = buttonType;
+        this.texture = texture;
         region.LBBigButton = this;
         region.bigButtons.Add(this);
     }

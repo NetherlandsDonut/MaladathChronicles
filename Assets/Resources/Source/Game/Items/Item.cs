@@ -1141,6 +1141,8 @@ public class Item
       if (detailedType == "Staff") result = "WoodLarge";
       else if (detailedType == "Wand") result = "Wand";
       else if (detailedType == "Totem") result = "WoodLarge";
+      else if (detailedType == "Bow") result = "WoodLarge";
+      else if (detailedType == "Crossbow") result = "WoodLarge";
       else if (detailedType == "Libram") result = "Ring";
       else if (detailedType == "Idol") result = "Ring";
       else if (detailedType == "Gem") result = "Gems";

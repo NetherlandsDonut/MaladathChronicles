@@ -18,6 +18,7 @@ public class FutureEntity
         stats = entity.stats;
         currentActionSet = entity.currentActionSet;
         actionBars = entity.actionBars.ToDictionary(x => x.Key, x => x.Value.ToList());
+        worldBuffs = entity.worldBuffs.ToList();
         buffs = new();
         foreach (var buff in entity.buffs)
             buffs.Add((buff.Item1, buff.Item2, buff.Item3));
@@ -37,6 +38,7 @@ public class FutureEntity
         stats = entity.stats;
         currentActionSet = entity.currentActionSet;
         actionBars = entity.actionBars.ToDictionary(x => x.Key, x => x.Value.ToList());
+        worldBuffs = entity.worldBuffs.ToList();
         buffs = new();
         foreach (var buff in entity.buffs)
             buffs.Add((buff.Item1, buff.Item2, buff.Item4));
@@ -68,6 +70,9 @@ public class FutureEntity
     public Dictionary<string, int> resources;
 
     public List<(Buff, int, int)> buffs;
+
+    //List of active world buffs and world debuffs on this entity
+    public List<WorldBuff> worldBuffs;
 
     public Dictionary<string, double> ElementImportance(double healthPerc, double otherHealthPerc)
     {
@@ -186,11 +191,34 @@ public class FutureEntity
         var stats = new Dictionary<string, int>();
         foreach (var stat in this.stats.stats)
             stats.Add(stat.Key, stat.Value);
+        var temp = Spec();
+        if (temp != null)
+        {
+            stats["Stamina"] += (int)(temp.rules["Stamina per Level"] * level);
+            stats["Strength"] += (int)(temp.rules["Strength per Level"] * level);
+            stats["Agility"] += (int)(temp.rules["Agility per Level"] * level);
+            stats["Intellect"] += (int)(temp.rules["Intellect per Level"] * level);
+            stats["Spirit"] += (int)(temp.rules["Spirit per Level"] * level);
+        }
         if (equipment != null)
             foreach (var itemPair in equipment)
+            {
                 if (itemPair.Value.stats != null)
                     foreach (var stat in itemPair.Value.stats.stats)
-                        stats[stat.Key] += stat.Value;
+                        stats.Inc(stat.Key, stat.Value);
+                if (itemPair.Value.armor > 0)
+                    stats.Inc("Armor", itemPair.Value.armor);
+            }
+        if (worldBuffs != null)
+            foreach (var worldBuff in worldBuffs)
+                if (worldBuff.buff.gains != null)
+                    foreach (var stat in worldBuff.buff.gains)
+                        stats.Inc(stat.Key, stat.Value);
+        if (buffs != null)
+            foreach (var buff in buffs)
+                if (buff.Item1 != null && buff.Item1.gains != null)
+                    foreach (var stat in buff.Item1.gains)
+                        stats.Inc(stat.Key, stat.Value);
         return stats;
     }
 

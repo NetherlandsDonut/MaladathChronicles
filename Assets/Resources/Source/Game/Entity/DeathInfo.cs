@@ -14,5 +14,4 @@ public class DeathInfo
     public bool commonSource;
 
     public string area;
-
 }

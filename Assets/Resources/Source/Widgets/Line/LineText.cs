@@ -50,11 +50,12 @@ public class LineText : MonoBehaviour
         newCharacter.transform.parent = transform;
         newCharacter.transform.localPosition = new Vector3(offset, 0, -0.05f);
         var glyph = fonts[font].GetGlyph(character);
-        newCharacter.GetComponent<SpriteRenderer>().sprite = glyph;
+        var r = newCharacter.GetComponent<SpriteRenderer>();
+        r.sprite = glyph;
         if (color == null) { Debug.Log("ERROR 009: Color was not set"); color = "Gray"; }
         else if (!colors.ContainsKey(color)) { Debug.Log("ERROR 008: Color not found: \"" + color + "\""); color = "Gray"; }
-        newCharacter.GetComponent<SpriteRenderer>().color = colors[color];
-        newCharacter.GetComponent<SpriteRenderer>().sortingLayerName = layer == "" ? window.layer : layer;
+        r.color = colors[color];
+        r.sortingLayerName = layer == "" ? window.layer : layer;
         characters.Add(newCharacter);
         return offset + (int)glyph.rect.width + 1;
     }

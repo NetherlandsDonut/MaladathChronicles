@@ -2363,9 +2363,10 @@ public class Blueprint
             },
             (h) =>
             {
-                PlaySound("DesktopMenuClose");
                 currentSave.player.inventory.items.Remove(item);
+                PlaySound("DesktopMenuClose");
                 CloseWindow("ConfirmItemDestroy");
+                item = null;
                 Respawn("Inventory");
             });
             AddRegionGroup();
@@ -2375,6 +2376,7 @@ public class Blueprint
             {
                 PlaySound("DesktopMenuClose");
                 CloseWindow("ConfirmItemDestroy");
+                item = null;
                 Respawn("Inventory");
             });
         }, true),
@@ -6448,6 +6450,7 @@ public class Blueprint
         }),
         new("EquipmentScreen", () => 
         {
+            item = null;
             PlaySound("DesktopInventoryOpen");
             SetDesktopBackground("Backgrounds/Leather");
             SpawnWindowBlueprint("MapToolbarShadow");

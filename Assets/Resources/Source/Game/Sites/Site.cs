@@ -189,8 +189,8 @@ public class Site
     //Can this site be seen on map
     public bool CanBeSeen()
     {
-        if (currentSave.siteVisits.ContainsKey(name)) return true;
-        return paths.FindAll(x => x.sites.Contains(name)).Any(x => x.sites.Any(y => currentSave.siteVisits.ContainsKey(y)));
+        if (currentSave.Visited(name)) return true;
+        return paths.FindAll(x => x.sites.Contains(name)).Any(x => x.sites.Any(y => currentSave.Visited(y)));
     }
 
     public void BuildPath()

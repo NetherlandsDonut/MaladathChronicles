@@ -10,19 +10,13 @@ public class Tooltip
         this.tooltip = tooltip;
     }
 
-    public Window window;
     public Func<Highlightable, Action> tooltip;
     public Func<Highlightable> caller;
 
     public void SpawnTooltip()
     {
         SpawnWindowBlueprint(new Blueprint("Tooltip", () => { DisableCollisions(); tooltip(caller())(); }, true));
-        if (CDesktop.LBWindow.LBRegionGroup != null)
-        {
-            Sound.PlaySound("DesktopTooltipShow", 0.4f);
-            window = CDesktop.LBWindow;
-            //window.FadeIn();
-        }
+        if (CDesktop.LBWindow.LBRegionGroup != null) Sound.PlaySound("DesktopTooltipShow", 0.4f);
         else CloseWindow(CDesktop.LBWindow);
     }
 }

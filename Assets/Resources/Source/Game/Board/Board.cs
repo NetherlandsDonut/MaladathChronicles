@@ -180,7 +180,7 @@ public class Board
 
     public int CooldownOn(bool player, string ability) => (player ? playerCooldowns : enemyCooldowns).Get(ability);
 
-    //Cooldowns all action bar abilities and used passives by 1 turn
+    //Cools down all action bar abilities and used passives by 1 turn
     public int Cooldown(bool player)
     {
         int off = 0;

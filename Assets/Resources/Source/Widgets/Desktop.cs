@@ -109,16 +109,17 @@ public class Desktop : MonoBehaviour
 
     public void FixedUpdate()
     {
-        if (animatedSpriteTime > 0)
-            animatedSpriteTime -= Time.deltaTime;
-        if (animatedSpriteTime <= 0)
-        {
-            animatedSpriteTime = 0.1f;
-            AnimatedSprite.globalIndex++;
-            if (AnimatedSprite.globalIndex == 24)
-                AnimatedSprite.globalIndex = 0;
-        }
         soundsPlayedThisFrame = 0;
+        if (animatedSpriteTime > 0)
+        {
+            animatedSpriteTime -= Time.deltaTime;
+            if (animatedSpriteTime <= 0)
+            {
+                animatedSpriteTime = 0.1f;
+                if (++AnimatedSprite.globalIndex == 24)
+                    AnimatedSprite.globalIndex = 0;
+            }
+        }
     }
 
     public void Update()
@@ -208,8 +209,8 @@ public class Desktop : MonoBehaviour
                     Destroy(loadingBar[0]);
                     Destroy(loadingBar[1]);
                     loadingBar = null;
-                    PlaySound("DesktopLoadSuccess");
                     screen.transform.localPosition = cameraDestination;
+                    PlaySound("DesktopLoadSuccess");
                     break;
                 }
             }
@@ -232,7 +233,7 @@ public class Desktop : MonoBehaviour
                 {
                     var temp = screen.transform.localPosition;
                     var where = new Vector2(titleScreenFunnyEffect[0].Item1, titleScreenFunnyEffect[0].Item2);
-                    if (Vector2.Distance(temp, where) > 1f)
+                    if (Vector2.Distance(temp, where) > 1)
                     {
                         lastFunnyEffectTime += Time.deltaTime * 2;
                         var newPosition = Vector3.Lerp(lastFunnyEffectPosition, where, lastFunnyEffectTime);
@@ -287,14 +288,7 @@ public class Desktop : MonoBehaviour
                             mapGrid.queuedPath[0].Item2.RemoveAt(0);
                             if (mapGrid.queuedPath[0].Item2.Count == 0)
                             {
-                                if (mapGrid.queuedPath[0].Item1.means == "Tram")
-                                    PlaySound("TramStop", 0.6f);
-                                else if (mapGrid.queuedPath[0].Item1.means == "Zeppelin")
-                                    PlaySound("ZeppelinStop", 0.45f);
-                                else if (mapGrid.queuedPath[0].Item1.means == "Ship")
-                                    PlaySound("ShipStop", 0.45f);
-                                else if (mapGrid.queuedPath[0].Item1.means == "Darnassus")
-                                    PlaySound("TeleportStop", 0.5f);
+                                mapGrid.queuedPath[0].Item1.PlayPathEndSound();
                                 mapGrid.queuedPath.RemoveAt(0);
                             }
                         }
@@ -303,7 +297,7 @@ public class Desktop : MonoBehaviour
                             UnlockScreen();
                             currentSave.currentSite = mapGrid.queuedSiteOpen;
                             var find = FindSite(x => x.name == mapGrid.queuedSiteOpen);
-                            if (!currentSave.siteVisits.ContainsKey(mapGrid.queuedSiteOpen))
+                            if (!currentSave.Visited(mapGrid.queuedSiteOpen))
                             {
                                 currentSave.siteVisits.Add(mapGrid.queuedSiteOpen, 0);
                                 PlaySound("DesktopZoneDiscovered", 1f);

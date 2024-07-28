@@ -17,7 +17,7 @@ public class FadeIn : MonoBehaviour
         if (!initialised)
         {
             initialised = true;
-            if (!random || gameObject.name.Contains("PathDot")) counter = 0.2f;
+            if (!random || gameObject.name.Contains("PathDot")) counter = 0.05f;
             else
             {
                 var r = new System.Random((gameObject.transform.childCount == 0 ? gameObject.transform.parent : gameObject.transform).GetInstanceID());

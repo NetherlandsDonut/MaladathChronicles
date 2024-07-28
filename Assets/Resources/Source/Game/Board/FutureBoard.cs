@@ -164,9 +164,8 @@ public class FutureBoard
                         var futureBoard = new FutureBoard(this);
                         entity = futureBoard.playerTurn ? futureBoard.player : futureBoard.enemy;
                         list.Add(new FutureMove(ability.name, futureBoard));
-                        //futureBoard.PutOnCooldown(false, ability);
                         futureBoard.CallEvents(entity, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Effector" }, { "AbilityName", ability.name } });
-                        futureBoard.CallEvents(entity == player ? enemy : player, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Effector" }, { "AbilityName", ability.name } });
+                        futureBoard.CallEvents(entity == player ? enemy : player, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Other" }, { "AbilityName", ability.name } });
                         entity.DetractResources(futureBoard, ability.cost);
                         while (!futureBoard.finishedAnimation)
                             futureBoard.AnimateBoard();
@@ -309,5 +308,20 @@ public class FutureBoard
         else if (id % 10 == 9) return "Order";
         else if (id % 10 == 0) return "Shadow";
         else return "None";
+    }
+
+    public int ResourceReverse(string element)
+    {
+        if (element == "Earth") return 1;
+        else if (element == "Fire") return 2;
+        else if (element == "Water") return 3;
+        else if (element == "Air") return 4;
+        else if (element == "Lightning") return 5;
+        else if (element == "Frost") return 6;
+        else if (element == "Decay") return 7;
+        else if (element == "Arcane") return 8;
+        else if (element == "Order") return 9;
+        else if (element == "Shadow") return 0;
+        else return -1;
     }
 }

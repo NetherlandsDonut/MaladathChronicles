@@ -4,6 +4,7 @@ using System.Linq;
 using System.Collections.Generic;
 
 using static Root;
+using static Sound;
 using static Defines;
 using static SaveGame;
 
@@ -28,6 +29,14 @@ public class SitePath
         var here = sites[exclude.Count(x => x == sites[0]) == 1 ? 0 : 1];
         return pathsConnectedToSite[here].Where(x => x != this).ToList();
 
+    }
+
+    public void PlayPathEndSound()
+    {
+        if (means == "Tram") PlaySound("TramStop", 0.6f);
+        else if (means == "Zeppelin") PlaySound("ZeppelinStop", 0.45f);
+        else if (means == "Ship") PlaySound("ShipStop", 0.45f);
+        else if (means == "Darnassus") PlaySound("TeleportStop", 0.5f);
     }
 
     //Sites connected with a path

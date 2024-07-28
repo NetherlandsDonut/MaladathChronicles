@@ -101,7 +101,7 @@ public class Highlightable : MonoBehaviour
         if (pressedState == "Left" && pressEvent != null)
         {
             var l = GetComponent<LineSmallButton>();
-            if (l != null && l.buttonType == "OtherClose") PlaySound("DesktopButtonClose");
+            if (l != null && l.texture == "OtherClose") PlaySound("DesktopButtonClose");
             else PlaySound("DesktopButtonPress", 0.8f);
             pressEvent(this);
         }
@@ -116,7 +116,6 @@ public class Highlightable : MonoBehaviour
             middlePressEvent(this);
         }
         pressedState = "None";
-        if (window != null)
-            window.Respawn(true);
+        if (window != null) window.Respawn(true);
     }
 }

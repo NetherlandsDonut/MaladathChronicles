@@ -57,37 +57,30 @@ public class Window : MonoBehaviour
         transform.localPosition += (anchor.anchor != None && anchor.magnet == null ? new Vector3(screenX / -2, screenY / 2) : Vector3.zero) + (Vector3)anchor.offset;
         transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, -desktop.windows.Count + (layer == "Default" ? 1024 : 0));
 
-        Vector2 Anchor()
+        Vector2 Anchor() => anchor.anchor switch
         {
-            switch (anchor.anchor)
-            {
-                case Bottom: return new Vector2(screenX / 2 - Width() / 2 - 1, 2 - screenY + yOffset);
-                case BottomRight: return new Vector2(screenX - 2 - Width(), 2 - screenY + yOffset);
-                case BottomLeft: return new Vector2(0, 2 - screenY + yOffset);
-                case Top: return new Vector2(screenX / 2 - Width() / 2 - 1, 0);
-                case TopRight: return new Vector2(screenX - 2 - Width(), 0);
-                case TopLeft: return new Vector2(0, 0);
-                case Center: return new Vector2(screenX / 2 - Width() / 2 - 1, screenY / -2 + yOffset / 2);
-                default: return new Vector2(0, 0);
-            }
-        }
+            Top => new Vector2(screenX / 2 - Width() / 2 - 1, 0),
+            TopRight => new Vector2(screenX - 2 - Width(), 0),
+            Bottom => new Vector2(screenX / 2 - Width() / 2 - 1, 2 - screenY + yOffset),
+            BottomRight => new Vector2(screenX - 2 - Width(), 2 - screenY + yOffset),
+            BottomLeft => new Vector2(0, 2 - screenY + yOffset),
+            Center => new Vector2(screenX / 2 - Width() / 2 - 1, screenY / -2 + yOffset / 2),
+            _ => new Vector2(0, 0),
+        };
 
-        Vector2 MagnetAnchor(Vector2 position, Vector2 size)
+        Vector2 MagnetAnchor(Vector2 position, Vector2 size) => anchor.anchor switch
         {
-            switch (anchor.anchor)
-            {
-                case Bottom: return new Vector2(position.x - (Width() - size.x) / 2, position.y - size.y);
-                case BottomLeft: return new Vector2(position.x + size.x - Width(), position.y - size.y);
-                case BottomRight: return new Vector2(position.x, position.y - size.y);
-                case Top: return new Vector2(position.x - (Width() - size.x) / 2, position.y + yOffset);
-                case TopRight: return new Vector2(position.x + size.x, position.y);
-                case TopLeft: return new Vector2(position.x - Width(), position.y);
-                case Center: return new Vector2(screenX / 2 - Width() / 2, screenY / -2 + yOffset / 2);
-                case RightTop: return new Vector2(position.x + size.x, position.y);
-                case RightBottom: return new Vector2(position.x + size.x, position.y - size.y + yOffset);
-                default: return new Vector2(0, 0);
-            }
-        }
+            Top => new Vector2(position.x - (Width() - size.x) / 2, position.y + yOffset),
+            TopRight => new Vector2(position.x + size.x, position.y),
+            TopLeft => new Vector2(position.x - Width(), position.y),
+            RightTop => new Vector2(position.x + size.x, position.y),
+            Bottom => new Vector2(position.x - (Width() - size.x) / 2, position.y - size.y),
+            BottomLeft => new Vector2(position.x + size.x - Width(), position.y - size.y),
+            BottomRight => new Vector2(position.x, position.y - size.y),
+            RightBottom => new Vector2(position.x + size.x, position.y - size.y + yOffset),
+            Center => new Vector2(screenX / 2 - Width() / 2, screenY / -2 + yOffset / 2),
+            _ => new Vector2(0, 0),
+        };
     }
 
     public int Width()
@@ -211,8 +204,8 @@ public class Window : MonoBehaviour
                 foreach (var smallButton in region.smallButtons)
                 {
                     if (region.currentHeight < 15) region.currentHeight = 15;
-                    if (smallButton.buttonType == null) continue;
-                    var load = Resources.Load<Sprite>("Sprites/Buttons/" + smallButton.buttonType);
+                    if (smallButton.texture == null) continue;
+                    var load = Resources.Load<Sprite>("Sprites/Buttons/" + smallButton.texture);
                     smallButton.GetComponent<SpriteRenderer>().sprite = load == null ? Resources.Load<Sprite>("Sprites/Buttons/OtherEmpty") : load;
                     smallButton.GetComponent<SpriteRenderer>().sortingLayerName = layer;
                     if (title.StartsWith("Site: ")) smallButton.GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
@@ -241,8 +234,8 @@ public class Window : MonoBehaviour
                 if (region.bigButtons.Count > 0 && region.currentHeight < 34) region.currentHeight = 34;
                 foreach (var bigButton in region.bigButtons)
                 {
-                    if (bigButton.buttonType == null) continue;
-                    var load = Resources.Load<Sprite>("Sprites/ButtonsBig/" + bigButton.buttonType);
+                    if (bigButton.texture == null) continue;
+                    var load = Resources.Load<Sprite>("Sprites/ButtonsBig/" + bigButton.texture);
                     bigButton.GetComponent<SpriteRenderer>().sprite = load == null ? Resources.Load<Sprite>("Sprites/ButtonsBig/OtherEmpty") : load;
                     bigButton.GetComponent<SpriteRenderer>().sortingLayerName = layer;
                     bigButton.transform.localPosition = region.reverseButtons ? new Vector3(regionGroup.AutoWidth() - 20 + region.xExtend + 2f - 38 * region.bigButtons.IndexOf(bigButton), -20f, 0.1f) : new Vector3(20 + 38 * region.bigButtons.IndexOf(bigButton), -20f, 0.1f);
@@ -473,31 +466,6 @@ public class Window : MonoBehaviour
                                     Destroy(region.shadows[2]);
                                 }
                         }
-
-            #endregion
-
-            #region TOOLTIPS
-
-            //Asigning tooltips for regions
-            foreach (var regionHandle in regionGroup.regions.Select(x => x.GetComponent<TooltipHandle>()).ToList().FindAll(x => x != null))
-                regionHandle.ApplyTooltip();
-
-            //Asigning tooltips for small buttons
-            foreach (var region in regionGroup.regions)
-                if (region.smallButtons.Count > 0)
-                    foreach (var smallButtonHandle in region.smallButtons.Select(x => x.GetComponent<TooltipHandle>()).ToList().FindAll(x => x != null))
-                        smallButtonHandle.ApplyTooltip();
-
-            //Asigning tooltips for big buttons
-            foreach (var region in regionGroup.regions)
-                if (region.bigButtons.Count > 0)
-                    foreach (var bigButtonHandle in region.bigButtons.Select(x => x.GetComponent<TooltipHandle>()).ToList().FindAll(x => x != null))
-                        bigButtonHandle.ApplyTooltip();
-
-            //Asigning tooltips for checkboxes
-            foreach (var region in regionGroup.regions)
-                if (region.checkbox != null && region.checkbox.GetComponent<TooltipHandle>() != null)
-                    region.checkbox.GetComponent<TooltipHandle>().ApplyTooltip();
 
             #endregion
 
