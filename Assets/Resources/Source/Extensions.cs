@@ -14,6 +14,8 @@ public static class Extensions
             (list[i], list[rnd]) = (list[rnd], list[i]);
     }
 
+    public static T SafeLast<T>(this IList<T> list) => list.Count != 0 ? list.Last() : default;
+
     //Increases a key by a specified amount and automatically adds it if it was not present
     public static void Inc<TKey>(this Dictionary<TKey, int> dic, TKey source, int amount = 1)
     {

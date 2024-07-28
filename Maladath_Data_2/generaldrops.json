@@ -2428,5 +2428,281 @@
     "rarity": 100.0,
     "category": "A Sack of Coins",
     "dropCount": 1
+  },
+  {
+    "item": "Huge Emerald",
+    "rarity": 100.0,
+    "category": "Green Sack of Gems",
+    "dropCount": 1
+  },
+  {
+    "item": "Golden Pearl",
+    "rarity": 3,
+    "category": "Green Sack of Gems",
+    "dropCount": 1
+  },
+  {
+    "item": "Black Pearl",
+    "rarity": 29,
+    "category": "Green Sack of Gems",
+    "dropCount": 1
+  },
+  {
+    "item": "Star Ruby",
+    "rarity": 63,
+    "category": "Green Sack of Gems",
+    "dropCount": 3
+  },
+  {
+    "item": "Aquamarine",
+    "rarity": 74,
+    "category": "Green Sack of Gems",
+    "dropCount": 3
+  },
+  {
+    "item": "Citrine",
+    "rarity": 58,
+    "category": "Green Sack of Gems",
+    "dropCount": 3
+  },
+  {
+    "item": "Jade",
+    "rarity": 58,
+    "category": "Green Sack of Gems",
+    "dropCount": 3
+  },
+  {
+    "item": "Black Pearl",
+    "rarity": 2,
+    "category": "Sack of Gems",
+    "dropCount": 1
+  },
+  {
+    "item": "Aquamarine",
+    "rarity": 5,
+    "category": "Sack of Gems",
+    "dropCount": 1
+  },
+  {
+    "item": "Citrine",
+    "rarity": 22,
+    "category": "Sack of Gems",
+    "dropCount": 2
+  },
+  {
+    "item": "Jade",
+    "rarity": 49,
+    "category": "Sack of Gems",
+    "dropCount": 3
+  },
+  {
+    "item": "Moss Agate",
+    "rarity": 54,
+    "category": "Sack of Gems",
+    "dropCount": 3
+  },
+  {
+    "item": "Lesser Moonstone",
+    "rarity": 58,
+    "category": "Sack of Gems",
+    "dropCount": 3
+  },
+  {
+    "item": "Iridescent Pearl",
+    "rarity": 23,
+    "category": "Sack of Gems",
+    "dropCount": 3
+  },
+  {
+    "item": "Small Lustrous Pearl",
+    "rarity": 36,
+    "category": "Sack of Gems",
+    "dropCount": 3
+  },
+  {
+    "item": "Malachite",
+    "rarity": 52,
+    "category": "Sack of Gems",
+    "dropCount": 2
+  },
+  {
+    "item": "Shadowgem",
+    "rarity": 56,
+    "category": "Sack of Gems",
+    "dropCount": 3
+  },
+  {
+    "item": "Tigerseye",
+    "rarity": 58,
+    "category": "Sack of Gems",
+    "dropCount": 3
+  },
+  {
+    "item": "Arcane Crystal",
+    "rarity": 100,
+    "category": "Yellow Sack of Gems",
+    "dropCount": 1
+  },
+  {
+    "item": "Golden Pearl",
+    "rarity": 5,
+    "category": "Yellow Sack of Gems",
+    "dropCount": 1
+  },
+  {
+    "item": "Black Pearl",
+    "rarity": 29,
+    "category": "Yellow Sack of Gems",
+    "dropCount": 1
+  },
+  {
+    "item": "Jade",
+    "rarity": 59,
+    "category": "Yellow Sack of Gems",
+    "dropCount": 3
+  },
+  {
+    "item": "Citrine",
+    "rarity": 68,
+    "category": "Yellow Sack of Gems",
+    "dropCount": 3
+  },
+  {
+    "item": "Aquamarine",
+    "rarity": 71,
+    "category": "Yellow Sack of Gems",
+    "dropCount": 3
+  },
+  {
+    "item": "Star Ruby",
+    "rarity": 82,
+    "category": "Yellow Sack of Gems",
+    "dropCount": 3
+  },
+  {
+    "item": "Large Opal",
+    "rarity": 100,
+    "category": "Red Sack of Gems",
+    "dropCount": 1
+  },
+  {
+    "item": "Golden Pearl",
+    "rarity": 6,
+    "category": "Red Sack of Gems",
+    "dropCount": 1
+  },
+  {
+    "item": "Aquamarine",
+    "rarity": 75,
+    "category": "Red Sack of Gems",
+    "dropCount": 3
+  },
+  {
+    "item": "Citrine",
+    "rarity": 75,
+    "category": "Red Sack of Gems",
+    "dropCount": 3
+  },
+  {
+    "item": "Star Ruby",
+    "rarity": 72,
+    "category": "Red Sack of Gems",
+    "dropCount": 3
+  },
+  {
+    "item": "Jade",
+    "rarity": 61,
+    "category": "Red Sack of Gems",
+    "dropCount": 3
+  },
+  {
+    "item": "Black Pearl",
+    "rarity": 19,
+    "category": "Red Sack of Gems",
+    "dropCount": 1
+  },
+  {
+    "item": "Azerothian Diamond",
+    "rarity": 100,
+    "category": "Gray Sack of Gems",
+    "dropCount": 1
+  },
+  {
+    "item": "Golden Pearl",
+    "rarity": 4,
+    "category": "Gray Sack of Gems",
+    "dropCount": 1
+  },
+  {
+    "item": "Star Ruby",
+    "rarity": 83,
+    "category": "Gray Sack of Gems",
+    "dropCount": 3
+  },
+  {
+    "item": "Citrine",
+    "rarity": 72,
+    "category": "Gray Sack of Gems",
+    "dropCount": 3
+  },
+  {
+    "item": "Aquamarine",
+    "rarity": 67,
+    "category": "Gray Sack of Gems",
+    "dropCount": 3
+  },
+  {
+    "item": "Jade",
+    "rarity": 56,
+    "category": "Gray Sack of Gems",
+    "dropCount": 3
+  },
+  {
+    "item": "Black Pearl",
+    "rarity": 8,
+    "category": "Gray Sack of Gems",
+    "dropCount": 1
+  },
+  {
+    "item": "Blue Sapphire",
+    "rarity": 100,
+    "category": "Blue Sack of Gems",
+    "dropCount": 1
+  },
+  {
+    "item": "Golden Pearl",
+    "rarity": 4,
+    "category": "Blue Sack of Gems",
+    "dropCount": 1
+  },
+  {
+    "item": "Star Ruby",
+    "rarity": 86,
+    "category": "Blue Sack of Gems",
+    "dropCount": 3
+  },
+  {
+    "item": "Citrine",
+    "rarity": 82,
+    "category": "Blue Sack of Gems",
+    "dropCount": 3
+  },
+  {
+    "item": "Jade",
+    "rarity": 68,
+    "category": "Blue Sack of Gems",
+    "dropCount": 3
+  },
+  {
+    "item": "Aquamarine",
+    "rarity": 64,
+    "category": "Blue Sack of Gems",
+    "dropCount": 3
+  },
+  {
+    "item": "Black Pearl",
+    "rarity": 5,
+    "category": "Blue Sack of Gems",
+    "dropCount": 1
   }
 ]

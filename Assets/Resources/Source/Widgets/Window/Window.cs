@@ -13,9 +13,8 @@ using static Root.RegionBackgroundType;
 public class Window : MonoBehaviour
 {
     public Desktop desktop;
-    public GameObject groupGrouping;
     public List<RegionGroup> regionGroups;
-    public RegionGroup LBRegionGroup, headerGroup;
+    public RegionGroup headerGroup;
     public int xOffset, yOffset;
     public string title, layer;
     public WindowAnchor anchor;
@@ -33,8 +32,6 @@ public class Window : MonoBehaviour
         shadows = new GameObject[8];
         if (upperUI) layer = "Upper";
         else layer = "Default";
-
-        desktop.LBWindow = this;
         desktop.windows.Add(this);
     }
 
@@ -44,6 +41,8 @@ public class Window : MonoBehaviour
         foreach (var r in rs) r.gameObject.AddComponent<FadeIn>().random = false;
     }
 
+    public RegionGroup LBRegionGroup() => regionGroups.SafeLast();
+
     public int PlannedHeight(bool includeHeader = false)
     {
         return (regionGroups.Count > 0 ? regionGroups.Max(x => x.PlannedHeight()) : 0) + (includeHeader && headerGroup != null ? (headerGroup.setHeight != 0 ? headerGroup.setHeight : headerGroup.PlannedHeight()) : 0);
@@ -51,10 +50,10 @@ public class Window : MonoBehaviour
 
     public void ResetPosition()
     {
-        if (anchor.anchor != None && anchor.magnet == null) transform.parent = desktop.screen.transform;
+        if (anchor.anchor != None) transform.parent = desktop.screen.transform;
         transform.localPosition = Vector3.zero;
-        transform.localPosition = anchor.magnet != null ? MagnetAnchor(anchor.magnet.transform.localPosition, new Vector2(anchor.magnet.Width(), anchor.magnet.PlannedHeight())) : Anchor();
-        transform.localPosition += (anchor.anchor != None && anchor.magnet == null ? new Vector3(screenX / -2, screenY / 2) : Vector3.zero) + (Vector3)anchor.offset;
+        transform.localPosition = Anchor();
+        transform.localPosition += (anchor.anchor != None ? new Vector3(screenX / -2, screenY / 2) : Vector3.zero) + (Vector3)anchor.offset;
         transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, -desktop.windows.Count + (layer == "Default" ? 1024 : 0));
 
         Vector2 Anchor() => anchor.anchor switch
@@ -65,20 +64,6 @@ public class Window : MonoBehaviour
             BottomRight => new Vector2(screenX - 2 - Width(), 2 - screenY + yOffset),
             BottomLeft => new Vector2(0, 2 - screenY + yOffset),
             Center => new Vector2(screenX / 2 - Width() / 2 - 1, screenY / -2 + yOffset / 2),
-            _ => new Vector2(0, 0),
-        };
-
-        Vector2 MagnetAnchor(Vector2 position, Vector2 size) => anchor.anchor switch
-        {
-            Top => new Vector2(position.x - (Width() - size.x) / 2, position.y + yOffset),
-            TopRight => new Vector2(position.x + size.x, position.y),
-            TopLeft => new Vector2(position.x - Width(), position.y),
-            RightTop => new Vector2(position.x + size.x, position.y),
-            Bottom => new Vector2(position.x - (Width() - size.x) / 2, position.y - size.y),
-            BottomLeft => new Vector2(position.x + size.x - Width(), position.y - size.y),
-            BottomRight => new Vector2(position.x, position.y - size.y),
-            RightBottom => new Vector2(position.x + size.x, position.y - size.y + yOffset),
-            Center => new Vector2(screenX / 2 - Width() / 2, screenY / -2 + yOffset / 2),
             _ => new Vector2(0, 0),
         };
     }
@@ -99,35 +84,33 @@ public class Window : MonoBehaviour
 
     public void Rebuild()
     {
-        CDesktop.LBWindow = this;
+        CDesktop.windows.Remove(this);
+        CDesktop.windows.Add(this);
         xOffset = 0;
-        if (groupGrouping == null)
+        for (int i = 0; i < regionGroups.Count; i++)
         {
-            groupGrouping = new GameObject("Groups");
-            groupGrouping.transform.parent = transform;
-        }
-        foreach (var regionGroup in regionGroups)
-        {
-            regionGroup.transform.parent = groupGrouping.transform;
-            regionGroup.transform.localPosition = new Vector3(xOffset, 0, 0);
+            var regionGroup = regionGroups[0];
+            regionGroups.Remove(regionGroup);
+            regionGroups.Add(regionGroup);
+            regionGroup.transform.parent = transform;
+            regionGroup.transform.localPosition = new Vector3(xOffset, regionGroup != headerGroup && headerGroup != null ? -headerGroup.currentHeight : 0, 0);
             BuildRegionGroup(regionGroup);
         }
-        if (headerGroup != null) BuildRegionGroup(headerGroup);
-        yOffset = (regionGroups.Count > 0 ? regionGroups.Max(x => x.currentHeight) : 0) + (headerGroup != null ? headerGroup.currentHeight : 0);
-        groupGrouping.transform.localPosition = new Vector3(0, headerGroup != null ? -headerGroup.currentHeight : 0, 0);
+        yOffset = headerGroup != null ? (regionGroups.Count > 1 ? regionGroups.Where(x => x != headerGroup).Max(x => x.currentHeight) : 0) + headerGroup.currentHeight : (regionGroups.Count > 0 ? regionGroups.Max(x => x.currentHeight) : 0);
         if (masked) GetComponentsInChildren<SpriteRenderer>().ToList().ForEach(x => x.maskInteraction = SpriteMaskInteraction.VisibleInsideMask);
 
         void BuildRegionGroup(RegionGroup regionGroup)
         {
             int extendOffset = 0;
-            CDesktop.LBWindow.LBRegionGroup = regionGroup;
 
             #region CREATING REGIONS
 
             //Draw all the regions
-            foreach (var region in regionGroup.regions)
+            for (int i = 0; i < regionGroup.regions.Count; i++)
             {
-                regionGroup.LBRegion = region;
+                var region = regionGroup.regions[0];
+                regionGroup.regions.Remove(region);
+                regionGroup.regions.Add(region);
                 region.draw();
                 if (regionGroup == headerGroup)
                 {
@@ -291,14 +274,12 @@ public class Window : MonoBehaviour
                     int length = 0;
                     region.inputLine.text.Erase();
                     var print = region.inputLine.text.text.Value();
-                    if (inputDestination == region.inputLine.text.text && inputLineName == region.inputLine.name)
+                    if (inputDestination == region.inputLine.text.text && inputLineWindow == title)
                         print = print.Insert(inputLineMarker > print.Length ? print.Length : inputLineMarker, defines.markerCharacter);
                     else
                     {
-                        if (region.inputLine.align != "Right")
-                            print += " ";
-                        if (region.inputLine.align != "Left")
-                            print = " " + print;
+                        if (region.inputLine.align != "Right") print += " ";
+                        if (region.inputLine.align != "Left") print = " " + print;
                     }
                     foreach (var character in print)
                         length = region.inputLine.text.SpawnCharacter(character, length, region.inputLine.color);
@@ -394,9 +375,9 @@ public class Window : MonoBehaviour
                             {
                                 Destroy(region.borders[4]);
                                 Destroy(region.borders[5]);
-                                if (regionGroup != regionGroups.First())
+                                if (regionGroup.transform != transform.GetChild(1))
                                     Destroy(region.borders[6]);
-                                if (regionGroup != regionGroups.Last())
+                                if (regionGroup.transform != transform.GetChild(transform.childCount - 1))
                                 {
                                     Destroy(region.borders[7]);
                                     region.borders[3].transform.localScale += new Vector3(4, 0, 0);
@@ -452,9 +433,9 @@ public class Window : MonoBehaviour
                                 if (regionGroup != headerGroup)
                                 {
                                     Destroy(region.shadows[0]);
-                                    if (regionGroup != regionGroups.First())
+                                    if (regionGroup.transform != transform.GetChild(1))
                                         Destroy(region.shadows[4]);
-                                    if (regionGroup != regionGroups.Last())
+                                    if (regionGroup.transform != transform.GetChild(transform.childCount - 1))
                                     {
                                         region.shadows[3].transform.localScale += new Vector3(5, 0, 0);
                                         Destroy(region.shadows[2]);

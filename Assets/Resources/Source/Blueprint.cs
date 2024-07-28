@@ -158,7 +158,7 @@ public class Blueprint
         new("BoardFrame", () => {
             SetAnchor(-115, 146);
             var boardBackground = new GameObject("BoardBackground", typeof(SpriteRenderer), typeof(SpriteMask));
-            boardBackground.transform.parent = CDesktop.LBWindow.transform;
+            boardBackground.transform.parent = CDesktop.LBWindow().transform;
             boardBackground.transform.localPosition = new Vector2(-17, 17);
             boardBackground.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/BoardFrames/BoardBackground" + board.field.GetLength(0) + "x" + board.field.GetLength(1));
             var mask = boardBackground.GetComponent<SpriteMask>();
@@ -167,7 +167,7 @@ public class Blueprint
             mask.frontSortingLayerID = SortingLayer.NameToID("Missile");
             mask.backSortingLayerID = SortingLayer.NameToID("Default");
             boardBackground = new GameObject("BoardInShadow", typeof(SpriteRenderer));
-            boardBackground.transform.parent = CDesktop.LBWindow.transform;
+            boardBackground.transform.parent = CDesktop.LBWindow().transform;
             boardBackground.transform.localPosition = new Vector2(-17, 17);
             boardBackground.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/BoardFrames/BoardShadow" + board.field.GetLength(0) + "x" + board.field.GetLength(1));
             boardBackground.GetComponent<SpriteRenderer>().sortingLayerName = "CameraShadow";
@@ -871,7 +871,7 @@ public class Blueprint
                     String.promptConfirm.Set("");
                     PlaySound("DesktopMenuOpen", 0.6f);
                     SpawnWindowBlueprint("ConfirmDeleteCharacter");
-                    CDesktop.LBWindow.LBRegionGroup.LBRegion.inputLine.Activate();
+                    CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
                 });
             }
             else
@@ -1577,7 +1577,7 @@ public class Blueprint
                 else
                     AddSmallButton("OtherSettingsOff");
             });
-            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             for (int i = 0; i < 11; i++)
             {
                 var index = i;
@@ -1659,7 +1659,7 @@ public class Blueprint
                             if (WindowUp("CraftingSettings")) return;
                             PrintItemTooltip(result, Input.GetKey(LeftShift));
                         });
-                        SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (results.IndexOf(result) % 5), result.amount + "", "", "Right");
+                        SpawnFloatingText(CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (results.IndexOf(result) % 5), result.amount + "", "", "Right");
                     }
                 });
             }
@@ -1691,7 +1691,7 @@ public class Blueprint
                             if (WindowUp("CraftingSettings")) return;
                             PrintItemTooltip(reagent, Input.GetKey(LeftShift));
                         });
-                        SpawnFloatingText(CDesktop.LBWindow.LBRegionGroup.LBRegion.transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (reagents.IndexOf(reagent) % 5), currentSave.player.inventory.items.Sum(x => x.name == reagent.name ? x.amount : 0) + "/" + reagent.amount, "", "Right");
+                        SpawnFloatingText(CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (reagents.IndexOf(reagent) % 5), currentSave.player.inventory.items.Sum(x => x.name == reagent.name ? x.amount : 0) + "/" + reagent.amount, "", "Right");
                     }
                 });
             }
@@ -1850,7 +1850,7 @@ public class Blueprint
                     Respawn("CraftingList");
                 });
             });
-            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             for (int i = 0; i < 12; i++)
             {
                 var index = i;
@@ -1931,7 +1931,7 @@ public class Blueprint
                 else
                     AddSmallButton("OtherSettingsOff");
             });
-            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             for (int i = 0; i < 11; i++)
             {
                 var index = i;
@@ -2352,7 +2352,7 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddLine("You are about to destroy", "", "Center");
-                AddLine(item.name, item.rarity, "Center");
+                AddLine(itemToDestroy.name, itemToDestroy.rarity, "Center");
             });
             AddRegionGroup();
             SetRegionGroupWidth(91);
@@ -2363,10 +2363,10 @@ public class Blueprint
             },
             (h) =>
             {
-                currentSave.player.inventory.items.Remove(item);
+                currentSave.player.inventory.items.Remove(itemToDestroy);
                 PlaySound("DesktopMenuClose");
                 CloseWindow("ConfirmItemDestroy");
-                item = null;
+                itemToDestroy = null;
                 Respawn("Inventory");
             });
             AddRegionGroup();
@@ -2376,7 +2376,7 @@ public class Blueprint
             {
                 PlaySound("DesktopMenuClose");
                 CloseWindow("ConfirmItemDestroy");
-                item = null;
+                itemToDestroy = null;
                 Respawn("Inventory");
             });
         }, true),
@@ -2387,7 +2387,7 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddLine("You are about to disenchant", "", "Center");
-                AddLine(item.name, item.rarity, "Center");
+                AddLine(itemToDisenchant.name, itemToDisenchant.rarity, "Center");
             });
             AddRegionGroup();
             SetRegionGroupWidth(91);
@@ -2400,10 +2400,10 @@ public class Blueprint
             {
                 PlaySound("Disenchant");
                 currentSave.AddTime(30);
-                currentSave.player.inventory.items.Remove(item);
+                currentSave.player.inventory.items.Remove(itemToDisenchant);
                 CloseWindow("ConfirmItemDisenchant");
                 Respawn("Inventory");
-                disenchantLoot = item.GenerateDisenchantLoot();
+                disenchantLoot = itemToDisenchant.GenerateDisenchantLoot();
                 SpawnDesktopBlueprint("DisenchantLoot");
             });
             AddRegionGroup();
@@ -2431,8 +2431,8 @@ public class Blueprint
             AddPaddingRegion(
                 () =>
                 {
-                    for (int j = 0; j < 4 && j < item.itemsInside.Count; j++)
-                        PrintLootItem(item.itemsInside[j]);
+                    for (int j = 0; j < 4 && j < openedItem.itemsInside.Count; j++)
+                        PrintLootItem(openedItem.itemsInside[j]);
                 }
             );
         }),
@@ -2861,12 +2861,12 @@ public class Blueprint
                     }
                     else if (CDesktop.title == "ContainerLoot")
                     {
-                        AddLine(item.name + ":");
+                        AddLine(openedItem.name + ":");
                         AddSmallButton("OtherClose", (h) =>
                         {
-                            if (item.itemsInside.Count == 0)
-                                currentSave.player.inventory.items.Remove(item);
-                            item = null;
+                            if (openedItem.itemsInside.Count == 0)
+                                currentSave.player.inventory.items.Remove(openedItem);
+                            openedItem = null;
                             PlaySound("DesktopInventoryClose");
                             CloseDesktop("ContainerLoot");
                         });
@@ -3250,8 +3250,8 @@ public class Blueprint
                         {
                             var marker = new GameObject("ProgressionMarker", typeof(SpriteRenderer));
                             marker.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/Progress" + printType);
-                            marker.transform.parent = CDesktop.LBWindow.LBRegionGroup.LBRegion.transform;
-                            marker.transform.localPosition = new Vector3(1 + CDesktop.LBWindow.LBRegionGroup.setWidth, -3 - thickness);
+                            marker.transform.parent = CDesktop.LBWindow().LBRegionGroup().LBRegion().transform;
+                            marker.transform.localPosition = new Vector3(1 + CDesktop.LBWindow().LBRegionGroup().setWidth, -3 - thickness);
                         }
                     }
                     if (i < area.areaSize)
@@ -3982,7 +3982,7 @@ public class Blueprint
                 else
                     AddSmallButton("OtherSortOff");
             });
-            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             AddPaginationLine(regionGroup);
             var mounts = currentSave.player.mounts.Select(x => Mount.mounts.Find(y => y.name == x)).ToList();
             mounts.RemoveAll(x => x.name == currentSave.player.mount);
@@ -4047,7 +4047,7 @@ public class Blueprint
             {
                 AddLine("Available mounts:");
             });
-            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             AddPaginationLine(regionGroup);
             var mounts = Mount.mounts.FindAll(x => !currentSave.player.mounts.Contains(x.name) && x.factions != null && x.factions.Contains(person.faction == null ? town.faction : person.faction)).OrderBy(x => x.speed).ThenBy(x => x.price).ThenBy(x => x.name).ToList();
             for (int i = 0; i < 6; i++)
@@ -4313,7 +4313,7 @@ public class Blueprint
             {
                 AddLine("Possible destinations:");
             });
-            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             for (int i = 0; i < 12; i++)
             {
                 var index = i;
@@ -4401,7 +4401,7 @@ public class Blueprint
                     PlaySound("DesktopInstanceClose");
                 });
             });
-            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             for (int i = 0; i < 6; i++)
             {
                 var index = i;
@@ -4507,7 +4507,7 @@ public class Blueprint
                     PlaySound("DesktopInstanceClose");
                 });
             });
-            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             for (int i = 0; i < 6; i++)
             {
                 var index = i;
@@ -4584,7 +4584,7 @@ public class Blueprint
         new("FishingBoardFrame", () => {
             SetAnchor(-115, 146);
             var boardBackground = new GameObject("BoardBackground", typeof(SpriteRenderer), typeof(SpriteMask));
-            boardBackground.transform.parent = CDesktop.LBWindow.transform;
+            boardBackground.transform.parent = CDesktop.LBWindow().transform;
             boardBackground.transform.localPosition = new Vector2(-17, 17);
             boardBackground.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/BoardFrames/BoardBackground6x6Simple");
             var mask = boardBackground.GetComponent<SpriteMask>();
@@ -4593,7 +4593,7 @@ public class Blueprint
             mask.frontSortingLayerID = SortingLayer.NameToID("Missile");
             mask.backSortingLayerID = SortingLayer.NameToID("Default");
             boardBackground = new GameObject("FishingPool", typeof(SpriteRenderer), typeof(Highlightable), typeof(BoxCollider2D));
-            boardBackground.transform.parent = CDesktop.LBWindow.transform;
+            boardBackground.transform.parent = CDesktop.LBWindow().transform;
             boardBackground.transform.localPosition = new Vector2(-17, 17);
             boardBackground.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/BoardFrames/BoardShadow6x6Water" + fishingSpot.waterType);
             boardBackground.GetComponent<SpriteRenderer>().sortingLayerName = "CameraShadow";
@@ -5052,7 +5052,7 @@ public class Blueprint
             maladathIcon.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/MaladathIcon");
             maladathIcon.GetComponent<SpriteRenderer>().sortingLayerName = "Upper";
             maladathIcon.GetComponent<SpriteRenderer>().sortingOrder = 1;
-            maladathIcon.transform.parent = CDesktop.LBWindow.transform;
+            maladathIcon.transform.parent = CDesktop.LBWindow().transform;
             maladathIcon.transform.localPosition = new Vector3(69, -145);
         }, true),
         new("TitleScreenSingleplayer", () => {
@@ -5257,7 +5257,7 @@ public class Blueprint
                 else
                     AddSmallButton("OtherSortOff");
             });
-            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             AddPaginationLine(regionGroup);
             var bars = currentSave.player.actionBars[currentSave.player.currentActionSet];
             for (int i = 0; i < 6; i++)
@@ -5342,7 +5342,7 @@ public class Blueprint
                 else
                     AddSmallButton("OtherSortOff");
             });
-            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             AddPaginationLine(regionGroup);
             for (int i = 0; i < 6; i++)
             {
@@ -5583,7 +5583,7 @@ public class Blueprint
         new("TalentTreeRight", () => {
             SetAnchor(TopRight, 0, -19);
             var specShadow = new GameObject("SpecShadow", typeof(SpriteRenderer));
-            specShadow.transform.parent = CDesktop.LBWindow.transform;
+            specShadow.transform.parent = CDesktop.LBWindow().transform;
             specShadow.transform.localPosition = new Vector3(2, -2, 0.1f);
             specShadow.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/SpecShadow");
             DisableShadows();
@@ -5607,7 +5607,7 @@ public class Blueprint
         new("TalentTreeLeft", () => {
             SetAnchor(TopLeft, 0, -19);
             var specShadow = new GameObject("SpecShadow", typeof(SpriteRenderer));
-            specShadow.transform.parent = CDesktop.LBWindow.transform;
+            specShadow.transform.parent = CDesktop.LBWindow().transform;
             specShadow.transform.localPosition = new Vector3(2, -2, 0.1f);
             specShadow.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/SpecShadow");
             AddHeaderGroup();
@@ -5651,7 +5651,7 @@ public class Blueprint
                 if (SpawnWindowBlueprint("Console") != null)
                 {
                     PlaySound("DesktopTooltipShow", 0.4f);
-                    CDesktop.LBWindow.LBRegionGroup.LBRegion.inputLine.Activate();
+                    CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
                 }
             });
             AddHotkey(Escape, () =>
@@ -5757,7 +5757,7 @@ public class Blueprint
                 if (SpawnWindowBlueprint("Console") != null)
                 {
                     PlaySound("DesktopTooltipShow", 0.4f);
-                    CDesktop.LBWindow.LBRegionGroup.LBRegion.inputLine.Activate();
+                    CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
                 }
             });
             AddHotkey(KeyCode.Space, () =>
@@ -5917,9 +5917,9 @@ public class Blueprint
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(Escape, () =>
             {
-                if (item.itemsInside.Count == 0)
-                    currentSave.player.inventory.items.Remove(item);
-                item = null;
+                if (openedItem.itemsInside.Count == 0)
+                    currentSave.player.inventory.items.Remove(openedItem);
+                openedItem = null;
                 PlaySound("DesktopInventoryClose");
                 CloseDesktop("ContainerLoot");
                 SpawnDesktopBlueprint("EquipmentScreen");
@@ -6450,7 +6450,9 @@ public class Blueprint
         }),
         new("EquipmentScreen", () => 
         {
-            item = null;
+            openedItem = null;
+            itemToDestroy = null;
+            itemToDisenchant = null;
             PlaySound("DesktopInventoryOpen");
             SetDesktopBackground("Backgrounds/Leather");
             SpawnWindowBlueprint("MapToolbarShadow");

@@ -8,7 +8,6 @@ using static Font;
 public class Line : MonoBehaviour
 {
     public Region region;
-    public LineText LBText;
     public List<LineText> texts;
     public string align;
 
@@ -17,9 +16,10 @@ public class Line : MonoBehaviour
         this.region = region;
         this.align = align;
         texts = new();
-        region.LBLine = this;
         region.lines.Add(this);
     }
+
+    public LineText LBText() => texts.Last();
 
     public int Length() => texts.Sum(x => x.text.Length == 0 ? 0 : fonts["Tahoma Bold"].Length(x.text));
 }

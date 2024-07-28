@@ -10,14 +10,11 @@ using static Defines;
 public class Region : MonoBehaviour
 {
     public Action draw;
-    public Line LBLine;
     public List<Line> lines;
     public InputLine inputLine;
     public LineCheckbox checkbox;
     public RegionGroup regionGroup;
-    public LineSmallButton LBSmallButton;
     public List<LineSmallButton> smallButtons;
-    public LineBigButton LBBigButton;
     public List<LineBigButton> bigButtons;
     public int currentHeight, xExtend, yExtend;
     public RegionBackgroundType backgroundType;
@@ -25,6 +22,8 @@ public class Region : MonoBehaviour
     public GameObject background;
     public GameObject[] borders;
     public GameObject[] shadows;
+
+    //If true small buttons appear on the left side and big ones on the right
     public bool reverseButtons;
 
     public void Initialise(RegionGroup regionGroup, RegionBackgroundType backgroundType, Action draw)
@@ -37,8 +36,6 @@ public class Region : MonoBehaviour
         this.draw = draw;
         this.regionGroup = regionGroup;
         this.backgroundType = backgroundType;
-
-        regionGroup.LBRegion = this;
         regionGroup.regions.Add(this);
     }
 
@@ -50,10 +47,13 @@ public class Region : MonoBehaviour
         return content + (content > 0 ? 2 : 0);
     }
 
-    public int AutoHeight()
-    {
-        return currentHeight;
-    }
+    public Line LBLine() => lines.SafeLast();
+
+    public LineBigButton LBBigButton() => bigButtons.SafeLast();
+
+    public LineSmallButton LBSmallButton() => smallButtons.SafeLast();
+
+    public int AutoHeight() => currentHeight;
 
     public int AutoWidth()
     {

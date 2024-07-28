@@ -241,7 +241,7 @@ public static class BlueprintDev
             //{
             //    var index = areas.IndexOf(area);
             //    if (index >= 10)
-            //        CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //        CDesktop.LBWindow().LBRegionGroup().SetPagination(index / 10);
             //}
             AddHeaderRegion(() =>
             {
@@ -268,7 +268,7 @@ public static class BlueprintDev
                 AddLine("Search:", "DarkGray");
                 AddInputLine(String.search);
             });
-            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             AddPaginationLine(regionGroup);
             for (int i = 0; i < 10; i++)
             {
@@ -392,7 +392,7 @@ public static class BlueprintDev
             //if (town != null)
             //{
             //    var index = towns.IndexOf(town);
-            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //    if (index >= 10) CDesktop.LBWindow().LBRegionGroup().SetPagination(index / 10);
             //}
             AddHeaderRegion(() =>
             {
@@ -419,7 +419,7 @@ public static class BlueprintDev
                 AddLine("Search:", "DarkGray");
                 AddInputLine(String.search);
             });
-            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             AddPaginationLine(regionGroup);
             for (int i = 0; i < 10; i++)
             {
@@ -581,7 +581,7 @@ public static class BlueprintDev
             //{
             //    var index = instances.IndexOf(instance);
             //    if (index >= 10)
-            //        CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //        CDesktop.LBWindow().LBRegionGroup().SetPagination(index / 10);
             //}
             AddHeaderRegion(() =>
             {
@@ -608,7 +608,7 @@ public static class BlueprintDev
                 AddLine("Search:", "DarkGray");
                 AddInputLine(String.search);
             });
-            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             AddPaginationLine(regionGroup);
             for (int i = 0; i < 10; i++)
             {
@@ -737,7 +737,7 @@ public static class BlueprintDev
             //{
             //    var index = complexes.IndexOf(complex);
             //    if (index >= 10)
-            //        CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //        CDesktop.LBWindow().LBRegionGroup().SetPagination(index / 10);
             //}
             AddHeaderRegion(() =>
             {
@@ -766,7 +766,7 @@ public static class BlueprintDev
                 AddLine("Search:", "DarkGray");
                 AddInputLine(String.search);
             });
-            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             AddPaginationLine(regionGroup);
             for (int i = 0; i < regionGroup.perPage; i++)
             {
@@ -841,17 +841,17 @@ public static class BlueprintDev
             //if (area != null)
             //{
             //    var index = Assets.assets.ambienceSearch.IndexOf(area.ambience + ".ogg");
-            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //    if (index >= 10) CDesktop.LBWindow().LBRegionGroup().SetPagination(index / 10);
             //}
             //else if (instance != null)
             //{
             //    var index = Assets.assets.ambienceSearch.IndexOf(instance.ambience + ".ogg");
-            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //    if (index >= 10) CDesktop.LBWindow().LBRegionGroup().SetPagination(index / 10);
             //}
             //else if (complex != null)
             //{
             //    var index = Assets.assets.ambienceSearch.IndexOf(complex.ambience + ".ogg");
-            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //    if (index >= 10) CDesktop.LBWindow().LBRegionGroup().SetPagination(index / 10);
             //}
             AddHeaderRegion(() =>
             {
@@ -878,7 +878,7 @@ public static class BlueprintDev
                 AddLine("Search:", "DarkGray");
                 AddInputLine(String.search);
             });
-            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             AddPaginationLine(regionGroup);
             for (int i = 0; i < regionGroup.perPage; i++)
             {
@@ -941,7 +941,7 @@ public static class BlueprintDev
             //{
             //    var temp = eventEdit.effects[selectedEffect];
             //    var index = temp.ContainsKey("SoundEffect") && temp["SoundEffect"] != "None" ? Assets.assets.soundsSearch.IndexOf(temp["SoundEffect"] + ".ogg") : 0;
-            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //    if (index >= 10) CDesktop.LBWindow().LBRegionGroup().SetPagination(index / 10);
             //}
             AddHeaderRegion(() =>
             {
@@ -964,7 +964,7 @@ public static class BlueprintDev
                 AddLine("Search:", "DarkGray");
                 AddInputLine(String.search);
             });
-            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             AddPaginationLine(regionGroup);
             for (int i = 0; i < regionGroup.perPage; i++)
             {
@@ -1017,7 +1017,7 @@ public static class BlueprintDev
             //if (item != null)
             //{
             //    var index = Assets.assets.itemIconsSearch.IndexOf(item.icon + ".png");
-            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //    if (index >= 10) CDesktop.LBWindow().LBRegionGroup().SetPagination(index / 10);
             //}
             AddHeaderRegion(() =>
             {
@@ -1042,7 +1042,7 @@ public static class BlueprintDev
                 AddLine("Search:", "DarkGray");
                 AddInputLine(String.search);
             });
-            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             AddPaginationLine(regionGroup);
             for (int i = 0; i < regionGroup.perPage; i++)
             {
@@ -1089,12 +1089,12 @@ public static class BlueprintDev
             //if (ability != null)
             //{
             //    var index = Assets.assets.abilityIconsSearch.IndexOf(ability.icon + ".png");
-            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //    if (index >= 10) CDesktop.LBWindow().LBRegionGroup().SetPagination(index / 10);
             //}
             //else if (buff != null)
             //{
             //    var index = Assets.assets.abilityIconsSearch.IndexOf(buff.icon + ".png");
-            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //    if (index >= 10) CDesktop.LBWindow().LBRegionGroup().SetPagination(index / 10);
             //}
             AddHeaderRegion(() =>
             {
@@ -1117,7 +1117,7 @@ public static class BlueprintDev
                 AddLine("Search:", "DarkGray");
                 AddInputLine(String.search);
             });
-            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             AddPaginationLine(regionGroup);
             for (int i = 0; i < regionGroup.perPage; i++)
             {
@@ -1170,7 +1170,7 @@ public static class BlueprintDev
             //if (faction != null)
             //{
             //    var index = Assets.assets.factionIconsSearch.IndexOf(faction.icon + ".png");
-            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //    if (index >= 10) CDesktop.LBWindow().LBRegionGroup().SetPagination(index / 10);
             //}
             AddHeaderRegion(() =>
             {
@@ -1192,7 +1192,7 @@ public static class BlueprintDev
                 AddLine("Search:", "DarkGray");
                 AddInputLine(String.search);
             });
-            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             AddPaginationLine(regionGroup);
             for (int i = 0; i < regionGroup.perPage; i++)
             {
@@ -1239,7 +1239,7 @@ public static class BlueprintDev
             //if (mount != null)
             //{
             //    var index = Assets.assets.mountIconsSearch.IndexOf(mount.icon + ".png");
-            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //    if (index >= 10) CDesktop.LBWindow().LBRegionGroup().SetPagination(index / 10);
             //}
             AddHeaderRegion(() =>
             {
@@ -1261,7 +1261,7 @@ public static class BlueprintDev
                 AddLine("Search:", "DarkGray");
                 AddInputLine(String.search);
             });
-            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             AddPaginationLine(regionGroup);
             for (int i = 0; i < regionGroup.perPage; i++)
             {
@@ -1308,7 +1308,7 @@ public static class BlueprintDev
             //if (race != null)
             //{
             //    var index = Assets.assets.portraitsSearch.IndexOf(race.portrait + ".png");
-            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //    if (index >= 10) CDesktop.LBWindow().LBRegionGroup().SetPagination(index / 10);
             //}
             AddHeaderRegion(() =>
             {
@@ -1330,7 +1330,7 @@ public static class BlueprintDev
                 AddLine("Search:", "DarkGray");
                 AddInputLine(String.search);
             });
-            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             AddPaginationLine(regionGroup);
             for (int i = 0; i < regionGroup.perPage; i++)
             {
@@ -1394,7 +1394,7 @@ public static class BlueprintDev
                 AddLine("Search:", "DarkGray");
                 AddInputLine(String.search);
             });
-            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             AddPaginationLine(regionGroup);
             for (int i = 0; i < regionGroup.perPage; i++)
             {
@@ -1454,7 +1454,7 @@ public static class BlueprintDev
                 AddLine("Search:", "DarkGray");
                 AddInputLine(String.search);
             });
-            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             AddPaginationLine(regionGroup);
             for (int i = 0; i < regionGroup.perPage; i++)
             {
@@ -1506,7 +1506,7 @@ public static class BlueprintDev
                     else SpawnWindowBlueprint("ObjectManagerBuffs");
                 });
             });
-            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             AddPaddingRegion(() =>
             {
                 AddLine("Triggers: ", "DarkGray");
@@ -1759,7 +1759,7 @@ public static class BlueprintDev
                     else SpawnWindowBlueprint("ObjectManagerBuffs");
                 });
             });
-            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             AddPaddingRegion(() =>
             {
                 AddLine("Effects: ", "DarkGray");
@@ -2751,7 +2751,7 @@ public static class BlueprintDev
                     SpawnWindowBlueprint("ObjectManagerHostileAreas");
                 });
             });
-            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             AddPaginationLine(regionGroup);
             AddButtonRegion(() =>
             {
@@ -2804,7 +2804,7 @@ public static class BlueprintDev
                     SpawnWindowBlueprint("ObjectManagerItems");
                 });
             });
-            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             AddPaginationLine(regionGroup);
             AddButtonRegion(() =>
             {
@@ -2993,7 +2993,7 @@ public static class BlueprintDev
                 AddLine("Search:", "DarkGray");
                 AddInputLine(String.search);
             });
-            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             AddPaginationLine(regionGroup);
             for (int i = 0; i < 10; i++)
             {
@@ -3175,7 +3175,7 @@ public static class BlueprintDev
                 AddLine("Search:", "DarkGray");
                 AddInputLine(String.search);
             });
-            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             AddPaginationLine(regionGroup);
             for (int i = 0; i < 5; i++)
             {
@@ -3437,7 +3437,7 @@ public static class BlueprintDev
             //if (ability != null)
             //{
             //    var index = abilitiesSearch.IndexOf(ability);
-            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //    if (index >= 10) CDesktop.LBWindow().LBRegionGroup().SetPagination(index / 10);
             //}
             //if (eventEdit != null)
             //{
@@ -3445,12 +3445,12 @@ public static class BlueprintDev
             //    if (editingEffects)
             //    {
             //        var index = abilitiesSearch.IndexOf(eventEdit.effects[selectedEffect].ContainsKey("AbilityName") ? abilities.Find(x => x.name == eventEdit.effects[selectedEffect]["AbilityName"]) : null);
-            //        if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //        if (index >= 10) CDesktop.LBWindow().LBRegionGroup().SetPagination(index / 10);
             //    }
             //    else
             //    {
             //        var index = abilitiesSearch.IndexOf(eventEdit.triggers[selectedTrigger].ContainsKey("AbilityName") ? abilities.Find(x => x.name == eventEdit.triggers[selectedTrigger]["AbilityName"]) : null);
-            //        if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //        if (index >= 10) CDesktop.LBWindow().LBRegionGroup().SetPagination(index / 10);
             //    }
             //}
             AddHeaderRegion(() =>
@@ -3492,7 +3492,7 @@ public static class BlueprintDev
                 AddLine("Search:", "DarkGray");
                 AddInputLine(String.search);
             });
-            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             AddPaginationLine(regionGroup);
             for (int i = 0; i < 10; i++)
             {
@@ -3752,12 +3752,12 @@ public static class BlueprintDev
                 if (editingEffects)
                 {
                     var index = buffsSearch.IndexOf(eventEdit.effects[selectedEffect].ContainsKey("BuffName") ? buffs.Find(x => x.name == eventEdit.effects[selectedEffect]["BuffName"]) : null);
-                    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+                    if (index >= 10) CDesktop.LBWindow().LBRegionGroup().SetPagination(index / 10);
                 }
                 else
                 {
                     var index = buffsSearch.IndexOf(eventEdit.triggers[selectedTrigger].ContainsKey("BuffName") ? buffs.Find(x => x.name == eventEdit.triggers[selectedTrigger]["BuffName"]) : null);
-                    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+                    if (index >= 10) CDesktop.LBWindow().LBRegionGroup().SetPagination(index / 10);
                 }
             }
             AddHeaderRegion(() =>
@@ -3799,7 +3799,7 @@ public static class BlueprintDev
                 AddLine("Search:", "DarkGray");
                 AddInputLine(String.search);
             });
-            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             AddPaginationLine(regionGroup);
             for (int i = 0; i < 10; i++)
             {
@@ -4093,7 +4093,7 @@ public static class BlueprintDev
             //if (race != null)
             //{
             //    var index = racesSearch.IndexOf(race);
-            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //    if (index >= 10) CDesktop.LBWindow().LBRegionGroup().SetPagination(index / 10);
             //}
             AddHeaderRegion(() =>
             {
@@ -4133,7 +4133,7 @@ public static class BlueprintDev
                 AddLine("Search:", "DarkGray");
                 AddInputLine(String.search);
             });
-            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             AddPaginationLine(regionGroup);
             for (int i = 0; i < 10; i++)
             {
@@ -4374,7 +4374,7 @@ public static class BlueprintDev
             //if (mount != null)
             //{
             //    var index = mountsSearch.IndexOf(mount);
-            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //    if (index >= 10) CDesktop.LBWindow().LBRegionGroup().SetPagination(index / 10);
             //}
             AddHeaderRegion(() =>
             {
@@ -4405,7 +4405,7 @@ public static class BlueprintDev
                 AddLine("Search:", "DarkGray");
                 AddInputLine(String.search);
             });
-            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             AddPaginationLine(regionGroup);
             for (int i = 0; i < 10; i++)
             {
@@ -4573,7 +4573,7 @@ public static class BlueprintDev
             //if (recipe != null)
             //{
             //    var index = recipesSearch.IndexOf(recipe);
-            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //    if (index >= 10) CDesktop.LBWindow().LBRegionGroup().SetPagination(index / 10);
             //}
             AddHeaderRegion(() =>
             {
@@ -4604,7 +4604,7 @@ public static class BlueprintDev
                 AddLine("Search:", "DarkGray");
                 AddInputLine(String.search);
             });
-            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             AddPaginationLine(regionGroup);
             for (int i = 0; i < 10; i++)
             {
@@ -4709,17 +4709,17 @@ public static class BlueprintDev
             //if (faction != null)
             //{
             //    var index = factionsSearch.IndexOf(faction);
-            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //    if (index >= 10) CDesktop.LBWindow().LBRegionGroup().SetPagination(index / 10);
             //}
             //else if (town != null)
             //{
             //    var index = factionsSearch.FindIndex(x => x.name == town.faction);
-            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //    if (index >= 10) CDesktop.LBWindow().LBRegionGroup().SetPagination(index / 10);
             //}
             //else if (race != null)
             //{
             //    var index = factionsSearch.FindIndex(x => x.name == race.faction);
-            //    if (index >= 10) CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //    if (index >= 10) CDesktop.LBWindow().LBRegionGroup().SetPagination(index / 10);
             //}
             AddHeaderRegion(() =>
             {
@@ -4763,7 +4763,7 @@ public static class BlueprintDev
                 AddLine("Search:", "DarkGray");
                 AddInputLine(String.search);
             });
-            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             AddPaginationLine(regionGroup);
             for (int i = 0; i < 10; i++)
             {
@@ -4882,7 +4882,7 @@ public static class BlueprintDev
             //{
             //    var index = specs.IndexOf(spec);
             //    if (index >= 10)
-            //        CDesktop.LBWindow.LBRegionGroup.SetPagination(index / 10);
+            //        CDesktop.LBWindow().LBRegionGroup().SetPagination(index / 10);
             //}
             AddHeaderRegion(() =>
             {
@@ -4905,7 +4905,7 @@ public static class BlueprintDev
                 AddLine("Search:", "DarkGray");
                 AddInputLine(String.search);
             });
-            var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             AddPaginationLine(regionGroup);
             for (int i = 0; i < 10; i++)
             {

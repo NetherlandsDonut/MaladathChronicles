@@ -376,7 +376,7 @@ public class Starter : MonoBehaviour
                                 dot.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/TalentDot" + (dotAmount == 1 ? "Single" : (i == 0 ? "First" : (i < dotAmount - 1 ? "Next" : "Last"))));
                                 dot.GetComponent<SpriteRenderer>().sortingLayerName = "Upper";
                                 dot.GetComponent<SpriteRenderer>().sortingOrder = 5 + i * 2;
-                                dot.transform.parent = LBDesktop.LBWindow.LBRegionGroup.LBRegion.transform;
+                                dot.transform.parent = LBDesktop.LBWindow().LBRegionGroup().LBRegion().transform;
                                 dot.transform.localPosition = new Vector3(38, -5 * i - 5);
                                 var fill = new GameObject("TalentDotFill", typeof(SpriteRenderer));
                                 fill.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/TalentDotFill" + (advancement >= (i + 1) * 2 ? "Picked" : (currentSave.player.unspentTalentPoints > 0 && advancement >= (i + 1) * 2 - 1 ? "Available" : "Locked")) + (dotAmount == 1 ? "Single" : (i == 0 ? "First" : (i < dotAmount - 1 ? "Next" : "Last"))));

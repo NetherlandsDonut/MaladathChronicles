@@ -195,7 +195,7 @@ public class Buff
 
     public void PrintDescription(Entity effector, Entity other, int rank)
     {
-        int width = CDesktop.LBWindow.LBRegionGroup.setWidth;
+        int width = CDesktop.LBWindow().LBRegionGroup().setWidth;
         if (description != null) description.Print(effector, other, width, RankVariables(rank));
         else AddHeaderRegion(() =>
         {

@@ -18,7 +18,7 @@ public class FutureEntity
         stats = entity.stats;
         currentActionSet = entity.currentActionSet;
         actionBars = entity.actionBars.ToDictionary(x => x.Key, x => x.Value.ToList());
-        worldBuffs = entity.worldBuffs.ToList();
+        worldBuffs = entity.worldBuffs?.ToList();
         buffs = new();
         foreach (var buff in entity.buffs)
             buffs.Add((buff.Item1, buff.Item2, buff.Item3));
@@ -38,7 +38,7 @@ public class FutureEntity
         stats = entity.stats;
         currentActionSet = entity.currentActionSet;
         actionBars = entity.actionBars.ToDictionary(x => x.Key, x => x.Value.ToList());
-        worldBuffs = entity.worldBuffs.ToList();
+        worldBuffs = entity.worldBuffs?.ToList();
         buffs = new();
         foreach (var buff in entity.buffs)
             buffs.Add((buff.Item1, buff.Item2, buff.Item4));

@@ -33,7 +33,7 @@ public class InputLine : MonoBehaviour
     {
         cursor.SetCursor(CursorType.None);
         UnityEngine.Cursor.lockState = CursorLockMode.Locked;
-        inputLineName = text.inputLine.name;
+        inputLineWindow = region.regionGroup.window.title;
         inputDestination = text.inputLine.text.text;
         inputLineMarker = marker == 0 ? text.inputLine.text.text.value.Length : marker;
         region.regionGroup.window.Respawn();
@@ -41,8 +41,11 @@ public class InputLine : MonoBehaviour
 
     public int Length() => fonts["Tahoma Bold"].Length(text.text.Value());
 
+    //String which is modified by interacting with the input field
     public static String inputDestination;
-    public static string inputLineName;
+
+    //Window where the current input line resides at
+    public static string inputLineWindow;
 
     public static void ExecuteQuit(String foo)
     {
@@ -667,7 +670,7 @@ public class InputLine : MonoBehaviour
                     foreach (var connection in SitePath.paths.FindAll(x => x.sites.Contains(site.name)))
                     {
                         var didRespawn = Respawn("Site: " + connection.sites.Find(x => x != site.name));
-                        if (!didRespawn) CDesktop.LBWindow.GetComponentsInChildren<Renderer>().ToList().ForEach(x => x.gameObject.AddComponent<FadeIn>());
+                        if (!didRespawn) CDesktop.LBWindow().GetComponentsInChildren<Renderer>().ToList().ForEach(x => x.gameObject.AddComponent<FadeIn>());
                     }
                     CDesktop.LockScreen();
                 }

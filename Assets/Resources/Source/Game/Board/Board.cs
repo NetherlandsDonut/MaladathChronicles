@@ -492,7 +492,7 @@ public class Board
                     for (int q = 0; q + j < field.GetLength(1); q++)
                         if (field[i, j + q] == -1) empty++;
                     (field[i, j], field[i, j + empty]) = (-1, field[i, j]);
-                    if (empty > 0) window.LBRegionGroup.regions[j].bigButtons[i].gameObject.AddComponent<FallingElement>().Initiate(empty, 0);
+                    if (empty > 0) window.LBRegionGroup().regions[j].bigButtons[i].gameObject.AddComponent<FallingElement>().Initiate(empty, 0);
                 }
 
         //IF BOARD IS NOT YET FULL RETURN AND DO PREVIOUS STEPS AGAIN
@@ -642,7 +642,7 @@ public class Board
                 }
                 else
                 {
-                    board.actions.Add(() => { cursorEnemy.Move(window.LBRegionGroup.regions[bestMove.y].bigButtons[bestMove.x].transform.position); animationTime += defines.frameTime * 8; });
+                    board.actions.Add(() => { cursorEnemy.Move(window.LBRegionGroup().regions[bestMove.y].bigButtons[bestMove.x].transform.position); animationTime += defines.frameTime * 8; });
                     board.actions.Add(() => { cursorEnemy.SetCursor(CursorType.Click); });
                     board.actions.Add(() =>
                     {
@@ -707,7 +707,7 @@ public class Board
         var foo = types.ToDictionary(x => Resource(x), x => list.Sum(y => y.Item3 % 10 == x ? y.Item3 / 10 + 1 : 0));
         foreach (var a in list)
         {
-            SpawnFlyingElement(1, 9, window.LBRegionGroup.regions[a.Item2].bigButtons[a.Item1].transform.position + new Vector3(-17.5f, -17.5f), boardButtonDictionary[a.Item3], board.playerTurn);
+            SpawnFlyingElement(1, 9, window.LBRegionGroup().regions[a.Item2].bigButtons[a.Item1].transform.position + new Vector3(-17.5f, -17.5f), boardButtonDictionary[a.Item3], board.playerTurn);
             field[a.Item1, a.Item2] = -1;
         }
         if (playerTurn) player.AddResources(foo);

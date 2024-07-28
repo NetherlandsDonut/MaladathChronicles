@@ -73,7 +73,7 @@ public class Chest
     {
         var chest = Object.Instantiate(Resources.Load<GameObject>("Prefabs/PrefabChest"));
         chest.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/ButtonsSpecial/Chest/" + chestTexture);
-        chest.transform.parent = CDesktop.LBWindow.transform;
+        chest.transform.parent = CDesktop.LBWindow().transform;
         chest.transform.position = position;
         chest.GetComponent<Highlightable>().Initialise(null,
             (h) =>

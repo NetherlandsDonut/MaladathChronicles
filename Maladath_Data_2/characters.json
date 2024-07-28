@@ -332,7 +332,7 @@
           6548
         ],
         "level": 23,
-        "experience": 8928,
+        "experience": 8948,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -476,7 +476,7 @@
           }
         },
         "inventory": {
-          "money": 1907,
+          "money": 31046,
           "items": [
             {
               "rarity": "Common",
@@ -495,48 +495,6 @@
             },
             {
               "rarity": "Common",
-              "name": "Plainstrider Meat",
-              "icon": "itemmiscfood14",
-              "detailedType": "Food",
-              "type": "Miscellaneous",
-              "source": "DirectDrop",
-              "ilvl": 1,
-              "amount": 1,
-              "maxStack": 20,
-              "droppedBy": [
-                "Plainstrider"
-              ]
-            },
-            {
-              "rarity": "Common",
-              "name": "Plainstrider Feather",
-              "icon": "itemfeather05",
-              "detailedType": "Feather",
-              "type": "Miscellaneous",
-              "source": "DirectDrop",
-              "ilvl": 1,
-              "amount": 1,
-              "maxStack": 20,
-              "droppedBy": [
-                "Plainstrider"
-              ]
-            },
-            {
-              "rarity": "Common",
-              "name": "Mountain Cougar Pelt",
-              "icon": "itemmiscpeltbear01",
-              "detailedType": "Organ",
-              "type": "Miscellaneous",
-              "source": "DirectDrop",
-              "ilvl": 1,
-              "amount": 1,
-              "maxStack": 20,
-              "droppedBy": [
-                "Mountain Cougar"
-              ]
-            },
-            {
-              "rarity": "Common",
               "name": "Ritual Salve",
               "icon": "itempotion01",
               "detailedType": "Potion",
@@ -550,20 +508,84 @@
               ]
             },
             {
-              "rarity": "Common",
-              "name": "Linen Cloth",
-              "icon": "itemfabriclinen01",
-              "detailedType": "Cloth",
+              "rarity": "Uncommon",
+              "name": "Jade",
+              "icon": "itemmiscgemstone01",
+              "detailedType": "Gem",
+              "type": "Trade Good",
+              "source": "Quest",
+              "ilvl": 35,
+              "lvl": 1,
+              "amount": 7,
+              "maxStack": 20,
+              "price": 700
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Citrine",
+              "icon": "itemmiscgemopal02",
+              "detailedType": "Gem",
               "type": "Trade Good",
               "source": "RareDrop",
-              "ilvl": 5,
+              "ilvl": 40,
               "lvl": 1,
-              "amount": 3,
+              "amount": 9,
               "maxStack": 20,
-              "price": 13
+              "price": 800
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Arcane Crystal",
+              "icon": "itemmiscgemtopaz01",
+              "detailedType": "Gem",
+              "type": "Trade Good",
+              "ilvl": 60,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 20,
+              "price": 2000
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Aquamarine",
+              "icon": "itemmiscgemcrystal02",
+              "detailedType": "Gem",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 45,
+              "lvl": 1,
+              "amount": 6,
+              "maxStack": 20,
+              "price": 1000
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Azerothian Diamond",
+              "icon": "itemmiscgemdiamond01",
+              "detailedType": "Gem",
+              "type": "Trade Good",
+              "ilvl": 60,
+              "lvl": 1,
+              "amount": 2,
+              "maxStack": 20,
+              "price": 10000
             }
           ],
-          "bags": []
+          "bags": [
+            {
+              "rarity": "Common",
+              "name": "Runecloth Bag",
+              "icon": "itemmiscbag19",
+              "type": "Bag",
+              "source": "Profession",
+              "ilvl": 52,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 5000,
+              "bagSpace": 6
+            }
+          ]
         },
         "mounts": [],
         "equipment": {
@@ -629,10 +651,10 @@
         },
         "worldBuffs": []
       },
-      "hour": 8,
-      "minute": 57,
-      "second": 39,
-      "currentSite": "Orgrimmar",
+      "hour": 9,
+      "minute": 1,
+      "second": 12,
+      "currentSite": "Skull Rock",
       "ringOfLaw": "Eviscerator",
       "forlornCloister": "Ironspine",
       "openedChests": {},
@@ -668,7 +690,8 @@
         "Honor's Stand": 2,
         "Camp Aparaje": 1,
         "Far Watch Post": 0,
-        "Orgrimmar": 6
+        "Orgrimmar": 6,
+        "Skull Rock": 1
       },
       "unlockedAreas": [],
       "vendorStock": {
@@ -1050,9 +1073,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2024-07-25T21:10:47.9718315+02:00",
-      "lastLoaded": "2024-07-28T03:30:57.761688+02:00",
-      "lastPlayed": "2024-07-28T03:31:11.5605838+02:00",
-      "timePlayed": "00:16:12.2999338",
+      "lastLoaded": "2024-07-28T17:56:29.1435728+02:00",
+      "lastPlayed": "2024-07-28T17:57:06.5829235+02:00",
+      "timePlayed": "00:31:29.2344520",
       "lastVisitedTalents": 1
     }
   ]

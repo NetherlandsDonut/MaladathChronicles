@@ -267,10 +267,10 @@ public static class Root
         if (WindowUp(blueprint.title)) return null;
         AddWindow(blueprint.title, blueprint.upperUI);
         blueprint.actions();
-        if (resetSearch && CDesktop.LBWindow.regionGroups.Any(x => x.maxPaginationReq != null)) String.search.Set("");
-        CDesktop.LBWindow.Rebuild();
-        CDesktop.LBWindow.ResetPosition();
-        return CDesktop.LBWindow;
+        if (resetSearch && CDesktop.LBWindow().regionGroups.Any(x => x.maxPaginationReq != null)) String.search.Set("");
+        CDesktop.LBWindow().Rebuild();
+        CDesktop.LBWindow().ResetPosition();
+        return CDesktop.LBWindow();
     }
 
     public static bool WindowUp(string title) => CDesktop.windows.Exists(x => x.title == title);
@@ -306,39 +306,34 @@ public static class Root
         return true;
     }
 
-    public static void SetAnchor(Anchor anchor, Window magnet)
-    {
-        CDesktop.LBWindow.anchor = new WindowAnchor(anchor, 0, 0, magnet);
-    }
-
     public static void SetAnchor(float x = 0, float y = 0)
     {
-        CDesktop.LBWindow.anchor = new WindowAnchor(None, x, y, null);
+        CDesktop.LBWindow().anchor = new WindowAnchor(None, x, y);
     }
 
     public static void SetAnchor(Anchor anchor, float x = 0, float y = 0)
     {
-        CDesktop.LBWindow.anchor = new WindowAnchor(anchor, x, y, null);
+        CDesktop.LBWindow().anchor = new WindowAnchor(anchor, x, y);
     }
 
     public static void DisableGeneralSprites()
     {
-        CDesktop.LBWindow.disabledGeneralSprites = true;
+        CDesktop.LBWindow().disabledGeneralSprites = true;
     }
 
     public static void DisableCollisions()
     {
-        CDesktop.LBWindow.disabledCollisions = true;
+        CDesktop.LBWindow().disabledCollisions = true;
     }
 
     public static void DisableShadows()
     {
-        CDesktop.LBWindow.disabledShadows = true;
+        CDesktop.LBWindow().disabledShadows = true;
     }
 
     public static void MaskWindow()
     {
-        CDesktop.LBWindow.masked = true;
+        CDesktop.LBWindow().masked = true;
     }
 
     #endregion
@@ -348,25 +343,25 @@ public static class Root
     public static void AddHeaderGroup(Func<double> maxPagination = null, int perPage = 10)
     {
         var newObject = new GameObject("HeaderGroup", typeof(RegionGroup));
-        newObject.transform.parent = CDesktop.LBWindow.transform;
-        newObject.GetComponent<RegionGroup>().Initialise(CDesktop.LBWindow, true, maxPagination, perPage);
+        newObject.transform.parent = CDesktop.LBWindow().transform;
+        newObject.GetComponent<RegionGroup>().Initialise(CDesktop.LBWindow(), true, maxPagination, perPage);
     }
 
     public static void AddRegionGroup(Func<double> maxPagination = null, int perPage = 10)
     {
         var newObject = new GameObject("RegionGroup", typeof(RegionGroup));
-        newObject.transform.parent = CDesktop.LBWindow.transform;
-        newObject.GetComponent<RegionGroup>().Initialise(CDesktop.LBWindow, false, maxPagination, perPage);
+        newObject.transform.parent = CDesktop.LBWindow().transform;
+        newObject.GetComponent<RegionGroup>().Initialise(CDesktop.LBWindow(), false, maxPagination, perPage);
     }
 
     public static void SetRegionGroupWidth(int width)
     {
-        CDesktop.LBWindow.LBRegionGroup.setWidth = width;
+        CDesktop.LBWindow().LBRegionGroup().setWidth = width;
     }
 
     public static void SetRegionGroupHeight(int height)
     {
-        CDesktop.LBWindow.LBRegionGroup.setHeight = height;
+        CDesktop.LBWindow().LBRegionGroup().setHeight = height;
     }
 
     #endregion
@@ -376,7 +371,7 @@ public static class Root
     private static void AddRegion(RegionBackgroundType backgroundType, Action draw, Action<Highlightable> pressEvent, Action<Highlightable> rightPressEvent, Func<Highlightable, Action> tooltip, Action<Highlightable> middlePressEvent)
     {
         var region = new GameObject("Region", typeof(Region)).GetComponent<Region>();
-        var regionGroup = CDesktop.LBWindow.LBRegionGroup;
+        var regionGroup = CDesktop.LBWindow().LBRegionGroup();
         region.transform.parent = regionGroup.transform;
         region.background = new GameObject("Background", typeof(SpriteRenderer), typeof(RegionBackground));
         region.background.transform.parent = region.transform;
@@ -424,7 +419,7 @@ public static class Root
     {
         AddPaddingRegion(() =>
         {
-            AddLine(CDesktop.LBWindow.title == "Instance" ? "Wing: " : "Page: ", "DarkGray");
+            AddLine(CDesktop.LBWindow().title == "Instance" ? "Wing: " : "Page: ", "DarkGray");
             AddText(group.pagination() + 1 + "");
             AddText(" / ", "DarkGray");
             AddText(group.maxPagination() + "");
@@ -449,12 +444,12 @@ public static class Root
 
     public static void ReverseButtons()
     {
-        CDesktop.LBWindow.LBRegionGroup.LBRegion.reverseButtons ^= true;
+        CDesktop.LBWindow().LBRegionGroup().LBRegion().reverseButtons ^= true;
     }
 
     public static void SetRegionBackgroundToGrayscale()
     {
-        var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
+        var region = CDesktop.LBWindow().LBRegionGroup().LBRegion();
         region.background.GetComponent<SpriteRenderer>().material = Resources.Load<Material>("Shaders/Grayscale");
     }
 
@@ -463,24 +458,24 @@ public static class Root
     //be extended to match length of the other group regions
     public static void SetRegionAsGroupExtender()
     {
-        var temp = CDesktop.LBWindow.LBRegionGroup;
-        temp.stretchRegion = temp.LBRegion;
+        var temp = CDesktop.LBWindow().LBRegionGroup();
+        temp.stretchRegion = temp.LBRegion();
     }
 
     public static void SetRegionBackground(RegionBackgroundType backgroundType)
     {
-        CDesktop.LBWindow.LBRegionGroup.LBRegion.backgroundType = backgroundType;
+        CDesktop.LBWindow().LBRegionGroup().LBRegion().backgroundType = backgroundType;
     }
 
     public static void SetRegionBackgroundAsImage(string replacement)
     {
         SetRegionBackground(Image);
-        CDesktop.LBWindow.LBRegionGroup.LBRegion.backgroundImage = Resources.Load<Sprite>("Sprites/RegionReplacements/" + replacement);
+        CDesktop.LBWindow().LBRegionGroup().LBRegion().backgroundImage = Resources.Load<Sprite>("Sprites/RegionReplacements/" + replacement);
     }
 
     public static void PrintPriceRegion(int price)
     {
-        int width = CDesktop.LBWindow.LBRegionGroup == null ? 0 : CDesktop.LBWindow.LBRegionGroup.setWidth;
+        int width = CDesktop.LBWindow().LBRegionGroup() == null ? 0 : CDesktop.LBWindow().LBRegionGroup().setWidth;
         var lacking = 0;
         if (price > 9999) Foo("ItemCoinsGold", price / 10000 + "", "Gold"); else lacking++;
         if (price / 100 % 100 > 0) Foo("ItemCoinsSilver", price / 100 % 100 + "", "Silver"); else lacking++;
@@ -491,7 +486,7 @@ public static class Root
         AddPaddingRegion(() =>
         {
             AddLine("");
-            if (CDesktop.LBWindow.title == "Inventory" && SaveGame.currentSave.player.professionSkills.ContainsKey("Enchanting"))
+            if (CDesktop.LBWindow().title == "Inventory" && SaveGame.currentSave.player.professionSkills.ContainsKey("Enchanting"))
                 if (CDesktop.title == "EquipmentScreen")
                     AddSmallButton(Cursor.cursor.color != "Pink" ? "ItemDisenchant" : "OtherCloseDisenchant", (h) =>
                     {
@@ -523,7 +518,7 @@ public static class Root
 
     public static void AddLine(string text = "", string color = "", string align = "Left")
     {
-        var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
+        var region = CDesktop.LBWindow().LBRegionGroup().LBRegion();
         if (region.lines.Count > 0 && region.smallButtons.Count > 0) return;
         var newObject = new GameObject("Line", typeof(Line));
         newObject.transform.parent = region.transform;
@@ -546,36 +541,36 @@ public static class Root
 
     public static void SetSmallButtonToRed()
     {
-        var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
-        var button = region.LBSmallButton.gameObject;
+        var region = CDesktop.LBWindow().LBRegionGroup().LBRegion();
+        var button = region.LBSmallButton().gameObject;
         button.GetComponent<SpriteRenderer>().material = Resources.Load<Material>("Shaders/Red");
     }
 
     public static void SetSmallButtonToGrayscale()
     {
-        var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
-        var button = region.LBSmallButton.gameObject;
+        var region = CDesktop.LBWindow().LBRegionGroup().LBRegion();
+        var button = region.LBSmallButton().gameObject;
         button.GetComponent<SpriteRenderer>().material = Resources.Load<Material>("Shaders/Grayscale");
     }
 
     public static void AddSmallButtonOverlay(string overlay, float time = 0, int sortingOrder = 0)
     {
-        var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
-        var button = region.LBSmallButton.gameObject;
+        var region = CDesktop.LBWindow().LBRegionGroup().LBRegion();
+        var button = region.LBSmallButton().gameObject;
         AddSmallButtonOverlay(button, overlay, time, sortingOrder);
     }
 
     public static void SmallButtonFlipX()
     {
-        var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
-        var button = region.LBSmallButton.gameObject;
+        var region = CDesktop.LBWindow().LBRegionGroup().LBRegion();
+        var button = region.LBSmallButton().gameObject;
         button.GetComponent<SpriteRenderer>().flipX ^= true;
     }
 
     public static void SmallButtonFlipY()
     {
-        var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
-        var button = region.LBSmallButton.gameObject;
+        var region = CDesktop.LBWindow().LBRegionGroup().LBRegion();
+        var button = region.LBSmallButton().gameObject;
         button.GetComponent<SpriteRenderer>().flipY ^= true;
     }
 
@@ -593,7 +588,7 @@ public static class Root
         else if (overlay == "AvailableQuest") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Other/AvailableQuest", false, 0.07f);
         else newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Buttons/" + overlay);
         newObject.GetComponent<SpriteRenderer>().sortingOrder = sortingOrder;
-        newObject.GetComponent<SpriteRenderer>().sortingLayerName = CDesktop.LBWindow.layer;
+        newObject.GetComponent<SpriteRenderer>().sortingLayerName = CDesktop.LBWindow().layer;
         if (time > 0)
         {
             newObject.AddComponent<Shatter>().render = newObject.GetComponent<SpriteRenderer>();
@@ -603,7 +598,7 @@ public static class Root
 
     public static void AddSmallButton(string type, Action<Highlightable> pressEvent = null, Action<Highlightable> rightPressEvent = null, Func<Highlightable, Action> tooltip = null, Action<Highlightable> middlePressEvent = null)
     {
-        var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
+        var region = CDesktop.LBWindow().LBRegionGroup().LBRegion();
         var newObject = new GameObject("SmallButton: " + type, typeof(LineSmallButton), typeof(SpriteRenderer));
         newObject.transform.parent = region.transform;
         newObject.GetComponent<LineSmallButton>().Initialise(region, type);
@@ -617,48 +612,48 @@ public static class Root
 
     public static void SetBigButtonToRed()
     {
-        var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
-        var button = region.LBBigButton.gameObject;
+        var region = CDesktop.LBWindow().LBRegionGroup().LBRegion();
+        var button = region.LBBigButton().gameObject;
         button.GetComponent<SpriteRenderer>().material = Resources.Load<Material>("Shaders/Red");
     }
 
     public static void SetBigButtonToGrayscale()
     {
-        var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
-        var button = region.LBBigButton.gameObject;
+        var region = CDesktop.LBWindow().LBRegionGroup().LBRegion();
+        var button = region.LBBigButton().gameObject;
         button.GetComponent<SpriteRenderer>().material = Resources.Load<Material>("Shaders/Grayscale");
     }
 
     public static GameObject AddBigButtonOverlay(string overlay, float time = 0, int sortingOrder = 0)
     {
-        var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
-        var button = region.LBBigButton.gameObject;
+        var region = CDesktop.LBWindow().LBRegionGroup().LBRegion();
+        var button = region.LBBigButton().gameObject;
         return AddBigButtonOverlay(button, "Sprites/ButtonsBig/" + overlay, time, sortingOrder);
     }
 
     public static void BigButtonFlipX()
     {
-        var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
-        var button = region.LBBigButton.gameObject;
+        var region = CDesktop.LBWindow().LBRegionGroup().LBRegion();
+        var button = region.LBBigButton().gameObject;
         button.GetComponent<SpriteRenderer>().flipX ^= true;
     }
 
     public static void BigButtonFlipY()
     {
-        var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
-        var button = region.LBBigButton.gameObject;
+        var region = CDesktop.LBWindow().LBRegionGroup().LBRegion();
+        var button = region.LBBigButton().gameObject;
         button.GetComponent<SpriteRenderer>().flipY ^= true;
     }
 
     public static GameObject AddBigButtonCooldownOverlay(double percentage)
     {
-        var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
-        var button = region.LBBigButton.gameObject;
+        var region = CDesktop.LBWindow().LBRegionGroup().LBRegion();
+        var button = region.LBBigButton().gameObject;
         var newObject = new GameObject("BigButtonGrid", typeof(SpriteRenderer));
         newObject.transform.parent = button.transform;
         newObject.transform.localPosition = new Vector3(0, 0, -0.01f);
         var sprites = Resources.LoadAll<Sprite>("Sprites/Other/CooldownBig");
-        newObject.GetComponent<SpriteRenderer>().sortingLayerName = CDesktop.LBWindow.layer;
+        newObject.GetComponent<SpriteRenderer>().sortingLayerName = CDesktop.LBWindow().layer;
         var value = 1.0 / sprites.Length;
         var first = 0;
         for (int i = 0; i < sprites.Length - 1; i++)
@@ -679,7 +674,7 @@ public static class Root
         newObject.transform.localPosition = new Vector3(0, 0, -0.01f);
         newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(overlay);
         newObject.GetComponent<SpriteRenderer>().sortingOrder = sortingOrder;
-        newObject.GetComponent<SpriteRenderer>().sortingLayerName = CDesktop.LBWindow.layer;
+        newObject.GetComponent<SpriteRenderer>().sortingLayerName = CDesktop.LBWindow().layer;
         if (time > 0)
         {
             newObject.AddComponent<Shatter>().render = newObject.GetComponent<SpriteRenderer>();
@@ -695,7 +690,7 @@ public static class Root
         newObject.transform.localPosition = new Vector3(position.x, position.y, -0.01f);
         newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/ButtonsBig/" + overlay);
         newObject.GetComponent<SpriteRenderer>().sortingOrder = sortingOrder;
-        newObject.GetComponent<SpriteRenderer>().sortingLayerName = CDesktop.LBWindow.layer;
+        newObject.GetComponent<SpriteRenderer>().sortingLayerName = CDesktop.LBWindow().layer;
         if (time > 0)
         {
             newObject.AddComponent<Shatter>().render = newObject.GetComponent<SpriteRenderer>();
@@ -706,7 +701,7 @@ public static class Root
 
     public static void AddBigButton(string type, Action<Highlightable> pressEvent = null, Action<Highlightable> rightPressEvent = null, Func<Highlightable, Action> tooltip = null, Action<Highlightable> middlePressEvent = null)
     {
-        var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
+        var region = CDesktop.LBWindow().LBRegionGroup().LBRegion();
         var newObject = new GameObject("BigButton: " + (type == null ? "Empty" : type), typeof(LineBigButton), typeof(SpriteRenderer));
         newObject.transform.parent = region.transform;
         newObject.GetComponent<LineBigButton>().Initialise(region, type);
@@ -720,7 +715,7 @@ public static class Root
 
     public static void AddCheckbox(Bool value)
     {
-        var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
+        var region = CDesktop.LBWindow().LBRegionGroup().LBRegion();
         if (region.checkbox != null) return;
         var newObject = new GameObject("Checkbox", typeof(LineCheckbox), typeof(SpriteRenderer));
         newObject.transform.parent = region.transform;
@@ -735,16 +730,16 @@ public static class Root
     {
         text ??= "";
         var newObject = new GameObject("Text", typeof(LineText));
-        var line = CDesktop.LBWindow.LBRegionGroup.LBRegion.LBLine;
+        var line = CDesktop.LBWindow().LBRegionGroup().LBRegion().LBLine();
         newObject.transform.parent = line.transform;
-        newObject.GetComponent<LineText>().Initialise(line, text, color == "" ? line.LBText.color : color);
+        newObject.GetComponent<LineText>().Initialise(line, text, color == "" ? line.LBText().color : color);
     }
 
     public static void SpawnFloatingText(Vector2 position, string text = "", string color = "", string align = "Center")
     {
         text ??= "";
         var newObject = new GameObject("FloatingText", typeof(FloatingText));
-        newObject.transform.parent = CDesktop.LBWindow.LBRegionGroup.LBRegion.transform;
+        newObject.transform.parent = CDesktop.LBWindow().LBRegionGroup().LBRegion().transform;
         newObject.transform.localPosition = position;
         var temp = newObject.GetComponent<FloatingText>();
         temp.Initialise(text, color == "" ? "Gray" : color, align, false);
@@ -768,7 +763,7 @@ public static class Root
 
     public static void AddInputLine(String refText, string color = "", string align = "Left")
     {
-        var region = CDesktop.LBWindow.LBRegionGroup.LBRegion;
+        var region = CDesktop.LBWindow().LBRegionGroup().LBRegion();
         if (region.lines.Count > 0 && region.checkbox != null) return;
         var newObject = new GameObject("InputLine", typeof(InputLine));
         newObject.transform.parent = region.transform;
@@ -827,7 +822,7 @@ public static class Root
                     if (chartPage == "Elements Used") AddSmallButton("Element" + list[i].Key + "Rousing");
                     else AddSmallButton(Ability.abilities.Find(y => y.name == list[i].Key).icon);
             });
-            iconRow = CDesktop.LBWindow.LBRegionGroup.LBRegion;
+            iconRow = CDesktop.LBWindow().LBRegionGroup().LBRegion();
             AddRegionGroup();
             SetRegionGroupWidth((int)Math.Ceiling(left / 2.0));
             SetRegionGroupHeight(243);
@@ -866,7 +861,7 @@ public static class Root
         SpawnWindowBlueprint(new Blueprint("ChartColumn" + index, () =>
         {
             var foo = (settings.chartBigIcons.Value() ? iconRow.bigButtons.Select(x => x.transform) : iconRow.smallButtons.Select(x => x.transform)).Last().position;
-            SetAnchor(foo.x + (settings.chartBigIcons.Value() ? -38 : 19) * (amount - 1 - index) - (settings.chartBigIcons.Value() ? 20f : 10.5f), foo.y + (settings.chartBigIcons.Value() ? 24 : 14.5f) + height);
+            SetAnchor(foo.x + (settings.chartBigIcons.Value() ? -38 : 19) * (amount - 1 - index) - (settings.chartBigIcons.Value() ? 20f : 10.5f), foo.y + (settings.chartBigIcons.Value() ? 24 + (height < 15 ? 15 : height) : 14.5f + height));
             DisableShadows();
             AddRegionGroup();
             SetRegionGroupWidth(settings.chartBigIcons.Value() ? 38 : 19);
@@ -938,7 +933,7 @@ public static class Root
     public static void AddSkillBar(int x, int y, Profession profession, Entity entity)
     {
         var skillBar = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/PrefabSkillBar"));
-        skillBar.transform.parent = CDesktop.LBWindow.transform;
+        skillBar.transform.parent = CDesktop.LBWindow().transform;
         skillBar.transform.localPosition = new Vector3(x, y, 0);
         var thisBar = skillBar.GetComponent<FluidBar>();
         thisBar.Initialise(150, () => profession.levels.Where(x => entity.professionSkills[profession.name].Item2.Contains(x.name)).Max(x => x.maxSkill), () => entity.professionSkills[profession.name].Item1, false);
@@ -948,7 +943,7 @@ public static class Root
     public static void AddResourceBar(int x, int y, string resource, string forWho, Entity entity)
     {
         var resourceBar = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/PrefabResourceBar"));
-        resourceBar.transform.parent = CDesktop.LBWindow.transform;
+        resourceBar.transform.parent = CDesktop.LBWindow().transform;
         resourceBar.transform.localPosition = new Vector3(x, y, 0);
         var thisBar = resourceBar.GetComponent<FluidBar>();
         resourceBar.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/FluidBars/ResourceBar/Resource" + resource + "Bar/FilledBar");
@@ -963,7 +958,7 @@ public static class Root
     public static void AddHealthBar(int x, int y, string forWho, Entity entity)
     {
         var healthBar = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/PrefabHealthBar"));
-        healthBar.transform.parent = CDesktop.LBWindow.transform;
+        healthBar.transform.parent = CDesktop.LBWindow().transform;
         healthBar.transform.localPosition = new Vector3(x, y, 0);
         var thisBar = healthBar.GetComponent<FluidBar>();
         thisBar.Initialise(150, () => entity.MaxHealth(), () => entity.health, false);

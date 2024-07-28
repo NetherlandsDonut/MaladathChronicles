@@ -22,9 +22,6 @@ public class Desktop : MonoBehaviour
     //Name of the desktop screen
     public string title;
 
-    //Last built window
-    public Window LBWindow;
-
     //List of all windows active on this desktop
     public List<Window> windows;
 
@@ -66,6 +63,10 @@ public class Desktop : MonoBehaviour
             windows[i].Respawn();
     }
 
+    //Last built window
+    public Window LBWindow() => windows.SafeLast();
+
+    //Is a specific window up
     public bool WindowUp(string title) => windows.Exists(x => x.title == title);
 
     public void SetTooltip(Tooltip tooltip)
@@ -309,7 +310,7 @@ public class Desktop : MonoBehaviour
                                 var site = connection.sites.Find(x => x != mapGrid.queuedSiteOpen);
                                 if (!WindowUp("Site: " + site))
                                     if (!Respawn("Site: " + connection.sites.Find(x => x != mapGrid.queuedSiteOpen)))
-                                        LBWindow.GetComponentsInChildren<Renderer>().ToList().ForEach(x => x.gameObject.AddComponent<FadeIn>());
+                                        LBWindow().GetComponentsInChildren<Renderer>().ToList().ForEach(x => x.gameObject.AddComponent<FadeIn>());
                             }
                             mapGrid.queuedSiteOpen = "";
                             cameraDestination = new Vector2(find.x, find.y);
@@ -355,7 +356,7 @@ public class Desktop : MonoBehaviour
                                 var site = connection.sites.Find(x => x != currentSave.currentSite);
                                 if (!WindowUp("Site: " + site))
                                     if (!Respawn("Site: " + connection.sites.Find(x => x != currentSave.currentSite)))
-                                        LBWindow.GetComponentsInChildren<Renderer>().ToList().ForEach(x => x.gameObject.AddComponent<FadeIn>());
+                                        LBWindow().GetComponentsInChildren<Renderer>().ToList().ForEach(x => x.gameObject.AddComponent<FadeIn>());
                             }
                         }
                         Respawn("Site: " + currentSave.currentSite);
@@ -423,13 +424,13 @@ public class Desktop : MonoBehaviour
                         tooltip.SpawnTooltip();
                 }
                 if (heldKeyTime > 0) heldKeyTime -= Time.deltaTime;
-                if (inputLineName != null)
+                if (inputLineWindow != null)
                 {
                     var didSomething = false;
                     var length = inputDestination.Value().Length;
                     if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Return))
                     {
-                        inputLineName = null;
+                        inputLineWindow = null;
                         UnityEngine.Cursor.lockState = CursorLockMode.None;
                         cursor.SetCursor(CursorType.Default);
                         if (Input.GetKeyDown(KeyCode.Return))
@@ -597,6 +598,7 @@ public class Desktop : MonoBehaviour
                                 Respawn("ObjectManagerAbilityIconList");
                             }
                         }
+                        Respawn(inputLineWindow);
                     }
                 }
                 else

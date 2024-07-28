@@ -12,7 +12,7 @@ public class RegionGroup : MonoBehaviour
     //All the regions this region group has
     public List<Region> regions;
 
-    public Region LBRegion, stretchRegion;
+    public Region stretchRegion;
     public int setWidth, setHeight, currentHeight, perPage;
     public Func<double> maxPaginationReq;
     public Func<int> maxPagination, pagination;
@@ -38,9 +38,8 @@ public class RegionGroup : MonoBehaviour
             if (dx == -1) dx = Root.staticPagination[window.title].Length - 1;
             return Root.staticPagination[window.title][dx];
         };
-        if (header) window.headerGroup = this;
+        if (header) { window.headerGroup = this; window.regionGroups.Insert(0, this); }
         else window.regionGroups.Add(this);
-        window.LBRegionGroup = this;
     }
 
     public int PlannedHeight()
@@ -48,6 +47,8 @@ public class RegionGroup : MonoBehaviour
         var regionSum = regions.Sum(x => x.PlannedHeight());
         return regionSum;
     }
+
+    public Region LBRegion() => regions.SafeLast();
 
     public int AutoWidth()
     {

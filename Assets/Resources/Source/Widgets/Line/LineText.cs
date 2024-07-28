@@ -22,7 +22,6 @@ public class LineText : MonoBehaviour
         this.layer = layer;
         window = line.region.regionGroup.window;
         characters = new();
-        line.LBText = this;
         line.texts.Add(this);
     }
 

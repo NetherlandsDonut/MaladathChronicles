@@ -19,7 +19,7 @@ public class FloatingText : MonoBehaviour
         else if (align == "Right")
             newObject.transform.localPosition = new Vector2(-fonts[floatingTextFont].Length(text), 7);
         var temp = newObject.GetComponent<LineText>();
-        temp.Initialise(Root.CDesktop.LBWindow, text, color == "" ? "Gray" : color, "FallingText");
+        temp.Initialise(Root.CDesktop.LBWindow(), text, color == "" ? "Gray" : color, "FallingText");
         int length = 0;
         temp.Erase();
         foreach (var character in temp.text)

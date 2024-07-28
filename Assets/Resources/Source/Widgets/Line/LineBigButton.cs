@@ -12,7 +12,6 @@ public class LineBigButton : MonoBehaviour
     public void Initialise(Region region, string texture)
     {
         this.texture = texture;
-        region.LBBigButton = this;
         region.bigButtons.Add(this);
     }
 }

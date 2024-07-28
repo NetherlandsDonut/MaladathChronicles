@@ -152,7 +152,7 @@ public class Event
                                 itemUsed.itemsInside.Add(Item.items.Find(x => x.name == drop.item).CopyItem(amount));
                             }
                 }
-                Item.item = itemUsed;
+                Item.openedItem = itemUsed;
                 SpawnDesktopBlueprint("ContainerLoot");
             }
 
@@ -205,7 +205,7 @@ public class Event
                 foreach (var connection in SitePath.paths.FindAll(x => x.sites.Contains(destination)))
                 {
                     var didRespawn = Respawn("Site: " + connection.sites.Find(x => x != destination));
-                    if (!didRespawn) CDesktop.LBWindow.GetComponentsInChildren<Renderer>().ToList().ForEach(x => x.gameObject.AddComponent<FadeIn>());
+                    if (!didRespawn) CDesktop.LBWindow().GetComponentsInChildren<Renderer>().ToList().ForEach(x => x.gameObject.AddComponent<FadeIn>());
                 }
                 Respawn("Site: " + prevSite);
                 var site = Site.FindSite(x => x.name == save.currentSite);
@@ -642,7 +642,7 @@ public class Event
                         while (newValue == board.field[e.Item1, e.Item2]);
                         board.field[e.Item1, e.Item2] = newValue;
                         for (int i = 0; i < shatterDensity; i++)
-                            SpawnShatter(shatterSpeed, shatterDegree, board.window.LBRegionGroup.regions[e.Item2].bigButtons[e.Item1].transform.position + new Vector3(-17.5f, -17.5f), Board.boardButtonDictionary[board.field[e.Item1, e.Item2]], false);
+                            SpawnShatter(shatterSpeed, shatterDegree, board.window.LBRegionGroup().regions[e.Item2].bigButtons[e.Item1].transform.position + new Vector3(-17.5f, -17.5f), Board.boardButtonDictionary[board.field[e.Item1, e.Item2]], false);
                     }
                 }
             }

@@ -12,7 +12,6 @@ public class LineSmallButton : MonoBehaviour
     public void Initialise(Region region, string texture)
     {
         this.texture = texture;
-        region.LBSmallButton = this;
         region.smallButtons.Add(this);
     }
 }

@@ -71,7 +71,7 @@ public class BufferBoard
             for (int j = 0; j < empty; j++)
             {
                 field[i, j] = this.field[i, j + field.GetLength(1) - empty];
-                window.LBRegionGroup.regions[j + field.GetLength(1) - empty].bigButtons[i].gameObject.AddComponent<FallingElement>().Initiate(empty, delay);
+                window.LBRegionGroup().regions[j + field.GetLength(1) - empty].bigButtons[i].gameObject.AddComponent<FallingElement>().Initiate(empty, delay);
             }
         }
     }
