@@ -23,15 +23,10 @@ public class Condition
         {
             var args = c.Split(" ").Select(x => Foo(x)).ToList();
             if (args.Count > 2 && new List<string> { ">", ">=", "==", "<=", "<", "!=", "<>" }.Contains(args[1]))
-            {
-                var is1 = int.TryParse(args[0], out int arg0);
-                var is2 = int.TryParse(args[2], out int arg2);
-                return CompareValues(arg0, arg2, args[1]);
-            }
+                if (int.TryParse(args[0], out int arg0) && int.TryParse(args[2], out int arg2))
+                    return CompareValues(arg0, arg2, args[1]);
             else if (args.Count > 2 && new List<string> { "==", "!=", "<>" }.Contains(args[1]))
-            {
                 return CompareValues(args[0], args[2], args[1]);
-            }
             return false;
         }
 

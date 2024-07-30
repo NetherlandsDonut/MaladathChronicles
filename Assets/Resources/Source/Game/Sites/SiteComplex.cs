@@ -179,31 +179,34 @@ public class SiteComplex : Site
 
     public static void PrintComplexSite(Dictionary<string, string> site)
     {
-        AddButtonRegion(() =>
-        {
-            AddLine(site["SiteName"], "", "Right");
-            AddSmallButton("Site" + site["SiteType"]);
-        },
-        (h) =>
-        {
-            if (site["SiteType"] == "HostileArea")
+        if (showAreasUnconditional || !site.ContainsKey("OpenByDefault") || site.ContainsKey("OpenByDefault") && site["OpenByDefault"] == "True" || currentSave.unlockedAreas.Contains(site["SiteName"]))
+            AddButtonRegion(() =>
             {
-                area = areas.Find(x => x.name == site["SiteName"]);
-                Respawn("HostileArea");
-                Respawn("HostileAreaProgress");
-                Respawn("HostileAreaDenizens");
-                Respawn("HostileAreaElites");
-                Respawn("Chest");
-                SetDesktopBackground(area.Background());
-            }
-            else
+                AddLine(site["SiteName"]);
+                AddSmallButton("Site" + site["SiteType"]);
+            },
+            (h) =>
             {
-                CloseDesktop("Complex");
-                instance = instances.Find(x => x.name == site["SiteName"]);
-                if (staticPagination.ContainsKey("Instance"))
-                    staticPagination.Remove("Instance");
-                SpawnDesktopBlueprint("Instance");
-            }
-        });
+                if (site["SiteType"] == "HostileArea")
+                {
+                    area = areas.Find(x => x.name == site["SiteName"]);
+                    Respawn("HostileArea");
+                    Respawn("HostileAreaProgress");
+                    Respawn("HostileAreaDenizens");
+                    Respawn("HostileAreaElites");
+                    Respawn("Chest");
+                    SetDesktopBackground(area.Background());
+                }
+                else
+                {
+                    CloseDesktop("Complex");
+                    instance = instances.Find(x => x.name == site["SiteName"]);
+                    if (staticPagination.ContainsKey("Instance"))
+                        staticPagination.Remove("Instance");
+                    SpawnDesktopBlueprint("Instance");
+                }
+            });
+        else
+            AddHeaderRegion(() => AddLine("?", "DimGray"));
     }
 }

@@ -774,6 +774,11 @@
         "point": 4
       },
       {
+        "type": "Area",
+        "areaName": "Blackwing Lair",
+        "point": 4
+      },
+      {
         "type": "Treasure",
         "point": 5
       }
@@ -5018,6 +5023,11 @@
       {
         "type": "Area",
         "areaName": "The Iron Hall",
+        "point": 2
+      },
+      {
+        "type": "Area",
+        "areaName": "Molten Core",
         "point": 2
       },
       {

@@ -1752,8 +1752,10 @@ public class Blueprint
                     }
                     if (recipe.enchantment)
                     {
+                        currentSave.player.Unequip(new() { enchant.type });
                         enchantmentTarget.enchant = enchant;
                         enchantmentTarget = null;
+                        enchantmentTarget.Equip(currentSave.player, enchant.type);
                         PlaySound("PutDownGems", 0.8f);
                     }
                     Respawn("CraftingList");

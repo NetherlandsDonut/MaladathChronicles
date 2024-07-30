@@ -86,7 +86,7 @@ public class SiteInstance : Site
         AddPaddingRegion(() =>
         {
             AddSmallButton(currentSave.siteVisits.ContainsKey(name) ? "Map" + type : "MapUnknown",
-            (h) => { CDesktop.cameraDestination = new Vector2(x, y); },
+            (h) => CDesktop.cameraDestination = new Vector2(x, y),
             (h) =>
             {
                 if (zone == "Teldrassil" && zone != FindSite(x => x.name == currentSave.currentSite).zone) return;
@@ -147,7 +147,7 @@ public class SiteInstance : Site
                     }
                 }
             },
-            (h) => { BuildPath(); });
+            (h) => BuildPath());
             var q = currentSave.player.AvailableQuestsAt(this, true).Count;
             sitesWithQuestMarkers.Remove(this);
             if (currentSave.currentSite == name)
@@ -190,10 +190,7 @@ public class SiteInstance : Site
                 SetDesktopBackground(area.Background());
             });
         else
-            AddPaddingRegion(() =>
-            {
-                AddLine("?", "DimGray");
-            });
+            AddPaddingRegion(() => AddLine("?", "DimGray"));
     }
 
     public static void PrintInstanceWing(SiteInstance instance, InstanceWing wing)
@@ -222,10 +219,7 @@ public class SiteInstance : Site
                     SetDesktopBackground("Areas/Area" + (instance.name + area.Item1.name).Clean() + (area.Item1.specialClearBackground && area.Item1.eliteEncounters.All(x => currentSave.elitesKilled.ContainsKey(x.who)) ? "Cleared" : ""));
                 });
             else
-                AddPaddingRegion(() =>
-                {
-                    AddLine("?", "DimGray");
-                });
+                AddPaddingRegion(() => AddLine("?", "DimGray"));
     }
 }
 

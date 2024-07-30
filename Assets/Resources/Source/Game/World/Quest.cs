@@ -10,444 +10,438 @@ using static Coloring;
 
 public class Quest
 {
-   public void Initialise()
-   {
-      if (siteStart != null)
-      {
-         var find = Site.FindSite(x => x.name == siteStart);
-         if (find != null)
-         {
-            find.questsStarted ??= new();
-            find.questsStarted.Add(this);
-         }
-         else Debug.Log("ERROR 014: Starting site for quest was not found: \"" + siteStart + "\"");
-      }
-      if (itemStart != null)
-      {
-         var find = Item.items.Find(x => x.name == itemStart);
-         if (find != null)
-         {
-            find.questsStarted ??= new();
-            find.questsStarted.Add(questID);
-         }
-         else Debug.Log("ERROR 016: Quest starting item was not found: \"" + itemStart + "\"");
-      }
-   }
-
-   //ID of the quest
-   public int questID;
-
-   //Prerequisite quests needed to be done before this becomes available
-   public List<int> previous;
-
-   //Required level to have this quest
-   public int requiredLevel;
-
-   //Level of the quest
-   public int questLevel;
-
-   //Name of the quest
-   public string name;
-
-   //Description of the quest
-   public string description;
-
-   //Objective of the quest
-   public string objective;
-
-   //Objective of the quest
-   public string completion;
-
-   //Item required to start quest
-   public string itemStart;
-
-   //Site where the quest is available for pickup
-   public string siteStart;
-
-   //Site where the quest can be handed in
-   public string siteEnd;
-
-   //Zone of the quest
-   public string zone;
-
-   //Reputation connected with the quest
-   public string faction;
-
-   //Required reputation rank from the faction
-   //for the quest to be available
-   public string requiredRank;
-
-   //Amount of money awarded
-   public int money;
-
-   //Amount of experience awarded
-   public int experience;
-
-   //Eligble races for this quest
-   public List<string> races;
-
-   //Eligble classes for this quest
-   public List<string> classes;
-
-   //Item rewards for this quest
-   public Dictionary<string, int> rewards;
-
-   //Amount of reputation awarded to the quest faction
-   public Dictionary<string, int> reputationGain;
-
-   //Items provided by the quest when player accepts it
-   public Dictionary<string, int> providedItems;
-
-   //Conditions for completing the quest
-   public List<QuestCondition> conditions;
-
-   //Zone icon for the quest
-   public string ZoneIcon() => "Zone" + zone.Clean();
-
-   //Icon for the quest
-   public string Icon()
-   {
-      var r = "Quest";
-      if (races == null || races.Count == 0) r += "Neutral";
-      else if (races.Contains("Orc") || races.Contains("Troll") || races.Contains("Tauren") || races.Contains("Forsaken")) r += "Red";
-      else if (races.Contains("Human") || races.Contains("Dwarf") || races.Contains("Gnome") || races.Contains("Night Elf")) r += "Blue";
-      else r += "Neutral";
-      if (conditions == null) r += "Sealed";
-      else if (conditions.Count == 1) r += "";
-      else if (conditions.Count >= 2) r += "Big";
-      else r += "Sealed";
-      return r;
-   }
-   
-   //Currently chosen quest reward by player
-   public static string chosenReward;
-
-   //Currently selected quest
-   public static Quest quest;
-
-   //EXTERNAL FILE: List containing all quests in-game
-   public static List<Quest> quests;
-
-   //List of all filtered quests by input search
-   public static List<Quest> questsSearch;
-
-   //All sites that currently have quest markers on them
-   public static List<Site> sitesWithQuestMarkers;
-
-   //All the sites that need to be respawned after entering the map again
-   public static List<Site> sitesToRespawn;
-
-   public void Print(string f = "Log")
-   {
-      AddRegionGroup(f == "Add" && description != null ? () => description.Split("$B$B").Length : (f == "Turn" && completion != null ? () => completion.Split("$B$B").Length : () => 1), 1);
-      SetRegionGroupWidth(190);
-      SetRegionGroupHeight(281);
-      var color = ColorQuestLevel(questLevel);
-      AddHeaderRegion(() =>
-      {
-         AddLine(name, color != null ? "Black" : "Gray");
-         if (f == "Log")
-            if (WindowUp("QuestConfirmAbandon"))
+    public void Initialise()
+    {
+        if (siteStart != null)
+        {
+            var find = Site.FindSite(x => x.name == siteStart);
+            if (find != null)
             {
-               AddSmallButton("OtherCloseOff");
-               AddSmallButton("OtherTrashOff");
+                find.questsStarted ??= new();
+                find.questsStarted.Add(this);
             }
-            else if (WindowUp("QuestConfirmAbandon") || WindowUp("QuestSort") || WindowUp("QuestSettings"))
+            else Debug.Log("ERROR 014: Starting site for quest was not found: \"" + siteStart + "\"");
+        }
+        if (itemStart != null)
+        {
+            var find = Item.items.Find(x => x.name == itemStart);
+            if (find != null)
             {
-               AddSmallButton("OtherClose", (h) =>
-               {
-                  CloseWindow("Quest");
-                  Respawn("Chest", true);
-                  Respawn("PlayerMoney", true);
-                  PlaySound("DesktopInstanceClose");
-               });
-               AddSmallButton("OtherTrashOff");
+                find.questsStarted ??= new();
+                find.questsStarted.Add(questID);
+            }
+            else Debug.Log("ERROR 016: Quest starting item was not found: \"" + itemStart + "\"");
+        }
+    }
+
+    //ID of the quest
+    public int questID;
+
+    //Prerequisite quests needed to be done before this becomes available
+    public List<int> previous;
+
+    //Required level to have this quest
+    public int requiredLevel;
+
+    //Level of the quest
+    public int questLevel;
+
+    //Name of the quest
+    public string name;
+
+    //Description of the quest
+    public string description;
+
+    //Objective of the quest
+    public string objective;
+
+    //Objective of the quest
+    public string completion;
+
+    //Item required to start quest
+    public string itemStart;
+
+    //Site where the quest is available for pickup
+    public string siteStart;
+
+    //Site where the quest can be handed in
+    public string siteEnd;
+
+    //Zone of the quest
+    public string zone;
+
+    //Reputation connected with the quest
+    public string faction;
+
+    //Required reputation rank from the faction
+    //for the quest to be available
+    public string requiredRank;
+
+    //Amount of money awarded
+    public int money;
+
+    //Amount of experience awarded
+    public int experience;
+
+    //Eligble races for this quest
+    public List<string> races;
+
+    //Eligble classes for this quest
+    public List<string> classes;
+
+    //Item rewards for this quest
+    public Dictionary<string, int> rewards;
+
+    //Amount of reputation awarded to the quest faction
+    public Dictionary<string, int> reputationGain;
+
+    //Items provided by the quest when player accepts it
+    public Dictionary<string, int> providedItems;
+
+    //Conditions for completing the quest
+    public List<QuestCondition> conditions;
+
+    //Zone icon for the quest
+    public string ZoneIcon() => "Zone" + zone.Clean();
+
+    //Icon for the quest
+    public string Icon()
+    {
+        var r = "Quest";
+        if (races == null || races.Count == 0) r += "Neutral";
+        else if (races.Contains("Orc") || races.Contains("Troll") || races.Contains("Tauren") || races.Contains("Forsaken")) r += "Red";
+        else if (races.Contains("Human") || races.Contains("Dwarf") || races.Contains("Gnome") || races.Contains("Night Elf")) r += "Blue";
+        else r += "Neutral";
+        if (conditions == null) r += "Sealed";
+        else if (conditions.Count == 1) r += "";
+        else if (conditions.Count >= 2) r += "Big";
+        else r += "Sealed";
+        return r;
+    }
+    
+    //Currently chosen quest reward by player
+    public static string chosenReward;
+
+    //Currently selected quest
+    public static Quest quest;
+
+    //EXTERNAL FILE: List containing all quests in-game
+    public static List<Quest> quests;
+
+    //List of all filtered quests by input search
+    public static List<Quest> questsSearch;
+
+    //All sites that currently have quest markers on them
+    public static List<Site> sitesWithQuestMarkers;
+
+    //All the sites that need to be respawned after entering the map again
+    public static List<Site> sitesToRespawn;
+
+    public void Print(string f = "Log")
+    {
+        AddRegionGroup(f == "Add" && description != null ? () => description.Split("$B$B").Length : (f == "Turn" && completion != null ? () => completion.Split("$B$B").Length : () => 1), 1);
+        SetRegionGroupWidth(190);
+        SetRegionGroupHeight(281);
+        var color = ColorQuestLevel(questLevel);
+        AddHeaderRegion(() =>
+        {
+            AddLine(name, color != null ? "Black" : "Gray");
+            if (f == "Log")
+                if (WindowUp("QuestConfirmAbandon"))
+                {
+                    AddSmallButton("OtherCloseOff");
+                    AddSmallButton("OtherTrashOff");
+                }
+                else if (WindowUp("QuestConfirmAbandon") || WindowUp("QuestSort") || WindowUp("QuestSettings"))
+                {
+                    AddSmallButton("OtherClose", (h) =>
+                    {
+                        CloseWindow("Quest");
+                        Respawn("Chest", true);
+                        Respawn("PlayerMoney", true);
+                        PlaySound("DesktopInstanceClose");
+                    });
+                    AddSmallButton("OtherTrashOff");
+                }
+                else
+                {
+                    AddSmallButton("OtherClose", (h) =>
+                    {
+                        CloseWindow("Quest");
+                        Respawn("Chest", true);
+                        Respawn("PlayerMoney", true);
+                        PlaySound("DesktopInstanceClose");
+                    });
+                    AddSmallButton("OtherTrash", (h) =>
+                    {
+                        PlaySound("DesktopMenuOpen", 0.6f);
+                        Respawn("QuestConfirmAbandon");
+                        Respawn("QuestList");
+                    });
+                }
+            else
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow("Quest" + f);
+                    Respawn("Chest", true);
+                    Respawn("PlayerMoney", true);
+                    if (CDesktop.title != "QuestLog")
+                        if (SiteComplex.complex != null) Respawn("Complex");
+                        else if (SiteInstance.instance != null) Respawn("Instance");
+                    PlaySound("DesktopInstanceClose");
+                });
+        });
+        if (color != null) SetRegionBackgroundAsImage("SkillUp" + color + "Long");
+        var regionGroup = CDesktop.LBWindow().LBRegionGroup();
+        Root.PreparePagination(regionGroup);
+        if (f == "Add")
+        {
+            AddHeaderRegion(() =>
+            {
+                AddLine("Description: ", "Gray");
+                AddText(regionGroup.pagination() + 1 + "", "HalfGray");
+                AddText(" / ", "DarkGray");
+                AddText(regionGroup.maxPagination() + "", "HalfGray");
+                AddSmallButton("OtherNextPage", (h) =>
+                {
+                    if (regionGroup.pagination() < regionGroup.maxPagination() - 1)
+                    {
+                        PlaySound("DesktopChangePage", 0.6f);
+                        regionGroup.IncrementPagination();
+                    }
+                });
+                AddSmallButton("OtherPreviousPage", (h) =>
+                {
+                    if (regionGroup.pagination() > 0)
+                    {
+                        PlaySound("DesktopChangePage", 0.6f);
+                        regionGroup.DecrementPagination();
+                    }
+                });
+            });
+            new Description()
+            {
+                regions = new() { new() { regionType = "Padding", contents = new() { new ()
+                    {
+                        { "Color", "DarkGray" },
+                        { "Text", description != null ? description.Split("$B$B")[staticPagination["QuestAdd"][0]] : "" }
+                    }
+                } } }
+            }.Print(currentSave.player, null, 190, null);
+            SetRegionAsGroupExtender();
+        }
+        if (f == "Turn")
+        {
+            AddHeaderRegion(() =>
+            {
+                AddLine("Description: ", "Gray");
+                AddText(regionGroup.pagination() + 1 + "", "HalfGray");
+                AddText(" / ", "DarkGray");
+                AddText(regionGroup.maxPagination() + "", "HalfGray");
+                AddSmallButton("OtherNextPage", (h) =>
+                {
+                    if (regionGroup.pagination() < regionGroup.maxPagination() - 1)
+                    {
+                        PlaySound("DesktopChangePage", 0.6f);
+                        regionGroup.IncrementPagination();
+                    }
+                });
+                AddSmallButton("OtherPreviousPage", (h) =>
+                {
+                    if (regionGroup.pagination() > 0)
+                    {
+                        PlaySound("DesktopChangePage", 0.6f);
+                        regionGroup.DecrementPagination();
+                    }
+                });
+            });
+            new Description()
+            {
+                regions = new() { new() { regionType = "Padding", contents = new() { new ()
+                    {
+                        { "Color", "DarkGray" },
+                        { "Text", completion != null ? completion.Split("$B$B")[staticPagination["QuestTurn"][0]] : "" }
+                    }
+                } } }
+            }.Print(currentSave.player, null, 190, null);
+            SetRegionAsGroupExtender();
+        }
+        if (f != "Turn" && objective != null)
+        {
+            AddHeaderRegion(() => AddLine("Objective:"));
+            new Description()
+            {
+                regions = new() { new() { regionType = "Padding", contents = new() { new()
+                    {
+                        { "Color", "DarkGray" },
+                        { "Text", objective }
+                    }
+                } } }
+            }.Print(currentSave.player, null, 190, null, false);
+            if (f == "Log") SetRegionAsGroupExtender();
+        }
+        if (f == "Log" && conditions != null)
+        {
+            if (conditions.Count == 0 || currentSave.player.CanTurnQuest(this))
+            {
+                AddHeaderRegion(() => AddLine("Turn in at:"));
+                AddPaddingRegion(() =>
+                {
+                    AddLine(siteEnd, "HalfGray");
+                    AddSmallButton("ItemMiscMap01", (h) =>
+                    {
+                        CloseDesktop("HostileArea");
+                        CloseDesktop("Instance");
+                        CloseDesktop("Complex");
+                        SwitchDesktop("Map");
+                        CloseDesktop("QuestLog");
+                        var where = Site.FindSite(x => x.name == siteEnd);
+                        CDesktop.cameraDestination = new Vector2(where.x, where.y);
+                    });
+                });
             }
             else
             {
-               AddSmallButton("OtherClose", (h) =>
-               {
-                  CloseWindow("Quest");
-                  Respawn("Chest", true);
-                  Respawn("PlayerMoney", true);
-                  PlaySound("DesktopInstanceClose");
-               });
-               AddSmallButton("OtherTrash", (h) =>
-               {
-                  PlaySound("DesktopMenuOpen", 0.6f);
-                  Respawn("QuestConfirmAbandon");
-                  Respawn("QuestList");
-               });
+                AddHeaderRegion(() => AddLine("Details:"));
+                foreach (var condition in conditions)
+                    condition.Print(CDesktop.title == "QuestLog");
             }
-         else
-            AddSmallButton("OtherClose", (h) =>
-            {
-               CloseWindow("Quest" + f);
-               Respawn("Chest", true);
-               Respawn("PlayerMoney", true);
-               if (CDesktop.title != "QuestLog")
-                  if (SiteComplex.complex != null) Respawn("Complex");
-                  else if (SiteInstance.instance != null) Respawn("Instance");
-               PlaySound("DesktopInstanceClose");
-            });
-      });
-      if (color != null) SetRegionBackgroundAsImage("SkillUp" + color + "Long");
-      var regionGroup = CDesktop.LBWindow().LBRegionGroup();
-      Root.PreparePagination(regionGroup);
-      if (f == "Add")
-      {
-         AddHeaderRegion(() =>
-         {
-            AddLine("Description: ", "Gray");
-            AddText(regionGroup.pagination() + 1 + "", "HalfGray");
-            AddText(" / ", "DarkGray");
-            AddText(regionGroup.maxPagination() + "", "HalfGray");
-            AddSmallButton("OtherNextPage", (h) =>
-            {
-               if (regionGroup.pagination() < regionGroup.maxPagination() - 1)
-               {
-                  PlaySound("DesktopChangePage", 0.6f);
-                  regionGroup.IncrementPagination();
-               }
-            });
-            AddSmallButton("OtherPreviousPage", (h) =>
-            {
-               if (regionGroup.pagination() > 0)
-               {
-                  PlaySound("DesktopChangePage", 0.6f);
-                  regionGroup.DecrementPagination();
-               }
-            });
-         });
-         new Description()
-         {
-            regions = new() { new() { regionType = "Padding", contents = new() { new ()
-               {
-                  { "Color", "DarkGray" },
-                  { "Text", description != null ? description.Split("$B$B")[staticPagination["QuestAdd"][0]] : "" }
-               }
-            } } }
-         }.Print(currentSave.player, null, 190, null);
-         SetRegionAsGroupExtender();
-      }
-      if (f == "Turn")
-      {
-         AddHeaderRegion(() =>
-         {
-            AddLine("Description: ", "Gray");
-            AddText(regionGroup.pagination() + 1 + "", "HalfGray");
-            AddText(" / ", "DarkGray");
-            AddText(regionGroup.maxPagination() + "", "HalfGray");
-            AddSmallButton("OtherNextPage", (h) =>
-            {
-               if (regionGroup.pagination() < regionGroup.maxPagination() - 1)
-               {
-                  PlaySound("DesktopChangePage", 0.6f);
-                  regionGroup.IncrementPagination();
-               }
-            });
-            AddSmallButton("OtherPreviousPage", (h) =>
-            {
-               if (regionGroup.pagination() > 0)
-               {
-                  PlaySound("DesktopChangePage", 0.6f);
-                  regionGroup.DecrementPagination();
-               }
-            });
-         });
-         new Description()
-         {
-            regions = new() { new() { regionType = "Padding", contents = new() { new ()
-               {
-                  { "Color", "DarkGray" },
-                  { "Text", completion != null ? completion.Split("$B$B")[staticPagination["QuestTurn"][0]] : "" }
-               }
-            } } }
-         }.Print(currentSave.player, null, 190, null);
-         SetRegionAsGroupExtender();
-      }
-      if (f != "Turn" && objective != null)
-      {
-         AddHeaderRegion(() => AddLine("Objective:"));
-         new Description()
-         {
-            regions = new() { new() { regionType = "Padding", contents = new() { new ()
-               {
-                  { "Color", "DarkGray" },
-                  { "Text", objective }
-               }
-            } } }
-         }.Print(currentSave.player, null, 190, null, false);
-         if (f == "Log") SetRegionAsGroupExtender();
-      }
-      if (f == "Log" && conditions != null)
-      {
-         if (conditions.Count == 0 || currentSave.player.CanTurnQuest(this))
-         {
-            AddHeaderRegion(() => AddLine("Turn in at:"));
+        }
+        if (rewards != null)
+        {
+            AddHeaderRegion(() => AddLine("Rewards:"));
+            if (experience > 0)
+                AddPaddingRegion(() =>
+                {
+                    if (experience > 0)
+                    {
+                        AddLine("XP: ", "HalfGray");
+                        AddText(experience + "", "Gray");
+                    }
+                });
             AddPaddingRegion(() =>
             {
-               AddLine(siteEnd, "HalfGray");
-               AddSmallButton("ItemMiscMap01", (h) =>
-               {
-                  CloseDesktop("HostileArea");
-                  CloseDesktop("Instance");
-                  CloseDesktop("Complex");
-                  SwitchDesktop("Map");
-                  CloseDesktop("QuestLog");
-                  var where = Site.FindSite(x => x.name == siteEnd);
-                  CDesktop.cameraDestination = new Vector2(where.x, where.y);
-               });
+                foreach (var item in rewards)
+                {
+                    var find = Item.items.Find(x => x.name == item.Key);
+                    AddBigButton(find.icon, f == "Turn" ? (h) => { chosenReward = find.name; } : null, null, (h) => () =>
+                    {
+                        if (WindowUp("CraftingSort")) return;
+                        if (WindowUp("CraftingSettings")) return;
+                        Item.PrintItemTooltip(find, Input.GetKey(KeyCode.LeftShift));
+                    });
+                    if (find.type != "Miscellaneous" && find.type != "Trade Good" && find.type != "Recipe" && !find.CanEquip(currentSave.player, true)) { SetBigButtonToRed(); AddBigButtonOverlay("OtherGridBlurred"); }
+                    if (find.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (rewards.Keys.ToList().IndexOf(item.Key) % 5), item.Value + "", "", "Right");
+                    if (find.name == chosenReward && rewards.Count > 1) AddBigButtonOverlay("OtherGlowChosen");
+                }
             });
-         }
-         else
-         {
-            AddHeaderRegion(() => AddLine("Details:"));
+        }
+        if (f == "Turn")
+            AddButtonRegion(() => { AddLine("Complete the Quest"); }, (h) =>
+            {
+                if (rewards != null && rewards.Count == 1)
+                {
+                    var item = Item.items.Find(x => x.name == chosenReward).CopyItem(rewards[chosenReward]);
+                    if (!currentSave.player.inventory.CanAddItem(item))
+                    {
+                        PlaySound("QuestFailed");
+                        SpawnFallingText(new Vector2(0, 34), "Inventory full", "Red");
+                    }
+                    else
+                    {
+                        PlaySound(item.ItemSound("PutDown"), 0.8f);
+                        currentSave.player.inventory.AddItem(item);
+                        Foo();
+                    }
+                }
+                else if (rewards != null && rewards.Count > 1)
+                {
+                    var item = chosenReward == null ? null : Item.items.Find(x => x.name == chosenReward).CopyItem(rewards[chosenReward]);
+                    if (item == null)
+                    {
+                        PlaySound("QuestFailed");
+                        SpawnFallingText(new Vector2(0, 34), "No reward chosen", "Red");
+                    }
+                    else if (!currentSave.player.inventory.CanAddItem(item))
+                    {
+                        PlaySound("QuestFailed");
+                        SpawnFallingText(new Vector2(0, 34), "Inventory full", "Red");
+                    }
+                    else
+                    {
+                        PlaySound(item.ItemSound("PutDown"), 0.8f);
+                        currentSave.player.inventory.AddItem(item);
+                        Foo();
+                    }
+                }
+                else Foo();
+
+                void Foo()
+                {
+                    currentSave.player.TurnQuest(this);
+                    PlaySound("QuestTurn");
+                    CloseWindow(h.window);
+                    var find = CDesktop.windows.Find(x => x.title.Contains("QuestAvailable"));
+                    if (find != null) find.Respawn();
+                    find = CDesktop.windows.Find(x => x.title.Contains("QuestDone"));
+                    if (find != null) find.Respawn();
+                    Respawn("Chest", true);
+                    Respawn("PlayerMoney", true);
+                }
+            });
+        if (f == "Add")
+            AddButtonRegion(() => { AddLine("Accept Quest"); }, (h) =>
+            {
+                if (currentSave.player.CanAddQuest(this))
+                {
+                    PlaySound("QuestAdd", 0.4f);
+                    currentSave.player.AddQuest(quest);
+                    CloseWindow(h.window);
+                    var find = CDesktop.windows.Find(x => x.title.Contains("QuestAvailable"));
+                    if (find != null) find.Respawn();
+                    find = CDesktop.windows.Find(x => x.title.Contains("QuestDone"));
+                    if (find != null) find.Respawn();
+                    Respawn("Chest", true);
+                    Respawn("PlayerMoney", true);
+                    Respawn("QuestList", true);
+                }
+                else PlaySound("QuestFailed", 0.4f);
+            });
+    }
+
+    //Copies a quest to a new one for the player to take
+    public Quest CopyQuest()
+    {
+        var newQuest = new Quest();
+        newQuest.name = name;
+        if (classes != null)
+            newQuest.classes = classes.ToList();
+        if (races != null)
+            newQuest.races = races.ToList();
+        if (rewards != null)
+            newQuest.rewards = rewards.ToDictionary(x => x.Key, x => x.Value);
+        newQuest.previous = previous;
+        newQuest.questLevel = questLevel;
+        newQuest.requiredLevel = requiredLevel;
+        if (reputationGain != null)
+            newQuest.reputationGain = reputationGain.ToDictionary(x => x.Key, x => x.Value);
+        newQuest.description = description;
+        newQuest.objective = objective;
+        newQuest.completion = completion;
+        newQuest.conditions = new();
+        if (conditions != null)
             foreach (var condition in conditions)
-               condition.Print(CDesktop.title == "QuestLog");
-         }
-      }
-      if (rewards != null)
-      {
-         AddHeaderRegion(() => AddLine("Rewards:"));
-         if (experience > 0)
-         {
-            AddPaddingRegion(() =>
-            {
-               if (experience > 0)
-               {
-                  AddLine("XP: ", "HalfGray");
-                  AddText(experience + "", "Gray");
-               }
-            });
-         }
-         AddPaddingRegion(() =>
-         {
-            foreach (var item in rewards)
-            {
-               var find = Item.items.Find(x => x.name == item.Key);
-               AddBigButton(find.icon, f == "Turn" ? (h) => { chosenReward = find.name; } : null, null, (h) => () =>
-               {
-                  if (WindowUp("CraftingSort")) return;
-                  if (WindowUp("CraftingSettings")) return;
-                  Item.PrintItemTooltip(find, Input.GetKey(KeyCode.LeftShift));
-               });
-               if (find.type != "Miscellaneous" && find.type != "Trade Good" && find.type != "Recipe" && !find.CanEquip(currentSave.player, true)) { SetBigButtonToRed(); AddBigButtonOverlay("OtherGridBlurred"); }
-               if (find.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (rewards.Keys.ToList().IndexOf(item.Key) % 5), item.Value + "", "", "Right");
-               if (find.name == chosenReward && rewards.Count > 1) AddBigButtonOverlay("OtherGlowChosen");
-            }
-         });
-      }
-      if (f == "Turn")
-      {
-         AddButtonRegion(() => { AddLine("Complete the Quest"); }, (h) =>
-         {
-            if (rewards != null && rewards.Count == 1)
-            {
-               var item = Item.items.Find(x => x.name == chosenReward).CopyItem(rewards[chosenReward]);
-               if (!currentSave.player.inventory.CanAddItem(item))
-               {
-                  PlaySound("QuestFailed");
-                  SpawnFallingText(new Vector2(0, 34), "Inventory full", "Red");
-               }
-               else
-               {
-                  PlaySound(item.ItemSound("PutDown"), 0.8f);
-                  currentSave.player.inventory.AddItem(item);
-                  Foo();
-               }
-            }
-            else if (rewards != null && rewards.Count > 1)
-            {
-               var item = chosenReward == null ? null : Item.items.Find(x => x.name == chosenReward).CopyItem(rewards[chosenReward]);
-               if (item == null)
-               {
-                  PlaySound("QuestFailed");
-                  SpawnFallingText(new Vector2(0, 34), "No reward chosen", "Red");
-               }
-               else if (!currentSave.player.inventory.CanAddItem(item))
-               {
-                  PlaySound("QuestFailed");
-                  SpawnFallingText(new Vector2(0, 34), "Inventory full", "Red");
-               }
-               else
-               {
-                  PlaySound(item.ItemSound("PutDown"), 0.8f);
-                  currentSave.player.inventory.AddItem(item);
-                  Foo();
-               }
-            }
-            else Foo();
-
-            void Foo()
-            {
-               currentSave.player.TurnQuest(this);
-               PlaySound("QuestTurn");
-               CloseWindow(h.window);
-               var find = CDesktop.windows.Find(x => x.title.Contains("QuestAvailable"));
-               if (find != null) find.Respawn();
-               find = CDesktop.windows.Find(x => x.title.Contains("QuestDone"));
-               if (find != null) find.Respawn();
-               Respawn("Chest", true);
-               Respawn("PlayerMoney", true);
-            }
-         });
-      }
-      if (f == "Add")
-      {
-         AddButtonRegion(() => { AddLine("Accept Quest"); }, (h) =>
-         {
-            if (currentSave.player.CanAddQuest(this))
-            {
-               PlaySound("QuestAdd", 0.4f);
-               currentSave.player.AddQuest(quest);
-               CloseWindow(h.window);
-               var find = CDesktop.windows.Find(x => x.title.Contains("QuestAvailable"));
-               if (find != null) find.Respawn();
-               find = CDesktop.windows.Find(x => x.title.Contains("QuestDone"));
-               if (find != null) find.Respawn();
-               Respawn("Chest", true);
-               Respawn("PlayerMoney", true);
-               Respawn("QuestList", true);
-            }
-            else PlaySound("QuestFailed", 0.4f);
-         });
-      }
-   }
-
-   //Copies a quest to a new one for the player to take
-   public Quest CopyQuest()
-   {
-      var newQuest = new Quest();
-      newQuest.name = name;
-      if (classes != null)
-         newQuest.classes = classes.ToList();
-      if (races != null)
-         newQuest.races = races.ToList();
-      if (rewards != null)
-         newQuest.rewards = rewards.ToDictionary(x => x.Key, x => x.Value);
-      newQuest.previous = previous;
-      newQuest.questLevel = questLevel;
-      newQuest.requiredLevel = requiredLevel;
-      if (reputationGain != null)
-         newQuest.reputationGain = reputationGain.ToDictionary(x => x.Key, x => x.Value);
-      newQuest.description = description;
-      newQuest.objective = objective;
-      newQuest.completion = completion;
-      newQuest.conditions = new();
-      if (conditions != null)
-         foreach (var condition in conditions)
-            newQuest.conditions.Add(new() { name = condition.name, amount = condition.amount, type = condition.type });
-      newQuest.faction = faction;
-      newQuest.requiredRank = requiredRank;
-      newQuest.experience = experience;
-      newQuest.money = money;
-      newQuest.siteStart = siteStart;
-      newQuest.siteEnd = siteEnd;
-      if (providedItems != null)
-         newQuest.providedItems = providedItems.ToDictionary(x => x.Key, x => x.Value);
-      newQuest.questID = questID;
-      newQuest.zone = zone;
-      return newQuest;
-   }
+                newQuest.conditions.Add(new() { name = condition.name, amount = condition.amount, type = condition.type });
+        newQuest.faction = faction;
+        newQuest.requiredRank = requiredRank;
+        newQuest.experience = experience;
+        newQuest.money = money;
+        newQuest.siteStart = siteStart;
+        newQuest.siteEnd = siteEnd;
+        if (providedItems != null)
+            newQuest.providedItems = providedItems.ToDictionary(x => x.Key, x => x.Value);
+        newQuest.questID = questID;
+        newQuest.zone = zone;
+        return newQuest;
+    }
 }

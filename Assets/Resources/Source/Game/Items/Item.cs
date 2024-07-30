@@ -159,8 +159,10 @@ public class Item
         else entity.equipment[slot] = this;
         if (entity.inventory.items.Contains(this))
             entity.inventory.items.Remove(this);
-        if (abilities == null) return;
-        entity.abilities = entity.abilities.Concat(abilities).ToDictionary(x => x.Key, x => x.Value);
+        if (abilities != null)
+            entity.abilities = entity.abilities.Concat(abilities).ToDictionary(x => x.Key, x => x.Value);
+        if (enchant != null && enchant.abilities != null)
+            entity.abilities = entity.abilities.Concat(enchant.abilities).ToDictionary(x => x.Key, x => x.Value);
     }
 
     public void Equip(Entity entity)

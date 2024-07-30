@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class AreaProgression
 {
     //Type of the progression [Area, Boss, Treasure]

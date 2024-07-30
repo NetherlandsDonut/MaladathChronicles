@@ -331,8 +331,8 @@
           4921,
           6548
         ],
-        "level": 23,
-        "experience": 8948,
+        "level": 24,
+        "experience": 28428,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -403,9 +403,22 @@
           "Bloodtooth Tribe": 0,
           "Bristleback Tribe": 0
         },
-        "professionSkills": {},
-        "learnedRecipes": {},
-        "unspentTalentPoints": 5,
+        "professionSkills": {
+          "Enchanting": {
+            "Item1": 1,
+            "Item2": [
+              "Apprentice"
+            ]
+          }
+        },
+        "learnedRecipes": {
+          "Enchanting": [
+            "Runed Copper Rod",
+            "Enchant Bracer - Minor Deflect",
+            "Enchant Bracer - Minor Health"
+          ]
+        },
+        "unspentTalentPoints": 6,
         "faction": "Thunder Bluff",
         "name": "Hannaya",
         "race": "Tauren",
@@ -476,7 +489,7 @@
           }
         },
         "inventory": {
-          "money": 31046,
+          "money": 31036,
           "items": [
             {
               "rarity": "Common",
@@ -569,6 +582,119 @@
               "amount": 2,
               "maxStack": 20,
               "price": 10000
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Schematic: Master Engineer's Goggles",
+              "icon": "itemscroll06",
+              "detailedType": "Scroll",
+              "type": "Recipe",
+              "source": "DirectDrop",
+              "amount": 1,
+              "maxStack": 1,
+              "price": 5000,
+              "droppedBy": [
+                "Doomforge Arcanasmith"
+              ]
+            },
+            {
+              "rarity": "Common",
+              "name": "Scroll of Intellect IV",
+              "icon": "itemscroll01",
+              "detailedType": "Scroll",
+              "type": "Miscellaneous",
+              "source": "RareDrop",
+              "ilvl": 60,
+              "amount": 1,
+              "maxStack": 5,
+              "abilities": {
+                "Scroll of Intellect IV": 1
+              },
+              "price": 112
+            },
+            {
+              "rarity": "Common",
+              "name": "Runecloth",
+              "icon": "itemfabricpurplefire01",
+              "detailedType": "Cloth",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 50,
+              "lvl": 1,
+              "amount": 3,
+              "maxStack": 20,
+              "price": 400
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Schematic: Master Engineer's Goggles",
+              "icon": "itemscroll06",
+              "detailedType": "Scroll",
+              "type": "Recipe",
+              "source": "DirectDrop",
+              "amount": 1,
+              "maxStack": 1,
+              "price": 5000,
+              "droppedBy": [
+                "Doomforge Arcanasmith"
+              ]
+            },
+            {
+              "rarity": "Poor",
+              "name": "Laminated Scale Bracers",
+              "icon": "itembracer03",
+              "type": "Wrists",
+              "armorClass": "Mail",
+              "source": "RareDrop",
+              "ilvl": 58,
+              "lvl": 53,
+              "armor": 123,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 4404
+            },
+            {
+              "rarity": "Rare",
+              "name": "Shalehusk Boots",
+              "icon": "itembootsplate01",
+              "type": "Feet",
+              "armorClass": "Plate",
+              "source": "DirectDrop",
+              "ilvl": 58,
+              "lvl": 53,
+              "armor": 417,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 13732,
+              "stats": {
+                "stats": {
+                  "Stamina": 5
+                }
+              },
+              "droppedBy": [
+                "Panzor the Invincible"
+              ]
+            },
+            {
+              "rarity": "Uncommon",
+              "name": "Impenetrable Breastplate of the Tiger",
+              "icon": "itemchestplate01",
+              "randomEnchantment": true,
+              "type": "Chest",
+              "armorClass": "Mail",
+              "source": "RareDrop",
+              "ilvl": 61,
+              "lvl": 56,
+              "armor": 327,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 26315,
+              "stats": {
+                "stats": {
+                  "Agility": 17,
+                  "Strength": 17
+                }
+              }
             }
           ],
           "bags": [
@@ -652,9 +778,9 @@
         "worldBuffs": []
       },
       "hour": 9,
-      "minute": 1,
-      "second": 12,
-      "currentSite": "Skull Rock",
+      "minute": 5,
+      "second": 30,
+      "currentSite": "Blackrock Mountain",
       "ringOfLaw": "Eviscerator",
       "forlornCloister": "Ironspine",
       "openedChests": {},
@@ -663,17 +789,24 @@
       "siteProgress": {
         "Red Cloud Mesa": 2,
         "Brambleblade Ravine": 1,
-        "Camp Aparaje": 2
+        "Camp Aparaje": 2,
+        "Mold Foundry": 2,
+        "Summoners' Tomb": 2
       },
       "commonsKilled": {
         "Plainstrider": 1,
         "Mountain Cougar": 1,
         "Bristleback Shaman": 1,
         "Grimtotem Mercenary": 1,
-        "Grimtotem Ruffian": 1
+        "Grimtotem Ruffian": 1,
+        "Doomforge Arcanasmith": 2,
+        "Cannibal Ghoul": 2
       },
       "raresKilled": {},
-      "elitesKilled": {},
+      "elitesKilled": {
+        "Panzor the Invincible": 1,
+        "The Seven": 1
+      },
       "siteVisits": {
         "Camp Narache": 4,
         "Red Cloud Mesa": 2,
@@ -690,10 +823,15 @@
         "Honor's Stand": 2,
         "Camp Aparaje": 1,
         "Far Watch Post": 0,
-        "Orgrimmar": 6,
-        "Skull Rock": 1
+        "Orgrimmar": 7,
+        "Skull Rock": 1,
+        "Blackrock Mountain": 5
       },
-      "unlockedAreas": [],
+      "unlockedAreas": [
+        "Summoners' Tomb",
+        "The Iron Hall",
+        "Molten Core"
+      ],
       "vendorStock": {
         "Camp Narache:Kawnie Softbreeze": [
           {
@@ -1073,9 +1211,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2024-07-25T21:10:47.9718315+02:00",
-      "lastLoaded": "2024-07-28T17:56:29.1435728+02:00",
-      "lastPlayed": "2024-07-28T17:57:06.5829235+02:00",
-      "timePlayed": "00:31:29.2344520",
+      "lastLoaded": "2024-07-30T04:49:16.4058814+02:00",
+      "lastPlayed": "2024-07-30T04:53:20.9431144+02:00",
+      "timePlayed": "00:37:06.1647091",
       "lastVisitedTalents": 1
     }
   ]

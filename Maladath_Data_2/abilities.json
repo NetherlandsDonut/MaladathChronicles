@@ -1904,13 +1904,8 @@
           {
             "Effect": "AddWorldBuff",
             "WorldBuffName": "Well Fed @ Mightfish Steak",
-            "WorldBuffDurationUnits": "Combat",
-            "WorldBuffDuration": "10",
-            "ShatterDensity": "1",
-            "SoundEffect": "DesktopFoodEat",
-            "Await": "5",
-            "ShatterSpeed": "30",
-            "ShatterDegree": "40"
+            "WorldBuffDuration": "360",
+            "SoundEffect": "DesktopFoodEat"
           },
           {
             "Effect": "ConsumeItem"

@@ -9,14 +9,14 @@ public class Enchant
     //Shortened name of the enchantment
     public string Name() => name.Split("-").Last().Trim();
 
+    //Item type this enchantment can be put on
+    public string type;
+
     //Stats provided by this enchantment
     public Dictionary<string, int> gains;
 
-    //List of item types this enchantment can be put on
-    public string type;
-
-    //Description of the enchantment to show on hover in the status bar
-    //public Description description;
+    //List of abilities provided to the wearer of an item with this enchantment
+    public Dictionary<string, int> abilities;
 
     //Currently opened enchantment
     public static Enchant enchant;

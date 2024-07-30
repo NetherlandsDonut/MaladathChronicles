@@ -409,10 +409,7 @@ public class Entity
 
     //Tells whether this entity will get experience from
     //killing an enemy that was at given level
-    public bool WillGetExperience(int level)
-    {
-        return this.level - 5 <= level;
-    }
+    public bool WillGetExperience(int level) => this.level - 5 <= level;
 
     //Tells whether this entity will get experience from
     //killing an enemy that was at given level
@@ -770,9 +767,12 @@ public class Entity
         else foreach (var slot in slots)
                 if (equipment.ContainsKey(slot))
                 {
-                    var itemAbilities = equipment[slot].abilities;
-                    if (itemAbilities != null)
-                        foreach (var ability in itemAbilities)
+                    var item = equipment[slot];
+                    if (item.abilities != null)
+                        foreach (var ability in item.abilities)
+                            abilities.Remove(ability.Key);
+                    if (item.enchant != null && item.enchant.abilities != null)
+                        foreach (var ability in item.enchant.abilities)
                             abilities.Remove(ability.Key);
                     if (index != -1) inventory.items.Insert(index, equipment[slot]);
                     else inventory.items.Add(equipment[slot]);
@@ -1110,6 +1110,9 @@ public class Entity
                 if (itemPair.Value.stats != null)
                     foreach (var stat in itemPair.Value.stats.stats)
                         stats.Inc(stat.Key, stat.Value);
+                if (itemPair.Value.enchant != null && itemPair.Value.enchant.gains != null)
+                    foreach (var stat in itemPair.Value.enchant.gains)
+                        stats.Inc(stat.Key, stat.Value);
                 if (itemPair.Value.armor > 0)
                     stats.Inc("Armor", itemPair.Value.armor);
             }
@@ -1317,14 +1320,6 @@ public class Entity
 
     //Which side of the conflict is this entity on
     public string Side() => Faction.factions.Find(x => x.name == faction).side;
-
-    #endregion
-
-    #region World Events
-
-    //public List<WorldBuff> worldBuffs;
-
-    public Dictionary<string, int> worldCooldowns;
 
     #endregion
 

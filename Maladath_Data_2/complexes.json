@@ -13,7 +13,8 @@
       },
       {
         "SiteType": "Raid",
-        "SiteName": "Molten Core"
+        "SiteName": "Molten Core",
+        "OpenByDefault": "False"
       },
       {
         "SiteType": "Dungeon",
@@ -25,7 +26,8 @@
       },
       {
         "SiteType": "Raid",
-        "SiteName": "Blackwing Lair"
+        "SiteName": "Blackwing Lair",
+        "OpenByDefault": "False"
       }
     ]
   },
