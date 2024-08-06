@@ -5389,6 +5389,7 @@ public class Blueprint
         new("SpellbookResources", () => {
             SetAnchor(-301, -29);
             AddHeaderGroup();
+            SetRegionGroupWidth(171);
             AddHeaderRegion(() => { AddLine("Starting elements:"); });
             var elements = new List<string> { "Fire", "Water", "Earth", "Air", "Frost" };
             AddRegionGroup();
@@ -5442,7 +5443,8 @@ public class Blueprint
                         AddSmallButton("OtherSwitchOff");
             });
             var bars = currentSave.player.actionBars[currentSave.player.currentActionSet];
-            for (int i = 0; i < currentSave.player.ActionBarsAmount(); i++)
+            int amount = currentSave.player.ActionBarsAmount();
+            for (int i = 0; i < amount; i++)
             {
                 var index = i;
                 var abilityObj = bars.Count <= index ? null : abilities.Find(x => x.name == bars[index]);
@@ -5480,7 +5482,7 @@ public class Blueprint
                         }
                     );
             }
-            AddPaddingRegion(() => { });
+            if (amount < 7) AddPaddingRegion(() => { });
         }),
         new("SwitchActionBars", () => {
             SetAnchor(Center);

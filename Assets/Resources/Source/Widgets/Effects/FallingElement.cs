@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-using static Root;
 using static Sound;
 
 //Class controling the falling effect of the elements on the board
@@ -18,8 +17,8 @@ public class FallingElement : MonoBehaviour
     //Amount of time this element already is traveling
     public float timeAlive;
 
-    //Entry and final position for this element
-    public Vector3 start, destination;
+    //Final position for this element
+    public Vector3 destination;
 
     //Did this falling element already play it's falling sound
     public bool playedSound;
@@ -31,7 +30,6 @@ public class FallingElement : MonoBehaviour
         timeAlive = 0;
         this.howFar = howFar;
         fallingElements.Add(this);
-        start = transform.position;
         destination = transform.position + new Vector3(0, -38 * howFar);
         this.delay = delay * 0.07f;
     }
@@ -43,14 +41,13 @@ public class FallingElement : MonoBehaviour
         else
         {
             timeAlive += Time.deltaTime;
-            transform.position = Vector3.Lerp(transform.position, destination, timeAlive * 0.8f / (float)Math.Sqrt(howFar) * (GameSettings.settings.fastCascading.Value() ? 0.9f : 0.6f));
+            transform.position = Vector3.Lerp(transform.position, destination, timeAlive / (float)Math.Sqrt(howFar) * (GameSettings.settings.fastCascading.Value() ? 0.8f : 0.5f));
             var temp = Vector3.Distance(transform.position, destination);
-            if (temp <= 0.5f)
+            if (temp <= 1.5f)
                 if (!playedSound)
                 {
                     playedSound = true;
-                    if (soundsPlayedThisFrame < 3)
-                        PlaySound("PutDownWoodSmall", 1f);
+                    PlaySound("PutDownWoodSmall", 1f);
                 }
                 else if (temp < 0.05f)
                 {

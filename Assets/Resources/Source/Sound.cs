@@ -12,10 +12,11 @@ public static class Sound
     //Plays a singular sound effect
     public static void PlaySound(string path, float volume = 0.7f)
     {
-        if (!settings.soundEffects.Value() || soundsPlayedThisFrame > 5) return;
+        if (soundsPlayedThisFrame.Contains(path)) return;
+        if (!settings.soundEffects.Value()) return;
         if (!sounds.ContainsKey(path)) return;
         soundEffects.PlayOneShot(sounds[path], volume);
-        soundsPlayedThisFrame++;
+        soundsPlayedThisFrame.Add(path);
     }
 
     //Plays a singular sound effect
@@ -68,7 +69,7 @@ public static class Sound
     //Amount of falling element sounds played this frame
     //It is used to ensure that user's headphones are not
     //destroyed with a stacked sound of 47 falling sounds played at once
-    public static int soundsPlayedThisFrame;
+    public static List<string> soundsPlayedThisFrame;
 
     //Queued ambience to be played by the ambience controller
     public static (AudioClip, float, bool) queuedAmbience;

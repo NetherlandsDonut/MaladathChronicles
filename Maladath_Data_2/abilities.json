@@ -687,6 +687,1006 @@
     }
   },
   {
+    "name": "Elixir of Minor Agility",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Elixir of Minor Agility @ Battle Elixir",
+            "WorldBuffDuration": "120",
+            "SoundEffect": "AbilityDrink"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Agility by 4 for 2 hours. This effect counts as a battle elixir."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Elixir of Lion's Strength",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Elixir of Lion's Strength @ Battle Elixir",
+            "WorldBuffDuration": "120",
+            "SoundEffect": "AbilityDrink"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Strength by 4 for 2 hours. This effect counts as a battle elixir."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Elixir of Giant Growth",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Elixir of Giant Growth @ Battle Elixir",
+            "WorldBuffDuration": "120",
+            "SoundEffect": "AbilityDrink"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Strength by 8 for 2 hours. This effect counts as a battle elixir."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Elixir of Wisdom",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Elixir of Wisdom @ Battle Elixir",
+            "WorldBuffDuration": "120",
+            "SoundEffect": "AbilityDrink"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Intellect by 6 for 2 hours. This effect counts as a battle elixir."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Elixir of Firepower",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Elixir of Firepower @ Battle Elixir",
+            "WorldBuffDuration": "120",
+            "SoundEffect": "AbilityDrink"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Fire Mastery by 1 for 2 hours. This effect counts as a battle elixir."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Elixir of Lesser Agility",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Elixir of Lesser Agility @ Battle Elixir",
+            "WorldBuffDuration": "120",
+            "SoundEffect": "AbilityDrink"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Agility by 8 for 2 hours. This effect counts as a battle elixir."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Elixir of Ogre's Strength",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Elixir of Ogre's Strength @ Battle Elixir",
+            "WorldBuffDuration": "120",
+            "SoundEffect": "AbilityDrink"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Strength by 8 for 2 hours. This effect counts as a battle elixir."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Elixir of Agility",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Elixir of Agility @ Battle Elixir",
+            "WorldBuffDuration": "120",
+            "SoundEffect": "AbilityDrink"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Agility by 15 for 2 hours. This effect counts as a battle elixir."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Elixir of Frost Power",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Elixir of Frost Power @ Battle Elixir",
+            "WorldBuffDuration": "120",
+            "SoundEffect": "AbilityDrink"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Frost Mastery by 1 for 2 hours. This effect counts as a battle elixir."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Arcane Elixir",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Arcane Elixir @ Battle Elixir",
+            "WorldBuffDuration": "120",
+            "SoundEffect": "AbilityDrink"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Arcane Mastery by 1 for 2 hours. This effect counts as a battle elixir."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Elixir of Greater Intellect",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Elixir of Greater Intellect @ Battle Elixir",
+            "WorldBuffDuration": "120",
+            "SoundEffect": "AbilityDrink"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Intellect by 25 for 2 hours. This effect counts as a battle elixir."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Elixir of Giants",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Elixir of Giants @ Battle Elixir",
+            "WorldBuffDuration": "120",
+            "SoundEffect": "AbilityDrink"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Strength by 25 for 2 hours. This effect counts as a battle elixir."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Elixir of Greater Agility",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Elixir of Greater Agility @ Battle Elixir",
+            "WorldBuffDuration": "120",
+            "SoundEffect": "AbilityDrink"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Agility by 25 for 2 hours. This effect counts as a battle elixir."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Mageblood Potion",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Mageblood Potion @ Battle Elixir",
+            "WorldBuffDuration": "120",
+            "SoundEffect": "AbilityDrink"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Spirit by 25 for 2 hours. This effect counts as a battle elixir."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Elixir of Greater Firepower",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Elixir of Greater Firepower @ Battle Elixir",
+            "WorldBuffDuration": "120",
+            "SoundEffect": "AbilityDrink"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Fire Mastery by 2 for 2 hours. This effect counts as a battle elixir."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Elixir of Demonslaying",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Elixir of Demonslaying @ Battle Elixir",
+            "WorldBuffDuration": "120",
+            "SoundEffect": "AbilityDrink"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases something for 2 hours. This effect counts as a battle elixir."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Elixir of Shadow Power",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Elixir of Shadow Power @ Battle Elixir",
+            "WorldBuffDuration": "120",
+            "SoundEffect": "AbilityDrink"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Shadow Mastery by 2 for 2 hours. This effect counts as a battle elixir."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Elixir of the Sages",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Elixir of the Sages @ Battle Elixir",
+            "WorldBuffDuration": "120",
+            "SoundEffect": "AbilityDrink"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Intellect and Spirit by 18 for 2 hours. This effect counts as a battle elixir."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Elixir of Brute Force",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Elixir of Brute Force @ Battle Elixir",
+            "WorldBuffDuration": "120",
+            "SoundEffect": "AbilityDrink"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Strength and Stamina by 18 for 2 hours. This effect counts as a battle elixir."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Winterfall Firewater",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Winterfall Firewater @ Battle Elixir",
+            "WorldBuffDuration": "120",
+            "SoundEffect": "AbilityDrink"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Attack Power by 35 for 2 hours. This effect counts as a battle elixir."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "R.O.I.D.S.",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "R.O.I.D.S. @ Battle Elixir",
+            "WorldBuffDuration": "120",
+            "SoundEffect": "AbilityDrink"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Strength by 25 for 2 hours. This effect counts as a battle elixir."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Ground Scorpok Assay",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Ground Scorpok Assay @ Battle Elixir",
+            "WorldBuffDuration": "120",
+            "SoundEffect": "AbilityDrink"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Agility by 25 for 2 hours. This effect counts as a battle elixir."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Gizzard Gum",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Gizzard Gum @ Battle Elixir",
+            "WorldBuffDuration": "120",
+            "SoundEffect": "AbilityDrink"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Spirit by 25 for 2 hours. This effect counts as a battle elixir."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Elixir of the Mongoose",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Elixir of the Mongoose @ Battle Elixir",
+            "WorldBuffDuration": "120",
+            "SoundEffect": "AbilityDrink"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Agility by 25 and Critical Strike Chance by 2% for 2 hours. This effect counts as a battle elixir."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Greater Arcane Elixir",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddWorldBuff",
+            "WorldBuffName": "Greater Arcane Elixir @ Battle Elixir",
+            "WorldBuffDuration": "120",
+            "SoundEffect": "AbilityDrink"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Increases Arcane Mastery by 2 and Critical Strike Chance by 2% for 2 hours. This effect counts as a battle elixir."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "name": "Scroll of Spirit II",
     "tags": [],
     "ranks": [

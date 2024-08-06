@@ -105,7 +105,7 @@ public class Shatter : MonoBehaviour
                     r.AddRelativeForce(Random.insideUnitCircle * 240);
 
                     //Play a sound indicating that the object collided with the destination
-                    Sound.PlaySound("Sparkle" + random.Next(1, 4), 0.3f);
+                    if (random.Next(2) == 0) Sound.PlaySound("Sparkle" + random.Next(1, 4), 0.3f);
 
                     //Disable travel as the object completed it's travel
                     travelEnabled = false;

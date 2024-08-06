@@ -452,17 +452,21 @@ public class Board
                 PlaySound("Death");
                 StopAmbience();
                 if (Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore)
-                {
                     currentSave.deathInfo = new(enemy.name, enemy.Race().kind == "Common", area.name);
-                }
                 else
                 {
+                    //Find all world buffs that player has that aren't death persistant
+                    var toRemove = player.worldBuffs.Where(x => !x.buff.deathResistant);
+
+                    //Remove not death resistant world buffs from player that just died
+                    foreach (var buff in toRemove) player.RemoveWorldBuff(buff);
+
                     SwitchDesktop("Map");
-                    SpawnTransition();
-                    SpawnTransition();
-                    SpawnTransition();
-                    SpawnTransition();
-                    SpawnTransition();
+                    SpawnTransition(false);
+                    SpawnTransition(false);
+                    SpawnTransition(false);
+                    SpawnTransition(false);
+                    SpawnTransition(false);
                 }
                 chartPage = "Damage Dealt";
                 SpawnDesktopBlueprint("CombatResults");

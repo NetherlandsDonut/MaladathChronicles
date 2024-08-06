@@ -1,21 +1,307 @@
 [
   {
-    "name": "Scroll of Intellect I",
-    "icon": "ItemScroll01",
-    "dispelType": "None",
-    "tags": [
-      "Scroll"
-    ],
+    "name": "Elixir of Minor Agility @ Battle Elixir",
+    "icon": "ItemPotion91",
+    "tags": [],
     "ranks": [
       {}
     ],
     "gains": {
-      "Intellect": 4
+      "Agility": 4
     },
     "events": []
   },
   {
-    "name": "Scroll of Intellect II",
+    "name": "Elixir of Lion's Strength @ Battle Elixir",
+    "icon": "ItemPotion56",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "gains": {
+      "Strength": 4
+    },
+    "events": []
+  },
+  {
+    "name": "Elixir of Giant Growth @ Battle Elixir",
+    "icon": "ItemPotion10",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "gains": {
+      "Strength": 8
+    },
+    "events": []
+  },
+  {
+    "name": "Elixir of Wisdom @ Battle Elixir",
+    "icon": "ItemPotion06",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "gains": {
+      "Intellect": 6
+    },
+    "events": []
+  },
+  {
+    "name": "Elixir of Firepower @ Battle Elixir",
+    "icon": "ItemPotion33",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "gains": {
+      "Fire Mastery": 1
+    },
+    "events": []
+  },
+  {
+    "name": "Elixir of Lesser Agility @ Battle Elixir",
+    "icon": "ItemPotion92",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "gains": {
+      "Agility": 8
+    },
+    "events": []
+  },
+  {
+    "name": "Elixir of Ogre's Strength @ Battle Elixir",
+    "icon": "ItemPotion57",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "gains": {
+      "Strength": 8
+    },
+    "events": []
+  },
+  {
+    "name": "Elixir of Agility @ Battle Elixir",
+    "icon": "ItemPotion93",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "gains": {
+      "Agility": 15
+    },
+    "events": []
+  },
+  {
+    "name": "Elixir of Frost Power @ Battle Elixir",
+    "icon": "ItemPotion03",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "gains": {
+      "Frost Mastery": 1
+    },
+    "events": []
+  },
+  {
+    "name": "Arcane Elixir @ Battle Elixir",
+    "icon": "ItemPotion30",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "gains": {
+      "Arcane Mastery": 1
+    },
+    "events": []
+  },
+  {
+    "name": "Elixir of Greater Intellect @ Battle Elixir",
+    "icon": "ItemPotion10",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "gains": {
+      "Intellect": 25
+    },
+    "events": []
+  },
+  {
+    "name": "Elixir of Giants @ Battle Elixir",
+    "icon": "ItemPotion61",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "gains": {
+      "Strength": 25
+    },
+    "events": []
+  },
+  {
+    "name": "Elixir of Greater Agility @ Battle Elixir",
+    "icon": "ItemPotion94",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "gains": {
+      "Agility": 25
+    },
+    "events": []
+  },
+  {
+    "name": "Mageblood Potion @ Battle Elixir",
+    "icon": "ItemPotion45",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "gains": {
+      "Spirit": 25
+    },
+    "events": []
+  },
+  {
+    "name": "Elixir of Greater Firepower @ Battle Elixir",
+    "icon": "ItemPotion60",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "gains": {
+      "Fire Mastery": 2
+    },
+    "events": []
+  },
+  {
+    "name": "Elixir of Demonslaying @ Battle Elixir",
+    "icon": "ItemPotion27",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "gains": {},
+    "events": []
+  },
+  {
+    "name": "Elixir of Shadow Power @ Battle Elixir",
+    "icon": "ItemPotion46",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "gains": {
+      "Shadow Mastery": 2
+    },
+    "events": []
+  },
+  {
+    "name": "Elixir of the Sages @ Battle Elixir",
+    "icon": "ItemPotion29",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "gains": {
+      "Intellect": 18,
+      "Spirit": 18
+    },
+    "events": []
+  },
+  {
+    "name": "Elixir of Brute Force @ Battle Elixir",
+    "icon": "ItemPotion40",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "gains": {
+      "Strength": 18,
+      "Stamina": 18
+    },
+    "events": []
+  },
+  {
+    "name": "Winterfall Firewater @ Battle Elixir",
+    "icon": "ItemPotion92",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "gains": {
+      "Attack Power": 35
+    },
+    "events": []
+  },
+  {
+    "name": "R.O.I.D.S. @ Battle Elixir",
+    "icon": "ItemStone15",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "gains": {
+      "Strength": 25
+    },
+    "events": []
+  },
+  {
+    "name": "Ground Scorpok Assay @ Battle Elixir",
+    "icon": "ItemDust02",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "gains": {
+      "Agility": 25
+    },
+    "events": []
+  },
+  {
+    "name": "Gizzard Gum @ Battle Elixir",
+    "icon": "ItemFood30",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "gains": {
+      "Spirit": 25
+    },
+    "events": []
+  },
+  {
+    "name": "Elixir of the Mongoose @ Battle Elixir",
+    "icon": "ItemPotion32",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "gains": {
+      "Agility": 25,
+      "Critical Strike Chance": 2
+    },
+    "events": []
+  },
+  {
+    "name": "Greater Arcane Elixir @ Battle Elixir",
+    "icon": "ItemPotion25",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "gains": {
+      "Arcane Mastery": 2
+    },
+    "events": []
+  },
+  {
+    "name": "Scroll of Intellect II @ Scroll of Intellect",
     "icon": "ItemScroll01",
     "dispelType": "None",
     "tags": [
@@ -30,7 +316,7 @@
     "events": []
   },
   {
-    "name": "Scroll of Intellect III",
+    "name": "Scroll of Intellect III @ Scroll of Intellect",
     "icon": "ItemScroll01",
     "dispelType": "None",
     "tags": [
@@ -45,7 +331,7 @@
     "events": []
   },
   {
-    "name": "Scroll of Intellect IV",
+    "name": "Scroll of Intellect IV @ Scroll of Intellect",
     "icon": "ItemScroll01",
     "dispelType": "None",
     "tags": [
@@ -60,7 +346,7 @@
     "events": []
   },
   {
-    "name": "Scroll of Strength I",
+    "name": "Scroll of Strength I @ Scroll of Strength",
     "icon": "ItemScroll02",
     "dispelType": "None",
     "tags": [
@@ -75,7 +361,7 @@
     "events": []
   },
   {
-    "name": "Scroll of Strength II",
+    "name": "Scroll of Strength II @ Scroll of Strength",
     "icon": "ItemScroll02",
     "dispelType": "None",
     "tags": [
@@ -90,7 +376,7 @@
     "events": []
   },
   {
-    "name": "Scroll of Strength III",
+    "name": "Scroll of Strength III @ Scroll of Strength",
     "icon": "ItemScroll02",
     "dispelType": "None",
     "tags": [
@@ -105,7 +391,7 @@
     "events": []
   },
   {
-    "name": "Scroll of Strength IV",
+    "name": "Scroll of Strength IV @ Scroll of Strength",
     "icon": "ItemScroll02",
     "dispelType": "None",
     "tags": [
@@ -120,7 +406,7 @@
     "events": []
   },
   {
-    "name": "Scroll of Agility I",
+    "name": "Scroll of Agility I @ Scroll of Agility",
     "icon": "ItemScroll02",
     "dispelType": "None",
     "tags": [
@@ -135,7 +421,7 @@
     "events": []
   },
   {
-    "name": "Scroll of Agility II",
+    "name": "Scroll of Agility II @ Scroll of Agility",
     "icon": "ItemScroll02",
     "dispelType": "None",
     "tags": [
@@ -150,7 +436,7 @@
     "events": []
   },
   {
-    "name": "Scroll of Agility III",
+    "name": "Scroll of Agility III @ Scroll of Agility",
     "icon": "ItemScroll02",
     "dispelType": "None",
     "tags": [
@@ -165,7 +451,7 @@
     "events": []
   },
   {
-    "name": "Scroll of Agility IV",
+    "name": "Scroll of Agility IV @ Scroll of Agility",
     "icon": "ItemScroll02",
     "dispelType": "None",
     "tags": [
@@ -180,7 +466,7 @@
     "events": []
   },
   {
-    "name": "Scroll of Stamina I",
+    "name": "Scroll of Stamina I @ Scroll of Stamina",
     "icon": "ItemScroll07",
     "dispelType": "None",
     "tags": [
@@ -195,7 +481,7 @@
     "events": []
   },
   {
-    "name": "Scroll of Stamina II",
+    "name": "Scroll of Stamina II @ Scroll of Stamina",
     "icon": "ItemScroll07",
     "dispelType": "None",
     "tags": [
@@ -210,7 +496,7 @@
     "events": []
   },
   {
-    "name": "Scroll of Stamina III",
+    "name": "Scroll of Stamina III @ Scroll of Stamina",
     "icon": "ItemScroll07",
     "dispelType": "None",
     "tags": [
@@ -225,7 +511,7 @@
     "events": []
   },
   {
-    "name": "Scroll of Stamina IV",
+    "name": "Scroll of Stamina IV @ Scroll of Stamina",
     "icon": "ItemScroll07",
     "dispelType": "None",
     "tags": [
@@ -240,7 +526,7 @@
     "events": []
   },
   {
-    "name": "Scroll of Protection I",
+    "name": "Scroll of Protection I @ Scroll of Protection",
     "icon": "ItemScroll07",
     "dispelType": "None",
     "tags": [
@@ -255,7 +541,7 @@
     "events": []
   },
   {
-    "name": "Scroll of Protection II",
+    "name": "Scroll of Protection II @ Scroll of Protection",
     "icon": "ItemScroll07",
     "dispelType": "None",
     "tags": [
@@ -270,7 +556,7 @@
     "events": []
   },
   {
-    "name": "Scroll of Protection III",
+    "name": "Scroll of Protection III @ Scroll of Protection",
     "icon": "ItemScroll07",
     "dispelType": "None",
     "tags": [
@@ -285,7 +571,7 @@
     "events": []
   },
   {
-    "name": "Scroll of Protection IV",
+    "name": "Scroll of Protection IV @ Scroll of Protection",
     "icon": "ItemScroll07",
     "dispelType": "None",
     "tags": [
@@ -300,7 +586,7 @@
     "events": []
   },
   {
-    "name": "Scroll of Spirit I",
+    "name": "Scroll of Spirit I @ Scroll of Spirit",
     "icon": "ItemScroll01",
     "dispelType": "None",
     "tags": [
@@ -315,7 +601,7 @@
     "events": []
   },
   {
-    "name": "Scroll of Spirit II",
+    "name": "Scroll of Spirit II @ Scroll of Spirit",
     "icon": "ItemScroll01",
     "dispelType": "None",
     "tags": [
@@ -330,7 +616,7 @@
     "events": []
   },
   {
-    "name": "Scroll of Spirit III",
+    "name": "Scroll of Spirit III @ Scroll of Spirit",
     "icon": "ItemScroll01",
     "dispelType": "None",
     "tags": [
@@ -345,7 +631,7 @@
     "events": []
   },
   {
-    "name": "Scroll of Spirit IV",
+    "name": "Scroll of Spirit IV @ Scroll of Spirit",
     "icon": "ItemScroll01",
     "dispelType": "None",
     "tags": [

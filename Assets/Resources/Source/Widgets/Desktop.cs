@@ -110,8 +110,8 @@ public class Desktop : MonoBehaviour
 
     public void FixedUpdate()
     {
-        soundsPlayedThisFrame = 0;
-        if (animatedSpriteTime > 0)
+        soundsPlayedThisFrame = new();
+        if (animatedSpriteTime >= 0)
         {
             animatedSpriteTime -= Time.deltaTime;
             if (animatedSpriteTime <= 0)

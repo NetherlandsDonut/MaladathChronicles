@@ -32,6 +32,9 @@ public class Buff
     //Dispel type that let's an entity dispel a buff with proper ability
     public string dispelType;
 
+    //Indicates whether the buff is removed after death
+    public bool deathResistant;
+
     //Tags to help AI in calculating priorities in combat
     public List<string> tags;
 

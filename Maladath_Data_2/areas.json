@@ -27259,7 +27259,10 @@
         "type": "Treasure",
         "point": 3
       }
-    ]
+    ],
+    "chestBonus": {
+      "Agamand Family Weapons": 1
+    }
   },
   {
     "x": 4886,

@@ -427,7 +427,7 @@ public class Entity
             experience -= ExperienceNeeded();
             level++;
             unspentTalentPoints++;
-            if (soundsPlayedThisFrame < 3) PlaySound("DesktopLevelUp", 0.5f);
+            PlaySound("DesktopLevelUp", 0.5f);
             var newLevelQuests = quests.FindAll(x => x.requiredLevel == level);
             foreach (var newQuest in newLevelQuests)
             {
