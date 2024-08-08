@@ -25,6 +25,11 @@
     "category": "Vendor"
   },
   {
+    "type": "Master Smith",
+    "icon": "ItemHammer20",
+    "category": "Vendor"
+  },
+  {
     "type": "General Goods",
     "icon": "ItemCrate06",
     "category": "Vendor"

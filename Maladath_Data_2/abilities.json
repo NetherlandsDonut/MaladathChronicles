@@ -8122,7 +8122,7 @@
   {
     "name": "Execute",
     "icon": "AbilityExecute",
-    "cooldown": 10,
+    "cooldown": 1,
     "tags": [],
     "cost": {
       "Fire": 2,
@@ -8146,7 +8146,9 @@
             "Await": "4",
             "ShatterType": "None",
             "ShatterTarget": "Effector",
-            "ShatterSpeed": "5"
+            "ShatterSpeed": "1",
+            "ShatterDegree": "5",
+            "AnimationType": "None"
           },
           {
             "Effect": "Damage",

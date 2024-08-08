@@ -50,16 +50,23 @@ public class Board
     {
         turn = 1;
         field = new int[x, y];
+        var possible = Race.races.Where(x => !x.genderedPortrait).ToList();
         player = new Entity(60, null);
         player.InitialiseCombat();
-        enemy = new Entity(60, null);
+        enemy = new Entity(60, possible[random.Next(possible.Count)]);
         playerTurn = true;
         area = areas[random.Next(areas.Count)];
         player.currentActionSet = "Default";
-        playerCombatAbilities = abilities;
+        playerCombatAbilities = player.AbilitiesInCombat();
+        foreach (var a in abilities)
+            if (!playerCombatAbilities.ContainsKey(a.Key))
+            {
+                playerCombatAbilities.Add(a.Key, a.Value);
+                if (a.Key.cost != null) player.actionBars["Default"].Add(a.Key.name);
+            }
         playerCooldowns = new();
         enemy.currentActionSet = "Default";
-        enemyCombatAbilities = abilities;
+        enemyCombatAbilities = enemy.AbilitiesInCombat();
         enemyCooldowns = new();
         temporaryElementsPlayer = new();
         temporaryElementsEnemy = new();
@@ -88,7 +95,7 @@ public class Board
         board = new Board(6, 6, new() { { testingAbility, 0 } });
         bufferBoard = new BufferBoard();
         if (testingAbility.events != null)
-            board.CallEvents(board.enemy, new() { { "Trigger", "AbilityCast" }, { "AbilityName", testingAbility.name }, { "Triggerer", "Effector" } });
+            board.CallEvents(board.player, new() { { "Trigger", "AbilityCast" }, { "IgnoreConditions", "Yes" }, { "AbilityName", testingAbility.name }, { "Triggerer", "Effector" } });
 
         //This line automatically closed the simulation once the ability is done testing.
         //It was deactivated to make the dev see the after effects of the ability.
@@ -268,11 +275,10 @@ public class Board
     public void EndCombat(string result)
     {
         cursorEnemy.fadeOut = true;
-        currentSave.AddTime(turn * 15);
-        CloseDesktop("Game");
-        CloseDesktop("GameSimulation");
         if (result != "Quit")
         {
+            CloseDesktop("Game");
+            currentSave.AddTime(turn * 15);
             results = new CombatResults(result, area.zone, area.recommendedLevel);
             if (result == "Won")
             {
@@ -481,6 +487,7 @@ public class Board
                 Respawn("MapToolbarClockRight");
             }
         }
+        else CloseDesktop("GameSimulation");
         if (CDesktop.screenLocked)
             CDesktop.UnlockScreen();
     }

@@ -5063,6 +5063,40 @@ public static class BlueprintDev
                 SpawnWindowBlueprint("Enemy" + element + "Resource");
             }
             board.Reset();
+            AddHotkey(PageUp, () => {
+                board.player.resources = new Dictionary<string, int>
+                {
+                    { "Earth", 99 },
+                    { "Fire", 99 },
+                    { "Air", 99 },
+                    { "Water", 99 },
+                    { "Frost", 99 },
+                    { "Lightning", 99 },
+                    { "Arcane", 99 },
+                    { "Decay", 99 },
+                    { "Order", 99 },
+                    { "Shadow", 99 },
+                };
+                Respawn("PlayerBattleInfo");
+                board.UpdateResourceBars("Player", elements);
+            });
+            AddHotkey(PageDown, () => {
+                board.enemy.resources = new Dictionary<string, int>
+                {
+                    { "Earth", 99 },
+                    { "Fire", 99 },
+                    { "Air", 99 },
+                    { "Water", 99 },
+                    { "Frost", 99 },
+                    { "Lightning", 99 },
+                    { "Arcane", 99 },
+                    { "Decay", 99 },
+                    { "Order", 99 },
+                    { "Shadow", 99 },
+                };
+                Respawn("EnemyBattleInfo");
+                board.UpdateResourceBars("Enemy", elements);
+            });
         }),
         new("ObjectManagerHostileAreas", () =>
         {

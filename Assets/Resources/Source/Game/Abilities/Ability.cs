@@ -52,7 +52,7 @@ public class Ability
                         execute = item != null && item.GetHashCode() + "" == itemHash && (sitePresence == "" || save.currentSite == sitePresence);
                     }
                 }
-            if (execute && AreConditionsMet(eve, save, null, null))
+            if (execute && (trigger.ContainsKey("IgnoreConditions") && trigger["IgnoreConditions"] == "Yes" || AreConditionsMet(eve, save, null, null)))
                 eve.ExecuteEffects(save, item, trigger, RankVariables(abilityRank), this, abilityRank);
         }
     }
@@ -136,7 +136,7 @@ public class Ability
                     }
                 }
             if (execute && (board != null ? board.CooldownOn(sourcedFromPlayer, name) : futureBoard.CooldownOn(sourcedFromPlayer, name)) <= 0)
-                if (AreConditionsMet(eve, null, board, futureBoard))
+                if (trigger.ContainsKey("IgnoreConditions") && trigger["IgnoreConditions"] == "Yes" || AreConditionsMet(eve, null, board, futureBoard))
                 {
                     if (board != null) board.PutOnCooldown(sourcedFromPlayer, this);
                     else futureBoard.PutOnCooldown(sourcedFromPlayer, this);
