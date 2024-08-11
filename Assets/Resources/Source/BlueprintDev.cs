@@ -29,6 +29,7 @@ using static SaveGame;
 using static Blueprint;
 using static PersonType;
 using static Profession;
+using static Auctionable;
 using static FishingSpot;
 using static GeneralDrop;
 using static Serialization;
@@ -153,6 +154,7 @@ public static class BlueprintDev
                 Serialize(zones, "zones", false, false, prefix);
                 Serialize(quests, "quests", false, false, prefix);
                 Serialize(paths, "paths", false, false, prefix);
+                Serialize(auctionables, "auctionables", false, false, prefix);
                 Serialize(fishingSpots, "fishingspots", false, false, prefix);
                 Serialize(defines, "defines", false, false, prefix);
             });

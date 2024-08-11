@@ -8636,8 +8636,8 @@
     ]
   },
   {
-    "x": 2486,
-    "y": -2355,
+    "x": 2468,
+    "y": -2266,
     "name": "Bladefist Bay",
     "zone": "Durotar",
     "type": "HostileArea",
@@ -8654,9 +8654,41 @@
         "levelMax": 10
       },
       {
-        "who": "Venomtail Scorpid",
+        "who": "Encrusted Surf Crawler",
         "levelMin": 9,
         "levelMax": 10
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
+    "x": 2475,
+    "y": -2352,
+    "name": "Deadeye Shore",
+    "zone": "Durotar",
+    "type": "HostileArea",
+    "fishing": true,
+    "commonEncounters": [
+      {
+        "who": "Surf Crawler",
+        "levelMin": 7,
+        "levelMax": 8
+      },
+      {
+        "who": "Bloodtalon Taillasher",
+        "levelMin": 7,
+        "levelMax": 8
+      },
+      {
+        "who": "Armored Scorpid",
+        "levelMin": 7,
+        "levelMax": 8
       }
     ],
     "areaSize": 3,
@@ -8941,6 +8973,22 @@
     "name": "The Placid Dune",
     "zone": "Durotar",
     "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Elder Mottled Boar",
+        "levelMin": 8,
+        "levelMax": 9
+      },
+      {
+        "who": "Armored Scorpid",
+        "levelMin": 8,
+        "levelMax": 9
+      },
+      {
+        "who": "Corrupted Scorpid",
+        "levelMin": 10
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -13965,6 +14013,24 @@
     "name": "Wildhammer Mountain Pass",
     "zone": "Hinterlands",
     "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Mangy Silvermane",
+        "levelMin": 40,
+        "levelMax": 41
+      },
+      {
+        "who": "Razorbeak Gryphon",
+        "levelMin": 40,
+        "levelMax": 41
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Old Cliff Jumper",
+        "levelMin": 42
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
@@ -14379,12 +14445,6 @@
         "who": "Witherbark Zealot",
         "levelMin": 41,
         "levelMax": 42
-      }
-    ],
-    "rareEncounters": [
-      {
-        "who": "Old Cliff Jumper",
-        "levelMin": 42
       }
     ],
     "areaSize": 3,

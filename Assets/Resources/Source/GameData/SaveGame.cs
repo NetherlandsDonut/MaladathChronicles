@@ -37,6 +37,11 @@ public class SaveGame
             unlockedAreas = new(),
             vendorStock = new(),
             openedChests = new(),
+            markets = new()
+            {
+                new Market("Alliance Market"),
+                new Market("Horde Market")
+            },
             banks = new(),
             startDate = DateTime.Now,
             player = new Entity
@@ -48,11 +53,6 @@ public class SaveGame
                 spec.startingEquipment[creationRace]
             )
         };
-        //foreach (var town in towns)
-        //    if (town.people != null)
-        //        foreach (var person in town.people)
-        //            if (person.itemsSold != null && person.itemsSold.Count > 0)
-        //                newSlot.vendorStock.Add(town.name + ":" + person.name, person.ExportStock());
         var possibleBosses = new List<string>()
         {
             "Anub'shiah",
@@ -131,6 +131,7 @@ public class SaveGame
         Restock(minutes + second / 60);
         second %= 60;
         hour += hours + minute / 60;
+        AccountHoursForMarkets(hours + minute / 60);
         minute %= 60;
         day += days + hour / 24;
         hour %= 24;
@@ -142,6 +143,14 @@ public class SaveGame
         Respawn("MapToolbarClockRight", true);
         Respawn("MapToolbarStatusLeft", true);
         Respawn("MapToolbarStatusRight", true);
+    }
+
+    //Take note that hour/hours passed without markets being updated
+    public void AccountHoursForMarkets(int hours)
+    {
+        if (markets != null)
+            foreach (var market in markets)
+                market.hoursSinceUpdate += hours;
     }
 
     //Decays items that have duration left of their existance
@@ -204,6 +213,9 @@ public class SaveGame
 
     //Randomly generated bosses for this run
     public string ringOfLaw, forlornCloister;
+
+    //Markets offering auctions
+    public List<Market> markets;
 
     //All chests opened in the game are saved here
     public Dictionary<string, Chest> openedChests;

@@ -9542,28 +9542,21 @@
         ],
         "effects": [
           {
-            "SoundEffect": "AbilityConsecrationCast",
-            "ShatterType": "Directional",
-            "ShatterTarget": "Effector",
-            "ShatterDegree": "5",
-            "ShatterSpeed": "10",
-            "AnimationType": "None"
-          },
-          {
             "Effect": "Damage",
-            "AnimationType": "Missile",
+            "AnimationType": "None",
             "ShatterType": "Central",
             "Await": "5",
             "ShatterTarget": "Other",
             "PowerSource": "Effector",
             "Affect": "Other",
             "PowerType": "Melee",
-            "SoundEffect": "AbilityHammerOfJusticeImpact",
+            "SoundEffect": "AbilityHeroicStrikeImpact",
             "ShatterSpeed": "10",
-            "ShatterDegree": "30",
+            "ShatterDegree": "20",
             "ShatterDensity": "1",
             "AnimationSpeed": "4",
-            "TrailStrength": "0"
+            "TrailStrength": "0",
+            "SoundEffectVolume": "1"
           },
           {
             "Effect": "EndTurn"
@@ -13619,6 +13612,148 @@
           },
           {
             "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Graceful Soar",
+    "icon": "AbilityEagleEye",
+    "cooldown": 7,
+    "tags": [],
+    "cost": {
+      "Earth": 2,
+      "Air": 2,
+      "Order": 4
+    },
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Heal",
+            "PowerSource": "Effector",
+            "Affect": "Effector",
+            "PowerType": "Spell",
+            "ShatterType": "Central",
+            "ShatterTarget": "Effector",
+            "ShatterSpeed": "4",
+            "ShatterDegree": "30"
+          },
+          {
+            "Effect": "ChangeElements",
+            "ChangeAmount": "4",
+            "ElementTo": "Air",
+            "SoundEffect": "AbilityWitheringCloudCast",
+            "ShatterType": "None",
+            "ShatterTarget": "Effector",
+            "ShatterDegree": "10",
+            "ShatterSpeed": "6",
+            "Await": "12"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sky Assault",
+    "icon": "AbilityDisembowel",
+    "cooldown": 3,
+    "tags": [],
+    "cost": {
+      "Air": 6,
+      "Lightning": 2
+    },
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "PowerSource": "Effector",
+            "PowerType": "Melee",
+            "PowerScale": "2",
+            "ShatterType": "Central",
+            "ShatterTarget": "Other",
+            "Affect": "Other",
+            "SoundEffect": "AbilityRendImpact",
+            "ShatterDegree": "50",
+            "ShatterSpeed": "15",
+            "Await": "7"
+          },
+          {
+            "Effect": "Damage",
+            "PowerSource": "Effector",
+            "PowerType": "Melee",
+            "PowerScale": "2",
+            "ShatterType": "Central",
+            "ShatterTarget": "Other",
+            "Affect": "Other",
+            "SoundEffect": "AbilityRendImpact",
+            "ShatterDegree": "50",
+            "ShatterSpeed": "15",
+            "Await": "5"
+          },
+          {
+            "Effect": "EndTurn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gryphon Claw",
+    "icon": "AbilityMangle2",
+    "cooldown": 2,
+    "tags": [],
+    "cost": {
+      "Earth": 6
+    },
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Damage",
+            "Await": "5",
+            "PowerType": "Melee",
+            "PowerScale": "1,5",
+            "ShatterType": "Central",
+            "ShatterTarget": "Other",
+            "ShatterSpeed": "10",
+            "ShatterDegree": "40",
+            "Affect": "Other",
+            "PowerSource": "Effector",
+            "SoundEffect": "AbilityBloodthirstImpact",
+            "ShatterDensity": "1"
           }
         ]
       }

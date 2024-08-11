@@ -1,0 +1,14 @@
+[
+  {
+    "item": "Rough Stone",
+    "minPrice": 1000,
+    "maxPrice": 100000,
+    "frequency": 80
+  },
+  {
+    "item": "Sulfuron Ingot",
+    "minPrice": 1000000,
+    "maxPrice": 7000000,
+    "frequency": 10
+  }
+]

@@ -265,7 +265,7 @@ public class Blueprint
                     }
                 );
             }
-            for (int i = 0; i < aimedLength; i++)
+            for (int i = board.enemy.actionBars[board.enemy.currentActionSet].Count; i < aimedLength; i++)
                 AddPaddingRegion(() => AddLine(""));
         }),
         new("PlayerBattleInfo", () => {
@@ -277,10 +277,7 @@ public class Blueprint
                 {
                     ReverseButtons();
                     AddLine(board.player.name, "Black", "Right");
-                    AddSmallButton("MenuFlee", (h) =>
-                    {
-                        board.EndCombat("Quit");
-                    });
+                    AddSmallButton("MenuFlee", (h) => board.EndCombat(CDesktop.title == "Game" ? "Flee" : "Quit"));
                 }
             );
             AddHeaderRegion(() =>
@@ -3599,8 +3596,24 @@ public class Blueprint
                     CloseWindow("Town");
                     SpawnWindowBlueprint("Bank");
                     SpawnWindowBlueprint("Inventory");
-                    Respawn("ExperienceBarBorder");
-                    Respawn("ExperienceBar");
+                });
+            }
+            else if (type.category == "Auctioneer")
+            {
+                AddButtonRegion(() =>
+                {
+                    AddLine("I want browse the auctions.");
+                },
+                (h) =>
+                {
+                    var foo = factions.Find(x => x.name == town.faction).side;
+                    if (foo == "Neutral" || foo == "Horde")
+                        currentSave.markets.Find(x => x.name == "Horde Market").UpdateMarket();
+                    if (foo == "Neutral" || foo == "Alliance")
+                        currentSave.markets.Find(x => x.name == "Alliance Market").UpdateMarket();
+                    PlaySound("DesktopAuctionOpen", 0.4f);
+                    CloseWindow(h.window);
+                    CloseWindow("Town");
                 });
             }
             else if (type.category == "Innkeeper")

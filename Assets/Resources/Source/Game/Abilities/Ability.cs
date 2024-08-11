@@ -148,11 +148,12 @@ public class Ability
     public Dictionary<string, string> RankVariables(int abilityRank)
     {
         var variables = new Dictionary<string, string>();
-        foreach (var rank in ranks)
-            if (ranks.IndexOf(rank) > abilityRank) break;
-            else foreach (var variable in rank)
-                    if (variables.ContainsKey(variable.Key)) variables[variable.Key] = variable.Value;
-                    else variables.Add(variable.Key, variable.Value);
+        if (ranks != null)
+            foreach (var rank in ranks)
+                if (ranks.IndexOf(rank) > abilityRank) break;
+                else foreach (var variable in rank)
+                        if (variables.ContainsKey(variable.Key)) variables[variable.Key] = variable.Value;
+                        else variables.Add(variable.Key, variable.Value);
         return variables;
     }
 

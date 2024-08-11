@@ -1,5 +1,59 @@
 [
   {
+    "name": "Razorbeak Gryphon",
+    "category": "Beast",
+    "subcategory": "Gryphon",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitGryphon",
+    "vitality": 1.0,
+    "abilities": {
+      "Graceful Soar": 1,
+      "Sky Assault": 1,
+      "Gryphon Claw": 1
+    }
+  },
+  {
+    "name": "Surf Crawler",
+    "category": "Beast",
+    "subcategory": "Crab",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitCrabRed",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Encrusted Surf Crawler",
+    "category": "Beast",
+    "subcategory": "Crab",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitCrabWhite",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Corrupted Scorpid",
+    "category": "Beast",
+    "subcategory": "Scorpid",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitScorpidBlack",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Armored Scorpid",
+    "category": "Beast",
+    "subcategory": "Scorpid",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitScorpid",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Lethlas",
     "category": "Humanoid",
     "subcategory": "Human",
@@ -17162,7 +17216,7 @@
     "subcategory": "Raptor",
     "side": "Neutral",
     "kind": "Common",
-    "portrait": "PortraitRaptor",
+    "portrait": "PortraitRaptorRed",
     "vitality": 1.0,
     "abilities": {}
   },

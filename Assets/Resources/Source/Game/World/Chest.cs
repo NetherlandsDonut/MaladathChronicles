@@ -20,6 +20,7 @@ public class Chest
             area = area.name,
             inventory = new Inventory(true)
         };
+        //chest.inventory.AddItem(Item.items.Find(x => x.name == "Silver").CopyItem(2));
         var worldDrop = Item.items.FindAll(x => x.lvl >= area.recommendedLevel - 6 && x.lvl <= area.recommendedLevel && x.source == "RareDrop");
         var instance = area.instancePart ? SiteInstance.instances.Find(x => x.wings.Any(y => y.areas.Any(z => z["AreaName"] == area.name))) : null;
         var zoneDrop = instance == null || instance.zoneDrop == null ? new() : Item.items.FindAll(x => instance.zoneDrop.Contains(x.name));

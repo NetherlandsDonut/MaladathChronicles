@@ -16,6 +16,7 @@ using static Enchant;
 using static MapGrid;
 using static SaveGame;
 using static SitePath;
+using static Auctionable;
 using static FishingSpot;
 using static GameSettings;
 using static CursorRemote;
@@ -198,6 +199,8 @@ public class Starter : MonoBehaviour
         quests ??= new();
         Deserialize(ref paths, "paths", false, prefix);
         paths ??= new();
+        Deserialize(ref auctionables, "auctionables", false, prefix);
+        auctionables ??= new();
         Deserialize(ref fishingSpots, "fishingspots", false, prefix);
         fishingSpots ??= new();
         Deserialize(ref defines, "defines", false, prefix);
