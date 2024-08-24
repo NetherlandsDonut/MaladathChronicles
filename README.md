@@ -774,6 +774,34 @@ v0.6.22
 v0.6.23
     21.07 Added respecing at class trainers
           Added sound effect volume to effects
+v0.6.24
+    22.07 Profession levels are now capped for trainers
+          Added Zandalar supplies
+          Fixed gendered quest descriptions
+          Fixed word wrap wrapping whitespaces
+v0.6.25
+    23.07 Added armor to stat display
+          Added opening loot items like crates or bags
+v0.6.26
+    24.07 Added separate action bar sets and shifting between them in combat
+          Disabled saving while in combat or when looting
+v0.6.27
+    25.07 Added event conditions for advanced ability making
+v0.6.28
+    26.07 Added more types of conditions
+v0.6.29
+    28.07 Added loot to sacks of gems
+v0.6.30
+    30.07 Added accounting for enchantment abilities and stat gains
+          Added unlocking MC and BWL through exploration
+v0.6.31
+    06.08 Updated the sound system
+          Fixes to spellbook
+v0.6.32
+    08.08 Fixed errors while testing abilities
+          Made sites more circular
+v0.6.33
+    11.08 Entry work on auction houses
 ```
 
 </details>
