@@ -127,6 +127,12 @@ public class Item
     //Specs listed in it are the specs that exclusively can use this item
     public List<string> specs;
 
+    //Drop restrictions based on race
+    public List<string> raceDropRestriction;
+
+    //Drop restrictions based on character class
+    public List<string> specDropRestriction;
+
     //List of quests that can be started by using this item
     public List<int> questsStarted;
 

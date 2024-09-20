@@ -2362,6 +2362,8 @@ public class Blueprint
             },
             (h) =>
             {
+                if (currentSave.player.uniquesGotten.Contains(itemToDestroy.name))
+                    currentSave.player.uniquesGotten.Remove(itemToDestroy.name);
                 currentSave.player.inventory.items.Remove(itemToDestroy);
                 PlaySound("DesktopMenuClose");
                 CloseWindow("ConfirmItemDestroy");
@@ -5655,6 +5657,72 @@ public class Blueprint
                 AddInputLine(String.consoleInput);
             });
         }, true),
+
+        //Card Game
+        new("CardTest", () => {
+            SetAnchor(BottomLeft, 19, 35);
+            AddHeaderGroup();
+            AddHeaderRegion(() =>
+            {
+                AddBigButton("PortraitScarletWizard", (h) =>
+                {
+                    PlaySound("DesktopMenuClose");
+                });
+                AddBigButton("PortraitScarletMonk", (h) =>
+                {
+                    PlaySound("DesktopMenuClose");
+                });
+                AddBigButton("PortraitScarletEnchanter", (h) =>
+                {
+                    PlaySound("DesktopMenuClose");
+                });
+            });
+            AddHeaderRegion(() =>
+            {
+                AddBigButton("PortraitScarletAugur", (h) =>
+                {
+                    PlaySound("DesktopMenuClose");
+                });
+                AddBigButton("PortraitScarletCavalier", (h) =>
+                {
+                    PlaySound("DesktopMenuClose");
+                });
+                AddBigButton("PortraitScarletExecutioner", (h) =>
+                {
+                    PlaySound("DesktopMenuClose");
+                });
+            });
+            AddHeaderRegion(() =>
+            {
+                AddBigButton("PortraitBlackhandVeteran", (h) =>
+                {
+                    PlaySound("DesktopMenuClose");
+                });
+                AddBigButton("PortraitBlackhandIronGuard", (h) =>
+                {
+                    PlaySound("DesktopMenuClose");
+                });
+                AddBigButton("PortraitBlackrockSlayer", (h) =>
+                {
+                    PlaySound("DesktopMenuClose");
+                });
+            });
+            AddHeaderRegion(() =>
+            {
+                AddBigButton("PortraitBlackrockWarlock", (h) =>
+                {
+                    PlaySound("DesktopMenuClose");
+                });
+                AddBigButton("PortraitBlackrockWarlock", (h) =>
+                {
+                    PlaySound("DesktopMenuClose");
+                });
+                AddBigButton("PortraitBlackhandIncarcerator", (h) =>
+                {
+                    PlaySound("DesktopMenuClose");
+                });
+            });
+        }, true),
     };
 
     public static List<Blueprint> desktopBlueprints = new()
@@ -6577,6 +6645,17 @@ public class Blueprint
             {
                 PlaySound("DesktopButtonClose");
                 CloseDesktop("RankingScreen");
+            });
+        }),
+        new("CardGame", () =>
+        {
+            SetDesktopBackground("Backgrounds/SkyRed");
+            SpawnWindowBlueprint("CardTest");
+            SpawnWindowBlueprint("ExperienceBarBorder");
+            AddHotkey(Escape, () =>
+            {
+                PlaySound("DesktopButtonClose");
+                CloseDesktop("CardGame");
             });
         })
     };

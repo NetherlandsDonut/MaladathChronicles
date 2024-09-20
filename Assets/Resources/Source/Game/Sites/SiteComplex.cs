@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Collections.Generic;
 
 using UnityEngine;
@@ -12,7 +13,6 @@ using static Coloring;
 using static SiteInstance;
 using static GameSettings;
 using static SiteHostileArea;
-using System.Linq;
 
 public class SiteComplex : Site
 {

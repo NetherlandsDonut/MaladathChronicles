@@ -2045,6 +2045,7 @@
       "regions": [
         {
           "regionType": "Padding",
+          "isExtender": true,
           "contents": [
             {
               "Color": "Uncommon",

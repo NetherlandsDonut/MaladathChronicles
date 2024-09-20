@@ -375,7 +375,7 @@ public class Board
                 CDesktop.RespawnAll();
 
                 //Drop items
-                var directDrop = enemyRace.droppedItems.Select(x => Item.items.Find(y => y.name == x)).Where(x => !x.unique || !currentSave.player.uniquesGotten.Contains(x.name)).ToList();
+                var directDrop = enemyRace.droppedItems.Select(x => Item.items.Find(y => y.name == x)).Where(x => !x.unique || !currentSave.player.uniquesGotten.Contains(x.name)).Where(x => x.specDropRestriction == null || x.specDropRestriction.Contains(player.race)).Where(x => x.raceDropRestriction == null || x.raceDropRestriction.Contains(player.race)).ToList();
                 var wearableDirect = directDrop.Where(x => x.IsWearable()).ToList();
                 var equipableDirect = wearableDirect.Where(x => x.CanEquip(currentSave.player)).ToList();
 

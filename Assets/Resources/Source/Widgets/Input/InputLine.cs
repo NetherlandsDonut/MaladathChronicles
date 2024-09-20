@@ -466,6 +466,8 @@ public class InputLine : MonoBehaviour
                 showAreasUnconditional = false;
             else if (foo.Value() == "respec")
                 currentSave.player.ResetTalents();
+            else if (foo.Value() == "cardgame")
+                SpawnDesktopBlueprint("CardGame");
             else if (foo.Value() == "disablebounds")
                 disableCameraBounds = true;
             else if (foo.Value() == "enablebounds")
