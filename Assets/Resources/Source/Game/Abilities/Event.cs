@@ -178,7 +178,7 @@ public class Event
             void EffectRemoveWorldBuff()
             {
                 var target = effector;
-                target.RemoveWorldBuff(target.worldBuffs.Find(x => x.buff.name == worldBuffName));
+                target.RemoveWorldBuff(target.worldBuffs.Find(x => x.buff == worldBuffName));
                 save.CallEvents(new()
                 {
                     { "Trigger", "BuffRemove" },

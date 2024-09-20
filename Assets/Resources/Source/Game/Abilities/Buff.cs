@@ -157,14 +157,14 @@ public class Buff
         AddHeaderGroup();
         SetRegionGroupWidth(228);
         SetRegionGroupHeight(195);
-        AddHeaderRegion(() => { AddLine(worldBuff.buff.name.OnlyNameCategory()); });
+        AddHeaderRegion(() => { AddLine(worldBuff.buff.OnlyNameCategory()); });
         AddPaddingRegion(() =>
         {
-            AddBigButton(worldBuff.buff.icon);
+            AddBigButton(worldBuff.Buff.icon);
             AddLine("Minutes left: ", "DarkGray");
             AddText(worldBuff.minutesLeft + "");
         });
-        worldBuff.buff.PrintDescription(SaveGame.currentSave.player, null, worldBuff.rank);
+        worldBuff.Buff.PrintDescription(SaveGame.currentSave.player, null, worldBuff.rank);
         AddRegionGroup();
         SetRegionGroupWidth(228);
         AddPaddingRegion(() => { AddLine(); });

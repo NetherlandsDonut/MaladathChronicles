@@ -1,17 +1,24 @@
+using System;
 
 public class WorldBuff
 {
-    public WorldBuff() { }
+    //Constructor for deserialisation
+    public WorldBuff() => Buff = Buff.buffs.Find(x => x.name == buff);
 
+    //Default constructor for adding new world buffs to entities
     public WorldBuff(Buff buff, int rank, int minutesLeft)
     {
-        this.buff = buff;
+        Buff = buff;
+        this.buff = buff.name;
         this.rank = rank;
         this.minutesLeft = minutesLeft;
     }
 
-    //Buff that this is
-    public Buff buff;
+    //Buff that this world buff is functioning as
+    public string buff;
+
+    //Buff that this world buff is functioning as
+    [NonSerialized] public Buff Buff;
 
     //Rank of the buff
     public int rank;

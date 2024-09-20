@@ -211,8 +211,8 @@ public class FutureEntity
             }
         if (worldBuffs != null)
             foreach (var worldBuff in worldBuffs)
-                if (worldBuff.buff.gains != null)
-                    foreach (var stat in worldBuff.buff.gains)
+                if (worldBuff.Buff.gains != null)
+                    foreach (var stat in worldBuff.Buff.gains)
                         stats.Inc(stat.Key, stat.Value);
         if (buffs != null)
             foreach (var buff in buffs)

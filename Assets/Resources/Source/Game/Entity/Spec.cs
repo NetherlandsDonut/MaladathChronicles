@@ -49,8 +49,8 @@ public class Spec
 
     //List of abilities this class provides
     //Item1 provides information on the name of the ability provided
-    //Item2 provides information at which level of a character the ability is granted
-    //EXAMPLE: { "Item1": "Mail Proficiency", "Item2": 40 }
+    //Item2 provides information about the rank of the ability
+    //EXAMPLE: { "Item1": "Fireball", "Item2": 2 }
     public Dictionary<string, int> abilities;
 
     //Talent trees available to characters of this class

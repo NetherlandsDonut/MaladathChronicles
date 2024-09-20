@@ -5,9 +5,11 @@ public class FadeIn : MonoBehaviour
     public float counter;
     public bool initialised, random = true;
     public SpriteRenderer render;
+    public BoxCollider2D boxCollider;
 
     void Start()
     {
+        boxCollider = GetComponent<BoxCollider2D>();
         render = GetComponent<SpriteRenderer>();
         render.color = new Color(render.color.r, render.color.g, render.color.b, 0);
     }
@@ -16,6 +18,8 @@ public class FadeIn : MonoBehaviour
     {
         if (!initialised)
         {
+            if (boxCollider != null)
+                boxCollider.enabled = false;
             initialised = true;
             if (!random || gameObject.name.Contains("PathDot")) counter = 0.05f;
             else
@@ -27,8 +31,14 @@ public class FadeIn : MonoBehaviour
         if (counter > 0) counter -= Time.deltaTime;
         if (counter <= 0)
         {
-            render.color = new Color(render.color.r, render.color.g, render.color.b, render.color.a + 0.1f);
-            if (render.color.a == 1) Destroy(this);
+            var amount = 0.1f + render.color.a > 1 ? 1 - render.color.a : 0.1f;
+            render.color = new Color(render.color.r, render.color.g, render.color.b, render.color.a + amount);
+            if (render.color.a == 1f)
+            {
+                if (boxCollider != null)
+                    boxCollider.enabled = true;
+                Destroy(this);
+            }
             counter = 0.015f;
         }
     }

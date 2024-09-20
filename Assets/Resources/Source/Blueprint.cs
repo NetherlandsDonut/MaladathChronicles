@@ -729,6 +729,7 @@ public class Blueprint
         {
             SetAnchor(Center, 0, 117);
             AddHeaderGroup();
+            SetRegionGroupWidth(258);
             AddHeaderRegion(() =>
             {
                 AddLine("Realms:");
@@ -786,6 +787,7 @@ public class Blueprint
                 });
             }
             AddRegionGroup();
+            SetRegionGroupWidth(95);
             foreach (var realm in Realm.realms)
             {
                 AddPaddingRegion(() =>
@@ -801,6 +803,7 @@ public class Blueprint
         new("ConfirmDeleteCharacter", () => {
             SetAnchor(Center);
             AddRegionGroup();
+            SetRegionGroupWidth(258);
             AddHeaderRegion(() =>
             {
                 AddLine("Confirm deletion:");
@@ -3493,12 +3496,12 @@ public class Blueprint
                 if (rank == "Hated")
                 {
                     AddLine("This town's folk consider you");
-                    AddLine("to be their enemy.");
+                    AddLine("to be their enemy");
                 }
                 else if (rank == "Hostile")
                 {
                     AddLine("This town's folk consider you");
-                    AddLine("to be an enemy.");
+                    AddLine("to be an enemy");
                 }
                 else if (rank == "Unfriendly")
                 {
@@ -3506,7 +3509,8 @@ public class Blueprint
                     AddLine("towards you.");
                     AddLine("Consider improving your reputation");
                     AddLine("with " + town.faction + " in order");
-                    AddLine("to be welcomed here.");
+                    AddLine("to be welcomed here");
+                    AddLine("");
                 }
             });
         }),
@@ -3540,7 +3544,7 @@ public class Blueprint
                 if (person.type.ToLower().Contains(currentSave.player.spec.ToLower()))
                     AddButtonRegion(() =>
                     {
-                        AddLine("I want to reset my talents.");
+                        AddLine("I want to reset my talents");
                     },
                     (h) =>
                     {
@@ -3553,7 +3557,7 @@ public class Blueprint
             {
                 AddButtonRegion(() =>
                 {
-                    AddLine("I want to learn the profession.");
+                    AddLine("I want to learn the profession");
                 },
                 (h) =>
                 {
@@ -3570,7 +3574,7 @@ public class Blueprint
                     if (rt != null)
                         AddButtonRegion(() =>
                         {
-                            AddLine("I would like to learn " + rt.ToLower() + (rt.Last() == 's' ? "." : "s."));
+                            AddLine("I would like to learn " + rt.ToLower() + (rt.Last() == 's' ? "" : "s"));
                         },
                         (h) =>
                         {
@@ -3587,7 +3591,7 @@ public class Blueprint
             {
                 AddButtonRegion(() =>
                 {
-                    AddLine("I want to open my vault.");
+                    AddLine("I want to open my vault");
                 },
                 (h) =>
                 {
@@ -3604,7 +3608,7 @@ public class Blueprint
             {
                 AddButtonRegion(() =>
                 {
-                    AddLine("I want browse the auctions.");
+                    AddLine("I want browse the auctions");
                 },
                 (h) =>
                 {
@@ -3622,12 +3626,12 @@ public class Blueprint
             {
                 AddButtonRegion(() =>
                 {
-                    AddLine("I want to rest in this inn.");
+                    AddLine("I want to rest in this inn");
                 });
                 if (currentSave.player.homeLocation != town.name)
                     AddButtonRegion(() =>
                     {
-                        AddLine("I want this inn to be my home.");
+                        AddLine("I want this inn to be my home");
                     },
                     (h) =>
                     {
@@ -3638,7 +3642,7 @@ public class Blueprint
                 if (!currentSave.player.inventory.items.Exists(x => x.name == "Hearthstone"))
                     AddButtonRegion(() =>
                     {
-                        AddLine("I lost my hearthstone.");
+                        AddLine("I lost my hearthstone");
                     },
                     (h) =>
                     {
@@ -3656,18 +3660,18 @@ public class Blueprint
             {
                 AddButtonRegion(() =>
                 {
-                    AddLine("I want to enter the arena.");
+                    AddLine("I want to enter the arena");
                 });
                 AddButtonRegion(() =>
                 {
-                    AddLine("I want to buy equipment.");
+                    AddLine("I want to buy equipment");
                 });
             }
             else if (type.category == "Stable Master")
             {
                 AddButtonRegion(() =>
                 {
-                    AddLine("I want to swap my mount.");
+                    AddLine("I want to swap my mount");
                 },
                 (h) =>
                 {
@@ -3683,7 +3687,7 @@ public class Blueprint
                 if (mounts.Count(x => !currentSave.player.mounts.Contains(x.name) && x.factions != null && x.factions.Contains(person.faction == null ? town.faction : person.faction)) > 0)
                     AddButtonRegion(() =>
                     {
-                        AddLine("I want to buy a new mount.");
+                        AddLine("I want to buy a new mount");
                     },
                     (h) =>
                     {
@@ -3697,7 +3701,7 @@ public class Blueprint
             {
                 AddButtonRegion(() =>
                 {
-                    AddLine("I want to take a flight path.");
+                    AddLine("I want to take a flight path");
                 },
                 (h) =>
                 {
@@ -3713,7 +3717,7 @@ public class Blueprint
             {
                 AddButtonRegion(() =>
                 {
-                    AddLine("I want to browse your goods.");
+                    AddLine("I want to browse your goods");
                 },
                 (h) =>
                 {
@@ -3732,7 +3736,7 @@ public class Blueprint
             }
             AddButtonRegion(() =>
             {
-                AddLine("Goodbye.");
+                AddLine("Goodbye");
             },
             (h) =>
             {
@@ -3935,6 +3939,7 @@ public class Blueprint
                 AddText(currentSave.player.homeLocation, "LightGray");
                 AddLine("to ", "DarkGray");
                 AddText(town.name, "LightGray");
+                AddText("?", "DarkGray");
                 AddLine("");
             });
             AddRegionGroup();
@@ -4989,7 +4994,7 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 foreach (var buff in currentSave.player.worldBuffs)
-                    AddSmallButton(buff.buff.icon, null, null, (h) => () => Buff.PrintWorldBuffTooltip(buff));
+                    AddSmallButton(buff.Buff.icon, null, null, (h) => () => Buff.PrintWorldBuffTooltip(buff));
             });
         }, true),
 
@@ -6134,6 +6139,7 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
+            AddPaginationHotkeys();
             if (currentSave.player.Reputation(town.faction) >= 4200)
             {
                 SpawnWindowBlueprint("Town");

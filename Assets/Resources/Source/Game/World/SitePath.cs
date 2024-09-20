@@ -94,7 +94,7 @@ public class SitePath
             var start = new Vector2(a.Item1, a.Item2);
             var end = new Vector2(b.Item1, b.Item2);
             while ((int)Vector2.Distance(start, end) >= stepsMade - beginSteps)
-                if (stepsMade++ % 10 == 0)
+                if (stepsMade++ % (spacing < 1 ? 1 : spacing) == 0)
                     if (hidden)
                     {
                         var dot = new GameObject("PathDot");

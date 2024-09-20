@@ -1118,8 +1118,8 @@ public class Entity
             }
         if (worldBuffs != null)
             foreach (var worldBuff in worldBuffs)
-                if (worldBuff.buff.gains != null)
-                    foreach (var stat in worldBuff.buff.gains)
+                if (worldBuff.Buff.gains != null)
+                    foreach (var stat in worldBuff.Buff.gains)
                         stats.Inc(stat.Key, stat.Value);
         if (buffs != null)
             foreach (var buff in buffs)
@@ -1279,7 +1279,7 @@ public class Entity
     {
         if (!buff.stackable)
         {
-            var list = worldBuffs.FindAll(x => x.buff.name.OnlyNameCategory() == buff.name.OnlyNameCategory()).ToList();
+            var list = worldBuffs.FindAll(x => x.buff.OnlyNameCategory() == buff.name.OnlyNameCategory()).ToList();
             for (int i = list.Count - 1; i >= 0; i--) RemoveWorldBuff(list[i]);
         }
         worldBuffs.Add(new WorldBuff(buff, rank, duration));

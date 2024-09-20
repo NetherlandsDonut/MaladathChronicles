@@ -462,7 +462,7 @@ public class Board
                 else
                 {
                     //Find all world buffs that player has that aren't death persistant
-                    var toRemove = player.worldBuffs.Where(x => !x.buff.deathResistant);
+                    var toRemove = player.worldBuffs.Where(x => !x.Buff.deathResistant);
 
                     //Remove not death resistant world buffs from player that just died
                     foreach (var buff in toRemove) player.RemoveWorldBuff(buff);
