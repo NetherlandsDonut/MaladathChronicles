@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Font
 {
+    //Initialises a font
     public Font(string name, string charset)
     {
         this.name = name;

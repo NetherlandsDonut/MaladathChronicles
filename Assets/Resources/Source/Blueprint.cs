@@ -3612,12 +3612,22 @@ public class Blueprint
                 },
                 (h) =>
                 {
+                    Market.exploredAuctions = new List<Auction>();
                     var foo = factions.Find(x => x.name == town.faction).side;
                     if (foo == "Neutral" || foo == "Horde")
-                        currentSave.markets.Find(x => x.name == "Horde Market").UpdateMarket();
+                    {
+                        var woo = currentSave.markets.Find(x => x.name == "Horde Market");
+                        woo.UpdateMarket();
+                        Market.exploredAuctions.AddRange(woo.auctions);
+                    }
                     if (foo == "Neutral" || foo == "Alliance")
-                        currentSave.markets.Find(x => x.name == "Alliance Market").UpdateMarket();
+                    {
+                        var woo = currentSave.markets.Find(x => x.name == "Alliance Market");
+                        woo.UpdateMarket();
+                        Market.exploredAuctions.AddRange(woo.auctions);
+                    }
                     PlaySound("DesktopAuctionOpen", 0.4f);
+                    SpawnWindowBlueprint("AuctionHouseOffers");
                     CloseWindow(h.window);
                     CloseWindow("Town");
                 });
@@ -4396,6 +4406,216 @@ public class Blueprint
                     });
             }
             AddPaginationLine(regionGroup);
+        }),
+        new("AuctionHouse", () => {
+            //SetAnchor(TopLeft, 19, -38);
+            //var destinations = town.flightPaths[side].FindAll(x => x != town).OrderBy(x => !currentSave.siteVisits.ContainsKey(x.name)).ThenBy(x => x.zone).ThenBy(x => x.name).ToList();
+            //AddRegionGroup(() => destinations.Count, 12);
+            //SetRegionGroupWidth(190);
+            //SetRegionGroupHeight(281);
+            //AddHeaderRegion(() =>
+            //{
+            //    var type = personTypes.Find(x => x.type == person.type);
+            //    AddLine(person.type + " ", "Gray");
+            //    AddText(person.name);
+            //    AddSmallButton("OtherClose", (h) =>
+            //    {
+            //        CloseWindow("FlightMaster");
+            //        Respawn("Person");
+            //        PlaySound("DesktopInstanceClose");
+            //    });
+            //});
+            //AddHeaderRegion(() =>
+            //{
+            //    AddLine("Possible destinations:");
+            //});
+            //var regionGroup = CDesktop.LBWindow().LBRegionGroup();
+            //for (int i = 0; i < 12; i++)
+            //{
+            //    var index = i;
+            //    if (destinations.Count > index + 12 * regionGroup.pagination())
+            //        AddButtonRegion(() =>
+            //        {
+            //            var destination = destinations[index + 12 * regionGroup.pagination()];
+            //            if (currentSave.siteVisits.ContainsKey(destination.name))
+            //            {
+            //                AddLine(destination.name);
+            //                AddSmallButton("Zone" + destination.zone.Clean());
+            //            }
+            //            else
+            //            {
+            //                SetRegionBackground(Header);
+            //                AddLine("?", "DarkGray");
+            //                AddSmallButton("OtherDisabled");
+            //            }
+            //        },
+            //        (h) =>
+            //        {
+            //            var destination = destinations[index + 12 * regionGroup.pagination()];
+            //            currentSave.currentSite = destination.name;
+            //            Respawn("Site: " + town.name);
+            //            Respawn("Site: " + currentSave.currentSite);
+            //            town = destination;
+
+            //            //if (transport.price > 0)
+            //            //{
+            //            //    if (transport.price > currentSave.player.inventory.money) return;
+            //            //    PlaySound("DesktopTransportPay");
+            //            //    currentSave.player.inventory.money -= transport.price;
+            //            //}
+
+            //            //Close town screen as we're beginning to travel on map
+            //            CloseDesktop("Town");
+
+            //            //Switch desktop to map
+            //            SwitchDesktop("Map");
+
+            //            //Move camera to the newly visited town
+            //            CDesktop.cameraDestination = new Vector2(town.x, town.y);
+
+            //            ////Find current site
+            //            //var current = FindSite(x => x.name == currentSave.currentSite);
+
+            //            ////Lead path to the destination
+            //            //LeadPath(new SitePath() { means = "Flight", sites = new() { current.name, town.name }, points = new() { (town.x, town.y), (current.x, current.y) }, spacing = 9999 }, true);
+
+            //            ////Queue moving player to the destination
+            //            //town.ExecutePath("Town");
+            //        });
+            //    else if (destinations.Count == index + 12 * regionGroup.pagination())
+            //        AddPaddingRegion(() =>
+            //        {
+            //            SetRegionAsGroupExtender();
+            //            AddLine("");
+            //        });
+            //}
+            //AddPaginationLine(regionGroup);
+        }),
+        new("AuctionHouseOffers", () => {
+            SetAnchor(TopLeft, 19, -38);
+            AddRegionGroup(() => Market.exploredAuctions.Count, 12);
+            SetRegionGroupWidth(190);
+            SetRegionGroupHeight(281);
+            AddHeaderRegion(() =>
+            {
+                var type = personTypes.Find(x => x.type == person.type);
+                AddLine(person.type + " ", "Gray");
+                AddText(person.name);
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow("AuctionHouseOffers");
+                    Respawn("AuctionHouseOffers");
+                    PlaySound("DesktopInstanceClose");
+                });
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Available auctions:");
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    Market.exploredAuctions.Reverse();
+                    CloseWindow("AuctionHouseOffers");
+                    Respawn("AuctionHouseOffers");
+                    PlaySound("DesktopInventorySort", 0.4f);
+                });
+                if (!WindowUp("AuctionHouseOffersSettings") && !WindowUp("AuctionHouseOffersSort"))
+                    AddSmallButton("OtherSort", (h) =>
+                    {
+                        SpawnWindowBlueprint("AuctionHouseOffersSort");
+                        CloseWindow("AuctionHouseOffers");
+                        Respawn("AuctionHouseOffers");
+                    });
+                else
+                    AddSmallButton("OtherSortOff");
+                if (!WindowUp("AuctionHouseOffersSettings") && !WindowUp("AuctionHouseOffersSort"))
+                    AddSmallButton("OtherSettings", (h) =>
+                    {
+                        SpawnWindowBlueprint("AuctionHouseOffersSettings");
+                        CloseWindow("AuctionHouseOffers");
+                        Respawn("AuctionHouseOffers");
+                    });
+                else
+                    AddSmallButton("OtherSettingsOff");
+            });
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
+            for (int i = 0; i < 12; i++)
+            {
+                var index = i;
+                if (Market.exploredAuctions.Count > index + 12 * regionGroup.pagination())
+                    AddButtonRegion(() =>
+                    {
+                        var offer = Market.exploredAuctions[index + 12 * regionGroup.pagination()];
+                        AddLine(offer.item.name);
+                        if (settings.sourcedMarket.Value())
+                            AddSmallButton(offer.market == "Alliance Market" ? "FactionAlliance" : (offer.market == "Horde Market" ? "FactionHorde" : "ItemMiscQuestionMark"));
+                        AddSmallButton(offer.item.icon);
+                    },
+                    (h) =>
+                    {
+                        var offer = Market.exploredAuctions[index + 12 * regionGroup.pagination()];
+                    });
+                else if (Market.exploredAuctions.Count == index + 12 * regionGroup.pagination())
+                    AddPaddingRegion(() =>
+                    {
+                        SetRegionAsGroupExtender();
+                        AddLine("");
+                    });
+            }
+            AddPaginationLine(regionGroup);
+        }),
+        new("AuctionHouseOffersSort", () => {
+            SetAnchor(Center);
+            AddRegionGroup();
+            SetRegionGroupWidth(182);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Sort auctions:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow("AuctionHouseOffersSort");
+                    CDesktop.RespawnAll();
+                });
+            });
+            AddButtonRegion(() => AddLine("By item name", "Black"),
+            (h) =>
+            {
+                Market.exploredAuctions = Market.exploredAuctions.OrderBy(x => x.item.name).ToList();
+                CloseWindow("AuctionHouseOffersSort");
+                CDesktop.RespawnAll();
+                PlaySound("DesktopInventorySort", 0.4f);
+            });
+            AddButtonRegion(() => AddLine("By unit price", "Black"),
+            (h) =>
+            {
+                Market.exploredAuctions = Market.exploredAuctions.OrderByDescending(x => x.price).ToList();
+                CloseWindow("AuctionHouseOffersSort");
+                CDesktop.RespawnAll();
+                PlaySound("DesktopInventorySort", 0.4f);
+            });
+        }),
+        new("AuctionHouseOffersSettings", () => {
+            SetAnchor(Center);
+            AddRegionGroup();
+            SetRegionGroupWidth(182);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Auction list settings:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow("AuctionHouseOffersSettings");
+                    CDesktop.RespawnAll();
+                });
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Show sourced market", "Black");
+                AddCheckbox(settings.sourcedMarket);
+            },
+            (h) =>
+            {
+                settings.sourcedMarket.Invert();
+                CDesktop.RespawnAll();
+            });
         }),
         new("ProfessionLevelTrainer", () => {
             SetAnchor(TopLeft, 19, -38);

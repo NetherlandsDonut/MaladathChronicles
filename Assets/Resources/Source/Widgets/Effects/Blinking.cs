@@ -10,8 +10,7 @@ public class Blinking : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (counter > 0)
-            counter -= Time.deltaTime;
+        if (counter > 0) counter -= Time.deltaTime;
         if (counter <= 0)
         {
             render.color = new Color(render.color.r, render.color.g, render.color.b, blinked ? 0 : 1);

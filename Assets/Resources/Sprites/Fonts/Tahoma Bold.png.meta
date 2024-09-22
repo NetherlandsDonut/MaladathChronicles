@@ -16488,6 +16488,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
     nameFileIdTable:
       Font_0: -25530560
       Font_1: 565159165

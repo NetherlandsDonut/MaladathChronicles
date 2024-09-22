@@ -12,7 +12,11 @@ public class FlyingMissile : MonoBehaviour
     public float flySpeed, timeAlive;
     public string trailSprite;
     public double trailStrength;
+
+    //Indicates whether the missile spawns trails when it travels
     public int trailSpawns;
+
+    //Determines whether the missile takes the path above targets
     public bool up;
 
     public void Initiate(bool fromPlayer, float arc, double flySpeed, double trailStrength, string trailSprite)

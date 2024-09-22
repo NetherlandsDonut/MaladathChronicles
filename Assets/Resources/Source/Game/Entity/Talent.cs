@@ -62,12 +62,14 @@ public class Talent
                     PrintAbilityTooltip(currentSave.player, null, abilities.Find(x => x.name == talent.ability), currentSave.player.abilities.ContainsKey(talent.ability) ? (currentSave.player.abilities[talent.ability] == abilities.Find(x => x.name == talent.ability).ranks.Count - 1 ? currentSave.player.abilities[talent.ability] : currentSave.player.abilities[talent.ability] + 1) : 0);
                 }
             );
-            if (currentSave.player.abilities.ContainsKey(talent.ability) && !currentSave.player.CanPickTalent(tree, talent))
-                AddBigButtonOverlay("OtherGlowLearned");
+            var canPick = currentSave.player.CanPickTalent(spec, talent);
+            if (currentSave.player.abilities.ContainsKey(talent.ability) && !canPick)
+            {
+                if (!canPick) AddBigButtonOverlay("OtherGlowLearned");
+            }
             else
             {
-                var canPick = currentSave.player.CanPickTalent(spec, talent);
-                if (currentSave.player.CanPickTalent(spec, talent) && currentSave.player.unspentTalentPoints > 0)
+                if (canPick && currentSave.player.unspentTalentPoints > 0)
                     AddBigButtonOverlay("OtherGlowLearnable");
                 else
                 {

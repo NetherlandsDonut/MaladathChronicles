@@ -99,7 +99,7 @@ public class Shatter : MonoBehaviour
                     r.gravityScale = 0;
 
                     //Set velocity to zero so the object will stop in place
-                    r.velocity = Vector2.zero;
+                    r.linearVelocity = Vector2.zero;
 
                     //Apply force in a random direction to add a "bounce-off" effect to the object
                     r.AddRelativeForce(Random.insideUnitCircle * 240);

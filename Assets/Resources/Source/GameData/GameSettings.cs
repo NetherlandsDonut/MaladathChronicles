@@ -19,6 +19,7 @@ public class GameSettings
         onlyHavingMaterials ??= new Bool(false);
         onlySkillUp ??= new Bool(false);
         questLevel ??= new Bool(false);
+        sourcedMarket ??= new Bool(false);
         autoCloseLoot ??= new Bool(false);
         rarityIndicators ??= new Bool(false);
         bigRarityIndicators ??= new Bool(false);
@@ -52,6 +53,9 @@ public class GameSettings
 
     //Indicates whether quest level is shown in the quest log list
     public Bool questLevel;
+
+    //Indicates whether quest level is shown in the quest log list
+    public Bool sourcedMarket;
 
     //Indicates whether the items in the inventory show green arrows indicating that an item is an upgrade
     public Bool upgradeIndicators;
