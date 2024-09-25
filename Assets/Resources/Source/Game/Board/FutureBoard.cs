@@ -208,6 +208,7 @@ public class FutureBoard
 
     public void EndTurn()
     {
+        turn++;
         if (playerTurn)
         {
             CallEvents(player, new() { { "Trigger", "TurnEnd" } });
@@ -226,6 +227,9 @@ public class FutureBoard
             CallEvents(player, new() { { "Trigger", "TurnBegin" } });
             player.FlareBuffs(this);
         }
+        if (turn % 2 == 1)
+            for (int i = 0; i < field.GetLength(0); i++)
+                field[i, field.GetLength(1) - 1] = -1;
     }
 
     //CHECK IF THE TURN ENDED
@@ -245,7 +249,7 @@ public class FutureBoard
                 if (field[i, j] != -1)
                 {
                     var list = FloodCount(i, j);
-                    if (list.Count >= 3)
+                    if (list.Count >= defines.cascadeMinimum)
                     {
                         FloodDestroy(list);
                         return;

@@ -9,7 +9,7 @@ public class BufferBoard
     {
         fallingElements = new();
         field = new int[Board.board.field.GetLength(0), Board.board.field.GetLength(1)];
-        Generate(true);
+        Generate("Illegal");
     }
 
     //Resets the buffer board to be later filled
@@ -24,38 +24,55 @@ public class BufferBoard
 
     //Generates elements on the buffer board that will
     //then fall down into the board to fill empty spaces
-    public void Generate(bool noCascades = false)
+    public void Generate(string cascading = "Allowed")
     {
+        //Reset the buffer board
         Reset();
+
+        //Generate new elements based on the amount of lacking elements on the board
         for (int i = 0; i < field.GetLength(0); i++)
         {
-            var column = new List<int>();
+            var alreadyAdded = 0;
             for (int j = 0; j < field.GetLength(1); j++)
                 if (Board.board.field[i, j] == -1)
-                {
-                    int newElement;
-                    do newElement = random.Next(0, 20);
-                    while (noCascades && ((j > 0 && column[j - 1] % 10 == newElement % 10) || (i > 0 && field[i - 1, field.GetLength(1) - 1 - j] % 10 == newElement % 10)));
-                    column.Add(newElement);
-                }
-            for (int j = 0; j < column.Count; j++)
-                field[i, field.GetLength(1) - 1 - j] = column[j];
+                    field[i, field.GetLength(1) - 1 - alreadyAdded++] = random.Next(0, 20);
         }
+
+        //Illegal First Row means that only one row of new elements is added
+        //onto the buffer. To avoid making any unnessecary operations we are
+        //checking only the highest elements on the board for cascading.
+        //The fact that we are adding one row means that only one full row is lacking.
+        //Thanks to this we know that we don't have to check sides as everything is flat.
+        if (cascading == "IllegalFirstRow")
+            for (int i = 0; i < field.GetLength(0); i++)
+            {
+                var L = field.GetLength(1) - 1;
+                if (field[i, L] != -1)
+                {
+                    var topInBoard = -1;
+                    for (int j = 0; j < field.GetLength(1); j++)
+                        if (Board.board.field[i, j] != -1)
+                        {
+                            topInBoard = Board.board.field[i, j];
+                            break;
+                        }
+                    while (i > 0 && field[i, L] % 10 == field[i - 1, L] % 10 || field[i, L] % 10 == topInBoard % 10)
+                        field[i, L] = random.Next(0, 20);
+                }
+            }
+
+        //Illegal means that all cascading is illegal.
+        //This is used only on the full board reset.
+        else if (cascading == "Illegal")
+            for (int i = 0; i < field.GetLength(0); i++)
+                for (int j = 0; j < field.GetLength(1); j++)
+                    if (field[i, j] != -1)
+                        while (i > 0 && field[i, j] % 10 == field[i - 1, j] % 10 || j > 0 && field[i, j] % 10 == field[i, j - 1] % 10)
+                            field[i, j] = random.Next(0, 20);
     }
 
-    public int fieldGetCounterX = 0;
-    public int fieldGetCounterY = 0;
-
-    public string GetFieldButton()
-    {
-        var r = bufferBoardButtonDictionary[field[fieldGetCounterX, fieldGetCounterY]];
-        fieldGetCounterX++;
-        if (fieldGetCounterX == field.GetLength(0))
-            (fieldGetCounterX, fieldGetCounterY) = (0, fieldGetCounterY + 1);
-        if (fieldGetCounterY == field.GetLength(1))
-            fieldGetCounterY = 0;
-        return r;
-    }
+    //Get sprite for the element at coords [i, j]
+    public string GetFieldButton(int i, int j) => bufferBoardButtonDictionary[field[i, j]];
 
     //Fills the empty spaces in a specified field
     //with this buffer board generated beforehand
@@ -76,8 +93,10 @@ public class BufferBoard
         }
     }
 
+    //Currently used buffer board for combat
     public static BufferBoard bufferBoard;
 
+    //IDs of specific elements possible on the board
     public static Dictionary<int, string> bufferBoardButtonDictionary = new()
     {
         { -1, null },
@@ -113,6 +132,9 @@ public class BufferBoard
         { 29, "ElementOrderSoul" },
     };
 
+    //Elements on this buffer board
     public int[,] field;
+
+    //Window that this buffer board is connected to and is displayed at
     public Window window;
 }

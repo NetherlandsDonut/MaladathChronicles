@@ -6,10 +6,10 @@
     "value": "False"
   },
   "music": {
-    "value": "False"
+    "value": "True"
   },
   "soundEffects": {
-    "value": "False"
+    "value": "True"
   },
   "rarityIndicators": {
     "value": "False"
@@ -19,6 +19,9 @@
   },
   "questLevel": {
     "value": "False"
+  },
+  "sourcedMarket": {
+    "value": "True"
   },
   "upgradeIndicators": {
     "value": "False"

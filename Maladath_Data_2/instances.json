@@ -465,6 +465,12 @@
         "areas": [
           {
             "OpenByDefault": "True",
+            "AreaName": "Deviate Grotto"
+          },
+          {
+            "AreaName": "Cavern of Mists"
+          },
+          {
             "AreaName": "Screaming Gully"
           },
           {

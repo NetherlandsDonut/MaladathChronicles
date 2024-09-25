@@ -2,6 +2,7 @@ using System.Collections.Generic;
 
 using static Root;
 using static Auctionable;
+using System.Linq;
 
 public class Market
 {
@@ -47,4 +48,6 @@ public class Market
     }
 
     public static List<Auction> exploredAuctions;
+
+    public static Dictionary<string, List<Auction>> exploredAuctionsGroups;
 }

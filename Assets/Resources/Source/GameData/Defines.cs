@@ -54,6 +54,8 @@ public class Defines
             textWrapEnding ??= "...";
         if (frameTime < 0.01f)
             frameTime = 0.08f;
+        if (cascadeMinimum < 2)
+            cascadeMinimum = 2;
     }
 
     public int maxPathLength;
@@ -114,6 +116,9 @@ public class Defines
 
     //Amount of experience given to player when they explore a new area
     public int expForExploration;
+
+    //Amount of elements on the board next to each other required for the elements to cascade
+    public int cascadeMinimum;
 
     //Text displayed when an input field is active, this 
     public string markerCharacter;

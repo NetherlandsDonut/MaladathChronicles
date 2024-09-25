@@ -84,13 +84,14 @@ public static class Root
 
     #region Desktop
 
-    public static Blueprint FindDesktopBlueprint(string name)
+    private static Blueprint FindDesktopBlueprint(string name)
     {
         var find = desktopBlueprints.Find(x => x.title == name);
         find ??= BlueprintDev.desktopBlueprints.Find(x => x.title == name);
         return find;
     }
 
+    //Spawns a new desktop and switches automatically by default
     public static void SpawnDesktopBlueprint(string blueprintTitle, bool autoSwitch = true)
     {
         var blueprint = FindDesktopBlueprint(blueprintTitle);
@@ -102,6 +103,7 @@ public static class Root
         if (spawnedNew) blueprint.actions();
     }
 
+    //Closes a desktop whether it was active or not
     public static bool CloseDesktop(string desktopName)
     {
         var find = desktops.Find(x => x.title == desktopName);

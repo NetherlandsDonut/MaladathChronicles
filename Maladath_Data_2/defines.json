@@ -1,4 +1,5 @@
 {
+  "cascadeMinimum": 3,
   "maxPathLength": 9999,
   "maxPlayerLevel": 60,
   "maxBagsEquipped": 3,

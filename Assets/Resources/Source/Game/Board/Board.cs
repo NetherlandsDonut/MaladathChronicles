@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using static Root;
 using static Sound;
 using static Defines;
-using static MapGrid;
 using static SaveGame;
 using static BufferBoard;
 using static GameSettings;
@@ -103,10 +102,6 @@ public class Board
     }
 
     #endregion
-
-    //STATIC REFERENCE TO THE BOARD
-    //THERE CAN BE ONLY ONE AT A TIME THANKS TO STATIC REF
-    public static Board board;
 
     //Turn counter
     public int turn;
@@ -245,6 +240,12 @@ public class Board
             if (Cooldown(true) > 0) Respawn("PlayerBattleInfo");
             CallEvents(player, new() { { "Trigger", "TurnBegin" } });
             player.FlareBuffs();
+        }
+        if (turn % 2 == 1)
+        {
+            for (int i = 0; i < field.GetLength(0); i++)
+                field[i, field.GetLength(1) - 1] = -1;
+            bufferBoard.Generate("IllegalFirstRow");
         }
     }
 
@@ -528,7 +529,7 @@ public class Board
             for (int i = 0; i < field.GetLength(0); i++)
             {
                 var list = FloodCount(i, j);
-                if (list.Count >= 3)
+                if (list.Count >= defines.cascadeMinimum)
                 {
                     FloodDestroy(list);
                     return;
@@ -881,4 +882,6 @@ public class Board
         { 28, "ElementArcane" },
         { 29, "ElementOrder" },
     };
+
+    public static Board board;
 }

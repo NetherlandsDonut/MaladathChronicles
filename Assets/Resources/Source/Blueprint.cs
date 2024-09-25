@@ -196,12 +196,18 @@ public class Blueprint
             DisableGeneralSprites();
             DisableCollisions();
             AddRegionGroup();
-            for (int i = 0; i < BufferBoard.bufferBoard.field.GetLength(1); i++)
+            for (int i = 0; i < BufferBoard.bufferBoard.field.GetLength(0); i++)
+            {
+                var I = i;
                 AddPaddingRegion(() =>
                 {
-                    for (int j = 0; j < BufferBoard.bufferBoard.field.GetLength(0); j++)
-                        AddBigButton(BufferBoard.bufferBoard.GetFieldButton());
+                    for (int j = 0; j < BufferBoard.bufferBoard.field.GetLength(1); j++)
+                    {
+                        var J = j;
+                        AddBigButton(BufferBoard.bufferBoard.GetFieldButton(J, I));
+                    }
                 });
+            }
         }, true),
         new("EnemyBattleInfo", () => {
             SetAnchor(TopRight);
@@ -3612,22 +3618,26 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    Market.exploredAuctions = new List<Auction>();
+                    Market.exploredAuctionsGroups = new();
                     var foo = factions.Find(x => x.name == town.faction).side;
                     if (foo == "Neutral" || foo == "Horde")
                     {
                         var woo = currentSave.markets.Find(x => x.name == "Horde Market");
                         woo.UpdateMarket();
-                        Market.exploredAuctions.AddRange(woo.auctions);
+                        foreach (var type in woo.auctions.GroupBy(x => x.item.name).ToDictionary(x => x.Key, x => x.ToList()))
+                            if (!Market.exploredAuctionsGroups.TryAdd(type.Key, type.Value))
+                                Market.exploredAuctionsGroups[type.Key].AddRange(type.Value);
                     }
                     if (foo == "Neutral" || foo == "Alliance")
                     {
                         var woo = currentSave.markets.Find(x => x.name == "Alliance Market");
                         woo.UpdateMarket();
-                        Market.exploredAuctions.AddRange(woo.auctions);
+                        foreach (var type in woo.auctions.GroupBy(x => x.item.name).ToDictionary(x => x.Key, x => x.ToList()))
+                            if (!Market.exploredAuctionsGroups.TryAdd(type.Key, type.Value))
+                                Market.exploredAuctionsGroups[type.Key].AddRange(type.Value);
                     }
                     PlaySound("DesktopAuctionOpen", 0.4f);
-                    SpawnWindowBlueprint("AuctionHouseOffers");
+                    SpawnWindowBlueprint("AuctionHouseOffersGroups");
                     CloseWindow(h.window);
                     CloseWindow("Town");
                 });
@@ -4491,6 +4501,87 @@ public class Blueprint
             //}
             //AddPaginationLine(regionGroup);
         }),
+        new("AuctionHouseOffersGroups", () => {
+            SetAnchor(TopLeft, 19, -38);
+            AddRegionGroup(() => Market.exploredAuctionsGroups.Count(), 12);
+            SetRegionGroupWidth(190);
+            SetRegionGroupHeight(281);
+            AddHeaderRegion(() =>
+            {
+                var type = personTypes.Find(x => x.type == person.type);
+                AddLine(person.type + " ", "Gray");
+                AddText(person.name);
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow("AuctionHouseOffersGroups");
+                    Respawn("Person");
+                    PlaySound("DesktopInstanceClose");
+                });
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Available auctions:");
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    Market.exploredAuctions.Reverse();
+                    CloseWindow("AuctionHouseOffersGroups");
+                    Respawn("AuctionHouseOffersGroups");
+                    PlaySound("DesktopInventorySort", 0.4f);
+                });
+                if (!WindowUp("AuctionHouseOffersSettings") && !WindowUp("AuctionHouseOffersSort"))
+                    AddSmallButton("OtherSort", (h) =>
+                    {
+                        SpawnWindowBlueprint("AuctionHouseOffersSort");
+                        CloseWindow("AuctionHouseOffersGroups");
+                        Respawn("AuctionHouseOffersGroups");
+                    });
+                else
+                    AddSmallButton("OtherSortOff");
+                if (!WindowUp("AuctionHouseOffersSettings") && !WindowUp("AuctionHouseOffersSort"))
+                    AddSmallButton("OtherSettings", (h) =>
+                    {
+                        SpawnWindowBlueprint("AuctionHouseOffersSettings");
+                        CloseWindow("AuctionHouseOffersGroups");
+                        Respawn("AuctionHouseOffersGroups");
+                    });
+                else
+                    AddSmallButton("OtherSettingsOff");
+            });
+            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
+            for (int i = 0; i < 12; i++)
+            {
+                var index = i;
+                if (Market.exploredAuctionsGroups.Count() > index + 12 * regionGroup.pagination())
+                    AddButtonRegion(() =>
+                    {
+                        var offerGroupKey = Market.exploredAuctionsGroups.Keys.ToList()[index + 12 * regionGroup.pagination()];
+                        var offerGroup = Market.exploredAuctionsGroups[offerGroupKey];
+                        var offerGroupFirst = Market.exploredAuctionsGroups[offerGroupKey][0];
+                        AddLine(offerGroupFirst.item.name + " x" + offerGroup.Count);
+                        AddSmallButton(offerGroupFirst.item.icon);
+                    },
+                    (h) =>
+                    {
+                        var offerGroupKey = Market.exploredAuctionsGroups.Keys.ToList()[index + 12 * regionGroup.pagination()];
+                        Market.exploredAuctions = Market.exploredAuctionsGroups[offerGroupKey].OrderBy(x => x.price).ToList();
+                        CloseWindow("AuctionHouseOffersGroups");
+                        SpawnWindowBlueprint("AuctionHouseOffers");
+                        SpawnWindowBlueprint("AuctionHouseChosenItem");
+                    },
+                    null, (h) => () =>
+                    {
+                        var offerGroupKey = Market.exploredAuctionsGroups.Keys.ToList()[index + 12 * regionGroup.pagination()];
+                        PrintItemTooltip(Market.exploredAuctionsGroups[offerGroupKey][0].item);
+                    });
+                else if (Market.exploredAuctionsGroups.Count == index + 12 * regionGroup.pagination())
+                    AddPaddingRegion(() =>
+                    {
+                        SetRegionAsGroupExtender();
+                        AddLine("");
+                    });
+            }
+            AddPaginationLine(regionGroup);
+        }),
         new("AuctionHouseOffers", () => {
             SetAnchor(TopLeft, 19, -38);
             AddRegionGroup(() => Market.exploredAuctions.Count, 12);
@@ -4504,30 +4595,15 @@ public class Blueprint
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseWindow("AuctionHouseOffers");
-                    Respawn("AuctionHouseOffers");
+                    CloseWindow("AuctionHouseChosenItem");
+                    Respawn("AuctionHouseOffersGroups");
                     PlaySound("DesktopInstanceClose");
                 });
             });
             AddHeaderRegion(() =>
             {
                 AddLine("Available auctions:");
-                AddSmallButton("OtherReverse", (h) =>
-                {
-                    Market.exploredAuctions.Reverse();
-                    CloseWindow("AuctionHouseOffers");
-                    Respawn("AuctionHouseOffers");
-                    PlaySound("DesktopInventorySort", 0.4f);
-                });
-                if (!WindowUp("AuctionHouseOffersSettings") && !WindowUp("AuctionHouseOffersSort"))
-                    AddSmallButton("OtherSort", (h) =>
-                    {
-                        SpawnWindowBlueprint("AuctionHouseOffersSort");
-                        CloseWindow("AuctionHouseOffers");
-                        Respawn("AuctionHouseOffers");
-                    });
-                else
-                    AddSmallButton("OtherSortOff");
-                if (!WindowUp("AuctionHouseOffersSettings") && !WindowUp("AuctionHouseOffersSort"))
+                if (!WindowUp("AuctionHouseOffersSettings"))
                     AddSmallButton("OtherSettings", (h) =>
                     {
                         SpawnWindowBlueprint("AuctionHouseOffersSettings");
@@ -4542,17 +4618,16 @@ public class Blueprint
             {
                 var index = i;
                 if (Market.exploredAuctions.Count > index + 12 * regionGroup.pagination())
-                    AddButtonRegion(() =>
+                    AddPaddingRegion(() =>
                     {
                         var offer = Market.exploredAuctions[index + 12 * regionGroup.pagination()];
-                        AddLine(offer.item.name);
+                        AddLine("x" + offer.item.amount);
+                        AddText(" each for ", "DarkGray");
+                        if (offer.price / 10000 > 0) AddText(offer.price / 10000 + " ", "Gold");
+                        if (offer.price % 10000 / 100 > 0) AddText(offer.price % 10000 / 100 + " ", "Silver");
+                        if (offer.price % 100 > 0) AddText(offer.price % 100 + "", "Copper");
                         if (settings.sourcedMarket.Value())
                             AddSmallButton(offer.market == "Alliance Market" ? "FactionAlliance" : (offer.market == "Horde Market" ? "FactionHorde" : "ItemMiscQuestionMark"));
-                        AddSmallButton(offer.item.icon);
-                    },
-                    (h) =>
-                    {
-                        var offer = Market.exploredAuctions[index + 12 * regionGroup.pagination()];
                     });
                 else if (Market.exploredAuctions.Count == index + 12 * regionGroup.pagination())
                     AddPaddingRegion(() =>
@@ -4562,6 +4637,9 @@ public class Blueprint
                     });
             }
             AddPaginationLine(regionGroup);
+        }),
+        new("AuctionHouseChosenItem", () => {
+            PrintItemTooltip(Market.exploredAuctions[0].item);
         }),
         new("AuctionHouseOffersSort", () => {
             SetAnchor(Center);

@@ -28808,6 +28808,102 @@
     ]
   },
   {
+    "name": "Deviate Grotto",
+    "zone": "Wailing Caverns",
+    "type": "HostileArea",
+    "noNightVariant": true,
+    "commonEncounters": [
+      {
+        "who": "Deviate Coiler",
+        "levelMin": 16,
+        "levelMax": 17
+      },
+      {
+        "who": "Devouring Ectoplasm",
+        "levelMin": 16,
+        "levelMax": 17
+      },
+      {
+        "who": "Deviate Stalker",
+        "levelMin": 16,
+        "levelMax": 17
+      },
+      {
+        "who": "Deviate Creeper",
+        "levelMin": 16,
+        "levelMax": 17
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Mad Magglish",
+        "levelMin": 18
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Boss",
+        "bossName": "Mad Magglish",
+        "point": 2
+      },
+      {
+        "type": "Area",
+        "areaName": "Cavern of Mists",
+        "point": 2
+      },
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
+    "name": "Cavern of Mists",
+    "zone": "Wailing Caverns",
+    "type": "HostileArea",
+    "noNightVariant": true,
+    "commonEncounters": [
+      {
+        "who": "Deviate Coiler",
+        "levelMin": 17,
+        "levelMax": 18
+      },
+      {
+        "who": "Deviate Stinglash",
+        "levelMin": 17,
+        "levelMax": 18
+      },
+      {
+        "who": "Deviate Slayer",
+        "levelMin": 17,
+        "levelMax": 18
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Trigore the Lasher",
+        "levelMin": 19
+      },
+      {
+        "who": "Boahn",
+        "levelMin": 20
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Area",
+        "areaName": "Screaming Gully",
+        "point": 2
+      },
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
     "name": "Screaming Gully",
     "zone": "Wailing Caverns",
     "type": "HostileArea",

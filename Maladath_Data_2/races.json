@@ -1,5 +1,95 @@
 [
   {
+    "name": "Boahn",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitBoahn",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
+    "name": "Trigore the Lasher",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Rare",
+    "portrait": "PortraitHydraRed",
+    "vitality": 2.0,
+    "abilities": {}
+  },
+  {
+    "name": "Deviate Slayer",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitRaptorBlue",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Deviate Stinglash",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitWindSerpent",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Mad Magglish",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Elite",
+    "portrait": "PortraitGoblin",
+    "vitality": 3.0,
+    "abilities": {}
+  },
+  {
+    "name": "Deviate Creeper",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitRaptor",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Deviate Stalker",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitRaptorDark",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Devouring Ectoplasm",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitOozeBlack",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
+    "name": "Deviate Coiler",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "kind": "Common",
+    "portrait": "PortraitWindSerpentYellow",
+    "vitality": 1.0,
+    "abilities": {}
+  },
+  {
     "name": "Razorbeak Gryphon",
     "category": "Beast",
     "subcategory": "Gryphon",
