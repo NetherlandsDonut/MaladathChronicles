@@ -5,13 +5,13 @@ using System.Collections.Generic;
 
 using static Root;
 using static Sound;
+using static Shatter;
 using static Defines;
 using static SaveGame;
 using static BufferBoard;
 using static GameSettings;
 using static CursorRemote;
 using static FlyingMissile;
-using static FlyingElement;
 using static SiteHostileArea;
 
 public class Board
@@ -21,56 +21,69 @@ public class Board
     public Board(int x, int y, Entity enemy, Site area = null)
     {
         turn = 1;
+        whosTurn = 0;
         field = new int[x, y];
-        player = currentSave.player;
-        player.InitialiseCombat();
-        this.enemy = enemy;
-        playerTurn = true;
         this.area = area;
-        player.currentActionSet = "Default";
-        playerCombatAbilities = player.AbilitiesInCombat();
-        playerCooldowns = new();
-        this.enemy.currentActionSet = "Default";
-        enemyCombatAbilities = this.enemy.AbilitiesInCombat();
-        enemyCooldowns = new();
-        temporaryElementsPlayer = new();
-        temporaryElementsEnemy = new();
-        temporaryBuffsPlayer = new();
-        temporaryBuffsEnemy = new();
-        flyingMissiles = new();
-        actions = new List<Action>();
         log = new();
         healthBars = new();
         resourceBars = new();
+        flyingMissiles = new();
+        actions = new List<Action>();
+        spotlightEnemy = new() { 1, 2 };
+        spotlightFriendly = new() { 0, 3 };
+        participants = new() { new(), new(), new(), new() };
+        participants[0].who = currentSave.player;
+        participants[0].human = true;
+        participants[0].team = 1;
+        participants[0].who.currentActionSet = "Default";
+        participants[0].combatAbilities = participants[0].who.AbilitiesInCombat();
+        participants[0].who.InitialiseCombat();
+        participants[1].who = enemy;
+        participants[1].team = 2;
+        participants[1].who.currentActionSet = "Default";
+        participants[1].combatAbilities = participants[1].who.AbilitiesInCombat();
+        participants[2].who = new Entity(2, Race.races.Find(x => x.name == "Harvest Watcher"));
+        participants[2].team = 2;
+        participants[2].who.currentActionSet = "Default";
+        participants[2].combatAbilities = participants[2].who.AbilitiesInCombat();
+        participants[3].who = new Entity(1, Race.races.Find(x => x.name == "Burning Blade Shadowmage"));
+        participants[3].team = 1;
+        participants[3].who.currentActionSet = "Default";
+        participants[3].combatAbilities = participants[3].who.AbilitiesInCombat();
+        cooldowns = new();
+        foreach (var poo in participants)
+            cooldowns.Add(participants.IndexOf(poo), new());
+        temporaryBuffs = new();
+        foreach (var poo in participants)
+            temporaryBuffs.Add(participants.IndexOf(poo), new());
         Reset();
     }
 
     public Board(int x, int y, Dictionary<Ability, int> abilities)
     {
         turn = 1;
+        spotlightFriendly = new() { 0 };
+        spotlightEnemy = new() { 1 };
         field = new int[x, y];
         var possible = Race.races.Where(x => !x.genderedPortrait).ToList();
-        player = new Entity(60, null);
-        player.InitialiseCombat();
-        enemy = new Entity(60, possible[random.Next(possible.Count)]);
-        playerTurn = true;
+        participants = new() { new(), new() };
+        participants[0].who = new Entity(60, null);
+        participants[0].who.InitialiseCombat();
+        participants[1].who = new Entity(60, possible[random.Next(possible.Count)]);
+        whosTurn = 0;
         area = areas[random.Next(areas.Count)];
-        player.currentActionSet = "Default";
-        playerCombatAbilities = player.AbilitiesInCombat();
+        participants[0].who.currentActionSet = "Default";
+        participants[0].combatAbilities = participants[0].who.AbilitiesInCombat();
         foreach (var a in abilities)
-            if (!playerCombatAbilities.ContainsKey(a.Key))
+            if (!participants[0].combatAbilities.ContainsKey(a.Key))
             {
-                playerCombatAbilities.Add(a.Key, a.Value);
-                if (a.Key.cost != null) player.actionBars["Default"].Add(a.Key.name);
+                participants[0].combatAbilities.Add(a.Key, a.Value);
+                if (a.Key.cost != null) participants[0].who.actionBars["Default"].Add(a.Key.name);
             }
-        playerCooldowns = new();
-        enemy.currentActionSet = "Default";
-        enemyCombatAbilities = enemy.AbilitiesInCombat();
-        enemyCooldowns = new();
-        temporaryElementsPlayer = new();
-        temporaryElementsEnemy = new();
-        temporaryBuffsPlayer = new();
-        temporaryBuffsEnemy = new();
+        cooldowns = new() { { 0, new() }, { 1, new() } };
+        participants[1].who.currentActionSet = "Default";
+        participants[1].combatAbilities = participants[1].who.AbilitiesInCombat();
+        temporaryBuffs = new() { { 0, new() }, { 1, new() } };
         flyingMissiles = new();
         actions = new List<Action>();
         log = new();
@@ -84,8 +97,8 @@ public class Board
         PlayEnemyLine(entity.EnemyLine("Aggro"));
         board = new Board(6, 6, entity, area);
         bufferBoard = new BufferBoard();
-        board.CallEvents(board.player, new() { { "Trigger", "CombatBegin" } });
-        board.CallEvents(board.enemy, new() { { "Trigger", "CombatBegin" } });
+        foreach (var foo in board.participants)
+            board.CallEvents(foo.who, new() { { "Trigger", "CombatBegin" } });
     }
 
     //Spawns a new board that is intended to be used as a playtest site for a specific ability
@@ -94,7 +107,7 @@ public class Board
         board = new Board(6, 6, new() { { testingAbility, 0 } });
         bufferBoard = new BufferBoard();
         if (testingAbility.events != null)
-            board.CallEvents(board.player, new() { { "Trigger", "AbilityCast" }, { "IgnoreConditions", "Yes" }, { "AbilityName", testingAbility.name }, { "Triggerer", "Effector" } });
+            board.CallEvents(board.participants[0].who, new() { { "Trigger", "AbilityCast" }, { "IgnoreConditions", "Yes" }, { "AbilityName", testingAbility.name }, { "Triggerer", "Effector" } });
 
         //This line automatically closed the simulation once the ability is done testing.
         //It was deactivated to make the dev see the after effects of the ability.
@@ -121,50 +134,29 @@ public class Board
     //Reference to the window that contains the drawn board
     public Window window;
 
-    //Player and enemy references for the combat. Player is always on the left side of the screen.
-    public Entity player, enemy;
+    //All of the combat participants of both teams
+    public List<CombatParticipant> participants;
 
-    //Health bars for player and the enemy
-    public Dictionary<string, FluidBar> healthBars;
+    //Health bars for all combat participants
+    public Dictionary<int, FluidBar> healthBars;
 
-    //Resource bars for player and the enemy
-    public Dictionary<string, Dictionary<string, FluidBar>> resourceBars;
+    //Resource bars for all combat participants
+    public Dictionary<int, Dictionary<string, FluidBar>> resourceBars;
 
-    //Indicates whether it's currently the player's turn
-    public bool playerTurn;
+    //Indicates whos turn it currently is
+    public int whosTurn;
 
     //Tells whether the artificial time break for the enemy move was made already. For now it is used as an illusion that the enemy is thinking before making a move. It may not be useful in the future. We will see
-    public bool breakForEnemy;
+    public bool breakForMove;
 
     //Indicates whether the enemy finished moving and whether turn can be switched to the player
-    public bool enemyFinishedMoving;
-
-    //Indicates whether the player finished moving and whether the turn can be switched to the enemy
-    public bool playerFinishedMoving;
-
-    //List of all flying elements that are docking in the player mana region
-    public List<GameObject> temporaryElementsPlayer;
-
-    //List of all flying elements that are docking in the enemy mana region
-    public List<GameObject> temporaryElementsEnemy;
-
-    //List of all flying buffs that are docking in the player buff region
-    public List<GameObject> temporaryBuffsPlayer;
+    public bool finishedMoving;
 
     //List of all flying buffs that are docking in the player mana region
-    public List<GameObject> temporaryBuffsEnemy;
+    public Dictionary<int, List<GameObject>> temporaryBuffs;
 
-    //Abilities (Active and passive) that player has in the combat
-    public Dictionary<Ability, int> playerCombatAbilities;
-
-    //List of passive abilities owned by player that are on cooldown
-    public Dictionary<string, int> playerCooldowns;
-
-    //Abilities (Active and passive) that enemy has in the combat
-    public Dictionary<Ability, int> enemyCombatAbilities;
-
-    //List of passive abilities owned by the enemy that are on cooldown
-    public Dictionary<string, int> enemyCooldowns;
+    //List of cooldowns that are currently on the participants
+    public Dictionary<int, Dictionary<string, int>> cooldowns;
 
     //Queue of actions to do on the board and the combatants
     public List<Action> actions;
@@ -172,22 +164,28 @@ public class Board
     //Are where the combat takes place
     public Site area;
 
-    public void PutOnCooldown(bool player, Ability ability)
+    //
+    public List<int> spotlightFriendly;
+
+    //
+    public List<int> spotlightEnemy;
+
+    public void PutOnCooldown(int participant, Ability ability)
     {
-        var list = player ? playerCooldowns : enemyCooldowns;
+        var list = cooldowns[participant];
         list.Remove(ability.name);
         if (ability.cooldown > 0)
             list.Add(ability.name, ability.cooldown);
     }
 
-    public int CooldownOn(bool player, string ability) => (player ? playerCooldowns : enemyCooldowns).Get(ability);
+    public int CooldownOn(int participant, string ability) => cooldowns[participant].Get(ability);
 
     //Cools down all action bar abilities and used passives by 1 turn
-    public int Cooldown(bool player)
+    public int Cooldown(int participant)
     {
         int off = 0;
-        ref var abilities = ref (player ? ref playerCooldowns : ref enemyCooldowns);
-        var names = (player ? playerCooldowns : enemyCooldowns).Keys.ToList();
+        var abilities = cooldowns[participant];
+        var names = cooldowns[participant].Keys.ToList();
         foreach (var name in names)
         {
             if (abilities[name] > 0)
@@ -196,7 +194,7 @@ public class Board
                 if (--abilities[name] <= 0)
                 {
                     abilities.Remove(name);
-                    board.CallEvents(player ? this.player : enemy, new() { { "Trigger", "Cooldown" }, { "Triggerer", "Effector" }, { "AbilityName", name } });
+                    board.CallEvents(participants[participant].who, new() { { "Trigger", "Cooldown" }, { "Triggerer", "Effector" }, { "AbilityName", name } });
                 }
             }
             else abilities.Remove(name);
@@ -204,44 +202,56 @@ public class Board
         return off;
     }
 
-    public void CallEvents(Entity entity, Dictionary<string, string> trigger)
+    public void CallEvents(Entity who, Dictionary<string, string> trigger)
     {
-        if (entity == player)
-            foreach (var item in player.inventory.items.Concat(player.equipment.Select(x => x.Value)).ToList())
+        if (who.inventory != null)
+            foreach (var item in who.inventory.items.Concat(who.equipment.Select(x => x.Value)).ToList())
                 if (item.abilities != null)
                     foreach (var ability in item.abilities.Select(x => (Ability.abilities.Find(y => y.name == x.Key), x.Value)))
-                        ability.Item1.ExecuteEvents(this, null, trigger, item, ability.Value, true);
-        foreach (var ability in entity == player ? playerCombatAbilities : enemyCombatAbilities)
-            ability.Key.ExecuteEvents(this, null, trigger, null, ability.Value, entity == player);
-        foreach (var buff in entity.buffs)
-            buff.Item1.ExecuteEvents(this, null, trigger, buff);
+                        ability.Item1.ExecuteEvents(this, null, trigger, item, ability.Value, participants.FindIndex(x => x.who == who));
+        foreach (var ability in participants.Find(x => x.who == who).combatAbilities)
+            ability.Key.ExecuteEvents(this, null, trigger, null, ability.Value, participants.FindIndex(x => x.who == who));
+        foreach (var buff in who.buffs.ToList())
+            buff.buff.ExecuteEvents(this, null, trigger, buff);
     }
 
-    //ENDS THE CURRENT PLAYER'S TURN
+    public CombatParticipant Target(int ofTeam) => participants[ofTeam == 1 ? spotlightEnemy[0] : spotlightFriendly[0]];
+
+    //Ends a turn for a participant and makes somebody else begin theirs
     public void EndTurn()
     {
+        //Increase turns by one as we are entering another
         turn++;
-        if (playerTurn)
-        {
-            CallEvents(player, new() { { "Trigger", "TurnEnd" } });
-            cursorEnemy.fadeIn = true;
-            playerTurn = false;
-            playerFinishedMoving = false;
-            if (Cooldown(false) > 0) Respawn("EnemyBattleInfo");
-            CallEvents(enemy, new() { { "Trigger", "TurnBegin" } });
-            enemy.FlareBuffs();
-        }
-        else
-        {
-            CallEvents(enemy, new() { { "Trigger", "TurnEnd" } });
-            cursorEnemy.fadeOut = true;
-            playerTurn = true;
-            enemyFinishedMoving = false;
-            if (Cooldown(true) > 0) Respawn("PlayerBattleInfo");
-            CallEvents(player, new() { { "Trigger", "TurnBegin" } });
-            player.FlareBuffs();
-        }
-        if (turn % 2 == 1)
+
+        //Call events for the participant that was moving now with TurnEnd trigger
+        CallEvents(participants[whosTurn].who, new() { { "Trigger", "TurnEnd" } });
+
+        //Change turns to next participants until one of them isn't dead
+        do { whosTurn++; whosTurn %= participants.Count; }
+        while (participants[whosTurn].who.dead);
+
+        //If the current participant is human controlled fade out the enemy cursor
+        if (participants[whosTurn].human) cursorEnemy.fadeOut = true;
+
+        //Otherwise fade it in so we can see how enemy moves
+        else cursorEnemy.fadeIn = true;
+
+        //Set status of finished moving to false because we have just began a new turn
+        finishedMoving = false;
+
+        //Cooldown all abilities of the current entity
+        if (Cooldown(whosTurn) > 0)
+            if (spotlightEnemy.Contains(whosTurn)) Respawn("EnemyBattleInfo");
+            else if (spotlightFriendly.Contains(whosTurn)) Respawn("PlayerBattleInfo");
+
+        //Call events for the turn begin
+        CallEvents(participants[whosTurn].who, new() { { "Trigger", "TurnBegin" } });
+
+        //Flare all of the buffs for the current participant
+        participants[whosTurn].who.FlareBuffs();
+
+        //If we made a full cycle and we are starting the loop again, remove one row on the bottom
+        if (whosTurn == 0)
         {
             for (int i = 0; i < field.GetLength(0); i++)
                 field[i, field.GetLength(1) - 1] = -1;
@@ -265,7 +275,7 @@ public class Board
             foo.Value.UpdateFluidBar();
     }
 
-    public void UpdateResourceBars(string forWho, List<string> elements)
+    public void UpdateResourceBars(int forWho, List<string> elements)
     {
         if (resourceBars.ContainsKey(forWho))
             foreach (var foo in resourceBars[forWho])
@@ -281,19 +291,8 @@ public class Board
             CloseDesktop("Game");
             currentSave.AddTime(turn * 15);
             results = new CombatResults(result, area.zone, area.recommendedLevel);
-            if (result == "Won")
+            if (result == "Team1Won")
             {
-                PlayEnemyLine(enemy.EnemyLine("Death"));
-                var enemyRace = Race.races.Find(x => x.name == enemy.race);
-                if (currentSave.player.WillGetExperience(enemy.level) && currentSave.player.level < defines.maxPlayerLevel)
-                {
-                    float amount = currentSave.player.ExperienceForEqualEnemy();
-                    if (Coloring.ColorEntityLevel(enemy.level) == "Green") amount *= 0.5f;
-                    else if (Coloring.ColorEntityLevel(enemy.level) == "DarkGray") amount *= 0;
-                    if (enemyRace.kind == "Elite") amount *= 2;
-                    else if (enemyRace.kind == "Rare") amount *= 1.5f;
-                    results.experience = (int)amount;
-                }
                 var progression = area.progression.FindAll(x => x.point == (currentSave.siteProgress.ContainsKey(area.name) ? currentSave.siteProgress[area.name] : 0));
                 var nextProgression = area.progression.FindAll(x => x.point - 1 == (currentSave.siteProgress.ContainsKey(area.name) ? currentSave.siteProgress[area.name] : 0));
                 var progBosses = progression.FindAll(x => x.type == "Boss");
@@ -301,58 +300,19 @@ public class Board
 
                 //If you just defeated an enemy that wasn't a boss and none bosses block your way
                 //in progression then increase your progression in the area by one point
-                if (area != null && enemy.kind != "Elite" && progBosses.Count > 0 && progBosses.All(x => currentSave.elitesKilled.ContainsKey(x.bossName)) || progBosses.Count == 0)
-                {
-                    if (!currentSave.siteProgress.ContainsKey(area.name))
-                        currentSave.siteProgress.Add(area.name, 1);
+                if (area != null && participants.First(x => x.team == 2).who.kind != "Elite" && progBosses.Count > 0 && progBosses.All(x => currentSave.elitesKilled.ContainsKey(x.bossName)) || progBosses.Count == 0)
+                    if (!currentSave.siteProgress.ContainsKey(area.name)) currentSave.siteProgress.Add(area.name, 1);
                     else currentSave.siteProgress[area.name]++;
-                }
-
-                var output = enemy.name + ": ";
-                if (results.result == "Won")
-                {
-                    foreach (var quest in player.currentQuests)
-                        foreach (var con in quest.conditions)
-                            if (con.type == "Kill" && con.name == enemy.name)
-                            {
-                                foreach (var site in con.Where())
-                                    if (!Quest.sitesToRespawn.Contains(site))
-                                        Quest.sitesToRespawn.Add(site);
-                                if (con.amountDone < con.amount)
-                                {
-                                    if (output.EndsWith(" ")) output += con.amountDone + 1 + "/" + con.amount;
-                                    else output += ", " + con.amountDone + 1 + "/" + con.amount;
-                                }
-                                var end = Site.FindSite(x => x.name == quest.siteEnd);
-                                if (!Quest.sitesToRespawn.Contains(end)) Quest.sitesToRespawn.Add(end);
-                            }
-                }
-
-                //Make progress on quests requiring you to kill certain enemies
-                player.QuestKill(enemy.name);
-
-                //Add +1 to the amount of times you defeated this enemy
-                //Depending on the rarity of the enemy add +1 to the right list
-                switch (enemy.kind)
-                {
-                    case "Common": currentSave.commonsKilled.Inc(enemy.name); break;
-                    case "Rare": currentSave.raresKilled.Inc(enemy.name); break;
-                    case "Elite": currentSave.elitesKilled.Inc(enemy.name); break;
-                }
-
-                //Unlock new areas
                 foreach (var unlockArea in progression.FindAll(x => x.type == "Area"))
                     if (!currentSave.unlockedAreas.Contains(unlockArea.areaName) && progBosses.Count > 0 && progBosses.All(x => currentSave.elitesKilled.ContainsKey(x.bossName)))
-                        if (!unlockArea.all)
-                            currentSave.unlockedAreas.Add(unlockArea.areaName);
-                        else Foo(unlockArea);
+                        if (!unlockArea.all) currentSave.unlockedAreas.Add(unlockArea.areaName);
+                        else UnlockArea(unlockArea);
                 foreach (var unlockArea in nextProgression.FindAll(x => x.type == "Area"))
                     if (!currentSave.unlockedAreas.Contains(unlockArea.areaName) && nextProgBosses.Count == 0)
-                        if (!unlockArea.all)
-                            currentSave.unlockedAreas.Add(unlockArea.areaName);
-                        else Foo(unlockArea);
+                        if (!unlockArea.all) currentSave.unlockedAreas.Add(unlockArea.areaName);
+                        else UnlockArea(unlockArea);
 
-                void Foo(AreaProgression unlockArea)
+                void UnlockArea(AreaProgression unlockArea)
                 {
                     var temp = SiteInstance.instance.wings.SelectMany(x => x.areas).Select(x => areas.Find(y => y.name == x["AreaName"]));
                     var foo = temp.Select(x => (x.name, x.progression.Find(y => y.areaName == unlockArea.areaName))).ToList();
@@ -369,111 +329,175 @@ public class Board
                     if (unlock) currentSave.unlockedAreas.Add(unlockArea.areaName);
                 }
 
+                //Add +1 to the amount of times you defeated this enemy
+                //Depending on the rarity of the enemy add +1 to the right list
+                foreach (var defeatedEnemy in participants.Where(x => x.team == 2))
+                {
+                    var enemy = defeatedEnemy.who;
+                    var enemyRace = Race.races.Find(x => x.name == enemy.race);
+
+                    //Increase defeated amounts of enemies in your party
+                    switch (defeatedEnemy.who.kind)
+                    {
+                        case "Common": currentSave.commonsKilled.Inc(defeatedEnemy.who.name); break;
+                        case "Rare": currentSave.raresKilled.Inc(defeatedEnemy.who.name); break;
+                        case "Elite": currentSave.elitesKilled.Inc(defeatedEnemy.who.name); break;
+                    }
+
+                    //Drop items
+                    var directDrop = enemyRace.droppedItems.Select(x => Item.items.Find(y => y.name == x)).Where(x => !x.unique || !currentSave.player.uniquesGotten.Contains(x.name)).Where(x => x.specDropRestriction == null || x.specDropRestriction.Contains(participants[0].who.race) || x.specDropRestriction.Contains(participants[0].who.race)).Where(x => x.raceDropRestriction == null || x.raceDropRestriction.Contains(participants[0].who.race)).ToList();
+                    var wearableDirect = directDrop.Where(x => x.IsWearable()).ToList();
+                    var equipableDirect = wearableDirect.Where(x => x.CanEquip(currentSave.player)).ToList();
+
+                    //One wearable item drop with priority on something you can equip
+                    if (equipableDirect.Count > 0)
+                    {
+                        var item = equipableDirect[random.Next(equipableDirect.Count)];
+                        results.inventory.AddItem(item.CopyItem());
+                    }
+                    else if (wearableDirect.Count > 0)
+                    {
+                        var item = wearableDirect[random.Next(wearableDirect.Count)];
+                        results.inventory.AddItem(item.CopyItem());
+                    }
+                    else
+                    {
+                        var worldDrop = Item.items.FindAll(x => (x.dropRange == null && x.lvl >= enemy.level - 6 && x.lvl <= enemy.level || x.dropRange != null && enemy.level >= int.Parse(x.dropRange.Split('-')[0]) && enemy.level <= int.Parse(x.dropRange.Split('-')[1])) && x.source == "RareDrop");
+                        var instance = area.instancePart ? SiteInstance.instances.Find(x => x.wings.Any(y => y.areas.Any(z => z["AreaName"] == area.name))) : null;
+                        var zoneDrop = instance == null || instance.zoneDrop == null ? new() : Item.items.FindAll(x => instance.zoneDrop.Contains(x.name));
+                        var everything = zoneDrop.Concat(worldDrop).Where(x => x.CanEquip(currentSave.player) && (!x.unique || !currentSave.player.uniquesGotten.Contains(x.name)));
+                        var dropGray = everything.Where(x => x.rarity == "Poor").ToList();
+                        var dropWhite = everything.Where(x => x.rarity == "Common").ToList();
+                        var dropGreen = everything.Where(x => x.rarity == "Uncommon").ToList();
+                        var dropBlue = everything.Where(x => x.rarity == "Rare").ToList();
+                        var dropPurple = everything.Where(x => x.rarity == "Epic").ToList();
+                        if (dropPurple.Count > 0 && Roll(0.05))
+                            results.inventory.AddItem(dropPurple[random.Next(dropPurple.Count)].CopyItem());
+                        else if (dropBlue.Count > 0 && Roll(1))
+                            results.inventory.AddItem(dropBlue[random.Next(dropBlue.Count)].CopyItem());
+                        else if (dropGreen.Count > 0 && (enemy.kind != "Common" || Roll(8)))
+                            results.inventory.AddItem(dropGreen[random.Next(dropGreen.Count)].CopyItem());
+                        else if (dropWhite.Count > 0 && (enemy.kind != "Common" || Roll(5)))
+                            results.inventory.AddItem(dropWhite[random.Next(dropWhite.Count)].CopyItem());
+                        else if (dropGray.Count > 0 && (enemy.kind != "Common" || Roll(3)))
+                            results.inventory.AddItem(dropGray[random.Next(dropGray.Count)].CopyItem());
+                    }
+
+                    //All the other guaranteed items
+                    var otherDirect = directDrop.Except(wearableDirect).ToList();
+                    if (otherDirect.Count > 0)
+                        foreach (var item in otherDirect)
+                            results.inventory.AddItem(item.CopyItem());
+
+                    //General drops
+                    var generalDrops = GeneralDrop.generalDrops.FindAll(x => x.DoesLevelFit(enemy.level) && (x.requiredProfession == null || (participants[0].who.professionSkills.ContainsKey(x.requiredProfession) && (x.requiredSkill == 0 || x.requiredSkill <= participants[0].who.professionSkills[x.requiredProfession].Item1))) && (x.category == null || x.category == enemy.Race().category) && x.inclusive);
+                    if (generalDrops.Count > 0)
+                        foreach (var drop in generalDrops)
+                            if (Roll(drop.rarity))
+                            {
+                                int amount = 1;
+                                for (int i = 1; i < drop.dropCount; i++) amount += Roll(10) ? 1 : 0;
+                                results.inventory.AddItem(Item.items.Find(x => x.name == drop.item).CopyItem(amount));
+                            }
+                    var possibleGeneralDrops = GeneralDrop.generalDrops.FindAll(x => x.DoesLevelFit(enemy.level) && (x.requiredProfession == null || (participants[0].who.professionSkills.ContainsKey(x.requiredProfession) && (x.requiredSkill == 0 || x.requiredSkill <= participants[0].who.professionSkills[x.requiredProfession].Item1))) && (x.category == null || x.category == enemy.Race().category) && !x.inclusive);
+                    possibleGeneralDrops.Shuffle();
+                    if (possibleGeneralDrops.Count > 0)
+                        foreach (var drop in possibleGeneralDrops.OrderBy(x => x.rarity))
+                            if (Roll(drop.rarity))
+                            {
+                                int amount = 1;
+                                for (int i = 1; i < drop.dropCount; i++) amount += Roll(50) ? 1 : 0;
+                                results.inventory.AddItem(Item.items.Find(x => x.name == drop.item).CopyItem(amount));
+                                break;
+                            }
+                    results.inventory.items.ForEach(x => x.SetRandomEnchantment());
+                    foreach (var item in results.inventory.items)
+                        if (item.unique && !currentSave.player.uniquesGotten.Contains(item.name))
+                            currentSave.player.uniquesGotten.Add(item.name);
+                }
+
                 //Exit board view
                 if (area != null && area.instancePart) SwitchDesktop("Instance");
                 else if (area != null && area.complexPart) SwitchDesktop("Complex");
                 else SwitchDesktop("HostileArea");
                 CDesktop.RespawnAll();
 
-                //Drop items
-                var directDrop = enemyRace.droppedItems.Select(x => Item.items.Find(y => y.name == x)).Where(x => !x.unique || !currentSave.player.uniquesGotten.Contains(x.name)).Where(x => x.specDropRestriction == null || x.specDropRestriction.Contains(player.race)).Where(x => x.raceDropRestriction == null || x.raceDropRestriction.Contains(player.race)).ToList();
-                var wearableDirect = directDrop.Where(x => x.IsWearable()).ToList();
-                var equipableDirect = wearableDirect.Where(x => x.CanEquip(currentSave.player)).ToList();
-
-                //One wearable item drop with priority on something you can equip
-                if (equipableDirect.Count > 0)
-                {
-                    var item = equipableDirect[random.Next(equipableDirect.Count)];
-                    results.inventory.AddItem(item.CopyItem());
-                }
-                else if (wearableDirect.Count > 0)
-                {
-                    var item = wearableDirect[random.Next(wearableDirect.Count)];
-                    results.inventory.AddItem(item.CopyItem());
-                }
-                else
-                {
-                    var worldDrop = Item.items.FindAll(x => (x.dropRange == null && x.lvl >= enemy.level - 6 && x.lvl <= enemy.level || x.dropRange != null && enemy.level >= int.Parse(x.dropRange.Split('-')[0]) && enemy.level <= int.Parse(x.dropRange.Split('-')[1])) && x.source == "RareDrop");
-                    var instance = area.instancePart ? SiteInstance.instances.Find(x => x.wings.Any(y => y.areas.Any(z => z["AreaName"] == area.name))) : null;
-                    var zoneDrop = instance == null || instance.zoneDrop == null ? new() : Item.items.FindAll(x => instance.zoneDrop.Contains(x.name));
-                    var everything = zoneDrop.Concat(worldDrop).Where(x => x.CanEquip(currentSave.player) && (!x.unique || !currentSave.player.uniquesGotten.Contains(x.name)));
-                    var dropGray = everything.Where(x => x.rarity == "Poor").ToList();
-                    var dropWhite = everything.Where(x => x.rarity == "Common").ToList();
-                    var dropGreen = everything.Where(x => x.rarity == "Uncommon").ToList();
-                    var dropBlue = everything.Where(x => x.rarity == "Rare").ToList();
-                    var dropPurple = everything.Where(x => x.rarity == "Epic").ToList();
-                    if (dropPurple.Count > 0 && Roll(0.05))
-                        results.inventory.AddItem(dropPurple[random.Next(dropPurple.Count)].CopyItem());
-                    else if (dropBlue.Count > 0 && Roll(1))
-                        results.inventory.AddItem(dropBlue[random.Next(dropBlue.Count)].CopyItem());
-                    else if (dropGreen.Count > 0 && (enemy.kind != "Common" || Roll(8)))
-                        results.inventory.AddItem(dropGreen[random.Next(dropGreen.Count)].CopyItem());
-                    else if (dropWhite.Count > 0 && (enemy.kind != "Common" || Roll(5)))
-                        results.inventory.AddItem(dropWhite[random.Next(dropWhite.Count)].CopyItem());
-                    else if (dropGray.Count > 0 && (enemy.kind != "Common" || Roll(3)))
-                        results.inventory.AddItem(dropGray[random.Next(dropGray.Count)].CopyItem());
-                }
-
-                //All the other guaranteed items
-                var otherDirect = directDrop.Except(wearableDirect).ToList();
-                if (otherDirect.Count > 0)
-                {
-                    foreach (var item in otherDirect)
-                        results.inventory.AddItem(item.CopyItem());
-                }
-
-                //General drops
-                var generalDrops = GeneralDrop.generalDrops.FindAll(x => x.DoesLevelFit(enemy.level) && (x.requiredProfession == null || (player.professionSkills.ContainsKey(x.requiredProfession) && (x.requiredSkill == 0 || x.requiredSkill <= player.professionSkills[x.requiredProfession].Item1))) && (x.category == null || x.category == enemy.Race().category) && x.inclusive);
-                if (generalDrops.Count > 0)
-                    foreach (var drop in generalDrops)
-                        if (Roll(drop.rarity))
+                //Grant experience for defeating the enemy
+                foreach (var winParticipant in participants.Where(x => x.team == 1))
+                    foreach (var lossParticipant in participants.Where(x => x.team == 2))
+                    {
+                        var enemy = lossParticipant.who;
+                        var enemyRace = Race.races.Find(x => x.name == enemy.race);
+                        if (winParticipant.who.WillGetExperience(enemy.level) && winParticipant.who.level < defines.maxPlayerLevel)
                         {
-                            int amount = 1;
-                            for (int i = 1; i < drop.dropCount; i++) amount += Roll(10) ? 1 : 0;
-                            results.inventory.AddItem(Item.items.Find(x => x.name == drop.item).CopyItem(amount));
+                            float amount = winParticipant.who.ExperienceForEqualEnemy();
+                            if (Coloring.ColorEntityLevel(enemy.level) == "Green") amount *= 0.5f;
+                            else if (Coloring.ColorEntityLevel(enemy.level) == "DarkGray") amount *= 0;
+                            if (enemyRace.kind == "Elite") amount *= 2;
+                            else if (enemyRace.kind == "Rare") amount *= 1.5f;
+                            results.experience.Inc(winParticipant.who, (int)amount);
                         }
-                var possibleGeneralDrops = GeneralDrop.generalDrops.FindAll(x => x.DoesLevelFit(enemy.level) && (x.requiredProfession == null || (player.professionSkills.ContainsKey(x.requiredProfession) && (x.requiredSkill == 0 || x.requiredSkill <= player.professionSkills[x.requiredProfession].Item1))) && (x.category == null || x.category == enemy.Race().category) && !x.inclusive);
-                possibleGeneralDrops.Shuffle();
-                if (possibleGeneralDrops.Count > 0)
-                    foreach (var drop in possibleGeneralDrops.OrderBy(x => x.rarity))
-                        if (Roll(drop.rarity))
-                        {
-                            int amount = 1;
-                            for (int i = 1; i < drop.dropCount; i++) amount += Roll(50) ? 1 : 0;
-                            results.inventory.AddItem(Item.items.Find(x => x.name == drop.item).CopyItem(amount));
-                            break;
-                        }
-                results.inventory.items.ForEach(x => x.SetRandomEnchantment());
-                foreach (var item in results.inventory.items)
-                    if (item.unique && !currentSave.player.uniquesGotten.Contains(item.name))
-                        currentSave.player.uniquesGotten.Add(item.name);
+                    }
+
+                //Open default page in the chart
                 chartPage = "Damage Dealt";
-                currentSave.player.ReceiveExperience(board.results.experience);
                 SpawnDesktopBlueprint("CombatResults");
-                if (!output.EndsWith(" "))
-                    SpawnFallingText(new Vector2(0, -72), output, "Yellow");
+
+                //Grant experience to all winning participants
+                foreach (var winParticipant in participants.Where(x => x.team == 1))
+                    winParticipant.who.ReceiveExperience(board.results.experience[winParticipant.who]);
+
+                //Progress quests requiring killing
+                foreach (var winParticipant in participants.Where(x => x.team == 1))
+                    foreach (var lossParticipant in participants.Where(x => x.team == 2))
+                        if (winParticipant.who.currentQuests != null)
+                        {
+                            var enemy = lossParticipant.who;
+                            var enemyRace = Race.races.Find(x => x.name == enemy.race);
+                            var output = enemy.name + ": ";
+                            foreach (var quest in winParticipant.who.currentQuests)
+                                foreach (var con in quest.conditions)
+                                    if (con.type == "Kill" && con.name == enemy.name)
+                                    {
+                                        foreach (var site in con.Where())
+                                            if (!Quest.sitesToRespawn.Contains(site))
+                                                Quest.sitesToRespawn.Add(site);
+                                        if (con.amountDone < con.amount)
+                                        {
+                                            if (output.EndsWith(" ")) output += con.amountDone + 1 + "/" + con.amount;
+                                            else output += ", " + con.amountDone + 1 + "/" + con.amount;
+                                        }
+                                        var end = Site.FindSite(x => x.name == quest.siteEnd);
+                                        if (!Quest.sitesToRespawn.Contains(end)) Quest.sitesToRespawn.Add(end);
+                                    }
+                            winParticipant.who.QuestKill(enemy.name);
+                            if (!output.EndsWith(" ")) SpawnFallingText(new Vector2(0, -72), output, "Yellow");
+                        }
             }
-            else if (result == "Lost")
+            else if (result == "Team2Won")
             {
-                currentSave.playerDead = true;
-                PlaySound("Death");
-                StopAmbience();
-                if (Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore)
-                    currentSave.deathInfo = new(enemy.name, enemy.Race().kind == "Common", area.name);
-                else
+                foreach (var participant in participants.Where(x => x.team == 1))
                 {
-                    //Find all world buffs that player has that aren't death persistant
-                    var toRemove = player.worldBuffs.Where(x => !x.Buff.deathResistant);
+                    StopAmbience();
 
-                    //Remove not death resistant world buffs from player that just died
-                    foreach (var buff in toRemove) player.RemoveWorldBuff(buff);
+                    //MOVE TO COMBAT
+                    PlaySound("Death");
+                    if (Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore)
+                    {
+                        var enemy = participants.Find(x => x.team == 2).who;
+                        currentSave.deathInfo = new(enemy.name, enemy.Race().kind == "Common", area.name);
+                    }
 
-                    SwitchDesktop("Map");
-                    SpawnTransition(false);
-                    SpawnTransition(false);
-                    SpawnTransition(false);
-                    SpawnTransition(false);
-                    SpawnTransition(false);
+                    //MOVE TO COMBAT
+                    else
+                    {
+                        SwitchDesktop("Map");
+                        SpawnTransition(false);
+                        SpawnTransition(false);
+                        SpawnTransition(false);
+                        SpawnTransition(false);
+                        SpawnTransition(false);
+                    }
                 }
                 chartPage = "Damage Dealt";
                 SpawnDesktopBlueprint("CombatResults");
@@ -536,50 +560,48 @@ public class Board
                 }
             }
 
-        //IF PLAYER DIED..
-        if (player.health <= 0 && window.desktop.title == "Game")
-            EndCombat("Lost");
+        //If all friendly entities died or the player died while on hardcore..
+        if ((participants.Where(x => x.team == 1).All(x => x.who.dead) || Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore && participants[0].who.health <= 0) && window.desktop.title == "Game")
+            EndCombat("Team2Won");
 
-        //IF ENEMY DIED..
-        else if (enemy.health <= 0 && window.desktop.title == "Game")
-            EndCombat("Won");
+        //If all enemiesdied..
+        else if (participants.Where(x => x.team == 2).All(x => x.who.dead) && window.desktop.title == "Game")
+            EndCombat("Team1Won");
 
         //IF IT'S ENEMY'S TURN..
-        else if (!playerTurn)
+        else if (!participants[whosTurn].human)
         {
             //IF ENEMY FINISHED MOVING END THEIR TURN
-            if (enemyFinishedMoving)
+            if (finishedMoving)
             {
                 //UNLESS THEY SCORED A BONUS MOVE
                 if (bonusTurnStreak > 0)
                 {
                     bonusTurnStreak = 0;
-                    enemyFinishedMoving = false;
+                    finishedMoving = false;
                 }
-                else
-                    EndTurn();
+                else EndTurn();
             }
 
             //DO ANIMATION BREAK FOR ENEMY TO GIVE THEM TIME TO THINK
-            else if (!breakForEnemy)
+            else if (!breakForMove)
             {
                 animationTime = (float)(random.Next(3, 5) / 10.0) + 0.3f;
-                breakForEnemy = true;
+                breakForMove = true;
             }
 
             //IF ENEMY WAS ALREADY ON THINKING BREAK MAKE THEM MOVE
             else
             {
-                breakForEnemy = false;
+                breakForMove = false;
                 bonusTurnStreak = 0;
-                temporaryElementsEnemy = new();
 
                 //CALCULATE SOLVINGS
                 var firstLayerBase = new FutureBoard(board);
                 var firstLayer = firstLayerBase.CalculateLayer().OrderByDescending(x => x.MaxDesiredness(firstLayerBase)).ToList();
-                firstLayerBase.enemyFinishedMoving = true;
+                firstLayerBase.finishedMoving = true;
                 var baseDesiredness = firstLayerBase.Desiredness();
-                firstLayerBase.enemyFinishedMoving = false;
+                firstLayerBase.finishedMoving = false;
                 var currentLayer = firstLayer;
                 firstLayer.ForEach(x => x.depth = defines.aiDepth);
                 while (true)
@@ -589,7 +611,7 @@ public class Board
                         solving.possibleSolves = solving.board.CalculateLayer();
                         foreach (var innerSolving in solving.possibleSolves)
                             if (innerSolving.depth > -1)
-                                innerSolving.depth = innerSolving.board.player.health == 0 || innerSolving.board.enemy.health == 0 ? 0 : solving.depth - (solving.board.TurnEnded() ? 1 : 0);
+                                innerSolving.depth = innerSolving.board.participants.Where(x => x.team == 1).All(x => x.who.dead) || Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore && innerSolving.board.participants[0].who.health <= 0 ? 0 : solving.depth - (solving.board.TurnEnded() ? 1 : 0);
                     }
                     currentLayer = currentLayer.SelectMany(x => x.possibleSolves.FindAll(y => y.depth > 0)).ToList();
                     if (currentLayer.Count == 0) break;
@@ -602,25 +624,25 @@ public class Board
                 //var message = "";
                 //foreach (var solving1 in firstLayer)
                 //{
-                //    message += (solving1.board.playerTurn ? "P: " : "E: ") + solving1.desiredness.ToString("0.000") + " " + (solving1.x != -1 ? "(" + solving1.x + ", " + solving1.y + ") (" + boardNameDictionary[firstLayerBase.field[solving1.x, solving1.y]] + ")" : "") + (solving1.ability == "" ? "" : "<" + solving1.ability + ">") + "\n";
+                //    message += solving1.board.whosTurn + ": " + solving1.desiredness.ToString("0.000") + " " + (solving1.x != -1 ? "(" + solving1.x + ", " + solving1.y + ") (" + boardNameDictionary[firstLayerBase.field[solving1.x, solving1.y]] + ")" : "") + (solving1.ability == "" ? "" : "<" + solving1.ability + ">") + "\n";
                 //    if (solving1.possibleSolves.Count > 0) foreach (var solving2 in solving1.possibleSolves)
                 //        {
-                //            message += "    " + (solving2.board.playerTurn ? "P: " : "E: ") + solving2.desiredness.ToString("0.000") + " " + (solving2.x != -1 ? "(" + solving2.x + ", " + solving2.y + ") (" + boardNameDictionary[solving1.board.field[solving2.x, solving2.y]] + ")" : "") + (solving2.ability == "" ? "" : "<" + solving2.ability + ">") + "\n";
+                //            message += "    " + solving2.board.whosTurn + ": " + solving2.desiredness.ToString("0.000") + " " + (solving2.x != -1 ? "(" + solving2.x + ", " + solving2.y + ") (" + boardNameDictionary[solving1.board.field[solving2.x, solving2.y]] + ")" : "") + (solving2.ability == "" ? "" : "<" + solving2.ability + ">") + "\n";
                 //            if (solving2.possibleSolves.Count > 0) foreach (var solving3 in solving2.possibleSolves)
                 //                {
-                //                    message += "      " + (solving3.board.playerTurn ? "P: " : "E: ") + solving3.desiredness.ToString("0.000") + " " + (solving3.x != -1 ? "(" + solving3.x + ", " + solving3.y + ") (" + boardNameDictionary[solving2.board.field[solving3.x, solving3.y]] + ")" : "") + (solving3.ability == "" ? "" : "<" + solving3.ability + ">") + "\n";
+                //                    message += "      " + solving3.board.whosTurn + ": " + solving3.desiredness.ToString("0.000") + " " + (solving3.x != -1 ? "(" + solving3.x + ", " + solving3.y + ") (" + boardNameDictionary[solving2.board.field[solving3.x, solving3.y]] + ")" : "") + (solving3.ability == "" ? "" : "<" + solving3.ability + ">") + "\n";
                 //                    if (solving3.possibleSolves.Count > 0) foreach (var solving4 in solving3.possibleSolves)
                 //                        {
-                //                            message += "         " + (solving4.board.playerTurn ? "P: " : "E: ") + solving4.desiredness.ToString("0.000") + " " + (solving4.x != -1 ? "(" + solving4.x + ", " + solving4.y + ") (" + boardNameDictionary[solving3.board.field[solving4.x, solving4.y]] + ")" : "") + (solving4.ability == "" ? "" : "<" + solving4.ability + ">") + "\n";
+                //                            message += "         " + solving4.board.whosTurn + ": " + solving4.desiredness.ToString("0.000") + " " + (solving4.x != -1 ? "(" + solving4.x + ", " + solving4.y + ") (" + boardNameDictionary[solving3.board.field[solving4.x, solving4.y]] + ")" : "") + (solving4.ability == "" ? "" : "<" + solving4.ability + ">") + "\n";
                 //                            if (solving4.possibleSolves.Count > 0) foreach (var solving5 in solving4.possibleSolves)
                 //                                {
-                //                                    message += "            " + (solving5.board.playerTurn ? "P: " : "E: ") + solving5.desiredness.ToString("0.000") + " " + (solving5.x != -1 ? "(" + solving5.x + ", " + solving5.y + ") (" + boardNameDictionary[solving4.board.field[solving5.x, solving5.y]] + ")" : "") + (solving5.ability == "" ? "" : "<" + solving5.ability + ">") + "\n";
+                //                                    message += "            " + solving5.board.whosTurn + ": " + solving5.desiredness.ToString("0.000") + " " + (solving5.x != -1 ? "(" + solving5.x + ", " + solving5.y + ") (" + boardNameDictionary[solving4.board.field[solving5.x, solving5.y]] + ")" : "") + (solving5.ability == "" ? "" : "<" + solving5.ability + ">") + "\n";
                 //                                    if (solving5.possibleSolves.Count > 0) foreach (var solving6 in solving5.possibleSolves)
                 //                                        {
-                //                                            message += "                " + (solving6.board.playerTurn ? "P: " : "E: ") + solving6.desiredness.ToString("0.000") + " " + (solving6.x != -1 ? "(" + solving6.x + ", " + solving6.y + ") (" + boardNameDictionary[solving5.board.field[solving6.x, solving6.y]] + ")" : "") + (solving6.ability == "" ? "" : "<" + solving6.ability + ">") + "\n";
+                //                                            message += "                " + solving6.board.whosTurn + ": " + solving6.desiredness.ToString("0.000") + " " + (solving6.x != -1 ? "(" + solving6.x + ", " + solving6.y + ") (" + boardNameDictionary[solving5.board.field[solving6.x, solving6.y]] + ")" : "") + (solving6.ability == "" ? "" : "<" + solving6.ability + ">") + "\n";
                 //                                            if (solving6.possibleSolves.Count > 0) foreach (var solving7 in solving6.possibleSolves)
                 //                                                {
-                //                                                    message += "                  " + (solving7.board.playerTurn ? "P: " : "E: ") + solving7.desiredness.ToString("0.000") + " " + (solving7.x != -1 ? "(" + solving7.x + ", " + solving7.y + ") (" + boardNameDictionary[solving6.board.field[solving7.x, solving7.y]] + ")" : "") + (solving7.ability == "" ? "" : "<" + solving7.ability + ">") + "\n";
+                //                                                    message += "                  " + solving7.board.whosTurn + ": " + solving7.desiredness.ToString("0.000") + " " + (solving7.x != -1 ? "(" + solving7.x + ", " + solving7.y + ") (" + boardNameDictionary[solving6.board.field[solving7.x, solving7.y]] + ")" : "") + (solving7.ability == "" ? "" : "<" + solving7.ability + ">") + "\n";
                 //                                                }
                 //                                        }
                 //                                }
@@ -638,18 +660,21 @@ public class Board
                     var abilityObj = Ability.abilities.Find(x => x.name == bestMove.ability);
                     board.actions.Add(() =>
                     {
-                        cursorEnemy.Move(CDesktop.windows.Find(x => x.title == "EnemyBattleInfo").regionGroups[0].regions[enemy.actionBars[enemy.currentActionSet].IndexOf(abilityObj.name) + 2].transform.position + new Vector3(139, -10));
+                        cursorEnemy.Move(CDesktop.windows.Find(x => x.title == "EnemyBattleInfo").regionGroups[0].regions[participants[whosTurn].who.actionBars[participants[whosTurn].who.currentActionSet].IndexOf(abilityObj.name) + 2].transform.position + new Vector3(139, -10));
                         animationTime += defines.frameTime * 9;
                     });
                     board.actions.Add(() => { cursorEnemy.SetCursor(CursorType.Click); });
                     board.actions.Add(() =>
                     {
                         cursorEnemy.SetCursor(CursorType.Default);
-                        AddRegionOverlay(CDesktop.windows.Find(x => x.title == "EnemyBattleInfo").regionGroups[0].regions[enemy.actionBars[enemy.currentActionSet].IndexOf(abilityObj.name) + 2], "Window", 10f);
+                        AddRegionOverlay(CDesktop.windows.Find(x => x.title == "EnemyBattleInfo").regionGroups[0].regions[participants[whosTurn].who.actionBars[participants[whosTurn].who.currentActionSet].IndexOf(abilityObj.name) + 2], "Window", 10f);
                         animationTime += defines.frameTime;
-                        board.CallEvents(board.enemy, new() { { "Trigger", "AbilityCast" }, {"Triggerer", "Effector" }, { "AbilityName", abilityObj.name } });
-                        board.CallEvents(board.player, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Other" }, { "AbilityName", abilityObj.name } });
-                        board.enemy.DetractResources(abilityObj.cost);
+                        foreach (var participant in participants)
+                        {
+                            if (participant == participants[whosTurn]) board.CallEvents(participant.who, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Effector" }, { "AbilityName", abilityObj.name } });
+                            board.CallEvents(participant.who, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Other" }, { "AbilityName", abilityObj.name } });
+                        }
+                        board.participants[whosTurn].who.DetractResources(abilityObj.cost);
                     });
                 }
                 else
@@ -661,7 +686,7 @@ public class Board
                         cursorEnemy.SetCursor(CursorType.Default);
                         var list1 = board.FloodCount(bestMove.x, bestMove.y);
                         board.FloodDestroy(list1);
-                        board.enemyFinishedMoving = true;
+                        board.finishedMoving = true;
                     });
                 }
             }
@@ -671,18 +696,16 @@ public class Board
         else
         {
             //IF PLAYER FINISHED MOVING TURN END THEIR TURN
-            if (playerFinishedMoving)
-            {
+            if (finishedMoving)
+
                 //UNLESS THEY SCORED A BONUS MOVE
                 if (bonusTurnStreak > 0)
                 {
                     bonusTurnStreak = 0;
-                    playerFinishedMoving = false;
+                    finishedMoving = false;
                     canUnlockScreen = true;
                 }
-                else
-                    EndTurn();
-            }
+                else EndTurn();
 
             //IF PLAYER IS STILL GOING TO MOVE UNLOCK THE SCREEN
             else canUnlockScreen = true;
@@ -716,14 +739,15 @@ public class Board
             SpawnFallingText(new Vector2(0, 34), "Bonus Move", "White");
         }
         var types = list.Select(x => x.Item3 % 10).Distinct();
-        var foo = types.ToDictionary(x => Resource(x), x => list.Sum(y => y.Item3 % 10 == x ? y.Item3 / 10 + 1 : 0));
+        var foo = types.ToDictionary(x => Resource(x), x => 0);
         foreach (var a in list)
         {
-            SpawnFlyingElement(1, 9, window.LBRegionGroup().regions[a.Item2].bigButtons[a.Item1].transform.position + new Vector3(-17.5f, -17.5f), boardButtonDictionary[a.Item3], board.playerTurn);
+            var r = Resource(a.Item3 % 10);
+            SpawnShatter(1, 9, window.LBRegionGroup().regions[a.Item2].bigButtons[a.Item1].transform.position + new Vector3(-17.5f, -17.5f), boardButtonDictionary[a.Item3], participants[whosTurn].who.resources[r] + foo[r] < participants[whosTurn].who.MaxResource(r));
+            foo.Inc(r, a.Item3 / 10 + 1);
             field[a.Item1, a.Item2] = -1;
         }
-        if (playerTurn) player.AddResources(foo);
-        else enemy.AddResources(foo);
+        participants[whosTurn].who.AddResources(foo);
         bufferBoard.Generate();
         CDesktop.LockScreen();
     }

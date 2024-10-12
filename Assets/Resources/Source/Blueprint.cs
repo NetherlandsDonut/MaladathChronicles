@@ -38,6 +38,7 @@ using static SiteHostileArea;
 using static SiteInstance;
 using static SiteComplex;
 using static SiteTown;
+using System.Xml.Linq;
 
 public class Blueprint
 {
@@ -184,8 +185,7 @@ public class Blueprint
                         (h) =>
                         {
                             var list = board.FloodCount(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h), h.region.regionGroup.regions.IndexOf(h.region));
-                            board.temporaryElementsPlayer = new();
-                            board.playerFinishedMoving = true;
+                            board.finishedMoving = true;
                             board.FloodDestroy(list);
                         });
                 });
@@ -213,31 +213,44 @@ public class Blueprint
             SetAnchor(TopRight);
             AddRegionGroup();
             SetRegionGroupWidth(190);
-            AddButtonRegion(
-                () =>
-                {
-                    AddLine(board.enemy.name, "Black");
-                    AddSmallButton("OtherSettings", (h) =>
-                    {
-                        PlaySound("DesktopMenuOpen", 0.6f);
-                        SpawnDesktopBlueprint("GameMenu");
-                    });
-                },
-                (h) =>
-                {
-
-                }
-            );
-            AddHeaderRegion(() =>
+            for (int i = board.spotlightEnemy.Count - 1; i >= 0; i--)
             {
-                var race = races.Find(x => x.name == board.enemy.race);
-                AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? board.enemy.gender : ""));
-                AddLine("Level: ", "DarkGray");
-                AddText(board.enemy.level - 10 > board.player.level ? "??" : "" + board.enemy.level, ColorEntityLevel(board.enemy.level));
-            });
-            AddHealthBar(40, -38, "Enemy", board.enemy);
-            var aimedLength = board.enemy.actionBars.Max(x => x.Value.Count());
-            foreach (var actionBar in board.enemy.actionBars[board.enemy.currentActionSet])
+                var index = i;
+                AddButtonRegion(
+                    () =>
+                    {
+                        AddLine(board.participants[board.spotlightEnemy[index]].who.name);
+                    },
+                    (h) =>
+                    {
+                        if (index == 0) return;
+                        var temp = board.spotlightEnemy[index];
+                        board.spotlightEnemy.RemoveAt(index);
+                        board.spotlightEnemy.Insert(0, temp);
+                        foreach (var res in board.participants[board.spotlightEnemy[0]].who.resources)
+                        {
+                            CloseWindow("Enemy" + res.Key + "Resource");
+                            SpawnWindowBlueprint("Enemy" + res.Key + "Resource");
+                        }
+                    }
+                );
+                AddHeaderRegion(() =>
+                {
+                    var race = races.Find(x => x.name == board.participants[board.spotlightEnemy[index]].who.race);
+                    AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? board.participants[index].who.gender : ""));
+                    if (board.participants[board.spotlightEnemy[index]].who.dead) SetBigButtonToGrayscale();
+                    AddLine("Level: ", "DarkGray");
+                    AddText(board.participants[board.spotlightEnemy[index]].who.level - 10 > currentSave.player.level ? "??" : "" + board.participants[board.spotlightEnemy[index]].who.level, ColorEntityLevel(board.participants[board.spotlightEnemy[index]].who.level));
+                });
+                AddHealthBar(40, -38 - 65 * (board.spotlightEnemy.Count - index - 1), board.spotlightEnemy[index], board.participants[board.spotlightEnemy[index]].who);
+                if (index > 0)
+                {
+                    AddSmallEmptyRegion();
+                    AddSmallEmptyRegion();
+                }
+            }
+            var aimedLength = board.participants[board.spotlightEnemy[0]].who.actionBars.Max(x => x.Value.Count());
+            foreach (var actionBar in board.participants[board.spotlightEnemy[0]].who.actionBars[board.participants[board.spotlightEnemy[0]].who.currentActionSet])
             {
                 var abilityObj = abilities.Find(x => x.name == actionBar);
                 if (abilityObj == null || abilityObj.cost == null) continue;
@@ -245,63 +258,80 @@ public class Blueprint
                     () =>
                     {
                         ReverseButtons();
-                        if (board.enemyCooldowns.ContainsKey(actionBar))
+                        if (board.cooldowns[board.spotlightEnemy[0]].ContainsKey(actionBar))
                         {
                             AddLine(actionBar, "Black");
-                            AddText(" \\ " + board.enemyCooldowns[actionBar], "DimGray");
+                            AddText(" \\ " + board.cooldowns[board.spotlightEnemy[0]][actionBar], "DimGray");
                         }
                         else AddLine(actionBar);
                         AddSmallButton(abilityObj.icon);
-                        if (!abilityObj.EnoughResources(board.enemy) || !abilityObj.AreAnyConditionsMet("AbilityCast", currentSave, board, null))
+                        if (!abilityObj.EnoughResources(board.participants[board.spotlightEnemy[0]].who) || !abilityObj.AreAnyConditionsMet("AbilityCast", currentSave, board, null))
                         {
                             SetSmallButtonToGrayscale();
                             AddSmallButtonOverlay("OtherGridBlurred");
                         }
-                        if (board.CooldownOn(false, actionBar) > 0)
+                        if (board.CooldownOn(board.spotlightEnemy[0], actionBar) > 0)
                             AddSmallButtonOverlay("AutoCast");
                     },
-                    (h) =>
-                    {
-
-                    },
+                    null,
                     null,
                     (h) => () =>
                     {
-                        PrintAbilityTooltip(board.enemy, board.player, abilityObj, board.enemy.abilities[abilityObj.name]);
+                        PrintAbilityTooltip(board.participants[board.spotlightEnemy[0]].who, abilityObj, board.participants[board.spotlightEnemy[0]].who.abilities[abilityObj.name]);
                     }
                 );
             }
-            for (int i = board.enemy.actionBars[board.enemy.currentActionSet].Count; i < aimedLength; i++)
+            for (int i = board.participants[board.spotlightEnemy[0]].who.actionBars[board.participants[board.spotlightEnemy[0]].who.currentActionSet].Count; i < aimedLength; i++)
                 AddPaddingRegion(() => AddLine(""));
         }),
         new("PlayerBattleInfo", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
             SetRegionGroupWidth(190);
-            AddButtonRegion(
-                () =>
+            for (int i = board.spotlightFriendly.Count - 1; i >= 0; i--)
+            {
+                var index = i;
+                AddButtonRegion(
+                    () =>
+                    {
+                        AddLine(board.participants[board.spotlightFriendly[index]].who.name, "", "Right");
+                    },
+                    (h) =>
+                    {
+                        if (index == 0) return;
+                        var temp = board.spotlightFriendly[index];
+                        board.spotlightFriendly.RemoveAt(index);
+                        board.spotlightFriendly.Insert(0, temp);
+                        foreach (var res in board.participants[board.spotlightFriendly[0]].who.resources)
+                        {
+                            CloseWindow("Player" + res.Key + "Resource");
+                            SpawnWindowBlueprint("Player" + res.Key + "Resource");
+                        }
+                    }
+                );
+                AddHeaderRegion(() =>
                 {
                     ReverseButtons();
-                    AddLine(board.player.name, "Black", "Right");
-                    AddSmallButton("MenuFlee", (h) => board.EndCombat(CDesktop.title == "Game" ? "Flee" : "Quit"));
-                }
-            );
-            AddHeaderRegion(() =>
-            {
-                ReverseButtons();
-                if (board.player.spec != null)
-                    AddBigButton(board.player.Spec().icon);
-                else
+                    if (board.participants[board.spotlightFriendly[index]].who.spec != null)
+                        AddBigButton(board.participants[board.spotlightFriendly[index]].who.Spec().icon);
+                    else
+                    {
+                        var race = races.Find(x => x.name == board.participants[board.spotlightFriendly[index]].who.race);
+                        AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? board.participants[board.spotlightFriendly[0]].who.gender : ""));
+                    }
+                    if (board.participants[board.spotlightFriendly[index]].who.dead) SetBigButtonToGrayscale();
+                    AddLine("Level: " , "DarkGray");
+                    AddText("" + board.participants[board.spotlightFriendly[index]].who.level, "Gray");
+                });
+                AddHealthBar(2, -38 - 65 * (board.spotlightFriendly.Count - index - 1), board.spotlightFriendly[index], board.participants[board.spotlightFriendly[index]].who);
+                if (index > 0)
                 {
-                    var race = races.Find(x => x.name == board.player.race);
-                    AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? board.player.gender : ""));
+                    AddSmallEmptyRegion();
+                    AddSmallEmptyRegion();
                 }
-                AddLine("Level: " , "DarkGray");
-                AddText("" + board.player.level, "Gray");
-            });
-            AddHealthBar(2, -38, "Player", board.player);
-            var aimedLength = board.player.actionBars.Max(x => x.Value.Count());
-            foreach (var actionBar in board.player.actionBars[board.player.currentActionSet])
+            }
+            var aimedLength = board.participants[board.spotlightFriendly[0]].who.actionBars.Max(x => x.Value.Count());
+            foreach (var actionBar in board.participants[board.spotlightFriendly[0]].who.actionBars[board.participants[0].who.currentActionSet])
             {
                 aimedLength--;
                 var abilityObj = abilities.Find(x => x.name == actionBar);
@@ -309,41 +339,45 @@ public class Blueprint
                 AddButtonRegion(
                     () =>
                     {
-                        if (board.playerCooldowns.ContainsKey(actionBar))
+                        if (board.cooldowns[board.spotlightFriendly[0]].ContainsKey(actionBar))
                         {
-                            AddLine(board.playerCooldowns[actionBar] + " / ", "DimGray", "Right");
+                            AddLine(board.cooldowns[board.spotlightFriendly[0]][actionBar] + " / ", "DimGray", "Right");
                             AddText(actionBar, "Black");
                         }
                         else AddLine(actionBar, "", "Right");
                         AddSmallButton(abilityObj.icon);
-                        if (!abilityObj.EnoughResources(board.player) || !abilityObj.AreAnyConditionsMet("AbilityCast", currentSave, board, null))
+                        if (!abilityObj.EnoughResources(board.participants[board.spotlightFriendly[0]].who) || !abilityObj.AreAnyConditionsMet("AbilityCast", currentSave, board, null))
                         {
                             SetSmallButtonToGrayscale();
                             AddSmallButtonOverlay("OtherGridBlurred");
                         }
-                        if (board.CooldownOn(true, actionBar) > 0)
+                        if (board.CooldownOn(board.spotlightFriendly[0], actionBar) > 0)
                             AddSmallButtonOverlay("AutoCast");
                     },
                     (h) =>
                     {
-                        if (abilityObj.EnoughResources(board.player) && board.CooldownOn(true, actionBar) <= 0 && abilityObj.AreAnyConditionsMet("AbilityCast", currentSave, board, null))
-                        {
-                            board.CallEvents(board.player, new() { { "Trigger", "AbilityCast" }, {"Triggerer", "Effector" }, { "AbilityName", abilityObj.name } });
-                            board.CallEvents(board.enemy, new() { { "Trigger", "AbilityCast" }, {"Triggerer", "Other" }, { "AbilityName", abilityObj.name } });
-                            board.player.DetractResources(abilityObj.cost);
-                            foreach (var element in abilityObj.cost)
-                                board.log.elementsUsed.Inc(element.Key, element.Value);
-                            board.temporaryElementsPlayer = new();
-                        }
+                        if (board.spotlightFriendly[0] == board.whosTurn)
+                            if (abilityObj.EnoughResources(board.participants[board.spotlightFriendly[0]].who))
+                                if (board.CooldownOn(board.spotlightFriendly[0], actionBar) <= 0 && abilityObj.AreAnyConditionsMet("AbilityCast", currentSave, board, null))
+                                {
+                                    foreach (var participant in board.participants)
+                                    {
+                                        if (participant == board.participants[board.spotlightFriendly[0]]) board.CallEvents(participant.who, new() { { "Trigger", "AbilityCast" }, {"Triggerer", "Effector" }, { "AbilityName", abilityObj.name } });
+                                        else board.CallEvents(participant.who, new() { { "Trigger", "AbilityCast" }, {"Triggerer", "Other" }, { "AbilityName", abilityObj.name } });
+                                    }
+                                    board.participants[board.spotlightFriendly[0]].who.DetractResources(abilityObj.cost);
+                                    foreach (var element in abilityObj.cost)
+                                        board.log.elementsUsed.Inc(element.Key, element.Value);
+                                }
                     },
                     null,
                     (h) => () =>
                     {
-                        PrintAbilityTooltip(board.player, board.enemy, abilityObj, board.player.abilities.ContainsKey(abilityObj.name) ? board.player.abilities[abilityObj.name] : 0);
+                        PrintAbilityTooltip(board.participants[board.spotlightFriendly[0]].who, abilityObj, board.participants[board.spotlightFriendly[0]].who.abilities.ContainsKey(abilityObj.name) ? board.participants[board.spotlightFriendly[0]].who.abilities[abilityObj.name] : 0);
                     }
                 );
             }
-            var item = board.player.equipment.ContainsKey("Trinket") ? board.player.equipment["Trinket"] : null;
+            var item = board.participants[board.spotlightFriendly[0]].who.equipment.ContainsKey("Trinket") ? board.participants[board.spotlightFriendly[0]].who.equipment["Trinket"] : null;
             if (item != null && item.abilities != null && item.combatUse)
             {
                 aimedLength--;
@@ -352,37 +386,39 @@ public class Blueprint
                 AddButtonRegion(
                     () =>
                     {
-                        if (board.playerCooldowns.ContainsKey(ability.Key))
+                        if (board.cooldowns[board.spotlightFriendly[0]].ContainsKey(ability.Key))
                         {
-                            AddLine("" + board.playerCooldowns[ability.Key] + " / ", "DimGray", "Right");
+                            AddLine("" + board.cooldowns[board.spotlightFriendly[0]][ability.Key] + " / ", "DimGray", "Right");
                             AddText(ability.Key, "Black");
                         }
                         else AddLine(ability.Key, "", "Right");
                         AddSmallButton(item.icon);
-                        if (!abilityObj.EnoughResources(board.player))
+                        if (!abilityObj.EnoughResources(board.participants[board.spotlightFriendly[0]].who))
                         {
                             SetSmallButtonToGrayscale();
                             AddSmallButtonOverlay("OtherGridBlurred");
                         }
-                        if (board.CooldownOn(true, ability.Key) > 0)
+                        if (board.CooldownOn(board.spotlightFriendly[0], ability.Key) > 0)
                             AddSmallButtonOverlay("AutoCast");
                     },
                     (h) =>
                     {
-                        if (abilityObj.EnoughResources(board.player) && board.CooldownOn(true, ability.Key) <= 0)
+                        if (abilityObj.EnoughResources(board.participants[board.spotlightFriendly[0]].who) && board.CooldownOn(board.spotlightFriendly[0], ability.Key) <= 0)
                         {
-                            board.CallEvents(board.player, new() { { "Trigger", "AbilityCast" }, {"Triggerer", "Effector" }, { "AbilityName", abilityObj.name } });
-                            board.CallEvents(board.enemy, new() { { "Trigger", "AbilityCast" }, {"Triggerer", "Other" }, { "AbilityName", abilityObj.name } });
-                            board.player.DetractResources(abilityObj.cost);
+                            foreach (var participant in board.participants)
+                            {
+                                if (participant == board.participants[board.spotlightFriendly[0]]) board.CallEvents(participant.who, new() { { "Trigger", "AbilityCast" }, {"Triggerer", "Effector" }, { "AbilityName", abilityObj.name } });
+                                else board.CallEvents(participant.who, new() { { "Trigger", "AbilityCast" }, {"Triggerer", "Other" }, { "AbilityName", abilityObj.name } });
+                            }
+                            board.participants[board.spotlightFriendly[0]].who.DetractResources(abilityObj.cost);
                             foreach (var element in abilityObj.cost)
                                 board.log.elementsUsed.Inc(element.Key, element.Value);
-                            board.temporaryElementsPlayer = new();
                         }
                     },
                     null,
                     (h) => () =>
                     {
-                        PrintAbilityTooltip(board.player, board.enemy, abilityObj, board.player.abilities[abilityObj.name], item);
+                        PrintAbilityTooltip(board.participants[board.spotlightFriendly[0]].who, abilityObj, board.participants[board.spotlightFriendly[0]].who.abilities[abilityObj.name], item);
                     }
                 );
             }
@@ -391,13 +427,14 @@ public class Blueprint
         }),
         new("PlayerQuickUse", () => {
             SetAnchor(Bottom, 0, 9);
-            if (board.player.inventory.items.FindAll(x => x.combatUse && !x.CanEquip(board.player)).Count == 0) return;
+            var entity = board.participants[board.whosTurn].who;
+            if (entity.inventory.items.FindAll(x => x.combatUse && !x.CanEquip(entity)).Count == 0) return;
             else
             {
                 AddRegionGroup();
                 AddPaddingRegion(() =>
                 {
-                    foreach (var item in currentSave.player.inventory.items.FindAll(x => x.combatUse && !x.CanEquip(currentSave.player)))
+                    foreach (var item in entity.inventory.items.FindAll(x => x.combatUse && !x.CanEquip(entity)))
                         if (item != null && item.abilities != null && item.combatUse)
                         {
                             var ability = item.abilities.ToList()[0];
@@ -405,12 +442,15 @@ public class Blueprint
                             AddSmallButton(item.icon,
                             (h) =>
                             {
-                                board.CallEvents(board.player, new() { { "Trigger", "ItemUsed" }, { "Triggerer", "Effector" }, { "ItemHash", item.GetHashCode() + "" } });
-                                board.CallEvents(board.enemy, new() { { "Trigger", "ItemUsed" }, { "Triggerer", "Other" }, { "ItemHash", item.GetHashCode() + "" } });
+                                foreach (var participant in board.participants)
+                                {
+                                    if (participant == board.participants[0]) board.CallEvents(participant.who, new() { { "Trigger", "ItemUsed" }, { "Triggerer", "Effector" }, { "ItemHash", item.GetHashCode() + "" } });
+                                    else board.CallEvents(participant.who, new() { { "Trigger", "ItemUsed" }, { "Triggerer", "Other" }, { "ItemHash", item.GetHashCode() + "" } });
+                                }
                             },
                             null,
                             (h) => () => PrintItemTooltip(item));
-                            if (board.CooldownOn(true, ability.Key) > 0)
+                            if (board.CooldownOn(0, ability.Key) > 0)
                                 AddSmallButtonOverlay("AutoCast");
                         }
                 });
@@ -921,7 +961,7 @@ public class Blueprint
                             { "Align", "Center" },
                             { "Text", "Orcs are a proud and powerful race with warrior culture deeply rooted in honor and combat. Originally from the shattered world of Draenor, they now inhabit the harsh landscapes of Durotar, with their capital at Orgrimmar. They strive to overcome their dark past and build a new future for their people." }
                         }
-                    } } } }.Print(null, null, 258, null);
+                    } } } }.Print(null, 258, null);
                 });
                 if (creationRace != "Orc")
                 {
@@ -956,7 +996,7 @@ public class Blueprint
                             { "Align", "Center" },
                             { "Text", "Trolls are a fierce and agile race with a long history of mysticism and shamanism. The Darkspear Tribe, having allied with the Horde, has established itself in the Echo Isles and the coastal regions of Durotar. Known for their cunning and resourcefulness, they are formidable warriors and mystics." }
                         }
-                    } } } }.Print(null, null, 258, null);
+                    } } } }.Print(null, 258, null);
                 });
                 if (creationRace != "Troll")
                 {
@@ -991,7 +1031,7 @@ public class Blueprint
                             { "Align", "Center" },
                             { "Text", "Tauren are massive, bovine-like beings with a deep spiritual connection to nature and the Earth Mother. They dwell in the grassy plains of Mulgore, with their capital in Thunder Bluff. Renowned for their strength and wisdom, they serve as staunch protectors of the natural world." }
                         }
-                    } } } }.Print(null, null, 258, null);
+                    } } } }.Print(null, 258, null);
                 });
                 if (creationRace != "Tauren")
                 {
@@ -1026,7 +1066,7 @@ public class Blueprint
                             { "Align", "Center" },
                             { "Text", "The Forsaken are former humans who have broken free from the Lich King's control, now seeking vengeance and a place in the world. They inhabit the eerie and decaying ruins of the Undercity, beneath the fallen kingdom of Lordaeron. Driven by a desire for autonomy and revenge, they are both feared and misunderstood by the living." }
                         }
-                    } } } }.Print(null, null, 258, null);
+                    } } } }.Print(null, 258, null);
                 });
                 if (creationRace != "Forsaken")
                 {
@@ -1070,7 +1110,7 @@ public class Blueprint
                             { "Align", "Center" },
                             { "Text", "Humans are a resilient and versatile race known for their unyielding spirit and strong sense of justice. They have a rich history of surviving numerous wars and catastrophes, making them natural leaders in the Alliance. Their capital city is Stormwind, a bustling hub of trade and governance." }
                         }
-                    } } } }.Print(null, null, 258, null);
+                    } } } }.Print(null, 258, null);
                 });
                 if (creationRace != "Human")
                 {
@@ -1105,7 +1145,7 @@ public class Blueprint
                             { "Align", "Center" },
                             { "Text", "Dwarves are hardy and stout creatures famed for their skills in mining and blacksmithing. They hail from the snowy peaks of Dun Morogh and are deeply connected to their ancestral homeland of Ironforge. Their adventurous nature drives them to uncover ancient relics and forgotten lore." }
                         }
-                    } } } }.Print(null, null, 258, null);
+                    } } } }.Print(null, 258, null);
                 });
                 if (creationRace != "Dwarf")
                 {
@@ -1140,7 +1180,7 @@ public class Blueprint
                             { "Align", "Center" },
                             { "Text", "Gnomes are brilliant inventors and tinkerers, known for their technological prowess and innovative gadgets. Originally from the subterranean city of Gnomeregan, many now reside with their Dwarven allies in Ironforge. Despite their small stature, they possess an insatiable curiosity and boundless energy." }
                         }
-                    } } } }.Print(null, null, 258, null);
+                    } } } }.Print(null, 258, null);
                 });
                 if (creationRace != "Gnome")
                 {
@@ -1175,7 +1215,7 @@ public class Blueprint
                             { "Align", "Center" },
                             { "Text", "Night Elves are an ancient and mystical race with a profound connection to nature and druidic magic. They once lived in isolation in the lush forests of Kalimdor with their majestic city of Darnassus. Renowned for their agility and wisdom, they strive to protect the world of nature from harm." }
                         }
-                    } } } }.Print(null, null, 258, null);
+                    } } } }.Print(null, 258, null);
                 });
                 if (creationRace != "Night Elf")
                 {
@@ -1291,7 +1331,7 @@ public class Blueprint
                                     { "Text", "Hunters are expert survivalists and marksmen, deeply attuned to the wilderness and the creatures that inhabit it. Often raised in the wilds, they form profound bonds with their animal companions and learn to navigate and master their environment. From the forests of Ashenvale to the savannas of the Barrens, hunters are the quintessential rangers and protectors of the natural world." }
                                 }
                             } } } };
-                        desc?.Print(null, null, 296, null);
+                        desc?.Print(null, 296, null);
                     });
                     if (creationSpec != spec.name)
                     {
@@ -2456,11 +2496,11 @@ public class Blueprint
             AddHeaderRegion(() =>
             {
                 AddLine("Combat Results", "", "Center");
-                if (board.results.result == "Won")
+                if (board.results.result == "Team1Won")
                     AddSmallButton("OtherClose", (h) =>
                     {
                         var hard = Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore;
-                        if (hard && board.results.result == "Lost")
+                        if (hard && board.results.result == "Team2Won")
                         {
                             CloseSave();
                             SaveGames();
@@ -2493,14 +2533,24 @@ public class Blueprint
             });
             AddPaddingRegion(() =>
             {
-                if (board.results.experience > 0)
-                    AddLine("You earned " + board.results.experience + " experience", "", "Center");
-                else AddLine("You earned no experience", "", "Center");
+                foreach (var result in board.results.experience)
+                    if (result.Value > 0)
+                    {
+                        AddLine(result.Key.name, "", "Center");
+                        if (result.Key.name.Length > 15) AddLine(" earned " + result.Value + " experience", "", "Center");
+                        else AddText(" earned " + result.Value + " experience");
+                    }
+                    else
+                    {
+                        AddLine(result.Key.name, "", "Center");
+                        if (result.Key.name.Length > 15) AddLine(" earned no experience", "", "Center");
+                        else AddText(" earned no experience");
+                    }
                 SetRegionAsGroupExtender();
             });
             AddButtonRegion(() =>
             {
-                if (board.results.result == "Won")
+                if (board.results.result == "Team1Won")
                 {
                     if (board.results.inventory.items.Count > 0) AddLine("Show Loot", "", "Center");
                     else AddLine("OK", "", "Center");
@@ -2515,7 +2565,7 @@ public class Blueprint
             (h) =>
             {
                 var hard = Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore;
-                if (hard && board.results.result == "Lost")
+                if (hard && board.results.result == "Team2Won")
                 {
                     CloseSave();
                     SaveGames();
@@ -2526,7 +2576,7 @@ public class Blueprint
                 }
                 else
                 {
-                    if (board.results.result == "Won")
+                    if (board.results.result == "Team1Won")
                     {
                         if (board.area.instancePart)
                         {
@@ -2554,7 +2604,7 @@ public class Blueprint
                     else
                     {
                         CloseDesktop("CombatResults");
-                        if (board.results.result == "Lost")
+                        if (board.results.result == "Team2Won")
                         {
                             if (area.instancePart) CloseDesktop("Instance");
                             else CloseDesktop("HostileArea");
@@ -2583,7 +2633,7 @@ public class Blueprint
             );
         }),
         new("CombatResultsSkinning", () => {
-            if (board.results.result != "Won") return;
+            if (board.results.result != "Team1Won") return;
             if (board.results.skinningNode.Item1 == null) return;
             if (board.results.skinningLoot.items.Count == 0) return;
             SetAnchor(Bottom, 0, 35);
@@ -2614,7 +2664,7 @@ public class Blueprint
             else AddPaddingRegion(() => AddLine("Gather", "DarkGray"));
         }),
         new("CombatResultsMining", () => {
-            if (board.results.result != "Won") return;
+            if (board.results.result != "Team1Won") return;
             if (board.results.miningNode.Item1 == null) return;
             if (board.results.miningLoot.items.Count == 0) return;
             SetAnchor(BottomLeft, 19, 35);
@@ -2669,7 +2719,7 @@ public class Blueprint
             }
         }),
         new("CombatResultsHerbalism", () => {
-            if (board.results.result != "Won") return;
+            if (board.results.result != "Team1Won") return;
             if (board.results.herb.Item1 == null) return;
             if (board.results.herbalismLoot.items.Count == 0) return;
             SetAnchor(BottomRight, -19, 35);
@@ -2861,7 +2911,7 @@ public class Blueprint
                     }
                     else if (CDesktop.title == "SkinningLoot")
                     {
-                        AddLine(board.enemy.name + ":");
+                        AddLine(board.participants[1].who.name + ":");
                         AddSmallButton("OtherClose", (h) =>
                         {
                             PlaySound("DesktopInventoryClose");
@@ -2893,7 +2943,7 @@ public class Blueprint
                     }
                     else
                     {
-                        AddLine(board.enemy.name + ":");
+                        AddLine(board.participants[1].who.name + ":");
                         AddSmallButton("OtherClose", (h) =>
                         {
                             PlaySound("DesktopInventoryClose");
@@ -5535,11 +5585,29 @@ public class Blueprint
         new("LocationInfo", () => {
             SetAnchor(Top);
             AddRegionGroup();
-            SetRegionGroupWidth(242);
+            AddHeaderRegion(
+                () =>
+                {
+                    AddSmallButton("MenuFlee", (h) => board.EndCombat(CDesktop.title == "Game" ? "Flee" : "Quit"));
+                }
+            );
+            AddRegionGroup();
+            SetRegionGroupWidth(204);
             AddPaddingRegion(
                 () =>
                 {
                     AddLine(board != null ? board.area.name : (fishingSpot != null ? fishingSpot.name : "?"), "Gray", "Center");
+                }
+            );
+            AddRegionGroup();
+            AddHeaderRegion(
+                () =>
+                {
+                    AddSmallButton("OtherSettings", (h) =>
+                    {
+                        PlaySound("DesktopMenuOpen", 0.6f);
+                        SpawnDesktopBlueprint("GameMenu");
+                    });
                 }
             );
         }),
@@ -5608,7 +5676,7 @@ public class Blueprint
                             {
                                 SetAnchor(Center);
                                 var key = activeAbilities.ToList()[index + 6 * regionGroup.pagination()].Key;
-                                PrintAbilityTooltip(currentSave.player, null, key, activeAbilities[key]);
+                                PrintAbilityTooltip(currentSave.player, key, activeAbilities[key]);
                             }
                         );
                         if (bars.Contains(key.Key.name) || key.Key.name == currentSave.player.currentActionSet)
@@ -5682,7 +5750,7 @@ public class Blueprint
                             {
                                 SetAnchor(Center);
                                 var key = passiveAbilities.ToList()[index + 6 * regionGroup.pagination()].Key;
-                                PrintAbilityTooltip(currentSave.player, null, key, passiveAbilities[key]);
+                                PrintAbilityTooltip(currentSave.player, key, passiveAbilities[key]);
                             }
                         );
                     }
@@ -5788,7 +5856,7 @@ public class Blueprint
                         null,
                         (h) => () =>
                         {
-                            PrintAbilityTooltip(currentSave.player, null, abilityObj, currentSave.player.abilities.ContainsKey(abilityObj.name) ? currentSave.player.abilities[abilityObj.name] : 0);
+                            PrintAbilityTooltip(currentSave.player, abilityObj, currentSave.player.abilities.ContainsKey(abilityObj.name) ? currentSave.player.abilities[abilityObj.name] : 0);
                         }
                     );
                 else
@@ -6217,7 +6285,7 @@ public class Blueprint
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(Escape, () =>
             {
-                if (board.results.result == "Won")
+                if (board.results.result == "Team1Won")
                 {
                     PlaySound("DesktopInstanceClose");
                     CloseDesktop("CombatResults");
@@ -6653,7 +6721,7 @@ public class Blueprint
                 SpawnWindowBlueprint("Enemy" + element + "Resource");
             }
             AddHotkey(PageUp, () => {
-                board.player.resources = new Dictionary<string, int>
+                board.participants[0].who.resources = new Dictionary<string, int>
                 {
                     { "Earth", 99 },
                     { "Fire", 99 },
@@ -6667,10 +6735,10 @@ public class Blueprint
                     { "Shadow", 99 },
                 };
                 Respawn("PlayerBattleInfo");
-                board.UpdateResourceBars("Player", elements);
+                board.UpdateResourceBars(0, elements);
             });
             AddHotkey(PageDown, () => {
-                board.enemy.resources = new Dictionary<string, int>
+                board.participants[1].who.resources = new Dictionary<string, int>
                 {
                     { "Earth", 99 },
                     { "Fire", 99 },
@@ -6684,7 +6752,7 @@ public class Blueprint
                     { "Shadow", 99 },
                 };
                 Respawn("EnemyBattleInfo");
-                board.UpdateResourceBars("Enemy", elements);
+                board.UpdateResourceBars(1, elements);
             });
             AddHotkey(Escape, () =>
             {
@@ -6692,8 +6760,8 @@ public class Blueprint
                 SpawnDesktopBlueprint("GameMenu");
             });
             AddHotkey(BackQuote, () => { SpawnDesktopBlueprint("DevPanel"); });
-            AddHotkey(KeypadMultiply, () => { board.EndCombat("Won"); });
-            AddHotkey(KeypadDivide, () => { board.EndCombat("Lost"); });
+            AddHotkey(KeypadMultiply, () => { board.EndCombat("Team1Won"); });
+            AddHotkey(KeypadDivide, () => { board.EndCombat("Team2Won"); });
         }),
         new("FishingGame", () => 
         {
@@ -6709,8 +6777,8 @@ public class Blueprint
                 PlaySound("DesktopMenuOpen", 0.6f);
                 SpawnDesktopBlueprint("GameMenu");
             });
-            AddHotkey(KeypadMultiply, () => { fishingSpot.EndFishing("Won"); });
-            AddHotkey(KeypadDivide, () => { fishingSpot.EndFishing("Lost"); });
+            AddHotkey(KeypadMultiply, () => { fishingSpot.EndFishing("Team1Won"); });
+            AddHotkey(KeypadDivide, () => { fishingSpot.EndFishing("Team2Won"); });
         }),
         new("CharacterSheet", () => 
         {

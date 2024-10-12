@@ -173,7 +173,7 @@ public class Shatter : MonoBehaviour
         }
     }
 
-    public static void SpawnShatter(double speed, double amount, Vector3 position, string sprite, bool travel, string block = "0000")
+    public static void SpawnShatter(double speed, double amount, Vector3 position, string sprite, bool travel)
     {
         var foo = Resources.Load<Sprite>("Sprites/ButtonsBig/" + sprite);
         if (foo == null) return;
@@ -184,7 +184,7 @@ public class Shatter : MonoBehaviour
         shatter.layer = 1;
         int x = (int)foo.textureRect.width, y = (int)foo.textureRect.height;
         var dot = Resources.Load<GameObject>("Prefabs/PrefabDot");
-        var direction = RollDirection();
+        var direction = Random.insideUnitCircle;
         if (amount > 100) amount = 100;
         else if (amount < 0) amount = 0;
         for (int i = 2; i < x - 1; i++)
@@ -202,22 +202,12 @@ public class Shatter : MonoBehaviour
             if (travel && Defines.defines.animatedResourceParticles)
             {
                 newObject.GetComponent<Shatter>().Initiate(random.Next(1, 10) / 5f, random.Next(3, 5) / 3f);
-                newObject.GetComponent<Shatter>().Travel(Board.board.playerTurn ? new Vector3(-148, 141) : new Vector3(148, 141), 0.4f);
+                newObject.GetComponent<Shatter>().Travel(Board.board.spotlightFriendly.Contains(Board.board.whosTurn) ? new Vector3(-148, 141 - 57 * (Board.board.spotlightFriendly.Count - Board.board.spotlightFriendly.IndexOf(Board.board.whosTurn) - 1)) : new Vector3(148, 141 - 57 * (Board.board.spotlightEnemy.Count - Board.board.spotlightEnemy.IndexOf(Board.board.whosTurn) - 1)), 0.4f);
                 newObject.GetComponent<Rigidbody2D>().AddRelativeForce((direction / 2 + Random.insideUnitCircle) * (int)(100 * speed));
             }
             else newObject.GetComponent<Shatter>().Initiate(random.Next(1, 7), random.Next(1, 3) / 3f);
             newObject.GetComponent<Rigidbody2D>().AddRelativeForce((direction / 2 + Random.insideUnitCircle) * (int)(100 * speed));
-            if (block == "0000") direction = RollDirection();
-        }
-
-        Vector2 RollDirection()
-        {
-            var direction = Random.insideUnitCircle;
-            if (block[0] == '1' && block[2] == '1') direction = new Vector2(direction.x, 0);
-            else if (block[0] == '1' && direction.y > 0 || block[2] == '1' && direction.y < 0) direction = new Vector2(direction.x, -direction.y);
-            if (block[1] == '1' && block[3] == '1') direction = new Vector2(0, direction.y);
-            else if (block[1] == '1' && direction.x > 0 || block[3] == '1' && direction.x < 0) direction = new Vector2(-direction.x, direction.y);
-            return direction;
+            direction = Random.insideUnitCircle;
         }
     }
 

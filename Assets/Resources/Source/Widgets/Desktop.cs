@@ -95,10 +95,8 @@ public class Desktop : MonoBehaviour
         PlaySound("DesktopMagicClick");
         Starter.LoadData();
         if (Board.board != null)
-        {
-            Board.board.playerCombatAbilities = Board.board.playerCombatAbilities.ToDictionary(x => Ability.abilities.Find(y => x.Key.name == y.name), x => x.Value);
-            Board.board.enemyCombatAbilities = Board.board.enemyCombatAbilities.ToDictionary(x => Ability.abilities.Find(y => x.Key.name == y.name), x => x.Value);
-        }
+            foreach (var participant in Board.board.participants)
+                participant.combatAbilities = participant.combatAbilities.ToDictionary(x => Ability.abilities.Find(y => x.Key.name == y.name), x => x.Value);
         if (title == "Map")
         {
             var temp = cameraDestination;
@@ -399,11 +397,10 @@ public class Desktop : MonoBehaviour
             {
                 if (title == "Game" || title == "GameSimulation")
                 {
-                    if (animationTime > 0)
-                        animationTime -= Time.deltaTime;
+                    if (animationTime > 0) animationTime -= Time.deltaTime;
                     if (flyingMissiles.Count == 0 && animationTime <= 0 && fallingElements.Count == 0)
                     {
-                        if (!Board.board.playerTurn && CursorRemote.cursorEnemy.fadeIn)
+                        if (!Board.board.participants[Board.board.whosTurn].human && CursorRemote.cursorEnemy.fadeIn)
                             animationTime += defines.frameTime;
                         if (fallingElements.Count == 0)
                         {

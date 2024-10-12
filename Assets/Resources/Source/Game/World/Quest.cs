@@ -227,7 +227,7 @@ public class Quest
                         { "Text", description != null ? description.Split("$B$B")[staticPagination["QuestAdd"][0]] : "" }
                     }
                 } } }
-            }.Print(currentSave.player, null, 190, null);
+            }.Print(currentSave.player, 190, null);
             SetRegionAsGroupExtender();
         }
         if (f == "Turn")
@@ -263,7 +263,7 @@ public class Quest
                         { "Text", completion != null ? completion.Split("$B$B")[staticPagination["QuestTurn"][0]] : "" }
                     }
                 } } }
-            }.Print(currentSave.player, null, 190, null);
+            }.Print(currentSave.player, 190, null);
             SetRegionAsGroupExtender();
         }
         if (f != "Turn" && objective != null)
@@ -277,7 +277,7 @@ public class Quest
                         { "Text", objective }
                     }
                 } } }
-            }.Print(currentSave.player, null, 190, null, false);
+            }.Print(currentSave.player, 190, null, false);
             if (f == "Log") SetRegionAsGroupExtender();
         }
         if (f == "Log" && conditions != null)

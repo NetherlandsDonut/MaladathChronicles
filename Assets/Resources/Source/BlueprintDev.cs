@@ -3551,7 +3551,7 @@ public static class BlueprintDev
                 {
                     SetAnchor(Center);
                     var key = abilitiesSearch.ToList()[index + 10 * regionGroup.pagination()];
-                    PrintAbilityTooltip(null, null, key, 0);
+                    PrintAbilityTooltip(null, key, 0);
                 });
             }
             AddPaddingRegion(() =>
@@ -3856,7 +3856,7 @@ public static class BlueprintDev
                 (h) => () =>
                 {
                     SetAnchor(Center);
-                    PrintBuffTooltip(null, null, (buffsSearch[index + 10 * regionGroup.pagination()], 0, null, 0));
+                    PrintBuffTooltip(null, new CombatBuff(buffsSearch[index + 10 * regionGroup.pagination()], 0, null, 0));
                 });
             }
             AddPaddingRegion(() =>
@@ -5066,7 +5066,7 @@ public static class BlueprintDev
             }
             board.Reset();
             AddHotkey(PageUp, () => {
-                board.player.resources = new Dictionary<string, int>
+                board.participants[0].who.resources = new Dictionary<string, int>
                 {
                     { "Earth", 99 },
                     { "Fire", 99 },
@@ -5080,10 +5080,10 @@ public static class BlueprintDev
                     { "Shadow", 99 },
                 };
                 Respawn("PlayerBattleInfo");
-                board.UpdateResourceBars("Player", elements);
+                board.UpdateResourceBars(0, elements);
             });
             AddHotkey(PageDown, () => {
-                board.enemy.resources = new Dictionary<string, int>
+                board.participants[1].who.resources = new Dictionary<string, int>
                 {
                     { "Earth", 99 },
                     { "Fire", 99 },
@@ -5097,7 +5097,7 @@ public static class BlueprintDev
                     { "Shadow", 99 },
                 };
                 Respawn("EnemyBattleInfo");
-                board.UpdateResourceBars("Enemy", elements);
+                board.UpdateResourceBars(1, elements);
             });
         }),
         new("ObjectManagerHostileAreas", () =>

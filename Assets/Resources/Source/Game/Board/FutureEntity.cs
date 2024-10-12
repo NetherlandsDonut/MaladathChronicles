@@ -16,12 +16,11 @@ public class FutureEntity
         inventory = entity.inventory;
         equipment = entity.equipment;
         stats = entity.stats;
+        dead = entity.dead;
         currentActionSet = entity.currentActionSet;
         actionBars = entity.actionBars.ToDictionary(x => x.Key, x => x.Value.ToList());
         worldBuffs = entity.worldBuffs?.ToList();
-        buffs = new();
-        foreach (var buff in entity.buffs)
-            buffs.Add((buff.Item1, buff.Item2, buff.Item3));
+        buffs = entity.buffs.Select(x => new CombatBuff(x)).ToList();
         resources = new();
         foreach (var pair in entity.resources)
             resources.Add(pair.Key, pair.Value);
@@ -36,12 +35,11 @@ public class FutureEntity
         inventory = entity.inventory;
         equipment = entity.equipment;
         stats = entity.stats;
+        dead = entity.dead;
         currentActionSet = entity.currentActionSet;
         actionBars = entity.actionBars.ToDictionary(x => x.Key, x => x.Value.ToList());
         worldBuffs = entity.worldBuffs?.ToList();
-        buffs = new();
-        foreach (var buff in entity.buffs)
-            buffs.Add((buff.Item1, buff.Item2, buff.Item4));
+        buffs = entity.buffs.Select(x => new CombatBuff(x)).ToList();
         resources = new();
         foreach (var pair in entity.resources)
             resources.Add(pair.Key, pair.Value);
@@ -69,12 +67,15 @@ public class FutureEntity
 
     public Dictionary<string, int> resources;
 
-    public List<(Buff, int, int)> buffs;
+    public List<CombatBuff> buffs;
 
     //List of active world buffs and world debuffs on this entity
     public List<WorldBuff> worldBuffs;
 
-    public Dictionary<string, double> ElementImportance(double healthPerc, double otherHealthPerc)
+    //Is this entity dead
+    public bool dead;
+
+    public Dictionary<string, double> ElementImportance()
     {
         var abilities = Ability.abilities.FindAll(x => actionBars[currentActionSet].Exists(y => y == x.name));
         var elementCostsSeparate = abilities.SelectMany(x => x.cost.ToList()).GroupBy(x => x.Key, x => x.Value).ToDictionary(x => x.Key, x => x.Sum(x => x));
@@ -216,8 +217,8 @@ public class FutureEntity
                         stats.Inc(stat.Key, stat.Value);
         if (buffs != null)
             foreach (var buff in buffs)
-                if (buff.Item1 != null && buff.Item1.gains != null)
-                    foreach (var stat in buff.Item1.gains)
+                if (buff.buff != null && buff.buff.gains != null)
+                    foreach (var stat in buff.buff.gains)
                         stats.Inc(stat.Key, stat.Value);
         return stats;
     }
@@ -276,17 +277,19 @@ public class FutureEntity
 
     public void AddResources(FutureBoard futureBoard, Dictionary<string, int> resources)
     {
-        foreach (var resource in resources)
-            if (resource.Value > 0)
+        foreach (var resource in this.resources.Keys.ToList())
+            if (resources.ContainsKey(resource) && resources[resource] > 0)
             {
-                var before = this.resources[resource.Key];
-                this.resources[resource.Key] += resource.Value;
-                if (this.resources[resource.Key] > MaxResource(resource.Key))
-                    this.resources[resource.Key] = MaxResource(resource.Key);
-                futureBoard.CallEvents(this, new() { { "Trigger", "ResourceCollected" }, { "Triggerer", "Effector" }, { "ResourceType", resource.Key }, { "ResourceAmount", resource.Value + "" } });
-                futureBoard.CallEvents(this == futureBoard.player ? futureBoard.enemy : futureBoard.player, new() { { "Trigger", "ResourceCollected" }, { "Triggerer", "Other" }, { "ResourceType", resource.Key }, { "ResourceAmount", resource.Value + "" } });
-                if (this.resources[resource.Key] == MaxResource(resource.Key) && this.resources[resource.Key] != before)
-                    futureBoard.CallEvents(this == futureBoard.player ? futureBoard.enemy : futureBoard.player, new() { { "Trigger", "ResourceMaxed" }, { "Triggerer", "Other" }, { "ResourceType", resource.Key } });
+                var before = this.resources[resource];
+                this.resources[resource] += resources[resource];
+                if (this.resources[resource] > MaxResource(resource))
+                    this.resources[resource] = MaxResource(resource);
+                foreach (var participant in futureBoard.participants)
+                    if (participant.who == this) futureBoard.CallEvents(this, new() { { "Trigger", "ResourceCollected" }, { "Triggerer", "Effector" }, { "ResourceType", resource }, { "ResourceAmount", resources[resource] + "" } });
+                    else futureBoard.CallEvents(this, new() { { "Trigger", "ResourceCollected" }, { "Triggerer", "Other" }, { "ResourceType", resource }, { "ResourceAmount", resources[resource] + "" } });
+                foreach (var participant in futureBoard.participants)
+                    if (participant.who == this) futureBoard.CallEvents(this, new() { { "Trigger", "ResourceMaxed" }, { "Triggerer", "Effector" }, { "ResourceType", resource } });
+                    else futureBoard.CallEvents(this, new() { { "Trigger", "ResourceMaxed" }, { "Triggerer", "Other" }, { "ResourceType", resource } });
             }
     }
 
@@ -294,20 +297,19 @@ public class FutureEntity
 
     public void DetractResources(FutureBoard futureBoard, Dictionary<string, int> resources)
     {
-        foreach (var resource in resources)
-            if (resource.Value > 0)
+        foreach (var resource in this.resources.Keys.ToList())
+            if (resources.ContainsKey(resource) && resources[resource] > 0)
             {
-                var before = this.resources[resource.Key];
-                this.resources[resource.Key] -= resource.Value;
-                if (this.resources[resource.Key] < 0)
-                    this.resources[resource.Key] = 0;
-                futureBoard.CallEvents(this, new() { { "Trigger", "ResourceLost" }, { "Triggerer", "Effector" }, { "ResourceType", resource.Key }, { "ResourceAmount", resource.Value + "" } });
-                futureBoard.CallEvents(this == futureBoard.player ? futureBoard.enemy : futureBoard.player, new() { { "Trigger", "ResourceLost" }, { "Triggerer", "Other" }, { "ResourceType", resource.Key }, { "ResourceAmount", resource.Value + "" } });
-                if (this.resources[resource.Key] == 0 && this.resources[resource.Key] != before)
-                {
-                    futureBoard.CallEvents(this, new() { { "Trigger", "ResourceDeplated" }, { "Triggerer", "Effector" }, { "ResourceType", resource.Key } });
-                    futureBoard.CallEvents(this == futureBoard.player ? futureBoard.enemy : futureBoard.player, new() { { "Trigger", "ResourceDeplated" }, { "Triggerer", "Other" }, { "ResourceType", resource.Key } });
-                }
+                var before = this.resources[resource];
+                this.resources[resource] -= resources[resource];
+                if (this.resources[resource] < 0)
+                    this.resources[resource] = 0;
+                foreach (var participant in futureBoard.participants)
+                    if (participant.who == this) futureBoard.CallEvents(this, new() { { "Trigger", "ResourceLost" }, { "Triggerer", "Effector" }, { "ResourceType", resource }, { "ResourceAmount", resources[resource] + "" } });
+                    else futureBoard.CallEvents(this, new() { { "Trigger", "ResourceLost" }, { "Triggerer", "Other" }, { "ResourceType", resource }, { "ResourceAmount", resources[resource] + "" } });
+                foreach (var participant in futureBoard.participants)
+                    if (participant.who == this) futureBoard.CallEvents(this, new() { { "Trigger", "ResourceDeplated" }, { "Triggerer", "Effector" }, { "ResourceType", resource } });
+                    else futureBoard.CallEvents(this, new() { { "Trigger", "ResourceDeplated" }, { "Triggerer", "Other" }, { "ResourceType", resource } });
             }
     }
 
@@ -316,7 +318,7 @@ public class FutureEntity
         if (tags.Contains("Damage"))    return 2.00;
         if (tags.Contains("Defensive")) return 1.50;
         if (tags.Contains("Stun"))      return 1.20;
-        if (tags.Contains("Healing"))    return 0.85;
+        if (tags.Contains("Healing"))   return 0.85;
         if (tags.Contains("Gathering")) return 0.60;
         return 1.00;
     }
@@ -335,15 +337,13 @@ public class FutureEntity
         if (health > MaxHealth())
             health = MaxHealth();
         if (!dontCall)
-        {
-            futureBoard.CallEvents(this, new() { { "Trigger", "Heal" }, { "Triggerer", "Effector" }, { "HealAmount", heal + "" } });
-            futureBoard.CallEvents(this == futureBoard.player ? futureBoard.enemy : futureBoard.player, new() { { "Trigger", "Heal" }, { "Triggerer", "Other" }, { "HealAmount", heal + "" } });
-        }
+            foreach (var participant in futureBoard.participants)
+                if (participant.who == this) futureBoard.CallEvents(participant.who, new() { { "Trigger", "Heal" }, { "Triggerer", "Effector" }, { "HealAmount", heal + "" } });
+                else futureBoard.CallEvents(participant.who, new() { { "Trigger", "Heal" }, { "Triggerer", "Other" }, { "HealAmount", heal + "" } });
         if (health == MaxHealth() && before != health)
-        {
-            futureBoard.CallEvents(this, new() { { "Trigger", "HealthMaxed" }, { "Triggerer", "Effector" } });
-            futureBoard.CallEvents(this == futureBoard.player ? futureBoard.enemy : futureBoard.player, new() { { "Trigger", "HealthMaxed" }, { "Triggerer", "Other" } });
-        }
+            foreach (var participant in futureBoard.participants)
+                if (participant.who == this) futureBoard.CallEvents(participant.who, new() { { "Trigger", "HealthMaxed" }, { "Triggerer", "Effector" } });
+                else futureBoard.CallEvents(participant.who, new() { { "Trigger", "HealthMaxed" }, { "Triggerer", "Other" } });
     }
 
     public void Damage(FutureBoard futureBoard, double damage, bool dontCall)
@@ -351,15 +351,34 @@ public class FutureEntity
         var before = health;
         health -= (int)Math.Ceiling(damage);
         if (!dontCall)
-        {
-            futureBoard.CallEvents(this, new() { { "Trigger", "Damage" }, { "Triggerer", "Effector" }, { "DamageAmount", damage + "" } });
-            futureBoard.CallEvents(this == futureBoard.player ? futureBoard.enemy : futureBoard.player, new() { { "Trigger", "Damage" }, { "Triggerer", "Other" }, { "DamageAmount", damage + "" } });
-        }
+            foreach (var participant in futureBoard.participants)
+                if (participant.who == this) futureBoard.CallEvents(participant.who, new() { { "Trigger", "Damage" }, { "Triggerer", "Effector" }, { "DamageAmount", damage + "" } });
+                else futureBoard.CallEvents(participant.who, new() { { "Trigger", "Damage" }, { "Triggerer", "Other" }, { "DamageAmount", damage + "" } });
         if (health <= 0 && before > 0)
         {
-            futureBoard.CallEvents(this, new() { { "Trigger", "HealthDeplated" }, { "Triggerer", "Effector" } });
-            futureBoard.CallEvents(this == futureBoard.player ? futureBoard.enemy : futureBoard.player, new() { { "Trigger", "HealthDeplated" }, { "Triggerer", "Other" } });
+            foreach (var participant in futureBoard.participants)
+                if (participant.who == this) futureBoard.CallEvents(participant.who, new() { { "Trigger", "HealthDeplated" }, { "Triggerer", "Effector" } });
+                else futureBoard.CallEvents(participant.who, new() { { "Trigger", "HealthDeplated" }, { "Triggerer", "Other" } });
+            if (health <= 0) Die();
         }
+    }
+
+    public void Die()
+    {
+        //Mark this entity as dead
+        dead = true;
+
+        //Find all world buffs that player has that aren't death persistant
+        var toRemove1 = buffs.Where(x => !x.buff.deathResistant).ToList();
+
+        //Remove not death resistant world buffs from player that just died
+        foreach (var buff in toRemove1) RemoveBuff(buff);
+
+        //Find all world buffs that player has that aren't death persistant
+        var toRemove2 = worldBuffs.Where(x => !x.Buff.deathResistant);
+
+        //Remove not death resistant world buffs from player that just died
+        foreach (var buff in toRemove2) RemoveWorldBuff(buff);
     }
 
     public void FlareBuffs(FutureBoard futureBoard)
@@ -367,29 +386,31 @@ public class FutureEntity
         for (int i = buffs.Count - 1; i >= 0; i--)
         {
             var index = i;
-            if (buffs[index].Item2 == 1)
+            if (buffs[index].durationLeft == 1)
             {
-                futureBoard.CallEvents(this, new() { { "Trigger", "BuffRemove" }, { "Triggerer", "Effector" }, { "BuffName", buffs[index].Item1.name } });
-                futureBoard.CallEvents(futureBoard.player == this ? futureBoard.enemy : futureBoard.player, new() { { "Trigger", "BuffRemove" }, { "Triggerer", "Other" }, { "BuffName", buffs[index].Item1.name } });
+                foreach (var participant in futureBoard.participants)
+                    if (participant.who == this) futureBoard.CallEvents(participant.who, new() { { "Trigger", "BuffRemove" }, { "Triggerer", "Effector" }, { "BuffName", buffs[index].buff.name } });
+                    else futureBoard.CallEvents(participant.who, new() { { "Trigger", "BuffRemove" }, { "Triggerer", "Other" }, { "BuffName", buffs[index].buff.name } });
             }
-            buffs[index] = (buffs[index].Item1, buffs[index].Item2 - 1, buffs[index].Item3);
-            if (buffs[index].Item2 == 0) RemoveBuff(buffs[index]);
+            if (--buffs[index].durationLeft <= 0) RemoveBuff(buffs[index]);
         }
     }
 
+    //Adds a buff to this future entity
     public void AddBuff(Buff buff, int duration, int rank)
     {
         if (!buff.stackable)
         {
-            var list = buffs.FindAll(x => x.Item1 == buff).ToList();
+            var list = buffs.FindAll(x => x.buff == buff).ToList();
             for (int i = list.Count - 1; i >= 0; i--)
                 RemoveBuff(list[i]);
         }
-        buffs.Add((buff, duration, rank));
+        buffs.Add(new CombatBuff(buff, duration, null, rank));
     }
 
-    public void RemoveBuff((Buff, int, int) buff)
-    {
-        buffs.Remove(buff);
-    }
+    //Removes a world buff from this future entity
+    public void RemoveWorldBuff(WorldBuff worldBuff) => worldBuffs.Remove(worldBuff);
+
+    //Removes a buff from this future entity
+    public void RemoveBuff(CombatBuff buff) => buffs.Remove(buff);
 }

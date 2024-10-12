@@ -71,6 +71,7 @@ public class Entity
         this.race = name = race.name;
         abilities = race.abilities.ToDictionary(x => x.Key, x => x.Value);
         equipment = new();
+        worldBuffs = new();
         inventory = new Inventory(new List<string>());
         actionBars = new() { { "Default", Ability.abilities.FindAll(x => abilities.ContainsKey(x.name) && x.cost != null).OrderBy(x => x.cost.Sum(y => y.Value)).OrderBy(x => x.putOnEnd).Select(x => x.name).ToList() } };
         stats = new Stats(
@@ -596,16 +597,17 @@ public class Entity
             if (resources.ContainsKey(resource))
             {
                 this.resources[resource] += resources[resource];
-                Board.board.CallEvents(this, new() { { "Trigger", "ResourceCollected" }, { "Triggerer", "Effector" }, { "ResourceType", resource }, { "ResourceAmount", resources[resource] + "" } });
-                Board.board.CallEvents(this == Board.board.player ? Board.board.enemy : Board.board.player, new() { { "Trigger", "ResourceCollected" }, { "Triggerer", "Other" }, { "ResourceType", resource }, { "ResourceAmount", resources[resource] + "" } });
+                foreach (var participant in Board.board.participants)
+                {
+                    if (participant.who == this) Board.board.CallEvents(this, new() { { "Trigger", "ResourceCollected" }, { "Triggerer", "Effector" }, { "ResourceType", resource }, { "ResourceAmount", resources[resource] + "" } });
+                    else Board.board.CallEvents(this, new() { { "Trigger", "ResourceCollected" }, { "Triggerer", "Other" }, { "ResourceType", resource }, { "ResourceAmount", resources[resource] + "" } });
+                }
             }
-            if (this.resources[resource] > MaxResource(resource))
-                this.resources[resource] = MaxResource(resource);
-            else if (this.resources[resource] < 0)
-                this.resources[resource] = 0;
+            if (this.resources[resource] > MaxResource(resource)) this.resources[resource] = MaxResource(resource);
+            else if (this.resources[resource] < 0) this.resources[resource] = 0;
         }
-        Board.board.UpdateResourceBars(Board.board.player == this ? "Player" : "Enemy", resources.Keys.ToList());
-        Respawn((Board.board.player == this ? "Player" : "Enemy") + "BattleInfo");
+        Board.board.UpdateResourceBars(Board.board.participants.FindIndex(x => x.who == this), resources.Keys.ToList());
+        Respawn((this == Board.board.participants[0].who ? "Player" : "Enemy") + "BattleInfo");
     }
 
     //Detracts specific resource in given amount from the entity
@@ -622,16 +624,19 @@ public class Entity
             if (resources.ContainsKey(resource))
             {
                 this.resources[resource] -= resources[resource];
-                Board.board.CallEvents(this, new() { { "Trigger", "ResourceLost" }, { "Triggerer", "Effector" }, { "ResourceType", resource }, { "ResourceAmount", resources[resource] + "" } });
-                Board.board.CallEvents(this == Board.board.player ? Board.board.enemy : Board.board.player, new() { { "Trigger", "ResourceLost" }, { "Triggerer", "Other" }, { "ResourceType", resource }, { "ResourceAmount", resources[resource] + "" } });
+                foreach (var participant in Board.board.participants)
+                {
+                    if (participant.who == this) Board.board.CallEvents(this, new() { { "Trigger", "ResourceLost" }, { "Triggerer", "Effector" }, { "ResourceType", resource }, { "ResourceAmount", resources[resource] + "" } });
+                    else Board.board.CallEvents(this, new() { { "Trigger", "ResourceLost" }, { "Triggerer", "Other" }, { "ResourceType", resource }, { "ResourceAmount", resources[resource] + "" } });
+                }
             }
             if (this.resources[resource] > MaxResource(resource))
                 this.resources[resource] = MaxResource(resource);
             else if (this.resources[resource] < 0)
                 this.resources[resource] = 0;
         }
-        Board.board.UpdateResourceBars(Board.board.player == this ? "Player" : "Enemy", resources.Keys.ToList());
-        Respawn((Board.board.player == this ? "Player" : "Enemy") + "BattleInfo");
+        Board.board.UpdateResourceBars(Board.board.participants.FindIndex(x => x.who == this), resources.Keys.ToList());
+        Respawn((this == Board.board.participants[0].who ? "Player" : "Enemy") + "BattleInfo");
     }
 
     //Resets entity's resources to their base amount
@@ -1123,8 +1128,8 @@ public class Entity
                         stats.Inc(stat.Key, stat.Value);
         if (buffs != null)
             foreach (var buff in buffs)
-                if (buff.Item1 != null && buff.Item1.gains != null)
-                    foreach (var stat in buff.Item1.gains)
+                if (buff.buff != null && buff.buff.gains != null)
+                    foreach (var stat in buff.buff.gains)
                         stats.Inc(stat.Key, stat.Value);
         return stats;
     }
@@ -1198,8 +1203,7 @@ public class Entity
     //Prepares this entity for combat
     public void InitialiseCombat(bool fullReset = true)
     {
-        if (fullReset)
-            health = MaxHealth();
+        if (fullReset) health = MaxHealth();
         buffs = new();
         ResetResources();
     }
@@ -1217,14 +1221,15 @@ public class Entity
         var before = health;
         health -= damage;
         if (!dontCall)
-        {
-            Board.board.CallEvents(this, new() { { "Trigger", "Damage" }, { "Triggerer", "Effector" }, { "DamageAmount", damage + "" } });
-            Board.board.CallEvents(this == Board.board.player ? Board.board.enemy : Board.board.player, new() { { "Trigger", "Damage" }, { "Triggerer", "Other" }, { "DamageAmount", damage + "" } });
-        }
+            foreach (var participant in Board.board.participants)
+                if (participant.who == this) Board.board.CallEvents(participant.who, new() { { "Trigger", "Damage" }, { "Triggerer", "Effector" }, { "DamageAmount", damage + "" } });
+                else Board.board.CallEvents(participant.who, new() { { "Trigger", "Damage" }, { "Triggerer", "Other" }, { "DamageAmount", damage + "" } });
         if (health <= 0 && before > 0)
         {
-            Board.board.CallEvents(this, new() { { "Trigger", "HealthDeplated" }, { "Triggerer", "Effector" } });
-            Board.board.CallEvents(this == Board.board.player ? Board.board.enemy : Board.board.player, new() { { "Trigger", "HealthDeplated" }, { "Triggerer", "Other" } });
+            foreach (var participant in Board.board.participants)
+                if (participant.who == this) Board.board.CallEvents(participant.who, new() { { "Trigger", "HealthDeplated" }, { "Triggerer", "Effector" } });
+                else Board.board.CallEvents(participant.who, new() { { "Trigger", "HealthDeplated" }, { "Triggerer", "Other" } });
+            if (health <= 0) Die();
         }
     }
 
@@ -1236,15 +1241,34 @@ public class Entity
         if (health > MaxHealth())
             health = MaxHealth();
         if (!dontCall)
-        {
-            Board.board.CallEvents(this, new() { { "Trigger", "Heal" }, { "Triggerer", "Effector" }, { "HealAmount", heal + "" } });
-            Board.board.CallEvents(this == Board.board.player ? Board.board.enemy : Board.board.player, new() { { "Trigger", "Heal" }, { "Triggerer", "Other" }, { "HealAmount", heal + "" } });
-        }
+            foreach (var participant in Board.board.participants)
+            if (participant.who == this) Board.board.CallEvents(participant.who, new() { { "Trigger", "Heal" }, { "Triggerer", "Effector" }, { "HealAmount", heal + "" } });
+            else Board.board.CallEvents(participant.who, new() { { "Trigger", "Heal" }, { "Triggerer", "Other" }, { "HealAmount", heal + "" } });
         if (health == MaxHealth() && before != health)
-        {
-            Board.board.CallEvents(this, new() { { "Trigger", "HealthMaxed" }, { "Triggerer", "Effector" } });
-            Board.board.CallEvents(this == Board.board.player ? Board.board.enemy : Board.board.player, new() { { "Trigger", "HealthMaxed" }, { "Triggerer", "Other" } });
-        }
+            foreach (var participant in Board.board.participants)
+                if (participant.who == this) Board.board.CallEvents(participant.who, new() { { "Trigger", "HealthMaxed" }, { "Triggerer", "Effector" } });
+                else Board.board.CallEvents(participant.who, new() { { "Trigger", "HealthMaxed" }, { "Triggerer", "Other" } });
+    }
+
+    public void Die()
+    {
+        //Mark this entity as dead
+        dead = true;
+
+        //Play death sound
+        PlayEnemyLine(EnemyLine("Death"));
+
+        //Find all world buffs that player has that aren't death persistant
+        var toRemove1 = buffs.Where(x => !x.buff.deathResistant);
+
+        //Remove not death resistant world buffs from player that just died
+        foreach (var buff in toRemove1.ToList()) RemoveBuff(buff);
+
+        //Find all world buffs that player has that aren't death persistant
+        var toRemove2 = worldBuffs.Where(x => !x.Buff.deathResistant);
+
+        //Remove not death resistant world buffs from player that just died
+        foreach (var buff in toRemove2) RemoveWorldBuff(buff);
     }
 
     public Dictionary<Ability, int> AbilitiesInCombat()
@@ -1261,16 +1285,11 @@ public class Entity
         for (int i = buffs.Count - 1; i >= 0; i--)
         {
             var index = i;
-            if (buffs[index].Item2 == 1)
-            {
-                Board.board.CallEvents(this, new() { { "Trigger", "BuffRemove" }, {"Triggerer", "Effector" }, { "BuffName", buffs[index].Item1.name } });
-                Board.board.CallEvents(Board.board.player == this ? Board.board.enemy : Board.board.player, new() { { "Trigger", "BuffRemove" }, {"Triggerer", "Other" }, { "BuffName", buffs[index].Item1.name } });
-            }
-            Board.board.actions.Add(() =>
-            {
-                buffs[index] = (buffs[index].Item1, buffs[index].Item2 - 1, buffs[index].Item3, buffs[index].Item4);
-                if (buffs[index].Item2 == 0) RemoveBuff(buffs[index]);
-            });
+            if (buffs[index].durationLeft == 1)
+                foreach (var participant in Board.board.participants)
+                    if (participant.who == this) Board.board.CallEvents(participant.who, new() { { "Trigger", "BuffRemove" }, { "Triggerer", "Effector" }, { "BuffName", buffs[index].buff.name } });
+                    else Board.board.CallEvents(participant.who, new() { { "Trigger", "BuffRemove" }, { "Triggerer", "Other" }, { "BuffName", buffs[index].buff.name } });
+            Board.board.actions.Add(() => { if (--buffs[index].durationLeft == 0) RemoveBuff(buffs[index]); });
         }
     }
 
@@ -1286,28 +1305,25 @@ public class Entity
     }
 
     //Removes a world buff from this entity
-    public void RemoveWorldBuff(WorldBuff worldBuff)
-    {
-        worldBuffs.Remove(worldBuff);
-    }
+    public void RemoveWorldBuff(WorldBuff worldBuff) => worldBuffs.Remove(worldBuff);
 
     //Adds a buff to this entity
     public void AddBuff(Buff buff, int duration, GameObject buffObject, int rank)
     {
         if (!buff.stackable)
         {
-            var list = buffs.FindAll(x => x.Item1 == buff).ToList();
+            var list = buffs.FindAll(x => x.buff == buff).ToList();
             for (int i = list.Count - 1; i >= 0; i--) RemoveBuff(list[i]);
         }
-        buffs.Add((buff, duration, buffObject, rank));
+        buffs.Add(new CombatBuff(buff, duration, buffObject, rank));
     }
 
     //Removes a buff from this entity
-    public void RemoveBuff((Buff, int, GameObject, int) buff)
+    public void RemoveBuff(CombatBuff buff)
     {
-        var temp = buff.Item3.GetComponent<FlyingBuff>();
+        var temp = buff.flyingBuff.GetComponent<FlyingBuff>();
         temp.dyingIndex = temp.Index();
-        (this == Board.board.player ? Board.board.temporaryBuffsPlayer : Board.board.temporaryBuffsEnemy).Remove(buff.Item3);
+        Board.board.temporaryBuffs[Board.board.participants.IndexOf(Board.board.participants.Find(x => x.who == this))].Remove(buff.flyingBuff);
         buffs.Remove(buff);
     }
 
@@ -1399,6 +1415,9 @@ public class Entity
     //List of active world buffs and world debuffs on this entity
     public List<WorldBuff> worldBuffs;
 
+    //Is this entity dead
+    public bool dead;
+
     //Current health of the entity
     [NonSerialized] public int health;
 
@@ -1406,5 +1425,5 @@ public class Entity
     [NonSerialized] public Dictionary<string, int> resources;
 
     //List of active buffs and debuffs on this entity
-    [NonSerialized] public List<(Buff, int, GameObject, int)> buffs;
+    [NonSerialized] public List<CombatBuff> buffs;
 }

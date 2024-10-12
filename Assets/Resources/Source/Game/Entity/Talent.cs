@@ -59,7 +59,7 @@ public class Talent
                 null,
                 (h) => () =>
                 {
-                    PrintAbilityTooltip(currentSave.player, null, abilities.Find(x => x.name == talent.ability), currentSave.player.abilities.ContainsKey(talent.ability) ? (currentSave.player.abilities[talent.ability] == abilities.Find(x => x.name == talent.ability).ranks.Count - 1 ? currentSave.player.abilities[talent.ability] : currentSave.player.abilities[talent.ability] + 1) : 0);
+                    PrintAbilityTooltip(currentSave.player, abilities.Find(x => x.name == talent.ability), currentSave.player.abilities.ContainsKey(talent.ability) ? (currentSave.player.abilities[talent.ability] == abilities.Find(x => x.name == talent.ability).ranks.Count - 1 ? currentSave.player.abilities[talent.ability] : currentSave.player.abilities[talent.ability] + 1) : 0);
                 }
             );
             var canPick = currentSave.player.CanPickTalent(spec, talent);

@@ -10,7 +10,6 @@ using static Sound;
 using static Defines;
 using static Shatter;
 using static FlyingBuff;
-using static FlyingElement;
 using static FlyingMissile;
 
 public class Event
@@ -230,10 +229,10 @@ public class Event
     public void ExecuteEffects(Board board, FutureBoard futureBoard, string icon, Dictionary<string, string> triggerBase, Dictionary<string, string> variables, string sourceName, int sourceRank)
     {
         //Define entities that take place in the event's effects
-        var effector = board == null ? null : (board.playerTurn ? board.player : board.enemy);
-        var other = board == null ? null : (board.playerTurn ? board.enemy : board.player);
-        var futureEffector = futureBoard == null ? null : (futureBoard.playerTurn ? futureBoard.player : futureBoard.enemy);
-        var futureOther = futureBoard == null ? null : (futureBoard.playerTurn ? futureBoard.enemy : futureBoard.player);
+        var effector = board?.participants[board.whosTurn];
+        var other = board?.Target(effector.team);
+        var futureEffector = futureBoard?.participants[futureBoard.whosTurn];
+        var futureOther = futureBoard?.Target(futureEffector.team);
 
         //If we are in realtime combat then print name of the ability of which effects are being executed
         //board?.actions.Add(() => SpawnFallingText(new Vector2(0, 14), sourceName, effector == board.player ? "White" : "Red"));
@@ -278,7 +277,7 @@ public class Event
             bool CheckFailChance()
             {
                 var randomRange = random.Next(0, 100);
-                return randomRange >= chanceBase + chance * (chanceScale == "None" ? 1 : (chanceSource != "None" ? (futureBoard == null ? (chanceSource == "Effector" ? effector : other).Stats()[chanceScale] : (chanceSource == "Effector" ? futureEffector : futureOther).Stats()[chanceScale]) : 1));
+                return randomRange >= chanceBase + chance * (chanceScale == "None" ? 1 : (chanceSource != "None" ? (futureBoard == null ? (chanceSource == "Effector" ? effector : other).who.Stats()[chanceScale] : (chanceSource == "Effector" ? futureEffector : futureOther).who.Stats()[chanceScale]) : 1));
             }
 
             //Executes effect's animation before the effect itself takes place
@@ -291,7 +290,7 @@ public class Event
                 board.actions.Add(() =>
                 {
                     if (animationType == "Missile")
-                        SpawnFlyingMissile(icon, (affect == "Effector" ? effector : other) != Board.board.player, animationArc, animationSpeed, trailStrength);
+                        SpawnFlyingMissile(icon, (affect == "Effector" ? effector : other) != Board.board.participants[0], animationArc, animationSpeed, trailStrength);
                 });
             }
 
@@ -329,7 +328,7 @@ public class Event
                     double shatterSpeed = effect.ContainsKey("ShatterSpeed") ? double.Parse(effect["ShatterSpeed"].Replace(".", ",")) : 6;
                     if (shatterTarget == "None") return;
                     for (int i = 0; i < shatterDensity; i++)
-                        SpawnShatter(shatterSpeed, shatterDegree, new Vector3(shatterTarget == "Other" ? (board.playerTurn ? 129 : -167) : (board.playerTurn ? -167 : 129), 124), icon, false, shatterType == "Directional" ? shatterTarget == "Other" ? (board.playerTurn ? "1011" : "1110") : (board.playerTurn ? "1011" : "1110") : "0000");
+                        SpawnShatter(shatterSpeed, shatterDegree, new Vector3(shatterTarget == "Other" ? (board.whosTurn == 0 ? 129 : -167) : (board.whosTurn == 0 ? -167 : 129), 124), icon, false);
                 }
 
                 //Plays a sound effect if it was specified in the effect
@@ -350,21 +349,21 @@ public class Event
                     var source = powerSource == "Effector" ? futureEffector : futureOther;
                     var target = affect == "Effector" ? futureEffector : futureOther;
                     string damageAmount = effect.ContainsKey("DamageAmount") ? effect["DamageAmount"] : "None";
-                    var amount = damageAmount != "None" ? int.Parse(damageAmount) : source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale;
-                    target.Damage(futureBoard, amount, trigger["Trigger"] == "Damage");
+                    var amount = damageAmount != "None" ? int.Parse(damageAmount) : source.who.RollWeaponDamage() * ((powerType == "Melee" ? source.who.MeleeAttackPower() : (powerType == "Spell" ? source.who.SpellPower() : (powerType == "Ranged" ? source.who.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale;
+                    target.who.Damage(futureBoard, amount, trigger["Trigger"] == "Damage");
                 }
                 else if (board != null)
                 {
                     var source = powerSource == "Effector" ? effector : other;
                     var target = affect == "Effector" ? effector : other;
                     string damageAmount = effect.ContainsKey("DamageAmount") ? effect["DamageAmount"] : "None";
-                    var amount = damageAmount != "None" ? int.Parse(damageAmount) : (int)Math.Round(source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale);
-                    if (amount > 0 && target == board.enemy) PlayEnemyLine(board.enemy.EnemyLine("Wound"));
-                    target.Damage(amount, trigger["Trigger"] == "Damage");
-                    AddBigButtonOverlay(new Vector2(target == board.player ? -148 : 148, 141), "OtherDamaged", 1f, -1);
-                    SpawnFallingText(new Vector2(target == board.player ? -148 : 148, 141), "" + amount, "White");
-                    if (target == board.player) board.log.damageTaken.Inc(sourceName, amount);
-                    else board.log.damageDealt.Inc(sourceName, amount);
+                    var amount = damageAmount != "None" ? int.Parse(damageAmount) : (int)Math.Round(source.who.RollWeaponDamage() * ((powerType == "Melee" ? source.who.MeleeAttackPower() : (powerType == "Spell" ? source.who.SpellPower() : (powerType == "Ranged" ? source.who.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale);
+                    if (amount > 0 && target.team == 2) PlayEnemyLine(target.who.EnemyLine("Wound"));
+                    target.who.Damage(amount, trigger["Trigger"] == "Damage");
+                    AddBigButtonOverlay(new Vector2(target == board.participants[0] ? -148 : 148, 141), "OtherDamaged", 1f, -1);
+                    SpawnFallingText(new Vector2(target == board.participants[0] ? -148 : 148, 141), "" + amount, "White");
+                    //if (target == board.player) board.log.damageTaken.Inc(sourceName, amount);
+                    //else board.log.damageDealt.Inc(sourceName, amount);
                     board.UpdateHealthBars();
                 }
             }
@@ -378,19 +377,19 @@ public class Event
                     var source = powerSource == "Effector" ? futureEffector : futureOther;
                     var target = affect == "Effector" ? futureEffector : futureOther;
                     string healAmount = effect.ContainsKey("HealAmount") ? effect["HealAmount"] : "None";
-                    var amount = healAmount != "None" ? int.Parse(healAmount) : source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale;
-                    target.Heal(futureBoard, amount, trigger["Trigger"] == "Heal");
+                    var amount = healAmount != "None" ? int.Parse(healAmount) : source.who.RollWeaponDamage() * ((powerType == "Melee" ? source.who.MeleeAttackPower() : (powerType == "Spell" ? source.who.SpellPower() : (powerType == "Ranged" ? source.who.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale;
+                    target.who.Heal(futureBoard, amount, trigger["Trigger"] == "Heal");
                 }
                 else if (board != null)
                 {
                     var source = powerSource == "Effector" ? effector : other;
                     var target = affect == "Effector" ? effector : other;
                     string healAmount = effect.ContainsKey("HealAmount") ? effect["HealAmount"] : "None";
-                    var amount = healAmount != "None" ? int.Parse(healAmount) : (int)Math.Round(source.RollWeaponDamage() * ((powerType == "Melee" ? source.MeleeAttackPower() : (powerType == "Spell" ? source.SpellPower() : (powerType == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale);
-                    target.Heal(amount, trigger["Trigger"] == "Heal");
-                    AddBigButtonOverlay(new Vector2(target == board.player ? -148 : 148, 141), "OtherHealed", 1f, 5);
-                    SpawnFallingText(new Vector2(target == board.player ? -148 : 148, 141), "" + amount, "Uncommon");
-                    if (target == board.player) board.log.healingReceived.Inc(sourceName, amount);
+                    var amount = healAmount != "None" ? int.Parse(healAmount) : (int)Math.Round(source.who.RollWeaponDamage() * ((powerType == "Melee" ? source.who.MeleeAttackPower() : (powerType == "Spell" ? source.who.SpellPower() : (powerType == "Ranged" ? source.who.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale);
+                    target.who.Heal(amount, trigger["Trigger"] == "Heal");
+                    AddBigButtonOverlay(new Vector2(target == board.participants[0] ? -148 : 148, 141), "OtherHealed", 1f, 5);
+                    SpawnFallingText(new Vector2(target == board.participants[0] ? -148 : 148, 141), "" + amount, "Uncommon");
+                    if (target == board.participants[0]) board.log.healingReceived.Inc(sourceName, amount);
                     board.UpdateHealthBars();
                 }
             }
@@ -406,7 +405,7 @@ public class Event
                     if (resourceType == "None" && trigger.ContainsKey("ResourceDetracted"))
                         resourceType = trigger["ResourceType"];
                     int resourceAmount = effect.ContainsKey("ResourceAmount") ? int.Parse(effect["ResourceAmount"]) : 1;
-                    if (resourceType != "None") target.DetractResource(futureBoard, resourceType, resourceAmount);
+                    if (resourceType != "None") target.who.DetractResource(futureBoard, resourceType, resourceAmount);
                 }
                 else if (board != null)
                 {
@@ -415,7 +414,7 @@ public class Event
                     if (resourceType == "None" && trigger.ContainsKey("ResourceDetracted"))
                         resourceType = trigger["ResourceType"];
                     int resourceAmount = effect.ContainsKey("ResourceAmount") ? int.Parse(effect["ResourceAmount"]) : 1;
-                    if (resourceType != "None") target.DetractResource(resourceType, resourceAmount);
+                    if (resourceType != "None") target.who.DetractResource(resourceType, resourceAmount);
                 }
             }
 
@@ -430,7 +429,7 @@ public class Event
                     if (resourceType == "None" && trigger.ContainsKey("ResourceCollected"))
                         resourceType = trigger["ResourceType"];
                     int resourceAmount = effect.ContainsKey("ResourceAmount") ? int.Parse(effect["ResourceAmount"]) : 1;
-                    if (resourceType != "None") target.AddResource(futureBoard, resourceType, resourceAmount);
+                    if (resourceType != "None") target.who.AddResource(futureBoard, resourceType, resourceAmount);
                 }
                 else if (board != null)
                 {
@@ -440,10 +439,10 @@ public class Event
                     if (resourceType == "None" && trigger.ContainsKey("ResourceType"))
                         resourceType = trigger["ResourceType"];
                     int resourceAmount = effect.ContainsKey("ResourceAmount") ? int.Parse(effect["ResourceAmount"]) : 1;
-                    if (resourceType != "None") target.AddResource(resourceType, resourceAmount);
+                    if (resourceType != "None") target.who.AddResource(resourceType, resourceAmount);
                     if (flyingResources == "Yes")
                         for (int i = 0; i < resourceAmount; i++)
-                            SpawnFlyingElement(new Vector3(affect == "Other" ? (board.playerTurn ? 166 : -302) : (board.playerTurn ? -302 : 166), 142), "Element" + resourceType + "Rousing", affect == "Other" ? !board.playerTurn : board.playerTurn);
+                            SpawnShatter(1, 9, new Vector3(affect == "Other" ? (board.whosTurn == 0 ? 166 : -302) : (board.whosTurn == 0 ? -302 : 166), 142), "Element" + resourceType + "Rousing", affect == "Other");
                 }
             }
 
@@ -454,38 +453,20 @@ public class Event
                 else if (futureBoard != null)
                 {
                     var target = affect == "Effector" ? futureEffector : futureOther;
-                    target.AddBuff(buffs.Find(x => x.name == buffName), buffDuration, sourceRank);
-                    futureBoard.CallEvents(target, new()
-                    {
-                        { "Trigger", "BuffAdd" },
-                        { "Triggerer", "Effector" },
-                        { "BuffName", buffName }
-                    });
-                    futureBoard.CallEvents(target == futureEffector ? futureOther : futureEffector, new()
-                    {
-                        { "Trigger", "BuffAdd" },
-                        { "Triggerer", "Other" },
-                        { "BuffName", buffName }
-                    });
+                    target.who.AddBuff(buffs.Find(x => x.name == buffName), buffDuration, sourceRank);
+                    foreach (var participant in futureBoard.participants)
+                        if (participant == target) futureBoard.CallEvents(participant.who, new() { { "Trigger", "BuffAdd" }, { "Triggerer", "Effector" }, { "BuffName", buffName } });
+                        else futureBoard.CallEvents(participant.who, new() { { "Trigger", "BuffAdd" }, { "Triggerer", "Other" }, { "BuffName", buffName } });
                 }
                 else if (board != null)
                 {
                     var target = affect == "Effector" ? effector : other;
-                    var pos = new Vector3(affect == "Other" ? (board.playerTurn ? 148 : -148) : (board.playerTurn ? -148 : 148), 142);
-                    target.AddBuff(buffs.Find(x => x.name == buffName), buffDuration, SpawnBuffObject(pos, icon, target), sourceRank);
-                    board.CallEvents(target, new()
-                    {
-                        { "Trigger", "BuffAdd" },
-                        { "Triggerer", "Effector" },
-                        { "BuffName", buffName }
-                    });
-                    board.CallEvents(target == effector ? other : effector, new()
-                    {
-                        { "Trigger", "BuffAdd" },
-                        { "Triggerer", "Other" },
-                        { "BuffName", buffName }
-                    });
-                    SpawnFallingText(new Vector2(target == board.player ? -148 : 148, 142), buffDuration + " turn" + (buffDuration > 1 ? "s" : ""), "White");
+                    var pos = new Vector3(affect == "Other" ? (board.whosTurn == 0 ? 148 : -148) : (board.whosTurn == 0 ? -148 : 148), 142);
+                    target.who.AddBuff(buffs.Find(x => x.name == buffName), buffDuration, SpawnBuffObject(pos, icon, target.who), sourceRank);
+                    foreach (var participant in board.participants)
+                        if (participant == target) board.CallEvents(participant.who, new() { { "Trigger", "BuffAdd" }, { "Triggerer", "Effector" }, { "BuffName", buffName } });
+                        else board.CallEvents(participant.who, new() { { "Trigger", "BuffAdd" }, { "Triggerer", "Other" }, { "BuffName", buffName } });
+                    SpawnFallingText(new Vector2(board.whosTurn == 0 ? 148 : -148, 142), buffDuration + " turn" + (buffDuration > 1 ? "s" : ""), "White");
                 }
             }
 
@@ -496,43 +477,25 @@ public class Event
                 else if (futureBoard != null)
                 {
                     var target = affect == "Effector" ? futureEffector : futureOther;
-                    var buff = target.buffs.Find(x => x.Item1.name == buffName);
-                    if (buff.Item1 != null)
+                    var buff = target.who.buffs.Find(x => x.buff.name == buffName);
+                    if (buff.buff != null)
                     {
-                        futureBoard.CallEvents(target, new()
-                        {
-                            { "Trigger", "BuffRemove" },
-                            { "Triggerer", "Effector" },
-                            { "BuffName", buffName }
-                        });
-                        futureBoard.CallEvents(target == futureEffector ? futureOther : futureEffector, new()
-                        {
-                            { "Trigger", "BuffRemove" },
-                            { "Triggerer", "Other" },
-                            { "BuffName", buffName }
-                        });
-                        target.RemoveBuff(buff);
+                        foreach (var participant in futureBoard.participants)
+                            if (participant == target) futureBoard.CallEvents(participant.who, new() { { "Trigger", "BuffRemove" }, { "Triggerer", "Effector" }, { "BuffName", buffName } });
+                            else futureBoard.CallEvents(participant.who, new() { { "Trigger", "BuffRemove" }, { "Triggerer", "Other" }, { "BuffName", buffName } });
+                        target.who.RemoveBuff(buff);
                     }
                 }
                 else if (board != null)
                 {
                     var target = affect == "Effector" ? effector : other;
-                    var buff = target.buffs.Find(x => x.Item1 == buffs.Find(x => x.name == buffName));
-                    if (buff.Item1 != null)
+                    var buff = target.who.buffs.Find(x => x.buff == buffs.Find(x => x.name == buffName));
+                    if (buff.buff != null)
                     {
-                        board.CallEvents(target, new()
-                        {
-                            { "Trigger", "BuffRemove" },
-                            { "Triggerer", "Effector" },
-                            { "BuffName", buffName }
-                        });
-                        board.CallEvents(target == effector ? other : effector, new()
-                        {
-                            { "Trigger", "BuffRemove" },
-                            { "Triggerer", "Other" },
-                            { "BuffName", buffName }
-                        });
-                        target.RemoveBuff(buff);
+                        foreach (var participant in board.participants)
+                            if (participant == target) board.CallEvents(participant.who, new() { { "Trigger", "BuffRemove" }, { "Triggerer", "Effector" }, { "BuffName", buffName } });
+                            else board.CallEvents(participant.who, new() { { "Trigger", "BuffRemove" }, { "Triggerer", "Other" }, { "BuffName", buffName } });
+                        target.who.RemoveBuff(buff);
                     }
                 }
             }
@@ -540,16 +503,8 @@ public class Event
             //This effect ends the turn of the current entity
             void EffectEndTurn()
             {
-                if (futureBoard != null)
-                {
-                    if (futureBoard.playerTurn) futureBoard.playerFinishedMoving = true;
-                    else futureBoard.enemyFinishedMoving = true;
-                }
-                else if (board != null)
-                {
-                    if (board.playerTurn) board.playerFinishedMoving = true;
-                    else board.enemyFinishedMoving = true;
-                }
+                if (futureBoard != null) futureBoard.finishedMoving = true;
+                else if (board != null) board.finishedMoving = true;
             }
 
             //This effect consumes one stack of the item
@@ -558,10 +513,10 @@ public class Event
                 if (board != null)
                 {
                     var target = effector;
-                    var itemUsed = target.inventory.items.Find(x => x.GetHashCode() + "" == trigger["ItemHash"]);
+                    var itemUsed = target.who.inventory.items.Find(x => x.GetHashCode() + "" == trigger["ItemHash"]);
                     itemUsed.amount--;
                     if (itemUsed.amount == 0)
-                        target.inventory.items.Remove(itemUsed);
+                        target.who.inventory.items.Remove(itemUsed);
                     Respawn("PlayerQuickUse", true);
                 }
             }
@@ -573,19 +528,19 @@ public class Event
                 {
                     var target = affect == "Effector" ? futureEffector : futureOther;
                     string to = effect.ContainsKey("ActionSet") ? effect["ActionSet"] : "Default";
-                    target.currentActionSet = to;
+                    target.who.currentActionSet = to;
                 }
                 else if (board != null)
                 {
                     var target = affect == "Effector" ? effector : other;
                     string to = effect.ContainsKey("ActionSet") ? effect["ActionSet"] : "Default";
-                    target.currentActionSet = to;
-                    if (target == board.enemy)
+                    target.who.currentActionSet = to;
+                    if (target.team == 2)
                     {
                         CloseWindow("EnemyBattleInfo");
-                        Respawn("PlayerBattleInfo");
+                        Respawn("EnemyBattleInfo");
                     }
-                    else if (target == board.player)
+                    else if (target.team == 1)
                     {
                         CloseWindow("PlayerBattleInfo");
                         Respawn("PlayerBattleInfo");

@@ -57,7 +57,7 @@ public class Ability
         }
     }
 
-    public void ExecuteEvents(Board board, FutureBoard futureBoard, Dictionary<string, string> trigger, Item item, int abilityRank, bool sourcedFromPlayer)
+    public void ExecuteEvents(Board board, FutureBoard futureBoard, Dictionary<string, string> trigger, Item item, int abilityRank, int entitySource)
     {
         //In case of this ability having no events just return
         if (events == null) return;
@@ -135,11 +135,11 @@ public class Ability
                         execute = item != null && item.GetHashCode() + "" == itemHash;
                     }
                 }
-            if (execute && (board != null ? board.CooldownOn(sourcedFromPlayer, name) : futureBoard.CooldownOn(sourcedFromPlayer, name)) <= 0)
+            if (execute && (board != null ? board.CooldownOn(entitySource, name) : futureBoard.CooldownOn(entitySource, name)) <= 0)
                 if (trigger.ContainsKey("IgnoreConditions") && trigger["IgnoreConditions"] == "Yes" || AreConditionsMet(eve, null, board, futureBoard))
                 {
-                    if (board != null) board.PutOnCooldown(sourcedFromPlayer, this);
-                    else futureBoard.PutOnCooldown(sourcedFromPlayer, this);
+                    if (board != null) board.PutOnCooldown(entitySource, this);
+                    else futureBoard.PutOnCooldown(entitySource, this);
                     eve.ExecuteEffects(board, futureBoard, icon, trigger, RankVariables(abilityRank), name, abilityRank);
                 }
         }
@@ -161,7 +161,7 @@ public class Ability
 
     #region Description
 
-    public static void PrintAbilityTooltip(Entity effector, Entity other, Ability ability, int rank, Item item = null)
+    public static void PrintAbilityTooltip(Entity effector, Ability ability, int rank, Item item = null)
     {
         AddHeaderGroup();
         var width = 220;
@@ -204,15 +204,15 @@ public class Ability
                 AddText(ability.cooldown == 0 ? "None" : ability.cooldown + (ability.cooldown == 1 ? " turn" : " turns"), "Gray");
                 if (CDesktop.title == "Game" || CDesktop.title == "GameSimulation")
                 {
-                    var c = Board.board.CooldownOn(effector == Board.board.player, ability.name);
-                    if (c > 0)
-                    {
-                        AddLine("Cooldown left: ", "DarkGray");
-                        AddText(c + (c == 1 ? " turn" : " turns"), "Gray");
-                    }
+                    //var c = Board.board.CooldownOn(effector == Board.board.player, ability.name);
+                    //if (c > 0)
+                    //{
+                    //    AddLine("Cooldown left: ", "DarkGray");
+                    //    AddText(c + (c == 1 ? " turn" : " turns"), "Gray");
+                    //}
                 }
             });
-            ability.PrintDescription(effector, other, width, rank);
+            ability.PrintDescription(effector, width, rank);
             if (ability.cost != null)
                 foreach (var cost in ability.cost)
                     if (cost.Value > 0)
@@ -235,10 +235,10 @@ public class Ability
         }
     }
 
-    public void PrintDescription(Entity effector, Entity other, int width, int rank)
+    public void PrintDescription(Entity effector, int width, int rank)
     {
 
-        if (description != null) description.Print(effector, other, width, RankVariables(rank));
+        if (description != null) description.Print(effector, width, RankVariables(rank));
         else AddHeaderRegion(() =>
         {
             SetRegionAsGroupExtender();

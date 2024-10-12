@@ -35,7 +35,7 @@ public class FishingSpot
     public void EndFishing(string result)
     {
         CloseDesktop("FishingGame");
-        if (result == "Won")
+        if (result == "Team1Won")
         {
             PlaySound("FishingReelIn");
             if (ShouldImproveSkill())
@@ -57,7 +57,7 @@ public class FishingSpot
             fishingLoot.SetRandomEnchantment();
             //if (!output.EndsWith(" ")) SpawnFallingText(new Vector2(0, -72), output, "Yellow");
         }
-        else if (result == "Lost")
+        else if (result == "Team2Won")
         {
 
         }

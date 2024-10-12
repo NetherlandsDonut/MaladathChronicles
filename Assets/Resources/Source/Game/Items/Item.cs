@@ -1046,7 +1046,7 @@ public class Item
             foreach (var ability in item.abilities)
             {
                 var foo = Ability.abilities.Find(x => x.name == ability.Key);
-                foo?.PrintDescription(currentSave.player, null, 182, ability.Value);
+                foo?.PrintDescription(currentSave.player, 182, ability.Value);
             }
         if (item.questsStarted != null) AddPaddingRegion(() => AddLine("Starts a quest", "HalfGray"));
         if (item.set != null)

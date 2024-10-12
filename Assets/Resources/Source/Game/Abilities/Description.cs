@@ -7,7 +7,7 @@ using static Font;
 
 public class Description
 {    
-    public void Print(Entity effector, Entity other, int width, Dictionary<string, string> variables, bool extend = true)
+    public void Print(Entity effector, int width, Dictionary<string, string> variables, bool extend = true)
     {
         if (extend && regions.Count(x => x.isExtender) != 1)
         {
@@ -15,7 +15,7 @@ public class Description
             regions.Last().isExtender = true;
         }
         foreach (var region in regions)
-            region.PrintRegion(effector, other, width, variables);
+            region.PrintRegion(effector, width, variables);
     }
 
     public List<DescriptionRegion> regions;
@@ -27,15 +27,15 @@ public class DescriptionRegion
     public bool isExtender;
     public List<Dictionary<string, string>> contents;
 
-    public void PrintRegion(Entity effector, Entity other, int width, Dictionary<string, string> variables)
+    public void PrintRegion(Entity effector, int width, Dictionary<string, string> variables)
     {
         if (regionType == "Header")
-            AddHeaderRegion(() => PrintContents(effector, other, width, variables));
+            AddHeaderRegion(() => PrintContents(effector, width, variables));
         else if (regionType == "Padding")
-            AddPaddingRegion(() => PrintContents(effector, other, width, variables));
+            AddPaddingRegion(() => PrintContents(effector, width, variables));
     }
 
-    public void PrintContents(Entity effector, Entity other, int width, Dictionary<string, string> variables)
+    public void PrintContents(Entity effector, int width, Dictionary<string, string> variables)
     {
         var li = contents.Select(x => (Process(x.ContainsKey("Text") ? x["Text"] : ""), x.ContainsKey("Color") ? x["Color"] : "", x.ContainsKey("Split") ? x["Split"] : "Yes", x.ContainsKey("Spacing") ? x["Spacing"] : "Yes", x.ContainsKey("Align") ? x["Align"] : "Left")).Where(x => x.Item1 != null && x.Item1.Length > 0);
         var lis = li.SelectMany(x => x.Item3 == "No" ? new() { (x.Item1 + (x.Item4 == "No" ? "" : " "), x.Item2, x.Item5) } : x.Item1.Split(" ").Select(y => (y + " ", x.Item2, x.Item5)).ToList().TrimLast(x.Item4 == "No"));
@@ -65,9 +65,9 @@ public class DescriptionRegion
                     if (double.TryParse(split[2].StartsWith("#") ? variables[split[2]].Replace(".", ",") : split[2].Replace(".", ","), out double powerScale))
                         if (int.TryParse(split[3], out int multiplier))
                         {
-                            var source = split[0] == "Effector" ? effector : other;
-                            var weaponPower = source.WeaponDamage();
-                            var scaler = (split[1] == "Melee" ? source.MeleeAttackPower() : (split[1] == "Spell" ? source.SpellPower() : (split[1] == "Ranged" ? source.RangedAttackPower() : 1))) / 10.0 + 1;
+                            //var source = split[0] == "Effector" ? effector : other;
+                            var weaponPower = effector.WeaponDamage();
+                            var scaler = (split[1] == "Melee" ? effector.MeleeAttackPower() : (split[1] == "Spell" ? effector.SpellPower() : (split[1] == "Ranged" ? effector.RangedAttackPower() : 1))) / 10.0 + 1;
                             return Math.Ceiling(weaponPower.Item1 * scaler * powerScale * multiplier) + " - " + Math.Ceiling(weaponPower.Item2 * scaler * powerScale * multiplier);
                         }
             }
@@ -78,8 +78,8 @@ public class DescriptionRegion
                 if (split.Length == 3)
                     if (double.TryParse(split[2].Replace(".", ","), out double multiplier))
                     {
-                        var source = split[0] == "Effector" ? effector : other;
-                        var stats = source.Stats();
+                        //var source = split[0] == "Effector" ? effector : other;
+                        var stats = effector.Stats();
                         var stat = stats.ContainsKey(split[1]) ? stats[split[1]] : 1;
                         return stat * multiplier + "%";
                     }

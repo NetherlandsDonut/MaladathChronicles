@@ -8,74 +8,73 @@ public class FutureBoard
     public FutureBoard(FutureBoard board)
     {
         field = board.field.Clone() as int[,];
-        player = new FutureEntity(board.player);
-        enemy = new FutureEntity(board.enemy);
+        participants = new();
+        foreach (var participant in board.participants)
+            participants.Add(new FutureCombatParticipant()
+            {
+                who = new FutureEntity(participant.who),
+                combatAbilities = participant.combatAbilities,
+                human = participant.human,
+                team = participant.team
+            });
         turn = board.turn;
-        playerTurn = board.playerTurn;
-        enemyFinishedMoving = board.enemyFinishedMoving;
-        playerFinishedMoving = board.playerFinishedMoving;
-        playerCooldowns = board.playerCooldowns.ToDictionary(x => x.Key, x => x.Value);
-        enemyCooldowns = board.enemyCooldowns.ToDictionary(x => x.Key, x => x.Value);
+        whosTurn = board.whosTurn;
+        finishedMoving = board.finishedMoving;
+        finishedMoving = board.finishedMoving;
+        cooldowns = board.cooldowns.ToDictionary(x => x.Key, x => x.Value);
+        cooldowns = board.cooldowns.ToDictionary(x => x.Key, x => x.Value);
         if (TurnEnded()) EndTurn();
     }
 
     public FutureBoard(Board board)
     {
         field = board.field.Clone() as int[,];
-        player = new FutureEntity(board.player);
-        enemy = new FutureEntity(board.enemy);
+        participants = new();
+        foreach (var participant in board.participants)
+            participants.Add(new FutureCombatParticipant()
+            {
+                who = new FutureEntity(participant.who),
+                combatAbilities = participant.combatAbilities,
+                human = participant.human,
+                team = participant.team
+            });
         turn = board.turn;
-        playerTurn = board.playerTurn;
-        enemyFinishedMoving = board.enemyFinishedMoving;
-        playerFinishedMoving = board.playerFinishedMoving;
-        playerCooldowns = board.playerCooldowns.ToDictionary(x => x.Key, x => x.Value);
-        enemyCooldowns = board.enemyCooldowns.ToDictionary(x => x.Key, x => x.Value);
+        whosTurn = board.whosTurn;
+        finishedMoving = board.finishedMoving;
+        cooldowns = board.cooldowns.ToDictionary(x => x.Key, x => x.Value.ToDictionary(y => y.Key, y => y.Value));
     }
 
     //Turn counter
     public int turn;
-
     public int bonusTurnStreak;
     public int[,] field;
-    public FutureEntity player, enemy;
-    public bool playerTurn, enemyFinishedMoving, playerFinishedMoving, finishedAnimation;
-    public Dictionary<string, double> playerElementImportance, enemyElementImportance;
-    public Dictionary<string, int> playerCooldowns, enemyCooldowns;
+    public List<FutureCombatParticipant> participants;
+    public int whosTurn;
+    public bool finishedMoving, finishedAnimation;
+    public Dictionary<int, Dictionary<string, int>> cooldowns;
 
-    public Dictionary<string, double> EnemyElementImportance()
+    public void PutOnCooldown(int participant, Ability ability)
     {
-        enemyElementImportance ??= enemy.ElementImportance(enemy.health / enemy.MaxHealth(), player.health / player.MaxHealth());
-        return enemyElementImportance;
-    }
-
-    public Dictionary<string, double> PlayerElementImportance()
-    {
-        playerElementImportance ??= player.ElementImportance(player.health / player.MaxHealth(), enemy.health / enemy.MaxHealth());
-        return playerElementImportance;
-    }
-
-    public void PutOnCooldown(bool player, Ability ability)
-    {
-        var list = player ? playerCooldowns : enemyCooldowns;
+        var list = cooldowns[participant];
         list.Remove(ability.name);
         if (ability.cooldown > 0)
             list.Add(ability.name, ability.cooldown);
     }
 
-    public int CooldownOn(bool player, string ability) => (player ? playerCooldowns : enemyCooldowns).Get(ability);
+    public int CooldownOn(int participant, string ability) => cooldowns[participant].Get(ability);
 
     //Cooldowns all action bar abilities and used passives by 1 turn
-    public void Cooldown(bool player)
+    public void Cooldown(int participant)
     {
-        ref var abilities = ref (player ? ref playerCooldowns : ref enemyCooldowns);
-        var names = (player ? playerCooldowns : enemyCooldowns).Keys.ToList();
+        var abilities = cooldowns[participant];
+        var names = cooldowns[participant].Keys.ToList();
         foreach (var name in names)
             if (abilities[name] > 0)
             {
                 if (--abilities[name] <= 0)
                 {
                     abilities.Remove(name);
-                    CallEvents(player ? this.player : enemy, new() { { "Trigger", "Cooldown" }, { "Triggerer", "Effector" }, { "AbilityName", name } });
+                    CallEvents(participants[participant].who, new() { { "Trigger", "Cooldown" }, { "Triggerer", "Effector" }, { "AbilityName", name } });
                 }
             }
             else abilities.Remove(name);
@@ -86,48 +85,34 @@ public class FutureBoard
         //In case of not basing the future on any different future then just set this one as the base
         baseBoard ??= this;
 
-        //Set entities properly based on who's turn it is right now
-        var entity = playerTurn ? player : enemy;
-        var other = playerTurn ? enemy : player;
-        var pastEntity = playerTurn ? baseBoard.player : baseBoard.enemy;
-        var pastOther = playerTurn ? baseBoard.enemy : baseBoard.player;
-        
         //Base score setting
         //Score higher than zero means it's good for the player
         //and score lower than zero means it's good for the opponent
         var score = 0.0;
 
-        //Information about which elements are of biggest importance to each entity
-        var entityElementImportance = playerTurn ? baseBoard.PlayerElementImportance() : baseBoard.EnemyElementImportance();
-        var otherElementImportance = playerTurn ? baseBoard.EnemyElementImportance() : baseBoard.PlayerElementImportance();
-        
         //Based on each entity's priorities in resources calculate how happy are they after recent resource changes
-        foreach (var resource in entity.resources)
-        {
-            var n = resource.Value - pastEntity.resources[resource.Key];
-            var amountMultiplier = entity.AmountModifier(n);
-            score += entityElementImportance[resource.Key] * amountMultiplier * (n < 0 ? 1 : -1);
-        }
-
-        //This may be unnecessary but I am not sure as it still provides valuable insight
-        //In the end if calculations will take exceptionally too long we can I guess get rid of this
-        foreach (var resource in other.resources)
-        {
-            var n = resource.Value - pastOther.resources[resource.Key];
-            var amountMultiplier = entity.AmountModifier(n);
-            score -= otherElementImportance[resource.Key] * amountMultiplier * (n < 0 ? 1 : -1);
-        }
+        foreach (var participant in participants)
+            foreach (var resource in participant.who.resources)
+            {
+                var n = resource.Value - baseBoard.participants[participants.FindIndex(x => x == participant)].who.resources[resource.Key];
+                var amountMultiplier = participant.who.AmountModifier(n);
+                score += participant.who.ElementImportance()[resource.Key] * amountMultiplier * (n < 0 ? 1 : -1);
+            }
 
         //Modify score by the difference in entity health
-        score += entity.health - pastEntity.health;
-        score -= other.health - pastOther.health;
+        foreach (var participant in participants)
+            score += (participant.team != participants[whosTurn].team ? -1 : 1) * participant.who.health - baseBoard.participants[participants.FindIndex(x => x == participant)].who.health;
 
-        //Impact score heavily when one of the entities die in the prediction
-        if (entity.health <= 0) score -= 1000;
-        else if (other.health <= 0) score += 1000;
+        //Impact score heavily when one of the entities dies in the prediction
+        foreach (var participant in participants)
+            if (participant.who.health <= 0 && baseBoard.participants[participants.FindIndex(x => x == participant)].who.dead)
+            {
+                if (participant.team != participants[whosTurn].team) score -= 1000;
+                else score += 1000;
+            }
 
         //Reverse the score if the prediction was being made for player and not AI
-        return score * (playerTurn ? -1 : 1);
+        return score * (participants[whosTurn].team == 1 ? -1 : 1);
     }
 
     //Returns a list of all possible moves on the board and it's effects
@@ -151,21 +136,21 @@ public class FutureBoard
     {
         var list = new List<FutureMove>();
         var temp = new FutureBoard(this);
-        if (temp.playerTurn && temp.playerFinishedMoving || !temp.playerTurn && temp.enemyFinishedMoving)
-            list.Add(new FutureMove("", temp));
+        if (temp.finishedMoving) list.Add(new FutureMove("", temp));
         else
         {
-            var entity = temp.playerTurn ? player : enemy;
+            var entity = temp.participants[whosTurn].who;
             var abilities = entity.actionBars[entity.currentActionSet].Select(x => Ability.abilities.Find(y => y.name == x)).ToList();
-            if (!temp.playerTurn) //THIS PREVENTS ENEMY FROM CALCULATING PLAYER ABILITIES
+            if (!temp.participants[whosTurn].human) //THIS PREVENTS ENEMY FROM CALCULATING PLAYER ABILITIES
                 foreach (var ability in abilities)
-                    if (CooldownOn(false, ability.name) <= 0 && ability.EnoughResources(entity) && ability.AreAnyConditionsMet("AbilityCast", SaveGame.currentSave, null, temp))
+                    if (CooldownOn(whosTurn, ability.name) <= 0 && ability.EnoughResources(entity) && ability.AreAnyConditionsMet("AbilityCast", SaveGame.currentSave, null, temp))
                     {
                         var futureBoard = new FutureBoard(this);
-                        entity = futureBoard.playerTurn ? futureBoard.player : futureBoard.enemy;
+                        entity = futureBoard.participants[whosTurn].who;
                         list.Add(new FutureMove(ability.name, futureBoard));
-                        futureBoard.CallEvents(entity, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Effector" }, { "AbilityName", ability.name } });
-                        futureBoard.CallEvents(entity == player ? enemy : player, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Other" }, { "AbilityName", ability.name } });
+                        foreach (var participant in futureBoard.participants)
+                            if (futureBoard.participants.IndexOf(participant) == whosTurn) futureBoard.CallEvents(participant.who, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Effector" }, { "AbilityName", ability.name } });
+                            else futureBoard.CallEvents(participant.who, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Other" }, { "AbilityName", ability.name } });
                         entity.DetractResources(futureBoard, ability.cost);
                         while (!futureBoard.finishedAnimation)
                             futureBoard.AnimateBoard();
@@ -176,13 +161,12 @@ public class FutureBoard
                 var futureBoard = new FutureBoard(this);
                 list.Add(new FutureMove(flooding.Item1, flooding.Item2, futureBoard));
                 futureBoard.FloodDestroy(flooding.Item3);
-                if (futureBoard.playerTurn) futureBoard.playerFinishedMoving = true;
-                else futureBoard.enemyFinishedMoving = true;
+                futureBoard.finishedMoving = true;
                 while (!futureBoard.finishedAnimation)
                     futureBoard.AnimateBoard();
             }
         }
-        list = list.OrderBy(x => (list[0].board.playerTurn ? 1 : -1) * x.board.Desiredness(this)).ToList();
+        list = list.OrderBy(x => (list[0].board.participants[list[0].board.whosTurn].team == 1 ? 1 : -1) * x.board.Desiredness(this)).ToList();
         var manualMoves = 0;
         for (int i = list.Count - 1; i >= 0; i--)
             if (list[i].ability == "" && defines.aiManualBranches <= manualMoves)
@@ -193,47 +177,37 @@ public class FutureBoard
     }
 
     //Call all events in combat that can be triggered by a specified trigger
-    public void CallEvents(FutureEntity entity, Dictionary<string, string> triggerData)
+    public void CallEvents(FutureEntity who, Dictionary<string, string> triggerData)
     {
-        if (entity == player)
-            foreach (var item in player.inventory.items.Concat(player.equipment.Select(x => x.Value)).ToList())
+        if (who.inventory != null)
+            foreach (var item in who.inventory.items.Concat(who.equipment.Select(x => x.Value)).ToList())
                 if (item.abilities != null)
                     foreach (var ability in item.abilities.Select(x => (Ability.abilities.Find(y => y.name == x.Key), x.Value)))
-                        ability.Item1.ExecuteEvents(null, this, triggerData, item, ability.Value, true);
-        foreach (var ability in entity == player ? Board.board.playerCombatAbilities : Board.board.enemyCombatAbilities)
-            ability.Key.ExecuteEvents(null, this, triggerData, null, ability.Value, entity == player);
-        foreach (var buff in entity.buffs)
-            buff.Item1.ExecuteEvents(null, this, triggerData, (buff.Item1, buff.Item2, null, buff.Item3));
+                        ability.Item1.ExecuteEvents(null, this, triggerData, item, ability.Value, whosTurn);
+        foreach (var ability in participants.Find(x => x.who == who).combatAbilities)
+            ability.Key.ExecuteEvents(null, this, triggerData, null, ability.Value, participants.FindIndex(x => x.who == who));
+        foreach (var buff in who.buffs.ToList())
+            buff.buff.ExecuteEvents(null, this, triggerData, buff);
     }
+
+    public FutureCombatParticipant Target(int ofTeam) => participants.Last(x => x.team != ofTeam);
 
     public void EndTurn()
     {
         turn++;
-        if (playerTurn)
-        {
-            CallEvents(player, new() { { "Trigger", "TurnEnd" } });
-            playerTurn = false;
-            playerFinishedMoving = false;
-            Cooldown(false);
-            CallEvents(enemy, new() { { "Trigger", "TurnBegin" } });
-            enemy.FlareBuffs(this);
-        }
-        else
-        {
-            CallEvents(enemy, new() { { "Trigger", "TurnEnd" } });
-            playerTurn = true;
-            enemyFinishedMoving = false;
-            Cooldown(true);
-            CallEvents(player, new() { { "Trigger", "TurnBegin" } });
-            player.FlareBuffs(this);
-        }
-        if (turn % 2 == 1)
+        CallEvents(participants[whosTurn++].who, new() { { "Trigger", "TurnEnd" } });
+        whosTurn %= participants.Count;
+        finishedMoving = false;
+        Cooldown(whosTurn);
+        CallEvents(participants[whosTurn].who, new() { { "Trigger", "TurnBegin" } });
+        participants[whosTurn].who.FlareBuffs(this);
+        if (turn % participants.Count == 1)
             for (int i = 0; i < field.GetLength(0); i++)
                 field[i, field.GetLength(1) - 1] = -1;
     }
 
     //CHECK IF THE TURN ENDED
-    public bool TurnEnded() => playerTurn && playerFinishedMoving || !playerTurn && enemyFinishedMoving;
+    public bool TurnEnded() => finishedMoving;
 
     public void AnimateBoard()
     {
@@ -258,10 +232,8 @@ public class FutureBoard
 
         //IF SCORED BONUS MOVE DON'T END TURN
         if (bonusTurnStreak > 0)
-            if (playerTurn && playerFinishedMoving)
-                playerFinishedMoving = false;
-            else if (!playerTurn && enemyFinishedMoving)
-                enemyFinishedMoving = false;
+            if (finishedMoving)
+                finishedMoving = false;
 
         //FINISH ANIMATING
         finishedAnimation = true;
@@ -275,8 +247,7 @@ public class FutureBoard
         var foo = types.ToDictionary(x => Resource(x), x => list.Sum(y => y.Item3 % 10 == x ? y.Item3 / 10 + 1 : 0));
         foreach (var a in list)
             field[a.Item1, a.Item2] = -1;
-        if (playerTurn) player.AddResources(this, foo);
-        else enemy.AddResources(this, foo);
+        participants[whosTurn].who.AddResources(this, foo);
     }
 
     public List<(int, int, int)> FloodCount(int x, int y)

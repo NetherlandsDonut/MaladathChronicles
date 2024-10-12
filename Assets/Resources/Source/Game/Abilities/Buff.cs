@@ -1,8 +1,6 @@
 using System.Linq;
 using System.Collections.Generic;
 
-using UnityEngine;
-
 using static Root;
 using static Root.Anchor;
 
@@ -56,7 +54,7 @@ public class Buff
 
     #region Execution
 
-    public void ExecuteEvents(Board board, FutureBoard futureBoard, Dictionary<string, string> trigger, (Buff, int, GameObject, int) entityBuff)
+    public void ExecuteEvents(Board board, FutureBoard futureBoard, Dictionary<string, string> trigger, CombatBuff entityBuff)
     {
         //In case of this buff having no events just return
         if (events == null) return;
@@ -130,8 +128,8 @@ public class Buff
                     if (execute)
                         if (eve.conditions == null || eve.conditions.Count == 0 || eve.conditions.All(x => x.IsMet(SaveGame.currentSave, board, futureBoard)))
                         {
-                            if (entityBuff.Item3 != null) board.actions.Add(() => { AddSmallButtonOverlay(entityBuff.Item3, "OtherBlack", 1, 5); });
-                            eve.ExecuteEffects(board, futureBoard, icon, trigger, RankVariables(entityBuff.Item4), name, entityBuff.Item4);
+                            if (board != null && entityBuff.flyingBuff != null) board.actions.Add(() => { AddSmallButtonOverlay(entityBuff.flyingBuff, "OtherBlack", 1, 5); });
+                            eve.ExecuteEffects(board, futureBoard, icon, trigger, RankVariables(entityBuff.rank), name, entityBuff.rank);
                         }
                 }
     }
@@ -164,13 +162,13 @@ public class Buff
             AddLine("Minutes left: ", "DarkGray");
             AddText(worldBuff.minutesLeft + "");
         });
-        worldBuff.Buff.PrintDescription(SaveGame.currentSave.player, null, worldBuff.rank);
+        worldBuff.Buff.PrintDescription(SaveGame.currentSave.player, worldBuff.rank);
         AddRegionGroup();
         SetRegionGroupWidth(228);
         AddPaddingRegion(() => { AddLine(); });
     }
 
-    public static void PrintBuffTooltip(Entity Effector, Entity other, (Buff, int, GameObject, int) buff)
+    public static void PrintBuffTooltip(Entity Effector, CombatBuff buff)
     {
         SetAnchor(Top, 0, -34);
         AddHeaderGroup();
@@ -178,28 +176,28 @@ public class Buff
             DisableShadows();
         SetRegionGroupWidth(228);
         SetRegionGroupHeight(195);
-        AddHeaderRegion(() => { AddLine(buff.Item1.name); });
+        AddHeaderRegion(() => { AddLine(buff.buff.name); });
         AddPaddingRegion(() =>
         {
-            AddBigButton(buff.Item1.icon);
+            AddBigButton(buff.buff.icon);
             AddLine("Dispellable: ", "DarkGray");
-            AddText(buff.Item1.dispelType != "None" ? "Yes" : "No");
-            if (buff.Item3 != null && buff.Item2 > 0)
+            AddText(buff.buff.dispelType != "None" ? "Yes" : "No");
+            if (buff.flyingBuff != null && buff.durationLeft > 0)
             {
                 AddLine("Turns left: ", "DarkGray");
-                AddText(buff.Item2 + "");
+                AddText(buff.durationLeft + "");
             }
         });
-        buff.Item1.PrintDescription(Effector, other, buff.Item4);
+        buff.buff.PrintDescription(Effector, buff.rank);
         AddRegionGroup();
         SetRegionGroupWidth(228);
         AddPaddingRegion(() => { AddLine(); });
     }
 
-    public void PrintDescription(Entity effector, Entity other, int rank)
+    public void PrintDescription(Entity effector, int rank)
     {
         int width = CDesktop.LBWindow().LBRegionGroup().setWidth;
-        if (description != null) description.Print(effector, other, width, RankVariables(rank));
+        if (description != null) description.Print(effector, width, RankVariables(rank));
         else AddHeaderRegion(() =>
         {
             SetRegionAsGroupExtender();

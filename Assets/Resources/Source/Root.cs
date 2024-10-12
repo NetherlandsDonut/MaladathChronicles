@@ -407,6 +407,11 @@ public static class Root
         AddRegion(Empty, () => { AddLine(""); }, null, null, null, null);
     }
 
+    public static void AddSmallEmptyRegion()
+    {
+        AddRegion(Empty, () => { }, null, null, null, null);
+    }
+
     public static void AddHeaderRegion(Action draw)
     {
         AddRegion(Header, draw, null, null, null, null);
@@ -942,7 +947,7 @@ public static class Root
         thisBar.UpdateFluidBar();
     }
 
-    public static void AddResourceBar(int x, int y, string resource, string forWho, Entity entity)
+    public static void AddResourceBar(int x, int y, string resource, int forWho, Entity entity)
     {
         var resourceBar = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/PrefabResourceBar"));
         resourceBar.transform.parent = CDesktop.LBWindow().transform;
@@ -952,14 +957,17 @@ public static class Root
         thisBar.Initialise(entity.MaxResource(resource) * 8, () => entity.MaxResource(resource), () => entity.resources[resource], true);
         thisBar.split.sprite = Resources.Load<Sprite>("Sprites/FluidBars/ResourceBar/Resource" + resource + "Bar/Splitter");
         thisBar.GetComponentsInChildren<SpriteRenderer>().First(x => x.name == "Capstone").sprite = Resources.Load<Sprite>("Sprites/FluidBars/ResourceBar/Resource" + resource + "Bar/Capstone");
-        if (Board.board.resourceBars.ContainsKey(forWho)) Board.board.resourceBars[forWho].Add(resource, thisBar);
+        if (Board.board.resourceBars.ContainsKey(forWho))
+            if (Board.board.resourceBars[forWho].ContainsKey(resource)) Board.board.resourceBars[forWho][resource] = thisBar;
+            else Board.board.resourceBars[forWho].Add(resource, thisBar);
         else Board.board.resourceBars.Add(forWho, new() { { resource, thisBar } });
         thisBar.UpdateFluidBar();
     }
 
-    public static void AddHealthBar(int x, int y, string forWho, Entity entity)
+    public static void AddHealthBar(int x, int y, int forWho, Entity entity)
     {
         var healthBar = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/PrefabHealthBar"));
+        healthBar.name += " " + entity.name;
         healthBar.transform.parent = CDesktop.LBWindow().transform;
         healthBar.transform.localPosition = new Vector3(x, y, 0);
         var thisBar = healthBar.GetComponent<FluidBar>();

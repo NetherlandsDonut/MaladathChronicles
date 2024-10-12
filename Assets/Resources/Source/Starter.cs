@@ -331,32 +331,34 @@ public class Starter : MonoBehaviour
         {
             Blueprint.windowBlueprints.Add(new Blueprint("Player" + element + "Resource", () =>
             {
-                var item = Board.board.player.equipment.ContainsKey("Trinket") ? Board.board.player.equipment["Trinket"] : null;
+                var player = Board.board.participants[Board.board.spotlightFriendly[0]].who;
+                var item = player.equipment.ContainsKey("Trinket") ? player.equipment["Trinket"] : null;
                 var addTrinket = item != null && item.abilities != null && item.combatUse;
-                var length = Board.board.player.actionBars.Max(x => x.Value.Count()) + (addTrinket ? 1 : 0);
-                SetAnchor(-320 + 19 * elements.IndexOf(element), 123 - 19 * length);
+                var length = player.actionBars.Max(x => x.Value.Count()) + (addTrinket ? 1 : 0);
+                SetAnchor(-320 + 19 * elements.IndexOf(element), 188 - 19 * length - 65 * Board.board.spotlightFriendly.Count);
                 AddRegionGroup();
-                SetRegionGroupHeight(Board.board.player.MaxResource(element) * 8);
+                SetRegionGroupHeight(player.MaxResource(element) * 8);
                 SetRegionGroupWidth(19);
                 AddPaddingRegion(() =>
                 {
                     AddLine("");
-                    AddResourceBar(2, -2, element, "Player", Board.board.player);
+                    AddResourceBar(2, -2, element, Board.board.spotlightFriendly[0], player);
                 });
             }));
             Blueprint.windowBlueprints.Add(new Blueprint("Enemy" + element + "Resource", () =>
             {
-                var item = Board.board.enemy.equipment.ContainsKey("Trinket") ? Board.board.enemy.equipment["Trinket"] : null;
+                var enemy = Board.board.participants[Board.board.spotlightEnemy[0]].who;
+                var item = enemy.equipment.ContainsKey("Trinket") ? enemy.equipment["Trinket"] : null;
                 var addTrinket = item != null && item.abilities != null && item.combatUse;
-                var length = Board.board.enemy.actionBars.Max(x => x.Value.Count()) + (addTrinket ? 1 : 0);
-                SetAnchor(299 - 19 * elements.IndexOf(element), 123 - 19 * length);
+                var length = enemy.actionBars.Max(x => x.Value.Count()) + (addTrinket ? 1 : 0);
+                SetAnchor(299 - 19 * elements.IndexOf(element), 188 - 19 * length - 65 * Board.board.spotlightEnemy.Count);
                 AddRegionGroup();
-                SetRegionGroupHeight(Board.board.enemy.MaxResource(element) * 8);
+                SetRegionGroupHeight(enemy.MaxResource(element) * 8);
                 SetRegionGroupWidth(19);
                 AddPaddingRegion(() =>
                 {
                     AddLine("");
-                    AddResourceBar(2, -2, element, "Enemy", Board.board.enemy);
+                    AddResourceBar(2, -2, element, Board.board.spotlightEnemy[0], enemy);
                 });
             }));
         }
