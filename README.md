@@ -802,6 +802,34 @@ v0.6.32
           Made sites more circular
 v0.6.33
     11.08 Entry work on auction houses
+v0.6.34
+    20.09 Destroyed unique items can be dropped again
+          Added racial and class based restrictions for dropping items, mainly for quest items
+          Game no longer saves buff on characters with full data, now it only includes the name for reference
+          Small UI changes in the logging screen
+          Fixed paths being drawn to sites on map before they appeared fully
+v0.6.35
+    22.09 Added basic auction house UI
+v0.6.36
+    25.09 Last row of the board is removed after all entities move
+          Expanded Wailing Caverns a bit
+          Further work on auction house UI
 ```
+</details>
 
+<details>
+
+<summary>Version history for <b>v0.7</b></summary>
+
+```
+v0.7.0
+    12.10 Multiple entity combat
+          Flying elements no longer travel on the board if collector had full mana
+v0.7.1
+    14.10 Rewritten the AI into a much more simple and intuitive in design system
+          Fixed errors related to player dying with buffs on
+          Adjusted quest markers for now bigger sites on map
+          Removed future calculation from the game which meant 14932 lines of code less :D
+          Removed Stats class and just made it into single dictionary
+```
 </details>
