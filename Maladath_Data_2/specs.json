@@ -63,13 +63,11 @@
       ]
     },
     "stats": {
-      "stats": {
         "Stamina": 1,
         "Strength": 1,
         "Agility": 3,
         "Intellect": 0,
         "Spirit": 0
-      }
     },
     "rules": {
       "Melee Attack Power per Strength": 2.0,
@@ -163,13 +161,12 @@
       ]
     },
     "stats": {
-      "stats": {
         "Stamina": 1,
         "Strength": 0,
         "Agility": 3,
         "Intellect": 0,
         "Spirit": 1
-      }
+
     },
     "rules": {
       "Melee Attack Power per Strength": 2.0,
@@ -244,13 +241,11 @@
       ]
     },
     "stats": {
-      "stats": {
         "Stamina": 1,
         "Strength": 1,
         "Agility": 0,
         "Intellect": 1,
         "Spirit": 1
-      }
     },
     "rules": {
       "Melee Attack Power per Strength": 2.0,
@@ -673,13 +668,11 @@
       ]
     },
     "stats": {
-      "stats": {
         "Stamina": 2,
         "Strength": 3,
         "Agility": 0,
         "Intellect": 0,
         "Spirit": 0
-      }
     },
     "rules": {
       "Melee Attack Power per Strength": 3.0,
@@ -983,13 +976,11 @@
       ]
     },
     "stats": {
-      "stats": {
         "Stamina": 1,
         "Strength": 2,
         "Agility": 0,
         "Intellect": 1,
         "Spirit": 1
-      }
     },
     "rules": {
       "Melee Attack Power per Strength": 2.0,
@@ -1358,13 +1349,11 @@
       ]
     },
     "stats": {
-      "stats": {
         "Stamina": 1,
         "Strength": 0,
         "Agility": 0,
         "Intellect": 2,
         "Spirit": 2
-      }
     },
     "rules": {
       "Melee Attack Power per Strength": 2.0,
@@ -1762,13 +1751,11 @@
       ]
     },
     "stats": {
-      "stats": {
         "Stamina": 0,
         "Strength": 0,
         "Agility": 0,
         "Intellect": 2,
         "Spirit": 3
-      }
     },
     "rules": {
       "Melee Attack Power per Strength": 1.0,
@@ -2053,13 +2040,11 @@
       ]
     },
     "stats": {
-      "stats": {
         "Stamina": 1,
         "Strength": 0,
         "Agility": 0,
         "Intellect": 2,
         "Spirit": 2
-      }
     },
     "rules": {
       "Melee Attack Power per Strength": 1.0,
@@ -2345,13 +2330,11 @@
       ]
     },
     "stats": {
-      "stats": {
         "Stamina": 0,
         "Strength": 0,
         "Agility": 0,
         "Intellect": 3,
         "Spirit": 2
-      }
     },
     "rules": {
       "Melee Attack Power per Strength": 1.0,
@@ -2725,13 +2708,11 @@
       ]
     },
     "stats": {
-      "stats": {
         "Stamina": 1,
         "Strength": 0,
         "Agility": 2,
         "Intellect": 1,
         "Spirit": 1
-      }
     },
     "rules": {
       "Melee Attack Power per Strength": 2.0,

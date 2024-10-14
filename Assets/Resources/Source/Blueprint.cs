@@ -265,7 +265,7 @@ public class Blueprint
                         }
                         else AddLine(actionBar);
                         AddSmallButton(abilityObj.icon);
-                        if (!abilityObj.EnoughResources(board.participants[board.spotlightEnemy[0]].who) || !abilityObj.AreAnyConditionsMet("AbilityCast", currentSave, board, null))
+                        if (!abilityObj.EnoughResources(board.participants[board.spotlightEnemy[0]].who) || !abilityObj.AreAnyConditionsMet("AbilityCast", currentSave, board))
                         {
                             SetSmallButtonToGrayscale();
                             AddSmallButtonOverlay("OtherGridBlurred");
@@ -346,7 +346,7 @@ public class Blueprint
                         }
                         else AddLine(actionBar, "", "Right");
                         AddSmallButton(abilityObj.icon);
-                        if (!abilityObj.EnoughResources(board.participants[board.spotlightFriendly[0]].who) || !abilityObj.AreAnyConditionsMet("AbilityCast", currentSave, board, null))
+                        if (!abilityObj.EnoughResources(board.participants[board.spotlightFriendly[0]].who) || !abilityObj.AreAnyConditionsMet("AbilityCast", currentSave, board))
                         {
                             SetSmallButtonToGrayscale();
                             AddSmallButtonOverlay("OtherGridBlurred");
@@ -358,7 +358,7 @@ public class Blueprint
                     {
                         if (board.spotlightFriendly[0] == board.whosTurn)
                             if (abilityObj.EnoughResources(board.participants[board.spotlightFriendly[0]].who))
-                                if (board.CooldownOn(board.spotlightFriendly[0], actionBar) <= 0 && abilityObj.AreAnyConditionsMet("AbilityCast", currentSave, board, null))
+                                if (board.CooldownOn(board.spotlightFriendly[0], actionBar) <= 0 && abilityObj.AreAnyConditionsMet("AbilityCast", currentSave, board))
                                 {
                                     foreach (var participant in board.participants)
                                     {

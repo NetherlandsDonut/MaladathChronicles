@@ -431,27 +431,27 @@ public class InputLine : MonoBehaviour
         else if (foo == stamina)
         {
             if (CDesktop.title == "ObjectManagerItems")
-                Item.item.stats.stats["Stamina"] = int.Parse(foo.Value());
+                Item.item.stats["Stamina"] = int.Parse(foo.Value());
         }
         else if (foo == strength)
         {
             if (CDesktop.title == "ObjectManagerItems")
-                Item.item.stats.stats["Strength"] = int.Parse(foo.Value());
+                Item.item.stats["Strength"] = int.Parse(foo.Value());
         }
         else if (foo == agility)
         {
             if (CDesktop.title == "ObjectManagerItems")
-                Item.item.stats.stats["Agility"] = int.Parse(foo.Value());
+                Item.item.stats["Agility"] = int.Parse(foo.Value());
         }
         else if (foo == intellect)
         {
             if (CDesktop.title == "ObjectManagerItems")
-                Item.item.stats.stats["Intellect"] = int.Parse(foo.Value());
+                Item.item.stats["Intellect"] = int.Parse(foo.Value());
         }
         else if (foo == spirit)
         {
             if (CDesktop.title == "ObjectManagerItems")
-                Item.item.stats.stats["Spirit"] = int.Parse(foo.Value());
+                Item.item.stats["Spirit"] = int.Parse(foo.Value());
         }
         else if (foo == consoleInput)
         {

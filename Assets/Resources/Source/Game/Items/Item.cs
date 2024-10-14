@@ -146,7 +146,7 @@ public class Item
     public int bagSpace;
     
     //Stats provided to the wearer like Stamina or Intellect
-    public Stats stats;
+    public Dictionary<string, int> stats;
 
     //This is a list of races that are eligible to drop this item
     public List<string> droppedBy;
@@ -964,10 +964,10 @@ public class Item
             else AddLine(item.type ?? "");
             if (item.armor > 0) AddLine(item.armor + " Armor");
         });
-        if (item.stats != null && item.stats.stats.Count > 0)
+        if (item.stats != null && item.stats.Count > 0)
             AddPaddingRegion(() =>
             {
-                foreach (var stat in item.stats.stats)
+                foreach (var stat in item.stats)
                     AddLine("+" + stat.Value + " " + stat.Key);
             });
         if (compare && item.IsWearable())
@@ -1010,10 +1010,10 @@ public class Item
                     AddText(" Block");
                 }
                 if (item.stats != null)
-                    foreach (var stat in item.stats.stats)
+                    foreach (var stat in item.stats)
                     {
                         statsRecorded.Add(stat.Key);
-                        var balance = current != null && current.stats != null && current.stats.stats.ContainsKey(stat.Key) ? stat.Value - current.stats.stats[stat.Key] : stat.Value;
+                        var balance = current != null && current.stats != null && current.stats.ContainsKey(stat.Key) ? stat.Value - current.stats[stat.Key] : stat.Value;
                         if (balance != 0)
                         {
                             AddLine((balance > 0 ? "+" : "") + balance, balance > 0 ? "Uncommon" : "DangerousRed");
@@ -1021,7 +1021,7 @@ public class Item
                         }
                     }
                 if (current != null && current.stats != null)
-                    foreach (var stat in current.stats.stats)
+                    foreach (var stat in current.stats)
                         if (!statsRecorded.Contains(stat.Key))
                         {
                             AddLine("-" + stat.Value, "DangerousRed");
@@ -1224,9 +1224,9 @@ public class Item
         name += " " + enchantment.suffix;
         if (enchantment.stats.Count > 0)
         {
-            stats = new(new());
+            stats = new();
             foreach (var stat in enchantment.stats)
-                stats.stats.Inc(stat.Key, EnchantmentStatGrowth(ilvl, stat.Value.Length));
+                stats.Inc(stat.Key, EnchantmentStatGrowth(ilvl, stat.Value.Length));
         }
 
         PermanentEnchant GenerateEnchantment()
@@ -1288,7 +1288,7 @@ public class Item
         newItem.specs = specs?.ToList();
         newItem.questsStarted = questsStarted?.ToList();
         newItem.speed = speed;
-        newItem.stats = stats != null ? new Stats(stats.stats?.ToDictionary(x => x.Key, x => x.Value)) : null;
+        newItem.stats = stats != null ? stats.ToDictionary(x => x.Key, x => x.Value) : null;
         newItem.type = type;
         return newItem;
     }

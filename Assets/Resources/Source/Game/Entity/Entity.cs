@@ -29,9 +29,9 @@ public class Entity
         this.spec = spec.name;
         faction = race.faction;
         abilities = race.abilities.Merge(spec.abilities).Merge(spec.talentTrees.SelectMany(x => x.talents.FindAll(y => y.defaultTaken)).ToDictionary(x => x.ability, x => 0));
-        stats = new Stats(race.stats.stats.ToDictionary(x => x.Key, x => x.Value));
-        foreach (var stat in spec.stats.stats)
-            stats.stats.Inc(stat.Key, stat.Value);
+        stats = race.stats.ToDictionary(x => x.Key, x => x.Value);
+        foreach (var stat in spec.stats)
+            stats.Inc(stat.Key, stat.Value);
         mounts = new();
         inventory = new Inventory(items);
         currentQuests = new();
@@ -75,27 +75,25 @@ public class Entity
         worldBuffs = new();
         inventory = new Inventory(new List<string>());
         actionBars = new() { { "Default", Ability.abilities.FindAll(x => abilities.ContainsKey(x.name) && x.cost != null).OrderBy(x => x.cost.Sum(y => y.Value)).OrderBy(x => x.putOnEnd).Select(x => x.name).ToList() } };
-        stats = new Stats(
-            new()
-            {
-                { "Stamina", (int)(5 * this.level * race.vitality) + 5 },
-                { "Strength", 3 * this.level },
-                { "Agility", 3 * this.level },
-                { "Intellect", 3 * this.level },
-                { "Spirit", 0 },
+        stats = new()
+        {
+            { "Stamina", (int)(5 * this.level * race.vitality) + 5 },
+            { "Strength", 3 * this.level },
+            { "Agility", 3 * this.level },
+            { "Intellect", 3 * this.level },
+            { "Spirit", 0 },
 
-                { "Earth Mastery", random.Next(1, 6) },
-                { "Fire Mastery", random.Next(1, 6) },
-                { "Air Mastery", random.Next(1, 6) },
-                { "Water Mastery", random.Next(1, 6) },
-                { "Frost Mastery", random.Next(1, 6) },
-                { "Lightning Mastery", random.Next(1, 6) },
-                { "Arcane Mastery", random.Next(1, 6) },
-                { "Decay Mastery", random.Next(1, 6) },
-                { "Shadow Mastery", random.Next(1, 6) },
-                { "Order Mastery", random.Next(1, 6) },
-            }
-        );
+            { "Earth Mastery", random.Next(1, 6) },
+            { "Fire Mastery", random.Next(1, 6) },
+            { "Air Mastery", random.Next(1, 6) },
+            { "Water Mastery", random.Next(1, 6) },
+            { "Frost Mastery", random.Next(1, 6) },
+            { "Lightning Mastery", random.Next(1, 6) },
+            { "Arcane Mastery", random.Next(1, 6) },
+            { "Decay Mastery", random.Next(1, 6) },
+            { "Shadow Mastery", random.Next(1, 6) },
+            { "Order Mastery", random.Next(1, 6) },
+        };
         InitialiseCombat();
     }
 
@@ -1099,7 +1097,7 @@ public class Entity
     public Dictionary<string, int> Stats()
     {
         var stats = new Dictionary<string, int>();
-        foreach (var stat in this.stats.stats)
+        foreach (var stat in this.stats)
             stats.Add(stat.Key, stat.Value);
         var temp = Spec();
         if (temp != null)
@@ -1114,7 +1112,7 @@ public class Entity
             foreach (var itemPair in equipment)
             {
                 if (itemPair.Value.stats != null)
-                    foreach (var stat in itemPair.Value.stats.stats)
+                    foreach (var stat in itemPair.Value.stats)
                         stats.Inc(stat.Key, stat.Value);
                 if (itemPair.Value.enchant != null && itemPair.Value.enchant.gains != null)
                     foreach (var stat in itemPair.Value.enchant.gains)
@@ -1400,7 +1398,7 @@ public class Entity
     public Dictionary<string, List<string>> actionBars;
 
     //"Naked" stats of the entity
-    public Stats stats;
+    public Dictionary<string, int> stats;
 
     //Inventory of the entity storing currency and items
     public Inventory inventory;

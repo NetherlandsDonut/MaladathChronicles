@@ -799,6 +799,8 @@ MonoBehaviour:
   texture: {fileID: 1782962384}
   textureDead: {fileID: 440465407}
   updateTextureColors: 0
+  cameraBoundaryPoints: []
+  queuedSiteOpen: 
 --- !u!1 &1535013492
 GameObject:
   m_ObjectHideFlags: 0
@@ -1133,8 +1135,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   render: {fileID: 0}
   target: {x: 0, y: 0, z: 0}
-  fadeOut: 0
   fadeIn: 0
+  fadeOut: 0
 --- !u!212 &1731670391
 SpriteRenderer:
   m_ObjectHideFlags: 0

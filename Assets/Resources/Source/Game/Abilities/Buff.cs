@@ -54,7 +54,7 @@ public class Buff
 
     #region Execution
 
-    public void ExecuteEvents(Board board, FutureBoard futureBoard, Dictionary<string, string> trigger, CombatBuff entityBuff)
+    public void ExecuteEvents(Board board, Dictionary<string, string> trigger, CombatBuff entityBuff)
     {
         //In case of this buff having no events just return
         if (events == null) return;
@@ -126,10 +126,10 @@ public class Buff
                     else if (trigger["Trigger"] == "TurnBegin") execute = true;
                     else if (trigger["Trigger"] == "TurnEnd") execute = true;
                     if (execute)
-                        if (eve.conditions == null || eve.conditions.Count == 0 || eve.conditions.All(x => x.IsMet(SaveGame.currentSave, board, futureBoard)))
+                        if (eve.conditions == null || eve.conditions.Count == 0 || eve.conditions.All(x => x.IsMet(SaveGame.currentSave, board)))
                         {
                             if (board != null && entityBuff.flyingBuff != null) board.actions.Add(() => { AddSmallButtonOverlay(entityBuff.flyingBuff, "OtherBlack", 1, 5); });
-                            eve.ExecuteEffects(board, futureBoard, icon, trigger, RankVariables(entityBuff.rank), name, entityBuff.rank);
+                            eve.ExecuteEffects(board, icon, trigger, RankVariables(entityBuff.rank), name, entityBuff.rank);
                         }
                 }
     }

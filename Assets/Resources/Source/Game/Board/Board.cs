@@ -221,11 +221,11 @@ public class Board
             foreach (var item in who.inventory.items.Concat(who.equipment.Select(x => x.Value)).ToList())
                 if (item.abilities != null)
                     foreach (var ability in item.abilities.Select(x => (Ability.abilities.Find(y => y.name == x.Key), x.Value)))
-                        ability.Item1.ExecuteEvents(this, null, trigger, item, ability.Value, participants.FindIndex(x => x.who == who));
+                        ability.Item1.ExecuteEvents(this, trigger, item, ability.Value, participants.FindIndex(x => x.who == who));
         foreach (var ability in participants.Find(x => x.who == who).combatAbilities)
-            ability.Key.ExecuteEvents(this, null, trigger, null, ability.Value, participants.FindIndex(x => x.who == who));
+            ability.Key.ExecuteEvents(this, trigger, null, ability.Value, participants.FindIndex(x => x.who == who));
         foreach (var buff in who.buffs.ToList())
-            buff.buff.ExecuteEvents(this, null, trigger, buff);
+            buff.buff.ExecuteEvents(this, trigger, buff);
     }
 
     public CombatParticipant Target(int ofTeam) => participants[ofTeam == 1 ? spotlightEnemy[0] : spotlightFriendly[0]];
@@ -634,7 +634,7 @@ public class Board
                                     currentImportance += a.Value == "Filler" ? 4 : 10;
                         importanceTable[resource.Key] = currentImportance;
                     }
-                    Debug.Log(string.Join(' ', importanceTable));
+                    differentFloodings.Shuffle();
                     var orderedFloodings = differentFloodings.OrderByDescending(x => x.Item3.Sum(y => (y.Item3 / 10 + 1) * importanceTable[Resource(y.Item3)])).ToList();
                     var chosenFlooding = orderedFloodings.First();
                     boardClick = (chosenFlooding.Item1, chosenFlooding.Item2);

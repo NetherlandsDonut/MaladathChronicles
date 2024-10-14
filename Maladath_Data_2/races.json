@@ -101,6 +101,11 @@
       "Graceful Soar": 1,
       "Sky Assault": 1,
       "Gryphon Claw": 1
+    },
+    "abilityAITags": {
+      "Graceful Soar": "Core",
+      "Sky Assault": "Core",
+      "Gryphon Claw": "Core"
     }
   },
   {
@@ -4246,13 +4251,7 @@
     "abilities": {
       "Frostbolt": 0,
       "Scorch": 0
-    },
-    "loot": [
-      {
-        "Item1": 100,
-        "Item2": "Ukorz Sandscalp's Loot"
-      }
-    ]
+    }
   },
   {
     "name": "Lord Lakmaeran",
@@ -6640,7 +6639,7 @@
     "genderedPortrait": true,
     "portrait": "PortraitDwarf",
     "stats": {
-      "stats": {
+
         "Stamina": 23,
         "Strength": 22,
         "Agility": 16,
@@ -6656,7 +6655,7 @@
         "Decay Mastery": 1,
         "Shadow Mastery": 1,
         "Order Mastery": 3
-      }
+
     },
     "abilities": {
       "Stoneform": 0
@@ -7403,7 +7402,7 @@
     "genderedPortrait": true,
     "portrait": "PortraitForsaken",
     "stats": {
-      "stats": {
+
         "Stamina": 21,
         "Strength": 19,
         "Agility": 18,
@@ -7419,7 +7418,7 @@
         "Decay Mastery": 3,
         "Shadow Mastery": 3,
         "Order Mastery": 1
-      }
+
     },
     "abilities": {},
     "maleNames": [
@@ -9150,7 +9149,7 @@
     "genderedPortrait": true,
     "portrait": "PortraitGnome",
     "stats": {
-      "stats": {
+
         "Stamina": 19,
         "Strength": 15,
         "Agility": 23,
@@ -9166,7 +9165,7 @@
         "Decay Mastery": 2,
         "Shadow Mastery": 3,
         "Order Mastery": 1
-      }
+
     },
     "abilities": {},
     "maleNames": [
@@ -10969,7 +10968,7 @@
     "genderedPortrait": true,
     "portrait": "PortraitHuman",
     "stats": {
-      "stats": {
+
         "Stamina": 20,
         "Strength": 20,
         "Agility": 20,
@@ -10985,7 +10984,7 @@
         "Decay Mastery": 1,
         "Shadow Mastery": 2,
         "Order Mastery": 3
-      }
+
     },
     "abilities": {},
     "maleNames": [
@@ -14302,13 +14301,7 @@
     "vitality": 4.0,
     "abilities": {
       "Shadowflame Breath": 0
-    },
-    "loot": [
-      {
-        "Item1": 100,
-        "Item2": "Nefarian's Loot"
-      }
-    ]
+    }
   },
   {
     "name": "Nekrum Gutchewer",
@@ -14331,7 +14324,7 @@
     "genderedPortrait": true,
     "portrait": "PortraitNightElf",
     "stats": {
-      "stats": {
+
         "Stamina": 19,
         "Strength": 17,
         "Agility": 25,
@@ -14347,7 +14340,7 @@
         "Decay Mastery": 1,
         "Shadow Mastery": 2,
         "Order Mastery": 2
-      }
+
     },
     "abilities": {},
     "maleNames": [
@@ -15951,7 +15944,7 @@
     "genderedPortrait": true,
     "portrait": "PortraitOrc",
     "stats": {
-      "stats": {
+
         "Stamina": 22,
         "Strength": 23,
         "Agility": 17,
@@ -15967,7 +15960,7 @@
         "Decay Mastery": 2,
         "Shadow Mastery": 2,
         "Order Mastery": 1
-      }
+
     },
     "abilities": {},
     "maleNames": [
@@ -16097,7 +16090,7 @@
     "genderedPortrait": true,
     "portrait": "PortraitPandaren",
     "stats": {
-      "stats": {
+
         "Stamina": 19,
         "Strength": 17,
         "Agility": 23,
@@ -16113,7 +16106,7 @@
         "Decay Mastery": 1,
         "Shadow Mastery": 2,
         "Order Mastery": 3
-      }
+
     },
     "abilities": {},
     "maleNames": [
@@ -21870,7 +21863,7 @@
     "genderedPortrait": true,
     "portrait": "PortraitTauren",
     "stats": {
-      "stats": {
+
         "Stamina": 22,
         "Strength": 25,
         "Agility": 15,
@@ -21886,7 +21879,7 @@
         "Decay Mastery": 1,
         "Shadow Mastery": 1,
         "Order Mastery": 2
-      }
+
     },
     "abilities": {},
     "maleNames": [
@@ -22676,7 +22669,7 @@
     "genderedPortrait": true,
     "portrait": "PortraitTroll",
     "stats": {
-      "stats": {
+
         "Stamina": 21,
         "Strength": 21,
         "Agility": 22,
@@ -22692,7 +22685,7 @@
         "Decay Mastery": 1,
         "Shadow Mastery": 3,
         "Order Mastery": 1
-      }
+
     },
     "abilities": {},
     "maleNames": [
@@ -23774,13 +23767,7 @@
     "abilities": {
       "Corruption": 0,
       "Curse of Agony": 0
-    },
-    "loot": [
-      {
-        "Item1": 100,
-        "Item2": "Witch Doctor Zum'rah Loot"
-      }
-    ]
+    }
   },
   {
     "name": "Witherbark Axe Thrower",

@@ -24,16 +24,15 @@ public class Ability
     #region Resource Check
 
     public bool EnoughResources(Entity entity) => EnoughResources(entity.resources);
-    public bool EnoughResources(FutureEntity entity) => EnoughResources(entity.resources);
     public bool EnoughResources(Dictionary<string, int> resources) => !cost.Any(x => x.Value > resources[x.Key]);
 
     #endregion
 
     #region Execution
 
-    public bool AreAnyConditionsMet(string trigger, SaveGame save, Board board, FutureBoard futureBoard) => events.FindAll(x => x.triggers.Any(y => y["Trigger"] == trigger)).Any(x => AreConditionsMet(x, save, board, futureBoard));
+    public bool AreAnyConditionsMet(string trigger, SaveGame save, Board board) => events.FindAll(x => x.triggers.Any(y => y["Trigger"] == trigger)).Any(x => AreConditionsMet(x, save, board));
 
-    public bool AreConditionsMet(Event eve, SaveGame save, Board board, FutureBoard futureBoard) => eve.conditions == null || eve.conditions.Count == 0 || eve.conditions.All(x => x.IsMet(SaveGame.currentSave, board, futureBoard));
+    public bool AreConditionsMet(Event eve, SaveGame save, Board board) => eve.conditions == null || eve.conditions.Count == 0 || eve.conditions.All(x => x.IsMet(SaveGame.currentSave, board));
 
     public void ExecuteEvents(SaveGame save, Dictionary<string, string> trigger, Item item, int abilityRank)
     {
@@ -52,12 +51,12 @@ public class Ability
                         execute = item != null && item.GetHashCode() + "" == itemHash && (sitePresence == "" || save.currentSite == sitePresence);
                     }
                 }
-            if (execute && (trigger.ContainsKey("IgnoreConditions") && trigger["IgnoreConditions"] == "Yes" || AreConditionsMet(eve, save, null, null)))
+            if (execute && (trigger.ContainsKey("IgnoreConditions") && trigger["IgnoreConditions"] == "Yes" || AreConditionsMet(eve, save, null)))
                 eve.ExecuteEffects(save, item, trigger, RankVariables(abilityRank), this, abilityRank);
         }
     }
 
-    public void ExecuteEvents(Board board, FutureBoard futureBoard, Dictionary<string, string> trigger, Item item, int abilityRank, int entitySource)
+    public void ExecuteEvents(Board board, Dictionary<string, string> trigger, Item item, int abilityRank, int entitySource)
     {
         //In case of this ability having no events just return
         if (events == null) return;
@@ -135,12 +134,11 @@ public class Ability
                         execute = item != null && item.GetHashCode() + "" == itemHash;
                     }
                 }
-            if (execute && (board != null ? board.CooldownOn(entitySource, name) : futureBoard.CooldownOn(entitySource, name)) <= 0)
-                if (trigger.ContainsKey("IgnoreConditions") && trigger["IgnoreConditions"] == "Yes" || AreConditionsMet(eve, null, board, futureBoard))
+            if (execute && board.CooldownOn(entitySource, name) <= 0)
+                if (trigger.ContainsKey("IgnoreConditions") && trigger["IgnoreConditions"] == "Yes" || AreConditionsMet(eve, null, board))
                 {
-                    if (board != null) board.PutOnCooldown(entitySource, this);
-                    else futureBoard.PutOnCooldown(entitySource, this);
-                    eve.ExecuteEffects(board, futureBoard, icon, trigger, RankVariables(abilityRank), name, abilityRank);
+                    board.PutOnCooldown(entitySource, this);
+                    eve.ExecuteEffects(board, icon, trigger, RankVariables(abilityRank), name, abilityRank);
                 }
         }
     }

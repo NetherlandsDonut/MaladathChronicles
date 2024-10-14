@@ -16,8 +16,6 @@ public class Defines
             maxBagsEquipped = 3;
         if (backpackSpace < 1)
             backpackSpace = 9;
-        if (aiDepth < 1)
-            aiDepth = 7;
         if (aiManualBranches < 1)
             aiManualBranches = 1;
         if (textPaddingLeft < 0)
@@ -68,9 +66,6 @@ public class Defines
 
     //Amount of space provided to the player in their inventory without any bags equipped
     public int backpackSpace;
-    
-    //Indicates how deep will AI go during the combat move calculation
-    public int aiDepth;
 
     //Indicates how many board moves will AI consider during move calculations
     public int aiManualBranches;

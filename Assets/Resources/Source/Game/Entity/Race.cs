@@ -186,6 +186,40 @@ public class Race
         return factions.Find(x => x.name == faction);
     }
 
+    //Portrait icon of the race
+    public string portrait;
+
+    //Race starting bonus stats for characters
+    //This is generally used only by player races as enemies have their stats calculated automatically 
+    public Dictionary<string, int> stats;
+
+    //List of abilities provided to all entities of this race
+    public Dictionary<string, int> abilities;
+
+    #region Non-playable Race Fields
+
+    //Kind of the race, kind of like rarity.
+    //This can be one of three values: "Common", "Rare" or "Elite"
+    public string kind;
+
+    //Race's vitality which affects how much stamina will the enemy have
+    //Generally this determines how hard of a fight an enemy is going to put up against the player.
+    //Common enemies usually oscilate around 1.0 vitality with enemies like abominations
+    //being really tough and enemies like skeletons being weaker than that. Rare enemies usually
+    //oscilate around 2.0 and elite's around 3.0 with raid bosses being exceptionally tough with
+    //vitality reaching up to 6.0 which indidacte hardest fights in the game like Doom Lord Kazzak
+    public double vitality;
+
+    //List of possible item drops by this race
+    [NonSerialized] public List<string> droppedItems;
+
+    //Tags for entity's abilities in order for it to know when to cast what
+    public Dictionary<string, string> abilityAITags;
+
+    #endregion
+
+    #region Playable Race Fields
+
     //Starting site of a race.
     //This is useful only to races playable by player
     //as it provides position to center camera on when creating a new character
@@ -199,34 +233,6 @@ public class Race
     //On this value being true program will search for portraits based on entity's gender
     //EXAMPLE: on race name being "Troll" it will search for "TrollMale" and "TrollFemale" in assets.
     public bool genderedPortrait;
-    
-    //Kind of the race, kind of like rarity.
-    //This can be one of three values: "Common", "Rare" or "Elite"
-    public string kind;
-
-    //Portrait icon of the race
-    public string portrait;
-
-    //Race's vitality which affects how much stamina will the enemy have
-    //Generally this determines how hard of a fight an enemy is going to put up against the player.
-    //Common enemies usually oscilate around 1.0 vitality with enemies like abominations
-    //being really tough and enemies like skeletons being weaker than that. Rare enemies usually
-    //oscilate around 2.0 and elite's around 3.0 with raid bosses being exceptionally tough with
-    //vitality reaching up to 6.0 which indidacte hardest fights in the game like Doom Lord Kazzak
-    public double vitality;
-
-    //Race starting bonus stats for characters
-    //This is generally used only by player races as enemies have their stats calculated automatically 
-    public Stats stats;
-
-    //List of abilities provided to all entities of this race
-    public Dictionary<string, int> abilities;
-
-    //Tags for entity's abilities in order for it to know when to cast what
-    public Dictionary<string, string> abilityAITags;
-
-    //List of possible item drops by this race
-    [NonSerialized] public List<string> droppedItems;
 
     //List of male names that are used when creating player characters
     public List<string> maleNames;
@@ -234,9 +240,7 @@ public class Race
     //List of female names that are used when creating player characters
     public List<string> femaleNames;
 
-    //Loot that this race can drop
-    //This is problematic right now because it is not dependant on entity's level
-    public List<(int, string)> loot;
+    #endregion
 
     //Currently opened race
     public static Race race;

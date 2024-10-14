@@ -3086,17 +3086,17 @@ public static class BlueprintDev
             AddButtonRegion(() => AddLine("Manage stats"),
             (h) =>
             {
-                item.stats ??= new(new());
-                if (!item.stats.stats.ContainsKey("Stamina")) item.stats.stats.Add("Stamina", 0);
-                if (!item.stats.stats.ContainsKey("Strength")) item.stats.stats.Add("Strength", 0);
-                if (!item.stats.stats.ContainsKey("Agility")) item.stats.stats.Add("Agility", 0);
-                if (!item.stats.stats.ContainsKey("Intellect")) item.stats.stats.Add("Intellect", 0);
-                if (!item.stats.stats.ContainsKey("Spirit")) item.stats.stats.Add("Spirit", 0);
-                String.stamina.Set(item.stats.stats["Stamina"] + "");
-                String.strength.Set(item.stats.stats["Strength"] + "");
-                String.agility.Set(item.stats.stats["Agility"] + "");
-                String.intellect.Set(item.stats.stats["Intellect"] + "");
-                String.spirit.Set(item.stats.stats["Spirit"] + "");
+                item.stats ??= new();
+                if (!item.stats.ContainsKey("Stamina")) item.stats.Add("Stamina", 0);
+                if (!item.stats.ContainsKey("Strength")) item.stats.Add("Strength", 0);
+                if (!item.stats.ContainsKey("Agility")) item.stats.Add("Agility", 0);
+                if (!item.stats.ContainsKey("Intellect")) item.stats.Add("Intellect", 0);
+                if (!item.stats.ContainsKey("Spirit")) item.stats.Add("Spirit", 0);
+                String.stamina.Set(item.stats["Stamina"] + "");
+                String.strength.Set(item.stats["Strength"] + "");
+                String.agility.Set(item.stats["Agility"] + "");
+                String.intellect.Set(item.stats["Intellect"] + "");
+                String.spirit.Set(item.stats["Spirit"] + "");
                 Respawn("ObjectManagerItemStatManager");
                 CloseWindow("ObjectManagerItems");
             });
@@ -3394,12 +3394,12 @@ public static class BlueprintDev
                 AddSmallButton("OtherClose",
                 (h) =>
                 {
-                    if (item.stats.stats["Stamina"] == 0) item.stats.stats.Remove("Stamina");
-                    if (item.stats.stats["Strength"] == 0) item.stats.stats.Remove("Strength");
-                    if (item.stats.stats["Agility"] == 0) item.stats.stats.Remove("Agility");
-                    if (item.stats.stats["Intellect"] == 0) item.stats.stats.Remove("Intellect");
-                    if (item.stats.stats["Spirit"] == 0) item.stats.stats.Remove("Spirit");
-                    //if (item.stats.stats.Count == 0) item.stats = null;
+                    if (item.stats["Stamina"] == 0) item.stats.Remove("Stamina");
+                    if (item.stats["Strength"] == 0) item.stats.Remove("Strength");
+                    if (item.stats["Agility"] == 0) item.stats.Remove("Agility");
+                    if (item.stats["Intellect"] == 0) item.stats.Remove("Intellect");
+                    if (item.stats["Spirit"] == 0) item.stats.Remove("Spirit");
+                    //if (item.stats.Count == 0) item.stats = null;
                     CloseWindow(h.window);
                     Respawn("ObjectManagerItems");
                 });
