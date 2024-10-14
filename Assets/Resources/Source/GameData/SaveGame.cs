@@ -302,7 +302,7 @@ public class SaveGame
     public static void CloseSave()
     {
         if (currentSave == null) return;
-        if (currentSave.playerDead) settings.selectedCharacter = "";
+        if (currentSave.player.dead) settings.selectedCharacter = "";
         Save();
         mapGrid.SwitchMapTexture(false);
         currentSave = null;
@@ -348,14 +348,11 @@ public class SaveGame
     //This variable stores information about entity's death
     public DeathInfo deathInfo;
 
-    //Indicates whether the character is dead at the momentt
-    public bool playerDead;
-
     //Revives the player
     public void RevivePlayer()
     {
-        if (!playerDead) return;
-        playerDead = false;
+        if (!player.dead) return;
+        player.dead = false;
         mapGrid.SwitchMapTexture(false);
         SpawnTransition();
         SpawnTransition();

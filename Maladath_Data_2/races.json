@@ -16280,6 +16280,10 @@
       "Corruption": 0,
       "Curse of Agony": 0
     },
+    "abilityAITags": {
+      "Corruption": "Filler",
+      "Curse of Agony": "Core"
+    },
     "loot": []
   },
   {

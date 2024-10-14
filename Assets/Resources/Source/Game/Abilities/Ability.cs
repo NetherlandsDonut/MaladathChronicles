@@ -204,12 +204,12 @@ public class Ability
                 AddText(ability.cooldown == 0 ? "None" : ability.cooldown + (ability.cooldown == 1 ? " turn" : " turns"), "Gray");
                 if (CDesktop.title == "Game" || CDesktop.title == "GameSimulation")
                 {
-                    //var c = Board.board.CooldownOn(effector == Board.board.player, ability.name);
-                    //if (c > 0)
-                    //{
-                    //    AddLine("Cooldown left: ", "DarkGray");
-                    //    AddText(c + (c == 1 ? " turn" : " turns"), "Gray");
-                    //}
+                    var c = Board.board.CooldownOn(Board.board.participants.FindIndex(x => x.who == effector), ability.name);
+                    if (c > 0)
+                    {
+                        AddLine("Cooldown left: ", "DarkGray");
+                        AddText(c + (c == 1 ? " turn" : " turns"), "Gray");
+                    }
                 }
             });
             ability.PrintDescription(effector, width, rank);

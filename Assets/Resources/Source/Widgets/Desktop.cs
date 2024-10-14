@@ -198,7 +198,7 @@ public class Desktop : MonoBehaviour
                     Respawn("ExperienceBarBorder");
                     Respawn("ExperienceBar");
                     Respawn("WorldBuffs");
-                    mapGrid.SwitchMapTexture(currentSave.playerDead);
+                    mapGrid.SwitchMapTexture(currentSave.player.dead);
                     SpawnTransition(false);
                     SpawnTransition(false);
                     SpawnTransition(false);

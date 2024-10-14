@@ -1,5 +1,4 @@
 {
-  "cascadeMinimum": 3,
   "maxPathLength": 9999,
   "maxPlayerLevel": 60,
   "maxBagsEquipped": 3,
@@ -20,6 +19,7 @@
   "defaultStanding": 4200,
   "maxPrimaryProfessions": 2,
   "expForExploration": 20,
+  "cascadeMinimum": 3,
   "markerCharacter": "_",
   "textWrapEnding": "...",
   "frameTime": 0.08,

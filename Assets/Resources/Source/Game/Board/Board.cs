@@ -29,9 +29,9 @@ public class Board
         resourceBars = new();
         flyingMissiles = new();
         actions = new List<Action>();
-        spotlightEnemy = new() { 1, 2 };
-        spotlightFriendly = new() { 0, 3 };
-        participants = new() { new(), new(), new(), new() };
+        spotlightFriendly = new() { 0 };
+        spotlightEnemy = new() { 1 };
+        participants = new() { new(), new()};
         participants[0].who = currentSave.player;
         participants[0].human = true;
         participants[0].team = 1;
@@ -42,14 +42,27 @@ public class Board
         participants[1].team = 2;
         participants[1].who.currentActionSet = "Default";
         participants[1].combatAbilities = participants[1].who.AbilitiesInCombat();
-        participants[2].who = new Entity(2, Race.races.Find(x => x.name == "Harvest Watcher"));
-        participants[2].team = 2;
-        participants[2].who.currentActionSet = "Default";
-        participants[2].combatAbilities = participants[2].who.AbilitiesInCombat();
-        participants[3].who = new Entity(1, Race.races.Find(x => x.name == "Burning Blade Shadowmage"));
-        participants[3].team = 1;
-        participants[3].who.currentActionSet = "Default";
-        participants[3].combatAbilities = participants[3].who.AbilitiesInCombat();
+        //spotlightFriendly = new() { 0, 3 };
+        //spotlightEnemy = new() { 1, 2 };
+        //participants = new() { new(), new(), new(), new() };
+        //participants[0].who = currentSave.player;
+        //participants[0].human = true;
+        //participants[0].team = 1;
+        //participants[0].who.currentActionSet = "Default";
+        //participants[0].combatAbilities = participants[0].who.AbilitiesInCombat();
+        //participants[0].who.InitialiseCombat();
+        //participants[1].who = enemy;
+        //participants[1].team = 2;
+        //participants[1].who.currentActionSet = "Default";
+        //participants[1].combatAbilities = participants[1].who.AbilitiesInCombat();
+        //participants[2].who = new Entity(2, Race.races.Find(x => x.name == "Harvest Watcher"));
+        //participants[2].team = 2;
+        //participants[2].who.currentActionSet = "Default";
+        //participants[2].combatAbilities = participants[2].who.AbilitiesInCombat();
+        //participants[3].who = new Entity(1, Race.races.Find(x => x.name == "Burning Blade Shadowmage"));
+        //participants[3].team = 1;
+        //participants[3].who.currentActionSet = "Default";
+        //participants[3].combatAbilities = participants[3].who.AbilitiesInCombat();
         cooldowns = new();
         foreach (var poo in participants)
             cooldowns.Add(participants.IndexOf(poo), new());
@@ -476,28 +489,21 @@ public class Board
             }
             else if (result == "Team2Won")
             {
-                foreach (var participant in participants.Where(x => x.team == 1))
+                StopAmbience();
+                PlaySound("Death");
+                if (Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore)
                 {
-                    StopAmbience();
-
-                    //MOVE TO COMBAT
-                    PlaySound("Death");
-                    if (Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore)
-                    {
-                        var enemy = participants.Find(x => x.team == 2).who;
-                        currentSave.deathInfo = new(enemy.name, enemy.Race().kind == "Common", area.name);
-                    }
-
-                    //MOVE TO COMBAT
-                    else
-                    {
-                        SwitchDesktop("Map");
-                        SpawnTransition(false);
-                        SpawnTransition(false);
-                        SpawnTransition(false);
-                        SpawnTransition(false);
-                        SpawnTransition(false);
-                    }
+                    var enemy = participants.Find(x => x.team == 2).who;
+                    currentSave.deathInfo = new(enemy.name, enemy.Race().kind == "Common", area.name);
+                }
+                else
+                {
+                    SwitchDesktop("Map");
+                    SpawnTransition(false);
+                    SpawnTransition(false);
+                    SpawnTransition(false);
+                    SpawnTransition(false);
+                    SpawnTransition(false);
                 }
                 chartPage = "Damage Dealt";
                 SpawnDesktopBlueprint("CombatResults");
@@ -583,7 +589,7 @@ public class Board
                 else EndTurn();
             }
 
-            //DO ANIMATION BREAK FOR ENEMY TO GIVE THEM TIME TO THINK
+            //Do a moment of waiting for the enemy to "think"
             else if (!breakForMove)
             {
                 animationTime = (float)(random.Next(3, 5) / 10.0) + 0.3f;
@@ -595,69 +601,47 @@ public class Board
             {
                 breakForMove = false;
                 bonusTurnStreak = 0;
-
-                //CALCULATE SOLVINGS
-                var firstLayerBase = new FutureBoard(board);
-                var firstLayer = firstLayerBase.CalculateLayer().OrderByDescending(x => x.MaxDesiredness(firstLayerBase)).ToList();
-                firstLayerBase.finishedMoving = true;
-                var baseDesiredness = firstLayerBase.Desiredness();
-                firstLayerBase.finishedMoving = false;
-                var currentLayer = firstLayer;
-                firstLayer.ForEach(x => x.depth = defines.aiDepth);
-                while (true)
+                var differentFloodings = PossibleFloodings();
+                var boardClick = (0, 0);
+                var castAbility = "";
+                var allAbilities = participants[whosTurn].who.abilityAITags == null ? new() : participants[whosTurn].who.abilityAITags.Select(x => (Ability.abilities.Find(y => y.name == x.Key), x.Value)).ToList();
+                var emergencies = allAbilities.Where(x => x.Value == "Emergency").Select(x => x.Item1);
+                var castableEmergencies = emergencies.Where(x => x.EnoughResources(participants[whosTurn].who) && CooldownOn(whosTurn, x.name) == 0);
+                var cores = allAbilities.Where(x => x.Value == "Core").Select(x => x.Item1);
+                var castableCores = cores.Where(x => x.EnoughResources(participants[whosTurn].who) && CooldownOn(whosTurn, x.name) == 0);
+                var fillers = allAbilities.Where(x => x.Value == "Filler").Select(x => x.Item1);
+                var castableFillers = fillers.Where(x => x.EnoughResources(participants[whosTurn].who) && CooldownOn(whosTurn, x.name) == 0);
+                if (emergencies.Count() > 0 && participants[whosTurn].who.health < participants[whosTurn].who.MaxHealth() / (2.6 - random.NextDouble()))
+                    if (castableEmergencies.Count() > 0)
+                        castAbility = castableEmergencies.OrderByDescending(x => x.cooldown).First().name;
+                if (cores.Count() > 0 && castAbility == "")
+                    if (castableCores.Count() > 0)
+                        castAbility = castableCores.OrderByDescending(x => x.cooldown).First().name;
+                if (fillers.Count() > 0 && castAbility == "")
+                    if (castableFillers.Count() > 0)
+                        castAbility = castableFillers.OrderByDescending(x => x.cooldown).First().name;
+                if (castAbility == "")
                 {
-                    foreach (var solving in currentLayer)
+                    var importanceTable = participants[whosTurn].who.resources.ToDictionary(x => x.Key, x => 1);
+                    foreach (var resource in participants[whosTurn].who.resources)
                     {
-                        solving.possibleSolves = solving.board.CalculateLayer();
-                        foreach (var innerSolving in solving.possibleSolves)
-                            if (innerSolving.depth > -1)
-                                innerSolving.depth = innerSolving.board.participants.Where(x => x.team == 1).All(x => x.who.dead) || Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore && innerSolving.board.participants[0].who.health <= 0 ? 0 : solving.depth - (solving.board.TurnEnded() ? 1 : 0);
+                        var abilitiesUsingResource = allAbilities.Where(x => x.Item1.cost.ContainsKey(resource.Key)).OrderBy(x => x.Value == "Filler" ? 1 : 0);
+                        var currentImportance = 1;
+                        var subtractedAlready = 0;
+                        foreach (var a in abilitiesUsingResource)
+                            for (int i = 0; i < a.Item1.cost[resource.Key]; i++)
+                                if (++subtractedAlready > resource.Value)
+                                    currentImportance += a.Value == "Filler" ? 4 : 10;
+                        importanceTable[resource.Key] = currentImportance;
                     }
-                    currentLayer = currentLayer.SelectMany(x => x.possibleSolves.FindAll(y => y.depth > 0)).ToList();
-                    if (currentLayer.Count == 0) break;
+                    Debug.Log(string.Join(' ', importanceTable));
+                    var orderedFloodings = differentFloodings.OrderByDescending(x => x.Item3.Sum(y => (y.Item3 / 10 + 1) * importanceTable[Resource(y.Item3)])).ToList();
+                    var chosenFlooding = orderedFloodings.First();
+                    boardClick = (chosenFlooding.Item1, chosenFlooding.Item2);
                 }
-                var results = new List<(FutureMove, double)>();
-                foreach (var solving in firstLayer)
-                    results.Add((solving, solving.MaxDesiredness(firstLayerBase, baseDesiredness)));
-                results = results.OrderByDescending(x => x.Item2).ToList();
-
-                //var message = "";
-                //foreach (var solving1 in firstLayer)
-                //{
-                //    message += solving1.board.whosTurn + ": " + solving1.desiredness.ToString("0.000") + " " + (solving1.x != -1 ? "(" + solving1.x + ", " + solving1.y + ") (" + boardNameDictionary[firstLayerBase.field[solving1.x, solving1.y]] + ")" : "") + (solving1.ability == "" ? "" : "<" + solving1.ability + ">") + "\n";
-                //    if (solving1.possibleSolves.Count > 0) foreach (var solving2 in solving1.possibleSolves)
-                //        {
-                //            message += "    " + solving2.board.whosTurn + ": " + solving2.desiredness.ToString("0.000") + " " + (solving2.x != -1 ? "(" + solving2.x + ", " + solving2.y + ") (" + boardNameDictionary[solving1.board.field[solving2.x, solving2.y]] + ")" : "") + (solving2.ability == "" ? "" : "<" + solving2.ability + ">") + "\n";
-                //            if (solving2.possibleSolves.Count > 0) foreach (var solving3 in solving2.possibleSolves)
-                //                {
-                //                    message += "      " + solving3.board.whosTurn + ": " + solving3.desiredness.ToString("0.000") + " " + (solving3.x != -1 ? "(" + solving3.x + ", " + solving3.y + ") (" + boardNameDictionary[solving2.board.field[solving3.x, solving3.y]] + ")" : "") + (solving3.ability == "" ? "" : "<" + solving3.ability + ">") + "\n";
-                //                    if (solving3.possibleSolves.Count > 0) foreach (var solving4 in solving3.possibleSolves)
-                //                        {
-                //                            message += "         " + solving4.board.whosTurn + ": " + solving4.desiredness.ToString("0.000") + " " + (solving4.x != -1 ? "(" + solving4.x + ", " + solving4.y + ") (" + boardNameDictionary[solving3.board.field[solving4.x, solving4.y]] + ")" : "") + (solving4.ability == "" ? "" : "<" + solving4.ability + ">") + "\n";
-                //                            if (solving4.possibleSolves.Count > 0) foreach (var solving5 in solving4.possibleSolves)
-                //                                {
-                //                                    message += "            " + solving5.board.whosTurn + ": " + solving5.desiredness.ToString("0.000") + " " + (solving5.x != -1 ? "(" + solving5.x + ", " + solving5.y + ") (" + boardNameDictionary[solving4.board.field[solving5.x, solving5.y]] + ")" : "") + (solving5.ability == "" ? "" : "<" + solving5.ability + ">") + "\n";
-                //                                    if (solving5.possibleSolves.Count > 0) foreach (var solving6 in solving5.possibleSolves)
-                //                                        {
-                //                                            message += "                " + solving6.board.whosTurn + ": " + solving6.desiredness.ToString("0.000") + " " + (solving6.x != -1 ? "(" + solving6.x + ", " + solving6.y + ") (" + boardNameDictionary[solving5.board.field[solving6.x, solving6.y]] + ")" : "") + (solving6.ability == "" ? "" : "<" + solving6.ability + ">") + "\n";
-                //                                            if (solving6.possibleSolves.Count > 0) foreach (var solving7 in solving6.possibleSolves)
-                //                                                {
-                //                                                    message += "                  " + solving7.board.whosTurn + ": " + solving7.desiredness.ToString("0.000") + " " + (solving7.x != -1 ? "(" + solving7.x + ", " + solving7.y + ") (" + boardNameDictionary[solving6.board.field[solving7.x, solving7.y]] + ")" : "") + (solving7.ability == "" ? "" : "<" + solving7.ability + ">") + "\n";
-                //                                                }
-                //                                        }
-                //                                }
-                //                        }
-                //                }
-                //        }
-                //}
-                ////File.WriteAllText("asd.txt", message);
-                //Debug.Log(message);
-
-                //EXECUTE
-                var bestMove = results[0].Item1;
-                if (bestMove.ability != "")
+                if (castAbility != "")
                 {
-                    var abilityObj = Ability.abilities.Find(x => x.name == bestMove.ability);
+                    var abilityObj = Ability.abilities.Find(x => x.name == castAbility);
                     board.actions.Add(() =>
                     {
                         cursorEnemy.Move(CDesktop.windows.Find(x => x.title == "EnemyBattleInfo").regionGroups[0].regions[participants[whosTurn].who.actionBars[participants[whosTurn].who.currentActionSet].IndexOf(abilityObj.name) + 2].transform.position + new Vector3(139, -10));
@@ -679,12 +663,12 @@ public class Board
                 }
                 else
                 {
-                    board.actions.Add(() => { cursorEnemy.Move(window.LBRegionGroup().regions[bestMove.y].bigButtons[bestMove.x].transform.position); animationTime += defines.frameTime * 8; });
+                    board.actions.Add(() => { cursorEnemy.Move(window.LBRegionGroup().regions[boardClick.Item2].bigButtons[boardClick.Item1].transform.position); animationTime += defines.frameTime * 8; });
                     board.actions.Add(() => { cursorEnemy.SetCursor(CursorType.Click); });
                     board.actions.Add(() =>
                     {
                         cursorEnemy.SetCursor(CursorType.Default);
-                        var list1 = board.FloodCount(bestMove.x, bestMove.y);
+                        var list1 = board.FloodCount(boardClick.Item1, boardClick.Item2);
                         board.FloodDestroy(list1);
                         board.finishedMoving = true;
                     });
@@ -711,6 +695,23 @@ public class Board
             else canUnlockScreen = true;
         }
     }
+
+    //Returns a list of all possible moves on the board and it's effects
+    //The returned list doesn't contain any duplicates
+    public List<(int, int, List<(int, int, int)>)> PossibleFloodings()
+    {
+        var differentFloodings = new List<(int, int, List<(int, int, int)>)>();
+        for (int i = 0; i < field.GetLength(0); i++)
+            for (int j = 0; j < field.GetLength(1); j++)
+                if (field[i, j] != -1)
+                {
+                    var list2 = FloodCount(i, j);
+                    if (!differentFloodings.Exists(x => x.Item3.All(y => list2.Contains((y.Item1, y.Item2, y.Item3)))))
+                        differentFloodings.Add((i, j, list2));
+                }
+        return differentFloodings;
+    }
+
 
     public int fieldGetCounterX = 0;
     public int fieldGetCounterY = 0;

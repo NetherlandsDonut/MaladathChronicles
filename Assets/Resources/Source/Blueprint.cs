@@ -575,7 +575,7 @@ public class Blueprint
                         AddLine(slot.player.name + ", a level " + slot.player.level + " ");
                         AddText(slot.player.spec, slot.player.spec);
                         AddLine("Score: " + slot.Score());
-                        if (slot.playerDead) AddText(", died while fighting " + (slot.deathInfo.commonSource ? "a " : "") + slot.deathInfo.source + " in " + slot.deathInfo.area);
+                        if (slot.player.dead) AddText(", died while fighting " + (slot.deathInfo.commonSource ? "a " : "") + slot.deathInfo.source + " in " + slot.deathInfo.area);
                     });
                 }
                 else
@@ -717,7 +717,7 @@ public class Blueprint
                 });
                 if (saves.ContainsKey(settings.selectedRealm))
                 {
-                    var aliveSlots = saves[settings.selectedRealm].FindAll(x => !x.playerDead);
+                    var aliveSlots = saves[settings.selectedRealm].FindAll(x => !x.player.dead);
                     foreach (var slot in aliveSlots)
                     {
                         AddPaddingRegion(() =>
@@ -800,9 +800,9 @@ public class Blueprint
                     (h) =>
                     {
                         settings.selectedRealm = realm.name;
-                        if (saves[settings.selectedRealm].Count(x => !x.playerDead) > 0)
+                        if (saves[settings.selectedRealm].Count(x => !x.player.dead) > 0)
                         {
-                            settings.selectedCharacter = saves[settings.selectedRealm].First(x => !x.playerDead).player.name;
+                            settings.selectedCharacter = saves[settings.selectedRealm].First(x => !x.player.dead).player.name;
                             SpawnTransition();
                         }
                         else if (settings.selectedCharacter != "")
@@ -838,7 +838,7 @@ public class Blueprint
             {
                 AddPaddingRegion(() =>
                 {
-                    var countAlive = saves[realm.name].Count(x => !x.playerDead);
+                    var countAlive = saves[realm.name].Count(x => !x.player.dead);
                     AddLine(countAlive + "", countAlive == 7 ? "DangerousRed" : "Gray");
                     AddText(" / ", "DarkGray");
                     AddText("7", countAlive == 7 ? "DangerousRed" : "Gray");
@@ -2564,14 +2564,16 @@ public class Blueprint
             },
             (h) =>
             {
-                var hard = Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore;
-                if (hard && board.results.result == "Team2Won")
+                var hardcore = Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore;
+                if (hardcore && board.results.result == "Team2Won")
                 {
                     CloseSave();
                     SaveGames();
-                    CloseDesktop("CombatResults");
                     CloseDesktop("Map");
-                    CloseDesktop("TitleScreen");
+                    CloseDesktop("Complex");
+                    CloseDesktop("Instance");
+                    CloseDesktop("HostileArea");
+                    CloseDesktop("CombatResults");
                     SpawnDesktopBlueprint("TitleScreen");
                 }
                 else

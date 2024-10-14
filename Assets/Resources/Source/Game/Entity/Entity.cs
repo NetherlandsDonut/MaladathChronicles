@@ -70,6 +70,7 @@ public class Entity
         kind = race.kind;
         this.race = name = race.name;
         abilities = race.abilities.ToDictionary(x => x.Key, x => x.Value);
+        abilityAITags = race.abilityAITags;
         equipment = new();
         worldBuffs = new();
         inventory = new Inventory(new List<string>());
@@ -1289,7 +1290,6 @@ public class Entity
                 foreach (var participant in Board.board.participants)
                     if (participant.who == this) Board.board.CallEvents(participant.who, new() { { "Trigger", "BuffRemove" }, { "Triggerer", "Effector" }, { "BuffName", buffs[index].buff.name } });
                     else Board.board.CallEvents(participant.who, new() { { "Trigger", "BuffRemove" }, { "Triggerer", "Other" }, { "BuffName", buffs[index].buff.name } });
-            Board.board.actions.Add(() => { if (--buffs[index].durationLeft == 0) RemoveBuff(buffs[index]); });
         }
     }
 
@@ -1389,6 +1389,9 @@ public class Entity
     //List of abilities that this entity has access to
     //This can be abilities from items, class or race
     public Dictionary<string, int> abilities;
+
+    //Tags for entity's abilities in order for it to know when to cast what
+    public Dictionary<string, string> abilityAITags;
 
     //Current action set
     public string currentActionSet;

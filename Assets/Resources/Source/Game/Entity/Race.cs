@@ -219,8 +219,11 @@ public class Race
     //This is generally used only by player races as enemies have their stats calculated automatically 
     public Stats stats;
 
-    //List of racial abilities provided to all entities of this race
+    //List of abilities provided to all entities of this race
     public Dictionary<string, int> abilities;
+
+    //Tags for entity's abilities in order for it to know when to cast what
+    public Dictionary<string, string> abilityAITags;
 
     //List of possible item drops by this race
     [NonSerialized] public List<string> droppedItems;
