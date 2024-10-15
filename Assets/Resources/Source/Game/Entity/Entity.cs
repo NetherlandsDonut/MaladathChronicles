@@ -1200,9 +1200,10 @@ public class Entity
     }
 
     //Prepares this entity for combat
-    public void InitialiseCombat(bool fullReset = true)
+    public void InitialiseCombat()
     {
-        if (fullReset) health = MaxHealth();
+        health = MaxHealth();
+        currentActionSet = "Default";
         buffs = new();
         ResetResources();
     }

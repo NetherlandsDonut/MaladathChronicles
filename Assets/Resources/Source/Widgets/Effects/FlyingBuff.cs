@@ -28,11 +28,13 @@ public class FlyingBuff : MonoBehaviour
 
     public void Update()
     {
-        //if (transform.localPosition.x < -322.5f || transform.localPosition.x > 322.5f) Destroy(gameObject);
         if (Board.board.temporaryBuffs[onWho].Contains(gameObject))
             transform.position = Vector3.Lerp(transform.position, new Vector3(onWho == 0 ? -302.5f - (23 * Mathf.Abs(dyingIndex % rowAmount - rowAmount) + 1) : 302.5f + 23 * (Mathf.Abs(dyingIndex % rowAmount - rowAmount) + 1), 67.5f - 23 * (dyingIndex / rowAmount)), Time.deltaTime * flySpeed);
         else
+        {
             transform.position = Vector3.Lerp(transform.position, onWho == 0 ? new Vector3(-302.5f + 23 * (Index() % rowAmount), -162.5f + 23 * (Index() / rowAmount)) : new Vector3(302.5f - 23 * (Index() % rowAmount), -162.5f + 23 * (Index() / rowAmount)), Time.deltaTime * flySpeed);
+            if (transform.localPosition.x < -322.5f || transform.localPosition.x > 322.5f) Destroy(gameObject);
+        }
     }
 
     public int Index() => Board.board.temporaryBuffs[onWho].IndexOf(gameObject);

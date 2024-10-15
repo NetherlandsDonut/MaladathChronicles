@@ -18,7 +18,7 @@ public class Board
 {
     #region Initialisation
 
-    public Board(int x, int y, Entity enemy, Site area = null)
+    public Board(int x, int y, List<Entity> enemies, Site area = null)
     {
         turn = 1;
         whosTurn = 0;
@@ -30,39 +30,25 @@ public class Board
         flyingMissiles = new();
         actions = new List<Action>();
         spotlightFriendly = new() { 0 };
-        spotlightEnemy = new() { 1 };
-        participants = new() { new(), new()};
+        spotlightEnemy = new() { };
+        participants = new() { new() };
+        participants[0].team = 1;
         participants[0].who = currentSave.player;
         participants[0].human = true;
-        participants[0].team = 1;
-        participants[0].who.currentActionSet = "Default";
-        participants[0].combatAbilities = participants[0].who.AbilitiesInCombat();
+        participants[0].combatAbilities = currentSave.player.AbilitiesInCombat();
         participants[0].who.InitialiseCombat();
-        participants[1].who = enemy;
-        participants[1].team = 2;
-        participants[1].who.currentActionSet = "Default";
-        participants[1].combatAbilities = participants[1].who.AbilitiesInCombat();
-        //spotlightFriendly = new() { 0, 3 };
-        //spotlightEnemy = new() { 1, 2 };
-        //participants = new() { new(), new(), new(), new() };
-        //participants[0].who = currentSave.player;
-        //participants[0].human = true;
-        //participants[0].team = 1;
-        //participants[0].who.currentActionSet = "Default";
-        //participants[0].combatAbilities = participants[0].who.AbilitiesInCombat();
-        //participants[0].who.InitialiseCombat();
-        //participants[1].who = enemy;
-        //participants[1].team = 2;
-        //participants[1].who.currentActionSet = "Default";
-        //participants[1].combatAbilities = participants[1].who.AbilitiesInCombat();
-        //participants[2].who = new Entity(2, Race.races.Find(x => x.name == "Harvest Watcher"));
-        //participants[2].team = 2;
-        //participants[2].who.currentActionSet = "Default";
-        //participants[2].combatAbilities = participants[2].who.AbilitiesInCombat();
-        //participants[3].who = new Entity(1, Race.races.Find(x => x.name == "Burning Blade Shadowmage"));
-        //participants[3].team = 1;
-        //participants[3].who.currentActionSet = "Default";
-        //participants[3].combatAbilities = participants[3].who.AbilitiesInCombat();
+        foreach (var enemy in enemies)
+        {
+            enemy.InitialiseCombat();
+            var newParticipant = new CombatParticipant
+            {
+                team = 2,
+                who = enemy,
+                combatAbilities = enemy.AbilitiesInCombat()
+            };
+            participants.Add(newParticipant);
+            spotlightEnemy.Add(participants.Count - 1);
+        }
         cooldowns = new();
         foreach (var poo in participants)
             cooldowns.Add(participants.IndexOf(poo), new());
@@ -105,10 +91,10 @@ public class Board
         Reset();
     }
 
-    public static void NewBoard(Entity entity, Site area)
+    public static void NewBoard(List<Entity> enemies, Site area)
     {
-        PlayEnemyLine(entity.EnemyLine("Aggro"));
-        board = new Board(6, 6, entity, area);
+        PlayEnemyLine(enemies.First().EnemyLine("Aggro"));
+        board = new Board(6, 6, enemies, area);
         bufferBoard = new BufferBoard();
         foreach (var foo in board.participants)
             board.CallEvents(foo.who, new() { { "Trigger", "CombatBegin" } });

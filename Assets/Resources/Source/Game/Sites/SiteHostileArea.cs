@@ -12,6 +12,7 @@ using static Faction;
 using static SaveGame;
 using static Coloring;
 using static SiteInstance;
+using System.Linq.Expressions;
 
 public class SiteHostileArea : Site
 {
@@ -207,16 +208,24 @@ public class SiteHostileArea : Site
         return "Areas/Area" + (zone + name).Clean() + (save != null && save.IsNight() && !noNightVariant ? "Night" : "") + (specialClearBackground && eliteEncounters.All(x => save.elitesKilled.ContainsKey(x.who)) ? "Cleared" : "");
     }
 
-    public Entity RollEncounter()
+    public List<Entity> RollEncounters(int amount)
     {
-        var encounters = commonEncounters.Select(x => (x.levelMax != 0 ? random.Next(x.levelMin, x.levelMax + 1) : x.levelMin, races.Find(y => y.name == x.who))).ToList();
-        if (Roll(5) && rareEncounters != null)
+        var alreadyGotRare = false;
+        var list = new List<Entity>();
+        Encounter rand = null;
+        for (int i = 0; i < amount; i++)
         {
-            var rares = rareEncounters.FindAll(x => !currentSave.raresKilled.ContainsKey(x.who));
-            if (rares.Count > 0) encounters = rares.Select(x => (x.levelMax != 0 ? random.Next(x.levelMin, x.levelMax + 1) : x.levelMin, races.Find(y => y.name == x.who))).ToList();
+            if (rareEncounters != null && !alreadyGotRare && Roll(5))
+            {
+                rand = rareEncounters[random.Next(0, rareEncounters.Count)];
+                list.Add(new Entity(random.Next(rand.levelMin, rand.levelMax + 1), races.Find(y => y.name == rand.who)));
+                alreadyGotRare = true;
+            }
+            else do rand = commonEncounters[random.Next(0, commonEncounters.Count)];
+                while (list.Exists(x => x.name == rand.who));
+            list.Add(new Entity(random.Next(rand.levelMin, rand.levelMax + 1), races.Find(y => y.name == rand.who)));
         }
-        var find = encounters[random.Next(0, encounters.Count)];
-        return new Entity(find.Item1, find.Item2);
+        return list;
     }
 
     public Entity RollEncounter(Encounter boss)

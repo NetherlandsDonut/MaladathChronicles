@@ -8,6 +8,7 @@
         "currentQuests": [],
         "completedQuests": [],
         "level": 1,
+        "experience": 220,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -85,6 +86,7 @@
         "race": "Human",
         "spec": "Mage",
         "gender": "Female",
+        "homeLocation": "Northshire Abbey",
         "abilities": {
           "Staff Proficiency": 0,
           "Cloth Proficiency": 0,
@@ -96,6 +98,7 @@
           "Frostbolt": 0,
           "Arcane Missiles": 0
         },
+        "currentActionSet": "Default",
         "actionBars": {
           "Default": [
             "Fireball",
@@ -197,20 +200,21 @@
         },
         "worldBuffs": []
       },
-      "hour": 7,
-      "currentSite": "Northshire Abbey",
+      "hour": 8,
+      "second": 39,
+      "currentSite": "The Deadmines",
       "ringOfLaw": "Gorosh the Dervish",
       "forlornCloister": "Ironspine",
       "markets": [
         {
           "name": "Alliance Market",
           "auctions": [],
-          "hoursSinceUpdate": 48
+          "hoursSinceUpdate": 49
         },
         {
           "name": "Horde Market",
           "auctions": [],
-          "hoursSinceUpdate": 48
+          "hoursSinceUpdate": 49
         }
       ],
       "openedChests": {},
@@ -221,12 +225,26 @@
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
-        "Northshire Abbey": 1
+        "Northshire Abbey": 1,
+        "Goldshire": 3,
+        "Crystal Lake": 3,
+        "Stormwind City": 0,
+        "The Stockade": 0,
+        "Mirror Lake": 1,
+        "Northshire Valley": 1,
+        "Jerod's Landing": 1,
+        "Jansen Stead": 0,
+        "Sentinel Hill": 0,
+        "Moonbrook": 0,
+        "The Deadmines": 2
       },
       "unlockedAreas": [],
       "vendorStock": {},
       "banks": {},
-      "startDate": "2024-10-14T16:51:56.1533076+02:00"
+      "startDate": "2024-10-14T16:51:56.1533076+02:00",
+      "lastLoaded": "2024-10-14T23:27:49.1440782+02:00",
+      "lastPlayed": "2024-10-14T23:30:26.4324841+02:00",
+      "timePlayed": "00:20:49.4858718"
     }
   ]
 }

@@ -47,7 +47,7 @@ public class FallingElement : MonoBehaviour
                 if (!playedSound)
                 {
                     playedSound = true;
-                    PlaySound("PutDownWoodSmall", 1f);
+                    PlaySound("PutDownWoodSmall", 0.5f);
                 }
                 else if (temp < 0.05f)
                 {

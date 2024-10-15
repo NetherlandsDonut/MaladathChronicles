@@ -3249,7 +3249,7 @@ public class Blueprint
             AddButtonRegion(() => { AddLine("Explore", "Black"); },
             (h) =>
             {
-                NewBoard(area.RollEncounter(), area);
+                NewBoard(area.RollEncounters(area.instancePart ? 2 : 1), area);
                 SpawnDesktopBlueprint("Game");
             });
         }),
@@ -3366,7 +3366,7 @@ public class Blueprint
                 AddBigButton(race == null ? "OtherUnknown" : race.portrait,
                     (h) =>
                     {
-                        NewBoard(area.RollEncounter(encounter), area);
+                        NewBoard(new() { area.RollEncounter(encounter) }, area);
                         SpawnDesktopBlueprint("Game");
                     }
                 );
