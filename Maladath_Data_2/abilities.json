@@ -2292,6 +2292,7 @@
       "regions": [
         {
           "regionType": "Padding",
+          "isExtender": true,
           "contents": [
             {
               "Color": "Uncommon",
@@ -13755,6 +13756,47 @@
             "PowerSource": "Effector",
             "SoundEffect": "AbilityBloodthirstImpact",
             "ShatterDensity": "1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Pinch",
+    "icon": "AbilityPinch",
+    "cooldown": 1,
+    "tags": [],
+    "cost": {
+      "Earth": 2,
+      "Water": 2
+    },
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector"
+          }
+        ],
+        "effects": [
+          {
+            "Await": "5",
+            "Effect": "Damage",
+            "PowerSource": "Effector",
+            "PowerType": "Melee",
+            "Affect": "Other",
+            "ShatterType": "Central",
+            "ShatterTarget": "Other",
+            "ShatterSpeed": "6",
+            "ShatterDegree": "20",
+            "ChanceScale": "None",
+            "SoundEffect": "AbilityRendImpact"
+          },
+          {
+            "Effect": "EndTurn"
           }
         ]
       }

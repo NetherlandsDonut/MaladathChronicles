@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections;
 
 using static Root;
+using System.Linq;
 
 public class Shatter : MonoBehaviour
 {
@@ -202,7 +203,20 @@ public class Shatter : MonoBehaviour
             if (travel && Defines.defines.animatedResourceParticles)
             {
                 newObject.GetComponent<Shatter>().Initiate(random.Next(1, 10) / 5f, random.Next(3, 5) / 3f);
-                newObject.GetComponent<Shatter>().Travel(Board.board.spotlightFriendly.Contains(Board.board.whosTurn) ? new Vector3(-148, 141 - 57 * (Board.board.spotlightFriendly.Count - Board.board.spotlightFriendly.IndexOf(Board.board.whosTurn) - 1)) : new Vector3(148, 141 - 57 * (Board.board.spotlightEnemy.Count - Board.board.spotlightEnemy.IndexOf(Board.board.whosTurn) - 1)), 0.4f);
+                if (Board.board.spotlightFriendly.Contains(Board.board.whosTurn))
+                {
+                    int sum = 0;
+                    foreach (var i in Board.board.spotlightFriendly.Skip(1).Take(Board.board.spotlightFriendly.Count - Board.board.spotlightFriendly.IndexOf(Board.board.whosTurn) - 1))
+                        sum += 65 + 19 * Board.board.participants[i].who.actionBars[Board.board.participants[i].who.currentActionSet].Count;
+                    newObject.GetComponent<Shatter>().Travel(new Vector3(-148, 141 - sum), 0.4f);
+                }
+                else
+                {
+                    int sum = 0;
+                    foreach (var i in Board.board.spotlightEnemy.Skip(1).Take(Board.board.spotlightEnemy.Count - Board.board.spotlightEnemy.IndexOf(Board.board.whosTurn) - 1))
+                        sum += 65 + 19 * Board.board.participants[i].who.actionBars[Board.board.participants[i].who.currentActionSet].Count;
+                    newObject.GetComponent<Shatter>().Travel(new Vector3(148, 141 - sum), 0.4f);
+                }
                 newObject.GetComponent<Rigidbody2D>().AddRelativeForce((direction / 2 + Random.insideUnitCircle) * (int)(100 * speed));
             }
             else newObject.GetComponent<Shatter>().Initiate(random.Next(1, 7), random.Next(1, 3) / 3f);

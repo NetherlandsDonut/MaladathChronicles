@@ -2366,52 +2366,28 @@ public static class BlueprintDev
             }
             AddPaddingRegion(() =>
             {
-                AddLine("Shatter type:", "DarkGray");
+                AddLine("Shatter target:", "DarkGray");
                 AddSmallButton("OtherReverse", (h) =>
                 {
-                    if (effect.ContainsKey("ShatterType"))
-                        effect["ShatterType"] = "None";
-                    });
+                    if (effect.ContainsKey("ShatterTarget"))
+                        effect.Remove("ShatterTarget");
+                });
             });
             AddButtonRegion(() =>
             {
-                AddLine(effect.ContainsKey("ShatterType") ? effect["ShatterType"] : "None");
+                AddLine(effect.ContainsKey("ShatterTarget") ? effect["ShatterTarget"] : "None");
             },
             (h) =>
             {
-                if (!effect.ContainsKey("ShatterType"))
-                    effect.Add("ShatterType", "Central");
-                else if (effect["ShatterType"] == "Central")
-                    effect["ShatterType"] = "Directional";
-                else if (effect["ShatterType"] == "Directional")
-                    effect["ShatterType"] = "None";
-                else if (effect["ShatterType"] == "None")
-                    effect["ShatterType"] = "Central";
-                });
-            if (effect.ContainsKey("ShatterType") && effect["ShatterType"] != "None")
+                if (!effect.ContainsKey("ShatterTarget"))
+                    effect.Add("ShatterTarget", "Effector");
+                else if (effect["ShatterTarget"] == "Effector")
+                    effect["ShatterTarget"] = "Other";
+                else if (effect["ShatterTarget"] == "Other")
+                    effect["ShatterTarget"] = "Effector";
+            });
+            if (effect.ContainsKey("ShatterTarget"))
             {
-                AddPaddingRegion(() =>
-                {
-                    AddLine("Shatter target:", "DarkGray");
-                    AddSmallButton("OtherReverse", (h) =>
-                    {
-                        if (effect.ContainsKey("ShatterTarget"))
-                            effect["ShatterTarget"] = "Effector";
-                        });
-                });
-                AddButtonRegion(() =>
-                {
-                    AddLine(effect.ContainsKey("ShatterTarget") ? effect["ShatterTarget"] : "None");
-                },
-                (h) =>
-                {
-                    if (!effect.ContainsKey("ShatterTarget"))
-                        effect.Add("ShatterTarget", "Effector");
-                    else if (effect["ShatterTarget"] == "Effector")
-                        effect["ShatterTarget"] = "Other";
-                    else if (effect["ShatterTarget"] == "Other")
-                        effect["ShatterTarget"] = "Effector";
-                    });
                 AddPaddingRegion(() =>
                 {
                     AddLine("Shatter degree:", "DarkGray");
@@ -2421,7 +2397,7 @@ public static class BlueprintDev
                         if (effect.ContainsKey("ShatterDegree"))
                             effect["ShatterDegree"] = "20";
                         String.shatterDegree.Set("20");
-                        });
+                    });
                 });
                 AddPaddingRegion(() =>
                 {
@@ -2432,7 +2408,7 @@ public static class BlueprintDev
                         if (effect.ContainsKey("ShatterDensity"))
                             effect["ShatterDensity"] = "1";
                         String.shatterDensity.Set("1");
-                        });
+                    });
                 });
                 AddPaddingRegion(() =>
                 {
@@ -2443,7 +2419,7 @@ public static class BlueprintDev
                         if (effect.ContainsKey("ShatterSpeed"))
                             effect["ShatterSpeed"] = "6";
                         String.shatterSpeed.Set("6");
-                        });
+                    });
                 });
             }
             if (effect.ContainsKey("Effect") && (effect["Effect"] == "ChangeElements"))
@@ -2457,7 +2433,7 @@ public static class BlueprintDev
                         if (effect.ContainsKey("ElementShatterDegree"))
                             effect["ElementShatterDegree"] = "8";
                         String.elementShatterDegree.Set("8");
-                        });
+                    });
                 });
                 AddPaddingRegion(() =>
                 {
@@ -2468,7 +2444,7 @@ public static class BlueprintDev
                         if (effect.ContainsKey("ElementShatterDensity"))
                             effect["ElementShatterDensity"] = "1";
                         String.elementShatterDensity.Set("1");
-                        });
+                    });
                 });
                 AddPaddingRegion(() =>
                 {
@@ -2479,7 +2455,7 @@ public static class BlueprintDev
                         if (effect.ContainsKey("ElementShatterSpeed"))
                             effect["ElementShatterSpeed"] = "5";
                         String.elementShatterSpeed.Set("5");
-                        });
+                    });
                 });
             }
             AddPaddingRegion(() => SetRegionAsGroupExtender());
@@ -2500,7 +2476,7 @@ public static class BlueprintDev
             AddRegionGroup();
             SetRegionGroupWidth(167);
             SetRegionGroupHeight(335);
-            if (area.commonEncounters == null) area.commonEncounters = new List<Encounter>();
+            area.commonEncounters ??= new List<Encounter>();
             foreach (var ce in area.commonEncounters)
             {
                 if (!String.encounterLevels.ContainsKey(ce))

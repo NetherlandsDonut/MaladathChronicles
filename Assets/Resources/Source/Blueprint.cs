@@ -240,49 +240,46 @@ public class Blueprint
                     AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? board.participants[index].who.gender : ""));
                     if (board.participants[board.spotlightEnemy[index]].who.dead) SetBigButtonToGrayscale();
                     AddLine("Level: ", "DarkGray");
-                    AddText(board.participants[board.spotlightEnemy[index]].who.level - 10 > currentSave.player.level ? "??" : "" + board.participants[board.spotlightEnemy[index]].who.level, ColorEntityLevel(board.participants[board.spotlightEnemy[index]].who.level));
+                    AddText(board.participants[board.spotlightEnemy[index]].who.level - 10 > board.participants[board.spotlightFriendly[0]].who.level ? "??" : "" + board.participants[board.spotlightEnemy[index]].who.level, ColorEntityLevel(board.participants[board.spotlightEnemy[index]].who.level));
                 });
                 AddHealthBar(40, -38 - 65 * (board.spotlightEnemy.Count - index - 1), board.spotlightEnemy[index], board.participants[board.spotlightEnemy[index]].who);
+                foreach (var actionBar in board.participants[board.spotlightEnemy[index]].who.actionBars[board.participants[board.spotlightEnemy[index]].who.currentActionSet])
+                {
+                    var abilityObj = abilities.Find(x => x.name == actionBar);
+                    if (abilityObj == null || abilityObj.cost == null) continue;
+                    AddButtonRegion(
+                        () =>
+                        {
+                            ReverseButtons();
+                            if (board.cooldowns[board.spotlightEnemy[index]].ContainsKey(actionBar))
+                            {
+                                AddLine(actionBar, "Black");
+                                AddText(" \\ " + board.cooldowns[board.spotlightEnemy[index]][actionBar], "DimGray");
+                            }
+                            else AddLine(actionBar);
+                            AddSmallButton(abilityObj.icon);
+                            if (!abilityObj.EnoughResources(board.participants[board.spotlightEnemy[index]].who) || !abilityObj.AreAnyConditionsMet("AbilityCast", currentSave, board))
+                            {
+                                SetSmallButtonToGrayscale();
+                                AddSmallButtonOverlay("OtherGridBlurred");
+                            }
+                            if (board.CooldownOn(board.spotlightEnemy[index], actionBar) > 0)
+                                AddSmallButtonOverlay("AutoCast");
+                        },
+                        null,
+                        null,
+                        (h) => () =>
+                        {
+                            PrintAbilityTooltip(board.participants[board.spotlightEnemy[index]].who, abilityObj, board.participants[board.spotlightEnemy[index]].who.abilities[abilityObj.name]);
+                        }
+                    );
+                }
                 if (index > 0)
                 {
                     AddSmallEmptyRegion();
                     AddSmallEmptyRegion();
                 }
             }
-            var aimedLength = board.participants[board.spotlightEnemy[0]].who.actionBars.Max(x => x.Value.Count());
-            foreach (var actionBar in board.participants[board.spotlightEnemy[0]].who.actionBars[board.participants[board.spotlightEnemy[0]].who.currentActionSet])
-            {
-                var abilityObj = abilities.Find(x => x.name == actionBar);
-                if (abilityObj == null || abilityObj.cost == null) continue;
-                AddButtonRegion(
-                    () =>
-                    {
-                        ReverseButtons();
-                        if (board.cooldowns[board.spotlightEnemy[0]].ContainsKey(actionBar))
-                        {
-                            AddLine(actionBar, "Black");
-                            AddText(" \\ " + board.cooldowns[board.spotlightEnemy[0]][actionBar], "DimGray");
-                        }
-                        else AddLine(actionBar);
-                        AddSmallButton(abilityObj.icon);
-                        if (!abilityObj.EnoughResources(board.participants[board.spotlightEnemy[0]].who) || !abilityObj.AreAnyConditionsMet("AbilityCast", currentSave, board))
-                        {
-                            SetSmallButtonToGrayscale();
-                            AddSmallButtonOverlay("OtherGridBlurred");
-                        }
-                        if (board.CooldownOn(board.spotlightEnemy[0], actionBar) > 0)
-                            AddSmallButtonOverlay("AutoCast");
-                    },
-                    null,
-                    null,
-                    (h) => () =>
-                    {
-                        PrintAbilityTooltip(board.participants[board.spotlightEnemy[0]].who, abilityObj, board.participants[board.spotlightEnemy[0]].who.abilities[abilityObj.name]);
-                    }
-                );
-            }
-            for (int i = board.participants[board.spotlightEnemy[0]].who.actionBars[board.participants[board.spotlightEnemy[0]].who.currentActionSet].Count; i < aimedLength; i++)
-                AddPaddingRegion(() => AddLine(""));
         }),
         new("PlayerBattleInfo", () => {
             SetAnchor(TopLeft);

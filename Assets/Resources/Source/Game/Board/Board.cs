@@ -67,6 +67,8 @@ public class Board
         var possible = Race.races.Where(x => !x.genderedPortrait).ToList();
         participants = new() { new(), new() };
         participants[0].who = new Entity(60, null);
+        participants[0].human = true;
+        participants[0].team = 1;
         participants[0].who.InitialiseCombat();
         participants[1].who = new Entity(60, possible[random.Next(possible.Count)]);
         whosTurn = 0;
@@ -80,6 +82,7 @@ public class Board
                 if (a.Key.cost != null) participants[0].who.actionBars["Default"].Add(a.Key.name);
             }
         cooldowns = new() { { 0, new() }, { 1, new() } };
+        participants[1].team = 2;
         participants[1].who.currentActionSet = "Default";
         participants[1].combatAbilities = participants[1].who.AbilitiesInCombat();
         temporaryBuffs = new() { { 0, new() }, { 1, new() } };
@@ -106,7 +109,11 @@ public class Board
         board = new Board(6, 6, new() { { testingAbility, 0 } });
         bufferBoard = new BufferBoard();
         if (testingAbility.events != null)
-            board.CallEvents(board.participants[0].who, new() { { "Trigger", "AbilityCast" }, { "IgnoreConditions", "Yes" }, { "AbilityName", testingAbility.name }, { "Triggerer", "Effector" } });
+            foreach (var participant in board.participants)
+            {
+                if (participant == board.participants[board.spotlightFriendly[0]]) board.CallEvents(participant.who, new() { { "Trigger", "AbilityCast" }, { "IgnoreConditions", "Yes" }, { "Triggerer", "Effector" }, { "AbilityName", testingAbility.name } });
+                else board.CallEvents(participant.who, new() { { "Trigger", "AbilityCast" }, { "IgnoreConditions", "Yes" }, { "Triggerer", "Other" }, { "AbilityName", testingAbility.name } });
+            }
 
         //This line automatically closed the simulation once the ability is done testing.
         //It was deactivated to make the dev see the after effects of the ability.
@@ -630,14 +637,26 @@ public class Board
                     var abilityObj = Ability.abilities.Find(x => x.name == castAbility);
                     board.actions.Add(() =>
                     {
-                        cursorEnemy.Move(CDesktop.windows.Find(x => x.title == "EnemyBattleInfo").regionGroups[0].regions[participants[whosTurn].who.actionBars[participants[whosTurn].who.currentActionSet].IndexOf(abilityObj.name) + 2].transform.position + new Vector3(139, -10));
+                        var temp = CDesktop.windows.Find(x => x.title == "EnemyBattleInfo").regionGroups[0].regions;
+                        var whereToStart = 0;
+                        if (spotlightEnemy.IndexOf(whosTurn) != spotlightEnemy.Count - 1)
+                            for (int i = 0, counted = 0; i < temp.Count; i++, whereToStart++)
+                                if (temp[i].currentHeight == 0 && ++counted / 2 == spotlightEnemy.Count - 1 - spotlightEnemy.IndexOf(whosTurn)) break;
+                        if (whereToStart > 0) whereToStart++;
+                        cursorEnemy.Move(temp[whereToStart + 2 + participants[whosTurn].who.actionBars[participants[whosTurn].who.currentActionSet].IndexOf(abilityObj.name)].transform.position + new Vector3(139, -10));
                         animationTime += defines.frameTime * 9;
                     });
                     board.actions.Add(() => { cursorEnemy.SetCursor(CursorType.Click); });
                     board.actions.Add(() =>
                     {
                         cursorEnemy.SetCursor(CursorType.Default);
-                        AddRegionOverlay(CDesktop.windows.Find(x => x.title == "EnemyBattleInfo").regionGroups[0].regions[participants[whosTurn].who.actionBars[participants[whosTurn].who.currentActionSet].IndexOf(abilityObj.name) + 2], "Window", 10f);
+                        var temp = CDesktop.windows.Find(x => x.title == "EnemyBattleInfo").regionGroups[0].regions;
+                        var whereToStart = 0;
+                        if (spotlightEnemy.IndexOf(whosTurn) != spotlightEnemy.Count - 1)
+                            for (int i = 0, counted = 0; i < temp.Count; i++, whereToStart++)
+                                if (temp[i].currentHeight == 0 && ++counted / 2 == spotlightEnemy.Count - 1 - spotlightEnemy.IndexOf(whosTurn)) break;
+                        if (whereToStart > 0) whereToStart++;
+                        AddRegionOverlay(temp[whereToStart + 2 + participants[whosTurn].who.actionBars[participants[whosTurn].who.currentActionSet].IndexOf(abilityObj.name)], "Window", 10f);
                         animationTime += defines.frameTime;
                         foreach (var participant in participants)
                         {

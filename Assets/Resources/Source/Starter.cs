@@ -334,8 +334,7 @@ public class Starter : MonoBehaviour
                 var player = Board.board.participants[Board.board.spotlightFriendly[0]].who;
                 var item = player.equipment.ContainsKey("Trinket") ? player.equipment["Trinket"] : null;
                 var addTrinket = item != null && item.abilities != null && item.combatUse;
-                var length = player.actionBars.Max(x => x.Value.Count()) + (addTrinket ? 1 : 0);
-                SetAnchor(-320 + 19 * elements.IndexOf(element), 188 - 19 * length - 65 * Board.board.spotlightFriendly.Count);
+                SetAnchor(-320 + 19 * elements.IndexOf(element), 188 - (addTrinket ? 19 : 0) - 65 * Board.board.spotlightFriendly.Count - 19 * Board.board.spotlightFriendly.Select(x => Board.board.participants[x]).Sum(x => x.who.actionBars[x.who.currentActionSet].Count));
                 AddRegionGroup();
                 SetRegionGroupHeight(player.MaxResource(element) * 8);
                 SetRegionGroupWidth(19);
@@ -350,8 +349,7 @@ public class Starter : MonoBehaviour
                 var enemy = Board.board.participants[Board.board.spotlightEnemy[0]].who;
                 var item = enemy.equipment.ContainsKey("Trinket") ? enemy.equipment["Trinket"] : null;
                 var addTrinket = item != null && item.abilities != null && item.combatUse;
-                var length = enemy.actionBars.Max(x => x.Value.Count()) + (addTrinket ? 1 : 0);
-                SetAnchor(299 - 19 * elements.IndexOf(element), 188 - 19 * length - 65 * Board.board.spotlightEnemy.Count);
+                SetAnchor(299 - 19 * elements.IndexOf(element), 188 - (addTrinket ? 19 : 0) - 65 * Board.board.spotlightEnemy.Count - 19 * Board.board.spotlightEnemy.Select(x => Board.board.participants[x]).Sum(x => x.who.actionBars[x.who.currentActionSet].Count));
                 AddRegionGroup();
                 SetRegionGroupHeight(enemy.MaxResource(element) * 8);
                 SetRegionGroupWidth(19);

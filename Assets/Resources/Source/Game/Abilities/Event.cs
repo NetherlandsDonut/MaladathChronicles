@@ -51,7 +51,6 @@ public class Event
             string chanceSource = effect.ContainsKey("ChanceSource") ? effect["ChanceSource"] : powerSource;
             string chanceScale = effect.ContainsKey("ChanceScale") ? effect["ChanceScale"] : "None";
             string animationType = effect.ContainsKey("AnimationType") ? effect["AnimationType"] : "None";
-            string shatterType = effect.ContainsKey("ShatterType") ? effect["ShatterType"] : "None";
             float await = effect.ContainsKey("Await") ? float.Parse(effect["Await"]) : 0;
 
             //On a failed chance check of an effect program continues to the next effect
@@ -229,11 +228,11 @@ public class Event
     public void ExecuteEffects(Board board, string icon, Dictionary<string, string> triggerBase, Dictionary<string, string> variables, string sourceName, int sourceRank)
     {
         //Define entities that take place in the event's effects
-        var effector = board?.participants[board.whosTurn];
-        var other = board?.Target(effector.team);
+        var effector = board.participants[board.whosTurn];
+        var other = board.Target(effector.team);
 
         //If we are in realtime combat then print name of the ability of which effects are being executed
-        //board?.actions.Add(() => SpawnFallingText(new Vector2(0, 14), sourceName, effector == board.player ? "White" : "Red"));
+        board.actions.Add(() => SpawnFallingText(new Vector2(0, 14), sourceName, "White"));
 
         //Main loop of executing effects, each effect is calculated here separately
         foreach (var effect in effects)
@@ -251,7 +250,6 @@ public class Event
             string chanceSource = effect.ContainsKey("ChanceSource") ? effect["ChanceSource"] : powerSource;
             string chanceScale = effect.ContainsKey("ChanceScale") ? effect["ChanceScale"] : "None";
             string animationType = effect.ContainsKey("AnimationType") ? effect["AnimationType"] : "None";
-            string shatterType = effect.ContainsKey("ShatterType") ? effect["ShatterType"] : "None";
             float await = effect.ContainsKey("Await") ? float.Parse(effect["Await"]) : 0;
 
             //On a failed chance check of an effect program continues to the next effect
@@ -313,8 +311,8 @@ public class Event
                 //Spawns a shatter effect if it was specified in the effect
                 void ExecuteShatter()
                 {
-                    if (board == null || shatterType == "None") return;
-                    string shatterTarget = effect.ContainsKey("ShatterTarget") ? effect["ShatterTarget"] : "None";
+                    if (!effect.ContainsKey("ShatterTarget")) return;
+                    string shatterTarget = effect["ShatterTarget"];
                     int shatterDensity = effect.ContainsKey("ShatterDensity") ? int.Parse(effect["ShatterDensity"]) : 1;
                     double shatterDegree = effect.ContainsKey("ShatterDegree") ? double.Parse(effect["ShatterDegree"].Replace(".", ",")) : 20;
                     double shatterSpeed = effect.ContainsKey("ShatterSpeed") ? double.Parse(effect["ShatterSpeed"].Replace(".", ",")) : 6;
@@ -326,7 +324,7 @@ public class Event
                 //Plays a sound effect if it was specified in the effect
                 void ExecuteSoundEffect()
                 {
-                    if (board == null || !effect.ContainsKey("SoundEffect")) return;
+                    if (!effect.ContainsKey("SoundEffect")) return;
                     var volume = effect.ContainsKey("SoundEffectVolume") ? float.Parse(effect["SoundEffectVolume"]) : 0.7f;
                     PlaySound(effect["SoundEffect"], volume);
                 }
@@ -344,8 +342,8 @@ public class Event
                 target.who.Damage(amount, trigger["Trigger"] == "Damage");
                 AddBigButtonOverlay(new Vector2(target == board.participants[0] ? -148 : 148, 141), "OtherDamaged", 1f, -1);
                 SpawnFallingText(new Vector2(target == board.participants[0] ? -148 : 148, 141), "" + amount, "White");
-                //if (target == board.player) board.log.damageTaken.Inc(sourceName, amount);
-                //else board.log.damageDealt.Inc(sourceName, amount);
+                if (target == board.participants[0]) board.log.damageTaken.Inc(sourceName, amount);
+                else if (!board.spotlightFriendly.Contains(board.participants.IndexOf(target))) board.log.damageDealt.Inc(sourceName, amount);
                 board.UpdateHealthBars();
             }
 
@@ -429,15 +427,12 @@ public class Event
             //This effect consumes one stack of the item
             void EffectConsumeItem()
             {
-                if (board != null)
-                {
-                    var target = effector;
-                    var itemUsed = target.who.inventory.items.Find(x => x.GetHashCode() + "" == trigger["ItemHash"]);
-                    itemUsed.amount--;
-                    if (itemUsed.amount == 0)
-                        target.who.inventory.items.Remove(itemUsed);
-                    Respawn("PlayerQuickUse", true);
-                }
+                var target = effector;
+                var itemUsed = target.who.inventory.items.Find(x => x.GetHashCode() + "" == trigger["ItemHash"]);
+                itemUsed.amount--;
+                if (itemUsed.amount == 0)
+                    target.who.inventory.items.Remove(itemUsed);
+                Respawn("PlayerQuickUse", true);
             }
 
             //This effect changes the action set that the entity has in combat
