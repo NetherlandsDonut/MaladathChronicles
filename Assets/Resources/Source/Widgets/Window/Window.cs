@@ -202,7 +202,6 @@ public class Window : MonoBehaviour
                     smallButton.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(title.StartsWith("Site: ") ? "Sprites/Other/PremadeCircularSite" : "Sprites/PremadeBorders/ButtonFrame" + (smallButton.GetComponent<SpriteRenderer>().sprite.texture.name.StartsWith("Other") ? "" : "Shadowed"));
                     if (title.StartsWith("Site: ")) smallButton.frame.GetComponent<SpriteRenderer>().sortingOrder = 1;
                     smallButton.frame.GetComponent<SpriteRenderer>().sortingLayerName = layer;
-                    smallButton.frame.GetComponent<SpriteRenderer>().sortingLayerName = layer;
                     if (title.StartsWith("Site: ")) smallButton.frame.AddComponent<SpriteMask>().sprite = Resources.Load<Sprite>("Sprites/PremadeBorders/ButtonCircleFrameMask");
                     smallButton.frame.transform.parent = smallButton.transform;
                     smallButton.frame.transform.localPosition = new Vector3(0, 0, -0.05f);
@@ -228,7 +227,7 @@ public class Window : MonoBehaviour
                         bigButton.gameObject.AddComponent<Highlightable>().Initialise(region, null, null, null, null);
                     if (bigButton.frame == null)
                         bigButton.frame = new GameObject("BigButtonFrame", typeof(SpriteRenderer));
-                    bigButton.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(title.StartsWith("TalentButton") ? "Sprites/PremadeBorders/PremadeTalent" : ("Sprites/PremadeBorders/BigButtonFrame" + (title.Contains("Board") ? "Rounded" : (title.Contains("Spellbook") ? "RoundedIn" : ""))));
+                    bigButton.frame.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(title.StartsWith("TalentButton") ? "Sprites/PremadeBorders/PremadeTalent" : "Sprites/PremadeBorders/BigButtonFrame");
                     bigButton.frame.GetComponent<SpriteRenderer>().sortingLayerName = layer;
                     if (title.StartsWith("TalentButton")) bigButton.frame.GetComponent<SpriteRenderer>().sortingOrder = 3;
                     bigButton.frame.transform.parent = bigButton.transform;
