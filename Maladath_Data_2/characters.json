@@ -1516,9 +1516,46 @@
     },
     {
       "player": {
-        "currentQuests": [],
-        "completedQuests": [],
+        "currentQuests": [
+          {
+            "questID": 7,
+            "previous": [
+              783
+            ],
+            "requiredLevel": 1,
+            "questLevel": 2,
+            "name": "Kobold Camp Cleanup",
+            "description": "Your first task is one of cleansing, $N. A clan of kobolds have infested the woods to the north. Go there and fight the kobold vermin you find. Reduce their numbers so that we may one day drive them from Northshire.",
+            "objective": "Kill 10 Kobold Vermin, then return to Marshal McBride.",
+            "completion": "Well done, citizen. Those kobolds are thieves and cowards, but in large numbers they pose a threat to us. And the humans of Stormwind do not need another threat.$B$BFor defeating them, you have my gratitude.",
+            "siteStart": "Northshire Abbey",
+            "siteEnd": "Northshire Abbey",
+            "zone": "Elwynn Forest",
+            "money": 25,
+            "experience": 170,
+            "races": [
+              "Gnome",
+              "Night Elf",
+              "Dwarf",
+              "Human"
+            ],
+            "reputationGain": {
+              "Stormwind": 250
+            },
+            "conditions": [
+              {
+                "type": "Kill",
+                "name": "Kobold Vermin",
+                "amount": 3
+              }
+            ]
+          }
+        ],
+        "completedQuests": [
+          783
+        ],
         "level": 1,
+        "experience": 20,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -1528,7 +1565,7 @@
           "Woodpaw Tribe": 0,
           "The Burning Legion": 0,
           "Darkspear Tribe": 0,
-          "Stormwind": 4600,
+          "Stormwind": 4675,
           "Magram Clan": 0,
           "Gelkis Clan": 0,
           "Kolkar Clan": 0,
@@ -1596,6 +1633,7 @@
         "race": "Human",
         "spec": "Mage",
         "gender": "Female",
+        "homeLocation": "Northshire Abbey",
         "abilities": {
           "Staff Proficiency": 0,
           "Cloth Proficiency": 0,
@@ -1710,7 +1748,9 @@
         "worldBuffs": []
       },
       "hour": 7,
-      "currentSite": "Northshire Abbey",
+      "minute": 1,
+      "second": 39,
+      "currentSite": "Northshire Valley",
       "ringOfLaw": "Hedrum the Creeper",
       "forlornCloister": "Fallen Champion",
       "markets": [
@@ -1733,12 +1773,16 @@
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
-        "Northshire Abbey": 1
+        "Northshire Abbey": 2,
+        "Northshire Valley": 1
       },
       "unlockedAreas": [],
       "vendorStock": {},
       "banks": {},
-      "startDate": "2024-10-15T17:48:05.4046278+02:00"
+      "startDate": "2024-10-15T17:48:05.4046278+02:00",
+      "lastLoaded": "2024-10-17T16:58:05.3048517+02:00",
+      "lastPlayed": "2024-10-17T16:58:24.671799+02:00",
+      "timePlayed": "00:00:38.6716481"
     }
   ]
 }

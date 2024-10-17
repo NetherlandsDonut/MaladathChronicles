@@ -206,7 +206,6 @@ public class SiteComplex : Site
                     SpawnDesktopBlueprint("Instance");
                 }
             });
-        else
-            AddHeaderRegion(() => AddLine("?", "DimGray"));
+        else AddHeaderRegion(() => AddLine("?", "DimGray"));
     }
 }

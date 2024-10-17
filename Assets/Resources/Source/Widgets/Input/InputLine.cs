@@ -66,18 +66,17 @@ public class InputLine : MonoBehaviour
                 if (foo.Value() == "DELETE")
                 {
                     saves[GameSettings.settings.selectedRealm].RemoveAll(x => x.player.name == GameSettings.settings.selectedCharacter);
-                    if (saves[GameSettings.settings.selectedRealm].Count > 0)
-                        GameSettings.settings.selectedCharacter = saves[GameSettings.settings.selectedRealm].First().player.name;
+                    if (saves[GameSettings.settings.selectedRealm].Count(x => !x.player.dead) > 0)
+                        GameSettings.settings.selectedCharacter = saves[GameSettings.settings.selectedRealm].Last(x => !x.player.dead).player.name;
                     else GameSettings.settings.selectedCharacter = "";
                     CloseWindow("ConfirmDeleteCharacter");
                     RemoveDesktopBackground();
                     Respawn("CharacterInfo");
                     Respawn("CharacterRoster");
-                    Respawn("TitleScreenSingleplayer");
+                    SpawnTransition();
                     SaveGames();
                 }
-                else
-                    CloseWindow("ConfirmDeleteCharacter");
+                else CloseWindow("ConfirmDeleteCharacter");
             }
         }
         else if (foo == creationName)

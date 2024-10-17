@@ -22,15 +22,6 @@ public class SitePath
                 list[site].Add(this);
     }
 
-    //Paths connected to this one excluding connections to sites in exclude list
-    public List<SitePath> PathsConnected(List<string> exclude)
-    {
-        if (exclude.Count(x => x == sites[0]) > 1 && exclude.Count(x => x == sites[1]) > 1) return new();
-        var here = sites[exclude.Count(x => x == sites[0]) == 1 ? 0 : 1];
-        return pathsConnectedToSite[here].Where(x => x != this).ToList();
-
-    }
-
     public void PlayPathEndSound()
     {
         if (means == "Tram") PlaySound("TramStop", 0.6f);
@@ -139,8 +130,7 @@ public class SitePath
         AddHeaderRegion(() => { AddLine(means); });
         AddPaddingRegion(() =>
         {
-            if (sites.Contains(currentSave.currentSite))
-                AddLine("To " + sites.Find(x => x != currentSave.currentSite));
+            if (sites.Contains(currentSave.currentSite)) AddLine("To " + sites.Find(x => x != currentSave.currentSite));
             else AddLine("Between " + sites[0] + " and " + sites[1]);
         });
         PrintPriceRegion(price);

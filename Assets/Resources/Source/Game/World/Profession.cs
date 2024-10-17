@@ -20,10 +20,7 @@ public class Profession
         SetAnchor(-92, 142);
         AddHeaderGroup();
         SetRegionGroupWidth(182);
-        AddHeaderRegion(() =>
-        {
-            AddLine(level.name, "Gray");
-        });
+        AddHeaderRegion(() => AddLine(level.name, "Gray"));
         AddPaddingRegion(() =>
         {
             AddBigButton(profession.icon);

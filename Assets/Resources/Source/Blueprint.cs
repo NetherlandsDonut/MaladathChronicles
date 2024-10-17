@@ -178,17 +178,23 @@ public class Blueprint
             DisableGeneralSprites();
             AddRegionGroup();
             for (int i = 0; i < board.field.GetLength(1); i++)
+            {
+                var I = i;
                 AddPaddingRegion(() =>
                 {
                     for (int j = 0; j < board.field.GetLength(0); j++)
-                        AddBigButton(board.GetFieldButton(),
+                    {
+                        var J = j;
+                        AddBigButton(boardButtonDictionary[board.field[J, I]],
                         (h) =>
                         {
                             var list = board.FloodCount(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h), h.region.regionGroup.regions.IndexOf(h.region));
                             board.finishedMoving = true;
                             board.FloodDestroy(list);
                         });
+                    }
                 });
+            }
         }),
         new("BufferBoard", () => {
             SetAnchor(Top, 0, 213 + 19 * (BufferBoard.bufferBoard.field.GetLength(1) - 7));
@@ -572,7 +578,7 @@ public class Blueprint
                         AddLine(slot.player.name + ", a level " + slot.player.level + " ");
                         AddText(slot.player.spec, slot.player.spec);
                         AddLine("Score: " + slot.Score());
-                        if (slot.player.dead) AddText(", died while fighting " + (slot.deathInfo.commonSource ? "a " : "") + slot.deathInfo.source + " in " + slot.deathInfo.area);
+                        if (slot.player.dead) AddText(", died fighting " + (slot.deathInfo.commonSource ? "a " : "") + slot.deathInfo.source + " in " + slot.deathInfo.area);
                     });
                 }
                 else
@@ -678,108 +684,68 @@ public class Blueprint
 
         //Login Screen
         new("CharacterRoster", () => {
-            if (settings.selectedCharacter != "")
-                SetDesktopBackground(saves[settings.selectedRealm].Find(x => x.player.name == settings.selectedCharacter).LoginBackground(), true);
+            if (settings.selectedCharacter != "") SetDesktopBackground(saves[settings.selectedRealm].Find(x => x.player.name == settings.selectedCharacter).LoginBackground(), true);
             else SetDesktopBackground("Backgrounds/Sky", true);
-            SetAnchor(TopRight);
+            SetAnchor(TopRight, -19, -92);
             AddRegionGroup();
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(354);
             AddHeaderRegion(() =>
             {
                 AddLine("Realm:", "Gray");
-                AddSmallButton("OtherClose", (h) =>
-                {
-                    CloseWindow(h.window);
-                    CloseWindow("RealmRoster");
-                    CloseWindow("CharacterInfo");
-                    CloseWindow("TitleScreenSingleplayer");
-                    RemoveDesktopBackground();
-                    Respawn("TitleScreenMenu");
-                });
+                AddSmallButton("OtherClose", (h) => CloseDesktop("LoginScreen"));
             });
-            AddButtonRegion(() =>
+            AddButtonRegion(() => AddLine(settings.selectedRealm), (h) => SpawnDesktopBlueprint("ChangeRealm"));
+            var aliveSlots = saves[settings.selectedRealm].FindAll(x => !x.player.dead);
+            AddHeaderRegion(() =>
             {
-                AddLine(settings.selectedRealm == "" ? "None" : settings.selectedRealm);
-            },
-            (h) =>
-            {
-                Respawn("RealmRoster");
-            });
-            if (settings.selectedRealm != "")
-            {
-                AddHeaderRegion(() =>
-                {
-                    AddLine("Characters:", "Gray");
-                });
-                if (saves.ContainsKey(settings.selectedRealm))
-                {
-                    var aliveSlots = saves[settings.selectedRealm].FindAll(x => !x.player.dead);
-                    foreach (var slot in aliveSlots)
+                AddLine("Characters:", "Gray");
+                if (aliveSlots.Count < 5)
+                    AddSmallButton("OtherAdd", (h) =>
                     {
-                        AddPaddingRegion(() =>
+                        creationRace = "";
+                        creationSpec = "";
+                        creationGender = "";
+                        String.creationName.Set("");
+                        SpawnDesktopBlueprint("CharCreatorScreen");
+                    });
+                else AddSmallButton("OtherAddOff", (h) => { });
+            });
+            foreach (var slot in aliveSlots)
+            {
+                AddPaddingRegion(() =>
+                {
+                    AddBigButton("Portrait" + slot.player.race.Clean() + (slot.player.Race().genderedPortrait ? slot.player.gender : ""), (h) =>
+                    {
+                        CloseWindow("RealmRoster");
+                        if (settings.selectedCharacter != slot.player.name)
                         {
-                            AddBigButton("Portrait" + slot.player.race.Clean() + (slot.player.Race().genderedPortrait ? slot.player.gender : ""), (h) =>
-                            {
-                                CloseWindow("RealmRoster");
-                                if (settings.selectedCharacter != slot.player.name)
-                                {
-                                    settings.selectedCharacter = slot.player.name;
-                                    SetDesktopBackground(slot.LoginBackground(), true);
-                                    Respawn("CharacterInfo");
-                                }
-                            });
-                            if (settings.selectedCharacter != slot.player.name)
-                            {
-                                SetBigButtonToGrayscale();
-                                AddBigButtonOverlay("OtherGridBlurred");
-                            }
-                            AddLine(slot.player.name);
-                            AddLine("Level: " + slot.player.level + " ");
-                            AddText(slot.player.spec, slot.player.spec);
-                        });
+                            settings.selectedCharacter = slot.player.name;
+                            SetDesktopBackground(slot.LoginBackground(), true);
+                            Respawn("CharacterInfo");
+                        }
+                    });
+                    if (settings.selectedCharacter != slot.player.name)
+                    {
+                        SetBigButtonToGrayscale();
+                        AddBigButtonOverlay("OtherGridBlurred");
                     }
-                    AddPaddingRegion(() => { SetRegionAsGroupExtender(); });
-                    if (aliveSlots.Count < 7)
-                        AddButtonRegion(() =>
-                        {
-                            AddLine("Create a new character", "Black");
-                        },
-                        (h) =>
-                        {
-                            creationRace = "";
-                            creationSpec = "";
-                            creationGender = "";
-                            String.creationName.Set("");
-                            CloseWindow(h.window);
-                            CloseWindow("RealmRoster");
-                            CloseWindow("CharacterInfo");
-                            CloseWindow("TitleScreenSingleplayer");
-                            SpawnWindowBlueprint("CharacterCreationWho");
-                            SpawnWindowBlueprint("CharacterCreationFinish");
-                            SpawnWindowBlueprint("CharacterCreationFactionHorde");
-                            SpawnWindowBlueprint("CharacterCreationFactionAlliance");
-                            SpawnTransition();
-                            SetDesktopBackground("Backgrounds/Sky");
-                        });
-                    else AddPaddingRegion(() => AddLine("Create a new character", "DarkGray"));
-                }
-                else AddPaddingRegion(() => AddLine("Create a new character", "DarkGray"));
+                    AddLine(slot.player.name);
+                    AddLine("Level: " + slot.player.level + " ");
+                    AddText(slot.player.spec, slot.player.spec);
+                });
             }
-            else AddPaddingRegion(() => { });
+            for (int i = 0; i < 5 - aliveSlots.Count; i++)
+                AddPaddingRegion(() => AddBigButton("OtherEmpty"));
         }, true),
         new("RealmRoster", () => 
         {
-            SetAnchor(Center, 0, 117);
+            SetAnchor(Center);
             AddHeaderGroup();
             SetRegionGroupWidth(258);
             AddHeaderRegion(() =>
             {
                 AddLine("Realms:");
-                AddSmallButton("OtherClose", (h) =>
-                {
-                    CloseWindow("RealmRoster");
-                });
+                AddSmallButton("OtherClose", (h) => CloseDesktop("ChangeRealm"));
             });
             AddRegionGroup();
             foreach (var realm in Realm.realms)
@@ -807,10 +773,9 @@ public class Blueprint
                             settings.selectedCharacter = "";
                             SpawnTransition();
                         }
-                        CloseWindow(h.window);
-                        Respawn("TitleScreenSingleplayer");
-                        Respawn("CharacterRoster");
-                        Respawn("CharacterInfo");
+                        CloseDesktop("ChangeRealm");
+                        CloseDesktop("LoginScreen");
+                        SpawnDesktopBlueprint("LoginScreen");
                     });
             }
             AddRegionGroup();
@@ -836,9 +801,9 @@ public class Blueprint
                 AddPaddingRegion(() =>
                 {
                     var countAlive = saves[realm.name].Count(x => !x.player.dead);
-                    AddLine(countAlive + "", countAlive == 7 ? "DangerousRed" : "Gray");
+                    AddLine(countAlive + "", countAlive == 5 ? "DangerousRed" : "Gray");
                     AddText(" / ", "DarkGray");
-                    AddText("7", countAlive == 7 ? "DangerousRed" : "Gray");
+                    AddText("5", countAlive == 5 ? "DangerousRed" : "Gray");
                     AddText(" chars", "DarkGray");
                 });
             }
@@ -846,7 +811,7 @@ public class Blueprint
         new("ConfirmDeleteCharacter", () => {
             SetAnchor(Center);
             AddRegionGroup();
-            SetRegionGroupWidth(258);
+            SetRegionGroupWidth(220);
             AddHeaderRegion(() =>
             {
                 AddLine("Confirm deletion:");
@@ -863,15 +828,24 @@ public class Blueprint
             });
         }, true),
         new("CharacterInfo", () => {
-            SetAnchor(TopLeft);
+            SetAnchor(TopLeft, 19, -19);
             AddRegionGroup();
             SetRegionGroupWidth(171);
-            SetRegionGroupHeight(354);
             if (settings.selectedCharacter != "")
             {
                 var slot = saves[settings.selectedRealm].Find(x => x.player.name == settings.selectedCharacter);
                 var spec = slot.player.Spec();
-                AddHeaderRegion(() => { AddLine("Character:"); });
+                AddHeaderRegion(() =>
+                {
+                    AddLine("Character:");
+                    AddSmallButton("OtherTrash", (h) =>
+                    {
+                        String.promptConfirm.Set("");
+                        PlaySound("DesktopMenuOpen", 0.6f);
+                        SpawnWindowBlueprint("ConfirmDeleteCharacter");
+                        CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
+                    });
+                });
                 AddHeaderRegion(() =>
                 {
                     AddBigButton("Portrait" + slot.player.race.Clean() + (slot.player.Race().genderedPortrait ? slot.player.gender : ""));
@@ -879,49 +853,24 @@ public class Blueprint
                     AddLine("Level: " + slot.player.level + " ", "Gray");
                     AddText(spec.name, spec.name);
                 });
-                AddHeaderRegion(() => { AddLine("Talents:"); });
-                AddPaddingRegion(() =>
+                AddButtonRegion(() => AddLine("Enter World", "", "Center"),
+                (h) =>
                 {
-                    AddLine(spec.talentTrees[0].name + ": ", "DarkGray");
-                    AddText(spec.talentTrees[0].talents.Count(x => slot.player.abilities.ContainsKey(x.ability)) + "");
-                    AddLine(spec.talentTrees[1].name + ": ", "DarkGray");
-                    AddText(spec.talentTrees[1].talents.Count(x => slot.player.abilities.ContainsKey(x.ability)) + "");
-                    AddLine(spec.talentTrees[2].name + ": ", "DarkGray");
-                    AddText(spec.talentTrees[2].talents.Count(x => slot.player.abilities.ContainsKey(x.ability)) + "");
+                    Login();
+                    SpawnDesktopBlueprint("Map");
+                    CloseDesktop("TitleScreen");
+                    var find = FindSite(x => x.name == currentSave.currentSite);
+                    if (find != null) CDesktop.cameraDestination = new Vector2(find.x, find.y);
+                    Cursor.cursor.transform.position += (Vector3)CDesktop.cameraDestination - CDesktop.screen.transform.position;
+                    CDesktop.screen.transform.localPosition = CDesktop.cameraDestination;
                 });
-                AddHeaderRegion(() => { AddLine("Enemies defeated:"); });
-                AddPaddingRegion(() =>
-                {
-                    AddLine("Common: ", "DarkGray");
-                    AddText("" + (slot.commonsKilled.Count > 0 ? slot.commonsKilled.Sum(x => x.Value) : 0));
-                    AddLine("Rares: ", "DarkGray");
-                    AddText("" + (slot.raresKilled.Count > 0 ? slot.raresKilled.Sum(x => x.Value) : 0));
-                    AddLine("Elites: ", "DarkGray");
-                    AddText("" + (slot.elitesKilled.Count > 0 ? slot.elitesKilled.Sum(x => x.Value) : 0));
-                });
-                AddHeaderRegion(() => { AddLine("Total time played:"); });
+                AddEmptyRegion();
+                AddHeaderRegion(() => AddLine("Total time played:"));
                 AddPaddingRegion(() =>
                 {
                     SetRegionAsGroupExtender();
                     AddLine(slot.timePlayed.Hours + "h "  + slot.timePlayed.Minutes + "m", "DarkGray");
                 });
-                AddButtonRegion(() =>
-                {
-                    AddLine("Delete character", "Black");
-                },
-                (h) =>
-                {
-                    String.promptConfirm.Set("");
-                    PlaySound("DesktopMenuOpen", 0.6f);
-                    SpawnWindowBlueprint("ConfirmDeleteCharacter");
-                    CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
-                });
-            }
-            else
-            {
-                AddHeaderRegion(() => { AddLine("Character:"); });
-                AddPaddingRegion(() => { AddLine("No character selected", "DarkGray"); SetRegionAsGroupExtender(); });
-                AddPaddingRegion(() => AddLine("Delete a character", "DarkGray"));
             }
         }, true),
         new("CharacterCreationFactionHorde", () => {
@@ -1386,37 +1335,16 @@ public class Blueprint
                 {
                     PlaySound("DesktopCreateCharacter");
                     AddNewSave();
-                    CloseWindow("CharacterCreationFactionHorde");
-                    CloseWindow("CharacterCreationFactionAlliance");
-                    CloseWindow("CharacterCreationFactionRaceChoice");
-                    CloseWindow("CharacterCreationFinish");
-                    CloseWindow("CharacterCreationSpec");
-                    CloseWindow("CharacterCreationWho");
-                    SpawnWindowBlueprint("CharacterRoster");
-                    SpawnWindowBlueprint("CharacterInfo");
-                    SpawnWindowBlueprint("TitleScreenSingleplayer");
+                    CloseDesktop("CharCreatorScreen");
+                    CloseDesktop("LoginScreen");
+                    SpawnDesktopBlueprint("LoginScreen");
+                    SpawnTransition();
                     SaveGames();
                 });
             }
             else AddPaddingRegion(() => AddLine("Finish Creation", "DarkGray", "Center"));
             AddRegionGroup();
-            AddPaddingRegion(() =>
-            {
-                AddSmallButton("OtherClose",
-                (h) =>
-                {
-                    CloseWindow("CharacterCreationFactionHorde");
-                    CloseWindow("CharacterCreationFactionAlliance");
-                    CloseWindow("CharacterCreationFactionRaceChoice");
-                    CloseWindow("CharacterCreationFinish");
-                    CloseWindow("CharacterCreationSpec");
-                    CloseWindow("CharacterCreationWho");
-                    SpawnWindowBlueprint("CharacterRoster");
-                    SpawnWindowBlueprint("CharacterInfo");
-                    SpawnWindowBlueprint("TitleScreenSingleplayer");
-                    SpawnTransition();
-                });
-            });
+            AddPaddingRegion(() => AddSmallButton("OtherClose", (h) => CloseDesktop("CharCreatorScreen")));
         }),
         new("CharacterCreationWho", () => {
             SetAnchor(Bottom, 0, 19);
@@ -5373,12 +5301,13 @@ public class Blueprint
             },
             (h) =>
             {
-                if (settings.selectedRealm == "")
-                    Respawn("RealmRoster");
-                Respawn("CharacterRoster");
-                Respawn("CharacterInfo");
-                Respawn("TitleScreenSingleplayer");
-                CloseWindow(h.window);
+                if (settings.selectedRealm != "" && settings.selectedCharacter != "")
+                {
+                    var character = saves[settings.selectedRealm].Find(x => x.player.name == settings.selectedCharacter);
+                    if (character.player.dead) settings.selectedCharacter = "";
+                }
+                else if (settings.selectedRealm == "" && settings.selectedCharacter != "") settings.selectedCharacter = "";
+                SpawnDesktopBlueprint("LoginScreen");
             });
             AddButtonRegion(() =>
             {
@@ -5386,7 +5315,7 @@ public class Blueprint
             },
             (h) =>
             {
-                Respawn("GameSettings");
+                SpawnWindowBlueprint("GameSettings");
                 CloseWindow(h.window);
             });
             AddButtonRegion(() =>
@@ -5423,31 +5352,6 @@ public class Blueprint
             maladathIcon.GetComponent<SpriteRenderer>().sortingOrder = 1;
             maladathIcon.transform.parent = CDesktop.LBWindow().transform;
             maladathIcon.transform.localPosition = new Vector3(69, -145);
-        }, true),
-        new("TitleScreenSingleplayer", () => {
-            SetAnchor(Bottom);
-            DisableShadows();
-            AddRegionGroup();
-            SetRegionGroupWidth(296);
-            if (settings.selectedRealm != "" && settings.selectedCharacter != "")
-            {
-                AddButtonRegion(() =>
-                {
-                    AddLine("Enter World", "", "Center");
-                },
-                (h) =>
-                {
-                    Login();
-                    SpawnDesktopBlueprint("Map");
-                    CloseDesktop("TitleScreen");
-                    var find = FindSite(x => x.name == currentSave.currentSite);
-                    if (find != null) CDesktop.cameraDestination = new Vector2(find.x, find.y);
-                    Cursor.cursor.transform.position += (Vector3)CDesktop.cameraDestination - CDesktop.screen.transform.position;
-                    CDesktop.screen.transform.localPosition = CDesktop.cameraDestination;
-                });
-            }
-            else
-                AddPaddingRegion(() => { AddLine("Enter World", "DarkGray", "Center"); });
         }, true),
         new("GameMenu", () => {
             SetAnchor(Center);
@@ -6116,29 +6020,75 @@ public class Blueprint
                     PlaySound("DesktopButtonClose");
                     SpawnWindowBlueprint("TitleScreenMenu");
                 }
-                else if (CloseWindow("CharacterCreationFinish"))
+            });
+        }),
+        new("LoginScreen", () =>
+        {
+            SpawnWindowBlueprint("CharacterRoster");
+            SpawnWindowBlueprint("CharacterInfo");
+            SpawnWindowBlueprint("EnterWorld");
+            AddHotkey(BackQuote, () =>
+            {
+                if (SpawnWindowBlueprint("Console") != null)
+                {
+                    PlaySound("DesktopTooltipShow", 0.4f);
+                    CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
+                }
+            });
+            AddHotkey(Escape, () =>
+            {
+                if (CloseWindow("ConfirmDeleteCharacter"))
                 {
                     PlaySound("DesktopButtonClose");
-                    CloseWindow("CharacterCreationFactionHorde");
-                    CloseWindow("CharacterCreationFactionAlliance");
-                    CloseWindow("CharacterCreationFactionRaceChoice");
-                    CloseWindow("CharacterCreationFinish");
-                    CloseWindow("CharacterCreationSpec");
-                    CloseWindow("CharacterCreationWho");
-                    SpawnWindowBlueprint("CharacterRoster");
-                    SpawnWindowBlueprint("CharacterInfo");
-                    SpawnWindowBlueprint("TitleScreenSingleplayer");
-                    SpawnTransition();
+                    CDesktop.RespawnAll();
                 }
-                else if (CloseWindow("TitleScreenSingleplayer"))
+                else
                 {
                     PlaySound("DesktopButtonClose");
-                    CloseWindow("CharacterRoster");
-                    CloseWindow("CharacterInfo");
-                    CloseWindow("RealmRoster");
-                    RemoveDesktopBackground();
-                    SpawnWindowBlueprint("TitleScreenMenu");
+                    CloseDesktop("LoginScreen");
                 }
+            });
+        }),
+        new("ChangeRealm", () =>
+        {
+            SetDesktopBackground("Backgrounds/Sky");
+            SpawnWindowBlueprint("RealmRoster");
+            AddHotkey(BackQuote, () =>
+            {
+                if (SpawnWindowBlueprint("Console") != null)
+                {
+                    PlaySound("DesktopTooltipShow", 0.4f);
+                    CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
+                }
+            });
+            AddHotkey(Escape, () =>
+            {
+                PlaySound("DesktopButtonClose");
+                CloseDesktop("ChangeRealm");
+                CloseDesktop("LoginScreen");
+                SpawnDesktopBlueprint("LoginScreen");
+            });
+        }),
+        new("CharCreatorScreen", () =>
+        {
+            SetDesktopBackground("Backgrounds/Sky");
+            SpawnWindowBlueprint("CharacterCreationFactionHorde");
+            SpawnWindowBlueprint("CharacterCreationFactionAlliance");
+            SpawnWindowBlueprint("CharacterCreationFactionRaceChoice");
+            SpawnWindowBlueprint("CharacterCreationFinish");
+            SpawnWindowBlueprint("CharacterCreationWho");
+            AddHotkey(BackQuote, () =>
+            {
+                if (SpawnWindowBlueprint("Console") != null)
+                {
+                    PlaySound("DesktopTooltipShow", 0.4f);
+                    CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
+                }
+            });
+            AddHotkey(Escape, () =>
+            {
+                PlaySound("DesktopButtonClose");
+                CloseDesktop("CharCreatorScreen");
             });
         }),
         new("Map", () => 

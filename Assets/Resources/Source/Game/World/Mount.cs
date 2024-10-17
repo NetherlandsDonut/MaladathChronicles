@@ -29,10 +29,7 @@ public class Mount
       SetAnchor(-92, WindowUp("CurrentMount") ? 47 : 142);
       AddHeaderGroup();
       SetRegionGroupWidth(182);
-      AddHeaderRegion(() =>
-      {
-         AddLine(mount.name, mount.speed == 7 ? "Rare" : "Epic");
-      });
+      AddHeaderRegion(() => AddLine(mount.name, mount.speed == 7 ? "Rare" : "Epic"));
       AddPaddingRegion(() =>
       {
          AddBigButton(mount.icon);

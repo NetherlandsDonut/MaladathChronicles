@@ -721,19 +721,6 @@ public class Board
     public int fieldGetCounterX = 0;
     public int fieldGetCounterY = 0;
 
-    public string GetFieldName(int x, int y) => boardNameDictionary[field[x, y]].ToString();
-
-    public string GetFieldButton()
-    {
-        var r = boardButtonDictionary[field[fieldGetCounterX, fieldGetCounterY]];
-        fieldGetCounterX++;
-        if (fieldGetCounterX == field.GetLength(0))
-            (fieldGetCounterX, fieldGetCounterY) = (0, fieldGetCounterY + 1);
-        if (fieldGetCounterY == field.GetLength(1))
-            fieldGetCounterY = 0;
-        return r;
-    }
-
     //DESTROYS ALL ELEMENTS OF THE SAME KIND THAT ARE NEARBY OF THE TARGETED ONE
     public void FloodDestroy(List<(int, int, int)> list)
     {

@@ -103,21 +103,6 @@ public class Quest
 
     //Zone icon for the quest
     public string ZoneIcon() => "Zone" + zone.Clean();
-
-    //Icon for the quest
-    public string Icon()
-    {
-        var r = "Quest";
-        if (races == null || races.Count == 0) r += "Neutral";
-        else if (races.Contains("Orc") || races.Contains("Troll") || races.Contains("Tauren") || races.Contains("Forsaken")) r += "Red";
-        else if (races.Contains("Human") || races.Contains("Dwarf") || races.Contains("Gnome") || races.Contains("Night Elf")) r += "Blue";
-        else r += "Neutral";
-        if (conditions == null) r += "Sealed";
-        else if (conditions.Count == 1) r += "";
-        else if (conditions.Count >= 2) r += "Big";
-        else r += "Sealed";
-        return r;
-    }
     
     //Currently chosen quest reward by player
     public static string chosenReward;
