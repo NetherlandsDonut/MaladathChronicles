@@ -8,7 +8,7 @@ using static Cursor;
 using static String;
 using static Defines;
 using static SaveGame;
-using static Serialization;
+using static GameSettings;
 
 public class InputLine : MonoBehaviour
 {
@@ -65,10 +65,10 @@ public class InputLine : MonoBehaviour
             {
                 if (foo.Value() == "DELETE")
                 {
-                    saves[GameSettings.settings.selectedRealm].RemoveAll(x => x.player.name == GameSettings.settings.selectedCharacter);
-                    if (saves[GameSettings.settings.selectedRealm].Count(x => !x.player.dead) > 0)
-                        GameSettings.settings.selectedCharacter = saves[GameSettings.settings.selectedRealm].Last(x => !x.player.dead).player.name;
-                    else GameSettings.settings.selectedCharacter = "";
+                    saves[settings.selectedRealm].RemoveAll(x => x.player.name == settings.selectedCharacter);
+                    if (saves[settings.selectedRealm].Count(x => !x.player.dead) > 0)
+                         settings.selectedCharacter = saves[settings.selectedRealm].Last(x => !x.player.dead).player.name;
+                    else settings.selectedCharacter = "";
                     CloseWindow("ConfirmDeleteCharacter");
                     RemoveDesktopBackground();
                     Respawn("CharacterInfo");

@@ -5301,13 +5301,11 @@ public class Blueprint
             },
             (h) =>
             {
-                if (settings.selectedRealm != "" && settings.selectedCharacter != "")
-                {
-                    var character = saves[settings.selectedRealm].Find(x => x.player.name == settings.selectedCharacter);
-                    if (character.player.dead) settings.selectedCharacter = "";
-                }
+                if (settings.selectedRealm != "" && settings.selectedCharacter != "" && saves[settings.selectedRealm].Find(x => x.player.name == settings.selectedCharacter).player.dead) settings.selectedCharacter = "";
                 else if (settings.selectedRealm == "" && settings.selectedCharacter != "") settings.selectedCharacter = "";
-                SpawnDesktopBlueprint("LoginScreen");
+                if (settings.selectedRealm != "" && saves[settings.selectedRealm].Count(x => !x.player.dead) == 0) settings.selectedRealm = "";
+                if (settings.selectedRealm == "") SpawnDesktopBlueprint("ChangeRealm");
+                else SpawnDesktopBlueprint("LoginScreen");
             });
             AddButtonRegion(() =>
             {

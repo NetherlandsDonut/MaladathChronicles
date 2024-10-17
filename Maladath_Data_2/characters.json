@@ -1516,46 +1516,10 @@
     },
     {
       "player": {
-        "currentQuests": [
-          {
-            "questID": 7,
-            "previous": [
-              783
-            ],
-            "requiredLevel": 1,
-            "questLevel": 2,
-            "name": "Kobold Camp Cleanup",
-            "description": "Your first task is one of cleansing, $N. A clan of kobolds have infested the woods to the north. Go there and fight the kobold vermin you find. Reduce their numbers so that we may one day drive them from Northshire.",
-            "objective": "Kill 10 Kobold Vermin, then return to Marshal McBride.",
-            "completion": "Well done, citizen. Those kobolds are thieves and cowards, but in large numbers they pose a threat to us. And the humans of Stormwind do not need another threat.$B$BFor defeating them, you have my gratitude.",
-            "siteStart": "Northshire Abbey",
-            "siteEnd": "Northshire Abbey",
-            "zone": "Elwynn Forest",
-            "money": 25,
-            "experience": 170,
-            "races": [
-              "Gnome",
-              "Night Elf",
-              "Dwarf",
-              "Human"
-            ],
-            "reputationGain": {
-              "Stormwind": 250
-            },
-            "conditions": [
-              {
-                "type": "Kill",
-                "name": "Kobold Vermin",
-                "amount": 3
-              }
-            ]
-          }
-        ],
-        "completedQuests": [
-          783
-        ],
+        "currentQuests": [],
+        "completedQuests": [],
         "level": 1,
-        "experience": 20,
+        "experience": 100,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -1564,30 +1528,30 @@
           "Grimtotem Tribe": 0,
           "Woodpaw Tribe": 0,
           "The Burning Legion": 0,
-          "Darkspear Tribe": 0,
-          "Stormwind": 4675,
+          "Darkspear Tribe": 4250,
+          "Stormwind": 0,
           "Magram Clan": 0,
           "Gelkis Clan": 0,
           "Kolkar Clan": 0,
-          "Orgrimmar": 0,
-          "Frostwolf Clan": 0,
-          "The Defiler's": 0,
-          "Thunder Bluff": 0,
-          "Undercity": 0,
-          "Ironforge": 4250,
+          "Orgrimmar": 4600,
+          "Frostwolf Clan": 4250,
+          "The Defiler's": 4250,
+          "Thunder Bluff": 4250,
+          "Undercity": 4250,
+          "Ironforge": 0,
           "Dark Iron Clan": 0,
-          "Wildhammer Clan": 4250,
+          "Wildhammer Clan": 0,
           "Winterfall Tribe": 0,
-          "Gnomeregan": 4250,
-          "Darnassus": 4250,
+          "Gnomeregan": 0,
+          "Darnassus": 0,
           "Bloodsail Buccaneers": 0,
           "Syndicate": 0,
-          "Warsong Outriders": 0,
-          "Stormpike Guard": 4250,
-          "Silverwing Sentinels": 4250,
-          "The League of Arathor": 4250,
+          "Warsong Outriders": 4250,
+          "Stormpike Guard": 0,
+          "Silverwing Sentinels": 0,
+          "The League of Arathor": 0,
           "Defias Brotherhood": 0,
-          "Dalaran": 4250,
+          "Dalaran": 0,
           "Burning Blade Clan": 0,
           "Burning Legion": 0,
           "Shadow Council": 0,
@@ -1600,7 +1564,7 @@
           "Twilight's Hammer": 0,
           "Grimtotem Clan": 0,
           "Razorfen Tribe": 0,
-          "Stonemaul Ogres": 0,
+          "Stonemaul Ogres": 4250,
           "Dustbelcher Ogres": 0,
           "Deadwind Ogres": 0,
           "Venture Co.": 0,
@@ -1618,7 +1582,7 @@
           "Rot Hide Tribe": 0,
           "Scourge": 0,
           "Smolderthorn Tribe": 0,
-          "Revantusk Tribe": 0,
+          "Revantusk Tribe": 4250,
           "Blackpaw Tribe": 0,
           "Maraudine Clan": 0,
           "Mosshide Tribe": 0,
@@ -1628,12 +1592,12 @@
         },
         "professionSkills": {},
         "learnedRecipes": {},
-        "faction": "Stormwind",
-        "name": "Nicollete",
-        "race": "Human",
-        "spec": "Mage",
-        "gender": "Female",
-        "homeLocation": "Northshire Abbey",
+        "faction": "Orgrimmar",
+        "name": "Muggoth",
+        "race": "Orc",
+        "spec": "Warlock",
+        "gender": "Male",
+        "homeLocation": "The Den",
         "abilities": {
           "Staff Proficiency": 0,
           "Cloth Proficiency": 0,
@@ -1641,34 +1605,34 @@
           "Off Hand Proficiency": 0,
           "Dagger Proficiency": 0,
           "Wand Proficiency": 0,
-          "Fireball": 0,
-          "Frostbolt": 0,
-          "Arcane Missiles": 0
+          "Corruption": 0,
+          "Summon Imp": 0,
+          "Shadow Bolt": 0
         },
         "currentActionSet": "Default",
         "actionBars": {
           "Default": [
-            "Fireball",
-            "Frostbolt",
-            "Arcane Missiles"
+            "Shadow Bolt",
+            "Corruption",
+            "Summon Imp"
           ]
         },
         "stats": {
-          "Stamina": 20,
-          "Strength": 20,
-          "Agility": 20,
-          "Intellect": 23,
-          "Spirit": 23,
-          "Earth Mastery": 1,
+          "Stamina": 23,
+          "Strength": 23,
+          "Agility": 17,
+          "Intellect": 19,
+          "Spirit": 25,
+          "Earth Mastery": 3,
           "Fire Mastery": 3,
           "Air Mastery": 2,
           "Water Mastery": 1,
-          "Frost Mastery": 2,
-          "Lightning Mastery": 1,
-          "Arcane Mastery": 3,
-          "Decay Mastery": 1,
+          "Frost Mastery": 1,
+          "Lightning Mastery": 3,
+          "Arcane Mastery": 1,
+          "Decay Mastery": 2,
           "Shadow Mastery": 2,
-          "Order Mastery": 3
+          "Order Mastery": 1
         },
         "inventory": {
           "items": [
@@ -1694,23 +1658,23 @@
         "equipment": {
           "Main Hand": {
             "rarity": "Common",
-            "name": "Bent Staff",
-            "icon": "itemstaff08",
-            "detailedType": "Staff",
-            "type": "Two Handed",
+            "name": "Worn Dagger",
+            "icon": "itemshortblade05",
+            "detailedType": "Dagger",
+            "type": "One Handed",
             "ilvl": 2,
             "lvl": 1,
-            "minDamage": 3,
-            "maxDamage": 5,
+            "minDamage": 1,
+            "maxDamage": 2,
             "amount": 1,
             "maxStack": 1,
-            "price": 9,
-            "speed": 2.9
+            "price": 7,
+            "speed": 1.6
           },
           "Feet": {
             "rarity": "Common",
-            "name": "Apprentice's Boots",
-            "icon": "itemboots09",
+            "name": "Acolyte's Shoes",
+            "icon": "itemboots01",
             "type": "Feet",
             "ilvl": 1,
             "lvl": 1,
@@ -1720,7 +1684,7 @@
           },
           "Legs": {
             "rarity": "Poor",
-            "name": "Apprentice's Pants",
+            "name": "Acolyte's Pants",
             "icon": "itempants01",
             "type": "Legs",
             "armorClass": "Cloth",
@@ -1733,8 +1697,8 @@
           },
           "Chest": {
             "rarity": "Poor",
-            "name": "Apprentice's Robe",
-            "icon": "itemchestcloth23",
+            "name": "Acolyte's Robe",
+            "icon": "itemchestcloth24",
             "type": "Chest",
             "armorClass": "Cloth",
             "ilvl": 1,
@@ -1748,10 +1712,10 @@
         "worldBuffs": []
       },
       "hour": 7,
-      "minute": 1,
-      "second": 39,
-      "currentSite": "Northshire Valley",
-      "ringOfLaw": "Hedrum the Creeper",
+      "minute": 17,
+      "second": 16,
+      "currentSite": "Echo Isles",
+      "ringOfLaw": "Anub'shiah",
       "forlornCloister": "Fallen Champion",
       "markets": [
         {
@@ -1773,16 +1737,20 @@
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
-        "Northshire Abbey": 2,
-        "Northshire Valley": 1
+        "The Den": 1,
+        "Valley of Trials": 0,
+        "Rocky Desert": 0,
+        "Sen'jin Village": 0,
+        "Darkspear Strand": 0,
+        "Echo Isles": 0
       },
       "unlockedAreas": [],
       "vendorStock": {},
       "banks": {},
-      "startDate": "2024-10-15T17:48:05.4046278+02:00",
-      "lastLoaded": "2024-10-17T16:58:05.3048517+02:00",
-      "lastPlayed": "2024-10-17T16:58:24.671799+02:00",
-      "timePlayed": "00:00:38.6716481"
+      "startDate": "2024-10-17T20:08:51.5451321+02:00",
+      "lastLoaded": "2024-10-17T20:10:12.8699801+02:00",
+      "lastPlayed": "2024-10-17T20:12:07.2051388+02:00",
+      "timePlayed": "00:01:54.3351587"
     }
   ]
 }

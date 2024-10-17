@@ -35,16 +35,12 @@ public class FloatingText : MonoBehaviour
                     var c = chs.sprite.texture.GetPixel((int)chs.sprite.textureRect.x + i, (int)chs.sprite.textureRect.y + j);
                     if (c.r == 1 && c.g == 1 && c.b == 1 && c.a == 1)
                     {
-                        //if (!pixelList.Contains((i - 2 + before, j + 2)))
-                        //    pixelList.Add((i - 2 + before, j + 2));
                         if (!pixelList.Contains((i - 2 + before, j + 1)))
                             pixelList.Add((i - 2 + before, j + 1));
                         if (!pixelList.Contains((i - 2 + before, j)))
                             pixelList.Add((i - 2 + before, j));
                         if (!pixelList.Contains((i - 2 + before, j - 1)))
                             pixelList.Add((i - 2 + before, j - 1));
-                        //if (!pixelList.Contains((i - 2 + before, j - 2)))
-                        //    pixelList.Add((i - 2 + before, j - 2));
                         if (!pixelList.Contains((i - 1 + before, j + 2)))
                             pixelList.Add((i - 1 + before, j + 2));
                         if (!pixelList.Contains((i - 1 + before, j + 1)))
@@ -55,16 +51,12 @@ public class FloatingText : MonoBehaviour
                             pixelList.Add((i - 1 + before, j - 1));
                         if (!pixelList.Contains((i - 1 + before, j - 2)))
                             pixelList.Add((i - 1 + before, j - 2));
-                        //if (!pixelList.Contains((i + 2 + before, j + 2)))
-                        //    pixelList.Add((i + 2 + before, j + 2));
                         if (!pixelList.Contains((i + 2 + before, j + 1)))
                             pixelList.Add((i + 2 + before, j + 1));
                         if (!pixelList.Contains((i + 2 + before, j)))
                             pixelList.Add((i + 2 + before, j));
                         if (!pixelList.Contains((i + 2 + before, j - 1)))
                             pixelList.Add((i + 2 + before, j - 1));
-                        //if (!pixelList.Contains((i + 2 + before, j - 2)))
-                        //    pixelList.Add((i + 2 + before, j - 2));
                         if (!pixelList.Contains((i + 1 + before, j - 1)))
                             pixelList.Add((i + 1 + before, j - 1));
                         if (!pixelList.Contains((i + 1 + before, j - 2)))
@@ -93,8 +85,7 @@ public class FloatingText : MonoBehaviour
         var texture = new Texture2D(pixelList.Max(x => x.Item1) - xPlus + 5, pixelList.Max(x => x.Item2) - yPlus + 5, TextureFormat.ARGB32, true) { filterMode = FilterMode.Point };
         for (int i = 0; i < texture.width; i++)
             for (int j = 0; j < texture.height ; j++)
-                if (pixelList.Contains((i + xPlus, j + yPlus)))
-                    texture.SetPixel(i, j, new Color(0, 0, 0, 1));
+                if (pixelList.Contains((i + xPlus, j + yPlus))) texture.SetPixel(i, j, new Color(0, 0, 0, 1));
                 else texture.SetPixel(i, j, new Color(0, 0, 0, 0));
         texture.Apply();
         var sprite = Sprite.Create(texture, new Rect(Vector2.zero, new Vector2(texture.width, texture.height)), new Vector2(0, 1), 1);
