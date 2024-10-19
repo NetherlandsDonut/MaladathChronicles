@@ -435,10 +435,10 @@ public class Entity
                 if (!sitesToRespawn.Contains(find)) sitesToRespawn.Add(find);
             }
         }
-        Respawn("ExperienceBarBorder", true);
-        Respawn("ExperienceBar", true);
-        Respawn("MapToolbarStatusLeft", true);
-        Respawn("MapToolbarStatusRight", true);
+        Respawn("ExperienceBarBorder");
+        Respawn("ExperienceBar");
+        Respawn("MapToolbarStatusLeft");
+        Respawn("MapToolbarStatusRight");
 
     }
 

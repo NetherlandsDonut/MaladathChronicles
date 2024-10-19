@@ -443,6 +443,7 @@ public class Board
                             else if (enemyRace.kind == "Rare") amount *= 1.5f;
                             results.experience.Inc(winParticipant.who, (int)amount);
                         }
+                        else results.experience.Inc(winParticipant.who, 0);
                     }
 
                 //Open default page in the chart
