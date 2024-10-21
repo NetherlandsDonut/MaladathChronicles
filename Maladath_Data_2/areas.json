@@ -15443,12 +15443,6 @@
         "levelMax": 49
       }
     ],
-    "rareEncounters": [
-      {
-        "who": "Rotgrip",
-        "levelMin": 50
-      }
-    ],
     "eliteEncounters": [
       {
         "who": "Landslide",
@@ -15465,6 +15459,52 @@
       {
         "type": "Area",
         "areaName": "Zaetar's Grave",
+        "point": 2
+      },
+      {
+        "type": "Area",
+        "areaName": "Below The Grave",
+        "point": 2
+      },
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
+    "name": "Below The Grave",
+    "zone": "Maraudon",
+    "type": "HostileArea",
+    "noNightVariant": true,
+    "fishing": true,
+    "commonEncounters": [
+      {
+        "who": "Primordial Behemoth",
+        "levelMin": 49
+      },
+      {
+        "who": "Theradrim Guardian",
+        "levelMin": 48,
+        "levelMax": 49
+      },
+      {
+        "who": "Thessala Hydra",
+        "levelMin": 48,
+        "levelMax": 49
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Rotgrip",
+        "levelMin": 50
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Boss",
+        "bossName": "Rotgrip",
         "point": 2
       },
       {
@@ -15722,11 +15762,6 @@
       {
         "who": "Primordial Behemoth",
         "levelMin": 48,
-        "levelMax": 50
-      },
-      {
-        "who": "Thessala Hydra",
-        "levelMin": 49,
         "levelMax": 50
       },
       {
@@ -16067,42 +16102,21 @@
     "y": -980,
     "name": "Moonglade Woods",
     "zone": "Moonglade",
-    "type": "HostileArea",
-    "areaSize": 3,
-    "progression": [
-      {
-        "type": "Treasure",
-        "point": 3
-      }
-    ]
+    "type": "HostileArea"
   },
   {
     "x": 1893,
     "y": -924,
     "name": "Shrine of Remulos",
     "zone": "Moonglade",
-    "type": "HostileArea",
-    "areaSize": 3,
-    "progression": [
-      {
-        "type": "Treasure",
-        "point": 3
-      }
-    ]
+    "type": "HostileArea"
   },
   {
     "x": 2053,
     "y": -986,
     "name": "Stormrage Barrow Dens",
     "zone": "Moonglade",
-    "type": "HostileArea",
-    "areaSize": 3,
-    "progression": [
-      {
-        "type": "Treasure",
-        "point": 3
-      }
-    ]
+    "type": "HostileArea"
   },
   {
     "x": 1387,

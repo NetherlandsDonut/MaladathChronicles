@@ -1518,8 +1518,8 @@
       "player": {
         "currentQuests": [],
         "completedQuests": [],
-        "level": 11,
-        "experience": 191,
+        "level": 53,
+        "experience": 156377,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -1612,7 +1612,7 @@
             "Elixir of Minor Defense"
           ]
         },
-        "unspentTalentPoints": 10,
+        "unspentTalentPoints": 52,
         "faction": "Orgrimmar",
         "name": "Muggoth",
         "race": "Orc",
@@ -1830,7 +1830,7 @@
       "hour": 7,
       "minute": 37,
       "second": 31,
-      "currentSite": "Sen'jin Village",
+      "currentSite": "Maraudon",
       "ringOfLaw": "Anub'shiah",
       "forlornCloister": "Fallen Champion",
       "markets": [
@@ -2853,7 +2853,7 @@
         "Shadowfang Keep": 1,
         "Shadow Hold": 1,
         "Scholomance": 1,
-        "Maraudon": 1,
+        "Maraudon": 7,
         "Stratholme": 1,
         "Wailing Caverns": 1,
         "Uldaman": 1,
@@ -3153,9 +3153,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2024-10-17T20:08:51.5451321+02:00",
-      "lastLoaded": "2024-10-19T11:56:47.7113869+02:00",
-      "lastPlayed": "2024-10-19T11:56:50.0373991+02:00",
-      "timePlayed": "00:19:14.4350505"
+      "lastLoaded": "2024-10-20T20:14:54.4894228+02:00",
+      "lastPlayed": "2024-10-20T20:19:36.143855+02:00",
+      "timePlayed": "00:25:10.7120031"
     }
   ]
 }

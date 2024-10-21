@@ -718,11 +718,7 @@ public class Board
         return differentFloodings;
     }
 
-
-    public int fieldGetCounterX = 0;
-    public int fieldGetCounterY = 0;
-
-    //DESTROYS ALL ELEMENTS OF THE SAME KIND THAT ARE NEARBY OF THE TARGETED ONE
+    //Destroys elements on the coordinates provided in the list
     public void FloodDestroy(List<(int, int, int)> list)
     {
         PlaySound(collectSoundDictionary[list[0].Item3].ToString(), 0.5f);
@@ -776,6 +772,8 @@ public class Board
         else return -1;
     }
 
+    //Returns a counted list of elements that can be collected
+    //together when targeting an element located on the provided coords
     public List<(int, int, int)> FloodCount(int x, int y)
     {
         var visited = new List<(int, int)>();
@@ -831,6 +829,7 @@ public class Board
         { 29, "Soul of Order" },
     };
 
+    //IDs of specific elements possible on the board
     public static Dictionary<int, string> boardButtonDictionary = new()
     {
         { -1, null },

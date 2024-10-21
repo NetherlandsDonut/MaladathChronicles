@@ -910,6 +910,7 @@ public static class Root
             {
                 Quest.quest = quest;
                 CloseWindow("Instance");
+                CloseWindow("InstanceWing");
                 CloseWindow("Complex");
                 if (f == "Add")
                 {

@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
+using static UnityEngine.Input;
+
 using static Site;
 using static Root;
 using static Quest;
@@ -123,43 +125,25 @@ public class Desktop : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.S))
-            GameSettings.settings.soundEffects.Invert();
-        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.M))
-            GameSettings.settings.music.Invert();
-        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyUp(KeyCode.LeftControl))
-            CloseWindow("Tooltip");
+        if (GetKey(KeyCode.LeftControl) && GetKeyDown(KeyCode.S)) GameSettings.settings.soundEffects.Invert();
+        if (GetKey(KeyCode.LeftControl) && GetKeyDown(KeyCode.M)) GameSettings.settings.music.Invert();
+        if (GetKeyDown(KeyCode.LeftShift) || GetKeyUp(KeyCode.LeftShift) || GetKeyDown(KeyCode.LeftControl) || GetKeyUp(KeyCode.LeftControl)) CloseWindow("Tooltip");
         if (mouseOver != null)
         {
-            if (mouseOver.pressedState == "None")
-            {
-                if (Input.GetMouseButtonDown(0))
-                    mouseOver.MouseDown("Left");
-                if (Input.GetMouseButtonDown(1))
-                    mouseOver.MouseDown("Right");
-                if (Input.GetMouseButtonDown(2))
-                    mouseOver.MouseDown("Middle");
-            }
-            else if (Input.GetMouseButtonUp(0))
-                mouseOver.MouseUp("Left");
-            else if (Input.GetMouseButtonUp(1))
-                mouseOver.MouseUp("Right");
-            else if (Input.GetMouseButtonUp(2))
-                mouseOver.MouseUp("Middle");
+            if (GetMouseButtonDown(0)) mouseOver.MouseDown("Left");
+            else if (GetMouseButtonDown(1)) mouseOver.MouseDown("Right");
+            else if (GetMouseButtonDown(2)) mouseOver.MouseDown("Middle");
+            else if (GetMouseButtonUp(0)) mouseOver.MouseUp("Left");
+            else if (GetMouseButtonUp(1)) mouseOver.MouseUp("Right");
+            else if (GetMouseButtonUp(2)) mouseOver.MouseUp("Middle");
         }
-        if (title == "GameSimulation" && Input.GetKeyDown(KeyCode.Escape))
+        if (title == "GameSimulation" && GetKeyDown(KeyCode.Escape))
         {
             CloseDesktop("GameSimulation");
             CDesktop.UnlockScreen();
         }
-        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.Tab) && Input.GetKeyDown(KeyCode.LeftAlt))
-        {
-            ReloadAssets();
-        }
-        if (!GameSettings.settings.music.Value())
-        {
-            if (ambience.volume > 0) ambience.volume -= 0.002f;
-        }
+        if (GetKey(KeyCode.LeftControl) && GetKey(KeyCode.Tab) && GetKeyDown(KeyCode.LeftAlt)) ReloadAssets();
+        if (!GameSettings.settings.music.Value() && ambience.volume > 0) ambience.volume -= 0.002f;
         else if (queuedAmbience.Item1 != ambience.clip)
         {
             if (ambience.volume > 0) ambience.volume -= 0.002f;
@@ -175,7 +159,7 @@ public class Desktop : MonoBehaviour
             else ambience.volume += 0.002f;
         }
         if (loadSites != null && loadSites.Count > 0)
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 10; i++)
             {
                 titleScreenFunnyEffect = new();
                 var site = loadSites[0];
@@ -259,7 +243,7 @@ public class Desktop : MonoBehaviour
                 var temp = screen.transform.localPosition;
                 if (mapGrid.queuedPath.Count > 0)
                 {
-                    if (Input.GetKeyDown(KeyCode.Escape))
+                    if (GetKeyDown(KeyCode.Escape))
                     {
                         mapGrid.queuedPath.FindAll(x => x != mapGrid.queuedPath[0]).SelectMany(x => x.Item2).ToList().ForEach(x => Destroy(x.gameObject));
                         mapGrid.queuedPath.RemoveAll(x => x != mapGrid.queuedPath[0]);
@@ -425,12 +409,12 @@ public class Desktop : MonoBehaviour
                 {
                     var didSomething = false;
                     var length = inputDestination.Value().Length;
-                    if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Return))
+                    if (GetKeyDown(KeyCode.Escape) || GetKeyDown(KeyCode.Return))
                     {
                         inputLineWindow = null;
                         UnityEngine.Cursor.lockState = CursorLockMode.None;
                         cursor.SetCursor(CursorType.Default);
-                        if (Input.GetKeyDown(KeyCode.Return))
+                        if (GetKeyDown(KeyCode.Return))
                         {
                             inputDestination.Confirm();
                             ExecuteChange(inputDestination);
@@ -444,55 +428,55 @@ public class Desktop : MonoBehaviour
                             didSomething = true;
                         }
                     }
-                    else if (Input.GetKeyDown(KeyCode.Delete) && inputLineMarker < length)
+                    else if (GetKeyDown(KeyCode.Delete) && inputLineMarker < length)
                     {
                         heldKeyTime = 0.4f;
                         inputDestination.RemoveNextOne(inputLineMarker);
                         didSomething = true;
                     }
-                    else if (Input.GetKey(KeyCode.Delete) && inputLineMarker < length && heldKeyTime <= 0)
+                    else if (GetKey(KeyCode.Delete) && inputLineMarker < length && heldKeyTime <= 0)
                     {
                         heldKeyTime = 0.0245f;
                         inputDestination.RemoveNextOne(inputLineMarker);
                         didSomething = true;
                     }
-                    else if (Input.GetKeyDown(KeyCode.LeftArrow) && inputLineMarker > 0)
+                    else if (GetKeyDown(KeyCode.LeftArrow) && inputLineMarker > 0)
                     {
                         heldKeyTime = 0.4f;
                         inputLineMarker--;
                         didSomething = true;
                     }
-                    else if (Input.GetKey(KeyCode.LeftArrow) && inputLineMarker > 0 && heldKeyTime <= 0)
+                    else if (GetKey(KeyCode.LeftArrow) && inputLineMarker > 0 && heldKeyTime <= 0)
                     {
                         heldKeyTime = 0.0245f;
                         inputLineMarker--;
                         didSomething = true;
                     }
-                    else if (Input.GetKeyDown(KeyCode.RightArrow) && inputLineMarker < length)
+                    else if (GetKeyDown(KeyCode.RightArrow) && inputLineMarker < length)
                     {
                         heldKeyTime = 0.4f;
                         inputLineMarker++;
                         didSomething = true;
                     }
-                    else if (Input.GetKey(KeyCode.RightArrow) && inputLineMarker < length && heldKeyTime <= 0)
+                    else if (GetKey(KeyCode.RightArrow) && inputLineMarker < length && heldKeyTime <= 0)
                     {
                         heldKeyTime = 0.0245f;
                         inputLineMarker++;
                         didSomething = true;
                     }
-                    else if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.LeftControl))
+                    else if (GetKey(KeyCode.A) && GetKey(KeyCode.LeftControl))
                     {
                         inputDestination.Clear();
                         inputLineMarker = 0;
                         didSomething = true;
                     }
-                    else if (Input.GetKey(KeyCode.V) && Input.GetKey(KeyCode.LeftControl))
+                    else if (GetKey(KeyCode.V) && GetKey(KeyCode.LeftControl))
                     {
                         inputDestination.Paste();
                         inputLineMarker = inputDestination.Value().Length;
                         didSomething = true;
                     }
-                    else foreach (char c in Input.inputString)
+                    else foreach (char c in inputString)
                     {
                         var a = inputLineMarker;
                         if (c == '\b')
@@ -602,11 +586,11 @@ public class Desktop : MonoBehaviour
                 {
                     int helds = 0;
                     foreach (var hotkey in hotkeys.OrderByDescending(x => x.keyDown))
-                        if (Input.GetKeyDown(hotkey.key) && hotkey.keyDown || Input.GetKey(hotkey.key) && !hotkey.keyDown)
+                        if (GetKeyDown(hotkey.key) && hotkey.keyDown || GetKey(hotkey.key) && !hotkey.keyDown)
                         {
                             CloseWindow("Tooltip");
                             tooltip = null;
-                            if (Input.GetKeyDown(hotkey.key)) keyStack = 0;
+                            if (GetKeyDown(hotkey.key)) keyStack = 0;
                             else helds++;
                             hotkey.action();
                         }

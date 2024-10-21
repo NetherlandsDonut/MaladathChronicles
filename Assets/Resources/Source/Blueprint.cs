@@ -858,19 +858,20 @@ public class Blueprint
                 {
                     Login();
                     SpawnDesktopBlueprint("Map");
+                    CloseDesktop("LoginScreen");
                     CloseDesktop("TitleScreen");
                     var find = FindSite(x => x.name == currentSave.currentSite);
                     if (find != null) CDesktop.cameraDestination = new Vector2(find.x, find.y);
                     Cursor.cursor.transform.position += (Vector3)CDesktop.cameraDestination - CDesktop.screen.transform.position;
                     CDesktop.screen.transform.localPosition = CDesktop.cameraDestination;
                 });
-                AddEmptyRegion();
-                AddHeaderRegion(() => AddLine("Total time played:"));
-                AddPaddingRegion(() =>
-                {
-                    SetRegionAsGroupExtender();
-                    AddLine(slot.timePlayed.Hours + "h "  + slot.timePlayed.Minutes + "m", "DarkGray");
-                });
+                //AddEmptyRegion();
+                //AddHeaderRegion(() => AddLine("Total time played:"));
+                //AddPaddingRegion(() =>
+                //{
+                //    SetRegionAsGroupExtender();
+                //    AddLine(slot.timePlayed.Hours + "h "  + slot.timePlayed.Minutes + "m", "DarkGray");
+                //});
             }
         }, true),
         new("CharacterCreationFactionHorde", () => {
@@ -3018,6 +3019,8 @@ public class Blueprint
                     CloseWindow("HostileAreaElites");
                     CloseWindow("Chest");
                     CloseWindow("InstanceWing");
+                    SpawnWindowBlueprint("InstanceQuestAvailable");
+                    SpawnWindowBlueprint("InstanceQuestDone");
                     Respawn("Instance");
                 });
             });
@@ -3048,6 +3051,8 @@ public class Blueprint
                         Respawn("HostileAreaProgress");
                         Respawn("HostileAreaDenizens");
                         Respawn("HostileAreaElites");
+                        Respawn("HostileAreaQuestAvailable");
+                        Respawn("HostileAreaQuestDone");
                         Respawn("Chest");
                         SetDesktopBackground(find.Background());
                     });
@@ -3090,12 +3095,21 @@ public class Blueprint
                     PlaySound("DesktopInstanceClose");
                     if (area.instancePart)
                     {
-                        SetDesktopBackground(instance.Background());
                         if (wing != null) SetDesktopBackground(wing.Background());
+                        else
+                        {
+                            SetDesktopBackground(instance.Background());
+                            SpawnWindowBlueprint("InstanceQuestAvailable");
+                            SpawnWindowBlueprint("InstanceQuestDone");
+                        }
                         CloseWindow(h.window);
                         CloseWindow("HostileAreaProgress");
                         CloseWindow("HostileAreaDenizens");
                         CloseWindow("HostileAreaElites");
+                        CloseWindow("HostileAreaQuestAvailable");
+                        CloseWindow("HostileAreaQuestDone");
+                        CloseWindow("QuestAdd");
+                        CloseWindow("QuestTurn");
                         CloseWindow("Chest");
                     }
                     else if (area.complexPart)
@@ -5986,7 +6000,6 @@ public class Blueprint
         {
             SpawnWindowBlueprint("CharacterRoster");
             SpawnWindowBlueprint("CharacterInfo");
-            SpawnWindowBlueprint("EnterWorld");
             AddHotkey(BackQuote, () =>
             {
                 if (SpawnWindowBlueprint("Console") != null)
@@ -6561,9 +6574,12 @@ public class Blueprint
         {
             SetDesktopBackground(instance.Background());
             if (wing != null) SpawnWindowBlueprint("InstanceWing");
+            else
+            {
+                SpawnWindowBlueprint("InstanceQuestAvailable");
+                SpawnWindowBlueprint("InstanceQuestDone");
+            }
             SpawnWindowBlueprint("Instance");
-            SpawnWindowBlueprint("InstanceQuestAvailable");
-            SpawnWindowBlueprint("InstanceQuestDone");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
@@ -6580,18 +6596,36 @@ public class Blueprint
                     Respawn("HostileArea");
                     Respawn("HostileAreaQuestAvailable");
                 }
+                else if (CloseWindow("QuestAdd") || CloseWindow("QuestTurn"))
+                {
+                    PlaySound("DesktopButtonClose");
+                    Respawn("HostileArea");
+                    Respawn("HostileAreaQuestAvailable");
+                    if (wing != null) SpawnWindowBlueprint("InstanceWing");
+                    else
+                    {
+                        SpawnWindowBlueprint("InstanceQuestAvailable");
+                        SpawnWindowBlueprint("InstanceQuestDone");
+                    }
+                    SpawnWindowBlueprint("Instance");
+                }
                 else if (CloseWindow("HostileArea"))
                 {
                     area = null;
                     CloseWindow("HostileAreaQuestAvailable");
+                    CloseWindow("HostileAreaQuestDone");
                     CloseWindow("HostileAreaProgress");
                     CloseWindow("HostileAreaDenizens");
                     CloseWindow("HostileAreaElites");
                     CloseWindow("Chest");
                     PlaySound("DesktopButtonClose");
-                    SetDesktopBackground(instance.Background());
                     if (wing != null) SetDesktopBackground(wing.Background());
-                    SpawnWindowBlueprint("InstanceQuestAvailable");
+                    else
+                    {
+                        SetDesktopBackground(instance.Background());
+                        SpawnWindowBlueprint("InstanceQuestAvailable");
+                        SpawnWindowBlueprint("InstanceQuestDone");
+                    }
                 }
                 else if (CloseWindow("InstanceWing"))
                 {

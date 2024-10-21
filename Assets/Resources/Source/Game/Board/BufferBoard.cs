@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 using static Root;
 using static FallingElement;
 
@@ -71,8 +69,8 @@ public class BufferBoard
                             field[i, j] = random.Next(0, 20);
     }
 
-    //Get sprite for the element at coords [i, j]
-    public string GetFieldButton(int i, int j) => bufferBoardButtonDictionary[field[i, j]];
+    //Get sprite for the element at provided coords
+    public string GetFieldButton(int x, int y) => Board.boardButtonDictionary[field[x, y]];
 
     //Fills the empty spaces in a specified field
     //with this buffer board generated beforehand
@@ -95,42 +93,6 @@ public class BufferBoard
 
     //Currently used buffer board for combat
     public static BufferBoard bufferBoard;
-
-    //IDs of specific elements possible on the board
-    public static Dictionary<int, string> bufferBoardButtonDictionary = new()
-    {
-        { -1, null },
-        { 00, "ElementShadowRousing" },
-        { 01, "ElementEarthRousing" },
-        { 02, "ElementFireRousing" },
-        { 03, "ElementWaterRousing" },
-        { 04, "ElementAirRousing" },
-        { 05, "ElementLightningRousing" },
-        { 06, "ElementFrostRousing" },
-        { 07, "ElementDecayRousing" },
-        { 08, "ElementArcaneRousing" },
-        { 09, "ElementOrderRousing" },
-        { 10, "ElementShadowAwakened" },
-        { 11, "ElementEarthAwakened" },
-        { 12, "ElementFireAwakened" },
-        { 13, "ElementWaterAwakened" },
-        { 14, "ElementAirAwakened" },
-        { 15, "ElementLightningAwakened" },
-        { 16, "ElementFrostAwakened" },
-        { 17, "ElementDecayAwakened" },
-        { 18, "ElementArcaneAwakened" },
-        { 19, "ElementOrderAwakened" },
-        { 20, "ElementShadowSoul" },
-        { 21, "ElementEarthSoul" },
-        { 22, "ElementFireSoul" },
-        { 23, "ElementWaterSoul" },
-        { 24, "ElementAirSoul" },
-        { 25, "ElementLightningSoul" },
-        { 26, "ElementFrostSoul" },
-        { 27, "ElementDecaySoul" },
-        { 28, "ElementArcaneSoul" },
-        { 29, "ElementOrderSoul" },
-    };
 
     //Elements on this buffer board
     public int[,] field;

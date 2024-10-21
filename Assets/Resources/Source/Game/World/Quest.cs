@@ -7,6 +7,7 @@ using static Root;
 using static Sound;
 using static SaveGame;
 using static Coloring;
+using System.Net.NetworkInformation;
 
 public class Quest
 {
@@ -174,6 +175,16 @@ public class Quest
                         if (SiteComplex.complex != null) Respawn("Complex");
                         else if (SiteInstance.instance != null) Respawn("Instance");
                     PlaySound("DesktopInstanceClose");
+                    if (CDesktop.title == "Instance")
+                    {
+                        if (SiteInstance.wing != null) SpawnWindowBlueprint("InstanceWing");
+                        else
+                        {
+                            SpawnWindowBlueprint("InstanceQuestAvailable");
+                            SpawnWindowBlueprint("InstanceQuestDone");
+                        }
+                        SpawnWindowBlueprint("Instance");
+                    }
                 });
         });
         if (color != null) SetRegionBackgroundAsImage("SkillUp" + color + "Long");
@@ -366,12 +377,20 @@ public class Quest
                     currentSave.player.TurnQuest(this);
                     PlaySound("QuestTurn");
                     CloseWindow(h.window);
-                    var find = CDesktop.windows.Find(x => x.title.Contains("QuestAvailable"));
-                    if (find != null) find.Respawn();
-                    find = CDesktop.windows.Find(x => x.title.Contains("QuestDone"));
-                    if (find != null) find.Respawn();
+                    Respawn("QuestAvailable", true);
+                    Respawn("QuestDone", true);
                     Respawn("Chest", true);
                     Respawn("PlayerMoney", true);
+                    if (CDesktop.title == "Instance")
+                    {
+                        if (SiteInstance.wing != null) SpawnWindowBlueprint("InstanceWing");
+                        else
+                        {
+                            SpawnWindowBlueprint("InstanceQuestAvailable");
+                            SpawnWindowBlueprint("InstanceQuestDone");
+                        }
+                        SpawnWindowBlueprint("Instance");
+                    }
                 }
             });
         if (f == "Add")
@@ -382,13 +401,11 @@ public class Quest
                     PlaySound("QuestAdd", 0.4f);
                     currentSave.player.AddQuest(quest);
                     CloseWindow(h.window);
-                    var find = CDesktop.windows.Find(x => x.title.Contains("QuestAvailable"));
-                    if (find != null) find.Respawn();
-                    find = CDesktop.windows.Find(x => x.title.Contains("QuestDone"));
-                    if (find != null) find.Respawn();
-                    Respawn("Chest", true);
-                    Respawn("PlayerMoney", true);
+                    Respawn("QuestAvailable", true);
+                    Respawn("QuestDone", true);
                     Respawn("QuestList", true);
+                    Respawn("PlayerMoney", true);
+                    Respawn("Chest", true);
                 }
                 else PlaySound("QuestFailed", 0.4f);
             });

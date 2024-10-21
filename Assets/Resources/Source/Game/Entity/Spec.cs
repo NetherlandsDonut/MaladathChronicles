@@ -41,6 +41,7 @@ public class Spec
     //EXAMPLE: { "Troll": [ "Trapper's Shirt", "Worn Axe" ] } 
     public Dictionary<string, List<string>> startingEquipment;
 
+    //Stats provided by the class to the character
     public Dictionary<string, int> stats;
 
     //Rules for calculating stats for this class
