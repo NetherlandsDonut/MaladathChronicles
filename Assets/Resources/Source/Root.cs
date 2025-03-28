@@ -92,25 +92,25 @@ public static class Root
     }
 
     //Spawns a new desktop and switches automatically by default
-    public static void SpawnDesktopBlueprint(string blueprintTitle, bool autoSwitch = true)
+    public static void SpawnDesktopBlueprint(string blueprintTitle, bool autoSwitch = true, bool transition = false)
     {
         var blueprint = FindDesktopBlueprint(blueprintTitle);
         if (blueprint == null) return;
         var spawnedNew = false;
         if (!desktops.Exists(x => x.title == blueprintTitle))
             { AddDesktop(blueprint.title); spawnedNew = true; }
-        if (autoSwitch) SwitchDesktop(blueprintTitle);
+        if (autoSwitch) SwitchDesktop(blueprintTitle, transition);
         if (spawnedNew) blueprint.actions();
     }
 
     //Closes a desktop whether it was active or not
-    public static bool CloseDesktop(string desktopName)
+    public static bool CloseDesktop(string desktopName, bool transition = true)
     {
         var find = desktops.Find(x => x.title == desktopName);
         if (find == null) return false;
         desktops.Remove(find);
         if (find == CDesktop)
-            if (desktops.Count > 0) SwitchDesktop(desktops[0].title);
+            if (desktops.Count > 0) SwitchDesktop(desktops[0].title, transition);
             else CDesktop = null;
         UnityEngine.Object.Destroy(find.gameObject);
         return true;
@@ -156,7 +156,7 @@ public static class Root
         newObject.SetActive(false);
     }
 
-    public static void SwitchDesktop(string name)
+    public static void SwitchDesktop(string name, bool transition = true)
     {
         Cursor.cursor.ResetColor();
         if (CDesktop != null && CDesktop.title == name) return;
@@ -171,7 +171,7 @@ public static class Root
             CDesktop.gameObject.SetActive(true);
             desktops.Remove(CDesktop);
             desktops.Insert(0, CDesktop);
-            SpawnTransition();
+            if (transition) SpawnTransition();
         }
         if (CDesktop.cameraDestination != Vector2.zero)
         {
@@ -235,7 +235,8 @@ public static class Root
         if (sprite == null) Debug.Log("ERROR 004: Desktop background not found: \"Sprites/Fullscreen/" + texture + "\"");
         else if (temp.sprite != sprite)
         {
-            SpawnTransition();
+            if (temp.sprite != null)
+                SpawnTransition();
             temp.sprite = sprite;
         }
     }
@@ -877,7 +878,7 @@ public static class Root
             {
                 SetRegionBackground(Button);
                 if (settings.chartBigIcons.Value())
-                    AddLine(Math.Round(100.0 / total * value) + "%");
+                    AddLine(/*Math.Round(100.0 / total * value)*/value + "");
                 SetRegionAsGroupExtender();
             });
         },

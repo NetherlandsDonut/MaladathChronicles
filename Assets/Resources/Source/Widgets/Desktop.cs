@@ -62,6 +62,9 @@ public class Desktop : MonoBehaviour
     public void RespawnAll()
     {
         for (int i = windows.Count - 1; i >= 0; i--)
+            if (windows[i].title.StartsWith("ChartColumn"))
+                CloseWindow(windows[i]);
+        for (int i = windows.Count - 1; i >= 0; i--)
             windows[i].Respawn();
     }
 

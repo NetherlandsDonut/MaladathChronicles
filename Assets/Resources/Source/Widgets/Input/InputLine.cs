@@ -467,6 +467,8 @@ public class InputLine : MonoBehaviour
                 currentSave.player.ResetTalents();
             else if (foo.Value() == "cardgame")
                 SpawnDesktopBlueprint("CardGame");
+            else if (foo.Value() == "cardtest")
+                SpawnDesktopBlueprint("CardGame");
             else if (foo.Value() == "disablebounds")
                 disableCameraBounds = true;
             else if (foo.Value() == "enablebounds")

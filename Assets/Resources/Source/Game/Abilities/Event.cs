@@ -232,7 +232,7 @@ public class Event
         var other = board.Target(effector.team);
 
         //If we are in realtime combat then print name of the ability of which effects are being executed
-        board.actions.Add(() => SpawnFallingText(new Vector2(0, 14), sourceName, "White"));
+        board.actions.Add(() => SpawnFallingText(new Vector2(0, 34), sourceName, "White"));
 
         //Main loop of executing effects, each effect is calculated here separately
         foreach (var effect in effects)

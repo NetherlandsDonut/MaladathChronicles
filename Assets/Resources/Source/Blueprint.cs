@@ -2729,8 +2729,8 @@ public class Blueprint
                     {
                         settings.chartBigIcons.Invert();
                         PlaySound("DesktopChartSwitch");
-                        CloseDesktop("CombatLog");
-                        SpawnDesktopBlueprint("CombatLog");
+                        CloseDesktop("CombatLog", false);
+                        SpawnDesktopBlueprint("CombatLog", true, false);
                     });
             });
             AddPaddingRegion(() => { AddLine(chartPage, "", "Center"); });
@@ -2749,8 +2749,8 @@ public class Blueprint
                     else if (chartPage == "Healing Received") chartPage = "Damage Taken";
                     else if (chartPage == "Elements Used") chartPage = "Healing Received";
                     else if (chartPage == "Damage Dealt") chartPage = "Elements Used";
-                    CloseDesktop("CombatLog");
-                    SpawnDesktopBlueprint("CombatLog");
+                    CloseDesktop("CombatLog", false);
+                    SpawnDesktopBlueprint("CombatLog", true, false);
                 });
             });
         }, true),
@@ -2767,8 +2767,8 @@ public class Blueprint
                     else if (chartPage == "Damage Taken") chartPage = "Healing Received";
                     else if (chartPage == "Healing Received") chartPage = "Elements Used";
                     else if (chartPage == "Elements Used") chartPage = "Damage Dealt";
-                    CloseDesktop("CombatLog");
-                    SpawnDesktopBlueprint("CombatLog");
+                    CloseDesktop("CombatLog", false);
+                    SpawnDesktopBlueprint("CombatLog", true, false);
                 });
             });
         }, true),

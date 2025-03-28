@@ -24356,11 +24356,22 @@
         "levelMin": 7
       }
     ],
+    "eliteEncounters": [
+      {
+        "who": "Lord Melenas",
+        "levelMin": 8
+      }
+    ],
     "areaSize": 3,
     "progression": [
       {
         "type": "Treasure",
         "point": 3
+      },
+      {
+        "type": "Boss",
+        "bossName": "Lord Melenas",
+        "point": 2
       }
     ]
   },

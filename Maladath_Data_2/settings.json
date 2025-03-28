@@ -1,12 +1,12 @@
 {
   "selectedRealm": "Whitemane",
   "selectedRealmRanking": "Whitemane",
-  "selectedCharacter": "Muggoth",
+  "selectedCharacter": "Shazi",
   "pixelPerfectVision": {
-    "value": "False"
+    "value": "True"
   },
   "music": {
-    "value": "False"
+    "value": "True"
   },
   "soundEffects": {
     "value": "True"
