@@ -433,7 +433,7 @@ public static class Root
             else AddText(thisWindow.pagination() + 1 + "");
             AddText(" / ", "DarkGray");
             if (thisWindow.paginateFullPages)
-                AddText((thisWindow.maxPagination() + 1) / thisWindow.perPage + 1 + "");
+                AddText(Math.Ceiling((double)thisWindow.maxPagination() / thisWindow.perPage) + 1 + "");
             else AddText(thisWindow.maxPagination() + 1 + "");
             AddSmallButton("OtherNextPage", (h) =>
             {
@@ -1000,8 +1000,9 @@ public static class Root
     {
         var pg = w.pagination();
         var mpg = w.maxPagination();
-        //if (pg > mpg) staticPagination[w.title] = mpg;
-        if (pg < 0) staticPagination[w.title] = 0;
+        if (pg > mpg && !w.paginateFullPages) staticPagination[w.title] = mpg;
+        else if (pg > Math.Ceiling((double)mpg / w.perPage) * w.perPage && w.paginateFullPages) staticPagination[w.title] = (int)Math.Ceiling((double)mpg / w.perPage) * w.perPage;
+        else if (pg < 0) staticPagination[w.title] = 0;
     }
 
     public static void SetPagination(this Window w, int to)
@@ -1022,7 +1023,8 @@ public static class Root
     public static void IncrementPaginationEuler(this Window w)
     {
         w.PreparePagination();
-        staticPagination[w.title] += (int)Math.Round(EuelerGrowth()) / 2;
+        if (w.paginateFullPages) staticPagination[w.title] += ((int)Math.Round(EuelerGrowth()) / 2) * w.perPage;
+        else staticPagination[w.title] += (int)Math.Round(EuelerGrowth()) / 2;
         w.CorrectPagination();
     }
 
@@ -1037,7 +1039,8 @@ public static class Root
     public static void DecrementPaginationEuler(this Window w)
     {
         w.PreparePagination();
-        staticPagination[w.title] -= (int)Math.Round(EuelerGrowth()) / 2;
+        if (w.paginateFullPages) staticPagination[w.title] -= ((int)Math.Round(EuelerGrowth()) / 2) * w.perPage;
+        else staticPagination[w.title] -= (int)Math.Round(EuelerGrowth()) / 2;
         w.CorrectPagination();
     }
 

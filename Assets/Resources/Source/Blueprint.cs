@@ -4331,7 +4331,7 @@ public class Blueprint
                 AddLine("Possible destinations:");
             });
             var regionGroup = CDesktop.LBWindow().LBRegionGroup();
-            for (int i = thisWindow.pagination() == 0 ? 0 : list.Count - thisWindow.pagination() < rowAmount ? list.Count - (thisWindow.pagination() + 1) : 0; i < rowAmount; i++)
+            for (int i = 0; i < rowAmount; i++)
             {
                 var index = i;
                 if (list.Count > index + thisWindow.pagination())
@@ -4522,7 +4522,7 @@ public class Blueprint
                     AddSmallButton("OtherSettingsOff");
             });
             var regionGroup = CDesktop.LBWindow().LBRegionGroup();
-            for (int i = thisWindow.pagination() == 0 ? 0 : list.Count - thisWindow.pagination() < rowAmount ? list.Count - (thisWindow.pagination() + 1) : 0; i < rowAmount; i++)
+            for (int i = 0; i < rowAmount; i++)
             {
                 var index = i;
                 if (list.Count > index + thisWindow.pagination())
@@ -4587,7 +4587,7 @@ public class Blueprint
                     AddSmallButton("OtherSettingsOff");
             });
             var regionGroup = CDesktop.LBWindow().LBRegionGroup();
-            for (int i = thisWindow.pagination() == 0 ? 0 : list.Count - thisWindow.pagination() < rowAmount ? list.Count - (thisWindow.pagination() + 1) : 0; i < rowAmount; i++)
+            for (int i = 0; i < rowAmount; i++)
             {
                 var index = i;
                 if (list.Count > index + thisWindow.pagination())
@@ -4694,7 +4694,7 @@ public class Blueprint
                 });
             });
             var regionGroup = CDesktop.LBWindow().LBRegionGroup();
-            for (int i = thisWindow.pagination() == 0 ? 0 : list.Count - thisWindow.pagination() < rowAmount ? list.Count - (thisWindow.pagination() + 1) : 0; i < rowAmount; i++)
+            for (int i = 0; i < rowAmount; i++)
             {
                 var index = i;
                 if (list.Count > index + thisWindow.pagination())
@@ -4779,7 +4779,7 @@ public class Blueprint
             var profession = professions.Find(x => x.name == type.profession);
             var list = recipes.FindAll(x => x.profession == type.profession && x.price > 0 && (x.learnedAt <= type.skillCap || type.skillCap == 0));
             if (currentSave.player.learnedRecipes.ContainsKey(type.profession))
-                list = recipes.FindAll(x => !currentSave.player.learnedRecipes[type.profession].Contains(x.name));
+                list = list.FindAll(x => !currentSave.player.learnedRecipes[type.profession].Contains(x.name));
             thisWindow.SetPagination(() => list.Count, rowAmount);
             SetAnchor(TopLeft, 19, -38);
             AddHeaderGroup();
@@ -4802,7 +4802,7 @@ public class Blueprint
                 });
             });
             var regionGroup = CDesktop.LBWindow().LBRegionGroup();
-            for (int i = thisWindow.pagination() == 0 ? 0 : list.Count - thisWindow.pagination() < rowAmount ? list.Count - (thisWindow.pagination() + 1) : 0; i < rowAmount; i++)
+            for (int i = 0; i < rowAmount; i++)
             {
                 var index = i;
                 if (list.Count > index + thisWindow.pagination())
@@ -5549,7 +5549,7 @@ public class Blueprint
             var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             AddPaginationLine();
             var bars = currentSave.player.actionBars[currentSave.player.currentActionSet];
-            for (int i = thisWindow.pagination() == 0 ? 0 : list.Count - thisWindow.pagination() < rowAmount ? list.Count - (thisWindow.pagination() + 1) : 0; i < rowAmount; i++)
+            for (int i = 0; i < rowAmount; i++)
             {
                 var index = i;
                 if (list.Count > index + thisWindow.pagination())
