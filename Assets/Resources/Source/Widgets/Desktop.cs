@@ -594,10 +594,28 @@ public class Desktop : MonoBehaviour
                             CloseWindow("Tooltip");
                             tooltip = null;
                             if (GetKeyDown(hotkey.key)) keyStack = 0;
-                            else helds++;
+                            else
+                            {
+                                heldKeyTime = 0.02f;
+                                helds++;
+                            }
                             hotkey.action();
                         }
                     if (helds > 0 && keyStack < 100) keyStack++;
+                }
+                var pageUp = hotkeys.Find(x => x.key == KeyCode.PageUp);
+                if (pageUp != null && mouseScrollDelta.y > 0)
+                {
+                    CloseWindow("Tooltip");
+                    tooltip = null;
+                    pageUp.action();
+                }
+                var pageDown = hotkeys.Find(x => x.key == KeyCode.PageDown);
+                if (pageDown != null && mouseScrollDelta.y < 0)
+                {
+                    CloseWindow("Tooltip");
+                    tooltip = null;
+                    pageDown.action();
                 }
             }
         }

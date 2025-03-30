@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 
 using UnityEngine;
@@ -15,11 +16,13 @@ public class Window : MonoBehaviour
     public Desktop desktop;
     public List<RegionGroup> regionGroups;
     public RegionGroup headerGroup;
-    public int xOffset, yOffset;
+    public int xOffset, yOffset, perPage;
     public string title, layer;
     public WindowAnchor anchor;
     public GameObject[] shadows;
-    public bool disabledShadows, disabledGeneralSprites, disabledCollisions, masked;
+    public bool disabledShadows, disabledGeneralSprites, disabledCollisions, masked, paginateFullPages;
+    public Func<double> maxPaginationReq;
+    public Func<int> maxPagination, pagination;
 
     public void Initialise(Desktop desktop, string title, bool upperUI)
     {
@@ -33,6 +36,32 @@ public class Window : MonoBehaviour
         if (upperUI) layer = "Upper";
         else layer = "Default";
         desktop.windows.Add(this);
+    }
+
+    public void SetPagination(Func<double> maxPagination, int perPage)
+    {
+        paginateFullPages = true;
+        SetPaginationSingleStep(maxPagination, perPage);
+    }
+
+    public void SetPaginationSingleStep(Func<double> maxPagination, int perPage)
+    {
+        this.perPage = perPage;
+        maxPaginationReq ??= maxPagination;
+        if (maxPaginationReq != null)
+            this.maxPagination = () =>
+            {
+                var max = (int)Math.Ceiling(maxPaginationReq() - this.perPage);
+                if (max < 0) return 0;
+                else return max;
+            };
+        else this.maxPagination = () => 0;
+        pagination = () =>
+        {
+            if (!staticPagination.ContainsKey(title)) return 0;
+            return staticPagination[title];
+        };
+        this.CorrectPagination();
     }
 
     public void FadeIn()
@@ -114,10 +143,12 @@ public class Window : MonoBehaviour
                 region.draw();
                 if (regionGroup == headerGroup)
                 {
-                    var temp = xOffset - headerGroup.AutoWidth();
+                    var temp = xOffset - regionGroup.AutoWidth();
                     if (region.xExtend < temp) region.xExtend = temp;
                 }
             }
+
+            var autoWidth = regionGroup.AutoWidth();
 
             #endregion
 
@@ -125,62 +156,77 @@ public class Window : MonoBehaviour
 
             //Draws region lines and text
             foreach (var region in regionGroup.regions)
-                foreach (var line in region.lines)
+            {
+                var maxHeight = 0;
+                var groups = region.lines.GroupBy(x => x.align);
+                foreach (var group in groups)
                 {
-                    var objectOffset = (region.checkbox != null ? 15 : 0) + (region.reverseButtons ? region.smallButtons.Count * 19 : region.bigButtons.Count * 38);
-                    int length = 0;
-                    if (regionGroup.setWidth == 0)
-                        foreach (var text in line.texts)
-                        {
-                            text.Erase();
-                            foreach (var character in text.text)
-                                length = text.SpawnCharacter(character, length);
-                        }
-                    else
+                    foreach (var line in group)
                     {
-                        var emptySpace = regionGroup.setWidth - (defines.textPaddingLeft + defines.textPaddingRight + objectOffset + (region.reverseButtons ? region.bigButtons.Count * 38 : region.smallButtons.Count * 19));
-                        var fullText = string.Join("", line.texts.Select(x => x.text));
-                        var toPrint = 0;
-                        var useWrapper = false;
-                        var currentLength = 0;
-                        var wrapperLength = Font.fonts["Tahoma Bold"].Length(defines.textWrapEnding);
-                        for (int i = 0; i < fullText.Length; i++)
-                        {
-                            var newCharLength = Font.fonts["Tahoma Bold"].Length(fullText[i]) + 1;
-                            if (fullText.Length > i + 1 && fullText[i + 1] != ' ' && currentLength + newCharLength + wrapperLength + 1 > emptySpace)
+                        var objectOffset = (region.checkbox != null ? 15 : 0) + (region.reverseButtons ? region.smallButtons.Count * 19 : region.bigButtons.Count * 38);
+                        int length = 0;
+                        if (regionGroup.setWidth == 0)
+                            foreach (var text in line.texts)
                             {
-                                useWrapper = fullText[i] != ' ';
-                                break;
-                            }
-                            else if (currentLength + newCharLength + wrapperLength <= emptySpace)
-                            {
-                                currentLength += newCharLength;
-                                toPrint++;
-                            }
-                        }
-                        var printed = 0;
-                        foreach (var text in line.texts)
-                        {
-                            foreach (var character in text.text)
-                                if (++printed <= toPrint)
+                                text.Erase();
+                                foreach (var character in text.text)
                                     length = text.SpawnCharacter(character, length);
-                            if (printed > toPrint && useWrapper)
+                            }
+                        else
+                        {
+                            var emptySpace = regionGroup.setWidth - (defines.textPaddingLeft + defines.textPaddingRight + objectOffset + (region.reverseButtons ? region.bigButtons.Count * 38 : region.smallButtons.Count * 19));
+                            var fullText = string.Join("", line.texts.Select(x => x.text));
+                            var toPrint = 0;
+                            var useWrapper = false;
+                            var currentLength = 0;
+                            var wrapperLength = Font.fonts["Tahoma Bold"].Length(defines.textWrapEnding);
+                            for (int i = 0; i < fullText.Length; i++)
                             {
-                                for (int i = 0; i < defines.textWrapEnding.Length; i++)
-                                    length = text.SpawnCharacter(defines.textWrapEnding[i], length);
-                                length = text.SpawnCharacter(' ', length);
-                                break;
+                                var newCharLength = Font.fonts["Tahoma Bold"].Length(fullText[i]);
+                                if (fullText.Length > i + 1 && fullText[i + 1] != ' ' && currentLength + newCharLength + wrapperLength > emptySpace)
+                                {
+                                    useWrapper = fullText[i] != ' ';
+                                    break;
+                                }
+                                else if (currentLength + newCharLength + (fullText.Length == i + 1 ? 0 : wrapperLength) <= emptySpace)
+                                {
+                                    currentLength += newCharLength + 1;
+                                    toPrint++;
+                                }
+                                else
+                                {
+                                    useWrapper = true;
+                                    break;
+                                }
+                            }
+                            var printed = 0;
+                            foreach (var text in line.texts)
+                            {
+                                foreach (var character in text.text)
+                                    if (++printed <= toPrint)
+                                        length = text.SpawnCharacter(character, length);
+                                if (printed > toPrint && useWrapper)
+                                {
+                                    for (int i = 0; i < defines.textWrapEnding.Length; i++)
+                                        length = text.SpawnCharacter(defines.textWrapEnding[i], length);
+                                    length = text.SpawnCharacter(' ', length);
+                                    break;
+                                }
                             }
                         }
+                        if (line.align == "Left")
+                            line.transform.localPosition = new Vector3(2 + defines.textPaddingLeft + objectOffset, -region.currentHeight - 3, 0);
+                        else if (line.align == "Center")
+                            line.transform.localPosition = new Vector3(2 + (autoWidth / 2) - (length / 2), -region.currentHeight - 3, 0);
+                        else if (line.align == "Right")
+                            line.transform.localPosition = new Vector3(-defines.textPaddingLeft + autoWidth - (region.reverseButtons ? region.bigButtons.Count * 38 : region.smallButtons.Count * 19) - length, -region.currentHeight - 3, 0);
+                        region.currentHeight += 15;
                     }
-                    if (line.align == "Left")
-                        line.transform.localPosition = new Vector3(2 + defines.textPaddingLeft + objectOffset, -region.currentHeight - 3, 0);
-                    else if (line.align == "Center")
-                        line.transform.localPosition = new Vector3(2 + (region.regionGroup.AutoWidth() / 2) - (length / 2), -region.currentHeight - 3, 0);
-                    else if (line.align == "Right")
-                        line.transform.localPosition = new Vector3(-defines.textPaddingLeft + region.regionGroup.AutoWidth() - (region.reverseButtons ? region.bigButtons.Count * 38 : region.smallButtons.Count * 19) - length, -region.currentHeight - 3, 0);
-                    region.currentHeight += 15;
+                    if (region.currentHeight > maxHeight)
+                        maxHeight = region.currentHeight;
+                    region.currentHeight = groups.Last().Key == group.Key ? maxHeight : 0;
                 }
+            }
 
             //Draws small buttons for single lined regions
             foreach (var region in regionGroup.regions)
@@ -290,6 +336,8 @@ public class Window : MonoBehaviour
 
             #region POSITIONING & EXPANDING
 
+            var plannedHeight = regionGroup.PlannedHeight();
+
             //Position all regions and marks which ones need to be extended
             foreach (var region in regionGroup.regions)
             {
@@ -297,11 +345,11 @@ public class Window : MonoBehaviour
                 if (regionGroup == headerGroup)
                 {
                     if (regionGroup.stretchRegion == region && regionGroup.setHeight != 0)
-                        region.yExtend = regionGroup.setHeight - regionGroup.PlannedHeight() + 10 + (region.lines.Count > 0 ? 4 : 0);
+                        region.yExtend = regionGroup.setHeight - plannedHeight + 10 + (region.lines.Count > 0 ? 4 : 0);
                 }
-                else if (regionGroup.PlannedHeight() < regionGroup.setHeight)
+                else if (plannedHeight < regionGroup.setHeight)
                     if (regionGroup.stretchRegion == region || regionGroup.stretchRegion == null && region == regionGroup.regions.Last())
-                        region.yExtend = regionGroup.setHeight - regionGroup.PlannedHeight() + (region.lines.Count > 0 ? 4 : 0);
+                        region.yExtend = regionGroup.setHeight - plannedHeight + (region.lines.Count > 0 ? 4 : 0);
                 if (region.yExtend > 0) extendOffset += region.yExtend;
                 regionGroup.currentHeight += 4 + region.currentHeight;
             }
@@ -320,7 +368,7 @@ public class Window : MonoBehaviour
                         region.background.GetComponent<SpriteRenderer>().sprite = region.backgroundType == Image ? region.backgroundImage : Resources.Load<Sprite>("Sprites/Fills/" + region.backgroundType);
                         region.background.GetComponent<SpriteRenderer>().sortingLayerName = layer;
                         if (region.backgroundType == Image) region.background.transform.localScale = new Vector3(1, 1, 1);
-                        else region.background.transform.localScale = new Vector3(regionGroup.AutoWidth() - 2 + region.xExtend, region.AutoHeight() + 2 + region.yExtend, 1);
+                        else region.background.transform.localScale = new Vector3(autoWidth - 2 + region.xExtend, region.AutoHeight() + 2 + region.yExtend, 1);
                         region.background.transform.localPosition = new Vector3(2, -2, 0.8f);
                         if (region.backgroundType == Button || region.backgroundType == ButtonRed || region.backgroundType == Image)
                         {
@@ -353,10 +401,10 @@ public class Window : MonoBehaviour
                                 if (i == 1 || i == 3) region.borders[i + 4].GetComponent<SpriteRenderer>().flipX = true;
                                 if (i == 2 || i == 3) region.borders[i + 4].GetComponent<SpriteRenderer>().flipY = true;
                             }
-                        region.borders[0].transform.localScale = region.borders[3].transform.localScale = new Vector3(regionGroup.AutoWidth() + 2 + region.xExtend, 2, 2);
+                        region.borders[0].transform.localScale = region.borders[3].transform.localScale = new Vector3(autoWidth + 2 + region.xExtend, 2, 2);
                         region.borders[1].transform.localScale = region.borders[2].transform.localScale = new Vector3(2, region.AutoHeight() + 4 + region.yExtend, 2);
                         region.borders[0].transform.localPosition = region.borders[1].transform.localPosition = new Vector3(0, 0, 0.5f);
-                        region.borders[2].transform.localPosition = new Vector3(regionGroup.AutoWidth() + region.xExtend, 0, 0.5f);
+                        region.borders[2].transform.localPosition = new Vector3(autoWidth + region.xExtend, 0, 0.5f);
                         region.borders[3].transform.localPosition = new Vector3(0, -region.AutoHeight() - 4 - region.yExtend, 0.5f);
                         if (!defines.windowBorders)
                         {
@@ -393,15 +441,15 @@ public class Window : MonoBehaviour
                                 Destroy(region.borders[6]);
                                 Destroy(region.borders[7]);
                             }
-                        if (regionGroup.AutoWidth() + region.xExtend - 1.5f - 19 * region.smallButtons.Count < 0 || 3.5f + 38 * region.bigButtons.Count >= regionGroup.AutoWidth() + region.xExtend)
+                        if (autoWidth + region.xExtend - 1.5f - 19 * region.smallButtons.Count < 0 || 3.5f + 38 * region.bigButtons.Count >= autoWidth + region.xExtend)
                             for (int i = 0; i < 4; i++)
                                 region.borders[i + 4].GetComponent<SpriteRenderer>().sprite = null;
                         else
                         {
                             region.borders[4].transform.localPosition = new Vector3(3.5f + (region.reverseButtons ? 19 * region.smallButtons.Count : 38 * region.bigButtons.Count), -3.5f, 0.05f);
-                            region.borders[5].transform.localPosition = new Vector3(regionGroup.AutoWidth() + region.xExtend - 1.5f - (region.reverseButtons ? region.bigButtons.Count * 38 : 19 * region.smallButtons.Count), -3.5f, 0.05f);
+                            region.borders[5].transform.localPosition = new Vector3(autoWidth + region.xExtend - 1.5f - (region.reverseButtons ? region.bigButtons.Count * 38 : 19 * region.smallButtons.Count), -3.5f, 0.05f);
                             region.borders[6].transform.localPosition = new Vector3(3.5f + (region.reverseButtons ? 19 * region.smallButtons.Count : 38 * region.bigButtons.Count), -region.AutoHeight() - 2.5f - region.yExtend, 0.05f);
-                            region.borders[7].transform.localPosition = new Vector3(regionGroup.AutoWidth() + region.xExtend - 1.5f - (region.reverseButtons ? region.bigButtons.Count * 38 : (region.bigButtons.Count > 0 || region.lines.Count > 1 ? 0 : 19 * region.smallButtons.Count)), -region.AutoHeight() - 2.5f - region.yExtend, 0.05f);
+                            region.borders[7].transform.localPosition = new Vector3(autoWidth + region.xExtend - 1.5f - (region.reverseButtons ? region.bigButtons.Count * 38 : (region.bigButtons.Count > 0 || region.lines.Count > 1 ? 0 : 19 * region.smallButtons.Count)), -region.AutoHeight() - 2.5f - region.yExtend, 0.05f);
                         }
                     }
 
@@ -451,7 +499,7 @@ public class Window : MonoBehaviour
 
             regionGroup.currentHeight += extendOffset;
             if (headerGroup != regionGroup)
-                xOffset += regionGroup.AutoWidth();
+                xOffset += autoWidth;
         }
     }
 }

@@ -16102,21 +16102,42 @@
     "y": -980,
     "name": "Moonglade Woods",
     "zone": "Moonglade",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
   },
   {
     "x": 1893,
     "y": -924,
     "name": "Shrine of Remulos",
     "zone": "Moonglade",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
   },
   {
     "x": 2053,
     "y": -986,
     "name": "Stormrage Barrow Dens",
     "zone": "Moonglade",
-    "type": "HostileArea"
+    "type": "HostileArea",
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
   },
   {
     "x": 1387,

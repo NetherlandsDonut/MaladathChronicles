@@ -1094,7 +1094,7 @@ public class Entity
         return random.Next((int)(damage.Item1 * 100), (int)(damage.Item2 * 100) + 1) / 100.0;
     }
 
-    public Dictionary<string, int> Stats()
+    public Dictionary<string, int> Stats(bool raw = false)
     {
         var stats = new Dictionary<string, int>();
         foreach (var stat in this.stats)
@@ -1111,15 +1111,16 @@ public class Entity
         if (equipment != null)
             foreach (var itemPair in equipment)
             {
-                if (itemPair.Value.stats != null)
+                if (!raw && itemPair.Value.stats != null)
                     foreach (var stat in itemPair.Value.stats)
                         stats.Inc(stat.Key, stat.Value);
-                if (itemPair.Value.enchant != null && itemPair.Value.enchant.gains != null)
+                if (!raw && itemPair.Value.enchant != null && itemPair.Value.enchant.gains != null)
                     foreach (var stat in itemPair.Value.enchant.gains)
                         stats.Inc(stat.Key, stat.Value);
                 if (itemPair.Value.armor > 0)
                     stats.Inc("Armor", itemPair.Value.armor);
             }
+        if (raw) return stats;
         if (worldBuffs != null)
             foreach (var worldBuff in worldBuffs)
                 if (worldBuff.Buff.gains != null)

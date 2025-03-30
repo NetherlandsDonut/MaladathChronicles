@@ -1594,9 +1594,34 @@
           "Bloodtooth Tribe": 0,
           "Bristleback Tribe": 0
         },
-        "professionSkills": {},
-        "learnedRecipes": {},
-        "unspentTalentPoints": 5,
+        "professionSkills": {
+          "Blacksmithing": {
+            "Item1": 2,
+            "Item2": [
+              "Apprentice"
+            ]
+          },
+          "Tailoring": {
+            "Item1": 1,
+            "Item2": [
+              "Apprentice"
+            ]
+          }
+        },
+        "learnedRecipes": {
+          "Blacksmithing": [
+            "Rough Sharpening Stone",
+            "Rough Weightstone",
+            "Rough Copper Vest",
+            "Copper Bracers"
+          ],
+          "Tailoring": [
+            "Bolt of Linen Cloth",
+            "Brown Linen Shirt",
+            "Linen Cloak",
+            "Simple Linen Pants"
+          ]
+        },
         "faction": "Darkspear Tribe",
         "name": "Shazi",
         "race": "Troll",
@@ -1623,7 +1648,12 @@
           "Earth Shock": 0,
           "Searing Flames": 0,
           "Flame Shock": 0,
-          "Liquid Magma Totem": 0
+          "Liquid Magma Totem": 0,
+          "Flash of Lightning": 0,
+          "Capacitor Totem": 0,
+          "Magma Chamber": 0,
+          "Echo of the Elements": 0,
+          "Primordial Fury": 0
         },
         "currentActionSet": "Default",
         "actionBars": {
@@ -1651,7 +1681,7 @@
           "Order Mastery": 1
         },
         "inventory": {
-          "money": 1000,
+          "money": 980,
           "items": [
             {
               "rarity": "Common",
@@ -1693,7 +1723,7 @@
               "source": "RareDrop",
               "ilvl": 5,
               "lvl": 1,
-              "amount": 4,
+              "amount": 3,
               "maxStack": 20,
               "price": 13
             },
@@ -1710,6 +1740,19 @@
               "amount": 1,
               "maxStack": 1,
               "price": 515
+            },
+            {
+              "rarity": "Common",
+              "name": "Rough Weightstone",
+              "icon": "itemstoneweightstone01",
+              "detailedType": "Rock",
+              "type": "Trade Good",
+              "source": "Profession",
+              "ilvl": 5,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 20,
+              "price": 3
             }
           ],
           "bags": [
@@ -1822,9 +1865,9 @@
         "worldBuffs": []
       },
       "hour": 8,
-      "minute": 54,
-      "second": 25,
-      "currentSite": "Wailing Caverns",
+      "minute": 59,
+      "second": 47,
+      "currentSite": "The Crossroads",
       "ringOfLaw": "Ok'thor the Breaker",
       "forlornCloister": "Ironspine",
       "markets": [
@@ -2825,7 +2868,7 @@
         "Algaz Station": 1,
         "Razor Hill": 2,
         "Zoram'gar Outpost": 1,
-        "The Crossroads": 1,
+        "The Crossroads": 2,
         "Bloodvenom Post": 1,
         "Valormok": 1,
         "The Mor'shan Rampart": 1,
@@ -3018,9 +3061,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2024-11-18T03:52:29.4822813+01:00",
-      "lastLoaded": "2025-03-28T16:23:05.8317177+01:00",
-      "lastPlayed": "2025-03-28T16:58:42.1898282+01:00",
-      "timePlayed": "00:52:46.5970136"
+      "lastLoaded": "2025-03-30T12:28:58.894872+02:00",
+      "lastPlayed": "2025-03-30T12:31:53.8527243+02:00",
+      "timePlayed": "00:55:41.5548659"
     },
     {
       "player": {

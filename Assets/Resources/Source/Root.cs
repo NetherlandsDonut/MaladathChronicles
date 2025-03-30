@@ -270,7 +270,7 @@ public static class Root
         if (WindowUp(blueprint.title)) return null;
         AddWindow(blueprint.title, blueprint.upperUI);
         blueprint.actions();
-        if (resetSearch && CDesktop.LBWindow().regionGroups.Any(x => x.maxPaginationReq != null)) String.search.Set("");
+        if (resetSearch && CDesktop.LBWindow().maxPaginationReq != null) String.search.Set("");
         CDesktop.LBWindow().Rebuild();
         CDesktop.LBWindow().ResetPosition();
         return CDesktop.LBWindow();
@@ -296,7 +296,7 @@ public static class Root
 
     public static bool CloseWindow(string windowName, bool resetPagination = true)
     {
-        return CloseWindow(CDesktop.windows.Find(x => x.title == windowName), resetPagination);
+        return CDesktop != null && CloseWindow(CDesktop.windows.Find(x => x.title == windowName), resetPagination);
     }
 
     public static bool CloseWindow(Window window, bool resetPagination = true)
@@ -343,18 +343,18 @@ public static class Root
 
     #region RegionGroups
 
-    public static void AddHeaderGroup(Func<double> maxPagination = null, int perPage = 10)
+    public static void AddHeaderGroup(bool paged = false)
     {
         var newObject = new GameObject("HeaderGroup", typeof(RegionGroup));
         newObject.transform.parent = CDesktop.LBWindow().transform;
-        newObject.GetComponent<RegionGroup>().Initialise(CDesktop.LBWindow(), true, maxPagination, perPage);
+        newObject.GetComponent<RegionGroup>().Initialise(CDesktop.LBWindow(), true);
     }
 
-    public static void AddRegionGroup(Func<double> maxPagination = null, int perPage = 10)
+    public static void AddRegionGroup()
     {
         var newObject = new GameObject("RegionGroup", typeof(RegionGroup));
         newObject.transform.parent = CDesktop.LBWindow().transform;
-        newObject.GetComponent<RegionGroup>().Initialise(CDesktop.LBWindow(), false, maxPagination, perPage);
+        newObject.GetComponent<RegionGroup>().Initialise(CDesktop.LBWindow(), false);
     }
 
     public static void SetRegionGroupWidth(int width)
@@ -366,7 +366,6 @@ public static class Root
     {
         CDesktop.LBWindow().LBRegionGroup().setHeight = height;
     }
-
     #endregion
 
     #region Regions
@@ -423,28 +422,33 @@ public static class Root
         AddRegion(Padding, draw, null, null, null, null);
     }
 
-    public static void AddPaginationLine(RegionGroup group)
+    public static void AddPaginationLine()
     {
         AddPaddingRegion(() =>
         {
-            AddLine(CDesktop.LBWindow().title == "Instance" ? "Wing: " : "Page: ", "DarkGray");
-            AddText(group.pagination() + 1 + "");
+            var thisWindow = CDesktop.LBWindow();
+            AddLine("Page: ", "DarkGray");
+            if (thisWindow.paginateFullPages)
+                AddText((thisWindow.pagination() + 1) / thisWindow.perPage + 1 + "");
+            else AddText(thisWindow.pagination() + 1 + "");
             AddText(" / ", "DarkGray");
-            AddText(group.maxPagination() + "");
+            if (thisWindow.paginateFullPages)
+                AddText((thisWindow.maxPagination() + 1) / thisWindow.perPage + 1 + "");
+            else AddText(thisWindow.maxPagination() + 1 + "");
             AddSmallButton("OtherNextPage", (h) =>
             {
-                if (group.pagination() < group.maxPagination() - 1)
+                if (thisWindow.pagination() < thisWindow.maxPagination())
                 {
                     PlaySound("DesktopChangePage", 0.6f);
-                    group.IncrementPagination();
+                    thisWindow.IncrementPagination();
                 }
             });
             AddSmallButton("OtherPreviousPage", (h) =>
             {
-                if (group.pagination() > 0)
+                if (thisWindow.pagination() > 0)
                 {
                     PlaySound("DesktopChangePage", 0.6f);
-                    group.DecrementPagination();
+                    thisWindow.DecrementPagination();
                 }
             });
         });
@@ -865,7 +869,7 @@ public static class Root
 
     public static void AddChartColumn(int amount, int index, int total, int highestValue, int value)
     {
-        var height = (int)((223.0 - (settings.chartBigIcons.Value() ? 19 : 0)) / highestValue * value);
+        var height = (int)((224.0 - (settings.chartBigIcons.Value() ? 19 : 0)) / highestValue * value);
         SpawnWindowBlueprint(new Blueprint("ChartColumn" + index, () =>
         {
             var foo = (settings.chartBigIcons.Value() ? iconRow.bigButtons.Select(x => x.transform) : iconRow.smallButtons.Select(x => x.transform)).Last().position;
@@ -984,72 +988,57 @@ public static class Root
     #region Static Pagination
 
     //Saved static pagination
-    public static Dictionary<string, int[]> staticPagination;
+    public static Dictionary<string, int> staticPagination;
 
-    public static void PreparePagination(this RegionGroup rg)
+    public static void PreparePagination(this Window w)
     {
-        if (!staticPagination.ContainsKey(rg.window.title))
-            staticPagination.Add(rg.window.title, new int[rg.window.regionGroups.Count + (rg.window.headerGroup != null ? 1 : 0)]);
-        else if (staticPagination[rg.window.title].Length <= rg.window.regionGroups.IndexOf(rg))
-        {
-            var temp = staticPagination[rg.window.title];
-            Array.Resize(ref temp, rg.window.regionGroups.Count);
-        }
+        if (!staticPagination.ContainsKey(w.title))
+            staticPagination.Add(w.title, 0);
     }
 
-    public static void CorrectPagination(this RegionGroup rg)
+    public static void CorrectPagination(this Window w)
     {
-        var dx = rg.window.regionGroups.IndexOf(rg);
-        if (dx == -1) dx = staticPagination[rg.window.title].Length - 1;
-        var pg = rg.pagination();
-        var mpg = rg.maxPagination();
-        if (pg >= mpg) staticPagination[rg.window.title][dx] = mpg - 1;
-        else if (pg < 0) staticPagination[rg.window.title][dx] = 0;
+        var pg = w.pagination();
+        var mpg = w.maxPagination();
+        //if (pg > mpg) staticPagination[w.title] = mpg;
+        if (pg < 0) staticPagination[w.title] = 0;
     }
 
-    public static void SetPagination(this RegionGroup rg, int to)
+    public static void SetPagination(this Window w, int to)
     {
-        var dx = rg.window.regionGroups.IndexOf(rg);
-        if (dx == -1) dx = staticPagination[rg.window.title].Length - 1;
-        rg.PreparePagination();
-        staticPagination[rg.window.title][dx] = to;
-        rg.CorrectPagination();
+        w.PreparePagination();
+        staticPagination[w.title] = to;
+        w.CorrectPagination();
     }
 
-    public static void IncrementPagination(this RegionGroup rg)
+    public static void IncrementPagination(this Window w)
     {
-        rg.PreparePagination();
-        var dx = rg.window.regionGroups.IndexOf(rg);
-        if (dx == -1) dx = staticPagination[rg.window.title].Length - 1;
-        staticPagination[rg.window.title][dx]++;
-        rg.CorrectPagination();
+        w.PreparePagination();
+        if (w.paginateFullPages) staticPagination[w.title] += w.perPage;
+        else staticPagination[w.title]++;
+        w.CorrectPagination();
     }
 
-    public static void IncrementPaginationEuler(this RegionGroup rg)
+    public static void IncrementPaginationEuler(this Window w)
     {
-        rg.PreparePagination();
-        var dx = rg.window.regionGroups.IndexOf(rg);
-        if (dx == -1) dx = staticPagination[rg.window.title].Length - 1;
-        staticPagination[rg.window.title][dx] += (int)Math.Round(EuelerGrowth()) / 2;
-        rg.CorrectPagination();
+        w.PreparePagination();
+        staticPagination[w.title] += (int)Math.Round(EuelerGrowth()) / 2;
+        w.CorrectPagination();
     }
 
-    public static void DecrementPagination(this RegionGroup rg)
+    public static void DecrementPagination(this Window w)
     {
-        rg.PreparePagination();
-        var dx = rg.window.regionGroups.IndexOf(rg);
-        if (dx == -1) dx = staticPagination[rg.window.title].Length - 1;
-        staticPagination[rg.window.title][dx]--;
-        rg.CorrectPagination();
+        w.PreparePagination();
+        if (w.paginateFullPages) staticPagination[w.title] -= w.perPage;
+        else staticPagination[w.title]--;
+        w.CorrectPagination();
     }
 
-    public static void DecrementPaginationEuler(this RegionGroup rg)
+    public static void DecrementPaginationEuler(this Window w)
     {
-        rg.PreparePagination();
-        var dx = rg.window.regionGroups.IndexOf(rg);
-        if (dx == -1) dx = staticPagination[rg.window.title].Length - 1;
-        staticPagination[rg.window.title][dx] -= (int)Math.Round(EuelerGrowth()) / 2;
-        rg.CorrectPagination();
+        w.PreparePagination();
+        staticPagination[w.title] -= (int)Math.Round(EuelerGrowth()) / 2;
+        w.CorrectPagination();
     }
 
     #endregion

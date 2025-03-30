@@ -41,7 +41,7 @@ public class Region : MonoBehaviour
 
     public int PlannedHeight()
     {
-        var content = (lines.Count > 0 ? 2 : 0) + lines.Count * 15 + (inputLine != null && lines.Count == 0 ? 17 : 0);
+        var content = (lines.Count > 0 ? 2 : 0) + (lines.Count == 0 ? 0 : lines.GroupBy(x => x.align).Max(x => x.Count())) * 15 + (inputLine != null && lines.Count == 0 ? 17 : 0);
         if (content < 36 && bigButtons.Count > 0) content = 36;
         else if (content < 17 && smallButtons.Count > 0) content = 17;
         return content + (content > 0 ? 2 : 0);

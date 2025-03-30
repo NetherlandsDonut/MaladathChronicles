@@ -1,5 +1,15 @@
 [
   {
+    "name": "Lord Melenas",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "side": "Neutral",
+    "portrait": "PortraitSatyrOrange",
+    "abilities": {},
+    "kind": "Elite",
+    "vitality": 3.0
+  },
+  {
     "name": "Boahn",
     "category": "Humanoid",
     "subcategory": "Human",
@@ -117,11 +127,11 @@
     "abilities": {
       "Pinch": 1
     },
+    "kind": "Common",
+    "vitality": 1.0,
     "abilityAITags": {
       "Pinch": "Core"
-    },
-    "kind": "Common",
-    "vitality": 1.0
+    }
   },
   {
     "name": "Encrusted Surf Crawler",
@@ -132,11 +142,11 @@
     "abilities": {
       "Pinch": 1
     },
+    "kind": "Common",
+    "vitality": 1.0,
     "abilityAITags": {
       "Pinch": "Core"
-    },
-    "kind": "Common",
-    "vitality": 1.0
+    }
   },
   {
     "name": "Corrupted Scorpid",
@@ -257,11 +267,11 @@
     "abilities": {
       "Pinch": 1
     },
+    "kind": "Common",
+    "vitality": 1.0,
     "abilityAITags": {
       "Pinch": "Core"
-    },
-    "kind": "Common",
-    "vitality": 1.0
+    }
   },
   {
     "name": "Nightmare Wanderer",
@@ -4783,11 +4793,11 @@
     "abilities": {
       "Pinch": 1
     },
+    "kind": "Common",
+    "vitality": 1.0,
     "abilityAITags": {
       "Pinch": "Core"
-    },
-    "kind": "Common",
-    "vitality": 1.0
+    }
   },
   {
     "name": "Shore Crawler",
@@ -4798,11 +4808,11 @@
     "abilities": {
       "Pinch": 1
     },
+    "kind": "Common",
+    "vitality": 1.0,
     "abilityAITags": {
       "Pinch": "Core"
-    },
-    "kind": "Common",
-    "vitality": 1.0
+    }
   },
   {
     "name": "Silt Crawler",
@@ -4813,11 +4823,11 @@
     "abilities": {
       "Pinch": 1
     },
+    "kind": "Common",
+    "vitality": 1.0,
     "abilityAITags": {
       "Pinch": "Core"
-    },
-    "kind": "Common",
-    "vitality": 1.0
+    }
   },
   {
     "name": "Pygmy Tide Crawler",
@@ -4828,11 +4838,11 @@
     "abilities": {
       "Pinch": 1
     },
+    "kind": "Common",
+    "vitality": 1.0,
     "abilityAITags": {
       "Pinch": "Core"
-    },
-    "kind": "Common",
-    "vitality": 1.0
+    }
   },
   {
     "name": "Southern Strand Crawler",
@@ -4843,11 +4853,11 @@
     "abilities": {
       "Pinch": 1
     },
+    "kind": "Common",
+    "vitality": 1.0,
     "abilityAITags": {
       "Pinch": "Core"
-    },
-    "kind": "Common",
-    "vitality": 1.0
+    }
   },
   {
     "name": "Tide Crawler",
@@ -4858,11 +4868,11 @@
     "abilities": {
       "Pinch": 1
     },
+    "kind": "Common",
+    "vitality": 1.0,
     "abilityAITags": {
       "Pinch": "Core"
-    },
-    "kind": "Common",
-    "vitality": 1.0
+    }
   },
   {
     "name": "Pygmy Surf Crawler",
@@ -4873,11 +4883,11 @@
     "abilities": {
       "Pinch": 1
     },
+    "kind": "Common",
+    "vitality": 1.0,
     "abilityAITags": {
       "Pinch": "Core"
-    },
-    "kind": "Common",
-    "vitality": 1.0
+    }
   },
   {
     "name": "Enraged Reef Crawler",
@@ -4888,11 +4898,11 @@
     "abilities": {
       "Pinch": 1
     },
+    "kind": "Common",
+    "vitality": 1.0,
     "abilityAITags": {
       "Pinch": "Core"
-    },
-    "kind": "Common",
-    "vitality": 1.0
+    }
   },
   {
     "name": "Monstrous Crawler",
@@ -4903,11 +4913,11 @@
     "abilities": {
       "Pinch": 1
     },
+    "kind": "Common",
+    "vitality": 1.0,
     "abilityAITags": {
       "Pinch": "Core"
-    },
-    "kind": "Common",
-    "vitality": 1.0
+    }
   },
   {
     "name": "Skittering Crustacean",
@@ -4918,11 +4928,11 @@
     "abilities": {
       "Pinch": 1
     },
+    "kind": "Common",
+    "vitality": 1.0,
     "abilityAITags": {
       "Pinch": "Core"
-    },
-    "kind": "Common",
-    "vitality": 1.0
+    }
   },
   {
     "name": "Spined Crawler",
@@ -4933,11 +4943,11 @@
     "abilities": {
       "Pinch": 1
     },
+    "kind": "Common",
+    "vitality": 1.0,
     "abilityAITags": {
       "Pinch": "Core"
-    },
-    "kind": "Common",
-    "vitality": 1.0
+    }
   },
   {
     "name": "Crimson Battle Mage",
@@ -12654,11 +12664,11 @@
     "abilities": {
       "Pinch": 1
     },
+    "kind": "Common",
+    "vitality": 1.0,
     "abilityAITags": {
       "Pinch": "Core"
-    },
-    "kind": "Common",
-    "vitality": 1.0
+    }
   },
   {
     "name": "Makrura Shellhide",
@@ -12669,11 +12679,11 @@
     "abilities": {
       "Pinch": 1
     },
+    "kind": "Common",
+    "vitality": 1.0,
     "abilityAITags": {
       "Pinch": "Core"
-    },
-    "kind": "Common",
-    "vitality": 1.0
+    }
   },
   {
     "name": "Arkkoran Clacker",
@@ -12684,11 +12694,11 @@
     "abilities": {
       "Pinch": 1
     },
+    "kind": "Common",
+    "vitality": 1.0,
     "abilityAITags": {
       "Pinch": "Core"
-    },
-    "kind": "Common",
-    "vitality": 1.0
+    }
   },
   {
     "name": "Makrinni Razorclaw",
@@ -12699,11 +12709,11 @@
     "abilities": {
       "Pinch": 1
     },
+    "kind": "Common",
+    "vitality": 1.0,
     "abilityAITags": {
       "Pinch": "Core"
-    },
-    "kind": "Common",
-    "vitality": 1.0
+    }
   },
   {
     "name": "Makrinni Snapclaw",
@@ -12714,11 +12724,11 @@
     "abilities": {
       "Pinch": 1
     },
+    "kind": "Common",
+    "vitality": 1.0,
     "abilityAITags": {
       "Pinch": "Core"
-    },
-    "kind": "Common",
-    "vitality": 1.0
+    }
   },
   {
     "name": "Muckshell Clacker",
@@ -12729,11 +12739,11 @@
     "abilities": {
       "Pinch": 1
     },
+    "kind": "Common",
+    "vitality": 1.0,
     "abilityAITags": {
       "Pinch": "Core"
-    },
-    "kind": "Common",
-    "vitality": 1.0
+    }
   },
   {
     "name": "Muckshell Scrabbler",
@@ -12744,11 +12754,11 @@
     "abilities": {
       "Pinch": 1
     },
+    "kind": "Common",
+    "vitality": 1.0,
     "abilityAITags": {
       "Pinch": "Core"
-    },
-    "kind": "Common",
-    "vitality": 1.0
+    }
   },
   {
     "name": "Lord Angler",
@@ -12759,11 +12769,11 @@
     "abilities": {
       "Pinch": 1
     },
+    "kind": "Rare",
+    "vitality": 2.0,
     "abilityAITags": {
       "Pinch": "Core"
-    },
-    "kind": "Rare",
-    "vitality": 2.0
+    }
   },
   {
     "name": "Diamond Head",
@@ -12774,11 +12784,11 @@
     "abilities": {
       "Pinch": 1
     },
+    "kind": "Rare",
+    "vitality": 2.0,
     "abilityAITags": {
       "Pinch": "Core"
-    },
-    "kind": "Rare",
-    "vitality": 2.0
+    }
   },
   {
     "name": "Arkkoran Pincer",
@@ -12789,11 +12799,11 @@
     "abilities": {
       "Pinch": 1
     },
+    "kind": "Common",
+    "vitality": 1.0,
     "abilityAITags": {
       "Pinch": "Core"
-    },
-    "kind": "Common",
-    "vitality": 1.0
+    }
   },
   {
     "name": "Makrinni Scrabbler",
@@ -12804,11 +12814,11 @@
     "abilities": {
       "Pinch": 1
     },
+    "kind": "Common",
+    "vitality": 1.0,
     "abilityAITags": {
       "Pinch": "Core"
-    },
-    "kind": "Common",
-    "vitality": 1.0
+    }
   },
   {
     "name": "Muckshell Pincer",
@@ -12819,11 +12829,11 @@
     "abilities": {
       "Pinch": 1
     },
+    "kind": "Common",
+    "vitality": 1.0,
     "abilityAITags": {
       "Pinch": "Core"
-    },
-    "kind": "Common",
-    "vitality": 1.0
+    }
   },
   {
     "name": "Slimeshell Makrura",
@@ -12834,11 +12844,11 @@
     "abilities": {
       "Pinch": 1
     },
+    "kind": "Common",
+    "vitality": 1.0,
     "abilityAITags": {
       "Pinch": "Core"
-    },
-    "kind": "Common",
-    "vitality": 1.0
+    }
   },
   {
     "name": "Maleki the Pallid",
@@ -20711,7 +20721,7 @@
   {
     "name": "Skullsplitter Axe Thrower",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "side": "Neutral",
     "portrait": "PortraitSkullsplitterAxeThrower",
     "abilities": {},
@@ -20721,7 +20731,7 @@
   {
     "name": "Skullsplitter Beastmaster",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "side": "Neutral",
     "portrait": "PortraitSkullsplitterHunter",
     "abilities": {},
@@ -20731,7 +20741,7 @@
   {
     "name": "Skullsplitter Mystic",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "side": "Neutral",
     "portrait": "PortraitSkullsplitterMystic",
     "abilities": {},
@@ -20741,7 +20751,7 @@
   {
     "name": "Skullsplitter Warrior",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "side": "Neutral",
     "portrait": "PortraitSkullsplitterWarrior",
     "abilities": {},
@@ -20751,7 +20761,7 @@
   {
     "name": "Skullsplitter Witch Doctor",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "side": "Neutral",
     "portrait": "PortraitSkullsplitterWitchDoctor",
     "abilities": {},
@@ -20761,7 +20771,7 @@
   {
     "name": "Mith'rethis the Enchanter",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "side": "Neutral",
     "portrait": "PortraitSmolderthornHeadhunter",
     "abilities": {},
@@ -20771,7 +20781,7 @@
   {
     "name": "Smolderthorn Headhunter",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "faction": "Smolderthorn Tribe",
     "side": "Hostile",
     "portrait": "PortraitSmolderthornHeadhunter",
@@ -20782,7 +20792,7 @@
   {
     "name": "Smolderthorn Mystic",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "faction": "Smolderthorn Tribe",
     "side": "Hostile",
     "portrait": "PortraitSmolderthornMystic",
@@ -20793,7 +20803,7 @@
   {
     "name": "Smolderthorn Seer",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "faction": "Smolderthorn Tribe",
     "side": "Hostile",
     "portrait": "PortraitSmolderthornSeer",
@@ -20804,7 +20814,7 @@
   {
     "name": "Smolderthorn Shadow Hunter",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "faction": "Smolderthorn Tribe",
     "side": "Hostile",
     "portrait": "PortraitSmolderthornShadowHunter",
@@ -20815,7 +20825,7 @@
   {
     "name": "Snow Leopard",
     "category": "Beast",
-    "subcategory": "Owl",
+    "subcategory": "Cat",
     "side": "Neutral",
     "portrait": "PortraitSnowLeopard",
     "abilities": {},
@@ -21219,8 +21229,8 @@
   },
   {
     "name": "Wild Buck",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Stag",
     "side": "Neutral",
     "portrait": "PortraitStag",
     "abilities": {},
@@ -21229,8 +21239,8 @@
   },
   {
     "name": "Antlered Courser",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Stag",
     "side": "Neutral",
     "portrait": "PortraitStag",
     "abilities": {},
@@ -21239,8 +21249,8 @@
   },
   {
     "name": "Elder Shadowhorn Stag",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Stag",
     "side": "Neutral",
     "portrait": "PortraitStag",
     "abilities": {},
@@ -21249,8 +21259,8 @@
   },
   {
     "name": "Mosshoof Stag",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Stag",
     "side": "Neutral",
     "portrait": "PortraitStag",
     "abilities": {},
@@ -21269,8 +21279,8 @@
   },
   {
     "name": "Archaedas",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Giant",
+    "subcategory": "Watcher",
     "side": "Neutral",
     "portrait": "PortraitStoneWatcher",
     "abilities": {},

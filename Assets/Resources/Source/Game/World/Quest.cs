@@ -125,7 +125,10 @@ public class Quest
 
     public void Print(string f = "Log")
     {
-        AddRegionGroup(f == "Add" && description != null ? () => description.Split("$B$B").Length : (f == "Turn" && completion != null ? () => completion.Split("$B$B").Length : () => 1), 1);
+        var rowAmount = 1;
+        var thisWindow = CDesktop.LBWindow();
+        thisWindow.SetPaginationSingleStep(f == "Add" && description != null ? () => description.Split("$B$B").Length : (f == "Turn" && completion != null ? () => completion.Split("$B$B").Length : () => 1), rowAmount);
+        AddRegionGroup();
         SetRegionGroupWidth(190);
         SetRegionGroupHeight(281);
         var color = ColorQuestLevel(questLevel);
@@ -189,29 +192,28 @@ public class Quest
         });
         if (color != null) SetRegionBackgroundAsImage("SkillUp" + color + "Long");
         var regionGroup = CDesktop.LBWindow().LBRegionGroup();
-        Root.PreparePagination(regionGroup);
         if (f == "Add")
         {
             AddHeaderRegion(() =>
             {
                 AddLine("Description: ", "Gray");
-                AddText(regionGroup.pagination() + 1 + "", "HalfGray");
+                AddText(thisWindow.pagination() + 1 + "", "HalfGray");
                 AddText(" / ", "DarkGray");
-                AddText(regionGroup.maxPagination() + "", "HalfGray");
+                AddText(thisWindow.maxPagination() + "", "HalfGray");
                 AddSmallButton("OtherNextPage", (h) =>
                 {
-                    if (regionGroup.pagination() < regionGroup.maxPagination() - 1)
+                    if (thisWindow.pagination() < thisWindow.maxPagination() - 1)
                     {
                         PlaySound("DesktopChangePage", 0.6f);
-                        regionGroup.IncrementPagination();
+                        thisWindow.IncrementPagination();
                     }
                 });
                 AddSmallButton("OtherPreviousPage", (h) =>
                 {
-                    if (regionGroup.pagination() > 0)
+                    if (thisWindow.pagination() > 0)
                     {
                         PlaySound("DesktopChangePage", 0.6f);
-                        regionGroup.DecrementPagination();
+                        thisWindow.DecrementPagination();
                     }
                 });
             });
@@ -220,7 +222,7 @@ public class Quest
                 regions = new() { new() { regionType = "Padding", contents = new() { new ()
                     {
                         { "Color", "DarkGray" },
-                        { "Text", description != null ? description.Split("$B$B")[staticPagination["QuestAdd"][0]] : "" }
+                        { "Text", description != null ? description.Split("$B$B")[staticPagination["QuestAdd"]] : "" }
                     }
                 } } }
             }.Print(currentSave.player, 190, null);
@@ -231,23 +233,23 @@ public class Quest
             AddHeaderRegion(() =>
             {
                 AddLine("Description: ", "Gray");
-                AddText(regionGroup.pagination() + 1 + "", "HalfGray");
+                AddText(thisWindow.pagination() + 1 + "", "HalfGray");
                 AddText(" / ", "DarkGray");
-                AddText(regionGroup.maxPagination() + "", "HalfGray");
+                AddText(thisWindow.maxPagination() + "", "HalfGray");
                 AddSmallButton("OtherNextPage", (h) =>
                 {
-                    if (regionGroup.pagination() < regionGroup.maxPagination() - 1)
+                    if (thisWindow.pagination() < thisWindow.maxPagination() - 1)
                     {
                         PlaySound("DesktopChangePage", 0.6f);
-                        regionGroup.IncrementPagination();
+                        thisWindow.IncrementPagination();
                     }
                 });
                 AddSmallButton("OtherPreviousPage", (h) =>
                 {
-                    if (regionGroup.pagination() > 0)
+                    if (thisWindow.pagination() > 0)
                     {
                         PlaySound("DesktopChangePage", 0.6f);
-                        regionGroup.DecrementPagination();
+                        thisWindow.DecrementPagination();
                     }
                 });
             });
@@ -256,7 +258,7 @@ public class Quest
                 regions = new() { new() { regionType = "Padding", contents = new() { new ()
                     {
                         { "Color", "DarkGray" },
-                        { "Text", completion != null ? completion.Split("$B$B")[staticPagination["QuestTurn"][0]] : "" }
+                        { "Text", completion != null ? completion.Split("$B$B")[staticPagination["QuestTurn"]] : "" }
                     }
                 } } }
             }.Print(currentSave.player, 190, null);

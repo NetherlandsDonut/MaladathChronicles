@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -12,32 +11,22 @@ public class RegionGroup : MonoBehaviour
     //All the regions this region group has
     public List<Region> regions;
 
+    //Region that will be stretched to match the set height of the group
     public Region stretchRegion;
-    public int setWidth, setHeight, currentHeight, perPage;
-    public Func<double> maxPaginationReq;
-    public Func<int> maxPagination, pagination;
 
-    public void Initialise(Window window, bool header, Func<double> maxPagination, int perPage)
+    //Set width of the region group
+    public int setWidth;
+
+    //Set height of the region group
+    public int setHeight;
+
+    //Current height of the region group
+    public int currentHeight;
+
+    public void Initialise(Window window, bool header)
     {
         regions = new();
         this.window = window;
-        this.perPage = perPage;
-        maxPaginationReq ??= maxPagination;
-        if (maxPaginationReq != null)
-            this.maxPagination = () =>
-            {
-                var max = (int)Math.Ceiling(maxPaginationReq() / perPage);
-                if (max < 1) return 1;
-                else return max;
-            };
-        else this.maxPagination = () => 1;
-        pagination = () =>
-        {
-            if (window == null || !Root.staticPagination.ContainsKey(window.title)) return 0;
-            var dx = window.regionGroups.IndexOf(this);
-            if (dx == -1) dx = Root.staticPagination[window.title].Length - 1;
-            return Root.staticPagination[window.title][dx];
-        };
         if (header) { window.headerGroup = this; window.regionGroups.Insert(0, this); }
         else window.regionGroups.Add(this);
     }
