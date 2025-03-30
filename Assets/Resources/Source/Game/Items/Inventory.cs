@@ -120,7 +120,7 @@ public class Inventory
                 else { (item.amount, stack.amount) = (0, stack.amount + item.amount); break; }
         }
         if (item.amount > 0 && (ignoreSpaceChecks || items.Count < BagSpace()))
-            items.Add(item.CopyItem(item.amount));
+            AddNewItem(item.CopyItem(item.amount));
         if (SaveGame.currentSave != null && SaveGame.currentSave.player.inventory == this)
         {
             var output = item.name + ": ";
@@ -142,6 +142,28 @@ public class Inventory
             if (!output.EndsWith(" "))
                 Root.SpawnFallingText(new UnityEngine.Vector2(0, 34), output, "Yellow");
         }
+    }
+
+    //Extension method for adding new items to the list of items
+    //This extension automatically asigns a spot in the inventory for the item
+    public void AddNewItem(Item item)
+    {
+        items.Add(item);
+        for (int j = 0; j < 6; j++)
+            for (int i = 0; i < 5; i++)
+                if (items.All(x => x.x != i || x.y != j))
+                {
+                    (item.x, item.y) = (i, j);
+                    return;
+                }
+    }
+
+    //After sorting the items in the inventory
+    //this method applies the order of them and saves it
+    public void ApplySortOrder()
+    {
+        for (int i = 0; i < items.Count; i++)
+            (items[i].x, items[i].y) = (i % 5, i / 5);
     }
 
     //Decays items that have duration left of their existance

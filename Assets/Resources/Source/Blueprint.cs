@@ -1730,10 +1730,10 @@ public class Blueprint
                     }
                     if (recipe.enchantment)
                     {
-                        currentSave.player.Unequip(new() { enchant.type });
+                        var item = currentSave.player.Unequip(new() { enchant.type });
                         enchantmentTarget.enchant = enchant;
                         enchantmentTarget = null;
-                        enchantmentTarget.Equip(currentSave.player, enchant.type);
+                        if (item != null) enchantmentTarget.Equip(currentSave.player);
                         PlaySound("PutDownGems", 0.8f);
                     }
                     Respawn("CraftingList");
@@ -2106,10 +2106,11 @@ public class Blueprint
                             (h) =>
                             {
                                 if (Cursor.cursor.color == "Pink") return;
-                                if (WindowUp("Inventory") && currentSave.player.inventory.CanAddItem(currentSave.player.equipment[slot]))
+                                if (WindowUp("Inventory") && movingItem == null && currentSave.player.inventory.CanAddItem(currentSave.player.equipment[slot]))
                                 {
                                     PlaySound(item.ItemSound("PutDown"), 0.8f);
-                                    currentSave.player.Unequip(new() { slot });
+                                    foreach (var unequiped in currentSave.player.Unequip(new() { slot }))
+                                        currentSave.player.inventory.AddItem(unequiped);
                                     Respawn("PlayerEquipmentInfo");
                                     Respawn("Inventory");
                                 }
@@ -2190,8 +2191,13 @@ public class Blueprint
                     {
                         for (int j = 0; j < 5; j++)
                             if (index * 5 + j >= currentSave.player.inventory.BagSpace()) AddBigButton("OtherDisabled");
-                            else if (items.Count > index * 5 + j) PrintInventoryItem(items[index * 5 + j]);
-                            else AddBigButton("OtherEmpty");
+                            else
+                            {
+                                var findItem = items.Find(x => x.y == index && x.x == j);
+                                if (findItem != null) PrintInventoryItem(findItem);
+                                else if (movingItem != null) AddBigButton("OtherEmpty", (h) => PutDownMovingItem(h));
+                                else AddBigButton("OtherEmpty");
+                            }
                     }
                 );
             }
@@ -2232,6 +2238,7 @@ public class Blueprint
             (h) =>
             {
                 currentSave.player.inventory.items = currentSave.player.inventory.items.OrderBy(x => x.name).ToList();
+                currentSave.player.inventory.ApplySortOrder();
                 CloseWindow("InventorySort");
                 CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.4f);
@@ -2240,6 +2247,7 @@ public class Blueprint
             (h) =>
             {
                 currentSave.player.inventory.items = currentSave.player.inventory.items.OrderBy(x => x.amount).ToList();
+                currentSave.player.inventory.ApplySortOrder();
                 CloseWindow("InventorySort");
                 CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.4f);
@@ -2248,6 +2256,7 @@ public class Blueprint
             (h) =>
             {
                 currentSave.player.inventory.items = currentSave.player.inventory.items.OrderByDescending(x => x.rarity == "Poor" ? 0 : (x.rarity == "Common" ? 1 : (x.rarity == "Uncommon" ? 2 : (x.rarity == "Rare" ? 3 : (x.rarity == "Epic" ? 4 : 5))))).ToList();
+                currentSave.player.inventory.ApplySortOrder();
                 CloseWindow("InventorySort");
                 CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.4f);
@@ -2256,6 +2265,7 @@ public class Blueprint
             (h) =>
             {
                 currentSave.player.inventory.items = currentSave.player.inventory.items.OrderByDescending(x => x.ilvl).ToList();
+                currentSave.player.inventory.ApplySortOrder();
                 CloseWindow("InventorySort");
                 CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.4f);
@@ -2264,6 +2274,7 @@ public class Blueprint
             (h) =>
             {
                 currentSave.player.inventory.items = currentSave.player.inventory.items.OrderByDescending(x => x.price).ToList();
+                currentSave.player.inventory.ApplySortOrder();
                 CloseWindow("InventorySort");
                 CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.4f);
@@ -2272,6 +2283,7 @@ public class Blueprint
             (h) =>
             {
                 currentSave.player.inventory.items = currentSave.player.inventory.items.OrderByDescending(x => x.type).ToList();
+                currentSave.player.inventory.ApplySortOrder();
                 CloseWindow("InventorySort");
                 CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.4f);
@@ -2400,6 +2412,7 @@ public class Blueprint
             AddButtonRegion(() => AddLine("Cancel", "", "Center"),
             (h) =>
             {
+                itemToDisenchant = null;
                 PlaySound("DesktopMenuClose");
                 CloseWindow("ConfirmItemDisenchant");
                 Respawn("Inventory");
@@ -5281,7 +5294,7 @@ public class Blueprint
                 AddLine("", "Gray", "Center");
                 AddLine("Maladath", "Epic", "Center");
                 AddLine("Chronicles", "Epic", "Center");
-                AddLine("0.7.1", "DimGray", "Center");
+                AddLine("0.7.2", "DimGray", "Center");
                 AddLine("", "Gray", "Center");
                 AddLine("", "Gray", "Center");
                 AddLine("", "Gray", "Center");

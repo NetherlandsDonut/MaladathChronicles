@@ -199,10 +199,10 @@ public class Quest
                 AddLine("Description: ", "Gray");
                 AddText(thisWindow.pagination() + 1 + "", "HalfGray");
                 AddText(" / ", "DarkGray");
-                AddText(thisWindow.maxPagination() + "", "HalfGray");
+                AddText(thisWindow.maxPagination() + 1 + "", "HalfGray");
                 AddSmallButton("OtherNextPage", (h) =>
                 {
-                    if (thisWindow.pagination() < thisWindow.maxPagination() - 1)
+                    if (thisWindow.pagination() < thisWindow.maxPagination())
                     {
                         PlaySound("DesktopChangePage", 0.6f);
                         thisWindow.IncrementPagination();
@@ -222,7 +222,7 @@ public class Quest
                 regions = new() { new() { regionType = "Padding", contents = new() { new ()
                     {
                         { "Color", "DarkGray" },
-                        { "Text", description != null ? description.Split("$B$B")[staticPagination["QuestAdd"]] : "" }
+                        { "Text", description != null ? description.Split("$B$B")[staticPagination.ContainsKey("QuestAdd") ? staticPagination["QuestAdd"] : 0] : "" }
                     }
                 } } }
             }.Print(currentSave.player, 190, null);
@@ -235,10 +235,10 @@ public class Quest
                 AddLine("Description: ", "Gray");
                 AddText(thisWindow.pagination() + 1 + "", "HalfGray");
                 AddText(" / ", "DarkGray");
-                AddText(thisWindow.maxPagination() + "", "HalfGray");
+                AddText(thisWindow.maxPagination() + 1 + "", "HalfGray");
                 AddSmallButton("OtherNextPage", (h) =>
                 {
-                    if (thisWindow.pagination() < thisWindow.maxPagination() - 1)
+                    if (thisWindow.pagination() < thisWindow.maxPagination())
                     {
                         PlaySound("DesktopChangePage", 0.6f);
                         thisWindow.IncrementPagination();
@@ -258,7 +258,7 @@ public class Quest
                 regions = new() { new() { regionType = "Padding", contents = new() { new ()
                     {
                         { "Color", "DarkGray" },
-                        { "Text", completion != null ? completion.Split("$B$B")[staticPagination["QuestTurn"]] : "" }
+                        { "Text", completion != null ? completion.Split("$B$B")[staticPagination.ContainsKey("QuestTurn") ? staticPagination["QuestTurn"] : 0] : "" }
                     }
                 } } }
             }.Print(currentSave.player, 190, null);
@@ -379,8 +379,14 @@ public class Quest
                     currentSave.player.TurnQuest(this);
                     PlaySound("QuestTurn");
                     CloseWindow(h.window);
-                    Respawn("QuestAvailable", true);
-                    Respawn("QuestDone", true);
+                    Respawn("ComplexQuestAvailable", true);
+                    Respawn("InstanceQuestAvailable", true);
+                    Respawn("HostileAreaQuestAvailable", true);
+                    Respawn("TownQuestAvailable", true);
+                    Respawn("ComplexQuestDone", true);
+                    Respawn("InstanceQuestDone", true);
+                    Respawn("HostileAreaQuestDone", true);
+                    Respawn("TownQuestDone", true);
                     Respawn("Chest", true);
                     Respawn("PlayerMoney", true);
                     if (CDesktop.title == "Instance")
@@ -403,8 +409,14 @@ public class Quest
                     PlaySound("QuestAdd", 0.4f);
                     currentSave.player.AddQuest(quest);
                     CloseWindow(h.window);
-                    Respawn("QuestAvailable", true);
-                    Respawn("QuestDone", true);
+                    Respawn("ComplexQuestAvailable", true);
+                    Respawn("InstanceQuestAvailable", true);
+                    Respawn("HostileAreaQuestAvailable", true);
+                    Respawn("TownQuestAvailable", true);
+                    Respawn("ComplexQuestDone", true);
+                    Respawn("InstanceQuestDone", true);
+                    Respawn("HostileAreaQuestDone", true);
+                    Respawn("TownQuestDone", true);
                     Respawn("QuestList", true);
                     Respawn("PlayerMoney", true);
                     Respawn("Chest", true);

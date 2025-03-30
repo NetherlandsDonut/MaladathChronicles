@@ -10,6 +10,9 @@ public class Cursor : MonoBehaviour
     //Renderer of the cursor responsible for visuals
     public SpriteRenderer render;
 
+    //Attached icon to the cursor
+    public GameObject iconAttached;
+
     void Awake() => UnityEngine.Cursor.visible = false;
     void Start() => (render, color) = (GetComponent<SpriteRenderer>(), "None");
 

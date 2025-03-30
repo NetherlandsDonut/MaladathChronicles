@@ -78,6 +78,45 @@ public static class Root
     public static float animationTime;
     public static float animatedSpriteTime;
 
+    public static Item movingItem;
+
+    public static void PickUpMovingItem(Highlightable h)
+    {
+        var bigButtonIndex = h.region.bigButtons.IndexOf(h.GetComponent<LineBigButton>());
+        var regionIndex = h.window.headerGroup.regions.IndexOf(h.region) - 1;
+        movingItem = SaveGame.currentSave.player.inventory.items.Find(x => x.x == bigButtonIndex && x.y == regionIndex);
+        SaveGame.currentSave.player.inventory.items.Remove(movingItem);
+        PlaySound(movingItem.ItemSound("PickUp"), 0.8f);
+        Cursor.cursor.iconAttached.SetActive(true);
+        Cursor.cursor.iconAttached.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Buttons/" + movingItem.icon);
+    }
+
+    public static void PutDownMovingItem(Highlightable h)
+    {
+        SaveGame.currentSave.player.inventory.AddNewItem(movingItem);
+        var bigButtonIndex = h.region.bigButtons.IndexOf(h.GetComponent<LineBigButton>());
+        var regionIndex = h.window.headerGroup.regions.IndexOf(h.region) - 1;
+        movingItem.x = bigButtonIndex;
+        movingItem.y = regionIndex;
+        PlaySound(movingItem.ItemSound("PutDown"), 0.8f);
+        movingItem = null;
+        Cursor.cursor.iconAttached.SetActive(false);
+    }
+
+    public static void SwapMovingItem(Highlightable h)
+    {
+        var bigButtonIndex = h.region.bigButtons.IndexOf(h.GetComponent<LineBigButton>());
+        var regionIndex = h.window.headerGroup.regions.IndexOf(h.region) - 1;
+        var temp = SaveGame.currentSave.player.inventory.items.Find(x => x.x == bigButtonIndex && x.y == regionIndex);
+        SaveGame.currentSave.player.inventory.AddNewItem(movingItem);
+        movingItem.x = bigButtonIndex;
+        movingItem.y = regionIndex;
+        PlaySound(movingItem.ItemSound("PutDown"), 0.8f);
+        movingItem = temp;
+        SaveGame.currentSave.player.inventory.items.Remove(movingItem);
+        Cursor.cursor.iconAttached.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Buttons/" + movingItem.icon);
+    }
+
     public static Desktop CDesktop, LBDesktop;
 
     public static List<Desktop> desktops;
@@ -493,12 +532,15 @@ public static class Root
         if (price / 100 % 100 > 0) Foo("ItemCoinsSilver", price / 100 % 100 + "", "Silver"); else lacking++;
         if (price % 100 > 0 || price == 0) Foo("ItemCoinsCopper", price % 100 + "", "Copper"); else lacking++;
         if (width == 0) return;
+        var showDisenchant = CDesktop.LBWindow().title == "Inventory" && SaveGame.currentSave.player.professionSkills.ContainsKey("Enchanting");
         AddRegionGroup();
-        SetRegionGroupWidth(width - (3 - lacking) * 54);
-        AddPaddingRegion(() =>
+        SetRegionGroupWidth(width - (3 - lacking) * 54 - (showDisenchant ? 19 : 0));
+        AddPaddingRegion(() => AddLine(""));
+        if (showDisenchant)
         {
-            AddLine("");
-            if (CDesktop.LBWindow().title == "Inventory" && SaveGame.currentSave.player.professionSkills.ContainsKey("Enchanting"))
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
                 if (CDesktop.title == "EquipmentScreen")
                     AddSmallButton(Cursor.cursor.color != "Pink" ? "ItemDisenchant" : "OtherCloseDisenchant", (h) =>
                     {
@@ -512,7 +554,8 @@ public static class Root
                     AddSmallButton("ItemDisenchant");
                     SetSmallButtonToGrayscale();
                 }
-        });
+            });
+        }
 
         void Foo(string icon, string text, string color)
         {
@@ -922,6 +965,7 @@ public static class Root
                     if (staticPagination.ContainsKey("QuestAdd"))
                         staticPagination.Remove("QuestAdd");
                     if (!Respawn("QuestAdd")) PlaySound("DesktopWriteQuest" + random.Next(1, 4));
+                    CloseWindow("QuestTurn");
                 }
                 else if (f == "Turn")
                 {
@@ -930,6 +974,7 @@ public static class Root
                     if (quest.rewards != null && quest.rewards.Count == 1) Quest.chosenReward = quest.rewards.ToList()[0].Key;
                     else Quest.chosenReward = null;
                     if (!Respawn("QuestTurn")) PlaySound("DesktopWriteQuest" + random.Next(1, 4));
+                    CloseWindow("QuestAdd");
                 }
                 Respawn("Chest", true);
                 Respawn("PlayerMoney", true);

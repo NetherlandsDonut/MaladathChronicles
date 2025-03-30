@@ -55,7 +55,7 @@ public class Entity
             Item item;
             do item = Item.items[random.Next(Item.items.Count)].CopyItem();
             while (!item.CanEquip(this) || item.lvl - level < -5 || item.lvl > level);
-            inventory.items.Add(item);
+            inventory.AddItem(item);
         }
         equipment = new Dictionary<string, Item>();
         EquipAllItems();
@@ -765,8 +765,9 @@ public class Entity
     }
 
     //Unequips items in given list of slots
-    public void Unequip(List<string> slots = null, int index = -1)
+    public List<Item> Unequip(List<string> slots = null)
     {
+        var itemsUnequiped = new List<Item>();
         if (slots == null) equipment = new();
         else foreach (var slot in slots)
                 if (equipment.ContainsKey(slot))
@@ -778,10 +779,10 @@ public class Entity
                     if (item.enchant != null && item.enchant.abilities != null)
                         foreach (var ability in item.enchant.abilities)
                             abilities.Remove(ability.Key);
-                    if (index != -1) inventory.items.Insert(index, equipment[slot]);
-                    else inventory.items.Add(equipment[slot]);
+                    itemsUnequiped.Add(equipment[slot]);
                     equipment.Remove(slot);
                 }
+        return itemsUnequiped;
     }
 
     //Unequips a bag in given index
@@ -793,7 +794,7 @@ public class Entity
             foreach (var ability in itemAbilities)
                 abilities.Remove(ability.Key);
         PlaySound(inventory.bags[index].ItemSound("PutDown"), 0.8f);
-        inventory.items.Add(inventory.bags[index]);
+        inventory.AddItem(inventory.bags[index]);
         inventory.bags.RemoveAt(index);
     }
 

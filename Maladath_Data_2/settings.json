@@ -1,7 +1,7 @@
 {
   "selectedRealm": "Whitemane",
   "selectedRealmRanking": "Whitemane",
-  "selectedCharacter": "Shazi",
+  "selectedCharacter": "Odam",
   "pixelPerfectVision": {
     "value": "True"
   },
@@ -12,7 +12,7 @@
     "value": "True"
   },
   "rarityIndicators": {
-    "value": "False"
+    "value": "True"
   },
   "bigRarityIndicators": {
     "value": "False"

@@ -40,6 +40,9 @@ public class Item
                     });
     }
 
+    //Position of the item in the inventory
+    public int x, y;
+
     //Rarity of this item which can range from Poor to Legendary
     public string rarity;
 
@@ -159,7 +162,7 @@ public class Item
         return true;
     }
 
-    public void Equip(Entity entity, string slot)
+    private void Equip(Entity entity, string slot)
     {
         if (slot == "Bag") entity.inventory.bags.Add(this);
         else entity.equipment[slot] = this;
@@ -173,18 +176,23 @@ public class Item
 
     public void Equip(Entity entity)
     {
-        var index = entity.inventory.items.IndexOf(this);
+        var unequiped = new List<Item>();
         if (type == "Two Handed")
         {
-            entity.Unequip(new() { "Off Hand", "Main Hand" }, index);
-            Equip(entity, "Main Hand");
+            if (entity.equipment.ContainsKey("Off Hand") && entity.equipment.ContainsKey("Main Hand") && entity.inventory.BagSpace() - entity.inventory.items.Count < 1)
+                SpawnFallingText(new Vector2(0, 34), "Inventory full", "Red");
+            else 
+            {
+                unequiped.AddRange(entity.Unequip(new() { "Off Hand", "Main Hand" }));
+                Equip(entity, "Main Hand");
+            }
         }
         else if (type == "Off Hand")
         {
             var mainHand = entity.GetItemInSlot("Main Hand");
             if (mainHand != null && mainHand.type == "Two Handed")
-                entity.Unequip(new() { "Main Hand" }, index);
-            entity.Unequip(new() { "Off Hand" }, index);
+                unequiped.AddRange(entity.Unequip(new() { "Main Hand" }));
+            else unequiped.AddRange(entity.Unequip(new() { "Off Hand" }));
             Equip(entity, "Off Hand");
         }
         else if (type == "One Handed")
@@ -194,13 +202,13 @@ public class Item
             if (mainHand != null && mainHand.type != "Two Handed" && entity.abilities.ContainsKey("Dual Wielding Proficiency") && (offHand == null || offHand.ilvl <= mainHand.ilvl))
             {
                 if (mainHand != null && mainHand.type == "Two Handed")
-                    entity.Unequip(new() { "Main Hand" }, index);
-                entity.Unequip(new() { "Off Hand" }, index);
+                    unequiped.AddRange(entity.Unequip(new() { "Main Hand" }));
+                else unequiped.AddRange(entity.Unequip(new() { "Off Hand" }));
                 Equip(entity, "Off Hand");
             }
             else
             {
-                entity.Unequip(new() { "Main Hand" }, index);
+                unequiped.AddRange(entity.Unequip(new() { "Main Hand" }));
                 Equip(entity, "Main Hand");
             }
         }
@@ -208,9 +216,11 @@ public class Item
         else
         {
             if (type == null) Debug.Log(name);
-            entity.Unequip(new() { type }, index);
+            unequiped.AddRange(entity.Unequip(new() { type }));
             Equip(entity, type);
         }
+        foreach (var item in unequiped)
+            entity.inventory.AddItem(item);
     }
 
     public bool CanEquip(Entity entity, bool downgradeArmor = false)
@@ -597,13 +607,24 @@ public class Item
         AddBigButton(item.icon,
             (h) =>
             {
-                if (!h.GetComponent<SpriteRenderer>().material.name.Contains("Gray") && Cursor.cursor.color == "Pink")
+                if (Cursor.cursor.color == "Pink")
                 {
-                    itemToDisenchant = item;
-                    Cursor.cursor.ResetColor();
-                    PlaySound("DesktopMenuOpen", 0.6f);
-                    Respawn("PlayerEquipmentInfo");
-                    SpawnWindowBlueprint("ConfirmItemDisenchant");
+                    if (!h.GetComponent<SpriteRenderer>().material.name.Contains("Gray"))
+                    {
+                        itemToDisenchant = item;
+                        Cursor.cursor.ResetColor();
+                        PlaySound("DesktopMenuOpen", 0.6f);
+                        Respawn("PlayerEquipmentInfo");
+                        SpawnWindowBlueprint("ConfirmItemDisenchant");
+                    }
+                }
+                else if (movingItem == null)
+                {
+                    PickUpMovingItem(h);
+                }
+                else if (movingItem != null)
+                {
+                    SwapMovingItem(h);
                 }
             },
             (h) =>
@@ -630,13 +651,13 @@ public class Item
                                 {
                                     if (!item.indestructible)
                                         item.minutesLeft = defines.buybackDecay;
-                                    currentSave.buyback.items.Add(item);
+                                    currentSave.buyback.AddItem(item);
                                     currentSave.player.inventory.items.Remove(item);
                                 }
                                 else
                                 {
                                     var newItem = item.CopyItem(amount);
-                                    currentSave.buyback.items.Add(newItem);
+                                    currentSave.buyback.AddItem(newItem);
                                     if (!newItem.indestructible)
                                         newItem.minutesLeft = defines.buybackDecay;
                                     item.amount -= amount;
@@ -655,7 +676,7 @@ public class Item
                             currentSave.player.inventory.money += item.price * item.amount;
                             if (!item.indestructible)
                                 item.minutesLeft = defines.buybackDecay;
-                            currentSave.buyback.items.Add(item);
+                            currentSave.buyback.AddItem(item);
                             currentSave.player.inventory.items.Remove(item);
                             CloseWindow("Vendor");
                             Respawn("VendorBuyback");
@@ -753,7 +774,7 @@ public class Item
         if (Cursor.cursor.color == "Pink" && !item.IsDisenchantable()) SetBigButtonToGrayscale();
         else if (Cursor.cursor.color == "Pink") AddBigButtonOverlay("OtherGlowDisenchantable" + item.rarity, 0, 2);
         if (openedItem == item || itemToDisenchant == item || itemToDestroy == item) { AddBigButtonOverlay("OtherGridBlurred", 0, 3); SetBigButtonToGrayscale(); }
-        if (item.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (currentSave.player.inventory.items.IndexOf(item) % 5), item.amount + "", "", "Right");
+        if (item.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.position + new Vector3(32, -27) + new Vector3(38, 0) * item.x, item.amount + "", "", "Right");
     }
 
     public static void PrintLootItem(Item item)
