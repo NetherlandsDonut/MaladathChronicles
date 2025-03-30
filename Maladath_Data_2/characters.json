@@ -1862,24 +1862,29 @@
             }
           }
         },
-        "worldBuffs": []
+        "worldBuffs": [
+          {
+            "buff": "Scroll of Intellect II @ Scroll of Intellect",
+            "minutesLeft": 697
+          }
+        ]
       },
-      "hour": 8,
-      "minute": 59,
-      "second": 47,
-      "currentSite": "The Crossroads",
+      "hour": 9,
+      "minute": 22,
+      "second": 42,
+      "currentSite": "Splintertree Post",
       "ringOfLaw": "Ok'thor the Breaker",
       "forlornCloister": "Ironspine",
       "markets": [
         {
           "name": "Alliance Market",
           "auctions": [],
-          "hoursSinceUpdate": 49
+          "hoursSinceUpdate": 50
         },
         {
           "name": "Horde Market",
           "auctions": [],
-          "hoursSinceUpdate": 49
+          "hoursSinceUpdate": 50
         }
       ],
       "openedChests": {
@@ -2007,7 +2012,7 @@
         "Demon Fall Canyon": 1,
         "Demon Fall Ridge": 1,
         "Falfarren River": 1,
-        "Fallen Sky Lake": 1,
+        "Fallen Sky Lake": 2,
         "Felfire Hill": 1,
         "Fire Scar Shrine": 1,
         "Greenpaw Village": 1,
@@ -2868,12 +2873,12 @@
         "Algaz Station": 1,
         "Razor Hill": 2,
         "Zoram'gar Outpost": 1,
-        "The Crossroads": 2,
+        "The Crossroads": 3,
         "Bloodvenom Post": 1,
         "Valormok": 1,
         "The Mor'shan Rampart": 1,
         "Grom'gol Base Camp": 1,
-        "Splintertree Post": 1,
+        "Splintertree Post": 2,
         "Kargath": 1,
         "Stonard": 1,
         "Brackenwall Village": 1,
@@ -3061,9 +3066,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2024-11-18T03:52:29.4822813+01:00",
-      "lastLoaded": "2025-03-30T12:28:58.894872+02:00",
-      "lastPlayed": "2025-03-30T12:31:53.8527243+02:00",
-      "timePlayed": "00:55:41.5548659"
+      "lastLoaded": "2025-03-30T15:02:10.6053202+02:00",
+      "lastPlayed": "2025-03-30T15:03:41.9320689+02:00",
+      "timePlayed": "00:58:41.9005556"
     },
     {
       "player": {
@@ -3598,9 +3603,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2025-03-01T15:27:25.7421219+01:00",
-      "lastLoaded": "2025-03-01T15:27:29.7701311+01:00",
-      "lastPlayed": "2025-03-01T15:36:01.1832225+01:00",
-      "timePlayed": "00:08:31.4130914"
+      "lastLoaded": "2025-03-30T14:40:42.2238109+02:00",
+      "lastPlayed": "2025-03-30T14:40:43.7027712+02:00",
+      "timePlayed": "00:08:32.8920517"
     }
   ]
 }

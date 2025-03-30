@@ -118,6 +118,7 @@ public class Starter : MonoBehaviour
         Deserialize(ref settings, "settings", false, prefix);
         settings ??= new();
         settings.FillNulls();
+        Application.runInBackground = settings.runsInBackground.Value();
 
         //Settings file contains last selected character and it's realm.
         //If the game content doesn't posses either the realm or the character that is supposed

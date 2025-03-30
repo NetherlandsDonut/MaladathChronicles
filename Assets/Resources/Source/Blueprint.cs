@@ -3959,6 +3959,7 @@ public class Blueprint
             var list = currentSave.player.mounts;
             thisWindow.SetPagination(() => list.Count, rowAmount);
             SetAnchor(TopLeft, 19, -38);
+            AddHeaderGroup();
             SetRegionGroupWidth(190);
             SetRegionGroupHeight(288);
             var type = personTypes.Find(x => x.type == person.type);
@@ -5476,6 +5477,21 @@ public class Blueprint
             (h) =>
             {
                 settings.soundEffects.Invert();
+                CDesktop.RespawnAll();
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Other", "HalfGray");
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(settings.runsInBackground);
+                AddLine("Runs in background");
+            },
+            (h) =>
+            {
+                settings.runsInBackground.Invert();
+                Application.runInBackground = settings.runsInBackground.Value();
                 CDesktop.RespawnAll();
             });
         }, true),

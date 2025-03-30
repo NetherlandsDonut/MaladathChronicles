@@ -288,6 +288,7 @@ public class SaveGame
         if (currentSite != null && Site.FindSite(x => x.name == currentSite) == null) currentSite = null;
         currentSite ??= player.Race().startingSite;
         player.homeLocation ??= player.Race().startingSite;
+        AsignVoidedData();
     }
 
     //Provides information which background should be used for character
@@ -330,8 +331,8 @@ public class SaveGame
     public static void SaveGames()
     {
         if (currentSave != null) Save();
-        Serialization.Serialize(saves, "characters", false, false, prefix);
-        Serialization.Serialize(settings, "settings", false, false, prefix);
+        Serialize(saves, "characters", false, false, prefix);
+        Serialize(settings, "settings", false, false, prefix);
     }
 
     //Can you save at the moment
@@ -339,6 +340,12 @@ public class SaveGame
     {
         var blockedDesktops = new List<string> { "ChestLoot", "ContainerLoot", "CombatResults", "CombatLog", "MiningLoot", "CombatResultsLoot", "HerbalismLoot", "SkinningLoot", "FishingGame", "Game" };
         return !desktops.Any(x => blockedDesktops.Contains(x.title));
+    }
+
+    //Asigns references to variables that were compressed on serialisation
+    public void AsignVoidedData()
+    {
+        player.worldBuffs.ForEach(x => x.Buff = Buff.buffs.Find(y => y.name == x.buff));
     }
 
     #endregion

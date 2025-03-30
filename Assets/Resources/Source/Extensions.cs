@@ -38,6 +38,7 @@ public static class Extensions
     //Removes all nasty characters from a string (Usually used for accessing files with names based of something)
     public static string OnlyNameCategory(this string text)
     {
+        var a = text != null && text.Contains(" @ ") ? text[..text.IndexOf(" @ ")] : "";
         return text != null && text.Contains(" @ ") ? text[..text.IndexOf(" @ ")] : text;
     }
 

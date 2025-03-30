@@ -25,6 +25,7 @@ public class GameSettings
         bigRarityIndicators ??= new Bool(false);
         upgradeIndicators ??= new Bool(false);
         newSlotIndicators ??= new Bool(false);
+        runsInBackground ??= new Bool(false);
     }
 
     //Currently selected realm in login screen
@@ -77,6 +78,9 @@ public class GameSettings
 
     //Tells whether the loot windows will close automatically after taking all the items
     public Bool autoCloseLoot;
+
+    //Determines whether the program runs while in background
+    public Bool runsInBackground;
 
     //EXTERNAL FILE: Collection of all settings in game
     public static GameSettings settings;

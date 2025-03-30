@@ -661,7 +661,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Scroll of Spirit I",
+            "WorldBuffName": "Scroll of Spirit I @ Scroll of Spirit",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "720",
             "SoundEffect": "ItemScroll"
@@ -1825,7 +1825,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Scroll of Agility I",
+            "WorldBuffName": "Scroll of Agility I @ Scroll of Agility",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "720",
             "SoundEffect": "ItemScroll"
@@ -1866,7 +1866,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Scroll of Agility II",
+            "WorldBuffName": "Scroll of Agility II @ Scroll of Agility",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "720",
             "SoundEffect": "ItemScroll"
@@ -1907,7 +1907,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Scroll of Agility III",
+            "WorldBuffName": "Scroll of Agility III @ Scroll of Agility",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "720",
             "SoundEffect": "ItemScroll"
@@ -1948,7 +1948,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Scroll of Agility IV",
+            "WorldBuffName": "Scroll of Agility IV @ Scroll of Agility",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "720",
             "SoundEffect": "ItemScroll"
@@ -1989,7 +1989,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Scroll of Strength I",
+            "WorldBuffName": "Scroll of Strength I @ Scroll of Strength",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "720",
             "SoundEffect": "ItemScroll"
@@ -2030,7 +2030,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Scroll of Strength II",
+            "WorldBuffName": "Scroll of Strength II @ Scroll of Strength",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "720",
             "SoundEffect": "ItemScroll"
@@ -2072,7 +2072,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Scroll of Strength III",
+            "WorldBuffName": "Scroll of Strength III @ Scroll of Strength",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "720",
             "SoundEffect": "ItemScroll"
@@ -2113,7 +2113,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Scroll of Strength IV",
+            "WorldBuffName": "Scroll of Strength IV @ Scroll of Strength",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "720",
             "SoundEffect": "ItemScroll"
@@ -2154,7 +2154,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Scroll of Stamina I",
+            "WorldBuffName": "Scroll of Stamina I @ Scroll of Stamina",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "720",
             "SoundEffect": "ItemScroll"
@@ -2195,7 +2195,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Scroll of Stamina II",
+            "WorldBuffName": "Scroll of Stamina II @ Scroll of Stamina",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "720",
             "SoundEffect": "ItemScroll"
@@ -2236,7 +2236,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Scroll of Stamina III",
+            "WorldBuffName": "Scroll of Stamina III @ Scroll of Stamina",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "720",
             "SoundEffect": "ItemScroll"
@@ -2277,7 +2277,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Scroll of Stamina IV",
+            "WorldBuffName": "Scroll of Stamina IV @ Scroll of Stamina",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "720",
             "SoundEffect": "ItemScroll"
@@ -2319,7 +2319,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Scroll of Protection I",
+            "WorldBuffName": "Scroll of Protection I @ Scroll of Protection",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "720",
             "SoundEffect": "ItemScroll"
@@ -2360,7 +2360,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Scroll of Protection II",
+            "WorldBuffName": "Scroll of Protection II @ Scroll of Protection",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "720",
             "SoundEffect": "ItemScroll"
@@ -2401,7 +2401,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Scroll of Protection III",
+            "WorldBuffName": "Scroll of Protection III @ Scroll of Protection",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "720",
             "SoundEffect": "ItemScroll"
@@ -2442,7 +2442,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Scroll of Protection IV",
+            "WorldBuffName": "Scroll of Protection IV @ Scroll of Protection",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "720",
             "SoundEffect": "ItemScroll"
@@ -2483,7 +2483,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Scroll of Intellect I",
+            "WorldBuffName": "Scroll of Intellect I @ Scroll of Intellect",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "720",
             "SoundEffect": "ItemScroll"
@@ -2524,7 +2524,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Scroll of Intellect II",
+            "WorldBuffName": "Scroll of Intellect II @ Scroll of Intellect",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "720",
             "SoundEffect": "ItemScroll"
@@ -2565,7 +2565,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Scroll of Intellect III",
+            "WorldBuffName": "Scroll of Intellect III @ Scroll of Intellect",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "720",
             "SoundEffect": "ItemScroll"
@@ -2606,7 +2606,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Scroll of Intellect IV",
+            "WorldBuffName": "Scroll of Intellect IV @ Scroll of Intellect",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "720",
             "SoundEffect": "ItemScroll"
@@ -2905,7 +2905,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Mightfish Steak",
+            "WorldBuffName": "Mightfish Steak @ Well Fed",
             "WorldBuffDuration": "360",
             "SoundEffect": "DesktopFoodEat"
           },
@@ -2945,7 +2945,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Grilled Squid",
+            "WorldBuffName": "Grilled Squid @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -2990,7 +2990,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Dirge's Kickin' Chimaerok Chops",
+            "WorldBuffName": "Dirge's Kickin' Chimaerok Chops @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -3035,7 +3035,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Clamlette Surprise",
+            "WorldBuffName": "Clamlette Surprise @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -3080,7 +3080,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Tender Wolf Steak",
+            "WorldBuffName": "Tender Wolf Steak @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -3125,7 +3125,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Monster Omelet",
+            "WorldBuffName": "Monster Omelet @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -3170,7 +3170,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Spiced Chili Crab",
+            "WorldBuffName": "Spiced Chili Crab @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -3215,7 +3215,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Hot Smoked Bass",
+            "WorldBuffName": "Hot Smoked Bass @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -3260,7 +3260,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Cooked Glossy Mightfish",
+            "WorldBuffName": "Cooked Glossy Mightfish @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -3305,7 +3305,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Spider Sausage",
+            "WorldBuffName": "Spider Sausage @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -3350,7 +3350,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Sagefish Delight",
+            "WorldBuffName": "Sagefish Delight @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -3395,7 +3395,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Heavy Kodo Stew",
+            "WorldBuffName": "Heavy Kodo Stew @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -3440,7 +3440,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Barbecued Buzzard Wing",
+            "WorldBuffName": "Barbecued Buzzard Wing @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -3485,7 +3485,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Roast Raptor",
+            "WorldBuffName": "Roast Raptor @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -3530,7 +3530,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Mystery Stew",
+            "WorldBuffName": "Mystery Stew @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -3575,7 +3575,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Soothing Turtle Bisque",
+            "WorldBuffName": "Soothing Turtle Bisque @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -3620,7 +3620,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Hot Wolf Ribs",
+            "WorldBuffName": "Hot Wolf Ribs @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -3665,7 +3665,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Giant Clam Scorcho",
+            "WorldBuffName": "Giant Clam Scorcho @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -3710,7 +3710,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Spiced Wolf Ribs",
+            "WorldBuffName": "Spiced Wolf Ribs @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -3755,7 +3755,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Heavy Crocolisk Stew",
+            "WorldBuffName": "Heavy Crocolisk Stew @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -3800,7 +3800,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Tasty Lion Steak",
+            "WorldBuffName": "Tasty Lion Steak @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -3845,7 +3845,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Goblin Deviled Clams",
+            "WorldBuffName": "Goblin Deviled Clams @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -3890,7 +3890,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Lean Venison",
+            "WorldBuffName": "Lean Venison @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -3935,7 +3935,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Seasoned Wolf Kabob",
+            "WorldBuffName": "Seasoned Wolf Kabob @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -3980,7 +3980,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Curiously Tasty Omelet",
+            "WorldBuffName": "Curiously Tasty Omelet @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -4025,7 +4025,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Murloc Fin Soup",
+            "WorldBuffName": "Murloc Fin Soup @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -4070,7 +4070,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Big Bear Steak",
+            "WorldBuffName": "Big Bear Steak @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -4115,7 +4115,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Crocolisk Gumbo",
+            "WorldBuffName": "Crocolisk Gumbo @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -4160,7 +4160,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Gooey Spider Cake",
+            "WorldBuffName": "Gooey Spider Cake @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -4205,7 +4205,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Lean Wolf Steak",
+            "WorldBuffName": "Lean Wolf Steak @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -4250,7 +4250,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Hot Lion Chops",
+            "WorldBuffName": "Hot Lion Chops @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -4295,7 +4295,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Crispy Lizard Tail",
+            "WorldBuffName": "Crispy Lizard Tail @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -4340,7 +4340,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Smoked Sagefish",
+            "WorldBuffName": "Smoked Sagefish @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -4385,7 +4385,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Redridge Goulash",
+            "WorldBuffName": "Redridge Goulash @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -4430,7 +4430,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Dry Pork Ribs",
+            "WorldBuffName": "Dry Pork Ribs @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -4475,7 +4475,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Boiled Clams",
+            "WorldBuffName": "Boiled Clams @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -4520,7 +4520,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Coyote Steak",
+            "WorldBuffName": "Coyote Steak @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -4565,7 +4565,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Crab Cake",
+            "WorldBuffName": "Crab Cake @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -4610,7 +4610,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Blood Sausage",
+            "WorldBuffName": "Blood Sausage @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -4655,7 +4655,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Strider Stew",
+            "WorldBuffName": "Strider Stew @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -4700,7 +4700,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Fillet of Frenzy",
+            "WorldBuffName": "Fillet of Frenzy @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -4745,7 +4745,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Crocolisk Steak",
+            "WorldBuffName": "Crocolisk Steak @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -4790,7 +4790,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Goretusk Liver Pie",
+            "WorldBuffName": "Goretusk Liver Pie @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -4835,7 +4835,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Bad Egg Nog",
+            "WorldBuffName": "Bad Egg Nog @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -4880,7 +4880,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Beer Basted Boar Ribs",
+            "WorldBuffName": "Beer Basted Boar Ribs @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -4925,7 +4925,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Spiced Wolf Meat",
+            "WorldBuffName": "Spiced Wolf Meat @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -4970,7 +4970,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Herb Baked Egg",
+            "WorldBuffName": "Herb Baked Egg @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -5015,7 +5015,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Kaldorei Spider Kabob",
+            "WorldBuffName": "Kaldorei Spider Kabob @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -5060,7 +5060,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Crispy Bat Wing",
+            "WorldBuffName": "Crispy Bat Wing @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -5105,7 +5105,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Jungle Stew",
+            "WorldBuffName": "Jungle Stew @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -5150,7 +5150,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Carrion Surprise",
+            "WorldBuffName": "Carrion Surprise @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -5195,7 +5195,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Blessed Sunfruit",
+            "WorldBuffName": "Blessed Sunfruit @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -5240,7 +5240,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Roasted Kodo Meat",
+            "WorldBuffName": "Roasted Kodo Meat @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "ShatterDensity": "1",
@@ -5285,7 +5285,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Well Fed @ Runn Tum Tuber Surprise",
+            "WorldBuffName": "Runn Tum Tuber Surprise @ Well Fed",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "10",
             "SoundEffect": "DesktopFoodEat"

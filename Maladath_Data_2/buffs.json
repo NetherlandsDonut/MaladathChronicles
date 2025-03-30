@@ -646,7 +646,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Mightfish Steak",
+    "name": "Mightfish Steak @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -661,7 +661,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Grilled Squid",
+    "name": "Grilled Squid @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -676,7 +676,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Dirge's Kickin' Chimaerok Chops",
+    "name": "Dirge's Kickin' Chimaerok Chops @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -691,7 +691,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Clamlette Surprise",
+    "name": "Clamlette Surprise @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -707,7 +707,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Tender Wolf Steak",
+    "name": "Tender Wolf Steak @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -723,7 +723,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Monster Omelet",
+    "name": "Monster Omelet @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -739,7 +739,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Spiced Chili Crab",
+    "name": "Spiced Chili Crab @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -755,7 +755,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Hot Smoked Bass",
+    "name": "Hot Smoked Bass @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -770,7 +770,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Cooked Glossy Mightfish",
+    "name": "Cooked Glossy Mightfish @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -785,7 +785,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Spider Sausage",
+    "name": "Spider Sausage @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -801,7 +801,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Sagefish Delight",
+    "name": "Sagefish Delight @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -816,7 +816,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Heavy Kodo Stew",
+    "name": "Heavy Kodo Stew @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -832,7 +832,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Barbecued Buzzard Wing",
+    "name": "Barbecued Buzzard Wing @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -848,7 +848,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Roast Raptor",
+    "name": "Roast Raptor @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -864,7 +864,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Mystery Stew",
+    "name": "Mystery Stew @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -880,7 +880,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Soothing Turtle Bisque",
+    "name": "Soothing Turtle Bisque @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -896,7 +896,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Hot Wolf Ribs",
+    "name": "Hot Wolf Ribs @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -912,7 +912,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Giant Clam Scorcho",
+    "name": "Giant Clam Scorcho @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -928,7 +928,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Spiced Wolf Ribs",
+    "name": "Spiced Wolf Ribs @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -944,7 +944,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Heavy Crocolisk Stew",
+    "name": "Heavy Crocolisk Stew @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -960,7 +960,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Tasty Lion Steak",
+    "name": "Tasty Lion Steak @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -976,7 +976,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Goblin Deviled Clams",
+    "name": "Goblin Deviled Clams @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -992,7 +992,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Lean Venison",
+    "name": "Lean Venison @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -1008,7 +1008,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Seasoned Wolf Kabob",
+    "name": "Seasoned Wolf Kabob @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -1024,7 +1024,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Curiously Tasty Omelet",
+    "name": "Curiously Tasty Omelet @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -1040,7 +1040,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Murloc Fin Soup",
+    "name": "Murloc Fin Soup @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -1056,7 +1056,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Big Bear Steak",
+    "name": "Big Bear Steak @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -1072,7 +1072,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Crocolisk Gumbo",
+    "name": "Crocolisk Gumbo @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -1088,7 +1088,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Gooey Spider Cake",
+    "name": "Gooey Spider Cake @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -1104,7 +1104,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Lean Wolf Steak",
+    "name": "Lean Wolf Steak @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -1120,7 +1120,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Hot Lion Chops",
+    "name": "Hot Lion Chops @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -1136,7 +1136,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Crispy Lizard Tail",
+    "name": "Crispy Lizard Tail @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -1152,7 +1152,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Smoked Sagefish",
+    "name": "Smoked Sagefish @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -1167,7 +1167,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Redridge Goulash",
+    "name": "Redridge Goulash @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -1183,7 +1183,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Dry Pork Ribs",
+    "name": "Dry Pork Ribs @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -1199,7 +1199,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Boiled Clams",
+    "name": "Boiled Clams @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -1215,7 +1215,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Coyote Steak",
+    "name": "Coyote Steak @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -1231,7 +1231,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Crab Cake",
+    "name": "Crab Cake @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -1247,7 +1247,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Blood Sausage",
+    "name": "Blood Sausage @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -1263,7 +1263,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Strider Stew",
+    "name": "Strider Stew @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -1279,7 +1279,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Fillet of Frenzy",
+    "name": "Fillet of Frenzy @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -1295,7 +1295,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Crocolisk Steak",
+    "name": "Crocolisk Steak @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -1311,7 +1311,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Goretusk Liver Pie",
+    "name": "Goretusk Liver Pie @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -1327,7 +1327,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Bad Egg Nog",
+    "name": "Bad Egg Nog @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -1343,7 +1343,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Beer Basted Boar Ribs",
+    "name": "Beer Basted Boar Ribs @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -1359,7 +1359,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Spiced Wolf Meat",
+    "name": "Spiced Wolf Meat @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -1375,7 +1375,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Herb Baked Egg",
+    "name": "Herb Baked Egg @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -1391,7 +1391,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Jungle Stew",
+    "name": "Jungle Stew @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -1407,7 +1407,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Kaldorei Spider Kabob",
+    "name": "Kaldorei Spider Kabob @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -1423,7 +1423,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Blessed Sunfruit",
+    "name": "Blessed Sunfruit @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -1438,7 +1438,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Roasted Kodo Meat",
+    "name": "Roasted Kodo Meat @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [
@@ -1454,7 +1454,7 @@
     "events": []
   },
   {
-    "name": "Well Fed @ Runn Tum Tuber Surprise",
+    "name": "Runn Tum Tuber Surprise @ Well Fed",
     "icon": "AbilityFood",
     "dispelType": "None",
     "tags": [

@@ -43,5 +43,8 @@
   },
   "autoCloseLoot": {
     "value": "True"
+  },
+  "runsInBackground": {
+    "value": "False"
   }
 }

@@ -3,7 +3,7 @@ using System;
 public class WorldBuff
 {
     //Constructor for deserialisation
-    public WorldBuff() => Buff = Buff.buffs.Find(x => x.name == buff);
+    public WorldBuff() { }
 
     //Default constructor for adding new world buffs to entities
     public WorldBuff(Buff buff, int rank, int minutesLeft)
