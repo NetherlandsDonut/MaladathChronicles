@@ -437,6 +437,9 @@ public class Item
         AddBigButton(item.icon,
             (h) =>
             {
+                if (WindowUp("ConfirmItemDestroy")) return;
+                if (WindowUp("InventorySort")) return;
+                if (WindowUp("BankSort")) return;
                 if (movingItem == null)
                 {
                     if (item.amount > 1 && Input.GetKey(KeyCode.LeftShift))
@@ -462,6 +465,9 @@ public class Item
             },
             (h) =>
             {
+                if (WindowUp("ConfirmItemDestroy")) return;
+                if (WindowUp("InventorySort")) return;
+                if (WindowUp("BankSort")) return;
                 if (movingItem == null && currentSave.player.inventory.CanAddItem(item))
                 {
                     if (item.amount > 1 && Input.GetKey(KeyCode.LeftShift))
@@ -501,11 +507,14 @@ public class Item
             (h) => () =>
             {
                 if (item == null) return;
+                if (WindowUp("ConfirmItemDestroy")) return;
+                if (WindowUp("InventorySort")) return;
+                if (WindowUp("BankSort")) return;
                 PrintItemTooltip(item);
             }
         );
         if (settings.rarityIndicators.Value())
-            AddBigButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 2);
+            AddBigButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 3);
         if (item.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.position + new Vector3(32, -27) + new Vector3(38, 0) * item.x, item.amount + "", "", "Right");
     }
 
@@ -516,6 +525,8 @@ public class Item
             null,
             (h) =>
             {
+                if (WindowUp("ConfirmItemDestroy")) return;
+                if (WindowUp("InventorySort")) return;
                 if (movingItem == null && currentSave.player.inventory.CanAddItem(item))
                 {
                     if (buyback != null)
@@ -601,11 +612,12 @@ public class Item
             (h) => () =>
             {
                 if (item == null) return;
+                if (WindowUp("InventorySort")) return;
                 PrintItemTooltip(item, false, buyback == null ? 4 : 1);
             }
         );
         if (settings.rarityIndicators.Value())
-            AddBigButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 2);
+            AddBigButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 3);
         if (item.questsStarted != null)
         {
             var all = Quest.quests.FindAll(x => item.questsStarted.Contains(x.questID)).ToList();
@@ -631,6 +643,10 @@ public class Item
         AddBigButton(item.icon,
             (h) =>
             {
+                if (WindowUp("ConfirmItemDisenchant")) return;
+                if (WindowUp("ConfirmItemDestroy")) return;
+                if (WindowUp("InventorySort")) return;
+                if (WindowUp("BankSort")) return;
                 if (Cursor.cursor.color == "Pink")
                 {
                     if (!h.GetComponent<SpriteRenderer>().material.name.Contains("Gray"))
@@ -642,7 +658,7 @@ public class Item
                         SpawnWindowBlueprint("ConfirmItemDisenchant");
                     }
                 }
-                if (movingItem == null)
+                else if (movingItem == null)
                 {
                     if (item.amount > 1 && Input.GetKey(KeyCode.LeftShift))
                     {
@@ -669,6 +685,10 @@ public class Item
             {
                 if (item == null || itemToDisenchant == item) return;
                 if (Cursor.cursor.color == "Pink") return;
+                if (WindowUp("ConfirmItemDisenchant")) return;
+                if (WindowUp("ConfirmItemDestroy")) return;
+                if (WindowUp("InventorySort")) return;
+                if (WindowUp("BankSort")) return;
                 if (CDesktop.windows.Exists(x => x.title.StartsWith("Vendor")))
                 {
                     if (item.price > 0)
@@ -777,20 +797,27 @@ public class Item
             },
             (h) => () =>
             {
-                if (item == null || itemToDestroy == item) return;
+                if (item == null) return;
+                if (WindowUp("ConfirmItemDisenchant")) return;
                 if (WindowUp("ConfirmItemDestroy")) return;
+                if (WindowUp("InventorySort")) return;
+                if (WindowUp("BankSort")) return;
                 PrintItemTooltip(item, Input.GetKey(KeyCode.LeftShift));
             },
             (h) =>
             {
-                if (item.indestructible || itemToDestroy == item) return;
+                if (item.indestructible) return;
+                if (WindowUp("ConfirmItemDisenchant")) return;
+                if (WindowUp("ConfirmItemDestroy")) return;
+                if (WindowUp("InventorySort")) return;
+                if (WindowUp("BankSort")) return;
                 itemToDestroy = item;
                 PlaySound("DesktopMenuOpen", 0.6f);
                 SpawnWindowBlueprint("ConfirmItemDestroy");
             }
         );
         if (settings.rarityIndicators.Value())
-            AddBigButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 2);
+            AddBigButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 3);
         if (item.questsStarted != null)
         {
             var all = Quest.quests.FindAll(x => item.questsStarted.Contains(x.questID)).ToList();
@@ -953,7 +980,7 @@ public class Item
         if (Board.board != null && Board.board.results.exclusiveItems.Count > 1 && Board.board.results.exclusiveItems.Contains(item.name))
             AddBigButtonOverlay("OtherItemExclusive", 0, 2);
         if (settings.rarityIndicators.Value() && item.type != "Currency")
-            AddBigButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 2);
+            AddBigButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 3);
         if (item.questsStarted != null)
         {
             var all = Quest.quests.FindAll(x => item.questsStarted.Contains(x.questID)).ToList();

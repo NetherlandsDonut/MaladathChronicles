@@ -2106,6 +2106,9 @@ public class Blueprint
                             (h) =>
                             {
                                 if (Cursor.cursor.color == "Pink") return;
+                                if (WindowUp("InventorySort")) return;
+                                if (WindowUp("ConfirmItemDisenchant")) return;
+                                if (WindowUp("ConfirmItemDestroy")) return;
                                 if (WindowUp("Inventory") && movingItem == null && currentSave.player.inventory.CanAddItem(currentSave.player.equipment[slot]))
                                 {
                                     PlaySound(item.ItemSound("PutDown"), 0.8f);
@@ -2117,6 +2120,9 @@ public class Blueprint
                             },
                             (h) =>
                             {
+                                if (WindowUp("InventorySort")) return;
+                                if (WindowUp("ConfirmItemDisenchant")) return;
+                                if (WindowUp("ConfirmItemDestroy")) return;
                                 if (item.CanUse(currentSave.player))
                                 {
                                     PlaySound(item.ItemSound("Use"), 0.8f);
@@ -2127,6 +2133,9 @@ public class Blueprint
                             },
                             (h) => () =>
                             {
+                                if (WindowUp("InventorySort")) return;
+                                if (WindowUp("ConfirmItemDisenchant")) return;
+                                if (WindowUp("ConfirmItemDestroy")) return;
                                 PrintItemTooltip(item);
                             });
                             if (settings.rarityIndicators.Value())
@@ -6534,7 +6543,11 @@ public class Blueprint
                 });
                 AddHotkey(Escape, () =>
                 {
-                    if (CloseWindow("MountCollection"))
+                    if (CloseWindow("BankSort"))
+                    {
+                        PlaySound("DesktopInstanceClose");
+                    }
+                    else if (CloseWindow("MountCollection"))
                     {
                         PlaySound("DesktopInstanceClose");
                         CloseWindow("CurrentMount");
@@ -6558,7 +6571,6 @@ public class Blueprint
                     else if (CloseWindow("ResetTalents"))
                     {
                         PlaySound("DesktopInstanceClose");
-                        CloseWindow("ResetTalents");
                         Respawn("Person");
                     }
                     else if (CloseWindow("FlightMaster"))
@@ -6604,7 +6616,6 @@ public class Blueprint
             }
             else
             {
-
                 SpawnWindowBlueprint("TownHostile");
                 AddHotkey(Escape, () =>
                 {
@@ -6955,7 +6966,11 @@ public class Blueprint
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(Escape, () =>
             {
-                if (Cursor.cursor.color == "Pink")
+                if (CloseWindow("InventorySort"))
+                {
+                    PlaySound("DesktopInstanceClose");
+                }
+                else if (Cursor.cursor.color == "Pink")
                 {
                     Cursor.cursor.ResetColor();
                     Respawn("PlayerEquipmentInfo", true);
