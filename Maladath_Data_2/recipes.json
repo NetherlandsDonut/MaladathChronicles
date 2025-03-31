@@ -3771,23 +3771,6 @@
     }
   },
   {
-    "name": "Elixir of Coalesced Regret",
-    "profession": "Alchemy",
-    "skillUpYellow": 90,
-    "skillUpGreen": 100,
-    "skillUpGray": 110,
-    "learnedAt": 90,
-    "reagents": {
-      "Stranglekelp": 5,
-      "Leaded Vial": 1,
-      "Grave Moss": 5,
-      "Soul Dust": 1
-    },
-    "results": {
-      "210708": 1
-    }
-  },
-  {
     "name": "Runed Copper Bracers",
     "profession": "Blacksmithing",
     "skillUpOrange": 90,
@@ -4170,21 +4153,6 @@
     }
   },
   {
-    "name": "Blackfathom Sharpening Stone",
-    "profession": "Blacksmithing",
-    "skillUpYellow": 100,
-    "skillUpGreen": 110,
-    "skillUpGray": 120,
-    "learnedAt": 100,
-    "reagents": {
-      "Coarse Sharpening Stone": 1,
-      "Lesser Magic Essence": 1
-    },
-    "results": {
-      "211845": 1
-    }
-  },
-  {
     "name": "Enchant 2H Weapon - Minor Impact",
     "profession": "Enchanting",
     "enchantment": true,
@@ -4231,22 +4199,6 @@
     },
     "results": {
       "Runed Silver Rod": 1
-    }
-  },
-  {
-    "name": "Blackfathom Mana Oil",
-    "profession": "Enchanting",
-    "skillUpYellow": 100,
-    "skillUpGreen": 110,
-    "skillUpGray": 120,
-    "learnedAt": 100,
-    "reagents": {
-      "Leaded Vial": 1,
-      "Greater Magic Essence": 1,
-      "Strange Dust": 5
-    },
-    "results": {
-      "211848": 0
     }
   },
   {
@@ -5756,22 +5708,6 @@
     }
   },
   {
-    "name": "Phoenix Bindings",
-    "profession": "Tailoring",
-    "skillUpYellow": 125,
-    "skillUpGreen": 137,
-    "skillUpGray": 150,
-    "learnedAt": 125,
-    "reagents": {
-      "Bolt of Woolen Cloth": 6,
-      "Flask of Oil": 2,
-      "Fine Thread": 2
-    },
-    "results": {
-      "210781": 1
-    }
-  },
-  {
     "name": "Elixir of Defense",
     "profession": "Alchemy",
     "skillUpOrange": 130,
@@ -6055,22 +5991,6 @@
     }
   },
   {
-    "name": "Shredder Autosalvage Unit",
-    "profession": "Engineering",
-    "skillUpYellow": 135,
-    "skillUpGreen": 140,
-    "skillUpGray": 145,
-    "learnedAt": 135,
-    "reagents": {
-      "Bronze Framework": 1,
-      "Whirring Bronze Gizmo": 2,
-      "Heavy Leather": 1
-    },
-    "results": {
-      "210147": 1
-    }
-  },
-  {
     "name": "Toughened Leather Gloves",
     "profession": "Leatherworking",
     "skillUpOrange": 135,
@@ -6211,24 +6131,6 @@
     },
     "results": {
       "Iridescent Hammer": 1
-    }
-  },
-  {
-    "name": "Mantle of the Second War",
-    "profession": "Blacksmithing",
-    "skillUpYellow": 140,
-    "skillUpGreen": 150,
-    "skillUpGray": 160,
-    "learnedAt": 140,
-    "reagents": {
-      "Bronze Bar": 20,
-      "Moss Agate": 2,
-      "Lesser Moonstone": 2,
-      "Iridescent Pearl": 2,
-      "Silver Bar": 4
-    },
-    "results": {
-      "210773": 1
     }
   },
   {
@@ -7154,21 +7056,6 @@
     }
   },
   {
-    "name": "Extraplanar Spidersilk Boots",
-    "profession": "Tailoring",
-    "skillUpYellow": 150,
-    "skillUpGreen": 167,
-    "skillUpGray": 185,
-    "learnedAt": 150,
-    "reagents": {
-      "211422": 1,
-      "Spidersilk Boots": 1
-    },
-    "results": {
-      "210795": 1
-    }
-  },
-  {
     "name": "Greater Healing Potion",
     "profession": "Alchemy",
     "skillUpOrange": 155,
@@ -7564,54 +7451,6 @@
     },
     "results": {
       "Guardian Pants": 1
-    }
-  },
-  {
-    "name": "Void-Touched Leather Gloves",
-    "profession": "Leatherworking",
-    "skillUpYellow": 160,
-    "skillUpGreen": 172,
-    "skillUpGray": 185,
-    "learnedAt": 160,
-    "reagents": {
-      "211422": 1,
-      "Toughened Leather Gloves": 1
-    },
-    "results": {
-      "211423": 1
-    }
-  },
-  {
-    "name": "Void-Touched Leather Gauntlets",
-    "profession": "Leatherworking",
-    "skillUpYellow": 160,
-    "skillUpGreen": 172,
-    "skillUpGray": 185,
-    "learnedAt": 160,
-    "reagents": {
-      "211422": 1,
-      "Toughened Leather Gloves": 1
-    },
-    "results": {
-      "211502": 1
-    }
-  },
-  {
-    "name": "Guardian Pants",
-    "profession": "Leatherworking",
-    "skillUpOrange": 160,
-    "skillUpYellow": 180,
-    "skillUpGreen": 190,
-    "skillUpGray": 200,
-    "price": 900,
-    "learnedAt": 160,
-    "reagents": {
-      "Heavy Leather": 12,
-      "Bolt of Silk Cloth": 2,
-      "Fine Thread": 2
-    },
-    "results": {
-      "217267": 1
     }
   },
   {
@@ -8127,7 +7966,7 @@
       "Gray Dye": 1
     },
     "results": {
-      "215366": 1
+      "Invoker's Cord": 1
     }
   },
   {
@@ -8144,25 +7983,7 @@
       "Blue Dye": 4
     },
     "results": {
-      "215365": 1
-    }
-  },
-  {
-    "name": "Earthen Vest",
-    "profession": "Tailoring",
-    "skillUpOrange": 170,
-    "skillUpYellow": 190,
-    "skillUpGreen": 205,
-    "skillUpGray": 220,
-    "price": 810,
-    "learnedAt": 170,
-    "reagents": {
-      "Bolt of Silk Cloth": 3,
-      "Elemental Earth": 1,
-      "Fine Thread": 2
-    },
-    "results": {
-      "217256": 1
+      "Invoker's Mantle": 1
     }
   },
   {
@@ -8254,21 +8075,6 @@
     }
   },
   {
-    "name": "Shifting Silver Breastplate",
-    "profession": "Blacksmithing",
-    "skillUpYellow": 175,
-    "skillUpGreen": 190,
-    "skillUpGray": 205,
-    "learnedAt": 175,
-    "reagents": {
-      "Shining Silver Breastplate": 1,
-      "211422": 1
-    },
-    "results": {
-      "210794": 1
-    }
-  },
-  {
     "name": "Enchant Weapon - Lesser Beastslayer",
     "profession": "Enchanting",
     "enchantment": true,
@@ -8332,24 +8138,6 @@
     },
     "results": {
       "Greater Mystic Wand": 1
-    }
-  },
-  {
-    "name": "Greater Mystic Wand",
-    "profession": "Enchanting",
-    "skillUpOrange": 175,
-    "skillUpYellow": 195,
-    "skillUpGreen": 215,
-    "skillUpGray": 235,
-    "price": 3000,
-    "learnedAt": 175,
-    "reagents": {
-      "Star Wood": 1,
-      "Greater Mystic Essence": 1,
-      "Vision Dust": 1
-    },
-    "results": {
-      "217287": 1
     }
   },
   {
@@ -8712,25 +8500,6 @@
     },
     "results": {
       "Azure Silk Cloak": 1
-    }
-  },
-  {
-    "name": "Crimson Silk Belt",
-    "profession": "Tailoring",
-    "skillUpOrange": 175,
-    "skillUpYellow": 195,
-    "skillUpGreen": 210,
-    "skillUpGray": 225,
-    "price": 900,
-    "learnedAt": 175,
-    "reagents": {
-      "Bolt of Silk Cloth": 4,
-      "Iron Buckle": 1,
-      "Red Dye": 2,
-      "Silken Thread": 1
-    },
-    "results": {
-      "217255": 1
     }
   },
   {
@@ -9246,40 +9015,6 @@
     }
   },
   {
-    "name": "Long Silken Cloak",
-    "profession": "Tailoring",
-    "skillUpOrange": 185,
-    "skillUpYellow": 205,
-    "skillUpGreen": 220,
-    "skillUpGray": 235,
-    "price": 900,
-    "learnedAt": 185,
-    "reagents": {
-      "Bolt of Silk Cloth": 4,
-      "Mana Potion": 1,
-      "Silken Thread": 1
-    },
-    "results": {
-      "217252": 1
-    }
-  },
-  {
-    "name": "Enchanter's Cowl",
-    "profession": "Tailoring",
-    "skillUpYellow": 185,
-    "skillUpGreen": 200,
-    "skillUpGray": 215,
-    "learnedAt": 185,
-    "reagents": {
-      "Bolt of Silk Cloth": 3,
-      "Fine Thread": 2,
-      "Thick Spider's Silk": 2
-    },
-    "results": {
-      "217257": 1
-    }
-  },
-  {
     "name": "Frost Protection Potion",
     "profession": "Alchemy",
     "skillUpOrange": 190,
@@ -9558,23 +9293,6 @@
     }
   },
   {
-    "name": "Guardian Belt",
-    "profession": "Leatherworking",
-    "skillUpYellow": 190,
-    "skillUpGreen": 200,
-    "skillUpGray": 210,
-    "learnedAt": 190,
-    "reagents": {
-      "Cured Heavy Hide": 2,
-      "Heavy Leather": 4,
-      "Fine Thread": 1,
-      "Iron Buckle": 1
-    },
-    "results": {
-      "217265": 1
-    }
-  },
-  {
     "name": "Robe of Power",
     "profession": "Tailoring",
     "skillUpOrange": 190,
@@ -9699,22 +9417,6 @@
     },
     "results": {
       "Golden Scale Cuirass": 1
-    }
-  },
-  {
-    "name": "Golden Scale Leggings",
-    "profession": "Blacksmithing",
-    "skillUpYellow": 195,
-    "skillUpGreen": 207,
-    "skillUpGray": 220,
-    "learnedAt": 195,
-    "reagents": {
-      "Iron Bar": 10,
-      "Gold Bar": 2,
-      "Heavy Grinding Stone": 1
-    },
-    "results": {
-      "217285": 1
     }
   },
   {
@@ -9856,22 +9558,6 @@
     }
   },
   {
-    "name": "Boots of the Enchanter",
-    "profession": "Tailoring",
-    "skillUpYellow": 195,
-    "skillUpGreen": 210,
-    "skillUpGray": 225,
-    "learnedAt": 195,
-    "reagents": {
-      "Bolt of Silk Cloth": 4,
-      "Silken Thread": 1,
-      "Thick Spider's Silk": 2
-    },
-    "results": {
-      "217253": 1
-    }
-  },
-  {
     "name": "Frost Oil",
     "profession": "Alchemy",
     "skillUpOrange": 200,
@@ -9904,21 +9590,6 @@
     },
     "results": {
       "Catseye Elixir": 1
-    }
-  },
-  {
-    "name": "Insulating Gniodine",
-    "profession": "Alchemy",
-    "skillUpYellow": 200,
-    "skillUpGreen": 210,
-    "skillUpGray": 220,
-    "learnedAt": 200,
-    "reagents": {
-      "Leaded Vial": 1,
-      "213371": 5
-    },
-    "results": {
-      "213372": 1
     }
   },
   {
@@ -10094,37 +9765,6 @@
     },
     "results": {
       "Truesilver Skeleton Key": 2
-    }
-  },
-  {
-    "name": "Low-Background Truesilver Plates",
-    "profession": "Blacksmithing",
-    "skillUpYellow": 200,
-    "skillUpGreen": 210,
-    "skillUpGray": 220,
-    "learnedAt": 200,
-    "reagents": {
-      "Truesilver Bar": 1,
-      "213373": 5
-    },
-    "results": {
-      "213376": 1
-    }
-  },
-  {
-    "name": "Golden Scale Shoulders",
-    "profession": "Blacksmithing",
-    "skillUpYellow": 200,
-    "skillUpGreen": 212,
-    "skillUpGray": 225,
-    "learnedAt": 200,
-    "reagents": {
-      "Steel Bar": 6,
-      "Gold Bar": 2,
-      "Heavy Grinding Stone": 1
-    },
-    "results": {
-      "217283": 1
     }
   },
   {
@@ -10348,21 +9988,6 @@
     }
   },
   {
-    "name": "Polished Truesilver Gears",
-    "profession": "Engineering",
-    "skillUpYellow": 200,
-    "skillUpGreen": 210,
-    "skillUpGray": 220,
-    "learnedAt": 200,
-    "reagents": {
-      "Truesilver Bar": 1,
-      "213381": 5
-    },
-    "results": {
-      "213383": 1
-    }
-  },
-  {
     "name": "Barbaric Belt",
     "profession": "Leatherworking",
     "skillUpOrange": 200,
@@ -10506,21 +10131,6 @@
     }
   },
   {
-    "name": "Faintly Glowing Leather",
-    "profession": "Leatherworking",
-    "skillUpYellow": 200,
-    "skillUpGreen": 210,
-    "skillUpGray": 220,
-    "learnedAt": 200,
-    "reagents": {
-      "Cured Thick Hide": 1,
-      "213370": 5
-    },
-    "results": {
-      "213369": 1
-    }
-  },
-  {
     "name": "Icy Cloak",
     "profession": "Tailoring",
     "skillUpOrange": 200,
@@ -10572,22 +10182,6 @@
     },
     "results": {
       "Black Swashbuckler's Shirt": 1
-    }
-  },
-  {
-    "name": "Hyperconductive Arcano-Filament",
-    "profession": "Tailoring",
-    "skillUpYellow": 200,
-    "skillUpGreen": 210,
-    "skillUpGray": 220,
-    "learnedAt": 200,
-    "reagents": {
-      "Bolt of Mageweave": 2,
-      "213378": 5,
-      "Heavy Silken Thread": 5
-    },
-    "results": {
-      "213379": 1
     }
   },
   {
@@ -10676,24 +10270,6 @@
     },
     "results": {
       "Golden Scale Gauntlets": 1
-    }
-  },
-  {
-    "name": "Moonsteel Broadsword",
-    "profession": "Blacksmithing",
-    "skillUpYellow": 205,
-    "skillUpGreen": 217,
-    "skillUpGray": 230,
-    "learnedAt": 205,
-    "reagents": {
-      "Steel Bar": 8,
-      "Strong Flux": 2,
-      "Heavy Grinding Stone": 2,
-      "Lesser Moonstone": 3,
-      "Heavy Leather": 3
-    },
-    "results": {
-      "217281": 1
     }
   },
   {
@@ -11029,40 +10605,6 @@
     }
   },
   {
-    "name": "Black Mageweave Vest",
-    "profession": "Tailoring",
-    "skillUpOrange": 205,
-    "skillUpYellow": 220,
-    "skillUpGreen": 235,
-    "skillUpGray": 250,
-    "price": 3600,
-    "learnedAt": 205,
-    "reagents": {
-      "Bolt of Mageweave": 2,
-      "Silken Thread": 3
-    },
-    "results": {
-      "217246": 1
-    }
-  },
-  {
-    "name": "Black Mageweave Leggings",
-    "profession": "Tailoring",
-    "skillUpOrange": 205,
-    "skillUpYellow": 220,
-    "skillUpGreen": 235,
-    "skillUpGray": 250,
-    "price": 3600,
-    "learnedAt": 205,
-    "reagents": {
-      "Bolt of Mageweave": 2,
-      "Silken Thread": 3
-    },
-    "results": {
-      "217247": 1
-    }
-  },
-  {
     "name": "Magic Resistance Potion",
     "profession": "Alchemy",
     "skillUpOrange": 210,
@@ -11094,22 +10636,6 @@
     },
     "results": {
       "Goblin Rocket Fuel": 1
-    }
-  },
-  {
-    "name": "Lesser Arcane Elixir",
-    "profession": "Alchemy",
-    "skillUpYellow": 210,
-    "skillUpGreen": 212,
-    "skillUpGray": 215,
-    "learnedAt": 210,
-    "reagents": {
-      "Kingsblood": 1,
-      "Goldthorn": 1,
-      "Crystal Vial": 1
-    },
-    "results": {
-      "217398": 1
     }
   },
   {
@@ -11336,24 +10862,6 @@
     }
   },
   {
-    "name": "Turtle Scale Breastplate",
-    "profession": "Leatherworking",
-    "skillUpOrange": 210,
-    "skillUpYellow": 230,
-    "skillUpGreen": 240,
-    "skillUpGray": 250,
-    "price": 2700,
-    "learnedAt": 210,
-    "reagents": {
-      "Thick Leather": 6,
-      "Turtle Scale": 12,
-      "Heavy Silken Thread": 1
-    },
-    "results": {
-      "217268": 1
-    }
-  },
-  {
     "name": "Crimson Silk Gloves",
     "profession": "Tailoring",
     "skillUpOrange": 210,
@@ -11407,23 +10915,6 @@
     },
     "results": {
       "Shadoweave Pants": 1
-    }
-  },
-  {
-    "name": "Crimson Silk Shoulders",
-    "profession": "Tailoring",
-    "skillUpYellow": 210,
-    "skillUpGreen": 225,
-    "skillUpGray": 240,
-    "learnedAt": 210,
-    "reagents": {
-      "Bolt of Silk Cloth": 5,
-      "Fire Oil": 2,
-      "Red Dye": 2,
-      "Silken Thread": 2
-    },
-    "results": {
-      "217250": 1
     }
   },
   {
@@ -11547,22 +11038,6 @@
     }
   },
   {
-    "name": "Golden Scale Coif",
-    "profession": "Blacksmithing",
-    "skillUpYellow": 215,
-    "skillUpGreen": 227,
-    "skillUpGray": 240,
-    "learnedAt": 215,
-    "reagents": {
-      "Steel Bar": 8,
-      "Gold Bar": 2,
-      "Heavy Grinding Stone": 2
-    },
-    "results": {
-      "217279": 1
-    }
-  },
-  {
     "name": "Enchant Boots - Stamina",
     "profession": "Enchanting",
     "enchantment": true,
@@ -11661,22 +11136,6 @@
     },
     "results": {
       "Big Voodoo Robe": 1
-    }
-  },
-  {
-    "name": "Guardian Leather Bracers",
-    "profession": "Leatherworking",
-    "skillUpYellow": 215,
-    "skillUpGreen": 225,
-    "skillUpGray": 235,
-    "learnedAt": 215,
-    "reagents": {
-      "Heavy Leather": 6,
-      "Cured Heavy Hide": 2,
-      "Silken Thread": 1
-    },
-    "results": {
-      "217263": 1
     }
   },
   {
@@ -11784,24 +11243,6 @@
     }
   },
   {
-    "name": "Earthen Silk Belt",
-    "profession": "Tailoring",
-    "skillUpYellow": 215,
-    "skillUpGreen": 230,
-    "skillUpGray": 245,
-    "learnedAt": 215,
-    "reagents": {
-      "Bolt of Silk Cloth": 5,
-      "Elemental Earth": 4,
-      "Heavy Leather": 4,
-      "Iron Buckle": 1,
-      "Silken Thread": 2
-    },
-    "results": {
-      "217248": 1
-    }
-  },
-  {
     "name": "Ornate Mithril Pants",
     "profession": "Blacksmithing",
     "skillUpOrange": 220,
@@ -11853,23 +11294,6 @@
     },
     "results": {
       "Blue Glittering Axe": 1
-    }
-  },
-  {
-    "name": "Golden Scale Cuirass",
-    "profession": "Blacksmithing",
-    "skillUpYellow": 220,
-    "skillUpGreen": 232,
-    "skillUpGray": 245,
-    "learnedAt": 220,
-    "reagents": {
-      "Steel Bar": 12,
-      "Gold Bar": 2,
-      "Heavy Grinding Stone": 4,
-      "Jade": 2
-    },
-    "results": {
-      "217277": 1
     }
   },
   {
@@ -12024,24 +11448,6 @@
     }
   },
   {
-    "name": "Crimson Silk Robe",
-    "profession": "Tailoring",
-    "skillUpYellow": 220,
-    "skillUpGreen": 235,
-    "skillUpGray": 250,
-    "learnedAt": 220,
-    "reagents": {
-      "Bolt of Silk Cloth": 8,
-      "Elemental Fire": 4,
-      "Mana Potion": 2,
-      "Red Dye": 4,
-      "Silken Thread": 1
-    },
-    "results": {
-      "217245": 1
-    }
-  },
-  {
     "name": "Wildvine Potion",
     "profession": "Alchemy",
     "skillUpOrange": 225,
@@ -12108,23 +11514,6 @@
     }
   },
   {
-    "name": "Mildly Irradiated Rejuvenation Potion",
-    "profession": "Alchemy",
-    "skillUpYellow": 225,
-    "skillUpGreen": 230,
-    "skillUpGray": 235,
-    "learnedAt": 225,
-    "reagents": {
-      "213371": 1,
-      "Minor Rejuvenation Potion": 1,
-      "215430": 3,
-      "Crystal Vial": 5
-    },
-    "results": {
-      "215162": 5
-    }
-  },
-  {
     "name": "Ornate Mithril Shoulders",
     "profession": "Blacksmithing",
     "skillUpOrange": 225,
@@ -12178,74 +11567,6 @@
     },
     "results": {
       "Wicked Mithril Blade": 1
-    }
-  },
-  {
-    "name": "Reflective Truesilver Braincage",
-    "profession": "Blacksmithing",
-    "skillUpYellow": 225,
-    "skillUpGreen": 230,
-    "skillUpGray": 235,
-    "learnedAt": 225,
-    "reagents": {
-      "Mithril Bar": 25,
-      "213376": 4,
-      "213379": 2,
-      "213383": 1
-    },
-    "results": {
-      "215167": 1
-    }
-  },
-  {
-    "name": "Tempered Interference-Negating Helmet",
-    "profession": "Blacksmithing",
-    "skillUpYellow": 225,
-    "skillUpGreen": 230,
-    "skillUpGray": 235,
-    "learnedAt": 225,
-    "reagents": {
-      "Mithril Bar": 25,
-      "213376": 4,
-      "213379": 1,
-      "213369": 2
-    },
-    "results": {
-      "215161": 1
-    }
-  },
-  {
-    "name": "Golden Scale Gauntlets",
-    "profession": "Blacksmithing",
-    "skillUpYellow": 225,
-    "skillUpGreen": 235,
-    "skillUpGray": 245,
-    "learnedAt": 225,
-    "reagents": {
-      "Steel Bar": 10,
-      "Gold Bar": 4,
-      "Heavy Grinding Stone": 4,
-      "Citrine": 1
-    },
-    "results": {
-      "217273": 1
-    }
-  },
-  {
-    "name": "Golden Scale Boots",
-    "profession": "Blacksmithing",
-    "skillUpYellow": 225,
-    "skillUpGreen": 237,
-    "skillUpGray": 250,
-    "learnedAt": 225,
-    "reagents": {
-      "Steel Bar": 10,
-      "Gold Bar": 4,
-      "Heavy Grinding Stone": 4,
-      "Citrine": 1
-    },
-    "results": {
-      "217275": 1
     }
   },
   {
@@ -12309,20 +11630,6 @@
       "Lesser Nether Essence": 1
     },
     "results": {}
-  },
-  {
-    "name": "Sigil of Innovation",
-    "profession": "Enchanting",
-    "skillUpYellow": 225,
-    "skillUpGreen": 227,
-    "skillUpGray": 230,
-    "learnedAt": 225,
-    "reagents": {
-      "Vision Dust": 5
-    },
-    "results": {
-      "217308": 1
-    }
   },
   {
     "name": "Goblin Rocket Boots",
@@ -12483,74 +11790,6 @@
     }
   },
   {
-    "name": "Whirling Truesilver Gearwall",
-    "profession": "Engineering",
-    "skillUpYellow": 225,
-    "skillUpGreen": 232,
-    "skillUpGray": 240,
-    "learnedAt": 225,
-    "reagents": {
-      "213376": 3,
-      "213383": 5,
-      "213369": 2,
-      "Mithril Casing": 2,
-      "Gyrochronatom": 2,
-      "Mithril Bar": 15
-    },
-    "results": {
-      "213390": 1
-    }
-  },
-  {
-    "name": "Hyperconductive Goldwap",
-    "profession": "Engineering",
-    "skillUpYellow": 225,
-    "skillUpGreen": 230,
-    "skillUpGray": 235,
-    "learnedAt": 225,
-    "reagents": {
-      "213383": 3,
-      "213379": 3,
-      "213369": 1,
-      "Gold Bar": 10
-    },
-    "results": {
-      "215115": 1
-    }
-  },
-  {
-    "name": "High-Yield Radiation Bomb",
-    "profession": "Engineering",
-    "skillUpYellow": 225,
-    "skillUpGreen": 230,
-    "skillUpGray": 235,
-    "learnedAt": 225,
-    "reagents": {
-      "Solid Blasting Powder": 1,
-      "215430": 1,
-      "Mithril Bar": 2
-    },
-    "results": {
-      "215127": 2
-    }
-  },
-  {
-    "name": "Ez-Thro Radiation Bomb",
-    "profession": "Engineering",
-    "skillUpYellow": 225,
-    "skillUpGreen": 230,
-    "skillUpGray": 235,
-    "learnedAt": 225,
-    "reagents": {
-      "Solid Blasting Powder": 2,
-      "215430": 1,
-      "Mithril Bar": 2
-    },
-    "results": {
-      "215168": 2
-    }
-  },
-  {
     "name": "Tough Scorpid Gloves",
     "profession": "Leatherworking",
     "skillUpOrange": 225,
@@ -12679,90 +11918,6 @@
     }
   },
   {
-    "name": "Glowing Gneuro-Linked Cowl",
-    "profession": "Leatherworking",
-    "skillUpYellow": 225,
-    "skillUpGreen": 230,
-    "skillUpGray": 235,
-    "learnedAt": 225,
-    "reagents": {
-      "213379": 1,
-      "Cured Thick Hide": 5,
-      "Silken Thread": 2,
-      "213369": 5
-    },
-    "results": {
-      "215166": 1
-    }
-  },
-  {
-    "name": "Glowing Hyperconductive Scale Coif",
-    "profession": "Leatherworking",
-    "skillUpYellow": 225,
-    "skillUpGreen": 230,
-    "skillUpGray": 235,
-    "learnedAt": 225,
-    "reagents": {
-      "213376": 1,
-      "Thick Murloc Scale": 10,
-      "213369": 5,
-      "213372": 1
-    },
-    "results": {
-      "215114": 1
-    }
-  },
-  {
-    "name": "Gneuro-Conductive Channeler's Hood",
-    "profession": "Leatherworking",
-    "skillUpYellow": 225,
-    "skillUpGreen": 230,
-    "skillUpGray": 235,
-    "learnedAt": 225,
-    "reagents": {
-      "213372": 1,
-      "Cured Thick Hide": 5,
-      "213369": 5,
-      "213379": 1
-    },
-    "results": {
-      "215381": 1
-    }
-  },
-  {
-    "name": "Rad-Resistant Scale Hood",
-    "profession": "Leatherworking",
-    "skillUpYellow": 225,
-    "skillUpGreen": 230,
-    "skillUpGray": 235,
-    "learnedAt": 225,
-    "reagents": {
-      "213376": 1,
-      "Cured Thick Hide": 5,
-      "213369": 5,
-      "213372": 1
-    },
-    "results": {
-      "215382": 1
-    }
-  },
-  {
-    "name": "Turtle Scale Gloves",
-    "profession": "Leatherworking",
-    "skillUpYellow": 225,
-    "skillUpGreen": 235,
-    "skillUpGray": 245,
-    "learnedAt": 225,
-    "reagents": {
-      "Thick Leather": 6,
-      "Turtle Scale": 8,
-      "Heavy Silken Thread": 1
-    },
-    "results": {
-      "217270": 1
-    }
-  },
-  {
     "name": "Mageweave Bag",
     "profession": "Tailoring",
     "skillUpOrange": 225,
@@ -12885,24 +12040,6 @@
     },
     "results": {
       "Enchanted Mageweave Pouch": 1
-    }
-  },
-  {
-    "name": "Gneuro-Linked Arcano-Filament Monocle",
-    "profession": "Tailoring",
-    "skillUpYellow": 225,
-    "skillUpGreen": 230,
-    "skillUpGray": 235,
-    "learnedAt": 225,
-    "reagents": {
-      "213379": 5,
-      "213369": 1,
-      "213372": 1,
-      "Vision Dust": 10,
-      "Bolt of Mageweave": 10
-    },
-    "results": {
-      "215111": 1
     }
   },
   {
@@ -13565,22 +12702,6 @@
     }
   },
   {
-    "name": "Big Voodoo Robe",
-    "profession": "Leatherworking",
-    "skillUpYellow": 235,
-    "skillUpGreen": 245,
-    "skillUpGray": 255,
-    "learnedAt": 235,
-    "reagents": {
-      "Thick Leather": 10,
-      "Flask of Mojo": 4,
-      "Heavy Silken Thread": 1
-    },
-    "results": {
-      "217261": 1
-    }
-  },
-  {
     "name": "Shadoweave Shoulders",
     "profession": "Tailoring",
     "skillUpOrange": 235,
@@ -13896,22 +13017,6 @@
     },
     "results": {
       "Tough Scorpid Shoulders": 1
-    }
-  },
-  {
-    "name": "Big Voodoo Mask",
-    "profession": "Leatherworking",
-    "skillUpYellow": 240,
-    "skillUpGreen": 250,
-    "skillUpGray": 260,
-    "learnedAt": 240,
-    "reagents": {
-      "Thick Leather": 8,
-      "Flask of Mojo": 6,
-      "Heavy Silken Thread": 1
-    },
-    "results": {
-      "217259": 1
     }
   },
   {
@@ -14421,54 +13526,6 @@
     }
   },
   {
-    "name": "Flask of Everlasting Nightmares",
-    "profession": "Alchemy",
-    "skillUpYellow": 250,
-    "skillUpGreen": 255,
-    "skillUpGray": 260,
-    "learnedAt": 250,
-    "reagents": {
-      "221021": 10,
-      "220688": 1,
-      "Crystal Vial": 1
-    },
-    "results": {
-      "221024": 1
-    }
-  },
-  {
-    "name": "Flask of Nightmarish Mojo",
-    "profession": "Alchemy",
-    "skillUpYellow": 250,
-    "skillUpGreen": 255,
-    "skillUpGray": 260,
-    "learnedAt": 250,
-    "reagents": {
-      "221021": 5,
-      "Crystal Vial": 1,
-      "221312": 5
-    },
-    "results": {
-      "221313": 1
-    }
-  },
-  {
-    "name": "Flask of Restless Dreams",
-    "profession": "Alchemy",
-    "skillUpYellow": 250,
-    "skillUpGreen": 255,
-    "skillUpGray": 260,
-    "learnedAt": 250,
-    "reagents": {
-      "221021": 10,
-      "220688": 1,
-      "Crystal Vial": 1
-    },
-    "results": {
-      "222952": 1
-    }
-  },
-  {
     "name": "Blight",
     "profession": "Blacksmithing",
     "skillUpOrange": 250,
@@ -14571,51 +13628,6 @@
     }
   },
   {
-    "name": "Shoulderplates of Dread",
-    "profession": "Blacksmithing",
-    "skillUpYellow": 250,
-    "skillUpGreen": 255,
-    "skillUpGray": 260,
-    "learnedAt": 250,
-    "reagents": {
-      "221021": 10,
-      "220688": 1
-    },
-    "results": {
-      "220738": 1
-    }
-  },
-  {
-    "name": "Fearmonger's Shoulderguards",
-    "profession": "Blacksmithing",
-    "skillUpYellow": 250,
-    "skillUpGreen": 255,
-    "skillUpGray": 260,
-    "learnedAt": 250,
-    "reagents": {
-      "221021": 10,
-      "220688": 1
-    },
-    "results": {
-      "220740": 1
-    }
-  },
-  {
-    "name": "Baleful Pauldrons",
-    "profession": "Blacksmithing",
-    "skillUpYellow": 250,
-    "skillUpGreen": 255,
-    "skillUpGray": 260,
-    "learnedAt": 250,
-    "reagents": {
-      "221021": 10,
-      "220688": 1
-    },
-    "results": {
-      "220739": 1
-    }
-  },
-  {
     "name": "Enchant Gloves - Riding Skill",
     "profession": "Enchanting",
     "enchantment": true,
@@ -14695,20 +13707,6 @@
     },
     "results": {
       "Lesser Mana Oil": 0
-    }
-  },
-  {
-    "name": "Sigil of Living Dreams",
-    "profession": "Enchanting",
-    "skillUpYellow": 250,
-    "skillUpGreen": 255,
-    "skillUpGray": 260,
-    "learnedAt": 250,
-    "reagents": {
-      "Dream Dust": 5
-    },
-    "results": {
-      "221028": 1
     }
   },
   {
@@ -14817,60 +13815,6 @@
     },
     "results": {
       "Tranquil Mechanical Yeti": 1
-    }
-  },
-  {
-    "name": "Void-Powered Invoker's Vambraces",
-    "profession": "Engineering",
-    "skillUpYellow": 250,
-    "skillUpGreen": 255,
-    "skillUpGray": 260,
-    "learnedAt": 250,
-    "reagents": {
-      "221021": 10,
-      "220688": 1,
-      "220689": 1,
-      "Gold Power Core": 2,
-      "Thorium Widget": 2
-    },
-    "results": {
-      "221025": 1
-    }
-  },
-  {
-    "name": "Void-Powered Slayer's Vambraces",
-    "profession": "Engineering",
-    "skillUpYellow": 250,
-    "skillUpGreen": 255,
-    "skillUpGray": 260,
-    "learnedAt": 250,
-    "reagents": {
-      "221021": 10,
-      "220688": 1,
-      "220689": 1,
-      "Dense Blasting Powder": 3,
-      "Star Ruby": 2
-    },
-    "results": {
-      "221026": 1
-    }
-  },
-  {
-    "name": "Void-Powered Protector's Vambraces",
-    "profession": "Engineering",
-    "skillUpYellow": 250,
-    "skillUpGreen": 255,
-    "skillUpGray": 260,
-    "learnedAt": 250,
-    "reagents": {
-      "221021": 10,
-      "220688": 1,
-      "220689": 1,
-      "Gold Power Core": 2,
-      "Thorium Tube": 2
-    },
-    "results": {
-      "221027": 1
     }
   },
   {
@@ -15014,108 +13958,6 @@
     }
   },
   {
-    "name": "Paranoia Mantle",
-    "profession": "Leatherworking",
-    "skillUpYellow": 250,
-    "skillUpGreen": 255,
-    "skillUpGray": 260,
-    "learnedAt": 250,
-    "reagents": {
-      "221021": 10,
-      "220688": 1,
-      "Chimera Leather": 8,
-      "Rugged Leather": 4
-    },
-    "results": {
-      "220747": 1
-    }
-  },
-  {
-    "name": "Shrieking Spaulders",
-    "profession": "Leatherworking",
-    "skillUpYellow": 250,
-    "skillUpGreen": 255,
-    "skillUpGray": 260,
-    "learnedAt": 250,
-    "reagents": {
-      "221021": 10,
-      "220688": 1,
-      "Black Dragonscale": 8,
-      "Rugged Leather": 8
-    },
-    "results": {
-      "220742": 1
-    }
-  },
-  {
-    "name": "Cacophonous Chain Shoulderguards",
-    "profession": "Leatherworking",
-    "skillUpYellow": 250,
-    "skillUpGreen": 255,
-    "skillUpGray": 260,
-    "learnedAt": 250,
-    "reagents": {
-      "221021": 10,
-      "220688": 1,
-      "Black Dragonscale": 4,
-      "Rugged Leather": 10
-    },
-    "results": {
-      "220743": 1
-    }
-  },
-  {
-    "name": "Shoulderpads of Obsession",
-    "profession": "Leatherworking",
-    "skillUpYellow": 250,
-    "skillUpGreen": 255,
-    "skillUpGray": 260,
-    "learnedAt": 250,
-    "reagents": {
-      "221021": 10,
-      "220688": 1,
-      "Essence of Water": 1,
-      "Rugged Leather": 12
-    },
-    "results": {
-      "220748": 1
-    }
-  },
-  {
-    "name": "Wailing Chain Mantle",
-    "profession": "Leatherworking",
-    "skillUpYellow": 250,
-    "skillUpGreen": 255,
-    "skillUpGray": 260,
-    "learnedAt": 250,
-    "reagents": {
-      "221021": 10,
-      "220688": 1,
-      "Green Dragonscale": 8,
-      "Rugged Leather": 8
-    },
-    "results": {
-      "220744": 1
-    }
-  },
-  {
-    "name": "Membrane of Dark Neurosis",
-    "profession": "Leatherworking",
-    "skillUpYellow": 250,
-    "skillUpGreen": 255,
-    "skillUpGray": 260,
-    "learnedAt": 250,
-    "reagents": {
-      "221021": 10,
-      "220688": 1,
-      "Cured Rugged Hide": 2,
-      "Rugged Leather": 6
-    },
-    "results": {
-      "220745": 1
-    }
-  },
-  {
     "name": "Smelt Thorium",
     "profession": "Mining",
     "skillUpOrange": 250,
@@ -15250,58 +14092,6 @@
     },
     "results": {
       "Festival Suit": 1
-    }
-  },
-  {
-    "name": "Fractured Mind Pauldrons",
-    "profession": "Tailoring",
-    "skillUpYellow": 250,
-    "skillUpGreen": 255,
-    "skillUpGray": 260,
-    "learnedAt": 250,
-    "reagents": {
-      "221021": 10,
-      "220688": 1,
-      "Felcloth": 8,
-      "Bolt of Runecloth": 8
-    },
-    "results": {
-      "220750": 1
-    }
-  },
-  {
-    "name": "Mantle of Insanity",
-    "profession": "Tailoring",
-    "skillUpYellow": 250,
-    "skillUpGreen": 255,
-    "skillUpGray": 260,
-    "learnedAt": 250,
-    "reagents": {
-      "221021": 10,
-      "220688": 1,
-      "Living Essence": 4,
-      "Bolt of Runecloth": 10
-    },
-    "results": {
-      "220749": 1
-    }
-  },
-  {
-    "name": "Shoulderpads of the Deranged",
-    "profession": "Tailoring",
-    "skillUpYellow": 250,
-    "skillUpGreen": 255,
-    "skillUpGray": 260,
-    "learnedAt": 250,
-    "reagents": {
-      "221021": 10,
-      "220688": 1,
-      "Felcloth": 6,
-      "Essence of Water": 1,
-      "Bolt of Runecloth": 3
-    },
-    "results": {
-      "220751": 1
     }
   },
   {
@@ -18855,7 +17645,7 @@
       "Black Lotus": 4
     },
     "results": {
-      "13503": 1
+      "Alchemist's Stone": 1
     }
   },
   {

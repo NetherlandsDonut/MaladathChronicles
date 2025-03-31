@@ -148,6 +148,8 @@ public class Inventory
     //This extension automatically asigns a spot in the inventory for the item
     public void AddNewItem(Item item)
     {
+        item.x = -1;
+        item.y = -1;
         items.Add(item);
         for (int j = 0; j < 6; j++)
             for (int i = 0; i < 5; i++)

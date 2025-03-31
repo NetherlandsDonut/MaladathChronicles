@@ -78,44 +78,116 @@ public static class Root
     public static float animationTime;
     public static float animatedSpriteTime;
 
+    #region Moving Items
+
+    //Item that is being moved
     public static Item movingItem;
 
-    public static void PickUpMovingItem(Highlightable h)
+    //From which window is the item being moved from
+    public static string movingItemFrom;
+
+    //Coordinates of the moving item for split pick up
+    public static int movingItemX, movingItemY;
+
+    //Is the picked up moving item a split off
+    //If it is, you cannot place a split off on an already
+    //existing item as that would make you lack one space for the previous one
+    public static bool movingItemSplitOff;
+
+    //Close moving item on closing of a window or switch of a desktop
+    public static void CloseMovingItem()
     {
-        var bigButtonIndex = h.region.bigButtons.IndexOf(h.GetComponent<LineBigButton>());
-        var regionIndex = h.window.headerGroup.regions.IndexOf(h.region) - 1;
-        movingItem = SaveGame.currentSave.player.inventory.items.Find(x => x.x == bigButtonIndex && x.y == regionIndex);
-        SaveGame.currentSave.player.inventory.items.Remove(movingItem);
+        if (movingItemFrom == "Bank") SaveGame.currentSave.banks[SiteTown.town.name].items.Add(movingItem);
+        else SaveGame.currentSave.player.inventory.items.Add(movingItem);
+        Cursor.cursor.iconAttached.SetActive(false);
+        movingItem = null;
+        Respawn("Inventory", true);
+        Respawn("Bank", true);
+    }
+
+    //Pick up an item to move it
+    public static void PickUpMovingItem(string window, Highlightable h, int amount = 0)
+    {
+        movingItemFrom = window;
+        var bigButtonIndex = h == null ? movingItemX : h.region.bigButtons.IndexOf(h.GetComponent<LineBigButton>());
+        var regionIndex = h == null ? movingItemY : h.window.headerGroup.regions.IndexOf(h.region) - (movingItemFrom == "Bank" ? 2 : 1);
+        movingItem = (movingItemFrom == "Bank" ? SaveGame.currentSave.banks[SiteTown.town.name].items : SaveGame.currentSave.player.inventory.items).Find(x => x.x == bigButtonIndex && x.y == regionIndex);
+        movingItemSplitOff = false;
+        if (amount != 0 && amount < movingItem.amount)
+        {
+            movingItem.amount -= amount;
+            movingItem = movingItem.CopyItem(amount);
+            movingItemSplitOff = true;
+        }
+        else if (movingItemFrom == "Bank") SaveGame.currentSave.banks[SiteTown.town.name].items.Remove(movingItem);
+        else SaveGame.currentSave.player.inventory.items.Remove(movingItem);
         PlaySound(movingItem.ItemSound("PickUp"), 0.8f);
         Cursor.cursor.iconAttached.SetActive(true);
         Cursor.cursor.iconAttached.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Buttons/" + movingItem.icon);
+        if (movingItemFrom == "Bank") Respawn("Inventory", true);
+        else Respawn("Bank", true);
     }
 
+    //Put down an item into an inventory
     public static void PutDownMovingItem(Highlightable h)
     {
-        SaveGame.currentSave.player.inventory.AddNewItem(movingItem);
+        if (h.window.title == "Bank") SaveGame.currentSave.banks[SiteTown.town.name].AddNewItem(movingItem);
+        else SaveGame.currentSave.player.inventory.AddNewItem(movingItem);
         var bigButtonIndex = h.region.bigButtons.IndexOf(h.GetComponent<LineBigButton>());
-        var regionIndex = h.window.headerGroup.regions.IndexOf(h.region) - 1;
+        var regionIndex = h.window.headerGroup.regions.IndexOf(h.region) - (h.window.title == "Bank" ? 2 : 1);
         movingItem.x = bigButtonIndex;
         movingItem.y = regionIndex;
         PlaySound(movingItem.ItemSound("PutDown"), 0.8f);
         movingItem = null;
         Cursor.cursor.iconAttached.SetActive(false);
+        if (h.window.title == "Bank") Respawn("Inventory", true);
+        else Respawn("Bank", true);
     }
 
+    //Swap moving item with the one at clicked position
+    //If they can stack together, do that
+    //If moving a split off you have to put it on a free space or same item type
     public static void SwapMovingItem(Highlightable h)
     {
         var bigButtonIndex = h.region.bigButtons.IndexOf(h.GetComponent<LineBigButton>());
-        var regionIndex = h.window.headerGroup.regions.IndexOf(h.region) - 1;
-        var temp = SaveGame.currentSave.player.inventory.items.Find(x => x.x == bigButtonIndex && x.y == regionIndex);
-        SaveGame.currentSave.player.inventory.AddNewItem(movingItem);
-        movingItem.x = bigButtonIndex;
-        movingItem.y = regionIndex;
+        var regionIndex = h.window.headerGroup.regions.IndexOf(h.region) - (h.window.title == "Bank" ? 2 : 1);
+        var temp = (h.window.title == "Bank" ? SaveGame.currentSave.banks[SiteTown.town.name].items : SaveGame.currentSave.player.inventory.items).Find(x => x.x == bigButtonIndex && x.y == regionIndex);
         PlaySound(movingItem.ItemSound("PutDown"), 0.8f);
-        movingItem = temp;
-        SaveGame.currentSave.player.inventory.items.Remove(movingItem);
-        Cursor.cursor.iconAttached.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Buttons/" + movingItem.icon);
+        if (temp.name == movingItem.name && temp.amount + movingItem.amount <= temp.maxStack)
+        {
+            temp.amount += movingItem.amount;
+            movingItem = null;
+            Cursor.cursor.iconAttached.SetActive(false);
+        }
+        else if (temp.name == movingItem.name && temp.amount + movingItem.amount > temp.maxStack)
+        {
+            movingItem.amount -= temp.maxStack - temp.amount;
+            temp.amount = temp.maxStack;
+        }
+        else if (!movingItemSplitOff)
+        {
+            if (h.window.title == "Bank") SaveGame.currentSave.banks[SiteTown.town.name].AddNewItem(movingItem);
+            else SaveGame.currentSave.player.inventory.AddNewItem(movingItem);
+            movingItem.x = bigButtonIndex;
+            movingItem.y = regionIndex;
+            movingItem = temp;
+            if (h.window.title == "Bank") SaveGame.currentSave.banks[SiteTown.town.name].items.Remove(movingItem);
+            else SaveGame.currentSave.player.inventory.items.Remove(movingItem);
+            Cursor.cursor.iconAttached.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Buttons/" + movingItem.icon);
+        }
+        else
+        {
+            if (movingItemFrom == "Bank") SaveGame.currentSave.banks[SiteTown.town.name].AddItem(movingItem);
+            else SaveGame.currentSave.player.inventory.AddItem(movingItem);
+            movingItem = null;
+            Cursor.cursor.iconAttached.SetActive(false);
+            SpawnFallingText(new Vector2(0, 34), "Couldn't split the items", "Red");
+            if (h.window.title == "Bank") Respawn("Inventory", true);
+            else Respawn("Bank", true);
+        }
     }
+
+    #endregion
 
     public static Desktop CDesktop, LBDesktop;
 
@@ -200,6 +272,7 @@ public static class Root
         Cursor.cursor.ResetColor();
         if (CDesktop != null && CDesktop.title == name) return;
         var windows = CDesktop != null ? CDesktop.windows.Select(x => x.title).ToList() : null;
+        if (movingItem != null && CDesktop.windows.Any(x => x.title == "Inventory")) CloseMovingItem();
         if (mouseOver != null) mouseOver.OnMouseExit();
         if (CDesktop != null) CDesktop.gameObject.SetActive(false);
         var find = desktops.Find(x => x.title == name);
@@ -335,6 +408,7 @@ public static class Root
 
     public static bool CloseWindow(string windowName, bool resetPagination = true)
     {
+        if (windowName == "Inventory" && movingItem != null) CloseMovingItem();
         return CDesktop != null && CloseWindow(CDesktop.windows.Find(x => x.title == windowName), resetPagination);
     }
 

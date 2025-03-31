@@ -2153,13 +2153,6 @@ public class Blueprint
             AddHeaderRegion(() =>
             {
                 AddLine("Inventory:");
-                AddSmallButton("OtherReverse", (h) =>
-                {
-                    currentSave.player.inventory.items.Reverse();
-                    CloseWindow("Inventory");
-                    SpawnWindowBlueprint("Inventory");
-                    PlaySound("DesktopInventorySort", 0.4f);
-                });
                 if (!WindowUp("ConfirmItemDestroy") && !WindowUp("ConfirmItemDisenchant") && !WindowUp("InventorySettings") && !WindowUp("BankSort") && !WindowUp("VendorSort") && !WindowUp("InventorySort"))
                     AddSmallButton("OtherSort", (h) =>
                     {
@@ -4195,7 +4188,7 @@ public class Blueprint
         }),
         new("Bank", () => {
             SetAnchor(TopLeft, 19, -38);
-            AddRegionGroup();
+            AddHeaderGroup();
             SetRegionGroupHeight(281);
             var items = currentSave.banks[town.name].items;
             AddHeaderRegion(() =>
@@ -4214,13 +4207,6 @@ public class Blueprint
             AddHeaderRegion(() =>
             {
                 AddLine("Bank:");
-                AddSmallButton("OtherReverse", (h) =>
-                {
-                    currentSave.banks[town.name].items.Reverse();
-                    Respawn("Bank");
-                    Respawn("Inventory");
-                    PlaySound("DesktopInventorySort", 0.4f);
-                });
                 if (!WindowUp("InventorySettings") && !WindowUp("InventorySort") && !WindowUp("BankSort"))
                     AddSmallButton("OtherSort", (h) =>
                     {
@@ -4238,9 +4224,12 @@ public class Blueprint
                     () =>
                     {
                         for (int j = 0; j < 5; j++)
-                            if (index * 5 + j >= currentSave.banks[town.name].BagSpace()) AddBigButton("OtherNoSlot");
-                            else if (items.Count > index * 5 + j) PrintBankItem(items[index * 5 + j]);
+                        {
+                            var findItem = items.Find(x => x.y == index && x.x == j);
+                            if (findItem != null) PrintBankItem(findItem);
+                            else if (movingItem != null) AddBigButton("OtherEmpty", (h) => PutDownMovingItem(h));
                             else AddBigButton("OtherEmpty");
+                        }
                     }
                 );
             }
@@ -4269,6 +4258,7 @@ public class Blueprint
             (h) =>
             {
                 currentSave.banks[town.name].items = currentSave.banks[town.name].items.OrderBy(x => x.name).ToList();
+                currentSave.banks[town.name].ApplySortOrder();
                 CloseWindow("BankSort");
                 CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.4f);
@@ -4280,6 +4270,7 @@ public class Blueprint
             (h) =>
             {
                 currentSave.banks[town.name].items = currentSave.banks[town.name].items.OrderBy(x => x.amount).ToList();
+                currentSave.banks[town.name].ApplySortOrder();
                 CloseWindow("BankSort");
                 CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.4f);
@@ -4291,6 +4282,7 @@ public class Blueprint
             (h) =>
             {
                 currentSave.banks[town.name].items = currentSave.banks[town.name].items.OrderByDescending(x => x.ilvl).ToList();
+                currentSave.banks[town.name].ApplySortOrder();
                 CloseWindow("BankSort");
                 CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.4f);
@@ -4302,6 +4294,7 @@ public class Blueprint
             (h) =>
             {
                 currentSave.banks[town.name].items = currentSave.banks[town.name].items.OrderByDescending(x => x.price).ToList();
+                currentSave.banks[town.name].ApplySortOrder();
                 CloseWindow("BankSort");
                 CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.4f);
@@ -4313,6 +4306,7 @@ public class Blueprint
             (h) =>
             {
                 currentSave.banks[town.name].items = currentSave.banks[town.name].items.OrderByDescending(x => x.type).ToList();
+                currentSave.banks[town.name].ApplySortOrder();
                 CloseWindow("BankSort");
                 CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.4f);
@@ -6961,8 +6955,26 @@ public class Blueprint
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(Escape, () =>
             {
-                PlaySound("DesktopInventoryClose");
-                CloseDesktop("EquipmentScreen");
+                if (Cursor.cursor.color == "Pink")
+                {
+                    Cursor.cursor.ResetColor();
+                    Respawn("PlayerEquipmentInfo", true);
+                    Respawn("Inventory", true);
+                }
+                else if (movingItem != null)
+                {
+                    currentSave.player.inventory.items.Add(movingItem);
+                    PlaySound(movingItem.ItemSound("PutDown"), 0.8f);
+                    Cursor.cursor.iconAttached.SetActive(false);
+                    movingItem = null;
+                    Respawn("PlayerEquipmentInfo", true);
+                    Respawn("Inventory", true);
+                }
+                else
+                {
+                    PlaySound("DesktopInventoryClose");
+                    CloseDesktop("EquipmentScreen");
+                }
             });
         }),
         new("BestiaryScreen", () => 

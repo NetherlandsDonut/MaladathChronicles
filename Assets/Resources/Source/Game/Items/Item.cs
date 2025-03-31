@@ -435,10 +435,34 @@ public class Item
     public static void PrintBankItem(Item item)
     {
         AddBigButton(item.icon,
-            null,
             (h) =>
             {
-                if (currentSave.player.inventory.CanAddItem(item))
+                if (movingItem == null)
+                {
+                    if (item.amount > 1 && Input.GetKey(KeyCode.LeftShift))
+                    {
+                        String.splitAmount.Set("");
+                        SpawnWindowBlueprint("SplitItem");
+                        CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
+                        movingItemX = h.region.bigButtons.IndexOf(h.GetComponent<LineBigButton>());
+                        movingItemY = h.window.headerGroup.regions.IndexOf(h.region) - 2;
+                        splitDelegate = () =>
+                        {
+                            var amount = int.Parse(String.splitAmount.value == "" ? "0" : String.splitAmount.value);
+                            if (amount >= item.amount) PickUpMovingItem("Bank", null);
+                            else PickUpMovingItem("Bank", null, amount);
+                            Respawn("Bank", true);
+                            Respawn("Inventory", true);
+                        };
+                    }
+                    else PickUpMovingItem("Bank", h);
+                }
+                else if (movingItem != null)
+                    SwapMovingItem(h);
+            },
+            (h) =>
+            {
+                if (movingItem == null && currentSave.player.inventory.CanAddItem(item))
                 {
                     if (item.amount > 1 && Input.GetKey(KeyCode.LeftShift))
                     {
@@ -482,7 +506,7 @@ public class Item
         );
         if (settings.rarityIndicators.Value())
             AddBigButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 2);
-        if (item.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (currentSave.banks[town.name].items.IndexOf(item) % 5), item.amount + "", "", "Right");
+        if (item.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.position + new Vector3(32, -27) + new Vector3(38, 0) * item.x, item.amount + "", "", "Right");
     }
 
     public static void PrintVendorItem(StockItem stockItem, Item buyback)
@@ -492,7 +516,7 @@ public class Item
             null,
             (h) =>
             {
-                if (currentSave.player.inventory.CanAddItem(item))
+                if (movingItem == null && currentSave.player.inventory.CanAddItem(item))
                 {
                     if (buyback != null)
                     {
@@ -618,14 +642,28 @@ public class Item
                         SpawnWindowBlueprint("ConfirmItemDisenchant");
                     }
                 }
-                else if (movingItem == null)
+                if (movingItem == null)
                 {
-                    PickUpMovingItem(h);
+                    if (item.amount > 1 && Input.GetKey(KeyCode.LeftShift))
+                    {
+                        String.splitAmount.Set("");
+                        SpawnWindowBlueprint("SplitItem");
+                        CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
+                        movingItemX = h.region.bigButtons.IndexOf(h.GetComponent<LineBigButton>());
+                        movingItemY = h.window.headerGroup.regions.IndexOf(h.region) - 1;
+                        splitDelegate = () =>
+                        {
+                            var amount = int.Parse(String.splitAmount.value == "" ? "0" : String.splitAmount.value);
+                            if (amount >= item.amount) PickUpMovingItem("Inventory", null);
+                            else PickUpMovingItem("Inventory", null, amount);
+                            Respawn("Inventory", true);
+                            Respawn("Bank", true);
+                        };
+                    }
+                    else PickUpMovingItem("Inventory", h);
                 }
                 else if (movingItem != null)
-                {
                     SwapMovingItem(h);
-                }
             },
             (h) =>
             {

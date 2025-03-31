@@ -70,6 +70,7 @@ public class InputLine : MonoBehaviour
                          settings.selectedCharacter = saves[settings.selectedRealm].Last(x => !x.player.dead).player.name;
                     else settings.selectedCharacter = "";
                     CloseWindow("ConfirmDeleteCharacter");
+                    Sound.PlaySound("DesktopButtonClose");
                     RemoveDesktopBackground();
                     Respawn("CharacterInfo");
                     Respawn("CharacterRoster");
