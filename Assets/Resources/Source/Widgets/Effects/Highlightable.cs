@@ -71,20 +71,6 @@ public class Highlightable : MonoBehaviour
         if (window != null && desktops.Contains(window.desktop))
             CloseWindow("Tooltip");
         Root.tooltip = null;
-        //if (window.title == "Inventory" && cursor.IsNow(Click) && window.headerGroup != null && window.headerGroup.regions.IndexOf(region) >= 1 && window.headerGroup.regions.IndexOf(region) <= 6)
-        //{
-        //    var bigButtonIndex = region.bigButtons.IndexOf(GetComponent<LineBigButton>());
-        //    var regionIndex = window.headerGroup.regions.IndexOf(region) - 1;
-        //    movingItem = currentSave.player.inventory.items.Find(x => x.x == bigButtonIndex && x.y == regionIndex);
-        //    if (movingItem != null)
-        //    {
-        //        currentSave.player.inventory.items.Remove(movingItem);
-        //        PlaySound(movingItem.ItemSound("PickUp"), 0.8f);
-        //        Respawn("Inventory");
-        //    }
-        //    cursor.SetCursor(Default);
-        //}
-        //else
         if (cursor.IsNow(Click) || cursor.IsNow(Write) || cursor.IsNow(Hook))
             cursor.SetCursor(Default);
         render.color = defaultColor;

@@ -1,4 +1,3 @@
-using System.Linq;
 using UnityEngine;
 
 using static Buff;
@@ -69,13 +68,7 @@ public class FlyingBuff : MonoBehaviour
             buff.transform.position = position;
             var fly = buff.GetComponent<FlyingBuff>();
         fly.Initiate(Board.board.participants.FindIndex(x => x.who == target));
-        buff.GetComponent<Highlightable>().Initialise(null, null, 
-            (h) =>
-            {
-                var fb = h.GetComponent<FlyingBuff>();
-                var buff = Board.board.participants[fb.onWho].who.buffs.Find(x => x.flyingBuff == h.gameObject);
-                Board.board.participants[fb.onWho].who.RemoveBuff(buff);
-            },
+        buff.GetComponent<Highlightable>().Initialise(null, null, null,
             (h) => () =>
             {
                 var fb = h.GetComponent<FlyingBuff>();
