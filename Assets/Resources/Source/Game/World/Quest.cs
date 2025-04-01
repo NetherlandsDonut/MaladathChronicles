@@ -417,6 +417,7 @@ public class Quest
                     Respawn("InstanceQuestDone", true);
                     Respawn("HostileAreaQuestDone", true);
                     Respawn("TownQuestDone", true);
+                    Respawn("HostileArea", true);
                     Respawn("QuestList", true);
                     Respawn("PlayerMoney", true);
                     Respawn("Chest", true);

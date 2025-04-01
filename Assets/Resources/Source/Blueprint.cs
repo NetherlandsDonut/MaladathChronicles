@@ -3179,7 +3179,11 @@ public class Blueprint
                 AddLine("Recommended level: ", "DarkGray");
                 AddText(area.recommendedLevel + "", ColorEntityLevel(area.recommendedLevel));
                 if (WindowUp("HostileAreaQuestTracker"))
-                    AddSmallButton("OtherQuestClose", (h) => CloseWindow("HostileAreaQuestTracker"));
+                    AddSmallButton("OtherQuestClose", (h) =>
+                    {
+                        CloseWindow("HostileAreaQuestTracker");
+                        Respawn("HostileAreaQuestAvailable");
+                    });
                 else if (currentSave.player.QuestsAt(area).Count > 0)
                     AddSmallButton("OtherQuestOpen", (h) =>
                     {

@@ -3424,6 +3424,7 @@
         "currentQuests": [],
         "completedQuests": [],
         "level": 1,
+        "experience": 40,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -3501,6 +3502,7 @@
         "race": "Forsaken",
         "spec": "Priest",
         "gender": "Female",
+        "homeLocation": "Shadow Grave",
         "abilities": {
           "Staff Proficiency": 0,
           "Cloth Proficiency": 0,
@@ -3615,6 +3617,8 @@
         "worldBuffs": []
       },
       "hour": 7,
+      "minute": 8,
+      "second": 15,
       "currentSite": "Shadow Grave",
       "ringOfLaw": "Anub'shiah",
       "forlornCloister": "Azshir the Sleepless",
@@ -3638,12 +3642,17 @@
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
-        "Shadow Grave": 1
+        "Shadow Grave": 2,
+        "Deathknell": 1,
+        "Night Web's Hollow": 1
       },
       "unlockedAreas": [],
       "vendorStock": {},
       "banks": {},
-      "startDate": "2025-04-01T18:57:49.4542858+02:00"
+      "startDate": "2025-04-01T18:57:49.4542858+02:00",
+      "lastLoaded": "2025-04-01T22:48:59.9934253+02:00",
+      "lastPlayed": "2025-04-01T22:59:18.168796+02:00",
+      "timePlayed": "00:10:18.1753707"
     }
   ]
 }
