@@ -687,7 +687,7 @@ public class Blueprint
         new("CharacterRoster", () => {
             if (settings.selectedCharacter != "") SetDesktopBackground(saves[settings.selectedRealm].Find(x => x.player.name == settings.selectedCharacter).LoginBackground(), true);
             else SetDesktopBackground("Backgrounds/Sky", true);
-            SetAnchor(TopRight, -19, -92);
+            SetAnchor(TopRight, -19, -19);
             AddRegionGroup();
             SetRegionGroupWidth(171);
             AddHeaderRegion(() =>
@@ -700,16 +700,6 @@ public class Blueprint
             AddHeaderRegion(() =>
             {
                 AddLine("Characters:", "Gray");
-                if (aliveSlots.Count < 5)
-                    AddSmallButton("OtherAdd", (h) =>
-                    {
-                        creationRace = "";
-                        creationSpec = "";
-                        creationGender = "";
-                        String.creationName.Set("");
-                        SpawnDesktopBlueprint("CharCreatorScreen");
-                    });
-                else AddSmallButton("OtherAddOff", (h) => { });
             });
             foreach (var slot in aliveSlots)
             {
@@ -731,12 +721,34 @@ public class Blueprint
                         AddBigButtonOverlay("OtherGridBlurred");
                     }
                     AddLine(slot.player.name);
-                    AddLine("Level: " + slot.player.level + " ");
+                    AddLine("Level: ", "DarkGray");
+                    AddText(slot.player.level + " ", "Gray");
                     AddText(slot.player.spec, slot.player.spec);
                 });
             }
-            for (int i = 0; i < 5 - aliveSlots.Count; i++)
+            for (int i = 0; i < 6 - aliveSlots.Count; i++)
                 AddPaddingRegion(() => AddBigButton("OtherEmpty"));
+            if (aliveSlots.Count < 6)
+                AddButtonRegion(() => AddLine("Create new character", "", "Center"), (h) =>
+                {
+                    creationRace = "";
+                    creationSpec = "";
+                    creationGender = "";
+                    String.creationName.Set("");
+                    SpawnDesktopBlueprint("CharCreatorScreen");
+                });
+            else
+                AddHeaderRegion(() => AddLine("Create new character", "DarkGray", "Center"));
+            if (settings.selectedCharacter != "")
+                AddButtonRegion(() => AddLine("Delete character", "", "Center"), (h) =>
+                {
+                    String.promptConfirm.Set("");
+                    PlaySound("DesktopMenuOpen", 0.6f);
+                    SpawnWindowBlueprint("ConfirmDeleteCharacter");
+                    CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
+                });
+            else
+                AddHeaderRegion(() => AddLine("Delete character", "DarkGray", "Center"));
         }, true),
         new("RealmRoster", () => 
         {
@@ -802,9 +814,9 @@ public class Blueprint
                 AddPaddingRegion(() =>
                 {
                     var countAlive = saves[realm.name].Count(x => !x.player.dead);
-                    AddLine(countAlive + "", countAlive == 5 ? "DangerousRed" : "Gray");
+                    AddLine(countAlive + "", countAlive == 6 ? "DangerousRed" : "Gray");
                     AddText(" / ", "DarkGray");
-                    AddText("5", countAlive == 5 ? "DangerousRed" : "Gray");
+                    AddText("6", countAlive == 6 ? "DangerousRed" : "Gray");
                     AddText(" chars", "DarkGray");
                 });
             }
@@ -832,6 +844,7 @@ public class Blueprint
             SetAnchor(TopLeft, 19, -19);
             AddRegionGroup();
             SetRegionGroupWidth(171);
+            SetRegionGroupHeight(316);
             if (settings.selectedCharacter != "")
             {
                 var slot = saves[settings.selectedRealm].Find(x => x.player.name == settings.selectedCharacter);
@@ -839,21 +852,28 @@ public class Blueprint
                 AddHeaderRegion(() =>
                 {
                     AddLine("Character:");
-                    AddSmallButton("OtherTrash", (h) =>
+                    AddSmallButton("OtherClose", (h) =>
                     {
-                        String.promptConfirm.Set("");
-                        PlaySound("DesktopMenuOpen", 0.6f);
-                        SpawnWindowBlueprint("ConfirmDeleteCharacter");
-                        CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
+                        settings.selectedCharacter = "";
+                        SetDesktopBackground("Backgrounds/Sky", true);
+                        Respawn("CharacterRoster");
+                        CloseWindow("CharacterInfo");
                     });
                 });
-                AddHeaderRegion(() =>
+                AddPaddingRegion(() =>
                 {
                     AddBigButton("Portrait" + slot.player.race.Clean() + (slot.player.Race().genderedPortrait ? slot.player.gender : ""));
                     AddLine(slot.player.name, "Gray");
-                    AddLine("Level: " + slot.player.level + " ", "Gray");
+                    AddLine("Level: ", "DarkGray");
+                    AddText(slot.player.level + " ", "Gray");
                     AddText(spec.name, spec.name);
                 });
+                AddHeaderRegion(() => AddLine("Total time played:"));
+                AddPaddingRegion(() =>
+                {
+                    AddLine((slot.timePlayed.Hours > 0 ? slot.timePlayed.Hours + "h " : "") + slot.timePlayed.Minutes + "m", "DarkGray");
+                });
+                AddPaddingRegion(() => SetRegionAsGroupExtender());
                 AddButtonRegion(() => AddLine("Enter World", "", "Center"),
                 (h) =>
                 {
@@ -866,13 +886,6 @@ public class Blueprint
                     Cursor.cursor.transform.position += (Vector3)CDesktop.cameraDestination - CDesktop.screen.transform.position;
                     CDesktop.screen.transform.localPosition = CDesktop.cameraDestination;
                 });
-                //AddEmptyRegion();
-                //AddHeaderRegion(() => AddLine("Total time played:"));
-                //AddPaddingRegion(() =>
-                //{
-                //    SetRegionAsGroupExtender();
-                //    AddLine(slot.timePlayed.Hours + "h "  + slot.timePlayed.Minutes + "m", "DarkGray");
-                //});
             }
         }, true),
         new("CharacterCreationFactionHorde", () => {
@@ -2435,8 +2448,9 @@ public class Blueprint
             AddPaddingRegion(
                 () =>
                 {
-                    for (int j = 0; j < 4 && j < openedItem.itemsInside.Count; j++)
-                        PrintLootItem(openedItem.itemsInside[j]);
+                    for (int j = 0; j < 4 && j <= (openedItem.itemsInside.Count == 0 ? 0 : openedItem.itemsInside.Max(x => x.x)); j++)
+                        if (openedItem.itemsInside.Any(x => x.x == j)) PrintLootItem(openedItem.itemsInside.Find(x => x.x == j));
+                        else AddBigButton("OtherEmpty");
                 }
             );
         }),
@@ -2577,7 +2591,7 @@ public class Blueprint
         }),
         new("CombatResultsLoot", () => {
             SetAnchor(-92, -105);
-            AddRegionGroup();
+            AddHeaderGroup();
             SetRegionGroupHeight(34);
             SetRegionGroupWidth(182);
             AddPaddingRegion(
@@ -2652,7 +2666,7 @@ public class Blueprint
         }),
         new("MiningLoot", () => {
             SetAnchor(-92, -105);
-            AddRegionGroup();
+            AddHeaderGroup();
             SetRegionGroupHeight(34);
             SetRegionGroupWidth(182);
             AddPaddingRegion(
@@ -2696,13 +2710,12 @@ public class Blueprint
         }),
         new("HerbalismLoot", () => {
             SetAnchor(-92, -105);
-            AddRegionGroup();
+            AddHeaderGroup();
             SetRegionGroupHeight(34);
             SetRegionGroupWidth(182);
             AddPaddingRegion(
                 () =>
                 {
-                    AddLine("");
                     for (int j = 0; j < 4 && j < board.results.herbalismLoot.items.Count; j++)
                         PrintLootItem(board.results.herbalismLoot.items[j]);
                 }
@@ -2710,7 +2723,7 @@ public class Blueprint
         }),
         new("SkinningLoot", () => {
             SetAnchor(-92, -105);
-            AddRegionGroup();
+            AddHeaderGroup();
             SetRegionGroupHeight(34);
             SetRegionGroupWidth(182);
             AddPaddingRegion(
@@ -2723,7 +2736,7 @@ public class Blueprint
         }),
         new("DisenchantLoot", () => {
             SetAnchor(-92, -105);
-            AddRegionGroup();
+            AddHeaderGroup();
             SetRegionGroupHeight(34);
             SetRegionGroupWidth(182);
             AddPaddingRegion(
@@ -6325,10 +6338,21 @@ public class Blueprint
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(Escape, () =>
             {
-                PlaySound("DesktopInventoryClose");
-                CloseDesktop("CombatResultsLoot");
-                SwitchDesktop("CombatResults");
-                Respawn("CombatResults");
+                if (movingItem != null)
+                {
+                    currentSave.player.inventory.items.Add(movingItem);
+                    PlaySound(movingItem.ItemSound("PutDown"), 0.8f);
+                    Cursor.cursor.iconAttached.SetActive(false);
+                    movingItem = null;
+                    Respawn("Inventory", true);
+                }
+                else
+                {
+                    PlaySound("DesktopInventoryClose");
+                    CloseDesktop("CombatResultsLoot");
+                    SwitchDesktop("CombatResults");
+                    Respawn("CombatResults");
+                }
             });
         }),
         new("ContainerLoot", () =>
@@ -6348,12 +6372,23 @@ public class Blueprint
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(Escape, () =>
             {
-                if (openedItem.itemsInside.Count == 0)
-                    currentSave.player.inventory.items.Remove(openedItem);
-                openedItem = null;
-                PlaySound("DesktopInventoryClose");
-                CloseDesktop("ContainerLoot");
-                SpawnDesktopBlueprint("EquipmentScreen");
+                if (movingItem != null)
+                {
+                    currentSave.player.inventory.items.Add(movingItem);
+                    PlaySound(movingItem.ItemSound("PutDown"), 0.8f);
+                    Cursor.cursor.iconAttached.SetActive(false);
+                    movingItem = null;
+                    Respawn("Inventory", true);
+                }
+                else
+                {
+                    if (openedItem.itemsInside.Count == 0)
+                        currentSave.player.inventory.items.Remove(openedItem);
+                    openedItem = null;
+                    PlaySound("DesktopInventoryClose");
+                    CloseDesktop("ContainerLoot");
+                    SpawnDesktopBlueprint("EquipmentScreen");
+                }
             });
         }),
         new("MiningLoot", () =>
@@ -6384,9 +6419,20 @@ public class Blueprint
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(Escape, () =>
             {
-                PlaySound("DesktopInventoryClose");
-                CloseDesktop("MiningLoot");
-                Respawn("CombatResultsMining");
+                if (movingItem != null)
+                {
+                    currentSave.player.inventory.items.Add(movingItem);
+                    PlaySound(movingItem.ItemSound("PutDown"), 0.8f);
+                    Cursor.cursor.iconAttached.SetActive(false);
+                    movingItem = null;
+                    Respawn("Inventory", true);
+                }
+                else
+                {
+                    PlaySound("DesktopInventoryClose");
+                    CloseDesktop("MiningLoot");
+                    Respawn("CombatResultsMining");
+                }
             });
         }),
         new("HerbalismLoot", () =>
@@ -6417,9 +6463,20 @@ public class Blueprint
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(Escape, () =>
             {
-                PlaySound("DesktopInventoryClose");
-                CloseDesktop("HerbalismLoot");
-                Respawn("CombatResultsHerbalism");
+                if (movingItem != null)
+                {
+                    currentSave.player.inventory.items.Add(movingItem);
+                    PlaySound(movingItem.ItemSound("PutDown"), 0.8f);
+                    Cursor.cursor.iconAttached.SetActive(false);
+                    movingItem = null;
+                    Respawn("Inventory", true);
+                }
+                else
+                {
+                    PlaySound("DesktopInventoryClose");
+                    CloseDesktop("HerbalismLoot");
+                    Respawn("CombatResultsHerbalism");
+                }
             });
         }),
         new("SkinningLoot", () =>
@@ -6450,9 +6507,20 @@ public class Blueprint
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(Escape, () =>
             {
-                PlaySound("DesktopInventoryClose");
-                CloseDesktop("SkinningLoot");
-                Respawn("CombatResultsSkinning");
+                if (movingItem != null)
+                {
+                    currentSave.player.inventory.items.Add(movingItem);
+                    PlaySound(movingItem.ItemSound("PutDown"), 0.8f);
+                    Cursor.cursor.iconAttached.SetActive(false);
+                    movingItem = null;
+                    Respawn("Inventory", true);
+                }
+                else
+                {
+                    PlaySound("DesktopInventoryClose");
+                    CloseDesktop("SkinningLoot");
+                    Respawn("CombatResultsSkinning");
+                }
             });
         }),
         new("ChestLoot", () => 
@@ -6472,8 +6540,19 @@ public class Blueprint
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(Escape, () =>
             {
-                PlaySound("DesktopCloseChest");
-                CloseDesktop("ChestLoot");
+                if (movingItem != null)
+                {
+                    currentSave.player.inventory.items.Add(movingItem);
+                    PlaySound(movingItem.ItemSound("PutDown"), 0.8f);
+                    Cursor.cursor.iconAttached.SetActive(false);
+                    movingItem = null;
+                    Respawn("Inventory", true);
+                }
+                else
+                {
+                    PlaySound("DesktopCloseChest");
+                    CloseDesktop("ChestLoot");
+                }
             });
         }),
         new("DisenchantLoot", () => 
@@ -6504,9 +6583,20 @@ public class Blueprint
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey(Escape, () =>
             {
-                disenchantLoot = null;
-                enchantingSkillChange = false;
-                CloseDesktop("DisenchantLoot");
+                if (movingItem != null)
+                {
+                    currentSave.player.inventory.items.Add(movingItem);
+                    PlaySound(movingItem.ItemSound("PutDown"), 0.8f);
+                    Cursor.cursor.iconAttached.SetActive(false);
+                    movingItem = null;
+                    Respawn("Inventory", true);
+                }
+                else
+                {
+                    disenchantLoot = null;
+                    enchantingSkillChange = false;
+                    CloseDesktop("DisenchantLoot");
+                }
             });
         }),
         new("Town", () => 

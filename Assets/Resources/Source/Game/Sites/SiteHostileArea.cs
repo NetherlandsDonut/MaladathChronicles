@@ -218,12 +218,12 @@ public class SiteHostileArea : Site
             if (rareEncounters != null && !alreadyGotRare && Roll(5))
             {
                 rand = rareEncounters[random.Next(0, rareEncounters.Count)];
-                list.Add(new Entity(random.Next(rand.levelMin, rand.levelMax + 1), races.Find(y => y.name == rand.who)));
+                list.Add(new Entity(random.Next(rand.levelMin, rand.levelMax == 0 ? rand.levelMin + 1 : rand.levelMax + 1), races.Find(y => y.name == rand.who)));
                 alreadyGotRare = true;
             }
             else do rand = commonEncounters[random.Next(0, commonEncounters.Count)];
                 while (list.Exists(x => x.name == rand.who));
-            list.Add(new Entity(random.Next(rand.levelMin, rand.levelMax + 1), races.Find(y => y.name == rand.who)));
+            list.Add(new Entity(random.Next(rand.levelMin, rand.levelMax == 0 ? rand.levelMin + 1 : rand.levelMax + 1), races.Find(y => y.name == rand.who)));
         }
         return list;
     }

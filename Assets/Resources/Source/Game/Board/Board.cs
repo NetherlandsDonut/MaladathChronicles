@@ -254,9 +254,9 @@ public class Board
         CallEvents(participants[whosTurn].who, new() { { "Trigger", "TurnBegin" } });
 
         //Flare all of the buffs for the current participant
-        participants[whosTurn].who.FlareBuffs();
+        board.actions.Add(() => participants[whosTurn].who.FlareBuffs());
 
-        //If we made a full cycle and we are starting the loop again, remove one row on the bottom
+        //If we made a full cycle and we are starting the loop again, remove one row on the bottom of the board
         if (whosTurn == 0)
         {
             for (int i = 0; i < field.GetLength(0); i++)

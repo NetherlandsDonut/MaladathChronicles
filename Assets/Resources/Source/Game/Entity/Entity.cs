@@ -11,6 +11,7 @@ using static Spec;
 using static Quest;
 using static Sound;
 using static Defines;
+using static UnityEngine.GraphicsBuffer;
 
 public class Entity
 {
@@ -1287,10 +1288,14 @@ public class Entity
         for (int i = buffs.Count - 1; i >= 0; i--)
         {
             var index = i;
-            if (buffs[index].durationLeft == 1)
+            buffs[index].durationLeft--;
+            if (buffs[index].durationLeft == 0)
+            {
                 foreach (var participant in Board.board.participants)
                     if (participant.who == this) Board.board.CallEvents(participant.who, new() { { "Trigger", "BuffRemove" }, { "Triggerer", "Effector" }, { "BuffName", buffs[index].buff.name } });
                     else Board.board.CallEvents(participant.who, new() { { "Trigger", "BuffRemove" }, { "Triggerer", "Other" }, { "BuffName", buffs[index].buff.name } });
+                RemoveBuff(buffs[index]);
+            }
         }
     }
 

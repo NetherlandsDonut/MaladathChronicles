@@ -845,6 +845,7 @@ public class Item
     public static void PrintLootItem(Item item)
     {
         AddBigButton(item.icon,
+            null,
             (h) =>
             {
                 if (currentSave.player.inventory.CanAddItem(item))
@@ -969,11 +970,11 @@ public class Item
                     }
                 }
             },
-            null,
             (h) => () =>
             {
                 if (item == null) return;
                 if (WindowUp("ConfirmItemDestroy")) return;
+                if (WindowUp("InventorySort")) return;
                 PrintItemTooltip(item, Input.GetKey(KeyCode.LeftShift));
             }
         );
@@ -1272,7 +1273,7 @@ public class Item
         else if (detailedType == "Cask") result = "WoodSmall";
         else if (detailedType == "Crate") result = "WoodSmall";
         else if (detailedType == "Crown") result = "MetalSmall";
-        else if (detailedType == "Shard") result = "Gem";
+        else if (detailedType == "Shard") result = "Gems";
         else if (detailedType == "Cloth") result = "ClothLeather";
         else if (detailedType == "Feather") result = "WoodSmall";
         else if (detailedType == "Letter") result = "ParchmentPaper";

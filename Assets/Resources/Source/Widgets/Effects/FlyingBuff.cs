@@ -5,10 +5,11 @@ using static Buff;
 
 public class FlyingBuff : MonoBehaviour
 {
-    //Is this buff on player or the enemy
+    //On which entity in combat is this buff
     public int onWho;
 
-    //I have no idea what that is
+    //What was the position of the buff on the list before it was removed
+    //Used for positioning before removing from the scene
     public int dyingIndex;
 
     //Renderer of this buff
@@ -28,12 +29,33 @@ public class FlyingBuff : MonoBehaviour
 
     public void Update()
     {
-        if (Board.board.temporaryBuffs[onWho].Contains(gameObject))
-            transform.position = Vector3.Lerp(transform.position, new Vector3(onWho == 0 ? -302.5f - (23 * Mathf.Abs(dyingIndex % rowAmount - rowAmount) + 1) : 302.5f + 23 * (Mathf.Abs(dyingIndex % rowAmount - rowAmount) + 1), 67.5f - 23 * (dyingIndex / rowAmount)), Time.deltaTime * flySpeed);
-        else
+        var participant = Board.board.participants[onWho];
+        var stillActive = Board.board.temporaryBuffs[onWho].Contains(gameObject);
+        if (participant.team == 1)
         {
-            transform.position = Vector3.Lerp(transform.position, onWho == 0 ? new Vector3(-302.5f + 23 * (Index() % rowAmount), -162.5f + 23 * (Index() / rowAmount)) : new Vector3(302.5f - 23 * (Index() % rowAmount), -162.5f + 23 * (Index() / rowAmount)), Time.deltaTime * flySpeed);
-            if (transform.localPosition.x < -322.5f || transform.localPosition.x > 322.5f) Destroy(gameObject);
+            if (stillActive)
+            {
+                if (Board.board.spotlightEnemy[0] == onWho) transform.position = Vector3.Lerp(transform.position, new Vector3(-302.5f + 23 * (Index() % rowAmount), -162.5f + 23 * (Index() / rowAmount)), Time.deltaTime * flySpeed);
+                else transform.position = Vector3.Lerp(transform.position, new Vector3(-474.5f + 23 * (Index() % rowAmount), -162.5f + 23 * (Index() / rowAmount)), Time.deltaTime * flySpeed);
+            }
+            else
+            {
+                transform.position = Vector3.Lerp(transform.position, new Vector3(-474.5f + 23 * (dyingIndex % rowAmount), -162.5f + 23 * (dyingIndex / rowAmount)), Time.deltaTime * flySpeed);
+                if (transform.localPosition.x < -330) Destroy(gameObject);
+            }
+        }
+        else if (participant.team == 2)
+        {
+            if (stillActive)
+            {
+                if (Board.board.spotlightEnemy[0] == onWho) transform.position = Vector3.Lerp(transform.position, new Vector3(302.5f - 23 * (Index() % rowAmount), -162.5f + 23 * (Index() / rowAmount)), Time.deltaTime * flySpeed);
+                else transform.position = Vector3.Lerp(transform.position, new Vector3(474.5f - 23 * (Index() % rowAmount), -162.5f + 23 * (Index() / rowAmount)), Time.deltaTime * flySpeed);
+            }
+            else
+            {
+                transform.position = Vector3.Lerp(transform.position, new Vector3(474.5f - 23 * (dyingIndex % rowAmount), -162.5f + 23 * (dyingIndex / rowAmount)), Time.deltaTime * flySpeed);
+                if (transform.localPosition.x > 330) Destroy(gameObject);
+            }
         }
     }
 

@@ -1609,7 +1609,6 @@
             "Enchant Bracer - Minor Health"
           ]
         },
-        "unspentTalentPoints": 8,
         "faction": "Orgrimmar",
         "name": "Odam",
         "race": "Orc",
@@ -1630,7 +1629,15 @@
           "Dagger Proficiency": 0,
           "Lightning Bolt": 0,
           "Stormstrike": 0,
-          "Healing Wave": 0
+          "Healing Wave": 0,
+          "Lightning Shield": 0,
+          "Flash of Lightning": 0,
+          "Flame Shock": 0,
+          "Lava Burst": 0,
+          "Earth Shock": 0,
+          "Liquid Magma Totem": 0,
+          "Searing Flames": 0,
+          "Capacitor Totem": 0
         },
         "currentActionSet": "Default",
         "actionBars": {
@@ -1703,8 +1710,54 @@
               "price": 13
             },
             {
+              "x": 1,
+              "y": 1,
+              "rarity": "Common",
+              "name": "Earthroot",
+              "icon": "itemmischerb07",
+              "detailedType": "Flowers",
+              "type": "Trade Good",
+              "source": "Quest",
+              "ilvl": 5,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 20,
+              "price": 20
+            },
+            {
               "x": 3,
               "y": 1,
+              "rarity": "Common",
+              "name": "Empty Vial",
+              "icon": "itemdrink06",
+              "detailedType": "Drink",
+              "type": "Trade Good",
+              "ilvl": 1,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 20,
+              "price": 1
+            },
+            {
+              "x": 2,
+              "y": 1,
+              "rarity": "Common",
+              "name": "Putrid Wooden Hammer",
+              "icon": "itemhammer15",
+              "detailedType": "Mace",
+              "type": "One Handed",
+              "source": "RareDrop",
+              "ilvl": 3,
+              "lvl": 1,
+              "minDamage": 1,
+              "maxDamage": 3,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 10,
+              "speed": 2.0
+            },
+            {
+              "x": 2,
               "rarity": "Rare",
               "name": "Corpsemaker",
               "icon": "itemhalbard01",
@@ -1728,7 +1781,7 @@
               ]
             },
             {
-              "y": 1,
+              "x": 3,
               "rarity": "Common",
               "name": "Felcloth",
               "icon": "itemfabricfelrag",
@@ -1737,53 +1790,9 @@
               "ilvl": 50,
               "lvl": 1,
               "amount": 2,
+              "minutesLeft": 16,
               "maxStack": 20,
               "price": 2000
-            },
-            {
-              "x": 1,
-              "y": 1,
-              "rarity": "Common",
-              "name": "Earthroot",
-              "icon": "itemmischerb07",
-              "detailedType": "Flowers",
-              "type": "Trade Good",
-              "source": "Quest",
-              "ilvl": 5,
-              "lvl": 1,
-              "amount": 1,
-              "maxStack": 20,
-              "price": 20
-            },
-            {
-              "x": 3,
-              "rarity": "Common",
-              "name": "Empty Vial",
-              "icon": "itemdrink06",
-              "detailedType": "Drink",
-              "type": "Trade Good",
-              "ilvl": 1,
-              "lvl": 1,
-              "amount": 1,
-              "maxStack": 20,
-              "price": 1
-            },
-            {
-              "x": 2,
-              "rarity": "Common",
-              "name": "Putrid Wooden Hammer",
-              "icon": "itemhammer15",
-              "detailedType": "Mace",
-              "type": "One Handed",
-              "source": "RareDrop",
-              "ilvl": 3,
-              "lvl": 1,
-              "minDamage": 1,
-              "maxDamage": 3,
-              "amount": 1,
-              "maxStack": 1,
-              "price": 10,
-              "speed": 2.0
             }
           ],
           "bags": []
@@ -1881,9 +1890,8 @@
         "worldBuffs": []
       },
       "hour": 7,
-      "minute": 8,
-      "second": 51,
-      "currentSite": "Orgrimmar",
+      "minute": 22,
+      "currentSite": "Bloodvenom River",
       "ringOfLaw": "Grizzle",
       "forlornCloister": "Fallen Champion",
       "markets": [
@@ -1921,7 +1929,7 @@
       "siteVisits": {
         "The Den": 5,
         "Valley of Trials": 1,
-        "Orgrimmar": 5,
+        "Orgrimmar": 6,
         "Hall of Illusions": 1,
         "Searing Blade Hideout": 1,
         "Main Chamber": 1,
@@ -2265,7 +2273,7 @@
         "East Elwynn Bridge": 1,
         "Tower of Azora": 1,
         "Bloodvenom Falls": 1,
-        "Bloodvenom River": 1,
+        "Bloodvenom River": 4,
         "Corrupted Woods": 1,
         "Deadwood Village": 1,
         "Jadefire Glen": 1,
@@ -2848,7 +2856,7 @@
         "Razor Hill": 1,
         "Zoram'gar Outpost": 1,
         "The Crossroads": 1,
-        "Bloodvenom Post": 1,
+        "Bloodvenom Post": 2,
         "Valormok": 1,
         "The Mor'shan Rampart": 1,
         "Grom'gol Base Camp": 1,
@@ -2932,7 +2940,7 @@
         "Ruins of Stromgarde": 1,
         "Ruins of Alterac": 1,
         "Scarlet Monastery Grounds": 1,
-        "Jaedenar Grounds": 1,
+        "Jaedenar Grounds": 2,
         "Alcaz Island": 1
       },
       "unlockedAreas": [],
@@ -2990,7 +2998,7 @@
             "item": "Formula: Minor Mana Oil",
             "amount": 1,
             "maxAmount": 2,
-            "minutesLeft": 40,
+            "minutesLeft": 26,
             "restockSpeed": 40
           },
           {
@@ -3007,6 +3015,98 @@
           },
           {
             "item": "Pattern: Enchanted Mageweave Pouch",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
+        ],
+        "Orgrimmar:Gryshka": [
+          {
+            "item": "Tough Jerky",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Refreshing Spring Water",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Ice Cold Milk",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Melon Juice",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Moonberry Juice",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Sweet Nectar",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Haunch of Meat",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mutton Chop",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Wild Hog Shank",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Cured Ham Steak",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Morning Glory Dew",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Roasted Quail",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Love Token",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Perfume Bottle",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Cologne Bottle",
             "amount": 2,
             "maxAmount": 2,
             "restockSpeed": 40
@@ -3029,7 +3129,7 @@
             "minDamage": 104,
             "maxDamage": 157,
             "amount": 1,
-            "minutesLeft": 30,
+            "minutesLeft": 16,
             "maxStack": 1,
             "price": 18923,
             "speed": 3.5,
@@ -3045,7 +3145,7 @@
             "detailedType": "Note",
             "type": "Recipe",
             "amount": 1,
-            "minutesLeft": 30,
+            "minutesLeft": 16,
             "maxStack": 1,
             "price": 750
           }
@@ -3054,9 +3154,496 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2025-03-30T21:26:13.6460386+02:00",
-      "lastLoaded": "2025-03-30T23:54:25.9945042+02:00",
-      "lastPlayed": "2025-03-30T23:59:33.4118378+02:00",
-      "timePlayed": "00:19:28.1679704"
+      "lastLoaded": "2025-04-01T18:51:27.772908+02:00",
+      "lastPlayed": "2025-04-01T18:57:43.6856866+02:00",
+      "timePlayed": "00:35:24.6495327",
+      "lastVisitedTalents": 2
+    },
+    {
+      "player": {
+        "currentQuests": [],
+        "completedQuests": [],
+        "level": 1,
+        "experience": 153,
+        "uniquesGotten": [],
+        "reputation": {
+          "Southsea Pirates": 0,
+          "Razormane Tribe": 0,
+          "Pandaren": 0,
+          "Grimtotem Tribe": 0,
+          "Woodpaw Tribe": 0,
+          "The Burning Legion": 0,
+          "Darkspear Tribe": 0,
+          "Stormwind": 4250,
+          "Magram Clan": 0,
+          "Gelkis Clan": 0,
+          "Kolkar Clan": 0,
+          "Orgrimmar": 0,
+          "Frostwolf Clan": 0,
+          "The Defiler's": 0,
+          "Thunder Bluff": 0,
+          "Undercity": 0,
+          "Ironforge": 4250,
+          "Dark Iron Clan": 0,
+          "Wildhammer Clan": 4250,
+          "Winterfall Tribe": 0,
+          "Gnomeregan": 4250,
+          "Darnassus": 4600,
+          "Bloodsail Buccaneers": 0,
+          "Syndicate": 0,
+          "Warsong Outriders": 0,
+          "Stormpike Guard": 4250,
+          "Silverwing Sentinels": 4250,
+          "The League of Arathor": 4250,
+          "Defias Brotherhood": 0,
+          "Dalaran": 4250,
+          "Burning Blade Clan": 0,
+          "Burning Legion": 0,
+          "Shadow Council": 0,
+          "Gordunni Ogres": 0,
+          "Blackrock Clan": 0,
+          "Dragonmaw Clan": 0,
+          "Black Tooth Grin Clan": 0,
+          "Gurubashi Tribe": 0,
+          "Sandfury Tribe": 0,
+          "Twilight's Hammer": 0,
+          "Grimtotem Clan": 0,
+          "Razorfen Tribe": 0,
+          "Stonemaul Ogres": 0,
+          "Dustbelcher Ogres": 0,
+          "Deadwind Ogres": 0,
+          "Venture Co.": 0,
+          "Southsea Freebooters": 0,
+          "Atal'ai Tribe": 0,
+          "Qiraji Empire": 0,
+          "Scarlet Crusade": 0,
+          "Vilebranch Tribe": 0,
+          "Witherbark Tribe": 0,
+          "Mossflayer Tribe": 0,
+          "Frostmane Tribe": 0,
+          "Bloodscalp Tribe": 0,
+          "Skullsplitter Tribe": 0,
+          "Shatterspear Tribe": 0,
+          "Rot Hide Tribe": 0,
+          "Scourge": 0,
+          "Smolderthorn Tribe": 0,
+          "Revantusk Tribe": 0,
+          "Blackpaw Tribe": 0,
+          "Maraudine Clan": 0,
+          "Mosshide Tribe": 0,
+          "Deadwood Tribe": 0,
+          "Bloodtooth Tribe": 0,
+          "Bristleback Tribe": 0
+        },
+        "professionSkills": {},
+        "learnedRecipes": {},
+        "faction": "Darnassus",
+        "name": "Faenai",
+        "race": "Night Elf",
+        "spec": "Priest",
+        "gender": "Female",
+        "homeLocation": "Aldrassil",
+        "abilities": {
+          "Staff Proficiency": 0,
+          "Cloth Proficiency": 0,
+          "One Handed Mace Proficiency": 0,
+          "Off Hand Proficiency": 0,
+          "Dagger Proficiency": 0,
+          "Wand Proficiency": 0,
+          "Smite": 0,
+          "Power Word: Shield": 0,
+          "Shadow Word: Pain": 0
+        },
+        "currentActionSet": "Default",
+        "actionBars": {
+          "Default": [
+            "Smite",
+            "Power Word: Shield",
+            "Shadow Word: Pain"
+          ]
+        },
+        "stats": {
+          "Stamina": 19,
+          "Strength": 17,
+          "Agility": 25,
+          "Intellect": 22,
+          "Spirit": 23,
+          "Earth Mastery": 2,
+          "Fire Mastery": 1,
+          "Air Mastery": 3,
+          "Water Mastery": 3,
+          "Frost Mastery": 1,
+          "Lightning Mastery": 1,
+          "Arcane Mastery": 3,
+          "Decay Mastery": 1,
+          "Shadow Mastery": 2,
+          "Order Mastery": 2
+        },
+        "inventory": {
+          "items": [
+            {
+              "rarity": "Common",
+              "name": "Hearthstone",
+              "icon": "itemmiscrune01",
+              "detailedType": "Rune",
+              "type": "Miscellaneous",
+              "ilvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "indestructible": true,
+              "unique": true,
+              "abilities": {
+                "Hearthstone": 1
+              }
+            }
+          ],
+          "bags": [
+            {
+              "x": 1,
+              "rarity": "Common",
+              "name": "Small Black Pouch",
+              "icon": "itemmiscbag09black",
+              "type": "Bag",
+              "source": "GeneralDrop",
+              "ilvl": 5,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 250,
+              "bagSpace": 2
+            }
+          ]
+        },
+        "mounts": [],
+        "equipment": {
+          "Main Hand": {
+            "rarity": "Common",
+            "name": "Worn Mace",
+            "icon": "itemmace03",
+            "detailedType": "Mace",
+            "type": "One Handed",
+            "ilvl": 2,
+            "lvl": 1,
+            "minDamage": 1,
+            "maxDamage": 3,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 7,
+            "speed": 1.9
+          },
+          "Feet": {
+            "rarity": "Common",
+            "name": "Neophyte's Boots",
+            "icon": "itemboots04",
+            "type": "Feet",
+            "ilvl": 1,
+            "lvl": 1,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1
+          },
+          "Legs": {
+            "rarity": "Poor",
+            "name": "Neophyte's Pants",
+            "icon": "itempants02",
+            "type": "Legs",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 2,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1
+          },
+          "Chest": {
+            "rarity": "Poor",
+            "name": "Neophyte's Robe",
+            "icon": "itemchestcloth13",
+            "type": "Chest",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 3,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1
+          }
+        },
+        "worldBuffs": [],
+        "dead": true
+      },
+      "hour": 7,
+      "minute": 10,
+      "second": 25,
+      "currentSite": "Wildhammer Mountain Pass",
+      "ringOfLaw": "Eviscerator",
+      "forlornCloister": "Azshir the Sleepless",
+      "markets": [
+        {
+          "name": "Alliance Market",
+          "auctions": [],
+          "hoursSinceUpdate": 48
+        },
+        {
+          "name": "Horde Market",
+          "auctions": [],
+          "hoursSinceUpdate": 48
+        }
+      ],
+      "openedChests": {},
+      "fishingSpots": {},
+      "fishingSpoils": {},
+      "siteProgress": {
+        "Shadowglen": 1
+      },
+      "commonsKilled": {
+        "Mangy Nightsaber": 1
+      },
+      "raresKilled": {},
+      "elitesKilled": {},
+      "siteVisits": {
+        "Aldrassil": 1,
+        "Shadowglen": 1,
+        "Wildhammer Mountain Pass": 3
+      },
+      "unlockedAreas": [],
+      "vendorStock": {},
+      "banks": {},
+      "startDate": "2025-03-31T21:23:13.8691499+02:00",
+      "lastLoaded": "2025-03-31T23:35:54.2833576+02:00",
+      "lastPlayed": "2025-03-31T23:46:19.6881161+02:00",
+      "timePlayed": "00:10:35.4528132",
+      "deathInfo": {
+        "source": "Razorbeak Gryphon",
+        "commonSource": true,
+        "area": "Wildhammer Mountain Pass"
+      }
+    },
+    {
+      "player": {
+        "currentQuests": [],
+        "completedQuests": [],
+        "level": 1,
+        "uniquesGotten": [],
+        "reputation": {
+          "Southsea Pirates": 0,
+          "Razormane Tribe": 0,
+          "Pandaren": 0,
+          "Grimtotem Tribe": 0,
+          "Woodpaw Tribe": 0,
+          "The Burning Legion": 0,
+          "Darkspear Tribe": 4250,
+          "Stormwind": 0,
+          "Magram Clan": 0,
+          "Gelkis Clan": 0,
+          "Kolkar Clan": 0,
+          "Orgrimmar": 4250,
+          "Frostwolf Clan": 4250,
+          "The Defiler's": 4250,
+          "Thunder Bluff": 4250,
+          "Undercity": 4600,
+          "Ironforge": 0,
+          "Dark Iron Clan": 0,
+          "Wildhammer Clan": 0,
+          "Winterfall Tribe": 0,
+          "Gnomeregan": 0,
+          "Darnassus": 0,
+          "Bloodsail Buccaneers": 0,
+          "Syndicate": 0,
+          "Warsong Outriders": 4250,
+          "Stormpike Guard": 0,
+          "Silverwing Sentinels": 0,
+          "The League of Arathor": 0,
+          "Defias Brotherhood": 0,
+          "Dalaran": 0,
+          "Burning Blade Clan": 0,
+          "Burning Legion": 0,
+          "Shadow Council": 0,
+          "Gordunni Ogres": 0,
+          "Blackrock Clan": 0,
+          "Dragonmaw Clan": 0,
+          "Black Tooth Grin Clan": 0,
+          "Gurubashi Tribe": 0,
+          "Sandfury Tribe": 0,
+          "Twilight's Hammer": 0,
+          "Grimtotem Clan": 0,
+          "Razorfen Tribe": 0,
+          "Stonemaul Ogres": 4250,
+          "Dustbelcher Ogres": 0,
+          "Deadwind Ogres": 0,
+          "Venture Co.": 0,
+          "Southsea Freebooters": 0,
+          "Atal'ai Tribe": 0,
+          "Qiraji Empire": 0,
+          "Scarlet Crusade": 0,
+          "Vilebranch Tribe": 0,
+          "Witherbark Tribe": 0,
+          "Mossflayer Tribe": 0,
+          "Frostmane Tribe": 0,
+          "Bloodscalp Tribe": 0,
+          "Skullsplitter Tribe": 0,
+          "Shatterspear Tribe": 0,
+          "Rot Hide Tribe": 0,
+          "Scourge": 0,
+          "Smolderthorn Tribe": 0,
+          "Revantusk Tribe": 4250,
+          "Blackpaw Tribe": 0,
+          "Maraudine Clan": 0,
+          "Mosshide Tribe": 0,
+          "Deadwood Tribe": 0,
+          "Bloodtooth Tribe": 0,
+          "Bristleback Tribe": 0
+        },
+        "professionSkills": {},
+        "learnedRecipes": {},
+        "faction": "Undercity",
+        "name": "Bryana",
+        "race": "Forsaken",
+        "spec": "Priest",
+        "gender": "Female",
+        "abilities": {
+          "Staff Proficiency": 0,
+          "Cloth Proficiency": 0,
+          "One Handed Mace Proficiency": 0,
+          "Off Hand Proficiency": 0,
+          "Dagger Proficiency": 0,
+          "Wand Proficiency": 0,
+          "Smite": 0,
+          "Power Word: Shield": 0,
+          "Shadow Word: Pain": 0
+        },
+        "currentActionSet": "Default",
+        "actionBars": {
+          "Default": [
+            "Smite",
+            "Power Word: Shield",
+            "Shadow Word: Pain"
+          ]
+        },
+        "stats": {
+          "Stamina": 21,
+          "Strength": 19,
+          "Agility": 18,
+          "Intellect": 20,
+          "Spirit": 28,
+          "Earth Mastery": 2,
+          "Fire Mastery": 2,
+          "Air Mastery": 2,
+          "Water Mastery": 1,
+          "Frost Mastery": 3,
+          "Lightning Mastery": 1,
+          "Arcane Mastery": 1,
+          "Decay Mastery": 3,
+          "Shadow Mastery": 3,
+          "Order Mastery": 1
+        },
+        "inventory": {
+          "items": [
+            {
+              "rarity": "Common",
+              "name": "Hearthstone",
+              "icon": "itemmiscrune01",
+              "detailedType": "Rune",
+              "type": "Miscellaneous",
+              "ilvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "indestructible": true,
+              "unique": true,
+              "abilities": {
+                "Hearthstone": 1
+              }
+            }
+          ],
+          "bags": []
+        },
+        "mounts": [],
+        "equipment": {
+          "Main Hand": {
+            "rarity": "Common",
+            "name": "Worn Mace",
+            "icon": "itemmace03",
+            "detailedType": "Mace",
+            "type": "One Handed",
+            "ilvl": 2,
+            "lvl": 1,
+            "minDamage": 1,
+            "maxDamage": 3,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 7,
+            "speed": 1.9
+          },
+          "Feet": {
+            "rarity": "Common",
+            "name": "Neophyte's Boots",
+            "icon": "itemboots04",
+            "type": "Feet",
+            "ilvl": 1,
+            "lvl": 1,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1
+          },
+          "Legs": {
+            "rarity": "Poor",
+            "name": "Neophyte's Pants",
+            "icon": "itempants02",
+            "type": "Legs",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 2,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1
+          },
+          "Chest": {
+            "rarity": "Poor",
+            "name": "Neophyte's Robe",
+            "icon": "itemchestcloth13",
+            "type": "Chest",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 3,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1
+          }
+        },
+        "worldBuffs": []
+      },
+      "hour": 7,
+      "currentSite": "Shadow Grave",
+      "ringOfLaw": "Anub'shiah",
+      "forlornCloister": "Azshir the Sleepless",
+      "markets": [
+        {
+          "name": "Alliance Market",
+          "auctions": [],
+          "hoursSinceUpdate": 48
+        },
+        {
+          "name": "Horde Market",
+          "auctions": [],
+          "hoursSinceUpdate": 48
+        }
+      ],
+      "openedChests": {},
+      "fishingSpots": {},
+      "fishingSpoils": {},
+      "siteProgress": {},
+      "commonsKilled": {},
+      "raresKilled": {},
+      "elitesKilled": {},
+      "siteVisits": {
+        "Shadow Grave": 1
+      },
+      "unlockedAreas": [],
+      "vendorStock": {},
+      "banks": {},
+      "startDate": "2025-04-01T18:57:49.4542858+02:00"
     }
   ]
 }

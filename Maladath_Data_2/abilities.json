@@ -11950,7 +11950,7 @@
   {
     "name": "Shadow Word: Pain",
     "icon": "AbilityShadowWordPain",
-    "cooldown": 2,
+    "cooldown": 0,
     "tags": [
       "Damage",
       "Overtime"
@@ -11973,7 +11973,7 @@
             "Effect": "AddBuff",
             "Affect": "Other",
             "BuffName": "Shadow Word: Pain",
-            "BuffDuration": "5",
+            "BuffDuration": "2",
             "ShatterTarget": "Other",
             "ShatterType": "Central",
             "ShatterDensity": "1",
