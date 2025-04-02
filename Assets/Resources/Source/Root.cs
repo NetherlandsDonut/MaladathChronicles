@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using static Sound;
+using static Board;
 using static MapGrid;
 using static Coloring;
 using static Blueprint;
@@ -77,6 +78,81 @@ public static class Root
     public static float heldKeyTime;
     public static float animationTime;
     public static float animatedSpriteTime;
+
+    #region Spell Targeting
+
+    //Item that is being moved
+    public static Ability abilityTargetted;
+
+    //Participant targetted
+    public static CombatParticipant participantTargetted;
+
+    //Tile on the board that is targetted
+    public static (int, int) tileTargetted;
+
+    //Pick up an item to move it
+    public static void ClearTargettingAbility(bool shouldClear)
+    {
+        if (!shouldClear) return;
+        abilityTargetted = null;
+        Cursor.cursor.SetCursor(CursorType.Default);
+    }
+
+    //Pick up an item to move it
+    public static void StartTargettingAbility(Ability ability)
+    {
+        abilityTargetted = ability;
+        Cursor.cursor.SetCursor(CursorType.Crosshair);
+    }
+
+    //Pick up an item to move it
+    public static void FinishTargettingAbility(CombatParticipant targetParticipant)
+    {
+        if (abilityTargetted == null) return;
+        participantTargetted = targetParticipant;
+        if (abilityTargetted.possibleTargets == "Tile") SpawnFallingText(new Vector2(0, 34), "This ability can only target the board", "Red");
+        else if (abilityTargetted.possibleTargets == "Enemies" && participantTargetted.team == board.participants[board.whosTurn].team) SpawnFallingText(new Vector2(0, 34), "This ability can only target enemies", "Red");
+        else if (abilityTargetted.possibleTargets == "Friendly" && participantTargetted.team != board.participants[board.whosTurn].team) SpawnFallingText(new Vector2(0, 34), "This ability can only target friendly targets", "Red");
+        else
+        {
+            foreach (var participant in board.participants)
+            {
+                if (participant == board.participants[board.whosTurn]) board.CallEvents(participant.who, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Effector" }, { "AbilityName", abilityTargetted.name } });
+                else board.CallEvents(participant.who, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Other" }, { "AbilityName", abilityTargetted.name } });
+            }
+            board.participants[board.whosTurn].who.DetractResources(abilityTargetted.cost);
+            foreach (var element in abilityTargetted.cost)
+                board.log.elementsUsed.Inc(element.Key, element.Value);
+
+        }
+        abilityTargetted = null;
+        participantTargetted = null;
+    }
+
+    //Pick up an item to move it
+    public static void FinishTargettingAbility(int x, int y)
+    {
+        if (abilityTargetted == null) return;
+        if (abilityTargetted.possibleTargets == "Friendly") SpawnFallingText(new Vector2(0, 34), "This ability can only target friendly targets", "Red");
+        else if (abilityTargetted.possibleTargets == "Enemies") SpawnFallingText(new Vector2(0, 34), "This ability can only target enemies", "Red");
+        else if (abilityTargetted.possibleTargets == "Entity") SpawnFallingText(new Vector2(0, 34), "This ability cannot target the board", "Red");
+        else
+        {
+            tileTargetted = (x, y);
+            foreach (var participant in board.participants)
+            {
+                if (participant == board.participants[board.whosTurn]) board.CallEvents(participant.who, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Effector" }, { "AbilityName", abilityTargetted.name } });
+                else board.CallEvents(participant.who, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Other" }, { "AbilityName", abilityTargetted.name } });
+            }
+            board.participants[board.whosTurn].who.DetractResources(abilityTargetted.cost);
+            foreach (var element in abilityTargetted.cost)
+                board.log.elementsUsed.Inc(element.Key, element.Value);
+        }
+        abilityTargetted = null;
+        tileTargetted = (0, 0);
+    }
+
+    #endregion
 
     #region Moving Items
 
@@ -1284,7 +1360,8 @@ public static class Root
         Grab,
         Await,
         Write,
-        Hook
+        Hook,
+        Crosshair
     }
 
     #endregion

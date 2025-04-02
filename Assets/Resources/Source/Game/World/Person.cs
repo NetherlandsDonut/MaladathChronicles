@@ -20,8 +20,9 @@ public class Person
         if (itemsSold != null)
             foreach (var stockItem in itemsSold)
                 stockItem.Initialise();
-        if (new List<string> { "GoblinFemale", "HighElfMale", "HighElfFemale", "Broken" }.Contains(race + gender)) voiceVariant = 1;
-        else voiceVariant = Root.random.Next(1, 4);
+        if (voiceVariant == 0)
+            if (new List<string> { "GoblinFemale", "HighElfMale", "HighElfFemale", "Broken" }.Contains(race + gender)) voiceVariant = 1;
+            else voiceVariant = Root.random.Next(1, 4);
     }
 
     //Name of the person

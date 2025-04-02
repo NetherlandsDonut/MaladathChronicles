@@ -49,6 +49,19 @@ public class Board
             participants.Add(newParticipant);
             spotlightEnemy.Add(participants.Count - 1);
         }
+
+        var possible = Race.races.Where(x => !x.genderedPortrait).ToList();
+        var choice = new Entity(currentSave.player.level, possible[random.Next(possible.Count)]);
+        choice.InitialiseCombat();
+        var additionallAlly = new CombatParticipant
+        {
+            team = 1,
+            who = choice,
+            combatAbilities = choice.AbilitiesInCombat()
+        };
+        participants.Add(additionallAlly);
+        spotlightFriendly.Add(participants.Count - 1);
+
         cooldowns = new();
         foreach (var poo in participants)
             cooldowns.Add(participants.IndexOf(poo), new());
@@ -221,7 +234,7 @@ public class Board
             buff.buff.ExecuteEvents(this, trigger, buff);
     }
 
-    public CombatParticipant Target(int ofTeam) => participants[ofTeam == 1 ? spotlightEnemy[0] : spotlightFriendly[0]];
+    public CombatParticipant Target(int ofTeam) => participantTargetted != null ? participantTargetted : participants[ofTeam == 1 ? spotlightEnemy[0] : spotlightFriendly[0]];
 
     //Ends a turn for a participant and makes somebody else begin theirs
     public void EndTurn()

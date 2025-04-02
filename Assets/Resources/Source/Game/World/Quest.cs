@@ -1,13 +1,12 @@
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
+
 using UnityEngine;
 
 using static Root;
-
 using static Sound;
 using static SaveGame;
 using static Coloring;
-using System.Net.NetworkInformation;
 
 public class Quest
 {
@@ -29,7 +28,8 @@ public class Quest
             if (find != null)
             {
                 find.questsStarted ??= new();
-                find.questsStarted.Add(questID);
+                if (!find.questsStarted.Contains(questID))
+                    find.questsStarted.Add(questID);
             }
             else Debug.Log("ERROR 016: Quest starting item was not found: \"" + itemStart + "\"");
         }

@@ -187,9 +187,16 @@ public class Blueprint
                         AddBigButton(boardButtonDictionary[board.field[J, I]],
                         (h) =>
                         {
-                            var list = board.FloodCount(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h), h.region.regionGroup.regions.IndexOf(h.region));
-                            board.finishedMoving = true;
-                            board.FloodDestroy(list);
+                            if (abilityTargetted != null)
+                            {
+                                FinishTargettingAbility(J, I);
+                            }
+                            else
+                            {
+                                var list = board.FloodCount(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h), h.region.regionGroup.regions.IndexOf(h.region));
+                                board.finishedMoving = true;
+                                board.FloodDestroy(list);
+                            }
                         });
                     }
                 });
@@ -242,7 +249,10 @@ public class Blueprint
                 AddHeaderRegion(() =>
                 {
                     var race = races.Find(x => x.name == board.participants[board.spotlightEnemy[index]].who.race);
-                    AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? board.participants[index].who.gender : ""));
+                    AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? board.participants[index].who.gender : ""), (h) =>
+                    {
+                        FinishTargettingAbility(board.participants[board.spotlightEnemy[index]]);
+                    });
                     if (board.participants[board.spotlightEnemy[index]].who.dead) SetBigButtonToGrayscale();
                     AddLine("Level: ", "DarkGray");
                     AddText(board.participants[board.spotlightEnemy[index]].who.level - 10 > board.participants[board.spotlightFriendly[0]].who.level ? "??" : "" + board.participants[board.spotlightEnemy[index]].who.level, ColorEntityLevel(board.participants[board.spotlightEnemy[index]].who.level));
@@ -315,11 +325,17 @@ public class Blueprint
                 {
                     ReverseButtons();
                     if (board.participants[board.spotlightFriendly[index]].who.spec != null)
-                        AddBigButton(board.participants[board.spotlightFriendly[index]].who.Spec().icon);
+                        AddBigButton(board.participants[board.spotlightFriendly[index]].who.Spec().icon, (h) =>
+                        {
+                            FinishTargettingAbility(board.participants[board.spotlightFriendly[index]]);
+                        });
                     else
                     {
                         var race = races.Find(x => x.name == board.participants[board.spotlightFriendly[index]].who.race);
-                        AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? board.participants[board.spotlightFriendly[0]].who.gender : ""));
+                        AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? board.participants[board.spotlightFriendly[0]].who.gender : ""), (h) =>
+                        {
+                            FinishTargettingAbility(board.participants[board.spotlightFriendly[index]]); 
+                        });
                     }
                     if (board.participants[board.spotlightFriendly[index]].who.dead) SetBigButtonToGrayscale();
                     AddLine("Level: " , "DarkGray");
@@ -358,19 +374,13 @@ public class Blueprint
                     },
                     (h) =>
                     {
+                        var temp = abilityTargetted;
+                        abilityTargetted = null;
                         if (board.spotlightFriendly[0] == board.whosTurn)
                             if (abilityObj.EnoughResources(board.participants[board.spotlightFriendly[0]].who))
                                 if (board.CooldownOn(board.spotlightFriendly[0], actionBar) <= 0 && abilityObj.AreAnyConditionsMet("AbilityCast", currentSave, board))
-                                {
-                                    foreach (var participant in board.participants)
-                                    {
-                                        if (participant == board.participants[board.spotlightFriendly[0]]) board.CallEvents(participant.who, new() { { "Trigger", "AbilityCast" }, {"Triggerer", "Effector" }, { "AbilityName", abilityObj.name } });
-                                        else board.CallEvents(participant.who, new() { { "Trigger", "AbilityCast" }, {"Triggerer", "Other" }, { "AbilityName", abilityObj.name } });
-                                    }
-                                    board.participants[board.spotlightFriendly[0]].who.DetractResources(abilityObj.cost);
-                                    foreach (var element in abilityObj.cost)
-                                        board.log.elementsUsed.Inc(element.Key, element.Value);
-                                }
+                                    StartTargettingAbility(abilityObj);
+                        ClearTargettingAbility(temp == abilityTargetted);
                     },
                     null,
                     (h) => () =>
@@ -405,17 +415,11 @@ public class Blueprint
                     },
                     (h) =>
                     {
+                        var temp = abilityTargetted;
+                        abilityTargetted = null;
                         if (abilityObj.EnoughResources(board.participants[board.spotlightFriendly[0]].who) && board.CooldownOn(board.spotlightFriendly[0], ability.Key) <= 0)
-                        {
-                            foreach (var participant in board.participants)
-                            {
-                                if (participant == board.participants[board.spotlightFriendly[0]]) board.CallEvents(participant.who, new() { { "Trigger", "AbilityCast" }, {"Triggerer", "Effector" }, { "AbilityName", abilityObj.name } });
-                                else board.CallEvents(participant.who, new() { { "Trigger", "AbilityCast" }, {"Triggerer", "Other" }, { "AbilityName", abilityObj.name } });
-                            }
-                            board.participants[board.spotlightFriendly[0]].who.DetractResources(abilityObj.cost);
-                            foreach (var element in abilityObj.cost)
-                                board.log.elementsUsed.Inc(element.Key, element.Value);
-                        }
+                            StartTargettingAbility(abilityObj);
+                        ClearTargettingAbility(temp == abilityTargetted);
                     },
                     null,
                     (h) => () =>
@@ -6892,8 +6896,18 @@ public class Blueprint
             });
             AddHotkey(Escape, () =>
             {
-                PlaySound("DesktopMenuOpen", 0.6f);
-                SpawnDesktopBlueprint("GameMenu");
+                if (abilityTargetted != null)
+                {
+                    PlaySound("DesktopInstanceClose");
+                    Cursor.cursor.SetCursor(CursorType.Default);
+                    Cursor.cursor.iconAttached.SetActive(false);
+                    abilityTargetted = null;
+                }
+                else
+                {
+                    PlaySound("DesktopMenuOpen", 0.6f);
+                    SpawnDesktopBlueprint("GameMenu");
+                }
             });
             AddHotkey(BackQuote, () => { SpawnDesktopBlueprint("DevPanel"); });
             AddHotkey(KeypadMultiply, () => { board.EndCombat("Team1Won"); });

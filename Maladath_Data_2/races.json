@@ -1,8 +1,8 @@
 [
   {
     "name": "Lord Melenas",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Demon",
+    "subcategory": "Satyr",
     "side": "Neutral",
     "portrait": "PortraitSatyrOrange",
     "abilities": {},
@@ -5685,9 +5685,10 @@
   },
   {
     "name": "Anvilrage Dragoon",
-    "category": "Dragonkin",
-    "subcategory": "Dragon",
-    "side": "Neutral",
+    "category": "Humanoid",
+    "subcategory": "Dwarf",
+    "faction": "Dark Iron Clan",
+    "side": "Hostile",
     "portrait": "PortraitDarkIronDragoon",
     "abilities": {},
     "kind": "Common",
@@ -5695,9 +5696,10 @@
   },
   {
     "name": "Doomforge Dragoon",
-    "category": "Dragonkin",
-    "subcategory": "Dragon",
-    "side": "Neutral",
+    "category": "Humanoid",
+    "subcategory": "Dwarf",
+    "faction": "Dark Iron Clan",
+    "side": "Hostile",
     "portrait": "PortraitDarkIronDragoon",
     "abilities": {},
     "kind": "Common",

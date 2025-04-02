@@ -261,6 +261,9 @@ public class Ability
     //Hides this ability in spellbook
     public bool hide;
 
+    //Information on who can this spell be casted
+    public string possibleTargets;
+
     //Tags to help AI in calculating priorities in combat
     public List<string> tags;
 

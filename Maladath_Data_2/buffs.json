@@ -1873,7 +1873,6 @@
     "name": "Shadow Word: Pain",
     "icon": "AbilityShadowWordPain",
     "dispelType": "None",
-    "stackable": false,
     "tags": [
       "Damage"
     ],

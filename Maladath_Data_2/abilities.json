@@ -3,6 +3,7 @@
     "name": "Shadowform",
     "icon": "AbilityShadowform",
     "cooldown": 6,
+    "possibleTargets": "Self",
     "tags": [],
     "cost": {
       "Shadow": 6
@@ -37,6 +38,7 @@
     "icon": "AbilityShadowform",
     "cooldown": 1,
     "hide": true,
+    "possibleTargets": "Self",
     "tags": [],
     "cost": {
       "Shadow": 6
@@ -68,6 +70,7 @@
     "name": "Moonkin Form",
     "icon": "AbilityMoonkinForm",
     "cooldown": 1,
+    "possibleTargets": "Self",
     "tags": [],
     "cost": {
       "Arcane": 2
@@ -102,6 +105,7 @@
     "icon": "AbilityMoonkinForm",
     "cooldown": 1,
     "hide": true,
+    "possibleTargets": "Self",
     "tags": [],
     "cost": {
       "Arcane": 2
@@ -133,6 +137,7 @@
     "name": "Bear Form",
     "icon": "AbilityBearForm",
     "cooldown": 1,
+    "possibleTargets": "Self",
     "tags": [],
     "cost": {
       "Earth": 2
@@ -167,6 +172,7 @@
     "icon": "AbilityBearForm",
     "cooldown": 1,
     "hide": true,
+    "possibleTargets": "Self",
     "tags": [],
     "cost": {
       "Earth": 2
@@ -196,6 +202,7 @@
   },
   {
     "name": "A Sack of Coins",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -233,6 +240,7 @@
   },
   {
     "name": "Fat Sack of Coins",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -271,6 +279,7 @@
   },
   {
     "name": "Green Sack of Gems",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -307,6 +316,7 @@
   },
   {
     "name": "Red Sack of Gems",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -343,6 +353,7 @@
   },
   {
     "name": "Yellow Sack of Gems",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -379,6 +390,7 @@
   },
   {
     "name": "Blue Sack of Gems",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -415,6 +427,7 @@
   },
   {
     "name": "Gray Sack of Gems",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -451,6 +464,7 @@
   },
   {
     "name": "Sack of Gems",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -487,6 +501,7 @@
   },
   {
     "name": "Incendia Powder",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -526,6 +541,7 @@
   },
   {
     "name": "Encased Corrupt Ooze",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -565,6 +581,7 @@
   },
   {
     "name": "Hearthstone",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -610,6 +627,7 @@
   },
   {
     "name": "Ultrasafe Transporter: Gadgetzan",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -647,6 +665,7 @@
   },
   {
     "name": "Scroll of Spirit I",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -688,6 +707,7 @@
   },
   {
     "name": "Elixir of Minor Agility",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -728,6 +748,7 @@
   },
   {
     "name": "Elixir of Lion's Strength",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -768,6 +789,7 @@
   },
   {
     "name": "Elixir of Giant Growth",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -808,6 +830,7 @@
   },
   {
     "name": "Elixir of Wisdom",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -848,6 +871,7 @@
   },
   {
     "name": "Elixir of Firepower",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -888,6 +912,7 @@
   },
   {
     "name": "Elixir of Lesser Agility",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -928,6 +953,7 @@
   },
   {
     "name": "Elixir of Ogre's Strength",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -968,6 +994,7 @@
   },
   {
     "name": "Elixir of Agility",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -1008,6 +1035,7 @@
   },
   {
     "name": "Elixir of Frost Power",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -1048,6 +1076,7 @@
   },
   {
     "name": "Arcane Elixir",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -1088,6 +1117,7 @@
   },
   {
     "name": "Elixir of Greater Intellect",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -1128,6 +1158,7 @@
   },
   {
     "name": "Elixir of Giants",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -1168,6 +1199,7 @@
   },
   {
     "name": "Elixir of Greater Agility",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -1208,6 +1240,7 @@
   },
   {
     "name": "Mageblood Potion",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -1248,6 +1281,7 @@
   },
   {
     "name": "Elixir of Greater Firepower",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -1288,6 +1322,7 @@
   },
   {
     "name": "Elixir of Demonslaying",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -1328,6 +1363,7 @@
   },
   {
     "name": "Elixir of Shadow Power",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -1368,6 +1404,7 @@
   },
   {
     "name": "Elixir of the Sages",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -1408,6 +1445,7 @@
   },
   {
     "name": "Elixir of Brute Force",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -1448,6 +1486,7 @@
   },
   {
     "name": "Winterfall Firewater",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -1488,6 +1527,7 @@
   },
   {
     "name": "R.O.I.D.S.",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -1528,6 +1568,7 @@
   },
   {
     "name": "Ground Scorpok Assay",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -1568,6 +1609,7 @@
   },
   {
     "name": "Gizzard Gum",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -1608,6 +1650,7 @@
   },
   {
     "name": "Elixir of the Mongoose",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -1648,6 +1691,7 @@
   },
   {
     "name": "Greater Arcane Elixir",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -1688,6 +1732,7 @@
   },
   {
     "name": "Scroll of Spirit II",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -1729,6 +1774,7 @@
   },
   {
     "name": "Scroll of Spirit III",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -1770,6 +1816,7 @@
   },
   {
     "name": "Scroll of Spirit IV",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -1811,6 +1858,7 @@
   },
   {
     "name": "Scroll of Agility I",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -1852,6 +1900,7 @@
   },
   {
     "name": "Scroll of Agility II",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -1893,6 +1942,7 @@
   },
   {
     "name": "Scroll of Agility III",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -1934,6 +1984,7 @@
   },
   {
     "name": "Scroll of Agility IV",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -1975,6 +2026,7 @@
   },
   {
     "name": "Scroll of Strength I",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -2016,6 +2068,7 @@
   },
   {
     "name": "Scroll of Strength II",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -2058,6 +2111,7 @@
   },
   {
     "name": "Scroll of Strength III",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -2099,6 +2153,7 @@
   },
   {
     "name": "Scroll of Strength IV",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -2140,6 +2195,7 @@
   },
   {
     "name": "Scroll of Stamina I",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -2181,6 +2237,7 @@
   },
   {
     "name": "Scroll of Stamina II",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -2222,6 +2279,7 @@
   },
   {
     "name": "Scroll of Stamina III",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -2263,6 +2321,7 @@
   },
   {
     "name": "Scroll of Stamina IV",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -2305,6 +2364,7 @@
   },
   {
     "name": "Scroll of Protection I",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -2346,6 +2406,7 @@
   },
   {
     "name": "Scroll of Protection II",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -2387,6 +2448,7 @@
   },
   {
     "name": "Scroll of Protection III",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -2428,6 +2490,7 @@
   },
   {
     "name": "Scroll of Protection IV",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -2469,6 +2532,7 @@
   },
   {
     "name": "Scroll of Intellect I",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -2510,6 +2574,7 @@
   },
   {
     "name": "Scroll of Intellect II",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -2551,6 +2616,7 @@
   },
   {
     "name": "Scroll of Intellect III",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -2592,6 +2658,7 @@
   },
   {
     "name": "Scroll of Intellect IV",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -2633,6 +2700,7 @@
   },
   {
     "name": "Minor Healing Potion",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -2676,6 +2744,7 @@
   },
   {
     "name": "Lesser Healing Potion",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -2719,6 +2788,7 @@
   },
   {
     "name": "Healing Potion",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -2762,6 +2832,7 @@
   },
   {
     "name": "Greater Healing Potion",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -2805,6 +2876,7 @@
   },
   {
     "name": "Superior Healing Potion",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -2848,6 +2920,7 @@
   },
   {
     "name": "Major Healing Potion",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -2891,6 +2964,7 @@
   },
   {
     "name": "Mightfish Steak",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -2931,6 +3005,7 @@
   },
   {
     "name": "Grilled Squid",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -2976,6 +3051,7 @@
   },
   {
     "name": "Dirge's Kickin' Chimaerok Chops",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -3021,6 +3097,7 @@
   },
   {
     "name": "Clamlette Surprise",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -3066,6 +3143,7 @@
   },
   {
     "name": "Tender Wolf Steak",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -3111,6 +3189,7 @@
   },
   {
     "name": "Monster Omelet",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -3156,6 +3235,7 @@
   },
   {
     "name": "Spiced Chili Crab",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -3201,6 +3281,7 @@
   },
   {
     "name": "Hot Smoked Bass",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -3246,6 +3327,7 @@
   },
   {
     "name": "Cooked Glossy Mightfish",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -3291,6 +3373,7 @@
   },
   {
     "name": "Spider Sausage",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -3336,6 +3419,7 @@
   },
   {
     "name": "Sagefish Delight",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -3381,6 +3465,7 @@
   },
   {
     "name": "Heavy Kodo Stew",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -3426,6 +3511,7 @@
   },
   {
     "name": "Barbecued Buzzard Wing",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -3471,6 +3557,7 @@
   },
   {
     "name": "Roast Raptor",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -3516,6 +3603,7 @@
   },
   {
     "name": "Mystery Stew",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -3561,6 +3649,7 @@
   },
   {
     "name": "Soothing Turtle Bisque",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -3606,6 +3695,7 @@
   },
   {
     "name": "Hot Wolf Ribs",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -3651,6 +3741,7 @@
   },
   {
     "name": "Giant Clam Scorcho",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -3696,6 +3787,7 @@
   },
   {
     "name": "Spiced Wolf Ribs",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -3741,6 +3833,7 @@
   },
   {
     "name": "Heavy Crocolisk Stew",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -3786,6 +3879,7 @@
   },
   {
     "name": "Tasty Lion Steak",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -3831,6 +3925,7 @@
   },
   {
     "name": "Goblin Deviled Clams",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -3876,6 +3971,7 @@
   },
   {
     "name": "Lean Venison",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -3921,6 +4017,7 @@
   },
   {
     "name": "Seasoned Wolf Kabob",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -3966,6 +4063,7 @@
   },
   {
     "name": "Curiously Tasty Omelet",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -4011,6 +4109,7 @@
   },
   {
     "name": "Murloc Fin Soup",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -4056,6 +4155,7 @@
   },
   {
     "name": "Big Bear Steak",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -4101,6 +4201,7 @@
   },
   {
     "name": "Crocolisk Gumbo",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -4146,6 +4247,7 @@
   },
   {
     "name": "Gooey Spider Cake",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -4191,6 +4293,7 @@
   },
   {
     "name": "Lean Wolf Steak",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -4236,6 +4339,7 @@
   },
   {
     "name": "Hot Lion Chops",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -4281,6 +4385,7 @@
   },
   {
     "name": "Crispy Lizard Tail",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -4326,6 +4431,7 @@
   },
   {
     "name": "Smoked Sagefish",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -4371,6 +4477,7 @@
   },
   {
     "name": "Redridge Goulash",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -4416,6 +4523,7 @@
   },
   {
     "name": "Dry Pork Ribs",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -4461,6 +4569,7 @@
   },
   {
     "name": "Boiled Clams",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -4506,6 +4615,7 @@
   },
   {
     "name": "Coyote Steak",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -4551,6 +4661,7 @@
   },
   {
     "name": "Crab Cake",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -4596,6 +4707,7 @@
   },
   {
     "name": "Blood Sausage",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -4641,6 +4753,7 @@
   },
   {
     "name": "Strider Stew",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -4686,6 +4799,7 @@
   },
   {
     "name": "Fillet of Frenzy",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -4731,6 +4845,7 @@
   },
   {
     "name": "Crocolisk Steak",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -4776,6 +4891,7 @@
   },
   {
     "name": "Goretusk Liver Pie",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -4821,6 +4937,7 @@
   },
   {
     "name": "Bad Egg Nog",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -4866,6 +4983,7 @@
   },
   {
     "name": "Beer Basted Boar Ribs",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -4911,6 +5029,7 @@
   },
   {
     "name": "Spiced Wolf Meat",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -4956,6 +5075,7 @@
   },
   {
     "name": "Herb Baked Egg",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -5001,6 +5121,7 @@
   },
   {
     "name": "Kaldorei Spider Kabob",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -5046,6 +5167,7 @@
   },
   {
     "name": "Crispy Bat Wing",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -5091,6 +5213,7 @@
   },
   {
     "name": "Jungle Stew",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -5136,6 +5259,7 @@
   },
   {
     "name": "Carrion Surprise",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -5181,6 +5305,7 @@
   },
   {
     "name": "Blessed Sunfruit",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -5226,6 +5351,7 @@
   },
   {
     "name": "Roasted Kodo Meat",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -5271,6 +5397,7 @@
   },
   {
     "name": "Runn Tum Tuber Surprise",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -5313,6 +5440,7 @@
   {
     "name": "Prismatic Light",
     "icon": "AbilityPrismaticLight",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -5323,6 +5451,7 @@
     "name": "Holy Bolts",
     "icon": "AbilityHolyBolts",
     "cooldown": 7,
+    "possibleTargets": "Enemies",
     "tags": [],
     "cost": {
       "Air": 4,
@@ -5507,6 +5636,7 @@
   {
     "name": "Light's Grace",
     "icon": "AbilityLightsGrace",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -5516,6 +5646,7 @@
   {
     "name": "Aftermath",
     "icon": "AbilityFire",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -5525,6 +5656,7 @@
   {
     "name": "Destructive Calamity",
     "icon": "AbilityDestructiveSoul",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -5534,6 +5666,7 @@
   {
     "name": "Weight of Death",
     "icon": "AbilityDarkSummoning",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -5543,6 +5676,7 @@
   {
     "name": "Seized Vitality",
     "icon": "AbilitySeizedVitality",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -5552,6 +5686,7 @@
   {
     "name": "Harvest of Life",
     "icon": "AbilityHarvestofLife",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -5561,6 +5696,7 @@
   {
     "name": "Soul Mangle",
     "icon": "AbilitySoulSiphon",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -5570,6 +5706,7 @@
   {
     "name": "War Machine",
     "icon": "AbilityRapidKilling",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -5579,6 +5716,7 @@
   {
     "name": "Immense Strength",
     "icon": "AbilityFaultline",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -5588,6 +5726,7 @@
   {
     "name": "Sunder Armor",
     "icon": "AbilitySunderArmor",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -5597,6 +5736,7 @@
   {
     "name": "Toughness",
     "icon": "AbilityToughness",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -5606,6 +5746,7 @@
   {
     "name": "Pummel",
     "icon": "AbilityPummel",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -5615,6 +5756,7 @@
   {
     "name": "Bloodcraze",
     "icon": "AbilityBloodcraze",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -5624,6 +5766,7 @@
   {
     "name": "Fresh Meat",
     "icon": "AbilityBloodCorruptionDeath",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -5633,6 +5776,7 @@
   {
     "name": "Storm's Wrath",
     "icon": "AbilityStormsWrath",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -5642,6 +5786,7 @@
   {
     "name": "Acid Rain",
     "icon": "AbilityAcid",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -5651,6 +5796,7 @@
   {
     "name": "Adjudication",
     "icon": "AbilityAdjudication",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -5660,6 +5806,7 @@
   {
     "name": "Aetherial Kindling",
     "icon": "AbilityAetherialKindling",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -5669,6 +5816,7 @@
   {
     "name": "Agonizing Corruption",
     "icon": "AbilityAgonizingCorruption",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -5678,6 +5826,7 @@
   {
     "name": "Amplification",
     "icon": "AbilityAmplification",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -5707,6 +5856,7 @@
   {
     "name": "Ancestral Guidance",
     "icon": "AbilityAncestralGuidance",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -5716,6 +5866,7 @@
   {
     "name": "Ancestral Vigor",
     "icon": "AbilityAncestralVigor",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -5725,6 +5876,7 @@
   {
     "name": "Anticipation",
     "icon": "AbilityAnticipation",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -5734,6 +5886,7 @@
   {
     "name": "Apex Predator",
     "icon": "AbilityApexPredator",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -5743,6 +5896,7 @@
   {
     "name": "Arcane Barrage",
     "icon": "AbilityArcaneBarrage",
+    "possibleTargets": "Enemies",
     "tags": [],
     "ranks": [
       {}
@@ -5777,6 +5931,7 @@
   {
     "name": "Arcane Blast",
     "icon": "AbilityArcaneBlast",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -5786,6 +5941,7 @@
   {
     "name": "Arcane Bombardment",
     "icon": "AbilityArcaneBombardment",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -5795,6 +5951,7 @@
   {
     "name": "Arcane Harmony",
     "icon": "AbilityArcaneHarmony",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -5825,6 +5982,7 @@
     "name": "Arcane Missiles",
     "icon": "AbilityArcaneMissiles",
     "cooldown": 2,
+    "possibleTargets": "Enemies",
     "tags": [
       "Damage"
     ],
@@ -5983,6 +6141,7 @@
   {
     "name": "Arcane Tempo",
     "icon": "AbilityArcaneTempo",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6012,6 +6171,7 @@
   {
     "name": "Arcing Cleaves",
     "icon": "AbilityArcingCleaves",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6041,6 +6201,7 @@
   {
     "name": "Ardent Defender",
     "icon": "AbilityArdentDefender",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6073,6 +6234,7 @@
   {
     "name": "Ashen Catalyst",
     "icon": "AbilityAshenCatalyst",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6082,6 +6244,7 @@
   {
     "name": "Astral Communion",
     "icon": "AbilityAstralCommunion",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6091,6 +6254,7 @@
   {
     "name": "Astral Invocation",
     "icon": "AbilityAstralInvocation",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6100,6 +6264,7 @@
   {
     "name": "Avenger's Shield",
     "icon": "AbilityAvengersShield",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6109,6 +6274,7 @@
   {
     "name": "Avenging Wrath",
     "icon": "AbilityAvengingWrath",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6142,6 +6308,7 @@
   {
     "name": "Barkskin",
     "icon": "AbilityBarkskin",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6151,6 +6318,7 @@
   {
     "name": "Barricade of Faith",
     "icon": "AbilityBarricadeofFaith",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6160,6 +6328,7 @@
   {
     "name": "Bastion of Light",
     "icon": "AbilityBastionofLight",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6169,6 +6338,7 @@
   {
     "name": "Battle Shout",
     "icon": "AbilityBattleShout",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6178,6 +6348,7 @@
   {
     "name": "Beacon of the Lightbringer",
     "icon": "AbilityBeaconoftheLightbringer",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6187,6 +6358,7 @@
   {
     "name": "Bellowing Roar",
     "icon": "AbilityBellowingRoar",
+    "possibleTargets": "Self",
     "tags": [
       "Gathering"
     ],
@@ -6222,6 +6394,7 @@
   {
     "name": "Benediction",
     "icon": "AbilityBenediction",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6231,6 +6404,7 @@
   {
     "name": "Berserk",
     "icon": "AbilityBerserk",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6264,6 +6438,7 @@
   {
     "name": "Berserker Rage",
     "icon": "AbilityBerserkerRage",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6273,6 +6448,7 @@
   {
     "name": "Blackout",
     "icon": "AbilityBlackout",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6283,6 +6459,7 @@
     "name": "Blade of Justice",
     "icon": "AbilityBladeofJustice",
     "cooldown": 2,
+    "possibleTargets": "Enemies",
     "tags": [],
     "cost": {
       "Fire": 2,
@@ -6338,6 +6515,7 @@
   {
     "name": "Blades of Light",
     "icon": "AbilityBladesofLight",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6347,6 +6525,7 @@
   {
     "name": "Bladestorm",
     "icon": "AbilityBladestorm",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6356,6 +6535,7 @@
   {
     "name": "Blast Wave",
     "icon": "AbilityBlastWave",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6366,6 +6546,7 @@
     "name": "Blazing Barrier",
     "icon": "AbilityBlazingBarrier",
     "cooldown": 5,
+    "possibleTargets": "Self",
     "tags": [],
     "cost": {
       "Fire": 4,
@@ -6401,6 +6582,7 @@
   {
     "name": "Blessed Champion",
     "icon": "AbilityBlessedChampion",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6410,6 +6592,7 @@
   {
     "name": "Blessed Recovery",
     "icon": "AbilityBlessedRecovery",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6419,6 +6602,7 @@
   {
     "name": "Blessing of Kings",
     "icon": "AbilityBlessingofKings",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6429,6 +6613,7 @@
     "name": "Blessing of Might",
     "icon": "AbilityBlessingofMight",
     "cooldown": 3,
+    "possibleTargets": "Self",
     "tags": [],
     "cost": {
       "Air": 2,
@@ -6467,6 +6652,7 @@
   {
     "name": "Blessing of Wisdom",
     "icon": "AbilityBlessingofWisdom",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6477,6 +6663,7 @@
     "name": "Blizzard",
     "icon": "AbilityBlizzard",
     "cooldown": 4,
+    "possibleTargets": "Self",
     "tags": [
       "Damage",
       "Overtime"
@@ -6513,6 +6700,7 @@
   {
     "name": "Bloodrage",
     "icon": "AbilityBloodrage",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6522,6 +6710,7 @@
   {
     "name": "Bloodthirst",
     "icon": "AbilityBloodthirst",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6531,6 +6720,7 @@
   {
     "name": "Bone Chilling",
     "icon": "AbilityBoneChilling",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6560,6 +6750,7 @@
   {
     "name": "Boundless Judgement",
     "icon": "AbilityBoundlessJudgement",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6569,6 +6760,7 @@
   {
     "name": "Boundless Salvation",
     "icon": "AbilityBoundlessSalvation",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6579,6 +6771,7 @@
     "name": "Bow Proficiency",
     "icon": "AbilityBowProficiency",
     "hide": true,
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6588,6 +6781,7 @@
   {
     "name": "Brain Freeze",
     "icon": "AbilityBrainFreeze",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6649,6 +6843,7 @@
   {
     "name": "Brutal Swipes",
     "icon": "AbilityBrutalSwipes",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6658,6 +6853,7 @@
   {
     "name": "Bulwark of Order",
     "icon": "AbilityBulwarkofOrder",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6667,6 +6863,7 @@
   {
     "name": "Call of Thunder",
     "icon": "AbilityAcid",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6676,6 +6873,7 @@
   {
     "name": "Capacitor Totem",
     "icon": "AbilityBrilliance",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6685,6 +6883,7 @@
   {
     "name": "Cascading Power",
     "icon": "AbilityCascadingPower",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6715,6 +6914,7 @@
     "name": "Chain Lightning",
     "icon": "AbilityChainLightning",
     "cooldown": 3,
+    "possibleTargets": "Self",
     "tags": [],
     "cost": {
       "Air": 2,
@@ -6779,6 +6979,7 @@
   {
     "name": "Channel Demonfire",
     "icon": "AbilityChannelDemonfire",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6788,6 +6989,7 @@
   {
     "name": "Chaos Bolt",
     "icon": "AbilityChaosBolt",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6833,6 +7035,7 @@
   {
     "name": "Charge",
     "icon": "AbilityCharge",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6842,6 +7045,7 @@
   {
     "name": "Cleanse",
     "icon": "AbilityPurify",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6852,6 +7056,7 @@
     "name": "Cleave",
     "icon": "AbilityCleave",
     "cooldown": 3,
+    "possibleTargets": "Self",
     "tags": [],
     "cost": {
       "Earth": 4,
@@ -6904,6 +7109,7 @@
     "name": "Cloth Proficiency",
     "icon": "AbilityClothProficiency",
     "hide": true,
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6913,6 +7119,7 @@
   {
     "name": "Combustion",
     "icon": "AbilityCombustion",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6948,6 +7155,7 @@
   {
     "name": "Concentrated Power",
     "icon": "AbilityConcentratedPower",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -6977,6 +7185,7 @@
   {
     "name": "Concentration",
     "icon": "AbilityConcentration",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7006,6 +7215,7 @@
   {
     "name": "Concetration",
     "icon": "AbilityConcetration",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7015,6 +7225,7 @@
   {
     "name": "Conflagration",
     "icon": "AbilityConflagration",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7044,6 +7255,7 @@
   {
     "name": "Consecrated Ground",
     "icon": "AbilityConsecratedGround",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7054,6 +7266,7 @@
     "name": "Consecration",
     "icon": "AbilityConsecration",
     "cooldown": 4,
+    "possibleTargets": "Self",
     "tags": [],
     "cost": {
       "Fire": 2,
@@ -7093,6 +7306,7 @@
   {
     "name": "Continuous Waves",
     "icon": "AbilityAcid",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7102,6 +7316,7 @@
   {
     "name": "Convection",
     "icon": "AbilityConvection",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7131,6 +7346,7 @@
   {
     "name": "Converging Storms",
     "icon": "AbilityConvergingStorms",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7140,6 +7356,7 @@
   {
     "name": "Conviction",
     "icon": "AbilityConviction",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7149,6 +7366,7 @@
   {
     "name": "Convoke the Spirits",
     "icon": "AbilityConvoketheSpirits",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7159,6 +7377,7 @@
     "name": "Corruption",
     "icon": "AbilityCorruption",
     "cooldown": 3,
+    "possibleTargets": "Enemies",
     "tags": [
       "Damage",
       "Overtime"
@@ -7232,6 +7451,7 @@
   {
     "name": "Corruption of the Earth",
     "icon": "AbilityCreatureCursed01",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7241,6 +7461,7 @@
   {
     "name": "Cosmic Rapidity",
     "icon": "AbilityCosmicRapidity",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7250,6 +7471,7 @@
   {
     "name": "Crash Lightning",
     "icon": "AbilityCrashLightning",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7259,6 +7481,7 @@
   {
     "name": "Creeping Death",
     "icon": "AbilityCreepingDeath",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7268,6 +7491,7 @@
   {
     "name": "Critical Mass",
     "icon": "AbilityCriticalMass",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7298,6 +7522,7 @@
     "name": "Crossbow Proficiency",
     "icon": "AbilityCrossbowProficiency",
     "hide": true,
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7307,6 +7532,7 @@
   {
     "name": "Cruel Winter",
     "icon": "AbilityCruelWinter",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7336,6 +7562,7 @@
   {
     "name": "Cruelty",
     "icon": "AbilityCruelty",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7345,6 +7572,7 @@
   {
     "name": "Crusade",
     "icon": "AbilityCrusade",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7354,6 +7582,7 @@
   {
     "name": "Crusader's Resolve",
     "icon": "AbilityCrusadersResolve",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7363,6 +7592,7 @@
   {
     "name": "Cryopathy",
     "icon": "AbilityCryopathy",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7372,6 +7602,7 @@
   {
     "name": "Cultivation",
     "icon": "AbilityCultivation",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7382,6 +7613,7 @@
     "name": "Curse of Agony",
     "icon": "AbilityCurseOfAgony",
     "cooldown": 4,
+    "possibleTargets": "Enemies",
     "tags": [
       "Damage",
       "Overtime"
@@ -7471,6 +7703,7 @@
   {
     "name": "Curse of Thorns",
     "icon": "AbilityThorns",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7480,6 +7713,7 @@
   {
     "name": "Curse of Tongues",
     "icon": "AbilityCurseofTongues",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7489,6 +7723,7 @@
   {
     "name": "Curse of Weakness",
     "icon": "AbilityCurseofWeakness",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7498,6 +7733,7 @@
   {
     "name": "Cyclone",
     "icon": "AbilityCyclone",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7508,6 +7744,7 @@
     "name": "Dagger Proficiency",
     "icon": "AbilityDaggerProficiency",
     "hide": true,
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7517,6 +7754,7 @@
   {
     "name": "Dash",
     "icon": "AbilityDash",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7527,6 +7765,7 @@
     "name": "Deep Freeze",
     "icon": "AbilityDeepFreeze",
     "cooldown": 5,
+    "possibleTargets": "Self",
     "tags": [
       "Gathering"
     ],
@@ -7605,6 +7844,7 @@
   {
     "name": "Deep Impact",
     "icon": "AbilityDeepImpact",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7635,6 +7875,7 @@
   {
     "name": "Deep Shatter",
     "icon": "AbilityDeepShatter",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7664,6 +7905,7 @@
   {
     "name": "Deep Wounds",
     "icon": "AbilityDeepWounds",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7673,6 +7915,7 @@
   {
     "name": "Defiance",
     "icon": "AbilityDefiance",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7682,6 +7925,7 @@
   {
     "name": "Deflection",
     "icon": "AbilityDeflection",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7691,6 +7935,7 @@
   {
     "name": "Deluge",
     "icon": "AbilityDeluge",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7700,6 +7945,7 @@
   {
     "name": "Demon Skin",
     "icon": "AbilityDemonSkin",
+    "possibleTargets": "Self",
     "tags": [
       "Defensive"
     ],
@@ -7734,6 +7980,7 @@
   {
     "name": "Demonic Embrace",
     "icon": "AbilityDemonicEmbrace",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7743,6 +7990,7 @@
   {
     "name": "Demoralizing Shout",
     "icon": "AbilityDemoralizingShout",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7752,6 +8000,7 @@
   {
     "name": "Desperate Prayer",
     "icon": "AbilityDesperatePrayer",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7761,6 +8010,7 @@
   {
     "name": "Devouring Plague",
     "icon": "AbilityDevouringPlague",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7770,6 +8020,7 @@
   {
     "name": "Dire Fixation",
     "icon": "AbilityDireFixation",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7779,6 +8030,7 @@
   {
     "name": "Divine Auxiliary",
     "icon": "AbilityDivineAuxiliary",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7788,6 +8040,7 @@
   {
     "name": "Divine Favor",
     "icon": "AbilityDivineFavor",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7797,6 +8050,7 @@
   {
     "name": "Divine Fury",
     "icon": "AbilityDivineFury",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7806,6 +8060,7 @@
   {
     "name": "Divine Intervention",
     "icon": "AbilityDivineIntervention",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7815,6 +8070,7 @@
   {
     "name": "Divine Revelations",
     "icon": "AbilityDivineRevelations",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7824,6 +8080,7 @@
   {
     "name": "Divine Shield",
     "icon": "AbilityDivineShield",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7833,6 +8090,7 @@
   {
     "name": "Divine Spirit",
     "icon": "AbilityDivineSpirit",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7842,6 +8100,7 @@
   {
     "name": "Divine Storm",
     "icon": "AbilityDivineStorm",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7851,6 +8110,7 @@
   {
     "name": "Divine Wrath",
     "icon": "AbilityDivineWrath",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7860,6 +8120,7 @@
   {
     "name": "Doom Winds",
     "icon": "AbilitySkyreachFourWind",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7869,6 +8130,7 @@
   {
     "name": "Downpour",
     "icon": "AbilityDownpour",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7878,6 +8140,7 @@
   {
     "name": "Dragon's Breath",
     "icon": "AbilityDragonsBreath",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7887,6 +8150,7 @@
   {
     "name": "Drain Soul",
     "icon": "AbilityDrainSoul",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7923,6 +8187,7 @@
   {
     "name": "Draw Spirit",
     "icon": "AbilityDrawSpirit",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7932,6 +8197,7 @@
   {
     "name": "Dream Fog",
     "icon": "AbilityDeadEye",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7942,6 +8208,7 @@
     "name": "Dual Wielding Proficiency",
     "icon": "AbilityAbolishMagic",
     "hide": true,
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7951,6 +8218,7 @@
   {
     "name": "Earth Shield",
     "icon": "AbilityEarthShield",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7960,6 +8228,7 @@
   {
     "name": "Earth Shock",
     "icon": "AbilityEarthShock",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7969,6 +8238,7 @@
   {
     "name": "Earthen Harmony",
     "icon": "AbilityEarthenHarmony",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7978,6 +8248,7 @@
   {
     "name": "Earthquake",
     "icon": "AbilityEarthquake",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7987,6 +8258,7 @@
   {
     "name": "Echo of the Elements",
     "icon": "AbilityEchooftheElements",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -7996,6 +8268,7 @@
   {
     "name": "Echoes of Great Sundering",
     "icon": "AbilityEchoesofGreatSundering",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8005,6 +8278,7 @@
   {
     "name": "Eclipse",
     "icon": "AbilityEclipse",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8014,6 +8288,7 @@
   {
     "name": "Efflorescence",
     "icon": "AbilityEfflorescence",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8023,6 +8298,7 @@
   {
     "name": "Elemental Assault",
     "icon": "AbilityElementalAssault",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8032,6 +8308,7 @@
   {
     "name": "Elemental Equilibrium",
     "icon": "AbilityElementalAbsorption",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8041,6 +8318,7 @@
   {
     "name": "Elemental Warding",
     "icon": "AbilityManaTree",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8050,6 +8328,7 @@
   {
     "name": "Embrace of the Dream",
     "icon": "AbilityEmbraceoftheDream",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8059,6 +8338,7 @@
   {
     "name": "Empyrean Power",
     "icon": "AbilityEmpyreanPower",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8068,6 +8348,7 @@
   {
     "name": "Enlightenment",
     "icon": "AbilityEnlightenment",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8097,6 +8378,7 @@
   {
     "name": "Enraged Regeneration",
     "icon": "AbilityEnragedRegeneration",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8106,6 +8388,7 @@
   {
     "name": "Eradication",
     "icon": "AbilityEradication",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8115,6 +8398,7 @@
   {
     "name": "Evocation",
     "icon": "AbilityEvocation",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8125,6 +8409,7 @@
     "name": "Execute",
     "icon": "AbilityExecute",
     "cooldown": 1,
+    "possibleTargets": "Enemies",
     "tags": [],
     "cost": {
       "Fire": 2,
@@ -8181,6 +8466,7 @@
   {
     "name": "Executioner's Will",
     "icon": "AbilityExecutioner'sWill",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8190,6 +8476,7 @@
   {
     "name": "Eye of The Storm",
     "icon": "AbilityEyeOfTheStorm",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8199,6 +8486,7 @@
   {
     "name": "Fade",
     "icon": "AbilityFade",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8208,6 +8496,7 @@
   {
     "name": "Faerie Fire",
     "icon": "AbilityFaerieFire",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8217,6 +8506,7 @@
   {
     "name": "Fel Armor",
     "icon": "AbilityFelArmor",
+    "possibleTargets": "Self",
     "tags": [
       "Defensive"
     ],
@@ -8252,6 +8542,7 @@
   {
     "name": "Feline Swiftness",
     "icon": "AbilityFelineSwiftness",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8261,6 +8552,7 @@
   {
     "name": "Feral Spirit",
     "icon": "AbilityFeralSpirit",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8270,6 +8562,7 @@
   {
     "name": "Ferocious Bite",
     "icon": "AbilityFerociousBite",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8279,6 +8572,7 @@
   {
     "name": "Fervent Flickering",
     "icon": "AbilityFerventFlickering",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8309,6 +8603,7 @@
   {
     "name": "Fiery Rush",
     "icon": "AbilityFieryRush",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8338,6 +8633,7 @@
   {
     "name": "Final Verdict",
     "icon": "AbilityFinalVerdict",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8347,6 +8643,7 @@
   {
     "name": "Fingers of Frost",
     "icon": "AbilityFingersOfFrost",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8377,6 +8674,7 @@
     "name": "Fire Blast",
     "icon": "AbilityFireBlast",
     "cooldown": 5,
+    "possibleTargets": "Enemies",
     "tags": [],
     "cost": {
       "Fire": 4,
@@ -8444,6 +8742,7 @@
     "name": "Fireball",
     "icon": "AbilityFireball",
     "cooldown": 1,
+    "possibleTargets": "Enemies",
     "tags": [
       "Damage"
     ],
@@ -8543,6 +8842,7 @@
     "icon": "AbilityFireball",
     "cooldown": 10,
     "hide": true,
+    "possibleTargets": "Enemies",
     "tags": [
       "Damage"
     ],
@@ -8628,6 +8928,7 @@
   {
     "name": "Firemind",
     "icon": "AbilityFiremind",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8688,6 +8989,7 @@
     "name": "Fist Weapon Proficiency",
     "icon": "AbilityFistWeaponProficiency",
     "hide": true,
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8697,6 +8999,7 @@
   {
     "name": "Flame Patch",
     "icon": "AbilityFlamePatch",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8728,6 +9031,7 @@
     "name": "Flame Shock",
     "icon": "AbilityFlameShock",
     "cooldown": 4,
+    "possibleTargets": "Enemies",
     "tags": [],
     "cost": {
       "Fire": 4
@@ -8780,6 +9084,7 @@
   {
     "name": "Flamestrike",
     "icon": "AbilityFlamestrike",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8789,6 +9094,7 @@
   {
     "name": "Flametongue Weapon",
     "icon": "AbilityFlameTounge",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8798,6 +9104,7 @@
   {
     "name": "Flash Flood",
     "icon": "AbilityFlashFlood",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8807,6 +9114,7 @@
   {
     "name": "Flash Freeze",
     "icon": "AbilityFlashFreeze",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8836,6 +9144,7 @@
   {
     "name": "Flash of Light",
     "icon": "AbilityFlashHeal",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8845,6 +9154,7 @@
   {
     "name": "Flash of Lightning",
     "icon": "AbilityLightningOverload",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8854,6 +9164,7 @@
   {
     "name": "Flourish",
     "icon": "AbilityFlourish",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8863,6 +9174,7 @@
   {
     "name": "Flow of Power",
     "icon": "AbilityAcid",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8872,6 +9184,7 @@
   {
     "name": "Force of Will",
     "icon": "AbilityForceofWill",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8881,6 +9194,7 @@
   {
     "name": "Forceful Winds",
     "icon": "AbilityAcid",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8890,6 +9204,7 @@
   {
     "name": "Foresight",
     "icon": "AbilityForesight",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8949,6 +9264,7 @@
   {
     "name": "Frantic Momentum",
     "icon": "AbilityFranticMomentum",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -8959,6 +9275,7 @@
     "name": "Freezing Nova",
     "icon": "AbilityFreezingNova",
     "cooldown": 1,
+    "possibleTargets": "Self",
     "tags": [
       "Gathering"
     ],
@@ -9013,6 +9330,7 @@
   {
     "name": "Frost Channeling",
     "icon": "AbilityFrostChanneling",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9042,6 +9360,7 @@
   {
     "name": "Frost Shock",
     "icon": "AbilityFrostShock",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9051,6 +9370,7 @@
   {
     "name": "Frost Ward",
     "icon": "AbilityFrostWard",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9060,6 +9380,7 @@
   {
     "name": "Frostbite",
     "icon": "AbilityFrostbite",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9089,6 +9410,7 @@
   {
     "name": "Frostbolt",
     "icon": "AbilityFrostbolt",
+    "possibleTargets": "Self",
     "tags": [
       "Damage"
     ],
@@ -9174,6 +9496,7 @@
   {
     "name": "Frostbrand Weapon",
     "icon": "AbilityFrostBrand",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9183,6 +9506,7 @@
   {
     "name": "Further Beyond",
     "icon": "AbilityFurtherBeyond",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9192,6 +9516,7 @@
   {
     "name": "Glorious Dawn",
     "icon": "AbilityGloriousDawn",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9201,6 +9526,7 @@
   {
     "name": "Growl",
     "icon": "AbilityGrowl",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9211,6 +9537,7 @@
     "name": "Gun Proficiency",
     "icon": "AbilityGunProficiency",
     "hide": true,
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9220,6 +9547,7 @@
   {
     "name": "Hailstones",
     "icon": "AbilityHailstones",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9250,6 +9578,7 @@
     "name": "Hammer of Justice",
     "icon": "AbilityHammerOfJustice",
     "cooldown": 5,
+    "possibleTargets": "Enemies",
     "tags": [
       "Stun"
     ],
@@ -9301,6 +9630,7 @@
   {
     "name": "Hammer of Wrath",
     "icon": "AbilityHammerofWrath",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9310,6 +9640,7 @@
   {
     "name": "Hamstring",
     "icon": "AbilityHamstring",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9319,6 +9650,7 @@
   {
     "name": "Hand of the Protector",
     "icon": "AbilityHandoftheProtector",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9328,6 +9660,7 @@
   {
     "name": "Harmonic Echo",
     "icon": "AbilityHarmonicEcho",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9357,6 +9690,7 @@
   {
     "name": "Harmonic Echo",
     "icon": "AbilityHarmonicEcho",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9386,6 +9720,7 @@
   {
     "name": "Harmonious Blooming",
     "icon": "AbilityHarmoniousBlooming",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9395,6 +9730,7 @@
   {
     "name": "Haunt",
     "icon": "AbilityHaunt",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9404,6 +9740,7 @@
   {
     "name": "Havoc",
     "icon": "AbilityHavoc",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9413,6 +9750,7 @@
   {
     "name": "Heal",
     "icon": "AbilityHeal",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9422,6 +9760,7 @@
   {
     "name": "Healing Focus",
     "icon": "AbilityHealingFocus",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9431,6 +9770,7 @@
   {
     "name": "Healing Grace",
     "icon": "AbilityAcid",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9440,6 +9780,7 @@
   {
     "name": "Healing Rain",
     "icon": "AbilityHealingRain",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9449,6 +9790,7 @@
   {
     "name": "Healing Stream Totem",
     "icon": "AbilityTotemNatureResistance",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9458,6 +9800,7 @@
   {
     "name": "Healing Wave",
     "icon": "AbilityHealingWave",
+    "possibleTargets": "Friendly",
     "tags": [
       "Healing"
     ],
@@ -9499,6 +9842,7 @@
   {
     "name": "Health Funnel",
     "icon": "AbilityHealthFunnel",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9508,6 +9852,7 @@
   {
     "name": "Heart of the Crusader",
     "icon": "AbilityHeartoftheCrusader",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9518,18 +9863,10 @@
     "name": "Heroic Strike",
     "icon": "AbilityHeroicStrike",
     "cooldown": 1,
+    "possibleTargets": "Enemies",
     "tags": [],
     "cost": {
-      "Lightning": 0,
-      "Arcane": 0,
-      "Order": 0,
-      "Air": 4,
-      "Shadow": 0,
-      "Decay": 0,
-      "Frost": 0,
-      "Water": 0,
-      "Earth": 0,
-      "Fire": 0
+      "Air": 4
     },
     "ranks": [
       {}
@@ -9570,6 +9907,7 @@
   {
     "name": "Hex of Weakness",
     "icon": "AbilityHexofWeakness",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9579,6 +9917,7 @@
   {
     "name": "Hibernate",
     "icon": "AbilityHibernate",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9589,6 +9928,7 @@
     "name": "Holy Fire",
     "icon": "AbilityHolyFire",
     "cooldown": 4,
+    "possibleTargets": "Enemies",
     "tags": [
       "Damage",
       "Overtime"
@@ -9638,6 +9978,7 @@
   {
     "name": "Holy Light",
     "icon": "AbilityHolyLight",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9647,6 +9988,7 @@
   {
     "name": "Holy Nova",
     "icon": "AbilityHolyNova",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9656,6 +9998,7 @@
   {
     "name": "Holy Shock",
     "icon": "AbilityHolyShock",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9665,6 +10008,7 @@
   {
     "name": "Holy Wrath",
     "icon": "AbilityHolyWrath",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9674,6 +10018,7 @@
   {
     "name": "Honed Instincts",
     "icon": "AbilityHonedInstincts",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9683,6 +10028,7 @@
   {
     "name": "Hot Hand",
     "icon": "AbilityFieryRush",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9692,6 +10038,7 @@
   {
     "name": "Hot Streak",
     "icon": "AbilityHotStreak",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9749,6 +10096,7 @@
   {
     "name": "Hyperthermia",
     "icon": "AbilityHyperthermia",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9778,6 +10126,7 @@
   {
     "name": "Ice Block",
     "icon": "AbilityIceBlock",
+    "possibleTargets": "Self",
     "tags": [
       "Defensive",
       "Emergency"
@@ -9814,6 +10163,7 @@
     "name": "Ice Lance",
     "icon": "AbilityIceLance",
     "cooldown": 1,
+    "possibleTargets": "Enemies",
     "tags": [
       "Damage"
     ],
@@ -9861,6 +10211,7 @@
   {
     "name": "Ice Shards",
     "icon": "AbilityIceShards",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9890,6 +10241,7 @@
   {
     "name": "Ice Strike",
     "icon": "AbilityFrostStrike",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9899,6 +10251,7 @@
   {
     "name": "Icy Flows",
     "icon": "AbilityIcyFlows",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9908,6 +10261,7 @@
   {
     "name": "Icy Veins",
     "icon": "AbilityIcyVeins",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9918,6 +10272,7 @@
     "name": "Idol Proficiency",
     "icon": "AbilityIdolProficiency",
     "hide": true,
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9927,6 +10282,7 @@
   {
     "name": "Illumination",
     "icon": "AbilityIllumination",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9936,6 +10292,7 @@
   {
     "name": "Imbued Infusions",
     "icon": "AbilityImbuedInfusions",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9946,6 +10303,7 @@
     "name": "Immolate",
     "icon": "AbilityImmolate",
     "cooldown": 4,
+    "possibleTargets": "Enemies",
     "tags": [],
     "cost": {
       "Fire": 6,
@@ -9982,6 +10340,7 @@
   {
     "name": "Incapacitating Roar",
     "icon": "AbilityIncapacitatingRoar",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -9991,6 +10350,7 @@
   {
     "name": "Indomitable",
     "icon": "AbilityIndomitable",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10000,6 +10360,7 @@
   {
     "name": "Infected Wounds",
     "icon": "AbilityInfectedWounds",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10009,6 +10370,7 @@
   {
     "name": "Infernal Brand",
     "icon": "AbilityInfernalBrand",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10018,6 +10380,7 @@
   {
     "name": "Inmost Light",
     "icon": "AbilityInmostLight",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10027,6 +10390,7 @@
   {
     "name": "Inner Fire",
     "icon": "AbilityInnerFire",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10036,6 +10400,7 @@
   {
     "name": "Innervate",
     "icon": "AbilityInnervate",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10046,6 +10411,7 @@
     "name": "Judgement",
     "icon": "AbilityJudgement",
     "cooldown": 1,
+    "possibleTargets": "Enemies",
     "tags": [],
     "cost": {
       "Air": 2,
@@ -10132,6 +10498,7 @@
   {
     "name": "Jurisdiction",
     "icon": "AbilityJurisdiction",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10141,6 +10508,7 @@
   {
     "name": "Killer Instinct",
     "icon": "AbilityKillerInstinct",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10150,6 +10518,7 @@
   {
     "name": "Kindled Malice",
     "icon": "AbilityKindledMalice",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10159,6 +10528,7 @@
   {
     "name": "Last Stand",
     "icon": "AbilityLastStand",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10169,6 +10539,7 @@
     "name": "Lava Burst",
     "icon": "AbilityLavaBurst",
     "cooldown": 4,
+    "possibleTargets": "Enemies",
     "tags": [],
     "cost": {
       "Fire": 4,
@@ -10220,6 +10591,7 @@
   {
     "name": "Lava Lash",
     "icon": "AbilityLavalash",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10229,6 +10601,7 @@
   {
     "name": "Lay on Hands",
     "icon": "AbilityLayonHands",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10239,6 +10612,7 @@
     "name": "Leather Proficiency",
     "icon": "AbilityLeatherProficiency",
     "hide": true,
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10248,6 +10622,7 @@
   {
     "name": "Lesser Heal",
     "icon": "AbilityLesserHeal",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10258,6 +10633,7 @@
     "name": "Libram Proficiency",
     "icon": "AbilityLibramProficiency",
     "hide": true,
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10267,6 +10643,7 @@
   {
     "name": "Lifebloom",
     "icon": "AbilityLifebloom",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10276,6 +10653,7 @@
   {
     "name": "Light of the Sun",
     "icon": "AbilityLightoftheSun",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10286,6 +10664,7 @@
     "name": "Lightning Bolt",
     "icon": "AbilityLightningBolt",
     "cooldown": 1,
+    "possibleTargets": "Enemies",
     "tags": [],
     "cost": {
       "Lightning": 4
@@ -10334,6 +10713,7 @@
   {
     "name": "Lightning Shield",
     "icon": "AbilityLightningShield",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10343,6 +10723,7 @@
   {
     "name": "Lightning Wave",
     "icon": "AbilityCrashingStorm",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10352,6 +10733,7 @@
   {
     "name": "Light's Conviction",
     "icon": "AbilityLight'sConviction",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10361,6 +10743,7 @@
   {
     "name": "Lightwell",
     "icon": "AbilityLightwell",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10370,6 +10753,7 @@
   {
     "name": "Liquid Magma Totem",
     "icon": "AbilityTotemFireResistance",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10379,6 +10763,7 @@
   {
     "name": "Lunar Shrapnel",
     "icon": "AbilityLunarShrapnel",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10388,6 +10773,7 @@
   {
     "name": "Luxuriant Soil",
     "icon": "AbilityLuxuriantSoil",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10397,6 +10783,7 @@
   {
     "name": "Magma Chamber",
     "icon": "AbilityMagmaChamber",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10406,6 +10793,7 @@
   {
     "name": "Magma Splash",
     "icon": "AbilityMagmaSplash",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10416,6 +10804,7 @@
     "name": "Mail Proficiency",
     "icon": "AbilityMailProficiency",
     "hide": true,
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10425,6 +10814,7 @@
   {
     "name": "Mana Adept",
     "icon": "AbilityManaAdept",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10454,6 +10844,7 @@
   {
     "name": "Mana Burn",
     "icon": "AbilityManaBurn",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10463,6 +10854,7 @@
   {
     "name": "Mana Spring Totem",
     "icon": "AbilityTotemManaRegen",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10472,6 +10864,7 @@
   {
     "name": "Mangle",
     "icon": "AbilityMangle",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10481,6 +10874,7 @@
   {
     "name": "Martyrdom",
     "icon": "AbilityMartyrdom",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10490,6 +10884,7 @@
   {
     "name": "Master of the Elements",
     "icon": "AbilityMasterOfElements",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10499,6 +10894,7 @@
   {
     "name": "Master Summoner",
     "icon": "AbilityMasterSummoner",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10508,6 +10904,7 @@
   {
     "name": "Meditation",
     "icon": "AbilityMeditation",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10518,6 +10915,7 @@
     "name": "Meteor",
     "icon": "AbilityMeteor",
     "cooldown": 5,
+    "possibleTargets": "Self",
     "tags": [
       "Gathering"
     ],
@@ -10552,6 +10950,7 @@
   {
     "name": "Molten Assault",
     "icon": "AbilityMoltenCore",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10562,6 +10961,7 @@
     "name": "Moonfire",
     "icon": "AbilityMoonfire",
     "cooldown": 3,
+    "possibleTargets": "Enemies",
     "tags": [],
     "cost": {
       "Arcane": 4
@@ -10593,6 +10993,7 @@
   {
     "name": "Mortal Strike",
     "icon": "AbilityMortalStrike",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10603,6 +11004,7 @@
     "name": "Muscle Tear",
     "icon": "AbilityMuscleTear",
     "cooldown": 1,
+    "possibleTargets": "Enemies",
     "tags": [
       "Damage"
     ],
@@ -10637,6 +11039,7 @@
   {
     "name": "Naralex's Nightmare",
     "icon": "AbilitySleep",
+    "possibleTargets": "Self",
     "tags": [
       "Stun"
     ],
@@ -10724,6 +11127,7 @@
   {
     "name": "Natural Recovery",
     "icon": "AbilityNaturalRecovery",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10733,6 +11137,7 @@
   {
     "name": "Nature's Balance",
     "icon": "AbilityNaturesBalance",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10742,6 +11147,7 @@
   {
     "name": "Nature's Grace",
     "icon": "AbilityNaturesGrace",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10751,6 +11157,7 @@
   {
     "name": "Nature's Guardian",
     "icon": "AbilityNatureGuardian",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10760,6 +11167,7 @@
   {
     "name": "Nether Precision",
     "icon": "AbilityNetherPrecision",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10789,6 +11197,7 @@
   {
     "name": "Nightfall",
     "icon": "AbilityNightfall",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10798,6 +11207,7 @@
   {
     "name": "Noxious Breath",
     "icon": "AbilityNoxiousBreath",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10807,6 +11217,7 @@
   {
     "name": "Nurturing Instinct",
     "icon": "AbilityNurturingInstinct",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10816,6 +11227,7 @@
   {
     "name": "Oath of the Far Seer",
     "icon": "AbilityElementalOath",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10826,6 +11238,7 @@
     "name": "Off Hand Proficiency",
     "icon": "AbilityOffHandProficiency",
     "hide": true,
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10836,6 +11249,7 @@
     "name": "One Handed Axe Proficiency",
     "icon": "AbilityOneHandedAxeProficiency",
     "hide": true,
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10846,6 +11260,7 @@
     "name": "One Handed Mace Proficiency",
     "icon": "AbilityOneHandedMaceProficiency",
     "hide": true,
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10856,6 +11271,7 @@
     "name": "One Handed Sword Proficiency",
     "icon": "AbilityOneHandedSwordProficiency",
     "hide": true,
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10865,6 +11281,7 @@
   {
     "name": "Enrage",
     "icon": "AbilityEnrage",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10874,6 +11291,7 @@
   {
     "name": "Heroism",
     "icon": "AbilityEmpowerChampion",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10883,6 +11301,7 @@
   {
     "name": "Orbit Breaker",
     "icon": "AbilityOrbitBreaker",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10892,6 +11311,7 @@
   {
     "name": "Overflowing Light",
     "icon": "AbilityOverflowingLight",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10901,6 +11321,7 @@
   {
     "name": "Overpower",
     "icon": "AbilityOverpower",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10910,6 +11331,7 @@
   {
     "name": "Pain And Gain",
     "icon": "AbilityPainAndGain",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10919,6 +11341,7 @@
   {
     "name": "Permafrost",
     "icon": "AbilityPermafrost",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10948,6 +11371,7 @@
   {
     "name": "Perpetual Winter",
     "icon": "AbilityPerpetualWinter",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -10977,6 +11401,7 @@
   {
     "name": "Piercing Ice",
     "icon": "AbilityPiercingIce",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11007,6 +11432,7 @@
     "name": "Plate Proficiency",
     "icon": "AbilityPlateProficiency",
     "hide": true,
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11017,6 +11443,7 @@
     "name": "Polearm Proficiency",
     "icon": "AbilityPolearmProficiency",
     "hide": true,
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11027,6 +11454,7 @@
     "name": "Pouch Proficiency",
     "icon": "AbilityPouchProficiency",
     "hide": true,
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11036,6 +11464,7 @@
   {
     "name": "Power Infusion",
     "icon": "AbilityPowerInfusion",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11045,6 +11474,7 @@
   {
     "name": "Power of the Archdruid",
     "icon": "AbilityPoweroftheArchdruid",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11054,6 +11484,7 @@
   {
     "name": "Power Word: Fortitude",
     "icon": "AbilityPrayerofFortitude",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11063,6 +11494,7 @@
   {
     "name": "Power Word: Shield",
     "icon": "AbilityPowerWordShield",
+    "possibleTargets": "Self",
     "tags": [
       "Defensive"
     ],
@@ -11097,6 +11529,7 @@
   {
     "name": "Prayer of Healing",
     "icon": "AbilityPrayerofHealing",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11106,6 +11539,7 @@
   {
     "name": "Presence of Mind",
     "icon": "AbilityPresenceofMind",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11115,6 +11549,7 @@
   {
     "name": "Primal Fury",
     "icon": "AbilityPrimalFury",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11124,6 +11559,7 @@
   {
     "name": "Primordial Fury",
     "icon": "AbilityPrimordialFury",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11133,6 +11569,7 @@
   {
     "name": "Prismatic Barrier",
     "icon": "AbilityPrismaticBarrier",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11142,6 +11579,7 @@
   {
     "name": "Prodigious Savant",
     "icon": "AbilityProdigiousSavant",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11151,6 +11589,7 @@
   {
     "name": "Profane Bargain",
     "icon": "AbilityProfaneBargain",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11160,6 +11599,7 @@
   {
     "name": "Protector of the Pack",
     "icon": "AbilityProtectorofthePack",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11169,6 +11609,7 @@
   {
     "name": "Psychic Scream",
     "icon": "AbilityPsychicScream",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11178,6 +11619,7 @@
   {
     "name": "Pursuit of Justice",
     "icon": "AbilityPursuitofJustice",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11188,6 +11630,7 @@
     "name": "Putrid Bite",
     "icon": "AbilityPutridBite",
     "cooldown": 2,
+    "possibleTargets": "Enemies",
     "tags": [
       "Damage",
       "Overtime"
@@ -11224,6 +11667,7 @@
   {
     "name": "Pyroblast",
     "icon": "AbilityPyroblast",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11233,6 +11677,7 @@
   {
     "name": "Pyroclasm",
     "icon": "AbilityPyroclasm",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11262,6 +11707,7 @@
   {
     "name": "Pyrogenics",
     "icon": "AbilityPyrogenics",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11271,6 +11717,7 @@
   {
     "name": "Pyromaniac",
     "icon": "AbilityPyromaniac",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11301,6 +11748,7 @@
     "name": "Quiver Proficiency",
     "icon": "AbilityQuiverProficiency",
     "hide": true,
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11310,6 +11758,7 @@
   {
     "name": "Slam",
     "icon": "AbilitySlam",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11319,6 +11768,7 @@
   {
     "name": "Rain of Fire",
     "icon": "AbilityRainofFire",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11328,6 +11778,7 @@
   {
     "name": "Rake",
     "icon": "AbilityRake",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11337,6 +11788,7 @@
   {
     "name": "Blood Frenzy",
     "icon": "AbilityBloodFrenzy",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11346,6 +11798,7 @@
   {
     "name": "Recklessness",
     "icon": "AbilityRecklessness",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11355,6 +11808,7 @@
   {
     "name": "Reckoning",
     "icon": "AbilityReckoning",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11364,6 +11818,7 @@
   {
     "name": "Redoubt",
     "icon": "AbilityRedoubt",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11373,6 +11828,7 @@
   {
     "name": "Refreshing Waters",
     "icon": "AbilityAcid",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11382,6 +11838,7 @@
   {
     "name": "Regrowth",
     "icon": "AbilityRegrowth",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11391,6 +11848,7 @@
   {
     "name": "Rejuvenation",
     "icon": "AbilityRejuvenation",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11400,6 +11858,7 @@
   {
     "name": "Relentless Inquisitor",
     "icon": "AbilityRelentlessInquisitor",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11410,6 +11869,7 @@
     "name": "Relic Proficiency",
     "icon": "AbilityRelicProficiency",
     "hide": true,
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11419,6 +11879,7 @@
   {
     "name": "Rend",
     "icon": "AbilityRend",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11428,6 +11889,7 @@
   {
     "name": "Renew",
     "icon": "AbilityRenew",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11437,6 +11899,7 @@
   {
     "name": "Renewal",
     "icon": "AbilityRenewal",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11446,6 +11909,7 @@
   {
     "name": "Repentance",
     "icon": "AbilityRepentance",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11455,6 +11919,7 @@
   {
     "name": "Resolute Defender",
     "icon": "AbilityResoluteDefender",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11464,6 +11929,7 @@
   {
     "name": "Resonance",
     "icon": "AbilityResonance",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11493,6 +11959,7 @@
   {
     "name": "Resonant Waters",
     "icon": "AbilityAcid",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11502,6 +11969,7 @@
   {
     "name": "Resurgence",
     "icon": "AbilityAcid",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11511,6 +11979,7 @@
   {
     "name": "Retaliation",
     "icon": "AbilityRetaliation",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11520,6 +11989,7 @@
   {
     "name": "Revenge",
     "icon": "AbilityRevenge",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11529,6 +11999,7 @@
   {
     "name": "Reverberate",
     "icon": "AbilityReverberate",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11558,6 +12029,7 @@
   {
     "name": "Righteous Protector",
     "icon": "AbilityRighteousProtector",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11567,6 +12039,7 @@
   {
     "name": "Riptide",
     "icon": "AbilityRiptide",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11576,6 +12049,7 @@
   {
     "name": "Ritual of Ruin",
     "icon": "AbilityRitualofRuin",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11585,6 +12059,7 @@
   {
     "name": "Rolling Magma",
     "icon": "AbilityRollingMagma",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11594,6 +12069,7 @@
   {
     "name": "Sanctuary",
     "icon": "AbilitySanctuary",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11603,6 +12079,7 @@
   {
     "name": "Saved by the Light",
     "icon": "AbilitySavedbytheLight",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11613,6 +12090,7 @@
     "name": "Scorch",
     "icon": "AbilityScorch",
     "cooldown": 2,
+    "possibleTargets": "Enemies",
     "tags": [
       "Damage",
       "Overtime"
@@ -11684,6 +12162,7 @@
   {
     "name": "Seal of Blood",
     "icon": "AbilitySealofBlood",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11694,6 +12173,7 @@
     "name": "Seal of Fury",
     "icon": "AbilitySealofFury",
     "cooldown": 5,
+    "possibleTargets": "Self",
     "tags": [],
     "cost": {
       "Fire": 4,
@@ -11735,6 +12215,7 @@
   {
     "name": "Seal of Protection",
     "icon": "AbilitySealofProtection",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11744,6 +12225,7 @@
   {
     "name": "Seal of Righteousness",
     "icon": "AbilitySealofRighteousness",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11753,6 +12235,7 @@
   {
     "name": "Seal of Sacrifice",
     "icon": "AbilitySealofSacrifice",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11762,6 +12245,7 @@
   {
     "name": "Seal of Salvation",
     "icon": "AbilitySealofSalvation",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11771,6 +12255,7 @@
   {
     "name": "Searing Flames",
     "icon": "AbilitySearingFlames",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11780,6 +12265,7 @@
   {
     "name": "Searing Light",
     "icon": "AbilitySearingLight",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11789,6 +12275,7 @@
   {
     "name": "Searing Touch",
     "icon": "AbilitySearingTouch",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11818,6 +12305,7 @@
   {
     "name": "Seething Flames",
     "icon": "AbilitySeethingFlames",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11828,20 +12316,12 @@
     "name": "Shadow Bolt",
     "icon": "AbilityShadowBolt",
     "cooldown": 1,
+    "possibleTargets": "Enemies",
     "tags": [
       "Damage"
     ],
     "cost": {
-      "Shadow": 4,
-      "Fire": 0,
-      "Earth": 0,
-      "Water": 0,
-      "Air": 0,
-      "Frost": 0,
-      "Decay": 0,
-      "Order": 0,
-      "Arcane": 0,
-      "Lightning": 0
+      "Shadow": 4
     },
     "ranks": [
       {}
@@ -11923,6 +12403,7 @@
   {
     "name": "Shadow Bolt Whirl",
     "icon": "AbilityShadowBolt",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11932,6 +12413,7 @@
   {
     "name": "Shadow Focus",
     "icon": "AbilityShadowFocus",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11941,6 +12423,7 @@
   {
     "name": "Shadow Weaving",
     "icon": "AbilityShadowWeaving",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -11951,6 +12434,7 @@
     "name": "Shadow Word: Pain",
     "icon": "AbilityShadowWordPain",
     "cooldown": 2,
+    "possibleTargets": "Enemies",
     "tags": [
       "Damage",
       "Overtime"
@@ -12013,6 +12497,7 @@
     "name": "Shadowflame Breath",
     "icon": "AbilityShadowflameBreath",
     "cooldown": 3,
+    "possibleTargets": "Self",
     "tags": [
       "Damage",
       "Gathering"
@@ -12050,6 +12535,7 @@
   {
     "name": "Shield Bash",
     "icon": "AbilityShieldBash",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12059,6 +12545,7 @@
   {
     "name": "Shield Block",
     "icon": "AbilityShieldBlock",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12069,6 +12556,7 @@
     "name": "Shield Proficiency",
     "icon": "AbilityShieldProficiency",
     "hide": true,
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12078,6 +12566,7 @@
   {
     "name": "Shield Slam",
     "icon": "AbilityShieldSlam",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12087,6 +12576,7 @@
   {
     "name": "Shield Wall",
     "icon": "AbilityShieldWall",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12096,6 +12586,7 @@
   {
     "name": "Shooting Stars",
     "icon": "AbilityShootingStars",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12105,6 +12596,7 @@
   {
     "name": "Silent Resolve",
     "icon": "AbilitySilentResolve",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12114,6 +12606,7 @@
   {
     "name": "Blind Rage",
     "icon": "AbilityBloodyEye",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12123,6 +12616,7 @@
   {
     "name": "Slipstream",
     "icon": "AbilitySlipstream",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12132,6 +12626,7 @@
   {
     "name": "Smite",
     "icon": "AbilitySmite",
+    "possibleTargets": "Enemies",
     "tags": [
       "Damage"
     ],
@@ -12187,6 +12682,7 @@
   {
     "name": "Solar Beam",
     "icon": "AbilitySolarBeam",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12196,6 +12692,7 @@
   {
     "name": "Solstice",
     "icon": "AbilitySolstice",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12205,6 +12702,7 @@
   {
     "name": "Spell Reflection",
     "icon": "AbilitySpellReflection",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12214,6 +12712,7 @@
   {
     "name": "Spell Warding",
     "icon": "AbilitySpellWarding",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12223,6 +12722,7 @@
   {
     "name": "Spirit of Redemption",
     "icon": "AbilitySpiritofRedemption",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12232,6 +12732,7 @@
   {
     "name": "Spiritual Guidance",
     "icon": "AbilitySpiritualGuidance",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12241,6 +12742,7 @@
   {
     "name": "Spiritual Healing",
     "icon": "AbilitySpiritualHealing",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12250,6 +12752,7 @@
   {
     "name": "Splintered Elements",
     "icon": "AbilitySplinteredElements",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12260,6 +12763,7 @@
     "name": "Splitting Ice",
     "icon": "AbilitySplittingIce",
     "cooldown": 2,
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12306,6 +12810,7 @@
     "name": "Spore Cloud",
     "icon": "AbilityDetectInvisibility",
     "cooldown": 5,
+    "possibleTargets": "Enemies",
     "tags": [
       "Damage"
     ],
@@ -12342,6 +12847,7 @@
     "name": "Staff Proficiency",
     "icon": "AbilityStaffProficiency",
     "hide": true,
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12351,6 +12857,7 @@
   {
     "name": "Star Surge",
     "icon": "AbilityStarSurge",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12361,18 +12868,11 @@
     "name": "Starfall",
     "icon": "AbilityStarfall",
     "cooldown": 7,
+    "possibleTargets": "Self",
     "tags": [],
     "cost": {
       "Shadow": 4,
-      "Arcane": 10,
-      "Fire": 0,
-      "Earth": 0,
-      "Water": 0,
-      "Air": 0,
-      "Frost": 0,
-      "Decay": 0,
-      "Order": 0,
-      "Lightning": 0
+      "Arcane": 10
     },
     "ranks": [
       {}
@@ -12401,6 +12901,7 @@
   {
     "name": "Starweaver",
     "icon": "AbilityStarweaver",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12410,6 +12911,7 @@
   {
     "name": "Static Accumulation",
     "icon": "AbilityStaticAccumulation",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12419,6 +12921,7 @@
   {
     "name": "Stellar Innervation",
     "icon": "AbilityStellarInnervation",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12429,6 +12932,7 @@
     "name": "Stoneform",
     "icon": "AbilityStoneform",
     "cooldown": 20,
+    "possibleTargets": "Self",
     "tags": [
       "Defensive"
     ],
@@ -12464,6 +12968,7 @@
   {
     "name": "Stormblast",
     "icon": "AbilityStormReach",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12473,6 +12978,7 @@
   {
     "name": "Stormflurry",
     "icon": "AbilityStormflurry",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12482,6 +12988,7 @@
   {
     "name": "Stormkeeper",
     "icon": "AbilityThunderKingLightningWhip",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12491,6 +12998,7 @@
   {
     "name": "Stormstrike",
     "icon": "AbilityStormstrike",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12500,6 +13008,7 @@
   {
     "name": "Summon Fel Guard",
     "icon": "AbilitySummonFelGuard",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12509,6 +13018,7 @@
   {
     "name": "Summon Felhunter",
     "icon": "AbilitySummonFelhunter",
+    "possibleTargets": "Self",
     "tags": [
       "Damage",
       "Overtime"
@@ -12545,6 +13055,7 @@
   {
     "name": "Summon Imp",
     "icon": "AbilitySummonImp",
+    "possibleTargets": "Self",
     "tags": [
       "Damage",
       "Overtime"
@@ -12581,6 +13092,7 @@
   {
     "name": "Summon Infernal",
     "icon": "AbilitySummonInfernal",
+    "possibleTargets": "Self",
     "tags": [
       "Damage",
       "Overtime"
@@ -12634,6 +13146,7 @@
   {
     "name": "Summon Voidwalker",
     "icon": "AbilitySummonVoidwalker",
+    "possibleTargets": "Self",
     "tags": [
       "Damage",
       "Overtime"
@@ -12669,6 +13182,7 @@
   {
     "name": "Sun King's Blessing",
     "icon": "AbilitySunKingsBlessing",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12698,6 +13212,7 @@
   {
     "name": "Sundered Firmament",
     "icon": "AbilitySunderedFirmament",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12707,6 +13222,7 @@
   {
     "name": "Sundering",
     "icon": "AbilitySundering",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12716,6 +13232,7 @@
   {
     "name": "Sunfire",
     "icon": "AbilitySunfire",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12725,6 +13242,7 @@
   {
     "name": "Supernova",
     "icon": "AbilitySupernova",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12734,6 +13252,7 @@
   {
     "name": "Sweeping Strikes",
     "icon": "AbilitySweepingStrikes",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12743,6 +13262,7 @@
   {
     "name": "Swift Justice",
     "icon": "AbilitySwiftJustice",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12752,6 +13272,7 @@
   {
     "name": "Swipe",
     "icon": "AbilitySwipe",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12761,6 +13282,7 @@
   {
     "name": "Tail Sweep",
     "icon": "AbilityTailSweep",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12770,6 +13292,7 @@
   {
     "name": "Taste for Blood",
     "icon": "AbilityTasteforBlood",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12779,6 +13302,7 @@
   {
     "name": "Thick Hide",
     "icon": "AbilityThickHide",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12788,6 +13312,7 @@
   {
     "name": "Thorim's Invocation",
     "icon": "AbilityThorimsInvocation",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12797,6 +13322,7 @@
   {
     "name": "Thrash",
     "icon": "AbilityThrash",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12807,17 +13333,10 @@
     "name": "Thunder Clap",
     "icon": "AbilityThunderClap",
     "cooldown": 4,
+    "possibleTargets": "Self",
     "tags": [],
     "cost": {
-      "Fire": 0,
       "Earth": 4,
-      "Water": 0,
-      "Air": 0,
-      "Frost": 0,
-      "Decay": 0,
-      "Shadow": 0,
-      "Order": 0,
-      "Arcane": 0,
       "Lightning": 6
     },
     "ranks": [
@@ -12871,6 +13390,7 @@
     "name": "Thunderstorm",
     "icon": "AbilityThunderstorm",
     "cooldown": 6,
+    "possibleTargets": "Self",
     "tags": [
       "Damage"
     ],
@@ -12906,6 +13426,7 @@
   {
     "name": "Tidal Mastery",
     "icon": "AbilityTidalWaves",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12915,6 +13436,7 @@
   {
     "name": "Tidebringer",
     "icon": "AbilityAcid",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12924,6 +13446,7 @@
   {
     "name": "Time Warp",
     "icon": "AbilityTimeWarp",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12933,6 +13456,7 @@
   {
     "name": "Tireless Pursuit",
     "icon": "AbilityTirelessPursuit",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12943,6 +13467,7 @@
     "name": "Totem Proficiency",
     "icon": "AbilityTotemProficiency",
     "hide": true,
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12952,6 +13477,7 @@
   {
     "name": "Totemic Focus",
     "icon": "AbilityTotemTranquilMind",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12961,6 +13487,7 @@
   {
     "name": "Tranquil Mind",
     "icon": "AbilityTranquilMind",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12970,6 +13497,7 @@
   {
     "name": "Tranquility",
     "icon": "AbilityTranquility",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12979,6 +13507,7 @@
   {
     "name": "Truth's Wake",
     "icon": "AbilityTruthsWake",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12988,6 +13517,7 @@
   {
     "name": "Twin Moons",
     "icon": "AbilityTwinMoons",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -12998,6 +13528,7 @@
     "name": "Two Handed Axe Proficiency",
     "icon": "AbilityTwoHandedAxeProficiency",
     "hide": true,
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -13008,6 +13539,7 @@
     "name": "Two Handed Mace Proficiency",
     "icon": "AbilityTwoHandedMaceProficiency",
     "hide": true,
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -13018,6 +13550,7 @@
     "name": "Two Handed Sword Proficiency",
     "icon": "AbilityTwoHandedSwordProficiency",
     "hide": true,
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -13027,6 +13560,7 @@
   {
     "name": "Umbral Intensity",
     "icon": "AbilityUmbralIntensity",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -13036,6 +13570,7 @@
   {
     "name": "Unbreakable Will",
     "icon": "AbilityUnbreakableWill",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -13045,6 +13580,7 @@
   {
     "name": "Undercurrent",
     "icon": "AbilityUndercurrent",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -13054,6 +13590,7 @@
   {
     "name": "Unrelenting Calamity",
     "icon": "AbilityAcid",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -13063,6 +13600,7 @@
   {
     "name": "Unruly Winds",
     "icon": "AbilityAcid",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -13072,6 +13610,7 @@
   {
     "name": "Unstable Affliction",
     "icon": "AbilityUnstableAffliction",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -13081,6 +13620,7 @@
   {
     "name": "Unstoppable Growth",
     "icon": "AbilityUnstoppableGrowth",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -13090,6 +13630,7 @@
   {
     "name": "Unyielding Faith",
     "icon": "AbilityUnyieldingFaith",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -13099,6 +13640,7 @@
   {
     "name": "Vanguard of Justice",
     "icon": "AbilityVanguardofJustice",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -13110,6 +13652,7 @@
     "icon": "itemmiscahnqirajtrinket05",
     "cooldown": 20,
     "putOnEnd": true,
+    "possibleTargets": "Self",
     "tags": [
       "Damage"
     ],
@@ -13147,6 +13690,7 @@
   {
     "name": "Veil of Shadow",
     "icon": "AbilityVeilofShadow",
+    "possibleTargets": "Self",
     "tags": [
       "Gathering"
     ],
@@ -13182,6 +13726,7 @@
   {
     "name": "Vein Ripper",
     "icon": "AbilityVeinRipper",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -13191,6 +13736,7 @@
   {
     "name": "Vengeance",
     "icon": "AbilityVengeance",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -13201,6 +13747,7 @@
     "name": "Venomous Bite",
     "icon": "AbilityVenomousBite",
     "cooldown": 3,
+    "possibleTargets": "Enemies",
     "tags": [
       "Damage",
       "Overtime"
@@ -13240,6 +13787,7 @@
   {
     "name": "Verdancy",
     "icon": "AbilityVerdancy",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -13249,6 +13797,7 @@
   {
     "name": "Verdant Heart",
     "icon": "AbilityVerdantHeart",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -13258,6 +13807,7 @@
   {
     "name": "Volatile Detonation",
     "icon": "AbilityVolatileDetonation",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -13288,6 +13838,7 @@
     "name": "Volatile Infection",
     "icon": "AbilityDeathPact",
     "cooldown": 5,
+    "possibleTargets": "Enemies",
     "tags": [
       "Damage"
     ],
@@ -13326,6 +13877,7 @@
   {
     "name": "Wake of Ashes",
     "icon": "AbilityWakeofAshes",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -13335,6 +13887,7 @@
   {
     "name": "Waking Dream",
     "icon": "AbilityWakingDream",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -13345,6 +13898,7 @@
     "name": "Wand Proficiency",
     "icon": "AbilityWandProficiency",
     "hide": true,
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -13354,6 +13908,7 @@
   {
     "name": "Water Shield",
     "icon": "AbilityWaterShield",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -13364,6 +13919,7 @@
     "name": "Web Burst",
     "icon": "AbilityWebBurst",
     "cooldown": 4,
+    "possibleTargets": "Enemies",
     "tags": [
       "Stun"
     ],
@@ -13403,6 +13959,7 @@
   {
     "name": "Whirlwind",
     "icon": "AbilityWhirlwind",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -13412,6 +13969,7 @@
   {
     "name": "Wild Growth",
     "icon": "AbilityWildGrowth",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -13421,6 +13979,7 @@
   {
     "name": "Grounding Totem",
     "icon": "AbilityTotemGrounding",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -13430,6 +13989,7 @@
   {
     "name": "Wintertide",
     "icon": "AbilityWintertide",
+    "possibleTargets": "Enemies",
     "tags": [],
     "ranks": [
       {}
@@ -13460,6 +14020,7 @@
     "name": "Withering Cloud",
     "icon": "AbilityWitheringCloud",
     "cooldown": 5,
+    "possibleTargets": "Enemies",
     "tags": [
       "Gathering"
     ],
@@ -13498,18 +14059,11 @@
     "name": "Wrath",
     "icon": "AbilityWrath",
     "cooldown": 1,
+    "possibleTargets": "Enemies",
     "tags": [],
     "cost": {
       "Order": 1,
-      "Arcane": 2,
-      "Fire": 0,
-      "Earth": 0,
-      "Water": 0,
-      "Air": 0,
-      "Frost": 0,
-      "Decay": 0,
-      "Shadow": 0,
-      "Lightning": 0
+      "Arcane": 2
     },
     "ranks": [
       {}
@@ -13538,6 +14092,7 @@
   {
     "name": "Xavius Gambit",
     "icon": "AbilityXaviusGambit",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -13547,6 +14102,7 @@
   {
     "name": "Ysera's Gift",
     "icon": "AbilityYserasGift",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -13556,6 +14112,7 @@
   {
     "name": "Zealot's Fervor",
     "icon": "AbilityZealotsFervor",
+    "possibleTargets": "Self",
     "tags": [],
     "ranks": [
       {}
@@ -13566,6 +14123,7 @@
     "name": "Rabies",
     "icon": "AbilityHarmUndeadAura",
     "cooldown": 5,
+    "possibleTargets": "Enemies",
     "tags": [],
     "cost": {
       "Air": 2,
@@ -13623,6 +14181,7 @@
     "name": "Graceful Soar",
     "icon": "AbilityEagleEye",
     "cooldown": 7,
+    "possibleTargets": "Enemies",
     "tags": [],
     "cost": {
       "Earth": 2,
@@ -13673,6 +14232,7 @@
     "name": "Sky Assault",
     "icon": "AbilityDisembowel",
     "cooldown": 3,
+    "possibleTargets": "Enemies",
     "tags": [],
     "cost": {
       "Air": 6,
@@ -13727,6 +14287,7 @@
     "name": "Gryphon Claw",
     "icon": "AbilityMangle2",
     "cooldown": 2,
+    "possibleTargets": "Enemies",
     "tags": [],
     "cost": {
       "Earth": 6
@@ -13765,6 +14326,7 @@
     "name": "Pinch",
     "icon": "AbilityPinch",
     "cooldown": 1,
+    "possibleTargets": "Enemies",
     "tags": [],
     "cost": {
       "Earth": 2,

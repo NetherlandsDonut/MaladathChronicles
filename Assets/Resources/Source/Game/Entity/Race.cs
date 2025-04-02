@@ -91,6 +91,8 @@ public class Race
             else if (portrait.ToLower().Contains("nagafemale")) subcategory = "Naga Siren";
             else if (portrait.ToLower().Contains("naga")) subcategory = "Naga";
             else if (portrait.ToLower().Contains("centaur")) subcategory = "Centaur";
+            else if (portrait.ToLower().Contains("anvilrage")) subcategory = "Orc";
+            else if (portrait.ToLower().Contains("doomforge")) subcategory = "Orc";
             else if (portrait.ToLower().Contains("darkiron")) subcategory = "Dwarf";
             else if (portrait.ToLower().Contains("wildhammer")) subcategory = "Dwarf";
             else if (portrait.ToLower().Contains("dwarf")) subcategory = "Dwarf";
@@ -133,6 +135,8 @@ public class Race
         {
             if (portrait.ToLower().Contains("spawn")) subcategory = "Dragonspawn";
             else if (portrait.ToLower().Contains("draconid")) subcategory = "Draconid";
+            else if (portrait.ToLower().Contains("anvilrage")) (category, subcategory) = ("Humanoid", "Dwarf");
+            else if (portrait.ToLower().Contains("doomforge")) (category, subcategory) = ("Humanoid", "Dwarf");
             else if (portrait.ToLower().Contains("faerie")) subcategory = "Faerie Dragon";
             else subcategory = "Dragon";
         }
