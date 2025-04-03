@@ -4263,7 +4263,7 @@
   {
     "name": "Chief Ukorz Sandscalp",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "faction": "Sandfury Tribe",
     "side": "Hostile",
     "portrait": "PortraitChiefUkorz",
@@ -6695,9 +6695,9 @@
   },
   {
     "name": "Dustwraith",
-    "category": "Undead",
-    "subcategory": "Ghost",
-    "side": "Neutral",
+    "category": "Humanoid",
+    "subcategory": "Troll",
+    "faction": "Sandfury Tribe",
     "portrait": "PortraitDustwraith",
     "abilities": {},
     "kind": "Rare",
@@ -11181,7 +11181,7 @@
   {
     "name": "Hydromancer Velratha",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "faction": "Sandfury Tribe",
     "side": "Hostile",
     "portrait": "PortraitHydromancerVelratha",
@@ -23861,7 +23861,7 @@
   {
     "name": "Witch Doctor Zum'rah",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "faction": "Sandfury Tribe",
     "side": "Hostile",
     "portrait": "PortraitWitchDoctorZumrah",
@@ -25542,8 +25542,8 @@
   },
   {
     "name": "Zul'Farrak Dead Hero",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Zombie",
     "faction": "Sandfury Tribe",
     "side": "Hostile",
     "portrait": "PortraitZulFarrakDeadHero",

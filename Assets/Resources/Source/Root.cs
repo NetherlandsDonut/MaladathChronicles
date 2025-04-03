@@ -1158,10 +1158,10 @@ public static class Root
         thisBar.Initialise(entity.MaxResource(resource) * 8, () => entity.MaxResource(resource), () => entity.resources[resource], true);
         thisBar.split.sprite = Resources.Load<Sprite>("Sprites/FluidBars/ResourceBar/Resource" + resource + "Bar/Splitter");
         thisBar.GetComponentsInChildren<SpriteRenderer>().First(x => x.name == "Capstone").sprite = Resources.Load<Sprite>("Sprites/FluidBars/ResourceBar/Resource" + resource + "Bar/Capstone");
-        if (Board.board.resourceBars.ContainsKey(forWho))
-            if (Board.board.resourceBars[forWho].ContainsKey(resource)) Board.board.resourceBars[forWho][resource] = thisBar;
-            else Board.board.resourceBars[forWho].Add(resource, thisBar);
-        else Board.board.resourceBars.Add(forWho, new() { { resource, thisBar } });
+        if (board.resourceBars.ContainsKey(forWho))
+            if (board.resourceBars[forWho].ContainsKey(resource)) board.resourceBars[forWho][resource] = thisBar;
+            else board.resourceBars[forWho].Add(resource, thisBar);
+        else board.resourceBars.Add(forWho, new() { { resource, thisBar } });
         thisBar.UpdateFluidBar();
     }
 

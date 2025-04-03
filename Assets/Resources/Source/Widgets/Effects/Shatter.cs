@@ -200,26 +200,14 @@ public class Shatter : MonoBehaviour
             newObject.transform.parent = shatter.transform;
             newObject.transform.localPosition = new Vector3(c, v);
             newObject.GetComponent<SpriteRenderer>().color = color;
+            var shat = newObject.GetComponent<Shatter>();
             if (travel && Defines.defines.animatedResourceParticles)
             {
-                newObject.GetComponent<Shatter>().Initiate(random.Next(1, 10) / 5f, random.Next(3, 5) / 3f);
-                if (Board.board.spotlightFriendly.Contains(Board.board.whosTurn))
-                {
-                    int sum = 0;
-                    foreach (var i in Board.board.spotlightFriendly.Skip(1).Take(Board.board.spotlightFriendly.Count - Board.board.spotlightFriendly.IndexOf(Board.board.whosTurn) - 1))
-                        sum += 65 + 19 * Board.board.participants[i].who.actionBars[Board.board.participants[i].who.currentActionSet].Count;
-                    newObject.GetComponent<Shatter>().Travel(new Vector3(-148, 141 - sum), 0.4f);
-                }
-                else
-                {
-                    int sum = 0;
-                    foreach (var i in Board.board.spotlightEnemy.Skip(1).Take(Board.board.spotlightEnemy.Count - Board.board.spotlightEnemy.IndexOf(Board.board.whosTurn) - 1))
-                        sum += 65 + 19 * Board.board.participants[i].who.actionBars[Board.board.participants[i].who.currentActionSet].Count;
-                    newObject.GetComponent<Shatter>().Travel(new Vector3(148, 141 - sum), 0.4f);
-                }
+                shat.Initiate(random.Next(1, 10) / 5f, random.Next(3, 5) / 3f);
+                shat.Travel(Board.board.PortraitPosition(Board.board.whosTurn), 0.4f);
                 newObject.GetComponent<Rigidbody2D>().AddRelativeForce((direction / 2 + Random.insideUnitCircle) * (int)(100 * speed));
             }
-            else newObject.GetComponent<Shatter>().Initiate(random.Next(1, 7), random.Next(1, 3) / 3f);
+            else shat.Initiate(random.Next(1, 7), random.Next(1, 3) / 3f);
             newObject.GetComponent<Rigidbody2D>().AddRelativeForce((direction / 2 + Random.insideUnitCircle) * (int)(100 * speed));
             direction = Random.insideUnitCircle;
         }

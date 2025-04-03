@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 
+using UnityEngine;
+
 public class CombatParticipant
 {
     //Who is this combat participant

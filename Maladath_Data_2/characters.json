@@ -3618,7 +3618,7 @@
       },
       "hour": 7,
       "minute": 13,
-      "second": 10,
+      "second": 25,
       "currentSite": "Sandsorrow Watch",
       "ringOfLaw": "Anub'shiah",
       "forlornCloister": "Azshir the Sleepless",
@@ -3646,15 +3646,15 @@
         "Deathknell": 1,
         "Night Web's Hollow": 1,
         "Zul'Farrak": 6,
-        "Sandsorrow Watch": 2
+        "Sandsorrow Watch": 3
       },
       "unlockedAreas": [],
       "vendorStock": {},
       "banks": {},
       "startDate": "2025-04-01T18:57:49.4542858+02:00",
-      "lastLoaded": "2025-04-03T15:15:14.3069595+02:00",
-      "lastPlayed": "2025-04-03T15:15:18.2139265+02:00",
-      "timePlayed": "00:13:03.6348127"
+      "lastLoaded": "2025-04-03T17:24:06.8174899+02:00",
+      "lastPlayed": "2025-04-03T17:24:27.6998859+02:00",
+      "timePlayed": "00:13:24.5172087"
     }
   ]
 }

@@ -65,8 +65,8 @@ public class FlyingBuff : MonoBehaviour
         var buff = Instantiate(Resources.Load<GameObject>("Prefabs/PrefabBuff"));
         buff.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Buttons/" + icon);
         buff.transform.parent = Board.board.window.desktop.transform;
-            buff.transform.position = position;
-            var fly = buff.GetComponent<FlyingBuff>();
+        buff.transform.position = position;
+        var fly = buff.GetComponent<FlyingBuff>();
         fly.Initiate(Board.board.participants.FindIndex(x => x.who == target));
         buff.GetComponent<Highlightable>().Initialise(null, null, null,
             (h) => () =>

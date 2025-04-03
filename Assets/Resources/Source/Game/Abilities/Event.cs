@@ -280,7 +280,7 @@ public class Event
                 board.actions.Add(() =>
                 {
                     if (animationType == "Missile")
-                        SpawnFlyingMissile(icon, (affect == "Effector" ? effector : other) != Board.board.participants[0], animationArc, animationSpeed, trailStrength);
+                        SpawnFlyingMissile(icon, affect == "Effector" ? board.participants.IndexOf(other) : board.whosTurn, affect == "Effector" ? board.whosTurn : board.participants.IndexOf(other), animationArc, animationSpeed, trailStrength);
                 });
             }
 
@@ -318,7 +318,7 @@ public class Event
                     double shatterSpeed = effect.ContainsKey("ShatterSpeed") ? double.Parse(effect["ShatterSpeed"].Replace(".", ",")) : 6;
                     if (shatterTarget == "None") return;
                     for (int i = 0; i < shatterDensity; i++)
-                        SpawnShatter(shatterSpeed, shatterDegree, new Vector3(shatterTarget == "Other" ? (board.whosTurn == 0 ? 129 : -167) : (board.whosTurn == 0 ? -167 : 129), 124), icon, false);
+                        SpawnShatter(shatterSpeed, shatterDegree, new Vector3(-18, -18) + Board.board.PortraitPosition(shatterTarget == "Other" ? Board.board.participants.IndexOf(other) : board.whosTurn), icon, false);
                 }
 
                 //Plays a sound effect if it was specified in the effect
@@ -340,8 +340,8 @@ public class Event
                 var amount = damageAmount != "None" ? int.Parse(damageAmount) : (int)Math.Round(source.who.RollWeaponDamage() * ((powerType == "Melee" ? source.who.MeleeAttackPower() : (powerType == "Spell" ? source.who.SpellPower() : (powerType == "Ranged" ? source.who.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale);
                 if (amount > 0 && target.team == 2) PlayEnemyLine(target.who.EnemyLine("Wound"));
                 target.who.Damage(amount, trigger["Trigger"] == "Damage");
-                AddBigButtonOverlay(new Vector2(target == board.participants[0] ? -148 : 148, 141), "OtherDamaged", 1f, -1);
-                SpawnFallingText(new Vector2(target == board.participants[0] ? -148 : 148, 141), "" + amount, "White");
+                AddBigButtonOverlay(new Vector3(1, -1) + Board.board.PortraitPosition(Board.board.participants.IndexOf(target)), "OtherDamaged", 1f, -1);
+                SpawnFallingText(new Vector3(1, 0) + Board.board.PortraitPosition(Board.board.participants.IndexOf(target)), "" + amount, "White");
                 if (target == board.participants[0]) board.log.damageTaken.Inc(sourceName, amount);
                 else if (!board.spotlightFriendly.Contains(board.participants.IndexOf(target))) board.log.damageDealt.Inc(sourceName, amount);
                 board.UpdateHealthBars();
@@ -356,8 +356,8 @@ public class Event
                 string healAmount = effect.ContainsKey("HealAmount") ? effect["HealAmount"] : "None";
                 var amount = healAmount != "None" ? int.Parse(healAmount) : (int)Math.Round(source.who.RollWeaponDamage() * ((powerType == "Melee" ? source.who.MeleeAttackPower() : (powerType == "Spell" ? source.who.SpellPower() : (powerType == "Ranged" ? source.who.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale);
                 target.who.Heal(amount, trigger["Trigger"] == "Heal");
-                AddBigButtonOverlay(new Vector2(target == board.participants[0] ? -148 : 148, 141), "OtherHealed", 1f, 5);
-                SpawnFallingText(new Vector2(target == board.participants[0] ? -148 : 148, 141), "" + amount, "Uncommon");
+                AddBigButtonOverlay(new Vector3(1, -1) + Board.board.PortraitPosition(Board.board.participants.IndexOf(target)), "OtherHealed", 1f, 5);
+                SpawnFallingText(new Vector3(1, 0) + Board.board.PortraitPosition(Board.board.participants.IndexOf(target)), "" + amount, "Uncommon");
                 if (target == board.participants[0]) board.log.healingReceived.Inc(sourceName, amount);
                 board.UpdateHealthBars();
             }
@@ -395,12 +395,13 @@ public class Event
             {
                 if (affect != "Effector" && affect != "Other") return;
                 var target = affect == "Effector" ? effector : other;
-                var pos = new Vector3(affect == "Other" ? (board.whosTurn == 0 ? 148 : -148) : (board.whosTurn == 0 ? -148 : 148), 142);
+                var pos = new Vector3(1, -1) + Board.board.PortraitPosition(Board.board.participants.IndexOf(target));
+                if (target.team == 1 && Board.board.spotlightFriendly[0] != Board.board.participants.IndexOf(target) || target.team == 2 && Board.board.spotlightEnemy[0] != Board.board.participants.IndexOf(target)) pos *= 2;
                 target.who.AddBuff(buffs.Find(x => x.name == buffName), buffDuration, SpawnBuffObject(pos, icon, target.who), sourceRank);
                 foreach (var participant in board.participants)
                     if (participant == target) board.CallEvents(participant.who, new() { { "Trigger", "BuffAdd" }, { "Triggerer", "Effector" }, { "BuffName", buffName } });
                     else board.CallEvents(participant.who, new() { { "Trigger", "BuffAdd" }, { "Triggerer", "Other" }, { "BuffName", buffName } });
-                SpawnFallingText(new Vector2(board.whosTurn == 0 ? 148 : -148, 142), buffDuration + " turn" + (buffDuration > 1 ? "s" : ""), "White");
+                SpawnFallingText(new Vector3(1, 0) + Board.board.PortraitPosition(Board.board.participants.IndexOf(target)), buffDuration + " turn" + (buffDuration > 1 ? "s" : ""), "White");
             }
 
             //This effect removes a buff from the targetted entity

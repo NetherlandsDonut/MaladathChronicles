@@ -4,6 +4,7 @@ using UnityEngine;
 
 using static Root;
 using static Defines;
+using System.Linq;
 
 public class FlyingMissile : MonoBehaviour
 {
@@ -19,35 +20,26 @@ public class FlyingMissile : MonoBehaviour
     //Determines whether the missile takes the path above targets
     public bool up;
 
-    public void Initiate(bool fromPlayer, float arc, double flySpeed, double trailStrength, string trailSprite)
+    public void Initiate(int entityFrom, int entityTo, float arc, double flySpeed, double trailStrength, string trailSprite)
     {
         flyingMissiles.Add(this);
         up = random.Next(0, 2) == 0;
         this.flySpeed = (float)flySpeed;
         this.trailStrength = trailStrength;
         this.trailSprite = trailSprite;
-        if (fromPlayer)
-        {
-            from = new Vector3(-148, 141);
-            through1 = new Vector3(-155, 141 + (arc <= 40 && !up ? arc : -arc));
-            through2 = new Vector3(5, 141 + (arc <= 40 && !up ? arc : -arc));
-            to = new Vector3(148, 141);
-            transform.position = from;
-        }
-        else
-        {
-            from = new Vector3(148, 141);
-            through1 = new Vector3(155, 141 + (arc <= 40 && !up ? arc : -arc));
-            through2 = new Vector3(-5, 141 + (arc <= 40 && !up ? arc : -arc));
-            to = new Vector3(-148, 141);
-            transform.position = from;
-        }
+        from = Board.board.PortraitPosition(entityFrom);
+        to = Board.board.PortraitPosition(entityTo);
+        var intArc = (int)arc;
+        var distance = Vector3.Distance(from, to);
+        through1 = Vector3.MoveTowards(from, to, distance / 3) + new Vector3(random.Next(-intArc, intArc), random.Next(-intArc, intArc));
+        through2 = Vector3.MoveTowards(from, to, distance / 3 * 2) + new Vector3(random.Next(-intArc, intArc), random.Next(-intArc, intArc));
+        transform.position = from;
     }
 
     public void Update()
     {
         timeAlive += Time.deltaTime;
-        if ((to.x < 0 && transform.position.x <= to.x || to.x >= 0 && transform.position.x >= to.x)/* && (to.y < 0 && transform.position.y <= to.y || to.y >= 0 && transform.position.y >= to.y)*/)
+        if (Vector3.Distance(transform.position, to) < 19)
         {
             flyingMissiles.Remove(this);
             Destroy(gameObject);
@@ -68,14 +60,14 @@ public class FlyingMissile : MonoBehaviour
         Shatter.SpawnTrailShatter(1, trailStrength, transform.position, trailSprite);
     }
 
-    public static GameObject SpawnFlyingMissile(string sprite, bool fromPlayer, double arc, double flySpeed, double trailStrength)
+    public static GameObject SpawnFlyingMissile(string sprite, int entityFrom, int entityTo, double arc, double flySpeed, double trailStrength)
     {
         var foo = Resources.Load<Sprite>("Sprites/Buttons/" + sprite);
         if (foo == null) return null;
         var missile = Instantiate(Resources.Load<GameObject>("Prefabs/PrefabMissile"));
         missile.GetComponent<SpriteRenderer>().sprite = foo;
         missile.transform.parent = Board.board.window.desktop.transform;
-        missile.GetComponent<FlyingMissile>().Initiate(fromPlayer, (float)arc, flySpeed, trailStrength, sprite);
+        missile.GetComponent<FlyingMissile>().Initiate(entityFrom, entityTo, (float)arc, flySpeed, trailStrength, sprite);
         return missile;
     }
 

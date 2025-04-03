@@ -231,8 +231,7 @@ public class Blueprint
                 AddButtonRegion(() =>
                 {
                     AddLine(board.participants[board.spotlightEnemy[index]].who.name);
-                    var HBP = CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.localPosition;
-                    SpawnFloatingText(HBP + new Vector3(34, -9), board.participants[board.spotlightEnemy[index]].who.level - 10 > board.participants[board.spotlightFriendly[0]].who.level ? "??" : "" + board.participants[board.spotlightEnemy[index]].who.level, ColorEntityLevel(board.participants[board.spotlightEnemy[index]].who.level), "DimGray", "Right");
+                    SpawnFloatingText(new Vector3(34, -9), board.participants[board.spotlightEnemy[index]].who.level - 10 > board.participants[board.spotlightFriendly[0]].who.level ? "??" : "" + board.participants[board.spotlightEnemy[index]].who.level, ColorEntityLevel(board.participants[board.spotlightEnemy[index]].who.level), "DimGray", "Right");
                     var race = races.Find(x => x.name == board.participants[board.spotlightEnemy[index]].who.race);
                     AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? board.participants[index].who.gender : ""), (h) =>
                     {
@@ -240,7 +239,7 @@ public class Blueprint
                     });
                     BigButtonFlipX();
                     if (board.participants[board.spotlightEnemy[index]].who.dead) SetBigButtonToGrayscale();
-                    AddHealthBar((int)HBP.x + 40, (int)HBP.y - 19, board.spotlightEnemy[index], board.participants[board.spotlightEnemy[index]].who);
+                    AddHealthBar(40, -19, board.spotlightEnemy[index], board.participants[board.spotlightEnemy[index]].who);
                 },
                 (h) =>
                 {
@@ -302,8 +301,7 @@ public class Blueprint
                 AddButtonRegion(() =>
                 {
                     AddLine(board.participants[board.spotlightFriendly[index]].who.name, "", "Right");
-                    var HBP = CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.localPosition;
-                    SpawnFloatingText(HBP + new Vector3(158, -9), board.participants[board.spotlightFriendly[index]].who.level + "", "Gray", "DimGray", "Left");
+                    SpawnFloatingText(new Vector3(158, -9), board.participants[board.spotlightFriendly[index]].who.level + "", "Gray", "DimGray", "Left");
                     ReverseButtons();
                     if (board.participants[board.spotlightFriendly[index]].who.spec != null)
                         AddBigButton(board.participants[board.spotlightFriendly[index]].who.Spec().icon, (h) =>
@@ -319,7 +317,7 @@ public class Blueprint
                         });
                     }
                     if (board.participants[board.spotlightFriendly[index]].who.dead) SetBigButtonToGrayscale();
-                    AddHealthBar((int)HBP.x + 2, (int)HBP.y - 19, board.spotlightFriendly[index], board.participants[board.spotlightFriendly[index]].who);
+                    AddHealthBar(2, -19, board.spotlightFriendly[index], board.participants[board.spotlightFriendly[index]].who);
                 },
                 (h) =>
                 {

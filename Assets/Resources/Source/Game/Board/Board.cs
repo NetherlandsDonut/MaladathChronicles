@@ -189,6 +189,16 @@ public class Board
     //
     public List<int> spotlightEnemy;
 
+    public Vector3 PortraitPosition(int participantIndex)
+    {
+        var team = participants[participantIndex].team;
+        var team1 = CDesktop.windows.Find(x => x.title == "PlayerBattleInfo").LBRegionGroup().regions.Where(x => x.bigButtons.Count == 1).ToList();
+        var team2 = CDesktop.windows.Find(x => x.title == "EnemyBattleInfo").LBRegionGroup().regions.Where(x => x.bigButtons.Count == 1).ToList();
+        var offset = new Vector3(19, -19);
+        if (team == 1) offset += new Vector3(152, 0);
+        return offset + (team == 1 ? team1 : team2)[(team == 1 ? spotlightFriendly : spotlightEnemy).Count - 1 - (team == 1 ?spotlightFriendly : spotlightEnemy).IndexOf(participantIndex)].transform.position;
+    }
+
     public void PutOnCooldown(int participant, Ability ability)
     {
         var list = cooldowns[participant];
