@@ -515,7 +515,7 @@ public class Item
         );
         if (settings.rarityIndicators.Value())
             AddBigButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 3);
-        if (item.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.position + new Vector3(32, -27) + new Vector3(38, 0) * item.x, item.amount + "", "", "Right");
+        if (item.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.position + new Vector3(32, -27) + new Vector3(38, 0) * item.x, item.amount + "", "", "", "Right");
     }
 
     public static void PrintVendorItem(StockItem stockItem, Item buyback)
@@ -633,7 +633,7 @@ public class Item
             AddBigButtonOverlay("QuestStarter" + (status == "Can" ? "" : (status == "Active" ? "Active" : "Off")), 0, 4);
         }
         if (item.amount == 0) SetBigButtonToGrayscale();
-        if (stockItem != null || item.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.position + new Vector3(32, -27) + new Vector3(38, 0) * ((buyback != null ? currentSave.buyback.items.IndexOf(buyback) : currentSave.vendorStock[town.name + ":" + Person.person.name].FindIndex(x => x.item == item.name)) % 5), item.amount + (false && buyback == null ?  "/" + currentSave.vendorStock[town.name + ":" + Person.person.name].Find(x => x.item == item.name).maxAmount : ""), "", "Right");
+        if (stockItem != null || item.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.position + new Vector3(32, -27) + new Vector3(38, 0) * ((buyback != null ? currentSave.buyback.items.IndexOf(buyback) : currentSave.vendorStock[town.name + ":" + Person.person.name].FindIndex(x => x.item == item.name)) % 5), item.amount + (false && buyback == null ?  "/" + currentSave.vendorStock[town.name + ":" + Person.person.name].Find(x => x.item == item.name).maxAmount : ""), "", "", "Right");
         if (stockItem != null && stockItem.minutesLeft > 0) AddBigButtonCooldownOverlay(stockItem.minutesLeft / (double)stockItem.restockSpeed);
         else if (buyback != null && buyback.minutesLeft > 0) AddBigButtonCooldownOverlay(buyback.minutesLeft / (double)defines.buybackDecay);
     }
@@ -839,7 +839,7 @@ public class Item
         if (Cursor.cursor.color == "Pink" && !item.IsDisenchantable()) SetBigButtonToGrayscale();
         else if (Cursor.cursor.color == "Pink") AddBigButtonOverlay("OtherGlowDisenchantable" + item.rarity, 0, 2);
         if (openedItem == item || itemToDisenchant == item || itemToDestroy == item) { AddBigButtonOverlay("OtherGridBlurred", 0, 3); SetBigButtonToGrayscale(); }
-        if (item.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.position + new Vector3(32, -27) + new Vector3(38, 0) * item.x, item.amount + "", "", "Right");
+        if (item.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.position + new Vector3(32, -27) + new Vector3(38, 0) * item.x, item.amount + "", "", "", "Right");
     }
 
     public static void PrintLootItem(Item item)
@@ -1000,7 +1000,7 @@ public class Item
             AddBigButtonOverlay(settings.newSlotIndicators.Value() ? "OtherItemNewSlot" : "OtherItemUpgrade", 0, 2);
         else if (settings.upgradeIndicators.Value() && item.CanEquip(currentSave.player) && currentSave.player.IsItemAnUpgrade(item))
             AddBigButtonOverlay("OtherItemUpgrade", 0, 2);
-        if (item.maxStack > 1 && item.type != "Currency") SpawnFloatingText(CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (CDesktop.title == "ContainerLoot" ? openedItem.itemsInside : (CDesktop.title == "ChestLoot" ? currentSave.openedChests[SiteHostileArea.area.name].inventory : (CDesktop.title == "MiningLoot" ? Board.board.results.miningLoot : (CDesktop.title == "HerbalismLoot" ? Board.board.results.herbalismLoot : (CDesktop.title == "DisenchantLoot" ? disenchantLoot : (CDesktop.title == "SkinningLoot" ? Board.board.results.skinningLoot : Board.board.results.inventory))))).items).IndexOf(item), item.amount + "", "", "Right");
+        if (item.maxStack > 1 && item.type != "Currency") SpawnFloatingText(CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (CDesktop.title == "ContainerLoot" ? openedItem.itemsInside : (CDesktop.title == "ChestLoot" ? currentSave.openedChests[SiteHostileArea.area.name].inventory : (CDesktop.title == "MiningLoot" ? Board.board.results.miningLoot : (CDesktop.title == "HerbalismLoot" ? Board.board.results.herbalismLoot : (CDesktop.title == "DisenchantLoot" ? disenchantLoot : (CDesktop.title == "SkinningLoot" ? Board.board.results.skinningLoot : Board.board.results.inventory))))).items).IndexOf(item), item.amount + "", "", "", "Right");
     }
 
     public static void PrintItemTooltip(Item item, bool compare = false, double priceMultiplier = 1)

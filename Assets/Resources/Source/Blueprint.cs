@@ -222,42 +222,38 @@ public class Blueprint
             }
         }, true),
         new("EnemyBattleInfo", () => {
-            SetAnchor(TopRight);
+            SetAnchor(TopRight, 0, -8);
             AddRegionGroup();
             SetRegionGroupWidth(190);
             for (int i = board.spotlightEnemy.Count - 1; i >= 0; i--)
             {
                 var index = i;
-                AddButtonRegion(
-                    () =>
-                    {
-                        AddLine(board.participants[board.spotlightEnemy[index]].who.name);
-                    },
-                    (h) =>
-                    {
-                        if (index == 0) return;
-                        var temp = board.spotlightEnemy[index];
-                        board.spotlightEnemy.RemoveAt(index);
-                        board.spotlightEnemy.Insert(0, temp);
-                        foreach (var res in board.participants[board.spotlightEnemy[0]].who.resources)
-                        {
-                            CloseWindow("Enemy" + res.Key + "Resource");
-                            SpawnWindowBlueprint("Enemy" + res.Key + "Resource");
-                        }
-                    }
-                );
-                AddHeaderRegion(() =>
+                AddButtonRegion(() =>
                 {
+                    AddLine(board.participants[board.spotlightEnemy[index]].who.name);
+                    var HBP = CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.localPosition;
+                    SpawnFloatingText(HBP + new Vector3(34, -9), board.participants[board.spotlightEnemy[index]].who.level - 10 > board.participants[board.spotlightFriendly[0]].who.level ? "??" : "" + board.participants[board.spotlightEnemy[index]].who.level, ColorEntityLevel(board.participants[board.spotlightEnemy[index]].who.level), "DimGray", "Right");
                     var race = races.Find(x => x.name == board.participants[board.spotlightEnemy[index]].who.race);
                     AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? board.participants[index].who.gender : ""), (h) =>
                     {
                         FinishTargettingAbility(board.participants[board.spotlightEnemy[index]]);
                     });
+                    BigButtonFlipX();
                     if (board.participants[board.spotlightEnemy[index]].who.dead) SetBigButtonToGrayscale();
-                    AddLine("Level: ", "DarkGray");
-                    AddText(board.participants[board.spotlightEnemy[index]].who.level - 10 > board.participants[board.spotlightFriendly[0]].who.level ? "??" : "" + board.participants[board.spotlightEnemy[index]].who.level, ColorEntityLevel(board.participants[board.spotlightEnemy[index]].who.level));
+                    AddHealthBar((int)HBP.x + 40, (int)HBP.y - 19, board.spotlightEnemy[index], board.participants[board.spotlightEnemy[index]].who);
+                },
+                (h) =>
+                {
+                    if (index == 0) return;
+                    var temp = board.spotlightEnemy[index];
+                    board.spotlightEnemy.RemoveAt(index);
+                    board.spotlightEnemy.Insert(0, temp);
+                    foreach (var res in board.participants[board.spotlightEnemy[0]].who.resources)
+                    {
+                        CloseWindow("Enemy" + res.Key + "Resource");
+                        SpawnWindowBlueprint("Enemy" + res.Key + "Resource");
+                    }
                 });
-                AddHealthBar(40, -38 - 65 * (board.spotlightEnemy.Count - index - 1), board.spotlightEnemy[index], board.participants[board.spotlightEnemy[index]].who);
                 foreach (var actionBar in board.participants[board.spotlightEnemy[index]].who.actionBars[board.participants[board.spotlightEnemy[index]].who.currentActionSet])
                 {
                     var abilityObj = abilities.Find(x => x.name == actionBar);
@@ -297,32 +293,17 @@ public class Blueprint
             }
         }),
         new("PlayerBattleInfo", () => {
-            SetAnchor(TopLeft);
+            SetAnchor(TopLeft, 0, -8);
             AddRegionGroup();
             SetRegionGroupWidth(190);
             for (int i = board.spotlightFriendly.Count - 1; i >= 0; i--)
             {
                 var index = i;
-                AddButtonRegion(
-                    () =>
-                    {
-                        AddLine(board.participants[board.spotlightFriendly[index]].who.name, "", "Right");
-                    },
-                    (h) =>
-                    {
-                        if (index == 0) return;
-                        var temp = board.spotlightFriendly[index];
-                        board.spotlightFriendly.RemoveAt(index);
-                        board.spotlightFriendly.Insert(0, temp);
-                        foreach (var res in board.participants[board.spotlightFriendly[0]].who.resources)
-                        {
-                            CloseWindow("Player" + res.Key + "Resource");
-                            SpawnWindowBlueprint("Player" + res.Key + "Resource");
-                        }
-                    }
-                );
-                AddHeaderRegion(() =>
+                AddButtonRegion(() =>
                 {
+                    AddLine(board.participants[board.spotlightFriendly[index]].who.name, "", "Right");
+                    var HBP = CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.localPosition;
+                    SpawnFloatingText(HBP + new Vector3(158, -9), board.participants[board.spotlightFriendly[index]].who.level + "", "Gray", "DimGray", "Left");
                     ReverseButtons();
                     if (board.participants[board.spotlightFriendly[index]].who.spec != null)
                         AddBigButton(board.participants[board.spotlightFriendly[index]].who.Spec().icon, (h) =>
@@ -338,10 +319,20 @@ public class Blueprint
                         });
                     }
                     if (board.participants[board.spotlightFriendly[index]].who.dead) SetBigButtonToGrayscale();
-                    AddLine("Level: " , "DarkGray");
-                    AddText("" + board.participants[board.spotlightFriendly[index]].who.level, "Gray");
+                    AddHealthBar((int)HBP.x + 2, (int)HBP.y - 19, board.spotlightFriendly[index], board.participants[board.spotlightFriendly[index]].who);
+                },
+                (h) =>
+                {
+                    if (index == 0) return;
+                    var temp = board.spotlightFriendly[index];
+                    board.spotlightFriendly.RemoveAt(index);
+                    board.spotlightFriendly.Insert(0, temp);
+                    foreach (var res in board.participants[board.spotlightFriendly[0]].who.resources)
+                    {
+                        CloseWindow("Friendly" + res.Key + "Resource");
+                        SpawnWindowBlueprint("Friendly" + res.Key + "Resource");
+                    }
                 });
-                AddHealthBar(2, -38 - 65 * (board.spotlightFriendly.Count - index - 1), board.spotlightFriendly[index], board.participants[board.spotlightFriendly[index]].who);
                 if (index > 0)
                 {
                     AddSmallEmptyRegion();
@@ -1653,7 +1644,7 @@ public class Blueprint
                             if (WindowUp("CraftingSettings")) return;
                             PrintItemTooltip(result, Input.GetKey(LeftShift));
                         });
-                        SpawnFloatingText(CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (results.IndexOf(result) % 5), result.amount + "", "", "Right");
+                        SpawnFloatingText(CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (results.IndexOf(result) % 5), result.amount + "", "", "", "Right");
                     }
                 });
             }
@@ -5421,6 +5412,18 @@ public class Blueprint
                 {
                     CloseSave();
                     SaveGames();
+                    CloseDesktop("HostileArea");
+                    CloseDesktop("Town");
+                    CloseDesktop("Instance");
+                    CloseDesktop("Complex");
+                    CloseDesktop("FishingGame");
+                    CloseDesktop("CharacterSheet");
+                    CloseDesktop("QuestLog");
+                    CloseDesktop("TalentScreen");
+                    CloseDesktop("SpellbookScreen");
+                    CloseDesktop("EquipmentScreen");
+                    CloseDesktop("BestiaryScreen");
+                    CloseDesktop("CraftingScreen");
                     CloseDesktop("GameMenu");
                     CloseDesktop("Map");
                     SpawnDesktopBlueprint("TitleScreen");
@@ -6857,7 +6860,7 @@ public class Blueprint
             var elements = new List<string> { "Fire", "Water", "Earth", "Air", "Frost", "Lightning", "Arcane", "Decay", "Order", "Shadow" };
             foreach (var element in elements)
             {
-                SpawnWindowBlueprint("Player" + element + "Resource");
+                SpawnWindowBlueprint("Friendly" + element + "Resource");
                 SpawnWindowBlueprint("Enemy" + element + "Resource");
             }
             AddHotkey(PageUp, () => {

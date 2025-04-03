@@ -17927,7 +17927,9 @@
     "faction": "Sandfury Tribe",
     "side": "Hostile",
     "portrait": "PortraitSandfuryBloodDrinker",
-    "abilities": {},
+    "abilities": {
+      "Corruption": 0
+    },
     "kind": "Common",
     "vitality": 1.0
   },
@@ -17960,7 +17962,10 @@
     "faction": "Sandfury Tribe",
     "side": "Hostile",
     "portrait": "PortraitSandfuryWitchDoctor",
-    "abilities": {},
+    "abilities": {
+      "Corruption": 0,
+      "Shadow Bolt": 0
+    },
     "kind": "Common",
     "vitality": 1.0
   },

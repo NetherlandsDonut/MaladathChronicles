@@ -330,19 +330,19 @@ public class Starter : MonoBehaviour
         var elements = new List<string> { "Fire", "Water", "Earth", "Air", "Frost", "Lightning", "Arcane", "Decay", "Order", "Shadow" };
         foreach (var element in elements)
         {
-            Blueprint.windowBlueprints.Add(new Blueprint("Player" + element + "Resource", () =>
+            Blueprint.windowBlueprints.Add(new Blueprint("Friendly" + element + "Resource", () =>
             {
-                var player = Board.board.participants[Board.board.spotlightFriendly[0]].who;
-                var item = player.equipment.ContainsKey("Trinket") ? player.equipment["Trinket"] : null;
+                var friendly = Board.board.participants[Board.board.spotlightFriendly[0]].who;
+                var item = friendly.equipment.ContainsKey("Trinket") ? friendly.equipment["Trinket"] : null;
                 var addTrinket = item != null && item.abilities != null && item.combatUse;
-                SetAnchor(-320 + 19 * elements.IndexOf(element), 188 - (addTrinket ? 19 : 0) - 65 * Board.board.spotlightFriendly.Count - 19 * Board.board.spotlightFriendly.Select(x => Board.board.participants[x]).Sum(x => x.who.actionBars[x.who.currentActionSet].Count));
+                SetAnchor(-320 + 19 * elements.IndexOf(element), 180 - (addTrinket ? 19 : 0) - 46 * Board.board.spotlightFriendly.Count - 19 * Board.board.spotlightFriendly.Select(x => Board.board.participants[x]).Sum(x => x.who.actionBars[x.who.currentActionSet].Count));
                 AddRegionGroup();
-                SetRegionGroupHeight(player.MaxResource(element) * 8);
+                SetRegionGroupHeight(friendly.MaxResource(element) * 8);
                 SetRegionGroupWidth(19);
                 AddPaddingRegion(() =>
                 {
                     AddLine("");
-                    AddResourceBar(2, -2, element, Board.board.spotlightFriendly[0], player);
+                    AddResourceBar(2, -2, element, Board.board.spotlightFriendly[0], friendly);
                 });
             }));
             Blueprint.windowBlueprints.Add(new Blueprint("Enemy" + element + "Resource", () =>
@@ -350,7 +350,7 @@ public class Starter : MonoBehaviour
                 var enemy = Board.board.participants[Board.board.spotlightEnemy[0]].who;
                 var item = enemy.equipment.ContainsKey("Trinket") ? enemy.equipment["Trinket"] : null;
                 var addTrinket = item != null && item.abilities != null && item.combatUse;
-                SetAnchor(299 - 19 * elements.IndexOf(element), 188 - (addTrinket ? 19 : 0) - 65 * Board.board.spotlightEnemy.Count - 19 * Board.board.spotlightEnemy.Select(x => Board.board.participants[x]).Sum(x => x.who.actionBars[x.who.currentActionSet].Count));
+                SetAnchor(299 - 19 * elements.IndexOf(element), 180 - (addTrinket ? 19 : 0) - 46 * Board.board.spotlightEnemy.Count - 19 * Board.board.spotlightEnemy.Select(x => Board.board.participants[x]).Sum(x => x.who.actionBars[x.who.currentActionSet].Count));
                 AddRegionGroup();
                 SetRegionGroupHeight(enemy.MaxResource(element) * 8);
                 SetRegionGroupWidth(19);

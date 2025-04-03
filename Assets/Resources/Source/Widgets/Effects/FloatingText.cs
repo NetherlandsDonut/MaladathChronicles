@@ -7,7 +7,7 @@ using static Font;
 
 public class FloatingText : MonoBehaviour
 {
-    public void Initialise(string text, string color, string align, bool fall = true)
+    public void Initialise(string text, string color, string borderColor, string align, bool fall = true)
     {
         var pixelList = new List<(int, int)>();
         var newObject = new GameObject("Text", typeof(LineText));
@@ -19,7 +19,7 @@ public class FloatingText : MonoBehaviour
         else if (align == "Right")
             newObject.transform.localPosition = new Vector2(-fonts[floatingTextFont].Length(text), 7);
         var temp = newObject.GetComponent<LineText>();
-        temp.Initialise(Root.CDesktop.LBWindow(), text, color == "" ? "Gray" : color, "FallingText");
+        temp.Initialise(Root.CDesktop.LBWindow(), text, color == "" ? "Gray" : color, fall ? "FallingText" : transform.parent.GetComponent<Region>().regionGroup.window.layer);
         int length = 0;
         temp.Erase();
         foreach (var character in temp.text)
@@ -85,7 +85,7 @@ public class FloatingText : MonoBehaviour
         var texture = new Texture2D(pixelList.Max(x => x.Item1) - xPlus + 5, pixelList.Max(x => x.Item2) - yPlus + 5, TextureFormat.ARGB32, true) { filterMode = FilterMode.Point };
         for (int i = 0; i < texture.width; i++)
             for (int j = 0; j < texture.height ; j++)
-                if (pixelList.Contains((i + xPlus, j + yPlus))) texture.SetPixel(i, j, new Color(0, 0, 0, 1));
+                if (pixelList.Contains((i + xPlus, j + yPlus))) texture.SetPixel(i, j, Coloring.colors[borderColor == "" ? "Black" : borderColor]);
                 else texture.SetPixel(i, j, new Color(0, 0, 0, 0));
         texture.Apply();
         var sprite = Sprite.Create(texture, new Rect(Vector2.zero, new Vector2(texture.width, texture.height)), new Vector2(0, 1), 1);

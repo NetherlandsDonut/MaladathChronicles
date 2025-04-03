@@ -423,7 +423,7 @@ public class Entity
     public void ReceiveExperience(int exp)
     {
         experience += exp;
-        while (ExperienceNeeded() <= experience)
+        while (ExperienceNeeded() > 0 && ExperienceNeeded() <= experience)
         {
             experience -= ExperienceNeeded();
             level++;

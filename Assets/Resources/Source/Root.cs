@@ -940,17 +940,17 @@ public static class Root
         newObject.GetComponent<LineText>().Initialise(line, text, color == "" ? line.LBText().color : color);
     }
 
-    public static void SpawnFloatingText(Vector2 position, string text = "", string color = "", string align = "Center")
+    public static void SpawnFloatingText(Vector2 position, string text = "", string color = "", string borderColor = "", string align = "Center")
     {
         text ??= "";
         var newObject = new GameObject("FloatingText", typeof(FloatingText));
         newObject.transform.parent = CDesktop.LBWindow().LBRegionGroup().LBRegion().transform;
         newObject.transform.localPosition = position;
         var temp = newObject.GetComponent<FloatingText>();
-        temp.Initialise(text, color == "" ? "Gray" : color, align, false);
+        temp.Initialise(text, color == "" ? "Gray" : color, borderColor, align, false);
     }
 
-    public static void SpawnFallingText(Vector2 position, string text = "", string color = "", string align = "Center")
+    public static void SpawnFallingText(Vector2 position, string text = "", string color = "", string borderColor = "", string align = "Center")
     {
         text ??= "";
         var newObject = new GameObject("FallingText", typeof(FloatingText));
@@ -959,7 +959,7 @@ public static class Root
         newObject.AddComponent<Rigidbody2D>().gravityScale = 2.0f;
         newObject.AddComponent<Shatter>().Initiate(7);
         var temp = newObject.GetComponent<FloatingText>();
-        temp.Initialise(text, color == "" ? "Gray" : color, align);
+        temp.Initialise(text, color == "" ? "Gray" : color, borderColor, align);
     }
 
     #endregion
@@ -1169,12 +1169,12 @@ public static class Root
     {
         var healthBar = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/PrefabHealthBar"));
         healthBar.name += " " + entity.name;
-        healthBar.transform.parent = CDesktop.LBWindow().transform;
+        healthBar.transform.parent = CDesktop.LBWindow().LBRegionGroup().LBRegion().transform;
         healthBar.transform.localPosition = new Vector3(x, y, 0);
         var thisBar = healthBar.GetComponent<FluidBar>();
         thisBar.Initialise(150, () => entity.MaxHealth(), () => entity.health, false);
-        if (Board.board.healthBars.ContainsKey(forWho)) Board.board.healthBars[forWho] = thisBar;
-        else Board.board.healthBars.Add(forWho, thisBar);
+        if (board.healthBars.ContainsKey(forWho)) board.healthBars[forWho] = thisBar;
+        else board.healthBars.Add(forWho, thisBar);
         thisBar.UpdateFluidBar();
     }
 
