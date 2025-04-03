@@ -244,6 +244,7 @@ public class Blueprint
                 (h) =>
                 {
                     if (index == 0) return;
+                    var switchBuffsWith = board.spotlightEnemy[0];
                     var temp = board.spotlightEnemy[index];
                     board.spotlightEnemy.RemoveAt(index);
                     board.spotlightEnemy.Insert(0, temp);
@@ -252,6 +253,8 @@ public class Blueprint
                         CloseWindow("Enemy" + res.Key + "Resource");
                         SpawnWindowBlueprint("Enemy" + res.Key + "Resource");
                     }
+                    board.temporaryBuffs[switchBuffsWith].ForEach(x => x.GetComponent<FlyingBuff>().InstantMove());
+                    board.temporaryBuffs[temp].ForEach(x => x.GetComponent<FlyingBuff>().InstantMove());
                 });
                 foreach (var actionBar in board.participants[board.spotlightEnemy[index]].who.actionBars[board.participants[board.spotlightEnemy[index]].who.currentActionSet])
                 {
@@ -322,6 +325,7 @@ public class Blueprint
                 (h) =>
                 {
                     if (index == 0) return;
+                    var switchBuffsWith = board.spotlightFriendly[0];
                     var temp = board.spotlightFriendly[index];
                     board.spotlightFriendly.RemoveAt(index);
                     board.spotlightFriendly.Insert(0, temp);
@@ -330,95 +334,97 @@ public class Blueprint
                         CloseWindow("Friendly" + res.Key + "Resource");
                         SpawnWindowBlueprint("Friendly" + res.Key + "Resource");
                     }
+                    board.temporaryBuffs[switchBuffsWith].ForEach(x => x.GetComponent<FlyingBuff>().InstantMove());
+                    board.temporaryBuffs[temp].ForEach(x => x.GetComponent<FlyingBuff>().InstantMove());
                 });
+                var aimedLength = board.participants[board.spotlightFriendly[index]].who.actionBars.Max(x => x.Value.Count());
+                foreach (var actionBar in board.participants[board.spotlightFriendly[index]].who.actionBars[board.participants[index].who.currentActionSet])
+                {
+                    aimedLength--;
+                    var abilityObj = abilities.Find(x => x.name == actionBar);
+                    if (abilityObj == null || abilityObj.cost == null) continue;
+                    AddButtonRegion(
+                        () =>
+                        {
+                            if (board.cooldowns[board.spotlightFriendly[index]].ContainsKey(actionBar))
+                            {
+                                AddLine(board.cooldowns[board.spotlightFriendly[index]][actionBar] + " / ", "DimGray", "Right");
+                                AddText(actionBar, "Black");
+                            }
+                            else AddLine(actionBar, "", "Right");
+                            AddSmallButton(abilityObj.icon);
+                            if (!abilityObj.EnoughResources(board.participants[board.spotlightFriendly[index]].who) || !abilityObj.AreAnyConditionsMet("AbilityCast", currentSave, board))
+                            {
+                                SetSmallButtonToGrayscale();
+                                AddSmallButtonOverlay("OtherGridBlurred");
+                            }
+                            if (board.CooldownOn(board.spotlightFriendly[index], actionBar) > 0)
+                                AddSmallButtonOverlay("AutoCast");
+                        },
+                        (h) =>
+                        {
+                            var temp = abilityTargetted;
+                            abilityTargetted = null;
+                            if (board.spotlightFriendly[index] == board.whosTurn)
+                                if (abilityObj.EnoughResources(board.participants[board.spotlightFriendly[index]].who))
+                                    if (board.CooldownOn(board.spotlightFriendly[index], actionBar) <= 0 && abilityObj.AreAnyConditionsMet("AbilityCast", currentSave, board))
+                                        StartTargettingAbility(abilityObj);
+                            ClearTargettingAbility(temp == abilityTargetted);
+                        },
+                        null,
+                        (h) => () =>
+                        {
+                            PrintAbilityTooltip(board.participants[board.spotlightFriendly[index]].who, abilityObj, board.participants[board.spotlightFriendly[index]].who.abilities.ContainsKey(abilityObj.name) ? board.participants[board.spotlightFriendly[index]].who.abilities[abilityObj.name] : 0);
+                        }
+                    );
+                }
+                var item = board.participants[board.spotlightFriendly[index]].who.equipment.ContainsKey("Trinket") ? board.participants[board.spotlightFriendly[index]].who.equipment["Trinket"] : null;
+                if (item != null && item.abilities != null && item.combatUse)
+                {
+                    aimedLength--;
+                    var ability = item.abilities.ToList()[index];
+                    var abilityObj = abilities.Find(x => x.name == ability.Key);
+                    AddButtonRegion(
+                        () =>
+                        {
+                            if (board.cooldowns[board.spotlightFriendly[index]].ContainsKey(ability.Key))
+                            {
+                                AddLine("" + board.cooldowns[board.spotlightFriendly[index]][ability.Key] + " / ", "DimGray", "Right");
+                                AddText(ability.Key, "Black");
+                            }
+                            else AddLine(ability.Key, "", "Right");
+                            AddSmallButton(item.icon);
+                            if (!abilityObj.EnoughResources(board.participants[board.spotlightFriendly[index]].who))
+                            {
+                                SetSmallButtonToGrayscale();
+                                AddSmallButtonOverlay("OtherGridBlurred");
+                            }
+                            if (board.CooldownOn(board.spotlightFriendly[index], ability.Key) > 0)
+                                AddSmallButtonOverlay("AutoCast");
+                        },
+                        (h) =>
+                        {
+                            var temp = abilityTargetted;
+                            abilityTargetted = null;
+                            if (abilityObj.EnoughResources(board.participants[board.spotlightFriendly[index]].who) && board.CooldownOn(board.spotlightFriendly[index], ability.Key) <= 0)
+                                StartTargettingAbility(abilityObj);
+                            ClearTargettingAbility(temp == abilityTargetted);
+                        },
+                        null,
+                        (h) => () =>
+                        {
+                            PrintAbilityTooltip(board.participants[board.spotlightFriendly[index]].who, abilityObj, board.participants[board.spotlightFriendly[index]].who.abilities[abilityObj.name], item);
+                        }
+                    );
+                }
+                for (int z = 0; z < aimedLength; z++)
+                    AddPaddingRegion(() => AddLine(""));
                 if (index > 0)
                 {
                     AddSmallEmptyRegion();
                     AddSmallEmptyRegion();
                 }
             }
-            var aimedLength = board.participants[board.spotlightFriendly[0]].who.actionBars.Max(x => x.Value.Count());
-            foreach (var actionBar in board.participants[board.spotlightFriendly[0]].who.actionBars[board.participants[0].who.currentActionSet])
-            {
-                aimedLength--;
-                var abilityObj = abilities.Find(x => x.name == actionBar);
-                if (abilityObj == null || abilityObj.cost == null) continue;
-                AddButtonRegion(
-                    () =>
-                    {
-                        if (board.cooldowns[board.spotlightFriendly[0]].ContainsKey(actionBar))
-                        {
-                            AddLine(board.cooldowns[board.spotlightFriendly[0]][actionBar] + " / ", "DimGray", "Right");
-                            AddText(actionBar, "Black");
-                        }
-                        else AddLine(actionBar, "", "Right");
-                        AddSmallButton(abilityObj.icon);
-                        if (!abilityObj.EnoughResources(board.participants[board.spotlightFriendly[0]].who) || !abilityObj.AreAnyConditionsMet("AbilityCast", currentSave, board))
-                        {
-                            SetSmallButtonToGrayscale();
-                            AddSmallButtonOverlay("OtherGridBlurred");
-                        }
-                        if (board.CooldownOn(board.spotlightFriendly[0], actionBar) > 0)
-                            AddSmallButtonOverlay("AutoCast");
-                    },
-                    (h) =>
-                    {
-                        var temp = abilityTargetted;
-                        abilityTargetted = null;
-                        if (board.spotlightFriendly[0] == board.whosTurn)
-                            if (abilityObj.EnoughResources(board.participants[board.spotlightFriendly[0]].who))
-                                if (board.CooldownOn(board.spotlightFriendly[0], actionBar) <= 0 && abilityObj.AreAnyConditionsMet("AbilityCast", currentSave, board))
-                                    StartTargettingAbility(abilityObj);
-                        ClearTargettingAbility(temp == abilityTargetted);
-                    },
-                    null,
-                    (h) => () =>
-                    {
-                        PrintAbilityTooltip(board.participants[board.spotlightFriendly[0]].who, abilityObj, board.participants[board.spotlightFriendly[0]].who.abilities.ContainsKey(abilityObj.name) ? board.participants[board.spotlightFriendly[0]].who.abilities[abilityObj.name] : 0);
-                    }
-                );
-            }
-            var item = board.participants[board.spotlightFriendly[0]].who.equipment.ContainsKey("Trinket") ? board.participants[board.spotlightFriendly[0]].who.equipment["Trinket"] : null;
-            if (item != null && item.abilities != null && item.combatUse)
-            {
-                aimedLength--;
-                var ability = item.abilities.ToList()[0];
-                var abilityObj = abilities.Find(x => x.name == ability.Key);
-                AddButtonRegion(
-                    () =>
-                    {
-                        if (board.cooldowns[board.spotlightFriendly[0]].ContainsKey(ability.Key))
-                        {
-                            AddLine("" + board.cooldowns[board.spotlightFriendly[0]][ability.Key] + " / ", "DimGray", "Right");
-                            AddText(ability.Key, "Black");
-                        }
-                        else AddLine(ability.Key, "", "Right");
-                        AddSmallButton(item.icon);
-                        if (!abilityObj.EnoughResources(board.participants[board.spotlightFriendly[0]].who))
-                        {
-                            SetSmallButtonToGrayscale();
-                            AddSmallButtonOverlay("OtherGridBlurred");
-                        }
-                        if (board.CooldownOn(board.spotlightFriendly[0], ability.Key) > 0)
-                            AddSmallButtonOverlay("AutoCast");
-                    },
-                    (h) =>
-                    {
-                        var temp = abilityTargetted;
-                        abilityTargetted = null;
-                        if (abilityObj.EnoughResources(board.participants[board.spotlightFriendly[0]].who) && board.CooldownOn(board.spotlightFriendly[0], ability.Key) <= 0)
-                            StartTargettingAbility(abilityObj);
-                        ClearTargettingAbility(temp == abilityTargetted);
-                    },
-                    null,
-                    (h) => () =>
-                    {
-                        PrintAbilityTooltip(board.participants[board.spotlightFriendly[0]].who, abilityObj, board.participants[board.spotlightFriendly[0]].who.abilities[abilityObj.name], item);
-                    }
-                );
-            }
-            for (int i = 0; i < aimedLength; i++)
-                AddPaddingRegion(() => AddLine(""));
         }),
         new("PlayerQuickUse", () => {
             SetAnchor(Bottom, 0, 9);
@@ -6862,7 +6868,7 @@ public class Blueprint
                 SpawnWindowBlueprint("Enemy" + element + "Resource");
             }
             AddHotkey(PageUp, () => {
-                board.participants[0].who.resources = new Dictionary<string, int>
+                board.participants[board.spotlightFriendly[0]].who.resources = new Dictionary<string, int>
                 {
                     { "Earth", 99 },
                     { "Fire", 99 },
@@ -6876,10 +6882,10 @@ public class Blueprint
                     { "Shadow", 99 },
                 };
                 Respawn("PlayerBattleInfo");
-                board.UpdateResourceBars(0, elements);
+                board.UpdateResourceBars(board.spotlightFriendly[0], elements);
             });
             AddHotkey(PageDown, () => {
-                board.participants[1].who.resources = new Dictionary<string, int>
+                board.participants[board.spotlightEnemy[0]].who.resources = new Dictionary<string, int>
                 {
                     { "Earth", 99 },
                     { "Fire", 99 },
@@ -6893,7 +6899,7 @@ public class Blueprint
                     { "Shadow", 99 },
                 };
                 Respawn("EnemyBattleInfo");
-                board.UpdateResourceBars(1, elements);
+                board.UpdateResourceBars(board.spotlightEnemy[0], elements);
             });
             AddHotkey(Escape, () =>
             {
