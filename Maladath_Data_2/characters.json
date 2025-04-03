@@ -1522,7 +1522,7 @@
           788
         ],
         "level": 9,
-        "experience": 178,
+        "experience": 2344,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -1643,7 +1643,9 @@
         "actionBars": {
           "Default": [
             "Lightning Bolt",
-            "Healing Wave"
+            "Healing Wave",
+            "Lava Burst",
+            "Flame Shock"
           ]
         },
         "stats": {
@@ -1705,7 +1707,7 @@
               "source": "RareDrop",
               "ilvl": 5,
               "lvl": 1,
-              "amount": 1,
+              "amount": 3,
               "maxStack": 20,
               "price": 13
             },
@@ -1790,7 +1792,7 @@
               "ilvl": 50,
               "lvl": 1,
               "amount": 2,
-              "minutesLeft": 16,
+              "minutesLeft": 9,
               "maxStack": 20,
               "price": 2000
             }
@@ -1890,8 +1892,9 @@
         "worldBuffs": []
       },
       "hour": 7,
-      "minute": 22,
-      "currentSite": "Bloodvenom River",
+      "minute": 29,
+      "second": 30,
+      "currentSite": "The Long Wash",
       "ringOfLaw": "Grizzle",
       "forlornCloister": "Fallen Champion",
       "markets": [
@@ -1919,10 +1922,12 @@
       "fishingSpots": {},
       "fishingSpoils": {},
       "siteProgress": {
-        "Valley of Trials": 4
+        "Valley of Trials": 4,
+        "The Long Wash": 1
       },
       "commonsKilled": {
-        "Mottled Boar": 4
+        "Mottled Boar": 4,
+        "Greymist Coaststrider": 1
       },
       "raresKilled": {},
       "elitesKilled": {},
@@ -2109,7 +2114,7 @@
         "Moonkin Caves": 1,
         "Remtravel's Excavation": 1,
         "Ruins of Mathystra": 1,
-        "The Long Wash": 1,
+        "The Long Wash": 5,
         "The Master's Glaive": 1,
         "Tower of Althalaxx": 1,
         "Twilight Shore": 1,
@@ -2998,7 +3003,7 @@
             "item": "Formula: Minor Mana Oil",
             "amount": 1,
             "maxAmount": 2,
-            "minutesLeft": 26,
+            "minutesLeft": 19,
             "restockSpeed": 40
           },
           {
@@ -3129,7 +3134,7 @@
             "minDamage": 104,
             "maxDamage": 157,
             "amount": 1,
-            "minutesLeft": 16,
+            "minutesLeft": 9,
             "maxStack": 1,
             "price": 18923,
             "speed": 3.5,
@@ -3145,7 +3150,7 @@
             "detailedType": "Note",
             "type": "Recipe",
             "amount": 1,
-            "minutesLeft": 16,
+            "minutesLeft": 9,
             "maxStack": 1,
             "price": 750
           }
@@ -3154,10 +3159,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2025-03-30T21:26:13.6460386+02:00",
-      "lastLoaded": "2025-04-01T18:51:27.772908+02:00",
-      "lastPlayed": "2025-04-01T18:57:43.6856866+02:00",
-      "timePlayed": "00:35:24.6495327",
-      "lastVisitedTalents": 2
+      "lastLoaded": "2025-04-03T22:02:34.3783558+02:00",
+      "lastPlayed": "2025-04-03T22:06:33.8325472+02:00",
+      "timePlayed": "00:40:41.2458710"
     },
     {
       "player": {

@@ -9821,14 +9821,14 @@
         "effects": [
           {
             "Effect": "Heal",
-            "Affect": "Effector",
+            "Affect": "Other",
             "PowerType": "Spell",
             "PowerSource": "Effector",
             "PowerScale": "1.5",
             "SoundEffect": "AbilityHealingWaveImpact",
             "Await": "5",
             "ShatterType": "Central",
-            "ShatterTarget": "Effector",
+            "ShatterTarget": "Other",
             "ShatterDegree": "40",
             "ShatterSpeed": "15"
           },

@@ -578,6 +578,11 @@ public class InputLine : MonoBehaviour
                 var amount = int.Parse(foo.Value().Substring(7));
                 currentSave.AddTime(amount);
             }
+            else if (foo.Value().StartsWith("ft "))
+            {
+                var amount = foo.Value().Substring(3);
+                SpawnFallingText(new Vector2(0, 34), amount);
+            }
             else if (foo.Value().StartsWith("showpaths"))
             {
                 foreach (var path in SitePath.paths)
