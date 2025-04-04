@@ -111,6 +111,25 @@ public class Desktop : MonoBehaviour
         }
     }
 
+    public bool GetBind(string function)
+    {
+        if (!Keybinds.keybinds.ContainsKey(function)) return false;
+        var key = Keybinds.keybinds[function].key;
+        if (keyTimer > 0 || lastKey != key || !GetKey(key)) return false;
+        keyTimer = defines.keyTimerSameKey;
+        return true;
+    }
+
+    public bool GetBindDown(string function)
+    {
+        if (!Keybinds.keybinds.ContainsKey(function)) return false;
+        var key = Keybinds.keybinds[function].key;
+        if (!GetKeyDown(key)) return false;
+        lastKey = key;
+        keyTimer = defines.keyTimerNewKey;
+        return true;
+    }
+
     public void FixedUpdate()
     {
         soundsPlayedThisFrame = new();
@@ -382,7 +401,22 @@ public class Desktop : MonoBehaviour
             }
             if (screenLocked)
             {
-                if (title == "Game" || title == "GameSimulation")
+                if (awaitingNewBind)
+                {
+                    for (int i = 0; i < 350; i++)
+                        if ((i < 303 || i > 308) && GetKeyDown((KeyCode)i))
+                        {
+                            var newKeybind = new Keybind() { key = (KeyCode)i };
+                            if (Keybinds.keybinds.Any(x => x.Value.key == newKeybind.key))
+                                SpawnFallingText(new Vector2(0, 34), "Key already set to something else", "Red");
+                            else if (Keybinds.keybinds[newBindFor].key == newKeybind.key)
+                                SpawnFallingText(new Vector2(0, 34), "This key is already bound to this", "Red");
+                            else Keybinds.keybinds[newBindFor].key = newKeybind.key;
+                            Respawn("GameKeybinds", true);
+                            UnlockScreen();
+                        }
+                }
+                else if (title == "Game" || title == "GameSimulation")
                 {
                     if (animationTime > 0) animationTime -= Time.deltaTime;
                     if (flyingMissiles.Count == 0 && animationTime <= 0 && fallingElements.Count == 0)
@@ -407,7 +441,7 @@ public class Desktop : MonoBehaviour
                     if (tooltipChanneling <= 0 && tooltip.caller != null && tooltip.caller() != null)
                         tooltip.SpawnTooltip();
                 }
-                if (heldKeyTime > 0) heldKeyTime -= Time.deltaTime;
+                if (keyTimer > 0) keyTimer -= Time.deltaTime;
                 if (inputLineWindow != null)
                 {
                     var didSomething = false;
@@ -433,37 +467,37 @@ public class Desktop : MonoBehaviour
                     }
                     else if (GetKeyDown(KeyCode.Delete) && inputLineMarker < length)
                     {
-                        heldKeyTime = 0.4f;
+                        keyTimer = defines.keyTimerNewKey;
                         inputDestination.RemoveNextOne(inputLineMarker);
                         didSomething = true;
                     }
-                    else if (GetKey(KeyCode.Delete) && inputLineMarker < length && heldKeyTime <= 0)
+                    else if (GetKey(KeyCode.Delete) && inputLineMarker < length && keyTimer <= 0)
                     {
-                        heldKeyTime = 0.0245f;
+                        keyTimer = defines.keyTimerSameKey;
                         inputDestination.RemoveNextOne(inputLineMarker);
                         didSomething = true;
                     }
                     else if (GetKeyDown(KeyCode.LeftArrow) && inputLineMarker > 0)
                     {
-                        heldKeyTime = 0.4f;
+                        keyTimer = defines.keyTimerNewKey;
                         inputLineMarker--;
                         didSomething = true;
                     }
-                    else if (GetKey(KeyCode.LeftArrow) && inputLineMarker > 0 && heldKeyTime <= 0)
+                    else if (GetKey(KeyCode.LeftArrow) && inputLineMarker > 0 && keyTimer <= 0)
                     {
-                        heldKeyTime = 0.0245f;
+                        keyTimer = defines.keyTimerSameKey;
                         inputLineMarker--;
                         didSomething = true;
                     }
                     else if (GetKeyDown(KeyCode.RightArrow) && inputLineMarker < length)
                     {
-                        heldKeyTime = 0.4f;
+                        keyTimer = defines.keyTimerNewKey;
                         inputLineMarker++;
                         didSomething = true;
                     }
-                    else if (GetKey(KeyCode.RightArrow) && inputLineMarker < length && heldKeyTime <= 0)
+                    else if (GetKey(KeyCode.RightArrow) && inputLineMarker < length && keyTimer <= 0)
                     {
-                        heldKeyTime = 0.0245f;
+                        keyTimer = defines.keyTimerSameKey;
                         inputLineMarker++;
                         didSomething = true;
                     }
@@ -596,7 +630,7 @@ public class Desktop : MonoBehaviour
                             if (GetKeyDown(hotkey.key)) keyStack = 0;
                             else
                             {
-                                heldKeyTime = 0.02f;
+                                keyTimer = defines.keyTimerSameKey;
                                 helds++;
                             }
                             hotkey.action();

@@ -5088,7 +5088,7 @@ public static class BlueprintDev
 
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerLobby");
-            AddHotkey(Escape, () => CloseDesktop("DevPanel"));
+            AddHotkey("Open menu / Back", () => CloseDesktop("DevPanel"));
         }),
         new("GameSimulation", () =>
         {
@@ -5146,49 +5146,49 @@ public static class BlueprintDev
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerHostileAreas");
-            AddHotkey(Escape, () => { area = null; areasSearch = null; Encounter.encounter = null; CloseDesktop("ObjectManagerHostileAreas"); });
+            AddHotkey("Open menu / Back", () => { area = null; areasSearch = null; Encounter.encounter = null; CloseDesktop("ObjectManagerHostileAreas"); });
             AddPaginationHotkeys();
         }),
         new("ObjectManagerInstances", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerInstances");
-            AddHotkey(Escape, () => { instance = null; instancesSearch = null; CloseDesktop("ObjectManagerInstances"); });
+            AddHotkey("Open menu / Back", () => { instance = null; instancesSearch = null; CloseDesktop("ObjectManagerInstances"); });
             AddPaginationHotkeys();
         }),
         new("ObjectManagerComplexes", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerComplexes");
-            AddHotkey(Escape, () => { complex = null; complexesSearch = null; CloseDesktop("ObjectManagerComplexes"); });
+            AddHotkey("Open menu / Back", () => { complex = null; complexesSearch = null; CloseDesktop("ObjectManagerComplexes"); });
             AddPaginationHotkeys();
         }),
         new("ObjectManagerTowns", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerTowns");
-            AddHotkey(Escape, () => { town = null; townsSearch = null; CloseDesktop("ObjectManagerTowns"); });
+            AddHotkey("Open menu / Back", () => { town = null; townsSearch = null; CloseDesktop("ObjectManagerTowns"); });
             AddPaginationHotkeys();
         }),
         new("ObjectManagerRaces", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerRaces");
-            AddHotkey(Escape, () => { race = null; racesSearch = null; CloseDesktop("ObjectManagerRaces"); });
+            AddHotkey("Open menu / Back", () => { race = null; racesSearch = null; CloseDesktop("ObjectManagerRaces"); });
             AddPaginationHotkeys();
         }),
         new("ObjectManagerSpecs", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerSpecs");
-            AddHotkey(Escape, () => { spec = null; specsSearch = null; CloseDesktop("ObjectManagerSpecs"); });
+            AddHotkey("Open menu / Back", () => { spec = null; specsSearch = null; CloseDesktop("ObjectManagerSpecs"); });
             AddPaginationHotkeys();
         }),
         new("ObjectManagerAbilities", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerAbilities");
-            AddHotkey(Escape, () =>
+            AddHotkey("Open menu / Back", () =>
             {
                 if (CloseWindow("ObjectManagerCostManager"))
                 {
@@ -5220,49 +5220,49 @@ public static class BlueprintDev
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerBuffs");
-            AddHotkey(Escape, () => { buff = null; buffsSearch = null; CloseDesktop("ObjectManagerBuffs"); });
+            AddHotkey("Open menu / Back", () => { buff = null; buffsSearch = null; CloseDesktop("ObjectManagerBuffs"); });
             AddPaginationHotkeys();
         }),
         new("ObjectManagerItems", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerItems");
-            AddHotkey(Escape, () => { item = null; itemsSearch = null; CloseDesktop("ObjectManagerItems"); });
+            AddHotkey("Open menu / Back", () => { item = null; itemsSearch = null; CloseDesktop("ObjectManagerItems"); });
             AddPaginationHotkeys();
         }),
         new("ObjectManagerItemSets", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerItemSets");
-            AddHotkey(Escape, () => { itemSet = null; itemSetsSearch = null; CloseDesktop("ObjectManagerItemSets"); });
+            AddHotkey("Open menu / Back", () => { itemSet = null; itemSetsSearch = null; CloseDesktop("ObjectManagerItemSets"); });
             AddPaginationHotkeys();
         }),
         new("ObjectManagerMounts", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerMounts");
-            AddHotkey(Escape, () => { mount = null; mountsSearch = null; CloseDesktop("ObjectManagerMounts"); });
+            AddHotkey("Open menu / Back", () => { mount = null; mountsSearch = null; CloseDesktop("ObjectManagerMounts"); });
             AddPaginationHotkeys();
         }),
         new("ObjectManagerRecipes", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerRecipes");
-            AddHotkey(Escape, () => { recipe = null; recipesSearch = null; CloseDesktop("ObjectManagerRecipes"); });
+            AddHotkey("Open menu / Back", () => { recipe = null; recipesSearch = null; CloseDesktop("ObjectManagerRecipes"); });
             AddPaginationHotkeys();
         }),
         new("ObjectManagerGeneralDrops", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerGeneralDrops");
-            AddHotkey(Escape, () => { generalDrop = null; generalDropsSearch = null; CloseDesktop("ObjectManagerGeneralDrops"); });
+            AddHotkey("Open menu / Back", () => { generalDrop = null; generalDropsSearch = null; CloseDesktop("ObjectManagerGeneralDrops"); });
             AddPaginationHotkeys();
         }),
         new("ObjectManagerFactions", () =>
         {
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerFactions");
-            AddHotkey(Escape, () => { faction = null; factionsSearch = null; CloseDesktop("ObjectManagerFactions"); });
+            AddHotkey("Open menu / Back", () => { faction = null; factionsSearch = null; CloseDesktop("ObjectManagerFactions"); });
             AddPaginationHotkeys();
         }),
     };

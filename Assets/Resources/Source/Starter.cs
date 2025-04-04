@@ -148,6 +148,10 @@ public class Starter : MonoBehaviour
         //into the game. By game content I mean specs, abilities, instances etc
         #region Data Deserialization
 
+        Deserialize(ref Keybinds.keybinds, "keybinds");
+        Keybinds.keybinds ??= new();
+        Keybinds.AddMissingKeybinds();
+        Serialize(Keybinds.keybinds, "keybinds");
         Deserialize(ref SiteHostileArea.areas, "areas", false, prefix);
         SiteHostileArea.areas ??= new();
         Deserialize(ref instances, "instances", false, prefix);

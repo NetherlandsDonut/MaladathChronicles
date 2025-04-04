@@ -54,6 +54,10 @@ public class Defines
             frameTime = 0.08f;
         if (cascadeMinimum < 2)
             cascadeMinimum = 2;
+        if (keyTimerNewKey <= 0)
+            keyTimerNewKey = 0.4f;
+        if (keyTimerSameKey <= 0)
+            keyTimerSameKey = 0.05f;
     }
 
     public int maxPathLength;
@@ -135,6 +139,12 @@ public class Defines
 
     //Indicates whether the full rectangular borders of the window are drawn
     public bool windowBorders;
+
+    //Time between detected held key when a new one is detected
+    public float keyTimerNewKey = 0.4f;
+
+    //Time between detected held key when the same one is applied again
+    public float keyTimerSameKey = 0.05f;
 
     //EXTERNAL FILE: Collection of constant values or alternate ways of handling engine
     public static Defines defines;

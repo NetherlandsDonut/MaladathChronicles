@@ -75,9 +75,12 @@ public static class Root
     public static List<(int, int)> titleScreenFunnyEffect = new();
 
     public static int keyStack;
-    public static float heldKeyTime;
+    public static KeyCode lastKey;
+    public static float keyTimer;
     public static float animationTime;
     public static float animatedSpriteTime;
+    public static bool awaitingNewBind;
+    public static string newBindFor;
 
     #region Spell Targeting
 
@@ -102,7 +105,8 @@ public static class Root
     public static void StartTargettingAbility(Ability ability)
     {
         abilityTargetted = ability;
-        Cursor.cursor.SetCursor(CursorType.Crosshair);
+        if (abilityTargetted.possibleTargets == "Self") FinishTargettingAbility(null);
+        else Cursor.cursor.SetCursor(CursorType.Crosshair);
     }
 
     //Pick up an item to move it
@@ -352,7 +356,8 @@ public static class Root
         Cursor.cursor.ResetColor();
         if (CDesktop != null && CDesktop.title == name) return;
         var windows = CDesktop != null ? CDesktop.windows.Select(x => x.title).ToList() : null;
-        if (movingItem != null && CDesktop.windows.Any(x => x.title == "Inventory")) CloseMovingItem();
+        if (movingItem != null && CDesktop != null && CDesktop.windows.Any(x => x.title == "Inventory")) CloseMovingItem();
+        if (CDesktop != null && CDesktop.title == "GameKeybinds") Serialization.Serialize(Keybinds.keybinds, "keybinds");
         if (mouseOver != null) mouseOver.OnMouseExit();
         if (CDesktop != null) CDesktop.gameObject.SetActive(false);
         var find = desktops.Find(x => x.title == name);
@@ -431,6 +436,15 @@ public static class Root
                 SpawnTransition();
             temp.sprite = sprite;
         }
+    }
+
+    //Hotkeys can be added only on desktop creation!
+    public static void AddHotkey(string function, Action action, bool keyDown = true)
+    {
+        if (!Keybinds.keybinds.ContainsKey(function)) return;
+        var key = Keybinds.keybinds[function].key;
+        if (LBDesktop.hotkeys.Exists(x => x.key == key && x.keyDown == keyDown)) return;
+        LBDesktop.hotkeys.Add(new Hotkey(key, action, keyDown));
     }
 
     //Hotkeys can be added only on desktop creation!

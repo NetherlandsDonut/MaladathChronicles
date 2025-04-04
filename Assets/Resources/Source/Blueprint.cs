@@ -4997,7 +4997,7 @@ public class Blueprint
             AddPaddingRegion(() => { });
         }, true),
         new("MapToolbar", () => {
-            AddHotkey(N, () =>
+            AddHotkey("Open talents", () =>
             {
                 CloseDesktop("SpellbookScreen");
                 CloseDesktop("EquipmentScreen");
@@ -5016,7 +5016,7 @@ public class Blueprint
                     PlaySound("DesktopTalentScreenClose");
                 }
             });
-            AddHotkey(P, () =>
+            AddHotkey("Open spellbook", () =>
             {
                 CloseDesktop("TalentScreen");
                 CloseDesktop("EquipmentScreen");
@@ -5032,7 +5032,7 @@ public class Blueprint
                     PlaySound("DesktopSpellbookClose");
                 }
             });
-            AddHotkey(B, () =>
+            AddHotkey("Open inventory", () =>
             {
                 CloseDesktop("TalentScreen");
                 CloseDesktop("SpellbookScreen");
@@ -5051,7 +5051,7 @@ public class Blueprint
                     }
                 }
             });
-            AddHotkey(T, () =>
+            AddHotkey("Open bestiary", () =>
             {
                 CloseDesktop("TalentScreen");
                 CloseDesktop("SpellbookScreen");
@@ -5067,7 +5067,7 @@ public class Blueprint
                     PlaySound("DesktopInstanceClose");
                 }
             });
-            AddHotkey(R, () =>
+            AddHotkey("Open professions", () =>
             {
                 CloseDesktop("TalentScreen");
                 CloseDesktop("SpellbookScreen");
@@ -5083,7 +5083,7 @@ public class Blueprint
                     PlaySound("DesktopSpellbookClose");
                 }
             });
-            AddHotkey(C, () =>
+            AddHotkey("Open character sheet", () =>
             {
                 CloseDesktop("TalentScreen");
                 CloseDesktop("SpellbookScreen");
@@ -5099,7 +5099,7 @@ public class Blueprint
                     PlaySound("DesktopCharacterSheetClose");
                 }
             });
-            AddHotkey(L, () =>
+            AddHotkey("Open quest log", () =>
             {
                 CloseDesktop("TalentScreen");
                 CloseDesktop("SpellbookScreen");
@@ -5347,6 +5347,15 @@ public class Blueprint
             });
             AddButtonRegion(() =>
             {
+                AddLine("Keybinds", "", "Center");
+            },
+            (h) =>
+            {
+                SpawnWindowBlueprint("GameKeybinds");
+                CloseWindow(h.window);
+            });
+            AddButtonRegion(() =>
+            {
                 AddLine("Rankings", "", "Center");
             },
             (h) =>
@@ -5359,10 +5368,14 @@ public class Blueprint
             },
             (h) =>
             {
-                //BLIZZARD: MUSIC, SOUNDS AND TEXTURES
-                //POOH: PROGRAMMING, DESIGN, 
-                //RYVED & LEKRIS: CONSULTATION AND ADVICE
-                //SPECIAL THANKS: ALL OF DISCO ADVANCE FOR BEING THE BEST TEAM EVER
+                //PROGRAMMING and DESIGN:
+                //Eerie
+
+                //MUSIC, SOUNDS AND TEXTURES
+                //Blizzard Entertainment
+
+                //CONSULTATION AND ADVICE:
+                //Ryved, FunkiMunki, LeKris, Tlaxcal
             });
             AddButtonRegion(() =>
             {
@@ -5409,6 +5422,7 @@ public class Blueprint
                 Respawn("GameSettings");
                 CloseWindow(h.window);
             });
+            AddPaddingRegion(() => AddLine("Keybinds", "DarkGray"));
             if (CanSave())
             {
                 AddButtonRegion(() => AddLine("Save and return to main menu", "Black"),
@@ -5538,6 +5552,63 @@ public class Blueprint
                 Application.runInBackground = settings.runsInBackground.Value();
                 CDesktop.RespawnAll();
             });
+        }, true),
+        new("GameKeybinds", () => {
+            SetAnchor(Center);
+            AddHeaderGroup();
+            SetRegionGroupWidth(570);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Keybinds:", "Gray");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow(h.window);
+                    Respawn(CDesktop.title == "GameMenu" ? "GameMenu" : "TitleScreenMenu");
+                });
+            });
+            AddRegionGroup();
+            SetRegionGroupWidth(190);
+            SetRegionGroupHeight(281);
+            AddPaddingRegion(() => AddLine("General:", "HalfGray"));
+            BindLine("Open menu / Back");
+            BindLine("Open console");
+            AddPaddingRegion(() => { });
+            AddRegionGroup();
+            SetRegionGroupWidth(190);
+            SetRegionGroupHeight(281);
+            AddPaddingRegion(() => AddLine("Camera:", "HalfGray"));
+            BindLine("Move camera north");
+            BindLine("Move camera west");
+            BindLine("Move camera south");
+            BindLine("Move camera east");
+            BindLine("Focus camera on player");
+            AddPaddingRegion(() => { });
+            AddRegionGroup();
+            SetRegionGroupWidth(190);
+            AddPaddingRegion(() => AddLine("Screen change:", "HalfGray"));
+            BindLine("Open talents");
+            BindLine("Open inventory");
+            BindLine("Open spellbook");
+            BindLine("Open quest log");
+            BindLine("Open professions");
+            BindLine("Open character sheet");
+            BindLine("Open bestiary");
+
+            void BindLine(string bind)
+            {
+                AddButtonRegion(() =>
+                {
+                    AddLine(bind);
+                    AddSmallButton("OtherReverse", (h) => Keybinds.keybinds[bind].key = Keybinds.defaultKeybinds[bind].key);
+                },
+                (h) =>
+                {
+                    newBindFor = bind;
+                    awaitingNewBind = true;
+                    CDesktop.LockScreen();
+                });
+                AddHeaderRegion(() => AddLine(Keybinds.keybinds[bind].key.ToString()));
+            }
         }, true),
         new("LocationInfo", () => {
             SetAnchor(Top);
@@ -6060,7 +6131,7 @@ public class Blueprint
         {
             PlayAmbience("AmbienceMainScreen", 0.2f, true);
             SpawnWindowBlueprint("TitleScreenMenu");
-            AddHotkey(BackQuote, () =>
+            AddHotkey("Open console", () =>
             {
                 if (SpawnWindowBlueprint("Console") != null)
                 {
@@ -6068,9 +6139,14 @@ public class Blueprint
                     CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
                 }
             });
-            AddHotkey(Escape, () =>
+            AddHotkey("Open menu / Back", () =>
             {
                 if (CloseWindow("GameSettings"))
+                {
+                    PlaySound("DesktopButtonClose");
+                    SpawnWindowBlueprint("TitleScreenMenu");
+                }
+                else if (CloseWindow("GameKeybinds"))
                 {
                     PlaySound("DesktopButtonClose");
                     SpawnWindowBlueprint("TitleScreenMenu");
@@ -6081,7 +6157,7 @@ public class Blueprint
         {
             SpawnWindowBlueprint("CharacterRoster");
             SpawnWindowBlueprint("CharacterInfo");
-            AddHotkey(BackQuote, () =>
+            AddHotkey("Open console", () =>
             {
                 if (SpawnWindowBlueprint("Console") != null)
                 {
@@ -6089,7 +6165,7 @@ public class Blueprint
                     CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
                 }
             });
-            AddHotkey(Escape, () =>
+            AddHotkey("Open menu / Back", () =>
             {
                 if (CloseWindow("ConfirmDeleteCharacter"))
                 {
@@ -6107,7 +6183,7 @@ public class Blueprint
         {
             SetDesktopBackground("Backgrounds/Sky");
             SpawnWindowBlueprint("RealmRoster");
-            AddHotkey(BackQuote, () =>
+            AddHotkey("Open console", () =>
             {
                 if (SpawnWindowBlueprint("Console") != null)
                 {
@@ -6115,7 +6191,7 @@ public class Blueprint
                     CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
                 }
             });
-            AddHotkey(Escape, () =>
+            AddHotkey("Open menu / Back", () =>
             {
                 PlaySound("DesktopButtonClose");
                 CloseDesktop("ChangeRealm");
@@ -6131,7 +6207,7 @@ public class Blueprint
             SpawnWindowBlueprint("CharacterCreationFactionRaceChoice");
             SpawnWindowBlueprint("CharacterCreationFinish");
             SpawnWindowBlueprint("CharacterCreationWho");
-            AddHotkey(BackQuote, () =>
+            AddHotkey("Open console", () =>
             {
                 if (SpawnWindowBlueprint("Console") != null)
                 {
@@ -6139,7 +6215,7 @@ public class Blueprint
                     CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
                 }
             });
-            AddHotkey(Escape, () =>
+            AddHotkey("Open menu / Back", () =>
             {
                 PlaySound("DesktopButtonClose");
                 CloseDesktop("CharCreatorScreen");
@@ -6157,10 +6233,10 @@ public class Blueprint
             loadingBar[1].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/LoadingBarStretch");
             loadingBar[1].transform.position = new Vector3(-1168, 854);
             OrderLoadingMap();
-            AddHotkey(W, () => { MoveCamera(new Vector2(0, EuelerGrowth())); }, false);
-            AddHotkey(A, () => { MoveCamera(new Vector2(-EuelerGrowth(), 0)); }, false);
-            AddHotkey(S, () => { MoveCamera(new Vector2(0, -EuelerGrowth())); }, false);
-            AddHotkey(D, () => { MoveCamera(new Vector2(EuelerGrowth(), 0)); }, false);
+            AddHotkey("Move camera north", () => { MoveCamera(new Vector2(0, EuelerGrowth())); }, false);
+            AddHotkey("Move camera west", () => { MoveCamera(new Vector2(-EuelerGrowth(), 0)); }, false);
+            AddHotkey("Move camera south", () => { MoveCamera(new Vector2(0, -EuelerGrowth())); }, false);
+            AddHotkey("Move camera east", () => { MoveCamera(new Vector2(EuelerGrowth(), 0)); }, false);
             AddHotkey(UpArrow, () =>
             {
                 var site = FindSite(x => x.name == currentSave.currentSite);
@@ -6198,7 +6274,7 @@ public class Blueprint
                 CloseWindow("Site: " + site.name);
                 SpawnWindowBlueprint("Site: " + site.name);
             }, false);
-            AddHotkey(Escape, () =>
+            AddHotkey("Open menu / Back", () =>
             {
                 PlaySound("DesktopMenuOpen", 0.6f);
                 SpawnDesktopBlueprint("GameMenu");
@@ -6211,7 +6287,7 @@ public class Blueprint
                     sitePathBuilder = null;
                 }
             });
-            AddHotkey(BackQuote, () =>
+            AddHotkey("Open console", () =>
             {
                 if (SpawnWindowBlueprint("Console") != null)
                 {
@@ -6219,7 +6295,7 @@ public class Blueprint
                     CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
                 }
             });
-            AddHotkey(KeyCode.Space, () =>
+            AddHotkey("Focus camera on player", () =>
             {
                 var whereTo = FindSite(x => x.name == currentSave.currentSite);
                 CDesktop.cameraDestination = new Vector2(whereTo.x, whereTo.y);
@@ -6250,7 +6326,7 @@ public class Blueprint
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
             SpawnWindowBlueprint("Chest");
-            AddHotkey(Escape, () =>
+            AddHotkey("Open menu / Back", () =>
             {
                 if (CloseWindow("HostileAreaQuestTracker"))
                 {
@@ -6286,7 +6362,7 @@ public class Blueprint
             SpawnWindowBlueprint("CombatResultsSkinning");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
-            AddHotkey(Escape, () =>
+            AddHotkey("Open menu / Back", () =>
             {
                 if (board.results.result == "Team1Won")
                 {
@@ -6310,7 +6386,7 @@ public class Blueprint
             FillChart();
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
-            AddHotkey(A, () =>
+            AddHotkey("Move camera west", () =>
             {
                 PlaySound("DesktopChartSwitch");
                 if (chartPage == "Damage Taken") chartPage = "Damage Dealt";
@@ -6320,7 +6396,7 @@ public class Blueprint
                 CloseDesktop("CombatLog");
                 SpawnDesktopBlueprint("CombatLog");
             });
-            AddHotkey(D, () =>
+            AddHotkey("Move camera east", () =>
             {
                 PlaySound("DesktopChartSwitch");
                 if (chartPage == "Damage Dealt") chartPage = "Damage Taken";
@@ -6330,7 +6406,7 @@ public class Blueprint
                 CloseDesktop("CombatLog");
                 SpawnDesktopBlueprint("CombatLog");
             });
-            AddHotkey(Escape, () =>
+            AddHotkey("Open menu / Back", () =>
             {
                 PlaySound("DesktopInstanceClose");
                 CloseDesktop("CombatLog");
@@ -6351,7 +6427,7 @@ public class Blueprint
             SpawnWindowBlueprint("Inventory");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
-            AddHotkey(Escape, () =>
+            AddHotkey("Open menu / Back", () =>
             {
                 if (movingItem != null)
                 {
@@ -6385,7 +6461,7 @@ public class Blueprint
             SpawnWindowBlueprint("Inventory");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
-            AddHotkey(Escape, () =>
+            AddHotkey("Open menu / Back", () =>
             {
                 if (movingItem != null)
                 {
@@ -6432,7 +6508,7 @@ public class Blueprint
             SpawnWindowBlueprint("Inventory");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
-            AddHotkey(Escape, () =>
+            AddHotkey("Open menu / Back", () =>
             {
                 if (movingItem != null)
                 {
@@ -6476,7 +6552,7 @@ public class Blueprint
             SpawnWindowBlueprint("Inventory");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
-            AddHotkey(Escape, () =>
+            AddHotkey("Open menu / Back", () =>
             {
                 if (movingItem != null)
                 {
@@ -6520,7 +6596,7 @@ public class Blueprint
             SpawnWindowBlueprint("Inventory");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
-            AddHotkey(Escape, () =>
+            AddHotkey("Open menu / Back", () =>
             {
                 if (movingItem != null)
                 {
@@ -6553,7 +6629,7 @@ public class Blueprint
             SpawnWindowBlueprint("Inventory");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
-            AddHotkey(Escape, () =>
+            AddHotkey("Open menu / Back", () =>
             {
                 if (movingItem != null)
                 {
@@ -6596,7 +6672,7 @@ public class Blueprint
             SpawnWindowBlueprint("Inventory");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
-            AddHotkey(Escape, () =>
+            AddHotkey("Open menu / Back", () =>
             {
                 if (movingItem != null)
                 {
@@ -6646,7 +6722,7 @@ public class Blueprint
                         Respawn("Vendor");
                     }
                 });
-                AddHotkey(Escape, () =>
+                AddHotkey("Open menu / Back", () =>
                 {
                     if (CloseWindow("BankSort"))
                     {
@@ -6722,7 +6798,7 @@ public class Blueprint
             else
             {
                 SpawnWindowBlueprint("TownHostile");
-                AddHotkey(Escape, () =>
+                AddHotkey("Open menu / Back", () =>
                 {
                     PlaySound("DesktopInstanceClose");
                     town = null;
@@ -6748,7 +6824,7 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
-            AddHotkey(Escape, () =>
+            AddHotkey("Open menu / Back", () =>
             {
                 if (CloseWindow("HostileAreaQuestTracker"))
                 {
@@ -6821,7 +6897,7 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
-            AddHotkey(Escape, () =>
+            AddHotkey("Open menu / Back", () =>
             {
                 if (CloseWindow("HostileAreaQuestTracker"))
                 {
@@ -6901,7 +6977,7 @@ public class Blueprint
                 Respawn("EnemyBattleInfo");
                 board.UpdateResourceBars(board.spotlightEnemy[0], elements);
             });
-            AddHotkey(Escape, () =>
+            AddHotkey("Open menu / Back", () =>
             {
                 if (abilityTargetted != null)
                 {
@@ -6916,7 +6992,7 @@ public class Blueprint
                     SpawnDesktopBlueprint("GameMenu");
                 }
             });
-            AddHotkey(BackQuote, () => { SpawnDesktopBlueprint("DevPanel"); });
+            AddHotkey("Open console", () => { SpawnDesktopBlueprint("DevPanel"); });
             AddHotkey(KeypadMultiply, () => { board.EndCombat("Team1Won"); });
             AddHotkey(KeypadDivide, () => { board.EndCombat("Team2Won"); });
         }),
@@ -6929,7 +7005,7 @@ public class Blueprint
             SpawnWindowBlueprint("FishingSpotInfo");
             SpawnWindowBlueprint("FisherInfo");
             SpawnWindowBlueprint("LocationInfo");
-            AddHotkey(Escape, () =>
+            AddHotkey("Open menu / Back", () =>
             {
                 PlaySound("DesktopMenuOpen", 0.6f);
                 SpawnDesktopBlueprint("GameMenu");
@@ -6952,7 +7028,7 @@ public class Blueprint
             //SpawnWindowBlueprint("CharacterInfoStatsRight");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
-            AddHotkey(Escape, () =>
+            AddHotkey("Open menu / Back", () =>
             {
                 PlaySound("DesktopCharacterSheetClose");
                 CloseDesktop("CharacterSheet");
@@ -6971,7 +7047,7 @@ public class Blueprint
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
             SpawnWindowBlueprint("QuestList");
-            AddHotkey(Escape, () =>
+            AddHotkey("Open menu / Back", () =>
             {
                 if (CloseWindow("QuestSort"))
                 {
@@ -7023,7 +7099,7 @@ public class Blueprint
                                 SpawnWindowBlueprint("TalentButton" + tree + row + col);
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
-            AddHotkey(A, () =>
+            AddHotkey("Move camera west", () =>
             {
                 PlaySound("DesktopSwitchPage");
                 currentSave.lastVisitedTalents--;
@@ -7032,7 +7108,7 @@ public class Blueprint
                 CloseDesktop("TalentScreen");
                 SpawnDesktopBlueprint("TalentScreen");
             });
-            AddHotkey(D, () =>
+            AddHotkey("Move camera east", () =>
             {
                 PlaySound("DesktopSwitchPage");
                 currentSave.lastVisitedTalents++;
@@ -7041,7 +7117,7 @@ public class Blueprint
                 CloseDesktop("TalentScreen");
                 SpawnDesktopBlueprint("TalentScreen");
             });
-            AddHotkey(Escape, () => { CloseDesktop("TalentScreen"); PlaySound("DesktopTalentScreenClose"); });
+            AddHotkey("Open menu / Back", () => { CloseDesktop("TalentScreen"); PlaySound("DesktopTalentScreenClose"); });
         }),
         new("SpellbookScreen", () => 
         {
@@ -7059,7 +7135,7 @@ public class Blueprint
             SpawnWindowBlueprint("SpellbookResources");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
-            AddHotkey(Escape, () => { CloseDesktop("SpellbookScreen"); PlaySound("DesktopSpellbookClose"); });
+            AddHotkey("Open menu / Back", () => { CloseDesktop("SpellbookScreen"); PlaySound("DesktopSpellbookClose"); });
             AddPaginationHotkeys();
         }),
         new("EquipmentScreen", () => 
@@ -7079,7 +7155,7 @@ public class Blueprint
             SpawnWindowBlueprint("Inventory");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
-            AddHotkey(Escape, () =>
+            AddHotkey("Open menu / Back", () =>
             {
                 if (CloseWindow("InventorySort"))
                 {
@@ -7121,7 +7197,7 @@ public class Blueprint
             SpawnWindowBlueprint("BestiaryEasternKingdoms");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
-            AddHotkey(Escape, () =>
+            AddHotkey("Open menu / Back", () =>
             {
                 PlaySound("DesktopInstanceClose");
                 CloseDesktop("BestiaryScreen");
@@ -7141,7 +7217,7 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
-            AddHotkey(Escape, () =>
+            AddHotkey("Open menu / Back", () =>
             {
                 if (CloseWindow("CraftingRecipe"))
                 {
@@ -7166,9 +7242,14 @@ public class Blueprint
         {
             SetDesktopBackground("Backgrounds/StoneFull");
             SpawnWindowBlueprint("GameMenu");
-            AddHotkey(Escape, () =>
+            AddHotkey("Open menu / Back", () =>
             {
                 if (CloseWindow("Settings"))
+                {
+                    PlaySound("DesktopButtonClose");
+                    SpawnWindowBlueprint("GameMenu");
+                }
+                else if (CloseWindow("GameKeybinds"))
                 {
                     PlaySound("DesktopButtonClose");
                     SpawnWindowBlueprint("GameMenu");
@@ -7192,7 +7273,7 @@ public class Blueprint
             SpawnWindowBlueprint("CharacterRankingTop");
             SpawnWindowBlueprint("CharacterRankingList");
             SpawnWindowBlueprint("CharacterRankingListRight");
-            AddHotkey(Escape, () =>
+            AddHotkey("Open menu / Back", () =>
             {
                 PlaySound("DesktopButtonClose");
                 CloseDesktop("RankingScreen");
@@ -7203,7 +7284,7 @@ public class Blueprint
             SetDesktopBackground("Backgrounds/SkyRed");
             SpawnWindowBlueprint("CardTest");
             SpawnWindowBlueprint("ExperienceBarBorder");
-            AddHotkey(Escape, () =>
+            AddHotkey("Open menu / Back", () =>
             {
                 PlaySound("DesktopButtonClose");
                 CloseDesktop("CardGame");
@@ -7213,7 +7294,7 @@ public class Blueprint
 
     public static void AddPaginationHotkeys()
     {
-        AddHotkey(D, () =>
+        AddHotkey("Move camera east", () =>
         {
             var window = CDesktop.windows.Find(x => x.maxPaginationReq != null);
             if (window == null) return;
@@ -7223,7 +7304,7 @@ public class Blueprint
                 PlaySound("DesktopChangePage", 0.6f);
             window.Respawn();
         });
-        AddHotkey(D, () =>
+        AddHotkey("Move camera east", () =>
         {
             var window = CDesktop.windows.Find(x => x.maxPaginationReq != null);
             if (window == null) return;
@@ -7233,7 +7314,7 @@ public class Blueprint
                 PlaySound("DesktopChangePage", 0.6f);
             window.Respawn();
         }, false);
-        AddHotkey(A, () =>
+        AddHotkey("Move camera west", () =>
         {
             var window = CDesktop.windows.Find(x => x.maxPaginationReq != null);
             if (window == null) return;
@@ -7243,7 +7324,7 @@ public class Blueprint
                 PlaySound("DesktopChangePage", 0.6f);
             window.Respawn();
         });
-        AddHotkey(A, () =>
+        AddHotkey("Move camera west", () =>
         {
             var window = CDesktop.windows.Find(x => x.maxPaginationReq != null);
             if (window == null) return;

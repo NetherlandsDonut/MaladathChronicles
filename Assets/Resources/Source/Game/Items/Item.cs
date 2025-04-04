@@ -845,131 +845,8 @@ public class Item
     public static void PrintLootItem(Item item)
     {
         AddBigButton(item.icon,
-            null,
-            (h) =>
-            {
-                if (currentSave.player.inventory.CanAddItem(item))
-                {
-                    PlaySound(item.ItemSound("PutDown"), 0.8f);
-                    if (CDesktop.title == "CombatResultsLoot")
-                    {
-                        currentSave.player.inventory.AddItem(item);
-                        Board.board.results.inventory.items.Remove(item);
-                        if (Board.board.results.exclusiveItems.Contains(item.name))
-                            Board.board.results.inventory.items.RemoveAll(x => Board.board.results.exclusiveItems.Contains(x.name));
-                        if (settings.autoCloseLoot.Value() && Board.board.results.inventory.items.Count == 0)
-                        {
-                            CloseDesktop("CombatResultsLoot");
-                            SwitchDesktop("CombatResults");
-                            Respawn("CombatResults");
-                        }
-                        else
-                        {
-                            Respawn("Inventory");
-                            Respawn("CombatResultsLoot");
-                        }
-                    }
-                    else if (CDesktop.title == "MiningLoot")
-                    {
-                        PlaySound("Mining" + random.Next(1, 6));
-                        currentSave.player.inventory.AddItem(item);
-                        Board.board.results.miningLoot.items.Remove(item);
-                        if (settings.autoCloseLoot.Value() && Board.board.results.miningLoot.items.Count == 0)
-                        {
-                            CloseDesktop("MiningLoot");
-                            Respawn("CombatResultsMining");
-                        }
-                        else
-                        {
-                            Respawn("Inventory");
-                            Respawn("MiningLoot");
-                        }
-                    }
-                    else if (CDesktop.title == "HerbalismLoot")
-                    {
-                        PlaySound("HerbGather" + random.Next(1, 5));
-                        currentSave.player.inventory.AddItem(item);
-                        Board.board.results.herbalismLoot.items.Remove(item);
-                        if (settings.autoCloseLoot.Value() && Board.board.results.herbalismLoot.items.Count == 0)
-                        {
-                            CloseDesktop("HerbalismLoot");
-                            Respawn("CombatResultsHerbalism");
-                        }
-                        else
-                        {
-                            Respawn("Inventory");
-                            Respawn("HerbalismLoot");
-                        }
-                    }
-                    else if (CDesktop.title == "SkinningLoot")
-                    {
-                        //PlaySound("SkinGather" + random.Next(1, 4));
-                        currentSave.player.inventory.AddItem(item);
-                        Board.board.results.skinningLoot.items.Remove(item);
-                        if (settings.autoCloseLoot.Value() && Board.board.results.skinningLoot.items.Count == 0)
-                        {
-                            CloseDesktop("SkinningLoot");
-                            Respawn("CombatResultsSkinning");
-                        }
-                        else
-                        {
-                            Respawn("Inventory");
-                            Respawn("SkinningLoot");
-                        }
-                    }
-                    else if (CDesktop.title == "DisenchantLoot")
-                    {
-                        currentSave.player.inventory.AddItem(item);
-                        disenchantLoot.items.Remove(item);
-                        if (settings.autoCloseLoot.Value() && disenchantLoot.items.Count == 0)
-                        {
-                            CloseDesktop("DisenchantLoot");
-                            CDesktop.RespawnAll();
-                        }
-                        else Respawn("Inventory");
-                    }
-                    else if (CDesktop.title == "ChestLoot")
-                    {
-                        currentSave.player.inventory.AddItem(item);
-                        currentSave.openedChests[SiteHostileArea.area.name].inventory.items.Remove(item);
-                        if (settings.autoCloseLoot.Value() && currentSave.openedChests[SiteHostileArea.area.name].inventory.items.Count == 0)
-                        {
-                            if (SiteHostileArea.area.instancePart)
-                            {
-                                CloseDesktop("Instance");
-                                SpawnDesktopBlueprint("Instance");
-                            }
-                            else
-                            {
-                                CloseDesktop("HostileArea");
-                                SpawnDesktopBlueprint("HostileArea");
-                            }
-                            CloseDesktop("ChestLoot");
-                        }
-                        else
-                        {
-                            Respawn("Inventory");
-                            Respawn("ChestLoot");
-                        }
-                    }
-                    else if (CDesktop.title == "ContainerLoot")
-                    {
-                        currentSave.player.inventory.AddItem(item);
-                        openedItem.itemsInside.Remove(item);
-                        if (settings.autoCloseLoot.Value() && openedItem.itemsInside.Count == 0)
-                        {
-                            currentSave.player.inventory.items.Remove(openedItem);
-                            openedItem = null;
-                            CloseDesktop("ContainerLoot");
-                        }
-                        else
-                        {
-                            Respawn("Inventory");
-                            Respawn("ContainerLoot");
-                        }
-                    }
-                }
-            },
+            (h) => Click(),
+            (h) => Click(),
             (h) => () =>
             {
                 if (item == null) return;
@@ -1001,6 +878,131 @@ public class Item
         else if (settings.upgradeIndicators.Value() && item.CanEquip(currentSave.player) && currentSave.player.IsItemAnUpgrade(item))
             AddBigButtonOverlay("OtherItemUpgrade", 0, 2);
         if (item.maxStack > 1 && item.type != "Currency") SpawnFloatingText(CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (CDesktop.title == "ContainerLoot" ? openedItem.itemsInside : (CDesktop.title == "ChestLoot" ? currentSave.openedChests[SiteHostileArea.area.name].inventory : (CDesktop.title == "MiningLoot" ? Board.board.results.miningLoot : (CDesktop.title == "HerbalismLoot" ? Board.board.results.herbalismLoot : (CDesktop.title == "DisenchantLoot" ? disenchantLoot : (CDesktop.title == "SkinningLoot" ? Board.board.results.skinningLoot : Board.board.results.inventory))))).items).IndexOf(item), item.amount + "", "", "", "Right");
+
+        void Click()
+        {
+            if (currentSave.player.inventory.CanAddItem(item))
+            {
+                PlaySound(item.ItemSound("PutDown"), 0.8f);
+                if (CDesktop.title == "CombatResultsLoot")
+                {
+                    currentSave.player.inventory.AddItem(item);
+                    Board.board.results.inventory.items.Remove(item);
+                    if (Board.board.results.exclusiveItems.Contains(item.name))
+                        Board.board.results.inventory.items.RemoveAll(x => Board.board.results.exclusiveItems.Contains(x.name));
+                    if (settings.autoCloseLoot.Value() && Board.board.results.inventory.items.Count == 0)
+                    {
+                        CloseDesktop("CombatResultsLoot");
+                        SwitchDesktop("CombatResults");
+                        Respawn("CombatResults");
+                    }
+                    else
+                    {
+                        Respawn("Inventory");
+                        Respawn("CombatResultsLoot");
+                    }
+                }
+                else if (CDesktop.title == "MiningLoot")
+                {
+                    PlaySound("Mining" + random.Next(1, 6));
+                    currentSave.player.inventory.AddItem(item);
+                    Board.board.results.miningLoot.items.Remove(item);
+                    if (settings.autoCloseLoot.Value() && Board.board.results.miningLoot.items.Count == 0)
+                    {
+                        CloseDesktop("MiningLoot");
+                        Respawn("CombatResultsMining");
+                    }
+                    else
+                    {
+                        Respawn("Inventory");
+                        Respawn("MiningLoot");
+                    }
+                }
+                else if (CDesktop.title == "HerbalismLoot")
+                {
+                    PlaySound("HerbGather" + random.Next(1, 5));
+                    currentSave.player.inventory.AddItem(item);
+                    Board.board.results.herbalismLoot.items.Remove(item);
+                    if (settings.autoCloseLoot.Value() && Board.board.results.herbalismLoot.items.Count == 0)
+                    {
+                        CloseDesktop("HerbalismLoot");
+                        Respawn("CombatResultsHerbalism");
+                    }
+                    else
+                    {
+                        Respawn("Inventory");
+                        Respawn("HerbalismLoot");
+                    }
+                }
+                else if (CDesktop.title == "SkinningLoot")
+                {
+                    //PlaySound("SkinGather" + random.Next(1, 4));
+                    currentSave.player.inventory.AddItem(item);
+                    Board.board.results.skinningLoot.items.Remove(item);
+                    if (settings.autoCloseLoot.Value() && Board.board.results.skinningLoot.items.Count == 0)
+                    {
+                        CloseDesktop("SkinningLoot");
+                        Respawn("CombatResultsSkinning");
+                    }
+                    else
+                    {
+                        Respawn("Inventory");
+                        Respawn("SkinningLoot");
+                    }
+                }
+                else if (CDesktop.title == "DisenchantLoot")
+                {
+                    currentSave.player.inventory.AddItem(item);
+                    disenchantLoot.items.Remove(item);
+                    if (settings.autoCloseLoot.Value() && disenchantLoot.items.Count == 0)
+                    {
+                        CloseDesktop("DisenchantLoot");
+                        CDesktop.RespawnAll();
+                    }
+                    else Respawn("Inventory");
+                }
+                else if (CDesktop.title == "ChestLoot")
+                {
+                    currentSave.player.inventory.AddItem(item);
+                    currentSave.openedChests[SiteHostileArea.area.name].inventory.items.Remove(item);
+                    if (settings.autoCloseLoot.Value() && currentSave.openedChests[SiteHostileArea.area.name].inventory.items.Count == 0)
+                    {
+                        if (SiteHostileArea.area.instancePart)
+                        {
+                            CloseDesktop("Instance");
+                            SpawnDesktopBlueprint("Instance");
+                        }
+                        else
+                        {
+                            CloseDesktop("HostileArea");
+                            SpawnDesktopBlueprint("HostileArea");
+                        }
+                        CloseDesktop("ChestLoot");
+                    }
+                    else
+                    {
+                        Respawn("Inventory");
+                        Respawn("ChestLoot");
+                    }
+                }
+                else if (CDesktop.title == "ContainerLoot")
+                {
+                    currentSave.player.inventory.AddItem(item);
+                    openedItem.itemsInside.Remove(item);
+                    if (settings.autoCloseLoot.Value() && openedItem.itemsInside.Count == 0)
+                    {
+                        currentSave.player.inventory.items.Remove(openedItem);
+                        openedItem = null;
+                        CloseDesktop("ContainerLoot");
+                    }
+                    else
+                    {
+                        Respawn("Inventory");
+                        Respawn("ContainerLoot");
+                    }
+                }
+            }
+        }
     }
 
     public static void PrintItemTooltip(Item item, bool compare = false, double priceMultiplier = 1)

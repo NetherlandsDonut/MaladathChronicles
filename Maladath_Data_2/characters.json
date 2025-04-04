@@ -3664,8 +3664,8 @@
       "player": {
         "currentQuests": [],
         "completedQuests": [],
-        "level": 17,
-        "experience": 14343,
+        "level": 18,
+        "experience": 5493,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -3738,7 +3738,7 @@
         },
         "professionSkills": {},
         "learnedRecipes": {},
-        "unspentTalentPoints": 1,
+        "unspentTalentPoints": 2,
         "faction": "Thunder Bluff",
         "name": "Hannaya",
         "race": "Tauren",
@@ -3820,6 +3820,80 @@
               "abilities": {
                 "Hearthstone": 1
               }
+            },
+            {
+              "x": 1,
+              "rarity": "Common",
+              "name": "Plainstrider Meat",
+              "icon": "itemmiscfood14",
+              "detailedType": "Food",
+              "type": "Miscellaneous",
+              "source": "DirectDrop",
+              "ilvl": 1,
+              "amount": 2,
+              "maxStack": 20,
+              "droppedBy": [
+                "Plainstrider"
+              ]
+            },
+            {
+              "x": 2,
+              "rarity": "Common",
+              "name": "Plainstrider Feather",
+              "icon": "itemfeather05",
+              "detailedType": "Feather",
+              "type": "Miscellaneous",
+              "source": "DirectDrop",
+              "ilvl": 1,
+              "amount": 2,
+              "maxStack": 20,
+              "droppedBy": [
+                "Plainstrider"
+              ]
+            },
+            {
+              "x": 3,
+              "rarity": "Common",
+              "name": "Scroll of Stamina",
+              "icon": "itemscroll07",
+              "detailedType": "Scroll",
+              "type": "Miscellaneous",
+              "source": "GeneralDrop",
+              "ilvl": 15,
+              "amount": 1,
+              "maxStack": 5,
+              "abilities": {
+                "Scroll of Stamina I": 1
+              },
+              "price": 37
+            },
+            {
+              "x": 4,
+              "rarity": "Common",
+              "name": "Lesser Mana Potion",
+              "icon": "itempotion71",
+              "detailedType": "Potion",
+              "type": "Miscellaneous",
+              "source": "Profession",
+              "ilvl": 24,
+              "amount": 1,
+              "maxStack": 5,
+              "price": 30
+            },
+            {
+              "y": 1,
+              "rarity": "Poor",
+              "name": "Laced Mail Vest",
+              "icon": "itemchestchain",
+              "type": "Chest",
+              "armorClass": "Mail",
+              "source": "RareDrop",
+              "ilvl": 16,
+              "lvl": 11,
+              "armor": 136,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 198
             }
           ],
           "bags": []
@@ -3869,9 +3943,9 @@
         "worldBuffs": []
       },
       "hour": 7,
-      "minute": 2,
-      "second": 22,
-      "currentSite": "Red Cloud Mesa",
+      "minute": 5,
+      "second": 52,
+      "currentSite": "Wailing Caverns",
       "ringOfLaw": "Eviscerator",
       "forlornCloister": "Fallen Champion",
       "markets": [
@@ -3889,21 +3963,29 @@
       "openedChests": {},
       "fishingSpots": {},
       "fishingSpoils": {},
-      "siteProgress": {},
-      "commonsKilled": {},
+      "siteProgress": {
+        "Red Cloud Mesa": 2,
+        "Deviate Grotto": 1
+      },
+      "commonsKilled": {
+        "Plainstrider": 2,
+        "Deviate Stalker": 1,
+        "Devouring Ectoplasm": 1
+      },
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
         "Camp Narache": 1,
-        "Red Cloud Mesa": 2
+        "Red Cloud Mesa": 3,
+        "Wailing Caverns": 3
       },
       "unlockedAreas": [],
       "vendorStock": {},
       "banks": {},
       "startDate": "2025-04-03T23:30:16.2593834+02:00",
-      "lastLoaded": "2025-04-04T00:06:27.1520907+02:00",
-      "lastPlayed": "2025-04-04T00:08:42.3550648+02:00",
-      "timePlayed": "00:02:15.2029741",
+      "lastLoaded": "2025-04-04T14:57:02.1271161+02:00",
+      "lastPlayed": "2025-04-04T14:57:40.3118221+02:00",
+      "timePlayed": "00:12:17.6388404",
       "lastVisitedTalents": 1
     }
   ]

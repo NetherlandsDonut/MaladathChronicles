@@ -1,0 +1,44 @@
+{
+  "Open menu / Back": {
+    "key": 27
+  },
+  "Open console": {
+    "key": 96
+  },
+  "Move camera north": {
+    "key": 119
+  },
+  "Move camera west": {
+    "key": 97
+  },
+  "Move camera south": {
+    "key": 115
+  },
+  "Move camera east": {
+    "key": 100
+  },
+  "Focus camera on player": {
+    "key": 32
+  },
+  "Open talents": {
+    "key": 110
+  },
+  "Open inventory": {
+    "key": 98
+  },
+  "Open spellbook": {
+    "key": 112
+  },
+  "Open quest log": {
+    "key": 108
+  },
+  "Open professions": {
+    "key": 114
+  },
+  "Open character sheet": {
+    "key": 99
+  },
+  "Open bestiary": {
+    "key": 116
+  }
+}
