@@ -876,5 +876,17 @@ v0.7.6
           Fixed lack of escape keybind to quit moving items in loot windows
           Removed the ability to simply right click a buff to remove it
           Fixed local quest tracker not refreshing on quest accept and list of available quests not being reappearing after closing the quest tracker
+v0.7.7
+ 03.04.25 Spell targetting
+          Redesigned entity bars in combat
+          Missiles, shatter effects and traveling particles now properly aim for portraits
+          Buffs immediately move into position if spotlight is changed
+          Friendly combatants always show action bars
+          Fixed an error that sometimes caused falling/floating text to not be aligned properly
+          Fixed player being able to infinitely level up for 0 exp, crashing the game, after reaching lvl 60
+          Fixed game crashing out when saving to menu while in a desktop different than map
+ 04.04.25 Rank variables available for conditions
+          Specific messages for specifically failed conditions
+          Trying to cast an ability and failing to because of conditions now doesn't cost resources and doesn't refresh cooldown
 ```
 </details>
