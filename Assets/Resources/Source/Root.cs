@@ -115,15 +115,19 @@ public static class Root
         else if (abilityTargetted.possibleTargets == "Friendly" && participantTargetted.team != board.participants[board.whosTurn].team) SpawnFallingText(new Vector2(0, 34), "This ability can only target friendly targets", "Red");
         else
         {
-            foreach (var participant in board.participants)
+            var notMet = abilityTargetted.ConditionsNotMet("AbilityCast", abilityTargetted, board.participants[board.whosTurn].combatAbilities[abilityTargetted], SaveGame.currentSave, board);
+            if (notMet.Count == 0)
             {
-                if (participant == board.participants[board.whosTurn]) board.CallEvents(participant.who, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Effector" }, { "AbilityName", abilityTargetted.name } });
-                else board.CallEvents(participant.who, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Other" }, { "AbilityName", abilityTargetted.name } });
+                foreach (var participant in board.participants)
+                {
+                    if (participant == board.participants[board.whosTurn]) board.CallEvents(participant.who, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Effector" }, { "AbilityName", abilityTargetted.name } });
+                    else board.CallEvents(participant.who, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Other" }, { "AbilityName", abilityTargetted.name } });
+                }
+                board.participants[board.whosTurn].who.DetractResources(abilityTargetted.cost);
+                foreach (var element in abilityTargetted.cost)
+                    board.log.elementsUsed.Inc(element.Key, element.Value);
             }
-            board.participants[board.whosTurn].who.DetractResources(abilityTargetted.cost);
-            foreach (var element in abilityTargetted.cost)
-                board.log.elementsUsed.Inc(element.Key, element.Value);
-
+            else SpawnFallingText(new Vector2(0, 34), notMet[0].failedMessage, "Red");
         }
         abilityTargetted = null;
         participantTargetted = null;

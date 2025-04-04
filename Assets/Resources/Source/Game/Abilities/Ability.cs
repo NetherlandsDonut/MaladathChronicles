@@ -30,9 +30,11 @@ public class Ability
 
     #region Execution
 
-    public bool AreAnyConditionsMet(string trigger, SaveGame save, Board board) => events.FindAll(x => x.triggers.Any(y => y["Trigger"] == trigger)).Any(x => AreConditionsMet(x, save, board));
+    public List<Condition> ConditionsNotMet(string trigger, Ability ability, int abilityRank, SaveGame save, Board board) => events.FindAll(x => x.triggers.Any(y => y["Trigger"] == trigger)).SelectMany(x => x.conditions == null ? new() : x.conditions.Where(y => !y.IsMet(ability, abilityRank, save, board)).ToList()).ToList();
 
-    public bool AreConditionsMet(Event eve, SaveGame save, Board board) => eve.conditions == null || eve.conditions.Count == 0 || eve.conditions.All(x => x.IsMet(SaveGame.currentSave, board));
+    public bool AreAnyConditionsMet(string trigger, Ability ability, int abilityRank, SaveGame save, Board board) => events.FindAll(x => x.triggers.Any(y => y["Trigger"] == trigger)).Any(x => AreConditionsMet(ability, abilityRank, x, save, board));
+
+    public bool AreConditionsMet(Ability ability, int abilityRank, Event eve, SaveGame save, Board board) => eve.conditions == null || eve.conditions.Count == 0 || eve.conditions.All(x => x.IsMet(ability, abilityRank, SaveGame.currentSave, board));
 
     public void ExecuteEvents(SaveGame save, Dictionary<string, string> trigger, Item item, int abilityRank)
     {
@@ -43,15 +45,13 @@ public class Ability
             bool execute = false;
             foreach (var triggerData in eve.triggers)
                 if (triggerData.ContainsKey("Trigger") && triggerData["Trigger"] == trigger["Trigger"])
-                {
                     if (trigger["Trigger"] == "ItemUsed")
                     {
                         string itemHash = trigger.ContainsKey("ItemHash") ? trigger["ItemHash"] : "";
                         string sitePresence = triggerData.ContainsKey("SitePresence") ? triggerData["SitePresence"] : "";
                         execute = item != null && item.GetHashCode() + "" == itemHash && (sitePresence == "" || save.currentSite == sitePresence);
                     }
-                }
-            if (execute && (trigger.ContainsKey("IgnoreConditions") && trigger["IgnoreConditions"] == "Yes" || AreConditionsMet(eve, save, null)))
+            if (execute && (trigger.ContainsKey("IgnoreConditions") && trigger["IgnoreConditions"] == "Yes" || AreConditionsMet(this, abilityRank, eve, save, null)))
                 eve.ExecuteEffects(save, item, trigger, RankVariables(abilityRank), this, abilityRank);
         }
     }
@@ -135,7 +135,7 @@ public class Ability
                     }
                 }
             if (execute && board.CooldownOn(entitySource, name) <= 0)
-                if (trigger.ContainsKey("IgnoreConditions") && trigger["IgnoreConditions"] == "Yes" || AreConditionsMet(eve, null, board))
+                if (trigger.ContainsKey("IgnoreConditions") && trigger["IgnoreConditions"] == "Yes" || AreConditionsMet(this, abilityRank, eve, null, board))
                 {
                     board.PutOnCooldown(entitySource, this);
                     eve.ExecuteEffects(board, icon, trigger, RankVariables(abilityRank), name, abilityRank);

@@ -8408,7 +8408,6 @@
   {
     "name": "Execute",
     "icon": "AbilityExecute",
-    "cooldown": 1,
     "possibleTargets": "Enemies",
     "tags": [],
     "cost": {
@@ -8417,7 +8416,21 @@
       "Air": 6
     },
     "ranks": [
-      {}
+      {
+        "#1": "30"
+      },
+      {
+        "#1": "33"
+      },
+      {
+        "#1": "36"
+      },
+      {
+        "#1": "40"
+      },
+      {
+        "#1": "90"
+      }
     ],
     "events": [
       {
@@ -8430,34 +8443,25 @@
         "effects": [
           {
             "SoundEffect": "AbilityExecuteCast",
-            "Await": "4",
-            "ShatterType": "None",
-            "ShatterTarget": "Effector",
-            "ShatterSpeed": "1",
-            "ShatterDegree": "5",
-            "AnimationType": "None"
+            "Await": "4"
           },
           {
+            "SoundEffect": "AbilityExecuteImpact",
+            "Affect": "Other",
             "Effect": "Damage",
             "PowerSource": "Effector",
             "PowerType": "Melee",
-            "Affect": "Other",
-            "ShatterType": "Central",
-            "ShatterTarget": "Other",
             "PowerScale": "3",
-            "Await": "5",
-            "SoundEffect": "AbilityExecuteImpact",
+            "ShatterTarget": "Other",
             "ShatterSpeed": "30",
             "ShatterDegree": "40",
-            "AnimationType": "None"
-          },
-          {
-            "Effect": "EndTurn"
+            "Await": "5"
           }
         ],
         "conditions": [
           {
-            "content": "@enemyhealth% < @playerhealth%"
+            "condition": "@otherhealth% < #1",
+            "failedMessage": "Target is too healthy"
           }
         ]
       }
@@ -9862,7 +9866,7 @@
   {
     "name": "Heroic Strike",
     "icon": "AbilityHeroicStrike",
-    "cooldown": 1,
+    "cooldown": 0,
     "possibleTargets": "Enemies",
     "tags": [],
     "cost": {
@@ -9881,24 +9885,15 @@
         ],
         "effects": [
           {
-            "Effect": "Damage",
-            "AnimationType": "None",
-            "ShatterType": "Central",
-            "Await": "5",
-            "ShatterTarget": "Other",
-            "PowerSource": "Effector",
-            "Affect": "Other",
-            "PowerType": "Melee",
             "SoundEffect": "AbilityHeroicStrikeImpact",
+            "Effect": "Damage",
+            "PowerSource": "Effector",
+            "PowerType": "Melee",
+            "Affect": "Other",
+            "ShatterTarget": "Other",
             "ShatterSpeed": "10",
             "ShatterDegree": "20",
-            "ShatterDensity": "1",
-            "AnimationSpeed": "4",
-            "TrailStrength": "0",
-            "SoundEffectVolume": "1"
-          },
-          {
-            "Effect": "EndTurn"
+            "Await": "5"
           }
         ]
       }

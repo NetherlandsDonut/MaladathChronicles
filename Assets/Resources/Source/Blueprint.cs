@@ -271,7 +271,7 @@ public class Blueprint
                             }
                             else AddLine(actionBar);
                             AddSmallButton(abilityObj.icon);
-                            if (!abilityObj.EnoughResources(board.participants[board.spotlightEnemy[index]].who) || !abilityObj.AreAnyConditionsMet("AbilityCast", currentSave, board))
+                            if (!abilityObj.EnoughResources(board.participants[board.spotlightEnemy[index]].who))
                             {
                                 SetSmallButtonToGrayscale();
                                 AddSmallButtonOverlay("OtherGridBlurred");
@@ -353,7 +353,7 @@ public class Blueprint
                             }
                             else AddLine(actionBar, "", "Right");
                             AddSmallButton(abilityObj.icon);
-                            if (!abilityObj.EnoughResources(board.participants[board.spotlightFriendly[index]].who) || !abilityObj.AreAnyConditionsMet("AbilityCast", currentSave, board))
+                            if (!abilityObj.EnoughResources(board.participants[board.spotlightFriendly[index]].who))
                             {
                                 SetSmallButtonToGrayscale();
                                 AddSmallButtonOverlay("OtherGridBlurred");
@@ -367,7 +367,7 @@ public class Blueprint
                             abilityTargetted = null;
                             if (board.spotlightFriendly[index] == board.whosTurn)
                                 if (abilityObj.EnoughResources(board.participants[board.spotlightFriendly[index]].who))
-                                    if (board.CooldownOn(board.spotlightFriendly[index], actionBar) <= 0 && abilityObj.AreAnyConditionsMet("AbilityCast", currentSave, board))
+                                    if (board.CooldownOn(board.spotlightFriendly[index], actionBar) <= 0)
                                         StartTargettingAbility(abilityObj);
                             ClearTargettingAbility(temp == abilityTargetted);
                         },
