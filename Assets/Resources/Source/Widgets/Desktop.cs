@@ -412,6 +412,7 @@ public class Desktop : MonoBehaviour
                             else if (Keybinds.keybinds[newBindFor].key == newKeybind.key)
                                 SpawnFallingText(new Vector2(0, 34), "This key is already bound to this", "Red");
                             else Keybinds.keybinds[newBindFor].key = newKeybind.key;
+                            awaitingNewBind = false;
                             Respawn("GameKeybinds", true);
                             UnlockScreen();
                         }

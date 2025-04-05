@@ -22,5 +22,7 @@
   "markerCharacter": "_",
   "textWrapEnding": "...",
   "frameTime": 0.08,
-  "animatedResourceParticles": true
+  "animatedResourceParticles": true,
+  "keyTimerNewKey": 0.4,
+  "keyTimerSameKey": 0.05
 }

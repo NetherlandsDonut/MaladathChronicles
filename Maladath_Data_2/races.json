@@ -1,5 +1,96 @@
 [
   {
+    "name": "Captain Perrine",
+    "portrait": "PortraitCaptainPerrine",
+    "abilities": {},
+    "kind": "Elite",
+    "vitality": 3.0
+  },
+  {
+    "name": "Scarlet Missionary",
+    "portrait": "PortraitScarletSentry",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
+  },
+  {
+    "name": "Captain Melrache",
+    "portrait": "PortraitCaptainMelrache",
+    "abilities": {},
+    "kind": "Elite",
+    "vitality": 3.0
+  },
+  {
+    "name": "Scarlet Neophyte",
+    "portrait": "PortraitScarletMagician",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
+  },
+  {
+    "name": "Scarlet Vanguard",
+    "portrait": "PortraitScarletVanguard",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
+  },
+  {
+    "name": "Captain Vachon",
+    "portrait": "PortraitCaptainVachon",
+    "abilities": {},
+    "kind": "Elite",
+    "vitality": 3.0
+  },
+  {
+    "name": "Venture Co. Drone",
+    "portrait": "PortraitVentureCoDrone",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
+  },
+  {
+    "name": "Defias Drone",
+    "portrait": "PortraitDefiasDrone",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
+  },
+  {
+    "name": "Malformed Defias Drone",
+    "portrait": "PortraitMalformedDefiasDrone",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
+  },
+  {
+    "name": "Murloc Oracle",
+    "portrait": "PortraitMurlocBlue",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
+  },
+  {
+    "name": "Murloc Warrior",
+    "portrait": "PortraitMurlocBlue",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
+  },
+  {
+    "name": "Murloc Hunter",
+    "portrait": "PortraitMurlocGreen",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
+  },
+  {
+    "name": "Elder Shadowmaw Panther",
+    "portrait": "PortraitPanther",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
+  },
+  {
     "name": "Lord Melenas",
     "category": "Demon",
     "subcategory": "Satyr",
@@ -14751,8 +14842,8 @@
   {
     "name": "Young Jungle Stalker",
     "category": "Beast",
-    "subcategory": "Cat",
-    "portrait": "PortraitPanther",
+    "subcategory": "Raptor",
+    "portrait": "PortraitRaptorGreen",
     "abilities": {},
     "kind": "Common",
     "vitality": 1.0
@@ -15831,8 +15922,8 @@
     "subcategory": "Raptor",
     "portrait": "PortraitRaptorBlue",
     "abilities": {},
-    "kind": "Rare",
-    "vitality": 2.0
+    "kind": "Elite",
+    "vitality": 2.8
   },
   {
     "name": "Ravasaur Hunter",
@@ -20163,6 +20254,33 @@
     "abilities": {},
     "kind": "Common",
     "vitality": 1.0
+  },
+  {
+    "name": "Sin'Dall",
+    "category": "Beast",
+    "subcategory": "Cat",
+    "portrait": "PortraitTiger",
+    "abilities": {},
+    "kind": "Elite",
+    "vitality": 2.8
+  },
+  {
+    "name": "Bhag'thera",
+    "category": "Beast",
+    "subcategory": "Cat",
+    "portrait": "PortraitPanther",
+    "abilities": {},
+    "kind": "Elite",
+    "vitality": 2.7
+  },
+  {
+    "name": "King Bangalash",
+    "category": "Beast",
+    "subcategory": "Cat",
+    "portrait": "PortraitTigerWhite",
+    "abilities": {},
+    "kind": "Elite",
+    "vitality": 3.2
   },
   {
     "name": "Stranglethorn Tiger",

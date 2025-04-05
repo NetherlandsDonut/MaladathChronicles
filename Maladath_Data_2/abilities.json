@@ -9866,7 +9866,6 @@
   {
     "name": "Heroic Strike",
     "icon": "AbilityHeroicStrike",
-    "cooldown": 0,
     "possibleTargets": "Enemies",
     "tags": [],
     "cost": {

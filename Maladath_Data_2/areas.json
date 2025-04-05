@@ -14136,8 +14136,8 @@
     ]
   },
   {
-    "x": 5135,
-    "y": -1776,
+    "x": 5111,
+    "y": -1786,
     "name": "Hillsbrad Plateau",
     "zone": "Hillsbrad Foothills",
     "type": "HostileArea",
@@ -22295,7 +22295,7 @@
         "levelMax": 38
       }
     ],
-    "rareEncounters": [
+    "eliteEncounters": [
       {
         "who": "Tethis",
         "levelMin": 43
@@ -22303,6 +22303,11 @@
     ],
     "areaSize": 3,
     "progression": [
+      {
+        "type": "Boss",
+        "bossName": "Tethis",
+        "point": 2
+      },
       {
         "type": "Treasure",
         "point": 3
@@ -22412,13 +22417,51 @@
     "commonEncounters": [
       {
         "who": "Jungle Stalker",
+        "levelMin": 36,
+        "levelMax": 37
+      },
+      {
+        "who": "Cold Eye Basilisk",
+        "levelMin": 36,
+        "levelMax": 37
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Sin'Dall",
+        "levelMin": 37
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Boss",
+        "bossName": "Sin'Dall",
+        "point": 2
+      },
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
+    "x": 4957,
+    "y": -4372,
+    "name": "Southern Savage Coast",
+    "zone": "Stranglethorn Vale",
+    "type": "HostileArea",
+    "fishing": true,
+    "commonEncounters": [
+      {
+        "who": "Jungle Stalker",
         "levelMin": 40,
         "levelMax": 41
       },
       {
-        "who": "Cold Eye Basilisk",
-        "levelMin": 40,
-        "levelMax": 41
+        "who": "Young Jungle Stalker",
+        "levelMin": 37,
+        "levelMax": 38
       }
     ],
     "areaSize": 3,
@@ -22430,7 +22473,83 @@
     ]
   },
   {
-    "name": "Southern Savage Coast",
+    "x": 5111,
+    "y": -4288,
+    "name": "Shadowmaw Vale",
+    "zone": "Stranglethorn Vale",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Shadowmaw Panther",
+        "levelMin": 38,
+        "levelMax": 39
+      },
+      {
+        "who": "Stranglethorn Tigress",
+        "levelMin": 38,
+        "levelMax": 39
+      },
+      {
+        "who": "Cold Eye Basilisk",
+        "levelMin": 38,
+        "levelMax": 39
+      },
+      {
+        "who": "Thrashtail Basilisk",
+        "levelMin": 39,
+        "levelMax": 40
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "King Bangalash",
+        "levelMin": 43
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Boss",
+        "bossName": "King Bangalash",
+        "point": 2
+      },
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
+    "x": 5023,
+    "y": -4464,
+    "name": "Southern Stranglethorn Jungle",
+    "zone": "Stranglethorn Vale",
+    "type": "HostileArea",
+    "fishing": true,
+    "commonEncounters": [
+      {
+        "who": "Elder Mistvale Gorilla",
+        "levelMin": 40,
+        "levelMax": 41
+      },
+      {
+        "who": "Elder Shadowmaw Panther",
+        "levelMin": 42,
+        "levelMax": 43
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
+    "x": 4970,
+    "y": -4547,
+    "name": "Bloodsail Cove",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
     "fishing": true,
@@ -22574,7 +22693,7 @@
   {
     "x": 5146,
     "y": -4212,
-    "name": "Central Jungle",
+    "name": "Central Stranglethorn Jungle",
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
     "commonEncounters": [
@@ -22594,8 +22713,19 @@
         "levelMax": 38
       }
     ],
+    "eliteEncounters": [
+      {
+        "who": "Bhag'thera",
+        "levelMin": 40
+      }
+    ],
     "areaSize": 3,
     "progression": [
+      {
+        "type": "Boss",
+        "bossName": "Bhag'thera",
+        "point": 2
+      },
       {
         "type": "Treasure",
         "point": 3
@@ -27439,6 +27569,122 @@
     ]
   },
   {
+    "x": 5168,
+    "y": -1225,
+    "name": "Eastern Crusader's Outpost",
+    "zone": "Tirisfal Glades",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Scarlet Friar",
+        "levelMin": 9,
+        "levelMax": 10
+      },
+      {
+        "who": "Scarlet Zealot",
+        "levelMin": 8,
+        "levelMax": 9
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Captain Vachon",
+        "levelMin": 11
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      },
+      {
+        "type": "Boss",
+        "bossName": "Captain Vachon",
+        "point": 2
+      }
+    ]
+  },
+  {
+    "x": 4916,
+    "y": -1303,
+    "name": "Southern Crusader's Outpost",
+    "zone": "Tirisfal Glades",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Scarlet Missionary",
+        "levelMin": 7,
+        "levelMax": 8
+      },
+      {
+        "who": "Scarlet Zealot",
+        "levelMin": 7,
+        "levelMax": 8
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Captain Perrine",
+        "levelMin": 9
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      },
+      {
+        "type": "Boss",
+        "bossName": "Captain Perrine",
+        "point": 2
+      }
+    ]
+  },
+  {
+    "x": 5174,
+    "y": -1046,
+    "name": "Scarlet Watch Outpost",
+    "zone": "Tirisfal Glades",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Scarlet Friar",
+        "levelMin": 9,
+        "levelMax": 10
+      },
+      {
+        "who": "Scarlet Vanguard",
+        "levelMin": 9,
+        "levelMax": 10
+      },
+      {
+        "who": "Scarlet Neophyte",
+        "levelMin": 10,
+        "levelMax": 11
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Captain Melrache",
+        "levelMin": 12
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      },
+      {
+        "type": "Boss",
+        "bossName": "Captain Melrache",
+        "point": 2
+      }
+    ]
+  },
+  {
     "x": 5065,
     "y": -1159,
     "name": "Brightwater Lake",
@@ -27532,7 +27778,7 @@
   {
     "x": 4739,
     "y": -1175,
-    "name": "Crusader's Outpost",
+    "name": "Western Crusader's Outpost",
     "zone": "Tirisfal Glades",
     "type": "HostileArea",
     "commonEncounters": [
@@ -29610,6 +29856,49 @@
     "commonEncounters": [
       {
         "who": "Sand Crawler",
+        "levelMin": 15,
+        "levelMax": 16
+      },
+      {
+        "who": "Murloc Hunter",
+        "levelMin": 16,
+        "levelMax": 17
+      },
+      {
+        "who": "Murloc Warrior",
+        "levelMin": 15,
+        "levelMax": 16
+      },
+      {
+        "who": "Murloc Oracle",
+        "levelMin": 17,
+        "levelMax": 18
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Brack",
+        "levelMin": 19
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
+    "x": 4806,
+    "y": -3623,
+    "name": "Northern Longshore",
+    "zone": "Westfall",
+    "type": "HostileArea",
+    "fishing": true,
+    "commonEncounters": [
+      {
+        "who": "Sand Crawler",
         "levelMin": 12,
         "levelMax": 13
       },
@@ -29620,23 +29909,50 @@
       },
       {
         "who": "Murloc Coastrunner",
-        "levelMin": 12,
-        "levelMax": 13
+        "levelMin": 11,
+        "levelMax": 12
       },
       {
         "who": "Murloc Raider",
-        "levelMin": 13,
-        "levelMax": 14
+        "levelMin": 11,
+        "levelMax": 12
       }
     ],
     "rareEncounters": [
       {
         "who": "Slark",
         "levelMin": 15
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
+    "x": 4945,
+    "y": -3936,
+    "name": "Defias Watchtower",
+    "zone": "Westfall",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Malformed Defias Drone",
+        "levelMin": 22,
+        "levelMax": 23
       },
       {
-        "who": "Brack",
-        "levelMin": 16
+        "who": "Defias Drone",
+        "levelMin": 21,
+        "levelMax": 22
+      },
+      {
+        "who": "Venture Co. Drone",
+        "levelMin": 21,
+        "levelMax": 22
       }
     ],
     "areaSize": 3,
