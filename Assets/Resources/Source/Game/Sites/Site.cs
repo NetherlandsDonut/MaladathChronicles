@@ -9,6 +9,7 @@ using static MapGrid;
 using static SiteTown;
 using static SaveGame;
 using static SitePath;
+using static SiteCapital;
 using static SiteComplex;
 using static SiteInstance;
 using static SiteHostileArea;
@@ -41,6 +42,10 @@ public class Site
     //If this value is empty then current ambience
     //will not be interrupted and will continue to play
     public string ambience;
+
+    //If set, when flight travelling to this site,
+    //on map you will be put on this specified site
+    public string convertFlightPathTo;
 
     //Areas during nighttime usually change visuals.
     //Sites marked with this boolean as true keep it always the same.
@@ -135,7 +140,16 @@ public class Site
                 staticPagination.Remove("Instance");
         }
         else if (siteType == "HostileArea") area = (SiteHostileArea)this;
-        else if (siteType == "Town") town = (SiteTown)this;
+        else if (siteType == "Town")
+        {
+            town = (SiteTown)this;
+            if (town.capital != null)
+            {
+                capitalThroughTown = town;
+                capital = capitals.Find(x => x.name == town.capital);
+                siteType = "Capital";
+            }
+        }
         else if (siteType == "Complex") complex = (SiteComplex)this;
         else if (siteType == "SpiritHealer") spiritHealer = (SiteSpiritHealer)this;
         mapGrid.queuedSiteOpen = siteType;

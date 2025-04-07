@@ -63,7 +63,6 @@ public class SitePath
     public (SitePath, GameObject) DrawPath(bool hidden = false)
     {
         if (points.Count == 0) return (this, null);
-        sites = sites.OrderBy(x => x).ToList();
         var a = sites[0];
         var b = sites[1];
         var name = "Path between \"" + a + "\" and \"" + b + "\"";

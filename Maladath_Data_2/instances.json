@@ -589,6 +589,7 @@
     "name": "Razorfen Kraul",
     "zone": "Razorfen Kraul",
     "type": "Dungeon",
+    "noNightVariant": true,
     "wings": [
       {
         "name": "Razorfen Kraul",

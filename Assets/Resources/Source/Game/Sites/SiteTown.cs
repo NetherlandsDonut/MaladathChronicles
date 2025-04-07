@@ -56,6 +56,9 @@ public class SiteTown : Site
     //List of town flight paths, these are generated automatically
     [NonSerialized] public Dictionary<string, List<SiteTown>> flightPaths;
 
+    //Capital city this town opens up instead of opening itself as a town
+    public string capital;
+
     //Currently opened town
     public static SiteTown town;
 
@@ -89,13 +92,11 @@ public class SiteTown : Site
                 SetRegionGroupWidth(171);
                 var f = factions.Find(x => x.name == faction);
                 var side = f == null ? "Neutral" : f.side;
-                AddHeaderRegion(() =>
+                AddHeaderRegion(() => AddLine(name, ColorReputation(currentSave.player.Reputation(faction))));
+                var peopleTogether = capital != null ? towns.Where(x => x.capital == capital).SelectMany(x => x.people ?? new()).ToList() : people;
+                if (peopleTogether != null && peopleTogether.Count > 0)
                 {
-                    AddLine(name, ColorReputation(currentSave.player.Reputation(faction)));
-                });
-                if (people != null)
-                {
-                    var legit = people.Where(x => !x.hidden && PersonType.personTypes.Exists(y => y.type == x.type)).OrderBy(x => x.category.priority).ThenBy(x => x.type).ToList();
+                    var legit = peopleTogether.Where(x => !x.hidden && PersonType.personTypes.Exists(y => y.type == x.type)).OrderBy(x => x.category.priority).ThenBy(x => x.type).ToList();
                     var types = legit.Select(x => PersonType.personTypes.Find(y => y.type == x.type)).Where(x => x != null).ToList();
                     var icons = types.Distinct().Select(x => x.icon + (x.factionVariant ? factions.Find(x => x.name == faction)?.side : "")).ToList();
                     var perRow = 9;

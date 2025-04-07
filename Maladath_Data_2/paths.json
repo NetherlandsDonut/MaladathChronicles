@@ -1,8 +1,26 @@
 [
   {
     "sites": [
-      "Ironforge",
+      "Tinker Town",
       "Stormwind City"
+    ],
+    "means": "Tram",
+    "spacing": 9999,
+    "points": [
+      {
+        "Item1": 5244,
+        "Item2": -2698
+      },
+      {
+        "Item1": 4940,
+        "Item2": -3477
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Dwarven District",
+      "Ironforge"
     ],
     "means": "Tram",
     "spacing": 9999,
@@ -37,6 +55,24 @@
   },
   {
     "sites": [
+      "Menethil Harbor",
+      "Auberdine"
+    ],
+    "means": "Ship",
+    "spacing": 9999,
+    "points": [
+      {
+        "Item1": 5225,
+        "Item2": -2413
+      },
+      {
+        "Item1": 1349,
+        "Item2": -1216
+      }
+    ]
+  },
+  {
+    "sites": [
       "Auberdine",
       "Rut'theran Village"
     ],
@@ -55,7 +91,25 @@
   },
   {
     "sites": [
-      "Darnassus",
+      "Rut'theran Village",
+      "Auberdine"
+    ],
+    "means": "Ship",
+    "spacing": 9999,
+    "points": [
+      {
+        "Item1": 1254,
+        "Item2": -741
+      },
+      {
+        "Item1": 1349,
+        "Item2": -1216
+      }
+    ]
+  },
+  {
+    "sites": [
+      "The Temple Gardens",
       "Rut'theran Village"
     ],
     "means": "Darnassus",
@@ -73,8 +127,45 @@
   },
   {
     "sites": [
-      "Orgrimmar",
-      "Undercity"
+      "Rut'theran Village",
+      "Darnassus"
+    ],
+    "means": "Darnassus",
+    "spacing": 9999,
+    "points": [
+      {
+        "Item1": 1254,
+        "Item2": -741
+      },
+      {
+        "Item1": 969,
+        "Item2": -513
+      }
+    ]
+  },
+  {
+    "sites": [
+      "The Valley of Strength",
+      "Brill"
+    ],
+    "means": "Zeppelin",
+    "price": 15000,
+    "spacing": 9999,
+    "points": [
+      {
+        "Item1": 5015,
+        "Item2": -1349
+      },
+      {
+        "Item1": 2337,
+        "Item2": -2242
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Brill",
+      "Orgrimmar Main Gates"
     ],
     "means": "Zeppelin",
     "price": 15000,
@@ -93,7 +184,26 @@
   {
     "sites": [
       "Grom'gol Base Camp",
-      "Orgrimmar"
+      "Orgrimmar Main Gates"
+    ],
+    "means": "Zeppelin",
+    "price": 15000,
+    "spacing": 9999,
+    "points": [
+      {
+        "Item1": 5016,
+        "Item2": -4180
+      },
+      {
+        "Item1": 2337,
+        "Item2": -2242
+      }
+    ]
+  },
+  {
+    "sites": [
+      "The Valley of Strength",
+      "Grom'gol Base Camp"
     ],
     "means": "Zeppelin",
     "price": 15000,
@@ -113,6 +223,25 @@
     "sites": [
       "Booty Bay",
       "Ratchet"
+    ],
+    "means": "Ship",
+    "price": 15000,
+    "spacing": 9999,
+    "points": [
+      {
+        "Item1": 4959,
+        "Item2": -4579
+      },
+      {
+        "Item1": 2204,
+        "Item2": -2717
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Ratchet",
+      "Booty Bay"
     ],
     "means": "Ship",
     "price": 15000,
@@ -2867,130 +2996,6 @@
       {
         "Item1": 5046,
         "Item2": -3599
-      }
-    ]
-  },
-  {
-    "sites": [
-      "Goldshire",
-      "Stormwind City"
-    ],
-    "means": "Land",
-    "spacing": 10,
-    "points": [
-      {
-        "Item1": 5046,
-        "Item2": -3599
-      },
-      {
-        "Item1": 5040,
-        "Item2": -3590
-      },
-      {
-        "Item1": 5035,
-        "Item2": -3581
-      },
-      {
-        "Item1": 5034,
-        "Item2": -3571
-      },
-      {
-        "Item1": 5030,
-        "Item2": -3561
-      },
-      {
-        "Item1": 5025,
-        "Item2": -3553
-      },
-      {
-        "Item1": 5018,
-        "Item2": -3546
-      },
-      {
-        "Item1": 5008,
-        "Item2": -3543
-      },
-      {
-        "Item1": 4998,
-        "Item2": -3540
-      },
-      {
-        "Item1": 4989,
-        "Item2": -3536
-      },
-      {
-        "Item1": 4982,
-        "Item2": -3529
-      },
-      {
-        "Item1": 4976,
-        "Item2": -3520
-      },
-      {
-        "Item1": 4970,
-        "Item2": -3512
-      },
-      {
-        "Item1": 4963,
-        "Item2": -3504
-      },
-      {
-        "Item1": 4956,
-        "Item2": -3497
-      },
-      {
-        "Item1": 4951,
-        "Item2": -3489
-      },
-      {
-        "Item1": 4945,
-        "Item2": -3480
-      },
-      {
-        "Item1": 4941,
-        "Item2": -3477
-      }
-    ]
-  },
-  {
-    "sites": [
-      "Stormwind City",
-      "The Stockade"
-    ],
-    "means": "Land",
-    "spacing": 10,
-    "points": [
-      {
-        "Item1": 4941,
-        "Item2": -3477
-      },
-      {
-        "Item1": 4933,
-        "Item2": -3469
-      },
-      {
-        "Item1": 4923,
-        "Item2": -3466
-      },
-      {
-        "Item1": 4916,
-        "Item2": -3473
-      },
-      {
-        "Item1": 4907,
-        "Item2": -3479
-      },
-      {
-        "Item1": 4900,
-        "Item2": -3472
-      },
-      {
-        "Item1": 4895,
-        "Item2": -3464
-      },
-      {
-        "Item1": 4891,
-        "Item2": -3459
       }
     ]
   },
@@ -14199,76 +14204,6 @@
       {
         "Item1": 4981,
         "Item2": -3682
-      }
-    ]
-  },
-  {
-    "sites": [
-      "Mirror Lake",
-      "Stormwind City"
-    ],
-    "means": "Land",
-    "spacing": 10,
-    "points": [
-      {
-        "Item1": 4989,
-        "Item2": -3582
-      },
-      {
-        "Item1": 4995,
-        "Item2": -3574
-      },
-      {
-        "Item1": 5003,
-        "Item2": -3567
-      },
-      {
-        "Item1": 5006,
-        "Item2": -3557
-      },
-      {
-        "Item1": 5004,
-        "Item2": -3547
-      },
-      {
-        "Item1": 4995,
-        "Item2": -3541
-      },
-      {
-        "Item1": 4986,
-        "Item2": -3536
-      },
-      {
-        "Item1": 4982,
-        "Item2": -3527
-      },
-      {
-        "Item1": 4975,
-        "Item2": -3519
-      },
-      {
-        "Item1": 4969,
-        "Item2": -3511
-      },
-      {
-        "Item1": 4962,
-        "Item2": -3503
-      },
-      {
-        "Item1": 4956,
-        "Item2": -3494
-      },
-      {
-        "Item1": 4948,
-        "Item2": -3488
-      },
-      {
-        "Item1": 4941,
-        "Item2": -3480
-      },
-      {
-        "Item1": 4941,
-        "Item2": -3477
       }
     ]
   },
@@ -55300,7 +55235,7 @@
   },
   {
     "sites": [
-      "Orgrimmar",
+      "Orgrimmar Main Gates",
       "The Placid Dune"
     ],
     "means": "Land",
@@ -55400,7 +55335,7 @@
   },
   {
     "sites": [
-      "Orgrimmar",
+      "Orgrimmar Main Gates",
       "Skull Rock"
     ],
     "means": "Land",
@@ -56264,7 +56199,7 @@
   },
   {
     "sites": [
-      "Orgrimmar",
+      "Orgrimmar Main Gates",
       "Southfury River"
     ],
     "means": "Land",
@@ -57051,7 +56986,7 @@
   {
     "sites": [
       "Fallen Sky Lake",
-      "Silverwind Outpost"
+      "Silverwing Outpost"
     ],
     "means": "Land",
     "spacing": 10,
@@ -57096,7 +57031,7 @@
   },
   {
     "sites": [
-      "Silverwind Outpost",
+      "Silverwing Outpost",
       "Splintertree Post"
     ],
     "means": "Land",
@@ -63420,120 +63355,6 @@
   },
   {
     "sites": [
-      "Stonebull Lake",
-      "Thunder Bluff"
-    ],
-    "means": "Land",
-    "spacing": 10,
-    "points": [
-      {
-        "Item1": 1444,
-        "Item2": -2778
-      },
-      {
-        "Item1": 1438,
-        "Item2": -2786
-      },
-      {
-        "Item1": 1429,
-        "Item2": -2791
-      },
-      {
-        "Item1": 1420,
-        "Item2": -2795
-      },
-      {
-        "Item1": 1414,
-        "Item2": -2804
-      },
-      {
-        "Item1": 1420,
-        "Item2": -2813
-      },
-      {
-        "Item1": 1429,
-        "Item2": -2820
-      },
-      {
-        "Item1": 1437,
-        "Item2": -2826
-      },
-      {
-        "Item1": 1444,
-        "Item2": -2834
-      },
-      {
-        "Item1": 1448,
-        "Item2": -2843
-      },
-      {
-        "Item1": 1453,
-        "Item2": -2853
-      },
-      {
-        "Item1": 1453,
-        "Item2": -2863
-      },
-      {
-        "Item1": 1453,
-        "Item2": -2873
-      },
-      {
-        "Item1": 1453,
-        "Item2": -2883
-      },
-      {
-        "Item1": 1454,
-        "Item2": -2893
-      },
-      {
-        "Item1": 1455,
-        "Item2": -2903
-      },
-      {
-        "Item1": 1459,
-        "Item2": -2913
-      },
-      {
-        "Item1": 1467,
-        "Item2": -2919
-      },
-      {
-        "Item1": 1476,
-        "Item2": -2925
-      },
-      {
-        "Item1": 1484,
-        "Item2": -2930
-      },
-      {
-        "Item1": 1492,
-        "Item2": -2937
-      },
-      {
-        "Item1": 1500,
-        "Item2": -2943
-      },
-      {
-        "Item1": 1511,
-        "Item2": -2947
-      },
-      {
-        "Item1": 1521,
-        "Item2": -2951
-      },
-      {
-        "Item1": 1530,
-        "Item2": -2957
-      },
-      {
-        "Item1": 1530,
-        "Item2": -2954
-      }
-    ]
-  },
-  {
-    "sites": [
       "Baeldun Digsite",
       "Thunderhorn Water Well"
     ],
@@ -63907,140 +63728,6 @@
       {
         "Item1": 1387,
         "Item2": -2888
-      }
-    ]
-  },
-  {
-    "sites": [
-      "Palemane Rock",
-      "Thunder Bluff"
-    ],
-    "means": "Land",
-    "spacing": 10,
-    "points": [
-      {
-        "Item1": 1405,
-        "Item2": -3019
-      },
-      {
-        "Item1": 1414,
-        "Item2": -3015
-      },
-      {
-        "Item1": 1422,
-        "Item2": -3008
-      },
-      {
-        "Item1": 1432,
-        "Item2": -3006
-      },
-      {
-        "Item1": 1441,
-        "Item2": -3002
-      },
-      {
-        "Item1": 1446,
-        "Item2": -2993
-      },
-      {
-        "Item1": 1446,
-        "Item2": -2983
-      },
-      {
-        "Item1": 1447,
-        "Item2": -2972
-      },
-      {
-        "Item1": 1455,
-        "Item2": -2965
-      },
-      {
-        "Item1": 1463,
-        "Item2": -2957
-      },
-      {
-        "Item1": 1464,
-        "Item2": -2947
-      },
-      {
-        "Item1": 1461,
-        "Item2": -2937
-      },
-      {
-        "Item1": 1461,
-        "Item2": -2926
-      },
-      {
-        "Item1": 1461,
-        "Item2": -2915
-      },
-      {
-        "Item1": 1458,
-        "Item2": -2906
-      },
-      {
-        "Item1": 1452,
-        "Item2": -2897
-      },
-      {
-        "Item1": 1452,
-        "Item2": -2887
-      },
-      {
-        "Item1": 1452,
-        "Item2": -2877
-      },
-      {
-        "Item1": 1451,
-        "Item2": -2867
-      },
-      {
-        "Item1": 1451,
-        "Item2": -2856
-      },
-      {
-        "Item1": 1448,
-        "Item2": -2846
-      },
-      {
-        "Item1": 1444,
-        "Item2": -2837
-      },
-      {
-        "Item1": 1437,
-        "Item2": -2829
-      },
-      {
-        "Item1": 1429,
-        "Item2": -2823
-      },
-      {
-        "Item1": 1421,
-        "Item2": -2817
-      },
-      {
-        "Item1": 1412,
-        "Item2": -2811
-      },
-      {
-        "Item1": 1414,
-        "Item2": -2801
-      },
-      {
-        "Item1": 1423,
-        "Item2": -2795
-      },
-      {
-        "Item1": 1433,
-        "Item2": -2792
-      },
-      {
-        "Item1": 1441,
-        "Item2": -2786
-      },
-      {
-        "Item1": 1444,
-        "Item2": -2778
       }
     ]
   },
@@ -64919,108 +64606,6 @@
       {
         "Item1": 1605,
         "Item2": -3059
-      }
-    ]
-  },
-  {
-    "sites": [
-      "The Golden Plains",
-      "Thunder Bluff"
-    ],
-    "means": "Land",
-    "spacing": 10,
-    "points": [
-      {
-        "Item1": 1444,
-        "Item2": -2778
-      },
-      {
-        "Item1": 1436,
-        "Item2": -2785
-      },
-      {
-        "Item1": 1428,
-        "Item2": -2792
-      },
-      {
-        "Item1": 1421,
-        "Item2": -2800
-      },
-      {
-        "Item1": 1413,
-        "Item2": -2807
-      },
-      {
-        "Item1": 1420,
-        "Item2": -2815
-      },
-      {
-        "Item1": 1430,
-        "Item2": -2820
-      },
-      {
-        "Item1": 1437,
-        "Item2": -2827
-      },
-      {
-        "Item1": 1444,
-        "Item2": -2820
-      },
-      {
-        "Item1": 1452,
-        "Item2": -2813
-      },
-      {
-        "Item1": 1460,
-        "Item2": -2807
-      },
-      {
-        "Item1": 1470,
-        "Item2": -2805
-      },
-      {
-        "Item1": 1480,
-        "Item2": -2808
-      },
-      {
-        "Item1": 1490,
-        "Item2": -2811
-      },
-      {
-        "Item1": 1499,
-        "Item2": -2816
-      },
-      {
-        "Item1": 1509,
-        "Item2": -2818
-      },
-      {
-        "Item1": 1519,
-        "Item2": -2817
-      },
-      {
-        "Item1": 1529,
-        "Item2": -2814
-      },
-      {
-        "Item1": 1539,
-        "Item2": -2812
-      },
-      {
-        "Item1": 1549,
-        "Item2": -2809
-      },
-      {
-        "Item1": 1559,
-        "Item2": -2810
-      },
-      {
-        "Item1": 1569,
-        "Item2": -2811
-      },
-      {
-        "Item1": 1573,
-        "Item2": -2808
       }
     ]
   },
@@ -66550,7 +66135,7 @@
   },
   {
     "sites": [
-      "Orgrimmar",
+      "Orgrimmar Main Gates",
       "Ragefire Chasm"
     ],
     "means": "Land",
@@ -86996,7 +86581,7 @@
   {
     "sites": [
       "Falfarren River",
-      "Silverwind Outpost"
+      "Silverwing Outpost"
     ],
     "means": "Land",
     "spacing": 10,
@@ -87405,7 +86990,7 @@
   },
   {
     "sites": [
-      "Silverwind Outpost",
+      "Silverwing Outpost",
       "Silverwing Grove"
     ],
     "means": "Land",
@@ -94664,7 +94249,7 @@
   {
     "sites": [
       "Felfire Hill",
-      "Silverwind Outpost"
+      "Silverwing Outpost"
     ],
     "means": "Land",
     "spacing": 10,
@@ -95005,7 +94590,7 @@
   },
   {
     "sites": [
-      "Silverwind Outpost",
+      "Silverwing Outpost",
       "Warsong Labor Camp"
     ],
     "means": "Land",
@@ -137787,560 +137372,6 @@
   },
   {
     "sites": [
-      "Boulder Lode Mine",
-      "Orgrimmar"
-    ],
-    "means": "Land",
-    "spacing": 10,
-    "points": [
-      {
-        "Item1": 2343,
-        "Item2": -2248
-      },
-      {
-        "Item1": 2349,
-        "Item2": -2239
-      },
-      {
-        "Item1": 2353,
-        "Item2": -2230
-      },
-      {
-        "Item1": 2350,
-        "Item2": -2220
-      },
-      {
-        "Item1": 2345,
-        "Item2": -2210
-      },
-      {
-        "Item1": 2336,
-        "Item2": -2205
-      },
-      {
-        "Item1": 2327,
-        "Item2": -2202
-      },
-      {
-        "Item1": 2318,
-        "Item2": -2209
-      },
-      {
-        "Item1": 2309,
-        "Item2": -2213
-      },
-      {
-        "Item1": 2299,
-        "Item2": -2209
-      },
-      {
-        "Item1": 2292,
-        "Item2": -2202
-      },
-      {
-        "Item1": 2290,
-        "Item2": -2192
-      },
-      {
-        "Item1": 2285,
-        "Item2": -2184
-      },
-      {
-        "Item1": 2276,
-        "Item2": -2180
-      },
-      {
-        "Item1": 2266,
-        "Item2": -2182
-      },
-      {
-        "Item1": 2257,
-        "Item2": -2186
-      },
-      {
-        "Item1": 2248,
-        "Item2": -2191
-      },
-      {
-        "Item1": 2239,
-        "Item2": -2196
-      },
-      {
-        "Item1": 2235,
-        "Item2": -2205
-      },
-      {
-        "Item1": 2237,
-        "Item2": -2215
-      },
-      {
-        "Item1": 2235,
-        "Item2": -2225
-      },
-      {
-        "Item1": 2233,
-        "Item2": -2236
-      },
-      {
-        "Item1": 2234,
-        "Item2": -2246
-      },
-      {
-        "Item1": 2234,
-        "Item2": -2256
-      },
-      {
-        "Item1": 2234,
-        "Item2": -2266
-      },
-      {
-        "Item1": 2238,
-        "Item2": -2276
-      },
-      {
-        "Item1": 2237,
-        "Item2": -2286
-      },
-      {
-        "Item1": 2231,
-        "Item2": -2294
-      },
-      {
-        "Item1": 2228,
-        "Item2": -2304
-      },
-      {
-        "Item1": 2222,
-        "Item2": -2313
-      },
-      {
-        "Item1": 2213,
-        "Item2": -2317
-      },
-      {
-        "Item1": 2203,
-        "Item2": -2315
-      },
-      {
-        "Item1": 2204,
-        "Item2": -2305
-      },
-      {
-        "Item1": 2196,
-        "Item2": -2298
-      },
-      {
-        "Item1": 2190,
-        "Item2": -2291
-      },
-      {
-        "Item1": 2189,
-        "Item2": -2280
-      },
-      {
-        "Item1": 2189,
-        "Item2": -2270
-      },
-      {
-        "Item1": 2187,
-        "Item2": -2260
-      },
-      {
-        "Item1": 2186,
-        "Item2": -2261
-      }
-    ]
-  },
-  {
-    "sites": [
-      "Orgrimmar",
-      "The Sludge Fen"
-    ],
-    "means": "Land",
-    "spacing": 10,
-    "points": [
-      {
-        "Item1": 2079,
-        "Item2": -2307
-      },
-      {
-        "Item1": 2086,
-        "Item2": -2299
-      },
-      {
-        "Item1": 2096,
-        "Item2": -2298
-      },
-      {
-        "Item1": 2106,
-        "Item2": -2301
-      },
-      {
-        "Item1": 2116,
-        "Item2": -2303
-      },
-      {
-        "Item1": 2125,
-        "Item2": -2308
-      },
-      {
-        "Item1": 2134,
-        "Item2": -2312
-      },
-      {
-        "Item1": 2144,
-        "Item2": -2312
-      },
-      {
-        "Item1": 2154,
-        "Item2": -2309
-      },
-      {
-        "Item1": 2164,
-        "Item2": -2309
-      },
-      {
-        "Item1": 2173,
-        "Item2": -2313
-      },
-      {
-        "Item1": 2183,
-        "Item2": -2316
-      },
-      {
-        "Item1": 2193,
-        "Item2": -2319
-      },
-      {
-        "Item1": 2203,
-        "Item2": -2320
-      },
-      {
-        "Item1": 2210,
-        "Item2": -2313
-      },
-      {
-        "Item1": 2218,
-        "Item2": -2308
-      },
-      {
-        "Item1": 2226,
-        "Item2": -2300
-      },
-      {
-        "Item1": 2233,
-        "Item2": -2293
-      },
-      {
-        "Item1": 2234,
-        "Item2": -2283
-      },
-      {
-        "Item1": 2235,
-        "Item2": -2273
-      },
-      {
-        "Item1": 2239,
-        "Item2": -2263
-      },
-      {
-        "Item1": 2235,
-        "Item2": -2253
-      },
-      {
-        "Item1": 2234,
-        "Item2": -2243
-      },
-      {
-        "Item1": 2237,
-        "Item2": -2232
-      },
-      {
-        "Item1": 2239,
-        "Item2": -2222
-      },
-      {
-        "Item1": 2239,
-        "Item2": -2212
-      },
-      {
-        "Item1": 2236,
-        "Item2": -2202
-      },
-      {
-        "Item1": 2240,
-        "Item2": -2193
-      },
-      {
-        "Item1": 2248,
-        "Item2": -2188
-      },
-      {
-        "Item1": 2257,
-        "Item2": -2183
-      },
-      {
-        "Item1": 2267,
-        "Item2": -2180
-      },
-      {
-        "Item1": 2278,
-        "Item2": -2179
-      },
-      {
-        "Item1": 2286,
-        "Item2": -2185
-      },
-      {
-        "Item1": 2287,
-        "Item2": -2195
-      },
-      {
-        "Item1": 2290,
-        "Item2": -2205
-      },
-      {
-        "Item1": 2298,
-        "Item2": -2212
-      },
-      {
-        "Item1": 2308,
-        "Item2": -2213
-      },
-      {
-        "Item1": 2317,
-        "Item2": -2208
-      },
-      {
-        "Item1": 2323,
-        "Item2": -2200
-      },
-      {
-        "Item1": 2333,
-        "Item2": -2202
-      },
-      {
-        "Item1": 2341,
-        "Item2": -2209
-      },
-      {
-        "Item1": 2349,
-        "Item2": -2216
-      },
-      {
-        "Item1": 2350,
-        "Item2": -2226
-      },
-      {
-        "Item1": 2348,
-        "Item2": -2236
-      },
-      {
-        "Item1": 2344,
-        "Item2": -2246
-      },
-      {
-        "Item1": 2343,
-        "Item2": -2248
-      }
-    ]
-  },
-  {
-    "sites": [
-      "Far Watch Post",
-      "Orgrimmar"
-    ],
-    "means": "Land",
-    "spacing": 10,
-    "points": [
-      {
-        "Item1": 2205,
-        "Item2": -2466
-      },
-      {
-        "Item1": 2203,
-        "Item2": -2455
-      },
-      {
-        "Item1": 2204,
-        "Item2": -2445
-      },
-      {
-        "Item1": 2202,
-        "Item2": -2435
-      },
-      {
-        "Item1": 2205,
-        "Item2": -2425
-      },
-      {
-        "Item1": 2210,
-        "Item2": -2416
-      },
-      {
-        "Item1": 2210,
-        "Item2": -2406
-      },
-      {
-        "Item1": 2209,
-        "Item2": -2396
-      },
-      {
-        "Item1": 2210,
-        "Item2": -2385
-      },
-      {
-        "Item1": 2209,
-        "Item2": -2374
-      },
-      {
-        "Item1": 2210,
-        "Item2": -2364
-      },
-      {
-        "Item1": 2211,
-        "Item2": -2354
-      },
-      {
-        "Item1": 2213,
-        "Item2": -2344
-      },
-      {
-        "Item1": 2214,
-        "Item2": -2334
-      },
-      {
-        "Item1": 2218,
-        "Item2": -2325
-      },
-      {
-        "Item1": 2220,
-        "Item2": -2314
-      },
-      {
-        "Item1": 2222,
-        "Item2": -2304
-      },
-      {
-        "Item1": 2228,
-        "Item2": -2296
-      },
-      {
-        "Item1": 2233,
-        "Item2": -2287
-      },
-      {
-        "Item1": 2235,
-        "Item2": -2277
-      },
-      {
-        "Item1": 2236,
-        "Item2": -2267
-      },
-      {
-        "Item1": 2236,
-        "Item2": -2256
-      },
-      {
-        "Item1": 2235,
-        "Item2": -2246
-      },
-      {
-        "Item1": 2235,
-        "Item2": -2236
-      },
-      {
-        "Item1": 2238,
-        "Item2": -2226
-      },
-      {
-        "Item1": 2239,
-        "Item2": -2216
-      },
-      {
-        "Item1": 2239,
-        "Item2": -2206
-      },
-      {
-        "Item1": 2237,
-        "Item2": -2196
-      },
-      {
-        "Item1": 2246,
-        "Item2": -2190
-      },
-      {
-        "Item1": 2255,
-        "Item2": -2186
-      },
-      {
-        "Item1": 2264,
-        "Item2": -2181
-      },
-      {
-        "Item1": 2273,
-        "Item2": -2177
-      },
-      {
-        "Item1": 2282,
-        "Item2": -2181
-      },
-      {
-        "Item1": 2286,
-        "Item2": -2190
-      },
-      {
-        "Item1": 2290,
-        "Item2": -2199
-      },
-      {
-        "Item1": 2294,
-        "Item2": -2209
-      },
-      {
-        "Item1": 2304,
-        "Item2": -2212
-      },
-      {
-        "Item1": 2313,
-        "Item2": -2209
-      },
-      {
-        "Item1": 2320,
-        "Item2": -2202
-      },
-      {
-        "Item1": 2330,
-        "Item2": -2200
-      },
-      {
-        "Item1": 2339,
-        "Item2": -2207
-      },
-      {
-        "Item1": 2347,
-        "Item2": -2213
-      },
-      {
-        "Item1": 2352,
-        "Item2": -2222
-      },
-      {
-        "Item1": 2351,
-        "Item2": -2233
-      },
-      {
-        "Item1": 2347,
-        "Item2": -2242
-      },
-      {
-        "Item1": 2343,
-        "Item2": -2248
-      }
-    ]
-  },
-  {
-    "sites": [
       "Talrendis Point",
       "The Dor'Danil Barrow Den"
     ],
@@ -143993,7 +143024,7 @@
   },
   {
     "sites": [
-      "Silverwind Outpost",
+      "Silverwing Outpost",
       "The Dor'Danil Barrow Den"
     ],
     "means": "Land",
@@ -144202,7 +143233,7 @@
   {
     "sites": [
       "Satyrnaar",
-      "Silverwind Outpost"
+      "Silverwing Outpost"
     ],
     "means": "Land",
     "spacing": 10,
@@ -146912,272 +145943,6 @@
       {
         "Item1": 1825,
         "Item2": -3473
-      }
-    ]
-  },
-  {
-    "sites": [
-      "Thunder Bluff",
-      "Wildmane Water Well"
-    ],
-    "means": "Land",
-    "spacing": 10,
-    "points": [
-      {
-        "Item1": 1444,
-        "Item2": -2778
-      },
-      {
-        "Item1": 1442,
-        "Item2": -2788
-      },
-      {
-        "Item1": 1434,
-        "Item2": -2794
-      },
-      {
-        "Item1": 1424,
-        "Item2": -2794
-      },
-      {
-        "Item1": 1414,
-        "Item2": -2796
-      },
-      {
-        "Item1": 1408,
-        "Item2": -2788
-      },
-      {
-        "Item1": 1401,
-        "Item2": -2780
-      },
-      {
-        "Item1": 1401,
-        "Item2": -2770
-      },
-      {
-        "Item1": 1408,
-        "Item2": -2763
-      },
-      {
-        "Item1": 1418,
-        "Item2": -2762
-      },
-      {
-        "Item1": 1423,
-        "Item2": -2753
-      },
-      {
-        "Item1": 1426,
-        "Item2": -2743
-      },
-      {
-        "Item1": 1434,
-        "Item2": -2737
-      },
-      {
-        "Item1": 1442,
-        "Item2": -2732
-      },
-      {
-        "Item1": 1444,
-        "Item2": -2722
-      },
-      {
-        "Item1": 1451,
-        "Item2": -2715
-      },
-      {
-        "Item1": 1460,
-        "Item2": -2710
-      },
-      {
-        "Item1": 1464,
-        "Item2": -2700
-      },
-      {
-        "Item1": 1471,
-        "Item2": -2693
-      },
-      {
-        "Item1": 1479,
-        "Item2": -2686
-      },
-      {
-        "Item1": 1483,
-        "Item2": -2684
-      }
-    ]
-  },
-  {
-    "sites": [
-      "Baeldun Digsite",
-      "Thunder Bluff"
-    ],
-    "means": "Land",
-    "spacing": 10,
-    "points": [
-      {
-        "Item1": 1387,
-        "Item2": -2888
-      },
-      {
-        "Item1": 1397,
-        "Item2": -2889
-      },
-      {
-        "Item1": 1406,
-        "Item2": -2883
-      },
-      {
-        "Item1": 1407,
-        "Item2": -2873
-      },
-      {
-        "Item1": 1406,
-        "Item2": -2863
-      },
-      {
-        "Item1": 1409,
-        "Item2": -2853
-      },
-      {
-        "Item1": 1418,
-        "Item2": -2847
-      },
-      {
-        "Item1": 1421,
-        "Item2": -2838
-      },
-      {
-        "Item1": 1430,
-        "Item2": -2835
-      },
-      {
-        "Item1": 1439,
-        "Item2": -2829
-      },
-      {
-        "Item1": 1433,
-        "Item2": -2821
-      },
-      {
-        "Item1": 1424,
-        "Item2": -2816
-      },
-      {
-        "Item1": 1418,
-        "Item2": -2808
-      },
-      {
-        "Item1": 1414,
-        "Item2": -2798
-      },
-      {
-        "Item1": 1424,
-        "Item2": -2795
-      },
-      {
-        "Item1": 1434,
-        "Item2": -2795
-      },
-      {
-        "Item1": 1442,
-        "Item2": -2788
-      },
-      {
-        "Item1": 1444,
-        "Item2": -2778
-      }
-    ]
-  },
-  {
-    "sites": [
-      "Thunder Bluff",
-      "Thunderhorn Water Well"
-    ],
-    "means": "Land",
-    "spacing": 10,
-    "points": [
-      {
-        "Item1": 1501,
-        "Item2": -2898
-      },
-      {
-        "Item1": 1492,
-        "Item2": -2893
-      },
-      {
-        "Item1": 1484,
-        "Item2": -2886
-      },
-      {
-        "Item1": 1477,
-        "Item2": -2879
-      },
-      {
-        "Item1": 1467,
-        "Item2": -2878
-      },
-      {
-        "Item1": 1459,
-        "Item2": -2871
-      },
-      {
-        "Item1": 1453,
-        "Item2": -2863
-      },
-      {
-        "Item1": 1452,
-        "Item2": -2853
-      },
-      {
-        "Item1": 1453,
-        "Item2": -2843
-      },
-      {
-        "Item1": 1445,
-        "Item2": -2836
-      },
-      {
-        "Item1": 1438,
-        "Item2": -2828
-      },
-      {
-        "Item1": 1431,
-        "Item2": -2821
-      },
-      {
-        "Item1": 1422,
-        "Item2": -2815
-      },
-      {
-        "Item1": 1416,
-        "Item2": -2808
-      },
-      {
-        "Item1": 1414,
-        "Item2": -2798
-      },
-      {
-        "Item1": 1424,
-        "Item2": -2795
-      },
-      {
-        "Item1": 1434,
-        "Item2": -2795
-      },
-      {
-        "Item1": 1442,
-        "Item2": -2788
-      },
-      {
-        "Item1": 1445,
-        "Item2": -2778
-      },
-      {
-        "Item1": 1444,
-        "Item2": -2778
       }
     ]
   },
@@ -150632,7 +149397,7 @@
   {
     "sites": [
       "Deadeye Shore",
-      "Orgrimmar"
+      "Orgrimmar Main Gates"
     ],
     "means": "Land",
     "spacing": 10,
@@ -151012,7 +149777,7 @@
   {
     "sites": [
       "Bladefist Bay",
-      "Orgrimmar"
+      "Orgrimmar Main Gates"
     ],
     "means": "Land",
     "spacing": 10,
@@ -162472,6 +161237,1710 @@
       {
         "Item1": 5101,
         "Item2": -3974
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Orgrimmar Main Gates",
+      "Orgrimmar Side Entrence"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 2241,
+        "Item2": -2192
+      },
+      {
+        "Item1": 2250,
+        "Item2": -2187
+      },
+      {
+        "Item1": 2259,
+        "Item2": -2182
+      },
+      {
+        "Item1": 2269,
+        "Item2": -2180
+      },
+      {
+        "Item1": 2279,
+        "Item2": -2181
+      },
+      {
+        "Item1": 2286,
+        "Item2": -2188
+      },
+      {
+        "Item1": 2290,
+        "Item2": -2198
+      },
+      {
+        "Item1": 2294,
+        "Item2": -2207
+      },
+      {
+        "Item1": 2303,
+        "Item2": -2212
+      },
+      {
+        "Item1": 2314,
+        "Item2": -2212
+      },
+      {
+        "Item1": 2320,
+        "Item2": -2204
+      },
+      {
+        "Item1": 2330,
+        "Item2": -2202
+      },
+      {
+        "Item1": 2338,
+        "Item2": -2208
+      },
+      {
+        "Item1": 2346,
+        "Item2": -2215
+      },
+      {
+        "Item1": 2351,
+        "Item2": -2224
+      },
+      {
+        "Item1": 2351,
+        "Item2": -2234
+      },
+      {
+        "Item1": 2349,
+        "Item2": -2244
+      },
+      {
+        "Item1": 2343,
+        "Item2": -2248
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Boulder Lode Mine",
+      "Orgrimmar Side Entrence"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 2186,
+        "Item2": -2261
+      },
+      {
+        "Item1": 2187,
+        "Item2": -2271
+      },
+      {
+        "Item1": 2190,
+        "Item2": -2280
+      },
+      {
+        "Item1": 2189,
+        "Item2": -2290
+      },
+      {
+        "Item1": 2195,
+        "Item2": -2298
+      },
+      {
+        "Item1": 2202,
+        "Item2": -2306
+      },
+      {
+        "Item1": 2208,
+        "Item2": -2314
+      },
+      {
+        "Item1": 2217,
+        "Item2": -2311
+      },
+      {
+        "Item1": 2222,
+        "Item2": -2302
+      },
+      {
+        "Item1": 2231,
+        "Item2": -2297
+      },
+      {
+        "Item1": 2232,
+        "Item2": -2287
+      },
+      {
+        "Item1": 2233,
+        "Item2": -2277
+      },
+      {
+        "Item1": 2235,
+        "Item2": -2267
+      },
+      {
+        "Item1": 2235,
+        "Item2": -2257
+      },
+      {
+        "Item1": 2233,
+        "Item2": -2247
+      },
+      {
+        "Item1": 2236,
+        "Item2": -2237
+      },
+      {
+        "Item1": 2240,
+        "Item2": -2227
+      },
+      {
+        "Item1": 2239,
+        "Item2": -2217
+      },
+      {
+        "Item1": 2236,
+        "Item2": -2207
+      },
+      {
+        "Item1": 2240,
+        "Item2": -2198
+      },
+      {
+        "Item1": 2241,
+        "Item2": -2192
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Orgrimmar Side Entrence",
+      "The Sludge Fen"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 2079,
+        "Item2": -2307
+      },
+      {
+        "Item1": 2086,
+        "Item2": -2300
+      },
+      {
+        "Item1": 2097,
+        "Item2": -2298
+      },
+      {
+        "Item1": 2107,
+        "Item2": -2298
+      },
+      {
+        "Item1": 2117,
+        "Item2": -2302
+      },
+      {
+        "Item1": 2125,
+        "Item2": -2308
+      },
+      {
+        "Item1": 2134,
+        "Item2": -2311
+      },
+      {
+        "Item1": 2145,
+        "Item2": -2310
+      },
+      {
+        "Item1": 2155,
+        "Item2": -2309
+      },
+      {
+        "Item1": 2165,
+        "Item2": -2310
+      },
+      {
+        "Item1": 2174,
+        "Item2": -2315
+      },
+      {
+        "Item1": 2183,
+        "Item2": -2319
+      },
+      {
+        "Item1": 2193,
+        "Item2": -2322
+      },
+      {
+        "Item1": 2203,
+        "Item2": -2321
+      },
+      {
+        "Item1": 2208,
+        "Item2": -2313
+      },
+      {
+        "Item1": 2216,
+        "Item2": -2306
+      },
+      {
+        "Item1": 2223,
+        "Item2": -2298
+      },
+      {
+        "Item1": 2231,
+        "Item2": -2293
+      },
+      {
+        "Item1": 2236,
+        "Item2": -2284
+      },
+      {
+        "Item1": 2235,
+        "Item2": -2274
+      },
+      {
+        "Item1": 2235,
+        "Item2": -2263
+      },
+      {
+        "Item1": 2237,
+        "Item2": -2253
+      },
+      {
+        "Item1": 2233,
+        "Item2": -2244
+      },
+      {
+        "Item1": 2234,
+        "Item2": -2234
+      },
+      {
+        "Item1": 2236,
+        "Item2": -2224
+      },
+      {
+        "Item1": 2236,
+        "Item2": -2214
+      },
+      {
+        "Item1": 2235,
+        "Item2": -2203
+      },
+      {
+        "Item1": 2242,
+        "Item2": -2195
+      },
+      {
+        "Item1": 2241,
+        "Item2": -2192
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Far Watch Post",
+      "Orgrimmar Side Entrence"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 2205,
+        "Item2": -2466
+      },
+      {
+        "Item1": 2205,
+        "Item2": -2455
+      },
+      {
+        "Item1": 2207,
+        "Item2": -2445
+      },
+      {
+        "Item1": 2208,
+        "Item2": -2435
+      },
+      {
+        "Item1": 2207,
+        "Item2": -2425
+      },
+      {
+        "Item1": 2209,
+        "Item2": -2415
+      },
+      {
+        "Item1": 2211,
+        "Item2": -2405
+      },
+      {
+        "Item1": 2211,
+        "Item2": -2394
+      },
+      {
+        "Item1": 2209,
+        "Item2": -2384
+      },
+      {
+        "Item1": 2209,
+        "Item2": -2374
+      },
+      {
+        "Item1": 2209,
+        "Item2": -2364
+      },
+      {
+        "Item1": 2210,
+        "Item2": -2353
+      },
+      {
+        "Item1": 2212,
+        "Item2": -2343
+      },
+      {
+        "Item1": 2215,
+        "Item2": -2334
+      },
+      {
+        "Item1": 2217,
+        "Item2": -2324
+      },
+      {
+        "Item1": 2221,
+        "Item2": -2314
+      },
+      {
+        "Item1": 2226,
+        "Item2": -2305
+      },
+      {
+        "Item1": 2232,
+        "Item2": -2297
+      },
+      {
+        "Item1": 2236,
+        "Item2": -2287
+      },
+      {
+        "Item1": 2237,
+        "Item2": -2276
+      },
+      {
+        "Item1": 2236,
+        "Item2": -2266
+      },
+      {
+        "Item1": 2234,
+        "Item2": -2256
+      },
+      {
+        "Item1": 2234,
+        "Item2": -2245
+      },
+      {
+        "Item1": 2234,
+        "Item2": -2235
+      },
+      {
+        "Item1": 2237,
+        "Item2": -2225
+      },
+      {
+        "Item1": 2236,
+        "Item2": -2215
+      },
+      {
+        "Item1": 2237,
+        "Item2": -2204
+      },
+      {
+        "Item1": 2241,
+        "Item2": -2192
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Thunder Bluff Southern Lift",
+      "Wildmane Water Well"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 1418,
+        "Item2": -2794
+      },
+      {
+        "Item1": 1409,
+        "Item2": -2788
+      },
+      {
+        "Item1": 1401,
+        "Item2": -2782
+      },
+      {
+        "Item1": 1397,
+        "Item2": -2773
+      },
+      {
+        "Item1": 1402,
+        "Item2": -2764
+      },
+      {
+        "Item1": 1412,
+        "Item2": -2760
+      },
+      {
+        "Item1": 1419,
+        "Item2": -2753
+      },
+      {
+        "Item1": 1423,
+        "Item2": -2744
+      },
+      {
+        "Item1": 1432,
+        "Item2": -2738
+      },
+      {
+        "Item1": 1440,
+        "Item2": -2733
+      },
+      {
+        "Item1": 1447,
+        "Item2": -2725
+      },
+      {
+        "Item1": 1450,
+        "Item2": -2715
+      },
+      {
+        "Item1": 1460,
+        "Item2": -2713
+      },
+      {
+        "Item1": 1470,
+        "Item2": -2712
+      },
+      {
+        "Item1": 1478,
+        "Item2": -2706
+      },
+      {
+        "Item1": 1484,
+        "Item2": -2697
+      },
+      {
+        "Item1": 1485,
+        "Item2": -2686
+      },
+      {
+        "Item1": 1483,
+        "Item2": -2684
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Thunder Bluff Southern Lift",
+      "Thunderhorn Water Well"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 1501,
+        "Item2": -2898
+      },
+      {
+        "Item1": 1491,
+        "Item2": -2894
+      },
+      {
+        "Item1": 1483,
+        "Item2": -2887
+      },
+      {
+        "Item1": 1475,
+        "Item2": -2879
+      },
+      {
+        "Item1": 1465,
+        "Item2": -2879
+      },
+      {
+        "Item1": 1456,
+        "Item2": -2875
+      },
+      {
+        "Item1": 1454,
+        "Item2": -2865
+      },
+      {
+        "Item1": 1453,
+        "Item2": -2854
+      },
+      {
+        "Item1": 1451,
+        "Item2": -2844
+      },
+      {
+        "Item1": 1445,
+        "Item2": -2836
+      },
+      {
+        "Item1": 1438,
+        "Item2": -2828
+      },
+      {
+        "Item1": 1431,
+        "Item2": -2822
+      },
+      {
+        "Item1": 1423,
+        "Item2": -2815
+      },
+      {
+        "Item1": 1419,
+        "Item2": -2806
+      },
+      {
+        "Item1": 1420,
+        "Item2": -2796
+      },
+      {
+        "Item1": 1418,
+        "Item2": -2794
+      }
+    ]
+  },
+  {
+    "sites": [
+      "The Golden Plains",
+      "Thunder Bluff Southern Lift"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 1573,
+        "Item2": -2808
+      },
+      {
+        "Item1": 1565,
+        "Item2": -2815
+      },
+      {
+        "Item1": 1557,
+        "Item2": -2821
+      },
+      {
+        "Item1": 1547,
+        "Item2": -2822
+      },
+      {
+        "Item1": 1537,
+        "Item2": -2823
+      },
+      {
+        "Item1": 1527,
+        "Item2": -2825
+      },
+      {
+        "Item1": 1520,
+        "Item2": -2833
+      },
+      {
+        "Item1": 1511,
+        "Item2": -2839
+      },
+      {
+        "Item1": 1502,
+        "Item2": -2843
+      },
+      {
+        "Item1": 1492,
+        "Item2": -2843
+      },
+      {
+        "Item1": 1483,
+        "Item2": -2848
+      },
+      {
+        "Item1": 1473,
+        "Item2": -2851
+      },
+      {
+        "Item1": 1463,
+        "Item2": -2849
+      },
+      {
+        "Item1": 1454,
+        "Item2": -2845
+      },
+      {
+        "Item1": 1446,
+        "Item2": -2838
+      },
+      {
+        "Item1": 1441,
+        "Item2": -2830
+      },
+      {
+        "Item1": 1435,
+        "Item2": -2821
+      },
+      {
+        "Item1": 1426,
+        "Item2": -2816
+      },
+      {
+        "Item1": 1419,
+        "Item2": -2809
+      },
+      {
+        "Item1": 1417,
+        "Item2": -2799
+      },
+      {
+        "Item1": 1418,
+        "Item2": -2794
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Baeldun Digsite",
+      "Thunder Bluff Southern Lift"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 1387,
+        "Item2": -2888
+      },
+      {
+        "Item1": 1397,
+        "Item2": -2886
+      },
+      {
+        "Item1": 1406,
+        "Item2": -2881
+      },
+      {
+        "Item1": 1405,
+        "Item2": -2871
+      },
+      {
+        "Item1": 1404,
+        "Item2": -2861
+      },
+      {
+        "Item1": 1410,
+        "Item2": -2852
+      },
+      {
+        "Item1": 1417,
+        "Item2": -2844
+      },
+      {
+        "Item1": 1424,
+        "Item2": -2837
+      },
+      {
+        "Item1": 1434,
+        "Item2": -2838
+      },
+      {
+        "Item1": 1440,
+        "Item2": -2829
+      },
+      {
+        "Item1": 1433,
+        "Item2": -2821
+      },
+      {
+        "Item1": 1425,
+        "Item2": -2816
+      },
+      {
+        "Item1": 1419,
+        "Item2": -2807
+      },
+      {
+        "Item1": 1417,
+        "Item2": -2797
+      },
+      {
+        "Item1": 1418,
+        "Item2": -2794
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Palemane Rock",
+      "Thunder Bluff Southern Lift"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 1405,
+        "Item2": -3019
+      },
+      {
+        "Item1": 1413,
+        "Item2": -3013
+      },
+      {
+        "Item1": 1421,
+        "Item2": -3006
+      },
+      {
+        "Item1": 1430,
+        "Item2": -3001
+      },
+      {
+        "Item1": 1439,
+        "Item2": -2997
+      },
+      {
+        "Item1": 1444,
+        "Item2": -2988
+      },
+      {
+        "Item1": 1446,
+        "Item2": -2978
+      },
+      {
+        "Item1": 1449,
+        "Item2": -2968
+      },
+      {
+        "Item1": 1454,
+        "Item2": -2960
+      },
+      {
+        "Item1": 1459,
+        "Item2": -2951
+      },
+      {
+        "Item1": 1460,
+        "Item2": -2941
+      },
+      {
+        "Item1": 1458,
+        "Item2": -2931
+      },
+      {
+        "Item1": 1455,
+        "Item2": -2921
+      },
+      {
+        "Item1": 1455,
+        "Item2": -2911
+      },
+      {
+        "Item1": 1454,
+        "Item2": -2900
+      },
+      {
+        "Item1": 1453,
+        "Item2": -2890
+      },
+      {
+        "Item1": 1455,
+        "Item2": -2880
+      },
+      {
+        "Item1": 1456,
+        "Item2": -2870
+      },
+      {
+        "Item1": 1454,
+        "Item2": -2860
+      },
+      {
+        "Item1": 1453,
+        "Item2": -2850
+      },
+      {
+        "Item1": 1448,
+        "Item2": -2840
+      },
+      {
+        "Item1": 1443,
+        "Item2": -2832
+      },
+      {
+        "Item1": 1435,
+        "Item2": -2825
+      },
+      {
+        "Item1": 1427,
+        "Item2": -2820
+      },
+      {
+        "Item1": 1420,
+        "Item2": -2812
+      },
+      {
+        "Item1": 1418,
+        "Item2": -2802
+      },
+      {
+        "Item1": 1418,
+        "Item2": -2794
+      }
+    ]
+  },
+  {
+    "sites": [
+      "The Washed Hillside",
+      "Thunder Bluff Southern Lift"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 1412,
+        "Item2": -3115
+      },
+      {
+        "Item1": 1419,
+        "Item2": -3108
+      },
+      {
+        "Item1": 1428,
+        "Item2": -3103
+      },
+      {
+        "Item1": 1438,
+        "Item2": -3100
+      },
+      {
+        "Item1": 1448,
+        "Item2": -3097
+      },
+      {
+        "Item1": 1456,
+        "Item2": -3090
+      },
+      {
+        "Item1": 1464,
+        "Item2": -3083
+      },
+      {
+        "Item1": 1468,
+        "Item2": -3074
+      },
+      {
+        "Item1": 1468,
+        "Item2": -3063
+      },
+      {
+        "Item1": 1467,
+        "Item2": -3053
+      },
+      {
+        "Item1": 1464,
+        "Item2": -3044
+      },
+      {
+        "Item1": 1461,
+        "Item2": -3034
+      },
+      {
+        "Item1": 1463,
+        "Item2": -3024
+      },
+      {
+        "Item1": 1464,
+        "Item2": -3014
+      },
+      {
+        "Item1": 1461,
+        "Item2": -3004
+      },
+      {
+        "Item1": 1458,
+        "Item2": -2994
+      },
+      {
+        "Item1": 1451,
+        "Item2": -2986
+      },
+      {
+        "Item1": 1449,
+        "Item2": -2976
+      },
+      {
+        "Item1": 1449,
+        "Item2": -2966
+      },
+      {
+        "Item1": 1452,
+        "Item2": -2956
+      },
+      {
+        "Item1": 1456,
+        "Item2": -2947
+      },
+      {
+        "Item1": 1456,
+        "Item2": -2937
+      },
+      {
+        "Item1": 1456,
+        "Item2": -2927
+      },
+      {
+        "Item1": 1455,
+        "Item2": -2916
+      },
+      {
+        "Item1": 1453,
+        "Item2": -2906
+      },
+      {
+        "Item1": 1453,
+        "Item2": -2895
+      },
+      {
+        "Item1": 1453,
+        "Item2": -2885
+      },
+      {
+        "Item1": 1453,
+        "Item2": -2875
+      },
+      {
+        "Item1": 1453,
+        "Item2": -2864
+      },
+      {
+        "Item1": 1453,
+        "Item2": -2854
+      },
+      {
+        "Item1": 1449,
+        "Item2": -2844
+      },
+      {
+        "Item1": 1445,
+        "Item2": -2835
+      },
+      {
+        "Item1": 1438,
+        "Item2": -2828
+      },
+      {
+        "Item1": 1431,
+        "Item2": -2820
+      },
+      {
+        "Item1": 1422,
+        "Item2": -2815
+      },
+      {
+        "Item1": 1418,
+        "Item2": -2805
+      },
+      {
+        "Item1": 1418,
+        "Item2": -2794
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Stonebull Lake",
+      "Thunder Bluff Southern Lift"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 1530,
+        "Item2": -2954
+      },
+      {
+        "Item1": 1520,
+        "Item2": -2951
+      },
+      {
+        "Item1": 1511,
+        "Item2": -2946
+      },
+      {
+        "Item1": 1502,
+        "Item2": -2942
+      },
+      {
+        "Item1": 1494,
+        "Item2": -2934
+      },
+      {
+        "Item1": 1485,
+        "Item2": -2928
+      },
+      {
+        "Item1": 1476,
+        "Item2": -2923
+      },
+      {
+        "Item1": 1469,
+        "Item2": -2916
+      },
+      {
+        "Item1": 1461,
+        "Item2": -2909
+      },
+      {
+        "Item1": 1457,
+        "Item2": -2900
+      },
+      {
+        "Item1": 1455,
+        "Item2": -2889
+      },
+      {
+        "Item1": 1453,
+        "Item2": -2879
+      },
+      {
+        "Item1": 1452,
+        "Item2": -2869
+      },
+      {
+        "Item1": 1452,
+        "Item2": -2859
+      },
+      {
+        "Item1": 1452,
+        "Item2": -2848
+      },
+      {
+        "Item1": 1448,
+        "Item2": -2839
+      },
+      {
+        "Item1": 1442,
+        "Item2": -2831
+      },
+      {
+        "Item1": 1436,
+        "Item2": -2822
+      },
+      {
+        "Item1": 1428,
+        "Item2": -2816
+      },
+      {
+        "Item1": 1420,
+        "Item2": -2809
+      },
+      {
+        "Item1": 1417,
+        "Item2": -2800
+      },
+      {
+        "Item1": 1418,
+        "Item2": -2794
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Stormwind City",
+      "The Stockade"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 4975,
+        "Item2": -3517
+      },
+      {
+        "Item1": 4966,
+        "Item2": -3511
+      },
+      {
+        "Item1": 4961,
+        "Item2": -3502
+      },
+      {
+        "Item1": 4955,
+        "Item2": -3494
+      },
+      {
+        "Item1": 4948,
+        "Item2": -3487
+      },
+      {
+        "Item1": 4942,
+        "Item2": -3478
+      },
+      {
+        "Item1": 4935,
+        "Item2": -3471
+      },
+      {
+        "Item1": 4925,
+        "Item2": -3470
+      },
+      {
+        "Item1": 4916,
+        "Item2": -3476
+      },
+      {
+        "Item1": 4908,
+        "Item2": -3481
+      },
+      {
+        "Item1": 4899,
+        "Item2": -3476
+      },
+      {
+        "Item1": 4895,
+        "Item2": -3466
+      },
+      {
+        "Item1": 4891,
+        "Item2": -3459
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Mirror Lake",
+      "Stormwind City"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 4989,
+        "Item2": -3582
+      },
+      {
+        "Item1": 4993,
+        "Item2": -3573
+      },
+      {
+        "Item1": 4999,
+        "Item2": -3564
+      },
+      {
+        "Item1": 5007,
+        "Item2": -3558
+      },
+      {
+        "Item1": 5006,
+        "Item2": -3548
+      },
+      {
+        "Item1": 4998,
+        "Item2": -3542
+      },
+      {
+        "Item1": 4990,
+        "Item2": -3537
+      },
+      {
+        "Item1": 4982,
+        "Item2": -3529
+      },
+      {
+        "Item1": 4975,
+        "Item2": -3517
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Goldshire",
+      "Stormwind City"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 5046,
+        "Item2": -3599
+      },
+      {
+        "Item1": 5044,
+        "Item2": -3588
+      },
+      {
+        "Item1": 5039,
+        "Item2": -3579
+      },
+      {
+        "Item1": 5034,
+        "Item2": -3570
+      },
+      {
+        "Item1": 5031,
+        "Item2": -3560
+      },
+      {
+        "Item1": 5024,
+        "Item2": -3553
+      },
+      {
+        "Item1": 5016,
+        "Item2": -3546
+      },
+      {
+        "Item1": 5008,
+        "Item2": -3540
+      },
+      {
+        "Item1": 4997,
+        "Item2": -3540
+      },
+      {
+        "Item1": 4988,
+        "Item2": -3535
+      },
+      {
+        "Item1": 4983,
+        "Item2": -3527
+      },
+      {
+        "Item1": 4975,
+        "Item2": -3517
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Northshire Abbey",
+      "Stormwind City"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 4975,
+        "Item2": -3517
+      },
+      {
+        "Item1": 4977,
+        "Item2": -3526
+      },
+      {
+        "Item1": 4985,
+        "Item2": -3534
+      },
+      {
+        "Item1": 4992,
+        "Item2": -3541
+      },
+      {
+        "Item1": 5002,
+        "Item2": -3541
+      },
+      {
+        "Item1": 5012,
+        "Item2": -3543
+      },
+      {
+        "Item1": 5022,
+        "Item2": -3548
+      },
+      {
+        "Item1": 5032,
+        "Item2": -3546
+      },
+      {
+        "Item1": 5040,
+        "Item2": -3540
+      },
+      {
+        "Item1": 5051,
+        "Item2": -3540
+      },
+      {
+        "Item1": 5061,
+        "Item2": -3540
+      },
+      {
+        "Item1": 5071,
+        "Item2": -3536
+      },
+      {
+        "Item1": 5074,
+        "Item2": -3526
+      },
+      {
+        "Item1": 5070,
+        "Item2": -3517
+      },
+      {
+        "Item1": 5079,
+        "Item2": -3511
+      },
+      {
+        "Item1": 5083,
+        "Item2": -3502
+      },
+      {
+        "Item1": 5087,
+        "Item2": -3492
+      },
+      {
+        "Item1": 5092,
+        "Item2": -3483
+      },
+      {
+        "Item1": 5104,
+        "Item2": -3478
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Northshire Valley",
+      "Stormwind City"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 5066,
+        "Item2": -3475
+      },
+      {
+        "Item1": 5073,
+        "Item2": -3482
+      },
+      {
+        "Item1": 5080,
+        "Item2": -3489
+      },
+      {
+        "Item1": 5080,
+        "Item2": -3499
+      },
+      {
+        "Item1": 5073,
+        "Item2": -3507
+      },
+      {
+        "Item1": 5072,
+        "Item2": -3518
+      },
+      {
+        "Item1": 5076,
+        "Item2": -3527
+      },
+      {
+        "Item1": 5073,
+        "Item2": -3537
+      },
+      {
+        "Item1": 5065,
+        "Item2": -3543
+      },
+      {
+        "Item1": 5054,
+        "Item2": -3543
+      },
+      {
+        "Item1": 5044,
+        "Item2": -3541
+      },
+      {
+        "Item1": 5034,
+        "Item2": -3543
+      },
+      {
+        "Item1": 5024,
+        "Item2": -3545
+      },
+      {
+        "Item1": 5014,
+        "Item2": -3542
+      },
+      {
+        "Item1": 5004,
+        "Item2": -3541
+      },
+      {
+        "Item1": 4994,
+        "Item2": -3541
+      },
+      {
+        "Item1": 4986,
+        "Item2": -3534
+      },
+      {
+        "Item1": 4979,
+        "Item2": -3526
+      },
+      {
+        "Item1": 4975,
+        "Item2": -3517
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Thunder Bluff Northern Lift",
+      "Wildmane Water Well"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 1460,
+        "Item2": -2741
+      },
+      {
+        "Item1": 1465,
+        "Item2": -2732
+      },
+      {
+        "Item1": 1462,
+        "Item2": -2722
+      },
+      {
+        "Item1": 1464,
+        "Item2": -2712
+      },
+      {
+        "Item1": 1474,
+        "Item2": -2709
+      },
+      {
+        "Item1": 1482,
+        "Item2": -2702
+      },
+      {
+        "Item1": 1485,
+        "Item2": -2692
+      },
+      {
+        "Item1": 1483,
+        "Item2": -2684
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Thunder Bluff Northern Lift",
+      "Thunder Bluff Southern Lift"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 1418,
+        "Item2": -2794
+      },
+      {
+        "Item1": 1427,
+        "Item2": -2789
+      },
+      {
+        "Item1": 1437,
+        "Item2": -2787
+      },
+      {
+        "Item1": 1446,
+        "Item2": -2781
+      },
+      {
+        "Item1": 1445,
+        "Item2": -2771
+      },
+      {
+        "Item1": 1449,
+        "Item2": -2761
+      },
+      {
+        "Item1": 1457,
+        "Item2": -2754
+      },
+      {
+        "Item1": 1460,
+        "Item2": -2744
+      },
+      {
+        "Item1": 1460,
+        "Item2": -2741
+      }
+    ]
+  },
+  {
+    "sites": [
+      "The Golden Plains",
+      "Thunder Bluff Northern Lift"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 1460,
+        "Item2": -2741
+      },
+      {
+        "Item1": 1468,
+        "Item2": -2746
+      },
+      {
+        "Item1": 1477,
+        "Item2": -2751
+      },
+      {
+        "Item1": 1487,
+        "Item2": -2755
+      },
+      {
+        "Item1": 1493,
+        "Item2": -2763
+      },
+      {
+        "Item1": 1498,
+        "Item2": -2772
+      },
+      {
+        "Item1": 1505,
+        "Item2": -2780
+      },
+      {
+        "Item1": 1515,
+        "Item2": -2781
+      },
+      {
+        "Item1": 1525,
+        "Item2": -2783
+      },
+      {
+        "Item1": 1533,
+        "Item2": -2790
+      },
+      {
+        "Item1": 1538,
+        "Item2": -2799
+      },
+      {
+        "Item1": 1546,
+        "Item2": -2806
+      },
+      {
+        "Item1": 1556,
+        "Item2": -2809
+      },
+      {
+        "Item1": 1566,
+        "Item2": -2809
+      },
+      {
+        "Item1": 1573,
+        "Item2": -2808
+      }
+    ]
+  },
+  {
+    "sites": [
+      "Thunder Bluff Northern Lift",
+      "Thunderhorn Water Well"
+    ],
+    "means": "Land",
+    "spacing": 10,
+    "points": [
+      {
+        "Item1": 1501,
+        "Item2": -2898
+      },
+      {
+        "Item1": 1505,
+        "Item2": -2887
+      },
+      {
+        "Item1": 1509,
+        "Item2": -2878
+      },
+      {
+        "Item1": 1513,
+        "Item2": -2869
+      },
+      {
+        "Item1": 1514,
+        "Item2": -2859
+      },
+      {
+        "Item1": 1510,
+        "Item2": -2849
+      },
+      {
+        "Item1": 1513,
+        "Item2": -2839
+      },
+      {
+        "Item1": 1520,
+        "Item2": -2832
+      },
+      {
+        "Item1": 1523,
+        "Item2": -2822
+      },
+      {
+        "Item1": 1520,
+        "Item2": -2813
+      },
+      {
+        "Item1": 1515,
+        "Item2": -2804
+      },
+      {
+        "Item1": 1514,
+        "Item2": -2794
+      },
+      {
+        "Item1": 1513,
+        "Item2": -2784
+      },
+      {
+        "Item1": 1505,
+        "Item2": -2778
+      },
+      {
+        "Item1": 1496,
+        "Item2": -2774
+      },
+      {
+        "Item1": 1490,
+        "Item2": -2765
+      },
+      {
+        "Item1": 1485,
+        "Item2": -2756
+      },
+      {
+        "Item1": 1475,
+        "Item2": -2753
+      },
+      {
+        "Item1": 1467,
+        "Item2": -2746
+      },
+      {
+        "Item1": 1460,
+        "Item2": -2741
       }
     ]
   }

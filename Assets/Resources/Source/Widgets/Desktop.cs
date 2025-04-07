@@ -309,7 +309,7 @@ public class Desktop : MonoBehaviour
                                 currentSave.player.ReceiveExperience(defines.expForExploration);
                             }
                             Respawn("Site: " + mapGrid.queuedSiteOpen);
-                            foreach (var connection in paths.FindAll(x => x.sites.Contains(mapGrid.queuedSiteOpen)))
+                            foreach (var connection in paths.FindAll(x => x.means == "Land" && x.sites.Contains(mapGrid.queuedSiteOpen)))
                             {
                                 var site = connection.sites.Find(x => x != mapGrid.queuedSiteOpen);
                                 if (!WindowUp("Site: " + site))
@@ -355,7 +355,7 @@ public class Desktop : MonoBehaviour
                                 PlaySound("DesktopZoneDiscovered", 1f);
                                 currentSave.player.ReceiveExperience(defines.expForExploration);
                             }
-                            foreach (var connection in paths.FindAll(x => x.sites.Contains(currentSave.currentSite)))
+                            foreach (var connection in paths.FindAll(x => x.means == "Land" && x.sites.Contains(currentSave.currentSite)))
                             {
                                 var site = connection.sites.Find(x => x != currentSave.currentSite);
                                 if (!WindowUp("Site: " + site))
@@ -369,25 +369,26 @@ public class Desktop : MonoBehaviour
                         {
                             PlaySound("DesktopInstanceOpen");
                             SpawnDesktopBlueprint("Instance");
-                            SwitchDesktop("Instance");
                         }
                         else if (mapGrid.queuedSiteOpen == "Complex")
                         {
                             PlaySound("DesktopInstanceOpen");
                             SpawnDesktopBlueprint("Complex");
-                            SwitchDesktop("Complex");
                         }
                         else if (mapGrid.queuedSiteOpen == "HostileArea")
                         {
                             PlaySound("DesktopInstanceOpen");
                             SpawnDesktopBlueprint("HostileArea");
-                            SwitchDesktop("HostileArea");
                         }
                         else if (mapGrid.queuedSiteOpen == "Town")
                         {
                             PlaySound("DesktopInstanceOpen");
                             SpawnDesktopBlueprint("Town");
-                            SwitchDesktop("Town");
+                        }
+                        else if (mapGrid.queuedSiteOpen == "Capital")
+                        {
+                            PlaySound("DesktopInstanceOpen");
+                            SpawnDesktopBlueprint("Capital");
                         }
                         if (mapGrid.queuedSiteOpen == "SpiritHealer")
                         {

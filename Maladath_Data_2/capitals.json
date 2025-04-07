@@ -1,0 +1,92 @@
+[
+  {
+    "districts": [
+      "The Trade Quarter",
+      "The War Quarter",
+      "The Magic Quarter",
+      "The Rogues' Quarter",
+      "The Apothecarium",
+      "The Royal Quarter"
+    ],
+    "name": "Undercity",
+    "zone": "Tirisfal Glades",
+    "faction": "Undercity",
+    "ambience": "MusicUndercity"
+  },
+  {
+    "districts": [
+      "Elder Rise",
+      "Hunter Rise",
+      "Spirit Rise",
+      "The Pools of Vision",
+      "Lower Rise",
+      "Middle Rise",
+      "Higher Rise"
+    ],
+    "name": "Thunder Bluff",
+    "zone": "Mulgore",
+    "faction": "Thunder Bluff",
+    "ambience": "MusicThunderBluff"
+  },
+  {
+    "districts": [
+      "Trade District",
+      "Dwarven District",
+      "Cathedral Square",
+      "Mage Quarter",
+      "The Park",
+      "Old Town",
+      "The Canals",
+      "Stormwind Keep"
+    ],
+    "name": "Stormwind City",
+    "zone": "Elwynn Forest",
+    "faction": "Stormwind",
+    "ambience": "MusicStormwind"
+  },
+  {
+    "districts": [
+      "The Temple Gardens",
+      "Warrior's Terrace",
+      "Cenarion Enclave",
+      "Craftsmen's Terrace",
+      "Tradesmen's Terrace",
+      "The Temple of The Moon"
+    ],
+    "name": "Darnassus",
+    "zone": "Teldrassil",
+    "faction": "Darnassus",
+    "ambience": "MusicDarnassus"
+  },
+  {
+    "districts": [
+      "The Commons",
+      "The Mystic Ward",
+      "The Military Ward",
+      "The Forlorn Cavern",
+      "Hall of Explorers",
+      "Tinker Town",
+      "The Great Forge",
+      "The High Seat"
+    ],
+    "name": "Ironforge",
+    "zone": "Dun Morogh",
+    "faction": "Ironforge",
+    "ambience": "MusicIronforge"
+  },
+  {
+    "districts": [
+      "The Valley of Strength",
+      "The Valley of Spirits",
+      "The Valley of Honor",
+      "The Valley of Wisdom",
+      "The Drag",
+      "The Cleft of Shadow",
+      "Grommash Hold"
+    ],
+    "name": "Orgrimmar",
+    "zone": "Durotar",
+    "faction": "Orgrimmar",
+    "ambience": "MusicOrgrimmar"
+  }
+]

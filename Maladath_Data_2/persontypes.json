@@ -25,6 +25,16 @@
     "category": "Vendor"
   },
   {
+    "type": "Fruit Vendor",
+    "icon": "ItemMiscFood19",
+    "category": "Vendor"
+  },
+  {
+    "type": "Basket Weaver",
+    "icon": "ItemMiscBag09",
+    "category": "Vendor"
+  },
+  {
     "type": "Master Smith",
     "icon": "ItemHammer20",
     "category": "Vendor"
@@ -45,6 +55,11 @@
     "category": "Vendor"
   },
   {
+    "type": "Herbalism Supplies",
+    "icon": "ItemMiscBagHerbPouch",
+    "category": "Vendor"
+  },
+  {
     "type": "Engineering Supplies & General Goods",
     "icon": "ItemMiscGear08",
     "category": "Vendor"
@@ -52,6 +67,16 @@
   {
     "type": "Engineering & Mining Supplies",
     "icon": "ItemMiscGear08",
+    "category": "Vendor"
+  },
+  {
+    "type": "Mining Supplies",
+    "icon": "ItemPick01",
+    "category": "Vendor"
+  },
+  {
+    "type": "Weapons Merchant",
+    "icon": "ItemThrowingKnife05",
     "category": "Vendor"
   },
   {
@@ -95,7 +120,17 @@
     "category": "Vendor"
   },
   {
+    "type": "Gun Merchant",
+    "icon": "ItemRifle01",
+    "category": "Vendor"
+  },
+  {
     "type": "Bowyer",
+    "icon": "ItemBow02",
+    "category": "Vendor"
+  },
+  {
+    "type": "Bow Merchant",
     "icon": "ItemBow02",
     "category": "Vendor"
   },

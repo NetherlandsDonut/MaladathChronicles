@@ -17482,8 +17482,8 @@
     "commonEncounters": [
       {
         "who": "Redridge Basher",
-        "levelMin": 18,
-        "levelMax": 19
+        "levelMin": 19,
+        "levelMax": 21
       },
       {
         "who": "Redridge Drudger",

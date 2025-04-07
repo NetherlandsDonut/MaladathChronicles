@@ -147,6 +147,7 @@ public class Quest
                     {
                         CloseWindow("Quest");
                         Respawn("Chest", true);
+                        Respawn("Capital", true);
                         Respawn("PlayerMoney", true);
                         PlaySound("DesktopInstanceClose");
                     });
@@ -158,6 +159,7 @@ public class Quest
                     {
                         CloseWindow("Quest");
                         Respawn("Chest", true);
+                        Respawn("Capital", true);
                         Respawn("PlayerMoney", true);
                         PlaySound("DesktopInstanceClose");
                     });
@@ -173,6 +175,7 @@ public class Quest
                 {
                     CloseWindow("Quest" + f);
                     Respawn("Chest", true);
+                    Respawn("Capital", true);
                     Respawn("PlayerMoney", true);
                     if (CDesktop.title != "QuestLog")
                         if (SiteComplex.complex != null) Respawn("Complex");
@@ -389,6 +392,7 @@ public class Quest
                     Respawn("TownQuestDone", true);
                     Respawn("Chest", true);
                     Respawn("PlayerMoney", true);
+                    Respawn("Capital", true);
                     if (CDesktop.title == "Instance")
                     {
                         if (SiteInstance.wing != null) SpawnWindowBlueprint("InstanceWing");
@@ -417,6 +421,7 @@ public class Quest
                     Respawn("InstanceQuestDone", true);
                     Respawn("HostileAreaQuestDone", true);
                     Respawn("TownQuestDone", true);
+                    Respawn("Capital", true);
                     Respawn("HostileArea", true);
                     Respawn("QuestList", true);
                     Respawn("PlayerMoney", true);

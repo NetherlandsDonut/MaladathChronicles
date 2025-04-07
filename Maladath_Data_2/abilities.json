@@ -664,7 +664,7 @@
     }
   },
   {
-    "name": "Scroll of Spirit I",
+    "name": "Scroll of Spirit",
     "possibleTargets": "Self",
     "tags": [],
     "ranks": [
@@ -680,7 +680,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Scroll of Spirit I @ Scroll of Spirit",
+            "WorldBuffName": "Scroll of Spirit @ Scroll of Spirit",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "720",
             "SoundEffect": "ItemScroll"
@@ -698,7 +698,7 @@
           "contents": [
             {
               "Color": "Uncommon",
-              "Text": "Use: Increases Spirit by 3 for 12 hours."
+              "Text": "Use: Increases Spirit by 3 for 12 hours. This effect counts as a scroll of spirit."
             }
           ]
         }
@@ -1765,7 +1765,7 @@
           "contents": [
             {
               "Color": "Uncommon",
-              "Text": "Use: Increases Spirit by 7 for 12 hours."
+              "Text": "Use: Increases Spirit by 7 for 12 hours. This effect counts as a scroll of spirit."
             }
           ]
         }
@@ -1807,7 +1807,7 @@
           "contents": [
             {
               "Color": "Uncommon",
-              "Text": "Use: Increases Spirit by 11 for 12 hours."
+              "Text": "Use: Increases Spirit by 11 for 12 hours. This effect counts as a scroll of spirit."
             }
           ]
         }
@@ -1849,7 +1849,7 @@
           "contents": [
             {
               "Color": "Uncommon",
-              "Text": "Use: Increases Spirit by 15 for 12 hours."
+              "Text": "Use: Increases Spirit by 15 for 12 hours. This effect counts as a scroll of spirit."
             }
           ]
         }
@@ -1857,7 +1857,7 @@
     }
   },
   {
-    "name": "Scroll of Agility I",
+    "name": "Scroll of Agility",
     "possibleTargets": "Self",
     "tags": [],
     "ranks": [
@@ -1873,7 +1873,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Scroll of Agility I @ Scroll of Agility",
+            "WorldBuffName": "Scroll of Agility @ Scroll of Agility",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "720",
             "SoundEffect": "ItemScroll"
@@ -1891,7 +1891,7 @@
           "contents": [
             {
               "Color": "Uncommon",
-              "Text": "Use: Increases Agility by 5 for 12 hours."
+              "Text": "Use: Increases Agility by 5 for 12 hours. This effect counts as a scroll of agility."
             }
           ]
         }
@@ -1933,7 +1933,7 @@
           "contents": [
             {
               "Color": "Uncommon",
-              "Text": "Use: Increases Agility by 9 for 12 hours."
+              "Text": "Use: Increases Agility by 9 for 12 hours. This effect counts as a scroll of agility."
             }
           ]
         }
@@ -1975,7 +1975,7 @@
           "contents": [
             {
               "Color": "Uncommon",
-              "Text": "Use: Increases Agility by 13 for 12 hours."
+              "Text": "Use: Increases Agility by 13 for 12 hours. This effect counts as a scroll of agility."
             }
           ]
         }
@@ -2017,7 +2017,7 @@
           "contents": [
             {
               "Color": "Uncommon",
-              "Text": "Use: Increases Agility by 17 for 12 hours."
+              "Text": "Use: Increases Agility by 17 for 12 hours. This effect counts as a scroll of agility."
             }
           ]
         }
@@ -2025,7 +2025,7 @@
     }
   },
   {
-    "name": "Scroll of Strength I",
+    "name": "Scroll of Strength",
     "possibleTargets": "Self",
     "tags": [],
     "ranks": [
@@ -2041,7 +2041,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Scroll of Strength I @ Scroll of Strength",
+            "WorldBuffName": "Scroll of Strength @ Scroll of Strength",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "720",
             "SoundEffect": "ItemScroll"
@@ -2059,7 +2059,7 @@
           "contents": [
             {
               "Color": "Uncommon",
-              "Text": "Use: Increases Strength by 5 for 12 hours."
+              "Text": "Use: Increases Strength by 5 for 12 hours. This effect counts as a scroll of strength."
             }
           ]
         }
@@ -2102,7 +2102,7 @@
           "contents": [
             {
               "Color": "Uncommon",
-              "Text": "Use: Increases Strength by 9 for 12 hours."
+              "Text": "Use: Increases Strength by 9 for 12 hours. This effect counts as a scroll of strength."
             }
           ]
         }
@@ -2144,7 +2144,7 @@
           "contents": [
             {
               "Color": "Uncommon",
-              "Text": "Use: Increases Strength by 13 for 12 hours."
+              "Text": "Use: Increases Strength by 13 for 12 hours. This effect counts as a scroll of strength."
             }
           ]
         }
@@ -2186,7 +2186,7 @@
           "contents": [
             {
               "Color": "Uncommon",
-              "Text": "Use: Increases Strength by 17 for 12 hours."
+              "Text": "Use: Increases Strength by 17 for 12 hours. This effect counts as a scroll of strength."
             }
           ]
         }
@@ -2194,7 +2194,7 @@
     }
   },
   {
-    "name": "Scroll of Stamina I",
+    "name": "Scroll of Stamina",
     "possibleTargets": "Self",
     "tags": [],
     "ranks": [
@@ -2210,7 +2210,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Scroll of Stamina I @ Scroll of Stamina",
+            "WorldBuffName": "Scroll of Stamina @ Scroll of Stamina",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "720",
             "SoundEffect": "ItemScroll"
@@ -2228,7 +2228,7 @@
           "contents": [
             {
               "Color": "Uncommon",
-              "Text": "Use: Increases Stamina by 4 for 12 hours."
+              "Text": "Use: Increases Stamina by 4 for 12 hours. This effect counts as a scroll of stamina."
             }
           ]
         }
@@ -2270,7 +2270,7 @@
           "contents": [
             {
               "Color": "Uncommon",
-              "Text": "Use: Increases Stamina by 8 for 12 hours."
+              "Text": "Use: Increases Stamina by 8 for 12 hours. This effect counts as a scroll of stamina."
             }
           ]
         }
@@ -2312,7 +2312,7 @@
           "contents": [
             {
               "Color": "Uncommon",
-              "Text": "Use: Increases Stamina by 12 for 12 hours."
+              "Text": "Use: Increases Stamina by 12 for 12 hours. This effect counts as a scroll of stamina."
             }
           ]
         }
@@ -2355,7 +2355,7 @@
           "contents": [
             {
               "Color": "Uncommon",
-              "Text": "Use: Increases Stamina by 16 for 12 hours."
+              "Text": "Use: Increases Stamina by 16 for 12 hours. This effect counts as a scroll of stamina."
             }
           ]
         }
@@ -2363,7 +2363,7 @@
     }
   },
   {
-    "name": "Scroll of Protection I",
+    "name": "Scroll of Protection",
     "possibleTargets": "Self",
     "tags": [],
     "ranks": [
@@ -2379,7 +2379,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Scroll of Protection I @ Scroll of Protection",
+            "WorldBuffName": "Scroll of Protection @ Scroll of Protection",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "720",
             "SoundEffect": "ItemScroll"
@@ -2397,7 +2397,7 @@
           "contents": [
             {
               "Color": "Uncommon",
-              "Text": "Use: Increases Armor by 60 for 12 hours."
+              "Text": "Use: Increases Armor by 60 for 12 hours. This effect counts as a scroll of protection."
             }
           ]
         }
@@ -2439,7 +2439,7 @@
           "contents": [
             {
               "Color": "Uncommon",
-              "Text": "Use: Increases Armor by 120 for 12 hours."
+              "Text": "Use: Increases Armor by 120 for 12 hours. This effect counts as a scroll of protection."
             }
           ]
         }
@@ -2481,7 +2481,7 @@
           "contents": [
             {
               "Color": "Uncommon",
-              "Text": "Use: Increases Armor by 180 for 12 hours."
+              "Text": "Use: Increases Armor by 180 for 12 hours. This effect counts as a scroll of protection."
             }
           ]
         }
@@ -2523,7 +2523,7 @@
           "contents": [
             {
               "Color": "Uncommon",
-              "Text": "Use: Increases Armor by 240 for 12 hours."
+              "Text": "Use: Increases Armor by 240 for 12 hours. This effect counts as a scroll of protection."
             }
           ]
         }
@@ -2531,7 +2531,7 @@
     }
   },
   {
-    "name": "Scroll of Intellect I",
+    "name": "Scroll of Intellect",
     "possibleTargets": "Self",
     "tags": [],
     "ranks": [
@@ -2547,7 +2547,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Scroll of Intellect I @ Scroll of Intellect",
+            "WorldBuffName": "Scroll of Intellect @ Scroll of Intellect",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "720",
             "SoundEffect": "ItemScroll"
@@ -2565,7 +2565,7 @@
           "contents": [
             {
               "Color": "Uncommon",
-              "Text": "Use: Increases Intellect by 4 for 12 hours."
+              "Text": "Use: Increases Intellect by 4 for 12 hours. This effect counts as a scroll of intellect."
             }
           ]
         }
@@ -2607,7 +2607,7 @@
           "contents": [
             {
               "Color": "Uncommon",
-              "Text": "Use: Increases Intellect by 8 for 12 hours."
+              "Text": "Use: Increases Intellect by 8 for 12 hours. This effect counts as a scroll of intellect."
             }
           ]
         }
@@ -2649,7 +2649,7 @@
           "contents": [
             {
               "Color": "Uncommon",
-              "Text": "Use: Increases Intellect by 12 for 12 hours."
+              "Text": "Use: Increases Intellect by 12 for 12 hours. This effect counts as a scroll of intellect."
             }
           ]
         }
@@ -2691,7 +2691,7 @@
           "contents": [
             {
               "Color": "Uncommon",
-              "Text": "Use: Increases Intellect by 16 for 12 hours."
+              "Text": "Use: Increases Intellect by 16 for 12 hours. This effect counts as a scroll of intellect."
             }
           ]
         }

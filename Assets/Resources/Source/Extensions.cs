@@ -42,6 +42,13 @@ public static class Extensions
         return text != null && text.Contains(" @ ") ? text[..text.IndexOf(" @ ")] : text;
     }
 
+    //Removes all nasty characters from a string (Usually used for accessing files with names based of something)
+    public static string OnlyGeneralCategory(this string text)
+    {
+        var a = text != null && text.Contains(" @ ") ? text[text.IndexOf(" @ ")..] : "";
+        return text != null && text.Contains(" @ ") ? text[text.IndexOf(" @ ")..] : text;
+    }
+
     //Returns a grayscale from a color
     public static float Grayscale(this Color32 color)
     {

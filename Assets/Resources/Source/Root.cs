@@ -1146,6 +1146,7 @@ public static class Root
                 }
                 Respawn("Chest", true);
                 Respawn("PlayerMoney", true);
+                Respawn("Capital", true);
             });
             var color = ColorQuestLevel(quest.questLevel);
             if (color != null) SetRegionBackgroundAsImage("SkillUp" + color);

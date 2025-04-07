@@ -301,6 +301,35 @@
     "events": []
   },
   {
+    "name": "Scroll of Intellect @ Scroll of Intellect",
+    "icon": "ItemScroll01",
+    "dispelType": "None",
+    "tags": [
+      "Scroll"
+    ],
+    "ranks": [
+      {}
+    ],
+    "gains": {
+      "Intellect": 4
+    },
+    "events": [],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "isExtender": true,
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Stamina increased by 16. This effect counts as a scroll of stamina."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "name": "Scroll of Intellect II @ Scroll of Intellect",
     "icon": "ItemScroll01",
     "dispelType": "None",
@@ -346,7 +375,7 @@
     "events": []
   },
   {
-    "name": "Scroll of Strength I @ Scroll of Strength",
+    "name": "Scroll of Strength @ Scroll of Strength",
     "icon": "ItemScroll02",
     "dispelType": "None",
     "tags": [
@@ -406,7 +435,7 @@
     "events": []
   },
   {
-    "name": "Scroll of Agility I @ Scroll of Agility",
+    "name": "Scroll of Agility @ Scroll of Agility",
     "icon": "ItemScroll02",
     "dispelType": "None",
     "tags": [
@@ -466,7 +495,7 @@
     "events": []
   },
   {
-    "name": "Scroll of Stamina I @ Scroll of Stamina",
+    "name": "Scroll of Stamina @ Scroll of Stamina",
     "icon": "ItemScroll07",
     "dispelType": "None",
     "tags": [
@@ -526,7 +555,7 @@
     "events": []
   },
   {
-    "name": "Scroll of Protection I @ Scroll of Protection",
+    "name": "Scroll of Protection @ Scroll of Protection",
     "icon": "ItemScroll07",
     "dispelType": "None",
     "tags": [
@@ -586,7 +615,7 @@
     "events": []
   },
   {
-    "name": "Scroll of Spirit I @ Scroll of Spirit",
+    "name": "Scroll of Spirit @ Scroll of Spirit",
     "icon": "ItemScroll01",
     "dispelType": "None",
     "tags": [

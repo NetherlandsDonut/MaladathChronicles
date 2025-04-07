@@ -31,6 +31,7 @@ using static Coloring;
 using static Inventory;
 using static PersonType;
 using static Profession;
+using static SiteCapital;
 using static FishingSpot;
 using static GameSettings;
 using static PersonCategory;
@@ -2950,6 +2951,55 @@ public class Blueprint
             SetAnchor(Bottom, 0, 35);
             AddQuestList(quests, "Turn");
         }),
+        
+        //Capital
+        new("Capital", () =>
+        {
+            if (WindowUp("Quest")) return;
+            if (WindowUp("QuestAdd")) return;
+            if (WindowUp("QuestTurn")) return;
+            if (WindowUp("Inventory")) return;
+            if (capital == null) return;
+            if (capital.ambience == null)
+            {
+                var zone = zones.Find(x => x.name == capital.zone);
+                if (zone != null) PlayAmbience(currentSave.IsNight() ? zone.ambienceNight : zone.ambienceDay);
+            }
+            else PlayAmbience(capital.ambience);
+            SetAnchor(TopRight, -19, -38);
+            AddRegionGroup();
+            SetRegionGroupWidth(190);
+            AddHeaderRegion(() =>
+            {
+                AddLine(capital.name, "Gray");
+                AddSmallButton("OtherClose",
+                (h) =>
+                {
+                    PlaySound("DesktopInstanceClose");
+                    CloseDesktop("Town");
+                    CloseDesktop("Capital");
+                    SwitchDesktop("Map");
+                    capitalThroughTown = null;
+                    capital = null;
+                });
+            });
+            foreach (var town in capital.districts)
+                PrintCapitalTown(town);
+        }),
+        new("ComplexQuestAvailable", () =>
+        {
+            var quests = currentSave.player.AvailableQuestsAt(complex).OrderBy(x => x.questLevel).ToList();
+            if (quests.Count == 0) return;
+            SetAnchor(Top, 0, -38);
+            AddQuestList(quests);
+        }),
+        new("ComplexQuestDone", () =>
+        {
+            var quests = currentSave.player.QuestsDoneAt(complex).OrderBy(x => x.questLevel).ToList();
+            if (quests.Count == 0) return;
+            SetAnchor(Bottom, 0, 35);
+            AddQuestList(quests, "Turn");
+        }),
 
         //Instance
         new("Instance", () => 
@@ -3347,7 +3397,8 @@ public class Blueprint
                     var title = CDesktop.title;
                     CloseDesktop(title);
                     PlaySound("DesktopInstanceClose");
-                    SwitchDesktop("Map");
+                    if (capital != null) town = capitalThroughTown;
+                    else SwitchDesktop("Map");
                 });
                 if (town.fishing)
                     AddSmallButton("OtherFish" + (!currentSave.player.professionSkills.ContainsKey("Fishing") ? "Off" : ""),
@@ -3367,12 +3418,13 @@ public class Blueprint
                 AddPaddingRegion(() => { AddLine("Transportation:", "HalfGray"); });
                 foreach (var transport in transportOptions)
                 {
-                    var desitnationName = transport.sites.Find(x => x != town.name);
-                    var destination = towns.Find(x => x.name == desitnationName);
+                    if (transport.sites.Count < 2) continue;
+                    var destination = towns.Find(x => x.name == transport.sites[1]);
                     if (destination == null) continue;
+                    if (destination.name == town.name) continue;
                     AddButtonRegion(() =>
                     {
-                        AddLine(desitnationName, "Black");
+                        AddLine(destination.convertFlightPathTo ?? destination.name, "Black");
                         AddSmallButton("Transport" + transport.means);
                     },
                     (h) =>
@@ -3386,6 +3438,9 @@ public class Blueprint
 
                         //Close town screen as we're beginning to travel on map
                         CloseDesktop("Town");
+                        CloseDesktop("Capital");
+
+                        capital = null;
 
                         //Switch desktop to map
                         SwitchDesktop("Map");
@@ -3604,6 +3659,9 @@ public class Blueprint
                     CloseWindow("Town");
                     SpawnWindowBlueprint("Bank");
                     SpawnWindowBlueprint("Inventory");
+                    Respawn("PlayerMoney", true);
+                    Respawn("Capital", true);
+
                 });
             }
             else if (type.category == "Auctioneer")
@@ -3741,11 +3799,13 @@ public class Blueprint
                         currentSave.vendorStock.Add(town.name + ":" + person.name, person.ExportStock());
                     PlayVoiceLine(person.VoiceLine("Vendor"));
                     PlaySound("DesktopInventoryOpen");
+                    PlaySound("DesktopCharacterSheetOpen");
                     CloseWindow(h.window);
                     CloseWindow("Town");
                     SpawnWindowBlueprint("Vendor");
                     SpawnWindowBlueprint("Inventory");
                     Respawn("PlayerMoney", true);
+                    Respawn("Capital", true);
                     Respawn("ExperienceBarBorder");
                     Respawn("ExperienceBar");
                 });
@@ -3823,6 +3883,7 @@ public class Blueprint
                     CloseWindow("Vendor");
                     CloseWindow("Inventory");
                     Respawn("PlayerMoney", true);
+                    Respawn("Capital", true);
                     Respawn("Person");
                     PlaySound("DesktopInventoryClose");
                 });
@@ -3866,6 +3927,7 @@ public class Blueprint
                     CloseWindow("VendorBuyback");
                     CloseWindow("Inventory");
                     Respawn("PlayerMoney", true);
+                    Respawn("Capital", true);
                     Respawn("Person");
                     PlaySound("DesktopInventoryClose");
                 });
@@ -4116,6 +4178,7 @@ public class Blueprint
                                     {
                                         currentSave.player.inventory.money -= mount.price;
                                         Respawn("PlayerMoney", true);
+                                        Respawn("Capital", true);
                                         currentSave.player.mounts.Add(mount.name);
                                         Respawn("MountVendor");
                                         PlaySound("DesktopTransportPay");
@@ -4341,7 +4404,7 @@ public class Blueprint
             var rowAmount = 12;
             var thisWindow = CDesktop.LBWindow();
             var side = currentSave.player.Side();
-            var list = town.flightPaths[side].FindAll(x => x != town).OrderBy(x => !currentSave.siteVisits.ContainsKey(x.name)).ThenBy(x => x.zone).ThenBy(x => x.name).ToList();
+            var list = town.flightPaths[side].FindAll(x => x != town).OrderBy(x => !currentSave.siteVisits.ContainsKey(x.convertFlightPathTo ?? x.name)).ThenBy(x => x.zone).ThenBy(x => x.name).ToList();
             thisWindow.SetPagination(() => list.Count, rowAmount);
             SetAnchor(TopLeft, 19, -38);
             AddRegionGroup();
@@ -4371,9 +4434,9 @@ public class Blueprint
                     AddButtonRegion(() =>
                     {
                         var destination = list[index + thisWindow.pagination()];
-                        if (currentSave.siteVisits.ContainsKey(destination.name))
+                        if (currentSave.siteVisits.ContainsKey(destination.convertFlightPathTo ?? destination.name))
                         {
-                            AddLine(destination.name);
+                            AddLine(destination.capital ?? destination.name);
                             AddSmallButton("Zone" + destination.zone.Clean());
                         }
                         else
@@ -4386,10 +4449,7 @@ public class Blueprint
                     (h) =>
                     {
                         var destination = list[index + thisWindow.pagination()];
-                        currentSave.currentSite = destination.name;
-                        Respawn("Site: " + town.name);
-                        Respawn("Site: " + currentSave.currentSite);
-                        town = destination;
+                        currentSave.currentSite = destination.convertFlightPathTo != null ? destination.convertFlightPathTo : destination.name;
 
                         //if (transport.price > 0)
                         //{
@@ -4400,12 +4460,21 @@ public class Blueprint
 
                         //Close town screen as we're beginning to travel on map
                         CloseDesktop("Town");
+                        CloseDesktop("Capital");
+
+                        capital = null;
 
                         //Switch desktop to map
                         SwitchDesktop("Map");
+                        
+                        Respawn("Site: " + town.name);
+                        Respawn("Site: " + currentSave.currentSite);
+                        if (destination.x == 0 || destination.y == 0)
+                            town = towns.Find(x => x.name == destination.convertFlightPathTo);
+                        else town = destination;
 
                         //Move camera to the newly visited town
-                        CDesktop.cameraDestination = new Vector2(town.x, town.y);
+                        CDesktop.cameraDestination = destination.convertFlightPathTo != null ? new Vector2(towns.Find(x => x.name == destination.convertFlightPathTo).x, towns.Find(x => x.name == destination.convertFlightPathTo).y) : new Vector2(town.x, town.y);
 
                         ////Find current site
                         //var current = FindSite(x => x.name == currentSave.currentSite);
@@ -4763,6 +4832,7 @@ public class Blueprint
                                             //Learn the level
                                             currentSave.player.inventory.money -= key.price;
                                             Respawn("PlayerMoney", true);
+                                            Respawn("Capital", true);
                                             if (!currentSave.player.professionSkills.ContainsKey(type.profession))
                                             {
                                                 currentSave.player.professionSkills.Add(type.profession, (1, new()));
@@ -4863,6 +4933,7 @@ public class Blueprint
                                         //Add the recipe
                                         currentSave.player.inventory.money -= key.price;
                                         Respawn("PlayerMoney", true);
+                                        Respawn("Capital", true);
                                         currentSave.player.LearnRecipe(key);
                                         Respawn(h.window.title);
                                         PlaySound("DesktopSkillLearned");
@@ -5432,6 +5503,7 @@ public class Blueprint
                     SaveGames();
                     CloseDesktop("HostileArea");
                     CloseDesktop("Town");
+                    CloseDesktop("Capital");
                     CloseDesktop("Instance");
                     CloseDesktop("Complex");
                     CloseDesktop("FishingGame");
@@ -6694,6 +6766,7 @@ public class Blueprint
         {
             personCategory = null;
             SetDesktopBackground(town.Background());
+            SpawnWindowBlueprint("Capital");
             SpawnWindowBlueprint("TownQuestAvailable");
             SpawnWindowBlueprint("TownQuestDone");
             SpawnWindowBlueprint("PlayerMoney");
@@ -6738,9 +6811,11 @@ public class Blueprint
                     {
                         PlaySound("DesktopInventoryClose");
                         CloseWindow("Bank");
-                        CloseWindow("Vendor");
+                        if (CloseWindow("Vendor"))
+                            PlaySound("DesktopCharacterSheetClose");
                         CloseWindow("VendorBuyback");
                         Respawn("PlayerMoney", true);
+                        Respawn("Capital", true);
                         Respawn("Person");
                     }
                     else if (CloseWindow("MakeInnHome"))
@@ -6790,7 +6865,12 @@ public class Blueprint
                     else
                     {
                         PlaySound("DesktopInstanceClose");
-                        town = null;
+                        if (capital != null)
+                        {
+                            town = capitalThroughTown;
+                            SwitchDesktop("Capital");
+                        }
+                        else town = null;
                         CloseDesktop("Town");
                     }
                 });
@@ -6922,6 +7002,26 @@ public class Blueprint
                     PlaySound("DesktopInstanceClose");
                     CloseDesktop("Complex");
                 }
+            });
+        }),
+        new("Capital", () =>
+        {
+            SetDesktopBackground(town.Background());
+            SpawnWindowBlueprint("Capital");
+            SpawnWindowBlueprint("MapToolbarShadow");
+            SpawnWindowBlueprint("MapToolbarClockLeft");
+            SpawnWindowBlueprint("MapToolbar");
+            SpawnWindowBlueprint("MapToolbarClockRight");
+            SpawnWindowBlueprint("MapToolbarStatusLeft");
+            SpawnWindowBlueprint("MapToolbarStatusRight");
+            SpawnWindowBlueprint("ExperienceBarBorder");
+            SpawnWindowBlueprint("ExperienceBar");
+            AddHotkey("Open menu / Back", () =>
+            {
+                PlaySound("DesktopInstanceClose");
+                CloseDesktop("Capital");
+                capitalThroughTown = null;
+                capital = null;
             });
         }),
         new("Game", () => 

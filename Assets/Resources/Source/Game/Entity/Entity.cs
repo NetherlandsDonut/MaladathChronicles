@@ -1304,7 +1304,7 @@ public class Entity
     {
         if (!buff.stackable)
         {
-            var list = worldBuffs.FindAll(x => x.buff.OnlyNameCategory() == buff.name.OnlyNameCategory()).ToList();
+            var list = worldBuffs.FindAll(x => x.buff.OnlyGeneralCategory() == buff.name.OnlyGeneralCategory()).ToList();
             for (int i = list.Count - 1; i >= 0; i--) RemoveWorldBuff(list[i]);
         }
         worldBuffs.Add(new WorldBuff(buff, rank, duration));
