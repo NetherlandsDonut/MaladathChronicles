@@ -24,6 +24,9 @@ public class QuestCondition
     //Checks whether player already done the quest
     public string status;
 
+    //Does the quest refrain from taking away this item
+    public bool isItemNotTaken;
+
     //Checks whether this condition is already fulfilled
     public bool IsDone()
     {

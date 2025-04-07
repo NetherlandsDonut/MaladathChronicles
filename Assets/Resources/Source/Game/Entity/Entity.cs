@@ -182,7 +182,7 @@ public class Entity
         currentQuests.Remove(quest);
         completedQuests.Add(quest.questID);
         foreach (var item in quest.conditions.Where(x => x.type == "Item"))
-            inventory.RemoveItem(item.name, item.amount);
+            if (!item.isItemNotTaken) inventory.RemoveItem(item.name, item.amount);
         var find = Site.FindSite(x => x.name == quest.siteEnd);
         if (!sitesToRespawn.Contains(find))
             sitesToRespawn.Add(find);

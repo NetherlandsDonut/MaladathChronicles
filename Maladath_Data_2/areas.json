@@ -21787,6 +21787,13 @@
     "zone": "Stranglethorn Vale",
     "type": "HostileArea",
     "fishing": true,
+    "commonEncounters": [
+      {
+        "who": "Southern Strand Crawler",
+        "levelMin": 42,
+        "levelMax": 43
+      }
+    ],
     "eliteEncounters": [
       {
         "who": "Gorlash",
