@@ -259,6 +259,10 @@ public class Board
         do { whosTurn++; whosTurn %= participants.Count; }
         while (participants[whosTurn].who.dead);
 
+        //If it's not player's turn.. change color of the remote cursor based on whether it is an ally using it or an enemy
+        if (participants[whosTurn].who != currentSave.player)
+            cursorEnemy.SetColor(participants[whosTurn].team == participants.Find(x => x.who == currentSave.player).team ? "CursorFriend" : "CursorEnemy");
+
         //If the current participant is human controlled fade out the enemy cursor
         if (participants[whosTurn].human) cursorEnemy.fadeOut = true;
 

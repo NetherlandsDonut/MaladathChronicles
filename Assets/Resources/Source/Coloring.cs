@@ -73,6 +73,8 @@ public static class Coloring
         { "Green",          new Color32(081, 181, 077, 255) },
         { "Blue",           new Color32(094, 105, 255, 255) },
         { "Pink",           new Color32(218, 065, 226, 255) },
+        { "CursorEnemy",    new Color32(255, 000, 000, 255) },
+        { "CursorFriend",   new Color32(000, 155, 255, 255) },
 
         //Class colors
         { "Druid",          new Color32(184, 090, 007, 255) },

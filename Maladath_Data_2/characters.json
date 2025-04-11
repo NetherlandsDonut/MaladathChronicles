@@ -1803,11 +1803,49 @@
                 "amount": 1
               }
             ]
+          },
+          {
+            "questID": 364,
+            "previous": [
+              363
+            ],
+            "requiredLevel": 1,
+            "questLevel": 2,
+            "name": "The Mindless Ones",
+            "description": "We Forsaken are at war with the Lich King's army of the Scourge: necromantically raised armies of the undead, foul beasts of the north, and tormented spectres.$B$BThe northern part of the village has become overrun with the Mindless Ones, and they must be destroyed. Destroy them, show them no mercy, our former brothers and sisters as they might be. The Fallen are nothing but The Lich King's slaves.",
+            "objective": "Shadow Priest Sarvis wants you to kill 2 Mindless Zombies and 2 Wretched Zombies.",
+            "completion": "It is unfortunate that the Scourge cannot be brought into the fold, their large numbers would be useful in the battles ahead.$B$BBut they will not join us, so we have no choice but to destroy them.",
+            "siteStart": "Deathknell",
+            "siteEnd": "Deathknell",
+            "zone": "Tirisfal Glades",
+            "money": 17,
+            "experience": 170,
+            "rewards": {
+              "Flax Gloves": 1,
+              "Battered Cloak": 1
+            },
+            "reputationGain": {
+              "Undercity": 250
+            },
+            "conditions": [
+              {
+                "type": "Kill",
+                "name": "Mindless Zombie",
+                "amount": 2
+              },
+              {
+                "type": "Kill",
+                "name": "Wretched Zombie",
+                "amount": 2
+              }
+            ]
           }
         ],
-        "completedQuests": [],
+        "completedQuests": [
+          363
+        ],
         "level": 60,
-        "experience": 8248953,
+        "experience": 16497906,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -1825,7 +1863,7 @@
           "Frostwolf Clan": 4250,
           "The Defiler's": 4250,
           "Thunder Bluff": 4250,
-          "Undercity": 4600,
+          "Undercity": 4675,
           "Ironforge": 0,
           "Dark Iron Clan": 0,
           "Wildhammer Clan": 0,
@@ -1986,6 +2024,7 @@
             "price": 1
           },
           "Chest": {
+            "y": 1,
             "rarity": "Poor",
             "name": "Acolyte's Robe",
             "icon": "itemchestcloth24",
@@ -2002,9 +2041,9 @@
         "worldBuffs": []
       },
       "hour": 7,
-      "minute": 45,
-      "second": 58,
-      "currentSite": "Hammerfall",
+      "minute": 53,
+      "second": 16,
+      "currentSite": "Night Web's Hollow",
       "ringOfLaw": "Eviscerator",
       "forlornCloister": "Fallen Champion",
       "markets": [
@@ -2027,8 +2066,8 @@
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
-        "Shadow Grave": 1,
-        "Deathknell": 1,
+        "Shadow Grave": 2,
+        "Deathknell": 4,
         "Cold Hearth Manor": 0,
         "Brill": 1,
         "Capital City Gates": 0,
@@ -2803,7 +2842,7 @@
         "Stillwater Pond": 1,
         "Western Crusader's Outpost": 1,
         "Garren's Haunt": 1,
-        "Night Web's Hollow": 1,
+        "Night Web's Hollow": 2,
         "Nightmare Vale": 1,
         "Solliden Farmstead": 1,
         "The North Coast": 1,
@@ -3034,7 +3073,7 @@
         "Whitereach Post": 1,
         "Sun Rock Retreat": 1,
         "Ghost Walker Post": 1,
-        "Hammerfall": 3,
+        "Hammerfall": 4,
         "Tarren Mill": 1,
         "The Sepulcher": 1,
         "Cenarion Hold": 1,
@@ -3099,9 +3138,9 @@
       "vendorStock": {},
       "banks": {},
       "startDate": "2025-04-07T03:18:46.5748667+02:00",
-      "lastLoaded": "2025-04-11T13:16:38.0656338+02:00",
-      "lastPlayed": "2025-04-11T13:16:41.9504041+02:00",
-      "timePlayed": "00:55:03.4708554"
+      "lastLoaded": "2025-04-11T18:08:54.5105022+02:00",
+      "lastPlayed": "2025-04-11T18:22:53.1196879+02:00",
+      "timePlayed": "01:09:02.0800411"
     },
     {
       "player": {

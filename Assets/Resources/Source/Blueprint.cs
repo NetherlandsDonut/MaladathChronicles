@@ -232,7 +232,7 @@ public class Blueprint
                 AddButtonRegion(() =>
                 {
                     AddLine(board.participants[board.spotlightEnemy[index]].who.name);
-                    SpawnFloatingText(new Vector3(19, -9), board.participants[board.spotlightEnemy[index]].who.level - 10 > board.participants[board.spotlightFriendly[0]].who.level ? "??" : "" + board.participants[board.spotlightEnemy[index]].who.level, ColorEntityLevel(board.participants[board.spotlightEnemy[index]].who.level), "DimGray", "Right");
+                    SpawnFloatingText(new Vector3(34, -9), board.participants[board.spotlightEnemy[index]].who.level - 10 > currentSave.player.level ? "??" : "" + board.participants[board.spotlightEnemy[index]].who.level, ColorEntityLevel(board.participants[board.spotlightEnemy[index]].who.level), "DimGray", "Right");
                     var race = races.Find(x => x.name == board.participants[board.spotlightEnemy[index]].who.race);
                     AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? board.participants[index].who.gender : ""), (h) =>
                     {
@@ -242,7 +242,7 @@ public class Blueprint
                     if (board.participants[board.spotlightEnemy[index]].who.dead) SetBigButtonToGrayscale();
                     if (board.participants[board.spotlightEnemy[index]] == board.participants[board.whosTurn])
                     {
-                        var arrow = AddSmallButtonOverlay(CDesktop.LBWindow().LBRegionGroup().LBRegion().gameObject, "PlayerLocationFromBelow", 0, 1);
+                        var arrow = AddSmallButtonOverlay(CDesktop.LBWindow().LBRegionGroup().LBRegion().gameObject, "EnemyLocationFromBelow", 0, 1);
                         arrow.transform.localPosition = new Vector3(0.5f, -20.5f, 0);
                         arrow.transform.localEulerAngles = new Vector3(0, 0, -90);
                     }
@@ -329,7 +329,7 @@ public class Blueprint
                     if (board.participants[board.spotlightFriendly[index]].who.dead) SetBigButtonToGrayscale();
                     if (board.participants[board.spotlightFriendly[index]] == board.participants[board.whosTurn])
                     {
-                        var arrow = AddSmallButtonOverlay(CDesktop.LBWindow().LBRegionGroup().LBRegion().gameObject, "PlayerLocationFromBelow", 0, 1);
+                        var arrow = AddSmallButtonOverlay(CDesktop.LBWindow().LBRegionGroup().LBRegion().gameObject, board.participants[board.whosTurn].human ? "PlayerLocationFromBelow" : "FriendLocationFromBelow", 0, 1);
                         arrow.transform.localPosition = new Vector3(191.5f, -20.5f, 0);
                         arrow.transform.localEulerAngles = new Vector3(0, 0, -90);
                         arrow.GetComponent<SpriteRenderer>().flipY = true;
@@ -3387,6 +3387,7 @@ public class Blueprint
                 AddLine("Level: ", "DarkGray");
                 AddText("" + encounter.levelMin, ColorEntityLevel(encounter.levelMin));
                 var race = races.Find(x => x.name == encounter.who);
+                SpawnFloatingText(new Vector3(34, -9), encounter.levelMin - 10 > currentSave.player.level ? "??" : "" + encounter.levelMin, ColorEntityLevel(encounter.levelMin), "DimGray", "Right");
                 AddBigButton(race == null ? "OtherUnknown" : race.portrait,
                     (h) =>
                     {
