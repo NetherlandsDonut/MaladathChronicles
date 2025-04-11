@@ -232,7 +232,7 @@ public class Blueprint
                 AddButtonRegion(() =>
                 {
                     AddLine(board.participants[board.spotlightEnemy[index]].who.name);
-                    SpawnFloatingText(new Vector3(34, -9), board.participants[board.spotlightEnemy[index]].who.level - 10 > board.participants[board.spotlightFriendly[0]].who.level ? "??" : "" + board.participants[board.spotlightEnemy[index]].who.level, ColorEntityLevel(board.participants[board.spotlightEnemy[index]].who.level), "DimGray", "Right");
+                    SpawnFloatingText(new Vector3(19, -9), board.participants[board.spotlightEnemy[index]].who.level - 10 > board.participants[board.spotlightFriendly[0]].who.level ? "??" : "" + board.participants[board.spotlightEnemy[index]].who.level, ColorEntityLevel(board.participants[board.spotlightEnemy[index]].who.level), "DimGray", "Right");
                     var race = races.Find(x => x.name == board.participants[board.spotlightEnemy[index]].who.race);
                     AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? board.participants[index].who.gender : ""), (h) =>
                     {
@@ -240,6 +240,12 @@ public class Blueprint
                     });
                     BigButtonFlipX();
                     if (board.participants[board.spotlightEnemy[index]].who.dead) SetBigButtonToGrayscale();
+                    if (board.participants[board.spotlightEnemy[index]] == board.participants[board.whosTurn])
+                    {
+                        var arrow = AddSmallButtonOverlay(CDesktop.LBWindow().LBRegionGroup().LBRegion().gameObject, "PlayerLocationFromBelow", 0, 1);
+                        arrow.transform.localPosition = new Vector3(0.5f, -20.5f, 0);
+                        arrow.transform.localEulerAngles = new Vector3(0, 0, -90);
+                    }
                     AddHealthBar(40, -19, board.spotlightEnemy[index], board.participants[board.spotlightEnemy[index]].who);
                 },
                 (h) =>
@@ -321,6 +327,13 @@ public class Blueprint
                         });
                     }
                     if (board.participants[board.spotlightFriendly[index]].who.dead) SetBigButtonToGrayscale();
+                    if (board.participants[board.spotlightFriendly[index]] == board.participants[board.whosTurn])
+                    {
+                        var arrow = AddSmallButtonOverlay(CDesktop.LBWindow().LBRegionGroup().LBRegion().gameObject, "PlayerLocationFromBelow", 0, 1);
+                        arrow.transform.localPosition = new Vector3(191.5f, -20.5f, 0);
+                        arrow.transform.localEulerAngles = new Vector3(0, 0, -90);
+                        arrow.GetComponent<SpriteRenderer>().flipY = true;
+                    }
                     AddHealthBar(2, -19, board.spotlightFriendly[index], board.participants[board.spotlightFriendly[index]].who);
                 },
                 (h) =>
@@ -481,12 +494,29 @@ public class Blueprint
                         AddLine(foo.Value + "", rawStats[foo.Key] == foo.Value ? "LightGray" : "Uncommon", "Right");
                     }
             });
-            AddHeaderRegion(() =>
+            AddButtonRegion(() =>
             {
-                AddLine("Armor:", "Gray", "Left");
-                AddLine(currentSave.player.Armor() + "", "Uncommon", "Right");
                 AddLine("Max health:", "Gray", "Left");
                 AddLine(currentSave.player.MaxHealth() + "", "Uncommon", "Right");
+                AddLine("Armor:", "Gray", "Left");
+                AddLine(currentSave.player.Armor() + "", "Uncommon", "Right");
+                AddLine("Melee attack power:", "Gray", "Left");
+                AddLine(currentSave.player.MeleeAttackPower() + "", "Uncommon", "Right");
+                AddLine("Ranged attack power:", "Gray", "Left");
+                AddLine(currentSave.player.RangedAttackPower() + "", "Uncommon", "Right");
+                AddLine("Spell power:", "Gray", "Left");
+                AddLine(currentSave.player.SpellPower() + "", "Uncommon", "Right");
+                AddLine("Critical strike:", "Gray", "Left");
+                AddLine(currentSave.player.CriticalStrike().ToString("0.00") + "%", "Uncommon", "Right");
+                AddLine("Spell critical:", "Gray", "Left");
+                AddLine(currentSave.player.SpellCritical().ToString("0.00") + "%", "Uncommon", "Right");
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Max health:", "Gray", "Left");
+                AddLine(currentSave.player.MaxHealth() + "", "Uncommon", "Right");
+                AddLine("Armor:", "Gray", "Left");
+                AddLine(currentSave.player.Armor() + "", "Uncommon", "Right");
                 AddLine("Melee attack power:", "Gray", "Left");
                 AddLine(currentSave.player.MeleeAttackPower() + "", "Uncommon", "Right");
                 AddLine("Ranged attack power:", "Gray", "Left");
@@ -3240,7 +3270,7 @@ public class Blueprint
                         Respawn("HostileAreaQuestTracker");
                     });
             });
-            AddButtonRegion(() => { AddLine("Explore", "Black"); },
+            AddButtonRegion(() => AddLine("Explore", "Black"),
             (h) =>
             {
                 NewBoard(area.RollEncounters(area.instancePart ? 2 : 1), area);

@@ -19,7 +19,7 @@ public class FloatingText : MonoBehaviour
         else if (align == "Right")
             newObject.transform.localPosition = new Vector2(-fonts[floatingTextFont].Length(text), 7);
         var temp = newObject.GetComponent<LineText>();
-        temp.Initialise(Root.CDesktop.LBWindow(), text, color == "" ? "Gray" : color, fall ? "FallingText" : transform.parent.GetComponent<Region>().regionGroup.window.layer);
+        temp.Initialise(Root.CDesktop.LBWindow(), text, color == "" ? "Gray" : color, "FallingText");
         int length = 0;
         temp.Erase();
         foreach (var character in temp.text)
@@ -89,7 +89,7 @@ public class FloatingText : MonoBehaviour
         var sprite = Sprite.Create(texture, new Rect(Vector2.zero, new Vector2(texture.width, texture.height)), new Vector2(0, 1), 1);
         if (fall) textBorder.AddComponent<Shatter>().Initiate(1.7f, 1f, textBorder.GetComponent<SpriteRenderer>());
         textBorder.GetComponent<SpriteRenderer>().sprite = sprite;
-        textBorder.GetComponent<SpriteRenderer>().sortingLayerName = fall ? "FallingText" : transform.parent.GetComponent<Region>().regionGroup.window.layer;
+        textBorder.GetComponent<SpriteRenderer>().sortingLayerName = "FallingText";
     }
 
     public static string floatingTextFont = "Tahoma Bold";

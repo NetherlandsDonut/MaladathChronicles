@@ -1921,7 +1921,10 @@
         "type": "Treasure",
         "point": 3
       }
-    ]
+    ],
+    "chestBonus": {
+      "Elven Gems": 1
+    }
   },
   {
     "x": 5502,

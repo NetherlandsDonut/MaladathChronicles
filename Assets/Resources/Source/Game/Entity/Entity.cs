@@ -580,7 +580,7 @@ public class Entity
     //Tells max amount of given resource entity can hold at once
     public int MaxResource(string resource)
     {
-        return Stats()[resource + " Mastery"] + 5;
+        return Stats()[resource + " Mastery"] + 3;
     }
 
     //Gives specific resource in given amount to the entity

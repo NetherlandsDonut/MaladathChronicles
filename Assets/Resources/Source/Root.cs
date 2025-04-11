@@ -797,7 +797,7 @@ public static class Root
         button.GetComponent<SpriteRenderer>().flipY ^= true;
     }
 
-    public static void AddSmallButtonOverlay(GameObject onWhat, string overlay, float time = 0, int sortingOrder = 0)
+    public static GameObject AddSmallButtonOverlay(GameObject onWhat, string overlay, float time = 0, int sortingOrder = 0)
     {
         var newObject = new GameObject("SmallButtonOverlay", typeof(SpriteRenderer));
         newObject.transform.parent = onWhat.transform;
@@ -817,6 +817,7 @@ public static class Root
             newObject.AddComponent<Shatter>().render = newObject.GetComponent<SpriteRenderer>();
             newObject.GetComponent<Shatter>().Initiate(time);
         }
+        return newObject;
     }
 
     public static void AddSmallButton(string type, Action<Highlightable> pressEvent = null, Action<Highlightable> rightPressEvent = null, Func<Highlightable, Action> tooltip = null, Action<Highlightable> middlePressEvent = null)

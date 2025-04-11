@@ -286,6 +286,10 @@ public class Board
                 field[i, field.GetLength(1) - 1] = -1;
             bufferBoard.Generate("IllegalFirstRow");
         }
+
+        //Respawn information about both teams to update visuals
+        Respawn("EnemyBattleInfo");
+        Respawn("PlayerBattleInfo");
     }
 
     //RESETS THE BOARD TO BE EMPTY AND REFILLED AGAIN
