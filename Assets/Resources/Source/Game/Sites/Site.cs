@@ -45,7 +45,7 @@ public class Site
 
     //If set, when flight travelling to this site,
     //on map you will be put on this specified site
-    public string convertFlightPathTo;
+    public string convertDestinationTo;
 
     //Areas during nighttime usually change visuals.
     //Sites marked with this boolean as true keep it always the same.
@@ -152,7 +152,8 @@ public class Site
         }
         else if (siteType == "Complex") complex = (SiteComplex)this;
         else if (siteType == "SpiritHealer") spiritHealer = (SiteSpiritHealer)this;
-        mapGrid.queuedSiteOpen = siteType;
+        mapGrid.queuedSiteOpen = name;
+        mapGrid.queuedSiteTypeOpen = siteType;
         CDesktop.cameraDestination = new Vector2(x, y);
         CDesktop.LockScreen();
     }
@@ -229,8 +230,7 @@ public class Site
             paths.Add(new SitePath()
             {
                 sites = new() { sitePathBuilder.name, name },
-                points = pathBuilder.Select(x => ((int)x.x, (int)x.y)).ToList(),
-                spacing = 10
+                points = pathBuilder.Select(x => ((int)x.x, (int)x.y)).ToList()
             });
             paths.Last().Initialise();
             if (pathsConnectedToSite.ContainsKey(sitePathBuilder.name))
@@ -260,7 +260,7 @@ public class Site
     public void ExecutePath(string siteType = null)
     {
         if (currentSave.currentSite != name && pathsDrawn.Count > 0) QueueSitePathTravel();
-        else QueueSiteOpen(siteType);
+        else if (currentSave.currentSite == name) QueueSiteOpen(siteType);
     }
 
     //Site selected as the beginning of the path building

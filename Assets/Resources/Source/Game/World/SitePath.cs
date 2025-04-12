@@ -1,10 +1,8 @@
-using UnityEngine;
-
 using System.Linq;
 using System.Collections.Generic;
 
-using static Root;
-using static Sound;
+using UnityEngine;
+
 using static Defines;
 using static SaveGame;
 
@@ -13,8 +11,7 @@ public class SitePath
     //Initialisation method to fill automatic values
     public void Initialise()
     {
-        means ??= "Land";
-        var list = means == "Land" ? pathsConnectedToSite : transportationConnectedToSite;
+        var list = pathsConnectedToSite;
         foreach (var site in sites)
             if (!list.ContainsKey(site))
                 list.Add(site, new() { this });
@@ -22,30 +19,13 @@ public class SitePath
                 list[site].Add(this);
     }
 
-    public void PlayPathEndSound()
-    {
-        if (means == "Tram") PlaySound("TramStop", 0.6f);
-        else if (means == "Zeppelin") PlaySound("ZeppelinStop", 0.45f);
-        else if (means == "Ship") PlaySound("ShipStop", 0.45f);
-        else if (means == "Darnassus") PlaySound("TeleportStop", 0.5f);
-    }
-
     //Sites connected with a path
     //This pathing will not work unless there are two
     //and only two sites in this list!
     public List<string> sites;
 
-    //Type of traveling that the entity takes while on this path
-    public string means;
-
     //Price of taking this path
     public int price;
-
-    //Time required to take this path
-    public int fixedDuration;
-
-    //Space between pips of the path
-    public int spacing;
 
     //List of all points in between the two sites
     public List<(int, int)> points;
@@ -54,7 +34,7 @@ public class SitePath
     public static Dictionary<string, List<SitePath>> pathsConnectedToSite = new();
 
     //Collection of all transportation paths connected to each site
-    public static Dictionary<string, List<SitePath>> transportationConnectedToSite = new();
+    public static Dictionary<string, List<TransportRoute>> transportationConnectedToSite = new();
 
     //List of all active paths in the world
     public static List<(SitePath, GameObject)> pathsDrawn = new();
@@ -84,7 +64,7 @@ public class SitePath
             var start = new Vector2(a.Item1, a.Item2);
             var end = new Vector2(b.Item1, b.Item2);
             while ((int)Vector2.Distance(start, end) >= stepsMade - beginSteps)
-                if (stepsMade++ % (spacing < 10 ? 10 : spacing) == 0)
+                if (stepsMade++ % defines.spaceBetweenPathPips == 0)
                     if (hidden)
                     {
                         var dot = new GameObject("PathDot");
@@ -119,21 +99,6 @@ public class SitePath
                     }
         }
     }
-
-    //Transport mouseover information
-    public void PrintTooltip()
-    {
-        SetAnchor(Anchor.Center);
-        AddHeaderGroup();
-        SetRegionGroupWidth(188);
-        AddHeaderRegion(() => { AddLine(means); });
-        AddPaddingRegion(() =>
-        {
-            if (sites.Contains(currentSave.currentSite)) AddLine("To " + sites.Find(x => x != currentSave.currentSite));
-            else AddLine("Between " + sites[0] + " and " + sites[1]);
-        });
-        PrintPriceRegion(price);
-    }
     
     //Path currently being built 
     public static (SitePath, GameObject) pathTest;
@@ -144,6 +109,7 @@ public class SitePath
     //Finds the path with the least points in between the two given sites
     public static List<SitePath> FindPath(Site from, Site to, bool ignoreProgress = false)
     {
+        if (from == null || to == null) return new();
         List<SitePath> bestPath = null;
         var possiblePaths = new List<List<SitePath>>();
         if (!pathsConnectedToSite.ContainsKey(from.name)) return new();

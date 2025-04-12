@@ -275,7 +275,7 @@ public class Desktop : MonoBehaviour
                     }
                     if (Vector2.Distance(temp, cameraDestination) > 5)
                     {
-                        var newPosition = Vector3.Lerp(temp, cameraDestination, Time.deltaTime * (mapGrid.queuedPath[0].Item1.means == "Land" ? currentSave.player.Speed() : 9999));
+                        var newPosition = Vector3.Lerp(temp, cameraDestination, Time.deltaTime * currentSave.player.Speed());
                         cursor.transform.position += newPosition - temp;
                         screen.transform.localPosition = newPosition;
                     }
@@ -283,19 +283,16 @@ public class Desktop : MonoBehaviour
                     {
                         if (mapGrid.queuedPath[0].Item2.Count > 0)
                         {
-                            if (mapGrid.queuedPath[0].Item2.Count % 2 == 0 && mapGrid.queuedPath[0].Item1.means == "Land")
+                            if (mapGrid.queuedPath[0].Item2.Count % 2 == 0)
                             {
                                 var what = mapGrid.groundData[Math.Abs((int)mapGrid.queuedPath[0].Item2[0].position.x / 19), Math.Abs((int)mapGrid.queuedPath[0].Item2[0].position.y / 19)];
                                 PlaySound("Step" + what + random.Next(1, 6), what == "Sand" ? 0.6f : 0.7f);
                             }
-                            currentSave.AddTime(mapGrid.queuedPath[0].Item1.fixedDuration != 0 ? mapGrid.queuedPath[0].Item1.fixedDuration : currentSave.player.TravelPassTime());
+                            currentSave.AddTime(currentSave.player.TravelPassTime());
                             Destroy(mapGrid.queuedPath[0].Item2.First(x => x.name == "PathDot").gameObject);
                             mapGrid.queuedPath[0].Item2.RemoveAt(0);
                             if (mapGrid.queuedPath[0].Item2.Count == 0)
-                            {
-                                mapGrid.queuedPath[0].Item1.PlayPathEndSound();
                                 mapGrid.queuedPath.RemoveAt(0);
-                            }
                         }
                         if (mapGrid.queuedPath.Count == 0)
                         {
@@ -309,11 +306,11 @@ public class Desktop : MonoBehaviour
                                 currentSave.player.ReceiveExperience(defines.expForExploration);
                             }
                             Respawn("Site: " + mapGrid.queuedSiteOpen);
-                            foreach (var connection in paths.FindAll(x => x.means == "Land" && x.sites.Contains(mapGrid.queuedSiteOpen)))
+                            foreach (var connection in paths.FindAll(x => x.sites.Contains(mapGrid.queuedSiteOpen)))
                             {
                                 var site = connection.sites.Find(x => x != mapGrid.queuedSiteOpen);
                                 if (!WindowUp("Site: " + site))
-                                    if (!Respawn("Site: " + connection.sites.Find(x => x != mapGrid.queuedSiteOpen)))
+                                    if (!Respawn("Site: " + site))
                                         LBWindow().GetComponentsInChildren<Renderer>().ToList().ForEach(x => x.gameObject.AddComponent<FadeIn>());
                             }
                             mapGrid.queuedSiteOpen = "";
@@ -325,7 +322,7 @@ public class Desktop : MonoBehaviour
                             var first = mapGrid.queuedPath[0].Item2.First(x => x.name == "PathDot");
                             cameraDestination = first.position;
                             if (first.TryGetComponent<SpriteRenderer>(out var r))
-                                r.color = mapGrid.queuedPath[0].Item1.means == "Tram" ? Color.yellow : (mapGrid.queuedPath[0].Item1.means == "Ship" ? Color.blue : Color.green);
+                                r.color = Color.green;
                         }
                     }
                 }
@@ -338,7 +335,7 @@ public class Desktop : MonoBehaviour
                     if (screenLocked && Vector3.Distance(screen.transform.localPosition, cameraDestination) <= 5)
                     {
                         currentSave.siteVisits ??= new();
-                        if (mapGrid.queuedSiteOpen != "SpiritHealer")
+                        if (mapGrid.queuedSiteTypeOpen != "SpiritHealer")
                         {
                             if (currentSave.siteVisits.ContainsKey(currentSave.currentSite))
                             {
@@ -355,48 +352,48 @@ public class Desktop : MonoBehaviour
                                 PlaySound("DesktopZoneDiscovered", 1f);
                                 currentSave.player.ReceiveExperience(defines.expForExploration);
                             }
-                            foreach (var connection in paths.FindAll(x => x.means == "Land" && x.sites.Contains(currentSave.currentSite)))
+                            foreach (var connection in paths.FindAll(x => x.sites.Contains(currentSave.currentSite)))
                             {
                                 var site = connection.sites.Find(x => x != currentSave.currentSite);
                                 if (!WindowUp("Site: " + site))
-                                    if (!Respawn("Site: " + connection.sites.Find(x => x != currentSave.currentSite)))
+                                    if (!Respawn("Site: " + site))
                                         LBWindow().GetComponentsInChildren<Renderer>().ToList().ForEach(x => x.gameObject.AddComponent<FadeIn>());
                             }
                         }
                         Respawn("Site: " + currentSave.currentSite);
                         UnlockScreen();
-                        if (mapGrid.queuedSiteOpen == "Instance")
+                        if (mapGrid.queuedSiteTypeOpen == "Instance")
                         {
                             PlaySound("DesktopInstanceOpen");
                             SpawnDesktopBlueprint("Instance");
                         }
-                        else if (mapGrid.queuedSiteOpen == "Complex")
+                        else if (mapGrid.queuedSiteTypeOpen == "Complex")
                         {
                             PlaySound("DesktopInstanceOpen");
                             SpawnDesktopBlueprint("Complex");
                         }
-                        else if (mapGrid.queuedSiteOpen == "HostileArea")
+                        else if (mapGrid.queuedSiteTypeOpen == "HostileArea")
                         {
                             PlaySound("DesktopInstanceOpen");
                             SpawnDesktopBlueprint("HostileArea");
                         }
-                        else if (mapGrid.queuedSiteOpen == "Town")
+                        else if (mapGrid.queuedSiteTypeOpen == "Town")
                         {
                             PlaySound("DesktopInstanceOpen");
                             SpawnDesktopBlueprint("Town");
                         }
-                        else if (mapGrid.queuedSiteOpen == "Capital")
+                        else if (mapGrid.queuedSiteTypeOpen == "Capital")
                         {
                             PlaySound("DesktopInstanceOpen");
                             SpawnDesktopBlueprint("Capital");
                         }
-                        if (mapGrid.queuedSiteOpen == "SpiritHealer")
+                        if (mapGrid.queuedSiteTypeOpen == "SpiritHealer")
                         {
                             StopAmbience();
                             PlaySound("DesktopRevive");
                             currentSave.RevivePlayer();
                         }
-                        mapGrid.queuedSiteOpen = "";
+                        mapGrid.queuedSiteTypeOpen = "";
                     }
                 }
             }

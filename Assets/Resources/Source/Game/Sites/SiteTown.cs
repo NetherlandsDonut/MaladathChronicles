@@ -29,11 +29,11 @@ public class SiteTown : Site
                     side = "Neutral"
                 });
         flightPaths = new();
-        foreach (var foo in FlightPathGroup.flightPathGroups.FindAll(x => x.sitesConnected.Contains(name)))
+        foreach (var foo in FlightPathGroup.flightPathGroups.FindAll(x => x.sites.Contains(name)))
         {
             if (!flightPaths.ContainsKey(foo.side))
                 flightPaths.Add(foo.side, new());
-            flightPaths[foo.side].AddRange(foo.sitesConnected.Select(x => towns.Find(y => y.name == x)));
+            flightPaths[foo.side].AddRange(foo.sites.Select(x => towns.Find(y => y.name == x)));
         }
         foreach (var foo in flightPaths)
             foo.Value?.Remove(this);

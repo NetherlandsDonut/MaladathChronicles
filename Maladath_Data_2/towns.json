@@ -1983,7 +1983,7 @@
     "zone": "Dun Morogh",
     "faction": "Ironforge",
     "ambience": "MusicIronforge",
-    "convertFlightPathTo": "Ironforge",
+    "convertDestinationTo": "Ironforge",
     "noNightVariant": true
   },
   {
@@ -2168,6 +2168,7 @@
     "zone": "Dun Morogh",
     "faction": "Ironforge",
     "ambience": "MusicIronforge",
+    "convertDestinationTo": "Ironforge",
     "noNightVariant": true
   },
   {
@@ -5823,7 +5824,8 @@
     "name": "Dwarven District",
     "zone": "Elwynn Forest",
     "faction": "Stormwind",
-    "ambience": "MusicStormwind"
+    "ambience": "MusicStormwind",
+    "convertDestinationTo": "Ironforge"
   },
   {
     "people": [
@@ -5911,7 +5913,7 @@
     "zone": "Mulgore",
     "faction": "Thunder Bluff",
     "ambience": "MusicThunderBluff",
-    "convertFlightPathTo": "Thunder Bluff Southern Lift"
+    "convertDestinationTo": "Thunder Bluff Southern Lift"
   },
   {
     "people": [
@@ -9857,7 +9859,7 @@
     "zone": "Tirisfal Glades",
     "faction": "Undercity",
     "ambience": "MusicUndercity",
-    "convertFlightPathTo": "Undercity",
+    "convertDestinationTo": "Undercity",
     "noNightVariant": true
   },
   {
@@ -10598,7 +10600,7 @@
     "zone": "Elwynn Forest",
     "faction": "Stormwind",
     "ambience": "MusicStormwind",
-    "convertFlightPathTo": "Stormwind City"
+    "convertDestinationTo": "Stormwind City"
   },
   {
     "capital": "Stormwind City",
@@ -21071,7 +21073,7 @@
     "zone": "Durotar",
     "faction": "Orgrimmar",
     "ambience": "MusicOrgrimmar",
-    "convertFlightPathTo": "Orgrimmar Main Gates"
+    "convertDestinationTo": "Orgrimmar Main Gates"
   },
   {
     "capital": "Orgrimmar",

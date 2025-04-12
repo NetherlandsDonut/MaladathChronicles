@@ -1,0 +1,63 @@
+[
+  {
+    "means": "Tram",
+    "time": 60,
+    "price": 500,
+    "sites": [
+      "Tinker Town",
+      "Dwarven District"
+    ]
+  },
+  {
+    "means": "Zeppelin",
+    "time": 2419,
+    "price": 500,
+    "sites": [
+      "The Valley of Strength",
+      "Grom'gol Base Camp"
+    ]
+  },
+  {
+    "means": "Zeppelin",
+    "time": 2265,
+    "price": 500,
+    "sites": [
+      "The Valley of Strength",
+      "Brill"
+    ]
+  },
+  {
+    "means": "Ship",
+    "time": 3025,
+    "price": 500,
+    "sites": [
+      "Booty Bay",
+      "Ratchet"
+    ]
+  },
+  {
+    "means": "Ship",
+    "time": 162,
+    "price": 5,
+    "sites": [
+      "Rut'theran Village",
+      "Auberdine"
+    ]
+  },
+  {
+    "means": "Ship",
+    "time": 3721,
+    "price": 500,
+    "sites": [
+      "Menethil Harbor",
+      "Auberdine"
+    ]
+  },
+  {
+    "means": "DarnassusTeleport",
+    "sites": [
+      "The Temple Gardens",
+      "Rut'theran Village"
+    ]
+  }
+]

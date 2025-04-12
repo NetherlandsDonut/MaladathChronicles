@@ -58,6 +58,8 @@ public class Defines
             keyTimerNewKey = 0.4f;
         if (keyTimerSameKey <= 0)
             keyTimerSameKey = 0.05f;
+        if (spaceBetweenPathPips <= 0)
+            spaceBetweenPathPips = 10;
     }
 
     public int maxPathLength;
@@ -118,6 +120,9 @@ public class Defines
 
     //Amount of elements on the board next to each other required for the elements to cascade
     public int cascadeMinimum;
+
+    //Amount of elements on the board next to each other required for the elements to cascade
+    public int spaceBetweenPathPips;
 
     //Text displayed when an input field is active, this 
     public string markerCharacter;

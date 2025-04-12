@@ -1255,6 +1255,9 @@ public class Entity
 
     public void Die()
     {
+        //If this is the player, shift the map into the dead zone
+        if (this == SaveGame.currentSave.player) MapGrid.mapGrid.SwitchMapTexture(true);
+
         //Mark this entity as dead
         dead = true;
 

@@ -5,11 +5,8 @@ public class FlightPathGroup
     //Which side is offered those flight paths, Alliance or the Horde
     public string side;
 
-    //I don't know, some money thing
-    public double priceMultiplier;
-
     //All sites that are interconnected
-    public List<string> sitesConnected;
+    public List<string> sites;
 
     //Currently opened flight path group
     public static FlightPathGroup flightPathGroup;

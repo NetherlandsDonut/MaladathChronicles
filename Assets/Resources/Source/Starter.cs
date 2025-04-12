@@ -20,6 +20,7 @@ using static Auctionable;
 using static FishingSpot;
 using static GameSettings;
 using static CursorRemote;
+using static TransportRoute;
 using static FallingElement;
 using static SiteSpiritHealer;
 using static PermanentEnchant;
@@ -206,6 +207,8 @@ public class Starter : MonoBehaviour
         quests ??= new();
         Deserialize(ref paths, "paths", false, prefix);
         paths ??= new();
+        Deserialize(ref transportRoutes, "transportation", false, prefix);
+        transportRoutes ??= new();
         Deserialize(ref auctionables, "auctionables", false, prefix);
         auctionables ??= new();
         Deserialize(ref fishingSpots, "fishingspots", false, prefix);
@@ -335,6 +338,8 @@ public class Starter : MonoBehaviour
             spiritHealers[i].Initialise();
         for (int i = 0; i < paths.Count; i++)
             paths[i].Initialise();
+        for (int i = 0; i < transportRoutes.Count; i++)
+            transportRoutes[i].Initialise();
         var elements = new List<string> { "Fire", "Water", "Earth", "Air", "Frost", "Lightning", "Arcane", "Decay", "Order", "Shadow" };
         foreach (var element in elements)
         {

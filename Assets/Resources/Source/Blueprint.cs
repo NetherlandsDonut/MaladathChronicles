@@ -25,6 +25,7 @@ using static Defines;
 using static Faction;
 using static Ability;
 using static Enchant;
+using static MapGrid;
 using static SitePath;
 using static SaveGame;
 using static Coloring;
@@ -3450,22 +3451,35 @@ public class Blueprint
                 foreach (var transport in transportOptions)
                 {
                     if (transport.sites.Count < 2) continue;
-                    var destination = towns.Find(x => x.name == transport.sites[1]);
+                    var destination = towns.Find(x => x.name != town.name && transport.sites.Contains(x.name));
                     if (destination == null) continue;
-                    if (destination.name == town.name) continue;
                     AddButtonRegion(() =>
                     {
-                        AddLine(destination.convertFlightPathTo ?? destination.name, "Black");
+                        AddLine(destination.convertDestinationTo ?? destination.name, "Black");
                         AddSmallButton("Transport" + transport.means);
                     },
                     (h) =>
                     {
+                        //Set the destination
+                        var destination = towns.Find(x => x.name != town.name && transport.sites.Contains(x.name));
+
+                        //Pay the toll
                         if (transport.price > 0)
                         {
-                            if (transport.price > currentSave.player.inventory.money) return;
+                            if (transport.price > currentSave.player.inventory.money)
+                            {
+                                SpawnFallingText(new Vector2(0, 34), "Not enough money", "Red");
+                                return;
+                            }
                             PlaySound("DesktopTransportPay");
                             currentSave.player.inventory.money -= transport.price;
                         }
+
+                        //Set the new site as current
+                        currentSave.currentSite = destination.convertDestinationTo != null ? destination.convertDestinationTo : destination.name;
+
+                        currentSave.AddTime(transport.time);
+                        transport.PlayPathEndSound();
 
                         //Close town screen as we're beginning to travel on map
                         CloseDesktop("Town");
@@ -3476,11 +3490,30 @@ public class Blueprint
                         //Switch desktop to map
                         SwitchDesktop("Map");
 
-                        //Lead path to the destination
-                        LeadPath(transport, true);
+                        //Explore the site if it wasnt explored
+                        if (!currentSave.Visited(currentSave.currentSite))
+                        {
+                            currentSave.siteVisits.Add(currentSave.currentSite, 0);
+                            PlaySound("DesktopZoneDiscovered", 1f);
+                            currentSave.player.ReceiveExperience(defines.expForExploration);
+                            foreach (var connection in paths.FindAll(x => x.sites.Contains(currentSave.currentSite)))
+                            {
+                                var site = connection.sites.Find(x => x != currentSave.currentSite);
+                                if (!WindowUp("Site: " + site))
+                                        if (!Respawn("Site: " + site))
+                                        CDesktop.LBWindow().GetComponentsInChildren<Renderer>().ToList().ForEach(x => x.gameObject.AddComponent<FadeIn>());
+                            }
+                        }
 
-                        //Queue moving player to the destination
-                        destination.ExecutePath("Town");
+                        if (town.capital != null) Respawn("Site: " + town.capital);
+                        else Respawn("Site: " + town.name);
+                        Respawn("Site: " + currentSave.currentSite);
+                        if (destination.x == 0 || destination.y == 0)
+                            town = towns.Find(x => x.name == destination.convertDestinationTo);
+                        else town = destination;
+
+                        //Move camera to the newly visited town
+                        CDesktop.cameraDestination = destination.convertDestinationTo != null ? new Vector2(towns.Find(x => x.name == destination.convertDestinationTo).x, towns.Find(x => x.name == destination.convertDestinationTo).y) : new Vector2(town.x, town.y);
                     },
                     null,
                     (h) => () => { transport.PrintTooltip(); });
@@ -4435,7 +4468,7 @@ public class Blueprint
             var rowAmount = 12;
             var thisWindow = CDesktop.LBWindow();
             var side = currentSave.player.Side();
-            var list = town.flightPaths[side].FindAll(x => x != town).OrderBy(x => !currentSave.siteVisits.ContainsKey(x.convertFlightPathTo ?? x.name)).ThenBy(x => x.zone).ThenBy(x => x.name).ToList();
+            var list = town.flightPaths[side].FindAll(x => x != town).OrderBy(x => !currentSave.siteVisits.ContainsKey(x.convertDestinationTo ?? x.name)).ThenBy(x => x.zone).ThenBy(x => x.name).ToList();
             thisWindow.SetPagination(() => list.Count, rowAmount);
             SetAnchor(TopLeft, 19, -38);
             AddRegionGroup();
@@ -4465,7 +4498,7 @@ public class Blueprint
                     AddButtonRegion(() =>
                     {
                         var destination = list[index + thisWindow.pagination()];
-                        if (currentSave.siteVisits.ContainsKey(destination.convertFlightPathTo ?? destination.name))
+                        if (currentSave.siteVisits.ContainsKey(destination.convertDestinationTo ?? destination.name))
                         {
                             AddLine(destination.capital ?? destination.name);
                             AddSmallButton("Zone" + destination.zone.Clean());
@@ -4480,14 +4513,19 @@ public class Blueprint
                     (h) =>
                     {
                         var destination = list[index + thisWindow.pagination()];
-                        currentSave.currentSite = destination.convertFlightPathTo != null ? destination.convertFlightPathTo : destination.name;
+                        currentSave.currentSite = destination.convertDestinationTo != null ? destination.convertDestinationTo : destination.name;
 
-                        //if (transport.price > 0)
-                        //{
-                        //    if (transport.price > currentSave.player.inventory.money) return;
-                        //    PlaySound("DesktopTransportPay");
-                        //    currentSave.player.inventory.money -= transport.price;
-                        //}
+                        var siteOfDestination = towns.Find(x => x.name == (destination.capital ?? destination.name));
+                        var fromWhere = towns.Find(x => x.name == currentSave.currentSite);
+                        var distance = Math.Abs(siteOfDestination.x - fromWhere.x) + Math.Abs(siteOfDestination.y - fromWhere.y);
+                        var price = distance / 10 * 10;
+
+                        if (price > 0)
+                        {
+                            if (price > currentSave.player.inventory.money) return;
+                            PlaySound("DesktopTransportPay");
+                            currentSave.player.inventory.money -= price;
+                        }
 
                         //Close town screen as we're beginning to travel on map
                         CloseDesktop("Town");
@@ -4501,20 +4539,25 @@ public class Blueprint
                         Respawn("Site: " + town.name);
                         Respawn("Site: " + currentSave.currentSite);
                         if (destination.x == 0 || destination.y == 0)
-                            town = towns.Find(x => x.name == destination.convertFlightPathTo);
+                            town = towns.Find(x => x.name == destination.convertDestinationTo);
                         else town = destination;
 
                         //Move camera to the newly visited town
-                        CDesktop.cameraDestination = destination.convertFlightPathTo != null ? new Vector2(towns.Find(x => x.name == destination.convertFlightPathTo).x, towns.Find(x => x.name == destination.convertFlightPathTo).y) : new Vector2(town.x, town.y);
-
-                        ////Find current site
-                        //var current = FindSite(x => x.name == currentSave.currentSite);
-
-                        ////Lead path to the destination
-                        //LeadPath(new SitePath() { means = "Flight", sites = new() { current.name, town.name }, points = new() { (town.x, town.y), (current.x, current.y) }, spacing = 9999 }, true);
-
-                        ////Queue moving player to the destination
-                        //town.ExecutePath("Town");
+                        CDesktop.cameraDestination = destination.convertDestinationTo != null ? new Vector2(towns.Find(x => x.name == destination.convertDestinationTo).x, towns.Find(x => x.name == destination.convertDestinationTo).y) : new Vector2(town.x, town.y);
+                    },
+                    null,
+                    (h) => () =>
+                    {
+                        var destination = list[index + thisWindow.pagination()];
+                        var siteOfDestination = towns.Find(x => x.name == (destination.capital ?? destination.name));
+                        var fromWhere = towns.Find(x => x.name == currentSave.currentSite);
+                        var distance = Math.Abs(siteOfDestination.x - fromWhere.x) + Math.Abs(siteOfDestination.y - fromWhere.y);
+                        var price = distance / 50 * 10;
+                        SetAnchor(Center);
+                        AddHeaderGroup();
+                        SetRegionGroupWidth(188);
+                        AddPaddingRegion(() => AddLine(list[index + thisWindow.pagination()].name));
+                        PrintPriceRegion(price);
                     });
                 else AddPaddingRegion(() => AddLine());
             }
@@ -7045,6 +7088,7 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockRight");
             SpawnWindowBlueprint("MapToolbarStatusLeft");
             SpawnWindowBlueprint("MapToolbarStatusRight");
+            SpawnWindowBlueprint("PlayerMoney");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey("Open menu / Back", () =>
@@ -7125,7 +7169,7 @@ public class Blueprint
             });
             AddHotkey("Open console", () => { SpawnDesktopBlueprint("DevPanel"); });
             AddHotkey(KeypadMultiply, () => { board.EndCombat("Team1Won"); });
-            AddHotkey(KeypadDivide, () => { board.EndCombat("Team2Won"); });
+            AddHotkey(KeypadDivide, () => { currentSave.player.Die(); board.EndCombat("Team2Won"); });
         }),
         new("FishingGame", () => 
         {

@@ -35,6 +35,9 @@ public class MapGrid : MonoBehaviour
     //Queued site open on the adventure map
     public string queuedSiteOpen;
 
+    //Queued site open on the adventure map
+    public string queuedSiteTypeOpen;
+
     //On mouse down pan the camera to the pressed square on the map
     void OnMouseDown()
     {
@@ -71,7 +74,7 @@ public class MapGrid : MonoBehaviour
     //Switches map textures between ghost realm and normal world map
     public void SwitchMapTexture(bool deadOn)
     {
-        CDesktop.windows.FindAll(x => x.title.StartsWith("Site: ")).ForEach(x => x.gameObject.SetActive(!x.title.Contains("SpiritHealer") ^ deadOn));
+        desktops.Find(x => x.title == "Map").windows.FindAll(x => x.title.StartsWith("Site: ")).ForEach(x => x.gameObject.SetActive(x.title.Contains("SpiritHealer") == deadOn));
         if (deadOn) PlayAmbience("AmbienceGhost");
         else if (ambience.clip != null && ambience.clip.name == "AmbienceGhost")
         {

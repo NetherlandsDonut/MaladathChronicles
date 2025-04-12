@@ -19,6 +19,7 @@
   "maxPrimaryProfessions": 2,
   "expForExploration": 20,
   "cascadeMinimum": 3,
+  "spaceBetweenPathPips": 10,
   "markerCharacter": "_",
   "textWrapEnding": "...",
   "frameTime": 0.08,

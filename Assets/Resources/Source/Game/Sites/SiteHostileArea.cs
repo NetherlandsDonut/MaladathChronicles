@@ -199,6 +199,8 @@ public class SiteHostileArea : Site
             if (currentSave.player.QuestsDoneAt(this, true).Count > 0)
                 AddSmallButtonOverlay("YellowGlowBig", 0, 2);
         });
+        if (currentSave.player.dead)
+            CDesktop.LBWindow().gameObject.SetActive(false);
     }
 
     //Returns path to a texture that is the background visual of this site
