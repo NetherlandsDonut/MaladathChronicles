@@ -9,7 +9,7 @@
         "type": "Shaman Trainer"
       }
     ],
-    "capital": "Orgrimmar",
+    "capitalRedirect": "Orgrimmar",
     "name": "Grommash Hold",
     "zone": "Durotar",
     "faction": "Orgrimmar",
@@ -32,7 +32,7 @@
         "type": "Warlock Trainer"
       }
     ],
-    "capital": "Orgrimmar",
+    "capitalRedirect": "Orgrimmar",
     "name": "The Cleft of Shadow",
     "zone": "Durotar",
     "faction": "Orgrimmar",
@@ -699,7 +699,7 @@
         "type": "Expert Alchemist"
       }
     ],
-    "capital": "Orgrimmar",
+    "capitalRedirect": "Orgrimmar",
     "name": "The Drag",
     "zone": "Durotar",
     "faction": "Orgrimmar",
@@ -707,7 +707,7 @@
   },
   {
     "people": [],
-    "capital": "Orgrimmar",
+    "capitalRedirect": "Orgrimmar",
     "name": "The Valley of Wisdom",
     "zone": "Durotar",
     "faction": "Orgrimmar",
@@ -1242,7 +1242,7 @@
         "type": "Battlemaster"
       }
     ],
-    "capital": "Orgrimmar",
+    "capitalRedirect": "Orgrimmar",
     "name": "The Valley of Honor",
     "zone": "Durotar",
     "faction": "Orgrimmar",
@@ -1279,7 +1279,7 @@
         "type": "Portal Trainer"
       }
     ],
-    "capital": "Orgrimmar",
+    "capitalRedirect": "Orgrimmar",
     "name": "The Valley of Spirits",
     "zone": "Durotar",
     "faction": "Orgrimmar",
@@ -1287,7 +1287,7 @@
   },
   {
     "people": [],
-    "capital": "Ironforge",
+    "capitalRedirect": "Ironforge",
     "name": "The High Seat",
     "zone": "Dun Morogh",
     "faction": "Ironforge",
@@ -1978,7 +1978,7 @@
         ]
       }
     ],
-    "capital": "Ironforge",
+    "capitalRedirect": "Ironforge",
     "name": "The Great Forge",
     "zone": "Dun Morogh",
     "faction": "Ironforge",
@@ -2163,7 +2163,7 @@
         "type": "Master Gnome Engineer"
       }
     ],
-    "capital": "Ironforge",
+    "capitalRedirect": "Ironforge",
     "name": "Tinker Town",
     "zone": "Dun Morogh",
     "faction": "Ironforge",
@@ -2173,7 +2173,7 @@
   },
   {
     "people": [],
-    "capital": "Ironforge",
+    "capitalRedirect": "Ironforge",
     "name": "Hall of Explorers",
     "zone": "Dun Morogh",
     "faction": "Ironforge",
@@ -2273,7 +2273,7 @@
         "type": "Warlock Trainer"
       }
     ],
-    "capital": "Ironforge",
+    "capitalRedirect": "Ironforge",
     "name": "The Forlorn Cavern",
     "zone": "Dun Morogh",
     "faction": "Ironforge",
@@ -2445,7 +2445,7 @@
         "type": "Hunter Trainer"
       }
     ],
-    "capital": "Ironforge",
+    "capitalRedirect": "Ironforge",
     "name": "The Military Ward",
     "zone": "Dun Morogh",
     "faction": "Ironforge",
@@ -2483,7 +2483,7 @@
         "type": "Portal Trainer"
       }
     ],
-    "capital": "Ironforge",
+    "capitalRedirect": "Ironforge",
     "name": "The Mystic Ward",
     "zone": "Dun Morogh",
     "faction": "Ironforge",
@@ -2935,7 +2935,7 @@
         "type": "Auctioneer"
       }
     ],
-    "capital": "Ironforge",
+    "capitalRedirect": "Ironforge",
     "name": "The Commons",
     "zone": "Dun Morogh",
     "faction": "Ironforge",
@@ -2959,7 +2959,7 @@
         "type": "Portal Trainer"
       }
     ],
-    "capital": "Darnassus",
+    "capitalRedirect": "Darnassus",
     "name": "The Temple of The Moon",
     "zone": "Teldrassil",
     "faction": "Darnassus",
@@ -3388,7 +3388,7 @@
         ]
       }
     ],
-    "capital": "Darnassus",
+    "capitalRedirect": "Darnassus",
     "name": "Tradesmen's Terrace",
     "zone": "Teldrassil",
     "faction": "Darnassus",
@@ -4561,7 +4561,7 @@
         ]
       }
     ],
-    "capital": "Darnassus",
+    "capitalRedirect": "Darnassus",
     "name": "Craftsmen's Terrace",
     "zone": "Teldrassil",
     "faction": "Darnassus",
@@ -4598,7 +4598,7 @@
         "type": "Hunter Trainer"
       }
     ],
-    "capital": "Darnassus",
+    "capitalRedirect": "Darnassus",
     "name": "Cenarion Enclave",
     "zone": "Teldrassil",
     "faction": "Darnassus",
@@ -4621,7 +4621,7 @@
         "type": "Battlemaster"
       }
     ],
-    "capital": "Darnassus",
+    "capitalRedirect": "Darnassus",
     "name": "Warrior's Terrace",
     "zone": "Teldrassil",
     "faction": "Darnassus",
@@ -4644,7 +4644,7 @@
         "type": "Banker"
       }
     ],
-    "capital": "Darnassus",
+    "capitalRedirect": "Darnassus",
     "name": "The Temple Gardens",
     "zone": "Teldrassil",
     "faction": "Darnassus",
@@ -4660,7 +4660,7 @@
         "type": "Battlemaster"
       }
     ],
-    "capital": "Stormwind City",
+    "capitalRedirect": "Stormwind City",
     "name": "Stormwind Keep",
     "zone": "Elwynn Forest",
     "faction": "Stormwind",
@@ -4739,7 +4739,7 @@
         ]
       }
     ],
-    "capital": "Stormwind City",
+    "capitalRedirect": "Stormwind City",
     "name": "The Canals",
     "zone": "Elwynn Forest",
     "faction": "Stormwind",
@@ -5146,7 +5146,7 @@
         "type": "Cook"
       }
     ],
-    "capital": "Stormwind City",
+    "capitalRedirect": "Stormwind City",
     "name": "Old Town",
     "zone": "Elwynn Forest",
     "faction": "Stormwind",
@@ -5169,7 +5169,7 @@
         "type": "Herbalist"
       }
     ],
-    "capital": "Stormwind City",
+    "capitalRedirect": "Stormwind City",
     "name": "The Park",
     "zone": "Elwynn Forest",
     "faction": "Stormwind",
@@ -5425,7 +5425,7 @@
         "type": "Artisan Tailor"
       }
     ],
-    "capital": "Stormwind City",
+    "capitalRedirect": "Stormwind City",
     "name": "Mage Quarter",
     "zone": "Elwynn Forest",
     "faction": "Stormwind",
@@ -5662,7 +5662,7 @@
         "type": "Physician"
       }
     ],
-    "capital": "Stormwind City",
+    "capitalRedirect": "Stormwind City",
     "name": "Cathedral Square",
     "zone": "Elwynn Forest",
     "faction": "Stormwind",
@@ -5820,7 +5820,7 @@
         "type": "Expert Engineer"
       }
     ],
-    "capital": "Stormwind City",
+    "capitalRedirect": "Stormwind City",
     "name": "Dwarven District",
     "zone": "Elwynn Forest",
     "faction": "Stormwind",
@@ -5908,7 +5908,7 @@
         ]
       }
     ],
-    "capital": "Thunder Bluff",
+    "capitalRedirect": "Thunder Bluff",
     "name": "Higher Rise",
     "zone": "Mulgore",
     "faction": "Thunder Bluff",
@@ -6867,7 +6867,7 @@
         ]
       }
     ],
-    "capital": "Thunder Bluff",
+    "capitalRedirect": "Thunder Bluff",
     "name": "Middle Rise",
     "zone": "Mulgore",
     "faction": "Thunder Bluff",
@@ -7703,7 +7703,7 @@
         ]
       }
     ],
-    "capital": "Thunder Bluff",
+    "capitalRedirect": "Thunder Bluff",
     "name": "Lower Rise",
     "zone": "Mulgore",
     "faction": "Thunder Bluff",
@@ -7733,7 +7733,7 @@
         "type": "Portal Trainer"
       }
     ],
-    "capital": "Thunder Bluff",
+    "capitalRedirect": "Thunder Bluff",
     "name": "The Pools of Vision",
     "zone": "Mulgore",
     "faction": "Thunder Bluff",
@@ -7757,7 +7757,7 @@
         "type": "Physician"
       }
     ],
-    "capital": "Thunder Bluff",
+    "capitalRedirect": "Thunder Bluff",
     "name": "Spirit Rise",
     "zone": "Mulgore",
     "faction": "Thunder Bluff",
@@ -7787,7 +7787,7 @@
         "type": "Warrior Trainer"
       }
     ],
-    "capital": "Thunder Bluff",
+    "capitalRedirect": "Thunder Bluff",
     "name": "Hunter Rise",
     "zone": "Mulgore",
     "faction": "Thunder Bluff",
@@ -7803,7 +7803,7 @@
         "type": "Druid Trainer"
       }
     ],
-    "capital": "Thunder Bluff",
+    "capitalRedirect": "Thunder Bluff",
     "name": "Elder Rise",
     "zone": "Mulgore",
     "faction": "Thunder Bluff",
@@ -7819,7 +7819,7 @@
         "type": "Battlemaster"
       }
     ],
-    "capital": "Undercity",
+    "capitalRedirect": "Undercity",
     "name": "The Royal Quarter",
     "zone": "Tirisfal Glades",
     "faction": "Undercity",
@@ -7867,7 +7867,7 @@
         "type": "Artisan Alchemist"
       }
     ],
-    "capital": "Undercity",
+    "capitalRedirect": "Undercity",
     "name": "The Apothecarium",
     "zone": "Tirisfal Glades",
     "faction": "Undercity",
@@ -8150,7 +8150,7 @@
         "type": "Skinner"
       }
     ],
-    "capital": "Undercity",
+    "capitalRedirect": "Undercity",
     "name": "The Rogues' Quarter",
     "zone": "Tirisfal Glades",
     "faction": "Undercity",
@@ -8747,7 +8747,7 @@
         "type": "Artisan Tailor"
       }
     ],
-    "capital": "Undercity",
+    "capitalRedirect": "Undercity",
     "name": "The Magic Quarter",
     "zone": "Tirisfal Glades",
     "faction": "Undercity",
@@ -9290,7 +9290,7 @@
         ]
       }
     ],
-    "capital": "Undercity",
+    "capitalRedirect": "Undercity",
     "name": "The War Quarter",
     "zone": "Tirisfal Glades",
     "faction": "Undercity",
@@ -9854,7 +9854,7 @@
         "type": "Banker"
       }
     ],
-    "capital": "Undercity",
+    "capitalRedirect": "Undercity",
     "name": "The Trade Quarter",
     "zone": "Tirisfal Glades",
     "faction": "Undercity",
@@ -10595,7 +10595,7 @@
         ]
       }
     ],
-    "capital": "Stormwind City",
+    "capitalRedirect": "Stormwind City",
     "name": "Trade District",
     "zone": "Elwynn Forest",
     "faction": "Stormwind",
@@ -10603,7 +10603,7 @@
     "convertDestinationTo": "Stormwind City"
   },
   {
-    "capital": "Stormwind City",
+    "capitalRedirect": "Stormwind City",
     "x": 4975,
     "y": -3517,
     "name": "Stormwind City",
@@ -15376,7 +15376,7 @@
     "faction": "Stormwind"
   },
   {
-    "capital": "Darnassus",
+    "capitalRedirect": "Darnassus",
     "x": 938,
     "y": -504,
     "name": "Darnassus",
@@ -19192,7 +19192,7 @@
     "faction": "Wildhammer Clan"
   },
   {
-    "capital": "Ironforge",
+    "capitalRedirect": "Ironforge",
     "x": 5231,
     "y": -2694,
     "name": "Ironforge",
@@ -21068,7 +21068,7 @@
         ]
       }
     ],
-    "capital": "Orgrimmar",
+    "capitalRedirect": "Orgrimmar",
     "name": "The Valley of Strength",
     "zone": "Durotar",
     "faction": "Orgrimmar",
@@ -21076,7 +21076,7 @@
     "convertDestinationTo": "Orgrimmar Main Gates"
   },
   {
-    "capital": "Orgrimmar",
+    "capitalRedirect": "Orgrimmar",
     "x": 2343,
     "y": -2248,
     "name": "Orgrimmar Main Gates",
@@ -21085,7 +21085,7 @@
     "ambience": "MusicOrgrimmar"
   },
   {
-    "capital": "Orgrimmar",
+    "capitalRedirect": "Orgrimmar",
     "x": 2241,
     "y": -2192,
     "name": "Orgrimmar Side Entrence",
@@ -24633,7 +24633,7 @@
     "faction": "Orgrimmar"
   },
   {
-    "capital": "Thunder Bluff",
+    "capitalRedirect": "Thunder Bluff",
     "x": 1418,
     "y": -2794,
     "name": "Thunder Bluff Southern Lift",
@@ -24642,7 +24642,7 @@
     "ambience": "MusicThunderBluff"
   },
   {
-    "capital": "Thunder Bluff",
+    "capitalRedirect": "Thunder Bluff",
     "x": 1460,
     "y": -2741,
     "name": "Thunder Bluff Northern Lift",
@@ -27195,7 +27195,7 @@
     "faction": "Thunder Bluff"
   },
   {
-    "capital": "Undercity",
+    "capitalRedirect": "Undercity",
     "x": 5011,
     "y": -1341,
     "name": "Undercity",

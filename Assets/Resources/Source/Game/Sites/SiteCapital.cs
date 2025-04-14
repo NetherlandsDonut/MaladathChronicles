@@ -20,7 +20,7 @@ public class SiteCapital : Site
                         zone = this.zone,
                         faction = this.faction,
                         ambience = this.ambience,
-                        capital = this.name
+                        capitalRedirect = this.name
                     });
         SitePath.pathsConnectedToSite.Remove(name);
     }

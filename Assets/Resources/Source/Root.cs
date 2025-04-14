@@ -1128,9 +1128,6 @@ public static class Root
             (h) =>
             {
                 Quest.quest = quest;
-                CloseWindow("Instance");
-                CloseWindow("InstanceWing");
-                CloseWindow("Complex");
                 if (f == "Add")
                 {
                     if (staticPagination.ContainsKey("QuestAdd"))
@@ -1150,6 +1147,9 @@ public static class Root
                 Respawn("Chest", true);
                 Respawn("PlayerMoney", true);
                 Respawn("Capital", true);
+                Respawn("InstanceWing", true);
+                Respawn("Instance", true);
+                Respawn("Complex", true);
             });
             var color = ColorQuestLevel(quest.questLevel);
             if (color != null) SetRegionBackgroundAsImage("SkillUp" + color);

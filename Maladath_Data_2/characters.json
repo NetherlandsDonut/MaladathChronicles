@@ -2138,6 +2138,101 @@
                 "amount": 2
               }
             ]
+          },
+          {
+            "questID": 1361,
+            "requiredLevel": 30,
+            "questLevel": 32,
+            "name": "Regthar Deathgate",
+            "description": "A warrior of the Horde, Regthar Deathgate, is recruiting agents for a mission into the land of Desolace. Speak with him if you wish to volunteer. He is stationed in the Barrens, in a series of bunkers west of the Crossroads.$B$BAnd sharpen your weapons. Desolace is a place torn by war.",
+            "objective": "Speak with Regthar Deathgate.",
+            "completion": "Yes, I am recruiting. This mission leads into Desolace, against the centaur there. I will be brief so that you may quickly begin.",
+            "siteStart": "The Valley of Honor",
+            "siteEnd": "Looted Farm",
+            "zone": "Desolace",
+            "experience": 640,
+            "races": [
+              "Troll",
+              "Tauren",
+              "Forsaken",
+              "Orc"
+            ],
+            "reputationGain": {
+              "Orgrimmar": 25
+            },
+            "conditions": []
+          },
+          {
+            "questID": 3504,
+            "requiredLevel": 44,
+            "questLevel": 53,
+            "name": "Betrayed",
+            "description": "Betraying, thieving woman! That's what I call her--that's all she'll ever be!$B$BI may have made a grave mistake, $N. I trusted a blood elf. What's worse, I trusted a woman!$B$BShe claimed Azshara would hold great riches... powerful items. I simply send some warriors with her to protect her and I would be rewarded. Well, look who's the fool--she's killed them all.$B$BI want vengeance, $N, but I can't afford to send anyone else. Find Ag'tor at Valormok, north of the Haldarr Encampment. He'll tell you more.",
+            "objective": "Deliver the Sealed Letter to Ag'tor to Ag'tor Bloodfist in Azshara.",
+            "completion": "We've sent everything we had at her and her workers, but they are strong in battle. None have bothered to return. I'm assuming some have died, but I'm sure others simply ran... cowards.$B$BBut now that reinforcements have arrived, perhaps there's still something we can do. Perhaps we can still punish her for lying and betraying Belgrom.$B$BWhat do you say, are you in?",
+            "siteStart": "The Valley of Honor",
+            "siteEnd": "Valormok",
+            "zone": "Durotar",
+            "experience": 2650,
+            "reputationGain": {
+              "Orgrimmar": 75
+            },
+            "providedItems": {
+              "Sealed Letter to Ag'tor": 1
+            },
+            "conditions": [
+              {
+                "type": "Item",
+                "name": "Sealed Letter to Ag'tor",
+                "amount": 1
+              }
+            ]
+          },
+          {
+            "questID": 5726,
+            "requiredLevel": 9,
+            "questLevel": 12,
+            "name": "Hidden Enemies",
+            "description": "One thing I will not tolerate are traitors in our midst, $N. But I would be a fool to play my hand so early--it would not sufficiently cut the corruption out of our lands and only cause the infection to grow worse.$B$BBut you, a young adventurer, could go places my agents could not... could learn the truth... could find the true head of the beast.$B$BIf you are brave enough, then enter Skull Rock to the east of Orgrimmar, find a lieutenant's insignia off one of the Burning Blade there, and return to me.",
+            "objective": "Bring a Lieutenant's Insignia to Thrall in Orgrimmar.",
+            "completion": "Good, $N! The spirits be praised, perhaps you are the one who will finally put my greatest fears to rest! Who would suspect someone so young and so brave would rise up and champion our cause? You remind me of myself when I was younger. I will ensure that you are justly rewarded for your efforts if we both survive the coming storm.$B$BBut there is time for more praise later. You've not accomplished anything in comparison to what you will face... but this is a good start.",
+            "siteStart": "Grommash Hold",
+            "siteEnd": "Grommash Hold",
+            "zone": "Durotar",
+            "money": 250,
+            "experience": 910,
+            "reputationGain": {
+              "Orgrimmar": 250
+            },
+            "conditions": [
+              {
+                "type": "Item",
+                "name": "Lieutenant's Insignia",
+                "amount": 1
+              }
+            ]
+          },
+          {
+            "questID": 813,
+            "requiredLevel": 7,
+            "questLevel": 9,
+            "name": "Finding the Antidote",
+            "description": "Venomtails are some of the deadliest scorpids in Durotar. It was unwise for Rhinag to hunt them without having some of the antidote with him, but right now, chastising is the last thing he needs.$B$BBring me a few venomtail poison sacs from any of the venomtails near the entrance of Orgrimmar and I'll make an antidote for him.$B$BMake haste, $N. One of our own needs your help.",
+            "objective": "Bring 4 Venomtail Poison Sacs to Kor'ghan in Orgrimmar.",
+            "completion": "Here is the antidote, $N. Take it to Rhinag as soon as you can, and be cautious.",
+            "siteStart": "The Cleft of Shadow",
+            "siteEnd": "The Cleft of Shadow",
+            "zone": "Durotar",
+            "rewards": {
+              "Venomtail Antidote": 1
+            },
+            "conditions": [
+              {
+                "type": "Item",
+                "name": "Venomtail Poison Sac",
+                "amount": 1
+              }
+            ]
           }
         ],
         "completedQuests": [
@@ -2145,7 +2240,9 @@
         ],
         "level": 60,
         "experience": 16497906,
-        "uniquesGotten": [],
+        "uniquesGotten": [
+          "Prison Cell Key"
+        ],
         "reputation": {
           "Southsea Pirates": 0,
           "Razormane Tribe": 0,
@@ -2277,6 +2374,141 @@
               "abilities": {
                 "Hearthstone": 1
               }
+            },
+            {
+              "x": 1,
+              "rarity": "Common",
+              "name": "Sealed Letter to Ag'tor",
+              "icon": "itemletter13",
+              "detailedType": "Letter",
+              "type": "Miscellaneous",
+              "ilvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "indestructible": true,
+              "unique": true
+            },
+            {
+              "x": 2,
+              "rarity": "Common",
+              "name": "Runecloth",
+              "icon": "itemfabricpurplefire01",
+              "detailedType": "Cloth",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 50,
+              "lvl": 1,
+              "amount": 3,
+              "maxStack": 20,
+              "price": 400
+            },
+            {
+              "x": 4,
+              "rarity": "Common",
+              "name": "Major Healing Potion",
+              "icon": "itempotion54",
+              "combatUse": true,
+              "detailedType": "Potion",
+              "type": "Miscellaneous",
+              "ilvl": 55,
+              "amount": 2,
+              "maxStack": 5,
+              "abilities": {
+                "Major Healing Potion": 1
+              },
+              "price": 1000
+            },
+            {
+              "y": 1,
+              "rarity": "Common",
+              "name": "Mageweave Cloth",
+              "icon": "itemfabricmageweave01",
+              "detailedType": "Cloth",
+              "type": "Trade Good",
+              "source": "Quest",
+              "ilvl": 40,
+              "lvl": 1,
+              "amount": 3,
+              "maxStack": 20,
+              "price": 250
+            },
+            {
+              "x": 1,
+              "y": 1,
+              "rarity": "Uncommon",
+              "name": "Marble Circle of the Bear",
+              "icon": "itemjewelryring04",
+              "randomEnchantment": true,
+              "type": "Finger",
+              "source": "RareDrop",
+              "ilvl": 54,
+              "lvl": 49,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 6322,
+              "stats": {
+                "Stamina": 14,
+                "Strength": 14
+              }
+            },
+            {
+              "x": 2,
+              "y": 1,
+              "rarity": "Rare",
+              "name": "Blackveil Cape",
+              "icon": "itemmisccape18",
+              "type": "Back",
+              "source": "DirectDrop",
+              "ilvl": 53,
+              "lvl": 48,
+              "armor": 38,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 9698,
+              "stats": {
+                "Strength": 6,
+                "Agility": 14
+              },
+              "droppedBy": [
+                "High Interrogator Gerstahn"
+              ]
+            },
+            {
+              "x": 3,
+              "y": 1,
+              "rarity": "Common",
+              "name": "Prison Cell Key",
+              "icon": "itemmisckey10",
+              "detailedType": "Key",
+              "type": "Miscellaneous",
+              "source": "DirectDrop",
+              "ilvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "indestructible": true,
+              "unique": true,
+              "droppedBy": [
+                "High Interrogator Gerstahn"
+              ]
+            },
+            {
+              "x": 3,
+              "rarity": "Uncommon",
+              "name": "Highborne Bracelets",
+              "icon": "itembracer13",
+              "type": "Wrists",
+              "armorClass": "Cloth",
+              "source": "RareDrop",
+              "ilvl": 52,
+              "lvl": 47,
+              "armor": 30,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 5555,
+              "stats": {
+                "Intellect": 9,
+                "Stamina": 6
+              }
             }
           ],
           "bags": []
@@ -2340,9 +2572,9 @@
         "worldBuffs": []
       },
       "hour": 8,
-      "minute": 7,
-      "second": 27,
-      "currentSite": "Capital City Gates",
+      "minute": 8,
+      "second": 42,
+      "currentSite": "Blackrock Mountain",
       "ringOfLaw": "Eviscerator",
       "forlornCloister": "Fallen Champion",
       "markets": [
@@ -2357,13 +2589,75 @@
           "hoursSinceUpdate": 49
         }
       ],
-      "openedChests": {},
+      "openedChests": {
+        "Detention Block": {
+          "area": "Detention Block",
+          "inventory": {
+            "items": [
+              {
+                "x": 1,
+                "rarity": "Common",
+                "name": "Plaguebloom",
+                "icon": "itemmischerbplaguebloom",
+                "detailedType": "Flowers",
+                "type": "Trade Good",
+                "source": "ZoneDrop",
+                "ilvl": 57,
+                "lvl": 1,
+                "amount": 2,
+                "maxStack": 20,
+                "price": 250
+              },
+              {
+                "x": 2,
+                "rarity": "Uncommon",
+                "name": "Star Ruby",
+                "icon": "itemmiscgemruby02",
+                "detailedType": "Gem",
+                "type": "Trade Good",
+                "source": "RareDrop",
+                "ilvl": 50,
+                "lvl": 1,
+                "amount": 1,
+                "maxStack": 20,
+                "price": 5000
+              },
+              {
+                "x": 3,
+                "rarity": "Common",
+                "name": "Scroll of Protection IV",
+                "icon": "itemscroll07",
+                "detailedType": "Scroll",
+                "type": "Miscellaneous",
+                "source": "RareDrop",
+                "ilvl": 55,
+                "amount": 1,
+                "maxStack": 5,
+                "abilities": {
+                  "Scroll of Protection IV": 1
+                },
+                "price": 100
+              }
+            ],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
+        }
+      },
       "fishingSpots": {},
       "fishingSpoils": {},
-      "siteProgress": {},
-      "commonsKilled": {},
+      "siteProgress": {
+        "Detention Block": 4
+      },
+      "commonsKilled": {
+        "Bloodhound": 4,
+        "Anvilrage Overseer": 2,
+        "Anvilrage Warden": 2
+      },
       "raresKilled": {},
-      "elitesKilled": {},
+      "elitesKilled": {
+        "High Interrogator Gerstahn": 1
+      },
       "siteVisits": {
         "Shadow Grave": 2,
         "Deathknell": 4,
@@ -3344,7 +3638,7 @@
         "Anvilmar": 1,
         "Algaz Station": 1,
         "The Valley of Strength": 1,
-        "Orgrimmar Main Gates": 1,
+        "Orgrimmar Main Gates": 8,
         "Orgrimmar Side Entrence": 1,
         "The Den": 1,
         "Razor Hill": 1,
@@ -3403,7 +3697,7 @@
         "Shadowfang Keep": 1,
         "Shadow Hold": 1,
         "Scholomance": 1,
-        "Maraudon": 1,
+        "Maraudon": 5,
         "Stratholme": 1,
         "Wailing Caverns": 1,
         "Uldaman": 1,
@@ -3423,23 +3717,25 @@
         "Blackwing Lair": 1,
         "Ruins of Ahn'Qiraj": 1,
         "Temple of Ahn'Qiraj": 1,
-        "Blackrock Mountain": 1,
+        "Blackrock Mountain": 6,
         "Jintha'Alor": 1,
         "Tyr's Hand": 1,
         "Hearthglen": 1,
         "Ruins of Stromgarde": 4,
         "Ruins of Alterac": 1,
         "Scarlet Monastery Grounds": 1,
-        "Jaedenar Grounds": 1,
+        "Jaedenar Grounds": 5,
         "Alcaz Island": 1
       },
-      "unlockedAreas": [],
+      "unlockedAreas": [
+        "Halls of the Law"
+      ],
       "vendorStock": {},
       "banks": {},
       "startDate": "2025-04-07T03:18:46.5748667+02:00",
-      "lastLoaded": "2025-04-11T19:47:29.9351287+02:00",
-      "lastPlayed": "2025-04-11T19:53:17.9530802+02:00",
-      "timePlayed": "01:14:50.0979926"
+      "lastLoaded": "2025-04-14T03:51:10.7013068+02:00",
+      "lastPlayed": "2025-04-14T03:51:27.4819221+02:00",
+      "timePlayed": "01:20:51.5897161"
     },
     {
       "player": {
@@ -3574,6 +3870,7 @@
           "Order Mastery": 3
         },
         "inventory": {
+          "money": 122123,
           "items": [
             {
               "rarity": "Common",
@@ -3688,9 +3985,9 @@
         },
         "worldBuffs": []
       },
-      "hour": 8,
+      "hour": 10,
       "minute": 4,
-      "second": 42,
+      "second": 12,
       "currentSite": "Booty Bay",
       "ringOfLaw": "Ok'thor the Breaker",
       "forlornCloister": "Ironspine",
@@ -4518,7 +4815,8 @@
               "hoursLeft": 48,
               "market": "Alliance Market"
             }
-          ]
+          ],
+          "hoursSinceUpdate": 2
         },
         {
           "name": "Horde Market",
@@ -5253,7 +5551,8 @@
               "hoursLeft": 48,
               "market": "Horde Market"
             }
-          ]
+          ],
+          "hoursSinceUpdate": 2
         }
       ],
       "openedChests": {},
@@ -5280,7 +5579,7 @@
         "Frozen Crossing": 0,
         "Goldshire": 0,
         "Crystal Lake": 0,
-        "Booty Bay": 8,
+        "Booty Bay": 16,
         "Crystal Shore": 3,
         "Jaguero Isle": 1,
         "Wild Shore": 1,
@@ -5899,7 +6198,7 @@
         "Mizjah Ruins": 1,
         "Mosh'Ogg Ogre Mound": 1,
         "Janeiro's Point": 1,
-        "Nek'mani Wellspring": 1,
+        "Nek'mani Wellspring": 2,
         "Ruins of Jubuwal": 1,
         "Ruins of Zul'Kunda": 1,
         "Ruins of Zul'Mamwe": 1,
@@ -6289,7 +6588,7 @@
         "Thorium Point": 1,
         "Everlook": 1,
         "Gadgetzan": 1,
-        "Ratchet": 1,
+        "Ratchet": 2,
         "Marshal's Refuge": 1,
         "Timbermaw Hold": 1,
         "Bear's Head": 1,
@@ -6300,7 +6599,7 @@
         "The Harborage": 1,
         "Nesingwary's Expedition": 1,
         "Yojamba Isle": 1,
-        "Gurubashi Arena": 1,
+        "Gurubashi Arena": 3,
         "Temple of Atal'Hakkar": 1,
         "The Stockade": 1,
         "Ragefire Chasm": 1,
@@ -6340,11 +6639,16 @@
       },
       "unlockedAreas": [],
       "vendorStock": {},
-      "banks": {},
+      "banks": {
+        "Booty Bay": {
+          "items": [],
+          "bags": []
+        }
+      },
       "startDate": "2025-04-07T03:31:08.6233938+02:00",
-      "lastLoaded": "2025-04-12T18:23:49.0256448+02:00",
-      "lastPlayed": "2025-04-12T18:30:41.1949066+02:00",
-      "timePlayed": "00:35:58.8397532"
+      "lastLoaded": "2025-04-13T19:03:28.1778009+02:00",
+      "lastPlayed": "2025-04-13T19:03:30.3457095+02:00",
+      "timePlayed": "00:45:24.0542811"
     },
     {
       "player": {

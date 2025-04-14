@@ -191,6 +191,8 @@ public class SiteComplex : Site
                 {
                     area = areas.Find(x => x.name == site["SiteName"]);
                     Respawn("HostileArea");
+                    Respawn("HostileAreaQuestAvailable");
+                    Respawn("HostileAreaQuestDone");
                     Respawn("HostileAreaProgress");
                     Respawn("HostileAreaDenizens");
                     Respawn("HostileAreaElites");

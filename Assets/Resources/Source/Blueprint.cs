@@ -2918,8 +2918,11 @@ public class Blueprint
         }),
         
         //Complex
-        new("Complex", () => 
+        new("Complex", () =>
         {
+            if (WindowUp("Quest")) return;
+            if (WindowUp("QuestAdd")) return;
+            if (WindowUp("QuestTurn")) return;
             if (complex.ambience == null)
             {
                 var zone = zones.Find(x => x.name == complex.zone);
@@ -2968,20 +2971,6 @@ public class Blueprint
             foreach (var site in complex.sites)
                 PrintComplexSite(site);
         }),
-        new("ComplexQuestAvailable", () => 
-        {
-            var quests = currentSave.player.AvailableQuestsAt(complex).OrderBy(x => x.questLevel).ToList();
-            if (quests.Count == 0) return;
-            SetAnchor(Top, 0, -38);
-            AddQuestList(quests);
-        }),
-        new("ComplexQuestDone", () => 
-        {
-            var quests = currentSave.player.QuestsDoneAt(complex).OrderBy(x => x.questLevel).ToList();
-            if (quests.Count == 0) return;
-            SetAnchor(Bottom, 0, 35);
-            AddQuestList(quests, "Turn");
-        }),
         
         //Capital
         new("Capital", () =>
@@ -3017,24 +3006,13 @@ public class Blueprint
             foreach (var town in capital.districts)
                 PrintCapitalTown(town);
         }),
-        new("ComplexQuestAvailable", () =>
-        {
-            var quests = currentSave.player.AvailableQuestsAt(complex).OrderBy(x => x.questLevel).ToList();
-            if (quests.Count == 0) return;
-            SetAnchor(Top, 0, -38);
-            AddQuestList(quests);
-        }),
-        new("ComplexQuestDone", () =>
-        {
-            var quests = currentSave.player.QuestsDoneAt(complex).OrderBy(x => x.questLevel).ToList();
-            if (quests.Count == 0) return;
-            SetAnchor(Bottom, 0, 35);
-            AddQuestList(quests, "Turn");
-        }),
 
         //Instance
-        new("Instance", () => 
+        new("Instance", () =>
         {
+            if (WindowUp("Quest")) return;
+            if (WindowUp("QuestAdd")) return;
+            if (WindowUp("QuestTurn")) return;
             if (instance.ambience == null)
             {
                 var zone = zones.Find(x => x.name == instance.zone);
@@ -3091,6 +3069,8 @@ public class Blueprint
                             Respawn("HostileAreaProgress");
                             Respawn("HostileAreaDenizens");
                             Respawn("HostileAreaElites");
+                            Respawn("HostileAreaQuestAvailable");
+                            Respawn("HostileAreaQuestDone");
                             Respawn("Chest");
                             SetDesktopBackground(find.Background());
                         });
@@ -3104,7 +3084,7 @@ public class Blueprint
                     if (showAreasUnconditional || find.areas.Any(x => x.ContainsKey("OpenByDefault") && x["OpenByDefault"] == "True" || currentSave.unlockedAreas.Contains(x["AreaName"])))
                         AddButtonRegion(() =>
                         {
-                            AddLine(find.name);
+                            AddLine(find.name + " (" + find.areas.Count + ")");
                             var allAreas = areas.FindAll(x => find.areas.Exists(y => y["AreaName"] == x.name));
                             if (allAreas.All(x => currentSave.siteProgress.ContainsKey(x.name) && x.areaSize <= currentSave.siteProgress[x.name]))
                                 SetRegionBackgroundAsImage("ClearedArea");
@@ -3119,8 +3099,11 @@ public class Blueprint
                     else AddHeaderRegion(() => AddLine("?", "DimGray"));
                 }
         }),
-        new("InstanceWing", () => 
+        new("InstanceWing", () =>
         {
+            if (WindowUp("Quest")) return;
+            if (WindowUp("QuestAdd")) return;
+            if (WindowUp("QuestTurn")) return;
             SetAnchor(TopRight, -19, -57);
             AddRegionGroup();
             SetRegionGroupWidth(190);
@@ -3134,13 +3117,14 @@ public class Blueprint
                     area = null;
                     SetDesktopBackground(instance.Background());
                     CloseWindow("HostileArea");
+                    CloseWindow("HostileAreaQuestTracker");
                     CloseWindow("HostileAreaProgress");
                     CloseWindow("HostileAreaDenizens");
                     CloseWindow("HostileAreaElites");
+                    CloseWindow("HostileAreaQuestAvailable");
+                    CloseWindow("HostileAreaQuestDone");
                     CloseWindow("Chest");
                     CloseWindow("InstanceWing");
-                    SpawnWindowBlueprint("InstanceQuestAvailable");
-                    SpawnWindowBlueprint("InstanceQuestDone");
                     Respawn("Instance");
                 });
             });
@@ -3179,20 +3163,6 @@ public class Blueprint
                 else AddHeaderRegion(() => AddLine("?", "DimGray"));
             }
         }),
-        new("InstanceQuestAvailable", () => 
-        {
-            var quests = currentSave.player.AvailableQuestsAt(instance).OrderBy(x => x.questLevel).ToList();
-            if (quests.Count == 0) return;
-            SetAnchor(Top, 0, -38);
-            AddQuestList(quests);
-        }),
-        new("InstanceQuestDone", () => 
-        {
-            var quests = currentSave.player.QuestsDoneAt(instance).OrderBy(x => x.questLevel).ToList();
-            if (quests.Count == 0) return;
-            SetAnchor(Bottom, 0, 35);
-            AddQuestList(quests, "Turn");
-        }),
 
         //Hostile Area
         new("HostileArea", () => 
@@ -3216,12 +3186,7 @@ public class Blueprint
                     if (area.instancePart)
                     {
                         if (wing != null) SetDesktopBackground(wing.Background());
-                        else
-                        {
-                            SetDesktopBackground(instance.Background());
-                            SpawnWindowBlueprint("InstanceQuestAvailable");
-                            SpawnWindowBlueprint("InstanceQuestDone");
-                        }
+                        else SetDesktopBackground(instance.Background());
                         CloseWindow(h.window);
                         CloseWindow("HostileAreaProgress");
                         CloseWindow("HostileAreaDenizens");
@@ -3500,12 +3465,12 @@ public class Blueprint
                             {
                                 var site = connection.sites.Find(x => x != currentSave.currentSite);
                                 if (!WindowUp("Site: " + site))
-                                        if (!Respawn("Site: " + site))
+                                    if (!Respawn("Site: " + site))
                                         CDesktop.LBWindow().GetComponentsInChildren<Renderer>().ToList().ForEach(x => x.gameObject.AddComponent<FadeIn>());
                             }
                         }
 
-                        if (town.capital != null) Respawn("Site: " + town.capital);
+                        if (town.capitalRedirect != null) Respawn("Site: " + town.capitalRedirect);
                         else Respawn("Site: " + town.name);
                         Respawn("Site: " + currentSave.currentSite);
                         if (destination.x == 0 || destination.y == 0)
@@ -3725,7 +3690,6 @@ public class Blueprint
                     SpawnWindowBlueprint("Inventory");
                     Respawn("PlayerMoney", true);
                     Respawn("Capital", true);
-
                 });
             }
             else if (type.category == "Auctioneer")
@@ -4500,7 +4464,7 @@ public class Blueprint
                         var destination = list[index + thisWindow.pagination()];
                         if (currentSave.siteVisits.ContainsKey(destination.convertDestinationTo ?? destination.name))
                         {
-                            AddLine(destination.capital ?? destination.name);
+                            AddLine(destination.capitalRedirect ?? destination.name);
                             AddSmallButton("Zone" + destination.zone.Clean());
                         }
                         else
@@ -4515,7 +4479,7 @@ public class Blueprint
                         var destination = list[index + thisWindow.pagination()];
                         currentSave.currentSite = destination.convertDestinationTo != null ? destination.convertDestinationTo : destination.name;
 
-                        var siteOfDestination = towns.Find(x => x.name == (destination.capital ?? destination.name));
+                        var siteOfDestination = towns.Find(x => x.name == (destination.capitalRedirect ?? destination.name));
                         var fromWhere = towns.Find(x => x.name == currentSave.currentSite);
                         var distance = Math.Abs(siteOfDestination.x - fromWhere.x) + Math.Abs(siteOfDestination.y - fromWhere.y);
                         var price = distance / 10 * 10;
@@ -4549,14 +4513,14 @@ public class Blueprint
                     (h) => () =>
                     {
                         var destination = list[index + thisWindow.pagination()];
-                        var siteOfDestination = towns.Find(x => x.name == (destination.capital ?? destination.name));
+                        var siteOfDestination = towns.Find(x => x.name == (destination.capitalRedirect ?? destination.name));
                         var fromWhere = towns.Find(x => x.name == currentSave.currentSite);
                         var distance = Math.Abs(siteOfDestination.x - fromWhere.x) + Math.Abs(siteOfDestination.y - fromWhere.y);
                         var price = distance / 50 * 10;
                         SetAnchor(Center);
                         AddHeaderGroup();
                         SetRegionGroupWidth(188);
-                        AddPaddingRegion(() => AddLine(list[index + thisWindow.pagination()].name));
+                        AddPaddingRegion(() => AddLine(list[index + thisWindow.pagination()].capitalRedirect ?? list[index + thisWindow.pagination()].name));
                         PrintPriceRegion(price);
                     });
                 else AddPaddingRegion(() => AddLine());
@@ -6964,11 +6928,6 @@ public class Blueprint
         {
             SetDesktopBackground(instance.Background());
             if (wing != null) SpawnWindowBlueprint("InstanceWing");
-            else
-            {
-                SpawnWindowBlueprint("InstanceQuestAvailable");
-                SpawnWindowBlueprint("InstanceQuestDone");
-            }
             SpawnWindowBlueprint("Instance");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
@@ -6991,17 +6950,14 @@ public class Blueprint
                     PlaySound("DesktopButtonClose");
                     Respawn("HostileArea");
                     Respawn("HostileAreaQuestAvailable");
-                    if (wing != null) SpawnWindowBlueprint("InstanceWing");
-                    else
-                    {
-                        SpawnWindowBlueprint("InstanceQuestAvailable");
-                        SpawnWindowBlueprint("InstanceQuestDone");
-                    }
-                    SpawnWindowBlueprint("Instance");
+                    Respawn("HostileAreaQuestDone");
+                    Respawn("InstanceWing", true);
+                    Respawn("Instance");
                 }
                 else if (CloseWindow("HostileArea"))
                 {
                     area = null;
+                    CloseWindow("HostileAreaQuestTracker");
                     CloseWindow("HostileAreaQuestAvailable");
                     CloseWindow("HostileAreaQuestDone");
                     CloseWindow("HostileAreaProgress");
@@ -7010,12 +6966,7 @@ public class Blueprint
                     CloseWindow("Chest");
                     PlaySound("DesktopButtonClose");
                     if (wing != null) SetDesktopBackground(wing.Background());
-                    else
-                    {
-                        SetDesktopBackground(instance.Background());
-                        SpawnWindowBlueprint("InstanceQuestAvailable");
-                        SpawnWindowBlueprint("InstanceQuestDone");
-                    }
+                    else SetDesktopBackground(instance.Background());
                 }
                 else if (CloseWindow("InstanceWing"))
                 {
@@ -7041,8 +6992,6 @@ public class Blueprint
         {
             SetDesktopBackground(complex.Background());
             SpawnWindowBlueprint("Complex");
-            SpawnWindowBlueprint("ComplexQuestAvailable");
-            SpawnWindowBlueprint("ComplexQuestDone");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
@@ -7059,17 +7008,25 @@ public class Blueprint
                     Respawn("HostileArea");
                     Respawn("HostileAreaQuestAvailable");
                 }
+                else if (CloseWindow("QuestAdd") || CloseWindow("QuestTurn"))
+                {
+                    PlaySound("DesktopButtonClose");
+                    Respawn("HostileArea");
+                    Respawn("HostileAreaQuestAvailable");
+                    Respawn("HostileAreaQuestDone");
+                    Respawn("Complex");
+                }
                 else if (CloseWindow("HostileArea"))
                 {
                     area = null;
                     PlaySound("DesktopButtonClose");
                     CloseWindow("HostileAreaQuestAvailable");
+                    CloseWindow("HostileAreaQuestDone");
                     CloseWindow("HostileAreaProgress");
                     CloseWindow("HostileAreaDenizens");
                     CloseWindow("HostileAreaElites");
                     CloseWindow("Chest");
                     SetDesktopBackground(complex.Background());
-                    SpawnWindowBlueprint("ComplexQuestAvailable");
                 }
                 else
                 {

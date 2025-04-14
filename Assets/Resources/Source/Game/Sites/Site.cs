@@ -101,6 +101,9 @@ public class Site
     //EXAMPLE: { "SiteType": "Raid", "SiteName": "Molten Core" }
     public List<Dictionary<string, string>> sites;
 
+    //Capital city this site opens up instead of opening itself
+    public string capitalRedirect;
+
     //Initialisation method to fill automatic values
     //and remove empty collections to avoid serialising them later
     public virtual void Initialise() { }
@@ -143,10 +146,10 @@ public class Site
         else if (siteType == "Town")
         {
             town = (SiteTown)this;
-            if (town.capital != null)
+            if (town.capitalRedirect != null)
             {
                 capitalThroughTown = town;
-                capital = capitals.Find(x => x.name == town.capital);
+                capital = capitals.Find(x => x.name == town.capitalRedirect);
                 siteType = "Capital";
             }
         }

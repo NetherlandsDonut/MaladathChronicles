@@ -124,10 +124,17 @@ public class Entity
             foreach (var bank in SaveGame.currentSave.banks)
                 bank.Value.items.RemoveAll(x => x.amount <= 0);
         }
+        var newSitesToRespawn = new List<Site>();
         foreach (var site in WhereCanQuestBeDone(quest))
-            if (!sitesToRespawn.Contains(site))
-                sitesToRespawn.Add(site);
-        sitesToRespawn.Add(Site.FindSite(x => x.name == quest.siteStart));
+            if (!newSitesToRespawn.Contains(site))
+                newSitesToRespawn.Add(site);
+        newSitesToRespawn.Add(Site.FindSite(x => x.name == quest.siteStart));
+        var sitesRelated = new List<Site>();
+        foreach (var site in newSitesToRespawn)
+            if (site.capitalRedirect != null)
+                sitesRelated.AddRange(SiteTown.towns.Where(x => x.capitalRedirect == site.capitalRedirect));
+        foreach (var site in sitesRelated.Distinct())
+            if (!sitesToRespawn.Contains(site)) sitesToRespawn.Add(site);
     }
 
     //Adds new quest to the quest log
@@ -152,15 +159,21 @@ public class Entity
         if (quest.providedItems != null)
             foreach (var item in quest.providedItems)
                 inventory.AddItem(Item.items.Find(x => x.name == item.Key).CopyItem(item.Value));
+        var newSitesToRespawn = new List<Site>();
         foreach (var site in WhereCanQuestBeDone(quest))
-            if (!sitesToRespawn.Contains(site))
-                sitesToRespawn.Add(site);
+            if (!newSitesToRespawn.Contains(site)) newSitesToRespawn.Add(site);
         var find = Site.FindSite(x => x.name == quest.siteStart);
-        if (!sitesToRespawn.Contains(find))
-            sitesToRespawn.Add(find);
+        if (!newSitesToRespawn.Contains(find)) newSitesToRespawn.Add(find);
         find = Site.FindSite(x => x.name == quest.siteEnd);
-        if (!sitesToRespawn.Contains(find))
-            sitesToRespawn.Add(find);
+        if (!newSitesToRespawn.Contains(find)) newSitesToRespawn.Add(find);
+        foreach (var site in newSitesToRespawn)
+            if (!sitesToRespawn.Contains(site)) sitesToRespawn.Add(site);
+        var sitesRelated = new List<Site>();
+        foreach (var site in newSitesToRespawn)
+            if (site.capitalRedirect != null)
+                sitesRelated.AddRange(SiteTown.towns.Where(x => x.capitalRedirect == site.capitalRedirect));
+        foreach (var site in sitesRelated.Distinct())
+            if (!sitesToRespawn.Contains(site)) sitesToRespawn.Add(site);
     }
 
     //Check if a specific quest is done
@@ -183,15 +196,21 @@ public class Entity
         completedQuests.Add(quest.questID);
         foreach (var item in quest.conditions.Where(x => x.type == "Item"))
             if (!item.isItemNotTaken) inventory.RemoveItem(item.name, item.amount);
+        var newSitesToRespawn = new List<Site>();
         var find = Site.FindSite(x => x.name == quest.siteEnd);
-        if (!sitesToRespawn.Contains(find))
-            sitesToRespawn.Add(find);
+        if (!newSitesToRespawn.Contains(find)) newSitesToRespawn.Add(find);
         var nextQuests = quests.FindAll(x => x.previous != null && x.previous.Contains(quest.questID));
         foreach (var nextQuest in nextQuests)
         {
             find = Site.FindSite(x => x.name == nextQuest.siteStart);
-            if (!sitesToRespawn.Contains(find)) sitesToRespawn.Add(find);
+            if (!newSitesToRespawn.Contains(find)) newSitesToRespawn.Add(find);
         }
+        var sitesRelated = new List<Site>();
+        foreach (var site in newSitesToRespawn)
+            if (site.capitalRedirect != null)
+                sitesRelated.AddRange(SiteTown.towns.Where(x => x.capitalRedirect == site.capitalRedirect));
+        foreach (var site in sitesRelated.Distinct())
+            if (!sitesToRespawn.Contains(site)) sitesToRespawn.Add(site);
     }
 
     //Check if this entity can pick up a specific quest
@@ -246,7 +265,7 @@ public class Entity
         return list.Distinct().ToList();
     }
 
-    //Check if any new quest can be got at a target site
+    //Check if new quests can be aquired at a target site
     public List<Quest> AvailableQuestsAt(Site site, bool oneIsEnough = false)
     {
         var list = new List<Quest>();
@@ -259,6 +278,36 @@ public class Entity
                         return list;
                 }
         return list;
+    }
+
+    //Check if any quest can be done at a target site
+    public List<Quest> AvailableQuestsAt(SiteComplex complex, bool oneIsEnough = false)
+    {
+        var list = new List<Quest>();
+        foreach (var site in complex.sites.Select(x => (Site.FindSite(y => y.name == x["SiteName"]), x["SiteType"])))
+            if (site.Item2 == "Dungeon" || site.Item2 == "Raid") list = list.Concat(AvailableQuestsAt((SiteInstance)site.Item1, oneIsEnough)).ToList();
+            else list = list.Concat(AvailableQuestsAt(site.Item1, oneIsEnough)).ToList();
+        return list.Distinct().ToList();
+    }
+
+    //Check if any new quest can be aquired at a target site
+    public List<Quest> AvailableQuestsAt(SiteTown town, bool oneIsEnough = false)
+    {
+        var list = new List<Quest>();
+        if (town.capitalRedirect != null && (town.x != 0 || town.y != 0))
+            foreach (var capitalSite in SiteTown.towns.FindAll(x => x.capitalRedirect == town.capitalRedirect))
+                list = list.Concat(AvailableQuestsAt((Site)capitalSite, oneIsEnough)).ToList();
+        else list = AvailableQuestsAt((Site)town, oneIsEnough);
+        return list;
+    }
+
+    //Check if any quest can be done at a target site
+    public List<Quest> AvailableQuestsAt(SiteInstance instance, bool oneIsEnough = false)
+    {
+        var list = new List<Quest>();
+        foreach (var site in instance.wings.SelectMany(x => x.areas.Select(z => Site.FindSite(y => y.name == z["AreaName"]))))
+            list = list.Concat(AvailableQuestsAt(site, oneIsEnough)).ToList();
+        return list.Distinct().ToList();
     }
 
     //Check if any quest can be handed in at a target site
@@ -279,8 +328,20 @@ public class Entity
     public List<Quest> QuestsDoneAt(SiteComplex complex, bool oneIsEnough = false)
     {
         var list = new List<Quest>();
-        foreach (var site in complex.sites.Select(x => Site.FindSite(y => y.name == x["SiteName"])))
-            list = list.Concat(QuestsDoneAt(site, oneIsEnough)).ToList();
+        foreach (var site in complex.sites.Select(x => (Site.FindSite(y => y.name == x["SiteName"]), x["SiteType"])))
+            if (site.Item2 == "Dungeon" || site.Item2 == "Raid") list = list.Concat(QuestsDoneAt((SiteInstance)site.Item1, oneIsEnough)).ToList();
+            else list = list.Concat(QuestsDoneAt(site.Item1, oneIsEnough)).ToList();
+        return list.Distinct().ToList();
+    }
+
+    //Check if any quest can be done at a target site
+    public List<Quest> QuestsDoneAt(SiteTown town, bool oneIsEnough = false)
+    {
+        var list = new List<Quest>();
+        if (town.capitalRedirect != null && (town.x != 0 || town.y != 0))
+            foreach (var site in SiteTown.towns.Where(x => x.capitalRedirect == town.capitalRedirect))
+                list = list.Concat(QuestsDoneAt((Site)site, oneIsEnough)).ToList();
+        else list = QuestsDoneAt((Site)town, oneIsEnough);
         return list.Distinct().ToList();
     }
 
@@ -342,8 +403,20 @@ public class Entity
     public List<Quest> QuestsAt(SiteComplex complex, bool oneIsEnough = false)
     {
         var list = new List<Quest>();
-        foreach (var site in complex.sites.Select(x => Site.FindSite(y => y.name == x["SiteName"])))
-            list = list.Concat(QuestsAt(site, oneIsEnough)).ToList();
+        foreach (var site in complex.sites.Select(x => (Site.FindSite(y => y.name == x["SiteName"]), x["SiteType"])))
+            if (site.Item2 == "Dungeon" || site.Item2 == "Raid") list = list.Concat(QuestsAt((SiteInstance)site.Item1, oneIsEnough)).ToList();
+            else list = list.Concat(QuestsAt(site.Item1, oneIsEnough)).ToList();
+        return list.Distinct().ToList();
+    }
+
+    //Check if any quest can be done at a target site
+    public List<Quest> QuestsAt(SiteTown town, bool oneIsEnough = false)
+    {
+        var list = new List<Quest>();
+        if (town.capitalRedirect != null && (town.x != 0 || town.y != 0))
+            foreach (var site in SiteTown.towns.Where(x => x.capitalRedirect == town.capitalRedirect))
+                list = list.Concat(QuestsAt((Site)site, oneIsEnough)).ToList();
+        else list = QuestsAt((Site)town, oneIsEnough);
         return list.Distinct().ToList();
     }
 

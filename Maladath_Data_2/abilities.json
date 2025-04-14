@@ -613,12 +613,12 @@
             },
             {
               "Color": "Uncommon",
-              "Text": "Hearthstone()",
+              "Text": "Hearthstone(). ",
               "Spacing": "No"
             },
             {
               "Color": "Uncommon",
-              "Text": ". Speak to an Innkeeper in a different place to change your home location."
+              "Text": "Speak to an Innkeeper in a different place to change your home location."
             }
           ]
         }

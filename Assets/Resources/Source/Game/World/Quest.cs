@@ -174,23 +174,13 @@ public class Quest
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseWindow("Quest" + f);
+                    PlaySound("DesktopInstanceClose");
                     Respawn("Chest", true);
                     Respawn("Capital", true);
                     Respawn("PlayerMoney", true);
-                    if (CDesktop.title != "QuestLog")
-                        if (SiteComplex.complex != null) Respawn("Complex");
-                        else if (SiteInstance.instance != null) Respawn("Instance");
-                    PlaySound("DesktopInstanceClose");
-                    if (CDesktop.title == "Instance")
-                    {
-                        if (SiteInstance.wing != null) SpawnWindowBlueprint("InstanceWing");
-                        else
-                        {
-                            SpawnWindowBlueprint("InstanceQuestAvailable");
-                            SpawnWindowBlueprint("InstanceQuestDone");
-                        }
-                        SpawnWindowBlueprint("Instance");
-                    }
+                    Respawn("Complex", true);
+                    Respawn("InstanceWing", true);
+                    Respawn("Instance", true);
                 });
         });
         if (color != null) SetRegionBackgroundAsImage("SkillUp" + color + "Long");
@@ -382,27 +372,16 @@ public class Quest
                     currentSave.player.TurnQuest(this);
                     PlaySound("QuestTurn");
                     CloseWindow(h.window);
-                    Respawn("ComplexQuestAvailable", true);
-                    Respawn("InstanceQuestAvailable", true);
                     Respawn("HostileAreaQuestAvailable", true);
                     Respawn("TownQuestAvailable", true);
-                    Respawn("ComplexQuestDone", true);
-                    Respawn("InstanceQuestDone", true);
                     Respawn("HostileAreaQuestDone", true);
                     Respawn("TownQuestDone", true);
                     Respawn("Chest", true);
                     Respawn("PlayerMoney", true);
                     Respawn("Capital", true);
-                    if (CDesktop.title == "Instance")
-                    {
-                        if (SiteInstance.wing != null) SpawnWindowBlueprint("InstanceWing");
-                        else
-                        {
-                            SpawnWindowBlueprint("InstanceQuestAvailable");
-                            SpawnWindowBlueprint("InstanceQuestDone");
-                        }
-                        SpawnWindowBlueprint("Instance");
-                    }
+                    Respawn("InstanceWing", true);
+                    Respawn("Instance", true);
+                    Respawn("Complex", true);
                 }
             });
         if (f == "Add")
@@ -413,12 +392,8 @@ public class Quest
                     PlaySound("QuestAdd", 0.4f);
                     currentSave.player.AddQuest(quest);
                     CloseWindow(h.window);
-                    Respawn("ComplexQuestAvailable", true);
-                    Respawn("InstanceQuestAvailable", true);
                     Respawn("HostileAreaQuestAvailable", true);
                     Respawn("TownQuestAvailable", true);
-                    Respawn("ComplexQuestDone", true);
-                    Respawn("InstanceQuestDone", true);
                     Respawn("HostileAreaQuestDone", true);
                     Respawn("TownQuestDone", true);
                     Respawn("Capital", true);
@@ -426,6 +401,9 @@ public class Quest
                     Respawn("QuestList", true);
                     Respawn("PlayerMoney", true);
                     Respawn("Chest", true);
+                    Respawn("InstanceWing", true);
+                    Respawn("Instance", true);
+                    Respawn("Complex", true);
                 }
                 else PlaySound("QuestFailed", 0.4f);
             });

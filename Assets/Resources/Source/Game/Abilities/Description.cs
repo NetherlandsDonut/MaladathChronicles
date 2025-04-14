@@ -56,6 +56,8 @@ public class DescriptionRegion
 
         string Process(string text)
         {
+            int startIndex, endIndex;
+            string toReplace = "";
             if (text == null) return "";
             if (Fn("PowerRange"))
             {
@@ -65,34 +67,42 @@ public class DescriptionRegion
                     if (double.TryParse(split[2].StartsWith("#") ? variables[split[2]].Replace(".", ",") : split[2].Replace(".", ","), out double powerScale))
                         if (int.TryParse(split[3], out int multiplier))
                         {
-                            //var source = split[0] == "Effector" ? effector : other;
                             var weaponPower = effector.WeaponDamage();
                             var scaler = (split[1] == "Melee" ? effector.MeleeAttackPower() : (split[1] == "Spell" ? effector.SpellPower() : (split[1] == "Ranged" ? effector.RangedAttackPower() : 1))) / 10.0 + 1;
-                            return Math.Ceiling(weaponPower.Item1 * scaler * powerScale * multiplier) + " - " + Math.Ceiling(weaponPower.Item2 * scaler * powerScale * multiplier);
+                            text = text.Replace(toReplace, Math.Ceiling(weaponPower.Item1 * scaler * powerScale * multiplier) + " - " + Math.Ceiling(weaponPower.Item2 * scaler * powerScale * multiplier));
                         }
             }
-            else if (Fn("Chance"))
+            if (Fn("Chance"))
             {
                 if (effector == null) return "?";
                 var split = text.Split("(").Last().Split(",").Select(x => x.Trim().Replace(")", "")).ToArray();
                 if (split.Length == 3)
                     if (double.TryParse(split[2].Replace(".", ","), out double multiplier))
                     {
-                        //var source = split[0] == "Effector" ? effector : other;
                         var stats = effector.Stats();
                         var stat = stats.ContainsKey(split[1]) ? stats[split[1]] : 1;
-                        return stat * multiplier + "%";
+                        text = text.Replace(toReplace, stat * multiplier + "%");
                     }
             }
-            else if (Fn("Hearthstone"))
+            if (Fn("Hearthstone"))
             {
                 if (effector == null) return "?";
-                return effector.homeLocation;
+                text = text.Replace(toReplace, effector.homeLocation);
             }
-            else if (text.Contains("$")) return FnDollar(text);
+            if (text.Contains("$")) return FnDollar(text);
             return text;
 
-            bool Fn(string functionName) => text.StartsWith(functionName + "(");
+            bool Fn(string functionName)
+            {
+                if (text.Contains(functionName + "("))
+                {
+                    startIndex = text.IndexOf(functionName + "(");
+                    endIndex = text[startIndex..].IndexOf(")") + startIndex + 1;
+                    toReplace = text[startIndex..endIndex];
+                    return true;
+                }
+                return false;
+            }
 
             string FnDollar(string text)
             {
