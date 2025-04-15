@@ -485,7 +485,8 @@ public class Blueprint
             SetAnchor(TopRight, -19, -38);
             //SetAnchor(-92, 142);
             AddHeaderGroup();
-            SetRegionGroupWidth(182);
+            SetRegionGroupWidth(190);
+            //SetRegionGroupWidth(182);
             SetRegionGroupHeight(271);
             var rawStats = currentSave.player.Stats(true);
             var stats = currentSave.player.Stats();
@@ -3439,7 +3440,7 @@ public class Blueprint
                     if (destination == null) continue;
                     AddButtonRegion(() =>
                     {
-                        AddLine(destination.convertDestinationTo ?? destination.name, "Black");
+                        AddLine(destination.capitalRedirect ?? (destination.convertDestinationTo ?? destination.name), "Black");
                         AddSmallButton("Transport" + transport.means);
                     },
                     (h) =>
@@ -4483,7 +4484,7 @@ public class Blueprint
                         var destination = list[index + thisWindow.pagination()];
                         if (currentSave.siteVisits.ContainsKey(destination.convertDestinationTo ?? destination.name))
                         {
-                            AddLine(destination.capitalRedirect ?? destination.name);
+                            AddLine(destination.capitalRedirect ?? destination.convertDestinationTo ?? destination.name);
                             AddSmallButton("Zone" + destination.zone.Clean());
                         }
                         else
@@ -4496,9 +4497,9 @@ public class Blueprint
                     (h) =>
                     {
                         var destination = list[index + thisWindow.pagination()];
-                        currentSave.currentSite = destination.convertDestinationTo != null ? destination.convertDestinationTo : destination.name;
+                        currentSave.currentSite = destination.convertDestinationTo ?? destination.name;
 
-                        var siteOfDestination = towns.Find(x => x.name == (destination.capitalRedirect ?? destination.name));
+                        var siteOfDestination = towns.Find(x => x.name == (destination.convertDestinationTo ?? destination.name));
                         var fromWhere = towns.Find(x => x.name == currentSave.currentSite);
                         var distance = Math.Abs(siteOfDestination.x - fromWhere.x) + Math.Abs(siteOfDestination.y - fromWhere.y);
                         var price = distance / 10 * 10;
@@ -4532,7 +4533,7 @@ public class Blueprint
                     (h) => () =>
                     {
                         var destination = list[index + thisWindow.pagination()];
-                        var siteOfDestination = towns.Find(x => x.name == (destination.capitalRedirect ?? destination.name));
+                        var siteOfDestination = towns.Find(x => x.name == (destination.convertDestinationTo ?? destination.name));
                         var fromWhere = towns.Find(x => x.name == currentSave.currentSite);
                         var distance = Math.Abs(siteOfDestination.x - fromWhere.x) + Math.Abs(siteOfDestination.y - fromWhere.y);
                         var price = distance / 50 * 10;

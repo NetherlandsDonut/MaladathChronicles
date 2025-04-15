@@ -198,6 +198,7 @@
     "name": "Shadow Hold",
     "zone": "Shadow Hold",
     "type": "Dungeon",
+    "convertDestinationTo": "Jaedenar Grounds",
     "wings": [
       {
         "name": "Shadow Hold",
@@ -799,6 +800,7 @@
     "name": "Scarlet Monastery",
     "zone": "Scarlet Monastery",
     "type": "Dungeon",
+    "convertDestinationTo": "Scarlet Monastery Grounds",
     "wings": [
       {
         "name": "Graveyard",
@@ -882,6 +884,7 @@
     "name": "Blackrock Depths",
     "zone": "Blackrock Depths",
     "type": "Dungeon",
+    "convertDestinationTo": "Blackrock Mountain",
     "noNightVariant": true,
     "wings": [
       {
@@ -974,6 +977,7 @@
     "name": "Lower Blackrock Spire",
     "zone": "Lower Blackrock Spire",
     "type": "Dungeon",
+    "convertDestinationTo": "Blackrock Mountain",
     "noNightVariant": true,
     "wings": [
       {
@@ -1029,6 +1033,7 @@
     "name": "Upper Blackrock Spire",
     "zone": "Upper Blackrock Spire",
     "type": "Dungeon",
+    "convertDestinationTo": "Blackrock Mountain",
     "noNightVariant": true,
     "wings": [
       {
@@ -1133,6 +1138,7 @@
     "name": "Molten Core",
     "zone": "Molten Core",
     "type": "Raid",
+    "convertDestinationTo": "Blackrock Mountain",
     "noNightVariant": true,
     "wings": [
       {
@@ -1245,6 +1251,7 @@
     "name": "Blackwing Lair",
     "zone": "Blackwing Lair",
     "type": "Raid",
+    "convertDestinationTo": "Blackrock Mountain",
     "noNightVariant": true,
     "wings": [
       {

@@ -76,7 +76,6 @@ public class Event
                 else if (type == "AddWorldBuff") EffectAddWorldBuff();
                 else if (type == "RemoveWorldBuff") EffectRemoveWorldBuff();
                 else if (type == "TeleportPlayer") EffectTeleportPlayer();
-                else if (type == "HearthstonePlayer") EffectHearthstonePlayer();
                 else if (type == "Combat") EffectCombat();
                 else if (type == "Loot") EffectLoot();
 
@@ -189,9 +188,13 @@ public class Event
             {
                 string destination = effect.ContainsKey("TeleportDestinaton") ? effect["TeleportDestinaton"] : "None";
                 if (destination == "None") return;
+                else if (destination == "<HomeLocation>") destination = save.player.homeLocation;
                 CloseDesktop("EquipmentScreen");
                 SwitchDesktop("Map");
                 var prevSite = save.currentSite;
+                var findDestination = Site.FindSite(x => x.name == destination);
+                if (findDestination.convertDestinationTo != null)
+                    destination = findDestination.convertDestinationTo;
                 save.currentSite = destination;
                 if (!save.siteVisits.ContainsKey(destination))
                 {
@@ -208,19 +211,6 @@ public class Event
                 Respawn("Site: " + prevSite);
                 var site = Site.FindSite(x => x.name == save.currentSite);
                 CDesktop.cameraDestination = new Vector2(site.x, site.y);
-            }
-
-            //This effect returns player to their home location
-            void EffectHearthstonePlayer()
-            {
-                CloseDesktop("EquipmentScreen");
-                SwitchDesktop("Map");
-                var prevSite = save.currentSite;
-                save.currentSite = save.player.homeLocation;
-                SiteTown.town = (SiteTown)Site.FindSite(x => x.name == save.currentSite);
-                Respawn("Site: " + prevSite);
-                Respawn("Site: " + save.currentSite);
-                CDesktop.cameraDestination = new Vector2(SiteTown.town.x, SiteTown.town.y);
             }
         }
     }

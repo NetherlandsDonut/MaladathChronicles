@@ -304,14 +304,14 @@ public class Starter : MonoBehaviour
 
         for (int i = 0; i < SiteTown.towns.Count; i++)
             SiteTown.towns[i].Initialise();
-        for (int i = 0; i < complexes.Count; i++)
-            complexes[i].Initialise();
+        for (int i = 0; i < SiteHostileArea.areas.Count; i++)
+            SiteHostileArea.areas[i].Initialise();
         for (int i = 0; i < instances.Count; i++)
             instances[i].Initialise();
         for (int i = 0; i < SiteCapital.capitals.Count; i++)
             SiteCapital.capitals[i].Initialise();
-        for (int i = 0; i < SiteHostileArea.areas.Count; i++)
-            SiteHostileArea.areas[i].Initialise();
+        for (int i = 0; i < complexes.Count; i++)
+            complexes[i].Initialise();
         for (int i = 0; i < Spec.specs.Count; i++)
             Spec.specs[i].Initialise();
         for (int i = 0; i < Item.items.Count; i++)

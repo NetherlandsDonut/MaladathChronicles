@@ -9,11 +9,12 @@
         "type": "Shaman Trainer"
       }
     ],
-    "capitalRedirect": "Orgrimmar",
     "name": "Grommash Hold",
     "zone": "Durotar",
     "faction": "Orgrimmar",
-    "ambience": "MusicOrgrimmar"
+    "ambience": "MusicOrgrimmar",
+    "convertDestinationTo": "Orgrimmar Main Gates",
+    "capitalRedirect": "Orgrimmar"
   },
   {
     "people": [
@@ -32,11 +33,12 @@
         "type": "Warlock Trainer"
       }
     ],
-    "capitalRedirect": "Orgrimmar",
     "name": "The Cleft of Shadow",
     "zone": "Durotar",
     "faction": "Orgrimmar",
-    "ambience": "MusicOrgrimmar"
+    "ambience": "MusicOrgrimmar",
+    "convertDestinationTo": "Orgrimmar Main Gates",
+    "capitalRedirect": "Orgrimmar"
   },
   {
     "people": [
@@ -699,19 +701,21 @@
         "type": "Expert Alchemist"
       }
     ],
-    "capitalRedirect": "Orgrimmar",
     "name": "The Drag",
     "zone": "Durotar",
     "faction": "Orgrimmar",
-    "ambience": "MusicOrgrimmar"
+    "ambience": "MusicOrgrimmar",
+    "convertDestinationTo": "Orgrimmar Main Gates",
+    "capitalRedirect": "Orgrimmar"
   },
   {
     "people": [],
-    "capitalRedirect": "Orgrimmar",
     "name": "The Valley of Wisdom",
     "zone": "Durotar",
     "faction": "Orgrimmar",
-    "ambience": "MusicOrgrimmar"
+    "ambience": "MusicOrgrimmar",
+    "convertDestinationTo": "Orgrimmar Main Gates",
+    "capitalRedirect": "Orgrimmar"
   },
   {
     "people": [
@@ -1242,11 +1246,12 @@
         "type": "Battlemaster"
       }
     ],
-    "capitalRedirect": "Orgrimmar",
     "name": "The Valley of Honor",
     "zone": "Durotar",
     "faction": "Orgrimmar",
-    "ambience": "MusicOrgrimmar"
+    "ambience": "MusicOrgrimmar",
+    "convertDestinationTo": "Orgrimmar Main Gates",
+    "capitalRedirect": "Orgrimmar"
   },
   {
     "people": [
@@ -1279,20 +1284,22 @@
         "type": "Portal Trainer"
       }
     ],
-    "capitalRedirect": "Orgrimmar",
     "name": "The Valley of Spirits",
     "zone": "Durotar",
     "faction": "Orgrimmar",
-    "ambience": "MusicOrgrimmar"
+    "ambience": "MusicOrgrimmar",
+    "convertDestinationTo": "Orgrimmar Main Gates",
+    "capitalRedirect": "Orgrimmar"
   },
   {
     "people": [],
-    "capitalRedirect": "Ironforge",
     "name": "The High Seat",
     "zone": "Dun Morogh",
     "faction": "Ironforge",
     "ambience": "MusicIronforge",
-    "noNightVariant": true
+    "convertDestinationTo": "Ironforge",
+    "noNightVariant": true,
+    "capitalRedirect": "Ironforge"
   },
   {
     "people": [
@@ -1978,13 +1985,13 @@
         ]
       }
     ],
-    "capitalRedirect": "Ironforge",
     "name": "The Great Forge",
     "zone": "Dun Morogh",
     "faction": "Ironforge",
     "ambience": "MusicIronforge",
     "convertDestinationTo": "Ironforge",
-    "noNightVariant": true
+    "noNightVariant": true,
+    "capitalRedirect": "Ironforge"
   },
   {
     "people": [
@@ -2163,22 +2170,23 @@
         "type": "Master Gnome Engineer"
       }
     ],
-    "capitalRedirect": "Ironforge",
     "name": "Tinker Town",
     "zone": "Dun Morogh",
     "faction": "Ironforge",
     "ambience": "MusicIronforge",
     "convertDestinationTo": "Ironforge",
-    "noNightVariant": true
+    "noNightVariant": true,
+    "capitalRedirect": "Ironforge"
   },
   {
     "people": [],
-    "capitalRedirect": "Ironforge",
     "name": "Hall of Explorers",
     "zone": "Dun Morogh",
     "faction": "Ironforge",
     "ambience": "MusicIronforge",
-    "noNightVariant": true
+    "convertDestinationTo": "Ironforge",
+    "noNightVariant": true,
+    "capitalRedirect": "Ironforge"
   },
   {
     "people": [
@@ -2273,12 +2281,13 @@
         "type": "Warlock Trainer"
       }
     ],
-    "capitalRedirect": "Ironforge",
     "name": "The Forlorn Cavern",
     "zone": "Dun Morogh",
     "faction": "Ironforge",
     "ambience": "MusicIronforge",
-    "noNightVariant": true
+    "convertDestinationTo": "Ironforge",
+    "noNightVariant": true,
+    "capitalRedirect": "Ironforge"
   },
   {
     "people": [
@@ -2445,12 +2454,13 @@
         "type": "Hunter Trainer"
       }
     ],
-    "capitalRedirect": "Ironforge",
     "name": "The Military Ward",
     "zone": "Dun Morogh",
     "faction": "Ironforge",
     "ambience": "MusicIronforge",
-    "noNightVariant": true
+    "convertDestinationTo": "Ironforge",
+    "noNightVariant": true,
+    "capitalRedirect": "Ironforge"
   },
   {
     "people": [
@@ -2483,12 +2493,13 @@
         "type": "Portal Trainer"
       }
     ],
-    "capitalRedirect": "Ironforge",
     "name": "The Mystic Ward",
     "zone": "Dun Morogh",
     "faction": "Ironforge",
     "ambience": "MusicIronforge",
-    "noNightVariant": true
+    "convertDestinationTo": "Ironforge",
+    "noNightVariant": true,
+    "capitalRedirect": "Ironforge"
   },
   {
     "people": [
@@ -2935,12 +2946,13 @@
         "type": "Auctioneer"
       }
     ],
-    "capitalRedirect": "Ironforge",
     "name": "The Commons",
     "zone": "Dun Morogh",
     "faction": "Ironforge",
     "ambience": "MusicIronforge",
-    "noNightVariant": true
+    "convertDestinationTo": "Ironforge",
+    "noNightVariant": true,
+    "capitalRedirect": "Ironforge"
   },
   {
     "people": [
@@ -2959,11 +2971,12 @@
         "type": "Portal Trainer"
       }
     ],
-    "capitalRedirect": "Darnassus",
     "name": "The Temple of The Moon",
     "zone": "Teldrassil",
     "faction": "Darnassus",
-    "ambience": "MusicDarnassus"
+    "ambience": "MusicDarnassus",
+    "convertDestinationTo": "Darnassus",
+    "capitalRedirect": "Darnassus"
   },
   {
     "people": [
@@ -3388,11 +3401,12 @@
         ]
       }
     ],
-    "capitalRedirect": "Darnassus",
     "name": "Tradesmen's Terrace",
     "zone": "Teldrassil",
     "faction": "Darnassus",
-    "ambience": "MusicDarnassus"
+    "ambience": "MusicDarnassus",
+    "convertDestinationTo": "Darnassus",
+    "capitalRedirect": "Darnassus"
   },
   {
     "people": [
@@ -4561,11 +4575,12 @@
         ]
       }
     ],
-    "capitalRedirect": "Darnassus",
     "name": "Craftsmen's Terrace",
     "zone": "Teldrassil",
     "faction": "Darnassus",
-    "ambience": "MusicDarnassus"
+    "ambience": "MusicDarnassus",
+    "convertDestinationTo": "Darnassus",
+    "capitalRedirect": "Darnassus"
   },
   {
     "people": [
@@ -4598,11 +4613,12 @@
         "type": "Hunter Trainer"
       }
     ],
-    "capitalRedirect": "Darnassus",
     "name": "Cenarion Enclave",
     "zone": "Teldrassil",
     "faction": "Darnassus",
-    "ambience": "MusicDarnassus"
+    "ambience": "MusicDarnassus",
+    "convertDestinationTo": "Darnassus",
+    "capitalRedirect": "Darnassus"
   },
   {
     "people": [
@@ -4621,11 +4637,12 @@
         "type": "Battlemaster"
       }
     ],
-    "capitalRedirect": "Darnassus",
     "name": "Warrior's Terrace",
     "zone": "Teldrassil",
     "faction": "Darnassus",
-    "ambience": "MusicDarnassus"
+    "ambience": "MusicDarnassus",
+    "convertDestinationTo": "Darnassus",
+    "capitalRedirect": "Darnassus"
   },
   {
     "people": [
@@ -4644,11 +4661,12 @@
         "type": "Banker"
       }
     ],
-    "capitalRedirect": "Darnassus",
     "name": "The Temple Gardens",
     "zone": "Teldrassil",
     "faction": "Darnassus",
-    "ambience": "MusicDarnassus"
+    "ambience": "MusicDarnassus",
+    "convertDestinationTo": "Darnassus",
+    "capitalRedirect": "Darnassus"
   },
   {
     "people": [
@@ -4660,11 +4678,12 @@
         "type": "Battlemaster"
       }
     ],
-    "capitalRedirect": "Stormwind City",
     "name": "Stormwind Keep",
     "zone": "Elwynn Forest",
     "faction": "Stormwind",
-    "ambience": "MusicStormwind"
+    "ambience": "MusicStormwind",
+    "convertDestinationTo": "Stormwind City",
+    "capitalRedirect": "Stormwind City"
   },
   {
     "people": [
@@ -4739,11 +4758,12 @@
         ]
       }
     ],
-    "capitalRedirect": "Stormwind City",
     "name": "The Canals",
     "zone": "Elwynn Forest",
     "faction": "Stormwind",
-    "ambience": "MusicStormwind"
+    "ambience": "MusicStormwind",
+    "convertDestinationTo": "Stormwind City",
+    "capitalRedirect": "Stormwind City"
   },
   {
     "people": [
@@ -5146,11 +5166,12 @@
         "type": "Cook"
       }
     ],
-    "capitalRedirect": "Stormwind City",
     "name": "Old Town",
     "zone": "Elwynn Forest",
     "faction": "Stormwind",
-    "ambience": "MusicStormwind"
+    "ambience": "MusicStormwind",
+    "convertDestinationTo": "Stormwind City",
+    "capitalRedirect": "Stormwind City"
   },
   {
     "people": [
@@ -5169,11 +5190,12 @@
         "type": "Herbalist"
       }
     ],
-    "capitalRedirect": "Stormwind City",
     "name": "The Park",
     "zone": "Elwynn Forest",
     "faction": "Stormwind",
-    "ambience": "MusicStormwind"
+    "ambience": "MusicStormwind",
+    "convertDestinationTo": "Stormwind City",
+    "capitalRedirect": "Stormwind City"
   },
   {
     "people": [
@@ -5425,11 +5447,12 @@
         "type": "Artisan Tailor"
       }
     ],
-    "capitalRedirect": "Stormwind City",
     "name": "Mage Quarter",
     "zone": "Elwynn Forest",
     "faction": "Stormwind",
-    "ambience": "MusicStormwind"
+    "ambience": "MusicStormwind",
+    "convertDestinationTo": "Stormwind City",
+    "capitalRedirect": "Stormwind City"
   },
   {
     "people": [
@@ -5662,11 +5685,12 @@
         "type": "Physician"
       }
     ],
-    "capitalRedirect": "Stormwind City",
     "name": "Cathedral Square",
     "zone": "Elwynn Forest",
     "faction": "Stormwind",
-    "ambience": "MusicStormwind"
+    "ambience": "MusicStormwind",
+    "convertDestinationTo": "Stormwind City",
+    "capitalRedirect": "Stormwind City"
   },
   {
     "people": [
@@ -5820,12 +5844,12 @@
         "type": "Expert Engineer"
       }
     ],
-    "capitalRedirect": "Stormwind City",
     "name": "Dwarven District",
     "zone": "Elwynn Forest",
     "faction": "Stormwind",
     "ambience": "MusicStormwind",
-    "convertDestinationTo": "Ironforge"
+    "convertDestinationTo": "Stormwind City",
+    "capitalRedirect": "Stormwind City"
   },
   {
     "people": [
@@ -5908,12 +5932,12 @@
         ]
       }
     ],
-    "capitalRedirect": "Thunder Bluff",
     "name": "Higher Rise",
     "zone": "Mulgore",
     "faction": "Thunder Bluff",
     "ambience": "MusicThunderBluff",
-    "convertDestinationTo": "Thunder Bluff Southern Lift"
+    "convertDestinationTo": "Thunder Bluff",
+    "capitalRedirect": "Thunder Bluff"
   },
   {
     "people": [
@@ -6867,11 +6891,12 @@
         ]
       }
     ],
-    "capitalRedirect": "Thunder Bluff",
     "name": "Middle Rise",
     "zone": "Mulgore",
     "faction": "Thunder Bluff",
-    "ambience": "MusicThunderBluff"
+    "ambience": "MusicThunderBluff",
+    "convertDestinationTo": "Thunder Bluff",
+    "capitalRedirect": "Thunder Bluff"
   },
   {
     "people": [
@@ -7703,11 +7728,12 @@
         ]
       }
     ],
-    "capitalRedirect": "Thunder Bluff",
     "name": "Lower Rise",
     "zone": "Mulgore",
     "faction": "Thunder Bluff",
-    "ambience": "MusicThunderBluff"
+    "ambience": "MusicThunderBluff",
+    "convertDestinationTo": "Thunder Bluff",
+    "capitalRedirect": "Thunder Bluff"
   },
   {
     "people": [
@@ -7733,12 +7759,13 @@
         "type": "Portal Trainer"
       }
     ],
-    "capitalRedirect": "Thunder Bluff",
     "name": "The Pools of Vision",
     "zone": "Mulgore",
     "faction": "Thunder Bluff",
     "ambience": "MusicThunderBluff",
-    "noNightVariant": true
+    "convertDestinationTo": "Thunder Bluff",
+    "noNightVariant": true,
+    "capitalRedirect": "Thunder Bluff"
   },
   {
     "people": [
@@ -7757,11 +7784,12 @@
         "type": "Physician"
       }
     ],
-    "capitalRedirect": "Thunder Bluff",
     "name": "Spirit Rise",
     "zone": "Mulgore",
     "faction": "Thunder Bluff",
-    "ambience": "MusicThunderBluff"
+    "ambience": "MusicThunderBluff",
+    "convertDestinationTo": "Thunder Bluff",
+    "capitalRedirect": "Thunder Bluff"
   },
   {
     "people": [
@@ -7787,11 +7815,12 @@
         "type": "Warrior Trainer"
       }
     ],
-    "capitalRedirect": "Thunder Bluff",
     "name": "Hunter Rise",
     "zone": "Mulgore",
     "faction": "Thunder Bluff",
-    "ambience": "MusicThunderBluff"
+    "ambience": "MusicThunderBluff",
+    "convertDestinationTo": "Thunder Bluff",
+    "capitalRedirect": "Thunder Bluff"
   },
   {
     "people": [
@@ -7803,11 +7832,12 @@
         "type": "Druid Trainer"
       }
     ],
-    "capitalRedirect": "Thunder Bluff",
     "name": "Elder Rise",
     "zone": "Mulgore",
     "faction": "Thunder Bluff",
-    "ambience": "MusicThunderBluff"
+    "ambience": "MusicThunderBluff",
+    "convertDestinationTo": "Thunder Bluff",
+    "capitalRedirect": "Thunder Bluff"
   },
   {
     "people": [
@@ -7819,12 +7849,13 @@
         "type": "Battlemaster"
       }
     ],
-    "capitalRedirect": "Undercity",
     "name": "The Royal Quarter",
     "zone": "Tirisfal Glades",
     "faction": "Undercity",
     "ambience": "MusicUndercity",
-    "noNightVariant": true
+    "convertDestinationTo": "Undercity",
+    "noNightVariant": true,
+    "capitalRedirect": "Undercity"
   },
   {
     "people": [
@@ -7867,12 +7898,13 @@
         "type": "Artisan Alchemist"
       }
     ],
-    "capitalRedirect": "Undercity",
     "name": "The Apothecarium",
     "zone": "Tirisfal Glades",
     "faction": "Undercity",
     "ambience": "MusicUndercity",
-    "noNightVariant": true
+    "convertDestinationTo": "Undercity",
+    "noNightVariant": true,
+    "capitalRedirect": "Undercity"
   },
   {
     "people": [
@@ -8150,12 +8182,13 @@
         "type": "Skinner"
       }
     ],
-    "capitalRedirect": "Undercity",
     "name": "The Rogues' Quarter",
     "zone": "Tirisfal Glades",
     "faction": "Undercity",
     "ambience": "MusicUndercity",
-    "noNightVariant": true
+    "convertDestinationTo": "Undercity",
+    "noNightVariant": true,
+    "capitalRedirect": "Undercity"
   },
   {
     "people": [
@@ -8747,12 +8780,13 @@
         "type": "Artisan Tailor"
       }
     ],
-    "capitalRedirect": "Undercity",
     "name": "The Magic Quarter",
     "zone": "Tirisfal Glades",
     "faction": "Undercity",
     "ambience": "MusicUndercity",
-    "noNightVariant": true
+    "convertDestinationTo": "Undercity",
+    "noNightVariant": true,
+    "capitalRedirect": "Undercity"
   },
   {
     "people": [
@@ -9290,12 +9324,13 @@
         ]
       }
     ],
-    "capitalRedirect": "Undercity",
     "name": "The War Quarter",
     "zone": "Tirisfal Glades",
     "faction": "Undercity",
     "ambience": "MusicUndercity",
-    "noNightVariant": true
+    "convertDestinationTo": "Undercity",
+    "noNightVariant": true,
+    "capitalRedirect": "Undercity"
   },
   {
     "people": [
@@ -9854,13 +9889,13 @@
         "type": "Banker"
       }
     ],
-    "capitalRedirect": "Undercity",
     "name": "The Trade Quarter",
     "zone": "Tirisfal Glades",
     "faction": "Undercity",
     "ambience": "MusicUndercity",
     "convertDestinationTo": "Undercity",
-    "noNightVariant": true
+    "noNightVariant": true,
+    "capitalRedirect": "Undercity"
   },
   {
     "x": 1826,
@@ -10595,22 +10630,23 @@
         ]
       }
     ],
-    "capitalRedirect": "Stormwind City",
     "name": "Trade District",
     "zone": "Elwynn Forest",
     "faction": "Stormwind",
     "ambience": "MusicStormwind",
-    "convertDestinationTo": "Stormwind City"
+    "convertDestinationTo": "Stormwind City",
+    "capitalRedirect": "Stormwind City"
   },
   {
-    "capitalRedirect": "Stormwind City",
     "x": 4975,
     "y": -3517,
     "name": "Stormwind City",
     "zone": "Elwynn Forest",
     "faction": "Stormwind",
     "ambience": "MusicStormwind",
-    "fishing": true
+    "convertDestinationTo": "Stormwind City",
+    "fishing": true,
+    "capitalRedirect": "Stormwind City"
   },
   {
     "people": [
@@ -15376,14 +15412,15 @@
     "faction": "Stormwind"
   },
   {
-    "capitalRedirect": "Darnassus",
     "x": 938,
     "y": -504,
     "name": "Darnassus",
     "zone": "Teldrassil",
     "faction": "Darnassus",
     "ambience": "MusicDarnassus",
-    "fishing": true
+    "convertDestinationTo": "Darnassus",
+    "fishing": true,
+    "capitalRedirect": "Darnassus"
   },
   {
     "people": [
@@ -19192,13 +19229,14 @@
     "faction": "Wildhammer Clan"
   },
   {
-    "capitalRedirect": "Ironforge",
     "x": 5231,
     "y": -2694,
     "name": "Ironforge",
     "zone": "Dun Morogh",
     "faction": "Ironforge",
-    "ambience": "MusicIronforge"
+    "ambience": "MusicIronforge",
+    "convertDestinationTo": "Ironforge",
+    "capitalRedirect": "Ironforge"
   },
   {
     "people": [
@@ -21068,30 +21106,30 @@
         ]
       }
     ],
-    "capitalRedirect": "Orgrimmar",
     "name": "The Valley of Strength",
     "zone": "Durotar",
     "faction": "Orgrimmar",
     "ambience": "MusicOrgrimmar",
-    "convertDestinationTo": "Orgrimmar Main Gates"
+    "convertDestinationTo": "Orgrimmar Main Gates",
+    "capitalRedirect": "Orgrimmar"
   },
   {
-    "capitalRedirect": "Orgrimmar",
     "x": 2343,
     "y": -2248,
     "name": "Orgrimmar Main Gates",
     "zone": "Durotar",
     "faction": "Orgrimmar",
-    "ambience": "MusicOrgrimmar"
+    "ambience": "MusicOrgrimmar",
+    "capitalRedirect": "Orgrimmar"
   },
   {
-    "capitalRedirect": "Orgrimmar",
     "x": 2241,
     "y": -2192,
     "name": "Orgrimmar Side Entrence",
     "zone": "Durotar",
     "faction": "Orgrimmar",
-    "ambience": "MusicOrgrimmar"
+    "ambience": "MusicOrgrimmar",
+    "capitalRedirect": "Orgrimmar"
   },
   {
     "people": [
@@ -24633,22 +24671,24 @@
     "faction": "Orgrimmar"
   },
   {
-    "capitalRedirect": "Thunder Bluff",
     "x": 1418,
     "y": -2794,
     "name": "Thunder Bluff Southern Lift",
     "zone": "Mulgore",
     "faction": "Thunder Bluff",
-    "ambience": "MusicThunderBluff"
+    "ambience": "MusicThunderBluff",
+    "convertDestinationTo": "Thunder Bluff",
+    "capitalRedirect": "Thunder Bluff"
   },
   {
-    "capitalRedirect": "Thunder Bluff",
     "x": 1460,
     "y": -2741,
     "name": "Thunder Bluff Northern Lift",
     "zone": "Mulgore",
     "faction": "Thunder Bluff",
-    "ambience": "MusicThunderBluff"
+    "ambience": "MusicThunderBluff",
+    "convertDestinationTo": "Thunder Bluff",
+    "capitalRedirect": "Thunder Bluff"
   },
   {
     "people": [
@@ -27195,14 +27235,15 @@
     "faction": "Thunder Bluff"
   },
   {
-    "capitalRedirect": "Undercity",
     "x": 5011,
     "y": -1341,
     "name": "Undercity",
     "zone": "Tirisfal Glades",
     "faction": "Undercity",
     "ambience": "MusicUndercity",
-    "noNightVariant": true
+    "convertDestinationTo": "Undercity",
+    "noNightVariant": true,
+    "capitalRedirect": "Undercity"
   },
   {
     "people": [

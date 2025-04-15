@@ -595,7 +595,8 @@
         ],
         "effects": [
           {
-            "Effect": "HearthstonePlayer",
+            "Effect": "TeleportPlayer",
+            "TeleportDestinaton": "<HomeLocation>",
             "SoundEffect": "AbilityTeleport"
           }
         ]

@@ -231,12 +231,12 @@
   },
   {
     "type": "Apprentice Weaponsmith",
-    "icon": "ItemHammer17",
+    "icon": "ItemHammer16",
     "category": "Vendor"
   },
   {
     "type": "Apprentice Armorer",
-    "icon": "ItemHammer17",
+    "icon": "ItemChestChain",
     "category": "Vendor"
   },
   {
