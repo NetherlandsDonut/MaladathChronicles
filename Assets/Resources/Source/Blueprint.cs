@@ -237,7 +237,8 @@ public class Blueprint
                     var race = races.Find(x => x.name == board.participants[board.spotlightEnemy[index]].who.race);
                     AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? board.participants[index].who.gender : ""), (h) =>
                     {
-                        FinishTargettingAbility(board.participants[board.spotlightEnemy[index]]);
+                        if (abilityTargetted != null) FinishTargettingAbility(board.participants[board.spotlightEnemy[index]]);
+                        else ChangeSpotlight(index);
                     });
                     BigButtonFlipX();
                     if (board.participants[board.spotlightEnemy[index]].who.dead) SetBigButtonToGrayscale();
@@ -249,21 +250,7 @@ public class Blueprint
                     }
                     AddHealthBar(40, -19, board.spotlightEnemy[index], board.participants[board.spotlightEnemy[index]].who);
                 },
-                (h) =>
-                {
-                    if (index == 0) return;
-                    var switchBuffsWith = board.spotlightEnemy[0];
-                    var temp = board.spotlightEnemy[index];
-                    board.spotlightEnemy.RemoveAt(index);
-                    board.spotlightEnemy.Insert(0, temp);
-                    foreach (var res in board.participants[board.spotlightEnemy[0]].who.resources)
-                    {
-                        CloseWindow("Enemy" + res.Key + "Resource");
-                        SpawnWindowBlueprint("Enemy" + res.Key + "Resource");
-                    }
-                    board.temporaryBuffs[switchBuffsWith].ForEach(x => x.GetComponent<FlyingBuff>().InstantMove());
-                    board.temporaryBuffs[temp].ForEach(x => x.GetComponent<FlyingBuff>().InstantMove());
-                });
+                (h) => ChangeSpotlight(index));
                 foreach (var actionBar in board.participants[board.spotlightEnemy[index]].who.actionBars[board.participants[board.spotlightEnemy[index]].who.currentActionSet])
                 {
                     var abilityObj = abilities.Find(x => x.name == actionBar);
@@ -301,6 +288,22 @@ public class Blueprint
                     AddSmallEmptyRegion();
                 }
             }
+
+            void ChangeSpotlight(int index)
+            {
+                if (index == 0) return;
+                var switchBuffsWith = board.spotlightEnemy[0];
+                var temp = board.spotlightEnemy[index];
+                board.spotlightEnemy.RemoveAt(index);
+                board.spotlightEnemy.Insert(0, temp);
+                foreach (var res in board.participants[board.spotlightEnemy[0]].who.resources)
+                {
+                    CloseWindow("Enemy" + res.Key + "Resource");
+                    SpawnWindowBlueprint("Enemy" + res.Key + "Resource");
+                }
+                board.temporaryBuffs[switchBuffsWith].ForEach(x => x.GetComponent<FlyingBuff>().InstantMove());
+                board.temporaryBuffs[temp].ForEach(x => x.GetComponent<FlyingBuff>().InstantMove());
+            }
         }),
         new("PlayerBattleInfo", () => {
             SetAnchor(TopLeft, 0, -8);
@@ -317,14 +320,16 @@ public class Blueprint
                     if (board.participants[board.spotlightFriendly[index]].who.spec != null)
                         AddBigButton(board.participants[board.spotlightFriendly[index]].who.Spec().icon, (h) =>
                         {
-                            FinishTargettingAbility(board.participants[board.spotlightFriendly[index]]);
+                            if (abilityTargetted != null) FinishTargettingAbility(board.participants[board.spotlightFriendly[index]]);
+                            else ChangeSpotlight(index);
                         });
                     else
                     {
                         var race = races.Find(x => x.name == board.participants[board.spotlightFriendly[index]].who.race);
                         AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? board.participants[board.spotlightFriendly[0]].who.gender : ""), (h) =>
                         {
-                            FinishTargettingAbility(board.participants[board.spotlightFriendly[index]]); 
+                            if (abilityTargetted != null) FinishTargettingAbility(board.participants[board.spotlightFriendly[index]]);
+                            else ChangeSpotlight(index);
                         });
                     }
                     if (board.participants[board.spotlightFriendly[index]].who.dead) SetBigButtonToGrayscale();
@@ -337,21 +342,7 @@ public class Blueprint
                     }
                     AddHealthBar(2, -19, board.spotlightFriendly[index], board.participants[board.spotlightFriendly[index]].who);
                 },
-                (h) =>
-                {
-                    if (index == 0) return;
-                    var switchBuffsWith = board.spotlightFriendly[0];
-                    var temp = board.spotlightFriendly[index];
-                    board.spotlightFriendly.RemoveAt(index);
-                    board.spotlightFriendly.Insert(0, temp);
-                    foreach (var res in board.participants[board.spotlightFriendly[0]].who.resources)
-                    {
-                        CloseWindow("Friendly" + res.Key + "Resource");
-                        SpawnWindowBlueprint("Friendly" + res.Key + "Resource");
-                    }
-                    board.temporaryBuffs[switchBuffsWith].ForEach(x => x.GetComponent<FlyingBuff>().InstantMove());
-                    board.temporaryBuffs[temp].ForEach(x => x.GetComponent<FlyingBuff>().InstantMove());
-                });
+                (h) => ChangeSpotlight(index));
                 var aimedLength = board.participants[board.spotlightFriendly[index]].who.actionBars.Max(x => x.Value.Count());
                 foreach (var actionBar in board.participants[board.spotlightFriendly[index]].who.actionBars[board.participants[index].who.currentActionSet])
                 {
@@ -440,6 +431,22 @@ public class Blueprint
                     AddSmallEmptyRegion();
                 }
             }
+
+            void ChangeSpotlight(int index)
+            {
+                if (index == 0) return;
+                var switchBuffsWith = board.spotlightFriendly[0];
+                var temp = board.spotlightFriendly[index];
+                board.spotlightFriendly.RemoveAt(index);
+                board.spotlightFriendly.Insert(0, temp);
+                foreach (var res in board.participants[board.spotlightFriendly[0]].who.resources)
+                {
+                    CloseWindow("Friendly" + res.Key + "Resource");
+                    SpawnWindowBlueprint("Friendly" + res.Key + "Resource");
+                }
+                board.temporaryBuffs[switchBuffsWith].ForEach(x => x.GetComponent<FlyingBuff>().InstantMove());
+                board.temporaryBuffs[temp].ForEach(x => x.GetComponent<FlyingBuff>().InstantMove());
+            }
         }),
         new("PlayerQuickUse", () => {
             SetAnchor(Bottom, 0, 9);
@@ -489,35 +496,33 @@ public class Blueprint
             AddHeaderRegion(() =>
             {
                 foreach (var foo in stats)
-                    if (!foo.Key.Contains("Mastery") && foo.Key != "Armor")
+                    if (!foo.Key.Contains("Mastery"))
                     {
                         AddLine(foo.Key + ":", "Gray", "Left");
-                        AddLine(foo.Value + "", rawStats[foo.Key] == foo.Value ? "LightGray" : "Uncommon", "Right");
+                        AddLine(foo.Value + "", rawStats[foo.Key] == foo.Value ? "Gray" : "Uncommon", "Right");
                     }
             });
-            AddButtonRegion(() =>
-            {
-                AddLine("Max health:", "Gray", "Left");
-                AddLine(currentSave.player.MaxHealth() + "", "Uncommon", "Right");
-                AddLine("Armor:", "Gray", "Left");
-                AddLine(currentSave.player.Armor() + "", "Uncommon", "Right");
-                AddLine("Melee attack power:", "Gray", "Left");
-                AddLine(currentSave.player.MeleeAttackPower() + "", "Uncommon", "Right");
-                AddLine("Ranged attack power:", "Gray", "Left");
-                AddLine(currentSave.player.RangedAttackPower() + "", "Uncommon", "Right");
-                AddLine("Spell power:", "Gray", "Left");
-                AddLine(currentSave.player.SpellPower() + "", "Uncommon", "Right");
-                AddLine("Critical strike:", "Gray", "Left");
-                AddLine(currentSave.player.CriticalStrike().ToString("0.00") + "%", "Uncommon", "Right");
-                AddLine("Spell critical:", "Gray", "Left");
-                AddLine(currentSave.player.SpellCritical().ToString("0.00") + "%", "Uncommon", "Right");
-            });
+            //AddButtonRegion(() =>
+            //{
+            //    AddLine("Max health:", "Gray", "Left");
+            //    AddLine(currentSave.player.MaxHealth() + "", "Uncommon", "Right");
+            //    AddLine("Armor:", "Gray", "Left");
+            //    AddLine(currentSave.player.Armor() + "", "Uncommon", "Right");
+            //    AddLine("Melee attack power:", "Gray", "Left");
+            //    AddLine(currentSave.player.MeleeAttackPower() + "", "Uncommon", "Right");
+            //    AddLine("Ranged attack power:", "Gray", "Left");
+            //    AddLine(currentSave.player.RangedAttackPower() + "", "Uncommon", "Right");
+            //    AddLine("Spell power:", "Gray", "Left");
+            //    AddLine(currentSave.player.SpellPower() + "", "Uncommon", "Right");
+            //    AddLine("Critical strike:", "Gray", "Left");
+            //    AddLine(currentSave.player.CriticalStrike().ToString("0.00") + "%", "Uncommon", "Right");
+            //    AddLine("Spell critical:", "Gray", "Left");
+            //    AddLine(currentSave.player.SpellCritical().ToString("0.00") + "%", "Uncommon", "Right");
+            //});
             AddHeaderRegion(() =>
             {
                 AddLine("Max health:", "Gray", "Left");
                 AddLine(currentSave.player.MaxHealth() + "", "Uncommon", "Right");
-                AddLine("Armor:", "Gray", "Left");
-                AddLine(currentSave.player.Armor() + "", "Uncommon", "Right");
                 AddLine("Melee attack power:", "Gray", "Left");
                 AddLine(currentSave.player.MeleeAttackPower() + "", "Uncommon", "Right");
                 AddLine("Ranged attack power:", "Gray", "Left");
@@ -528,6 +533,10 @@ public class Blueprint
                 AddLine(currentSave.player.CriticalStrike().ToString("0.00") + "%", "Uncommon", "Right");
                 AddLine("Spell critical:", "Gray", "Left");
                 AddLine(currentSave.player.SpellCritical().ToString("0.00") + "%", "Uncommon", "Right");
+                AddLine("Physical resistance:", "Gray", "Left");
+                AddLine(currentSave.player.PhysicalResistance().ToString("0.00") + "%", "Uncommon", "Right");
+                AddLine("Magic resistance:", "Gray", "Left");
+                AddLine(currentSave.player.MagicResistance().ToString("0.00") + "%", "Uncommon", "Right");
             });
             AddPaddingRegion(() => SetRegionAsGroupExtender());
         }, true),
@@ -880,7 +889,7 @@ public class Blueprint
             {
                 var slot = saves[settings.selectedRealm].Find(x => x.player.name == settings.selectedCharacter);
                 var spec = slot.player.Spec();
-                AddHeaderRegion(() =>
+                AddHeaderRegion(() => 
                 {
                     AddLine("Character:");
                     AddSmallButton("OtherClose", (h) =>
@@ -891,7 +900,7 @@ public class Blueprint
                         CloseWindow("CharacterInfo");
                     });
                 });
-                AddPaddingRegion(() =>
+                AddPaddingRegion(() => 
                 {
                     AddBigButton("Portrait" + slot.player.race.Clean() + (slot.player.Race().genderedPortrait ? slot.player.gender : ""));
                     AddLine(slot.player.name, "Gray");
@@ -899,10 +908,20 @@ public class Blueprint
                     AddText(slot.player.level + " ", "Gray");
                     AddText(spec.name, spec.name);
                 });
-                AddHeaderRegion(() => AddLine("Total time played:"));
                 AddPaddingRegion(() =>
                 {
-                    AddLine((slot.timePlayed.Hours > 0 ? slot.timePlayed.Hours + "h " : "") + slot.timePlayed.Minutes + "m", "DarkGray");
+                    AddLine("Total time played: ", "DarkGray");
+                    AddText((slot.timePlayed.Hours > 0 ? slot.timePlayed.Hours + "h " : "") + slot.timePlayed.Minutes + "m");
+                });
+                AddPaddingRegion(() =>
+                {
+                    AddLine("Elites killed: ", "DarkGray");
+                    AddText(slot.elitesKilled.Sum(x => x.Value) + "");
+                });
+                AddPaddingRegion(() =>
+                {
+                    AddLine("Rares killed: ", "DarkGray");
+                    AddText(slot.raresKilled.Sum(x => x.Value) + "");
                 });
                 AddPaddingRegion(() => SetRegionAsGroupExtender());
                 AddButtonRegion(() => AddLine("Enter World", "", "Center"),

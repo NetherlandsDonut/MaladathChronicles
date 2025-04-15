@@ -1058,11 +1058,6 @@ public class Entity
         return mount == null ? 5 : mount.speed;
     }
 
-    public int Armor()
-    {
-        return Stats()["Armor"];
-    }
-
     public int MaxHealth()
     {
         return Stats()["Stamina"] * 5;
@@ -1249,6 +1244,16 @@ public class Entity
         if (temp == null) return Stats()["Intellect"] * 0.03;
         var sum = temp.rules["Spell Critical per Intellect"] * Stats()["Intellect"];
         return sum;
+    }
+
+    public double PhysicalResistance()
+    {
+        return Stats()["Armor"] / 100.0;
+    }
+
+    public double MagicResistance()
+    {
+        return Stats()["Spirit"] / 20.0;
     }
 
     #endregion

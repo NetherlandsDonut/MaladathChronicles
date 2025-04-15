@@ -3717,7 +3717,7 @@
         "Blackwing Lair": 1,
         "Ruins of Ahn'Qiraj": 1,
         "Temple of Ahn'Qiraj": 1,
-        "Blackrock Mountain": 6,
+        "Blackrock Mountain": 7,
         "Jintha'Alor": 1,
         "Tyr's Hand": 1,
         "Hearthglen": 1,
@@ -3733,9 +3733,9 @@
       "vendorStock": {},
       "banks": {},
       "startDate": "2025-04-07T03:18:46.5748667+02:00",
-      "lastLoaded": "2025-04-14T03:51:10.7013068+02:00",
-      "lastPlayed": "2025-04-14T03:51:27.4819221+02:00",
-      "timePlayed": "01:20:51.5897161"
+      "lastLoaded": "2025-04-14T19:31:12.4779639+02:00",
+      "lastPlayed": "2025-04-14T19:31:15.4710682+02:00",
+      "timePlayed": "01:21:39.1441049"
     },
     {
       "player": {
