@@ -330,42 +330,6 @@ public class Board
             results = new CombatResults(result, area.zone, area.recommendedLevel);
             if (result == "Team1Won")
             {
-                var progression = area.progression.FindAll(x => x.point == (currentSave.siteProgress.ContainsKey(area.name) ? currentSave.siteProgress[area.name] : 0));
-                var nextProgression = area.progression.FindAll(x => x.point - 1 == (currentSave.siteProgress.ContainsKey(area.name) ? currentSave.siteProgress[area.name] : 0));
-                var progBosses = progression.FindAll(x => x.type == "Boss");
-                var nextProgBosses = nextProgression.FindAll(x => x.type == "Boss");
-
-                //If you just defeated an enemy that wasn't a boss and none bosses block your way
-                //in progression then increase your progression in the area by one point
-                if (area != null && participants.First(x => x.team == 2).who.kind != "Elite" && progBosses.Count > 0 && progBosses.All(x => currentSave.elitesKilled.ContainsKey(x.bossName)) || progBosses.Count == 0)
-                    if (!currentSave.siteProgress.ContainsKey(area.name)) currentSave.siteProgress.Add(area.name, 1);
-                    else currentSave.siteProgress[area.name]++;
-                foreach (var unlockArea in progression.FindAll(x => x.type == "Area"))
-                    if (!currentSave.unlockedAreas.Contains(unlockArea.areaName) && progBosses.Count > 0 && progBosses.All(x => currentSave.elitesKilled.ContainsKey(x.bossName)))
-                        if (!unlockArea.all) currentSave.unlockedAreas.Add(unlockArea.areaName);
-                        else UnlockArea(unlockArea);
-                foreach (var unlockArea in nextProgression.FindAll(x => x.type == "Area"))
-                    if (!currentSave.unlockedAreas.Contains(unlockArea.areaName) && nextProgBosses.Count == 0)
-                        if (!unlockArea.all) currentSave.unlockedAreas.Add(unlockArea.areaName);
-                        else UnlockArea(unlockArea);
-
-                void UnlockArea(AreaProgression unlockArea)
-                {
-                    var temp = SiteInstance.instance.wings.SelectMany(x => x.areas).Select(x => areas.Find(y => y.name == x["AreaName"]));
-                    var foo = temp.Select(x => (x.name, x.progression.Find(y => y.areaName == unlockArea.areaName))).ToList();
-                    foo.RemoveAll(x => x.Item2 == null);
-                    bool unlock = true;
-                    foreach (var a in foo)
-                    {
-                        var elite = temp.First(y => y.name == a.name).progression.Find(x => x.type == "Boss" && x.point == a.Item2.point);
-                        if (!currentSave.siteProgress.ContainsKey(a.name)) unlock = false;
-                        else if (elite != null) { if (elite != null && (a.Item2.point > currentSave.siteProgress[a.name] || a.Item2.point == currentSave.siteProgress[a.name] && !currentSave.elitesKilled.ContainsKey(elite.bossName))) unlock = false; }
-                        else if (elite == null) if (a.Item2.point > currentSave.siteProgress[a.name]) unlock = false;
-                        if (!unlock) break;
-                    }
-                    if (unlock) currentSave.unlockedAreas.Add(unlockArea.areaName);
-                }
-
                 //Add +1 to the amount of times you defeated this enemy
                 //Depending on the rarity of the enemy add +1 to the right list
                 foreach (var defeatedEnemy in participants.Where(x => x.team == 2))
@@ -451,6 +415,46 @@ public class Board
                     foreach (var item in results.inventory.items)
                         if (item.unique && !currentSave.player.uniquesGotten.Contains(item.name))
                             currentSave.player.uniquesGotten.Add(item.name);
+                }
+
+                var progression = area.progression.FindAll(x => x.point == (currentSave.siteProgress.ContainsKey(area.name) ? currentSave.siteProgress[area.name] : 0));
+                var nextProgression = area.progression.FindAll(x => x.point - 1 == (currentSave.siteProgress.ContainsKey(area.name) ? currentSave.siteProgress[area.name] : 0));
+                var progBosses = progression.FindAll(x => x.type == "Boss");
+                var nextProgBosses = nextProgression.FindAll(x => x.type == "Boss");
+
+                //If you just defeated an enemy that wasn't a boss and none bosses block your way
+                //in progression then increase your progression in the area by one point
+                if (area != null && participants.First(x => x.team == 2).who.kind != "Elite" && progBosses.Count > 0 && progBosses.All(x => currentSave.elitesKilled.ContainsKey(x.bossName)) || progBosses.Count == 0)
+                    if (!currentSave.siteProgress.ContainsKey(area.name)) currentSave.siteProgress.Add(area.name, 1);
+                    else currentSave.siteProgress[area.name]++;
+
+                //Unlock all areas that you were at that had bosses which are all killed
+                foreach (var unlockArea in progression.FindAll(x => x.type == "Area"))
+                    if (!currentSave.unlockedAreas.Contains(unlockArea.areaName) && progBosses.Count > 0 && progBosses.All(x => currentSave.elitesKilled.ContainsKey(x.bossName)))
+                        if (!unlockArea.all) currentSave.unlockedAreas.Add(unlockArea.areaName);
+                        else UnlockArea(unlockArea);
+
+                //Unlock all areas that you just reached if they have no boss in their way
+                foreach (var unlockArea in nextProgression.FindAll(x => x.type == "Area"))
+                    if (!currentSave.unlockedAreas.Contains(unlockArea.areaName) && nextProgBosses.Count == 0)
+                        if (!unlockArea.all) currentSave.unlockedAreas.Add(unlockArea.areaName);
+                        else UnlockArea(unlockArea);
+
+                void UnlockArea(AreaProgression unlockArea)
+                {
+                    var temp = SiteInstance.instance.wings.SelectMany(x => x.areas).Select(x => areas.Find(y => y.name == x["AreaName"]));
+                    var foo = temp.Select(x => (x.name, x.progression.Find(y => y.areaName == unlockArea.areaName))).ToList();
+                    foo.RemoveAll(x => x.Item2 == null);
+                    bool unlock = true;
+                    foreach (var a in foo)
+                    {
+                        var elite = temp.First(y => y.name == a.name).progression.Find(x => x.type == "Boss" && x.point == a.Item2.point);
+                        if (!currentSave.siteProgress.ContainsKey(a.name)) unlock = false;
+                        else if (elite != null) { if (elite != null && (a.Item2.point > currentSave.siteProgress[a.name] || a.Item2.point == currentSave.siteProgress[a.name] && !currentSave.elitesKilled.ContainsKey(elite.bossName))) unlock = false; }
+                        else if (elite == null) if (a.Item2.point > currentSave.siteProgress[a.name]) unlock = false;
+                        if (!unlock) break;
+                    }
+                    if (unlock) currentSave.unlockedAreas.Add(unlockArea.areaName);
                 }
 
                 //Exit board view

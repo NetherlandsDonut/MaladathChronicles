@@ -5,10 +5,35 @@
   "Whitemane": [
     {
       "player": {
-        "currentQuests": [],
+        "currentQuests": [
+          {
+            "questID": 5726,
+            "requiredLevel": 9,
+            "questLevel": 12,
+            "name": "Hidden Enemies",
+            "description": "One thing I will not tolerate are traitors in our midst, $N. But I would be a fool to play my hand so early--it would not sufficiently cut the corruption out of our lands and only cause the infection to grow worse.$B$BBut you, a young adventurer, could go places my agents could not... could learn the truth... could find the true head of the beast.$B$BIf you are brave enough, then enter Skull Rock to the east of Orgrimmar, find a lieutenant's insignia off one of the Burning Blade there, and return to me.",
+            "objective": "Bring a Lieutenant's Insignia to Thrall in Orgrimmar.",
+            "completion": "Good, $N! The spirits be praised, perhaps you are the one who will finally put my greatest fears to rest! Who would suspect someone so young and so brave would rise up and champion our cause? You remind me of myself when I was younger. I will ensure that you are justly rewarded for your efforts if we both survive the coming storm.$B$BBut there is time for more praise later. You've not accomplished anything in comparison to what you will face... but this is a good start.",
+            "siteStart": "Grommash Hold",
+            "siteEnd": "Grommash Hold",
+            "zone": "Durotar",
+            "money": 250,
+            "experience": 910,
+            "reputationGain": {
+              "Orgrimmar": 250
+            },
+            "conditions": [
+              {
+                "type": "Item",
+                "name": "Lieutenant's Insignia",
+                "amount": 1
+              }
+            ]
+          }
+        ],
         "completedQuests": [],
-        "level": 9,
-        "experience": 220,
+        "level": 18,
+        "experience": 2384,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -81,7 +106,7 @@
         },
         "professionSkills": {},
         "learnedRecipes": {},
-        "unspentTalentPoints": 8,
+        "unspentTalentPoints": 17,
         "faction": "Darkspear Tribe",
         "name": "Eahde",
         "race": "Troll",
@@ -109,9 +134,7 @@
         },
         "currentActionSet": "Default",
         "actionBars": {
-          "Default": [
-            "Heroic Strike"
-          ]
+          "Default": []
         },
         "stats": {
           "Stamina": 23,
@@ -146,6 +169,142 @@
               "unique": true,
               "abilities": {
                 "Hearthstone": 1
+              }
+            },
+            {
+              "x": 1,
+              "rarity": "Common",
+              "name": "Linen Cloth",
+              "icon": "itemfabriclinen01",
+              "detailedType": "Cloth",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 5,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 20,
+              "price": 13
+            },
+            {
+              "x": 2,
+              "rarity": "Poor",
+              "name": "Crushing Maul",
+              "icon": "itemhammer16",
+              "detailedType": "Mace",
+              "type": "Two Handed",
+              "source": "RareDrop",
+              "ilvl": 50,
+              "lvl": 45,
+              "minDamage": 61,
+              "maxDamage": 92,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 12059,
+              "speed": 3.3
+            },
+            {
+              "x": 3,
+              "rarity": "Common",
+              "name": "Mageweave Cloth",
+              "icon": "itemfabricmageweave01",
+              "detailedType": "Cloth",
+              "type": "Trade Good",
+              "source": "Quest",
+              "ilvl": 40,
+              "lvl": 1,
+              "amount": 11,
+              "maxStack": 20,
+              "price": 250
+            },
+            {
+              "x": 4,
+              "rarity": "Uncommon",
+              "name": "Protector Helm",
+              "icon": "itemhelmet10",
+              "type": "Head",
+              "armorClass": "Mail",
+              "source": "RareDrop",
+              "ilvl": 53,
+              "lvl": 48,
+              "armor": 234,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 12690,
+              "stats": {
+                "Stamina": 20,
+                "Spirit": 7
+              }
+            },
+            {
+              "y": 1,
+              "rarity": "Common",
+              "name": "Scroll of Spirit IV",
+              "icon": "itemscroll01",
+              "detailedType": "Scroll",
+              "type": "Miscellaneous",
+              "source": "RareDrop",
+              "ilvl": 55,
+              "amount": 2,
+              "maxStack": 5,
+              "abilities": {
+                "Scroll of Spirit IV": 1
+              },
+              "price": 100
+            },
+            {
+              "x": 1,
+              "y": 1,
+              "rarity": "Uncommon",
+              "name": "Onyx Ring of the Wolf",
+              "icon": "itemjewelryring01",
+              "randomEnchantment": true,
+              "type": "Finger",
+              "source": "RareDrop",
+              "ilvl": 50,
+              "lvl": 45,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 4971,
+              "stats": {
+                "Agility": 13,
+                "Spirit": 13
+              }
+            },
+            {
+              "x": 2,
+              "y": 1,
+              "rarity": "Common",
+              "name": "Scroll of Protection IV",
+              "icon": "itemscroll07",
+              "detailedType": "Scroll",
+              "type": "Miscellaneous",
+              "source": "RareDrop",
+              "ilvl": 55,
+              "amount": 1,
+              "maxStack": 5,
+              "abilities": {
+                "Scroll of Protection IV": 1
+              },
+              "price": 100
+            },
+            {
+              "x": 3,
+              "y": 1,
+              "rarity": "Uncommon",
+              "name": "Merciless Cloak of the Gorilla of the Owl",
+              "icon": "itemmisccape08",
+              "randomEnchantment": true,
+              "type": "Back",
+              "source": "RareDrop",
+              "ilvl": 51,
+              "lvl": 46,
+              "armor": 33,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 7139,
+              "stats": {
+                "Intellect": 13,
+                "Spirit": 13
               }
             }
           ],
@@ -209,9 +368,9 @@
         "worldBuffs": []
       },
       "hour": 11,
-      "minute": 33,
-      "second": 46,
-      "currentSite": "Orgrimmar Main Gates",
+      "minute": 44,
+      "second": 41,
+      "currentSite": "Temple of Atal'Hakkar",
       "ringOfLaw": "Eviscerator",
       "forlornCloister": "Ironspine",
       "markets": [
@@ -226,13 +385,112 @@
           "hoursSinceUpdate": 52
         }
       ],
-      "openedChests": {},
+      "openedChests": {
+        "Hall of Bones": {
+          "area": "Hall of Bones",
+          "inventory": {
+            "items": [
+              {
+                "rarity": "Uncommon",
+                "name": "Ancient Chestpiece of the Tiger",
+                "icon": "itemchestchain10",
+                "randomEnchantment": true,
+                "type": "Chest",
+                "armorClass": "Mail",
+                "source": "RareDrop",
+                "ilvl": 46,
+                "lvl": 41,
+                "armor": 254,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 10345,
+                "stats": {
+                  "Agility": 11,
+                  "Strength": 11
+                }
+              },
+              {
+                "x": 1,
+                "rarity": "Common",
+                "name": "Dark Iron Ore",
+                "icon": "itemoremithril01",
+                "detailedType": "Ore",
+                "type": "Trade Good",
+                "source": "RareDrop",
+                "ilvl": 50,
+                "lvl": 1,
+                "amount": 1,
+                "maxStack": 10,
+                "price": 500
+              },
+              {
+                "x": 2,
+                "rarity": "Uncommon",
+                "name": "Truesilver Ore",
+                "icon": "itemoretruesilver01",
+                "detailedType": "Ore",
+                "type": "Trade Good",
+                "source": "DirectDrop",
+                "ilvl": 40,
+                "lvl": 1,
+                "amount": 1,
+                "maxStack": 10,
+                "price": 500,
+                "droppedBy": [
+                  "Kalaran Windblade"
+                ]
+              },
+              {
+                "x": 3,
+                "rarity": "Common",
+                "name": "Scroll of Stamina III",
+                "icon": "itemscroll07",
+                "detailedType": "Scroll",
+                "type": "Miscellaneous",
+                "source": "RareDrop",
+                "ilvl": 45,
+                "amount": 1,
+                "maxStack": 5,
+                "abilities": {
+                  "Scroll of Intellect III": 1
+                },
+                "price": 112
+              }
+            ],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
+        }
+      },
       "fishingSpots": {},
       "fishingSpoils": {},
-      "siteProgress": {},
-      "commonsKilled": {},
+      "siteProgress": {
+        "Skull Rock": 2,
+        "Hall of Masks": 2,
+        "The Butchery": 2,
+        "Chamber of Blood": 2,
+        "Hall of Ritual": 2,
+        "The Pit of Sacrifice": 2,
+        "Hall of Bones": 3
+      },
+      "commonsKilled": {
+        "Burning Blade Fanatic": 2,
+        "Murk Slitherer": 2,
+        "Fungal Ooze": 2,
+        "Enthralled Atal'ai": 6,
+        "Cursed Atal'ai": 2,
+        "Atal'ai Priest": 4,
+        "Nightmare Wyrmkin": 2,
+        "Nightmare Wanderer": 2,
+        "Murk Spitter": 4,
+        "Mummified Atal'ai": 4
+      },
       "raresKilled": {},
-      "elitesKilled": {},
+      "elitesKilled": {
+        "Veyzhak the Cannibal": 1,
+        "Kazkaz the Unholy": 1,
+        "Zekkis": 1
+      },
       "siteVisits": {
         "The Den": 2,
         "Valley of Trials": 0,
@@ -337,7 +595,7 @@
         "Ruins of Eldarath": 1,
         "Shadowsong Shrine": 1,
         "Southridge Beach": 1,
-        "Temple of Arkkoran": 1,
+        "Temple of Arkkoran": 2,
         "Thalassian Base Camp": 1,
         "The Ruined Reaches": 1,
         "The Shattered Strand": 1,
@@ -485,7 +743,7 @@
         "Razorwind Canyon": 1,
         "The Placid Dune": 1,
         "Scuttle Coast": 1,
-        "Skull Rock": 1,
+        "Skull Rock": 3,
         "Dustwind Cave": 1,
         "Thunder Ridge": 1,
         "Tiragarde Keep": 1,
@@ -884,7 +1142,7 @@
         "Southern Misty Reed Strand": 1,
         "Northern Misty Reed Strand": 1,
         "Misty Valley": 1,
-        "Pool of Tears": 1,
+        "Pool of Tears": 2,
         "Sorrowmurk": 1,
         "Splinterspear Junction": 1,
         "Stagalbog": 1,
@@ -1209,7 +1467,7 @@
         "Anvilmar": 1,
         "Algaz Station": 1,
         "The Valley of Strength": 1,
-        "Orgrimmar Main Gates": 8,
+        "Orgrimmar Main Gates": 9,
         "Orgrimmar Side Entrence": 1,
         "Razor Hill": 2,
         "Zoram'gar Outpost": 2,
@@ -1265,7 +1523,7 @@
         "Nesingwary's Expedition": 1,
         "Yojamba Isle": 1,
         "Gurubashi Arena": 1,
-        "Temple of Atal'Hakkar": 1,
+        "Temple of Atal'Hakkar": 8,
         "The Stockade": 1,
         "Ragefire Chasm": 1,
         "Gnomeregan": 1,
@@ -1302,13 +1560,19 @@
         "Jaedenar Grounds": 1,
         "Alcaz Island": 1
       },
-      "unlockedAreas": [],
+      "unlockedAreas": [
+        "The Butchery",
+        "Chamber of Blood",
+        "Hall of Ritual",
+        "Hall of Bones",
+        "Hall of Serpents"
+      ],
       "vendorStock": {},
       "banks": {},
       "startDate": "2025-04-15T19:54:56.4819573+02:00",
-      "lastLoaded": "2025-04-15T20:42:37.7834607+02:00",
-      "lastPlayed": "2025-04-15T20:42:55.4283818+02:00",
-      "timePlayed": "00:02:12.7406375"
+      "lastLoaded": "2025-04-18T17:00:26.3209379+02:00",
+      "lastPlayed": "2025-04-18T17:04:43.0565886+02:00",
+      "timePlayed": "00:25:47.2681098"
     }
   ]
 }

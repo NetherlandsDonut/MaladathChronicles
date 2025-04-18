@@ -70,6 +70,9 @@ public static class Root
     //Amount of time left to show the tooltip
     public static float tooltipChanneling;
 
+    //Position to print out the elite on the screen
+    public static float positionOfElite;
+
     public static float lastFunnyEffectTime;
     public static Vector3 lastFunnyEffectPosition;
     public static List<(int, int)> titleScreenFunnyEffect = new();

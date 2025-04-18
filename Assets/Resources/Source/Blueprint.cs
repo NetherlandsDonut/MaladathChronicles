@@ -3297,10 +3297,7 @@ public class Blueprint
             SetAnchor(BottomLeft, 19, 35);
             AddHeaderGroup();
             SetRegionGroupWidth(190);
-            AddHeaderRegion(() =>
-            {
-                AddLine("Exploration progress:", "Gray");
-            });
+            AddHeaderRegion(() => AddLine("Exploration progress:", "Gray"));
             var thickness = 5;
             if (area.progression != null && area.progression.Count > 0)
                 for (int i = 0; i <= area.areaSize; i++)
@@ -3329,12 +3326,17 @@ public class Blueprint
                     if (i < area.areaSize)
                     {
                         AddRegionGroup();
-                        SetRegionGroupWidth((i == area.areaSize - 1 ? 190 % area.areaSize : 0) + 190 / area.areaSize);
+                        var setWidth = (i == area.areaSize - 1 ? 190 % area.areaSize : 0) + 190 / area.areaSize;
+                        SetRegionGroupWidth(setWidth);
                         SetRegionGroupHeight(thickness);
                         AddPaddingRegion(() =>
                         {
                             var temp = currentSave.siteProgress.ContainsKey(area.name) ? currentSave.siteProgress[area.name] : 0;
-                            if (temp > index) SetRegionBackground(ProgressDone);
+                            if (temp > index)
+                            {
+                                SetRegionBackground(ProgressDone);
+                                positionOfElite = CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.position.x + setWidth;
+                            }
                             else SetRegionBackground(ProgressEmpty);
                         });
                     }
@@ -3364,23 +3366,31 @@ public class Blueprint
             if (boss == null || currentSave.elitesKilled.ContainsKey(bossName)) return;
             var encounter = area.eliteEncounters.Find(x => x.who == bossName);
             if (encounter == null) return;
-            SetAnchor(BottomLeft, 19, 82);
-            AddHeaderGroup();
-            SetRegionGroupWidth(190);
+            SetAnchor(-301 + positionOfElite - 19, -69);
+            AddRegionGroup();
             AddPaddingRegion(() =>
             {
-                AddLine(encounter.who);
-                AddLine("Level: ", "DarkGray");
-                AddText("" + encounter.levelMin, ColorEntityLevel(encounter.levelMin));
                 var race = races.Find(x => x.name == encounter.who);
-                SpawnFloatingText(new Vector3(34, -9), encounter.levelMin - 10 > currentSave.player.level ? "??" : "" + encounter.levelMin, ColorEntityLevel(encounter.levelMin), "DimGray", "Right");
+                SpawnFloatingText(new Vector3(6, -9), encounter.levelMin - 10 > currentSave.player.level ? "??" : "" + encounter.levelMin, ColorEntityLevel(encounter.levelMin), "DimGray", "Left");
                 AddBigButton(race == null ? "OtherUnknown" : race.portrait,
-                    (h) =>
-                    {
-                        NewBoard(new() { area.RollEncounter(encounter) }, area);
-                        SpawnDesktopBlueprint("Game");
-                    }
-                );
+                (h) =>
+                {
+                    NewBoard(new() { area.RollEncounter(encounter) }, area);
+                    SpawnDesktopBlueprint("Game");
+                },
+                null,
+                (h) => () =>
+                {
+                    SetAnchor(-301 + positionOfElite + 19, -69);
+                    AddHeaderGroup();
+                    SetRegionGroupHeight(36);
+                    AddHeaderRegion(() => AddLine(race.name));
+                    AddPaddingRegion(() => AddLine("Defeat this elite to progress  ", "DarkGray"));
+                });
+                var marker = new GameObject("EliteMarker", typeof(SpriteRenderer));
+                marker.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/ProgressBossExpander");
+                marker.transform.parent = CDesktop.LBWindow().LBRegionGroup().LBRegion().transform;
+                marker.transform.localPosition = new Vector3(20, -45);
             });
         }),
         new("HostileAreaQuestAvailable", () => 
