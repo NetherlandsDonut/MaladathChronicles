@@ -888,5 +888,34 @@ v0.7.7
  04.04.25 Rank variables available for conditions
           Specific messages for specifically failed conditions
           Trying to cast an ability and failing to because of conditions now doesn't cost resources and doesn't refresh cooldown
+v0.7.8
+ 05.04.25 Added 8 new sites to Eastern Kingdoms
+          Added missing elites related to the big game hunt
+v0.7.9
+ 07.04.25 Added an option for a quest not to eat the items needed
+          Changed capital cities from just towns into towns with districts
+          Fixed lacking ability for Scroll of Intellect I and fixed world buffs not replacing each other
+          Added informative description to scrolls that they count as separate scrolls
+          Added missing Horde flight master to Gadgetzan and Grom'gol, and few npc's to Undercity and Thunder Bluff
+v0.7.10
+ 11.04.25 Added different cursor colors for friendly combatants and enemies
+          Added an indicator who's turn it is now in combat
+v0.7.11
+ 12.04.25 Made transports a separate system independent of flight paths and land paths
+          Transport routes now cost in-game time
+          Added prices to flight paths
+          Fixed player being able to teleport to any site that isn't reachable by land movement
+          Fixed death map and how the sites appear on it
+v0.7.12
+ 14.04.25 Removed instances and complexes having quests available at entrance, made it so quests can be only inside areas or towns
+          All site types now show if quests can be aquired, handed in or can be progressed in there
+          Improved description system by being able to fit more than just a function in a single text
+v0.7.13
+ 15.04.25 Teleporing/hearthing to a site that is inside a capital, a complex or an instance now doesn't clip player out of bounds
+          Added physical and magic resistance
+          Clicking on portraits in combat now also switches focus together with health bars and name bars
+v0.7.14
+ 18.04.25 Made available elite align itself with the progress bar
+          Fixed locations not unlocking in instances when defeating the elite
 ```
 </details>
