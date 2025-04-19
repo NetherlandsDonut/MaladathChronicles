@@ -424,15 +424,16 @@ public class Board
 
                 //If you just defeated an enemy that wasn't a boss and none bosses block your way
                 //in progression then increase your progression in the area by one point
-                if (area != null && participants.First(x => x.team == 2).who.kind != "Elite" && progBosses.Count > 0 && progBosses.All(x => currentSave.elitesKilled.ContainsKey(x.bossName)) || progBosses.Count == 0)
+                if (area != null && participants.First(x => x.team == 2).who.kind != "Elite" && progBosses.Count > 0 && progBosses.Any(x => currentSave.elitesKilled.ContainsKey(x.bossName)) || progBosses.Count == 0)
                     if (!currentSave.siteProgress.ContainsKey(area.name)) currentSave.siteProgress.Add(area.name, 1);
                     else currentSave.siteProgress[area.name]++;
 
-                //Unlock all areas that you were at that had bosses which are all killed
-                foreach (var unlockArea in progression.FindAll(x => x.type == "Area"))
-                    if (!currentSave.unlockedAreas.Contains(unlockArea.areaName) && progBosses.Count > 0 && progBosses.All(x => currentSave.elitesKilled.ContainsKey(x.bossName)))
-                        if (!unlockArea.all) currentSave.unlockedAreas.Add(unlockArea.areaName);
-                        else UnlockArea(unlockArea);
+                //Unlock all areas that you were at that if you just killed a boss there
+                if (participants.Where(x => x.team == 2).Any(x => x.who.kind == "Elite"))
+                    foreach (var unlockArea in progression.FindAll(x => x.type == "Area"))
+                        if (!currentSave.unlockedAreas.Contains(unlockArea.areaName))
+                            if (!unlockArea.all) currentSave.unlockedAreas.Add(unlockArea.areaName);
+                            else UnlockArea(unlockArea);
 
                 //Unlock all areas that you just reached if they have no boss in their way
                 foreach (var unlockArea in nextProgression.FindAll(x => x.type == "Area"))

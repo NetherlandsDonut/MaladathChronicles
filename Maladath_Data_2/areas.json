@@ -4999,6 +4999,11 @@
         "point": 2
       },
       {
+        "type": "Area",
+        "areaName": "Dark Iron Highway",
+        "point": 2
+      },
+      {
         "type": "Treasure",
         "point": 3
       }

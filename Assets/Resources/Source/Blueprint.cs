@@ -3104,7 +3104,7 @@ public class Blueprint
                     if (showAreasUnconditional || find.areas.Any(x => x.ContainsKey("OpenByDefault") && x["OpenByDefault"] == "True" || currentSave.unlockedAreas.Contains(x["AreaName"])))
                         AddButtonRegion(() =>
                         {
-                            AddLine(find.name + " (" + find.areas.Count + ")");
+                            AddLine(find.name/* + " (" + find.areas.Count + ")"*/);
                             var allAreas = areas.FindAll(x => find.areas.Exists(y => y["AreaName"] == x.name));
                             if (allAreas.All(x => currentSave.siteProgress.ContainsKey(x.name) && x.areaSize <= currentSave.siteProgress[x.name]))
                                 SetRegionBackgroundAsImage("ClearedArea");
@@ -3127,7 +3127,7 @@ public class Blueprint
             SetAnchor(TopRight, -19, -57);
             AddRegionGroup();
             SetRegionGroupWidth(190);
-            AddPaddingRegion(() =>
+            AddHeaderRegion(() =>
             {
                 AddLine(wing.name + ":", "Gray");
                 AddSmallButton("OtherReverse",
@@ -3389,6 +3389,7 @@ public class Blueprint
                 });
                 var marker = new GameObject("EliteMarker", typeof(SpriteRenderer));
                 marker.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/ProgressBossExpander");
+                marker.GetComponent<SpriteRenderer>().sortingOrder = -1;
                 marker.transform.parent = CDesktop.LBWindow().LBRegionGroup().LBRegion().transform;
                 marker.transform.localPosition = new Vector3(20, -45);
             });

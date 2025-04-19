@@ -32,9 +32,12 @@
           }
         ],
         "completedQuests": [],
-        "level": 18,
-        "experience": 2384,
-        "uniquesGotten": [],
+        "level": 26,
+        "experience": 1104,
+        "uniquesGotten": [
+          "Prison Cell Key",
+          "Idol of Ferocity"
+        ],
         "reputation": {
           "Southsea Pirates": 0,
           "Razormane Tribe": 0,
@@ -106,7 +109,7 @@
         },
         "professionSkills": {},
         "learnedRecipes": {},
-        "unspentTalentPoints": 17,
+        "unspentTalentPoints": 3,
         "faction": "Darkspear Tribe",
         "name": "Eahde",
         "race": "Troll",
@@ -130,11 +133,33 @@
           "Heroic Strike": 0,
           "Battle Shout": 0,
           "Bloodthirst": 0,
-          "Revenge": 0
+          "Revenge": 0,
+          "Charge": 0,
+          "Deflection": 0,
+          "Overpower": 0,
+          "Rend": 0,
+          "Thunder Clap": 0,
+          "Hamstring": 0,
+          "Cruelty": 0,
+          "Bloodcraze": 0,
+          "Demoralizing Shout": 0,
+          "Slam": 0,
+          "War Machine": 0,
+          "Fresh Meat": 0,
+          "Immense Strength": 0,
+          "Whirlwind": 0,
+          "Pummel": 0,
+          "Blind Rage": 0,
+          "Execute": 2,
+          "Enrage": 0,
+          "Berserker Rage": 0,
+          "Enraged Regeneration": 0
         },
         "currentActionSet": "Default",
         "actionBars": {
-          "Default": []
+          "Default": [
+            "Heroic Strike"
+          ]
         },
         "stats": {
           "Stamina": 23,
@@ -186,23 +211,6 @@
               "price": 13
             },
             {
-              "x": 2,
-              "rarity": "Poor",
-              "name": "Crushing Maul",
-              "icon": "itemhammer16",
-              "detailedType": "Mace",
-              "type": "Two Handed",
-              "source": "RareDrop",
-              "ilvl": 50,
-              "lvl": 45,
-              "minDamage": 61,
-              "maxDamage": 92,
-              "amount": 1,
-              "maxStack": 1,
-              "price": 12059,
-              "speed": 3.3
-            },
-            {
               "x": 3,
               "rarity": "Common",
               "name": "Mageweave Cloth",
@@ -215,25 +223,6 @@
               "amount": 11,
               "maxStack": 20,
               "price": 250
-            },
-            {
-              "x": 4,
-              "rarity": "Uncommon",
-              "name": "Protector Helm",
-              "icon": "itemhelmet10",
-              "type": "Head",
-              "armorClass": "Mail",
-              "source": "RareDrop",
-              "ilvl": 53,
-              "lvl": 48,
-              "armor": 234,
-              "amount": 1,
-              "maxStack": 1,
-              "price": 12690,
-              "stats": {
-                "Stamina": 20,
-                "Spirit": 7
-              }
             },
             {
               "y": 1,
@@ -250,25 +239,6 @@
                 "Scroll of Spirit IV": 1
               },
               "price": 100
-            },
-            {
-              "x": 1,
-              "y": 1,
-              "rarity": "Uncommon",
-              "name": "Onyx Ring of the Wolf",
-              "icon": "itemjewelryring01",
-              "randomEnchantment": true,
-              "type": "Finger",
-              "source": "RareDrop",
-              "ilvl": 50,
-              "lvl": 45,
-              "amount": 1,
-              "maxStack": 1,
-              "price": 4971,
-              "stats": {
-                "Agility": 13,
-                "Spirit": 13
-              }
             },
             {
               "x": 2,
@@ -288,24 +258,46 @@
               "price": 100
             },
             {
-              "x": 3,
-              "y": 1,
-              "rarity": "Uncommon",
-              "name": "Merciless Cloak of the Gorilla of the Owl",
-              "icon": "itemmisccape08",
-              "randomEnchantment": true,
-              "type": "Back",
+              "x": 4,
+              "rarity": "Poor",
+              "name": "Crushing Maul",
+              "icon": "itemhammer16",
+              "detailedType": "Mace",
+              "type": "Two Handed",
               "source": "RareDrop",
-              "ilvl": 51,
-              "lvl": 46,
-              "armor": 33,
+              "ilvl": 50,
+              "lvl": 45,
+              "minDamage": 61,
+              "maxDamage": 92,
               "amount": 1,
               "maxStack": 1,
-              "price": 7139,
+              "price": 12059,
+              "speed": 3.3
+            },
+            {
+              "x": 2,
+              "rarity": "Rare",
+              "name": "Savage Gladiator Grips",
+              "icon": "itemgauntlets04",
+              "type": "Hands",
+              "armorClass": "Mail",
+              "set": "The Gladiator",
+              "source": "DirectDrop",
+              "ilvl": 57,
+              "lvl": 52,
+              "armor": 211,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 12762,
               "stats": {
-                "Intellect": 13,
-                "Spirit": 13
-              }
+                "Strength": 5,
+                "Agility": 9,
+                "Intellect": 12,
+                "Stamina": 14
+              },
+              "droppedBy": [
+                "Eviscerator"
+              ]
             }
           ],
           "bags": []
@@ -313,6 +305,7 @@
         "mounts": [],
         "equipment": {
           "Off Hand": {
+            "x": 2,
             "rarity": "Poor",
             "name": "Worn Wooden Shield",
             "icon": "itemshield09",
@@ -326,6 +319,7 @@
             "price": 1
           },
           "Main Hand": {
+            "x": 4,
             "rarity": "Common",
             "name": "Worn Axe",
             "icon": "itemaxe11",
@@ -363,26 +357,84 @@
             "amount": 1,
             "maxStack": 1,
             "price": 1
+          },
+          "Head": {
+            "x": 4,
+            "rarity": "Uncommon",
+            "name": "Protector Helm",
+            "icon": "itemhelmet10",
+            "type": "Head",
+            "armorClass": "Mail",
+            "source": "RareDrop",
+            "ilvl": 53,
+            "lvl": 48,
+            "armor": 234,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 12690,
+            "stats": {
+              "Stamina": 20,
+              "Spirit": 7
+            }
+          },
+          "Back": {
+            "x": 3,
+            "y": 1,
+            "rarity": "Uncommon",
+            "name": "Merciless Cloak of the Gorilla of the Owl",
+            "icon": "itemmisccape08",
+            "randomEnchantment": true,
+            "type": "Back",
+            "source": "RareDrop",
+            "ilvl": 51,
+            "lvl": 46,
+            "armor": 33,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 7139,
+            "stats": {
+              "Intellect": 13,
+              "Spirit": 13
+            }
+          },
+          "Finger": {
+            "x": 1,
+            "y": 1,
+            "rarity": "Uncommon",
+            "name": "Onyx Ring of the Wolf",
+            "icon": "itemjewelryring01",
+            "randomEnchantment": true,
+            "type": "Finger",
+            "source": "RareDrop",
+            "ilvl": 50,
+            "lvl": 45,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 4971,
+            "stats": {
+              "Agility": 13,
+              "Spirit": 13
+            }
           }
         },
         "worldBuffs": []
       },
-      "hour": 11,
-      "minute": 44,
-      "second": 41,
-      "currentSite": "Temple of Atal'Hakkar",
+      "hour": 12,
+      "minute": 15,
+      "second": 25,
+      "currentSite": "Blackrock Mountain",
       "ringOfLaw": "Eviscerator",
       "forlornCloister": "Ironspine",
       "markets": [
         {
           "name": "Alliance Market",
           "auctions": [],
-          "hoursSinceUpdate": 52
+          "hoursSinceUpdate": 53
         },
         {
           "name": "Horde Market",
           "auctions": [],
-          "hoursSinceUpdate": 52
+          "hoursSinceUpdate": 53
         }
       ],
       "openedChests": {
@@ -471,7 +523,13 @@
         "Chamber of Blood": 2,
         "Hall of Ritual": 2,
         "The Pit of Sacrifice": 2,
-        "Hall of Bones": 3
+        "Hall of Bones": 3,
+        "Hall of Serpents": 2,
+        "Pit of Refuse": 2,
+        "Detention Block": 2,
+        "Halls of the Law": 4,
+        "Ring of Law": 2,
+        "Dark Iron Highway": 3
       },
       "commonsKilled": {
         "Burning Blade Fanatic": 2,
@@ -483,13 +541,31 @@
         "Nightmare Wyrmkin": 2,
         "Nightmare Wanderer": 2,
         "Murk Spitter": 4,
-        "Mummified Atal'ai": 4
+        "Mummified Atal'ai": 4,
+        "Spawn of Hakkar": 2,
+        "Deep Lurker": 4,
+        "Murk Worm": 2,
+        "Bloodhound": 2,
+        "Anvilrage Overseer": 1,
+        "Anvilrage Warden": 1,
+        "Anvilrage Footman": 6,
+        "Anvilrage Guardsman": 1,
+        "Fireguard": 3,
+        "Burrowing Thundersnout": 2,
+        "Dark Screecher": 2,
+        "Anvilrage Officer": 1,
+        "Anvilrage Soldier": 2,
+        "Anvilrage Medic": 1
       },
       "raresKilled": {},
       "elitesKilled": {
         "Veyzhak the Cannibal": 1,
         "Kazkaz the Unholy": 1,
-        "Zekkis": 1
+        "Zekkis": 1,
+        "High Interrogator Gerstahn": 1,
+        "Lord Roccor": 1,
+        "Houndmaster Grebmar": 1,
+        "Eviscerator": 1
       },
       "siteVisits": {
         "The Den": 2,
@@ -1433,7 +1509,7 @@
         "Sentinel Hill": 1,
         "Theramore Isle": 1,
         "Menethil Harbor": 1,
-        "Nethergarde Keep": 1,
+        "Nethergarde Keep": 2,
         "Morgan's Vigil": 1,
         "Flame Crest": 1,
         "Faldir's Cove": 1,
@@ -1478,7 +1554,7 @@
         "Grom'gol Base Camp": 3,
         "Splintertree Post": 1,
         "Kargath": 1,
-        "Stonard": 1,
+        "Stonard": 2,
         "Brackenwall Village": 1,
         "Sen'jin Village": 1,
         "Shadowprey Village": 1,
@@ -1523,7 +1599,7 @@
         "Nesingwary's Expedition": 1,
         "Yojamba Isle": 1,
         "Gurubashi Arena": 1,
-        "Temple of Atal'Hakkar": 8,
+        "Temple of Atal'Hakkar": 9,
         "The Stockade": 1,
         "Ragefire Chasm": 1,
         "Gnomeregan": 1,
@@ -1550,7 +1626,7 @@
         "Blackwing Lair": 1,
         "Ruins of Ahn'Qiraj": 1,
         "Temple of Ahn'Qiraj": 1,
-        "Blackrock Mountain": 2,
+        "Blackrock Mountain": 12,
         "Jintha'Alor": 1,
         "Tyr's Hand": 1,
         "Hearthglen": 1,
@@ -1565,14 +1641,20 @@
         "Chamber of Blood",
         "Hall of Ritual",
         "Hall of Bones",
-        "Hall of Serpents"
+        "Hall of Serpents",
+        "Pit of Refuse",
+        "Halls of the Law",
+        "Ring of Law",
+        "Dark Iron Highway",
+        "The Black Anvil"
       ],
       "vendorStock": {},
       "banks": {},
       "startDate": "2025-04-15T19:54:56.4819573+02:00",
-      "lastLoaded": "2025-04-18T17:00:26.3209379+02:00",
-      "lastPlayed": "2025-04-18T17:04:43.0565886+02:00",
-      "timePlayed": "00:25:47.2681098"
+      "lastLoaded": "2025-04-19T01:43:05.8867421+02:00",
+      "lastPlayed": "2025-04-19T02:24:55.4774803+02:00",
+      "timePlayed": "01:40:09.3382803",
+      "lastVisitedTalents": 1
     }
   ]
 }

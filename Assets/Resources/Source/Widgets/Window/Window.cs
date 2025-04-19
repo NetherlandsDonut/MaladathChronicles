@@ -183,12 +183,12 @@ public class Window : MonoBehaviour
                             for (int i = 0; i < fullText.Length; i++)
                             {
                                 var newCharLength = Font.fonts["Tahoma Bold"].Length(fullText[i]);
-                                if (fullText.Length > i + 1 && fullText[i + 1] != ' ' && currentLength + newCharLength + wrapperLength > emptySpace - 5)
+                                if (fullText.Length > i + 1 && fullText[i + 1] != ' ' && currentLength + newCharLength + wrapperLength > emptySpace - 8)
                                 {
                                     useWrapper = fullText[i] != ' ';
                                     break;
                                 }
-                                else if (currentLength + newCharLength + (fullText.Length == i + 1 ? 0 : wrapperLength) <= emptySpace - 5)
+                                else if (currentLength + newCharLength + (fullText.Length == i + 1 ? 0 : wrapperLength) <= emptySpace - 8)
                                 {
                                     currentLength += newCharLength + 1;
                                     toPrint++;
