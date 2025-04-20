@@ -1759,7 +1759,7 @@
         "worldBuffs": []
       },
       "hour": 7,
-      "currentSite": "Northshire Abbey",
+      "currentSite": "Blackrock Mountain",
       "ringOfLaw": "Eviscerator",
       "forlornCloister": "Ironspine",
       "markets": [
@@ -1782,15 +1782,19 @@
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
-        "Northshire Abbey": 1
+        "Northshire Abbey": 1,
+        "Maraudon": 4,
+        "Blackrock Pass": 2,
+        "Blackrock Mountain": 6
       },
       "unlockedAreas": [],
       "vendorStock": {},
       "banks": {},
       "startDate": "2025-04-19T18:02:15.5488263+02:00",
-      "lastLoaded": "2025-04-20T15:30:49.8926782+02:00",
-      "lastPlayed": "2025-04-20T15:41:27.2149013+02:00",
-      "timePlayed": "00:10:37.3222231"
+      "lastLoaded": "2025-04-20T17:46:51.7873497+02:00",
+      "lastPlayed": "2025-04-20T17:47:16.3433108+02:00",
+      "timePlayed": "00:34:12.3900009",
+      "lastVisitedTalents": 1
     }
   ]
 }

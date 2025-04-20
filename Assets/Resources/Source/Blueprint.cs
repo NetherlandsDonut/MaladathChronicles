@@ -3229,15 +3229,16 @@ public class Blueprint
                 });
             });
             if (WindowUp("InstanceWing")) return;
-            AddPaddingRegion(() =>
-            {
-                AddLine("Level range: ", "DarkGray");
-                var range = instance.LevelRange();
-                AddText(range.Item1 + "", ColorEntityLevel(range.Item1));
-                AddText(" - ", "DarkGray");
-                AddText(range.Item2 + "", ColorEntityLevel(range.Item2));
-            });
             if (instance.wings.Count == 1)
+            {
+                AddPaddingRegion(() =>
+                {
+                    AddLine("Level range: ", "DarkGray");
+                    var range = instance.LevelRange();
+                    AddText(range.Item1 + "", ColorEntityLevel(range.Item1));
+                    AddText(" - ", "DarkGray");
+                    AddText(range.Item2 + "", ColorEntityLevel(range.Item2));
+                });
                 for (int i = 0; i < instance.wings[0].areas.Count; i++)
                 {
                     var index = i;
@@ -3264,15 +3265,17 @@ public class Blueprint
                         });
                     else AddHeaderRegion(() => AddLine("?", "DimGray"));
                 }
+            }
             else
                 for (int i = 0; i < instance.wings.Count; i++)
                 {
                     var index = i;
                     var find = instance.wings[index];
                     if (showAreasUnconditional || find.areas.Any(x => x.ContainsKey("OpenByDefault") && x["OpenByDefault"] == "True" || currentSave.unlockedAreas.Contains(x["AreaName"])))
+                    {
                         AddButtonRegion(() =>
                         {
-                            AddLine(find.name/* + " (" + find.areas.Count + ")"*/);
+                            AddLine(find.name);
                             var allAreas = areas.FindAll(x => find.areas.Exists(y => y["AreaName"] == x.name));
                             if (allAreas.All(x => currentSave.siteProgress.ContainsKey(x.name) && x.areaSize <= currentSave.siteProgress[x.name]))
                                 SetRegionBackgroundAsImage("ClearedArea");
@@ -3284,7 +3287,20 @@ public class Blueprint
                             Respawn("Instance");
                             SetDesktopBackground(wing.Background());
                         });
-                    else AddHeaderRegion(() => AddLine("?", "DimGray"));
+                        AddPaddingRegion(() =>
+                        {
+                            AddLine("Level range: ", "DarkGray");
+                            var range = instance.LevelRange(index);
+                            AddText(range.Item1 + "", ColorEntityLevel(range.Item1));
+                            AddText(" - ", "DarkGray");
+                            AddText(range.Item2 + "", ColorEntityLevel(range.Item2));
+                        });
+                    }
+                    else
+                    {
+                        AddHeaderRegion(() => AddLine("?", "DimGray"));
+                        AddPaddingRegion(() => AddLine("Level range: ? - ?", "DimGray"));
+                    }
                 }
         }),
         new("InstanceWing", () =>
@@ -3295,7 +3311,7 @@ public class Blueprint
             SetAnchor(TopRight, -19, -57);
             AddRegionGroup();
             SetRegionGroupWidth(190);
-            AddHeaderRegion(() =>
+            AddHeaderRegion(() => 
             {
                 AddLine(wing.name + ":", "Gray");
                 AddSmallButton("OtherReverse",
