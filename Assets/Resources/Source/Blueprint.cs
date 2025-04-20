@@ -3298,7 +3298,7 @@ public class Blueprint
                     }
                     else
                     {
-                        AddHeaderRegion(() => AddLine("?", "DimGray"));
+                        AddHeaderRegion(() => AddLine("?", "Gray"));
                         AddPaddingRegion(() => AddLine("Level range: ? - ?", "DimGray"));
                     }
                 }
@@ -4239,7 +4239,7 @@ public class Blueprint
                 currentSave.player.ResetTalents();
                 CloseWindow("ResetTalents");
                 Respawn("Person");
-                Respawn("MapToolbarStatusRight", true);
+                Respawn("MapToolbarClockRight", true);
             });
         }),
         new("MakeInnHome", () => {
@@ -5571,27 +5571,22 @@ public class Blueprint
             SetRegionGroupWidth(253);
             AddPaddingRegion(() =>
             {
-                AddLine("Day " + (currentSave.day + 1), "", "Right");
-            });
-        }, true),
-        new("MapToolbarStatusLeft", () => {
-            SetAnchor(TopLeft);
-            DisableGeneralSprites();
-            AddRegionGroup();
-            SetRegionGroupWidth(262);
-            AddPaddingRegion(() =>
-            {
-                AddLine("Level: ", "DarkGray", "Left");
+                ReverseButtons();
+                AddLine("Level: ", "DarkGray");
                 AddText(currentSave.player.level + "", "Gray");
+                AddLine("Day " + (currentSave.day + 1), "", "Right");
+                AddSmallButton("Portrait" + currentSave.player.race.Clean() + (currentSave.player.Race().genderedPortrait ? currentSave.player.gender : ""));
+                AddSmallButton("Class" + currentSave.player.spec);
             });
         }, true),
-        new("MapToolbarStatusRight", () => {
+        new("MapToolbarClockRight", () => {
             SetAnchor(TopRight);
-            DisableGeneralSprites();
+            DisableShadows();
             AddRegionGroup();
-            SetRegionGroupWidth(262);
+            SetRegionGroupWidth(252);
             AddPaddingRegion(() =>
             {
+                AddLine(currentSave.hour + (currentSave.minute < 10 ? ":0" : ":") + currentSave.minute);
                 if (currentSave.player.unspentTalentPoints > 0)
                 {
                     AddLine("You have ", "Gray", "Right");
@@ -5603,16 +5598,6 @@ public class Blueprint
                     PlaySound("DesktopMenuOpen", 0.6f);
                     SpawnDesktopBlueprint("GameMenu");
                 });
-            });
-        }, true),
-        new("MapToolbarClockRight", () => {
-            SetAnchor(TopRight, -19);
-            DisableShadows();
-            AddRegionGroup();
-            SetRegionGroupWidth(233);
-            AddPaddingRegion(() =>
-            {
-                AddLine(currentSave.hour + (currentSave.minute < 10 ? ":0" : ":") + currentSave.minute, "", "Left");
             });
         }, true),
         new("WorldBuffs", () => {
@@ -6580,8 +6565,6 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
-            SpawnWindowBlueprint("MapToolbarStatusLeft");
-            SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
             SpawnWindowBlueprint("Chest");
@@ -6612,8 +6595,6 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
-            SpawnWindowBlueprint("MapToolbarStatusLeft");
-            SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("CombatResults");
             SpawnWindowBlueprint("CombatResultsChartButton");
             SpawnWindowBlueprint("CombatResultsMining");
@@ -6637,8 +6618,6 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
-            SpawnWindowBlueprint("MapToolbarStatusLeft");
-            SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("CombatResultsChart");
             SpawnWindowBlueprint("CombatResultsChartLeftArrow");
             SpawnWindowBlueprint("CombatResultsChartRightArrow");
@@ -6678,8 +6657,6 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
-            SpawnWindowBlueprint("MapToolbarStatusLeft");
-            SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("PlayerEquipmentInfo");
             SpawnWindowBlueprint("LootInfo");
             SpawnWindowBlueprint("CombatResultsLoot");
@@ -6712,8 +6689,6 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
-            SpawnWindowBlueprint("MapToolbarStatusLeft");
-            SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("PlayerEquipmentInfo");
             SpawnWindowBlueprint("LootInfo");
             SpawnWindowBlueprint("ContainerLoot");
@@ -6760,8 +6735,6 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
-            SpawnWindowBlueprint("MapToolbarStatusLeft");
-            SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("PlayerEquipmentInfo");
             SpawnWindowBlueprint("LootInfo");
             SpawnWindowBlueprint("Inventory");
@@ -6804,8 +6777,6 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
-            SpawnWindowBlueprint("MapToolbarStatusLeft");
-            SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("PlayerEquipmentInfo");
             SpawnWindowBlueprint("LootInfo");
             SpawnWindowBlueprint("Inventory");
@@ -6848,8 +6819,6 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
-            SpawnWindowBlueprint("MapToolbarStatusLeft");
-            SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("PlayerEquipmentInfo");
             SpawnWindowBlueprint("LootInfo");
             SpawnWindowBlueprint("Inventory");
@@ -6880,8 +6849,6 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
-            SpawnWindowBlueprint("MapToolbarStatusLeft");
-            SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("PlayerEquipmentInfo");
             SpawnWindowBlueprint("ChestInfo");
             SpawnWindowBlueprint("ChestLoot");
@@ -6924,8 +6891,6 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
-            SpawnWindowBlueprint("MapToolbarStatusLeft");
-            SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("PlayerEquipmentInfo");
             SpawnWindowBlueprint("LootInfo");
             SpawnWindowBlueprint("Inventory");
@@ -6961,8 +6926,6 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
-            SpawnWindowBlueprint("MapToolbarStatusLeft");
-            SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
             AddPaginationHotkeys();
@@ -7082,8 +7045,6 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
-            SpawnWindowBlueprint("MapToolbarStatusLeft");
-            SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey("Open menu / Back", () =>
@@ -7145,8 +7106,6 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
-            SpawnWindowBlueprint("MapToolbarStatusLeft");
-            SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey("Open menu / Back", () =>
@@ -7192,8 +7151,6 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
-            SpawnWindowBlueprint("MapToolbarStatusLeft");
-            SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("PlayerMoney");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
@@ -7302,11 +7259,8 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
-            SpawnWindowBlueprint("MapToolbarStatusLeft");
-            SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("PlayerEquipmentInfo");
             SpawnWindowBlueprint("CharacterInfoStats");
-            //SpawnWindowBlueprint("CharacterInfoStatsRight");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey("Open menu / Back", () =>
@@ -7323,8 +7277,6 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
-            SpawnWindowBlueprint("MapToolbarStatusLeft");
-            SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
             SpawnWindowBlueprint("QuestList");
@@ -7366,8 +7318,6 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
-            SpawnWindowBlueprint("MapToolbarStatusLeft");
-            SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("TalentTreeLeft");
             SpawnWindowBlueprint("TalentScreenHeader");
             SpawnWindowBlueprint("TalentTreeRight");
@@ -7409,8 +7359,6 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
-            SpawnWindowBlueprint("MapToolbarStatusLeft");
-            SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("SpellbookAbilityListActivated");
             SpawnWindowBlueprint("PlayerSpellbookInfo");
             SpawnWindowBlueprint("SpellbookResources");
@@ -7430,8 +7378,6 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
-            SpawnWindowBlueprint("MapToolbarStatusLeft");
-            SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("PlayerEquipmentInfo");
             SpawnWindowBlueprint("Inventory");
             SpawnWindowBlueprint("ExperienceBarBorder");
@@ -7472,8 +7418,6 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
-            SpawnWindowBlueprint("MapToolbarStatusLeft");
-            SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("BestiaryKalimdor");
             SpawnWindowBlueprint("BestiaryEasternKingdoms");
             SpawnWindowBlueprint("ExperienceBarBorder");
@@ -7494,8 +7438,6 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
-            SpawnWindowBlueprint("MapToolbarStatusLeft");
-            SpawnWindowBlueprint("MapToolbarStatusRight");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey("Open menu / Back", () =>

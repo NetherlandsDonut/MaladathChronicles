@@ -198,8 +198,6 @@ public class Desktop : MonoBehaviour
                     Respawn("MapToolbarClockLeft");
                     Respawn("MapToolbar");
                     Respawn("MapToolbarClockRight");
-                    Respawn("MapToolbarStatusLeft");
-                    Respawn("MapToolbarStatusRight");
                     Respawn("MapLocationInfo");
                     Respawn("ExperienceBarBorder");
                     Respawn("ExperienceBar");

@@ -141,8 +141,6 @@ public class SaveGame
         Respawn("MapToolbar", true);
         Respawn("MapToolbarClockLeft", true);
         Respawn("MapToolbarClockRight", true);
-        Respawn("MapToolbarStatusLeft", true);
-        Respawn("MapToolbarStatusRight", true);
     }
 
     //Take note that hour/hours passed without markets being updated

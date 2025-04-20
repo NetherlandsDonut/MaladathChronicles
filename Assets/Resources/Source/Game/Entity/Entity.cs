@@ -511,8 +511,8 @@ public class Entity
         }
         Respawn("ExperienceBarBorder");
         Respawn("ExperienceBar");
-        Respawn("MapToolbarStatusLeft");
-        Respawn("MapToolbarStatusRight");
+        Respawn("MapToolbarClockLeft");
+        Respawn("MapToolbarClockRight");
 
     }
 
