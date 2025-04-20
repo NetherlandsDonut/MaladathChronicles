@@ -93,6 +93,12 @@ public static class Coloring
         { "Silver",         new Color32(170, 188, 210, 255) },
         { "Gold",           new Color32(255, 210, 011, 255) },
 
+        //Damage types
+        { "Melee",          new Color32(246, 136, 053, 255) },
+        { "Magical",        new Color32(122, 109, 255, 255) },
+        { "Spell",        new Color32(122, 109, 255, 255) },
+        { "Ranged",         new Color32(049, 226, 070, 255) },
+
         //Item rarity colors
         { "Poor",           new Color32(114, 114, 114, 255) },
         { "Common",         new Color32(183, 183, 183, 255) },

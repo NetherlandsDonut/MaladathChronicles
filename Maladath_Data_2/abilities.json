@@ -6089,7 +6089,7 @@
               "Text": "Launches three Arcane Missiles at the enemy, causing"
             },
             {
-              "Color": "Arcane",
+              "Color": "Magical",
               "Text": "PowerRange(Effector, Spell, 1.3, 1)",
               "Split": "No"
             },
@@ -6098,7 +6098,7 @@
               "Text": "damage with each one of them totalling to"
             },
             {
-              "Color": "Arcane",
+              "Color": "Magical",
               "Text": "PowerRange(Effector, Spell, 1.3, 3)",
               "Split": "No"
             },
@@ -8819,7 +8819,7 @@
               "Text": "Hurls a fiery ball that causes"
             },
             {
-              "Color": "Fire",
+              "Color": "Magical",
               "Text": "PowerRange(Effector, Spell, #1, 1)",
               "Split": "No"
             },
@@ -8907,7 +8907,7 @@
               "Text": "Hurls a fiery ball that causes"
             },
             {
-              "Color": "Fire",
+              "Color": "Magical",
               "Text": "PowerRange(Effector, Spell, 1.1, 1)",
               "Split": "No"
             },
@@ -8977,7 +8977,7 @@
               "Text": "At the beginning of the combat, hurls a fiery ball at the enemy that causes"
             },
             {
-              "Color": "Fire",
+              "Color": "Magical",
               "Text": "PowerRange(Effector, Spell, 2.0, 1)",
               "Split": "No"
             },
@@ -9475,7 +9475,7 @@
               "Text": "Launches a bolt of frost at the enemy, causing"
             },
             {
-              "Color": "Frost",
+              "Color": "Magical",
               "Text": "PowerRange(Effector, Spell, 2.9, 1)",
               "Split": "No"
             },
@@ -10075,7 +10075,7 @@
               "Text": "Whenever Fireball is casted Hot Streak makes the caster hurl another one for free dealing"
             },
             {
-              "Color": "Fire",
+              "Color": "Magical",
               "Text": "PowerRange(Effector, Spell, 2.9, 1)",
               "Split": "No"
             },
@@ -10467,7 +10467,7 @@
               "Text": "Hurls a hammer of light that deals"
             },
             {
-              "Color": "Order",
+              "Color": "Magical",
               "Text": "PowerRange(Effector, Spell, 1, 1)",
               "Split": "No"
             },
@@ -11079,7 +11079,7 @@
               "Text": "Launches three Arcane Missiles at the enemy, causing"
             },
             {
-              "Color": "Arcane",
+              "Color": "Magical",
               "Text": "PowerRange(Effector, Spell, 1.3, 1)",
               "Split": "No"
             },
@@ -11088,7 +11088,7 @@
               "Text": "damage with each one of them totalling to"
             },
             {
-              "Color": "Arcane",
+              "Color": "Magical",
               "Text": "PowerRange(Effector, Spell, 1.3, 3)",
               "Split": "No"
             },
@@ -12141,7 +12141,7 @@
               "Text": "Scorches the enemy, making them burn for"
             },
             {
-              "Color": "Fire",
+              "Color": "Magical",
               "Text": "PowerRange(Effector, Spell, 1.3, 1)",
               "Split": "No"
             },
@@ -12372,7 +12372,7 @@
               "Text": "Sends a shadowy bolt at the enemy, causing"
             },
             {
-              "Color": "Shadow",
+              "Color": "Magical",
               "Text": "PowerRange(Effector, Spell, 2.9, 1)",
               "Split": "No"
             },
@@ -12475,7 +12475,7 @@
               "Text": "A word of darkness that causes 510 Shadow "
             },
             {
-              "Color": "Shadow",
+              "Color": "Magical",
               "Text": "PowerRange(Effector, Spell, 0.6, 1)",
               "Split": "No"
             },

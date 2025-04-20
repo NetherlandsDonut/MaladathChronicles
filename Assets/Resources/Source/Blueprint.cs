@@ -483,18 +483,29 @@ public class Blueprint
         //Character
         new("CharacterInfoStats", () => {
             SetAnchor(TopRight, -19, -38);
-            //SetAnchor(-92, 142);
             AddHeaderGroup();
             SetRegionGroupWidth(190);
-            //SetRegionGroupWidth(182);
-            SetRegionGroupHeight(271);
+            SetRegionGroupHeight(252);
             var rawStats = currentSave.player.Stats(true);
             var stats = currentSave.player.Stats();
-            AddHeaderRegion(() =>
+            AddHeaderRegion(() => 
             {
                 AddLine("Character stats:");
+                if (WindowUp("PlayerEquipmentInfo"))
+                    AddSmallButton("OtherBigger", (h) =>
+                    {
+                        CloseWindow("PlayerEquipmentInfo");
+                        Respawn("CharacterInfoStatsExpanded");
+                    });
+                else
+                    AddSmallButton("OtherSmaller", (h) =>
+                    {
+                        CloseWindow("CharacterInfoStatsExpanded");
+                        Respawn("PlayerEquipmentInfo");
+                    });
+                SmallButtonFlipX();
             });
-            AddHeaderRegion(() =>
+            AddHeaderRegion(() => 
             {
                 foreach (var foo in stats)
                     if (!foo.Key.Contains("Mastery"))
@@ -503,24 +514,7 @@ public class Blueprint
                         AddLine(foo.Value + "", rawStats[foo.Key] == foo.Value ? "Gray" : "Uncommon", "Right");
                     }
             });
-            //AddButtonRegion(() =>
-            //{
-            //    AddLine("Max health:", "Gray", "Left");
-            //    AddLine(currentSave.player.MaxHealth() + "", "Uncommon", "Right");
-            //    AddLine("Armor:", "Gray", "Left");
-            //    AddLine(currentSave.player.Armor() + "", "Uncommon", "Right");
-            //    AddLine("Melee attack power:", "Gray", "Left");
-            //    AddLine(currentSave.player.MeleeAttackPower() + "", "Uncommon", "Right");
-            //    AddLine("Ranged attack power:", "Gray", "Left");
-            //    AddLine(currentSave.player.RangedAttackPower() + "", "Uncommon", "Right");
-            //    AddLine("Spell power:", "Gray", "Left");
-            //    AddLine(currentSave.player.SpellPower() + "", "Uncommon", "Right");
-            //    AddLine("Critical strike:", "Gray", "Left");
-            //    AddLine(currentSave.player.CriticalStrike().ToString("0.00") + "%", "Uncommon", "Right");
-            //    AddLine("Spell critical:", "Gray", "Left");
-            //    AddLine(currentSave.player.SpellCritical().ToString("0.00") + "%", "Uncommon", "Right");
-            //});
-            AddHeaderRegion(() =>
+            AddHeaderRegion(() => 
             {
                 AddLine("Max health:", "Gray", "Left");
                 AddLine(currentSave.player.MaxHealth() + "", "Uncommon", "Right");
@@ -540,27 +534,201 @@ public class Blueprint
                 AddLine(currentSave.player.MagicResistance().ToString("0.00") + "%", "Uncommon", "Right");
             });
             AddPaddingRegion(() => SetRegionAsGroupExtender());
+            AddRegionGroup();
+            SetRegionGroupWidth(95);
+            AddPaddingRegion(() => AddLine("Stats", "", "Center"));
+            AddRegionGroup();
+            SetRegionGroupWidth(95);
+            AddButtonRegion(() => AddLine("Masteries", "", "Center"), (h) =>
+            {
+                CloseWindow("CharacterInfoStats");
+                Respawn("CharacterInfoMasteries");
+                if (CloseWindow("CharacterInfoStatsExpanded"))
+                    Respawn("CharacterInfoMasteriesExpanded");
+            });
         }, true),
-        new("CharacterInfoStatsRight", () => {
+        new("CharacterInfoStatsExpanded", () => {
+            SetAnchor(TopLeft, 19, -38);
+            AddHeaderGroup();
+            SetRegionGroupWidth(391);
+            var stats = currentSave.player.Stats();
+            var spec = currentSave.player.Spec();
+            AddHeaderRegion(() =>
+            {
+                AddLine("Each point in Stamina:");
+                AddLine(spec.rules["Stamina per Level"] + " per level", "DarkGray", "Right");
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("+" + spec.rules["Max Health per Stamina"] + " Max health", "Uncommon");
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Each point in Strength:");
+                AddLine(spec.rules["Strength per Level"] + " per level", "DarkGray", "Right");
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("+" + spec.rules["Melee Attack Power per Strength"] + " Melee attack power", "Uncommon");
+                if (spec.rules["Ranged Attack Power per Strength"] > 0)
+                    AddLine("+" + spec.rules["Ranged Attack Power per Strength"] + " Ranged attack power", "Uncommon");
+                if (spec.rules["Critical Strike per Strength"] > 0)
+                    AddLine("+" + spec.rules["Critical Strike per Strength"] + "% Critical strike", "Uncommon");
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Each point in Agility:");
+                AddLine(spec.rules["Agility per Level"] + " per level", "DarkGray", "Right");
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("+" + spec.rules["Melee Attack Power per Agility"] + " Melee attack power", "Uncommon");
+                if (spec.rules["Ranged Attack Power per Agility"] > 0)
+                    AddLine("+" + spec.rules["Ranged Attack Power per Agility"] + " Ranged attack power", "Uncommon");
+                if (spec.rules["Critical Strike per Agility"] > 0)
+                    AddLine("+" + spec.rules["Critical Strike per Agility"] + "% Critical strike", "Uncommon");
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Each point in Intellect:");
+                if (spec.rules["Intellect per Level"] > 0)
+                    AddLine(spec.rules["Intellect per Level"] + " per level", "DarkGray", "Right");
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("+" + spec.rules["Spell Power per Intellect"] + " Spell power", "Uncommon");
+                if (spec.rules["Spell Critical per Intellect"] > 0)
+                    AddLine("+" + spec.rules["Spell Critical per Intellect"] + "% Spell critical", "Uncommon");
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Each point in Spirit:");
+                if (spec.rules["Spirit per Level"] > 0)
+                    AddLine(spec.rules["Spirit per Level"] + " per level", "DarkGray", "Right");
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("+" + spec.rules["Magic Resistance per Spirit"] + "% Magic resistance", "Uncommon");
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Each point in Armor:");
+                if (spec.rules["Armor per Level"] > 0)
+                    AddLine(spec.rules["Armor per Level"] + " per level", "DarkGray", "Right");
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("+" + spec.rules["Physical Resistance per Armor"] + "% Physical resistance", "Uncommon");
+            });
+        }, true),
+        new("CharacterInfoMasteries", () => {
             SetAnchor(TopRight, -19, -38);
             AddHeaderGroup();
             SetRegionGroupWidth(190);
+            SetRegionGroupHeight(252);
+            var rawStats = currentSave.player.Stats(true);
+            var stats = currentSave.player.Stats();
+            AddHeaderRegion(() =>
+            {
+                AddLine("Element masteries:");
+                if (WindowUp("PlayerEquipmentInfo"))
+                    AddSmallButton("OtherBigger", (h) =>
+                    {
+                        CloseWindow("PlayerEquipmentInfo");
+                        Respawn("CharacterInfoMasteriesExpanded");
+                    });
+                else
+                    AddSmallButton("OtherSmaller", (h) =>
+                    {
+                        CloseWindow("CharacterInfoMasteriesExpanded");
+                        Respawn("PlayerEquipmentInfo");
+                    });
+                SmallButtonFlipX();
+            });
+            var ordered = stats.ToList().FindAll(x => x.Key.Contains("Mastery")).OrderBy(x => x.Key).OrderByDescending(x => x.Value).ToList();
+            foreach (var foo in ordered)
+                AddHeaderRegion(() =>
+                {
+                    AddLine(foo.Key + ":", "Gray", "Left");
+                    AddLine(ToRoman(foo.Value) + "", rawStats[foo.Key] == foo.Value ? "Gray" : "Uncommon", "Right");
+                    AddSmallButton("Element" + foo.Key.Split(" ")[0] + "Awakened");
+                });
+            AddPaddingRegion(() => SetRegionAsGroupExtender());
+            AddRegionGroup();
+            SetRegionGroupWidth(95);
+            AddButtonRegion(() => AddLine("Stats", "", "Center"), (h) =>
+            {
+                CloseWindow("CharacterInfoMasteries");
+                Respawn("CharacterInfoStats");
+                if (CloseWindow("CharacterInfoMasteriesExpanded"))
+                    Respawn("CharacterInfoStatsExpanded");
+            });
+            AddRegionGroup();
+            SetRegionGroupWidth(95);
+            AddPaddingRegion(() => AddLine("Masteries", "", "Center"));
+        }, true),
+        new("CharacterInfoMasteriesExpanded", () => {
+            SetAnchor(TopLeft, 19, -38);
+            AddHeaderGroup();
+            SetRegionGroupWidth(391);
             SetRegionGroupHeight(271);
             var stats = currentSave.player.Stats();
             AddHeaderRegion(() =>
             {
-                AddLine("Character mastery:");
+                AddLine("Tier I:");
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("4 Max resource", "Uncommon");
             });
             AddHeaderRegion(() =>
             {
-                var ordered = stats.ToList().FindAll(x => x.Key.Contains("Mastery")).OrderBy(x => x.Key).OrderByDescending(x => x.Value).ToList();
-                foreach (var foo in ordered)
-                {
-                    AddLine(foo.Key + ":", "Gray", "Left");
-                    AddLine(foo.Value + "", "Uncommon", "Right");
-                }
+                AddLine("Tier II:");
             });
-            AddPaddingRegion(() => SetRegionAsGroupExtender());
+            AddPaddingRegion(() =>
+            {
+                AddLine("5 Max resource", "Uncommon");
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Tier III:");
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("6 Max resource", "Uncommon");
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Tier IV:");
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("7 Max resource", "Uncommon");
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Tier V:");
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("8 Max resource", "Uncommon");
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Tier VI:");
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("9 Max resource", "Uncommon");
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Tier VII:");
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("10 Max resource", "Uncommon");
+            });
         }, true),
         new("CharacterRankingTop", () => 
         {
@@ -6196,72 +6364,6 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddInputLine(String.consoleInput);
-            });
-        }, true),
-
-        //Card Game
-        new("CardTest", () => {
-            SetAnchor(BottomLeft, 19, 35);
-            AddHeaderGroup();
-            AddHeaderRegion(() =>
-            {
-                AddBigButton("PortraitScarletWizard", (h) =>
-                {
-                    PlaySound("DesktopMenuClose");
-                });
-                AddBigButton("PortraitScarletMonk", (h) =>
-                {
-                    PlaySound("DesktopMenuClose");
-                });
-                AddBigButton("PortraitScarletEnchanter", (h) =>
-                {
-                    PlaySound("DesktopMenuClose");
-                });
-            });
-            AddHeaderRegion(() =>
-            {
-                AddBigButton("PortraitScarletAugur", (h) =>
-                {
-                    PlaySound("DesktopMenuClose");
-                });
-                AddBigButton("PortraitScarletCavalier", (h) =>
-                {
-                    PlaySound("DesktopMenuClose");
-                });
-                AddBigButton("PortraitScarletExecutioner", (h) =>
-                {
-                    PlaySound("DesktopMenuClose");
-                });
-            });
-            AddHeaderRegion(() =>
-            {
-                AddBigButton("PortraitBlackhandVeteran", (h) =>
-                {
-                    PlaySound("DesktopMenuClose");
-                });
-                AddBigButton("PortraitBlackhandIronGuard", (h) =>
-                {
-                    PlaySound("DesktopMenuClose");
-                });
-                AddBigButton("PortraitBlackrockSlayer", (h) =>
-                {
-                    PlaySound("DesktopMenuClose");
-                });
-            });
-            AddHeaderRegion(() =>
-            {
-                AddBigButton("PortraitBlackrockWarlock", (h) =>
-                {
-                    PlaySound("DesktopMenuClose");
-                });
-                AddBigButton("PortraitBlackrockWarlock", (h) =>
-                {
-                    PlaySound("DesktopMenuClose");
-                });
-                AddBigButton("PortraitBlackhandIncarcerator", (h) =>
-                {
-                    PlaySound("DesktopMenuClose");
-                });
             });
         }, true),
     };

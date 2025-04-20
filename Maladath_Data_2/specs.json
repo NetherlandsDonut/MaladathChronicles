@@ -70,6 +70,7 @@
       "Spirit": 0
     },
     "rules": {
+      "Max Health per Stamina": 5.0,
       "Melee Attack Power per Strength": 2.0,
       "Ranged Attack Power per Strength": 0.0,
       "Critical Strike per Strength": 0.0,
@@ -78,11 +79,14 @@
       "Critical Strike per Agility": 0.03,
       "Spell Power per Intellect": 1.0,
       "Spell Critical per Intellect": 0.03,
+      "Magic Resistance per Spirit": 0.05,
+      "Physical Resistance per Armor": 0.01,
       "Stamina per Level": 3.0,
       "Strength per Level": 2.0,
       "Agility per Level": 4.0,
       "Intellect per Level": 0.0,
-      "Spirit per Level": 0.0
+      "Spirit per Level": 0.0,
+      "Armor per Level": 0.0
     },
     "abilities": {
       "Dual Wielding Proficiency": 0,
@@ -168,6 +172,7 @@
       "Spirit": 1
     },
     "rules": {
+      "Max Health per Stamina": 5.0,
       "Melee Attack Power per Strength": 2.0,
       "Ranged Attack Power per Strength": 0.0,
       "Critical Strike per Strength": 0.0,
@@ -176,11 +181,14 @@
       "Critical Strike per Agility": 0.03,
       "Spell Power per Intellect": 1.0,
       "Spell Critical per Intellect": 0.03,
+      "Magic Resistance per Spirit": 0.05,
+      "Physical Resistance per Armor": 0.01,
       "Stamina per Level": 3.0,
       "Strength per Level": 2.0,
       "Agility per Level": 4.0,
       "Intellect per Level": 0.0,
-      "Spirit per Level": 0.0
+      "Spirit per Level": 0.0,
+      "Armor per Level": 0.0
     },
     "abilities": {
       "Dual Wielding Proficiency": 0,
@@ -247,6 +255,7 @@
       "Spirit": 1
     },
     "rules": {
+      "Max Health per Stamina": 5.0,
       "Melee Attack Power per Strength": 2.0,
       "Ranged Attack Power per Strength": 0.0,
       "Critical Strike per Strength": 0.0,
@@ -255,11 +264,14 @@
       "Critical Strike per Agility": 0.03,
       "Spell Power per Intellect": 2.0,
       "Spell Critical per Intellect": 0.03,
+      "Magic Resistance per Spirit": 0.05,
+      "Physical Resistance per Armor": 0.01,
       "Stamina per Level": 3.0,
       "Strength per Level": 2.0,
       "Agility per Level": 2.0,
       "Intellect per Level": 2.0,
-      "Spirit per Level": 0.0
+      "Spirit per Level": 0.0,
+      "Armor per Level": 0.0
     },
     "abilities": {
       "Dual Wielding Proficiency": 0,
@@ -675,6 +687,7 @@
       "Spirit": 0
     },
     "rules": {
+      "Max Health per Stamina": 5.0,
       "Melee Attack Power per Strength": 3.0,
       "Ranged Attack Power per Strength": 0.0,
       "Critical Strike per Strength": 0.0,
@@ -683,11 +696,14 @@
       "Critical Strike per Agility": 0.03,
       "Spell Power per Intellect": 1.0,
       "Spell Critical per Intellect": 0.03,
+      "Magic Resistance per Spirit": 0.05,
+      "Physical Resistance per Armor": 0.01,
       "Stamina per Level": 3.0,
       "Strength per Level": 4.0,
       "Agility per Level": 2.0,
       "Intellect per Level": 0.0,
-      "Spirit per Level": 0.0
+      "Spirit per Level": 0.0,
+      "Armor per Level": 0.0
     },
     "abilities": {
       "Dual Wielding Proficiency": 0,
@@ -983,6 +999,7 @@
       "Spirit": 1
     },
     "rules": {
+      "Max Health per Stamina": 5.0,
       "Melee Attack Power per Strength": 2.0,
       "Ranged Attack Power per Strength": 0.0,
       "Critical Strike per Strength": 0.0,
@@ -991,11 +1008,14 @@
       "Critical Strike per Agility": 0.03,
       "Spell Power per Intellect": 2.0,
       "Spell Critical per Intellect": 0.03,
+      "Magic Resistance per Spirit": 0.05,
+      "Physical Resistance per Armor": 0.01,
       "Stamina per Level": 3.0,
       "Strength per Level": 3.0,
       "Agility per Level": 1.0,
       "Intellect per Level": 2.0,
-      "Spirit per Level": 0.0
+      "Spirit per Level": 0.0,
+      "Armor per Level": 0.0
     },
     "abilities": {
       "Two Handed Axe Proficiency": 0,
@@ -1356,6 +1376,7 @@
       "Spirit": 2
     },
     "rules": {
+      "Max Health per Stamina": 5.0,
       "Melee Attack Power per Strength": 2.0,
       "Ranged Attack Power per Strength": 0.0,
       "Critical Strike per Strength": 0.0,
@@ -1364,11 +1385,14 @@
       "Critical Strike per Agility": 0.03,
       "Spell Power per Intellect": 2.0,
       "Spell Critical per Intellect": 0.03,
+      "Magic Resistance per Spirit": 0.05,
+      "Physical Resistance per Armor": 0.01,
       "Stamina per Level": 3.0,
       "Strength per Level": 2.0,
       "Agility per Level": 2.0,
       "Intellect per Level": 2.0,
-      "Spirit per Level": 0.0
+      "Spirit per Level": 0.0,
+      "Armor per Level": 0.0
     },
     "abilities": {
       "Two Handed Mace Proficiency": 0,
@@ -1758,6 +1782,7 @@
       "Spirit": 3
     },
     "rules": {
+      "Max Health per Stamina": 5.0,
       "Melee Attack Power per Strength": 1.0,
       "Ranged Attack Power per Strength": 0.0,
       "Critical Strike per Strength": 0.0,
@@ -1766,11 +1791,14 @@
       "Critical Strike per Agility": 0.03,
       "Spell Power per Intellect": 3.0,
       "Spell Critical per Intellect": 0.03,
+      "Magic Resistance per Spirit": 0.05,
+      "Physical Resistance per Armor": 0.01,
       "Stamina per Level": 3.0,
       "Strength per Level": 1.0,
       "Agility per Level": 1.0,
       "Intellect per Level": 4.0,
-      "Spirit per Level": 0.0
+      "Spirit per Level": 0.0,
+      "Armor per Level": 0.0
     },
     "abilities": {
       "Staff Proficiency": 0,
@@ -2047,6 +2075,7 @@
       "Spirit": 2
     },
     "rules": {
+      "Max Health per Stamina": 5.0,
       "Melee Attack Power per Strength": 1.0,
       "Ranged Attack Power per Strength": 0.0,
       "Critical Strike per Strength": 0.0,
@@ -2055,11 +2084,14 @@
       "Critical Strike per Agility": 0.03,
       "Spell Power per Intellect": 3.0,
       "Spell Critical per Intellect": 0.03,
+      "Magic Resistance per Spirit": 0.05,
+      "Physical Resistance per Armor": 0.01,
       "Stamina per Level": 3.0,
       "Strength per Level": 1.0,
       "Agility per Level": 1.0,
       "Intellect per Level": 4.0,
-      "Spirit per Level": 0.0
+      "Spirit per Level": 0.0,
+      "Armor per Level": 0.0
     },
     "abilities": {
       "Staff Proficiency": 0,
@@ -2337,6 +2369,7 @@
       "Spirit": 2
     },
     "rules": {
+      "Max Health per Stamina": 5.0,
       "Melee Attack Power per Strength": 1.0,
       "Ranged Attack Power per Strength": 0.0,
       "Critical Strike per Strength": 0.0,
@@ -2345,11 +2378,14 @@
       "Critical Strike per Agility": 0.03,
       "Spell Power per Intellect": 3.0,
       "Spell Critical per Intellect": 0.03,
+      "Magic Resistance per Spirit": 0.05,
+      "Physical Resistance per Armor": 0.01,
       "Stamina per Level": 3.0,
       "Strength per Level": 1.0,
       "Agility per Level": 1.0,
       "Intellect per Level": 4.0,
-      "Spirit per Level": 0.0
+      "Spirit per Level": 0.0,
+      "Armor per Level": 0.0
     },
     "abilities": {
       "Staff Proficiency": 0,
@@ -2715,6 +2751,7 @@
       "Spirit": 1
     },
     "rules": {
+      "Max Health per Stamina": 5.0,
       "Melee Attack Power per Strength": 2.0,
       "Ranged Attack Power per Strength": 0.0,
       "Critical Strike per Strength": 0.0,
@@ -2723,11 +2760,14 @@
       "Critical Strike per Agility": 0.03,
       "Spell Power per Intellect": 1.0,
       "Spell Critical per Intellect": 0.03,
+      "Magic Resistance per Spirit": 0.05,
+      "Physical Resistance per Armor": 0.01,
       "Stamina per Level": 3.0,
       "Strength per Level": 3.0,
       "Agility per Level": 3.0,
       "Intellect per Level": 0.0,
-      "Spirit per Level": 0.0
+      "Spirit per Level": 0.0,
+      "Armor per Level": 0.0
     },
     "abilities": {
       "Staff Proficiency": 0,

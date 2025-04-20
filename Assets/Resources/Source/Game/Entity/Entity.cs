@@ -11,7 +11,6 @@ using static Spec;
 using static Quest;
 using static Sound;
 using static Defines;
-using static UnityEngine.GraphicsBuffer;
 
 public class Entity
 {
@@ -82,7 +81,8 @@ public class Entity
             { "Strength", 3 * this.level },
             { "Agility", 3 * this.level },
             { "Intellect", 3 * this.level },
-            { "Spirit", 0 },
+            { "Spirit", this.level },
+            { "Armor", 10 * this.level },
 
             { "Earth Mastery", random.Next(1, 6) },
             { "Fire Mastery", random.Next(1, 6) },
@@ -1248,12 +1248,18 @@ public class Entity
 
     public double PhysicalResistance()
     {
-        return Stats()["Armor"] / 100.0;
+        var temp = Spec();
+        if (temp == null) return Stats()["Armor"] * 0.01;
+        var sum = temp.rules["Physical Resistance per Armor"] * Stats()["Armor"];
+        return sum;
     }
 
     public double MagicResistance()
     {
-        return Stats()["Spirit"] / 20.0;
+        var temp = Spec();
+        if (temp == null) return Stats()["Spirit"] * 0.05;
+        var sum = temp.rules["Magic Resistance per Spirit"] * Stats()["Spirit"];
+        return sum;
     }
 
     #endregion

@@ -62,7 +62,7 @@ public class DescriptionRegion
             if (Fn("PowerRange"))
             {
                 if (effector == null) return "? - ?";
-                var split = text.Split("(").Last().Split(",").Select(x => x.Trim().Replace(")", "")).ToArray();
+                var split = toReplace.Split("(").Last().Split(",").Select(x => x.Trim().Replace(")", "")).ToArray();
                 if (split.Length == 4)
                     if (double.TryParse(split[2].StartsWith("#") ? variables[split[2]].Replace(".", ",") : split[2].Replace(".", ","), out double powerScale))
                         if (int.TryParse(split[3], out int multiplier))
@@ -75,7 +75,7 @@ public class DescriptionRegion
             if (Fn("Chance"))
             {
                 if (effector == null) return "?";
-                var split = text.Split("(").Last().Split(",").Select(x => x.Trim().Replace(")", "")).ToArray();
+                var split = toReplace.Split("(").Last().Split(",").Select(x => x.Trim().Replace(")", "")).ToArray();
                 if (split.Length == 3)
                     if (double.TryParse(split[2].Replace(".", ","), out double multiplier))
                     {
@@ -88,6 +88,23 @@ public class DescriptionRegion
             {
                 if (effector == null) return "?";
                 text = text.Replace(toReplace, effector.homeLocation);
+            }
+            if (Fn("Math"))
+            {
+                var split = toReplace.Split("(").Last().Split(",").Select(x => x.Trim().Replace(")", "")).ToArray();
+                if (split.Length == 3)
+                    if (double.TryParse(split[0].StartsWith("#") ? variables[split[0]].Replace(".", ",") : split[0].Replace(".", ","), out double first))
+                        if (double.TryParse(split[2].StartsWith("#") ? variables[split[2]].Replace(".", ",") : split[2].Replace(".", ","), out double second))
+                            text = text.Replace(toReplace, (split[1] == "add" ? first + second : (split[1] == "sub" ? first - second : (split[1] == "div" ? first / second : (split[1] == "mul" ? first * second : first)))) + "");
+            }
+            if (Fn("v"))
+            {
+                var split = toReplace.Split("(").Last().Split(",").Select(x => x.Trim().Replace(")", "")).ToArray();
+                if (split.Length == 1)
+                    if (double.TryParse(split[0].StartsWith("#") ? variables[split[0]].Replace(".", ",") : split[0].Replace(".", ","), out double content))
+                        text = text.Replace(toReplace, content + "");
+                    else if (split[0].StartsWith("#") && variables.ContainsKey(split[0]))
+                        text = text.Replace(toReplace, variables[split[0]]);
             }
             if (text.Contains("$")) return FnDollar(text);
             return text;
