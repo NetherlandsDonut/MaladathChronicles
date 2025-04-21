@@ -192,7 +192,7 @@ public class Board
     public Vector3 PortraitPosition(int participantIndex)
     {
         var team = participants[participantIndex].team;
-        var team1 = CDesktop.windows.Find(x => x.title == "PlayerBattleInfo").LBRegionGroup().regions.Where(x => x.bigButtons.Count == 1).ToList();
+        var team1 = CDesktop.windows.Find(x => x.title == "FriendlyBattleInfo").LBRegionGroup().regions.Where(x => x.bigButtons.Count == 1).ToList();
         var team2 = CDesktop.windows.Find(x => x.title == "EnemyBattleInfo").LBRegionGroup().regions.Where(x => x.bigButtons.Count == 1).ToList();
         var offset = new Vector3(19, -19);
         if (team == 1) offset += new Vector3(152, 0);
@@ -275,7 +275,7 @@ public class Board
         //Cooldown all abilities of the current entity
         if (Cooldown(whosTurn) > 0)
             if (spotlightEnemy.Contains(whosTurn)) Respawn("EnemyBattleInfo");
-            else if (spotlightFriendly.Contains(whosTurn)) Respawn("PlayerBattleInfo");
+            else if (spotlightFriendly.Contains(whosTurn)) Respawn("FriendlyBattleInfo");
 
         //Call events for the turn begin
         CallEvents(participants[whosTurn].who, new() { { "Trigger", "TurnBegin" } });
@@ -293,7 +293,7 @@ public class Board
 
         //Respawn information about both teams to update visuals
         Respawn("EnemyBattleInfo");
-        Respawn("PlayerBattleInfo");
+        Respawn("FriendlyBattleInfo");
     }
 
     //RESETS THE BOARD TO BE EMPTY AND REFILLED AGAIN

@@ -346,9 +346,8 @@ public class Starter : MonoBehaviour
             Blueprint.windowBlueprints.Add(new Blueprint("Friendly" + element + "Resource", () =>
             {
                 var friendly = Board.board.participants[Board.board.spotlightFriendly[0]].who;
-                var item = friendly.equipment.ContainsKey("Trinket") ? friendly.equipment["Trinket"] : null;
-                var addTrinket = item != null && item.abilities != null && item.combatUse;
-                SetAnchor(-320 + 19 * elements.IndexOf(element), 180 - (addTrinket ? 19 : 0) - 46 * Board.board.spotlightFriendly.Count - 19 * Board.board.spotlightFriendly.Select(x => Board.board.participants[x]).Sum(x => x.who.actionBars[x.who.currentActionSet].Count));
+                var friendlyBattleInfo = CDesktop.windows.Find(x => x.title == "FriendlyBattleInfo");
+                SetAnchor(-320 + 19 * elements.IndexOf(element), 180 - friendlyBattleInfo.yOffset - 8);
                 AddRegionGroup();
                 SetRegionGroupHeight(friendly.MaxResource(element) * 8);
                 SetRegionGroupWidth(19);
@@ -361,9 +360,8 @@ public class Starter : MonoBehaviour
             Blueprint.windowBlueprints.Add(new Blueprint("Enemy" + element + "Resource", () =>
             {
                 var enemy = Board.board.participants[Board.board.spotlightEnemy[0]].who;
-                var item = enemy.equipment.ContainsKey("Trinket") ? enemy.equipment["Trinket"] : null;
-                var addTrinket = item != null && item.abilities != null && item.combatUse;
-                SetAnchor(299 - 19 * elements.IndexOf(element), 180 - (addTrinket ? 19 : 0) - 46 * Board.board.spotlightEnemy.Count - 19 * Board.board.spotlightEnemy.Select(x => Board.board.participants[x]).Sum(x => x.who.actionBars[x.who.currentActionSet].Count));
+                var enemyBattleInfo = CDesktop.windows.Find(x => x.title == "EnemyBattleInfo");
+                SetAnchor(299 - 19 * elements.IndexOf(element), 180 - enemyBattleInfo.yOffset - 8);
                 AddRegionGroup();
                 SetRegionGroupHeight(enemy.MaxResource(element) * 8);
                 SetRegionGroupWidth(19);

@@ -95,8 +95,7 @@ public static class Coloring
 
         //Damage types
         { "Melee",          new Color32(246, 136, 053, 255) },
-        { "Magical",        new Color32(122, 109, 255, 255) },
-        { "Spell",        new Color32(122, 109, 255, 255) },
+        { "Spell",          new Color32(122, 109, 255, 255) },
         { "Ranged",         new Color32(049, 226, 070, 255) },
 
         //Item rarity colors

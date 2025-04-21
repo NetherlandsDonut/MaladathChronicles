@@ -1609,24 +1609,9 @@
     "ranks": [
       {}
     ],
-    "events": [
-      {
-        "triggers": [
-          {
-            "Trigger": "TurnBegin"
-          }
-        ],
-        "effects": [
-          {
-            "Effect": "Damage",
-            "Affect": "Other",
-            "PowerType": "Spell",
-            "PowerSource": "Effector",
-            "PowerScale": "1.5"
-          }
-        ]
-      }
-    ]
+    "gains": {
+      "Armor": 20
+    }
   },
   {
     "name": "Fel Armor",
@@ -1638,24 +1623,9 @@
     "ranks": [
       {}
     ],
-    "events": [
-      {
-        "triggers": [
-          {
-            "Trigger": "TurnBegin"
-          }
-        ],
-        "effects": [
-          {
-            "Effect": "Damage",
-            "Affect": "Other",
-            "PowerType": "Spell",
-            "PowerSource": "Effector",
-            "PowerScale": "1.5"
-          }
-        ]
-      }
-    ]
+    "gains": {
+      "Armor": 50
+    }
   },
   {
     "name": "Foresight",

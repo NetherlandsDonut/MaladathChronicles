@@ -282,6 +282,37 @@ public class Blueprint
                         }
                     );
                 }
+                var item = board.participants[board.spotlightEnemy[index]].who.equipment.ContainsKey("Trinket") ? board.participants[board.spotlightEnemy[index]].who.equipment["Trinket"] : null;
+                if (item != null && item.abilities != null && item.combatUse)
+                {
+                    var ability = item.abilities.ToList()[index];
+                    var abilityObj = abilities.Find(x => x.name == ability.Key);
+                    AddButtonRegion(
+                        () =>
+                        {
+                            if (board.cooldowns[board.spotlightEnemy[index]].ContainsKey(ability.Key))
+                            {
+                                AddLine("" + board.cooldowns[board.spotlightEnemy[index]][ability.Key] + " / ", "DimGray", "Right");
+                                AddText(ability.Key, "Black");
+                            }
+                            else AddLine(ability.Key, "", "Right");
+                            AddSmallButton(item.icon);
+                            if (!abilityObj.EnoughResources(board.participants[board.spotlightEnemy[index]].who))
+                            {
+                                SetSmallButtonToGrayscale();
+                                AddSmallButtonOverlay("OtherGridBlurred");
+                            }
+                            if (board.CooldownOn(board.spotlightEnemy[index], ability.Key) > 0)
+                                AddSmallButtonOverlay("AutoCast");
+                        },
+                        null,
+                        null,
+                        (h) => () =>
+                        {
+                            PrintAbilityTooltip(board.participants[board.spotlightEnemy[index]].who, abilityObj, board.participants[board.spotlightEnemy[index]].who.abilities[abilityObj.name], item);
+                        }
+                    );
+                }
                 if (index > 0)
                 {
                     AddSmallEmptyRegion();
@@ -305,7 +336,7 @@ public class Blueprint
                 board.temporaryBuffs[temp].ForEach(x => x.GetComponent<FlyingBuff>().InstantMove());
             }
         }),
-        new("PlayerBattleInfo", () => {
+        new("FriendlyBattleInfo", () => {
             SetAnchor(TopLeft, 0, -8);
             AddRegionGroup();
             SetRegionGroupWidth(190);
@@ -343,10 +374,8 @@ public class Blueprint
                     AddHealthBar(2, -19, board.spotlightFriendly[index], board.participants[board.spotlightFriendly[index]].who);
                 },
                 (h) => ChangeSpotlight(index));
-                var aimedLength = board.participants[board.spotlightFriendly[index]].who.actionBars.Max(x => x.Value.Count());
                 foreach (var actionBar in board.participants[board.spotlightFriendly[index]].who.actionBars[board.participants[index].who.currentActionSet])
                 {
-                    aimedLength--;
                     var abilityObj = abilities.Find(x => x.name == actionBar);
                     if (abilityObj == null || abilityObj.cost == null) continue;
                     AddButtonRegion(
@@ -387,7 +416,6 @@ public class Blueprint
                 var item = board.participants[board.spotlightFriendly[index]].who.equipment.ContainsKey("Trinket") ? board.participants[board.spotlightFriendly[index]].who.equipment["Trinket"] : null;
                 if (item != null && item.abilities != null && item.combatUse)
                 {
-                    aimedLength--;
                     var ability = item.abilities.ToList()[index];
                     var abilityObj = abilities.Find(x => x.name == ability.Key);
                     AddButtonRegion(
@@ -423,8 +451,6 @@ public class Blueprint
                         }
                     );
                 }
-                for (int z = 0; z < aimedLength; z++)
-                    AddPaddingRegion(() => AddLine(""));
                 if (index > 0)
                 {
                     AddSmallEmptyRegion();
@@ -7171,7 +7197,7 @@ public class Blueprint
             SpawnWindowBlueprint("BoardFrame");
             SpawnWindowBlueprint("Board");
             SpawnWindowBlueprint("BufferBoard");
-            SpawnWindowBlueprint("PlayerBattleInfo");
+            SpawnWindowBlueprint("FriendlyBattleInfo");
             SpawnWindowBlueprint("LocationInfo");
             SpawnWindowBlueprint("EnemyBattleInfo");
             SpawnWindowBlueprint("PlayerQuickUse");
@@ -7195,7 +7221,7 @@ public class Blueprint
                     { "Order", 99 },
                     { "Shadow", 99 },
                 };
-                Respawn("PlayerBattleInfo");
+                Respawn("FriendlyBattleInfo");
                 board.UpdateResourceBars(board.spotlightFriendly[0], elements);
             });
             AddHotkey(PageDown, () => {

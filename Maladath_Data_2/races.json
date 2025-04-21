@@ -18722,7 +18722,10 @@
     "category": "Undead",
     "subcategory": "Skeleton",
     "portrait": "PortraitSkeleton",
-    "abilities": {},
+    "abilities": {
+      "Corruption": 0,
+      "Curse of Agony": 0
+    },
     "kind": "Common",
     "vitality": 1.0
   },
@@ -23173,7 +23176,11 @@
     "category": "Undead",
     "subcategory": "Zombie",
     "portrait": "PortraitZombiePale",
-    "abilities": {},
+    "abilities": {
+      "Corruption": 0,
+      "Curse of Agony": 0,
+      "Shadow Bolt": 0
+    },
     "kind": "Common",
     "vitality": 1.0
   },

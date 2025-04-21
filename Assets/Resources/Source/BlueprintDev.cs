@@ -5097,7 +5097,7 @@ public static class BlueprintDev
             SpawnWindowBlueprint("BoardFrame");
             SpawnWindowBlueprint("Board");
             SpawnWindowBlueprint("BufferBoard");
-            SpawnWindowBlueprint("PlayerBattleInfo");
+            SpawnWindowBlueprint("FriendlyBattleInfo");
             SpawnWindowBlueprint("LocationInfo");
             SpawnWindowBlueprint("EnemyBattleInfo");
             var elements = new List<string> { "Fire", "Water", "Earth", "Air", "Frost", "Lightning", "Arcane", "Decay", "Order", "Shadow" };
@@ -5121,7 +5121,7 @@ public static class BlueprintDev
                     { "Order", 99 },
                     { "Shadow", 99 },
                 };
-                Respawn("PlayerBattleInfo");
+                Respawn("FriendlyBattleInfo");
                 board.UpdateResourceBars(0, elements);
             });
             AddHotkey(PageDown, () => {

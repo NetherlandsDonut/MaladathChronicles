@@ -68,8 +68,7 @@ public class Highlightable : MonoBehaviour
     {
         if (cursor.IsNow(None)) return;
         SetMouseOver(null);
-        if (window != null && desktops.Contains(window.desktop))
-            CloseWindow("Tooltip");
+        CloseWindow("Tooltip");
         Root.tooltip = null;
         if (cursor.IsNow(Click) || cursor.IsNow(Write) || cursor.IsNow(Hook))
             cursor.SetCursor(Default);

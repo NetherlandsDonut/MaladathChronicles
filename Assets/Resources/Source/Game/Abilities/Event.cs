@@ -327,7 +327,7 @@ public class Event
                 var source = powerSource == "Effector" ? effector : other;
                 var target = affect == "Effector" ? effector : other;
                 string damageAmount = effect.ContainsKey("DamageAmount") ? effect["DamageAmount"] : "None";
-                var amount = damageAmount != "None" ? int.Parse(damageAmount) : (int)Math.Round(source.who.RollWeaponDamage() * ((powerType == "Melee" ? source.who.MeleeAttackPower() : (powerType == "Spell" ? source.who.SpellPower() : (powerType == "Ranged" ? source.who.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale);
+                var amount = damageAmount != "None" ? int.Parse(damageAmount) : (int)Math.Round(source.who.RollWeaponDamage() * (powerType == "Melee" ? source.who.MeleeAttackPower() : (powerType == "Spell" ? source.who.SpellPower() : (powerType == "Ranged" ? source.who.RangedAttackPower() : 1))) * powerScale);
                 var resistance = powerType == "Spell" ? target.who.MagicResistance() : target.who.PhysicalResistance();
                 amount = (int)(amount * (1 - resistance));
                 if (amount > 0 && target.team == 2) PlayEnemyLine(target.who.EnemyLine("Wound"));
@@ -346,7 +346,7 @@ public class Event
                 var source = powerSource == "Effector" ? effector : other;
                 var target = affect == "Effector" ? effector : other;
                 string healAmount = effect.ContainsKey("HealAmount") ? effect["HealAmount"] : "None";
-                var amount = healAmount != "None" ? int.Parse(healAmount) : (int)Math.Round(source.who.RollWeaponDamage() * ((powerType == "Melee" ? source.who.MeleeAttackPower() : (powerType == "Spell" ? source.who.SpellPower() : (powerType == "Ranged" ? source.who.RangedAttackPower() : 1))) / 10.0 + 1) * powerScale);
+                var amount = healAmount != "None" ? int.Parse(healAmount) : (int)Math.Round(source.who.RollWeaponDamage() * (powerType == "Melee" ? source.who.MeleeAttackPower() : (powerType == "Spell" ? source.who.SpellPower() : (powerType == "Ranged" ? source.who.RangedAttackPower() : 1))) * powerScale);
                 target.who.Heal(amount, trigger["Trigger"] == "Heal");
                 AddBigButtonOverlay(new Vector3(1, -1) + Board.board.PortraitPosition(Board.board.participants.IndexOf(target)), "OtherHealed", 1f, 5);
                 SpawnFallingText(new Vector3(1, 0) + Board.board.PortraitPosition(Board.board.participants.IndexOf(target)), "" + amount, "Uncommon");
@@ -438,11 +438,15 @@ public class Event
                 {
                     CloseWindow("EnemyBattleInfo");
                     Respawn("EnemyBattleInfo");
+                    foreach (var res in target.who.resources)
+                        Respawn("Enemy" + res.Key + "Resource");
                 }
                 else if (target.team == 1)
                 {
-                    CloseWindow("PlayerBattleInfo");
-                    Respawn("PlayerBattleInfo");
+                    CloseWindow("FriendlyBattleInfo");
+                    Respawn("FriendlyBattleInfo");
+                    foreach (var res in target.who.resources)
+                        Respawn("Friendly" + res.Key + "Resource");
                 }
             }
 

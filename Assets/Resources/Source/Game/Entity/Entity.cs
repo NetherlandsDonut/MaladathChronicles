@@ -1337,6 +1337,11 @@ public class Entity
                 else Board.board.CallEvents(participant.who, new() { { "Trigger", "HealthMaxed" }, { "Triggerer", "Other" } });
     }
 
+    public bool CanBeTargetted()
+    {
+        return true;
+    }
+
     public void Die()
     {
         //If this is the player, shift the map into the dead zone
