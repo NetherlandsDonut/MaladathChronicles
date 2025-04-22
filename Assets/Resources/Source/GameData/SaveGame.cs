@@ -19,6 +19,9 @@ public class SaveGame
     //Player character in the save
     public Entity player;
 
+    //Player pet in the save
+    public Entity pet;
+
     #region Creation
 
     //Creates a new character

@@ -52,7 +52,7 @@ public class Condition
 
                 //Caster related
                 "@effectorteam" => effector.team + "",
-                "@effectorhealth%" => (int)((double)board.Target(effector.team).who.health / effector.who.MaxHealth() * 100) + "",
+                "@effectorhealth%" => (int)((double)effector.who.health / effector.who.MaxHealth() * 100) + "",
                 "@effectorhealth" => effector.who.health + "",
                 "@effectormaxhealth" => effector.who.MaxHealth() + "",
                 "@effectorclass" => effector.who.spec,

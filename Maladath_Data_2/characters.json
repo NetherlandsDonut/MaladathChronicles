@@ -1450,6 +1450,43 @@
               "abilities": {
                 "Hearthstone": 1
               }
+            },
+            {
+              "x": 1,
+              "rarity": "Rare",
+              "name": "Ravager",
+              "icon": "itemhalberd05",
+              "detailedType": "Axe",
+              "type": "Two Handed",
+              "source": "DirectDrop",
+              "ilvl": 42,
+              "lvl": 37,
+              "minDamage": 104,
+              "maxDamage": 157,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 18923,
+              "speed": 3.5,
+              "droppedBy": [
+                "Herod"
+              ]
+            },
+            {
+              "x": 2,
+              "rarity": "Common",
+              "name": "Driftwood Branch",
+              "icon": "itemstaff09",
+              "detailedType": "Staff",
+              "type": "Two Handed",
+              "source": "ZoneDrop",
+              "ilvl": 10,
+              "lvl": 5,
+              "minDamage": 15,
+              "maxDamage": 24,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 174,
+              "speed": 3.4
             }
           ],
           "bags": []
@@ -1530,9 +1567,9 @@
       "vendorStock": {},
       "banks": {},
       "startDate": "2025-04-21T13:57:14.6576945+02:00",
-      "lastLoaded": "2025-04-21T13:57:15.4626331+02:00",
-      "lastPlayed": "2025-04-21T13:57:20.6191344+02:00",
-      "timePlayed": "00:00:05.1565013"
+      "lastLoaded": "2025-04-22T12:12:44.2791234+02:00",
+      "lastPlayed": "2025-04-22T12:14:44.0255279+02:00",
+      "timePlayed": "00:04:51.1552833"
     }
   ]
 }

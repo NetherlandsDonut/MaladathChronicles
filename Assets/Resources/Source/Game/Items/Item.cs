@@ -1035,13 +1035,14 @@ public class Item
             else if (item.maxDamage != 0)
             {
                 AddLine(item.type + " " + item.detailedType, currentSave != null && !currentSave.player.abilities.ContainsKey((new List<string> { "Polearm", "Staff", "Bow", "Crossbow", "Gun", "Dagger", "Fist Weapon", "Wand" }.Contains(item.detailedType) ? item.detailedType : item.type + " " + item.detailedType) + " Proficiency") ? "DangerousRed" : "Gray");
-                var a = Math.Round(item.minDamage / item.speed);
-                var b = Math.Round(item.maxDamage / item.speed);
-                AddLine(a + "", "Gray");
+                var a = 1 + Math.Round(item.minDamage / item.speed / 10, 2);
+                var b = 1 + Math.Round(item.maxDamage / item.speed / 10, 2);
+                AddLine((a + "").Replace(",", "."), "Gray");
                 AddText(" - ", "HalfGray");
-                AddText(b + " Damage", "Gray");
-                //AddLine("Average hit: ", "HalfGray");
-                //AddText("" + Math.Round((a + b) / 2), "White");
+                AddText((b + "").Replace(",", "."), "Gray");
+                AddText(" Power modifier", "HalfGray");
+                AddLine("Average modifier: ", "HalfGray");
+                AddText((Math.Round((a + b) / 2, 2) + "").Replace(",", "."), "Gray");
             }
             else if (item.bagSpace != 0) AddLine(item.bagSpace + " Slot Bag");
             else if (item.type == "Recipe")
@@ -1067,10 +1068,7 @@ public class Item
                     current = currentSave.player.equipment[item.type];
                 else if (item.type == "Two Handed" || item.type == "One Handed")
                     current = currentSave.player.equipment["Main Hand"];
-            AddHeaderRegion(() =>
-            {
-                AddLine("Stat changes on equip:", "DarkGray");
-            });
+            AddHeaderRegion(() => AddLine("Stat changes on equip:", "DarkGray"));
             AddPaddingRegion(() =>
             {
                 var statsRecorded = new List<string>();
@@ -1082,13 +1080,13 @@ public class Item
                     AddLine((balance > 0 ? "+" : "") + balance, balance > 0 ? "Uncommon" : "DangerousRed");
                     AddText(" Armor");
                 }
-                a1 = item.speed <= 0 ? 0 : (int)Math.Round((Math.Round(item.minDamage / item.speed) + Math.Round(item.maxDamage / item.speed)) / 2);
-                a2 = current == null || current.speed <= 0 ? 0 : (int)Math.Round((Math.Round(current.minDamage / current.speed) + Math.Round(current.maxDamage / current.speed)) / 2);
-                if (a1 - a2 != 0)
+                var a1d = item.speed <= 0 ? 1 : Math.Round((1 + Math.Round(item.minDamage / item.speed / 10, 2) + 1 + Math.Round(item.maxDamage / item.speed / 10, 2)) / 2, 2);
+                var a2d = current == null || current.speed <= 0 ? 1 : Math.Round((1 + Math.Round(current.minDamage / current.speed / 10, 2) + 1 + Math.Round(current.maxDamage / current.speed / 10, 2)) / 2, 2);
+                if (a1d - a2d != 0)
                 {
-                    var balance = a1 - a2;
-                    AddLine((balance > 0 ? "+" : "") + balance, balance > 0 ? "Uncommon" : "DangerousRed");
-                    AddText(" Damage");
+                    var balance = a1d - a2d;
+                    AddLine(((balance > 0 ? "+" : "") + balance).Replace(",", "."), balance > 0 ? "Uncommon" : "DangerousRed");
+                    AddText(" Power modifier");
                 }
                 a1 = item.block;
                 a2 = current == null ? 0 : current.block;

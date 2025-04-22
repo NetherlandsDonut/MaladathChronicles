@@ -216,7 +216,13 @@
       },
       {
         "name": "Beast Mastery",
-        "talents": []
+        "talents": [
+          {
+            "col": 1,
+            "ability": "Tame Beast",
+            "defaultTaken": true
+          }
+        ]
       },
       {
         "name": "Survival",

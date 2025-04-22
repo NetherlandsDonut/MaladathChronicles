@@ -29,14 +29,24 @@ public class Board
         resourceBars = new();
         flyingMissiles = new();
         actions = new List<Action>();
-        spotlightFriendly = new() { 0 };
+        spotlightFriendly = new() { };
         spotlightEnemy = new() { };
-        participants = new() { new() };
-        participants[0].team = 1;
-        participants[0].who = currentSave.player;
-        participants[0].human = true;
-        participants[0].combatAbilities = currentSave.player.AbilitiesInCombat();
-        participants[0].who.InitialiseCombat();
+        participants = new() { };
+        var friendly = new List<Entity> { currentSave.player };
+        if (currentSave.pet != null && !currentSave.pet.dead)
+            friendly.Add(currentSave.pet);
+        foreach (var friend in friendly)
+        {
+            friend.InitialiseCombat();
+            var newParticipant = new CombatParticipant
+            {
+                team = 1,
+                who = friend,
+                human = friend == currentSave.player,
+                combatAbilities = friend.AbilitiesInCombat()
+            };
+            participants.Add(newParticipant);
+        }
         foreach (var enemy in enemies)
         {
             enemy.InitialiseCombat();
@@ -47,21 +57,11 @@ public class Board
                 combatAbilities = enemy.AbilitiesInCombat()
             };
             participants.Add(newParticipant);
-            spotlightEnemy.Add(participants.Count - 1);
         }
-
-        var possible = Race.races.Where(x => !x.genderedPortrait).ToList();
-        var choice = new Entity(currentSave.player.level, possible[random.Next(possible.Count)]);
-        choice.InitialiseCombat();
-        var additionallAlly = new CombatParticipant
-        {
-            team = 1,
-            who = choice,
-            combatAbilities = choice.AbilitiesInCombat()
-        };
-        participants.Add(additionallAlly);
-        spotlightFriendly.Add(participants.Count - 1);
-
+        participants = participants.OrderByDescending(x => x.who.Stats()["Agility"]).ToList();
+        for (int i = 0; i < participants.Count; i++)
+            if (participants[i].team == 1) spotlightFriendly.Add(i);
+            else if (participants[i].team == 2) spotlightEnemy.Add(i);
         cooldowns = new();
         foreach (var poo in participants)
             cooldowns.Add(participants.IndexOf(poo), new());
@@ -244,7 +244,17 @@ public class Board
             buff.buff.ExecuteEvents(this, trigger, buff);
     }
 
-    public CombatParticipant Target(int ofTeam) => participantTargetted != null ? participantTargetted : participants[ofTeam == 1 ? spotlightEnemy[0] : spotlightFriendly[0]];
+    public CombatParticipant Target(int ofTeam)
+    {
+        if (participantTargetted != null) return participantTargetted;
+        else
+        {
+            foreach (var participant in ofTeam == 1 ? spotlightEnemy : spotlightFriendly)
+                if (participants[participant].who.CanBeTargetted())
+                    return participants[participant];
+        }
+        return null;
+    }
 
     //Ends a turn for a participant and makes somebody else begin theirs
     public void EndTurn()
@@ -260,7 +270,7 @@ public class Board
         while (participants[whosTurn].who.dead);
 
         //If it's not player's turn.. change color of the remote cursor based on whether it is an ally using it or an enemy
-        if (participants[whosTurn].who != currentSave.player)
+        if (!participants[whosTurn].human)
             cursorEnemy.SetColor(participants[whosTurn].team == participants.Find(x => x.who == currentSave.player).team ? "CursorFriend" : "CursorEnemy");
 
         //If the current participant is human controlled fade out the enemy cursor

@@ -1153,14 +1153,13 @@ public class Entity
                     max += Math.Round(offHand.maxDamage / offHand.speed) / 1.5;
                 }
             }
-            return (Math.Round(min), Math.Round(max));
+            return (1 + min / 10, 1 + max / 10);
         }
     }
 
     public double RollWeaponDamage()
     {
         var damage = WeaponDamage();
-        if (damage.Item2 == 0) return random.Next(2, 5);
         return random.Next((int)(damage.Item1 * 100), (int)(damage.Item2 * 100) + 1) / 100.0;
     }
 
