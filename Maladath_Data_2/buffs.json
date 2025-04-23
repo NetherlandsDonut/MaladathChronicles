@@ -1611,7 +1611,8 @@
     ],
     "gains": {
       "Armor": 20
-    }
+    },
+    "events": []
   },
   {
     "name": "Fel Armor",
@@ -1625,7 +1626,8 @@
     ],
     "gains": {
       "Armor": 50
-    }
+    },
+    "events": []
   },
   {
     "name": "Foresight",

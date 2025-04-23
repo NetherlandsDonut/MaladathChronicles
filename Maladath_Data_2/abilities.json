@@ -1,5 +1,1094 @@
 [
   {
+    "name": "Frost Shield",
+    "icon": "AbilityFrostShield",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Bloodseeker",
+    "icon": "AbilityBloodseeker",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Merciless Blow",
+    "icon": "AbilityMercilessBlow",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Flanker's Advantage",
+    "icon": "AbilityFlankersAdvantage",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Killer Companion",
+    "icon": "AbilityKillerCompanion",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Born To Kill",
+    "icon": "AbilityBornToKill",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Explosive Trap",
+    "icon": "AbilityExplosiveTrap",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Lone Survivor",
+    "icon": "AbilityLoneSurvivor",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Born To Be Wild",
+    "icon": "AbilityBornToBeWild",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Entrapment",
+    "icon": "AbilityEntrapment",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Feign Death",
+    "icon": "AbilityFeignDeath",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Terms of Engagement",
+    "icon": "AbilityTermsofEngagement",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Mongoose Bite",
+    "icon": "AbilityMongooseBite",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Disengage",
+    "icon": "AbilityDisengage",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Moment of Opportunity",
+    "icon": "AbilityMomentofOpportunity",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Immolation Trap",
+    "icon": "AbilityImmolationTrap",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Guerrilla Tactics",
+    "icon": "AbilityGuerrillaTactics",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Camouflage",
+    "icon": "AbilityCamouflage",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Freezing Trap",
+    "icon": "AbilityFreezingTrap",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Tactical Advantage",
+    "icon": "AbilityTacticalAdvantage",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Raptor Strike",
+    "icon": "AbilityRaptorStrike",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Call of The Wild",
+    "icon": "AbilityCallofTheWild",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Unbreakable Bond",
+    "icon": "AbilityUnbreakableBond",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Thrill of The Hunt",
+    "icon": "AbilityThrillofTheHunt",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Tranquilizing Shot",
+    "icon": "AbilityTranquilizingShot",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Dire Frenzy",
+    "icon": "AbilityDireFrenzy",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Territorial Instincts",
+    "icon": "AbilityTerritorialInstincts",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Aspect of The Viper",
+    "icon": "AbilityAspectofTheViper",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Bestial Swiftness",
+    "icon": "AbilityBestialSwiftness",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Rejuvenating Wind",
+    "icon": "AbilityRejuvenatingWind",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Bestial Discipline",
+    "icon": "AbilityBestialDiscipline",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Huntmaster's Call",
+    "icon": "AbilityHuntmastersCall",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Aspect of The Monkey",
+    "icon": "AbilityAspectofTheMonkey",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Intimidation",
+    "icon": "AbilityIntimidation",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Aspect of The Cheetah",
+    "icon": "AbilityAspectofTheCheetah",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Scent of Blood",
+    "icon": "AbilityScentofBlood",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Endurance Training",
+    "icon": "AbilityEnduranceTraining",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Barbed Shot",
+    "icon": "AbilityBarbedShot",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Pack Tactics",
+    "icon": "AbilityPackTactics",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Kill Command",
+    "icon": "AbilityKillCommand",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Tame Beast",
+    "icon": "AbilityTameBeast",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Deathblow",
+    "icon": "AbilityDeathblow",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Killer Mark",
+    "icon": "AbilityKillerMark",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Master Marksman",
+    "icon": "AbilityMasterMarksman",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Keen Eyesight",
+    "icon": "AbilityKeenEyesight",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Eagle's Accuracy",
+    "icon": "AbilityEaglesAccuracy",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Unnatural Causes",
+    "icon": "AbilityUnnaturalCauses",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Volley",
+    "icon": "AbilityVolley",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Lock and Load",
+    "icon": "AbilityLockandLoad",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Scorpid Sting",
+    "icon": "AbilityScorpidSting",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Rapid Fire",
+    "icon": "AbilityRapidFire",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Aspect of The Hawk",
+    "icon": "AbilityAspectofTheHawk",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "In The Rhythm",
+    "icon": "AbilityInTheRhythm",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Flare",
+    "icon": "AbilityFlare",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Calling The Shots",
+    "icon": "AbilityCallingTheShots",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Serpent Sting",
+    "icon": "AbilitySerpentSting",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Concussive Shot",
+    "icon": "AbilityConcussiveShot",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Precise Shots",
+    "icon": "AbilityPreciseShots",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Hunter's Avoidance",
+    "icon": "AbilityHuntersAvoidance",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Arcane Shot",
+    "icon": "AbilityArcaneShot",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Aimed Shot",
+    "icon": "AbilityAimedShot",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Lethality",
+    "icon": "AbilityLethality",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Alacrity",
+    "icon": "AbilityAlacrity",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Adrenaline Rush",
+    "icon": "AbilityAdrenalineRush",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Blade Flurry",
+    "icon": "AbilityBladeFlurry",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Deft Manouvers",
+    "icon": "AbilityDeftManouvers",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Ace Up Your Sleeve",
+    "icon": "AbilityAceUpYourSleeve",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Sprint",
+    "icon": "AbilitySprint",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Slice and Dice",
+    "icon": "AbilitySliceandDice",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Fatal Flourish",
+    "icon": "AbilityFatalFlourish",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Swift Slasher",
+    "icon": "AbilitySwiftSlasher",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Dirty Tricks",
+    "icon": "AbilityDirtyTricks",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Eviscerate",
+    "icon": "AbilityEviscerate",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Instant Poison",
+    "icon": "AbilityInstantPoison",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Kick",
+    "icon": "AbilityKick",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Quick Decisions",
+    "icon": "AbilityQuickDecisions",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Evasion",
+    "icon": "AbilityEvasion",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Fleet Footed",
+    "icon": "AbilityFleetFooted",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Precise Cuts",
+    "icon": "AbilityPreciseCuts",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Graceful Guile",
+    "icon": "AbilityGracefulGuile",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Sinister Strike",
+    "icon": "AbilitySinisterStrike",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Night Terrors",
+    "icon": "AbilityNightTerrors",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Symbols of Death",
+    "icon": "AbilitySymbolsofDeath",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Master of Deception",
+    "icon": "AbilityMasterofDeception",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Sinister Calling",
+    "icon": "AbilitySinisterCalling",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Cloak of Shadows",
+    "icon": "AbilityCloakofShadows",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Nightstalker",
+    "icon": "AbilityNightstalker",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Sepsis",
+    "icon": "AbilitySepsis",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Shadowstep",
+    "icon": "AbilityShadowstep",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Soothing Darkness",
+    "icon": "AbilitySoothingDarkness",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Cheap Shot",
+    "icon": "AbilityCheapShot",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Mind Numbing Poison",
+    "icon": "AbilityMindNumbingPoison",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Sleight of Hand",
+    "icon": "AbilitySleightofHand",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Perforated Veins",
+    "icon": "AbilityPerforatedVeins",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Sap",
+    "icon": "AbilitySap",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Shrouded Suffocation",
+    "icon": "AbilityShroudedSuffocation",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Distract",
+    "icon": "AbilityDistract",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Replicating Shadows",
+    "icon": "AbilityReplicatingShadows",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Premeditation",
+    "icon": "AbilityPremeditation",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Backstab",
+    "icon": "AbilityBackstab",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Stealth",
+    "icon": "AbilityStealth",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Cold Blood",
+    "icon": "AbilityColdBlood",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Kingsbane",
+    "icon": "AbilityKingsbane",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Lingering Shadow",
+    "icon": "AbilityLingeringShadow",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Master Assassin",
+    "icon": "AbilityMasterAssassin",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Death Mark",
+    "icon": "AbilityDeathMark",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Indiscriminate Carnage",
+    "icon": "AbilityIndiscriminateCarnage",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Systemic Failure",
+    "icon": "AbilitySystemicFailure",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Fatal Concoction",
+    "icon": "AbilityFatalConcoction",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Sudden Demise",
+    "icon": "AbilitySuddenDemise",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Garrote",
+    "icon": "AbilityGarrote",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Deadly Poison",
+    "icon": "AbilityDeadlyPoison",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Arterial Precision",
+    "icon": "AbilityArterialPrecision",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Shiv",
+    "icon": "AbilityShiv",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Venom Rush",
+    "icon": "AbilityVenomRush",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Blindside",
+    "icon": "AbilityBlindside",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Caustic Spatter",
+    "icon": "AbilityCausticSpatter",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Kidney Shot",
+    "icon": "AbilityKidneyShot",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Venomous Wounds",
+    "icon": "AbilityVenomousWounds",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Wound Poison",
+    "icon": "AbilityWoundPoison",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
+    "name": "Rupture",
+    "icon": "AbilityRupture",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": []
+  },
+  {
     "name": "Shadowform",
     "icon": "AbilityShadowform",
     "cooldown": 6,
@@ -9349,16 +10438,6 @@
   {
     "name": "Frost Shock",
     "icon": "AbilityFrostShock",
-    "possibleTargets": "Self",
-    "tags": [],
-    "ranks": [
-      {}
-    ],
-    "events": []
-  },
-  {
-    "name": "Frost Ward",
-    "icon": "AbilityFrostWard",
     "possibleTargets": "Self",
     "tags": [],
     "ranks": [

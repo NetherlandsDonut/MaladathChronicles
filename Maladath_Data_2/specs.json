@@ -101,15 +101,336 @@
     "talentTrees": [
       {
         "name": "Assassination",
-        "talents": []
+        "talents": [
+          {
+            "col": 1,
+            "ability": "Rupture",
+            "defaultTaken": true
+          },
+          {
+            "row": 1,
+            "col": 1,
+            "ability": "Wound Poison"
+          },
+          {
+            "row": 1,
+            "col": 2,
+            "ability": "Venomous Wounds"
+          },
+          {
+            "row": 2,
+            "ability": "Kidney Shot"
+          },
+          {
+            "row": 2,
+            "col": 2,
+            "ability": "Caustic Spatter",
+            "inherited": true
+          },
+          {
+            "row": 3,
+            "ability": "Blindside",
+            "inherited": true
+          },
+          {
+            "row": 3,
+            "col": 1,
+            "ability": "Venom Rush"
+          },
+          {
+            "row": 3,
+            "col": 2,
+            "ability": "Shiv"
+          },
+          {
+            "row": 4,
+            "col": 1,
+            "ability": "Arterial Precision"
+          },
+          {
+            "row": 4,
+            "col": 2,
+            "ability": "Deadly Poison"
+          },
+          {
+            "col": 1,
+            "tree": 1,
+            "ability": "Garrote"
+          },
+          {
+            "row": 1,
+            "tree": 1,
+            "ability": "Sudden Demise"
+          },
+          {
+            "row": 1,
+            "col": 2,
+            "tree": 1,
+            "ability": "Fatal Concoction"
+          },
+          {
+            "row": 2,
+            "tree": 1,
+            "ability": "Systemic Failure"
+          },
+          {
+            "row": 2,
+            "col": 1,
+            "tree": 1,
+            "ability": "Indiscriminate Carnage",
+            "inherited": true
+          },
+          {
+            "row": 3,
+            "tree": 1,
+            "ability": "Death Mark"
+          },
+          {
+            "row": 3,
+            "col": 1,
+            "tree": 1,
+            "ability": "Master Assassin"
+          },
+          {
+            "row": 3,
+            "col": 2,
+            "tree": 1,
+            "ability": "Lingering Shadow"
+          },
+          {
+            "row": 4,
+            "tree": 1,
+            "ability": "Kingsbane",
+            "inherited": true
+          },
+          {
+            "row": 4,
+            "col": 1,
+            "tree": 1,
+            "ability": "Cold Blood"
+          }
+        ]
       },
       {
         "name": "Subtlety",
-        "talents": []
+        "talents": [
+          {
+            "col": 1,
+            "ability": "Stealth",
+            "defaultTaken": true
+          },
+          {
+            "row": 1,
+            "col": 1,
+            "ability": "Backstab"
+          },
+          {
+            "row": 1,
+            "col": 2,
+            "ability": "Premeditation"
+          },
+          {
+            "row": 2,
+            "ability": "Replicating Shadows"
+          },
+          {
+            "row": 2,
+            "col": 2,
+            "ability": "Distract"
+          },
+          {
+            "row": 3,
+            "ability": "Shrouded Suffocation",
+            "inherited": true
+          },
+          {
+            "row": 3,
+            "col": 1,
+            "ability": "Sap"
+          },
+          {
+            "row": 3,
+            "col": 2,
+            "ability": "Perforated Veins"
+          },
+          {
+            "row": 4,
+            "ability": "Sleight of Hand"
+          },
+          {
+            "row": 4,
+            "col": 1,
+            "ability": "Mind Numbing Poison"
+          },
+          {
+            "col": 1,
+            "tree": 1,
+            "ability": "Cheap Shot"
+          },
+          {
+            "row": 1,
+            "col": 1,
+            "tree": 1,
+            "ability": "Soothing Darkness"
+          },
+          {
+            "row": 1,
+            "col": 2,
+            "tree": 1,
+            "ability": "Shadowstep"
+          },
+          {
+            "row": 2,
+            "tree": 1,
+            "ability": "Sepsis"
+          },
+          {
+            "row": 2,
+            "col": 1,
+            "tree": 1,
+            "ability": "Nightstalker"
+          },
+          {
+            "row": 2,
+            "col": 2,
+            "tree": 1,
+            "ability": "Cloak of Shadows"
+          },
+          {
+            "row": 3,
+            "tree": 1,
+            "ability": "Sinister Calling"
+          },
+          {
+            "row": 3,
+            "col": 2,
+            "tree": 1,
+            "ability": "Master of Deception"
+          },
+          {
+            "row": 4,
+            "tree": 1,
+            "ability": "Symbols of Death"
+          },
+          {
+            "row": 4,
+            "col": 1,
+            "tree": 1,
+            "ability": "Night Terrors",
+            "inherited": true
+          }
+        ]
       },
       {
         "name": "Outlaw",
-        "talents": []
+        "talents": [
+          {
+            "col": 1,
+            "ability": "Sinister Strike",
+            "defaultTaken": true
+          },
+          {
+            "row": 1,
+            "col": 1,
+            "ability": "Graceful Guile"
+          },
+          {
+            "row": 1,
+            "ability": "Eviscerate"
+          },
+          {
+            "row": 1,
+            "col": 2,
+            "ability": "Fleet Footed"
+          },
+          {
+            "row": 2,
+            "col": 1,
+            "ability": "Evasion"
+          },
+          {
+            "row": 2,
+            "col": 2,
+            "ability": "Quick Decisions"
+          },
+          {
+            "row": 3,
+            "col": 1,
+            "ability": "Kick"
+          },
+          {
+            "row": 3,
+            "col": 2,
+            "ability": "Instant Poison"
+          },
+          {
+            "row": 4,
+            "ability": "Precise Cuts",
+            "inherited": true
+          },
+          {
+            "row": 4,
+            "col": 2,
+            "ability": "Dirty Tricks"
+          },
+          {
+            "col": 1,
+            "tree": 1,
+            "ability": "Swift Slasher"
+          },
+          {
+            "row": 1,
+            "tree": 1,
+            "ability": "Fatal Flourish"
+          },
+          {
+            "row": 1,
+            "col": 2,
+            "tree": 1,
+            "ability": "Slice and Dice"
+          },
+          {
+            "row": 2,
+            "col": 1,
+            "tree": 1,
+            "ability": "Sprint",
+            "inherited": true
+          },
+          {
+            "row": 2,
+            "col": 2,
+            "tree": 1,
+            "ability": "Ace Up Your Sleeve"
+          },
+          {
+            "row": 3,
+            "tree": 1,
+            "ability": "Deft Manouvers"
+          },
+          {
+            "row": 3,
+            "col": 1,
+            "tree": 1,
+            "ability": "Blade Flurry"
+          },
+          {
+            "row": 3,
+            "col": 2,
+            "tree": 1,
+            "ability": "Adrenaline Rush"
+          },
+          {
+            "row": 4,
+            "tree": 1,
+            "ability": "Born To Kill"
+          },
+          {
+            "row": 4,
+            "col": 1,
+            "tree": 1,
+            "ability": "Lethality"
+          }
+        ]
       }
     ]
   },
@@ -212,7 +533,116 @@
     "talentTrees": [
       {
         "name": "Marksmanship",
-        "talents": []
+        "talents": [
+          {
+            "col": 1,
+            "ability": "Aimed Shot",
+            "defaultTaken": true
+          },
+          {
+            "row": 1,
+            "col": 2,
+            "ability": "Arcane Shot"
+          },
+          {
+            "row": 1,
+            "col": 1,
+            "ability": "Hunter's Avoidance"
+          },
+          {
+            "row": 2,
+            "ability": "Precise Shots"
+          },
+          {
+            "row": 2,
+            "col": 1,
+            "ability": "Concussive Shot"
+          },
+          {
+            "row": 2,
+            "col": 2,
+            "ability": "Serpent Sting"
+          },
+          {
+            "row": 3,
+            "col": 1,
+            "ability": "Calling The Shots"
+          },
+          {
+            "row": 3,
+            "col": 2,
+            "ability": "Flare"
+          },
+          {
+            "row": 4,
+            "ability": "In The Rhythm",
+            "inherited": true
+          },
+          {
+            "row": 4,
+            "col": 1,
+            "ability": "Aspect of The Hawk"
+          },
+          {
+            "col": 1,
+            "tree": 1,
+            "ability": "Rapid Fire"
+          },
+          {
+            "row": 1,
+            "tree": 1,
+            "ability": "Scorpid Sting"
+          },
+          {
+            "row": 1,
+            "col": 1,
+            "tree": 1,
+            "ability": "Lock and Load"
+          },
+          {
+            "row": 1,
+            "col": 2,
+            "tree": 1,
+            "ability": "Eagle's Accuracy"
+          },
+          {
+            "row": 2,
+            "tree": 1,
+            "ability": "Unnatural Causes",
+            "inherited": true
+          },
+          {
+            "row": 2,
+            "col": 2,
+            "tree": 1,
+            "ability": "Keen Eyesight"
+          },
+          {
+            "row": 3,
+            "col": 1,
+            "tree": 1,
+            "ability": "Volley"
+          },
+          {
+            "row": 3,
+            "col": 2,
+            "tree": 1,
+            "ability": "Master Marksman",
+            "inherited": true
+          },
+          {
+            "row": 4,
+            "col": 1,
+            "tree": 1,
+            "ability": "Killer Mark"
+          },
+          {
+            "row": 4,
+            "col": 2,
+            "tree": 1,
+            "ability": "Deathblow"
+          }
+        ]
       },
       {
         "name": "Beast Mastery",
@@ -221,12 +651,222 @@
             "col": 1,
             "ability": "Tame Beast",
             "defaultTaken": true
+          },
+          {
+            "row": 1,
+            "col": 1,
+            "ability": "Kill Command"
+          },
+          {
+            "row": 1,
+            "col": 2,
+            "ability": "Pack Tactics"
+          },
+          {
+            "row": 2,
+            "ability": "Barbed Shot"
+          },
+          {
+            "row": 2,
+            "col": 2,
+            "ability": "Endurance Training",
+            "inherited": true
+          },
+          {
+            "row": 3,
+            "col": 1,
+            "ability": "Scent of Blood",
+            "inherited": true
+          },
+          {
+            "row": 3,
+            "col": 2,
+            "ability": "Aspect of The Cheetah"
+          },
+          {
+            "row": 4,
+            "ability": "Intimidation"
+          },
+          {
+            "row": 4,
+            "col": 1,
+            "ability": "Aspect of The Monkey"
+          },
+          {
+            "row": 4,
+            "col": 2,
+            "ability": "Huntmaster's Call"
+          },
+          {
+            "col": 1,
+            "tree": 1,
+            "ability": "Bestial Discipline"
+          },
+          {
+            "row": 1,
+            "col": 1,
+            "tree": 1,
+            "ability": "Rejuvenating Wind"
+          },
+          {
+            "row": 1,
+            "col": 2,
+            "tree": 1,
+            "ability": "Bestial Swiftness"
+          },
+          {
+            "row": 2,
+            "tree": 1,
+            "ability": "Aspect of The Viper"
+          },
+          {
+            "row": 2,
+            "col": 1,
+            "tree": 1,
+            "ability": "Territorial Instincts"
+          },
+          {
+            "row": 3,
+            "col": 2,
+            "tree": 1,
+            "ability": "Dire Frenzy",
+            "inherited": true
+          },
+          {
+            "row": 3,
+            "tree": 1,
+            "ability": "Tranquilizing Shot"
+          },
+          {
+            "row": 3,
+            "col": 1,
+            "tree": 1,
+            "ability": "Thrill of The Hunt"
+          },
+          {
+            "row": 4,
+            "col": 1,
+            "tree": 1,
+            "ability": "Unbreakable Bond"
+          },
+          {
+            "row": 4,
+            "col": 2,
+            "tree": 1,
+            "ability": "Call of The Wild"
           }
         ]
       },
       {
         "name": "Survival",
-        "talents": []
+        "talents": [
+          {
+            "col": 1,
+            "ability": "Raptor Strike",
+            "defaultTaken": true
+          },
+          {
+            "row": 1,
+            "col": 1,
+            "ability": "Tactical Advantage"
+          },
+          {
+            "row": 1,
+            "col": 2,
+            "ability": "Freezing Trap"
+          },
+          {
+            "row": 2,
+            "ability": "Camouflage"
+          },
+          {
+            "row": 2,
+            "col": 2,
+            "ability": "Guerrilla Tactics"
+          },
+          {
+            "row": 3,
+            "ability": "Immolation Trap"
+          },
+          {
+            "row": 3,
+            "col": 1,
+            "ability": "Terms of Engagement",
+            "inherited": true
+          },
+          {
+            "row": 3,
+            "col": 2,
+            "ability": "Disengage"
+          },
+          {
+            "row": 4,
+            "col": 1,
+            "ability": "Mongoose Bite"
+          },
+          {
+            "row": 4,
+            "col": 2,
+            "ability": "Moment of Opportunity"
+          },
+          {
+            "col": 1,
+            "tree": 1,
+            "ability": "Feign Death"
+          },
+          {
+            "row": 1,
+            "tree": 1,
+            "ability": "Entrapment"
+          },
+          {
+            "row": 1,
+            "col": 1,
+            "tree": 1,
+            "ability": "Merciless Blow"
+          },
+          {
+            "row": 1,
+            "col": 2,
+            "tree": 1,
+            "ability": "Lone Survivor"
+          },
+          {
+            "row": 2,
+            "col": 1,
+            "tree": 1,
+            "ability": "Explosive Trap"
+          },
+          {
+            "row": 2,
+            "col": 2,
+            "tree": 1,
+            "ability": "Alacrity",
+            "inherited": true
+          },
+          {
+            "row": 3,
+            "tree": 1,
+            "ability": "Killer Companion"
+          },
+          {
+            "row": 3,
+            "col": 2,
+            "tree": 1,
+            "ability": "Flanker's Advantage"
+          },
+          {
+            "row": 4,
+            "tree": 1,
+            "ability": "Born To Be Wild"
+          },
+          {
+            "row": 4,
+            "col": 1,
+            "tree": 1,
+            "ability": "Bloodseeker"
+          }
+        ]
       }
     ]
   },
@@ -1424,13 +2064,15 @@
             "ability": "Moonfire"
           },
           {
-            "row": 2,
+            "row": 1,
+            "col": 1,
             "ability": "Sunfire"
           },
           {
             "row": 2,
             "col": 1,
-            "ability": "Light of the Sun"
+            "ability": "Light of the Sun",
+            "inherited": true
           },
           {
             "row": 2,
@@ -1439,7 +2081,8 @@
           },
           {
             "row": 3,
-            "ability": "Shooting Stars"
+            "ability": "Lunar Shrapnel",
+            "inherited": true
           },
           {
             "row": 3,
@@ -1449,11 +2092,13 @@
           {
             "row": 3,
             "col": 2,
-            "ability": "Lunar Shrapnel"
+            "ability": "Faerie Fire"
           },
           {
             "row": 4,
-            "ability": "Faerie Fire"
+            "col": 1,
+            "ability": "Shooting Stars",
+            "inherited": true
           },
           {
             "row": 4,
@@ -1462,12 +2107,8 @@
           },
           {
             "tree": 1,
-            "ability": "Cyclone"
-          },
-          {
             "col": 1,
-            "tree": 1,
-            "ability": "Astral Communion"
+            "ability": "Cyclone"
           },
           {
             "row": 1,
@@ -1496,24 +2137,32 @@
             "row": 2,
             "col": 2,
             "tree": 1,
-            "ability": "Umbral Intensity"
+            "ability": "Orbit Breaker"
           },
           {
             "row": 3,
             "tree": 1,
-            "ability": "Orbit Breaker"
+            "ability": "Umbral Intensity"
+          },
+          {
+            "row": 3,
+            "col": 1,
+            "tree": 1,
+            "ability": "Astral Communion"
           },
           {
             "row": 4,
             "col": 1,
             "tree": 1,
-            "ability": "Astral Invocation"
+            "ability": "Astral Invocation",
+            "inherited": true
           },
           {
             "row": 4,
             "col": 2,
             "tree": 1,
-            "ability": "Sundered Firmament"
+            "ability": "Sundered Firmament",
+            "inherited": true
           }
         ]
       },
@@ -1685,14 +2334,14 @@
           },
           {
             "row": 1,
+            "tree": 1,
+            "ability": "Nurturing Instinct"
+          },
+          {
+            "row": 1,
             "col": 1,
             "tree": 1,
             "ability": "Hibernate"
-          },
-          {
-            "row": 2,
-            "tree": 1,
-            "ability": "Nurturing Instinct"
           },
           {
             "row": 2,
@@ -2534,7 +3183,7 @@
           {
             "row": 1,
             "col": 2,
-            "ability": "Frost Ward"
+            "ability": "Frost Shield"
           },
           {
             "row": 2,
