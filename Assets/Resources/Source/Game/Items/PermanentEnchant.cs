@@ -23,8 +23,5 @@ public class PermanentEnchant
     public static List<PermanentEnchant> pEnchantsSearch;
 
     //Calculates how much stats does a permanent enchant grant
-    public static int EnchantmentStatGrowth(int ilvl, int amount)
-    {
-        return (int)Math.Ceiling(1 / 500.0f * (ilvl * ilvl) * (amount > 1 ? (amount > 5 ? 4 : amount - 1) : 0.2f) + 2);
-    }
+    public static int EnchantmentStatGrowth(int ilvl, int amount) => (int)Math.Ceiling(1 / 500.0f * (ilvl * ilvl) * (amount > 1 ? (amount > 5 ? 4 : amount - 1) : 0.2f) + 2);
 }

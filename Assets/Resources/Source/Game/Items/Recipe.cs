@@ -53,16 +53,10 @@ public class Recipe
             AddLine(recipe.name, recipe.NameColor());
             AddSmallButton(recipe.Icon());
         });
-        AddPaddingRegion(() =>
-        {
-            AddLine(recipe.profession + " " + Profession.professions.Find(x => x.name == recipe.profession).recipeType);
-        });
+        AddPaddingRegion(() => AddLine(recipe.profession + " " + Profession.professions.Find(x => x.name == recipe.profession).recipeType));
         if (recipe.results.Count > 0)
         {
-            AddHeaderRegion(() =>
-            {
-                AddLine("Results:", "DarkGray");
-            });
+            AddHeaderRegion(() => AddLine("Results:", "DarkGray"));
             AddPaddingRegion(() =>
             {
                 foreach (var result in recipe.results)
@@ -71,10 +65,7 @@ public class Recipe
         }
         else if (recipe.enchantment)
         {
-            AddHeaderRegion(() =>
-            {
-                AddLine("Enchantment:", "DarkGray");
-            });
+            AddHeaderRegion(() => AddLine("Enchantment:", "DarkGray"));
             var e = Enchant.enchants.Find(x => x.name == recipe.name);
             AddPaddingRegion(() =>
             {
@@ -82,10 +73,7 @@ public class Recipe
                 AddLine(e.Name());
             });
         }
-        AddHeaderRegion(() =>
-        {
-            AddLine("Reagents:", "DarkGray");
-        });
+        AddHeaderRegion(() => AddLine("Reagents:", "DarkGray"));
         AddPaddingRegion(() =>
         {
             foreach (var reagent in recipe.reagents)
@@ -96,8 +84,7 @@ public class Recipe
             AddLine("Required skill: ", "DarkGray");
             AddText(recipe.learnedAt + "", forWho.professionSkills.ContainsKey(recipe.profession) && recipe.learnedAt <= forWho.professionSkills[recipe.profession].Item1 ? "HalfGray" : "DangerousRed");
         });
-        if (recipe.price > 0)
-            PrintPriceRegion(recipe.price);
+        if (recipe.price > 0) PrintPriceRegion(recipe.price);
     }
 
     #endregion

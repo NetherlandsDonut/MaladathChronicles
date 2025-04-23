@@ -12,7 +12,6 @@ using static Faction;
 using static SaveGame;
 using static Coloring;
 using static SiteInstance;
-using System.Linq.Expressions;
 
 public class SiteHostileArea : Site
 {

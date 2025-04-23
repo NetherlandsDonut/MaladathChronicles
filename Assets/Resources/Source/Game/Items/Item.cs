@@ -156,12 +156,14 @@ public class Item
 
     #region Equipping
 
+    //Tells whether this item is generally wearable
     public bool IsWearable()
     {
         if (new List<string> { "Miscellaneous", "Trade Good", "Recipe", "Bag" }.Contains(type)) return false;
         return true;
     }
 
+    //Equips this item on the chosen entity in a specific slot
     private void Equip(Entity entity, string slot)
     {
         if (slot == "Bag") entity.inventory.bags.Add(this);
@@ -174,6 +176,7 @@ public class Item
             entity.abilities = entity.abilities.Concat(enchant.abilities).ToDictionary(x => x.Key, x => x.Value);
     }
 
+    //Equips this item on the chosen entity
     public void Equip(Entity entity)
     {
         var unequiped = new List<Item>();
@@ -223,6 +226,10 @@ public class Item
             entity.inventory.AddItem(item);
     }
 
+    //Checks whether a chosen entity can equip this item
+    //While [downgradeArmor] is set to false this function does not allow
+    //people downgrading their preferred armor class
+    //For example it will say that a Paladin cannot equip a cloth item
     public bool CanEquip(Entity entity, bool downgradeArmor = false)
     {
         if (type == "Miscellaneous" || type == "Trade Good" || type == "Recipe")
@@ -328,6 +335,8 @@ public class Item
 
     #region Using
 
+    //Tells whether a chosen entity can use this item
+    //This does not include equipping it
     public bool CanUse(Entity entity)
     {
         if (questsStarted != null && questsStarted.Count > 0)
@@ -343,6 +352,8 @@ public class Item
         return false;
     }
 
+    //Uses this item on a chosen entity
+    //This never equips any item, it uses it, but never equips it
     public void Use(Entity entity)
     {
         if (questsStarted != null)
@@ -393,6 +404,7 @@ public class Item
         else currentSave.CallEvents(new() { { "Trigger", "ItemUsed" }, { "ItemHash", GetHashCode() + "" } });
     }
 
+    //Check whether a chosen entity meets requirements to buy this item
     public bool CanBuy(Entity entity)
     {
         return entity.inventory.money >= price && (faction == null || currentSave.player.IsRankHighEnough(currentSave.player.ReputationRank(faction), reputationRequired));
@@ -402,6 +414,7 @@ public class Item
 
     #region Professions
 
+    //Indicates whether the item is disenchantable
     public bool IsDisenchantable()
     {
         if (new List<string> { "Miscellaneous", "Trade Good", "Recipe", "Bag" }.Contains(type)) return false;
@@ -409,6 +422,7 @@ public class Item
         return true;
     }
 
+    //Generates disenchanting loot based on this item
     public Inventory GenerateDisenchantLoot()
     {
         var rarities = new List<string>() { "Uncommon" };
@@ -1005,6 +1019,9 @@ public class Item
         }
     }
 
+    //Prints an item's tooltip
+    //Left Shift makes item compare appear in the tooltip if a compare is possible
+    //Left Control makes the viewed item change to the recipe resulting item if possible
     public static void PrintItemTooltip(Item item, bool compare = false, double priceMultiplier = 1)
     {
         if (CDesktop.title == "Game") SetAnchor(Anchor.Bottom, 0, 37);

@@ -33,6 +33,7 @@ public class Inventory
 
     #region Manipulation
 
+    //Removes a specific amount of an item from the inventory
     public void RemoveItem(string name, int amount)
     {
         int left = amount;
@@ -199,10 +200,7 @@ public class Inventory
     #region Management
 
     //Returns the amount of bag space inventory has
-    public int BagSpace()
-    {
-        return bags.Sum(x => x.bagSpace) + defines.backpackSpace;
-    }
+    public int BagSpace() => bags.Sum(x => x.bagSpace) + defines.backpackSpace;
 
     //If true, functions don't look at empty space in bags
     public bool ignoreSpaceChecks;

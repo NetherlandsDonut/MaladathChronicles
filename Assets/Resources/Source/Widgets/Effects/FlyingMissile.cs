@@ -4,14 +4,25 @@ using UnityEngine;
 
 using static Root;
 using static Defines;
-using System.Linq;
 
 public class FlyingMissile : MonoBehaviour
 {
+    //Main graphical render of the missile
     public SpriteRenderer render;
+
+    //Points on the travel path of the missile
     public Vector3 from, through1, through2, to;
-    public float flySpeed, timeAlive;
+
+    //Speed at which the missile is moving
+    public float flySpeed;
+
+    //Sum of time this missile is alive
+    public float timeAlive;
+
+    //Sprite used for the trail effect
     public string trailSprite;
+
+    //How strong is the trail effect left by this missile
     public double trailStrength;
 
     //Indicates whether the missile spawns trails when it travels
@@ -20,6 +31,7 @@ public class FlyingMissile : MonoBehaviour
     //Determines whether the missile takes the path above targets
     public bool up;
 
+    //Initiates this missile to start traveling
     public void Initiate(int entityFrom, int entityTo, float arc, double flySpeed, double trailStrength, string trailSprite)
     {
         flyingMissiles.Add(this);
@@ -36,6 +48,7 @@ public class FlyingMissile : MonoBehaviour
         transform.position = from;
     }
 
+    //Moves the missile in time and spawn trails on the way
     public void Update()
     {
         timeAlive += Time.deltaTime;
@@ -55,11 +68,10 @@ public class FlyingMissile : MonoBehaviour
         }
     }
 
-    public void SpawnTrail()
-    {
-        Shatter.SpawnTrailShatter(1, trailStrength, transform.position, trailSprite);
-    }
+    //Spawns a trail spot behind the missile
+    public void SpawnTrail() => Shatter.SpawnTrailShatter(1, trailStrength, transform.position, trailSprite);
 
+    //Spawns a new flying missile and automatically initiates it
     public static GameObject SpawnFlyingMissile(string sprite, int entityFrom, int entityTo, double arc, double flySpeed, double trailStrength)
     {
         var foo = Resources.Load<Sprite>("Sprites/Buttons/" + sprite);

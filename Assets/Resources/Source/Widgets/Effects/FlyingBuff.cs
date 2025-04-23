@@ -20,12 +20,15 @@ public class FlyingBuff : MonoBehaviour
     //Amount of buffs per row
     public static int rowAmount = 7;
 
+    //Initiates the flying buff variables
     public void Initiate(int onWho)
     {
         this.onWho = onWho;
         Board.board.temporaryBuffs[onWho].Add(gameObject);
     }
 
+    //Instantly moves the buffs away from the view or into visibility
+    //This is used during swapping of the spotlight
     public void InstantMove()
     {
         var participant = Board.board.participants[onWho];
@@ -46,6 +49,8 @@ public class FlyingBuff : MonoBehaviour
             else transform.position = new Vector3(474.5f - 23 * (dyingIndex % rowAmount), -162.5f + 23 * (dyingIndex / rowAmount));
     }
 
+    //Moves the buff object around the screen
+    //Outside of it when the buff is not on selected entity and into the view on the contrary
     public void Update()
     {
         var participant = Board.board.participants[onWho];
@@ -70,8 +75,10 @@ public class FlyingBuff : MonoBehaviour
             }
     }
 
+    //Tells the index of this buff on the buff list of the entity this buff is on
     public int Index() => Board.board.temporaryBuffs[onWho].IndexOf(gameObject);
     
+    //Spawns a new flying buff
     public static GameObject SpawnBuffObject(Vector3 position, string icon, Entity target)
     {
         var buff = Instantiate(Resources.Load<GameObject>("Prefabs/PrefabBuff"));

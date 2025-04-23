@@ -1336,11 +1336,13 @@ public class Entity
                 else Board.board.CallEvents(participant.who, new() { { "Trigger", "HealthMaxed" }, { "Triggerer", "Other" } });
     }
 
+    //Tells whether the entity can be targetted by an ability
     public bool CanBeTargetted()
     {
         return true;
     }
 
+    //Kills this entity
     public void Die()
     {
         //If this is the player, shift the map into the dead zone
@@ -1365,6 +1367,8 @@ public class Entity
         foreach (var buff in toRemove2) RemoveWorldBuff(buff);
     }
 
+    //Provides a list of all abilities that this
+    //entity has in combat including passive ones
     public Dictionary<Ability, int> AbilitiesInCombat()
     {
         var temp = Ability.abilities.FindAll(x => abilities.ContainsKey(x.name) && (x.cost == null || actionBars.Any(y => y.Value.Contains(x.name))) || actionBars.Any(y => y.Value.Contains(x.name)) && x.cost != null && !abilities.ContainsKey(x.name));
