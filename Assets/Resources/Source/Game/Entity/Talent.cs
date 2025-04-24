@@ -4,6 +4,7 @@ using static Root;
 using static Ability;
 using static SaveGame;
 using static Sound;
+using System.Linq;
 
 public class Talent
 {
@@ -56,7 +57,31 @@ public class Talent
                         CDesktop.RespawnAll();
                     }
                 },
-                null,
+                (h) =>
+                {
+                    if (currentSave.player.abilities.ContainsKey(talent.ability))
+                    {
+                        if (talent.defaultTaken && currentSave.player.abilities[talent.ability] == 0) return;
+                        var talentsPicked = playerSpec.talentTrees[spec].talents.Where(x => x != talent && currentSave.player.abilities.ContainsKey(x.ability)).ToList();
+                        currentSave.player.abilities[talent.ability]--;
+                        if (currentSave.player.abilities[talent.ability] < 0)
+                            currentSave.player.abilities.Remove(talent.ability);
+                        var canUndoTalentPick = true;
+                        foreach (var talentPick in talentsPicked)
+                            if (!currentSave.player.CanPickTalent(spec, talentPick, true))
+                                canUndoTalentPick = false;
+                        if (!canUndoTalentPick)
+                            if (currentSave.player.abilities.ContainsKey(talent.ability))
+                                currentSave.player.abilities[talent.ability]++;
+                            else currentSave.player.abilities.Add(talent.ability, 0);
+                        else
+                        {
+                            PlaySound("DesktopCantClick", 0.4f);
+                            currentSave.player.unspentTalentPoints++;
+                            CDesktop.RespawnAll();
+                        }
+                    }
+                },
                 (h) => () =>
                 {
                     PrintAbilityTooltip(currentSave.player, abilities.Find(x => x.name == talent.ability), currentSave.player.abilities.ContainsKey(talent.ability) ? (currentSave.player.abilities[talent.ability] == abilities.Find(x => x.name == talent.ability).ranks.Count - 1 ? currentSave.player.abilities[talent.ability] : currentSave.player.abilities[talent.ability] + 1) : 0);

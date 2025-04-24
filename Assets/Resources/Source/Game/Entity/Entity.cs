@@ -972,13 +972,13 @@ public class Entity
     public int unspentTalentPoints;
 
     //Checks whether entity can pick specific talent
-    public bool CanPickTalent(int spec, Talent talent)
+    public bool CanPickTalent(int spec, Talent talent, bool justCheckAccess = false)
     {
-        if (abilities.ContainsKey(talent.ability) && abilities[talent.ability] >= Ability.abilities.Find(x => x.name == talent.ability).ranks.Count - 1) return false;
+        if (!justCheckAccess && abilities.ContainsKey(talent.ability) && abilities[talent.ability] >= Ability.abilities.Find(x => x.name == talent.ability).ranks.Count - 1) return false;
         if (talent.tree == 1 && TreeCompletion(spec, 0) < defines.adeptTreeRequirement) return false;
         var talentTree = Spec().talentTrees[spec];
-        var temp = talentTree.talents.FindAll(x => x.tree == talent.tree && abilities.ContainsKey(x.ability));
-        if (talent.row > (temp.Count > 0 ? temp.Max(x => x.row) + 1 : 0)) return false;
+        var temp = talentTree.talents.FindAll(x => x != talent && x.tree == talent.tree && abilities.ContainsKey(x.ability));
+        if (talent.row > 0 && !temp.Exists(x => x.row == talent.row - 1)) return false;
         if (talent.inherited)
         {
             var foo = Ability.abilities.Find(x => x.name == PreviousTalent(spec, talent).ability).ranks.Count;
