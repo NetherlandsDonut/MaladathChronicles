@@ -103,6 +103,7 @@ public class SiteHostileArea : Site
             progression.Add(new AreaProgression() { point = length, type = "Treasure" });
         }
         SitePath.pathsConnectedToSite.Remove(name);
+        SitePath.transportationConnectedToSite.Remove(name);
         Blueprint.windowBlueprints.RemoveAll(x => x.title == "Site: " + name);
         if (x != 0 && y != 0) Blueprint.windowBlueprints.Add(new Blueprint("Site: " + name, () => PrintSite()));
     }

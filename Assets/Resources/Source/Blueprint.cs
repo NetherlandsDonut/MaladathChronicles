@@ -3449,9 +3449,94 @@ public class Blueprint
                         }
                     });
             });
+            if (transportationConnectedToSite.ContainsKey(area.name))
+            {
+                var transportOptions = transportationConnectedToSite[area.name];
+                AddPaddingRegion(() => { AddLine("Transportation:", "HalfGray"); });
+                foreach (var transport in transportOptions)
+                {
+                    if (transport.sites.Count < 2) continue;
+                    var destination = FindSite(x => x.name != area.name && transport.sites.Contains(x.name));
+                    if (destination == null) continue;
+                    AddButtonRegion(() =>
+                    {
+                        AddLine(destination.capitalRedirect ?? destination.convertDestinationTo ?? destination.name, "Black");
+                        AddSmallButton("Transport" + transport.means);
+                    },
+                    (h) =>
+                    {
+                        //Set the destination
+                        var destination = FindSite(x => x.name != area.name && transport.sites.Contains(x.name));
+
+                        //Pay the toll
+                        if (transport.price > 0)
+                        {
+                            if (transport.price > currentSave.player.inventory.money)
+                            {
+                                SpawnFallingText(new Vector2(0, 34), "Not enough money", "Red");
+                                return;
+                            }
+                            PlaySound("DesktopTransportPay");
+                            currentSave.player.inventory.money -= transport.price;
+                        }
+
+                        //Set the new site as current
+                        currentSave.currentSite = destination.convertDestinationTo != null ? destination.convertDestinationTo : destination.name;
+
+                        currentSave.AddTime(transport.time);
+                        transport.PlayPathEndSound();
+
+                        //Close town screen as we're beginning to travel on map
+                        CloseDesktop("HostileArea");
+
+                        //Switch desktop to map
+                        SwitchDesktop("Map");
+
+                        //Explore the site if it wasnt explored
+                        if (!currentSave.Visited(currentSave.currentSite))
+                        {
+                            currentSave.siteVisits.Add(currentSave.currentSite, 0);
+                            PlaySound("DesktopZoneDiscovered", 1f);
+                            currentSave.player.ReceiveExperience(defines.expForExploration);
+                            foreach (var connection in paths.FindAll(x => x.sites.Contains(currentSave.currentSite)))
+                            {
+                                var site = connection.sites.Find(x => x != currentSave.currentSite);
+                                if (!WindowUp("Site: " + site))
+                                    if (!Respawn("Site: " + site))
+                                        CDesktop.LBWindow().GetComponentsInChildren<Renderer>().ToList().ForEach(x => x.gameObject.AddComponent<FadeIn>());
+                            }
+                        }
+
+                        if (area.instancePart) Respawn("Site: " + instances.Find(x => x.wings.Any(z => z.areas.Exists(y => y["AreaName"] == area.name))));
+                        else if (area.complexPart) Respawn("Site: " + complexes.Find(x => x.sites.Exists(y => y["SiteName"] == area.name)));
+                        else Respawn("Site: " + area.name);
+
+                        var areaOfDestination = areas.Find(x => x.name == currentSave.currentSite);
+                        var townOfDestination = towns.Find(x => x.name == currentSave.currentSite);
+                        if (townOfDestination != null)
+                        {
+                            town = townOfDestination;
+                            if (town.capitalRedirect != null) Respawn("Site: " + town.capitalRedirect);
+                            else Respawn("Site: " + currentSave.currentSite);
+                        }
+                        else if (areaOfDestination != null)
+                        {
+                            area = areaOfDestination;
+                            if (area.instancePart) Respawn("Site: " + instances.Find(x => x.wings.Any(z => z.areas.Exists(y => y["AreaName"] == area.name))));
+                            else if (area.complexPart) Respawn("Site: " + complexes.Find(x => x.sites.Exists(y => y["SiteName"] == area.name)));
+                            else Respawn("Site: " + currentSave.currentSite);
+                        }
+
+                        //Move camera to the newly visited town
+                        CDesktop.cameraDestination = townOfDestination != null ? new Vector2(townOfDestination.x, townOfDestination.y) : new Vector2(areaOfDestination.x, areaOfDestination.y);
+                    },
+                    null,
+                    (h) => () => { transport.PrintTooltip(); });
+                }
+            }
             AddPaddingRegion(() => 
             {
-                AddLine("Recommended level: ", "DarkGray");
+                AddLine("Recommended level: ", "HalfGray");
                 AddText(area.recommendedLevel + "", ColorEntityLevel(area.recommendedLevel));
                 if (WindowUp("HostileAreaQuestTracker"))
                     AddSmallButton("OtherQuestClose", (h) =>
@@ -3507,7 +3592,7 @@ public class Blueprint
             SetAnchor(BottomLeft, 19, 35);
             AddHeaderGroup();
             SetRegionGroupWidth(190);
-            AddHeaderRegion(() => AddLine("Exploration progress:", "Gray"));
+            AddHeaderRegion(() => AddLine("Exploration progress:", "HalfGray"));
             var thickness = 5;
             if (area.progression != null && area.progression.Count > 0)
                 for (int i = 0; i <= area.areaSize; i++)
@@ -3555,7 +3640,8 @@ public class Blueprint
         new("HostileAreaDenizens", () => 
         {
             if (area.commonEncounters == null || area.commonEncounters.Count == 0) return;
-            SetAnchor(TopLeft, 19, -95);
+            var hostileArea = CDesktop.windows.Find(x => x.title == "HostileArea");
+            SetAnchor(TopLeft, 19, -38 - hostileArea.yOffset);
             AddRegionGroup();
             SetRegionGroupWidth(190);
             foreach (var encounter in area.commonEncounters)
@@ -3657,17 +3743,17 @@ public class Blueprint
                 foreach (var transport in transportOptions)
                 {
                     if (transport.sites.Count < 2) continue;
-                    var destination = towns.Find(x => x.name != town.name && transport.sites.Contains(x.name));
+                    var destination = FindSite(x => x.name != town.name && transport.sites.Contains(x.name));
                     if (destination == null) continue;
                     AddButtonRegion(() =>
                     {
-                        AddLine(destination.capitalRedirect ?? (destination.convertDestinationTo ?? destination.name), "Black");
+                        AddLine(destination.capitalRedirect ?? destination.convertDestinationTo ?? destination.name, "Black");
                         AddSmallButton("Transport" + transport.means);
                     },
                     (h) =>
                     {
                         //Set the destination
-                        var destination = towns.Find(x => x.name != town.name && transport.sites.Contains(x.name));
+                        var destination = FindSite(x => x.name != town.name && transport.sites.Contains(x.name));
 
                         //Pay the toll
                         if (transport.price > 0)
@@ -3713,13 +3799,25 @@ public class Blueprint
 
                         if (town.capitalRedirect != null) Respawn("Site: " + town.capitalRedirect);
                         else Respawn("Site: " + town.name);
-                        Respawn("Site: " + currentSave.currentSite);
-                        if (destination.x == 0 || destination.y == 0)
-                            town = towns.Find(x => x.name == destination.convertDestinationTo);
-                        else town = destination;
+
+                        var areaOfDestination = areas.Find(x => x.name == currentSave.currentSite);
+                        var townOfDestination = towns.Find(x => x.name == currentSave.currentSite);
+                        if (townOfDestination != null)
+                        {
+                            town = townOfDestination;
+                            if (town.capitalRedirect != null) Respawn("Site: " + town.capitalRedirect);
+                            else Respawn("Site: " + currentSave.currentSite);
+                        }
+                        else if (areaOfDestination != null)
+                        {
+                            area = areaOfDestination;
+                            if (area.instancePart) Respawn("Site: " + instances.Find(x => x.wings.Any(z => z.areas.Exists(y => y["AreaName"] == area.name))));
+                            else if (area.complexPart) Respawn("Site: " + complexes.Find(x => x.sites.Exists(y => y["SiteName"] == area.name)));
+                            else Respawn("Site: " + currentSave.currentSite);
+                        }
 
                         //Move camera to the newly visited town
-                        CDesktop.cameraDestination = destination.convertDestinationTo != null ? new Vector2(towns.Find(x => x.name == destination.convertDestinationTo).x, towns.Find(x => x.name == destination.convertDestinationTo).y) : new Vector2(town.x, town.y);
+                        CDesktop.cameraDestination = townOfDestination != null ? new Vector2(townOfDestination.x, townOfDestination.y) : new Vector2(areaOfDestination.x, areaOfDestination.y);
                     },
                     null,
                     (h) => () => { transport.PrintTooltip(); });

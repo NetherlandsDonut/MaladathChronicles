@@ -69,6 +69,7 @@ public class Board
         foreach (var poo in participants)
             temporaryBuffs.Add(participants.IndexOf(poo), new());
         Reset();
+        UpdateTheSecondaryCursor();
     }
 
     public Board(int x, int y, Dictionary<Ability, int> abilities)
@@ -269,15 +270,8 @@ public class Board
         do { whosTurn++; whosTurn %= participants.Count; }
         while (participants[whosTurn].who.dead);
 
-        //If it's not player's turn.. change color of the remote cursor based on whether it is an ally using it or an enemy
-        if (!participants[whosTurn].human)
-            cursorEnemy.SetColor(participants[whosTurn].team == participants.Find(x => x.who == currentSave.player).team ? "CursorFriend" : "CursorEnemy");
-
-        //If the current participant is human controlled fade out the enemy cursor
-        if (participants[whosTurn].human) cursorEnemy.fadeOut = true;
-
-        //Otherwise fade it in so we can see how enemy moves
-        else cursorEnemy.fadeIn = true;
+        //Update AI cursor
+        UpdateTheSecondaryCursor();
 
         //Set status of finished moving to false because we have just began a new turn
         finishedMoving = false;
@@ -304,6 +298,20 @@ public class Board
         //Respawn information about both teams to update visuals
         Respawn("EnemyBattleInfo");
         Respawn("FriendlyBattleInfo");
+    }
+
+    //Updates the visibility and color of the secondary cursor
+    public void UpdateTheSecondaryCursor()
+    {
+        //If it's not player's turn.. change color of the remote cursor based on whether it is an ally using it or an enemy
+        if (!participants[whosTurn].human)
+            cursorEnemy.SetColor(participants[whosTurn].team == participants.Find(x => x.who == currentSave.player).team ? "CursorFriend" : "CursorEnemy");
+
+        //If the current participant is human controlled fade out the enemy cursor
+        if (participants[whosTurn].human) cursorEnemy.fadeOut = true;
+
+        //Otherwise fade it in so we can see how enemy moves
+        else cursorEnemy.fadeIn = true;
     }
 
     //RESETS THE BOARD TO BE EMPTY AND REFILLED AGAIN

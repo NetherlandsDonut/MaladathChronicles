@@ -54,6 +54,15 @@
     ]
   },
   {
+    "means": "Ship",
+    "time": 183,
+    "price": 500,
+    "sites": [
+      "The Forgotten Coast",
+      "Feathermoon Stronghold"
+    ]
+  },
+  {
     "means": "DarnassusTeleport",
     "sites": [
       "The Temple Gardens",

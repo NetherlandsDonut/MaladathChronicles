@@ -44,7 +44,7 @@ public class Talent
             var previousTalent = currentSave.player.PreviousTalent(spec, talent);
             var previousTalentDistance = previousTalent == null ? 0 : talent.row - previousTalent.row;
             var abilityObj = abilities.Find(x => x.name == talent.ability);
-            AddBigButton(abilities.Find(x => x.name == talent.ability).icon,
+            AddBigButton(abilityObj.icon,
                 (h) =>
                 {
                     if (currentSave.player.unspentTalentPoints > 0 && currentSave.player.CanPickTalent(spec, talent))
@@ -82,10 +82,7 @@ public class Talent
                         }
                     }
                 },
-                (h) => () =>
-                {
-                    PrintAbilityTooltip(currentSave.player, abilities.Find(x => x.name == talent.ability), currentSave.player.abilities.ContainsKey(talent.ability) ? (currentSave.player.abilities[talent.ability] == abilities.Find(x => x.name == talent.ability).ranks.Count - 1 ? currentSave.player.abilities[talent.ability] : currentSave.player.abilities[talent.ability] + 1) : 0);
-                }
+                (h) => () => PrintAbilityTooltip(currentSave.player, abilities.Find(x => x.name == talent.ability), currentSave.player.abilities.ContainsKey(talent.ability) ? (currentSave.player.abilities[talent.ability] == abilities.Find(x => x.name == talent.ability).ranks.Count - 1 ? currentSave.player.abilities[talent.ability] : currentSave.player.abilities[talent.ability] + 1) : 0)
             );
             var canPick = currentSave.player.CanPickTalent(spec, talent);
             if (currentSave.player.abilities.ContainsKey(talent.ability) && !canPick)
