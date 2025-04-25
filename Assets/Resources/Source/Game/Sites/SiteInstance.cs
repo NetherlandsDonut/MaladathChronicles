@@ -99,7 +99,7 @@ public class SiteInstance : Site
                 SetAnchor(TopLeft, 19, -38);
                 AddRegionGroup();
                 SetRegionGroupWidth(171);
-                AddHeaderRegion(() => { AddLine(name); });
+                AddHeaderRegion(() => AddLine(name));
                 AddPaddingRegion(() =>
                 {
                     AddLine("Level range: ", "DarkGray");
@@ -109,7 +109,8 @@ public class SiteInstance : Site
                     AddText(range.Item2 + "", ColorEntityLevel(range.Item2));
                 });
                 var areas = wings.SelectMany(x => x.areas.Select(y => SiteHostileArea.areas.Find(z => z.name == y["AreaName"])));
-                var total = areas.SelectMany(x => x.commonEncounters ?? new()).Distinct().ToList();
+                var side = currentSave.player.Side();
+                var total = areas.SelectMany(x => x.CommonEncounters(side) ?? new()).Distinct().ToList();
                 total.AddRange(areas.SelectMany(x => x.eliteEncounters ?? new()).Distinct().ToList());
                 total.AddRange(areas.SelectMany(x => x.rareEncounters ?? new()).Distinct().ToList());
                 var races = total.Select(x => Race.races.Find(y => y.name == x.who).portrait).Distinct().ToList();

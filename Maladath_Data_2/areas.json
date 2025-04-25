@@ -2322,11 +2322,13 @@
     "commonEncounters": [
       {
         "who": "Forsaken Thug",
+        "side": "Alliance",
         "levelMin": 19,
         "levelMax": 20
       },
       {
         "who": "Forsaken Herbalist",
+        "side": "Alliance",
         "levelMin": 18,
         "levelMax": 19
       }
@@ -3125,23 +3127,32 @@
     "commonEncounters": [
       {
         "who": "Forsaken Death Stalker",
-        "levelMin": 28,
-        "levelMax": 29
-      },
-      {
-        "who": "Forsaken Intruder",
-        "levelMin": 28,
-        "levelMax": 29
-      },
-      {
-        "who": "Forsaken Infiltrator",
-        "levelMin": 28,
-        "levelMax": 29
+        "side": "Alliance",
+        "levelMin": 29,
+        "levelMax": 30
       },
       {
         "who": "Forsaken Assassin",
-        "levelMin": 29,
-        "levelMax": 30
+        "side": "Alliance",
+        "levelMin": 28,
+        "levelMax": 29
+      },
+      {
+        "who": "Severed Druid",
+        "side": "Horde",
+        "levelMin": 28,
+        "levelMax": 29
+      },
+      {
+        "who": "Severed Sleeper",
+        "side": "Horde",
+        "levelMin": 28,
+        "levelMax": 29
+      },
+      {
+        "who": "Rotting Slime",
+        "levelMin": 21,
+        "levelMax": 22
       }
     ],
     "areaSize": 3,
@@ -3319,19 +3330,32 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Horde Deforester",
-        "levelMin": 27,
-        "levelMax": 28
+        "who": "Horde Grunt",
+        "side": "Alliance",
+        "levelMin": 28,
+        "levelMax": 29
       },
       {
         "who": "Horde Shaman",
+        "side": "Alliance",
         "levelMin": 28,
         "levelMax": 29
       },
       {
         "who": "Warsong Shredder",
+        "side": "Alliance",
         "levelMin": 28,
         "levelMax": 29
+      },
+      {
+        "who": "Wildthorn Stalker",
+        "levelMin": 21,
+        "levelMax": 22
+      },
+      {
+        "who": "Ghostpaw Runner",
+        "levelMin": 20,
+        "levelMax": 21
       }
     ],
     "areaSize": 3,
@@ -3351,13 +3375,25 @@
     "commonEncounters": [
       {
         "who": "Horde Shaman",
+        "side": "Alliance",
         "levelMin": 28,
         "levelMax": 29
       },
       {
         "who": "Horde Grunt",
+        "side": "Alliance",
         "levelMin": 28,
         "levelMax": 29
+      },
+      {
+        "who": "Wildthorn Lurker",
+        "levelMin": 28,
+        "levelMax": 29
+      },
+      {
+        "who": "Elder Ashenvale Bear",
+        "levelMin": 27,
+        "levelMax": 28
       }
     ],
     "areaSize": 3,
@@ -7137,8 +7173,8 @@
     ]
   },
   {
-    "x": 938,
-    "y": -2977,
+    "x": 934,
+    "y": -2979,
     "name": "Bolgan's Hole",
     "zone": "Desolace",
     "type": "HostileArea",
@@ -22208,13 +22244,76 @@
     "commonEncounters": [
       {
         "who": "Mirkfallon Dryad",
+        "side": "Horde",
         "levelMin": 25,
         "levelMax": 26
       },
       {
         "who": "Mirkfallon Keeper",
+        "side": "Horde",
+        "levelMin": 26,
+        "levelMax": 27
+      },
+      {
+        "who": "Cenarion Druid",
+        "side": "Horde",
         "levelMin": 25,
         "levelMax": 26
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Nal'taszar",
+        "levelMin": 29
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
+    "x": 1168,
+    "y": -2028,
+    "name": "Stonetalon Grove",
+    "zone": "Stonetalon Mountains",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Sap Beast",
+        "levelMin": 22,
+        "levelMax": 23
+      },
+      {
+        "who": "Antlered Courser",
+        "levelMin": 22,
+        "levelMax": 23
+      },
+      {
+        "who": "Twilight Runner",
+        "levelMin": 22,
+        "levelMax": 23
+      },
+      {
+        "who": "Son of Cenarius",
+        "side": "Horde",
+        "levelMin": 24,
+        "levelMax": 25
+      },
+      {
+        "who": "Daughter of Cenarius",
+        "side": "Horde",
+        "levelMin": 24,
+        "levelMax": 25
+      },
+      {
+        "who": "Cenarion Botanist",
+        "side": "Horde",
+        "levelMin": 24,
+        "levelMax": 25
       }
     ],
     "rareEncounters": [
@@ -24226,19 +24325,14 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Swamp Jaguar",
-        "levelMin": 36,
-        "levelMax": 37
-      },
-      {
-        "who": "Sorrow Spinner",
-        "levelMin": 36,
-        "levelMax": 37
-      },
-      {
-        "who": "Young Sawtooth Crocolisk",
+        "who": "Lost One Hunter",
         "levelMin": 35,
         "levelMax": 36
+      },
+      {
+        "who": "Lost One Seer",
+        "levelMin": 37,
+        "levelMax": 38
       }
     ],
     "rareEncounters": [
@@ -24247,8 +24341,19 @@
         "levelMin": 42
       }
     ],
+    "eliteEncounters": [
+      {
+        "who": "Ongeku",
+        "levelMin": 38
+      }
+    ],
     "areaSize": 3,
     "progression": [
+      {
+        "type": "Boss",
+        "bossName": "Ongeku",
+        "point": 2
+      },
       {
         "type": "Treasure",
         "point": 3

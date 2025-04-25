@@ -34736,6 +34736,13 @@
     "faction": "Broken"
   },
   {
+    "x": 1381,
+    "y": -2351,
+    "name": "Fizziks' Hut",
+    "zone": "Stonetalon Mountains",
+    "faction": "Neutral"
+  },
+  {
     "x": 5073,
     "y": -4039,
     "name": "Nesingwary's Expedition",

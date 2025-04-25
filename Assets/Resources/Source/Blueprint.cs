@@ -134,10 +134,11 @@ public class Blueprint
                     allSites.Add(complexes[i]);
                 for (int i = 0; i < instances.Count; i++)
                     allSites.Add(instances[i]);
+                var side = currentSave.player.Side();
                 var zonesExcluded = zones.FindAll(x => x.continent != "Eastern Kingdoms").Select(x => x.name);
                 allSites.RemoveAll(x => x.x == 0 && x.y == 0 || zonesExcluded.Contains(x.zone));
                 AddLine("Explored areas: " + allSites.Count(x => currentSave.siteVisits.ContainsKey(x.name)) + " / " + allSites.Count, "DarkGray", "Center");
-                var commons = areas.FindAll(x => !zonesExcluded.Contains(x.zone)).SelectMany(x => x.commonEncounters ?? new()).Select(x => x.who).Distinct().ToList();
+                var commons = areas.FindAll(x => !zonesExcluded.Contains(x.zone)).SelectMany(x => x.CommonEncounters(side) ?? new()).Select(x => x.who).Distinct().ToList();
                 AddLine("Common entries: " + commons.Count(x => currentSave.commonsKilled.ContainsKey(x)) + " / " + commons.Count, "DarkGray", "Center");
                 var rares = areas.FindAll(x => !zonesExcluded.Contains(x.zone)).SelectMany(x => x.rareEncounters ?? new()).Select(x => x.who).Distinct().ToList();
                 AddLine("Rares killed: " + rares.Count(x => currentSave.raresKilled.ContainsKey(x)) + " / " + rares.Count, "DarkGray", "Center");
@@ -3639,18 +3640,18 @@ public class Blueprint
         }),
         new("HostileAreaDenizens", () => 
         {
-            if (area.commonEncounters == null || area.commonEncounters.Count == 0) return;
+            var common = area.CommonEncounters(currentSave.player.Side());
+            if (common == null || common.Count == 0) return;
             var hostileArea = CDesktop.windows.Find(x => x.title == "HostileArea");
             SetAnchor(TopLeft, 19, -38 - hostileArea.yOffset);
             AddRegionGroup();
             SetRegionGroupWidth(190);
-            foreach (var encounter in area.commonEncounters)
+            foreach (var encounter in common)
                 AddHeaderRegion(() =>
                 {
                     AddLine(encounter.who, "DarkGray", "Right");
                     var race = races.Find(x => x.name == encounter.who);
                     AddSmallButton(race == null ? "OtherUnknown" : race.portrait);
-                    //AddSmallButtonOverlay("QuestMarkerOneSided");
                 });
         }),
         new("HostileAreaElites", () => 

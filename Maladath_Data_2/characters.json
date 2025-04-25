@@ -214,9 +214,9 @@
         "worldBuffs": []
       },
       "hour": 8,
-      "minute": 6,
-      "second": 18,
-      "currentSite": "Skittering Wastes",
+      "minute": 24,
+      "second": 2,
+      "currentSite": "Fizziks' Hut",
       "ringOfLaw": "Eviscerator",
       "forlornCloister": "Ironspine",
       "markets": [
@@ -292,7 +292,7 @@
         "Circle of Inner Binding": 1,
         "Circle of Outer Binding": 1,
         "Circle of West Binding": 1,
-        "Arathi Outer Road": 1,
+        "Arathi Outer Road": 2,
         "Thoradin's Wall": 1,
         "Drywhisker Gorge": 1,
         "Northfold Manor": 1,
@@ -499,7 +499,7 @@
         "Den Overhill": 1,
         "Valley of Trials": 1,
         "Addle's Stead": 1,
-        "Brightwood Grove": 1,
+        "Brightwood Grove": 2,
         "Dawning Wood Catacombs": 1,
         "Forlorn Rowe": 1,
         "Sven's Camp": 1,
@@ -640,7 +640,7 @@
         "Eastern Strand": 1,
         "Nethander Stead": 1,
         "Alterac Junction": 1,
-        "Hillsbrad Plateau": 1,
+        "Hillsbrad Plateau": 2,
         "Darrowmere Crossing": 1,
         "Purgation Isle": 1,
         "Southpoint Tower": 1,
@@ -896,7 +896,7 @@
         "Splinterspear Junction": 1,
         "Stagalbog": 1,
         "Stagalbog Cave": 1,
-        "Fallow Sanctuary": 1,
+        "Fallow Sanctuary": 3,
         "Ruined Path": 1,
         "The Shifting Mire": 1,
         "Abyssal Sands": 1,
@@ -1203,7 +1203,7 @@
         "Feathermoon Stronghold": 5,
         "Nijel's Point": 1,
         "Thalanaar": 1,
-        "Stonetalon Peak": 1,
+        "Stonetalon Peak": 2,
         "Aerie Peak": 1,
         "Ironforge": 1,
         "Thelsamar": 1,
@@ -1263,12 +1263,12 @@
         "Booty Bay": 3,
         "Marshal's Refuge": 1,
         "Timbermaw Hold": 1,
-        "Bear's Head": 1,
+        "Bear's Head": 3,
         "Bronzebeard Encampment": 1,
         "Orgrimmar Legion Camp": 1,
         "Valor's Rest": 1,
         "Ironforge Brigade Outpost": 1,
-        "The Harborage": 1,
+        "The Harborage": 2,
         "Nesingwary's Expedition": 1,
         "Yojamba Isle": 1,
         "Gurubashi Arena": 1,
@@ -1322,15 +1322,139 @@
         "Nighstong Crossing": 1,
         "Nightsong Crossing": 2,
         "Wreckage of The Silver Dawning": 4,
-        "The Silver Dawning": 3
+        "The Silver Dawning": 3,
+        "Stonetalon Grove": 2,
+        "Fizziks' Hut": 3
       },
       "unlockedAreas": [],
-      "vendorStock": {},
+      "vendorStock": {
+        "The Harborage:Masat T'andr": [
+          {
+            "item": "Coarse Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Fine Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Black Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Red Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Green Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Salt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Silken Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Gray Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Yellow Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Purple Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Blue Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Orange Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Skinning Knife",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Heavy Silken Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pink Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Brilliant Red Cloak",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Well Oiled Cloak",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Rune Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pattern: Green Dragonscale Breastplate",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
+        ]
+      },
       "banks": {},
+      "buyback": {
+        "items": [],
+        "bags": [],
+        "ignoreSpaceChecks": true
+      },
       "startDate": "2025-04-19T18:02:15.5488263+02:00",
-      "lastLoaded": "2025-04-25T03:13:27.4464022+02:00",
-      "lastPlayed": "2025-04-25T03:13:29.3808857+02:00",
-      "timePlayed": "06:28:46.9381822",
+      "lastLoaded": "2025-04-25T16:14:10.2948882+02:00",
+      "lastPlayed": "2025-04-25T16:17:13.75381+02:00",
+      "timePlayed": "07:04:15.7692703",
       "lastVisitedTalents": 2
     },
     {
@@ -2040,7 +2164,7 @@
         "worldBuffs": []
       },
       "hour": 7,
-      "currentSite": "Shadow Grave",
+      "currentSite": "Stonetalon Grove",
       "ringOfLaw": "Anub'shiah",
       "forlornCloister": "Ironspine",
       "markets": [
@@ -2063,15 +2187,16 @@
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
-        "Shadow Grave": 1
+        "Shadow Grave": 1,
+        "Stonetalon Grove": 3
       },
       "unlockedAreas": [],
       "vendorStock": {},
       "banks": {},
       "startDate": "2025-04-23T01:52:58.0454584+02:00",
-      "lastLoaded": "2025-04-23T02:14:39.8028968+02:00",
-      "lastPlayed": "2025-04-23T02:14:43.103552+02:00",
-      "timePlayed": "00:01:04.9374140"
+      "lastLoaded": "2025-04-25T16:09:57.776708+02:00",
+      "lastPlayed": "2025-04-25T16:10:23.6470615+02:00",
+      "timePlayed": "00:01:30.8077675"
     },
     {
       "player": {

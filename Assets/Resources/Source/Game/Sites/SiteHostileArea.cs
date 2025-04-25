@@ -139,11 +139,12 @@ public class SiteHostileArea : Site
                     AddLine("Recommended level: ", "DarkGray");
                     AddText(recommendedLevel + "", ColorEntityLevel(recommendedLevel));
                 });
-                if (commonEncounters != null && commonEncounters.Count > 0)
+                var common = CommonEncounters(currentSave.player.Side());
+                if (common != null && common.Count > 0)
                     AddPaddingRegion(() =>
                     {
                         AddLine("Common: ", "HalfGray");
-                        foreach (var enemy in commonEncounters)
+                        foreach (var enemy in common)
                         {
                             var race = races.Find(x => x.name == enemy.who);
                             AddSmallButton(race == null ? "OtherUnknown" : race.portrait);
@@ -210,10 +211,13 @@ public class SiteHostileArea : Site
         return "Areas/Area" + (zone + name).Clean() + (save != null && save.IsNight() && !noNightVariant ? "Night" : "") + (specialClearBackground && eliteEncounters.All(x => save.elitesKilled.ContainsKey(x.who)) ? "Cleared" : "");
     }
 
+    public List<Encounter> CommonEncounters(string side) => commonEncounters?.Where(x => x.side == side || x.side == null).ToList();
+
     public List<Entity> RollEncounters(int amount)
     {
         var alreadyGotRare = false;
         var list = new List<Entity>();
+        var common = CommonEncounters(currentSave.player.Side());
         Encounter rand = null;
         for (int i = 0; i < amount; i++)
         {
@@ -223,7 +227,7 @@ public class SiteHostileArea : Site
                 list.Add(new Entity(random.Next(rand.levelMin, rand.levelMax == 0 ? rand.levelMin + 1 : rand.levelMax + 1), races.Find(y => y.name == rand.who)));
                 alreadyGotRare = true;
             }
-            else do rand = commonEncounters[random.Next(0, commonEncounters.Count)];
+            else do rand = common[random.Next(0, common.Count)];
                 while (list.Exists(x => x.name == rand.who));
             list.Add(new Entity(random.Next(rand.levelMin, rand.levelMax == 0 ? rand.levelMin + 1 : rand.levelMax + 1), races.Find(y => y.name == rand.who)));
         }
@@ -247,8 +251,17 @@ public class SiteHostileArea : Site
 
 public class Encounter
 {
+    //What race this encounter is
     public string who;
+
+    //For which side this encounter is available,
+    //leave this blank to be available to everyone
+    public string side;
+
+    //Level range of the encounter,
+    //when a single level is desired just leave levelMax blank
     public int levelMin, levelMax;
 
+    //Currently selected encounter
     public static Encounter encounter;
 }
