@@ -622,7 +622,8 @@ public class Desktop : MonoBehaviour
                     foreach (var hotkey in hotkeys.OrderByDescending(x => x.keyDown))
                         if (GetKeyDown(hotkey.key) && hotkey.keyDown || GetKey(hotkey.key) && !hotkey.keyDown)
                         {
-                            CloseWindow("Tooltip");
+                            if (hotkey.closesTooltip)
+                                CloseWindow("Tooltip");
                             tooltip = null;
                             if (GetKeyDown(hotkey.key)) keyStack = 0;
                             else
@@ -637,14 +638,16 @@ public class Desktop : MonoBehaviour
                 var pageUp = hotkeys.Find(x => x.key == KeyCode.PageUp);
                 if (pageUp != null && mouseScrollDelta.y > 0)
                 {
-                    CloseWindow("Tooltip");
+                    if (pageUp.closesTooltip)
+                        CloseWindow("Tooltip");
                     tooltip = null;
                     pageUp.action();
                 }
                 var pageDown = hotkeys.Find(x => x.key == KeyCode.PageDown);
                 if (pageDown != null && mouseScrollDelta.y < 0)
                 {
-                    CloseWindow("Tooltip");
+                    if (pageDown.closesTooltip)
+                        CloseWindow("Tooltip");
                     tooltip = null;
                     pageDown.action();
                 }

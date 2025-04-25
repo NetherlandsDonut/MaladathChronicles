@@ -2336,6 +2336,7 @@
     "rareEncounters": [
       {
         "who": "Apothecary Falthis",
+        "side": "Alliance",
         "levelMin": 22
       }
     ],
@@ -22264,6 +22265,7 @@
     "rareEncounters": [
       {
         "who": "Nal'taszar",
+        "side": "Horde",
         "levelMin": 29
       }
     ],
@@ -22314,12 +22316,6 @@
         "side": "Horde",
         "levelMin": 24,
         "levelMax": 25
-      }
-    ],
-    "rareEncounters": [
-      {
-        "who": "Nal'taszar",
-        "levelMin": 30
       }
     ],
     "areaSize": 3,

@@ -121,8 +121,8 @@ public class SiteComplex : Site
                     {
                         var min = areas.Min(x => x);
                         var max = areas.Max(x => x);
-                        if (range.Item1 < min) range = (min, range.Item2);
-                        if (range.Item2 < max) range = (range.Item1, max);
+                        if (range.Item1 < min[currentSave.playerSide]) range = (min[currentSave.playerSide], range.Item2);
+                        if (range.Item2 < max[currentSave.playerSide]) range = (range.Item1, max[currentSave.playerSide]);
                     }
                     var ranges = sites.Where(x => x["SiteType"] == "Dungeon" || x["SiteType"] == "Raid").Select(x => instances.Find(y => y.name == x["SiteName"]).LevelRange()).ToList();
                     if (ranges.Count > 0)

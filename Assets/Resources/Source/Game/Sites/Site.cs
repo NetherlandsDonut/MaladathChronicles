@@ -75,7 +75,7 @@ public class Site
 
     //Automatically calculated number that suggests
     //at which level player should enter this area
-    [NonSerialized] public int recommendedLevel;
+    [NonSerialized] public Dictionary<string, int> recommendedLevel;
 
     //Determines whether this area is part of an instance
     [NonSerialized] public bool instancePart;

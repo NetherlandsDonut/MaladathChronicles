@@ -459,7 +459,7 @@ public class InputLine : MonoBehaviour
             if (foo.Value() == "d")
                 SpawnDesktopBlueprint("DevPanel");
             else if (foo.Value() == "avglvl")
-                Debug.Log(string.Join('\n', SiteHostileArea.areas.FindAll(x => x.recommendedLevel > 0).GroupBy(x => x.zone).Select(x => (x.Key, x.Average(y => y.recommendedLevel))).OrderBy(x => x.Item2).Select(x => x.Key + ": " + System.Math.Round(x.Item2))));
+                Debug.Log(string.Join('\n', SiteHostileArea.areas.FindAll(x => x.recommendedLevel[currentSave.playerSide] > 0).GroupBy(x => x.zone).Select(x => (x.Key, x.Average(y => y.recommendedLevel[currentSave.playerSide]))).OrderBy(x => x.Item2).Select(x => x.Key + ": " + System.Math.Round(x.Item2))));
             else if (foo.Value() == "showlockedareas")
                 showAreasUnconditional = true;
             else if (foo.Value() == "hidelockedareas")

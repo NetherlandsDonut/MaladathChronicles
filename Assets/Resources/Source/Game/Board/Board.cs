@@ -345,7 +345,7 @@ public class Board
         {
             CloseDesktop("Game");
             currentSave.AddTime(turn * 15);
-            results = new CombatResults(result, area.zone, area.recommendedLevel);
+            results = new CombatResults(result, area.zone, area.recommendedLevel[currentSave.playerSide]);
             if (result == "Team1Won")
             {
                 //Add +1 to the amount of times you defeated this enemy

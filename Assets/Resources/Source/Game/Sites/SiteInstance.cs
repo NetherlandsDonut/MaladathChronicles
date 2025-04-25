@@ -55,7 +55,7 @@ public class SiteInstance : Site
     {
         var temp = areas.FindAll(x => localAreas.Contains(x.name));
         if (temp.Count() == 0) return (0, 0);
-        return (temp.Min(x => x.recommendedLevel), temp.Max(x => x.recommendedLevel));
+        return (temp.Min(x => x.recommendedLevel[currentSave.playerSide]), temp.Max(x => x.recommendedLevel[currentSave.playerSide]));
     }
 
     //Suggested level range for the player to enter this instance
@@ -109,7 +109,7 @@ public class SiteInstance : Site
                     AddText(range.Item2 + "", ColorEntityLevel(range.Item2));
                 });
                 var areas = wings.SelectMany(x => x.areas.Select(y => SiteHostileArea.areas.Find(z => z.name == y["AreaName"])));
-                var side = currentSave.player.Side();
+                var side = currentSave.playerSide;
                 var total = areas.SelectMany(x => x.CommonEncounters(side) ?? new()).Distinct().ToList();
                 total.AddRange(areas.SelectMany(x => x.eliteEncounters ?? new()).Distinct().ToList());
                 total.AddRange(areas.SelectMany(x => x.rareEncounters ?? new()).Distinct().ToList());

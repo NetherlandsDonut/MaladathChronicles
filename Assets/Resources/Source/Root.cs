@@ -442,19 +442,19 @@ public static class Root
     }
 
     //Hotkeys can be added only on desktop creation!
-    public static void AddHotkey(string function, Action action, bool keyDown = true)
+    public static void AddHotkey(string function, Action action, bool keyDown = true, bool closesTooltip = true)
     {
         if (!Keybinds.keybinds.ContainsKey(function)) return;
         var key = Keybinds.keybinds[function].key;
         if (LBDesktop.hotkeys.Exists(x => x.key == key && x.keyDown == keyDown)) return;
-        LBDesktop.hotkeys.Add(new Hotkey(key, action, keyDown));
+        LBDesktop.hotkeys.Add(new Hotkey(key, action, keyDown, closesTooltip));
     }
 
     //Hotkeys can be added only on desktop creation!
-    public static void AddHotkey(KeyCode key, Action action, bool keyDown = true)
+    public static void AddHotkey(KeyCode key, Action action, bool keyDown = true, bool closesTooltip = true)
     {
         if (LBDesktop.hotkeys.Exists(x => x.key == key && x.keyDown == keyDown)) return;
-        LBDesktop.hotkeys.Add(new Hotkey(key, action, keyDown));
+        LBDesktop.hotkeys.Add(new Hotkey(key, action, keyDown, closesTooltip));
     }
 
     #endregion

@@ -21,7 +21,7 @@ public class Chest
             inventory = new Inventory(true)
         };
         //chest.inventory.AddItem(Item.items.Find(x => x.name == "Silver").CopyItem(2));
-        var worldDrop = Item.items.FindAll(x => x.lvl >= area.recommendedLevel - 6 && x.lvl <= area.recommendedLevel && x.source == "RareDrop");
+        var worldDrop = Item.items.FindAll(x => x.lvl >= area.recommendedLevel[currentSave.playerSide] - 6 && x.lvl <= area.recommendedLevel[currentSave.playerSide] && x.source == "RareDrop");
         var instance = area.instancePart ? SiteInstance.instances.Find(x => x.wings.Any(y => y.areas.Any(z => z["AreaName"] == area.name))) : null;
         var zoneDrop = instance == null || instance.zoneDrop == null ? new() : Item.items.FindAll(x => instance.zoneDrop.Contains(x.name));
         var everything = zoneDrop.Concat(worldDrop).Where(x => x.CanEquip(currentSave.player) && (!x.unique || !currentSave.player.uniquesGotten.Contains(x.name)));
@@ -36,7 +36,7 @@ public class Chest
         else if (dropWhite.Count > 0) chest.inventory.AddItem(dropWhite[random.Next(dropWhite.Count)].CopyItem());
         if (area.chestBonus != null) chest.inventory.items.AddRange(area.chestBonus.Select(x => Item.items.Find(y => y.name == x.Key).CopyItem(x.Value)));
         chest.inventory.items.ForEach(x => x.SetRandomEnchantment());
-        var dropsWithinLevelRange = GeneralDrop.generalDrops.FindAll(x => x.dropStart <= area.recommendedLevel && x.dropEnd >= area.recommendedLevel);
+        var dropsWithinLevelRange = GeneralDrop.generalDrops.FindAll(x => x.dropStart <= area.recommendedLevel[currentSave.playerSide] && x.dropEnd >= area.recommendedLevel[currentSave.playerSide]);
         if (dropsWithinLevelRange.Count > 0)
         {
             dropsWithinLevelRange.Shuffle();

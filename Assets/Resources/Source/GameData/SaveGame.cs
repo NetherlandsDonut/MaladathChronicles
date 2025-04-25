@@ -16,6 +16,9 @@ using static SiteHostileArea;
 
 public class SaveGame
 {
+    //Side of the player
+    public string playerSide;
+
     //Player character in the save
     public Entity player;
 
@@ -76,6 +79,7 @@ public class SaveGame
         newSlot.hour = 7;
         newSlot.currentSite = race.startingSite;
         newSlot.siteVisits = new() { { race.startingSite, 1 } };
+        newSlot.playerSide = newSlot.player.Side();
         saves[settings.selectedRealm].Add(newSlot);
         settings.selectedCharacter = newSlot.player.name;
     }

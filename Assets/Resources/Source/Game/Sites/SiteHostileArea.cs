@@ -81,7 +81,14 @@ public class SiteHostileArea : Site
             if (eliteEncounters.Count > 0)
                 all.AddRange(eliteEncounters);
             else eliteEncounters = null;
-        if (all.Count > 0) recommendedLevel = (int)all.Average(x => x.levelMax != 0 ? (x.levelMin + x.levelMax) / 2.0 : x.levelMin);
+        recommendedLevel = new();
+        if (all.Count > 0)
+        {
+            var allianceOnes = all.Where(x => x.side == null || x.side == "Alliance").ToList();
+            recommendedLevel.Add("Alliance", allianceOnes.Count == 0 ? 0 : (int)all.Where(x => x.side == null || x.side == "Alliance").Average(x => x.levelMax != 0 ? (x.levelMin + x.levelMax) / 2.0 : x.levelMin));
+            var hordeOnes = all.Where(x => x.side == null || x.side == "Horde").ToList();
+            recommendedLevel.Add("Horde", hordeOnes.Count == 0 ? 0 : (int)all.Where(x => x.side == null || x.side == "Horde").Average(x => x.levelMax != 0 ? (x.levelMin + x.levelMax) / 2.0 : x.levelMin));
+        }
         if (progression == null)
         {
             var length = eliteEncounters != null ? eliteEncounters.Count * 2 + 1 : 3;
@@ -130,16 +137,14 @@ public class SiteHostileArea : Site
                 SetAnchor(TopLeft, 19, -38);
                 AddRegionGroup();
                 SetRegionGroupWidth(171);
-                AddHeaderRegion(() =>
-                {
-                    AddLine(name);
-                });
-                AddHeaderRegion(() =>
-                {
-                    AddLine("Recommended level: ", "DarkGray");
-                    AddText(recommendedLevel + "", ColorEntityLevel(recommendedLevel));
-                });
-                var common = CommonEncounters(currentSave.player.Side());
+                AddHeaderRegion(() => AddLine(name));
+                if (recommendedLevel[currentSave.playerSide] > 0)
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Recommended level: ", "DarkGray");
+                        AddText(recommendedLevel[currentSave.playerSide] + "", ColorEntityLevel(recommendedLevel[currentSave.playerSide]));
+                    });
+                var common = CommonEncounters(currentSave.playerSide);
                 if (common != null && common.Count > 0)
                     AddPaddingRegion(() =>
                     {
@@ -213,23 +218,25 @@ public class SiteHostileArea : Site
 
     public List<Encounter> CommonEncounters(string side) => commonEncounters?.Where(x => x.side == side || x.side == null).ToList();
 
+    public List<Encounter> RareEncounters(string side) => rareEncounters?.Where(x => x.side == side || x.side == null).ToList();
+
     public List<Entity> RollEncounters(int amount)
     {
         var alreadyGotRare = false;
         var list = new List<Entity>();
-        var common = CommonEncounters(currentSave.player.Side());
-        Encounter rand = null;
+        var common = CommonEncounters(currentSave.playerSide);
+        var rare = RareEncounters(currentSave.playerSide);
+        Encounter toAdd = null;
         for (int i = 0; i < amount; i++)
         {
-            if (rareEncounters != null && !alreadyGotRare && Roll(5))
+            if (rare != null && !alreadyGotRare && Roll(5))
             {
-                rand = rareEncounters[random.Next(0, rareEncounters.Count)];
-                list.Add(new Entity(random.Next(rand.levelMin, rand.levelMax == 0 ? rand.levelMin + 1 : rand.levelMax + 1), races.Find(y => y.name == rand.who)));
+                toAdd = rare[random.Next(0, rare.Count)];
                 alreadyGotRare = true;
             }
-            else do rand = common[random.Next(0, common.Count)];
-                while (list.Exists(x => x.name == rand.who));
-            list.Add(new Entity(random.Next(rand.levelMin, rand.levelMax == 0 ? rand.levelMin + 1 : rand.levelMax + 1), races.Find(y => y.name == rand.who)));
+            else do toAdd = common[random.Next(0, common.Count)];
+                while (list.Exists(x => x.name == toAdd.who));
+            list.Add(new Entity(random.Next(toAdd.levelMin, toAdd.levelMax == 0 ? toAdd.levelMin + 1 : toAdd.levelMax + 1), races.Find(y => y.name == toAdd.who)));
         }
         return list;
     }

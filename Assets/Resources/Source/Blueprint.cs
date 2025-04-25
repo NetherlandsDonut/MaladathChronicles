@@ -134,7 +134,7 @@ public class Blueprint
                     allSites.Add(complexes[i]);
                 for (int i = 0; i < instances.Count; i++)
                     allSites.Add(instances[i]);
-                var side = currentSave.player.Side();
+                var side = currentSave.playerSide;
                 var zonesExcluded = zones.FindAll(x => x.continent != "Eastern Kingdoms").Select(x => x.name);
                 allSites.RemoveAll(x => x.x == 0 && x.y == 0 || zonesExcluded.Contains(x.zone));
                 AddLine("Explored areas: " + allSites.Count(x => currentSave.siteVisits.ContainsKey(x.name)) + " / " + allSites.Count, "DarkGray", "Center");
@@ -3168,8 +3168,8 @@ public class Blueprint
                 {
                     var min = areas.Min(x => x);
                     var max = areas.Max(x => x);
-                    if (range.Item1 < min) range = (min, range.Item2);
-                    if (range.Item2 < max) range = (range.Item1, max);
+                    if (range.Item1 < min[currentSave.playerSide]) range = (min[currentSave.playerSide], range.Item2);
+                    if (range.Item2 < max[currentSave.playerSide]) range = (range.Item1, max[currentSave.playerSide]);
                 }
                 var ranges = complex.sites.Where(x => x["SiteType"] == "Dungeon" || x["SiteType"] == "Raid").Select(x => instances.Find(y => y.name == x["SiteName"]).LevelRange()).ToList();
                 if (ranges.Count > 0)
@@ -3535,29 +3535,37 @@ public class Blueprint
                     (h) => () => { transport.PrintTooltip(); });
                 }
             }
-            AddPaddingRegion(() => 
+            var levelHigherThanZero = area.recommendedLevel[currentSave.playerSide] > 0;
+            var tracker = WindowUp("HostileAreaQuestTracker");
+            var questsHere = currentSave.player.QuestsAt(area).Count > 0;
+            if (levelHigherThanZero || tracker || questsHere)
             {
-                AddLine("Recommended level: ", "HalfGray");
-                AddText(area.recommendedLevel + "", ColorEntityLevel(area.recommendedLevel));
-                if (WindowUp("HostileAreaQuestTracker"))
-                    AddSmallButton("OtherQuestClose", (h) =>
+                AddPaddingRegion(() =>
+                {
+                    if (levelHigherThanZero)
                     {
-                        CloseWindow("HostileAreaQuestTracker");
-                        Respawn("HostileAreaQuestAvailable");
-                    });
-                else if (currentSave.player.QuestsAt(area).Count > 0)
-                    AddSmallButton("OtherQuestOpen", (h) =>
+                        AddLine("Recommended level: ", "HalfGray");
+                        AddText(area.recommendedLevel[currentSave.playerSide] + "", ColorEntityLevel(area.recommendedLevel[currentSave.playerSide]));
+                    }
+                    if (tracker) AddSmallButton("OtherQuestClose", (h) =>
+                        {
+                            CloseWindow("HostileAreaQuestTracker");
+                            Respawn("HostileAreaQuestAvailable");
+                        });
+                    else if (questsHere) AddSmallButton("OtherQuestOpen", (h) =>
+                        {
+                            CloseWindow("HostileAreaQuestAvailable");
+                            Respawn("HostileAreaQuestTracker");
+                        });
+                });
+                if (levelHigherThanZero)
+                    AddButtonRegion(() => AddLine("Explore", "Black"),
+                    (h) =>
                     {
-                        CloseWindow("HostileAreaQuestAvailable");
-                        Respawn("HostileAreaQuestTracker");
+                        NewBoard(area.RollEncounters(area.instancePart ? 2 : 1), area);
+                        SpawnDesktopBlueprint("Game");
                     });
-            });
-            AddButtonRegion(() => AddLine("Explore", "Black"),
-            (h) =>
-            {
-                NewBoard(area.RollEncounters(area.instancePart ? 2 : 1), area);
-                SpawnDesktopBlueprint("Game");
-            });
+            }
         }),
         new("HostileAreaQuestTracker", () => 
         {
@@ -3590,6 +3598,7 @@ public class Blueprint
         }),
         new("HostileAreaProgress", () => 
         {
+            if (area.recommendedLevel[currentSave.playerSide] == 0) return;
             SetAnchor(BottomLeft, 19, 35);
             AddHeaderGroup();
             SetRegionGroupWidth(190);
@@ -3640,7 +3649,7 @@ public class Blueprint
         }),
         new("HostileAreaDenizens", () => 
         {
-            var common = area.CommonEncounters(currentSave.player.Side());
+            var common = area.CommonEncounters(currentSave.playerSide);
             if (common == null || common.Count == 0) return;
             var hostileArea = CDesktop.windows.Find(x => x.title == "HostileArea");
             SetAnchor(TopLeft, 19, -38 - hostileArea.yOffset);
@@ -3836,7 +3845,7 @@ public class Blueprint
                             var faction = factions.Find(x => x.name == person.faction);
                             faction ??= factions.Find(x => x.name == races.Find(y => y.name == person.race).faction);
                             faction ??= factions.Find(x => x.name == currentSave.player.faction);
-                            if (faction.side == currentSave.player.Side())
+                            if (faction.side == currentSave.playerSide)
                             {
                                 var personType = personTypes.Find(x => x.type == person.type);
                                 AddButtonRegion(() =>
@@ -4771,7 +4780,7 @@ public class Blueprint
         new("FlightMaster", () => {
             var rowAmount = 12;
             var thisWindow = CDesktop.LBWindow();
-            var side = currentSave.player.Side();
+            var side = currentSave.playerSide;
             var list = town.flightPaths[side].FindAll(x => x != town).OrderBy(x => !currentSave.siteVisits.ContainsKey(x.convertDestinationTo ?? x.name)).ThenBy(x => x.zone).ThenBy(x => x.name).ToList();
             thisWindow.SetPagination(() => list.Count, rowAmount);
             SetAnchor(TopLeft, 19, -38);
@@ -6522,7 +6531,7 @@ public class Blueprint
                 }
             });
         }),
-        new("LoginScreen", () =>
+        new("LoginScreen", () => 
         {
             SpawnWindowBlueprint("CharacterRoster");
             SpawnWindowBlueprint("CharacterInfo");
@@ -6548,7 +6557,7 @@ public class Blueprint
                 }
             });
         }),
-        new("ChangeRealm", () =>
+        new("ChangeRealm", () => 
         {
             SetDesktopBackground("Backgrounds/Sky");
             SpawnWindowBlueprint("RealmRoster");
@@ -6568,7 +6577,7 @@ public class Blueprint
                 SpawnDesktopBlueprint("LoginScreen");
             });
         }),
-        new("CharCreatorScreen", () =>
+        new("CharCreatorScreen", () => 
         {
             SetDesktopBackground("Backgrounds/Sky");
             SpawnWindowBlueprint("CharacterCreationFactionHorde");
@@ -6602,10 +6611,10 @@ public class Blueprint
             loadingBar[1].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/LoadingBarStretch");
             loadingBar[1].transform.position = new Vector3(-1168, 854);
             OrderLoadingMap();
-            AddHotkey("Move camera north", () => { MoveCamera(new Vector2(0, EuelerGrowth())); }, false);
-            AddHotkey("Move camera west", () => { MoveCamera(new Vector2(-EuelerGrowth(), 0)); }, false);
-            AddHotkey("Move camera south", () => { MoveCamera(new Vector2(0, -EuelerGrowth())); }, false);
-            AddHotkey("Move camera east", () => { MoveCamera(new Vector2(EuelerGrowth(), 0)); }, false);
+            AddHotkey("Move camera north", () => { MoveCamera(new Vector2(0, EuelerGrowth())); }, false, false);
+            AddHotkey("Move camera west", () => { MoveCamera(new Vector2(-EuelerGrowth(), 0)); }, false, false);
+            AddHotkey("Move camera south", () => { MoveCamera(new Vector2(0, -EuelerGrowth())); }, false, false);
+            AddHotkey("Move camera east", () => { MoveCamera(new Vector2(EuelerGrowth(), 0)); }, false, false);
             AddHotkey(UpArrow, () =>
             {
                 var site = FindSite(x => x.name == currentSave.currentSite);
@@ -6841,7 +6850,7 @@ public class Blueprint
                 }
             });
         }),
-        new("MiningLoot", () =>
+        new("MiningLoot", () => 
         {
             SetDesktopBackground(board.area.Background());
             SpawnWindowBlueprint("MiningLoot");
@@ -6883,7 +6892,7 @@ public class Blueprint
                 }
             });
         }),
-        new("HerbalismLoot", () =>
+        new("HerbalismLoot", () => 
         {
             SetDesktopBackground(board.area.Background());
             SpawnWindowBlueprint("HerbalismLoot");
@@ -6925,7 +6934,7 @@ public class Blueprint
                 }
             });
         }),
-        new("SkinningLoot", () =>
+        new("SkinningLoot", () => 
         {
             SetDesktopBackground(board.area.Background());
             SpawnWindowBlueprint("SkinningLoot");
@@ -7268,7 +7277,7 @@ public class Blueprint
                 }
             });
         }),
-        new("Capital", () =>
+        new("Capital", () => 
         {
             SetDesktopBackground(town.Background());
             SpawnWindowBlueprint("Capital");
@@ -7627,7 +7636,7 @@ public class Blueprint
                 CloseDesktop("RankingScreen");
             });
         }),
-        new("CardGame", () =>
+        new("CardGame", () => 
         {
             SetDesktopBackground("Backgrounds/SkyRed");
             SpawnWindowBlueprint("CardTest");
