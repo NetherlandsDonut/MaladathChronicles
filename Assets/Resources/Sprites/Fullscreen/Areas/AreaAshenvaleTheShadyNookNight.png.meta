@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b9d9b8f9d3d21a448af37e5de3533f02
+guid: ceda205409dd0ef438176fe514d67244
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -51,7 +51,7 @@ TextureImporter:
   spritePixelsToUnits: 1
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
-  alphaUsage: 0
+  alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
@@ -129,6 +129,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
     nameFileIdTable:
       PortraitZombiePale_0: 4910016540568515610
   mipmapLimitGroupName: 

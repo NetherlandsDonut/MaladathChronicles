@@ -2575,6 +2575,32 @@
     ]
   },
   {
+    "x": 1839,
+    "y": -2063,
+    "name": "The Shady Nook",
+    "zone": "Ashenvale",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Elder Ashenvale Bear",
+        "levelMin": 26,
+        "levelMax": 27
+      },
+      {
+        "who": "Wildthorn Venomspitter",
+        "levelMin": 25,
+        "levelMax": 26
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
     "x": 1902,
     "y": -2211,
     "name": "Fallen Sky Lake",
@@ -2676,8 +2702,8 @@
     ]
   },
   {
-    "x": 1738,
-    "y": -2067,
+    "x": 1712,
+    "y": -2062,
     "name": "Greenpaw Village",
     "zone": "Ashenvale",
     "type": "HostileArea",
@@ -2879,9 +2905,9 @@
     ]
   },
   {
-    "x": 1684,
-    "y": -2025,
-    "name": "Nightsong Woods",
+    "x": 1614,
+    "y": -2024,
+    "name": "Central Nightsong Woods",
     "zone": "Ashenvale",
     "type": "HostileArea",
     "commonEncounters": [
@@ -2899,6 +2925,37 @@
         "who": "Elder Ashenvale Bear",
         "levelMin": 25,
         "levelMax": 26
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
+    "x": 1933,
+    "y": -2124,
+    "name": "Eastern Nightsong Woods",
+    "zone": "Ashenvale",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Elder Shadowhorn Stag",
+        "levelMin": 23,
+        "levelMax": 24
+      },
+      {
+        "who": "Rotting Slime",
+        "levelMin": 21,
+        "levelMax": 22
+      },
+      {
+        "who": "Elder Ashenvale Bear",
+        "levelMin": 22,
+        "levelMax": 23
       }
     ],
     "areaSize": 3,
@@ -3029,6 +3086,37 @@
     ]
   },
   {
+    "x": 2034,
+    "y": -2018,
+    "name": "Nightsong Crossing",
+    "zone": "Ashenvale",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Shadethicket Stone Mover",
+        "levelMin": 26,
+        "levelMax": 27
+      },
+      {
+        "who": "Ghostpaw Alpha",
+        "levelMin": 26,
+        "levelMax": 27
+      },
+      {
+        "who": "Elder Shadowhorn Stag",
+        "levelMin": 26,
+        "levelMax": 27
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
     "x": 2002,
     "y": -2171,
     "name": "The Dor'Danil Barrow Den",
@@ -3123,6 +3211,32 @@
     ]
   },
   {
+    "x": 1470,
+    "y": -1951,
+    "name": "Shrine of Shizo",
+    "zone": "Ashenvale",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Ghostpaw Runner",
+        "levelMin": 19,
+        "levelMax": 20
+      },
+      {
+        "who": "Ashenvale Bear",
+        "levelMin": 20,
+        "levelMax": 21
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
     "x": 1269,
     "y": -1758,
     "name": "The Zoram Strand",
@@ -3161,8 +3275,8 @@
     ]
   },
   {
-    "x": 1538,
-    "y": -1841,
+    "x": 1554,
+    "y": -1834,
     "name": "Thistlefur Village",
     "zone": "Ashenvale",
     "type": "HostileArea",
@@ -6455,6 +6569,37 @@
     ]
   },
   {
+    "x": 1384,
+    "y": -1095,
+    "name": "The Silver Dawning",
+    "zone": "Darkshore",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Greymist Coastrunner",
+        "levelMin": 11,
+        "levelMax": 12
+      },
+      {
+        "who": "Greymist Seer",
+        "levelMin": 12,
+        "levelMax": 13
+      },
+      {
+        "who": "Darkshore Thresher",
+        "levelMin": 13,
+        "levelMax": 14
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
     "x": 1441,
     "y": -1591,
     "name": "Blackwood Den",
@@ -7067,7 +7212,7 @@
   {
     "x": 1045,
     "y": -2702,
-    "name": "Western Wastes",
+    "name": "Central Wastes",
     "zone": "Desolace",
     "type": "HostileArea",
     "commonEncounters": [
@@ -7091,6 +7236,42 @@
       {
         "who": "Hissperak",
         "levelMin": 37
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
+    "x": 980,
+    "y": -2811,
+    "name": "Western Wastes",
+    "zone": "Desolace",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Whirlwind Stormwalker",
+        "levelMin": 35,
+        "levelMax": 36
+      },
+      {
+        "who": "Hulking Gritjaw Basilisk",
+        "levelMin": 35,
+        "levelMax": 36
+      },
+      {
+        "who": "Dread Flyer",
+        "levelMin": 36,
+        "levelMax": 37
+      },
+      {
+        "who": "Scorpashi Lasher",
+        "levelMin": 35,
+        "levelMax": 36
       }
     ],
     "areaSize": 3,
@@ -7266,6 +7447,37 @@
         "bossName": "Khan Dez'hepah",
         "point": 2
       },
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
+    "x": 1210,
+    "y": -2763,
+    "name": "Eastern Wastes",
+    "zone": "Desolace",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Dread Swoop",
+        "levelMin": 32,
+        "levelMax": 33
+      },
+      {
+        "who": "Raging Thunder Lizard",
+        "levelMin": 32,
+        "levelMax": 33
+      },
+      {
+        "who": "Scorpashi Lasher",
+        "levelMin": 32,
+        "levelMax": 33
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
       {
         "type": "Treasure",
         "point": 3
@@ -9004,6 +9216,73 @@
       {
         "who": "Death Flayer",
         "levelMin": 11
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
+    "x": 2235,
+    "y": -2616,
+    "name": "Southfury River Outflow",
+    "zone": "The Barrens",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Zhevra Runner",
+        "levelMin": 13,
+        "levelMax": 14
+      },
+      {
+        "who": "Fleeting Plainstrider",
+        "levelMin": 13,
+        "levelMax": 14
+      },
+      {
+        "who": "Sunscale Screecher",
+        "levelMin": 12,
+        "levelMax": 13
+      },
+      {
+        "who": "Barrens Giraffe",
+        "levelMin": 14,
+        "levelMax": 15
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
+    "x": 2006,
+    "y": -2522,
+    "name": "Gold Road Watchtower",
+    "zone": "The Barrens",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Greater Plainstrider",
+        "levelMin": 11,
+        "levelMax": 12
+      },
+      {
+        "who": "Sunscale Lashtail",
+        "levelMin": 11,
+        "levelMax": 12
+      },
+      {
+        "who": "Savannah Huntress",
+        "levelMin": 12,
+        "levelMax": 13
       }
     ],
     "areaSize": 3,
@@ -13373,6 +13652,32 @@
     ]
   },
   {
+    "x": 709,
+    "y": -3443,
+    "name": "Sardor Isle",
+    "zone": "Feralas",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Coast Crawl Deepseer",
+        "levelMin": 42,
+        "levelMax": 43
+      },
+      {
+        "who": "Longtooth Runner",
+        "levelMin": 41,
+        "levelMax": 42
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
     "x": 703,
     "y": -3629,
     "name": "Shalzaru's Lair",
@@ -13486,6 +13791,38 @@
     ]
   },
   {
+    "x": 1023,
+    "y": -3364,
+    "name": "The Colossals Climb",
+    "zone": "Feralas",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Rabid Longtooth",
+        "levelMin": 48,
+        "levelMax": 49
+      },
+      {
+        "who": "Ironfur Patriarch",
+        "levelMin": 49,
+        "levelMax": 50
+      }
+    ],
+    "rareEncounters": [
+      {
+        "who": "Arash-ethis",
+        "levelMin": 51
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
     "x": 1398,
     "y": -3594,
     "name": "The Writhing Deep",
@@ -13566,6 +13903,37 @@
     ]
   },
   {
+    "x": 1277,
+    "y": -3510,
+    "name": "Woodpaw Den",
+    "zone": "Feralas",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Woodpaw Reaver",
+        "levelMin": 42,
+        "levelMax": 43
+      },
+      {
+        "who": "Woodpaw Alpha",
+        "levelMin": 43,
+        "levelMax": 44
+      },
+      {
+        "who": "Grizzled Mystic",
+        "levelMin": 43,
+        "levelMax": 44
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
     "x": 1375,
     "y": -3467,
     "name": "Wildwind Lake",
@@ -13614,16 +13982,6 @@
         "who": "Woodpaw Trapper",
         "levelMin": 42,
         "levelMax": 43
-      },
-      {
-        "who": "Woodpaw Mystic",
-        "levelMin": 43,
-        "levelMax": 44
-      },
-      {
-        "who": "Woodpaw Alpha",
-        "levelMin": 43,
-        "levelMax": 44
       },
       {
         "who": "Woodpaw Reaver",
@@ -18174,12 +18532,23 @@
       },
       {
         "who": "Stromgarde Troll Hunter",
-        "levelMin": 36,
-        "levelMax": 37
+        "levelMin": 37,
+        "levelMax": 38
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Lieutenant Valorcall",
+        "levelMin": 39
       }
     ],
     "areaSize": 3,
     "progression": [
+      {
+        "type": "Boss",
+        "bossName": "Lieutenant Valorcall",
+        "point": 2
+      },
       {
         "type": "Treasure",
         "point": 3
@@ -18211,15 +18580,29 @@
     ],
     "eliteEncounters": [
       {
+        "who": "Otto",
+        "levelMin": 38
+      },
+      {
         "who": "Lord Falconcrest",
         "levelMin": 40
       }
     ],
-    "areaSize": 3,
+    "areaSize": 5,
     "progression": [
       {
+        "type": "Boss",
+        "bossName": "Otto",
+        "point": 2
+      },
+      {
+        "type": "Boss",
+        "bossName": "Lord Falconcrest",
+        "point": 4
+      },
+      {
         "type": "Treasure",
-        "point": 3
+        "point": 5
       }
     ]
   },
@@ -18230,14 +18613,14 @@
     "convertDestinationTo": "Ruins of Stromgarde",
     "commonEncounters": [
       {
-        "who": "Boulderfist Lord",
-        "levelMin": 38,
-        "levelMax": 39
+        "who": "Stromgarde Defender",
+        "levelMin": 39,
+        "levelMax": 40
       },
       {
         "who": "Stromgarde Vindicator",
-        "levelMin": 38,
-        "levelMax": 39
+        "levelMin": 39,
+        "levelMax": 40
       }
     ],
     "eliteEncounters": [
@@ -18248,6 +18631,11 @@
     ],
     "areaSize": 3,
     "progression": [
+      {
+        "type": "Boss",
+        "bossName": "Prince Galen Trollbane",
+        "point": 2
+      },
       {
         "type": "Treasure",
         "point": 3
@@ -18262,8 +18650,8 @@
     "commonEncounters": [
       {
         "who": "Boulderfist Lord",
-        "levelMin": 39,
-        "levelMax": 40
+        "levelMin": 38,
+        "levelMax": 39
       },
       {
         "who": "Boulderfist Mauler",
@@ -18274,7 +18662,7 @@
     "eliteEncounters": [
       {
         "who": "Ruul Onestone",
-        "levelMin": 41
+        "levelMin": 40
       }
     ],
     "areaSize": 3,
@@ -18323,6 +18711,47 @@
       {
         "type": "Boss",
         "bossName": "Ruul Onestone",
+        "point": 2
+      },
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
+    "name": "Eastern Town",
+    "zone": "Ruins of Stromgarde",
+    "type": "HostileArea",
+    "convertDestinationTo": "Ruins of Stromgarde",
+    "commonEncounters": [
+      {
+        "who": "Syndicate Prowler",
+        "levelMin": 37,
+        "levelMax": 38
+      },
+      {
+        "who": "Syndicate Conjuror",
+        "levelMin": 38,
+        "levelMax": 39
+      },
+      {
+        "who": "Syndicate Magus",
+        "levelMin": 38,
+        "levelMax": 39
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Marez Cowl",
+        "levelMin": 40
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Boss",
+        "bossName": "Marez Cowl",
         "point": 2
       },
       {
@@ -20506,7 +20935,7 @@
   {
     "x": 1392,
     "y": -3911,
-    "name": "Eastern Wastes",
+    "name": "Skittering Wastes",
     "zone": "Silithus",
     "type": "HostileArea",
     "commonEncounters": [
@@ -26858,6 +27287,43 @@
       {
         "type": "Boss",
         "bossName": "Supervisor Lugwizzle",
+        "point": 2
+      },
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
+    "x": 2011,
+    "y": -2357,
+    "name": "Venture Co. Outpost",
+    "zone": "The Barrens",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Venture Co. Drudger",
+        "levelMin": 13,
+        "levelMax": 14
+      },
+      {
+        "who": "Venture Co. Peon",
+        "levelMin": 13,
+        "levelMax": 14
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Tinkerer Sniggles",
+        "levelMin": 16
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Boss",
+        "bossName": "Tinkerer Sniggles",
         "point": 2
       },
       {

@@ -1,5 +1,124 @@
 [
   {
+    "name": "Darkshore Thresher",
+    "portrait": "PortraitThreshadon",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
+  },
+  {
+    "name": "Greymist Seer",
+    "portrait": "PortraitMurlocWhite",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
+  },
+  {
+    "name": "Greymist Coastrunner",
+    "portrait": "PortraitMurlocWhite",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
+  },
+  {
+    "name": "Tinkerer Sniggles",
+    "portrait": "PortraitGoblin",
+    "abilities": {},
+    "kind": "Elite",
+    "vitality": 3.0
+  },
+  {
+    "name": "Venture Co. Peon",
+    "portrait": "PortraitGnollBrown",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
+  },
+  {
+    "name": "Rotting Slime",
+    "portrait": "PortraitOozeOrange",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
+  },
+  {
+    "name": "Scorpashi Lasher",
+    "portrait": "PortraitScorpidYellow",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
+  },
+  {
+    "name": "Dread Flyer",
+    "portrait": "PortraitCarrionBirdBlue",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
+  },
+  {
+    "name": "Whirlwind Stormwalker",
+    "portrait": "PortraitDustDevil",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
+  },
+  {
+    "name": "Wildthorn Venomspitter",
+    "portrait": "PortraitTarantula",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
+  },
+  {
+    "name": "Grizzled Mystic",
+    "portrait": "PortraitGnollRotMystic",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
+  },
+  {
+    "name": "Coast Crawl Deepseer",
+    "portrait": "PortraitMakruraBlue",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
+  },
+  {
+    "name": "Marez Cowl",
+    "portrait": "PortraitBurningBladeSeer",
+    "abilities": {},
+    "kind": "Elite",
+    "vitality": 3.0
+  },
+  {
+    "name": "Syndicate Conjuror",
+    "portrait": "PortraitSyndicateConjuror",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
+  },
+  {
+    "name": "Otto",
+    "portrait": "PortraitCow",
+    "abilities": {},
+    "kind": "Elite",
+    "vitality": 3.0
+  },
+  {
+    "name": "Lieutenant Valorcall",
+    "portrait": "PortraitCow",
+    "abilities": {},
+    "kind": "Elite",
+    "vitality": 3.0
+  },
+  {
+    "name": "Sunscale Lashtail",
+    "portrait": "PortraitRaptor",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
+  },
+  {
     "name": "Captain Perrine",
     "portrait": "PortraitCaptainPerrine",
     "abilities": {},

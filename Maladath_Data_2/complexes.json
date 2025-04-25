@@ -119,6 +119,10 @@
       },
       {
         "SiteType": "HostileArea",
+        "SiteName": "Eastern Town"
+      },
+      {
+        "SiteType": "HostileArea",
         "SiteName": "Western Town"
       },
       {
