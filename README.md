@@ -774,7 +774,7 @@ v0.6.21
 v0.6.22
  19.07.24 Finalised the text wrapping method
 v0.6.23
- 21.07 Added respecing at class trainers
+ 21.07.24 Added respecing at class trainers
           Added sound effect volume to effects
 v0.6.24
  22.07 Profession levels are now capped for trainers
@@ -782,38 +782,38 @@ v0.6.24
           Fixed gendered quest descriptions
           Fixed word wrap wrapping whitespaces
 v0.6.25
- 23.07 Added armor to stat display
+ 23.07.24 Added armor to stat display
           Added opening loot items like crates or bags
 v0.6.26
- 24.07 Added separate action bar sets and shifting between them in combat
+ 24.07.24 Added separate action bar sets and shifting between them in combat
           Disabled saving while in combat or when looting
 v0.6.27
- 25.07 Added event conditions for advanced ability making
+ 25.07.24 Added event conditions for advanced ability making
 v0.6.28
- 26.07 Added more types of conditions
+ 26.07.24 Added more types of conditions
 v0.6.29
- 28.07 Added loot to sacks of gems
+ 28.07.24 Added loot to sacks of gems
 v0.6.30
- 30.07 Added accounting for enchantment abilities and stat gains
+ 30.07.24 Added accounting for enchantment abilities and stat gains
           Added unlocking MC and BWL through exploration
 v0.6.31
- 06.08 Updated the sound system
+ 06.08.24 Updated the sound system
           Fixes to spellbook
 v0.6.32
- 08.08 Fixed errors while testing abilities
+ 08.08.24 Fixed errors while testing abilities
           Made sites more circular
 v0.6.33
- 11.08 Entry work on auction houses
+ 11.08.24 Entry work on auction houses
 v0.6.34
- 20.09 Destroyed unique items can be dropped again
+ 20.09.24 Destroyed unique items can be dropped again
           Added racial and class based restrictions for dropping items, mainly for quest items
           Game no longer saves buff on characters with full data, now it only includes the name for reference
           Small UI changes in the logging screen
           Fixed paths being drawn to sites on map before they appeared fully
 v0.6.35
- 22.09 Added basic auction house UI
+ 22.09.24 Added basic auction house UI
 v0.6.36
- 25.09 Last row of the board is removed after all entities move
+ 25.09.24 Last row of the board is removed after all entities move
           Expanded Wailing Caverns a bit
           Further work on auction house UI
 ```
@@ -917,5 +917,36 @@ v0.7.13
 v0.7.14
  18.04.25 Made available elite align itself with the progress bar
           Fixed locations not unlocking in instances when defeating the elite
+v0.7.15
+ 19.04.25 Fixed not being able to progress in sites with randomly chosen boss from a pool
+          Adjusted word wrap
+v0.7.16
+ 20.04.25 Simplified drawing process of the menu bar
+          Made wings appear differently from normal areas inside instances
+          Added stat and masteries explanation. Added colors for damage types
+v0.7.17
+ 21.04.25 Added Wrath spell
+          Fixed resource bars not drawing properly with trinkets and different action bar sets
+          Fixed Valley of Trials not having background
+          Fixed buff tooltips not closing on mouse exit
+ 22.04.25 Changed damage on weapons into Power modifier which is used to multiply all types of damage and healing
+v0.7.18
+ 23.04.25 Created talent trees for Rogue and Hunter
+          Small changes to Druid trees
+v0.7.19
+ 24.04.25 Transportation is now available for areas
+          Added a ship to Feathermoon Stronghold
+          If a non human player moves first during combat the cursor now properly appears
+          Added a lot of icons for rogue abilities
+          Player can now unlearn talents on the spot
+v0.7.20
+ 25.04.25 Fixed that encountering a rare enemy meant fighting two copies of it
+          Recommended level for areas is now calculated separately for different sides
+          Hotkeys can now be set not to close tooltips
+          Added a bunch of lacking portraits
+          Added a possibility of a common encounter being locked to a specific side
+          Added many new sites to Barrens, Stonetalon Mountains, Ashenvale, Feralas, Darkshore and one lacking to Stromgarde Ruins.
+v0.7.21
+ 26.04.25 Added beast taming
 ```
 </details>
