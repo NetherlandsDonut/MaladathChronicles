@@ -18,7 +18,7 @@ public class Condition
     public bool IsMet(Ability ability, int abilityRank, SaveGame save, Board board)
     {
         if (condition == null) return true;
-        var c = condition.ToLower();
+        var c = condition;
         if (c == "") return true;
         else if (c == "all") return subs == null || subs.Count == 0 || subs.All(x => x.IsMet(ability, abilityRank, save, board));
         else if (c == "any") return subs == null || subs.Count == 0 || subs.Any(x => x.IsMet(ability, abilityRank, save, board));
@@ -57,6 +57,9 @@ public class Condition
                 "@effectormaxhealth" => effector.who.MaxHealth() + "",
                 "@effectorclass" => effector.who.spec,
                 "@effectorlvl" => effector.who.level + "",
+                "@effectorkind" => effector.who.kind,
+                "@effectorcategory" => effector.who.Race().category,
+                "@effectorsubcategory" => effector.who.Race().subcategory,
                 "@effectorhighestresource" => effector.who.resources.Max(x => x.Value) + "",
                 "@effectorhighestmaxresource" => effector.who.resources.Max(x => x.Value) + "",
                 "@effectormaxshadow" => effector.who.MaxResource("Shadow") + "",
@@ -97,6 +100,9 @@ public class Condition
                 "@othermaxhealth" => other.who.MaxHealth() + "",
                 "@otherclass" => other.who.spec,
                 "@otherlvl" => other.who.level + "",
+                "@otherkind" => other.who.kind,
+                "@othercategory" => other.who.Race().category,
+                "@othersubcategory" => other.who.Race().subcategory,
                 "@otherhighestresource" => other.who.resources.Max(x => x.Value) + "",
                 "@otherhighestmaxresource" => other.who.resources.Max(x => x.Value) + "",
                 "@othermaxshadow" => other.who.MaxResource("Shadow") + "",

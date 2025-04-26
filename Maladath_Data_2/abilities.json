@@ -362,11 +362,113 @@
   {
     "name": "Tame Beast",
     "icon": "AbilityTameBeast",
-    "tags": [],
+    "possibleTargets": "Enemies",
+    "tags": [
+      "Taming"
+    ],
+    "cost": {
+      "Earth": 3,
+      "Air": 3,
+      "Water": 3
+    },
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector"
+          }
+        ],
+        "effects": [
+          {
+            "SoundEffect": "AbilityExecuteCast",
+            "Await": "4"
+          },
+          {
+            "SoundEffect": "GenericNatureCast",
+            "Affect": "Other",
+            "Effect": "Tame",
+            "ShatterTarget": "Other",
+            "ShatterSpeed": "10",
+            "ShatterDegree": "40",
+            "Await": "5"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "@othercategory == Beast",
+            "failedMessage": "Target is not a beast"
+          },
+          {
+            "condition": "@otherkind <> Elite",
+            "failedMessage": "Target cannot be an elite"
+          },
+          {
+            "condition": "@otherhealth% < 20",
+            "failedMessage": "Target is too healthy"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "HalfGray",
+              "Text": "Tries to tame a beast that has been brought down to at least"
+            },
+            {
+              "Color": "Gray",
+              "Text": "30%"
+            },
+            {
+              "Color": "HalfGray",
+              "Text": "of it's health."
+            }
+          ]
+        },
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "HalfGray",
+              "Text": "Base chance is"
+            },
+            {
+              "Color": "Gray",
+              "Text": "50%"
+            },
+            {
+              "Color": "HalfGray",
+              "Text": "altered by the difference in levels between caster and the target. Each level modifies the chance by"
+            },
+            {
+              "Color": "Gray",
+              "Text": "10%",
+              "Spacing": "No"
+            },
+            {
+              "Color": "HalfGray",
+              "Text": "."
+            }
+          ]
+        },
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "HalfGray",
+              "Text": "Cannot tame elite beasts."
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     "name": "Deathblow",
@@ -533,20 +635,191 @@
   {
     "name": "Arcane Shot",
     "icon": "AbilityArcaneShot",
-    "tags": [],
-    "ranks": [
-      {}
+    "possibleTargets": "Enemies",
+    "tags": [
+      "BasicDamage"
     ],
-    "events": []
+    "cost": {
+      "Air": 2,
+      "Arcane": 3
+    },
+    "ranks": [
+      {
+        "#1": "0,3",
+        "#2": "0,3"
+      },
+      {
+        "#1": "0,4",
+        "#2": "0,3"
+      },
+      {
+        "#1": "0,5",
+        "#2": "0,3"
+      },
+      {
+        "#1": "0,6",
+        "#2": "0,3"
+      }
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector"
+          }
+        ],
+        "effects": [
+          {
+            "SoundEffect": "AbilityFireballCast",
+            "ShatterTarget": "Effector",
+            "ShatterDensity": "1",
+            "ShatterSpeed": "3",
+            "ShatterDegree": "5",
+            "Await": "0"
+          },
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Ranged",
+            "PowerSource": "Effector",
+            "PowerScale": "#1",
+            "ShatterTarget": "Other",
+            "ShatterDensity": "1",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40",
+            "SoundEffect": "AbilityFireballImpact",
+            "AnimationType": "Missile",
+            "TrailStrength": "13",
+            "AnimationSpeed": "2",
+            "Await": "4"
+          },
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "#2",
+            "SoundEffect": "AbilityArcaneShotImpact2",
+            "Await": "5"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Gray",
+              "Text": "Quick shot that deals"
+            },
+            {
+              "Color": "Ranged",
+              "Text": "PowerRange(Effector, Ranged, #1, 1)",
+              "Split": "No"
+            },
+            {
+              "Color": "Gray",
+              "Text": "damage and additional"
+            },
+            {
+              "Color": "Spell",
+              "Text": "PowerRange(Effector, Spell, #2, 1)",
+              "Split": "No"
+            },
+            {
+              "Color": "Gray",
+              "Text": "magic damage."
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     "name": "Aimed Shot",
     "icon": "AbilityAimedShot",
-    "tags": [],
-    "ranks": [
-      {}
+    "possibleTargets": "Enemies",
+    "tags": [
+      "BasicDamage"
     ],
-    "events": []
+    "cost": {
+      "Air": 5
+    },
+    "ranks": [
+      {
+        "#1": "0,7"
+      },
+      {
+        "#1": "0,8"
+      },
+      {
+        "#1": "0,9"
+      },
+      {
+        "#1": "1,0"
+      }
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector"
+          }
+        ],
+        "effects": [
+          {
+            "SoundEffect": "AbilityFireballCast",
+            "ShatterTarget": "Effector",
+            "ShatterDensity": "1",
+            "ShatterSpeed": "3",
+            "ShatterDegree": "5",
+            "Await": "0"
+          },
+          {
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Spell",
+            "PowerSource": "Effector",
+            "PowerScale": "#1",
+            "ShatterTarget": "Other",
+            "ShatterDensity": "1",
+            "ShatterSpeed": "30",
+            "ShatterDegree": "40",
+            "SoundEffect": "AbilityFireballImpact",
+            "Await": "5",
+            "AnimationType": "Missile",
+            "TrailStrength": "13",
+            "AnimationSpeed": "2"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Gray",
+              "Text": "Powerful shot that deals"
+            },
+            {
+              "Color": "Ranged",
+              "Text": "PowerRange(Effector, Ranged, #1, 1)",
+              "Split": "No"
+            },
+            {
+              "Color": "Gray",
+              "Text": "damage."
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     "name": "Lethality",

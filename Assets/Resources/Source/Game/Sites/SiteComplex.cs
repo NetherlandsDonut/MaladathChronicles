@@ -132,9 +132,9 @@ public class SiteComplex : Site
                         if (range.Item1 < min) range = (min, range.Item2);
                         if (range.Item2 < max) range = (range.Item1, max);
                     }
-                    AddText(range.Item1 + "", ColorEntityLevel(range.Item1));
+                    AddText(range.Item1 + "", ColorEntityLevel(currentSave.player, range.Item1));
                     AddText(" - ", "DarkGray");
-                    AddText(range.Item2 + "", ColorEntityLevel(range.Item2));
+                    AddText(range.Item2 + "", ColorEntityLevel(currentSave.player, range.Item2));
                 });
                 foreach (var site in complex.sites)
                     AddHeaderRegion(() =>

@@ -581,7 +581,7 @@ public class Entity
         _ => 0,
     };
 
-    //Provides amount of experience needed to level up
+    //Experience given to the victor of combat against an equal entity power level
     public int ExperienceForEqualEnemy() => level switch
     {
         01 => 133,
@@ -1342,7 +1342,7 @@ public class Entity
         return true;
     }
 
-    //Kills this entity
+    //Kills this entity in combat
     public void Die()
     {
         //If this is the player, shift the map into the dead zone
@@ -1354,10 +1354,10 @@ public class Entity
         //Play death sound
         PlayEnemyLine(EnemyLine("Death"));
 
-        //Find all world buffs that player has that aren't death persistant
+        //Find all buffs that player has that aren't death persistant
         var toRemove1 = buffs.Where(x => !x.buff.deathResistant);
 
-        //Remove not death resistant world buffs from player that just died
+        //Remove not death resistant buffs from player that just died
         foreach (var buff in toRemove1.ToList()) RemoveBuff(buff);
 
         //Find all world buffs that player has that aren't death persistant
@@ -1365,6 +1365,13 @@ public class Entity
 
         //Remove not death resistant world buffs from player that just died
         foreach (var buff in toRemove2) RemoveWorldBuff(buff);
+    }
+
+    //Tames this entity in combat
+    public void Tame()
+    {
+        //Set current pet of the player as this entity
+        SaveGame.currentSave.pet = this;
     }
 
     //Provides a list of all abilities that this

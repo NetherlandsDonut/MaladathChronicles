@@ -345,6 +345,7 @@ public class Starter : MonoBehaviour
         {
             Blueprint.windowBlueprints.Add(new Blueprint("Friendly" + element + "Resource", () =>
             {
+                if (Board.board.spotlightFriendly.Count == 0) return;
                 var friendly = Board.board.participants[Board.board.spotlightFriendly[0]].who;
                 var friendlyBattleInfo = CDesktop.windows.Find(x => x.title == "FriendlyBattleInfo");
                 SetAnchor(-320 + 19 * elements.IndexOf(element), 180 - friendlyBattleInfo.yOffset - 8);
@@ -359,6 +360,7 @@ public class Starter : MonoBehaviour
             }));
             Blueprint.windowBlueprints.Add(new Blueprint("Enemy" + element + "Resource", () =>
             {
+                if (Board.board.spotlightEnemy.Count == 0) return;
                 var enemy = Board.board.participants[Board.board.spotlightEnemy[0]].who;
                 var enemyBattleInfo = CDesktop.windows.Find(x => x.title == "EnemyBattleInfo");
                 SetAnchor(299 - 19 * elements.IndexOf(element), 180 - enemyBattleInfo.yOffset - 8);

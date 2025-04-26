@@ -104,9 +104,9 @@ public class SiteInstance : Site
                 {
                     AddLine("Level range: ", "DarkGray");
                     var range = LevelRange();
-                    AddText(range.Item1 + "", ColorEntityLevel(range.Item1));
+                    AddText(range.Item1 + "", ColorEntityLevel(currentSave.player, range.Item1));
                     AddText(" - ", "DarkGray");
-                    AddText(range.Item2 + "", ColorEntityLevel(range.Item2));
+                    AddText(range.Item2 + "", ColorEntityLevel(currentSave.player, range.Item2));
                 });
                 var areas = wings.SelectMany(x => x.areas.Select(y => SiteHostileArea.areas.Find(z => z.name == y["AreaName"])));
                 var side = currentSave.playerSide;

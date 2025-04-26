@@ -89,6 +89,11 @@ public class SiteHostileArea : Site
             var hordeOnes = all.Where(x => x.side == null || x.side == "Horde").ToList();
             recommendedLevel.Add("Horde", hordeOnes.Count == 0 ? 0 : (int)all.Where(x => x.side == null || x.side == "Horde").Average(x => x.levelMax != 0 ? (x.levelMin + x.levelMax) / 2.0 : x.levelMin));
         }
+        else
+        {
+            recommendedLevel.Add("Alliance", new());
+            recommendedLevel.Add("Horde", new());
+        }
         if (progression == null)
         {
             var length = eliteEncounters != null ? eliteEncounters.Count * 2 + 1 : 3;
@@ -123,7 +128,7 @@ public class SiteHostileArea : Site
         AddRegionGroup();
         AddPaddingRegion(() =>
         {
-            AddSmallButton("Map" + (currentSave.siteVisits.ContainsKey(name) ? type : "Unknown"),
+            AddSmallButton("Map" + (currentSave.siteVisits.ContainsKey(name) ? type + (recommendedLevel["Horde"] < recommendedLevel["Alliance"] ? "HordeAligned" : (recommendedLevel["Horde"] > recommendedLevel["Alliance"] ? "AllianceAligned" : "")) : "Unknown"),
             (h) => { CDesktop.cameraDestination = new Vector2(x, y); },
             (h) =>
             {
@@ -142,7 +147,7 @@ public class SiteHostileArea : Site
                     AddHeaderRegion(() =>
                     {
                         AddLine("Recommended level: ", "DarkGray");
-                        AddText(recommendedLevel[currentSave.playerSide] + "", ColorEntityLevel(recommendedLevel[currentSave.playerSide]));
+                        AddText(recommendedLevel[currentSave.playerSide] + "", ColorEntityLevel(currentSave.player, recommendedLevel[currentSave.playerSide]));
                     });
                 var common = CommonEncounters(currentSave.playerSide);
                 if (common != null && common.Count > 0)

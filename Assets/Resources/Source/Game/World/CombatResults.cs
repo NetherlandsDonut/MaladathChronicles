@@ -44,6 +44,7 @@ public class CombatResults
     public void GenerateSkinningNode(int areaLevel)
     {
         var skinningTarget = Board.board.participants.Find(x => x.team == 2);
+        if (skinningTarget == null) return;
         if (!new List<string> { "Beast", "Dragonkin" }.Contains(skinningTarget.who.Race().category)) return;
         var possibleNodes = GeneralDrop.generalDrops.FindAll(y => y.requiredProfession == "Skinning" && y.tags.Contains("Main")).ToList();
         possibleNodes.RemoveAll(x => !x.DoesLevelFit(areaLevel));

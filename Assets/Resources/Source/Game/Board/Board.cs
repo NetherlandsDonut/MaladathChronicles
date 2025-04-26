@@ -442,22 +442,25 @@ public class Board
 
                 //If you just defeated an enemy that wasn't a boss and none bosses block your way
                 //in progression then increase your progression in the area by one point
-                if (area != null && participants.First(x => x.team == 2).who.kind != "Elite" && progBosses.Count > 0 && progBosses.Any(x => currentSave.elitesKilled.ContainsKey(x.bossName)) || progBosses.Count == 0)
-                    if (!currentSave.siteProgress.ContainsKey(area.name)) currentSave.siteProgress.Add(area.name, 1);
-                    else currentSave.siteProgress[area.name]++;
+                if (participants.Count(x => x.team == 2) > 0)
+                {
+                    if (area != null && participants.First(x => x.team == 2).who.kind != "Elite" && progBosses.Count > 0 && progBosses.Any(x => currentSave.elitesKilled.ContainsKey(x.bossName)) || progBosses.Count == 0)
+                        if (!currentSave.siteProgress.ContainsKey(area.name)) currentSave.siteProgress.Add(area.name, 1);
+                        else currentSave.siteProgress[area.name]++;
 
-                //Unlock all areas that you were at that if you just killed a boss there
-                if (participants.Where(x => x.team == 2).Any(x => x.who.kind == "Elite"))
-                    foreach (var unlockArea in progression.FindAll(x => x.type == "Area"))
-                        if (!currentSave.unlockedAreas.Contains(unlockArea.areaName))
+                    //Unlock all areas that you were at that if you just killed a boss there
+                    if (participants.Where(x => x.team == 2).Any(x => x.who.kind == "Elite"))
+                        foreach (var unlockArea in progression.FindAll(x => x.type == "Area"))
+                            if (!currentSave.unlockedAreas.Contains(unlockArea.areaName))
+                                if (!unlockArea.all) currentSave.unlockedAreas.Add(unlockArea.areaName);
+                                else UnlockArea(unlockArea);
+
+                    //Unlock all areas that you just reached if they have no boss in their way
+                    foreach (var unlockArea in nextProgression.FindAll(x => x.type == "Area"))
+                        if (!currentSave.unlockedAreas.Contains(unlockArea.areaName) && nextProgBosses.Count == 0)
                             if (!unlockArea.all) currentSave.unlockedAreas.Add(unlockArea.areaName);
                             else UnlockArea(unlockArea);
-
-                //Unlock all areas that you just reached if they have no boss in their way
-                foreach (var unlockArea in nextProgression.FindAll(x => x.type == "Area"))
-                    if (!currentSave.unlockedAreas.Contains(unlockArea.areaName) && nextProgBosses.Count == 0)
-                        if (!unlockArea.all) currentSave.unlockedAreas.Add(unlockArea.areaName);
-                        else UnlockArea(unlockArea);
+                }
 
                 void UnlockArea(AreaProgression unlockArea)
                 {
@@ -484,6 +487,8 @@ public class Board
 
                 //Grant experience for defeating the enemy
                 foreach (var winParticipant in participants.Where(x => x.team == 1))
+                {
+                    results.experience.Inc(winParticipant.who, 0);
                     foreach (var lossParticipant in participants.Where(x => x.team == 2))
                     {
                         var enemy = lossParticipant.who;
@@ -491,14 +496,14 @@ public class Board
                         if (winParticipant.who.WillGetExperience(enemy.level) && winParticipant.who.level < defines.maxPlayerLevel)
                         {
                             float amount = winParticipant.who.ExperienceForEqualEnemy();
-                            if (Coloring.ColorEntityLevel(enemy.level) == "Green") amount *= 0.5f;
-                            else if (Coloring.ColorEntityLevel(enemy.level) == "DarkGray") amount *= 0;
+                            if (Coloring.ColorEntityLevel(winParticipant.who, enemy.level) == "Green") amount *= 0.5f;
+                            else if (Coloring.ColorEntityLevel(winParticipant.who, enemy.level) == "DarkGray") amount *= 0;
                             if (enemyRace.kind == "Elite") amount *= 2;
                             else if (enemyRace.kind == "Rare") amount *= 1.5f;
                             results.experience.Inc(winParticipant.who, (int)amount);
                         }
-                        else results.experience.Inc(winParticipant.who, 0);
                     }
+                }
 
                 //Open default page in the chart
                 chartPage = "Damage Dealt";
@@ -506,7 +511,7 @@ public class Board
 
                 //Grant experience to all winning participants
                 foreach (var winParticipant in participants.Where(x => x.team == 1))
-                    winParticipant.who.ReceiveExperience(board.results.experience[winParticipant.who]);
+                    winParticipant.who.ReceiveExperience(board.results.experience.ContainsKey(winParticipant.who) ? board.results.experience[winParticipant.who] : 0);
 
                 //Progress quests requiring killing
                 foreach (var winParticipant in participants.Where(x => x.team == 1))

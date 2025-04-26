@@ -234,7 +234,7 @@ public class Blueprint
                 AddButtonRegion(() =>
                 {
                     AddLine(board.participants[board.spotlightEnemy[index]].who.name);
-                    SpawnFloatingText(new Vector3(34, -9), board.participants[board.spotlightEnemy[index]].who.level - 10 > currentSave.player.level ? "??" : "" + board.participants[board.spotlightEnemy[index]].who.level, ColorEntityLevel(board.participants[board.spotlightEnemy[index]].who.level), "DimGray", "Right");
+                    SpawnFloatingText(new Vector3(34, -9), board.participants[board.spotlightEnemy[index]].who.level - 10 > currentSave.player.level ? "??" : "" + board.participants[board.spotlightEnemy[index]].who.level, ColorEntityLevel(currentSave.player, board.participants[board.spotlightEnemy[index]].who.level), "DimGray", "Right");
                     var race = races.Find(x => x.name == board.participants[board.spotlightEnemy[index]].who.race);
                     AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? board.participants[index].who.gender : ""), (h) =>
                     {
@@ -251,7 +251,11 @@ public class Blueprint
                     }
                     AddHealthBar(40, -19, board.spotlightEnemy[index], board.participants[board.spotlightEnemy[index]].who);
                 },
-                (h) => ChangeSpotlight(index));
+                (h) =>
+                {
+                    if (abilityTargetted != null) FinishTargettingAbility(board.participants[board.spotlightEnemy[index]]);
+                    else ChangeSpotlight(index);
+                });
                 foreach (var actionBar in board.participants[board.spotlightEnemy[index]].who.actionBars[board.participants[board.spotlightEnemy[index]].who.currentActionSet])
                 {
                     var abilityObj = abilities.Find(x => x.name == actionBar);
@@ -374,7 +378,11 @@ public class Blueprint
                     }
                     AddHealthBar(2, -19, board.spotlightFriendly[index], board.participants[board.spotlightFriendly[index]].who);
                 },
-                (h) => ChangeSpotlight(index));
+                (h) =>
+                {
+                    if (abilityTargetted != null) FinishTargettingAbility(board.participants[board.spotlightFriendly[index]]);
+                    else ChangeSpotlight(index);
+                });
                 foreach (var actionBar in board.participants[board.spotlightFriendly[index]].who.actionBars[board.participants[index].who.currentActionSet])
                 {
                     var abilityObj = abilities.Find(x => x.name == actionBar);
@@ -3179,9 +3187,9 @@ public class Blueprint
                     if (range.Item1 < min) range = (min, range.Item2);
                     if (range.Item2 < max) range = (range.Item1, max);
                 }
-                AddText(range.Item1 + "", ColorEntityLevel(range.Item1));
+                AddText(range.Item1 + "", ColorEntityLevel(currentSave.player, range.Item1));
                 AddText(" - ", "DarkGray");
-                AddText(range.Item2 + "", ColorEntityLevel(range.Item2));
+                AddText(range.Item2 + "", ColorEntityLevel(currentSave.player, range.Item2));
             });
             foreach (var site in complex.sites)
                 PrintComplexSite(site);
@@ -3262,9 +3270,9 @@ public class Blueprint
                 {
                     AddLine("Level range: ", "DarkGray");
                     var range = instance.LevelRange();
-                    AddText(range.Item1 + "", ColorEntityLevel(range.Item1));
+                    AddText(range.Item1 + "", ColorEntityLevel(currentSave.player, range.Item1));
                     AddText(" - ", "DarkGray");
-                    AddText(range.Item2 + "", ColorEntityLevel(range.Item2));
+                    AddText(range.Item2 + "", ColorEntityLevel(currentSave.player, range.Item2));
                 });
                 for (int i = 0; i < instance.wings[0].areas.Count; i++)
                 {
@@ -3318,9 +3326,9 @@ public class Blueprint
                         {
                             AddLine("Level range: ", "DarkGray");
                             var range = instance.LevelRange(index);
-                            AddText(range.Item1 + "", ColorEntityLevel(range.Item1));
+                            AddText(range.Item1 + "", ColorEntityLevel(currentSave.player, range.Item1));
                             AddText(" - ", "DarkGray");
-                            AddText(range.Item2 + "", ColorEntityLevel(range.Item2));
+                            AddText(range.Item2 + "", ColorEntityLevel(currentSave.player, range.Item2));
                         });
                     }
                     else
@@ -3363,9 +3371,9 @@ public class Blueprint
             {
                 AddLine("Level range: ", "DarkGray");
                 var range = instance.LevelRange(instance.wings.IndexOf(wing));
-                AddText(range.Item1 + "", ColorEntityLevel(range.Item1));
+                AddText(range.Item1 + "", ColorEntityLevel(currentSave.player, range.Item1));
                 AddText(" - ", "DarkGray");
-                AddText(range.Item2 + "", ColorEntityLevel(range.Item2));
+                AddText(range.Item2 + "", ColorEntityLevel(currentSave.player, range.Item2));
             });
             for (int i = 0; i < wing.areas.Count; i++)
             {
@@ -3545,7 +3553,7 @@ public class Blueprint
                     if (levelHigherThanZero)
                     {
                         AddLine("Recommended level: ", "HalfGray");
-                        AddText(area.recommendedLevel[currentSave.playerSide] + "", ColorEntityLevel(area.recommendedLevel[currentSave.playerSide]));
+                        AddText(area.recommendedLevel[currentSave.playerSide] + "", ColorEntityLevel(currentSave.player, area.recommendedLevel[currentSave.playerSide]));
                     }
                     if (tracker) AddSmallButton("OtherQuestClose", (h) =>
                         {
@@ -3677,7 +3685,7 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 var race = races.Find(x => x.name == encounter.who);
-                SpawnFloatingText(new Vector3(6, -9), encounter.levelMin - 10 > currentSave.player.level ? "??" : "" + encounter.levelMin, ColorEntityLevel(encounter.levelMin), "DimGray", "Left");
+                SpawnFloatingText(new Vector3(6, -9), encounter.levelMin - 10 > currentSave.player.level ? "??" : "" + encounter.levelMin, ColorEntityLevel(currentSave.player, encounter.levelMin), "DimGray", "Left");
                 AddBigButton(race == null ? "OtherUnknown" : race.portrait,
                 (h) =>
                 {
@@ -6816,7 +6824,7 @@ public class Blueprint
                 }
             });
         }),
-        new("ContainerLoot", () =>
+        new("ContainerLoot", () => 
         {
             SetDesktopBackground("Backgrounds/Leather");
             SpawnWindowBlueprint("MapToolbarShadow");

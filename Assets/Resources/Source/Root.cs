@@ -1269,7 +1269,7 @@ public static class Root
     #region General
 
     //Rolls a chance with a provided % of something happening [0 - 100]
-    public static bool Roll(double chance) => random.Next(0, 100000) < chance * 1000;
+    public static bool Roll(double chance) => chance > 0 && (chance >= 100 || random.Next(0, 100000) < chance * 1000);
 
     //Set what highlightible object mouse is currently hovering over
     public static void SetMouseOver(Highlightable highlightable) => mouseOver = highlightable;

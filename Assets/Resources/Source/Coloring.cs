@@ -42,13 +42,13 @@ public static class Coloring
         else return "Yellow";
     }
 
-    public static string ColorEntityLevel(int level)
+    public static string ColorEntityLevel(Entity entity, int level)
     {
         if (currentSave == null) return "DarkGray";
-        var will = currentSave.player.WillGetExperience(level);
-        if (level - 4 > currentSave.player.level) return "DangerousRed";
-        else if (level - 2 > currentSave.player.level) return "Orange";
-        else if (level + 2 < currentSave.player.level && will) return "Green";
+        var will = entity.WillGetExperience(level);
+        if (level - 4 > entity.level) return "DangerousRed";
+        else if (level - 2 > entity.level) return "Orange";
+        else if (level + 2 < entity.level && will) return "Green";
         else if (!will) return "DarkGray";
         else return "Yellow";
     }

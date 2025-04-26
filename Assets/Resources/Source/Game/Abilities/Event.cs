@@ -294,6 +294,7 @@ public class Event
                 else if (type == "ChangeElements") EffectChangeElements();
                 else if (type == "ConsumeItem") EffectConsumeItem();
                 else if (type == "ChangeActionSet") EffectChangeActionSet();
+                else if (type == "Tame") EffectTame();
 
                 ExecuteShatter();
                 ExecuteSoundEffect();
@@ -448,6 +449,20 @@ public class Event
                     foreach (var res in target.who.resources)
                         Respawn("Friendly" + res.Key + "Resource");
                 }
+            }
+
+            //This effect tries to tame the beast that is targetted
+            void EffectTame()
+            {
+                var target = affect == "Effector" ? effector : other;
+                var levelDifference = effector.who.level - target.who.level;
+                if (Roll(50 + levelDifference * 10))
+                {
+                    SpawnFallingText(new Vector2(0, 34), "Successfully tamed!", "White");
+                    target.who.Tame();
+                    target.SwapTeam(1);
+                }
+                else SpawnFallingText(new Vector2(0, 34), "Taming failed", "Red");
             }
 
             //This effect gives a specific amount of a resource to the targetted entity
