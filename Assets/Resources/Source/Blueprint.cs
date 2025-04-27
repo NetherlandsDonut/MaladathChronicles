@@ -3226,7 +3226,30 @@ public class Blueprint
                     capital = null;
                 });
             });
-            foreach (var town in capital.districts)
+            var rank = currentSave.player.ReputationRank(capital.faction);
+            if (rank == "Hated")
+                AddPaddingRegion(() =>
+                {
+                    AddLine("This town's folk consider you", "HalfGray");
+                    AddLine("to be their enemy", "HalfGray");
+                });
+            else if (rank == "Hostile")
+                AddPaddingRegion(() =>
+                {
+                    AddLine("This town's folk consider you", "HalfGray");
+                    AddLine("to be an enemy", "HalfGray");
+                });
+            else if (rank == "Unfriendly")
+                AddPaddingRegion(() =>
+                {
+                    AddLine("This town's folk are reluctant", "HalfGray");
+                    AddLine("towards you. Consider", "HalfGray");
+                    AddLine("improving your reputation", "HalfGray");
+                    AddLine("with ", "HalfGray");
+                    AddLine(town.faction, "Unfriendly");
+                    AddLine("in order to be welcomed here", "HalfGray");
+                });
+            else foreach (var town in capital.districts)
                 PrintCapitalTown(town);
         }),
 
@@ -3938,22 +3961,22 @@ public class Blueprint
                 var rank = currentSave.player.ReputationRank(town.faction);
                 if (rank == "Hated")
                 {
-                    AddLine("This town's folk consider you");
-                    AddLine("to be their enemy");
+                    AddLine("This town's folk consider you", "HalfGray");
+                    AddLine("to be their enemy", "HalfGray");
                 }
                 else if (rank == "Hostile")
                 {
-                    AddLine("This town's folk consider you");
-                    AddLine("to be an enemy");
+                    AddLine("This town's folk consider you", "HalfGray");
+                    AddLine("to be an enemy", "HalfGray");
                 }
                 else if (rank == "Unfriendly")
                 {
-                    AddLine("This town's folk are reluctant");
-                    AddLine("towards you.");
-                    AddLine("Consider improving your reputation");
-                    AddLine("with " + town.faction + " in order");
-                    AddLine("to be welcomed here");
-                    AddLine("");
+                    AddLine("This town's folk are reluctant", "HalfGray");
+                    AddLine("towards you. Consider", "HalfGray");
+                    AddLine("improving your reputation", "HalfGray");
+                    AddLine("with ", "HalfGray");
+                    AddText(town.faction, "Unfriendly");
+                    AddLine("in order to be welcomed here", "HalfGray");
                 }
             });
         }),

@@ -47,6 +47,8 @@ public class Entity
                 reputation.Add(faction.name, 4600);
             else if (faction.side == side)
                 reputation.Add(faction.name, 4250);
+            else if (faction.side == "Unfriendly")
+                reputation.Add(faction.name, 4050);
             else if (faction.side != side && faction.side != "Neutral")
                 reputation.Add(faction.name, 0);
         inventory.items.RemoveAll(x => x == null);

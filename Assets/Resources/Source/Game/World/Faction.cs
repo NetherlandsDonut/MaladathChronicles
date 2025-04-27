@@ -11,7 +11,7 @@ public class Faction
     public string icon;
 
     //Side of the conflict this faction is on
-    //Can be: Alliance, Horde and Neutral
+    //Can be: Alliance, Horde, Unfriendly and Neutral
     public string side;
 
     //Gets the icon of this faction
@@ -19,7 +19,7 @@ public class Faction
     public string Icon()
     {
         if (assets.factionIcons.Contains(icon + ".png")) return icon;
-        else return "Faction" + side;
+        else return "Faction" + (side != "Alliance" && side != "Horde" ? "Neutral" : side);
     }
 
     //Currently opened faction

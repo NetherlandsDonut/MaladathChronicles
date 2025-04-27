@@ -4904,6 +4904,8 @@ public static class BlueprintDev
             (h) =>
             {
                 if (faction.side == "Hostile")
+                    faction.side = "Unfriendly";
+                else if (faction.side == "Unfriendly")
                     faction.side = "Neutral";
                 else if (faction.side == "Neutral")
                     faction.side = "Alliance";
