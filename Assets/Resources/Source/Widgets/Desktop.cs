@@ -453,13 +453,15 @@ public class Desktop : MonoBehaviour
                         {
                             inputDestination.Confirm();
                             ExecuteChange(inputDestination);
-                            Respawn(tempStore);
+                            Respawn(tempStore, true);
+                            didSomething = true;
                         }
                         else
                         {
                             PlaySound("DesktopMenuClose");
                             inputDestination.Reset();
                             ExecuteQuit(inputDestination);
+                            didSomething = true;
                         }
                     }
                     else if (GetKeyDown(KeyCode.Delete) && inputLineMarker < length)
