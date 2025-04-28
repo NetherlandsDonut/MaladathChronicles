@@ -445,6 +445,7 @@ public class Desktop : MonoBehaviour
                     var length = inputDestination.Value().Length;
                     if (GetKeyDown(KeyCode.Escape) || GetKeyDown(KeyCode.Return))
                     {
+                        var tempStore = inputLineWindow;
                         inputLineWindow = null;
                         UnityEngine.Cursor.lockState = CursorLockMode.None;
                         cursor.SetCursor(CursorType.Default);
@@ -452,14 +453,13 @@ public class Desktop : MonoBehaviour
                         {
                             inputDestination.Confirm();
                             ExecuteChange(inputDestination);
-                            didSomething = true;
+                            Respawn(tempStore);
                         }
                         else
                         {
                             PlaySound("DesktopMenuClose");
                             inputDestination.Reset();
                             ExecuteQuit(inputDestination);
-                            didSomething = true;
                         }
                     }
                     else if (GetKeyDown(KeyCode.Delete) && inputLineMarker < length)

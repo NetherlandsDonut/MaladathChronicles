@@ -1165,9 +1165,9 @@ public class Blueprint
                 },
                 null, (h) => () =>
                 {
-                    SetAnchor(Bottom, 0, 114);
+                    SetAnchor(Bottom, 0, 95);
                     AddRegionGroup();
-                    SetRegionGroupWidth(258);
+                    SetRegionGroupWidth(296);
                     AddHeaderRegion(() => AddLine("Orcs of Orgrimmar", "", "Center"));
                     new Description()
                     { regions = new() { new() { regionType = "Padding", contents = new() { new ()
@@ -1200,9 +1200,9 @@ public class Blueprint
                 },
                 null, (h) => () =>
                 {
-                    SetAnchor(Bottom, 0, 114);
+                    SetAnchor(Bottom, 0, 95);
                     AddRegionGroup();
-                    SetRegionGroupWidth(258);
+                    SetRegionGroupWidth(296);
                     AddHeaderRegion(() => AddLine("Trolls of the Darkspear Tribe", "", "Center"));
                     new Description()
                     { regions = new() { new() { regionType = "Padding", contents = new() { new ()
@@ -1235,9 +1235,9 @@ public class Blueprint
                 },
                 null, (h) => () =>
                 {
-                    SetAnchor(Bottom, 0, 114);
+                    SetAnchor(Bottom, 0, 95);
                     AddRegionGroup();
-                    SetRegionGroupWidth(258);
+                    SetRegionGroupWidth(296);
                     AddHeaderRegion(() => AddLine("Tauren of Thunder Bluff", "", "Center"));
                     new Description()
                     { regions = new() { new() { regionType = "Padding", contents = new() { new ()
@@ -1270,9 +1270,9 @@ public class Blueprint
                 },
                 null, (h) => () =>
                 {
-                    SetAnchor(Bottom, 0, 114);
+                    SetAnchor(Bottom, 0, 95);
                     AddRegionGroup();
-                    SetRegionGroupWidth(258);
+                    SetRegionGroupWidth(296);
                     AddHeaderRegion(() => AddLine("Forsaken of the Undercity", "", "Center"));
                     new Description()
                     { regions = new() { new() { regionType = "Padding", contents = new() { new ()
@@ -1314,9 +1314,9 @@ public class Blueprint
                 },
                 null, (h) => () =>
                 {
-                    SetAnchor(Bottom, 0, 114);
+                    SetAnchor(Bottom, 0, 95);
                     AddRegionGroup();
-                    SetRegionGroupWidth(258);
+                    SetRegionGroupWidth(296);
                     AddHeaderRegion(() => AddLine("Humans of Stormwind", "", "Center"));
                     new Description()
                     { regions = new() { new() { regionType = "Padding", contents = new() { new ()
@@ -1349,9 +1349,9 @@ public class Blueprint
                 },
                 null, (h) => () =>
                 {
-                    SetAnchor(Bottom, 0, 114);
+                    SetAnchor(Bottom, 0, 95);
                     AddRegionGroup();
-                    SetRegionGroupWidth(258);
+                    SetRegionGroupWidth(296);
                     AddHeaderRegion(() => AddLine("Dwarfs of Ironforge", "", "Center"));
                     new Description()
                     { regions = new() { new() { regionType = "Padding", contents = new() { new ()
@@ -1384,9 +1384,9 @@ public class Blueprint
                 },
                 null, (h) => () =>
                 {
-                    SetAnchor(Bottom, 0, 114);
+                    SetAnchor(Bottom, 0, 95);
                     AddRegionGroup();
-                    SetRegionGroupWidth(258);
+                    SetRegionGroupWidth(296);
                     AddHeaderRegion(() => AddLine("Gnomes of Gnomeregan", "", "Center"));
                     new Description()
                     { regions = new() { new() { regionType = "Padding", contents = new() { new ()
@@ -1419,9 +1419,9 @@ public class Blueprint
                 },
                 null, (h) => () =>
                 {
-                    SetAnchor(Bottom, 0, 114);
+                    SetAnchor(Bottom, 0, 95);
                     AddRegionGroup();
-                    SetRegionGroupWidth(258);
+                    SetRegionGroupWidth(296);
                     AddHeaderRegion(() => AddLine("Night Elfs of Darnassus", "", "Center"));
                     new Description()
                     { regions = new() { new() { regionType = "Padding", contents = new() { new ()
@@ -1557,7 +1557,7 @@ public class Blueprint
             });
         }),
         new("CharacterCreationFinish", () => {
-            SetAnchor(Bottom, 0, 76);
+            SetAnchor(Bottom, 0, 57);
             AddRegionGroup();
             AddPaddingRegion(() =>
             {
@@ -1590,11 +1590,10 @@ public class Blueprint
                     SpawnWindowBlueprint("CharacterCreationWho");
                     PlaySound("DesktopReroll" + random.Next(1, 3), 0.6f);
                 });
-            });
+            });     
             AddRegionGroup();
             SetRegionGroupWidth(114);
-            if (creationSpec != "" && creationGender != "" && creationRace != "" && String.creationName.Value().Length < 3) AddButtonRegion(() => { SetRegionBackground(ButtonRed); AddLine("Finish Creation", "Black", "Center"); });
-            else if (creationSpec != "" && creationGender != "" && creationRace != "")
+            if (creationSpec != "" && creationGender != "" && creationRace != "" && String.creationName.Value().Length >= 3)
             {
                 AddButtonRegion(() =>
                 {
@@ -1611,80 +1610,83 @@ public class Blueprint
                     SaveGames();
                 });
             }
-            else AddPaddingRegion(() => AddLine("Finish Creation", "DarkGray", "Center"));
+            else AddPaddingRegion(() => AddLine("Finish Creation", "DimGray", "Center"));
             AddRegionGroup();
             AddPaddingRegion(() => AddSmallButton("OtherClose", (h) => CloseDesktop("CharCreatorScreen")));
         }),
         new("CharacterCreationWho", () => {
-            SetAnchor(Bottom, 0, 19);
-            AddRegionGroup();
-            AddPaddingRegion(() =>
+            SetAnchor(Top, 0, -301);
+            if (creationSpec != "" && creationRace != "")
             {
-                AddBigButton("Portrait" + creationRace.Clean() + "Male",
-                (h) =>
+                AddRegionGroup();
+                AddPaddingRegion(() =>
                 {
-                    if (creationRace != "")
+                    AddBigButton("Portrait" + creationRace.Clean() + "Male",
+                    (h) =>
                     {
-                        creationGender = "Male";
-                        var oldName = String.creationName.Value();
-                        var name = "";
-                        var race = races.Find(x => x.name == creationRace);
-                        do name = race.maleNames[random.Next(race.maleNames.Count)];
-                        while (name == oldName || saves[settings.selectedRealm].Any(x => x.player.name == name));
-                        String.creationName.Set(name);
-                        CloseWindow("CharacterCreationWho");
-                        Respawn("CharacterCreationWho");
-                        CloseWindow("CharacterCreationFinish");
-                        Respawn("CharacterCreationFinish");
+                        if (creationRace != "")
+                        {
+                            creationGender = "Male";
+                            var oldName = String.creationName.Value();
+                            var name = "";
+                            var race = races.Find(x => x.name == creationRace);
+                            do name = race.maleNames[random.Next(race.maleNames.Count)];
+                            while (name == oldName || saves[settings.selectedRealm].Any(x => x.player.name == name));
+                            String.creationName.Set(name);
+                            CloseWindow("CharacterCreationWho");
+                            Respawn("CharacterCreationWho");
+                            CloseWindow("CharacterCreationFinish");
+                            Respawn("CharacterCreationFinish");
+                        }
+                    });
+                    if (creationRace != "" && creationGender != "Male")
+                    {
+                        AddBigButtonOverlay("OtherGridBlurred");
+                        SetBigButtonToGrayscale();
                     }
                 });
-                if (creationRace != "" && creationGender != "Male")
-                {
-                    AddBigButtonOverlay("OtherGridBlurred");
-                    SetBigButtonToGrayscale();
-                }
-            });
+            }
             AddRegionGroup();
-            SetRegionGroupWidth(182);
+            SetRegionGroupWidth(152);
             AddHeaderRegion(() =>
             {
                 if (creationRace == "") AddLine("Choose Race", "DarkGray", "Center");
-                else if (creationGender == "" && creationSpec == "") AddLine("Choose Portrait and Class", "DarkGray", "Center");
                 else if (creationSpec == "") AddLine("Choose Class", "DarkGray", "Center");
                 else if (creationGender == "") AddLine("Choose Portrait", "DarkGray", "Center");
                 else AddInputLine(String.creationName, "White", "Center");
             });
-            AddPaddingRegion(() =>
+            if (creationRace != "")
+                AddPaddingRegion(() => AddLine(creationRace != "" ? creationRace + (creationSpec != "" ? " " + creationSpec : "") : "", "", "Center"));
+            if (creationSpec != "" && creationRace != "")
             {
-                AddLine(creationRace != "" ? creationRace + (creationSpec != "" ? " " + creationSpec : "") : "", "", "Center");
-            });
-            AddRegionGroup();
-            AddPaddingRegion(() =>
-            {
-                AddBigButton("Portrait" + creationRace.Clean() + "Female",
-                (h) =>
+                AddRegionGroup();
+                AddPaddingRegion(() =>
                 {
-                    if (creationRace != "")
+                    AddBigButton("Portrait" + creationRace.Clean() + "Female",
+                    (h) =>
                     {
-                        creationGender = "Female";
-                        var oldName = String.creationName.Value();
-                        var name = "";
-                        var race = races.Find(x => x.name == creationRace);
-                        do name = race.femaleNames[random.Next(race.femaleNames.Count)];
-                        while (name == oldName || saves[settings.selectedRealm].Any(x => x.player.name == name));
-                        String.creationName.Set(name);
-                        CloseWindow("CharacterCreationWho");
-                        Respawn("CharacterCreationWho");
-                        CloseWindow("CharacterCreationFinish");
-                        Respawn("CharacterCreationFinish");
+                        if (creationRace != "")
+                        {
+                            creationGender = "Female";
+                            var oldName = String.creationName.Value();
+                            var name = "";
+                            var race = races.Find(x => x.name == creationRace);
+                            do name = race.femaleNames[random.Next(race.femaleNames.Count)];
+                            while (name == oldName || saves[settings.selectedRealm].Any(x => x.player.name == name));
+                            String.creationName.Set(name);
+                            CloseWindow("CharacterCreationWho");
+                            Respawn("CharacterCreationWho");
+                            CloseWindow("CharacterCreationFinish");
+                            Respawn("CharacterCreationFinish");
+                        }
+                    });
+                    if (creationRace != "" && creationGender != "Female")
+                    {
+                        AddBigButtonOverlay("OtherGridBlurred");
+                        SetBigButtonToGrayscale();
                     }
                 });
-                if (creationRace != "" && creationGender != "Female")
-                {
-                    AddBigButtonOverlay("OtherGridBlurred");
-                    SetBigButtonToGrayscale();
-                }
-            });
+            }
         }),
 
         //Crafting Screen
