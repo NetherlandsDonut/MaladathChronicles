@@ -205,7 +205,7 @@ public class Entity
         foreach (var nextQuest in nextQuests)
         {
             find = Site.FindSite(x => x.name == nextQuest.siteStart);
-            if (!newSitesToRespawn.Contains(find)) newSitesToRespawn.Add(find);
+            if (!newSitesToRespawn.Contains(find)) sitesToRespawn.Add(find);
         }
         var sitesRelated = new List<Site>();
         foreach (var site in newSitesToRespawn)
@@ -837,7 +837,7 @@ public class Entity
     {
         for (int i = inventory.items.Count - 1; i >= 0; i--)
             if (inventory.items[i].CanEquip(this, true))
-                inventory.items[i].Equip(this);
+                inventory.items[i].Equip(this, true);
     }
 
     //Unequips items in given list of slots

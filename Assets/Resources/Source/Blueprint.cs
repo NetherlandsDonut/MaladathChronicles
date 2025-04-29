@@ -2002,7 +2002,7 @@ public class Blueprint
                         var item = currentSave.player.Unequip(new() { enchant.type });
                         enchantmentTarget.enchant = enchant;
                         enchantmentTarget = null;
-                        if (item != null) enchantmentTarget.Equip(currentSave.player);
+                        if (item != null) enchantmentTarget.Equip(currentSave.player, true);
                         PlaySound("PutDownGems", 0.8f);
                     }
                     Respawn("CraftingList");

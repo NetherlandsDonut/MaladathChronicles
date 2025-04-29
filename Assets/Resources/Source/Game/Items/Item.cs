@@ -164,7 +164,7 @@ public class Item
     }
 
     //Equips this item on the chosen entity in a specific slot
-    private void Equip(Entity entity, string slot)
+    private void EquipInto(Entity entity, string slot)
     {
         if (slot == "Bag") entity.inventory.bags.Add(this);
         else entity.equipment[slot] = this;
@@ -177,7 +177,8 @@ public class Item
     }
 
     //Equips this item on the chosen entity
-    public void Equip(Entity entity)
+    //Slot action determines how is the item equiped [Auto, ]
+    public void Equip(Entity entity, bool autoSlotting)
     {
         var unequiped = new List<Item>();
         if (type == "Two Handed")
@@ -187,7 +188,7 @@ public class Item
             else 
             {
                 unequiped.AddRange(entity.Unequip(new() { "Off Hand", "Main Hand" }));
-                Equip(entity, "Main Hand");
+                EquipInto(entity, "Main Hand");
             }
         }
         else if (type == "Off Hand")
@@ -196,31 +197,58 @@ public class Item
             if (mainHand != null && mainHand.type == "Two Handed")
                 unequiped.AddRange(entity.Unequip(new() { "Main Hand" }));
             else unequiped.AddRange(entity.Unequip(new() { "Off Hand" }));
-            Equip(entity, "Off Hand");
+            EquipInto(entity, "Off Hand");
         }
         else if (type == "One Handed")
         {
             var mainHand = entity.GetItemInSlot("Main Hand");
             var offHand = entity.GetItemInSlot("Off Hand");
-            if (mainHand != null && mainHand.type != "Two Handed" && entity.abilities.ContainsKey("Dual Wielding Proficiency") && (offHand == null || offHand.ilvl <= mainHand.ilvl))
-            {
-                if (mainHand != null && mainHand.type == "Two Handed")
+
+            //If slot is chosen automatically..
+            if (autoSlotting)
+
+                //If there is a one handed weapon equipped and dual wielding is possible; equip the weapon in the off hand
+                if (mainHand != null && mainHand.type != "Two Handed" && entity.abilities.ContainsKey("Dual Wielding Proficiency"))
+                {
+                    if (mainHand != null && mainHand.type == "Two Handed")
+                        unequiped.AddRange(entity.Unequip(new() { "Main Hand" }));
+                    else unequiped.AddRange(entity.Unequip(new() { "Off Hand" }));
+                    EquipInto(entity, "Off Hand");
+                }
+
+                //Otherwise equip it into the main hand
+                else
+                {
                     unequiped.AddRange(entity.Unequip(new() { "Main Hand" }));
-                else unequiped.AddRange(entity.Unequip(new() { "Off Hand" }));
-                Equip(entity, "Off Hand");
-            }
+                    EquipInto(entity, "Main Hand");
+                }
+
+            //Otherwise equip it into the main slot or with LeftAlt into the offhand
             else
             {
-                unequiped.AddRange(entity.Unequip(new() { "Main Hand" }));
-                Equip(entity, "Main Hand");
+                //If dual wielding is possible and LeftAlt is pressed; equip the weapon in the off hand
+                if (Input.GetKey(KeyCode.LeftAlt) && entity.abilities.ContainsKey("Dual Wielding Proficiency"))
+                {
+                    if (mainHand != null && mainHand.type == "Two Handed")
+                        unequiped.AddRange(entity.Unequip(new() { "Main Hand" }));
+                    else unequiped.AddRange(entity.Unequip(new() { "Off Hand" }));
+                    EquipInto(entity, "Off Hand");
+                }
+
+                //Otherwise equip it into the main hand
+                else
+                {
+                    unequiped.AddRange(entity.Unequip(new() { "Main Hand" }));
+                    EquipInto(entity, "Main Hand");
+                }
             }
         }
-        else if (type == "Bag") Equip(entity, "Bag");
+        else if (type == "Bag") EquipInto(entity, "Bag");
         else
         {
             if (type == null) Debug.Log(name);
             unequiped.AddRange(entity.Unequip(new() { type }));
-            Equip(entity, type);
+            EquipInto(entity, type);
         }
         foreach (var item in unequiped)
             entity.inventory.AddItem(item);
@@ -627,7 +655,7 @@ public class Item
             {
                 if (item == null) return;
                 if (WindowUp("InventorySort")) return;
-                PrintItemTooltip(item, false, buyback == null ? 4 : 1);
+                PrintItemTooltip(item, Input.GetKey(KeyCode.LeftShift), buyback == null ? 4 : 1);
             }
         );
         if (settings.rarityIndicators.Value())
@@ -647,6 +675,7 @@ public class Item
             AddBigButtonOverlay("QuestStarter" + (status == "Can" ? "" : (status == "Active" ? "Active" : "Off")), 0, 4);
         }
         if (item.amount == 0) SetBigButtonToGrayscale();
+        else if (item.IsWearable() && !item.CanEquip(currentSave.player, true)) SetBigButtonToRed();
         if (stockItem != null || item.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.position + new Vector3(32, -27) + new Vector3(38, 0) * ((buyback != null ? currentSave.buyback.items.IndexOf(buyback) : currentSave.vendorStock[town.name + ":" + Person.person.name].FindIndex(x => x.item == item.name)) % 5), item.amount + (false && buyback == null ?  "/" + currentSave.vendorStock[town.name + ":" + Person.person.name].Find(x => x.item == item.name).maxAmount : ""), "", "", "Right");
         if (stockItem != null && stockItem.minutesLeft > 0) AddBigButtonCooldownOverlay(stockItem.minutesLeft / (double)stockItem.restockSpeed);
         else if (buyback != null && buyback.minutesLeft > 0) AddBigButtonCooldownOverlay(buyback.minutesLeft / (double)defines.buybackDecay);
@@ -796,7 +825,7 @@ public class Item
                     if (item.CanEquip(currentSave.player, true))
                     {
                         PlaySound(item.ItemSound("PickUp"), 0.8f);
-                        item.Equip(currentSave.player);
+                        item.Equip(currentSave.player, false);
                         Respawn("Inventory", true);
                         Respawn("PlayerEquipmentInfo", true);
                     }
@@ -1080,36 +1109,50 @@ public class Item
         if (compare && item.IsWearable())
         {
             Item current = null;
+            Item currentSecond = null;
             if (currentSave != null)
                 if (currentSave.player.equipment.ContainsKey(item.type))
                     current = currentSave.player.equipment[item.type];
-                else if (item.type == "Two Handed" || item.type == "One Handed")
-                    current = currentSave.player.equipment["Main Hand"];
+                else if (item.type == "Two Handed")
+                {
+                    current = currentSave.player.equipment.Get("Main Hand");
+                    currentSecond = currentSave.player.equipment.Get("Off Hand");
+                }
+                else if (item.type == "One Handed")
+                    current = Input.GetKey(KeyCode.LeftAlt) ? (currentSave.player.equipment.ContainsKey("Off Hand") ? currentSave.player.equipment["Off Hand"] : null) : (currentSave.player.equipment.ContainsKey("Main Hand") ? currentSave.player.equipment["Main Hand"] : null);
             AddHeaderRegion(() => AddLine("Stat changes on equip:", "DarkGray"));
             AddPaddingRegion(() =>
             {
                 var statsRecorded = new List<string>();
                 var a1 = item.armor;
                 var a2 = current == null ? 0 : current.armor;
-                if (a1 - a2 != 0)
+                var a3 = currentSecond == null ? 0 : currentSecond.armor;
+                if (a1 - a2 - a3 != 0)
                 {
-                    var balance = a1 - a2;
+                    var balance = a1 - a2 - a3;
                     AddLine((balance > 0 ? "+" : "") + balance, balance > 0 ? "Uncommon" : "DangerousRed");
                     AddText(" Armor");
                 }
                 var a1d = item.speed <= 0 ? 1 : Math.Round((1 + Math.Round(item.minDamage / item.speed / 10, 2) + 1 + Math.Round(item.maxDamage / item.speed / 10, 2)) / 2, 2);
                 var a2d = current == null || current.speed <= 0 ? 1 : Math.Round((1 + Math.Round(current.minDamage / current.speed / 10, 2) + 1 + Math.Round(current.maxDamage / current.speed / 10, 2)) / 2, 2);
-                if (a1d - a2d != 0)
+                var a3d = currentSecond == null || currentSecond.speed <= 0 ? 0 : Math.Round((1 + Math.Round(currentSecond.minDamage / currentSecond.speed / 10, 2) + 1 + Math.Round(currentSecond.maxDamage / currentSecond.speed / 10, 2)) / 2, 2);
+                if (a3d > 0)
                 {
-                    var balance = a1d - a2d;
-                    AddLine(((balance > 0 ? "+" : "") + balance).Replace(",", "."), balance > 0 ? "Uncommon" : "DangerousRed");
+                    a2d /= 1.5;
+                    a3d /= 1.5;
+                }
+                if (a1d - a2d - a3d != 0)
+                {
+                    var balance = a1d - a2d - a3d;
+                    AddLine(((balance > 0 ? "+" : "") + Math.Round(balance, 2)).Replace(",", "."), balance > 0 ? "Uncommon" : "DangerousRed");
                     AddText(" Power modifier");
                 }
                 a1 = item.block;
                 a2 = current == null ? 0 : current.block;
-                if (a1 - a2 != 0)
+                a3 = current == null ? 0 : current.block;
+                if (a1 - a2 - a3 != 0)
                 {
-                    var balance = a1 - a2;
+                    var balance = a1 - a2 - a3;
                     AddLine((balance > 0 ? "+" : "") + balance, balance > 0 ? "Uncommon" : "DangerousRed");
                     AddText(" Block");
                 }
@@ -1117,20 +1160,29 @@ public class Item
                     foreach (var stat in item.stats)
                     {
                         statsRecorded.Add(stat.Key);
-                        var balance = current != null && current.stats != null && current.stats.ContainsKey(stat.Key) ? stat.Value - current.stats[stat.Key] : stat.Value;
+                        a2 = current != null && current.stats != null ? current.stats.Get(stat.Key) : 0;
+                        a2 = currentSecond != null && currentSecond.stats != null ? current.stats.Get(stat.Key) : 0;
+                        var balance = stat.Value - a2 - a3;
                         if (balance != 0)
                         {
                             AddLine((balance > 0 ? "+" : "") + balance, balance > 0 ? "Uncommon" : "DangerousRed");
                             AddText(" " + stat.Key);
                         }
                     }
+                var fullLostStats = new Dictionary<string, int>();
                 if (current != null && current.stats != null)
                     foreach (var stat in current.stats)
                         if (!statsRecorded.Contains(stat.Key))
-                        {
-                            AddLine("-" + stat.Value, "DangerousRed");
-                            AddText(" " + stat.Key);
-                        }
+                            fullLostStats.Inc(stat.Key, stat.Value);
+                if (currentSecond != null && currentSecond.stats != null)
+                    foreach (var stat in currentSecond.stats)
+                        if (!statsRecorded.Contains(stat.Key))
+                            fullLostStats.Inc(stat.Key, stat.Value);
+                foreach (var stat in fullLostStats)
+                {
+                    AddLine("-" + stat.Value, "DangerousRed");
+                    AddText(" " + stat.Key);
+                }
                 if (CDesktop.LBWindow().LBRegionGroup().LBRegion().lines.Count == 0)
                     AddLine("No changes", "Gray");
             });

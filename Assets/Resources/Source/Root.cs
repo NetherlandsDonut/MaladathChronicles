@@ -383,6 +383,12 @@ public static class Root
             CloseWindow("HostileAreaQuestTracker");
             Respawn("HostileArea");
         }
+        Respawn("HostileAreaQuestAvailable", true);
+        Respawn("HostileAreaQuestDone", true);
+        Respawn("TownQuestAvailable", true);
+        Respawn("TownQuestDone", true);
+        CloseWindow("QuestAdd");
+        CloseWindow("QuestTurn");
         if (CDesktop.title == "Map") Respawn("WorldBuffs", true);
         if (windows != null)
             foreach (var window in windows)

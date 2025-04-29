@@ -149,7 +149,7 @@ public class Desktop : MonoBehaviour
     {
         if (GetKey(KeyCode.LeftControl) && GetKeyDown(KeyCode.S)) GameSettings.settings.soundEffects.Invert();
         if (GetKey(KeyCode.LeftControl) && GetKeyDown(KeyCode.M)) GameSettings.settings.music.Invert();
-        if (GetKeyDown(KeyCode.LeftShift) || GetKeyUp(KeyCode.LeftShift) || GetKeyDown(KeyCode.LeftControl) || GetKeyUp(KeyCode.LeftControl)) CloseWindow("Tooltip");
+        if (GetKeyDown(KeyCode.LeftShift) || GetKeyUp(KeyCode.LeftShift) || GetKeyDown(KeyCode.LeftControl) || GetKeyUp(KeyCode.LeftControl) || GetKeyDown(KeyCode.LeftAlt) || GetKeyUp(KeyCode.LeftAlt)) CloseWindow("Tooltip");
         if (mouseOver != null)
         {
             if (GetMouseButtonDown(0)) mouseOver.MouseDown("Left");
