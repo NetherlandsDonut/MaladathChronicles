@@ -1795,11 +1795,188 @@
     {
       "playerSide": "Horde",
       "player": {
-        "currentQuests": [],
-        "completedQuests": [],
-        "level": 1,
-        "experience": 20,
-        "uniquesGotten": [],
+        "currentQuests": [
+          {
+            "questID": 792,
+            "requiredLevel": 2,
+            "questLevel": 4,
+            "name": "Vile Familiars",
+            "description": "I trust the Valley of Trials will teach you much, young $C.$B$BI was sent to the Valley to guide you, but I have discovered a growing taint here...$B$BA group that calls itself the Burning Blade has a coven here in the Valley of Trials. They are skulking in a cave to the northeast, and their Vile Familiars have spilled from its mouth to cause havoc.$B$BAs your first task against the Burning Blade, I bid you, defeat these familiars. Slay many and, if you survive, return to me.",
+            "objective": "Kill 3 Vile Familiars and return to Zureetha Fargaze outside the Den.",
+            "completion": "You have done well, $N.$B$BAlthough the Vile Familiars were merely pets of the darker powers within the Burning Blade, your success against them foretells greater deeds ahead.",
+            "siteStart": "The Den",
+            "siteEnd": "The Den",
+            "zone": "Durotar",
+            "experience": 445,
+            "rewards": {
+              "Primitive Club": 1,
+              "Primitive Hand Blade": 1,
+              "Primitive Hatchet": 1,
+              "Primitive Walking Stick": 1
+            },
+            "reputationGain": {
+              "Darkspear Trolls": 350,
+              "Orgrimmar": 350
+            },
+            "conditions": [
+              {
+                "type": "Kill",
+                "name": "Vile Familiar",
+                "amount": 3,
+                "amountDone": 2
+              }
+            ]
+          },
+          {
+            "questID": 794,
+            "requiredLevel": 2,
+            "questLevel": 5,
+            "name": "Burning Blade Medallion",
+            "description": "Through my divinations, I see that an item of power hides deep within the Burning Blade Coven, guarded by beasts and black magic.$B$BIt is called the Burning Blade Medallion, and your next task is to find it and remove it from the coven.$B$BBut be wary, for the medallion may be possessed by an agent of the Burning Blade.$B$BIf so then the agent's power would be greater than the familiars you have already encountered.$B$BGo, $N. You will find the coven in a cave, to the north and west.",
+            "objective": "Bring the Burning Blade Medallion to Zureetha Fargaze, outside The Den.",
+            "completion": "You retrieved it! Well done!$B$BYour efforts within the Burning Blade Coven are key in rooting out this cult in the Valley of Trials. But I fear they have further aims in our land.$B$BWe have not seen the end of them.",
+            "siteStart": "The Den",
+            "siteEnd": "The Den",
+            "zone": "Durotar",
+            "experience": 670,
+            "rewards": {
+              "Dust-covered Leggings": 1,
+              "Jagged Chain Vest": 1,
+              "Ripped Pants": 1
+            },
+            "reputationGain": {
+              "Darkspear Trolls": 500,
+              "Orgrimmar": 500
+            },
+            "conditions": [
+              {
+                "type": "Item",
+                "name": "Burning Blade Medallion",
+                "amount": 1
+              }
+            ]
+          },
+          {
+            "questID": 818,
+            "requiredLevel": 5,
+            "questLevel": 7,
+            "name": "A Solvent Spirit",
+            "description": "Although my eyes fail me, I still can see clearly enough. More often I must rely on my alchemical skills to aid me in magics that once came easily. But I refuse to take on an apprentice--no troll or orc worthy enough has ever come forward.$B$BAre you worthy? Yes, of course you are... of course you think you are.$B$BI need a few things. Will you get them for me?$B$BI need intact makrura eyes, and vials of crawler mucus. You can find them on any makrura or crawler in Durotar. We shall speak again soon.",
+            "objective": "Bring 4 Intact Makrura Eyes and 8 vials of Crawler Mucus to Master Vornal in Sen'jin Village.",
+            "completion": "Well done, young one... well done indeed.",
+            "siteStart": "Sen'jin Village",
+            "siteEnd": "Sen'jin Village",
+            "zone": "Durotar",
+            "money": 175,
+            "experience": 630,
+            "rewards": {
+              "Really Sticky Glue": 1
+            },
+            "reputationGain": {
+              "Darkspear Trolls": 250,
+              "Orgrimmar": 250
+            },
+            "conditions": [
+              {
+                "type": "Item",
+                "name": "Intact Makrura Eye",
+                "amount": 2
+              },
+              {
+                "type": "Item",
+                "name": "Crawler Mucus",
+                "amount": 3
+              }
+            ]
+          },
+          {
+            "questID": 817,
+            "requiredLevel": 5,
+            "questLevel": 8,
+            "name": "Practical Prey",
+            "description": "Many of the hides we use come from Durotar tigers, $N. Blankets, armor, tents: there are a great many reasons we hunt the beasts, and many reasons we let them thrive at the same time.$B$BThe time has come for us to cull the flock, so to speak. Our numbers grow, and our needs are beginning to overwhelm our stocks. I need more hides if I'm to prepare suitable goods for our people.$B$BBring me 4 Durotar tiger furs, and I shall reward you. You can find them on the islands south of here.",
+            "objective": "Bring 4 Durotar Tiger Furs to Vel'rin Fang in Sen'jin Village.",
+            "completion": "I am pleased, $N. Because of your help, our people will be protected, and not go cold as the seasons change.$B$BThank you.",
+            "siteStart": "Sen'jin Village",
+            "siteEnd": "Sen'jin Village",
+            "zone": "Durotar",
+            "money": 225,
+            "experience": 700,
+            "reputationGain": {
+              "Darkspear Trolls": 250,
+              "Orgrimmar": 250
+            },
+            "conditions": [
+              {
+                "type": "Item",
+                "name": "Durotar Tiger Fur",
+                "amount": 3
+              }
+            ]
+          },
+          {
+            "questID": 786,
+            "requiredLevel": 5,
+            "questLevel": 8,
+            "name": "Thwarting Kolkar Aggression",
+            "description": "Lower your voice, $C. The Kolkar centaurs lie just over the ridge to the west in Kolkar Crag.$B$BLast night while they were raiding, I snuck into their village and discovered that the dirty beasts have a three-tiered attack planned on the trolls and orcs of Durotar.$B$BWe mustn't let their invasion come to fruition. Perhaps you can muster the might needed to infiltrate Kolkar Crag and destroy their attack plans.$B$BLast I saw, they had divided them up amongst three of their leaders.",
+            "objective": "Lar Prowltusk outside of Sen'jin Village wants you to destroy the 3 sets of Attack Plans held within Kolkar Crag.",
+            "completion": "The Horde would surely prevail if the Kolkar centaurs were to attack. But by preventing such an attack. we have spared our mighty warriors unnecessary bloodshed.$B$BAnd as sure as there is sand in the Tanaris desert. we know that there will be blood spilled before these trying times are through.$B$BYou have served your people well. $C.",
+            "siteStart": "Sen'jin Village",
+            "siteEnd": "Kolkar Crag",
+            "zone": "Durotar",
+            "experience": 700,
+            "rewards": {
+              "Seasoned Fighter's Cloak": 1,
+              "Heavy Cord Bracers": 1
+            },
+            "reputationGain": {
+              "Darkspear Trolls": 250,
+              "Orgrimmar": 250
+            },
+            "conditions": []
+          },
+          {
+            "questID": 808,
+            "requiredLevel": 4,
+            "questLevel": 9,
+            "name": "Minshina's Skull",
+            "description": "I hear the voice of my brother, Minshina, calling to me in my dreams.$B$BHe was taken by Zalazane, the warlock on the Echo Isles to the east. And he is dead.$B$BBut death is not freedom for my brother. Minshina's spirit was trapped within his own skull by Zalazane's magics. In my dreams I see it with other skulls, in a circle of power on the largest Echo Isle. As long as it remains there my brother's soul is doomed.$B$BPlease, $N. Find the circle and retrieve Minshina's skull. Bring it to me.$B$BFree him!",
+            "objective": "Retrieve Minshina's skull from the circle of power on the Echo Isles.$B$BBring it to Master Gadrin in Sen'jin Village.",
+            "completion": "Thank you, $N. You have saved Minshina. You have saved my brother's spirit from slavery!",
+            "siteStart": "Sen'jin Village",
+            "siteEnd": "Sen'jin Village",
+            "zone": "Durotar",
+            "experience": 780,
+            "rewards": {
+              "Faintly Glowing Skull": 1
+            },
+            "reputationGain": {
+              "Darkspear Trolls": 250,
+              "Orgrimmar": 250
+            },
+            "conditions": [
+              {
+                "type": "Item",
+                "name": "Minshina's Skull",
+                "amount": 1
+              }
+            ]
+          }
+        ],
+        "completedQuests": [
+          4641,
+          788,
+          790,
+          789,
+          804,
+          823
+        ],
+        "level": 6,
+        "experience": 2622,
+        "uniquesGotten": [
+          "Sarkoth's Mangled Claw"
+        ],
         "reputation": {
           "Southsea Pirates": 0,
           "Razormane Tribe": 0,
@@ -1813,7 +1990,7 @@
           "Magram Clan": 0,
           "Gelkis Clan": 0,
           "Kolkar Clan": 0,
-          "Orgrimmar": 4600,
+          "Orgrimmar": 5525,
           "Frostwolf Clan": 4250,
           "The Defiler's": 4250,
           "Thunder Bluff": 4250,
@@ -1868,10 +2045,12 @@
           "Mosshide Tribe": 0,
           "Deadwood Tribe": 0,
           "Bloodtooth Tribe": 0,
-          "Bristleback Tribe": 0
+          "Bristleback Tribe": 0,
+          "Darkspear Trolls": 5125
         },
         "professionSkills": {},
         "learnedRecipes": {},
+        "unspentTalentPoints": 1,
         "faction": "Orgrimmar",
         "name": "Sherga",
         "race": "Orc",
@@ -1892,13 +2071,19 @@
           "Dagger Proficiency": 0,
           "Lightning Bolt": 0,
           "Stormstrike": 0,
-          "Healing Wave": 0
+          "Healing Wave": 0,
+          "Flame Shock": 0,
+          "Lava Burst": 0,
+          "Liquid Magma Totem": 0,
+          "Searing Flames": 0
         },
         "currentActionSet": "Default",
         "actionBars": {
           "Default": [
             "Lightning Bolt",
-            "Healing Wave"
+            "Healing Wave",
+            "Flame Shock",
+            "Lava Burst"
           ]
         },
         "stats": {
@@ -1919,7 +2104,7 @@
           "Order Mastery": 1
         },
         "inventory": {
-          "money": 122751,
+          "money": 121506,
           "items": [
             {
               "rarity": "Common",
@@ -1935,103 +2120,6 @@
               "abilities": {
                 "Hearthstone": 1
               }
-            },
-            {
-              "x": 1,
-              "rarity": "Common",
-              "name": "Short Staff",
-              "icon": "itemstaff02",
-              "detailedType": "Staff",
-              "type": "Two Handed",
-              "ilvl": 4,
-              "lvl": 1,
-              "minDamage": 5,
-              "maxDamage": 8,
-              "amount": 1,
-              "maxStack": 1,
-              "price": 20,
-              "speed": 3.2
-            },
-            {
-              "x": 2,
-              "rarity": "Common",
-              "name": "Shortsword",
-              "icon": "itemsword04",
-              "detailedType": "Sword",
-              "type": "One Handed",
-              "ilvl": 3,
-              "lvl": 1,
-              "minDamage": 2,
-              "maxDamage": 4,
-              "amount": 1,
-              "maxStack": 1,
-              "price": 10,
-              "speed": 2.6
-            },
-            {
-              "x": 3,
-              "rarity": "Common",
-              "name": "Worn Mace",
-              "icon": "itemmace03",
-              "detailedType": "Mace",
-              "type": "One Handed",
-              "ilvl": 2,
-              "lvl": 1,
-              "minDamage": 1,
-              "maxDamage": 3,
-              "amount": 1,
-              "maxStack": 1,
-              "price": 7,
-              "speed": 1.9
-            },
-            {
-              "x": 4,
-              "rarity": "Common",
-              "name": "Club",
-              "icon": "itemmace10",
-              "detailedType": "Mace",
-              "type": "One Handed",
-              "ilvl": 3,
-              "lvl": 1,
-              "minDamage": 1,
-              "maxDamage": 3,
-              "amount": 1,
-              "maxStack": 1,
-              "price": 10,
-              "speed": 1.9
-            },
-            {
-              "y": 1,
-              "rarity": "Common",
-              "name": "Club",
-              "icon": "itemmace10",
-              "detailedType": "Mace",
-              "type": "One Handed",
-              "ilvl": 3,
-              "lvl": 1,
-              "minDamage": 1,
-              "maxDamage": 3,
-              "amount": 1,
-              "maxStack": 1,
-              "price": 10,
-              "speed": 1.9
-            },
-            {
-              "x": 1,
-              "y": 1,
-              "rarity": "Common",
-              "name": "Dirk",
-              "icon": "itemshortblade14",
-              "detailedType": "Dagger",
-              "type": "One Handed",
-              "ilvl": 3,
-              "lvl": 1,
-              "minDamage": 1,
-              "maxDamage": 3,
-              "amount": 1,
-              "maxStack": 1,
-              "price": 11,
-              "speed": 1.6
             }
           ],
           "bags": []
@@ -2039,52 +2127,13 @@
         "mounts": [],
         "equipment": {
           "Off Hand": {
-            "x": 3,
-            "rarity": "Common",
-            "name": "Hand Axe",
-            "icon": "itemaxe19",
-            "detailedType": "Axe",
-            "type": "One Handed",
-            "ilvl": 4,
-            "lvl": 1,
-            "minDamage": 2,
-            "maxDamage": 4,
-            "amount": 1,
-            "maxStack": 1,
-            "price": 16,
-            "speed": 2.0
-          },
-          "Legs": {
-            "rarity": "Poor",
-            "name": "Primitive Kilt",
-            "icon": "itempants02",
-            "type": "Legs",
-            "armorClass": "Leather",
-            "ilvl": 1,
-            "lvl": 1,
-            "armor": 14,
-            "amount": 1,
-            "maxStack": 1,
-            "price": 1
-          },
-          "Chest": {
-            "rarity": "Common",
-            "name": "Primitive Mantle",
-            "icon": "itemmisccape14",
-            "type": "Chest",
-            "ilvl": 1,
-            "lvl": 1,
-            "amount": 1,
-            "maxStack": 1,
-            "price": 1
-          },
-          "Main Hand": {
             "x": 4,
             "rarity": "Common",
-            "name": "Hand Axe",
-            "icon": "itemaxe19",
-            "detailedType": "Axe",
+            "name": "Small Wooden Hammer",
+            "icon": "itemhammer15",
+            "detailedType": "Mace",
             "type": "One Handed",
+            "source": "RareDrop",
             "ilvl": 4,
             "lvl": 1,
             "minDamage": 2,
@@ -2092,39 +2141,234 @@
             "amount": 1,
             "maxStack": 1,
             "price": 16,
-            "speed": 2.0
+            "speed": 1.9
+          },
+          "Legs": {
+            "x": 1,
+            "y": 1,
+            "rarity": "Common",
+            "name": "Battleworn Chain Leggings",
+            "icon": "itempants03",
+            "type": "Legs",
+            "armorClass": "Mail",
+            "source": "Quest",
+            "ilvl": 5,
+            "lvl": 1,
+            "armor": 58,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 14
+          },
+          "Chest": {
+            "x": 2,
+            "y": 1,
+            "rarity": "Common",
+            "name": "Frostmane Leather Vest",
+            "icon": "itemchestwolf",
+            "type": "Chest",
+            "armorClass": "Leather",
+            "source": "RareDrop",
+            "ilvl": 4,
+            "lvl": 1,
+            "armor": 29,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 8
+          },
+          "Main Hand": {
+            "x": 1,
+            "rarity": "Common",
+            "name": "Small Wooden Hammer",
+            "icon": "itemhammer15",
+            "detailedType": "Mace",
+            "type": "One Handed",
+            "source": "RareDrop",
+            "ilvl": 4,
+            "lvl": 1,
+            "minDamage": 2,
+            "maxDamage": 4,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 16,
+            "speed": 1.9
+          },
+          "Back": {
+            "x": 2,
+            "y": 1,
+            "rarity": "Common",
+            "name": "Ancestral Cloak",
+            "icon": "itemmisccape10",
+            "type": "Back",
+            "source": "RareDrop",
+            "ilvl": 9,
+            "lvl": 4,
+            "armor": 8,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 32
+          },
+          "Hands": {
+            "y": 1,
+            "rarity": "Common",
+            "name": "Battleworn Leather Gloves",
+            "icon": "itemgauntlets05",
+            "type": "Hands",
+            "armorClass": "Leather",
+            "source": "Quest",
+            "ilvl": 5,
+            "lvl": 1,
+            "armor": 21,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 5
+          },
+          "Waist": {
+            "y": 1,
+            "rarity": "Common",
+            "name": "Soft Wool Belt",
+            "icon": "itembelt03",
+            "type": "Waist",
+            "armorClass": "Cloth",
+            "source": "Quest",
+            "ilvl": 5,
+            "lvl": 1,
+            "armor": 6,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 5
           }
         },
         "worldBuffs": []
       },
-      "hour": 7,
-      "minute": 2,
-      "second": 48,
-      "currentSite": "The Den",
+      "hour": 21,
+      "minute": 26,
+      "second": 54,
+      "currentSite": "Sen'jin Village",
       "ringOfLaw": "Gorosh the Dervish",
       "forlornCloister": "Fallen Champion",
       "markets": [
         {
           "name": "Alliance Market",
           "auctions": [],
-          "hoursSinceUpdate": 48
+          "hoursSinceUpdate": 62
         },
         {
           "name": "Horde Market",
           "auctions": [],
-          "hoursSinceUpdate": 48
+          "hoursSinceUpdate": 62
         }
       ],
-      "openedChests": {},
+      "openedChests": {
+        "Valley of Trials": {
+          "area": "Valley of Trials",
+          "inventory": {
+            "items": [],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
+        },
+        "Den Overhill": {
+          "area": "Den Overhill",
+          "inventory": {
+            "items": [
+              {
+                "x": 1,
+                "rarity": "Common",
+                "name": "Rough Stone",
+                "icon": "itemstone06",
+                "detailedType": "Rock",
+                "type": "Trade Good",
+                "source": "RareDrop",
+                "ilvl": 5,
+                "lvl": 1,
+                "amount": 2,
+                "maxStack": 20,
+                "price": 2
+              },
+              {
+                "x": 2,
+                "rarity": "Uncommon",
+                "name": "Shadowgem",
+                "icon": "itemmiscgemamethyst01",
+                "detailedType": "Gem",
+                "type": "Trade Good",
+                "source": "RareDrop",
+                "ilvl": 20,
+                "lvl": 1,
+                "amount": 1,
+                "maxStack": 20,
+                "price": 250
+              }
+            ],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
+        },
+        "Burning Blade Coven": {
+          "area": "Burning Blade Coven",
+          "inventory": {
+            "items": [
+              {
+                "x": 1,
+                "rarity": "Common",
+                "name": "Silverleaf",
+                "icon": "itemmischerb10",
+                "detailedType": "Flowers",
+                "type": "Trade Good",
+                "source": "RareDrop",
+                "ilvl": 5,
+                "lvl": 1,
+                "amount": 3,
+                "maxStack": 20,
+                "price": 10
+              },
+              {
+                "x": 2,
+                "rarity": "Common",
+                "name": "Rough Stone",
+                "icon": "itemstone06",
+                "detailedType": "Rock",
+                "type": "Trade Good",
+                "source": "RareDrop",
+                "ilvl": 5,
+                "lvl": 1,
+                "amount": 2,
+                "maxStack": 20,
+                "price": 2
+              }
+            ],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
+        }
+      },
       "fishingSpots": {},
       "fishingSpoils": {},
-      "siteProgress": {},
-      "commonsKilled": {},
+      "siteProgress": {
+        "Valley of Trials": 3,
+        "Den Overhill": 3,
+        "Burning Blade Coven": 4
+      },
+      "commonsKilled": {
+        "Mottled Boar": 3,
+        "Scorpid Worker": 3,
+        "Vile Familiar": 2,
+        "Burning Blade Novice": 2
+      },
       "raresKilled": {},
-      "elitesKilled": {},
+      "elitesKilled": {
+        "Sarkoth": 1
+      },
       "siteVisits": {
-        "The Den": 7,
-        "Valley of Trials": 0
+        "The Den": 14,
+        "Valley of Trials": 7,
+        "Rocky Desert": 1,
+        "Razor Hill": 4,
+        "Burning Blade Coven": 3,
+        "Den Overhill": 1,
+        "Sen'jin Village": 6,
+        "Kolkar Crag": 1,
+        "Darkspear Strand": 2
       },
       "unlockedAreas": [],
       "vendorStock": {
@@ -2137,35 +2381,32 @@
           },
           {
             "item": "Club",
+            "amount": 2,
             "maxAmount": 2,
-            "minutesLeft": 38,
             "restockSpeed": 40
           },
           {
             "item": "Shortsword",
-            "amount": 1,
+            "amount": 2,
             "maxAmount": 2,
-            "minutesLeft": 38,
             "restockSpeed": 40
           },
           {
             "item": "Short Staff",
-            "amount": 1,
+            "amount": 2,
             "maxAmount": 2,
-            "minutesLeft": 38,
             "restockSpeed": 40
           },
           {
             "item": "Hand Axe",
+            "amount": 2,
             "maxAmount": 2,
-            "minutesLeft": 38,
             "restockSpeed": 40
           },
           {
             "item": "Dirk",
-            "amount": 1,
+            "amount": 2,
             "maxAmount": 2,
-            "minutesLeft": 40,
             "restockSpeed": 40
           },
           {
@@ -2180,18 +2421,407 @@
             "maxAmount": 2,
             "restockSpeed": 40
           }
+        ],
+        "Razor Hill:Ghrawt": [
+          {
+            "item": "Hornwood Recurve Bow",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Laminated Recurve Bow",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Rough Arrow",
+            "amount": 1,
+            "maxAmount": 2,
+            "minutesLeft": 13,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Sharp Arrow",
+            "amount": 1,
+            "maxAmount": 2,
+            "minutesLeft": 13,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Small Quiver",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Medium Quiver",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
+        ],
+        "Razor Hill:Flakk": [
+          {
+            "item": "Coarse Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Bleach",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Red Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mild Spices",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Weak Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mining Pick",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Empty Vial",
+            "amount": 1,
+            "maxAmount": 2,
+            "minutesLeft": 13,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Salt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Blacksmith Hammer",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Copper Rod",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Fishing Pole",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Blue Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Shiny Bauble",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Skinning Knife",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
+        ],
+        "Sen'jin Village:Trayexir": [
+          {
+            "item": "Gladius",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Two-handed Sword",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Tomahawk",
+            "amount": 1,
+            "maxAmount": 2,
+            "minutesLeft": 21,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Large Axe",
+            "maxAmount": 2,
+            "minutesLeft": 12,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Cudgel",
+            "maxAmount": 2,
+            "minutesLeft": 21,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Wooden Mallet",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Stiletto",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Walking Stick",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Hornwood Recurve Bow",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Laminated Recurve Bow",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Rough Arrow",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Sharp Arrow",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Small Quiver",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Medium Quiver",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
+        ],
+        "Sen'jin Village:Hai'zan": [
+          {
+            "item": "Tough Jerky",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Haunch of Meat",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mutton Chop",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Wild Hog Shank",
+            "maxAmount": 2,
+            "minutesLeft": 21,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Cured Ham Steak",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Roasted Quail",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       },
       "banks": {},
       "buyback": {
-        "items": [],
+        "items": [
+          {
+            "x": 1,
+            "y": 1,
+            "rarity": "Common",
+            "name": "Large Axe",
+            "icon": "itemaxe10",
+            "detailedType": "Axe",
+            "type": "Two Handed",
+            "ilvl": 8,
+            "lvl": 3,
+            "minDamage": 9,
+            "maxDamage": 15,
+            "amount": 1,
+            "minutesLeft": 11,
+            "maxStack": 1,
+            "price": 96,
+            "speed": 2.8
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "rarity": "Common",
+            "name": "Large Axe",
+            "icon": "itemaxe10",
+            "detailedType": "Axe",
+            "type": "Two Handed",
+            "ilvl": 8,
+            "lvl": 3,
+            "minDamage": 9,
+            "maxDamage": 15,
+            "amount": 1,
+            "minutesLeft": 11,
+            "maxStack": 1,
+            "price": 96,
+            "speed": 2.8
+          },
+          {
+            "x": 3,
+            "y": 1,
+            "rarity": "Uncommon",
+            "name": "Tigerseye",
+            "icon": "itemmiscgemopal03",
+            "detailedType": "Gem",
+            "type": "Trade Good",
+            "source": "RareDrop",
+            "ilvl": 15,
+            "lvl": 1,
+            "amount": 1,
+            "minutesLeft": 11,
+            "maxStack": 20,
+            "price": 100
+          },
+          {
+            "x": 4,
+            "y": 1,
+            "rarity": "Common",
+            "name": "Peacebloom",
+            "icon": "itemmiscflower02",
+            "detailedType": "Flowers",
+            "type": "Trade Good",
+            "source": "RareDrop",
+            "ilvl": 5,
+            "lvl": 1,
+            "amount": 3,
+            "minutesLeft": 11,
+            "maxStack": 20,
+            "price": 10
+          },
+          {
+            "y": 2,
+            "rarity": "Common",
+            "name": "Tomahawk",
+            "icon": "itemthrowingaxe03",
+            "detailedType": "Axe",
+            "type": "One Handed",
+            "ilvl": 9,
+            "lvl": 4,
+            "minDamage": 4,
+            "maxDamage": 9,
+            "amount": 1,
+            "minutesLeft": 17,
+            "maxStack": 1,
+            "price": 108,
+            "speed": 1.7
+          },
+          {
+            "x": 1,
+            "y": 2,
+            "rarity": "Common",
+            "name": "Cudgel",
+            "icon": "itemtorchunlit",
+            "detailedType": "Mace",
+            "type": "One Handed",
+            "ilvl": 7,
+            "lvl": 2,
+            "minDamage": 3,
+            "maxDamage": 7,
+            "amount": 1,
+            "minutesLeft": 17,
+            "maxStack": 1,
+            "price": 56,
+            "speed": 1.8
+          },
+          {
+            "x": 2,
+            "y": 2,
+            "rarity": "Common",
+            "name": "Cudgel",
+            "icon": "itemtorchunlit",
+            "detailedType": "Mace",
+            "type": "One Handed",
+            "ilvl": 7,
+            "lvl": 2,
+            "minDamage": 3,
+            "maxDamage": 7,
+            "amount": 1,
+            "minutesLeft": 17,
+            "maxStack": 1,
+            "price": 56,
+            "speed": 1.8
+          },
+          {
+            "x": 3,
+            "y": 2,
+            "rarity": "Common",
+            "name": "Wild Hog Shank",
+            "icon": "itemmiscfood13",
+            "detailedType": "Food",
+            "type": "Miscellaneous",
+            "source": "RareDrop",
+            "ilvl": 35,
+            "amount": 2,
+            "minutesLeft": 17,
+            "maxStack": 20,
+            "price": 50
+          }
+        ],
         "bags": [],
         "ignoreSpaceChecks": true
       },
       "startDate": "2025-04-28T20:12:13.934679+02:00",
-      "lastLoaded": "2025-04-29T15:21:59.2513828+02:00",
-      "lastPlayed": "2025-04-29T15:22:16.6819213+02:00",
-      "timePlayed": "00:09:50.6921780"
+      "lastLoaded": "2025-04-30T15:50:42.3196333+02:00",
+      "lastPlayed": "2025-04-30T16:16:35.8795355+02:00",
+      "timePlayed": "01:12:31.9435716"
     }
   ]
 }

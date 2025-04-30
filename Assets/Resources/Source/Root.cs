@@ -897,7 +897,29 @@ public static class Root
                 percentage -= value;
                 first++;
             }
-        newObject.GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 164);
+        newObject.GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 225);
+        newObject.GetComponent<SpriteRenderer>().sprite = sprites[Math.Abs(sprites.Length - 1 - first)];
+        return newObject;
+    }
+
+    public static GameObject AddBigButtonBuybackOverlay(double percentage)
+    {
+        var region = CDesktop.LBWindow().LBRegionGroup().LBRegion();
+        var button = region.LBBigButton().gameObject;
+        var newObject = new GameObject("BigButtonGrid", typeof(SpriteRenderer));
+        newObject.transform.parent = button.transform;
+        newObject.transform.localPosition = new Vector3(0, 0, -0.01f);
+        var sprites = Resources.LoadAll<Sprite>("Sprites/Other/BuybackBig");
+        newObject.GetComponent<SpriteRenderer>().sortingLayerName = CDesktop.LBWindow().layer;
+        var value = 1.0 / sprites.Length;
+        var first = 0;
+        for (int i = 0; i < sprites.Length - 1; i++)
+            if (percentage > value)
+            {
+                percentage -= value;
+                first++;
+            }
+        newObject.GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 225);
         newObject.GetComponent<SpriteRenderer>().sprite = sprites[Math.Abs(sprites.Length - 1 - first)];
         return newObject;
     }
