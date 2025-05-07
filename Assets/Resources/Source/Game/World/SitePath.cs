@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using static Defines;
-using static SaveGame;
 
 public class SitePath
 {
@@ -106,40 +105,105 @@ public class SitePath
     //EXTERNAL FILE: List containing all paths in-game
     public static List<SitePath> paths;
 
+    //EXTERNAL FILE: List containing all paths in-game
+    public static Dictionary<SitePath, (int distance, SitePath parent)> pathInfo;
+
     //Finds the path with the least points in between the two given sites
     public static List<SitePath> FindPath(Site from, Site to, bool ignoreProgress = false)
     {
+        //If either the starting site or the end site don't exist, return an empty path
         if (from == null || to == null) return new();
-        List<SitePath> bestPath = null;
-        var possiblePaths = new List<List<SitePath>>();
-        if (!pathsConnectedToSite.ContainsKey(from.name)) return new();
-        possiblePaths = pathsConnectedToSite[from.name].Select(x => new List<SitePath> { x }).ToList();
-        while (bestPath == null && possiblePaths.Count > 0) ContinuePaths();
-        return bestPath;
 
-        void ContinuePaths()
+        //The best path we are looking for
+        List<SitePath> bestPath = new();
+
+        //If no sites go out of the starting site just return an empty path
+        if (!pathsConnectedToSite.ContainsKey(from.name)) return new();
+
+        //Get all the branching paths from the starting site
+        var possiblePaths = pathsConnectedToSite[from.name].ToList();
+
+        //If we already reach the destination on the first branching
+        //then just return the path that matches the condition and end it
+        var findWinner = possiblePaths.Find(x => x.sites.Any(y => y == to.name));
+        if (findWinner != null) return new() { findWinner };
+
+        //From the starting branchings get the node information
+        pathInfo = possiblePaths.ToDictionary(x => x, x => (x.points.Count, (SitePath)null));
+
+        //Continue searching while best the path still wasn't chosen
+        while (possiblePaths.Count > 0)
         {
-            if (!defines.fasterPathfinding)
-                possiblePaths = possiblePaths.OrderBy(x => x.Sum(y => y.points.Count)).ToList();
-            var initialAmount = possiblePaths.Count;
-            var allVisitedSites = possiblePaths.SelectMany(y => y.SelectMany(x => x.sites)).Distinct().ToList();
-            for (int i = 0; i < initialAmount; i++)
+            //Set the first path as the current one
+            var currentPath = possiblePaths[0];
+
+            //Remove this path from the list to not consider it again
+            possiblePaths.Remove(currentPath);
+
+            //Get sites that were connected by the parent path
+            var previousSites = pathInfo[currentPath].parent?.sites;
+
+            //We are at a place which the parent path knew about
+            var whereAreWe = currentPath.sites.Find(x => previousSites == null ? x != from.name : !previousSites.Contains(x));
+
+            //If we have never visited this site, don't continue
+            if (!ignoreProgress && !SaveGame.currentSave.siteVisits.ContainsKey(whereAreWe)) continue;
+
+            //New paths branching out from this path being taken
+            var newPaths = pathsConnectedToSite[whereAreWe].Where(x => x != currentPath);
+
+            //For each path that branches out..
+            foreach (var path in newPaths)
             {
-                var path = possiblePaths[i];
-                if (path.Last().sites.Contains(to.name))
+                //Add new entry to the node info if it doesn't exist yet
+                if (!pathInfo.ContainsKey(path))
                 {
-                    bestPath = path;
-                    return;
+                    //Add info about this path and calculate it's distance from the start
+                    pathInfo.Add(path, (path.points.Count + pathInfo[currentPath].distance, currentPath));
+
+                    //If this path is connected to the destination we are done
+                    if (path.sites.Any(y => y == to.name))
+                    {
+                        if (bestPath.Count == 1 && pathInfo[bestPath[0]].distance > pathInfo[path].distance) bestPath[0] = path;
+                        else if (bestPath.Count == 0) bestPath.Add(path);
+                        break;
+                    }
+
+                    //Add this branched path to the list to be checked
+                    if (bestPath.Count == 0 || pathInfo[bestPath[0]].distance > pathInfo[path].distance) possiblePaths.Add(path);
                 }
-                var visitedSites = path.SelectMany(x => x.sites).ToList();
-                var newestSite = path.Last().sites[from.name == path.Last().sites[0] || visitedSites.Count(x => x == path.Last().sites[0]) == 2 ? 1 : 0];
-                if (!ignoreProgress && !currentSave.siteVisits.ContainsKey(newestSite)) continue;
-                var newPaths = pathsConnectedToSite[newestSite];
-                foreach (var newPath in newPaths)
-                    if (!allVisitedSites.Contains(newPath.sites.Find(x => x != newestSite)))
-                        possiblePaths.Add(path.Concat(new List<SitePath> { newPath }).ToList());
+
+                //If this path was taken before but is rechecked..
+                else
+                {
+                    //If the new cost of travel is better than the last one..
+                    var newCost = path.points.Count + pathInfo[currentPath].distance;
+                    if (newCost < pathInfo[path].distance)
+                    {
+                        //Replace the old cost and parent to this one because a better path was found
+                        pathInfo[path] = (newCost, currentPath);
+
+                        //If this path isn't on the list to be checked, add it to it
+                        if (!possiblePaths.Contains(path) && (bestPath.Count == 0 || pathInfo[bestPath[0]].distance > pathInfo[path].distance))
+                            possiblePaths.Add(path);
+                    }
+                }
             }
-            possiblePaths.RemoveRange(0, initialAmount);
         }
+
+        //If best path was found there will be the final path in the bestPath list..
+        if (bestPath.Count == 1)
+        {
+            var node = bestPath[0];
+            while (pathInfo[node].parent != null)
+            {
+                node = pathInfo[node].parent;
+                bestPath.Add(node);
+            }
+            bestPath.Reverse();
+        }
+
+        //Return the best path
+        return bestPath;
     }
 }
