@@ -682,7 +682,7 @@ public class Entity
             else if (this.resources[resource] < 0) this.resources[resource] = 0;
         }
         Board.board.UpdateResourceBars(Board.board.participants.FindIndex(x => x.who == this), resources.Keys.ToList());
-        Respawn((this == Board.board.participants[0].who ? "Player" : "Enemy") + "BattleInfo");
+        Respawn((Board.board.participants.Find(x => x.who == this).team == 1 ? "Player" : "Enemy") + "BattleInfo");
     }
 
     //Detracts specific resource in given amount from the entity
@@ -711,7 +711,7 @@ public class Entity
                 this.resources[resource] = 0;
         }
         Board.board.UpdateResourceBars(Board.board.participants.FindIndex(x => x.who == this), resources.Keys.ToList());
-        Respawn((this == Board.board.participants[0].who ? "Player" : "Enemy") + "BattleInfo");
+        Respawn((Board.board.participants.Find(x => x.who == this).team == 1 ? "Player" : "Enemy") + "BattleInfo");
     }
 
     //Resets entity's resources to their base amount

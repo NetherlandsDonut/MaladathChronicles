@@ -157,6 +157,9 @@ public class Board
     //All of the combat participants of both teams
     public List<CombatParticipant> participants;
 
+    //Player in combat
+    public CombatParticipant player;
+
     //Health bars for all combat participants
     public Dictionary<int, FluidBar> healthBars;
 
@@ -364,7 +367,7 @@ public class Board
                     }
 
                     //Drop items
-                    var directDrop = enemyRace.droppedItems.Select(x => Item.items.Find(y => y.name == x)).Where(x => !x.unique || !currentSave.player.uniquesGotten.Contains(x.name)).Where(x => x.specDropRestriction == null || x.specDropRestriction.Contains(participants[0].who.race) || x.specDropRestriction.Contains(participants[0].who.race)).Where(x => x.raceDropRestriction == null || x.raceDropRestriction.Contains(participants[0].who.race)).ToList();
+                    var directDrop = enemyRace.droppedItems.Select(x => Item.items.Find(y => y.name == x)).Where(x => !x.unique || !currentSave.player.uniquesGotten.Contains(x.name)).Where(x => x.specDropRestriction == null || x.specDropRestriction.Contains(currentSave.player.spec)).Where(x => x.raceDropRestriction == null || x.raceDropRestriction.Contains(currentSave.player.race)).ToList();
                     var wearableDirect = directDrop.Where(x => x.IsWearable()).ToList();
                     var equipableDirect = wearableDirect.Where(x => x.CanEquip(currentSave.player)).ToList();
 
@@ -409,7 +412,7 @@ public class Board
                             results.inventory.AddItem(item.CopyItem());
 
                     //General drops
-                    var generalDrops = GeneralDrop.generalDrops.FindAll(x => x.DoesLevelFit(enemy.level) && (x.requiredProfession == null || (participants[0].who.professionSkills.ContainsKey(x.requiredProfession) && (x.requiredSkill == 0 || x.requiredSkill <= participants[0].who.professionSkills[x.requiredProfession].Item1))) && (x.category == null || x.category == enemy.Race().category) && x.inclusive);
+                    var generalDrops = GeneralDrop.generalDrops.FindAll(x => x.DoesLevelFit(enemy.level) && (x.requiredProfession == null || (currentSave.player.professionSkills.ContainsKey(x.requiredProfession) && (x.requiredSkill == 0 || x.requiredSkill <= currentSave.player.professionSkills[x.requiredProfession].Item1))) && (x.category == null || x.category == enemy.Race().category) && x.inclusive);
                     if (generalDrops.Count > 0)
                         foreach (var drop in generalDrops)
                             if (Roll(drop.rarity))
@@ -418,7 +421,7 @@ public class Board
                                 for (int i = 1; i < drop.dropCount; i++) amount += Roll(10) ? 1 : 0;
                                 results.inventory.AddItem(Item.items.Find(x => x.name == drop.item).CopyItem(amount));
                             }
-                    var possibleGeneralDrops = GeneralDrop.generalDrops.FindAll(x => x.DoesLevelFit(enemy.level) && (x.requiredProfession == null || (participants[0].who.professionSkills.ContainsKey(x.requiredProfession) && (x.requiredSkill == 0 || x.requiredSkill <= participants[0].who.professionSkills[x.requiredProfession].Item1))) && (x.category == null || x.category == enemy.Race().category) && !x.inclusive);
+                    var possibleGeneralDrops = GeneralDrop.generalDrops.FindAll(x => x.DoesLevelFit(enemy.level) && (x.requiredProfession == null || currentSave.player.professionSkills.ContainsKey(x.requiredProfession) && (x.requiredSkill == 0 || x.requiredSkill <= currentSave.player.professionSkills[x.requiredProfession].Item1)) && (x.category == null || x.category == enemy.Race().category) && !x.inclusive);
                     possibleGeneralDrops.Shuffle();
                     if (possibleGeneralDrops.Count > 0)
                         foreach (var drop in possibleGeneralDrops.OrderBy(x => x.rarity))
@@ -620,7 +623,7 @@ public class Board
             }
 
         //If all friendly entities died or the player died while on hardcore..
-        if ((participants.Where(x => x.team == 1).All(x => x.who.dead) || Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore && participants[0].who.health <= 0) && window.desktop.title == "Game")
+        if ((participants.Where(x => x.team == 1).All(x => x.who.dead) || Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore && currentSave.player.health <= 0) && window.desktop.title == "Game")
             EndCombat("Team2Won");
 
         //If all enemiesdied..

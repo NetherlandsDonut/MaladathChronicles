@@ -46,6 +46,7 @@
     "zone": "Ragefire Chasm",
     "type": "HostileArea",
     "convertDestinationTo": "Ragefire Chasm",
+    "noNightVariant": true,
     "commonEncounters": [
       {
         "who": "Searing Blade Cultist",
@@ -91,6 +92,7 @@
     "zone": "Ragefire Chasm",
     "type": "HostileArea",
     "convertDestinationTo": "Ragefire Chasm",
+    "noNightVariant": true,
     "commonEncounters": [
       {
         "who": "Searing Blade Cultist",
@@ -132,6 +134,7 @@
     "zone": "Ragefire Chasm",
     "type": "HostileArea",
     "convertDestinationTo": "Ragefire Chasm",
+    "noNightVariant": true,
     "commonEncounters": [
       {
         "who": "Molten Elemental",

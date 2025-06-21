@@ -335,7 +335,7 @@ public class Event
                 target.who.Damage(amount, trigger["Trigger"] == "Damage");
                 AddBigButtonOverlay(new Vector3(1, -1) + Board.board.PortraitPosition(Board.board.participants.IndexOf(target)), "OtherDamaged", 1f, -1);
                 SpawnFallingText(new Vector3(1, 0) + Board.board.PortraitPosition(Board.board.participants.IndexOf(target)), "" + amount, "White");
-                if (target == board.participants[0]) board.log.damageTaken.Inc(sourceName, amount);
+                if (target.who == SaveGame.currentSave.player) board.log.damageTaken.Inc(sourceName, amount);
                 else if (!board.spotlightFriendly.Contains(board.participants.IndexOf(target))) board.log.damageDealt.Inc(sourceName, amount);
                 board.UpdateHealthBars();
             }
@@ -351,7 +351,7 @@ public class Event
                 target.who.Heal(amount, trigger["Trigger"] == "Heal");
                 AddBigButtonOverlay(new Vector3(1, -1) + Board.board.PortraitPosition(Board.board.participants.IndexOf(target)), "OtherHealed", 1f, 5);
                 SpawnFallingText(new Vector3(1, 0) + Board.board.PortraitPosition(Board.board.participants.IndexOf(target)), "" + amount, "Uncommon");
-                if (target == board.participants[0]) board.log.healingReceived.Inc(sourceName, amount);
+                if (target.who == SaveGame.currentSave.player) board.log.healingReceived.Inc(sourceName, amount);
                 board.UpdateHealthBars();
             }
 
