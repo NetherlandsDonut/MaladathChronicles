@@ -18,12 +18,13 @@
   "defaultStanding": 4200,
   "maxPrimaryProfessions": 2,
   "expForExploration": 20,
-  "cascadeMinimum": 3,
+  "cascadeMinimum": 2,
   "spaceBetweenPathPips": 10,
   "markerCharacter": "_",
   "textWrapEnding": "...",
   "frameTime": 0.08,
   "animatedResourceParticles": true,
   "keyTimerNewKey": 0.4,
-  "keyTimerSameKey": 0.05
+  "keyTimerSameKey": 0.05,
+  "dividerForDualWield": 1.9
 }

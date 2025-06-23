@@ -1135,7 +1135,7 @@ public class Entity
             if (equipment.ContainsKey("Ranged Weapon"))
             {
                 var ranged = equipment["Ranged Weapon"];
-                return (Math.Round(ranged.minDamage / ranged.speed, 2), Math.Round(ranged.maxDamage / ranged.speed, 2));
+                return (ranged.minPower, ranged.maxPower);
             }
             else return (1, 1);
         }
@@ -1144,7 +1144,7 @@ public class Entity
             if (equipment.ContainsKey("Two Handed"))
             {
                 var twohanded = equipment["Two Handed"];
-                return (Math.Round(twohanded.minDamage / twohanded.speed), Math.Round(twohanded.maxDamage / twohanded.speed));
+                return (twohanded.minPower, twohanded.maxPower);
             }
             else
             {
@@ -1152,18 +1152,18 @@ public class Entity
                 if (equipment.ContainsKey("Main Hand"))
                 {
                     var mainHand = equipment["Main Hand"];
-                    min += Math.Round(mainHand.minDamage / mainHand.speed);
-                    max += Math.Round(mainHand.maxDamage / mainHand.speed);
+                    min += mainHand.minPower;
+                    max += mainHand.maxPower;
                 }
                 if (equipment.ContainsKey("Off Hand"))
                 {
                     var offHand = equipment["Off Hand"];
-                    if (offHand.maxDamage > 0)
+                    if (offHand.maxPower > 0)
                     {
-                        min /= 1.5;
-                        min /= 1.5;
-                        min += Math.Round(offHand.minDamage / offHand.speed) / 1.5;
-                        max += Math.Round(offHand.maxDamage / offHand.speed) / 1.5;
+                        min /= defines.dividerForDualWield;
+                        max /= defines.dividerForDualWield;
+                        min += offHand.minPower / defines.dividerForDualWield;
+                        max += offHand.maxPower / defines.dividerForDualWield;
                     }
                 }
                 return (1 + min / 10, 1 + max / 10);

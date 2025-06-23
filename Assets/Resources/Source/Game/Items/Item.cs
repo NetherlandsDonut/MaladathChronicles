@@ -90,12 +90,6 @@ public class Item
     //Minimum required level of the character for it to be able to equip or use this item
     public int lvl;
 
-    //Minimum damage this weapon can do
-    public int minDamage;
-    
-    //Maximum damage this weapon can do
-    public int maxDamage;
-
     //Minimum power modifier this weapon can roll
     public double minPower;
 
@@ -147,9 +141,6 @@ public class Item
 
     //Price of the item for it to be bought, the sell price is 1/4 of that
     public int price;
-
-    //Weapon attack speed
-    public double speed;
 
     //Amount of bag space provided
     public int bagSpace;
@@ -1092,17 +1083,15 @@ public class Item
                 AddLine(item.armorClass + " ", currentSave != null && !copy.CanEquip(currentSave.player, true) ? "DangerousRed" : "Gray");
                 AddText(item.type);
             }
-            else if (item.maxDamage != 0)
+            else if (item.minPower > 0)
             {
                 AddLine(item.type + " " + item.detailedType, currentSave != null && !currentSave.player.abilities.ContainsKey((new List<string> { "Polearm", "Staff", "Bow", "Crossbow", "Gun", "Dagger", "Fist Weapon", "Wand" }.Contains(item.detailedType) ? item.detailedType : item.type + " " + item.detailedType) + " Proficiency") ? "DangerousRed" : "Gray");
-                var a = 1 + Math.Round(item.minDamage / item.speed / 10, 2);
-                var b = 1 + Math.Round(item.maxDamage / item.speed / 10, 2);
-                AddLine((a + "").Replace(",", "."), "Gray");
+                AddLine((item.minPower + "").Replace(",", "."), "Gray");
                 AddText(" - ", "HalfGray");
-                AddText((b + "").Replace(",", "."), "Gray");
+                AddText((item.maxPower + "").Replace(",", "."), "Gray");
                 AddText(" Power modifier", "HalfGray");
                 AddLine("Average modifier: ", "HalfGray");
-                AddText((Math.Round((a + b) / 2, 2) + "").Replace(",", "."), "Gray");
+                AddText((Math.Round((item.minPower + item.maxPower) / 2, 2) + "").Replace(",", "."), "Gray");
             }
             else if (item.bagSpace != 0) AddLine(item.bagSpace + " Slot Bag");
             else if (item.type == "Recipe")
@@ -1127,13 +1116,11 @@ public class Item
             if (currentSave != null)
                 if (currentSave.player.equipment.ContainsKey(item.type))
                     current = currentSave.player.equipment[item.type];
-                else if (item.type == "Two Handed")
+                else if (item.type == "Two Handed" || item.type == "One Handed")
                 {
                     current = currentSave.player.equipment.Get("Main Hand");
                     currentSecond = currentSave.player.equipment.Get("Off Hand");
                 }
-                else if (item.type == "One Handed")
-                    current = Input.GetKey(KeyCode.LeftAlt) ? (currentSave.player.equipment.ContainsKey("Off Hand") ? currentSave.player.equipment["Off Hand"] : null) : (currentSave.player.equipment.ContainsKey("Main Hand") ? currentSave.player.equipment["Main Hand"] : null);
             AddHeaderRegion(() => AddLine("Stat changes on equip:", "DarkGray"));
             AddPaddingRegion(() =>
             {
@@ -1147,18 +1134,32 @@ public class Item
                     AddLine((balance > 0 ? "+" : "") + balance, balance > 0 ? "Uncommon" : "DangerousRed");
                     AddText(" Armor");
                 }
-                var a1d = item.speed <= 0 ? 1 : Math.Round((1 + Math.Round(item.minDamage / item.speed / 10, 2) + 1 + Math.Round(item.maxDamage / item.speed / 10, 2)) / 2, 2);
-                var a2d = current == null || current.speed <= 0 ? 1 : Math.Round((1 + Math.Round(current.minDamage / current.speed / 10, 2) + 1 + Math.Round(current.maxDamage / current.speed / 10, 2)) / 2, 2);
-                var a3d = currentSecond == null || currentSecond.speed <= 0 ? 0 : Math.Round((1 + Math.Round(currentSecond.minDamage / currentSecond.speed / 10, 2) + 1 + Math.Round(currentSecond.maxDamage / currentSecond.speed / 10, 2)) / 2, 2);
-                if (a3d > 0)
+
+                //if im trying to equip a 1h into the offhand slot it has be divided
+
+                var newPower = item.minPower <= 0 ? 1 : (item.minPower + item.maxPower) / 2;
+                var b1d = Math.Round(!Input.GetKey(KeyCode.LeftAlt) || item.type == "Two Handed" ? newPower : current == null || current.minPower <= 0 ? 0 : (Input.GetKey(KeyCode.LeftAlt) && current.type == "Two Handed" ? 0 : (current.minPower + current.maxPower) / 2), 2);
+                var b2d = Math.Round(item.type == "Two Handed" ? 0 : Input.GetKey(KeyCode.LeftAlt) ? newPower : currentSecond == null || currentSecond.minPower <= 0 ? 0 : (currentSecond.minPower + currentSecond.maxPower) / 2, 2);
+                if (b1d == 0 && b2d == 0) b1d = 1;
+                else if (b2d > 0)
                 {
-                    a2d /= 1.5;
-                    a3d /= 1.5;
+                    b1d /= defines.dividerForDualWield;
+                    b2d /= defines.dividerForDualWield;
                 }
-                if (a1d - a2d - a3d != 0)
+                var bd = Math.Round(b1d + b2d, 2);
+                var a1d = Math.Round(current == null || current.minPower <= 0 ? 0 : (current.minPower + current.maxPower) / 2, 2);
+                var a2d = Math.Round(currentSecond == null || currentSecond.minPower <= 0 ? 0 : (currentSecond.minPower + currentSecond.maxPower) / 2, 2);
+                if (a1d == 0 && a2d == 0) a1d = 1;
+                else if (a2d > 0)
                 {
-                    var balance = a1d - a2d - a3d;
-                    AddLine(((balance > 0 ? "+" : "") + Math.Round(balance, 2)).Replace(",", "."), balance > 0 ? "Uncommon" : "DangerousRed");
+                    a1d /= defines.dividerForDualWield;
+                    a2d /= defines.dividerForDualWield;
+                }
+                var ad = Math.Round(a1d + a2d, 2);
+                if (bd - ad != 0)
+                {
+                    var balance = Math.Round(bd - ad, 2);
+                    AddLine(((balance > 0 ? "+" : "") + balance).Replace(",", "."), balance > 0 ? "Uncommon" : "DangerousRed");
                     AddText(" Power modifier");
                 }
                 a1 = item.block;
@@ -1427,41 +1428,38 @@ public class Item
     //Copies this item with a specific amount
     public Item CopyItem(int amount = 1)
     {
-        var newItem = new Item
-        {
-            abilities = abilities?.ToDictionary(x => x.Key, x => x.Value),
-            amount = amount,
-            armor = armor,
-            armorClass = armorClass,
-            bagSpace = bagSpace,
-            block = block,
-            detailedType = detailedType,
-            droppedBy = droppedBy,
-            dropRange = dropRange,
-            faction = faction,
-            combatUse = combatUse,
-            icon = icon,
-            ilvl = ilvl,
-            lvl = lvl,
-            maxDamage = maxDamage,
-            maxStack = maxStack,
-            minDamage = minDamage,
-            minutesLeft = minutesLeft,
-            name = name,
-            price = price,
-            rarity = rarity,
-            randomEnchantment = randomEnchantment,
-            reputationRequired = reputationRequired,
-            set = set,
-            source = source,
-            indestructible = indestructible,
-            unique = unique,
-            specs = specs?.ToList(),
-            questsStarted = questsStarted?.ToList(),
-            speed = speed,
-            stats = stats?.ToDictionary(x => x.Key, x => x.Value),
-            type = type
-        };
+        var newItem = new Item();
+        newItem.abilities = abilities?.ToDictionary(x => x.Key, x => x.Value);
+        newItem.amount = amount;
+        newItem.armor = armor;
+        newItem.armorClass = armorClass;
+        newItem.bagSpace = bagSpace;
+        newItem.block = block;
+        newItem.detailedType = detailedType;
+        newItem.droppedBy = droppedBy;
+        newItem.dropRange = dropRange;
+        newItem.faction = faction;
+        newItem.combatUse = combatUse;
+        newItem.icon = icon;
+        newItem.ilvl = ilvl;
+        newItem.lvl = lvl;
+        newItem.minPower = minPower;
+        newItem.maxPower = maxPower;
+        newItem.maxStack = maxStack;
+        newItem.minutesLeft = minutesLeft;
+        newItem.name = name;
+        newItem.price = price;
+        newItem.rarity = rarity;
+        newItem.randomEnchantment = randomEnchantment;
+        newItem.reputationRequired = reputationRequired;
+        newItem.set = set;
+        newItem.source = source;
+        newItem.indestructible = indestructible;
+        newItem.unique = unique;
+        newItem.specs = specs?.ToList();
+        newItem.questsStarted = questsStarted?.ToList();
+        newItem.stats = stats != null ? stats.ToDictionary(x => x.Key, x => x.Value) : null;
+        newItem.type = type;
         return newItem;
     }
 

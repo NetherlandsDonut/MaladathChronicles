@@ -4,11 +4,12 @@
   "Gehennas": [],
   "Whitemane": [
     {
-      "playerSide": "Alliance",
+      "playerSide": "Horde",
       "player": {
         "currentQuests": [],
         "completedQuests": [],
-        "level": 1,
+        "level": 17,
+        "experience": 14363,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -17,31 +18,31 @@
           "Grimtotem Tribe": 0,
           "Woodpaw Tribe": 0,
           "The Burning Legion": 0,
-          "Darkspear Tribe": 0,
-          "Stormwind": 4250,
+          "Darkspear Tribe": 4600,
+          "Stormwind": 0,
           "Timbermaw Tribe": 4050,
           "Magram Clan": 0,
           "Gelkis Clan": 0,
           "Kolkar Clan": 0,
-          "Orgrimmar": 0,
-          "Frostwolf Clan": 0,
-          "The Defiler's": 0,
-          "Thunder Bluff": 0,
-          "Undercity": 0,
-          "Ironforge": 4600,
+          "Orgrimmar": 4250,
+          "Frostwolf Clan": 4250,
+          "The Defiler's": 4250,
+          "Thunder Bluff": 4250,
+          "Undercity": 4250,
+          "Ironforge": 0,
           "Dark Iron Clan": 0,
-          "Wildhammer Clan": 4250,
+          "Wildhammer Clan": 0,
           "Winterfall Tribe": 0,
-          "Gnomeregan": 4250,
-          "Darnassus": 4250,
+          "Gnomeregan": 0,
+          "Darnassus": 0,
           "Bloodsail Buccaneers": 0,
           "Syndicate": 0,
-          "Warsong Outriders": 0,
-          "Stormpike Guard": 4250,
-          "Silverwing Sentinels": 4250,
-          "The League of Arathor": 4250,
+          "Warsong Outriders": 4250,
+          "Stormpike Guard": 0,
+          "Silverwing Sentinels": 0,
+          "The League of Arathor": 0,
           "Defias Brotherhood": 0,
-          "Dalaran": 4250,
+          "Dalaran": 0,
           "Burning Blade Clan": 0,
           "Burning Legion": 0,
           "Shadow Council": 0,
@@ -54,7 +55,7 @@
           "Twilight's Hammer": 0,
           "Grimtotem Clan": 0,
           "Razorfen Tribe": 0,
-          "Stonemaul Ogres": 0,
+          "Stonemaul Ogres": 4250,
           "Dustbelcher Ogres": 0,
           "Deadwind Ogres": 0,
           "Venture Co.": 0,
@@ -72,7 +73,7 @@
           "Rot Hide Tribe": 0,
           "Scourge": 0,
           "Smolderthorn Tribe": 0,
-          "Revantusk Tribe": 0,
+          "Revantusk Tribe": 4250,
           "Blackpaw Tribe": 0,
           "Maraudine Clan": 0,
           "Mosshide Tribe": 0,
@@ -82,14 +83,14 @@
         },
         "professionSkills": {},
         "learnedRecipes": {},
-        "faction": "Ironforge",
-        "name": "Twome",
-        "race": "Dwarf",
+        "unspentTalentPoints": 16,
+        "faction": "Darkspear Tribe",
+        "name": "Jo'do",
+        "race": "Troll",
         "spec": "Hunter",
-        "gender": "Female",
-        "homeLocation": "Anvilmar",
+        "gender": "Male",
+        "homeLocation": "The Den",
         "abilities": {
-          "Stoneform": 0,
           "Dual Wielding Proficiency": 0,
           "Two Handed Axe Proficiency": 0,
           "Two Handed Sword Proficiency": 0,
@@ -115,29 +116,28 @@
         "actionBars": {
           "Default": [
             "Aimed Shot",
-            "Stoneform",
             "Tame Beast"
           ]
         },
         "stats": {
-          "Stamina": 24,
-          "Strength": 22,
-          "Agility": 19,
-          "Intellect": 19,
-          "Spirit": 20,
-          "Earth Mastery": 3,
-          "Fire Mastery": 2,
-          "Air Mastery": 3,
+          "Stamina": 22,
+          "Strength": 21,
+          "Agility": 25,
+          "Intellect": 16,
+          "Spirit": 22,
+          "Earth Mastery": 2,
+          "Fire Mastery": 3,
+          "Air Mastery": 2,
           "Water Mastery": 1,
-          "Frost Mastery": 2,
+          "Frost Mastery": 3,
           "Lightning Mastery": 2,
           "Arcane Mastery": 1,
           "Decay Mastery": 1,
-          "Shadow Mastery": 1,
-          "Order Mastery": 3
+          "Shadow Mastery": 3,
+          "Order Mastery": 1
         },
         "inventory": {
-          "money": 12208,
+          "money": 122871,
           "items": [
             {
               "rarity": "Common",
@@ -157,34 +157,47 @@
             {
               "x": 1,
               "rarity": "Common",
-              "name": "Shortsword",
-              "icon": "itemsword04",
-              "detailedType": "Sword",
-              "type": "One Handed",
-              "ilvl": 3,
-              "lvl": 1,
-              "minDamage": 2,
-              "maxDamage": 4,
-              "amount": 1,
-              "maxStack": 1,
-              "price": 10,
-              "speed": 2.6
-            },
-            {
-              "x": 2,
-              "rarity": "Common",
               "name": "Worn Axe",
               "icon": "itemaxe11",
               "detailedType": "Axe",
               "type": "One Handed",
               "ilvl": 2,
               "lvl": 1,
-              "minDamage": 1,
-              "maxDamage": 3,
+              "minPower": 1.05,
+              "maxPower": 1.15,
               "amount": 1,
               "maxStack": 1,
-              "price": 7,
-              "speed": 2.0
+              "price": 7
+            },
+            {
+              "x": 4,
+              "rarity": "Common",
+              "name": "Dirk",
+              "icon": "itemshortblade14",
+              "detailedType": "Dagger",
+              "type": "One Handed",
+              "ilvl": 3,
+              "lvl": 1,
+              "minPower": 1.06,
+              "maxPower": 1.19,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 11
+            },
+            {
+              "x": 2,
+              "rarity": "Common",
+              "name": "Bastard Sword",
+              "icon": "itemsword06",
+              "detailedType": "Sword",
+              "type": "Two Handed",
+              "ilvl": 4,
+              "lvl": 1,
+              "minPower": 1.17,
+              "maxPower": 1.27,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 20
             }
           ],
           "bags": []
@@ -194,49 +207,36 @@
           "Ranged Weapon": {
             "x": 1,
             "rarity": "Common",
-            "name": "Old Blunderbuss",
-            "icon": "itemrifle01",
-            "detailedType": "Gun",
+            "name": "Worn Shortbow",
+            "icon": "itembow05",
+            "detailedType": "Bow",
             "type": "Ranged Weapon",
             "ilvl": 2,
             "lvl": 1,
-            "minDamage": 2,
-            "maxDamage": 5,
+            "minPower": 1.09,
+            "maxPower": 1.22,
             "amount": 1,
             "maxStack": 1,
-            "price": 5,
-            "speed": 2.3
+            "price": 5
           },
           "Main Hand": {
-            "x": 1,
+            "x": 3,
             "rarity": "Common",
-            "name": "Broad Axe",
-            "icon": "itemaxe11",
+            "name": "Hand Axe",
+            "icon": "itemaxe19",
             "detailedType": "Axe",
-            "type": "Two Handed",
+            "type": "One Handed",
             "ilvl": 4,
             "lvl": 1,
-            "minDamage": 5,
-            "maxDamage": 8,
+            "minPower": 1.1,
+            "maxPower": 1.2,
             "amount": 1,
             "maxStack": 1,
-            "price": 21,
-            "speed": 3.1
-          },
-          "Feet": {
-            "rarity": "Common",
-            "name": "Rugged Trapper's Boots",
-            "icon": "itemboots06",
-            "type": "Feet",
-            "ilvl": 1,
-            "lvl": 1,
-            "amount": 1,
-            "maxStack": 1,
-            "price": 1
+            "price": 16
           },
           "Legs": {
             "rarity": "Poor",
-            "name": "Rugged Trapper's Pants",
+            "name": "Trapper's Pants",
             "icon": "itempants02",
             "type": "Legs",
             "armorClass": "Cloth",
@@ -249,311 +249,38 @@
           },
           "Chest": {
             "rarity": "Common",
-            "name": "Rugged Trapper's Shirt",
-            "icon": "itemshirt01",
+            "name": "Trapper's Shirt",
+            "icon": "itemshirt07",
             "type": "Chest",
             "ilvl": 1,
             "lvl": 1,
             "amount": 1,
             "maxStack": 1,
             "price": 1
-          }
-        },
-        "worldBuffs": []
-      },
-      "hour": 7,
-      "currentSite": "Anvilmar",
-      "ringOfLaw": "Ok'thor the Breaker",
-      "forlornCloister": "Azshir the Sleepless",
-      "markets": [
-        {
-          "name": "Alliance Market",
-          "auctions": [],
-          "hoursSinceUpdate": 48
-        },
-        {
-          "name": "Horde Market",
-          "auctions": [],
-          "hoursSinceUpdate": 48
-        }
-      ],
-      "openedChests": {},
-      "fishingSpots": {},
-      "fishingSpoils": {},
-      "siteProgress": {},
-      "commonsKilled": {},
-      "raresKilled": {},
-      "elitesKilled": {},
-      "siteVisits": {
-        "Anvilmar": 3
-      },
-      "unlockedAreas": [],
-      "vendorStock": {
-        "Anvilmar:Rybrad Coldbank": [
-          {
-            "item": "Bastard Sword",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
           },
-          {
-            "item": "Club",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Shortsword",
-            "amount": 1,
-            "maxAmount": 2,
-            "minutesLeft": 40,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Short Staff",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Hand Axe",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Dirk",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Broad Axe",
-            "amount": 1,
-            "maxAmount": 2,
-            "minutesLeft": 40,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Large Club",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          }
-        ]
-      },
-      "banks": {},
-      "buyback": {
-        "items": [],
-        "bags": [],
-        "ignoreSpaceChecks": true
-      },
-      "startDate": "2025-06-22T18:38:15.3630725+02:00",
-      "lastLoaded": "2025-06-22T19:38:05.5004619+02:00",
-      "lastPlayed": "2025-06-22T19:38:10.555222+02:00",
-      "timePlayed": "00:02:38.8195730"
-    },
-    {
-      "playerSide": "Alliance",
-      "player": {
-        "currentQuests": [],
-        "completedQuests": [],
-        "level": 1,
-        "experience": 273,
-        "uniquesGotten": [],
-        "reputation": {
-          "Southsea Pirates": 0,
-          "Razormane Tribe": 0,
-          "Pandaren": 0,
-          "Grimtotem Tribe": 0,
-          "Woodpaw Tribe": 0,
-          "The Burning Legion": 0,
-          "Darkspear Tribe": 0,
-          "Stormwind": 4250,
-          "Timbermaw Tribe": 4050,
-          "Magram Clan": 0,
-          "Gelkis Clan": 0,
-          "Kolkar Clan": 0,
-          "Orgrimmar": 0,
-          "Frostwolf Clan": 0,
-          "The Defiler's": 0,
-          "Thunder Bluff": 0,
-          "Undercity": 0,
-          "Ironforge": 4250,
-          "Dark Iron Clan": 0,
-          "Wildhammer Clan": 4250,
-          "Winterfall Tribe": 0,
-          "Gnomeregan": 4250,
-          "Darnassus": 4600,
-          "Bloodsail Buccaneers": 0,
-          "Syndicate": 0,
-          "Warsong Outriders": 0,
-          "Stormpike Guard": 4250,
-          "Silverwing Sentinels": 4250,
-          "The League of Arathor": 4250,
-          "Defias Brotherhood": 0,
-          "Dalaran": 4250,
-          "Burning Blade Clan": 0,
-          "Burning Legion": 0,
-          "Shadow Council": 0,
-          "Gordunni Ogres": 0,
-          "Blackrock Clan": 0,
-          "Dragonmaw Clan": 0,
-          "Black Tooth Grin Clan": 0,
-          "Gurubashi Tribe": 0,
-          "Sandfury Tribe": 0,
-          "Twilight's Hammer": 0,
-          "Grimtotem Clan": 0,
-          "Razorfen Tribe": 0,
-          "Stonemaul Ogres": 0,
-          "Dustbelcher Ogres": 0,
-          "Deadwind Ogres": 0,
-          "Venture Co.": 0,
-          "Southsea Freebooters": 0,
-          "Atal'ai Tribe": 0,
-          "Qiraji Empire": 0,
-          "Scarlet Crusade": 0,
-          "Vilebranch Tribe": 0,
-          "Witherbark Tribe": 0,
-          "Mossflayer Tribe": 0,
-          "Frostmane Tribe": 0,
-          "Bloodscalp Tribe": 0,
-          "Skullsplitter Tribe": 0,
-          "Shatterspear Tribe": 0,
-          "Rot Hide Tribe": 0,
-          "Scourge": 0,
-          "Smolderthorn Tribe": 0,
-          "Revantusk Tribe": 0,
-          "Blackpaw Tribe": 0,
-          "Maraudine Clan": 0,
-          "Mosshide Tribe": 0,
-          "Deadwood Tribe": 0,
-          "Bloodtooth Tribe": 0,
-          "Bristleback Tribe": 0
-        },
-        "professionSkills": {},
-        "learnedRecipes": {},
-        "faction": "Darnassus",
-        "name": "Deyell",
-        "race": "Night Elf",
-        "spec": "Rogue",
-        "gender": "Female",
-        "homeLocation": "Aldrassil",
-        "abilities": {
-          "Dual Wielding Proficiency": 0,
-          "One Handed Axe Proficiency": 0,
-          "One Handed Mace Proficiency": 0,
-          "One Handed Sword Proficiency": 0,
-          "Fist Weapon Proficiency": 0,
-          "Off Hand Proficiency": 0,
-          "Dagger Proficiency": 0,
-          "Leather Proficiency": 0,
-          "Rupture": 0,
-          "Stealth": 0,
-          "Sinister Strike": 0
-        },
-        "currentActionSet": "Default",
-        "actionBars": {
-          "Default": []
-        },
-        "stats": {
-          "Stamina": 20,
-          "Strength": 18,
-          "Agility": 28,
-          "Intellect": 20,
-          "Spirit": 20,
-          "Earth Mastery": 2,
-          "Fire Mastery": 1,
-          "Air Mastery": 3,
-          "Water Mastery": 3,
-          "Frost Mastery": 1,
-          "Lightning Mastery": 1,
-          "Arcane Mastery": 3,
-          "Decay Mastery": 1,
-          "Shadow Mastery": 2,
-          "Order Mastery": 2
-        },
-        "inventory": {
-          "items": [
-            {
-              "rarity": "Common",
-              "name": "Hearthstone",
-              "icon": "itemmiscrune01",
-              "detailedType": "Rune",
-              "type": "Miscellaneous",
-              "ilvl": 1,
-              "amount": 1,
-              "maxStack": 1,
-              "indestructible": true,
-              "unique": true,
-              "abilities": {
-                "Hearthstone": 1
-              }
-            }
-          ],
-          "bags": []
-        },
-        "mounts": [],
-        "equipment": {
-          "Main Hand": {
-            "x": 1,
+          "Off Hand": {
+            "x": 3,
             "rarity": "Common",
-            "name": "Worn Dagger",
-            "icon": "itemshortblade05",
-            "detailedType": "Dagger",
+            "name": "Hand Axe",
+            "icon": "itemaxe19",
+            "detailedType": "Axe",
             "type": "One Handed",
-            "ilvl": 2,
+            "ilvl": 4,
             "lvl": 1,
-            "minDamage": 1,
-            "maxDamage": 2,
+            "minPower": 1.1,
+            "maxPower": 1.2,
             "amount": 1,
             "maxStack": 1,
-            "price": 7,
-            "speed": 1.6
-          },
-          "Feet": {
-            "rarity": "Common",
-            "name": "Footpad's Shoes",
-            "icon": "itemboots05",
-            "type": "Feet",
-            "ilvl": 1,
-            "lvl": 1,
-            "amount": 1,
-            "maxStack": 1,
-            "price": 1
-          },
-          "Legs": {
-            "rarity": "Poor",
-            "name": "Footpad's Pants",
-            "icon": "itempants02",
-            "type": "Legs",
-            "armorClass": "Cloth",
-            "ilvl": 1,
-            "lvl": 1,
-            "armor": 2,
-            "amount": 1,
-            "maxStack": 1,
-            "price": 1
-          },
-          "Chest": {
-            "rarity": "Common",
-            "name": "Footpad's Shirt",
-            "icon": "itemshirt05",
-            "type": "Chest",
-            "ilvl": 1,
-            "lvl": 1,
-            "amount": 1,
-            "maxStack": 1,
-            "price": 1
+            "price": 16
           }
         },
         "worldBuffs": []
       },
       "hour": 7,
-      "minute": 29,
-      "second": 14,
-      "currentSite": "The Oracle Glade",
-      "ringOfLaw": "Ok'thor the Breaker",
+      "minute": 14,
+      "second": 56,
+      "currentSite": "The Den",
+      "ringOfLaw": "Eviscerator",
       "forlornCloister": "Fallen Champion",
       "markets": [
         {
@@ -570,71 +297,102 @@
       "openedChests": {},
       "fishingSpots": {},
       "fishingSpoils": {},
-      "siteProgress": {
-        "Fel Rock": 1
-      },
-      "commonsKilled": {
-        "Shadow Sprite": 1
-      },
+      "siteProgress": {},
+      "commonsKilled": {},
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
-        "Aldrassil": 1,
-        "Dolanaar": 0,
-        "Fel Rock": 1,
-        "Darnassus": 2,
-        "Rut'theran Village": 2,
-        "Wellspring Lake": 1,
-        "Wellspring River": 1,
-        "The Oracle Glade": 2
+        "The Den": 3,
+        "Rocky Desert": 0,
+        "Razor Hill": 2
       },
       "unlockedAreas": [],
       "vendorStock": {
-        "Rut'theran Village:Nessa Shadowsong": [
+        "Razor Hill:Ghrawt": [
           {
-            "item": "Fishing Pole",
+            "item": "Hornwood Recurve Bow",
             "amount": 2,
             "maxAmount": 2,
             "restockSpeed": 40
           },
           {
-            "item": "Recipe: Slitherskin Mackerel",
+            "item": "Laminated Recurve Bow",
             "amount": 2,
             "maxAmount": 2,
             "restockSpeed": 40
           },
           {
-            "item": "Strong Fishing Pole",
+            "item": "Rough Arrow",
             "amount": 2,
             "maxAmount": 2,
             "restockSpeed": 40
           },
           {
-            "item": "Recipe: Rainbow Fin Albacore",
+            "item": "Sharp Arrow",
             "amount": 2,
             "maxAmount": 2,
             "restockSpeed": 40
           },
           {
-            "item": "Shiny Bauble",
+            "item": "Small Quiver",
             "amount": 2,
             "maxAmount": 2,
             "restockSpeed": 40
           },
           {
-            "item": "Nightcrawlers",
+            "item": "Medium Quiver",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
+        ],
+        "The Den:Kzan Thornslash": [
+          {
+            "item": "Bastard Sword",
+            "amount": 1,
+            "maxAmount": 2,
+            "minutesLeft": 40,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Club",
             "amount": 2,
             "maxAmount": 2,
             "restockSpeed": 40
           },
           {
-            "item": "Bright Baubles",
+            "item": "Shortsword",
             "amount": 2,
             "maxAmount": 2,
             "restockSpeed": 40
           },
           {
-            "item": "Aquadynamic Fish Attractor",
+            "item": "Short Staff",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Hand Axe",
+            "maxAmount": 2,
+            "minutesLeft": 40,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Dirk",
+            "amount": 1,
+            "maxAmount": 2,
+            "minutesLeft": 40,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Broad Axe",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Large Club",
             "amount": 2,
             "maxAmount": 2,
             "restockSpeed": 40
@@ -647,248 +405,10 @@
         "bags": [],
         "ignoreSpaceChecks": true
       },
-      "startDate": "2025-06-22T19:38:17.5979611+02:00",
-      "lastLoaded": "2025-06-23T12:05:02.6060175+02:00",
-      "lastPlayed": "2025-06-23T12:05:16.9522858+02:00",
-      "timePlayed": "00:16:28.0968946"
-    },
-    {
-      "playerSide": "Alliance",
-      "player": {
-        "currentQuests": [],
-        "completedQuests": [],
-        "level": 1,
-        "uniquesGotten": [],
-        "reputation": {
-          "Southsea Pirates": 0,
-          "Razormane Tribe": 0,
-          "Pandaren": 0,
-          "Grimtotem Tribe": 0,
-          "Woodpaw Tribe": 0,
-          "The Burning Legion": 0,
-          "Darkspear Tribe": 0,
-          "Stormwind": 4250,
-          "Timbermaw Tribe": 4050,
-          "Magram Clan": 0,
-          "Gelkis Clan": 0,
-          "Kolkar Clan": 0,
-          "Orgrimmar": 0,
-          "Frostwolf Clan": 0,
-          "The Defiler's": 0,
-          "Thunder Bluff": 0,
-          "Undercity": 0,
-          "Ironforge": 4600,
-          "Dark Iron Clan": 0,
-          "Wildhammer Clan": 4250,
-          "Winterfall Tribe": 0,
-          "Gnomeregan": 4250,
-          "Darnassus": 4250,
-          "Bloodsail Buccaneers": 0,
-          "Syndicate": 0,
-          "Warsong Outriders": 0,
-          "Stormpike Guard": 4250,
-          "Silverwing Sentinels": 4250,
-          "The League of Arathor": 4250,
-          "Defias Brotherhood": 0,
-          "Dalaran": 4250,
-          "Burning Blade Clan": 0,
-          "Burning Legion": 0,
-          "Shadow Council": 0,
-          "Gordunni Ogres": 0,
-          "Blackrock Clan": 0,
-          "Dragonmaw Clan": 0,
-          "Black Tooth Grin Clan": 0,
-          "Gurubashi Tribe": 0,
-          "Sandfury Tribe": 0,
-          "Twilight's Hammer": 0,
-          "Grimtotem Clan": 0,
-          "Razorfen Tribe": 0,
-          "Stonemaul Ogres": 0,
-          "Dustbelcher Ogres": 0,
-          "Deadwind Ogres": 0,
-          "Venture Co.": 0,
-          "Southsea Freebooters": 0,
-          "Atal'ai Tribe": 0,
-          "Qiraji Empire": 0,
-          "Scarlet Crusade": 0,
-          "Vilebranch Tribe": 0,
-          "Witherbark Tribe": 0,
-          "Mossflayer Tribe": 0,
-          "Frostmane Tribe": 0,
-          "Bloodscalp Tribe": 0,
-          "Skullsplitter Tribe": 0,
-          "Shatterspear Tribe": 0,
-          "Rot Hide Tribe": 0,
-          "Scourge": 0,
-          "Smolderthorn Tribe": 0,
-          "Revantusk Tribe": 0,
-          "Blackpaw Tribe": 0,
-          "Maraudine Clan": 0,
-          "Mosshide Tribe": 0,
-          "Deadwood Tribe": 0,
-          "Bloodtooth Tribe": 0,
-          "Bristleback Tribe": 0
-        },
-        "professionSkills": {},
-        "learnedRecipes": {},
-        "faction": "Ironforge",
-        "name": "Thumen",
-        "race": "Dwarf",
-        "spec": "Warrior",
-        "gender": "Female",
-        "homeLocation": "Anvilmar",
-        "abilities": {
-          "Stoneform": 0,
-          "Dual Wielding Proficiency": 0,
-          "Two Handed Axe Proficiency": 0,
-          "Two Handed Mace Proficiency": 0,
-          "Two Handed Sword Proficiency": 0,
-          "Polearm Proficiency": 0,
-          "Shield Proficiency": 0,
-          "Mail Proficiency": 0,
-          "Plate Proficiency": 0,
-          "One Handed Axe Proficiency": 0,
-          "One Handed Mace Proficiency": 0,
-          "One Handed Sword Proficiency": 0,
-          "Fist Weapon Proficiency": 0,
-          "Off Hand Proficiency": 0,
-          "Heroic Strike": 0,
-          "Battle Shout": 0,
-          "Bloodthirst": 0,
-          "Revenge": 0
-        },
-        "currentActionSet": "Default",
-        "actionBars": {
-          "Default": [
-            "Heroic Strike",
-            "Stoneform"
-          ]
-        },
-        "stats": {
-          "Stamina": 25,
-          "Strength": 25,
-          "Agility": 16,
-          "Intellect": 19,
-          "Spirit": 19,
-          "Earth Mastery": 3,
-          "Fire Mastery": 2,
-          "Air Mastery": 3,
-          "Water Mastery": 1,
-          "Frost Mastery": 2,
-          "Lightning Mastery": 2,
-          "Arcane Mastery": 1,
-          "Decay Mastery": 1,
-          "Shadow Mastery": 1,
-          "Order Mastery": 3
-        },
-        "inventory": {
-          "items": [
-            {
-              "rarity": "Common",
-              "name": "Hearthstone",
-              "icon": "itemmiscrune01",
-              "detailedType": "Rune",
-              "type": "Miscellaneous",
-              "ilvl": 1,
-              "amount": 1,
-              "maxStack": 1,
-              "indestructible": true,
-              "unique": true,
-              "abilities": {
-                "Hearthstone": 1
-              }
-            }
-          ],
-          "bags": []
-        },
-        "mounts": [],
-        "equipment": {
-          "Main Hand": {
-            "rarity": "Common",
-            "name": "Worn Battleaxe",
-            "icon": "itemaxe09",
-            "detailedType": "Axe",
-            "type": "Two Handed",
-            "ilvl": 2,
-            "lvl": 1,
-            "minDamage": 3,
-            "maxDamage": 5,
-            "amount": 1,
-            "maxStack": 1,
-            "price": 8,
-            "speed": 2.9
-          },
-          "Feet": {
-            "rarity": "Common",
-            "name": "Recruit's Boots",
-            "icon": "itemboots06",
-            "type": "Feet",
-            "ilvl": 1,
-            "lvl": 1,
-            "amount": 1,
-            "maxStack": 1,
-            "price": 1
-          },
-          "Legs": {
-            "rarity": "Poor",
-            "name": "Recruit's Pants",
-            "icon": "itempants02",
-            "type": "Legs",
-            "armorClass": "Cloth",
-            "ilvl": 1,
-            "lvl": 1,
-            "armor": 2,
-            "amount": 1,
-            "maxStack": 1,
-            "price": 1
-          },
-          "Chest": {
-            "rarity": "Common",
-            "name": "Recruit's Shirt",
-            "icon": "itemshirt05",
-            "type": "Chest",
-            "ilvl": 1,
-            "lvl": 1,
-            "amount": 1,
-            "maxStack": 1,
-            "price": 1
-          }
-        },
-        "worldBuffs": []
-      },
-      "hour": 7,
-      "currentSite": "Anvilmar",
-      "ringOfLaw": "Ok'thor the Breaker",
-      "forlornCloister": "Ironspine",
-      "markets": [
-        {
-          "name": "Alliance Market",
-          "auctions": [],
-          "hoursSinceUpdate": 48
-        },
-        {
-          "name": "Horde Market",
-          "auctions": [],
-          "hoursSinceUpdate": 48
-        }
-      ],
-      "openedChests": {},
-      "fishingSpots": {},
-      "fishingSpoils": {},
-      "siteProgress": {},
-      "commonsKilled": {},
-      "raresKilled": {},
-      "elitesKilled": {},
-      "siteVisits": {
-        "Anvilmar": 1
-      },
-      "unlockedAreas": [],
-      "vendorStock": {},
-      "banks": {},
-      "startDate": "2025-06-23T12:05:23.0162794+02:00",
-      "lastLoaded": "2025-06-23T12:31:28.2397776+02:00",
-      "lastPlayed": "2025-06-23T12:31:30.1946005+02:00",
-      "timePlayed": "00:00:01.9548229"
+      "startDate": "2025-06-23T12:52:19.8845211+02:00",
+      "lastLoaded": "2025-06-23T13:45:42.5240707+02:00",
+      "lastPlayed": "2025-06-23T13:46:50.4547436+02:00",
+      "timePlayed": "00:07:42.0860881"
     }
   ]
 }

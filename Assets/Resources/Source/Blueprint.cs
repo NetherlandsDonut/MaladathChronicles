@@ -2365,14 +2365,27 @@ public class Blueprint
             AddRegionGroup();
             SetRegionGroupWidth(182);
             AddHeaderRegion(() => AddLine("Weapons:"));
-            PrintEquipmentSlot("Main Hand", currentSave.player.GetItemInSlot("Main Hand"));
-            bool showOff = currentSave.player.GetItemInSlot("Main Hand") == null || currentSave.player.GetItemInSlot("Main Hand") != null && currentSave.player.GetItemInSlot("Main Hand").type != "Two Handed";
-            if (showOff) PrintEquipmentSlot("Off Hand", currentSave.player.GetItemInSlot("Off Hand"));
+            var main = currentSave.player.GetItemInSlot("Main Hand");
+            var off = currentSave.player.GetItemInSlot("Off Hand");
+            PrintEquipmentSlot("Main Hand", main);
+            bool showOff = main == null || main != null && main.type != "Two Handed";
+            if (showOff) PrintEquipmentSlot("Off Hand", off);
+            var mainPower = Math.Round(main == null ? (off == null || off.minPower == 0 ? 1 : 0) : (main.minPower + main.maxPower) / 2, 2);
+            if (off != null)
+            {
+                mainPower /= defines.dividerForDualWield;
+                mainPower = Math.Round(mainPower + Math.Round((off.minPower + off.maxPower) / 2, 2) / defines.dividerForDualWield, 2);
+            }
+            AddPaddingRegion(() => { AddLine("Melee power:"); AddLine(Math.Round(mainPower, 2).ToString("0.00"), "", "Right"); });
             var hasBowProficiency = currentSave.player.abilities.ContainsKey("Bow Proficiency");
             var hasCrossbowProficiency = currentSave.player.abilities.ContainsKey("Crossbow Proficiency");
             var hasGunProficiency = currentSave.player.abilities.ContainsKey("Gun Proficiency");
             if (hasBowProficiency || hasCrossbowProficiency || hasGunProficiency)
-                PrintEquipmentSlot("Ranged Weapon", currentSave.player.GetItemInSlot("Ranged Weapon"));
+            {
+                var ranged = currentSave.player.GetItemInSlot("Ranged Weapon");
+                PrintEquipmentSlot("Ranged Weapon", ranged);
+                AddPaddingRegion(() => { AddLine("Ranged power:"); AddLine(ranged == null ? "1.00" : Math.Round((ranged.minPower + ranged.maxPower) / 2, 2).ToString("0.00"), "", "Right"); });
+            }
         }),
         new("Inventory", () => {
             if (CDesktop.title == "Map") return;

@@ -54,10 +54,14 @@ public class Defines
             frameTime = 0.08f;
         if (cascadeMinimum < 2)
             cascadeMinimum = 2;
+        if (cascadeMinimum < 2)
+            cascadeMinimum = 2;
         if (keyTimerNewKey <= 0)
             keyTimerNewKey = 0.4f;
         if (keyTimerSameKey <= 0)
             keyTimerSameKey = 0.05f;
+        if (dividerForDualWield <= 1)
+            dividerForDualWield = 1;
         if (spaceBetweenPathPips <= 0)
             spaceBetweenPathPips = 10;
     }
@@ -146,10 +150,13 @@ public class Defines
     public bool windowBorders;
 
     //Time between detected held key when a new one is detected
-    public float keyTimerNewKey = 0.4f;
+    public float keyTimerNewKey;
 
     //Time between detected held key when the same one is applied again
-    public float keyTimerSameKey = 0.05f;
+    public float keyTimerSameKey;
+
+    //Time between detected held key when the same one is applied again
+    public double dividerForDualWield;
 
     //EXTERNAL FILE: Collection of constant values or alternate ways of handling engine
     public static Defines defines;
