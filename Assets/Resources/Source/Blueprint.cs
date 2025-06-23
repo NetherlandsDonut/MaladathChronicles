@@ -3193,6 +3193,39 @@ public class Blueprint
                     capital = null;
                 });
             });
+            foreach (var town in capital.districts)
+                PrintCapitalTown(town);
+        }),
+        new("CapitalHostile", () =>
+        {
+            if (WindowUp("Quest")) return;
+            if (WindowUp("QuestAdd")) return;
+            if (WindowUp("QuestTurn")) return;
+            if (WindowUp("Inventory")) return;
+            if (capital == null) return;
+            if (capital.ambience == null)
+            {
+                var zone = zones.Find(x => x.name == capital.zone);
+                if (zone != null) PlayAmbience(currentSave.IsNight() ? zone.ambienceNight : zone.ambienceDay);
+            }
+            else PlayAmbience(capital.ambience);
+            SetAnchor(TopRight, -19, -38);
+            AddRegionGroup();
+            SetRegionGroupWidth(190);
+            AddHeaderRegion(() =>
+            {
+                AddLine(capital.name, "Gray");
+                AddSmallButton("OtherClose",
+                (h) =>
+                {
+                    PlaySound("DesktopInstanceClose");
+                    CloseDesktop("Town");
+                    CloseDesktop("Capital");
+                    SwitchDesktop("Map");
+                    capitalThroughTown = null;
+                    capital = null;
+                });
+            });
             var rank = currentSave.player.ReputationRank(capital.faction);
             if (rank == "Hated")
                 AddPaddingRegion(() =>
@@ -3216,8 +3249,6 @@ public class Blueprint
                     AddLine(town.faction, "Unfriendly");
                     AddLine("in order to be welcomed here", "HalfGray");
                 });
-            else foreach (var town in capital.districts)
-                PrintCapitalTown(town);
         }),
 
         //Instance
@@ -5354,6 +5385,8 @@ public class Blueprint
             AddPaginationLine();
         }),
         new("PlayerMoney", () => {
+            if (WindowUp("TownHostile")) return;
+            if (WindowUp("CapitalHostile")) return;
             if (WindowUp("Inventory")) return;
             if (WindowUp("Quest")) return;
             if (WindowUp("QuestAdd")) return;
@@ -7052,16 +7085,6 @@ public class Blueprint
             personCategory = null;
             SetDesktopBackground(town.Background());
             SpawnWindowBlueprint("Capital");
-            SpawnWindowBlueprint("TownQuestAvailable");
-            SpawnWindowBlueprint("TownQuestDone");
-            SpawnWindowBlueprint("PlayerMoney");
-            SpawnWindowBlueprint("MapToolbarShadow");
-            SpawnWindowBlueprint("MapToolbarClockLeft");
-            SpawnWindowBlueprint("MapToolbar");
-            SpawnWindowBlueprint("MapToolbarClockRight");
-            SpawnWindowBlueprint("ExperienceBarBorder");
-            SpawnWindowBlueprint("ExperienceBar");
-            AddPaginationHotkeys();
             if (currentSave.player.Reputation(town.faction) >= 4200)
             {
                 SpawnWindowBlueprint("Town");
@@ -7168,6 +7191,16 @@ public class Blueprint
                     CloseDesktop("Town");
                 });
             }
+            SpawnWindowBlueprint("TownQuestAvailable");
+            SpawnWindowBlueprint("TownQuestDone");
+            SpawnWindowBlueprint("PlayerMoney");
+            SpawnWindowBlueprint("MapToolbarShadow");
+            SpawnWindowBlueprint("MapToolbarClockLeft");
+            SpawnWindowBlueprint("MapToolbar");
+            SpawnWindowBlueprint("MapToolbarClockRight");
+            SpawnWindowBlueprint("ExperienceBarBorder");
+            SpawnWindowBlueprint("ExperienceBar");
+            AddPaginationHotkeys();
         }),
         new("Instance", () => 
         {
@@ -7279,7 +7312,8 @@ public class Blueprint
         new("Capital", () => 
         {
             SetDesktopBackground(town.Background());
-            SpawnWindowBlueprint("Capital");
+            if (currentSave.player.Reputation(town.faction) >= 4200) SpawnWindowBlueprint("Capital");
+            else SpawnWindowBlueprint("CapitalHostile");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");

@@ -1135,8 +1135,6 @@ public class Item
                     AddText(" Armor");
                 }
 
-                //if im trying to equip a 1h into the offhand slot it has be divided
-
                 var newPower = item.minPower <= 0 ? 1 : (item.minPower + item.maxPower) / 2;
                 var b1d = Math.Round(!Input.GetKey(KeyCode.LeftAlt) || item.type == "Two Handed" ? newPower : current == null || current.minPower <= 0 ? 0 : (Input.GetKey(KeyCode.LeftAlt) && current.type == "Two Handed" ? 0 : (current.minPower + current.maxPower) / 2), 2);
                 var b2d = Math.Round(item.type == "Two Handed" ? 0 : Input.GetKey(KeyCode.LeftAlt) ? newPower : currentSecond == null || currentSecond.minPower <= 0 ? 0 : (currentSecond.minPower + currentSecond.maxPower) / 2, 2);

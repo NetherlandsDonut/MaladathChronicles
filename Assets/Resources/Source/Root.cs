@@ -705,15 +705,16 @@ public static class Root
 
     public static void PrintPriceRegion(int price)
     {
-        int width = CDesktop.LBWindow().LBRegionGroup() == null ? 0 : CDesktop.LBWindow().LBRegionGroup().setWidth;
+        int width = CDesktop.LBWindow().LBRegionGroup() == null ? 190 : CDesktop.LBWindow().LBRegionGroup().setWidth;
+        var oneSize = 50;
         var lacking = 0;
         if (price > 9999) Foo("ItemCoinsGold", price / 10000 + "", "Gold"); else lacking++;
         if (price / 100 % 100 > 0) Foo("ItemCoinsSilver", price / 100 % 100 + "", "Silver"); else lacking++;
         if (price % 100 > 0 || price == 0) Foo("ItemCoinsCopper", price % 100 + "", "Copper"); else lacking++;
         if (width == 0) return;
-        var showDisenchant = CDesktop.LBWindow().title == "Inventory" && SaveGame.currentSave.player.professionSkills.ContainsKey("Enchanting");
+        var showDisenchant = CDesktop.LBWindow().title == "Inventory" && currentSave.player.professionSkills.ContainsKey("Enchanting");
         AddRegionGroup();
-        SetRegionGroupWidth(width - (3 - lacking) * 54 - (showDisenchant ? 19 : 0));
+        SetRegionGroupWidth(width - (3 - lacking) * oneSize - (showDisenchant ? 19 : 0));
         AddPaddingRegion(() => AddLine(""));
         if (showDisenchant)
         {
@@ -742,7 +743,7 @@ public static class Root
             AddRegionGroup();
             AddPaddingRegion(() => { AddSmallButton(icon); });
             AddRegionGroup();
-            SetRegionGroupWidth(35);
+            SetRegionGroupWidth(oneSize - 19);
             AddPaddingRegion(() => { AddLine(text, color); });
         }
     }

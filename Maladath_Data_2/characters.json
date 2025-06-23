@@ -198,6 +198,25 @@
               "amount": 1,
               "maxStack": 1,
               "price": 20
+            },
+            {
+              "x": 3,
+              "rarity": "Rare",
+              "name": "Ravager",
+              "icon": "itemhalberd05",
+              "detailedType": "Axe",
+              "type": "Two Handed",
+              "source": "DirectDrop",
+              "ilvl": 42,
+              "lvl": 37,
+              "minPower": 3.97,
+              "maxPower": 5.49,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 18923,
+              "droppedBy": [
+                "Herod"
+              ]
             }
           ],
           "bags": []
@@ -406,9 +425,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2025-06-23T12:52:19.8845211+02:00",
-      "lastLoaded": "2025-06-23T13:45:42.5240707+02:00",
-      "lastPlayed": "2025-06-23T13:46:50.4547436+02:00",
-      "timePlayed": "00:07:42.0860881"
+      "lastLoaded": "2025-06-23T16:04:45.1153108+02:00",
+      "lastPlayed": "2025-06-23T16:05:07.3914539+02:00",
+      "timePlayed": "00:08:04.3622312"
     }
   ]
 }
