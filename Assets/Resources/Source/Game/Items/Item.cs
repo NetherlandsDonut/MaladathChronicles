@@ -1101,7 +1101,7 @@ public class Item
             }
             else if (item.type == "Off Hand") AddLine(item.type + (item.detailedType != null ? " " + item.detailedType : ""), currentSave != null && !currentSave.player.abilities.ContainsKey(item.detailedType == "Shield" ? "Shield Proficiency" : "Off Hand Proficiency") ? "DangerousRed" : "Gray");
             else AddLine(item.type ?? "");
-            if (item.armor > 0) AddLine(item.armor + " Armor");
+            if (item.armor > 0) AddLine(item.armor + " Armor", "", "Right");
         });
         if (item.stats != null && item.stats.Count > 0)
             AddPaddingRegion(() =>
@@ -1134,31 +1134,33 @@ public class Item
                     AddLine((balance > 0 ? "+" : "") + balance, balance > 0 ? "Uncommon" : "DangerousRed");
                     AddText(" Armor");
                 }
-
-                var newPower = item.minPower <= 0 ? 1 : (item.minPower + item.maxPower) / 2;
-                var b1d = Math.Round(!Input.GetKey(KeyCode.LeftAlt) || item.type == "Two Handed" ? newPower : current == null || current.minPower <= 0 ? 0 : (Input.GetKey(KeyCode.LeftAlt) && current.type == "Two Handed" ? 0 : (current.minPower + current.maxPower) / 2), 2);
-                var b2d = Math.Round(item.type == "Two Handed" ? 0 : Input.GetKey(KeyCode.LeftAlt) ? newPower : currentSecond == null || currentSecond.minPower <= 0 ? 0 : (currentSecond.minPower + currentSecond.maxPower) / 2, 2);
-                if (b1d == 0 && b2d == 0) b1d = 1;
-                else if (b2d > 0)
+                if (item.type == "One Handed" || item.type == "Two Handed" || item.type == "Ranged")
                 {
-                    b1d /= defines.dividerForDualWield;
-                    b2d /= defines.dividerForDualWield;
-                }
-                var bd = Math.Round(b1d + b2d, 2);
-                var a1d = Math.Round(current == null || current.minPower <= 0 ? 0 : (current.minPower + current.maxPower) / 2, 2);
-                var a2d = Math.Round(currentSecond == null || currentSecond.minPower <= 0 ? 0 : (currentSecond.minPower + currentSecond.maxPower) / 2, 2);
-                if (a1d == 0 && a2d == 0) a1d = 1;
-                else if (a2d > 0)
-                {
-                    a1d /= defines.dividerForDualWield;
-                    a2d /= defines.dividerForDualWield;
-                }
-                var ad = Math.Round(a1d + a2d, 2);
-                if (bd - ad != 0)
-                {
-                    var balance = Math.Round(bd - ad, 2);
-                    AddLine(((balance > 0 ? "+" : "") + balance).Replace(",", "."), balance > 0 ? "Uncommon" : "DangerousRed");
-                    AddText(" Power modifier");
+                    var newPower = item.minPower <= 0 ? 1 : (item.minPower + item.maxPower) / 2;
+                    var b1d = Math.Round(!Input.GetKey(KeyCode.LeftAlt) || item.type == "Two Handed" ? newPower : current == null || current.minPower <= 0 ? 0 : (Input.GetKey(KeyCode.LeftAlt) && current.type == "Two Handed" ? 0 : (current.minPower + current.maxPower) / 2), 2);
+                    var b2d = Math.Round(item.type == "Two Handed" ? 0 : Input.GetKey(KeyCode.LeftAlt) ? newPower : currentSecond == null || currentSecond.minPower <= 0 ? 0 : (currentSecond.minPower + currentSecond.maxPower) / 2, 2);
+                    if (b1d == 0 && b2d == 0) b1d = 1;
+                    else if (b2d > 0)
+                    {
+                        b1d /= defines.dividerForDualWield;
+                        b2d /= defines.dividerForDualWield;
+                    }
+                    var bd = Math.Round(b1d + b2d, 2);
+                    var a1d = Math.Round(current == null || current.minPower <= 0 ? 0 : (current.minPower + current.maxPower) / 2, 2);
+                    var a2d = Math.Round(currentSecond == null || currentSecond.minPower <= 0 ? 0 : (currentSecond.minPower + currentSecond.maxPower) / 2, 2);
+                    if (a1d == 0 && a2d == 0) a1d = 1;
+                    else if (a2d > 0)
+                    {
+                        a1d /= defines.dividerForDualWield;
+                        a2d /= defines.dividerForDualWield;
+                    }
+                    var ad = Math.Round(a1d + a2d, 2);
+                    if (bd - ad != 0)
+                    {
+                        var balance = Math.Round(bd - ad, 2);
+                        AddLine(((balance > 0 ? "+" : "") + balance).Replace(",", "."), balance > 0 ? "Uncommon" : "DangerousRed");
+                        AddText(" Power modifier");
+                    }
                 }
                 a1 = item.block;
                 a2 = current == null ? 0 : current.block;
