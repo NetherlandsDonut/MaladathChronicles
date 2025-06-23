@@ -96,6 +96,12 @@ public class Item
     //Maximum damage this weapon can do
     public int maxDamage;
 
+    //Minimum power modifier this weapon can roll
+    public double minPower;
+
+    //Maximum power modifier this weapon can roll
+    public double maxPower;
+
     //Amount of armor provided to the wearer of this item
     public int armor;
 
@@ -1421,39 +1427,41 @@ public class Item
     //Copies this item with a specific amount
     public Item CopyItem(int amount = 1)
     {
-        var newItem = new Item();
-        newItem.abilities = abilities?.ToDictionary(x => x.Key, x => x.Value);
-        newItem.amount = amount;
-        newItem.armor = armor;
-        newItem.armorClass = armorClass;
-        newItem.bagSpace = bagSpace;
-        newItem.block = block;
-        newItem.detailedType = detailedType;
-        newItem.droppedBy = droppedBy;
-        newItem.dropRange = dropRange;
-        newItem.faction = faction;
-        newItem.combatUse = combatUse;
-        newItem.icon = icon;
-        newItem.ilvl = ilvl;
-        newItem.lvl = lvl;
-        newItem.maxDamage = maxDamage;
-        newItem.maxStack = maxStack;
-        newItem.minDamage = minDamage;
-        newItem.minutesLeft = minutesLeft;
-        newItem.name = name;
-        newItem.price = price;
-        newItem.rarity = rarity;
-        newItem.randomEnchantment = randomEnchantment;
-        newItem.reputationRequired = reputationRequired;
-        newItem.set = set;
-        newItem.source = source;
-        newItem.indestructible = indestructible;
-        newItem.unique = unique;
-        newItem.specs = specs?.ToList();
-        newItem.questsStarted = questsStarted?.ToList();
-        newItem.speed = speed;
-        newItem.stats = stats != null ? stats.ToDictionary(x => x.Key, x => x.Value) : null;
-        newItem.type = type;
+        var newItem = new Item
+        {
+            abilities = abilities?.ToDictionary(x => x.Key, x => x.Value),
+            amount = amount,
+            armor = armor,
+            armorClass = armorClass,
+            bagSpace = bagSpace,
+            block = block,
+            detailedType = detailedType,
+            droppedBy = droppedBy,
+            dropRange = dropRange,
+            faction = faction,
+            combatUse = combatUse,
+            icon = icon,
+            ilvl = ilvl,
+            lvl = lvl,
+            maxDamage = maxDamage,
+            maxStack = maxStack,
+            minDamage = minDamage,
+            minutesLeft = minutesLeft,
+            name = name,
+            price = price,
+            rarity = rarity,
+            randomEnchantment = randomEnchantment,
+            reputationRequired = reputationRequired,
+            set = set,
+            source = source,
+            indestructible = indestructible,
+            unique = unique,
+            specs = specs?.ToList(),
+            questsStarted = questsStarted?.ToList(),
+            speed = speed,
+            stats = stats?.ToDictionary(x => x.Key, x => x.Value),
+            type = type
+        };
         return newItem;
     }
 

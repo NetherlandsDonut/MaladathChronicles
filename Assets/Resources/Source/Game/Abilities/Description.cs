@@ -68,7 +68,7 @@ public class DescriptionRegion
                     if (double.TryParse(split[2].StartsWith("#") ? variables[split[2]].Replace(".", ",") : split[2].Replace(".", ","), out double powerScale))
                         if (int.TryParse(split[3], out int multiplier))
                         {
-                            var weaponPower = effector.WeaponDamage();
+                            var weaponPower = effector.WeaponDamage(split[1]);
                             var scaler = split[1] == "Melee" ? effector.MeleeAttackPower() : (split[1] == "Spell" ? effector.SpellPower() : (split[1] == "Ranged" ? effector.RangedAttackPower() : 1));
                             if (!Input.GetKey(KeyCode.LeftControl)) text = text.Replace(toReplace, Math.Ceiling(weaponPower.Item1 * scaler * powerScale * multiplier) + " - " + Math.Ceiling(weaponPower.Item2 * scaler * powerScale * multiplier));
                             else text = text.Replace(toReplace, powerScale * 100 + (split[1] == "Melee" ? "% of MAP" : (split[1] == "Spell" ? "% of SP" : (split[1] == "Ranged" ? "% of RAP" : ""))));

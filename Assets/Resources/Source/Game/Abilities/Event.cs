@@ -232,8 +232,9 @@ public class Event
             string affect = effect.ContainsKey("Affect") ? effect["Affect"] : "None";
             string buffName = effect.ContainsKey("BuffName") ? effect["BuffName"] : "None";
             int buffDuration = effect.ContainsKey("BuffDuration") ? int.Parse(effect["BuffDuration"]) : 1;
+            string attackSource = effect.ContainsKey("AttackSource") ? effect["AttackSource"] : "Melee";
             string powerSource = effect.ContainsKey("PowerSource") ? effect["PowerSource"] : "Effector";
-            string powerType = effect.ContainsKey("PowerType") ? effect["PowerType"] : "None";
+            string powerType = effect.ContainsKey("PowerType") ? effect["PowerType"] : "Melee";
             double powerScale = effect.ContainsKey("PowerScale") ? double.Parse(effect["PowerScale"].StartsWith("#") ? variables[effect["PowerScale"]] : effect["PowerScale"].Replace(".", ",")) : 1;
             double chance = effect.ContainsKey("Chance") ? double.Parse(effect["Chance"].Replace(".", ",")) : 0;
             double chanceBase = effect.ContainsKey("ChanceBase") ? double.Parse(effect["ChanceBase"].Replace(".", ",")) : 100;
@@ -328,7 +329,7 @@ public class Event
                 var source = powerSource == "Effector" ? effector : other;
                 var target = affect == "Effector" ? effector : other;
                 string damageAmount = effect.ContainsKey("DamageAmount") ? effect["DamageAmount"] : "None";
-                var amount = damageAmount != "None" ? int.Parse(damageAmount) : (int)Math.Round(source.who.RollWeaponDamage() * ((powerType == "Melee" ? source.who.MeleeAttackPower() : (powerType == "Spell" ? source.who.SpellPower() : (powerType == "Ranged" ? source.who.RangedAttackPower() : 1))) * powerScale));
+                var amount = damageAmount != "None" ? int.Parse(damageAmount) : (int)Math.Round(source.who.RollWeaponDamage(powerType) * ((powerType == "Melee" ? source.who.MeleeAttackPower() : (powerType == "Spell" ? source.who.SpellPower() : (powerType == "Ranged" ? source.who.RangedAttackPower() : 1))) * powerScale));
                 var resistance = powerType == "Spell" ? target.who.MagicResistance() : target.who.PhysicalResistance();
                 amount = (int)(amount * (1 - resistance));
                 if (amount > 0 && target.team == 2) PlayEnemyLine(target.who.EnemyLine("Wound"));
@@ -347,7 +348,7 @@ public class Event
                 var source = powerSource == "Effector" ? effector : other;
                 var target = affect == "Effector" ? effector : other;
                 string healAmount = effect.ContainsKey("HealAmount") ? effect["HealAmount"] : "None";
-                var amount = healAmount != "None" ? int.Parse(healAmount) : (int)Math.Round(source.who.RollWeaponDamage() * ((powerType == "Melee" ? source.who.MeleeAttackPower() : (powerType == "Spell" ? source.who.SpellPower() : (powerType == "Ranged" ? source.who.RangedAttackPower() : 1))) * powerScale));
+                var amount = healAmount != "None" ? int.Parse(healAmount) : (int)Math.Round(source.who.RollWeaponDamage(powerType) * ((powerType == "Melee" ? source.who.MeleeAttackPower() : (powerType == "Spell" ? source.who.SpellPower() : (powerType == "Ranged" ? source.who.RangedAttackPower() : 1))) * powerScale));
                 target.who.Heal(amount, trigger["Trigger"] == "Heal");
                 AddBigButtonOverlay(new Vector3(1, -1) + Board.board.PortraitPosition(Board.board.participants.IndexOf(target)), "OtherHealed", 1f, 5);
                 SpawnFallingText(new Vector3(1, 0) + Board.board.PortraitPosition(Board.board.participants.IndexOf(target)), "" + amount, "Uncommon");

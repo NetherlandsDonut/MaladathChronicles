@@ -1065,7 +1065,7 @@ public class Entity
         return Stats()["Stamina"] * 5;
     }
 
-    public (double, double) WeaponDamage()
+    public (double, double) WeaponDamage(string type)
     {
         if (equipment == null)
         {
@@ -1130,38 +1130,50 @@ public class Entity
             if (level == 02) return (01, 03);
             else return (01, 02);
         }
-        else if (equipment.ContainsKey("Two Handed"))
+        else if (type == "Ranged")
         {
-            var twohanded = equipment["Two Handed"];
-            return (Math.Round(twohanded.minDamage / twohanded.speed), Math.Round(twohanded.maxDamage / twohanded.speed));
+            if (equipment.ContainsKey("Ranged Weapon"))
+            {
+                var ranged = equipment["Ranged Weapon"];
+                return (Math.Round(ranged.minDamage / ranged.speed, 2), Math.Round(ranged.maxDamage / ranged.speed, 2));
+            }
+            else return (1, 1);
         }
         else
         {
-            double min = 0, max = 0;
-            if (equipment.ContainsKey("Main Hand"))
+            if (equipment.ContainsKey("Two Handed"))
             {
-                var mainHand = equipment["Main Hand"];
-                min += Math.Round(mainHand.minDamage / mainHand.speed);
-                max += Math.Round(mainHand.maxDamage / mainHand.speed);
+                var twohanded = equipment["Two Handed"];
+                return (Math.Round(twohanded.minDamage / twohanded.speed), Math.Round(twohanded.maxDamage / twohanded.speed));
             }
-            if (equipment.ContainsKey("Off Hand"))
+            else
             {
-                var offHand = equipment["Off Hand"];
-                if (offHand.maxDamage > 0)
+                double min = 0, max = 0;
+                if (equipment.ContainsKey("Main Hand"))
                 {
-                    min /= 1.5;
-                    min /= 1.5;
-                    min += Math.Round(offHand.minDamage / offHand.speed) / 1.5;
-                    max += Math.Round(offHand.maxDamage / offHand.speed) / 1.5;
+                    var mainHand = equipment["Main Hand"];
+                    min += Math.Round(mainHand.minDamage / mainHand.speed);
+                    max += Math.Round(mainHand.maxDamage / mainHand.speed);
                 }
+                if (equipment.ContainsKey("Off Hand"))
+                {
+                    var offHand = equipment["Off Hand"];
+                    if (offHand.maxDamage > 0)
+                    {
+                        min /= 1.5;
+                        min /= 1.5;
+                        min += Math.Round(offHand.minDamage / offHand.speed) / 1.5;
+                        max += Math.Round(offHand.maxDamage / offHand.speed) / 1.5;
+                    }
+                }
+                return (1 + min / 10, 1 + max / 10);
             }
-            return (1 + min / 10, 1 + max / 10);
         }
     }
 
-    public double RollWeaponDamage()
+    public double RollWeaponDamage(string type)
     {
-        var damage = WeaponDamage();
+        var damage = WeaponDamage(type);
         return random.Next((int)(damage.Item1 * 100), (int)(damage.Item2 * 100) + 1) / 100.0;
     }
 
