@@ -39,7 +39,7 @@ public class Mount
          AddLine("Speed: ", "DarkGray");
          AddText(mount.speed == 7 ? "Fast" : (mount.speed == 9 ? "Very Fast" : "Normal"), "HalfGray");
       });
-      PrintPriceRegion(mount.price);
+      PrintPriceRegion(mount.price, 38, 38, 49);
    }
 
    #endregion

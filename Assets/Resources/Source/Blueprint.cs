@@ -2455,7 +2455,7 @@ public class Blueprint
                     else AddSmallButton("OtherEmpty");
                 }
             });
-            PrintPriceRegion(currentSave.player.inventory.money);
+            PrintPriceRegion(currentSave.player.inventory.money, 38, 38, 57);
         }, true),
         new("InventorySort", () => {
             SetAnchor(Center);
@@ -4899,7 +4899,7 @@ public class Blueprint
                         AddHeaderGroup();
                         SetRegionGroupWidth(188);
                         AddPaddingRegion(() => AddLine(list[index + thisWindow.pagination()].capitalRedirect ?? list[index + thisWindow.pagination()].name));
-                        PrintPriceRegion(price);
+                        PrintPriceRegion(price, 38, 38, 49);
                     });
                 else AddPaddingRegion(() => AddLine());
             }
@@ -5392,7 +5392,7 @@ public class Blueprint
             if (WindowUp("QuestAdd")) return;
             if (WindowUp("QuestTurn")) return;
             SetAnchor(BottomRight, -19, 35);
-            PrintPriceRegion(currentSave.player.inventory.money);
+            PrintPriceRegion(currentSave.player.inventory.money, 38, 38, 57);
         }),
 
         //Fishing

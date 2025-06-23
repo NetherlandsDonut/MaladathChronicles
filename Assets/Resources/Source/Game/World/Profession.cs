@@ -33,7 +33,7 @@ public class Profession
                 AddText(level.requiredSkill + "", !forWho.professionSkills.ContainsKey(profession.name) || forWho.professionSkills[profession.name].Item1 < level.requiredSkill ? "DangerousRed" : "HalfGray");
             }
         });
-        PrintPriceRegion(level.price);
+        PrintPriceRegion(level.price, 38, 38, 49);
     }
 
     #endregion

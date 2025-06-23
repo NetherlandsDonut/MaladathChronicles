@@ -703,19 +703,15 @@ public static class Root
         CDesktop.LBWindow().LBRegionGroup().LBRegion().backgroundImage = Resources.Load<Sprite>("Sprites/RegionReplacements/" + replacement);
     }
 
-    public static void PrintPriceRegion(int price)
+    public static void PrintPriceRegion(int price, int width1, int width2, int width3)
     {
-        int width = CDesktop.LBWindow().LBRegionGroup() == null ? 190 : CDesktop.LBWindow().LBRegionGroup().setWidth;
-        var oneSize = 50;
+        var last = "";
         var lacking = 0;
-        if (price > 9999) Foo("ItemCoinsGold", price / 10000 + "", "Gold"); else lacking++;
-        if (price / 100 % 100 > 0) Foo("ItemCoinsSilver", price / 100 % 100 + "", "Silver"); else lacking++;
-        if (price % 100 > 0 || price == 0) Foo("ItemCoinsCopper", price % 100 + "", "Copper"); else lacking++;
-        if (width == 0) return;
+        if (price > 9999) { Foo("ItemCoinsGold", price / 10000 + "", "Gold", width1); last = "Gold"; } else lacking += width1 + 19;
+        if (price / 100 % 100 > 0) { Foo("ItemCoinsSilver", price / 100 % 100 + "", "Silver", width2); last = "Silver"; } else lacking += width2 + 19;
+        if (price % 100 > 0 || price == 0) { Foo("ItemCoinsCopper", price % 100 + "", "Copper", width3); last = "Copper"; } else lacking += width3 + 19;
         var showDisenchant = CDesktop.LBWindow().title == "Inventory" && currentSave.player.professionSkills.ContainsKey("Enchanting");
-        AddRegionGroup();
-        SetRegionGroupWidth(width - (3 - lacking) * oneSize - (showDisenchant ? 19 : 0));
-        AddPaddingRegion(() => AddLine(""));
+        SetRegionGroupWidth(lacking + (last == "Gold" ? width1 : (last == "Silver" ? width2 : width3)) - (showDisenchant ? 19 : 0));
         if (showDisenchant)
         {
             AddRegionGroup();
@@ -738,12 +734,12 @@ public static class Root
             });
         }
 
-        void Foo(string icon, string text, string color)
+        void Foo(string icon, string text, string color, int size)
         {
             AddRegionGroup();
             AddPaddingRegion(() => { AddSmallButton(icon); });
             AddRegionGroup();
-            SetRegionGroupWidth(oneSize - 19);
+            SetRegionGroupWidth(size);
             AddPaddingRegion(() => { AddLine(text, color); });
         }
     }

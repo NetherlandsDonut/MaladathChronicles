@@ -46,7 +46,7 @@ public class TransportRoute
         SetRegionGroupWidth(188);
         AddHeaderRegion(() => AddLine(means));
         AddPaddingRegion(() => AddLine(sites.Find(x => x != currentSave.currentSite)));
-        PrintPriceRegion(price);
+        PrintPriceRegion(price, 38, 38, 49);
     }
 
     //EXTERNAL FILE: List containing all paths in-game

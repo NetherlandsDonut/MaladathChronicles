@@ -1304,7 +1304,7 @@ public class Item
                 AddLine("Required level: ", "DarkGray");
                 AddText(item.lvl + "", ColorRequiredLevel(item.lvl));
             });
-        if (item.price > 0) PrintPriceRegion((int)(item.price * priceMultiplier) * (item.type != "Currency" ? 1 : item.amount));
+        if (item.price > 0) PrintPriceRegion((int)(item.price * priceMultiplier) * (item.type != "Currency" ? 1 : item.amount), 38, 38, 49);
     }
 
     #endregion

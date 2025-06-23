@@ -84,7 +84,7 @@ public class Recipe
             AddLine("Required skill: ", "DarkGray");
             AddText(recipe.learnedAt + "", forWho.professionSkills.ContainsKey(recipe.profession) && recipe.learnedAt <= forWho.professionSkills[recipe.profession].Item1 ? "HalfGray" : "DangerousRed");
         });
-        if (recipe.price > 0) PrintPriceRegion(recipe.price);
+        if (recipe.price > 0) PrintPriceRegion(recipe.price, 38, 38, 49);
     }
 
     #endregion
