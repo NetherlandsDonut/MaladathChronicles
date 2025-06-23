@@ -530,6 +530,7 @@ public class Blueprint
                     AddSmallButton("OtherBigger", (h) =>
                     {
                         CloseWindow("PlayerEquipmentInfo");
+                        CloseWindow("PlayerWeaponsInfo");
                         Respawn("CharacterInfoStatsExpanded");
                     });
                 else
@@ -537,6 +538,7 @@ public class Blueprint
                     {
                         CloseWindow("CharacterInfoStatsExpanded");
                         Respawn("PlayerEquipmentInfo");
+                        Respawn("PlayerWeaponsInfo");
                     });
                 SmallButtonFlipX();
             });
@@ -670,6 +672,7 @@ public class Blueprint
                     AddSmallButton("OtherBigger", (h) =>
                     {
                         CloseWindow("PlayerEquipmentInfo");
+                        CloseWindow("PlayerWeaponsInfo");
                         Respawn("CharacterInfoMasteriesExpanded");
                     });
                 else
@@ -677,6 +680,7 @@ public class Blueprint
                     {
                         CloseWindow("CharacterInfoMasteriesExpanded");
                         Respawn("PlayerEquipmentInfo");
+                        Respawn("PlayerWeaponsInfo");
                     });
                 SmallButtonFlipX();
             });
@@ -2340,87 +2344,35 @@ public class Blueprint
             SetRegionGroupWidth(190);
             SetRegionGroupHeight(252);
             AddHeaderRegion(() => AddLine("Equipment:"));
-            Foo("Head", currentSave.player.GetItemInSlot("Head"));
-            Foo("Shoulders", currentSave.player.GetItemInSlot("Shoulders"));
-            Foo("Back", currentSave.player.GetItemInSlot("Back"));
-            Foo("Chest", currentSave.player.GetItemInSlot("Chest"));
-            Foo("Wrists", currentSave.player.GetItemInSlot("Wrists"));
-            Foo("Hands", currentSave.player.GetItemInSlot("Hands"));
-            Foo("Waist", currentSave.player.GetItemInSlot("Waist"));
-            Foo("Legs", currentSave.player.GetItemInSlot("Legs"));
-            Foo("Feet", currentSave.player.GetItemInSlot("Feet"));
-            Foo("Main Hand", currentSave.player.GetItemInSlot("Main Hand"));
+            PrintEquipmentSlot("Head", currentSave.player.GetItemInSlot("Head"));
+            PrintEquipmentSlot("Shoulders", currentSave.player.GetItemInSlot("Shoulders"));
+            PrintEquipmentSlot("Back", currentSave.player.GetItemInSlot("Back"));
+            PrintEquipmentSlot("Chest", currentSave.player.GetItemInSlot("Chest"));
+            PrintEquipmentSlot("Wrists", currentSave.player.GetItemInSlot("Wrists"));
+            PrintEquipmentSlot("Hands", currentSave.player.GetItemInSlot("Hands"));
+            PrintEquipmentSlot("Waist", currentSave.player.GetItemInSlot("Waist"));
+            PrintEquipmentSlot("Legs", currentSave.player.GetItemInSlot("Legs"));
+            PrintEquipmentSlot("Feet", currentSave.player.GetItemInSlot("Feet"));
+            AddEmptyRegion();
+            AddHeaderRegion(() => AddLine("Jewelry:"));
+            PrintEquipmentSlot("Neck", currentSave.player.GetItemInSlot("Neck"));
+            PrintEquipmentSlot("Finger", currentSave.player.GetItemInSlot("Finger"));
+            PrintEquipmentSlot("Trinket", currentSave.player.GetItemInSlot("Trinket"));
+        }),
+        new("PlayerWeaponsInfo", () => {
+            if (CDesktop.title == "Map") return;
+            SetAnchor(Bottom, 0, 35);
+            AddRegionGroup();
+            SetRegionGroupWidth(182);
+            AddHeaderRegion(() => AddLine("Weapons:"));
+            PrintEquipmentSlot("Main Hand", currentSave.player.GetItemInSlot("Main Hand"));
             bool showOff = currentSave.player.GetItemInSlot("Main Hand") == null || currentSave.player.GetItemInSlot("Main Hand") != null && currentSave.player.GetItemInSlot("Main Hand").type != "Two Handed";
-            if (showOff) Foo("Off Hand", currentSave.player.GetItemInSlot("Off Hand"));
-            Foo("Neck", currentSave.player.GetItemInSlot("Neck"));
-            Foo("Finger", currentSave.player.GetItemInSlot("Finger"));
-            Foo("Trinket", currentSave.player.GetItemInSlot("Trinket"));
-            if (!showOff) AddPaddingRegion(() => { AddLine(""); });
-            //if (currentSave.player.spec == "Druid")
-            //    Foo("Idol", currentSave.player.GetItemInSlot("Special"));
-            //if (currentSave.player.spec == "Paladin")
-            //    Foo("Libram", currentSave.player.GetItemInSlot("Special"));
-            //if (currentSave.player.spec == "Shaman")
-            //    Foo("Totem", currentSave.player.GetItemInSlot("Special"));
-            //AddPaddingRegion(() => { AddLine(); AddLine(); AddLine(); AddLine(); });
-
-            void Foo(string slot, Item item)
-            {
-                if (item != null)
-                    AddHeaderRegion(
-                        () =>
-                        {
-                            AddLine(item.name, item.rarity, "Right");
-                            AddSmallButton(item.icon,
-                            (h) =>
-                            {
-                                if (Cursor.cursor.color == "Pink") return;
-                                if (WindowUp("InventorySort")) return;
-                                if (WindowUp("ConfirmItemDisenchant")) return;
-                                if (WindowUp("ConfirmItemDestroy")) return;
-                                if (WindowUp("Inventory") && movingItem == null && currentSave.player.inventory.CanAddItem(currentSave.player.equipment[slot]))
-                                {
-                                    PlaySound(item.ItemSound("PutDown"), 0.8f);
-                                    foreach (var unequiped in currentSave.player.Unequip(new() { slot }))
-                                        currentSave.player.inventory.AddItem(unequiped);
-                                    Respawn("PlayerEquipmentInfo");
-                                    Respawn("Inventory");
-                                }
-                            },
-                            (h) =>
-                            {
-                                if (WindowUp("InventorySort")) return;
-                                if (WindowUp("ConfirmItemDisenchant")) return;
-                                if (WindowUp("ConfirmItemDestroy")) return;
-                                if (item.CanUse(currentSave.player))
-                                {
-                                    PlaySound(item.ItemSound("Use"), 0.8f);
-                                    item.Use(currentSave.player);
-                                    Respawn("Inventory", true);
-                                    Respawn("PlayerEquipmentInfo", true);
-                                }
-                            },
-                            (h) => () =>
-                            {
-                                if (WindowUp("InventorySort")) return;
-                                if (WindowUp("ConfirmItemDisenchant")) return;
-                                if (WindowUp("ConfirmItemDestroy")) return;
-                                PrintItemTooltip(item);
-                            });
-                            if (settings.rarityIndicators.Value())
-                                AddSmallButtonOverlay("OtherRarity" + item.rarity, 0, 2);
-                            if (Cursor.cursor.color == "Pink")
-                                if (!item.IsDisenchantable()) SetSmallButtonToGrayscale();
-                                else SetSmallButtonToRed();
-                        }
-                    );
-                else
-                    AddPaddingRegion(() =>
-                    {
-                        AddLine(slot, "DarkGray", "Right");
-                        AddSmallButton("OtherEmpty");
-                    });
-            }
+            if (showOff) PrintEquipmentSlot("Off Hand", currentSave.player.GetItemInSlot("Off Hand"));
+            var hasBowProficiency = currentSave.player.abilities.ContainsKey("Bow Proficiency");
+            var hasCrossbowProficiency = currentSave.player.abilities.ContainsKey("Crossbow Proficiency");
+            var hasGunProficiency = currentSave.player.abilities.ContainsKey("Gun Proficiency");
+            if (hasBowProficiency || hasCrossbowProficiency || hasGunProficiency)
+                PrintEquipmentSlot("Ranged Weapon", currentSave.player.GetItemInSlot("Ranged Weapon"));
         }),
         new("Inventory", () => {
             if (CDesktop.title == "Map") return;
@@ -3129,7 +3081,7 @@ public class Blueprint
                     }
                     else
                     {
-                        AddLine(board.participants[1].who.name + ":");
+                        AddLine("Combat spoils" + ":");
                         AddSmallButton("OtherClose", (h) =>
                         {
                             PlaySound("DesktopInventoryClose");
@@ -5883,6 +5835,7 @@ public class Blueprint
                     if (CDesktop.title == "EquipmentScreen")
                     {
                         Respawn("PlayerEquipmentInfo");
+                        Respawn("PlayerWeaponsInfo");
                         Respawn("Inventory");
                     }
                 });
@@ -6824,7 +6777,7 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
-            SpawnWindowBlueprint("PlayerEquipmentInfo");
+            //SpawnWindowBlueprint("PlayerEquipmentInfo");
             SpawnWindowBlueprint("LootInfo");
             SpawnWindowBlueprint("CombatResultsLoot");
             SpawnWindowBlueprint("Inventory");
@@ -6856,7 +6809,7 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
-            SpawnWindowBlueprint("PlayerEquipmentInfo");
+            //SpawnWindowBlueprint("PlayerEquipmentInfo");
             SpawnWindowBlueprint("LootInfo");
             SpawnWindowBlueprint("ContainerLoot");
             SpawnWindowBlueprint("Inventory");
@@ -6902,7 +6855,7 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
-            SpawnWindowBlueprint("PlayerEquipmentInfo");
+            //SpawnWindowBlueprint("PlayerEquipmentInfo");
             SpawnWindowBlueprint("LootInfo");
             SpawnWindowBlueprint("Inventory");
             SpawnWindowBlueprint("ExperienceBarBorder");
@@ -6944,7 +6897,7 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
-            SpawnWindowBlueprint("PlayerEquipmentInfo");
+            //SpawnWindowBlueprint("PlayerEquipmentInfo");
             SpawnWindowBlueprint("LootInfo");
             SpawnWindowBlueprint("Inventory");
             SpawnWindowBlueprint("ExperienceBarBorder");
@@ -6986,7 +6939,7 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
-            SpawnWindowBlueprint("PlayerEquipmentInfo");
+            //SpawnWindowBlueprint("PlayerEquipmentInfo");
             SpawnWindowBlueprint("LootInfo");
             SpawnWindowBlueprint("Inventory");
             SpawnWindowBlueprint("ExperienceBarBorder");
@@ -7016,7 +6969,7 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
-            SpawnWindowBlueprint("PlayerEquipmentInfo");
+            //SpawnWindowBlueprint("PlayerEquipmentInfo");
             SpawnWindowBlueprint("ChestInfo");
             SpawnWindowBlueprint("ChestLoot");
             SpawnWindowBlueprint("Inventory");
@@ -7058,7 +7011,7 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
-            SpawnWindowBlueprint("PlayerEquipmentInfo");
+            //SpawnWindowBlueprint("PlayerEquipmentInfo");
             SpawnWindowBlueprint("LootInfo");
             SpawnWindowBlueprint("Inventory");
             SpawnWindowBlueprint("ExperienceBarBorder");
@@ -7427,6 +7380,7 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
             SpawnWindowBlueprint("PlayerEquipmentInfo");
+            SpawnWindowBlueprint("PlayerWeaponsInfo");
             SpawnWindowBlueprint("CharacterInfoStats");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
@@ -7546,6 +7500,7 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
             SpawnWindowBlueprint("PlayerEquipmentInfo");
+            SpawnWindowBlueprint("PlayerWeaponsInfo");
             SpawnWindowBlueprint("Inventory");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
@@ -7559,6 +7514,7 @@ public class Blueprint
                 {
                     Cursor.cursor.ResetColor();
                     Respawn("PlayerEquipmentInfo", true);
+                    Respawn("PlayerWeaponsInfo", true);
                     Respawn("Inventory", true);
                 }
                 else if (movingItem != null)
@@ -7568,6 +7524,7 @@ public class Blueprint
                     Cursor.cursor.iconAttached.SetActive(false);
                     movingItem = null;
                     Respawn("PlayerEquipmentInfo", true);
+                    Respawn("PlayerWeaponsInfo", true);
                     Respawn("Inventory", true);
                 }
                 else
@@ -7651,6 +7608,7 @@ public class Blueprint
                     if (CDesktop.title == "EquipmentScreen")
                     {
                         Respawn("PlayerEquipmentInfo");
+                        Respawn("PlayerWeaponsInfo");
                         Respawn("Inventory");
                     }
                 }

@@ -4,9 +4,11 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
+using static Item;
 using static Sound;
 using static Board;
 using static MapGrid;
+using static SaveGame;
 using static Coloring;
 using static Blueprint;
 using static GameSettings;
@@ -725,6 +727,7 @@ public static class Root
                             Cursor.cursor.SetColor("Pink");
                         else Cursor.cursor.ResetColor();
                         Respawn("PlayerEquipmentInfo");
+                        Respawn("PlayerWeaponsInfo");
                     });
                 else
                 {
@@ -742,6 +745,66 @@ public static class Root
             SetRegionGroupWidth(35);
             AddPaddingRegion(() => { AddLine(text, color); });
         }
+    }
+
+    public static void PrintEquipmentSlot(string slot, Item item)
+    {
+        if (item != null)
+            AddHeaderRegion(() =>
+            {
+                ReverseButtons();
+                AddLine(item.name, item.rarity, "Left");
+                AddSmallButton(item.icon,
+                (h) =>
+                {
+                    if (Cursor.cursor.color == "Pink") return;
+                    if (WindowUp("InventorySort")) return;
+                    if (WindowUp("ConfirmItemDisenchant")) return;
+                    if (WindowUp("ConfirmItemDestroy")) return;
+                    if (WindowUp("Inventory") && movingItem == null && currentSave.player.inventory.CanAddItem(currentSave.player.equipment[slot]))
+                    {
+                        PlaySound(item.ItemSound("PutDown"), 0.8f);
+                        foreach (var unequiped in currentSave.player.Unequip(new() { slot }))
+                            currentSave.player.inventory.AddItem(unequiped);
+                        Respawn("PlayerEquipmentInfo");
+                        Respawn("PlayerWeaponsInfo");
+                        Respawn("Inventory");
+                    }
+                },
+                (h) =>
+                {
+                    if (WindowUp("InventorySort")) return;
+                    if (WindowUp("ConfirmItemDisenchant")) return;
+                    if (WindowUp("ConfirmItemDestroy")) return;
+                    if (item.CanUse(currentSave.player))
+                    {
+                        PlaySound(item.ItemSound("Use"), 0.8f);
+                        item.Use(currentSave.player);
+                        Respawn("Inventory", true);
+                        Respawn("PlayerEquipmentInfo", true);
+                        Respawn("PlayerWeaponsInfo", true);
+                    }
+                },
+                (h) => () =>
+                {
+                    if (WindowUp("InventorySort")) return;
+                    if (WindowUp("ConfirmItemDisenchant")) return;
+                    if (WindowUp("ConfirmItemDestroy")) return;
+                    PrintItemTooltip(item);
+                });
+                if (settings.rarityIndicators.Value())
+                    AddSmallButtonOverlay("OtherRarity" + item.rarity, 0, 2);
+                if (Cursor.cursor.color == "Pink")
+                    if (!item.IsDisenchantable()) SetSmallButtonToGrayscale();
+                    else SetSmallButtonToRed();
+            });
+        else
+            AddPaddingRegion(() =>
+            {
+                ReverseButtons();
+                AddLine(slot, "DarkGray", "Left");
+                AddSmallButton("OtherEmpty");
+            });
     }
 
     #endregion

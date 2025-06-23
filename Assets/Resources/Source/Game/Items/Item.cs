@@ -322,12 +322,6 @@ public class Item
                 return entity.abilities.ContainsKey("Polearm Proficiency");
             else if (detailedType == "Staff")
                 return entity.abilities.ContainsKey("Staff Proficiency");
-            else if (detailedType == "Bow")
-                return entity.abilities.ContainsKey("Bow Proficiency");
-            else if (detailedType == "Crossbow")
-                return entity.abilities.ContainsKey("Crossbow Proficiency");
-            else if (detailedType == "Gun")
-                return entity.abilities.ContainsKey("Gun Proficiency");
             else
                 return true;
         }
@@ -337,6 +331,17 @@ public class Item
                 return entity.abilities.ContainsKey("Shield Proficiency");
             else
                 return entity.abilities.ContainsKey("Off Hand Proficiency");
+        }
+        else if (type == "Ranged Weapon")
+        {
+            if (detailedType == "Bow")
+                return entity.abilities.ContainsKey("Bow Proficiency");
+            else if (detailedType == "Crossbow")
+                return entity.abilities.ContainsKey("Crossbow Proficiency");
+            else if (detailedType == "Gun")
+                return entity.abilities.ContainsKey("Gun Proficiency");
+            else
+                return true;
         }
         else if (type == "One Handed")
         {
@@ -698,6 +703,7 @@ public class Item
                         Cursor.cursor.ResetColor();
                         PlaySound("DesktopMenuOpen", 0.6f);
                         Respawn("PlayerEquipmentInfo");
+                        Respawn("PlayerWeaponsInfo");
                         SpawnWindowBlueprint("ConfirmItemDisenchant");
                     }
                 }
@@ -828,6 +834,7 @@ public class Item
                         item.Equip(currentSave.player, false);
                         Respawn("Inventory", true);
                         Respawn("PlayerEquipmentInfo", true);
+                        Respawn("PlayerWeaponsInfo", true);
                     }
                     else if (item.CanUse(currentSave.player))
                     {
@@ -835,6 +842,7 @@ public class Item
                         item.Use(currentSave.player);
                         Respawn("Inventory", true);
                         Respawn("PlayerEquipmentInfo", true);
+                        Respawn("PlayerWeaponsInfo", true);
                     }
                 }
             },
