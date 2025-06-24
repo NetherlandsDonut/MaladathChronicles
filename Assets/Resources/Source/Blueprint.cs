@@ -1737,11 +1737,10 @@ public class Blueprint
                 {
                     if (primary.Count() > index)
                     {
-                        AddLine(primary[index].name);
-                        AddLine("Skill: ", "DarkGray");
-                        AddText(currentSave.player.professionSkills[primary[index].name].Item1 + "", "Gray");
-                        AddText(" / ", "DarkGray");
-                        AddText(primary[index].levels.FindAll(x => currentSave.player.professionSkills[primary[index].name].Item2.Contains(x.name)).Max(x => x.maxSkill) + "", "Gray");
+                        var maxSkill = primary[index].levels.Where(x => currentSave.player.professionSkills[primary[index].name].Item2.Contains(x.name)).Max(x => x.maxSkill);
+                        var skill = currentSave.player.professionSkills[primary[index].name].Item1;
+                        AddLine(primary[index].name + " " + skill);
+                        AddLine(maxSkill + "", "DimGray", "Right");
                         AddBigButton(primary[index].icon,
                         (h) =>
                         {
@@ -1754,6 +1753,7 @@ public class Blueprint
                             PlaySound("DesktopInstanceOpen");
                             SetDesktopBackground("Backgrounds/Profession");
                         });
+                        AddSkillBar(40, -19, primary[index], currentSave.player);
                     }
                     else AddBigButton("OtherDisabled");
                 });
@@ -1768,23 +1768,22 @@ public class Blueprint
             {
                 AddLine("Gathering professions:");
             });
-            var primary = professions.Where(x => x.gathering).ToList();
-            for (int i = 0; i < primary.Count; i++)
+            var gathering = professions.Where(x => x.gathering).ToList();
+            for (int i = 0; i < gathering.Count; i++)
             {
                 var index = i;
                 AddPaddingRegion(() =>
                 {
-                    if (primary.Count() > index)
+                    if (gathering.Count() > index)
                     {
-                        AddLine(primary[index].name);
-                        AddLine("Skill: ", "DarkGray");
-                        AddText(currentSave.player.professionSkills[primary[index].name].Item1 + "", "Gray");
-                        AddText(" / ", "DarkGray");
-                        AddText(primary[index].levels.FindAll(x => currentSave.player.professionSkills[primary[index].name].Item2.Contains(x.name)).Max(x => x.maxSkill) + "", "Gray");
-                        AddBigButton(primary[index].icon,
+                        var maxSkill = gathering[index].levels.Where(x => currentSave.player.professionSkills[gathering[index].name].Item2.Contains(x.name)).Max(x => x.maxSkill);
+                        var skill = currentSave.player.professionSkills[gathering[index].name].Item1;
+                        AddLine(gathering[index].name + " " + skill);
+                        AddLine(maxSkill + "", "DimGray", "Right");
+                        AddBigButton(gathering[index].icon,
                         (h) =>
                         {
-                            profession = primary[index];
+                            profession = gathering[index];
                             if (profession.recipeType == null) return;
                             CloseWindow("ProfessionListPrimary");
                             CloseWindow("ProfessionListSecondary");
@@ -1793,6 +1792,7 @@ public class Blueprint
                             PlaySound("DesktopInstanceOpen");
                             SetDesktopBackground("Backgrounds/Profession");
                         });
+                        AddSkillBar(40, -19, gathering[index], currentSave.player);
                     }
                     else AddBigButton("OtherDisabled");
                 });
@@ -1814,11 +1814,10 @@ public class Blueprint
                 {
                     if (currentSave.player.professionSkills.ContainsKey(secondary[index].name))
                     {
-                        AddLine(secondary[index].name);
-                        AddLine("Skill: ", "DarkGray");
-                        AddText(currentSave.player.professionSkills[secondary[index].name].Item1 + "", "Gray");
-                        AddText(" / ", "DarkGray");
-                        AddText(secondary[index].levels.FindAll(x => currentSave.player.professionSkills[secondary[index].name].Item2.Contains(x.name)).Max(x => x.maxSkill) + "", "Gray");
+                        var maxSkill = secondary[index].levels.Where(x => currentSave.player.professionSkills[secondary[index].name].Item2.Contains(x.name)).Max(x => x.maxSkill);
+                        var skill = currentSave.player.professionSkills[secondary[index].name].Item1;
+                        AddLine(secondary[index].name + " " + skill);
+                        AddLine(maxSkill + "", "DimGray", "Right");
                         AddBigButton(secondary[index].icon,
                         (h) =>
                         {
@@ -1831,6 +1830,7 @@ public class Blueprint
                             PlaySound("DesktopInstanceOpen");
                             SetDesktopBackground("Backgrounds/Profession");
                         });
+                        AddSkillBar(40, -19, secondary[index], currentSave.player);
                     }
                     else AddBigButton("OtherDisabled");
                 });
@@ -1848,11 +1848,10 @@ public class Blueprint
             SetRegionGroupHeight(281);
             AddHeaderRegion(() =>
             {
-                AddLine(profession.name);
-                //AddLine("Skill: ", "DarkGray");
-                //AddText(currentSave.player.professionSkills[profession.name].Item1 + "", "Gray");
-                //AddText(" / ", "DarkGray");
-                //AddText(profession.levels.FindAll(x => currentSave.player.professionSkills[profession.name].Item2.Contains(x.levelName)).Max(x => x.maxSkill) + "", "Gray");
+                var maxSkill = profession.levels.Where(x => currentSave.player.professionSkills[profession.name].Item2.Contains(x.name)).Max(x => x.maxSkill);
+                var skill = currentSave.player.professionSkills[profession.name].Item1;
+                AddLine(profession.name + " " + skill);
+                //AddLine(maxSkill + "", "DimGray", "Right");
                 AddBigButton(profession.icon);
                 AddSmallButton("OtherClose", (h) =>
                 {

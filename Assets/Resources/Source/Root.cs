@@ -1074,7 +1074,7 @@ public static class Root
         temp.Initialise(text, color == "" ? "Gray" : color, borderColor, align);
     }
 
-    #endregion
+    #endregion  
 
     #region InputLines
 
@@ -1254,10 +1254,12 @@ public static class Root
     public static void AddSkillBar(int x, int y, Profession profession, Entity entity)
     {
         var skillBar = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/PrefabSkillBar"));
-        skillBar.transform.parent = CDesktop.LBWindow().transform;
+        skillBar.transform.parent = CDesktop.LBWindow().LBRegionGroup().LBRegion().transform;
         skillBar.transform.localPosition = new Vector3(x, y, 0);
         var thisBar = skillBar.GetComponent<FluidBar>();
-        thisBar.Initialise(150, () => profession.levels.Where(x => entity.professionSkills[profession.name].Item2.Contains(x.name)).Max(x => x.maxSkill) - 1, () => entity.professionSkills[profession.name].Item1 - 1, false);
+        var maxSkill = profession.levels.Where(x => entity.professionSkills[profession.name].Item2.Contains(x.name)).Max(x => x.maxSkill);
+        var skill = entity.professionSkills[profession.name].Item1;
+        thisBar.Initialise(150, () => maxSkill - 1, () => skill - 1, false);
         thisBar.UpdateFluidBar();
     }
 

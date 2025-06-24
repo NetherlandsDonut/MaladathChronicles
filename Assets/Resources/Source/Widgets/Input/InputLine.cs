@@ -629,7 +629,7 @@ public class InputLine : MonoBehaviour
 
         void ProfessionSetter(string profession)
         {
-            if (foo.Value().Substring(3).StartsWith("r"))
+            if (foo.Value()[3..].StartsWith("r"))
             {
                 if (currentSave.player.professionSkills.ContainsKey(profession))
                     currentSave.player.professionSkills.Remove(profession);
@@ -637,7 +637,7 @@ public class InputLine : MonoBehaviour
             }
             else
             {
-                var amount = int.Parse(foo.Value().Substring(3));
+                var amount = int.Parse(foo.Value()[3..]);
                 if (currentSave.player.professionSkills.ContainsKey(profession))
                     currentSave.player.professionSkills[profession] = (amount, currentSave.player.professionSkills[profession].Item2);
                 Sound.PlaySound("DesktopButtonPressRight");
