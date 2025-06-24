@@ -516,33 +516,98 @@ public class Blueprint
         }),
 
         //Character
-        new("CharacterInfoStats", () => {
-            SetAnchor(TopRight, -19, -38);
+        new("CharacterInfoWeapons", () => {
+            SetAnchor(Bottom, 0, 35);
+            AddHeaderGroup();
+            SetRegionGroupWidth(182);
+            AddHeaderRegion(() => AddLine("Weapon modifiers:"));
+            var ranged = currentSave.player.GetItemInSlot("Ranged Weapon");
+            var main = currentSave.player.GetItemInSlot("Main Hand");
+            var off = currentSave.player.GetItemInSlot("Off Hand");
+            var mainPower = Math.Round(main == null ? (off == null || off.minPower == 0 ? 1 : 0) : (main.minPower + main.maxPower) / 2, 2);
+            if (off != null)
+            {
+                mainPower /= defines.dividerForDualWield;
+                mainPower = Math.Round(mainPower + Math.Round((off.minPower + off.maxPower) / 2, 2) / defines.dividerForDualWield, 2);
+            }
+            AddPaddingRegion(() =>
+            {
+                AddLine("Average MAP modifier:");
+                AddLine(Math.Round(mainPower, 2).ToString("0.00").Replace(",", "."), "Melee", "Right");
+                AddLine("Average RAP modifier:");
+                AddLine(ranged == null ? "1.00" : Math.Round((ranged.minPower + ranged.maxPower) / 2, 2).ToString("0.00").Replace(",", "."), "Ranged", "Right");
+                AddLine("Average SP modifier:");
+                AddLine(Math.Round(mainPower, 2).ToString("0.00").Replace(",", "."), "Spell", "Right");
+            });
+        }, true),
+        new("CharacterInfoDefences", () => {
+            SetAnchor(Bottom, 0, 122);
+            AddHeaderGroup();
+            SetRegionGroupWidth(182);
+            AddHeaderRegion(() => AddLine("Combat prowess:"));
+            AddPaddingRegion(() =>
+            {
+                AddLine("Critical strike chance:", "Gray", "Left");
+                AddLine(currentSave.player.CriticalStrike().ToString("0.00").Replace(",", ".") + "%", "Uncommon", "Right");
+                AddLine("Spell critical chance:", "Gray", "Left");
+                AddLine(currentSave.player.SpellCritical().ToString("0.00").Replace(",", ".") + "%", "Uncommon", "Right");
+            });
+        }, true),
+        new("CharacterInfoPower", () => {
+            SetAnchor(BottomLeft, 19, 35);
             AddHeaderGroup();
             SetRegionGroupWidth(190);
-            SetRegionGroupHeight(252);
+            AddHeaderRegion(() => AddLine("Defence summary:"));
+            AddPaddingRegion(() =>
+            {
+                AddLine("Max health:", "Gray", "Left");
+                AddLine(currentSave.player.MaxHealth() + "", "Uncommon", "Right");
+                AddLine("Physical resistance:", "Gray", "Left");
+                AddLine(currentSave.player.PhysicalResistance().ToString("0.00").Replace(",", ".") + "%", "Uncommon", "Right");
+                AddLine("Magic resistance:", "Gray", "Left");
+                AddLine(currentSave.player.MagicResistance().ToString("0.00").Replace(",", ".") + "%", "Uncommon", "Right");
+            });
+            AddEmptyRegion();
+            AddHeaderRegion(() => AddLine("Character power:"));
+            AddPaddingRegion(() =>
+            {
+                AddLine("Melee attack power:", "Gray", "Left");
+                AddLine(currentSave.player.MeleeAttackPower() + "", "Uncommon", "Right");
+                AddLine("Ranged attack power:", "Gray", "Left");
+                AddLine(currentSave.player.RangedAttackPower() + "", "Uncommon", "Right");
+                AddLine("Spell power:", "Gray", "Left");
+                AddLine(currentSave.player.SpellPower() + "", "Uncommon", "Right");
+            });
+        }, true),
+        new("CharacterInfoStats", () => {
+            SetAnchor(TopLeft, 19, -38);
+            AddHeaderGroup();
+            SetRegionGroupWidth(190);
+            SetRegionGroupHeight(271);
             var rawStats = currentSave.player.Stats(true);
             var stats = currentSave.player.Stats();
             AddHeaderRegion(() => 
             {
-                AddLine("Character stats:");
-                if (WindowUp("PlayerEquipmentInfo"))
+                AddLine("General stats:");
+                if (!WindowUp("CharacterInfoStatsExpanded"))
                     AddSmallButton("OtherBigger", (h) =>
                     {
-                        CloseWindow("PlayerEquipmentInfo");
-                        CloseWindow("PlayerWeaponsInfo");
+                        CloseWindow("CharacterInfoMasteries");
+                        CloseWindow("CharacterInfoWeapons");
+                        CloseWindow("CharacterInfoDefences");
                         Respawn("CharacterInfoStatsExpanded");
                     });
                 else
                     AddSmallButton("OtherSmaller", (h) =>
                     {
                         CloseWindow("CharacterInfoStatsExpanded");
-                        Respawn("PlayerEquipmentInfo");
-                        Respawn("PlayerWeaponsInfo");
+                        Respawn("CharacterInfoMasteries");
+                        Respawn("CharacterInfoWeapons");
+                        Respawn("CharacterInfoDefences");
                     });
                 SmallButtonFlipX();
             });
-            AddHeaderRegion(() => 
+            AddPaddingRegion(() => 
             {
                 foreach (var foo in stats)
                     if (!foo.Key.Contains("Mastery"))
@@ -551,43 +616,12 @@ public class Blueprint
                         AddLine(foo.Value + "", rawStats[foo.Key] == foo.Value ? "Gray" : "Uncommon", "Right");
                     }
             });
-            AddHeaderRegion(() => 
-            {
-                AddLine("Max health:", "Gray", "Left");
-                AddLine(currentSave.player.MaxHealth() + "", "Uncommon", "Right");
-                AddLine("Melee attack power:", "Gray", "Left");
-                AddLine(currentSave.player.MeleeAttackPower() + "", "Uncommon", "Right");
-                AddLine("Ranged attack power:", "Gray", "Left");
-                AddLine(currentSave.player.RangedAttackPower() + "", "Uncommon", "Right");
-                AddLine("Spell power:", "Gray", "Left");
-                AddLine(currentSave.player.SpellPower() + "", "Uncommon", "Right");
-                AddLine("Critical strike:", "Gray", "Left");
-                AddLine(currentSave.player.CriticalStrike().ToString("0.00") + "%", "Uncommon", "Right");
-                AddLine("Spell critical:", "Gray", "Left");
-                AddLine(currentSave.player.SpellCritical().ToString("0.00") + "%", "Uncommon", "Right");
-                AddLine("Physical resistance:", "Gray", "Left");
-                AddLine(currentSave.player.PhysicalResistance().ToString("0.00") + "%", "Uncommon", "Right");
-                AddLine("Magic resistance:", "Gray", "Left");
-                AddLine(currentSave.player.MagicResistance().ToString("0.00") + "%", "Uncommon", "Right");
-            });
-            AddPaddingRegion(() => SetRegionAsGroupExtender());
-            AddRegionGroup();
-            SetRegionGroupWidth(95);
-            AddPaddingRegion(() => AddLine("Stats", "", "Center"));
-            AddRegionGroup();
-            SetRegionGroupWidth(95);
-            AddButtonRegion(() => AddLine("Masteries", "", "Center"), (h) =>
-            {
-                CloseWindow("CharacterInfoStats");
-                Respawn("CharacterInfoMasteries");
-                if (CloseWindow("CharacterInfoStatsExpanded"))
-                    Respawn("CharacterInfoMasteriesExpanded");
-            });
         }, true),
         new("CharacterInfoStatsExpanded", () => {
-            SetAnchor(TopLeft, 19, -38);
+            SetAnchor(TopRight, -19, -38);
             AddHeaderGroup();
             SetRegionGroupWidth(391);
+            SetRegionGroupHeight(271);
             var stats = currentSave.player.Stats();
             var spec = currentSave.player.Spec();
             AddHeaderRegion(() =>
@@ -623,7 +657,7 @@ public class Blueprint
                 if (spec.rules["Ranged Attack Power per Agility"] > 0)
                     AddLine("+" + spec.rules["Ranged Attack Power per Agility"] + " Ranged attack power", "Uncommon");
                 if (spec.rules["Critical Strike per Agility"] > 0)
-                    AddLine("+" + spec.rules["Critical Strike per Agility"] + "% Critical strike", "Uncommon");
+                    AddLine("+" + spec.rules["Critical Strike per Agility"] + "% Critical strike chance", "Uncommon");
             });
             AddHeaderRegion(() =>
             {
@@ -635,7 +669,7 @@ public class Blueprint
             {
                 AddLine("+" + spec.rules["Spell Power per Intellect"] + " Spell power", "Uncommon");
                 if (spec.rules["Spell Critical per Intellect"] > 0)
-                    AddLine("+" + spec.rules["Spell Critical per Intellect"] + "% Spell critical", "Uncommon");
+                    AddLine("+" + spec.rules["Spell Critical per Intellect"] + "% Spell critical chance", "Uncommon");
             });
             AddHeaderRegion(() =>
             {
@@ -656,55 +690,46 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddLine("+" + spec.rules["Physical Resistance per Armor"] + "% Physical resistance", "Uncommon");
+                SetRegionAsGroupExtender();
             });
         }, true),
         new("CharacterInfoMasteries", () => {
-            SetAnchor(TopRight, -19, -38);
+            SetAnchor(BottomRight, -19, 35);
             AddHeaderGroup();
             SetRegionGroupWidth(190);
-            SetRegionGroupHeight(252);
             var rawStats = currentSave.player.Stats(true);
             var stats = currentSave.player.Stats();
             AddHeaderRegion(() =>
             {
                 AddLine("Element masteries:");
-                if (WindowUp("PlayerEquipmentInfo"))
+                if (!WindowUp("CharacterInfoMasteriesExpanded"))
                     AddSmallButton("OtherBigger", (h) =>
                     {
-                        CloseWindow("PlayerEquipmentInfo");
-                        CloseWindow("PlayerWeaponsInfo");
+                        CloseWindow("CharacterInfoStats");
+                        CloseWindow("CharacterInfoWeapons");
+                        CloseWindow("CharacterInfoDefences");
+                        CloseWindow("CharacterInfoPower");
                         Respawn("CharacterInfoMasteriesExpanded");
                     });
                 else
                     AddSmallButton("OtherSmaller", (h) =>
                     {
                         CloseWindow("CharacterInfoMasteriesExpanded");
-                        Respawn("PlayerEquipmentInfo");
-                        Respawn("PlayerWeaponsInfo");
+                        Respawn("CharacterInfoStats");
+                        Respawn("CharacterInfoWeapons");
+                        Respawn("CharacterInfoDefences");
+                        Respawn("CharacterInfoPower");
                     });
                 SmallButtonFlipX();
             });
             var ordered = stats.ToList().FindAll(x => x.Key.Contains("Mastery")).OrderBy(x => x.Key).OrderByDescending(x => x.Value).ToList();
             foreach (var foo in ordered)
-                AddHeaderRegion(() =>
+                AddPaddingRegion(() =>
                 {
                     AddLine(foo.Key + ":", "Gray", "Left");
                     AddLine(ToRoman(foo.Value) + "", rawStats[foo.Key] == foo.Value ? "Gray" : "Uncommon", "Right");
                     AddSmallButton("Element" + foo.Key.Split(" ")[0] + "Awakened");
                 });
-            AddPaddingRegion(() => SetRegionAsGroupExtender());
-            AddRegionGroup();
-            SetRegionGroupWidth(95);
-            AddButtonRegion(() => AddLine("Stats", "", "Center"), (h) =>
-            {
-                CloseWindow("CharacterInfoMasteries");
-                Respawn("CharacterInfoStats");
-                if (CloseWindow("CharacterInfoMasteriesExpanded"))
-                    Respawn("CharacterInfoStatsExpanded");
-            });
-            AddRegionGroup();
-            SetRegionGroupWidth(95);
-            AddPaddingRegion(() => AddLine("Masteries", "", "Center"));
         }, true),
         new("CharacterInfoMasteriesExpanded", () => {
             SetAnchor(TopLeft, 19, -38);
@@ -767,6 +792,7 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddLine("10 Max resource", "Uncommon");
+                SetRegionAsGroupExtender();
             });
         }, true),
         new("CharacterRankingTop", () => 
@@ -2376,16 +2402,11 @@ public class Blueprint
                 mainPower /= defines.dividerForDualWield;
                 mainPower = Math.Round(mainPower + Math.Round((off.minPower + off.maxPower) / 2, 2) / defines.dividerForDualWield, 2);
             }
-            AddPaddingRegion(() => { AddLine("Melee power:"); AddLine(Math.Round(mainPower, 2).ToString("0.00"), "", "Right"); });
             var hasBowProficiency = currentSave.player.abilities.ContainsKey("Bow Proficiency");
             var hasCrossbowProficiency = currentSave.player.abilities.ContainsKey("Crossbow Proficiency");
             var hasGunProficiency = currentSave.player.abilities.ContainsKey("Gun Proficiency");
             if (hasBowProficiency || hasCrossbowProficiency || hasGunProficiency)
-            {
-                var ranged = currentSave.player.GetItemInSlot("Ranged Weapon");
-                PrintEquipmentSlot("Ranged Weapon", ranged);
-                AddPaddingRegion(() => { AddLine("Ranged power:"); AddLine(ranged == null ? "1.00" : Math.Round((ranged.minPower + ranged.maxPower) / 2, 2).ToString("0.00"), "", "Right"); });
-            }
+                PrintEquipmentSlot("Ranged Weapon", currentSave.player.GetItemInSlot("Ranged Weapon"));
         }),
         new("Inventory", () => {
             if (CDesktop.title == "Map") return;
@@ -7426,9 +7447,11 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
-            SpawnWindowBlueprint("PlayerEquipmentInfo");
-            SpawnWindowBlueprint("PlayerWeaponsInfo");
             SpawnWindowBlueprint("CharacterInfoStats");
+            SpawnWindowBlueprint("CharacterInfoPower");
+            SpawnWindowBlueprint("CharacterInfoWeapons");
+            SpawnWindowBlueprint("CharacterInfoDefences");
+            SpawnWindowBlueprint("CharacterInfoMasteries");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey("Open menu / Back", () =>
