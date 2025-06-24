@@ -1721,7 +1721,7 @@ public class Blueprint
 
         //Crafting Screen
         new("ProfessionListPrimary", () => {
-            SetAnchor(-301, 142);
+            SetAnchor(TopLeft, 19, -38);
             AddHeaderGroup();
             SetRegionGroupWidth(190);
             var professions = Profession.professions.FindAll(x => currentSave.player.professionSkills.ContainsKey(x.name));
@@ -1729,8 +1729,8 @@ public class Blueprint
             {
                 AddLine("Primary professions:");
             });
-            var primary = professions.Where(x => x.primary).ToList();
-            for (int i = 0; i < defines.maxPrimaryProfessions; i++)
+            var primary = professions.Where(x => x.primary && !x.gathering).ToList();
+            for (int i = 0; i < primary.Count; i++)
             {
                 var index = i;
                 AddPaddingRegion(() =>
@@ -1749,6 +1749,46 @@ public class Blueprint
                             if (profession.recipeType == null) return;
                             CloseWindow("ProfessionListPrimary");
                             CloseWindow("ProfessionListSecondary");
+                            CloseWindow("ProfessionListGathering");
+                            Respawn("CraftingList");
+                            PlaySound("DesktopInstanceOpen");
+                            SetDesktopBackground("Backgrounds/Profession");
+                        });
+                    }
+                    else AddBigButton("OtherDisabled");
+                });
+            }
+        }),
+        new("ProfessionListGathering", () => {
+            SetAnchor(TopRight, -19, -38);
+            AddHeaderGroup();
+            SetRegionGroupWidth(190);
+            var professions = Profession.professions.FindAll(x => currentSave.player.professionSkills.ContainsKey(x.name));
+            AddHeaderRegion(() =>
+            {
+                AddLine("Gathering professions:");
+            });
+            var primary = professions.Where(x => x.gathering).ToList();
+            for (int i = 0; i < primary.Count; i++)
+            {
+                var index = i;
+                AddPaddingRegion(() =>
+                {
+                    if (primary.Count() > index)
+                    {
+                        AddLine(primary[index].name);
+                        AddLine("Skill: ", "DarkGray");
+                        AddText(currentSave.player.professionSkills[primary[index].name].Item1 + "", "Gray");
+                        AddText(" / ", "DarkGray");
+                        AddText(primary[index].levels.FindAll(x => currentSave.player.professionSkills[primary[index].name].Item2.Contains(x.name)).Max(x => x.maxSkill) + "", "Gray");
+                        AddBigButton(primary[index].icon,
+                        (h) =>
+                        {
+                            profession = primary[index];
+                            if (profession.recipeType == null) return;
+                            CloseWindow("ProfessionListPrimary");
+                            CloseWindow("ProfessionListSecondary");
+                            CloseWindow("ProfessionListGathering");
                             Respawn("CraftingList");
                             PlaySound("DesktopInstanceOpen");
                             SetDesktopBackground("Backgrounds/Profession");
@@ -1759,7 +1799,7 @@ public class Blueprint
             }
         }),
         new("ProfessionListSecondary", () => {
-            SetAnchor(-301, 28);
+            SetAnchor(BottomRight, -19, 35);
             AddHeaderGroup();
             SetRegionGroupWidth(190);
             AddHeaderRegion(() =>
@@ -1786,6 +1826,7 @@ public class Blueprint
                             if (profession.recipeType == null) return;
                             CloseWindow("ProfessionListPrimary");
                             CloseWindow("ProfessionListSecondary");
+                            CloseWindow("ProfessionListGathering");
                             Respawn("CraftingList");
                             PlaySound("DesktopInstanceOpen");
                             SetDesktopBackground("Backgrounds/Profession");
@@ -1819,6 +1860,7 @@ public class Blueprint
                     CloseWindow("CraftingList");
                     Respawn("ProfessionListPrimary");
                     Respawn("ProfessionListSecondary");
+                    Respawn("ProfessionListGathering");
                     PlaySound("DesktopInstanceClose");
                     SetDesktopBackground("Backgrounds/Professions");
                 });
@@ -1968,7 +2010,7 @@ public class Blueprint
                             PrintItemTooltip(reagent, Input.GetKey(LeftShift));
                         });
                         var playerPossesion = currentSave.player.inventory.items.Sum(x => x.name == reagent.name ? x.amount : 0);
-                        SpawnFloatingText(CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (reagents.IndexOf(reagent) % 5), playerPossesion + "/" + reagent.amount, playerPossesion < reagent.amount ? "DangerousRed" : "", "Right");
+                        SpawnFloatingText(CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (reagents.IndexOf(reagent) % 5), playerPossesion + "/" + reagent.amount, playerPossesion < reagent.amount ? "DangerousRed" : "", "", "Right");
                     }
                 });
             }
@@ -7628,6 +7670,7 @@ public class Blueprint
             SetDesktopBackground("Backgrounds/Professions");
             SpawnWindowBlueprint("ProfessionListPrimary");
             SpawnWindowBlueprint("ProfessionListSecondary");
+            SpawnWindowBlueprint("ProfessionListGathering");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
@@ -7644,6 +7687,7 @@ public class Blueprint
                 {
                     Respawn("ProfessionListPrimary");
                     Respawn("ProfessionListSecondary");
+                    Respawn("ProfessionListGathering");
                     PlaySound("DesktopInstanceClose");
                     SetDesktopBackground("Backgrounds/Professions");
                 }

@@ -14,6 +14,11 @@
     ],
     "levels": [
       {
+        "name": "Amateur",
+        "requiredLevel": 1,
+        "maxSkill": 15
+      },
+      {
         "name": "Apprentice",
         "price": 10,
         "requiredLevel": 5,
@@ -55,6 +60,11 @@
     ],
     "levels": [
       {
+        "name": "Amateur",
+        "requiredLevel": 1,
+        "maxSkill": 15
+      },
+      {
         "name": "Apprentice",
         "price": 10,
         "requiredLevel": 5,
@@ -94,6 +104,11 @@
       "Elixir of Minor Defense"
     ],
     "levels": [
+      {
+        "name": "Amateur",
+        "requiredLevel": 1,
+        "maxSkill": 15
+      },
       {
         "name": "Apprentice",
         "price": 10,
@@ -136,6 +151,11 @@
     ],
     "levels": [
       {
+        "name": "Amateur",
+        "requiredLevel": 1,
+        "maxSkill": 15
+      },
+      {
         "name": "Apprentice",
         "price": 10,
         "requiredLevel": 5,
@@ -175,6 +195,11 @@
       "Enchant Bracer - Minor Health"
     ],
     "levels": [
+      {
+        "name": "Amateur",
+        "requiredLevel": 1,
+        "maxSkill": 15
+      },
       {
         "name": "Apprentice",
         "price": 10,
@@ -216,6 +241,11 @@
     ],
     "levels": [
       {
+        "name": "Amateur",
+        "requiredLevel": 1,
+        "maxSkill": 15
+      },
+      {
         "name": "Apprentice",
         "price": 10,
         "requiredLevel": 5,
@@ -254,6 +284,11 @@
     ],
     "levels": [
       {
+        "name": "Amateur",
+        "requiredLevel": 1,
+        "maxSkill": 15
+      },
+      {
         "name": "Apprentice",
         "price": 10,
         "requiredLevel": 5,
@@ -287,6 +322,11 @@
     "icon": "TradeFishing",
     "defaultRecipes": [],
     "levels": [
+      {
+        "name": "Amateur",
+        "requiredLevel": 1,
+        "maxSkill": 15
+      },
       {
         "name": "Apprentice",
         "price": 10,
@@ -325,6 +365,11 @@
     ],
     "levels": [
       {
+        "name": "Amateur",
+        "requiredLevel": 1,
+        "maxSkill": 15
+      },
+      {
         "name": "Apprentice",
         "price": 10,
         "requiredLevel": 5,
@@ -357,8 +402,14 @@
     "name": "Skinning",
     "icon": "TradeSkinning",
     "primary": true,
+    "gathering": true,
     "defaultRecipes": [],
     "levels": [
+      {
+        "name": "Amateur",
+        "requiredLevel": 1,
+        "maxSkill": 15
+      },
       {
         "name": "Apprentice",
         "price": 10,
@@ -393,10 +444,16 @@
     "icon": "TradeMining",
     "recipeType": "Pattern",
     "primary": true,
+    "gathering": true,
     "defaultRecipes": [
       "Smelt Copper"
     ],
     "levels": [
+      {
+        "name": "Amateur",
+        "requiredLevel": 1,
+        "maxSkill": 15
+      },
       {
         "name": "Apprentice",
         "price": 10,
@@ -430,8 +487,14 @@
     "name": "Herbalism",
     "icon": "TradeHerbalism",
     "primary": true,
+    "gathering": true,
     "defaultRecipes": [],
     "levels": [
+      {
+        "name": "Amateur",
+        "requiredLevel": 1,
+        "maxSkill": 15
+      },
       {
         "name": "Apprentice",
         "price": 10,

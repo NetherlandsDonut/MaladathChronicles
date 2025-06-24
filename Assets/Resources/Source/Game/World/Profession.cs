@@ -51,6 +51,9 @@ public class Profession
     //Indicates whether this profession is a primary one
     public bool primary;
 
+    //Indicates whether this profession is a gathering one
+    public bool gathering;
+
     //List of recipes player learns with the profession at start
     public List<string> defaultRecipes;
 

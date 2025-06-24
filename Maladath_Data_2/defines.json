@@ -14,7 +14,7 @@
   "lvlRequiredFastMounts": 40,
   "lvlRequiredVeryFastMounts": 60,
   "defaultStanding": 4200,
-  "maxPrimaryProfessions": 2,
+  "maxPrimaryProfessions": 9,
   "expForExploration": 20,
   "cascadeMinimum": 3,
   "spaceBetweenPathPips": 10,

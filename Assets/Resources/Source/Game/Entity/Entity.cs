@@ -36,8 +36,13 @@ public class Entity
         inventory = new Inventory(items);
         currentQuests = new();
         completedQuests = new();
-        learnedRecipes = new();
         professionSkills = new();
+        foreach (var profession in Profession.professions)
+            if (profession.levels.Count > 0 && profession.levels[0].requiredLevel == 1)
+                professionSkills.Add(profession.name, (1, new() { profession.levels[0].name }));
+        learnedRecipes = new();
+        foreach (var profession in professionSkills)
+            learnedRecipes.Add(profession.Key, Profession.professions.Find(x => x.name == profession.Key).defaultRecipes.ToList());
         uniquesGotten = new();
         worldBuffs = new();
         reputation = new();

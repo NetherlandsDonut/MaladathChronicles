@@ -1257,7 +1257,7 @@ public static class Root
         skillBar.transform.parent = CDesktop.LBWindow().transform;
         skillBar.transform.localPosition = new Vector3(x, y, 0);
         var thisBar = skillBar.GetComponent<FluidBar>();
-        thisBar.Initialise(150, () => profession.levels.Where(x => entity.professionSkills[profession.name].Item2.Contains(x.name)).Max(x => x.maxSkill), () => entity.professionSkills[profession.name].Item1, false);
+        thisBar.Initialise(150, () => profession.levels.Where(x => entity.professionSkills[profession.name].Item2.Contains(x.name)).Max(x => x.maxSkill) - 1, () => entity.professionSkills[profession.name].Item1 - 1, false);
         thisBar.UpdateFluidBar();
     }
 
