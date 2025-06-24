@@ -88,8 +88,8 @@ public class Entity
             { "Strength", 3 * this.level },
             { "Agility", 3 * this.level },
             { "Intellect", 3 * this.level },
-            { "Spirit", 2 * this.level },
-            { "Armor", 20 * this.level },
+            { "Spirit", 5 * this.level },
+            { "Armor", 25 * this.level },
 
             { "Earth Mastery", random.Next(1, 6) },
             { "Fire Mastery", random.Next(1, 6) },
@@ -1284,7 +1284,7 @@ public class Entity
 
     #region Combat
 
-    //Play a sound by this vendor
+    //Play a sound by this entityin combat
     public string EnemyLine(string type)
     {
         var foo = Race().subcategory.Clean();

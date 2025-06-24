@@ -1134,7 +1134,18 @@ public class Item
                     AddLine((balance > 0 ? "+" : "") + balance, balance > 0 ? "Uncommon" : "DangerousRed");
                     AddText(" Armor");
                 }
-                if (item.type == "One Handed" || item.type == "Two Handed" || item.type == "Ranged")
+                if (item.type == "Ranged Weapon")
+                {
+                    var newPower = item.minPower <= 0 ? 1 : Math.Round((item.minPower + item.maxPower) / 2, 2);
+                    var oldPower = current == null || current.minPower <= 0 ? 1 : Math.Round((current.minPower + current.maxPower) / 2, 2);
+                    if (newPower - oldPower != 0)
+                    {
+                        var balance = Math.Round(newPower - oldPower, 2);
+                        AddLine(((balance > 0 ? "+" : "") + balance).Replace(",", "."), balance > 0 ? "Uncommon" : "DangerousRed");
+                        AddText(" Power modifier");
+                    }
+                }
+                else if (item.type == "One Handed" || item.type == "Two Handed")
                 {
                     var newPower = item.minPower <= 0 ? 1 : (item.minPower + item.maxPower) / 2;
                     var b1d = Math.Round(!Input.GetKey(KeyCode.LeftAlt) || item.type == "Two Handed" ? newPower : current == null || current.minPower <= 0 ? 0 : (Input.GetKey(KeyCode.LeftAlt) && current.type == "Two Handed" ? 0 : (current.minPower + current.maxPower) / 2), 2);

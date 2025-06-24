@@ -8,8 +8,8 @@
       "player": {
         "currentQuests": [],
         "completedQuests": [],
-        "level": 17,
-        "experience": 14363,
+        "level": 23,
+        "experience": 23876,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -108,7 +108,7 @@
             "Copper Bracers"
           ]
         },
-        "unspentTalentPoints": 16,
+        "unspentTalentPoints": 22,
         "faction": "Darkspear Tribe",
         "name": "Jo'do",
         "race": "Troll",
@@ -259,20 +259,20 @@
               "price": 16
             },
             {
-              "x": 1,
+              "x": 3,
               "y": 1,
               "rarity": "Common",
-              "name": "Hand Axe",
-              "icon": "itemaxe19",
-              "detailedType": "Axe",
-              "type": "One Handed",
-              "ilvl": 4,
-              "lvl": 1,
-              "minPower": 1.1,
-              "maxPower": 1.2,
+              "name": "Ceremonial Leather Belt",
+              "icon": "itembelt16",
+              "type": "Waist",
+              "armorClass": "Leather",
+              "source": "RareDrop",
+              "ilvl": 14,
+              "lvl": 9,
+              "armor": 37,
               "amount": 1,
               "maxStack": 1,
-              "price": 16
+              "price": 86
             },
             {
               "x": 2,
@@ -289,6 +289,23 @@
               "amount": 1,
               "maxStack": 1,
               "price": 5
+            },
+            {
+              "x": 1,
+              "y": 1,
+              "rarity": "Rare",
+              "name": "Lil Timmy's Peashooter",
+              "icon": "itemrifle08",
+              "detailedType": "Gun",
+              "type": "Ranged Weapon",
+              "source": "RareDrop",
+              "ilvl": 21,
+              "lvl": 16,
+              "minPower": 1.77,
+              "maxPower": 2.42,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 1456
             }
           ],
           "bags": []
@@ -322,10 +339,45 @@
         },
         "worldBuffs": []
       },
+      "pet": {
+        "level": 21,
+        "kind": "Common",
+        "name": "Wildthorn Stalker",
+        "race": "Wildthorn Stalker",
+        "abilities": {},
+        "currentActionSet": "Default",
+        "actionBars": {
+          "Default": []
+        },
+        "stats": {
+          "Stamina": 110,
+          "Strength": 63,
+          "Agility": 63,
+          "Intellect": 63,
+          "Spirit": 105,
+          "Armor": 525,
+          "Earth Mastery": 4,
+          "Fire Mastery": 3,
+          "Air Mastery": 5,
+          "Water Mastery": 5,
+          "Frost Mastery": 3,
+          "Lightning Mastery": 2,
+          "Arcane Mastery": 5,
+          "Decay Mastery": 5,
+          "Shadow Mastery": 3,
+          "Order Mastery": 2
+        },
+        "inventory": {
+          "items": [],
+          "bags": []
+        },
+        "equipment": {},
+        "worldBuffs": []
+      },
       "hour": 7,
-      "minute": 22,
-      "second": 24,
-      "currentSite": "Razor Hill",
+      "minute": 56,
+      "second": 42,
+      "currentSite": "Fallen Sky Lake",
       "ringOfLaw": "Eviscerator",
       "forlornCloister": "Fallen Champion",
       "markets": [
@@ -340,17 +392,84 @@
           "hoursSinceUpdate": 48
         }
       ],
-      "openedChests": {},
+      "openedChests": {
+        "Fallen Sky Lake": {
+          "area": "Fallen Sky Lake",
+          "inventory": {
+            "items": [
+              {
+                "x": 1,
+                "rarity": "Common",
+                "name": "Light Hide",
+                "icon": "itemmiscpeltwolfruin02",
+                "detailedType": "Leather",
+                "type": "Trade Good",
+                "source": "RareDrop",
+                "ilvl": 10,
+                "lvl": 1,
+                "amount": 1,
+                "maxStack": 10,
+                "price": 50
+              },
+              {
+                "x": 2,
+                "rarity": "Common",
+                "name": "Earthroot",
+                "icon": "itemmischerb07",
+                "detailedType": "Flowers",
+                "type": "Trade Good",
+                "source": "Quest",
+                "ilvl": 5,
+                "lvl": 1,
+                "amount": 3,
+                "maxStack": 20,
+                "price": 20
+              },
+              {
+                "x": 3,
+                "rarity": "Common",
+                "name": "Lesser Mana Potion",
+                "icon": "itempotion71",
+                "detailedType": "Potion",
+                "type": "Miscellaneous",
+                "source": "Profession",
+                "ilvl": 24,
+                "amount": 1,
+                "maxStack": 5,
+                "price": 30
+              }
+            ],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
+        }
+      },
       "fishingSpots": {},
       "fishingSpoils": {},
-      "siteProgress": {},
-      "commonsKilled": {},
+      "siteProgress": {
+        "Far Watch Post": 2,
+        "Fallen Sky Lake": 3
+      },
+      "commonsKilled": {
+        "Sunscale Screecher": 1,
+        "Zhevra Runner": 1,
+        "Wildthorn Stalker": 2,
+        "Ghostpaw Runner": 1
+      },
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
         "The Den": 3,
         "Rocky Desert": 0,
-        "Razor Hill": 3
+        "Razor Hill": 3,
+        "Razormane Grounds": 0,
+        "Far Watch Post": 1,
+        "Grol'dom Farm": 1,
+        "Northern Gold Road": 1,
+        "The Mor'shan Rampart": 1,
+        "Fallen Sky Lake": 4,
+        "Silverwing Outpost": 1,
+        "Falfarren River": 1
       },
       "unlockedAreas": [],
       "vendorStock": {
@@ -395,9 +514,8 @@
         "The Den:Kzan Thornslash": [
           {
             "item": "Bastard Sword",
-            "amount": 1,
+            "amount": 2,
             "maxAmount": 2,
-            "minutesLeft": 32,
             "restockSpeed": 40
           },
           {
@@ -420,15 +538,15 @@
           },
           {
             "item": "Hand Axe",
+            "amount": 1,
             "maxAmount": 2,
-            "minutesLeft": 32,
+            "minutesLeft": 38,
             "restockSpeed": 40
           },
           {
             "item": "Dirk",
-            "amount": 1,
+            "amount": 2,
             "maxAmount": 2,
-            "minutesLeft": 32,
             "restockSpeed": 40
           },
           {
@@ -452,9 +570,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2025-06-23T12:52:19.8845211+02:00",
-      "lastLoaded": "2025-06-24T14:25:48.4307397+02:00",
-      "lastPlayed": "2025-06-24T14:26:53.2616157+02:00",
-      "timePlayed": "00:11:04.6240362"
+      "lastLoaded": "2025-06-24T16:55:12.8388647+02:00",
+      "lastPlayed": "2025-06-24T17:00:10.4857537+02:00",
+      "timePlayed": "00:16:02.2709252"
     },
     {
       "playerSide": "Horde",
@@ -911,9 +1029,9 @@
         "worldBuffs": []
       },
       "hour": 7,
-      "minute": 16,
-      "second": 45,
-      "currentSite": "Valley of Trials",
+      "minute": 20,
+      "second": 30,
+      "currentSite": "Blackrock Mountain",
       "ringOfLaw": "Grizzle",
       "forlornCloister": "Ironspine",
       "markets": [
@@ -963,8 +1081,9 @@
       },
       "siteVisits": {
         "The Den": 4,
-        "Valley of Trials": 4,
-        "Den Overhill": 1
+        "Valley of Trials": 5,
+        "Den Overhill": 1,
+        "Blackrock Mountain": 4
       },
       "unlockedAreas": [],
       "vendorStock": {
@@ -1033,7 +1152,7 @@
             "lvl": 1,
             "armor": 23,
             "amount": 1,
-            "minutesLeft": 29,
+            "minutesLeft": 25,
             "maxStack": 1,
             "price": 13
           },
@@ -1048,7 +1167,7 @@
             "lvl": 1,
             "armor": 14,
             "amount": 1,
-            "minutesLeft": 29,
+            "minutesLeft": 25,
             "maxStack": 1,
             "price": 1
           },
@@ -1064,7 +1183,7 @@
             "lvl": 1,
             "armor": 23,
             "amount": 1,
-            "minutesLeft": 29,
+            "minutesLeft": 25,
             "maxStack": 1,
             "price": 13
           }
@@ -1073,9 +1192,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2025-06-24T14:35:14.0502983+02:00",
-      "lastLoaded": "2025-06-24T16:42:01.9128534+02:00",
-      "lastPlayed": "2025-06-24T16:42:25.4174817+02:00",
-      "timePlayed": "00:14:42.1851520"
+      "lastLoaded": "2025-06-24T16:53:23.4861284+02:00",
+      "lastPlayed": "2025-06-24T16:55:11.5202544+02:00",
+      "timePlayed": "00:16:30.2192780"
     }
   ]
 }
