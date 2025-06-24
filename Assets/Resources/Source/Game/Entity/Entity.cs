@@ -88,8 +88,8 @@ public class Entity
             { "Strength", 3 * this.level },
             { "Agility", 3 * this.level },
             { "Intellect", 3 * this.level },
-            { "Spirit", this.level },
-            { "Armor", 10 * this.level },
+            { "Spirit", 2 * this.level },
+            { "Armor", 20 * this.level },
 
             { "Earth Mastery", random.Next(1, 6) },
             { "Fire Mastery", random.Next(1, 6) },
@@ -1267,16 +1267,16 @@ public class Entity
     public double PhysicalResistance()
     {
         var temp = Spec();
-        if (temp == null) return Stats()["Armor"] * 0.01;
-        var sum = temp.rules["Physical Resistance per Armor"] * Stats()["Armor"];
+        if (temp == null) return Stats()["Armor"] * 0.01 / 100;
+        var sum = temp.rules["Physical Resistance per Armor"] * Stats()["Armor"] / 100;
         return sum;
     }
 
     public double MagicResistance()
     {
         var temp = Spec();
-        if (temp == null) return Stats()["Spirit"] * 0.05;
-        var sum = temp.rules["Magic Resistance per Spirit"] * Stats()["Spirit"];
+        if (temp == null) return Stats()["Spirit"] * 0.05 / 100;
+        var sum = temp.rules["Magic Resistance per Spirit"] * Stats()["Spirit"] / 100;
         return sum;
     }
 

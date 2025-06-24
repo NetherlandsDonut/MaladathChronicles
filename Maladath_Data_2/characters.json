@@ -465,7 +465,7 @@
           804
         ],
         "level": 4,
-        "experience": 148,
+        "experience": 498,
         "uniquesGotten": [
           "Sarkoth's Mangled Claw"
         ],
@@ -911,9 +911,9 @@
         "worldBuffs": []
       },
       "hour": 7,
-      "minute": 15,
-      "second": 6,
-      "currentSite": "The Den",
+      "minute": 16,
+      "second": 45,
+      "currentSite": "Valley of Trials",
       "ringOfLaw": "Grizzle",
       "forlornCloister": "Ironspine",
       "markets": [
@@ -949,11 +949,11 @@
       "fishingSpots": {},
       "fishingSpoils": {},
       "siteProgress": {
-        "Valley of Trials": 4,
+        "Valley of Trials": 5,
         "Den Overhill": 3
       },
       "commonsKilled": {
-        "Mottled Boar": 3,
+        "Mottled Boar": 4,
         "Scorpid Worker": 2,
         "Clattering Scorpid": 2
       },
@@ -962,8 +962,8 @@
         "Sarkoth": 1
       },
       "siteVisits": {
-        "The Den": 3,
-        "Valley of Trials": 3,
+        "The Den": 4,
+        "Valley of Trials": 4,
         "Den Overhill": 1
       },
       "unlockedAreas": [],
@@ -1033,7 +1033,7 @@
             "lvl": 1,
             "armor": 23,
             "amount": 1,
-            "minutesLeft": 30,
+            "minutesLeft": 29,
             "maxStack": 1,
             "price": 13
           },
@@ -1048,7 +1048,7 @@
             "lvl": 1,
             "armor": 14,
             "amount": 1,
-            "minutesLeft": 30,
+            "minutesLeft": 29,
             "maxStack": 1,
             "price": 1
           },
@@ -1064,7 +1064,7 @@
             "lvl": 1,
             "armor": 23,
             "amount": 1,
-            "minutesLeft": 30,
+            "minutesLeft": 29,
             "maxStack": 1,
             "price": 13
           }
@@ -1073,9 +1073,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2025-06-24T14:35:14.0502983+02:00",
-      "lastLoaded": "2025-06-24T14:35:14.6581839+02:00",
-      "lastPlayed": "2025-06-24T14:38:41.9715998+02:00",
-      "timePlayed": "00:03:27.3134159"
+      "lastLoaded": "2025-06-24T16:42:01.9128534+02:00",
+      "lastPlayed": "2025-06-24T16:42:25.4174817+02:00",
+      "timePlayed": "00:14:42.1851520"
     }
   ]
 }

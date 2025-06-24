@@ -785,7 +785,7 @@
             "Effect": "Damage",
             "Affect": "Other",
             "AttackSource": "Melee",
-            "PowerType": "Spell",
+            "PowerType": "Ranged",
             "PowerSource": "Effector",
             "PowerScale": "#1",
             "ShatterTarget": "Other",
