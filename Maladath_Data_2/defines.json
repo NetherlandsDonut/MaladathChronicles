@@ -1,12 +1,10 @@
 {
-  "maxPathLength": 9999,
   "maxPlayerLevel": 60,
   "maxBagsEquipped": 3,
   "backpackSpace": 9,
   "aiManualBranches": 1,
   "textPaddingLeft": 4,
   "textPaddingRight": 4,
-  "shadowSystem": 1,
   "adeptTreeRequirement": 10,
   "buybackDecay": 30,
   "scoreForExploredSite": 2,

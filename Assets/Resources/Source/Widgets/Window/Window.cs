@@ -455,45 +455,44 @@ public class Window : MonoBehaviour
 
             //Draws region shadows
             if (!defines.windowBorders && !disabledGeneralSprites && !disabledShadows)
-                if (defines.shadowSystem == 1)
-                    foreach (var region in regionGroup.regions)
-                        if (region.backgroundType != Empty)
-                        {
-                            var shadowSprites = Resources.LoadAll<Sprite>("Sprites/Other/Second");
-                            for (int i = 0; i < 5; i++)
-                                if (region.shadows[i] == null)
+                foreach (var region in regionGroup.regions)
+                    if (region.backgroundType != Empty)
+                    {
+                        var shadowSprites = Resources.LoadAll<Sprite>("Sprites/Other/Second");
+                        for (int i = 0; i < 5; i++)
+                            if (region.shadows[i] == null)
+                            {
+                                region.shadows[i] = new GameObject("Shadow", typeof(SpriteRenderer));
+                                region.shadows[i].transform.parent = region.transform;
+                                region.shadows[i].GetComponent<SpriteRenderer>().sprite = shadowSprites[i];
+                                region.shadows[i].GetComponent<SpriteRenderer>().sortingLayerName = layer + "Shadows";
+                            }
+                        region.shadows[1].transform.localScale = new Vector3(1, region.borders[2].transform.localScale.y - 5, 1);
+                        region.shadows[3].transform.localScale = new Vector3(region.borders[3].transform.localScale.x - 5, 1, 1);
+                        region.shadows[0].transform.localPosition = new Vector3(region.borders[2].transform.localPosition.x + 2, -4, 0.9f);
+                        region.shadows[1].transform.localPosition = new Vector3(region.borders[2].transform.localPosition.x + 2, -8, 0.9f);
+                        region.shadows[2].transform.localPosition = new Vector3(region.borders[2].transform.localPosition.x - 1, region.borders[3].transform.localPosition.y + 1, 0.9f);
+                        region.shadows[3].transform.localPosition = new Vector3(8, region.borders[3].transform.localPosition.y - 2, 0.9f);
+                        region.shadows[4].transform.localPosition = new Vector3(4, region.borders[3].transform.localPosition.y - 2, 0.9f);
+                        region.shadows[2].GetComponent<SpriteRenderer>().sprite = shadowSprites[5];
+                        if (title == "HostileAreaProgress")
+                            if (regionGroup != headerGroup)
+                            {
+                                Destroy(region.shadows[0]);
+                                if (regionGroup.transform != transform.GetChild(1))
+                                    Destroy(region.shadows[4]);
+                                if (regionGroup.transform != transform.GetChild(transform.childCount - 1))
                                 {
-                                    region.shadows[i] = new GameObject("Shadow", typeof(SpriteRenderer));
-                                    region.shadows[i].transform.parent = region.transform;
-                                    region.shadows[i].GetComponent<SpriteRenderer>().sprite = shadowSprites[i];
-                                    region.shadows[i].GetComponent<SpriteRenderer>().sortingLayerName = layer + "Shadows";
-                                }
-                            region.shadows[1].transform.localScale = new Vector3(1, region.borders[2].transform.localScale.y - 5, 1);
-                            region.shadows[3].transform.localScale = new Vector3(region.borders[3].transform.localScale.x - 5, 1, 1);
-                            region.shadows[0].transform.localPosition = new Vector3(region.borders[2].transform.localPosition.x + 2, -4, 0.9f);
-                            region.shadows[1].transform.localPosition = new Vector3(region.borders[2].transform.localPosition.x + 2, -8, 0.9f);
-                            region.shadows[2].transform.localPosition = new Vector3(region.borders[2].transform.localPosition.x - 1, region.borders[3].transform.localPosition.y + 1, 0.9f);
-                            region.shadows[3].transform.localPosition = new Vector3(8, region.borders[3].transform.localPosition.y - 2, 0.9f);
-                            region.shadows[4].transform.localPosition = new Vector3(4, region.borders[3].transform.localPosition.y - 2, 0.9f);
-                            region.shadows[2].GetComponent<SpriteRenderer>().sprite = shadowSprites[5];
-                            if (title == "HostileAreaProgress")
-                                if (regionGroup != headerGroup)
-                                {
-                                    Destroy(region.shadows[0]);
-                                    if (regionGroup.transform != transform.GetChild(1))
-                                        Destroy(region.shadows[4]);
-                                    if (regionGroup.transform != transform.GetChild(transform.childCount - 1))
-                                    {
-                                        region.shadows[3].transform.localScale += new Vector3(5, 0, 0);
-                                        Destroy(region.shadows[2]);
-                                    }
-                                }
-                                else
-                                {
-                                    region.shadows[1].transform.localScale += new Vector3(0, 5, 0);
+                                    region.shadows[3].transform.localScale += new Vector3(5, 0, 0);
                                     Destroy(region.shadows[2]);
                                 }
-                        }
+                            }
+                            else
+                            {
+                                region.shadows[1].transform.localScale += new Vector3(0, 5, 0);
+                                Destroy(region.shadows[2]);
+                            }
+                    }
 
             #endregion
 

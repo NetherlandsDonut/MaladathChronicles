@@ -8,8 +8,6 @@ public class Defines
     //This function generates default values for the game settings
     public void FillNulls()
     {
-        if (maxPathLength < 0)
-            maxPathLength = 9999;
         if (maxPlayerLevel < 1)
             maxPlayerLevel = 60;
         if (maxBagsEquipped < 1)
@@ -22,8 +20,6 @@ public class Defines
             textPaddingLeft = 4;
         if (textPaddingRight < 0)
             textPaddingRight = 12;
-        if (shadowSystem < 0)
-            shadowSystem = 1;
         if (adeptTreeRequirement < 0)
             adeptTreeRequirement = 10;
         if (buybackDecay < 0)
@@ -66,8 +62,6 @@ public class Defines
             spaceBetweenPathPips = 10;
     }
 
-    public int maxPathLength;
-
     //Maximum level achievable by the player
     public int maxPlayerLevel;
 
@@ -85,9 +79,6 @@ public class Defines
     
     //Amount of padding on the right side of text lines
     public int textPaddingRight;
-
-    //Shadow system used by the program
-    public int shadowSystem;
 
     //Amount of talent points spent required in the novice tree for the adept tree to be available
     public int adeptTreeRequirement;
