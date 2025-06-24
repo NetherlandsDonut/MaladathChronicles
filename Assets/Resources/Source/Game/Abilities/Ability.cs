@@ -23,6 +23,7 @@ public class Ability
 
     #region Resource Check
 
+    public bool PossibleToHaveResources(Entity entity) => cost.All(x => x.Value <= entity.MaxResource(x.Key));
     public bool EnoughResources(Entity entity) => EnoughResources(entity.resources);
     public bool EnoughResources(Dictionary<string, int> resources) => !cost.Any(x => x.Value > resources[x.Key]);
 

@@ -22156,7 +22156,12 @@
     "subcategory": "Wolf",
     "portrait": "PortraitWolf",
     "abilities": {
-      "Rabies": 0
+      "Corruption": 0,
+      "Curse of Agony": 0
+    },
+    "abilityAITags": {
+      "Corruption": "Filler",
+      "Curse of Agony": "Core"
     },
     "kind": "Common",
     "vitality": 1.0

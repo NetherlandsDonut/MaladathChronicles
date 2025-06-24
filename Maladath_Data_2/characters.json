@@ -1195,6 +1195,355 @@
       "lastLoaded": "2025-06-24T16:53:23.4861284+02:00",
       "lastPlayed": "2025-06-24T16:55:11.5202544+02:00",
       "timePlayed": "00:16:30.2192780"
+    },
+    {
+      "playerSide": "Alliance",
+      "player": {
+        "currentQuests": [],
+        "completedQuests": [],
+        "level": 1,
+        "uniquesGotten": [],
+        "reputation": {
+          "Southsea Pirates": 0,
+          "Razormane Tribe": 0,
+          "Pandaren": 0,
+          "Grimtotem Tribe": 0,
+          "Woodpaw Tribe": 0,
+          "The Burning Legion": 0,
+          "Darkspear Tribe": 0,
+          "Stormwind": 4600,
+          "Timbermaw Tribe": 4050,
+          "Magram Clan": 0,
+          "Gelkis Clan": 0,
+          "Kolkar Clan": 0,
+          "Orgrimmar": 0,
+          "Frostwolf Clan": 0,
+          "The Defiler's": 0,
+          "Thunder Bluff": 0,
+          "Undercity": 0,
+          "Ironforge": 4250,
+          "Dark Iron Clan": 0,
+          "Wildhammer Clan": 4250,
+          "Winterfall Tribe": 0,
+          "Gnomeregan": 4250,
+          "Darnassus": 4250,
+          "Bloodsail Buccaneers": 0,
+          "Syndicate": 0,
+          "Warsong Outriders": 0,
+          "Stormpike Guard": 4250,
+          "Silverwing Sentinels": 4250,
+          "The League of Arathor": 4250,
+          "Defias Brotherhood": 0,
+          "Dalaran": 4250,
+          "Burning Blade Clan": 0,
+          "Burning Legion": 0,
+          "Shadow Council": 0,
+          "Gordunni Ogres": 0,
+          "Blackrock Clan": 0,
+          "Dragonmaw Clan": 0,
+          "Black Tooth Grin Clan": 0,
+          "Gurubashi Tribe": 0,
+          "Sandfury Tribe": 0,
+          "Twilight's Hammer": 0,
+          "Grimtotem Clan": 0,
+          "Razorfen Tribe": 0,
+          "Stonemaul Ogres": 0,
+          "Dustbelcher Ogres": 0,
+          "Deadwind Ogres": 0,
+          "Venture Co.": 0,
+          "Southsea Freebooters": 0,
+          "Atal'ai Tribe": 0,
+          "Qiraji Empire": 0,
+          "Scarlet Crusade": 0,
+          "Vilebranch Tribe": 0,
+          "Witherbark Tribe": 0,
+          "Mossflayer Tribe": 0,
+          "Frostmane Tribe": 0,
+          "Bloodscalp Tribe": 0,
+          "Skullsplitter Tribe": 0,
+          "Shatterspear Tribe": 0,
+          "Rot Hide Tribe": 0,
+          "Scourge": 0,
+          "Smolderthorn Tribe": 0,
+          "Revantusk Tribe": 0,
+          "Blackpaw Tribe": 0,
+          "Maraudine Clan": 0,
+          "Mosshide Tribe": 0,
+          "Deadwood Tribe": 0,
+          "Bloodtooth Tribe": 0,
+          "Bristleback Tribe": 0
+        },
+        "professionSkills": {
+          "Leatherworking": {
+            "Item1": 1,
+            "Item2": [
+              "Amateur"
+            ]
+          },
+          "Blacksmithing": {
+            "Item1": 1,
+            "Item2": [
+              "Amateur"
+            ]
+          },
+          "Alchemy": {
+            "Item1": 1,
+            "Item2": [
+              "Amateur"
+            ]
+          },
+          "Tailoring": {
+            "Item1": 1,
+            "Item2": [
+              "Amateur"
+            ]
+          },
+          "Enchanting": {
+            "Item1": 1,
+            "Item2": [
+              "Amateur"
+            ]
+          },
+          "Engineering": {
+            "Item1": 1,
+            "Item2": [
+              "Amateur"
+            ]
+          },
+          "Cooking": {
+            "Item1": 1,
+            "Item2": [
+              "Amateur"
+            ]
+          },
+          "Fishing": {
+            "Item1": 1,
+            "Item2": [
+              "Amateur"
+            ]
+          },
+          "First Aid": {
+            "Item1": 1,
+            "Item2": [
+              "Amateur"
+            ]
+          },
+          "Skinning": {
+            "Item1": 1,
+            "Item2": [
+              "Amateur"
+            ]
+          },
+          "Mining": {
+            "Item1": 1,
+            "Item2": [
+              "Amateur"
+            ]
+          },
+          "Herbalism": {
+            "Item1": 1,
+            "Item2": [
+              "Amateur"
+            ]
+          }
+        },
+        "learnedRecipes": {
+          "Leatherworking": [
+            "Light Leather",
+            "Light Armor Kit",
+            "Handstitched Leather Vest",
+            "Handstitched Leather Cloak",
+            "Handstitched Leather Bracers",
+            "Handstitched Leather Boots"
+          ],
+          "Blacksmithing": [
+            "Rough Sharpening Stone",
+            "Rough Weightstone",
+            "Rough Copper Vest",
+            "Copper Bracers"
+          ],
+          "Alchemy": [
+            "Minor Healing Potion",
+            "Elixir of Lion's Strength",
+            "Elixir of Minor Defense"
+          ],
+          "Tailoring": [
+            "Bolt of Linen Cloth",
+            "Brown Linen Shirt",
+            "Linen Cloak",
+            "Simple Linen Pants"
+          ],
+          "Enchanting": [
+            "Runed Copper Rod",
+            "Enchant Bracer - Minor Deflect",
+            "Enchant Bracer - Minor Health"
+          ],
+          "Engineering": [
+            "Rough Blasting Powder",
+            "Rough Dynamite",
+            "Crafted Light Shot"
+          ],
+          "Cooking": [
+            "Charred Wolf Meat",
+            "Roasted Boar Meat"
+          ],
+          "Fishing": [],
+          "First Aid": [
+            "Linen Bandage"
+          ],
+          "Skinning": [],
+          "Mining": [
+            "Smelt Copper"
+          ],
+          "Herbalism": []
+        },
+        "faction": "Stormwind",
+        "name": "Yol'ku",
+        "race": "Human",
+        "spec": "Mage",
+        "gender": "Female",
+        "abilities": {
+          "Staff Proficiency": 0,
+          "Cloth Proficiency": 0,
+          "One Handed Sword Proficiency": 0,
+          "Off Hand Proficiency": 0,
+          "Dagger Proficiency": 0,
+          "Wand Proficiency": 0,
+          "Fireball": 0,
+          "Frostbolt": 0,
+          "Arcane Missiles": 0
+        },
+        "currentActionSet": "Default",
+        "actionBars": {
+          "Default": [
+            "Fireball",
+            "Frostbolt",
+            "Arcane Missiles"
+          ]
+        },
+        "stats": {
+          "Stamina": 20,
+          "Strength": 20,
+          "Agility": 20,
+          "Intellect": 23,
+          "Spirit": 23,
+          "Earth Mastery": 1,
+          "Fire Mastery": 3,
+          "Air Mastery": 2,
+          "Water Mastery": 1,
+          "Frost Mastery": 2,
+          "Lightning Mastery": 1,
+          "Arcane Mastery": 3,
+          "Decay Mastery": 1,
+          "Shadow Mastery": 2,
+          "Order Mastery": 3
+        },
+        "inventory": {
+          "items": [
+            {
+              "rarity": "Common",
+              "name": "Hearthstone",
+              "icon": "itemmiscrune01",
+              "detailedType": "Rune",
+              "type": "Miscellaneous",
+              "ilvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "indestructible": true,
+              "unique": true,
+              "abilities": {
+                "Hearthstone": 1
+              }
+            }
+          ],
+          "bags": []
+        },
+        "mounts": [],
+        "equipment": {
+          "Main Hand": {
+            "rarity": "Common",
+            "name": "Bent Staff",
+            "icon": "itemstaff08",
+            "detailedType": "Staff",
+            "type": "Two Handed",
+            "ilvl": 2,
+            "lvl": 1,
+            "minPower": 1.1,
+            "maxPower": 1.17,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 9
+          },
+          "Feet": {
+            "rarity": "Common",
+            "name": "Apprentice's Boots",
+            "icon": "itemboots09",
+            "type": "Feet",
+            "ilvl": 1,
+            "lvl": 1,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1
+          },
+          "Legs": {
+            "rarity": "Poor",
+            "name": "Apprentice's Pants",
+            "icon": "itempants01",
+            "type": "Legs",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 2,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1
+          },
+          "Chest": {
+            "rarity": "Poor",
+            "name": "Apprentice's Robe",
+            "icon": "itemchestcloth23",
+            "type": "Chest",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 3,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1
+          }
+        },
+        "worldBuffs": []
+      },
+      "hour": 7,
+      "currentSite": "Northshire Abbey",
+      "ringOfLaw": "Anub'shiah",
+      "forlornCloister": "Ironspine",
+      "markets": [
+        {
+          "name": "Alliance Market",
+          "auctions": [],
+          "hoursSinceUpdate": 48
+        },
+        {
+          "name": "Horde Market",
+          "auctions": [],
+          "hoursSinceUpdate": 48
+        }
+      ],
+      "openedChests": {},
+      "fishingSpots": {},
+      "fishingSpoils": {},
+      "siteProgress": {},
+      "commonsKilled": {},
+      "raresKilled": {},
+      "elitesKilled": {},
+      "siteVisits": {
+        "Northshire Abbey": 1
+      },
+      "unlockedAreas": [],
+      "vendorStock": {},
+      "banks": {},
+      "startDate": "2025-06-24T18:33:55.3880698+02:00"
     }
   ]
 }

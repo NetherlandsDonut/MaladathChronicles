@@ -626,17 +626,17 @@ public class Board
         if ((participants.Where(x => x.team == 1).All(x => x.who.dead) || Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore && currentSave.player.health <= 0) && window.desktop.title == "Game")
             EndCombat("Team2Won");
 
-        //If all enemiesdied..
+        //If all enemies died..
         else if (participants.Where(x => x.team == 2).All(x => x.who.dead) && window.desktop.title == "Game")
             EndCombat("Team1Won");
 
-        //IF IT'S ENEMY'S TURN..
+        //If the entity is not controlled by a human..
         else if (!participants[whosTurn].human)
         {
-            //IF ENEMY FINISHED MOVING END THEIR TURN
+            //If entity finished moving end it's turn
             if (finishedMoving)
             {
-                //UNLESS THEY SCORED A BONUS MOVE
+                //Unless they scored a bonus move
                 if (bonusTurnStreak > 0)
                 {
                     bonusTurnStreak = 0;
@@ -645,56 +645,70 @@ public class Board
                 else EndTurn();
             }
 
-            //Do a moment of waiting for the enemy to "think"
+            //Do a moment of waiting for the entity to "think"
             else if (!breakForMove)
             {
                 animationTime = (float)(random.Next(3, 5) / 10.0) + 0.3f;
                 breakForMove = true;
             }
 
-            //IF ENEMY WAS ALREADY ON THINKING BREAK MAKE THEM MOVE
+            //If entity was already on a break before moving
             else
             {
+                //Reset whether this entity had a break before moving
                 breakForMove = false;
+
+                //Reset the bonus turn counter for this entity
                 bonusTurnStreak = 0;
+
+                //List of all possible board floodings with their effects accounted
                 var differentFloodings = PossibleFloodings();
+
+                //Point on the board to collect resources from
                 var boardClick = (0, 0);
+
+                //Ability to be casted
                 var castAbility = "";
+
+                //List of all usable abilities by the entity
                 var allAbilities = participants[whosTurn].who.abilityAITags == null ? new() : participants[whosTurn].who.abilityAITags.Select(x => (Ability.abilities.Find(y => y.name == x.Key), x.Value)).ToList();
+
+                //Ignore all abilities for which it's impossible to gather the resources
+                allAbilities.RemoveAll(x => !x.Item1.PossibleToHaveResources(participants[whosTurn].who));
+
+                //If the entity feels in danger and it can cast any of the emergency ability
+                //it will cast the one with the longest cooldown
                 var emergencies = allAbilities.Where(x => x.Value == "Emergency").Select(x => x.Item1);
                 var castableEmergencies = emergencies.Where(x => x.EnoughResources(participants[whosTurn].who) && CooldownOn(whosTurn, x.name) == 0);
-                var cores = allAbilities.Where(x => x.Value == "Core").Select(x => x.Item1);
-                var castableCores = cores.Where(x => x.EnoughResources(participants[whosTurn].who) && CooldownOn(whosTurn, x.name) == 0);
-                var fillers = allAbilities.Where(x => x.Value == "Filler").Select(x => x.Item1);
-                var castableFillers = fillers.Where(x => x.EnoughResources(participants[whosTurn].who) && CooldownOn(whosTurn, x.name) == 0);
                 if (emergencies.Count() > 0 && participants[whosTurn].who.health < participants[whosTurn].who.MaxHealth() / (2.6 - random.NextDouble()))
                     if (castableEmergencies.Count() > 0)
                         castAbility = castableEmergencies.OrderByDescending(x => x.cooldown).First().name;
-                if (cores.Count() > 0 && castAbility == "")
-                    if (castableCores.Count() > 0)
-                        castAbility = castableCores.OrderByDescending(x => x.cooldown).First().name;
-                if (fillers.Count() > 0 && castAbility == "")
-                    if (castableFillers.Count() > 0)
-                        castAbility = castableFillers.OrderByDescending(x => x.cooldown).First().name;
+
+                //If nothing was casted yet
                 if (castAbility == "")
                 {
-                    var importanceTable = participants[whosTurn].who.resources.ToDictionary(x => x.Key, x => 1);
-                    foreach (var resource in participants[whosTurn].who.resources)
-                    {
-                        var abilitiesUsingResource = allAbilities.Where(x => x.Item1.cost.ContainsKey(resource.Key)).OrderBy(x => x.Value == "Filler" ? 1 : 0);
-                        var currentImportance = 1;
-                        var subtractedAlready = 0;
-                        foreach (var a in abilitiesUsingResource)
-                            for (int i = 0; i < a.Item1.cost[resource.Key]; i++)
-                                if (++subtractedAlready > resource.Value)
-                                    currentImportance += a.Value == "Filler" ? 4 : 10;
-                        importanceTable[resource.Key] = currentImportance;
-                    }
-                    differentFloodings.Shuffle();
-                    var orderedFloodings = differentFloodings.OrderByDescending(x => x.Item3.Sum(y => (y.Item3 / 10 + 1) * importanceTable[Resource(y.Item3)])).ToList();
-                    var chosenFlooding = orderedFloodings.First();
-                    boardClick = (chosenFlooding.Item1, chosenFlooding.Item2);
+                    //If the entity can cast any core ability
+                    //it will cast the one with the longest cooldown
+                    var cores = allAbilities.Where(x => x.Value == "Core").Select(x => x.Item1);
+                    var castableCores = cores.Where(x => x.EnoughResources(participants[whosTurn].who) && CooldownOn(whosTurn, x.name) == 0);
+                    if (cores.Count() > 0 && castAbility == "")
+                        if (castableCores.Count() > 0)
+                            castAbility = castableCores.OrderByDescending(x => x.cooldown).First().name;
                 }
+
+                //If entity doesn't plan to cast anything
+                if (castAbility == "")
+                {
+                    //If the entity can cast any filler ability
+                    //it will cast the one with the longest cooldown
+                    var fillers = allAbilities.Where(x => x.Value == "Filler").Select(x => x.Item1);
+                    var castableFillers = fillers.Where(x => x.EnoughResources(participants[whosTurn].who) && CooldownOn(whosTurn, x.name) == 0);
+                    if (fillers.Count() > 0 && castAbility == "")
+                        if (castableFillers.Count() > 0)
+                            castAbility = castableFillers.OrderByDescending(x => x.cooldown).First().name;
+                }
+
+                //If the entity is planning to cast something
                 if (castAbility != "")
                 {
                     var abilityObj = Ability.abilities.Find(x => x.name == castAbility);
@@ -706,7 +720,7 @@ public class Board
                             for (int i = 0, counted = 0; i < temp.Count; i++, whereToStart++)
                                 if (temp[i].currentHeight == 0 && ++counted / 2 == spotlightEnemy.Count - 1 - spotlightEnemy.IndexOf(whosTurn)) break;
                         if (whereToStart > 0) whereToStart++;
-                        cursorEnemy.Move(temp[whereToStart + 2 + participants[whosTurn].who.actionBars[participants[whosTurn].who.currentActionSet].IndexOf(abilityObj.name)].transform.position + new Vector3(139, -10));
+                        cursorEnemy.Move(temp[whereToStart + 1 + participants[whosTurn].who.actionBars[participants[whosTurn].who.currentActionSet].IndexOf(abilityObj.name)].transform.position + new Vector3(139, -10));
                         animationTime += defines.frameTime * 9;
                     });
                     board.actions.Add(() => { cursorEnemy.SetCursor(CursorType.Click); });
@@ -719,7 +733,7 @@ public class Board
                             for (int i = 0, counted = 0; i < temp.Count; i++, whereToStart++)
                                 if (temp[i].currentHeight == 0 && ++counted / 2 == spotlightEnemy.Count - 1 - spotlightEnemy.IndexOf(whosTurn)) break;
                         if (whereToStart > 0) whereToStart++;
-                        AddRegionOverlay(temp[whereToStart + 2 + participants[whosTurn].who.actionBars[participants[whosTurn].who.currentActionSet].IndexOf(abilityObj.name)], "Window", 10f);
+                        AddRegionOverlay(temp[whereToStart + 1 + participants[whosTurn].who.actionBars[participants[whosTurn].who.currentActionSet].IndexOf(abilityObj.name)], "Window", 10f);
                         animationTime += defines.frameTime;
                         foreach (var participant in participants)
                         {
@@ -729,8 +743,29 @@ public class Board
                         board.participants[whosTurn].who.DetractResources(abilityObj.cost);
                     });
                 }
+
+                //If the entity doesn't want to cast anything
+                //it will pick up some elements on the board
                 else
                 {
+                    //This array will keep information about which resources are of most value for the entity at the moment
+                    var importanceTable = participants[whosTurn].who.resources.ToDictionary(x => x.Key, x => 1);
+                    foreach (var resource in participants[whosTurn].who.resources)
+                    {
+                        var abilitiesUsingResource = allAbilities.Where(x => x.Item1.cost.ContainsKey(resource.Key)).OrderBy(x => x.Value == "Filler" ? 1 : 0);
+                        var currentImportance = 1;
+                        var subtractedAlready = 0;
+                        foreach (var a in abilitiesUsingResource)
+                            for (int i = 0; i < a.Item1.cost[resource.Key]; i++)
+                                if (++subtractedAlready > resource.Value)
+                                    currentImportance += a.Value == "Filler" ? 4 : 10;
+                        importanceTable[resource.Key] = currentImportance;
+                    }
+                    Debug.Log(string.Join('\n', importanceTable.Select(x => x.Key + ": " + x.Value)));
+                    differentFloodings.Shuffle();
+                    var orderedFloodings = differentFloodings.OrderByDescending(x => x.Item3.Sum(y => (y.Item3 / 10 + 1) * importanceTable[Resource(y.Item3)])).ToList();
+                    var chosenFlooding = orderedFloodings.First();
+                    boardClick = (chosenFlooding.Item1, chosenFlooding.Item2);
                     board.actions.Add(() => { cursorEnemy.Move(window.LBRegionGroup().regions[boardClick.Item2].bigButtons[boardClick.Item1].transform.position); animationTime += defines.frameTime * 8; });
                     board.actions.Add(() => { cursorEnemy.SetCursor(CursorType.Click); });
                     board.actions.Add(() =>

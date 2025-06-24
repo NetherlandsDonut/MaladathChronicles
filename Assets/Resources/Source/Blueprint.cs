@@ -563,9 +563,9 @@ public class Blueprint
                 AddLine("Max health:", "Gray", "Left");
                 AddLine(currentSave.player.MaxHealth() + "", "Uncommon", "Right");
                 AddLine("Physical resistance:", "Gray", "Left");
-                AddLine(currentSave.player.PhysicalResistance().ToString("0.00").Replace(",", ".") + "%", "Uncommon", "Right");
+                AddLine((currentSave.player.PhysicalResistance() * 100).ToString("0.00").Replace(",", ".") + "%", "Uncommon", "Right");
                 AddLine("Magic resistance:", "Gray", "Left");
-                AddLine(currentSave.player.MagicResistance().ToString("0.00").Replace(",", ".") + "%", "Uncommon", "Right");
+                AddLine((currentSave.player.MagicResistance() * 100).ToString("0.00").Replace(",", ".") + "%", "Uncommon", "Right");
             });
             AddEmptyRegion();
             AddHeaderRegion(() => AddLine("Character power:"));

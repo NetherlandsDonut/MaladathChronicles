@@ -16,7 +16,7 @@
   "defaultStanding": 4200,
   "maxPrimaryProfessions": 9,
   "expForExploration": 20,
-  "cascadeMinimum": 3,
+  "cascadeMinimum": 49,
   "spaceBetweenPathPips": 10,
   "markerCharacter": "_",
   "textWrapEnding": "...",
