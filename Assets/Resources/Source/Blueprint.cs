@@ -534,10 +534,10 @@ public class Blueprint
             {
                 AddLine("Average MAP modifier:");
                 AddLine(Math.Round(mainPower, 2).ToString("0.00").Replace(",", "."), "Melee", "Right");
-                AddLine("Average RAP modifier:");
-                AddLine(ranged == null ? "1.00" : Math.Round((ranged.minPower + ranged.maxPower) / 2, 2).ToString("0.00").Replace(",", "."), "Ranged", "Right");
                 AddLine("Average SP modifier:");
                 AddLine(Math.Round(mainPower, 2).ToString("0.00").Replace(",", "."), "Spell", "Right");
+                AddLine("Average RAP modifier:");
+                AddLine(ranged == null ? "1.00" : Math.Round((ranged.minPower + ranged.maxPower) / 2, 2).ToString("0.00").Replace(",", "."), "Ranged", "Right");
             });
         }, true),
         new("CharacterInfoDefences", () => {
@@ -572,11 +572,14 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddLine("Melee attack power:", "Gray", "Left");
-                AddLine(currentSave.player.MeleeAttackPower() + "", "Uncommon", "Right");
-                AddLine("Ranged attack power:", "Gray", "Left");
-                AddLine(currentSave.player.RangedAttackPower() + "", "Uncommon", "Right");
+                var melee = currentSave.player.MeleeAttackPower();
+                AddLine(melee + "", melee > 0 ? "Uncommon" : "", "Right");
                 AddLine("Spell power:", "Gray", "Left");
-                AddLine(currentSave.player.SpellPower() + "", "Uncommon", "Right");
+                var spell = currentSave.player.SpellPower();
+                AddLine(spell + "", spell > 0 ? "Uncommon" : "", "Right");
+                AddLine("Ranged attack power:", "Gray", "Left");
+                var ranged = currentSave.player.RangedAttackPower();
+                AddLine(ranged + "", ranged > 0 ? "Uncommon" : "", "Right");
             });
         }, true),
         new("CharacterInfoStats", () => {

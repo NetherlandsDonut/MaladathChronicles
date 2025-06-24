@@ -43,6 +43,7 @@ public class Event
             string worldBuffName = effect.ContainsKey("WorldBuffName") ? effect["WorldBuffName"] : "None";
             int worldBuffDuration = effect.ContainsKey("WorldBuffDuration") ? int.Parse(effect["WorldBuffDuration"]) : 1;
             int worldBuffRank = effect.ContainsKey("WorldBuffRank") ? int.Parse(effect["WorldBuffRank"]) : 0;
+            string weaponUsed = effect.ContainsKey("WeaponUsed") ? effect["WeaponUsed"] : "Melee";
             string powerSource = effect.ContainsKey("PowerSource") ? effect["PowerSource"] : "Effector";
             string powerType = effect.ContainsKey("PowerType") ? effect["PowerType"] : "None";
             double powerScale = effect.ContainsKey("PowerScale") ? double.Parse(effect["PowerScale"].StartsWith("#") ? variables[effect["PowerScale"]] : effect["PowerScale"].Replace(".", ",")) : 1;
@@ -232,7 +233,7 @@ public class Event
             string affect = effect.ContainsKey("Affect") ? effect["Affect"] : "None";
             string buffName = effect.ContainsKey("BuffName") ? effect["BuffName"] : "None";
             int buffDuration = effect.ContainsKey("BuffDuration") ? int.Parse(effect["BuffDuration"]) : 1;
-            string attackSource = effect.ContainsKey("AttackSource") ? effect["AttackSource"] : "Melee";
+            string weaponUsed = effect.ContainsKey("WeaponUsed") ? effect["WeaponUsed"] : "Melee";
             string powerSource = effect.ContainsKey("PowerSource") ? effect["PowerSource"] : "Effector";
             string powerType = effect.ContainsKey("PowerType") ? effect["PowerType"] : "Melee";
             double powerScale = effect.ContainsKey("PowerScale") ? double.Parse(effect["PowerScale"].StartsWith("#") ? variables[effect["PowerScale"]] : effect["PowerScale"].Replace(".", ",")) : 1;
@@ -329,7 +330,7 @@ public class Event
                 var source = powerSource == "Effector" ? effector : other;
                 var target = affect == "Effector" ? effector : other;
                 string damageAmount = effect.ContainsKey("DamageAmount") ? effect["DamageAmount"] : "None";
-                var amount = damageAmount != "None" ? int.Parse(damageAmount) : (int)Math.Round(source.who.RollWeaponDamage(powerType) * ((powerType == "Melee" ? source.who.MeleeAttackPower() : (powerType == "Spell" ? source.who.SpellPower() : (powerType == "Ranged" ? source.who.RangedAttackPower() : 1))) * powerScale));
+                var amount = damageAmount != "None" ? int.Parse(damageAmount) : (int)Math.Round(source.who.RollWeaponDamage(weaponUsed) * ((powerType == "Melee" ? source.who.MeleeAttackPower() : (powerType == "Spell" ? source.who.SpellPower() : (powerType == "Ranged" ? source.who.RangedAttackPower() : 1))) * powerScale));
                 var resistance = powerType == "Spell" ? target.who.MagicResistance() : target.who.PhysicalResistance();
                 amount = (int)(amount * (1 - resistance));
                 if (amount > 0 && target.team == 2) PlayEnemyLine(target.who.EnemyLine("Wound"));

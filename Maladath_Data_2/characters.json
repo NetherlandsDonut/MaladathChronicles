@@ -1402,6 +1402,7 @@
         "race": "Human",
         "spec": "Mage",
         "gender": "Female",
+        "homeLocation": "Northshire Abbey",
         "abilities": {
           "Staff Proficiency": 0,
           "Cloth Proficiency": 0,
@@ -1461,6 +1462,7 @@
         "mounts": [],
         "equipment": {
           "Main Hand": {
+            "x": 1,
             "rarity": "Common",
             "name": "Bent Staff",
             "icon": "itemstaff08",
@@ -1543,7 +1545,10 @@
       "unlockedAreas": [],
       "vendorStock": {},
       "banks": {},
-      "startDate": "2025-06-24T18:33:55.3880698+02:00"
+      "startDate": "2025-06-24T18:33:55.3880698+02:00",
+      "lastLoaded": "2025-06-24T22:31:20.874159+02:00",
+      "lastPlayed": "2025-06-24T22:33:16.6308334+02:00",
+      "timePlayed": "00:16:43.2930510"
     }
   ]
 }

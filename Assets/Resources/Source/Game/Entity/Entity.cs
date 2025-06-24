@@ -1142,7 +1142,7 @@ public class Entity
                 var ranged = equipment["Ranged Weapon"];
                 return (ranged.minPower, ranged.maxPower);
             }
-            else return (1, 1);
+            else return (1, 1.1);
         }
         else
         {
@@ -1171,7 +1171,8 @@ public class Entity
                         max += offHand.maxPower / defines.dividerForDualWield;
                     }
                 }
-                return (1 + min / 10, 1 + max / 10);
+                if (min == 0 || max == 0) return (1, 1.1);
+                else return (min, max);
             }
         }
     }
