@@ -644,7 +644,7 @@ public class Blueprint
                 if (spec.rules["Ranged Attack Power per Strength"] > 0)
                     AddLine("+" + spec.rules["Ranged Attack Power per Strength"] + " Ranged attack power", "Uncommon");
                 if (spec.rules["Critical Strike per Strength"] > 0)
-                    AddLine("+" + spec.rules["Critical Strike per Strength"] + "% Critical strike", "Uncommon");
+                    AddLine(("+" + spec.rules["Critical Strike per Strength"]).Replace(",", ".") + "% Critical strike", "Uncommon");
             });
             AddHeaderRegion(() =>
             {
@@ -657,7 +657,7 @@ public class Blueprint
                 if (spec.rules["Ranged Attack Power per Agility"] > 0)
                     AddLine("+" + spec.rules["Ranged Attack Power per Agility"] + " Ranged attack power", "Uncommon");
                 if (spec.rules["Critical Strike per Agility"] > 0)
-                    AddLine("+" + spec.rules["Critical Strike per Agility"] + "% Critical strike chance", "Uncommon");
+                    AddLine(("+" + spec.rules["Critical Strike per Agility"]).Replace(",", ".") + "% Critical strike chance", "Uncommon");
             });
             AddHeaderRegion(() =>
             {
@@ -669,7 +669,7 @@ public class Blueprint
             {
                 AddLine("+" + spec.rules["Spell Power per Intellect"] + " Spell power", "Uncommon");
                 if (spec.rules["Spell Critical per Intellect"] > 0)
-                    AddLine("+" + spec.rules["Spell Critical per Intellect"] + "% Spell critical chance", "Uncommon");
+                    AddLine(("+" + spec.rules["Spell Critical per Intellect"]).Replace(",", ".") + "% Spell critical chance", "Uncommon");
             });
             AddHeaderRegion(() =>
             {
@@ -679,7 +679,7 @@ public class Blueprint
             });
             AddPaddingRegion(() =>
             {
-                AddLine("+" + spec.rules["Magic Resistance per Spirit"] + "% Magic resistance", "Uncommon");
+                AddLine(("+" + spec.rules["Magic Resistance per Spirit"]).Replace(",", ".") + "% Magic resistance", "Uncommon");
             });
             AddHeaderRegion(() =>
             {
@@ -689,7 +689,7 @@ public class Blueprint
             });
             AddPaddingRegion(() =>
             {
-                AddLine("+" + spec.rules["Physical Resistance per Armor"] + "% Physical resistance", "Uncommon");
+                AddLine(("+" + spec.rules["Physical Resistance per Armor"]).Replace(",", ".") + "% Physical resistance", "Uncommon");
                 SetRegionAsGroupExtender();
             });
         }, true),

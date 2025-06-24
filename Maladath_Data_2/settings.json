@@ -1,15 +1,15 @@
 {
   "selectedRealm": "Whitemane",
   "selectedRealmRanking": "Whitemane",
-  "selectedCharacter": "Jo'do",
+  "selectedCharacter": "Sahge",
   "pixelPerfectVision": {
     "value": "True"
   },
   "music": {
-    "value": "False"
+    "value": "True"
   },
   "soundEffects": {
-    "value": "False"
+    "value": "True"
   },
   "rarityIndicators": {
     "value": "True"
