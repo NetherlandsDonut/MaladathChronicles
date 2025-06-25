@@ -1,7 +1,7 @@
 {
   "selectedRealm": "Whitemane",
   "selectedRealmRanking": "Whitemane",
-  "selectedCharacter": "Yol'ku",
+  "selectedCharacter": "Jo'do",
   "pixelPerfectVision": {
     "value": "True"
   },
@@ -45,6 +45,6 @@
     "value": "True"
   },
   "runsInBackground": {
-    "value": "False"
+    "value": "True"
   }
 }

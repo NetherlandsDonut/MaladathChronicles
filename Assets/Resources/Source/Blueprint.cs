@@ -2512,12 +2512,24 @@ public class Blueprint
                         AddSmallButton(currentSave.player.inventory.bags[index].icon,
                             (h) =>
                             {
-                                if (currentSave.player.inventory.items.Count < currentSave.player.inventory.BagSpace() - currentSave.player.inventory.bags[index].bagSpace)
+                                if (movingItem == null && currentSave.player.inventory.items.Count < currentSave.player.inventory.BagSpace() - currentSave.player.inventory.bags[index].bagSpace)
                                     currentSave.player.UnequipBag(index);
                             },
                             null,
                             (h) => () => PrintItemTooltip(currentSave.player.inventory.bags[index]));
-                    else AddSmallButton("OtherEmpty");
+                    else
+                        AddSmallButton("OtherEmpty", (h) =>
+                        {
+                            if (movingItem != null && movingItem.CanEquip(currentSave.player, true) && movingItem.type == "Bag")
+                            {
+                                movingItem.Equip(currentSave.player, true, false);
+                                movingItem.x = -1;
+                                movingItem.y = -1;
+                                PlaySound(movingItem.ItemSound("PutDown"), 0.8f);
+                                movingItem = null;
+                                Cursor.cursor.iconAttached.SetActive(false);
+                            }
+                        });
                 }
             });
             PrintPriceRegion(currentSave.player.inventory.money, 38, 38, 57);

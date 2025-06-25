@@ -9,7 +9,7 @@
         "currentQuests": [],
         "completedQuests": [],
         "level": 23,
-        "experience": 23876,
+        "experience": 23916,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -162,7 +162,7 @@
           "Order Mastery": 1
         },
         "inventory": {
-          "money": 122851,
+          "money": 115075,
           "items": [
             {
               "rarity": "Common",
@@ -178,70 +178,6 @@
               "abilities": {
                 "Hearthstone": 1
               }
-            },
-            {
-              "x": 1,
-              "rarity": "Common",
-              "name": "Worn Axe",
-              "icon": "itemaxe11",
-              "detailedType": "Axe",
-              "type": "One Handed",
-              "ilvl": 2,
-              "lvl": 1,
-              "minPower": 1.05,
-              "maxPower": 1.15,
-              "amount": 1,
-              "maxStack": 1,
-              "price": 7
-            },
-            {
-              "x": 4,
-              "rarity": "Common",
-              "name": "Dirk",
-              "icon": "itemshortblade14",
-              "detailedType": "Dagger",
-              "type": "One Handed",
-              "ilvl": 3,
-              "lvl": 1,
-              "minPower": 1.06,
-              "maxPower": 1.19,
-              "amount": 1,
-              "maxStack": 1,
-              "price": 11
-            },
-            {
-              "x": 2,
-              "rarity": "Common",
-              "name": "Bastard Sword",
-              "icon": "itemsword06",
-              "detailedType": "Sword",
-              "type": "Two Handed",
-              "ilvl": 4,
-              "lvl": 1,
-              "minPower": 1.17,
-              "maxPower": 1.27,
-              "amount": 1,
-              "maxStack": 1,
-              "price": 20
-            },
-            {
-              "x": 3,
-              "rarity": "Rare",
-              "name": "Ravager",
-              "icon": "itemhalberd05",
-              "detailedType": "Axe",
-              "type": "Two Handed",
-              "source": "DirectDrop",
-              "ilvl": 42,
-              "lvl": 37,
-              "minPower": 3.97,
-              "maxPower": 5.49,
-              "amount": 1,
-              "maxStack": 1,
-              "price": 18923,
-              "droppedBy": [
-                "Herod"
-              ]
             },
             {
               "y": 1,
@@ -275,37 +211,68 @@
               "price": 86
             },
             {
+              "x": 4,
+              "rarity": "Uncommon",
+              "name": "Fine Longbow",
+              "icon": "itembow02",
+              "detailedType": "Bow",
+              "type": "Ranged Weapon",
+              "ilvl": 19,
+              "lvl": 14,
+              "minPower": 1.52,
+              "maxPower": 1.96,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 972
+            },
+            {
               "x": 2,
               "y": 1,
               "rarity": "Common",
-              "name": "Worn Shortbow",
-              "icon": "itembow05",
-              "detailedType": "Bow",
-              "type": "Ranged Weapon",
-              "ilvl": 2,
+              "name": "Bastard Sword",
+              "icon": "itemsword06",
+              "detailedType": "Sword",
+              "type": "Two Handed",
+              "ilvl": 4,
               "lvl": 1,
-              "minPower": 1.09,
-              "maxPower": 1.22,
+              "minPower": 1.17,
+              "maxPower": 1.27,
               "amount": 1,
               "maxStack": 1,
-              "price": 5
+              "price": 20
+            },
+            {
+              "x": 2,
+              "rarity": "Rare",
+              "name": "Ravager",
+              "icon": "itemhalberd05",
+              "detailedType": "Axe",
+              "type": "Two Handed",
+              "source": "DirectDrop",
+              "ilvl": 42,
+              "lvl": 37,
+              "minPower": 3.97,
+              "maxPower": 5.49,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 18923,
+              "droppedBy": [
+                "Herod"
+              ]
             },
             {
               "x": 1,
-              "y": 1,
-              "rarity": "Rare",
-              "name": "Lil Timmy's Peashooter",
-              "icon": "itemrifle08",
-              "detailedType": "Gun",
-              "type": "Ranged Weapon",
-              "source": "RareDrop",
-              "ilvl": 21,
-              "lvl": 16,
-              "minPower": 1.77,
-              "maxPower": 2.42,
+              "rarity": "Common",
+              "name": "Red Woolen Bag",
+              "icon": "itemmiscbag10red",
+              "type": "Bag",
+              "source": "Profession",
+              "ilvl": 15,
+              "lvl": 1,
               "amount": 1,
               "maxStack": 1,
-              "price": 1456
+              "price": 700,
+              "bagSpace": 3
             }
           ],
           "bags": []
@@ -335,6 +302,53 @@
             "amount": 1,
             "maxStack": 1,
             "price": 1
+          },
+          "Main Hand": {
+            "x": 3,
+            "rarity": "Common",
+            "name": "Dirk",
+            "icon": "itemshortblade14",
+            "detailedType": "Dagger",
+            "type": "One Handed",
+            "ilvl": 3,
+            "lvl": 1,
+            "minPower": 1.06,
+            "maxPower": 1.19,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 11
+          },
+          "Off Hand": {
+            "x": 1,
+            "rarity": "Common",
+            "name": "Worn Axe",
+            "icon": "itemaxe11",
+            "detailedType": "Axe",
+            "type": "One Handed",
+            "ilvl": 2,
+            "lvl": 1,
+            "minPower": 1.05,
+            "maxPower": 1.15,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 7
+          },
+          "Ranged Weapon": {
+            "x": 1,
+            "y": 1,
+            "rarity": "Rare",
+            "name": "Lil Timmy's Peashooter",
+            "icon": "itemrifle08",
+            "detailedType": "Gun",
+            "type": "Ranged Weapon",
+            "source": "RareDrop",
+            "ilvl": 21,
+            "lvl": 16,
+            "minPower": 1.77,
+            "maxPower": 2.42,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1456
           }
         },
         "worldBuffs": []
@@ -374,22 +388,22 @@
         "equipment": {},
         "worldBuffs": []
       },
-      "hour": 7,
-      "minute": 56,
-      "second": 42,
-      "currentSite": "Fallen Sky Lake",
+      "hour": 8,
+      "minute": 9,
+      "second": 18,
+      "currentSite": "The Crossroads",
       "ringOfLaw": "Eviscerator",
       "forlornCloister": "Fallen Champion",
       "markets": [
         {
           "name": "Alliance Market",
           "auctions": [],
-          "hoursSinceUpdate": 48
+          "hoursSinceUpdate": 49
         },
         {
           "name": "Horde Market",
           "auctions": [],
-          "hoursSinceUpdate": 48
+          "hoursSinceUpdate": 49
         }
       ],
       "openedChests": {
@@ -466,10 +480,12 @@
         "Far Watch Post": 1,
         "Grol'dom Farm": 1,
         "Northern Gold Road": 1,
-        "The Mor'shan Rampart": 1,
+        "The Mor'shan Rampart": 2,
         "Fallen Sky Lake": 4,
         "Silverwing Outpost": 1,
-        "Falfarren River": 1
+        "Falfarren River": 1,
+        "Gold Road Watchtower": 0,
+        "The Crossroads": 1
       },
       "unlockedAreas": [],
       "vendorStock": {
@@ -540,7 +556,7 @@
             "item": "Hand Axe",
             "amount": 1,
             "maxAmount": 2,
-            "minutesLeft": 38,
+            "minutesLeft": 25,
             "restockSpeed": 40
           },
           {
@@ -561,6 +577,80 @@
             "maxAmount": 2,
             "restockSpeed": 40
           }
+        ],
+        "The Crossroads:Uthrok": [
+          {
+            "item": "Laminated Recurve Bow",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Ornate Blunderbuss",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Hunter's Boomstick",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Rough Arrow",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Sharp Arrow",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Light Shot",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Heavy Shot",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Reinforced Bow",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Small Quiver",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Small Shot Pouch",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Fine Longbow",
+            "maxAmount": 2,
+            "minutesLeft": 40,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Medium Quiver",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       },
       "banks": {},
@@ -570,9 +660,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2025-06-23T12:52:19.8845211+02:00",
-      "lastLoaded": "2025-06-24T16:55:12.8388647+02:00",
-      "lastPlayed": "2025-06-24T17:00:10.4857537+02:00",
-      "timePlayed": "00:16:02.2709252"
+      "lastLoaded": "2025-06-25T02:06:57.8582831+02:00",
+      "lastPlayed": "2025-06-25T02:10:30.6009331+02:00",
+      "timePlayed": "00:19:35.0135752"
     },
     {
       "playerSide": "Horde",
@@ -1564,9 +1654,9 @@
       "vendorStock": {},
       "banks": {},
       "startDate": "2025-06-24T18:33:55.3880698+02:00",
-      "lastLoaded": "2025-06-25T01:57:55.9517638+02:00",
-      "lastPlayed": "2025-06-25T02:00:19.5295938+02:00",
-      "timePlayed": "00:29:23.0739522"
+      "lastLoaded": "2025-06-25T02:06:51.0511593+02:00",
+      "lastPlayed": "2025-06-25T02:06:55.7260937+02:00",
+      "timePlayed": "00:29:27.7488866"
     }
   ]
 }
