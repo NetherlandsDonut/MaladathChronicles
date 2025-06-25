@@ -220,17 +220,51 @@ public static class Root
     //Put down an item into an inventory
     public static void PutDownMovingItem(Highlightable h)
     {
-        if (h.window.title == "Bank") SaveGame.currentSave.banks[SiteTown.town.name].AddNewItem(movingItem);
-        else SaveGame.currentSave.player.inventory.AddNewItem(movingItem);
-        var bigButtonIndex = h.region.bigButtons.IndexOf(h.GetComponent<LineBigButton>());
-        var regionIndex = h.window.headerGroup.regions.IndexOf(h.region) - (h.window.title == "Bank" ? 2 : 1);
-        movingItem.x = bigButtonIndex;
-        movingItem.y = regionIndex;
-        PlaySound(movingItem.ItemSound("PutDown"), 0.8f);
-        movingItem = null;
-        Cursor.cursor.iconAttached.SetActive(false);
-        if (h.window.title == "Bank") Respawn("Inventory", true);
-        else Respawn("Bank", true);
+        if (h.window.title == "PlayerEquipmentInfo")
+        {
+            if (movingItem.CanEquip(currentSave.player, true) && h.region.LBLine().LBText().text == movingItem.type)
+            {
+                movingItem.Equip(currentSave.player, false, false);
+                movingItem.x = -1;
+                movingItem.y = -1;
+                PlaySound(movingItem.ItemSound("PutDown"), 0.8f);
+                movingItem = null;
+                Cursor.cursor.iconAttached.SetActive(false);
+                Respawn("Inventory", true);
+                Respawn("PlayerEquipmentInfo", true);
+                Respawn("PlayerWeaponsInfo", true);
+            }
+        }
+        else if (h.window.title == "PlayerWeaponsInfo")
+        {
+            var typeWritten = h.region.LBLine().LBText().text;
+            if (movingItem.CanEquip(currentSave.player, true) && ((typeWritten == "Main Hand" || typeWritten == "Off Hand") && (movingItem.type == "One Handed" || movingItem.type == "Two Handed") || typeWritten == "Ranged Weapon" && movingItem.type == "Ranged Weapon"))
+            {
+                movingItem.Equip(currentSave.player, false, typeWritten == "Off Hand");
+                movingItem.x = -1;
+                movingItem.y = -1;
+                PlaySound(movingItem.ItemSound("PutDown"), 0.8f);
+                movingItem = null;
+                Cursor.cursor.iconAttached.SetActive(false);
+                Respawn("Inventory", true);
+                Respawn("PlayerEquipmentInfo", true);
+                Respawn("PlayerWeaponsInfo", true);
+            }
+        }
+        else
+        {
+            if (h.window.title == "Bank") currentSave.banks[SiteTown.town.name].AddNewItem(movingItem);
+            else currentSave.player.inventory.AddNewItem(movingItem);
+            var bigButtonIndex = h.region.bigButtons.IndexOf(h.GetComponent<LineBigButton>());
+            var regionIndex = h.window.headerGroup.regions.IndexOf(h.region) - (h.window.title == "Bank" ? 2 : 1);
+            movingItem.x = bigButtonIndex;
+            movingItem.y = regionIndex;
+            PlaySound(movingItem.ItemSound("PutDown"), 0.8f);
+            movingItem = null;
+            Cursor.cursor.iconAttached.SetActive(false);
+            if (h.window.title == "Bank") Respawn("Inventory", true);
+            else Respawn("Bank", true);
+        }
     }
 
     //Swap moving item with the one at clicked position
@@ -240,7 +274,7 @@ public static class Root
     {
         var bigButtonIndex = h.region.bigButtons.IndexOf(h.GetComponent<LineBigButton>());
         var regionIndex = h.window.headerGroup.regions.IndexOf(h.region) - (h.window.title == "Bank" ? 2 : 1);
-        var temp = (h.window.title == "Bank" ? SaveGame.currentSave.banks[SiteTown.town.name].items : SaveGame.currentSave.player.inventory.items).Find(x => x.x == bigButtonIndex && x.y == regionIndex);
+        var temp = (h.window.title == "Bank" ? currentSave.banks[SiteTown.town.name].items : currentSave.player.inventory.items).Find(x => x.x == bigButtonIndex && x.y == regionIndex);
         PlaySound(movingItem.ItemSound("PutDown"), 0.8f);
         if (temp.name == movingItem.name && temp.amount + movingItem.amount <= temp.maxStack)
         {
@@ -255,19 +289,19 @@ public static class Root
         }
         else if (!movingItemSplitOff)
         {
-            if (h.window.title == "Bank") SaveGame.currentSave.banks[SiteTown.town.name].AddNewItem(movingItem);
-            else SaveGame.currentSave.player.inventory.AddNewItem(movingItem);
+            if (h.window.title == "Bank") currentSave.banks[SiteTown.town.name].AddNewItem(movingItem);
+            else currentSave.player.inventory.AddNewItem(movingItem);
             movingItem.x = bigButtonIndex;
             movingItem.y = regionIndex;
             movingItem = temp;
-            if (h.window.title == "Bank") SaveGame.currentSave.banks[SiteTown.town.name].items.Remove(movingItem);
-            else SaveGame.currentSave.player.inventory.items.Remove(movingItem);
+            if (h.window.title == "Bank") currentSave.banks[SiteTown.town.name].items.Remove(movingItem);
+            else currentSave.player.inventory.items.Remove(movingItem);
             Cursor.cursor.iconAttached.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Buttons/" + movingItem.icon);
         }
         else
         {
-            if (movingItemFrom == "Bank") SaveGame.currentSave.banks[SiteTown.town.name].AddItem(movingItem);
-            else SaveGame.currentSave.player.inventory.AddItem(movingItem);
+            if (movingItemFrom == "Bank") currentSave.banks[SiteTown.town.name].AddItem(movingItem);
+            else currentSave.player.inventory.AddItem(movingItem);
             movingItem = null;
             Cursor.cursor.iconAttached.SetActive(false);
             SpawnFallingText(new Vector2(0, 34), "Couldn't split the items", "Red");
@@ -800,7 +834,11 @@ public static class Root
             {
                 ReverseButtons();
                 AddLine(slot, "DarkGray", "Left");
-                AddSmallButton("OtherEmpty");
+                AddSmallButton("OtherEmpty", (h) =>
+                {
+                    if (WindowUp("Inventory") && movingItem != null)
+                        PutDownMovingItem(h);
+                });
             });
     }
 

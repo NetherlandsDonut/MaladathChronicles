@@ -842,7 +842,7 @@ public class Entity
     {
         for (int i = inventory.items.Count - 1; i >= 0; i--)
             if (inventory.items[i].CanEquip(this, true))
-                inventory.items[i].Equip(this, true);
+                inventory.items[i].Equip(this, true, false);
     }
 
     //Unequips items in given list of slots

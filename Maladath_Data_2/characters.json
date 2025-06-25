@@ -1455,27 +1455,27 @@
               "abilities": {
                 "Hearthstone": 1
               }
+            },
+            {
+              "x": 1,
+              "rarity": "Common",
+              "name": "Bent Staff",
+              "icon": "itemstaff08",
+              "detailedType": "Staff",
+              "type": "Two Handed",
+              "ilvl": 2,
+              "lvl": 1,
+              "minPower": 1.1,
+              "maxPower": 1.17,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 9
             }
           ],
           "bags": []
         },
         "mounts": [],
         "equipment": {
-          "Main Hand": {
-            "x": 1,
-            "rarity": "Common",
-            "name": "Bent Staff",
-            "icon": "itemstaff08",
-            "detailedType": "Staff",
-            "type": "Two Handed",
-            "ilvl": 2,
-            "lvl": 1,
-            "minPower": 1.1,
-            "maxPower": 1.17,
-            "amount": 1,
-            "maxStack": 1,
-            "price": 9
-          },
           "Feet": {
             "rarity": "Common",
             "name": "Apprentice's Boots",
@@ -1501,6 +1501,8 @@
             "price": 1
           },
           "Chest": {
+            "x": -1,
+            "y": -1,
             "rarity": "Poor",
             "name": "Apprentice's Robe",
             "icon": "itemchestcloth23",
@@ -1512,6 +1514,22 @@
             "amount": 1,
             "maxStack": 1,
             "price": 1
+          },
+          "Main Hand": {
+            "x": -1,
+            "y": -1,
+            "rarity": "Common",
+            "name": "Bent Staff",
+            "icon": "itemstaff08",
+            "detailedType": "Staff",
+            "type": "Two Handed",
+            "ilvl": 2,
+            "lvl": 1,
+            "minPower": 1.1,
+            "maxPower": 1.17,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 9
           }
         },
         "worldBuffs": []
@@ -1546,9 +1564,9 @@
       "vendorStock": {},
       "banks": {},
       "startDate": "2025-06-24T18:33:55.3880698+02:00",
-      "lastLoaded": "2025-06-24T22:31:20.874159+02:00",
-      "lastPlayed": "2025-06-24T22:33:16.6308334+02:00",
-      "timePlayed": "00:16:43.2930510"
+      "lastLoaded": "2025-06-25T01:57:55.9517638+02:00",
+      "lastPlayed": "2025-06-25T02:00:19.5295938+02:00",
+      "timePlayed": "00:29:23.0739522"
     }
   ]
 }

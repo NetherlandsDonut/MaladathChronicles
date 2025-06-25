@@ -175,7 +175,7 @@ public class Item
 
     //Equips this item on the chosen entity
     //Slot action determines how is the item equiped [Auto, ]
-    public void Equip(Entity entity, bool autoSlotting)
+    public void Equip(Entity entity, bool autoSlotting, bool altSlot)
     {
         var unequiped = new List<Item>();
         if (type == "Two Handed")
@@ -224,7 +224,7 @@ public class Item
             else
             {
                 //If dual wielding is possible and LeftAlt is pressed; equip the weapon in the off hand
-                if (Input.GetKey(KeyCode.LeftAlt) && entity.abilities.ContainsKey("Dual Wielding Proficiency"))
+                if (altSlot && entity.abilities.ContainsKey("Dual Wielding Proficiency"))
                 {
                     if (mainHand != null && mainHand.type == "Two Handed")
                         unequiped.AddRange(entity.Unequip(new() { "Main Hand" }));
@@ -828,7 +828,7 @@ public class Item
                     if (item.CanEquip(currentSave.player, true))
                     {
                         PlaySound(item.ItemSound("PickUp"), 0.8f);
-                        item.Equip(currentSave.player, false);
+                        item.Equip(currentSave.player, false, Input.GetKey(KeyCode.LeftAlt));
                         Respawn("Inventory", true);
                         Respawn("PlayerEquipmentInfo", true);
                         Respawn("PlayerWeaponsInfo", true);
