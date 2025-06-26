@@ -618,6 +618,7 @@ public static class Root
     {
         CDesktop.LBWindow().LBRegionGroup().setHeight = height;
     }
+
     #endregion
 
     #region Regions
@@ -966,8 +967,7 @@ public static class Root
 
     public static void BigButtonFlipX()
     {
-        var region = CDesktop.LBWindow().LBRegionGroup().LBRegion();
-        var button = region.LBBigButton().gameObject;
+        var button = CDesktop.LBWindow().LBRegionGroup().LBRegion().LBBigButton().gameObject;
         button.GetComponent<SpriteRenderer>().flipX ^= true;
     }
 
@@ -1024,10 +1024,16 @@ public static class Root
 
     public static GameObject AddBigButtonOverlay(GameObject onWhat, string overlay, float time = 0, int sortingOrder = 0)
     {
-        var newObject = new GameObject("BigButtonGrid", typeof(SpriteRenderer));
+        var newObject = new GameObject("BigButtonOverlay", typeof(SpriteRenderer));
         newObject.transform.parent = onWhat.transform;
         newObject.transform.localPosition = new Vector3(0, 0, -0.01f);
-        newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(overlay);
+        if (overlay == "CooldownBig") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Other/CooldownBig", true);
+        else if (overlay == "SneakingBig")
+        {
+            newObject.transform.localPosition = new Vector3(-18, 18, -0.01f);
+            newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Other/SneakingBig", true);
+        }
+        else newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/ButtonsBig/" + overlay);
         newObject.GetComponent<SpriteRenderer>().sortingOrder = sortingOrder;
         newObject.GetComponent<SpriteRenderer>().sortingLayerName = CDesktop.LBWindow().layer;
         if (time > 0)

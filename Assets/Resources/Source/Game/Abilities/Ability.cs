@@ -27,6 +27,20 @@ public class Ability
     public bool EnoughResources(Entity entity) => EnoughResources(entity.resources);
     public bool EnoughResources(Dictionary<string, int> resources) => !cost.Any(x => x.Value > resources[x.Key]);
 
+    //Checks if this ability can be casted on any valid target by the participant
+    public bool HasValidTarget(CombatParticipant participant)
+    {
+        if (possibleTargets == "Friendly")
+            return Board.board.participants.Any(x => x.who.CanBeTargetted() && x.team == participant.team && participant != x);
+        else if (possibleTargets == "Enemies")
+            return Board.board.participants.Any(x => x.who.CanBeTargetted() && x.team != participant.team);
+        else if (possibleTargets == "Entity")
+            return Board.board.participants.Any(x => x.who.CanBeTargetted());
+        else if (possibleTargets == "Self") return true;
+        else if (possibleTargets == "Tile") return true;
+        else return false;
+    }
+
     #endregion
 
     #region Execution

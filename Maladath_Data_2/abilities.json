@@ -1178,11 +1178,39 @@
   {
     "name": "Stealth",
     "icon": "AbilityStealth",
+    "cooldown": 5,
+    "possibleTargets": "Self",
     "tags": [],
+    "cost": {
+      "Shadow": 3
+    },
     "ranks": [
       {}
     ],
-    "events": []
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddBuff",
+            "Affect": "Effector",
+            "BuffName": "Stealth",
+            "BuffDuration": "5",
+            "ShatterTarget": "Effector",
+            "ShatterType": "Central",
+            "ShatterDensity": "1",
+            "ShatterSpeed": "15",
+            "SoundEffect": "AbilityCorruptionImpact",
+            "Await": "5",
+            "ShatterDegree": "30"
+          }
+        ]
+      }
+    ]
   },
   {
     "name": "Cold Blood",

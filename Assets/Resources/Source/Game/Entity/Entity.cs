@@ -1359,7 +1359,7 @@ public class Entity
     //Tells whether the entity can be targetted by an ability
     public bool CanBeTargetted()
     {
-        return true;
+        return !Stats().Any(x => x.Key == "Stealth" && x.Value > 0);
     }
 
     //Kills this entity in combat

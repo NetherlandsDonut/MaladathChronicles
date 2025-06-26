@@ -397,6 +397,8 @@ public class Event
                     if (participant == target) board.CallEvents(participant.who, new() { { "Trigger", "BuffAdd" }, { "Triggerer", "Effector" }, { "BuffName", buffName } });
                     else board.CallEvents(participant.who, new() { { "Trigger", "BuffAdd" }, { "Triggerer", "Other" }, { "BuffName", buffName } });
                 SpawnFallingText(new Vector3(1, 0) + Board.board.PortraitPosition(Board.board.participants.IndexOf(target)), buffDuration + " turn" + (buffDuration > 1 ? "s" : ""), "White");
+                if (target.team == 1) Respawn("FriendlyBattleInfo");
+                else if (target.team == 2) Respawn("EnemyBattleInfo");
             }
 
             //This effect removes a buff from the targetted entity

@@ -1527,6 +1527,19 @@
     ]
   },
   {
+    "name": "Stealth",
+    "icon": "AbilityStealth",
+    "dispelType": "None",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "gains": {
+      "Stealth": 1
+    },
+    "events": []
+  },
+  {
     "name": "Corruption",
     "icon": "AbilityCorruption",
     "dispelType": "None",

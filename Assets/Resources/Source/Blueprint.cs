@@ -231,32 +231,38 @@ public class Blueprint
             for (int i = board.spotlightEnemy.Count - 1; i >= 0; i--)
             {
                 var index = i;
+                var participant = board.participants[board.spotlightEnemy[index]];
                 AddButtonRegion(() =>
                 {
-                    AddLine(board.participants[board.spotlightEnemy[index]].who.name);
-                    SpawnFloatingText(new Vector3(34, -9), board.participants[board.spotlightEnemy[index]].who.level - 10 > currentSave.player.level ? "??" : "" + board.participants[board.spotlightEnemy[index]].who.level, ColorEntityLevel(currentSave.player, board.participants[board.spotlightEnemy[index]].who.level), "DimGray", "Right");
-                    var race = races.Find(x => x.name == board.participants[board.spotlightEnemy[index]].who.race);
-                    AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? board.participants[index].who.gender : ""), (h) =>
+                    AddLine(participant.who.name);
+                    SpawnFloatingText(new Vector3(34, -9), participant.who.level - 10 > currentSave.player.level ? "??" : "" + participant.who.level, ColorEntityLevel(currentSave.player, participant.who.level), "DimGray", "Right");
+                    var race = races.Find(x => x.name == participant.who.race);
+                    AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? participant.who.gender : ""), (h) =>
                     {
-                        if (abilityTargetted != null) FinishTargettingAbility(board.participants[board.spotlightEnemy[index]]);
+                        if (abilityTargetted != null) FinishTargettingAbility(participant);
                         else ChangeSpotlight(index);
                     });
+                    if (!participant.who.CanBeTargetted())
+                    {
+                        var button = CDesktop.LBWindow().LBRegionGroup().LBRegion().LBBigButton().gameObject;
+                        AddBigButtonOverlay(button, "SneakingBig", 0, 1);
+                    }
                     BigButtonFlipX();
-                    if (board.participants[board.spotlightEnemy[index]].who.dead) SetBigButtonToGrayscale();
-                    if (board.participants[board.spotlightEnemy[index]] == board.participants[board.whosTurn])
+                    if (participant.who.dead) SetBigButtonToGrayscale();
+                    if (participant == board.participants[board.whosTurn])
                     {
                         var arrow = AddSmallButtonOverlay(CDesktop.LBWindow().LBRegionGroup().LBRegion().gameObject, "EnemyLocationFromBelow", 0, 1);
                         arrow.transform.localPosition = new Vector3(0.5f, -20.5f, 0);
                         arrow.transform.localEulerAngles = new Vector3(0, 0, -90);
                     }
-                    AddHealthBar(40, -19, board.spotlightEnemy[index], board.participants[board.spotlightEnemy[index]].who);
+                    AddHealthBar(40, -19, board.spotlightEnemy[index], participant.who);
                 },
                 (h) =>
                 {
-                    if (abilityTargetted != null) FinishTargettingAbility(board.participants[board.spotlightEnemy[index]]);
+                    if (abilityTargetted != null) FinishTargettingAbility(participant);
                     else ChangeSpotlight(index);
                 });
-                foreach (var actionBar in board.participants[board.spotlightEnemy[index]].who.actionBars[board.participants[board.spotlightEnemy[index]].who.currentActionSet])
+                foreach (var actionBar in participant.who.actionBars[participant.who.currentActionSet])
                 {
                     var abilityObj = abilities.Find(x => x.name == actionBar);
                     if (abilityObj == null || abilityObj.cost == null) continue;
@@ -287,7 +293,7 @@ public class Blueprint
                         }
                     );
                 }
-                var item = board.participants[board.spotlightEnemy[index]].who.equipment.ContainsKey("Trinket") ? board.participants[board.spotlightEnemy[index]].who.equipment["Trinket"] : null;
+                var item = participant.who.equipment.ContainsKey("Trinket") ? participant.who.equipment["Trinket"] : null;
                 if (item != null && item.abilities != null && item.combatUse)
                 {
                     var ability = item.abilities.ToList()[index];
@@ -302,7 +308,7 @@ public class Blueprint
                             }
                             else AddLine(ability.Key, "", "Right");
                             AddSmallButton(item.icon);
-                            if (!abilityObj.EnoughResources(board.participants[board.spotlightEnemy[index]].who))
+                            if (!abilityObj.EnoughResources(participant.who))
                             {
                                 SetSmallButtonToGrayscale();
                                 AddSmallButtonOverlay("OtherGridBlurred");
@@ -314,7 +320,7 @@ public class Blueprint
                         null,
                         (h) => () =>
                         {
-                            PrintAbilityTooltip(board.participants[board.spotlightEnemy[index]].who, abilityObj, board.participants[board.spotlightEnemy[index]].who.abilities[abilityObj.name], item);
+                            PrintAbilityTooltip(participant.who, abilityObj, participant.who.abilities[abilityObj.name], item);
                         }
                     );
                 }
@@ -348,42 +354,48 @@ public class Blueprint
             for (int i = board.spotlightFriendly.Count - 1; i >= 0; i--)
             {
                 var index = i;
+                var participant = board.participants[board.spotlightFriendly[index]];
                 AddButtonRegion(() =>
                 {
-                    AddLine(board.participants[board.spotlightFriendly[index]].who.name, "", "Right");
-                    SpawnFloatingText(new Vector3(158, -9), board.participants[board.spotlightFriendly[index]].who.level + "", "Gray", "DimGray", "Left");
+                    AddLine(participant.who.name, "", "Right");
+                    SpawnFloatingText(new Vector3(158, -9), participant.who.level + "", "Gray", "DimGray", "Left");
                     ReverseButtons();
-                    if (board.participants[board.spotlightFriendly[index]].who.spec != null)
-                        AddBigButton(board.participants[board.spotlightFriendly[index]].who.Spec().icon, (h) =>
+                    if (participant.who.spec != null)
+                        AddBigButton(participant.who.Spec().icon, (h) =>
                         {
-                            if (abilityTargetted != null) FinishTargettingAbility(board.participants[board.spotlightFriendly[index]]);
+                            if (abilityTargetted != null) FinishTargettingAbility(participant);
                             else ChangeSpotlight(index);
                         });
                     else
                     {
-                        var race = races.Find(x => x.name == board.participants[board.spotlightFriendly[index]].who.race);
+                        var race = races.Find(x => x.name == participant.who.race);
                         AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? board.participants[board.spotlightFriendly[0]].who.gender : ""), (h) =>
                         {
                             if (abilityTargetted != null) FinishTargettingAbility(board.participants[board.spotlightFriendly[index]]);
                             else ChangeSpotlight(index);
                         });
                     }
-                    if (board.participants[board.spotlightFriendly[index]].who.dead) SetBigButtonToGrayscale();
-                    if (board.participants[board.spotlightFriendly[index]] == board.participants[board.whosTurn])
+                    if (!participant.who.CanBeTargetted())
+                    {
+                        var button = CDesktop.LBWindow().LBRegionGroup().LBRegion().LBBigButton().gameObject;
+                        AddBigButtonOverlay(button, "SneakingBig", 0, 1);
+                    }
+                    if (participant.who.dead) SetBigButtonToGrayscale();
+                    if (participant == board.participants[board.whosTurn])
                     {
                         var arrow = AddSmallButtonOverlay(CDesktop.LBWindow().LBRegionGroup().LBRegion().gameObject, board.participants[board.whosTurn].human ? "PlayerLocationFromBelow" : "FriendLocationFromBelow", 0, 1);
                         arrow.transform.localPosition = new Vector3(191.5f, -20.5f, 0);
                         arrow.transform.localEulerAngles = new Vector3(0, 0, -90);
                         arrow.GetComponent<SpriteRenderer>().flipY = true;
                     }
-                    AddHealthBar(2, -19, board.spotlightFriendly[index], board.participants[board.spotlightFriendly[index]].who);
+                    AddHealthBar(2, -19, board.spotlightFriendly[index], participant.who);
                 },
                 (h) =>
                 {
-                    if (abilityTargetted != null) FinishTargettingAbility(board.participants[board.spotlightFriendly[index]]);
+                    if (abilityTargetted != null) FinishTargettingAbility(participant);
                     else ChangeSpotlight(index);
                 });
-                foreach (var actionBar in board.participants[board.spotlightFriendly[index]].who.actionBars[board.participants[index].who.currentActionSet])
+                foreach (var actionBar in participant.who.actionBars[board.participants[index].who.currentActionSet])
                 {
                     var abilityObj = abilities.Find(x => x.name == actionBar);
                     if (abilityObj == null || abilityObj.cost == null) continue;
@@ -422,7 +434,7 @@ public class Blueprint
                         }
                     );
                 }
-                var item = board.participants[board.spotlightFriendly[index]].who.equipment.ContainsKey("Trinket") ? board.participants[board.spotlightFriendly[index]].who.equipment["Trinket"] : null;
+                var item = participant.who.equipment.ContainsKey("Trinket") ? participant.who.equipment["Trinket"] : null;
                 if (item != null && item.abilities != null && item.combatUse)
                 {
                     var ability = item.abilities.ToList()[index];

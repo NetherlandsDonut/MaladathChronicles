@@ -679,7 +679,7 @@ public class Board
                 //If the entity feels in danger and it can cast any of the emergency ability
                 //it will cast the one with the longest cooldown
                 var emergencies = allAbilities.Where(x => x.Value == "Emergency").Select(x => x.Item1);
-                var castableEmergencies = emergencies.Where(x => x.EnoughResources(participants[whosTurn].who) && CooldownOn(whosTurn, x.name) == 0);
+                var castableEmergencies = emergencies.Where(x => x.EnoughResources(participants[whosTurn].who) && CooldownOn(whosTurn, x.name) == 0 && x.HasValidTarget(participants[whosTurn]));
                 if (emergencies.Count() > 0 && participants[whosTurn].who.health < participants[whosTurn].who.MaxHealth() / (2.6 - random.NextDouble()))
                     if (castableEmergencies.Count() > 0)
                         castAbility = castableEmergencies.OrderByDescending(x => x.cooldown).First().name;
@@ -690,7 +690,7 @@ public class Board
                     //If the entity can cast any core ability
                     //it will cast the one with the longest cooldown
                     var cores = allAbilities.Where(x => x.Value == "Core").Select(x => x.Item1);
-                    var castableCores = cores.Where(x => x.EnoughResources(participants[whosTurn].who) && CooldownOn(whosTurn, x.name) == 0);
+                    var castableCores = cores.Where(x => x.EnoughResources(participants[whosTurn].who) && CooldownOn(whosTurn, x.name) == 0 && x.HasValidTarget(participants[whosTurn]));
                     if (cores.Count() > 0 && castAbility == "")
                         if (castableCores.Count() > 0)
                             castAbility = castableCores.OrderByDescending(x => x.cooldown).First().name;
@@ -702,7 +702,7 @@ public class Board
                     //If the entity can cast any filler ability
                     //it will cast the one with the longest cooldown
                     var fillers = allAbilities.Where(x => x.Value == "Filler").Select(x => x.Item1);
-                    var castableFillers = fillers.Where(x => x.EnoughResources(participants[whosTurn].who) && CooldownOn(whosTurn, x.name) == 0);
+                    var castableFillers = fillers.Where(x => x.EnoughResources(participants[whosTurn].who) && CooldownOn(whosTurn, x.name) == 0 && x.HasValidTarget(participants[whosTurn]));
                     if (fillers.Count() > 0 && castAbility == "")
                         if (castableFillers.Count() > 0)
                             castAbility = castableFillers.OrderByDescending(x => x.cooldown).First().name;
