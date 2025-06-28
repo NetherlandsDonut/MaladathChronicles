@@ -11,7 +11,10 @@ public class CombatResults
         experience = new();
         inventory = new(true);
         exclusiveItems = new();
-        GenerateSkinningNode(areaLevel);
+        skinningNodes = new();
+        skinningLoots = new();
+        skinningSkillChange = new();
+        GenerateSkinningNode();
         GenerateMiningNode(zone, areaLevel);
         GenerateHerb(zone, areaLevel);
     }
@@ -32,41 +35,48 @@ public class CombatResults
     #region Skinning
 
     //Found skinning node in the area after combat (node name, skill required)
-    public (string, int) skinningNode;
+    public List<(string, int)> skinningNodes;
 
     //Generated skinning loot based on player skill in skinning and the node found
-    public Inventory skinningLoot;
+    public List<Inventory> skinningLoots;
+
+    //Indicates which skinning loot is opened at the moment
+    public int selectedSkinningLoot;
 
     //Stores whether the player skill was already modified after a successful gathering
-    public bool skinningSkillChange;
+    public List<bool> skinningSkillChange;
 
     //Generates a skinning node and asignes it a generated loot based on the node
-    public void GenerateSkinningNode(int areaLevel)
+    public void GenerateSkinningNode()
     {
-        var skinningTarget = Board.board.participants.Find(x => x.team == 2);
-        if (skinningTarget == null) return;
-        if (!new List<string> { "Beast", "Dragonkin" }.Contains(skinningTarget.who.Race().category)) return;
-        var possibleNodes = GeneralDrop.generalDrops.FindAll(y => y.requiredProfession == "Skinning" && y.tags.Contains("Main")).ToList();
-        possibleNodes.RemoveAll(x => !x.DoesLevelFit(areaLevel));
-        if (possibleNodes.Count > 0)
+        var defeatedEnemies = Board.board.participants.Where(x => x.team == 2);
+        foreach (var skinningTarget in defeatedEnemies)
         {
-            var common = possibleNodes.Where(x => x.tags.Contains("CommonMaterial")).ToList();
-            var rare = possibleNodes.Where(x => x.tags.Contains("RareMaterial")).ToList();
-            GeneralDrop r = null;
-            if (possibleNodes.Any(x => x.category == skinningTarget.who.name)) r = possibleNodes.First(x => x.category == skinningTarget.who.name);
-            else if (rare.Count > 0 && Roll(possibleNodes.Count == 1 ? 5 : (possibleNodes.Count == 2 ? 4 : (possibleNodes.Count == 3 ? 3 : (possibleNodes.Count == 4 ? 2 : 1))))) r = rare[random.Next(rare.Count)];
-            else r = common[random.Next(common.Count)];
-            skinningNode = (r.category, r.requiredSkill);
-            var drops = GeneralDrop.generalDrops.FindAll(x => x.category == skinningNode.Item1 && x.DoesLevelFit(areaLevel));
-            skinningLoot = new Inventory(true);
-            if (drops.Count > 0)
-                foreach (var drop in drops)
-                    if (Roll(drop.rarity))
-                    {
-                        int amount = 1;
-                        for (int i = 1; i < drop.dropCount; i++) amount += Roll(50) ? 1 : 0;
-                        skinningLoot.AddItem(Item.items.Find(x => x.name == drop.item).CopyItem(amount));
-                    }
+            if (skinningTarget == null) continue;
+            if (!Profession.skinnables.Contains(skinningTarget.who.Race().subcategory)) continue;
+            var possibleNodes = GeneralDrop.generalDrops.FindAll(y => y.requiredProfession == "Skinning" && y.tags.Contains("Main")).ToList();
+            possibleNodes.RemoveAll(x => !x.DoesLevelFit(skinningTarget.who.level));
+            if (possibleNodes.Count > 0)
+            {
+                var common = possibleNodes.Where(x => x.tags.Contains("CommonMaterial")).ToList();
+                var rare = possibleNodes.Where(x => x.tags.Contains("RareMaterial")).ToList();
+                GeneralDrop r = null;
+                if (possibleNodes.Any(x => x.category == skinningTarget.who.name)) r = possibleNodes.First(x => x.category == skinningTarget.who.name);
+                else if (rare.Count > 0 && Roll(possibleNodes.Count == 1 ? 5 : (possibleNodes.Count == 2 ? 4 : (possibleNodes.Count == 3 ? 3 : (possibleNodes.Count == 4 ? 2 : 1))))) r = rare[random.Next(rare.Count)];
+                else r = common[random.Next(common.Count)];
+                skinningNodes.Add((r.category, r.requiredSkill));
+                var drops = GeneralDrop.generalDrops.FindAll(x => x.category == r.category && x.DoesLevelFit(skinningTarget.who.level));
+                skinningLoots.Add(new Inventory(true));
+                skinningSkillChange.Add(false);
+                if (drops.Count > 0)
+                    foreach (var drop in drops)
+                        if (Roll(drop.rarity))
+                        {
+                            int amount = 1;
+                            for (int i = 1; i < drop.dropCount; i++) amount += Roll(50) ? 1 : 0;
+                            skinningLoots[^1].AddItem(Item.items.Find(x => x.name == drop.item).CopyItem(amount));
+                        }
+            }
         }
     }
 

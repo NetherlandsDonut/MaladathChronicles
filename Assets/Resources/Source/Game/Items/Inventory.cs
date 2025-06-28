@@ -54,8 +54,8 @@ public class Inventory
     //Tells whether the player can fit the item in the inventory
     public bool CanAddItem(Item item)
     {
-        if (item.type == "Currency") return true;
         if (ignoreSpaceChecks) return true;
+        if (item.type == "Currency") return true;
         if (items.Count < BagSpace()) return true;
         var find = items.FindAll(x => x.name == item.name);
         if (find.Count > 0) return find.Sum(x => x.maxStack - x.amount) > 0;

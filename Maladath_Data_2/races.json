@@ -1496,8 +1496,8 @@
   },
   {
     "name": "Brimgore",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Dragonkin",
+    "subcategory": "Drake",
     "portrait": "PortraitBlackDrake",
     "abilities": {},
     "kind": "Rare",
@@ -1505,8 +1505,8 @@
   },
   {
     "name": "Ebonroc",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Dragonkin",
+    "subcategory": "Drake",
     "portrait": "PortraitBlackDrake",
     "abilities": {},
     "kind": "Elite",
@@ -1514,8 +1514,8 @@
   },
   {
     "name": "Emberstrife",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Dragonkin",
+    "subcategory": "Drake",
     "portrait": "PortraitBlackDrake",
     "abilities": {},
     "kind": "Elite",
@@ -1523,8 +1523,8 @@
   },
   {
     "name": "Firemaw",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Dragonkin",
+    "subcategory": "Drake",
     "portrait": "PortraitBlackDrake",
     "abilities": {},
     "kind": "Elite",
@@ -1532,8 +1532,8 @@
   },
   {
     "name": "Flamegor",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Dragonkin",
+    "subcategory": "Drake",
     "portrait": "PortraitBlackDrake",
     "abilities": {},
     "kind": "Elite",
@@ -1541,8 +1541,8 @@
   },
   {
     "name": "Teremus the Devourer",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Dragonkin",
+    "subcategory": "Drake",
     "portrait": "PortraitBlackDrake",
     "abilities": {},
     "kind": "Elite",
@@ -1550,8 +1550,8 @@
   },
   {
     "name": "Hematos",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Dragonkin",
+    "subcategory": "Drake",
     "portrait": "PortraitBlackDrake",
     "abilities": {},
     "kind": "Rare",
@@ -1559,8 +1559,8 @@
   },
   {
     "name": "Scorched Guardian",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Dragonkin",
+    "subcategory": "Drake",
     "portrait": "PortraitBlackDrake",
     "abilities": {},
     "kind": "Common",
@@ -1568,8 +1568,8 @@
   },
   {
     "name": "Searscale Drake",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Dragonkin",
+    "subcategory": "Drake",
     "portrait": "PortraitBlackDrake",
     "abilities": {},
     "kind": "Common",
@@ -1809,7 +1809,7 @@
   {
     "name": "Bloodaxe Evoker",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Orc",
     "faction": "Blackrock Clan",
     "portrait": "PortraitBloodaxeEvoker",
     "abilities": {},
@@ -1819,7 +1819,7 @@
   {
     "name": "Blackhand Summoner",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Orc",
     "faction": "Blackrock Clan",
     "portrait": "PortraitBloodaxeSummoner",
     "abilities": {},
@@ -1829,7 +1829,7 @@
   {
     "name": "Bloodaxe Summoner",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Orc",
     "faction": "Blackrock Clan",
     "portrait": "PortraitBloodaxeSummoner",
     "abilities": {},
@@ -1839,7 +1839,7 @@
   {
     "name": "Bloodaxe Veteran",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Orc",
     "faction": "Blackrock Clan",
     "portrait": "PortraitBloodaxeVeteran",
     "abilities": {},
@@ -1849,7 +1849,7 @@
   {
     "name": "Bloodaxe Warmonger",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Orc",
     "faction": "Blackrock Clan",
     "portrait": "PortraitBloodaxeWarmonger",
     "abilities": {},
@@ -1859,7 +1859,7 @@
   {
     "name": "Magister Hawkhelm",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Blood Elf",
     "portrait": "PortraitBloodElfReclaimer",
     "abilities": {},
     "kind": "Rare",
@@ -1868,7 +1868,7 @@
   {
     "name": "Blood Elf Reclaimer",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Blood Elf",
     "portrait": "PortraitBloodElfReclaimer",
     "abilities": {},
     "kind": "Common",
@@ -1877,7 +1877,7 @@
   {
     "name": "Blood Elf Surveyor",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Blood Elf",
     "portrait": "PortraitBloodElfSurveyor",
     "abilities": {},
     "kind": "Common",
@@ -2056,8 +2056,8 @@
   },
   {
     "name": "Manaclaw",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Dragonkin",
+    "subcategory": "Drake",
     "portrait": "PortraitBlueDrake",
     "abilities": {},
     "kind": "Elite",
@@ -2065,8 +2065,8 @@
   },
   {
     "name": "Scryer",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Dragonkin",
+    "subcategory": "Drake",
     "portrait": "PortraitBlueDrake",
     "abilities": {},
     "kind": "Elite",
@@ -2074,8 +2074,8 @@
   },
   {
     "name": "Azurous",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Dragonkin",
+    "subcategory": "Drake",
     "portrait": "PortraitBlueDrake",
     "abilities": {},
     "kind": "Rare",
@@ -2084,7 +2084,7 @@
   {
     "name": "Boahn",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Night Elf",
     "portrait": "PortraitBoahn",
     "abilities": {},
     "kind": "Rare",
@@ -2762,8 +2762,8 @@
   },
   {
     "name": "Akubar the Seer",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Draenei",
+    "subcategory": "Broken",
     "portrait": "PortraitBroken",
     "abilities": {},
     "kind": "Rare",
@@ -2771,28 +2771,19 @@
   },
   {
     "name": "Broken",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Draenei",
+    "subcategory": "Broken",
     "portrait": "PortraitBroken",
     "previewSite": "The Harborage"
   },
   {
     "name": "Bruegal Ironknuckle",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Dwarf",
     "portrait": "PortraitBruegalIronknuckle",
     "abilities": {},
     "kind": "Rare",
     "vitality": 2.0
-  },
-  {
-    "name": "Enormous Bullfrog",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "portrait": "PortraitBullfrog",
-    "abilities": {},
-    "kind": "Common",
-    "vitality": 1.0
   },
   {
     "name": "Burning Blade Acolyte",
@@ -3616,7 +3607,7 @@
   {
     "name": "Forsaken Assassin",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Forsaken",
     "portrait": "PortraitForsakenAssassin",
     "abilities": {},
     "kind": "Common",
@@ -3625,7 +3616,7 @@
   {
     "name": "Forsaken Death Stalker",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Forsaken",
     "portrait": "PortraitForsakenDeathStalker",
     "abilities": {},
     "kind": "Common",
@@ -3643,7 +3634,7 @@
   {
     "name": "Forsaken Infiltrator",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Forsaken",
     "portrait": "PortraitForsakenInfiltrator",
     "abilities": {},
     "kind": "Common",
@@ -3652,7 +3643,7 @@
   {
     "name": "Forsaken Intruder",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Forsaken",
     "portrait": "PortraitForsakenIntruder",
     "abilities": {},
     "kind": "Common",
@@ -3661,7 +3652,7 @@
   {
     "name": "Forsaken Thug",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Forsaken",
     "portrait": "PortraitForsakenThug",
     "abilities": {},
     "kind": "Common",
@@ -3670,7 +3661,7 @@
   {
     "name": "Horde Shaman",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Orc",
     "portrait": "PortraitHordeShaman",
     "abilities": {},
     "kind": "Common",
@@ -3691,8 +3682,8 @@
   },
   {
     "name": "Lord Lakmaeran",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Chimaera",
     "portrait": "PortraitChimaera",
     "abilities": {},
     "kind": "Elite",
@@ -3700,8 +3691,8 @@
   },
   {
     "name": "Arcane Chimaerok",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Chimaera",
     "portrait": "PortraitChimaera",
     "abilities": {},
     "kind": "Common",
@@ -3709,8 +3700,8 @@
   },
   {
     "name": "Chimaerok Devourer",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Chimaera",
     "portrait": "PortraitChimaera",
     "abilities": {},
     "kind": "Common",
@@ -3718,8 +3709,8 @@
   },
   {
     "name": "Young Chimaera",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Chimaera",
     "portrait": "PortraitChimaera",
     "abilities": {},
     "kind": "Common",
@@ -3727,8 +3718,8 @@
   },
   {
     "name": "The Evalcharr",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Chimaera",
     "portrait": "PortraitChimaeraBlue",
     "abilities": {},
     "kind": "Rare",
@@ -3736,8 +3727,8 @@
   },
   {
     "name": "Chillwind Chimaera",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Chimaera",
     "portrait": "PortraitChimaeraBlue",
     "abilities": {},
     "kind": "Common",
@@ -3745,8 +3736,8 @@
   },
   {
     "name": "Chillwind Ravager",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Chimaera",
     "portrait": "PortraitChimaeraBlue",
     "abilities": {},
     "kind": "Common",
@@ -3754,8 +3745,8 @@
   },
   {
     "name": "Fledgling Chillwind",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Chimaera",
     "portrait": "PortraitChimaeraBlue",
     "abilities": {},
     "kind": "Common",
@@ -3763,8 +3754,8 @@
   },
   {
     "name": "Chromaggus",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Dragonkin",
+    "subcategory": "Dragonspawn",
     "portrait": "PortraitChromaggus",
     "abilities": {},
     "kind": "Elite",
@@ -3790,8 +3781,8 @@
   },
   {
     "name": "Gyth",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Dragonkin",
+    "subcategory": "Drake",
     "portrait": "PortraitChromaticDrake",
     "abilities": {},
     "kind": "Elite",
@@ -3799,8 +3790,8 @@
   },
   {
     "name": "Commander Springvale",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Ghost",
     "portrait": "PortraitCommanderSpringvale",
     "abilities": {},
     "kind": "Elite",
@@ -3808,8 +3799,8 @@
   },
   {
     "name": "Condemned Cleric",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Ghost",
     "portrait": "PortraitCondemnedCleric",
     "abilities": {},
     "kind": "Common",
@@ -3817,8 +3808,8 @@
   },
   {
     "name": "Condemned Monk",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Ghost",
     "portrait": "PortraitCondemnedMonk",
     "abilities": {},
     "kind": "Common",
@@ -4346,8 +4337,8 @@
   },
   {
     "name": "Crimson Battle Mage",
-    "category": "Beast",
-    "subcategory": "Bat",
+    "category": "Humanoid",
+    "subcategory": "Human",
     "portrait": "PortraitCrimsonBattleMage",
     "abilities": {},
     "kind": "Common",
@@ -4728,8 +4719,8 @@
   },
   {
     "name": "Cursed Justicar",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Ghost",
     "portrait": "PortraitCursedJusticar",
     "abilities": {},
     "kind": "Common",
@@ -4737,8 +4728,8 @@
   },
   {
     "name": "Cursed Paladin",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Ghost",
     "portrait": "PortraitCursedPaladin",
     "abilities": {},
     "kind": "Common",
@@ -4747,7 +4738,7 @@
   {
     "name": "Emperor Dagran Thaurissan",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Dwarf",
     "faction": "Dark Iron Clan",
     "portrait": "PortraitDagranThaurissan",
     "abilities": {},
@@ -14288,8 +14279,8 @@
   },
   {
     "name": "Onyxia",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Dragonkin",
+    "subcategory": "Dragon",
     "portrait": "PortraitOnyxia",
     "abilities": {},
     "kind": "Elite",
@@ -20233,7 +20224,7 @@
   {
     "name": "Mekgineer Thermaplugg",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Gnome",
     "portrait": "PortraitThermaplugg",
     "abilities": {},
     "kind": "Elite",
@@ -20241,8 +20232,8 @@
   },
   {
     "name": "The Seven",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Ghost",
     "faction": "Dark Iron Clan",
     "portrait": "PortraitTheSeven",
     "abilities": {},
@@ -20251,6 +20242,8 @@
   },
   {
     "name": "Darkshore Thresher",
+    "category": "Beast",
+    "subcategory": "Threshadon",
     "portrait": "PortraitThreshadon",
     "abilities": {},
     "kind": "Common",
@@ -20258,8 +20251,8 @@
   },
   {
     "name": "Deep Pool Threshkin",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Threshadon",
     "portrait": "PortraitThreshadon",
     "abilities": {},
     "kind": "Common",
@@ -20267,8 +20260,8 @@
   },
   {
     "name": "Subterranean Diemetradon",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Threshadon",
     "portrait": "PortraitThreshadon",
     "abilities": {},
     "kind": "Common",
@@ -20276,8 +20269,8 @@
   },
   {
     "name": "Young Murk Tresher",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Threshadon",
     "portrait": "PortraitThreshadon",
     "abilities": {},
     "kind": "Common",
@@ -20285,8 +20278,8 @@
   },
   {
     "name": "Young Treshadon",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Threshadon",
     "portrait": "PortraitThreshadon",
     "abilities": {},
     "kind": "Common",
@@ -20501,8 +20494,8 @@
   },
   {
     "name": "Tormented Officer",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Ghost",
     "portrait": "PortraitTormentedOfficer",
     "abilities": {},
     "kind": "Common",
@@ -20510,8 +20503,8 @@
   },
   {
     "name": "Tortured Druid",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Ghost",
     "portrait": "PortraitTorturedDruid",
     "abilities": {},
     "kind": "Common",
@@ -20519,8 +20512,8 @@
   },
   {
     "name": "Tortured Sentinel",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Ghost",
     "portrait": "PortraitTorturedSentinel",
     "abilities": {},
     "kind": "Common",
@@ -21262,7 +21255,7 @@
   {
     "name": "Twilight Shadowmage",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Forsaken",
     "faction": "Twilight's Hammer",
     "portrait": "PortraitTwilightShadowmage",
     "abilities": {},
@@ -21282,8 +21275,8 @@
   {
     "name": "Twilight Bodyguard",
     "category": "Humanoid",
-    "subcategory": "Human",
-    "portrait": "PortraitTwilightThug",
+    "subcategory": "Tauren",
+    "portrait": "PortraitTwilightBodyguard",
     "abilities": {},
     "kind": "Common",
     "vitality": 1.0
@@ -21291,9 +21284,9 @@
   {
     "name": "Twilight Fire Guard",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Night Elf",
     "faction": "Twilight's Hammer",
-    "portrait": "PortraitTwilightThug",
+    "portrait": "PortraitTwilightFireGuard",
     "abilities": {},
     "kind": "Common",
     "vitality": 1.0
@@ -21310,7 +21303,7 @@
   {
     "name": "Tyranis Malem",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Night Elf",
     "portrait": "PortraitTyranisMalem",
     "abilities": {},
     "kind": "Rare",
@@ -21319,7 +21312,7 @@
   {
     "name": "Ulathek",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Orc",
     "faction": "Shadow Council",
     "portrait": "PortraitUlathek",
     "abilities": {},
@@ -21328,8 +21321,8 @@
   },
   {
     "name": "Unliving Resident",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Ghost",
     "portrait": "PortraitUnlivingResident",
     "abilities": {},
     "kind": "Common",
@@ -21443,8 +21436,8 @@
   },
   {
     "name": "Immol'thar",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Demon",
+    "subcategory": "Void Terror",
     "portrait": "PortraitVoidTerror",
     "abilities": {},
     "kind": "Elite",
@@ -21452,8 +21445,8 @@
   },
   {
     "name": "Voidwalker",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Demon",
+    "subcategory": "Voidwalker",
     "portrait": "PortraitVoidwalker",
     "abilities": {},
     "kind": "Common",
@@ -21470,8 +21463,8 @@
   },
   {
     "name": "Wailing Guardsman",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Ghost",
     "portrait": "PortraitWailingGuardsman",
     "abilities": {},
     "kind": "Common",
@@ -21480,7 +21473,7 @@
   {
     "name": "Warlord Tresh'jin",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "portrait": "PortraitWarlordThreshjin",
     "abilities": {},
     "kind": "Rare",
@@ -21489,7 +21482,7 @@
   {
     "name": "War Master Voone",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "portrait": "PortraitWarMasterVoone",
     "abilities": {},
     "kind": "Elite",
@@ -21661,8 +21654,8 @@
   },
   {
     "name": "Magistrate Barthilas",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Wight",
     "portrait": "PortraitWight",
     "abilities": {},
     "kind": "Elite",
@@ -21670,8 +21663,8 @@
   },
   {
     "name": "The Ravenian",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Wight",
     "faction": "Scourge",
     "portrait": "PortraitWight",
     "abilities": {},
@@ -22008,8 +22001,8 @@
   },
   {
     "name": "Withered Mistress",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Zombie",
     "portrait": "PortraitWitheredMistress",
     "abilities": {},
     "kind": "Common",
@@ -22018,7 +22011,7 @@
   {
     "name": "Witherheart the Stalker",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "portrait": "PortraitWitherhearttheStalker",
     "abilities": {},
     "kind": "Rare",
@@ -22027,7 +22020,7 @@
   {
     "name": "Zalas Witherbark",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "portrait": "PortraitWitherhearttheStalker",
     "abilities": {},
     "kind": "Rare",
@@ -22894,8 +22887,8 @@
   },
   {
     "name": "Writhing Mage",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Ghost",
     "portrait": "PortraitWrithingMage",
     "abilities": {},
     "kind": "Common",
@@ -22904,7 +22897,7 @@
   {
     "name": "Wushoolay",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "portrait": "PortraitWushoolay",
     "abilities": {},
     "kind": "Elite",
@@ -22976,7 +22969,7 @@
   {
     "name": "Old Icebeard",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Yeti",
     "portrait": "PortraitYeti",
     "abilities": {},
     "kind": "Elite",
@@ -22985,7 +22978,7 @@
   {
     "name": "Edan the Howler",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Yeti",
     "portrait": "PortraitYeti",
     "abilities": {},
     "kind": "Rare",
@@ -22994,7 +22987,7 @@
   {
     "name": "Mezzir the Howler",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Yeti",
     "portrait": "PortraitYeti",
     "abilities": {},
     "kind": "Rare",
@@ -23003,7 +22996,7 @@
   {
     "name": "Ice Thistle Matriarch",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Yeti",
     "portrait": "PortraitYeti",
     "abilities": {},
     "kind": "Common",
@@ -23012,7 +23005,7 @@
   {
     "name": "Ice Thistle Patriarch",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Yeti",
     "portrait": "PortraitYeti",
     "abilities": {},
     "kind": "Common",
@@ -23021,7 +23014,7 @@
   {
     "name": "Ice Thistle Yeti",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Yeti",
     "portrait": "PortraitYeti",
     "abilities": {},
     "kind": "Common",
@@ -23030,7 +23023,7 @@
   {
     "name": "Mountain Yeti",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Yeti",
     "portrait": "PortraitYeti",
     "abilities": {},
     "kind": "Common",
@@ -23039,7 +23032,7 @@
   {
     "name": "Wendigo",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Yeti",
     "portrait": "PortraitYeti",
     "abilities": {},
     "kind": "Common",
@@ -23048,7 +23041,7 @@
   {
     "name": "Young Wendigo",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Yeti",
     "portrait": "PortraitYeti",
     "abilities": {},
     "kind": "Common",
@@ -23057,7 +23050,7 @@
   {
     "name": "Bloodroar the Stalker",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Yeti",
     "portrait": "PortraitYetiBrown",
     "abilities": {},
     "kind": "Rare",
@@ -23066,7 +23059,7 @@
   {
     "name": "Cave Yeti",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Yeti",
     "portrait": "PortraitYetiBrown",
     "abilities": {},
     "kind": "Common",
@@ -23075,7 +23068,7 @@
   {
     "name": "Enraged Feral Scar Yeti",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Yeti",
     "portrait": "PortraitYetiBrown",
     "abilities": {},
     "kind": "Common",
@@ -23084,7 +23077,7 @@
   {
     "name": "Feral Scar Yeti",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Yeti",
     "portrait": "PortraitYetiBrown",
     "abilities": {},
     "kind": "Common",
@@ -23093,7 +23086,7 @@
   {
     "name": "Ferocious Yeti",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Yeti",
     "portrait": "PortraitYetiBrown",
     "abilities": {},
     "kind": "Common",
@@ -23102,7 +23095,7 @@
   {
     "name": "Giant Yeti",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Yeti",
     "portrait": "PortraitYetiBrown",
     "abilities": {},
     "kind": "Common",
@@ -23111,7 +23104,7 @@
   {
     "name": "Hulking Feral Scar Yeti",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Yeti",
     "portrait": "PortraitYetiBrown",
     "abilities": {},
     "kind": "Common",
@@ -23120,7 +23113,7 @@
   {
     "name": "Elder Rage Scar",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Yeti",
     "portrait": "PortraitYetiDark",
     "abilities": {},
     "kind": "Common",
@@ -23129,7 +23122,7 @@
   {
     "name": "Ferocious Rage Scar",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Yeti",
     "portrait": "PortraitYetiDark",
     "abilities": {},
     "kind": "Common",
@@ -23138,7 +23131,7 @@
   {
     "name": "Rage Scar Yeti",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Yeti",
     "portrait": "PortraitYetiDark",
     "abilities": {},
     "kind": "Common",
@@ -23146,8 +23139,8 @@
   },
   {
     "name": "Ysondre",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Dragonkin",
+    "subcategory": "Dragon",
     "portrait": "PortraitYsondre",
     "abilities": {
       "Tail Sweep": 0,
@@ -23163,7 +23156,7 @@
   {
     "name": "Zalazane",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "portrait": "PortraitZalazane",
     "abilities": {},
     "kind": "Elite",
@@ -23172,7 +23165,7 @@
   {
     "name": "Zanzil the Outcast",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "portrait": "PortraitZanziltheOutcast",
     "abilities": {},
     "kind": "Rare",
@@ -23181,7 +23174,7 @@
   {
     "name": "Zanzil Witch Doctor",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "portrait": "PortraitZanzilWitchDoctor",
     "abilities": {},
     "kind": "Common",
@@ -23190,7 +23183,7 @@
   {
     "name": "Zekkis",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "portrait": "PortraitZekkis",
     "abilities": {},
     "kind": "Elite",
@@ -23199,7 +23192,7 @@
   {
     "name": "Zerillis",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "portrait": "PortraitZerillis",
     "abilities": {},
     "kind": "Rare",
@@ -23208,7 +23201,7 @@
   {
     "name": "Swiftmane",
     "category": "Beast",
-    "subcategory": "Human",
+    "subcategory": "Zhevra",
     "portrait": "PortraitZhevra",
     "abilities": {},
     "kind": "Rare",
@@ -23217,7 +23210,7 @@
   {
     "name": "Zhevra Charger",
     "category": "Beast",
-    "subcategory": "Human",
+    "subcategory": "Zhevra",
     "portrait": "PortraitZhevra",
     "abilities": {},
     "kind": "Common",
@@ -23226,7 +23219,7 @@
   {
     "name": "Zhevra Courser",
     "category": "Beast",
-    "subcategory": "Human",
+    "subcategory": "Zhevra",
     "portrait": "PortraitZhevra",
     "abilities": {},
     "kind": "Common",
@@ -23235,7 +23228,7 @@
   {
     "name": "Zhevra Runner",
     "category": "Beast",
-    "subcategory": "Human",
+    "subcategory": "Zhevra",
     "portrait": "PortraitZhevra",
     "abilities": {},
     "kind": "Common",
@@ -23244,7 +23237,7 @@
   {
     "name": "Zolo",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "portrait": "PortraitZolo",
     "abilities": {},
     "kind": "Elite",
@@ -23414,7 +23407,7 @@
   {
     "name": "Zul'Brin Warpbranch",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "portrait": "PortraitZulBrinWarpbranch",
     "abilities": {},
     "kind": "Rare",
@@ -23479,7 +23472,7 @@
   {
     "name": "Zul'Lor",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "portrait": "PortraitZulLor",
     "abilities": {},
     "kind": "Elite",

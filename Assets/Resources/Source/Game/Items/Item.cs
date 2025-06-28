@@ -925,7 +925,7 @@ public class Item
             AddBigButtonOverlay(settings.newSlotIndicators.Value() ? "OtherItemNewSlot" : "OtherItemUpgrade", 0, 2);
         else if (settings.upgradeIndicators.Value() && item.CanEquip(currentSave.player) && currentSave.player.IsItemAnUpgrade(item))
             AddBigButtonOverlay("OtherItemUpgrade", 0, 2);
-        if (item.maxStack > 1 && item.type != "Currency") SpawnFloatingText(CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (CDesktop.title == "ContainerLoot" ? openedItem.itemsInside : (CDesktop.title == "ChestLoot" ? currentSave.openedChests[SiteHostileArea.area.name].inventory : (CDesktop.title == "MiningLoot" ? Board.board.results.miningLoot : (CDesktop.title == "HerbalismLoot" ? Board.board.results.herbalismLoot : (CDesktop.title == "DisenchantLoot" ? disenchantLoot : (CDesktop.title == "SkinningLoot" ? Board.board.results.skinningLoot : Board.board.results.inventory))))).items).IndexOf(item), item.amount + "", "", "", "Right");
+        if (item.maxStack > 1 && item.type != "Currency") SpawnFloatingText(CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (CDesktop.title == "ContainerLoot" ? openedItem.itemsInside : (CDesktop.title == "ChestLoot" ? currentSave.openedChests[SiteHostileArea.area.name].inventory : (CDesktop.title == "MiningLoot" ? Board.board.results.miningLoot : (CDesktop.title == "HerbalismLoot" ? Board.board.results.herbalismLoot : (CDesktop.title == "DisenchantLoot" ? disenchantLoot : (CDesktop.title == "SkinningLoot" ? Board.board.results.skinningLoots[Board.board.results.selectedSkinningLoot] : Board.board.results.inventory))))).items).IndexOf(item), item.amount + "", "", "", "Right");
 
         void Click()
         {
@@ -986,11 +986,13 @@ public class Item
                 {
                     //PlaySound("SkinGather" + random.Next(1, 4));
                     currentSave.player.inventory.AddItem(item);
-                    Board.board.results.skinningLoot.items.Remove(item);
-                    if (settings.autoCloseLoot.Value() && Board.board.results.skinningLoot.items.Count == 0)
+                    Board.board.results.skinningLoots[Board.board.results.selectedSkinningLoot].items.Remove(item);
+                    if (settings.autoCloseLoot.Value() && Board.board.results.skinningLoots[Board.board.results.selectedSkinningLoot].items.Count == 0)
                     {
                         CloseDesktop("SkinningLoot");
-                        Respawn("CombatResultsSkinning");
+                        Respawn("CombatResultsSkinning1");
+                        Respawn("CombatResultsSkinning2");
+                        Respawn("CombatResultsSkinning3");
                     }
                     else
                     {

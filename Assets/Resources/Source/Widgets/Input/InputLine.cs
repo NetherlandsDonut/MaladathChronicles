@@ -569,10 +569,16 @@ public class InputLine : MonoBehaviour
                 ProfessionSetter("Mining");
             else if (foo.Value().StartsWith("enc"))
                 ProfessionSetter("Enchanting");
+            else if (foo.Value().StartsWith("eng"))
+                ProfessionSetter("Engineering");
             else if (foo.Value().StartsWith("coo"))
                 ProfessionSetter("Cooking");
             else if (foo.Value().StartsWith("tai"))
                 ProfessionSetter("Tailoring");
+            else if (foo.Value().StartsWith("ski"))
+                ProfessionSetter("Skinning");
+            else if (foo.Value().StartsWith("fis"))
+                ProfessionSetter("Fishing");
             else if (foo.Value().StartsWith("addtime "))
             {
                 var amount = int.Parse(foo.Value().Substring(7));

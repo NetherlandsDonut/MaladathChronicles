@@ -71,6 +71,9 @@ public class Profession
 
     //List of all filtered professions by input search
     public static List<Profession> professionsSearch;
+
+    //EXTERNAL FILE: List of all sub categories of entities that can be skinned
+    public static List<string> skinnables;
 }
 
 public class ProfessionLevel

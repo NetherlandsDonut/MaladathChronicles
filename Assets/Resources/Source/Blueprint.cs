@@ -2767,10 +2767,10 @@ public class Blueprint
 
         //Combat Results
         new("CombatResults", () => {
-            SetAnchor(Center, 0, 11);
+            SetAnchor(Center);
             AddRegionGroup();
             SetRegionGroupWidth(262);
-            SetRegionGroupHeight(113);
+            SetRegionGroupHeight(91);
             AddHeaderRegion(() =>
             {
                 AddLine("Combat Results", "", "Center");
@@ -2912,11 +2912,13 @@ public class Blueprint
                 }
             );
         }),
-        new("CombatResultsSkinning", () => {
+        new("CombatResultsSkinning1", () => {
             if (board.results.result != "Team1Won") return;
-            if (board.results.skinningNode.Item1 == null) return;
-            if (board.results.skinningLoot.items.Count == 0) return;
-            SetAnchor(Bottom, 0, 35);
+            if (board.results.skinningNodes.Count < 1) return;
+            if (board.results.skinningLoots[0].items.Count == 0) return;
+            if (board.results.skinningNodes.Count == 1) SetAnchor(-94, 142);
+            if (board.results.skinningNodes.Count == 2) SetAnchor(-198, 142);
+            if (board.results.skinningNodes.Count == 3) SetAnchor(-301, 142);
             AddRegionGroup();
             SetRegionGroupWidth(186);
             AddHeaderRegion(() =>
@@ -2924,20 +2926,86 @@ public class Blueprint
                 AddLine("Skinning");
                 AddSmallButton("TradeSkinning");
             });
-            var can = currentSave.player.professionSkills.ContainsKey("Skinning") && board.results.skinningNode.Item2 <= currentSave.player.professionSkills["Skinning"].Item1;
+            var can = currentSave.player.professionSkills.ContainsKey("Skinning") && board.results.skinningNodes[0].Item2 <= currentSave.player.professionSkills["Skinning"].Item1;
             AddPaddingRegion(() =>
             {
-                var drop = GeneralDrop.generalDrops.Find(x => x.category == board.results.skinningNode.Item1 && x.tags.Contains("Main"));
+                var drop = GeneralDrop.generalDrops.Find(x => x.category == board.results.skinningNodes[0].Item1 && x.tags.Contains("Main"));
                 var item = items.Find(x => x.name == drop.item);
                 AddLine(item.name);
                 AddLine("Required skill: ", "DarkGray");
-                AddText("" + board.results.skinningNode.Item2, can ? "Gray" : "DangerousRed");
+                AddText("" + board.results.skinningNodes[0].Item2, can ? "Gray" : "DangerousRed");
                 AddBigButton(item.icon);
             });
             if (can)
                 AddButtonRegion(() => AddLine("Gather"),
                 (h) =>
                 {
+                    Board.board.results.selectedSkinningLoot = 0;
+                    PlaySound("SkinGather" + random.Next(1, 4));
+                    SpawnDesktopBlueprint("SkinningLoot");
+                });
+            else AddPaddingRegion(() => AddLine("Gather", "DarkGray"));
+        }),
+        new("CombatResultsSkinning2", () => {
+            if (board.results.result != "Team1Won") return;
+            if (board.results.skinningNodes.Count < 2) return;
+            if (board.results.skinningLoots[1].items.Count == 0) return;
+            if (board.results.skinningNodes.Count == 2) SetAnchor(9, 142);
+            if (board.results.skinningNodes.Count == 3) SetAnchor(-94, 142);
+            AddRegionGroup();
+            SetRegionGroupWidth(186);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Skinning");
+                AddSmallButton("TradeSkinning");
+            });
+            var can = currentSave.player.professionSkills.ContainsKey("Skinning") && board.results.skinningNodes[1].Item2 <= currentSave.player.professionSkills["Skinning"].Item1;
+            AddPaddingRegion(() =>
+            {
+                var drop = GeneralDrop.generalDrops.Find(x => x.category == board.results.skinningNodes[1].Item1 && x.tags.Contains("Main"));
+                var item = items.Find(x => x.name == drop.item);
+                AddLine(item.name);
+                AddLine("Required skill: ", "DarkGray");
+                AddText("" + board.results.skinningNodes[1].Item2, can ? "Gray" : "DangerousRed");
+                AddBigButton(item.icon);
+            });
+            if (can)
+                AddButtonRegion(() => AddLine("Gather"),
+                (h) =>
+                {
+                    Board.board.results.selectedSkinningLoot = 1;
+                    PlaySound("SkinGather" + random.Next(1, 4));
+                    SpawnDesktopBlueprint("SkinningLoot");
+                });
+            else AddPaddingRegion(() => AddLine("Gather", "DarkGray"));
+        }),
+        new("CombatResultsSkinning3", () => {
+            if (board.results.result != "Team1Won") return;
+            if (board.results.skinningNodes.Count < 3) return;
+            if (board.results.skinningLoots[2].items.Count == 0) return;
+            SetAnchor(111, 142);
+            AddRegionGroup();
+            SetRegionGroupWidth(186);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Skinning");
+                AddSmallButton("TradeSkinning");
+            });
+            var can = currentSave.player.professionSkills.ContainsKey("Skinning") && board.results.skinningNodes[2].Item2 <= currentSave.player.professionSkills["Skinning"].Item1;
+            AddPaddingRegion(() =>
+            {
+                var drop = GeneralDrop.generalDrops.Find(x => x.category == board.results.skinningNodes[2].Item1 && x.tags.Contains("Main"));
+                var item = items.Find(x => x.name == drop.item);
+                AddLine(item.name);
+                AddLine("Required skill: ", "DarkGray");
+                AddText("" + board.results.skinningNodes[2].Item2, can ? "Gray" : "DangerousRed");
+                AddBigButton(item.icon);
+            });
+            if (can)
+                AddButtonRegion(() => AddLine("Gather"),
+                (h) =>
+                {
+                    Board.board.results.selectedSkinningLoot = 2;
                     PlaySound("SkinGather" + random.Next(1, 4));
                     SpawnDesktopBlueprint("SkinningLoot");
                 });
@@ -2947,7 +3015,8 @@ public class Blueprint
             if (board.results.result != "Team1Won") return;
             if (board.results.miningNode.Item1 == null) return;
             if (board.results.miningLoot.items.Count == 0) return;
-            SetAnchor(BottomLeft, 19, 35);
+            if (board.results.herb.Item1 != null) SetAnchor(-198, -67);
+            else SetAnchor(-94, -67);
             AddRegionGroup();
             SetRegionGroupWidth(188);
             AddHeaderRegion(() =>
@@ -2991,7 +3060,8 @@ public class Blueprint
             if (board.results.result != "Team1Won") return;
             if (board.results.herb.Item1 == null) return;
             if (board.results.herbalismLoot.items.Count == 0) return;
-            SetAnchor(BottomRight, -19, 35);
+            if (board.results.miningNode.Item1 != null) SetAnchor(9, -67);
+            else SetAnchor(-94, -67);
             AddRegionGroup();
             SetRegionGroupWidth(188);
             AddHeaderRegion(() =>
@@ -3039,8 +3109,8 @@ public class Blueprint
             AddPaddingRegion(
                 () =>
                 {
-                    for (int j = 0; j < 4 && j < board.results.skinningLoot.items.Count; j++)
-                        PrintLootItem(board.results.skinningLoot.items[j]);
+                    for (int j = 0; j < 4 && j < board.results.skinningLoots[board.results.selectedSkinningLoot].items.Count; j++)
+                        PrintLootItem(board.results.skinningLoots[board.results.selectedSkinningLoot].items[j]);
                 }
             );
         }),
@@ -3058,7 +3128,7 @@ public class Blueprint
             );
         }),
         new("CombatResultsChartButton", () => {
-            SetAnchor(-132, 69);
+            SetAnchor(-132, 47);
             DisableShadows();
             AddRegionGroup();
             AddHeaderRegion(() =>
@@ -3156,7 +3226,9 @@ public class Blueprint
                         {
                             PlaySound("DesktopInventoryClose");
                             CloseDesktop("SkinningLoot");
-                            Respawn("CombatResultsSkinning");
+                            Respawn("CombatResultsSkinning1");
+                            Respawn("CombatResultsSkinning2");
+                            Respawn("CombatResultsSkinning3");
                         });
                     }
                     else if (CDesktop.title == "ContainerLoot")
@@ -6854,7 +6926,9 @@ public class Blueprint
             SpawnWindowBlueprint("CombatResultsChartButton");
             SpawnWindowBlueprint("CombatResultsMining");
             SpawnWindowBlueprint("CombatResultsHerbalism");
-            SpawnWindowBlueprint("CombatResultsSkinning");
+            SpawnWindowBlueprint("CombatResultsSkinning1");
+            SpawnWindowBlueprint("CombatResultsSkinning2");
+            SpawnWindowBlueprint("CombatResultsSkinning3");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey("Open menu / Back", () =>
@@ -7060,11 +7134,11 @@ public class Blueprint
             SetDesktopBackground(board.area.Background());
             SpawnWindowBlueprint("SkinningLoot");
             var s = currentSave.player.professionSkills["Skinning"];
-            if (!board.results.skinningSkillChange)
+            if (!board.results.skinningSkillChange[board.results.selectedSkinningLoot])
             {
                 currentSave.AddTime(30);
-                board.results.skinningSkillChange = true;
-                if (board.results.skinningNode.Item2 + 50 >= s.Item1 && s.Item1 < professions.Find(x => x.name == "Skinning").levels.FindAll(x => s.Item2.Contains(x.name)).Max(x => x.maxSkill))
+                board.results.skinningSkillChange[board.results.selectedSkinningLoot] = true;
+                if (board.results.skinningNodes[board.results.selectedSkinningLoot].Item2 + 50 >= s.Item1 && s.Item1 < professions.Find(x => x.name == "Skinning").levels.FindAll(x => s.Item2.Contains(x.name)).Max(x => x.maxSkill))
                 {
                     currentSave.player.professionSkills["Skinning"] = (s.Item1 + 1, s.Item2);
                     SpawnFallingText(new Vector2(0, 34), "Skinning increased to " + (s.Item1 + 1), "Blue");
@@ -7093,7 +7167,9 @@ public class Blueprint
                 {
                     PlaySound("DesktopInventoryClose");
                     CloseDesktop("SkinningLoot");
-                    Respawn("CombatResultsSkinning");
+                    Respawn("CombatResultsSkinning1");
+                    Respawn("CombatResultsSkinning2");
+                    Respawn("CombatResultsSkinning3");
                 }
             });
         }),

@@ -173,6 +173,8 @@ public class Starter : MonoBehaviour
         Spec.specs ??= new();
         Deserialize(ref Race.races, "races", false, prefix);
         Race.races ??= new();
+        Deserialize(ref Profession.skinnables, "skinnables", false, prefix);
+        Profession.skinnables ??= new();
         Deserialize(ref ItemSet.itemSets, "sets", false, prefix);
         ItemSet.itemSets ??= new();
         Deserialize(ref PVPRank.pvpRanks, "pvpranks", false, prefix);
