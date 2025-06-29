@@ -942,9 +942,9 @@ public class Blueprint
             Chest.SpawnChestObject(new Vector2(0, 0), "Chest");
         }),
         new("ChestInfo", () => {
-            SetAnchor(-92, -86);
+            SetAnchor(TopLeft, 19, -38);
             AddRegionGroup();
-            SetRegionGroupWidth(182);
+            SetRegionGroupWidth(190);
             AddHeaderRegion(
                 () =>
                 {
@@ -959,17 +959,24 @@ public class Blueprint
             );
         }),
         new("ChestLoot", () => {
-            SetAnchor(-92, -105);
-            AddRegionGroup();
-            SetRegionGroupHeight(34);
-            SetRegionGroupWidth(182);
-            AddPaddingRegion(
-                () =>
-                {
-                    for (int j = 0; j < 4 && j < currentSave.openedChests[area.name].inventory.items.Count; j++)
-                        PrintLootItem(currentSave.openedChests[area.name].inventory.items[j]);
-                }
-            );
+            SetAnchor(TopLeft, 19, -57);
+            AddHeaderGroup();
+            SetRegionGroupWidth(190);
+            for (int i = 0; i < 2; i++)
+            {
+                var index = i;
+                AddPaddingRegion(
+                    () =>
+                    {
+                        for (int j = 0; j < 5; j++)
+                        {
+                            var findItem = currentSave.openedChests[area.name].inventory.items.Find(x => x.y == index && x.x == j);
+                            if (findItem != null) PrintLootItem(findItem);
+                            else AddBigButton("OtherDisabled");
+                        }
+                    }
+                );
+            }
         }),
 
         //Login Screen
@@ -2751,18 +2758,24 @@ public class Blueprint
             AddPaddingRegion(() => AddInputLine(String.splitAmount));
         }, true),
         new("ContainerLoot", () => {
-            SetAnchor(-92, -105);
-            AddRegionGroup();
-            SetRegionGroupHeight(34);
-            SetRegionGroupWidth(182);
-            AddPaddingRegion(
-                () =>
-                {
-                    for (int j = 0; j < 4 && j <= (openedItem.itemsInside.Count == 0 ? 0 : openedItem.itemsInside.Max(x => x.x)); j++)
-                        if (openedItem.itemsInside.Any(x => x.x == j)) PrintLootItem(openedItem.itemsInside.Find(x => x.x == j));
-                        else AddBigButton("OtherEmpty");
-                }
-            );
+            SetAnchor(TopLeft, 19, -57);
+            AddHeaderGroup();
+            SetRegionGroupWidth(190);
+            for (int i = 0; i < 2; i++)
+            {
+                var index = i;
+                AddPaddingRegion(
+                    () =>
+                    {
+                        for (int j = 0; j < 5; j++)
+                        {
+                            var findItem = openedItem.itemsInside.Find(x => x.y == index && x.x == j);
+                            if (findItem != null) PrintLootItem(findItem);
+                            else AddBigButton("OtherDisabled");
+                        }
+                    }
+                );
+            }
         }),
 
         //Combat Results
@@ -2900,17 +2913,24 @@ public class Blueprint
             });
         }),
         new("CombatResultsLoot", () => {
-            SetAnchor(-92, -105);
+            SetAnchor(TopLeft, 19, -57);
             AddHeaderGroup();
-            SetRegionGroupHeight(34);
-            SetRegionGroupWidth(182);
-            AddPaddingRegion(
-                () =>
-                {
-                    for (int j = 0; j < 4 && j < board.results.inventory.items.Count; j++)
-                        PrintLootItem(board.results.inventory.items[j]);
-                }
-            );
+            SetRegionGroupWidth(190);
+            for (int i = 0; i < 2; i++)
+            {
+                var index = i;
+                AddPaddingRegion(
+                    () =>
+                    {
+                        for (int j = 0; j < 5; j++)
+                        {
+                            var findItem = board.results.inventory.items.Find(x => x.y == index && x.x == j);
+                            if (findItem != null) PrintLootItem(findItem);
+                            else AddBigButton("OtherDisabled");
+                        }
+                    }
+                );
+            }
         }),
         new("CombatResultsSkinning1", () => {
             if (board.results.result != "Team1Won") return;
@@ -3044,17 +3064,24 @@ public class Blueprint
             else AddPaddingRegion(() => AddLine("Gather", "DarkGray"));
         }),
         new("MiningLoot", () => {
-            SetAnchor(-92, -105);
+            SetAnchor(TopLeft, 19, -57);
             AddHeaderGroup();
-            SetRegionGroupHeight(34);
-            SetRegionGroupWidth(182);
-            AddPaddingRegion(
-                () =>
-                {
-                    for (int j = 0; j < 4 && j < board.results.miningLoot.items.Count; j++)
-                        PrintLootItem(board.results.miningLoot.items[j]);
-                }
-            );
+            SetRegionGroupWidth(190);
+            for (int i = 0; i < 2; i++)
+            {
+                var index = i;
+                AddPaddingRegion(
+                    () =>
+                    {
+                        for (int j = 0; j < 5; j++)
+                        {
+                            var findItem = board.results.miningLoot.items.Find(x => x.y == index && x.x == j);
+                            if (findItem != null) PrintLootItem(findItem);
+                            else AddBigButton("OtherDisabled");
+                        }
+                    }
+                );
+            }
         }),
         new("CombatResultsHerbalism", () => {
             if (board.results.result != "Team1Won") return;
@@ -3089,43 +3116,64 @@ public class Blueprint
             else AddPaddingRegion(() => AddLine("Gather", "DarkGray"));
         }),
         new("HerbalismLoot", () => {
-            SetAnchor(-92, -105);
+            SetAnchor(TopLeft, 19, -57);
             AddHeaderGroup();
-            SetRegionGroupHeight(34);
-            SetRegionGroupWidth(182);
-            AddPaddingRegion(
-                () =>
-                {
-                    for (int j = 0; j < 4 && j < board.results.herbalismLoot.items.Count; j++)
-                        PrintLootItem(board.results.herbalismLoot.items[j]);
-                }
-            );
+            SetRegionGroupWidth(190);
+            for (int i = 0; i < 2; i++)
+            {
+                var index = i;
+                AddPaddingRegion(
+                    () =>
+                    {
+                        for (int j = 0; j < 5; j++)
+                        {
+                            var findItem = board.results.herbalismLoot.items.Find(x => x.y == index && x.x == j);
+                            if (findItem != null) PrintLootItem(findItem);
+                            else AddBigButton("OtherDisabled");
+                        }
+                    }
+                );
+            }
         }),
         new("SkinningLoot", () => {
-            SetAnchor(-92, -105);
+            SetAnchor(TopLeft, 19, -57);
             AddHeaderGroup();
-            SetRegionGroupHeight(34);
-            SetRegionGroupWidth(182);
-            AddPaddingRegion(
-                () =>
-                {
-                    for (int j = 0; j < 4 && j < board.results.skinningLoots[board.results.selectedSkinningLoot].items.Count; j++)
-                        PrintLootItem(board.results.skinningLoots[board.results.selectedSkinningLoot].items[j]);
-                }
-            );
+            SetRegionGroupWidth(190);
+            for (int i = 0; i < 2; i++)
+            {
+                var index = i;
+                AddPaddingRegion(
+                    () =>
+                    {
+                        for (int j = 0; j < 5; j++)
+                        {
+                            var findItem = board.results.skinningLoots[board.results.selectedSkinningLoot].items.Find(x => x.y == index && x.x == j);
+                            if (findItem != null) PrintLootItem(findItem);
+                            else AddBigButton("OtherDisabled");
+                        }
+                    }
+                );
+            }
         }),
         new("DisenchantLoot", () => {
-            SetAnchor(-92, -105);
+            SetAnchor(TopLeft, 19, -57);
             AddHeaderGroup();
-            SetRegionGroupHeight(34);
-            SetRegionGroupWidth(182);
-            AddPaddingRegion(
-                () =>
-                {
-                    for (int j = 0; j < 4 && j < disenchantLoot.items.Count; j++)
-                        PrintLootItem(disenchantLoot.items[j]);
-                }
-            );
+            SetRegionGroupWidth(190);
+            for (int i = 0; i < 2; i++)
+            {
+                var index = i;
+                AddPaddingRegion(
+                    () =>
+                    {
+                        for (int j = 0; j < 5; j++)
+                        {
+                            var findItem = disenchantLoot.items.Find(x => x.y == index && x.x == j);
+                            if (findItem != null) PrintLootItem(findItem);
+                            else AddBigButton("OtherDisabled");
+                        }
+                    }
+                );
+            }
         }),
         new("CombatResultsChartButton", () => {
             SetAnchor(-132, 47);
@@ -3193,9 +3241,9 @@ public class Blueprint
             });
         }, true),
         new("LootInfo", () => {
-            SetAnchor(-92, -86);
+            SetAnchor(TopLeft, 19, -38);
             AddRegionGroup();
-            SetRegionGroupWidth(182);
+            SetRegionGroupWidth(190);
             AddHeaderRegion(
                 () =>
                 {

@@ -17746,7 +17746,7 @@
   {
     "name": "Mok'rash",
     "category": "Giant",
-    "subcategory": "Human",
+    "subcategory": "Sea Giant",
     "portrait": "PortraitSeaGiant",
     "abilities": {},
     "kind": "Elite",
@@ -17822,8 +17822,8 @@
   },
   {
     "name": "Senegos",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Dragonkin",
+    "subcategory": "Dragon",
     "portrait": "PortraitSenegos",
     "abilities": {},
     "kind": "Common",
@@ -17912,6 +17912,8 @@
   },
   {
     "name": "Severed Druid",
+    "category": "Undead",
+    "subcategory": "Ghost",
     "portrait": "PortraitSeveredDruid",
     "abilities": {},
     "kind": "Common",
@@ -17919,6 +17921,8 @@
   },
   {
     "name": "Severed Sleeper",
+    "category": "Undead",
+    "subcategory": "Ghost",
     "portrait": "PortraitSeveredSleeper",
     "abilities": {},
     "kind": "Common",
@@ -17927,7 +17931,7 @@
   {
     "name": "Shadow Hunter Vosh'Gajin",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "portrait": "PortraitShadowHunterVoshgajin",
     "abilities": {},
     "kind": "Elite",
@@ -17936,7 +17940,7 @@
   {
     "name": "Shadowpriest Sezz'ziz",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "portrait": "PortraitShadowpriestSezzziz",
     "abilities": {},
     "kind": "Elite",
@@ -17944,8 +17948,8 @@
   },
   {
     "name": "Shadowsworn Adept",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Forsaken",
     "portrait": "PortraitShadowswornAdept",
     "abilities": {},
     "kind": "Common",
@@ -17954,7 +17958,7 @@
   {
     "name": "Shadowsworn Cultist",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Goblin",
     "portrait": "PortraitShadowswornCultist",
     "abilities": {},
     "kind": "Common",
@@ -17962,8 +17966,8 @@
   },
   {
     "name": "Shadowsworn Dreadweaver",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Forsaken",
     "portrait": "PortraitShadowswornDreadweaver",
     "abilities": {},
     "kind": "Common",
@@ -17972,7 +17976,7 @@
   {
     "name": "Shadowsworn Enforcer",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Orc",
     "portrait": "PortraitShadowswornEnforcer",
     "abilities": {},
     "kind": "Common",
@@ -17981,7 +17985,7 @@
   {
     "name": "Shadowsworn Thug",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Orc",
     "portrait": "PortraitShadowswornThug",
     "abilities": {},
     "kind": "Common",
@@ -17989,8 +17993,8 @@
   },
   {
     "name": "Shadowsworn Warlock",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Forsaken",
     "portrait": "PortraitShadowswornWarlock",
     "abilities": {},
     "kind": "Common",
@@ -17999,7 +18003,7 @@
   {
     "name": "Shazzrah",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Flamewaker",
     "portrait": "PortraitShazzrah",
     "abilities": {},
     "kind": "Elite",
@@ -18007,8 +18011,8 @@
   },
   {
     "name": "Sneed",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Mechanical",
+    "subcategory": "Shredder",
     "portrait": "PortraitShredder",
     "abilities": {},
     "kind": "Elite",
@@ -18016,8 +18020,8 @@
   },
   {
     "name": "Venture Co. Shredder",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Mechanical",
+    "subcategory": "Shredder",
     "portrait": "PortraitShredder",
     "abilities": {},
     "kind": "Common",
@@ -18025,8 +18029,8 @@
   },
   {
     "name": "Warsong Shredder",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Mechanical",
+    "subcategory": "Shredder",
     "portrait": "PortraitShredder",
     "abilities": {},
     "kind": "Common",
@@ -19478,8 +19482,8 @@
   },
   {
     "name": "Stalvan Mistmantle",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Forsaken",
     "portrait": "PortraitStalvanMistmantle",
     "abilities": {},
     "kind": "Rare",
@@ -19514,7 +19518,7 @@
   {
     "name": "Stromgarde Troll Hunter",
     "category": "Humanoid",
-    "subcategory": "Troll",
+    "subcategory": "Human",
     "portrait": "PortraitStromgardeTrollHunter",
     "abilities": {},
     "kind": "Common",
@@ -19522,8 +19526,8 @@
   },
   {
     "name": "Stromgarde Vindicator",
-    "category": "Beast",
-    "subcategory": "Cat",
+    "category": "Humanoid",
+    "subcategory": "Human",
     "portrait": "PortraitStromgardeVindicator",
     "abilities": {},
     "kind": "Common",
@@ -19531,8 +19535,8 @@
   },
   {
     "name": "Syndicate Assassin",
-    "category": "Beast",
-    "subcategory": "Cat",
+    "category": "Humanoid",
+    "subcategory": "Human",
     "portrait": "PortraitSyndicateAssassin",
     "abilities": {},
     "kind": "Common",
@@ -19540,6 +19544,8 @@
   },
   {
     "name": "Syndicate Conjuror",
+    "category": "Humanoid",
+    "subcategory": "Human",
     "portrait": "PortraitSyndicateConjuror",
     "abilities": {},
     "kind": "Common",
@@ -19547,8 +19553,8 @@
   },
   {
     "name": "Lord Falconcrest",
-    "category": "Beast",
-    "subcategory": "Cat",
+    "category": "Humanoid",
+    "subcategory": "Human",
     "portrait": "PortraitSyndicateEnforcer",
     "abilities": {},
     "kind": "Elite",
@@ -19556,8 +19562,8 @@
   },
   {
     "name": "Syndicate Enforcer",
-    "category": "Beast",
-    "subcategory": "Cat",
+    "category": "Humanoid",
+    "subcategory": "Human",
     "portrait": "PortraitSyndicateEnforcer",
     "abilities": {},
     "kind": "Common",
@@ -19565,8 +19571,8 @@
   },
   {
     "name": "Syndicate Footpad",
-    "category": "Beast",
-    "subcategory": "Cat",
+    "category": "Humanoid",
+    "subcategory": "Human",
     "portrait": "PortraitSyndicateFootpad",
     "abilities": {},
     "kind": "Common",
@@ -19574,8 +19580,8 @@
   },
   {
     "name": "Syndicate Highwayman",
-    "category": "Beast",
-    "subcategory": "Cat",
+    "category": "Humanoid",
+    "subcategory": "Human",
     "portrait": "PortraitSyndicateHighwayman",
     "abilities": {},
     "kind": "Common",
@@ -19583,8 +19589,8 @@
   },
   {
     "name": "Syndicate Magus",
-    "category": "Beast",
-    "subcategory": "Cat",
+    "category": "Humanoid",
+    "subcategory": "Human",
     "portrait": "PortraitSyndicateMagus",
     "abilities": {},
     "kind": "Common",
@@ -19592,8 +19598,8 @@
   },
   {
     "name": "Syndicate Mercenary",
-    "category": "Beast",
-    "subcategory": "Cat",
+    "category": "Humanoid",
+    "subcategory": "Human",
     "portrait": "PortraitSyndicateMercenary",
     "abilities": {},
     "kind": "Common",
@@ -19601,8 +19607,8 @@
   },
   {
     "name": "Syndicate Pathstalker",
-    "category": "Beast",
-    "subcategory": "Cat",
+    "category": "Humanoid",
+    "subcategory": "Human",
     "portrait": "PortraitSyndicatePathstalker",
     "abilities": {},
     "kind": "Common",
@@ -19610,8 +19616,8 @@
   },
   {
     "name": "Syndicate Prowler",
-    "category": "Beast",
-    "subcategory": "Owl",
+    "category": "Humanoid",
+    "subcategory": "Human",
     "portrait": "PortraitSyndicateProwler",
     "abilities": {},
     "kind": "Common",
@@ -19619,8 +19625,8 @@
   },
   {
     "name": "Syndicate Rogue",
-    "category": "Beast",
-    "subcategory": "Cat",
+    "category": "Humanoid",
+    "subcategory": "Human",
     "portrait": "PortraitSyndicateRogue",
     "abilities": {},
     "kind": "Common",
@@ -19628,8 +19634,8 @@
   },
   {
     "name": "Jimmy the Bleeder",
-    "category": "Beast",
-    "subcategory": "Cat",
+    "category": "Humanoid",
+    "subcategory": "Human",
     "portrait": "PortraitSyndicateSaboteur",
     "abilities": {},
     "kind": "Rare",
@@ -19637,8 +19643,8 @@
   },
   {
     "name": "Syndicate Saboteur",
-    "category": "Beast",
-    "subcategory": "Cat",
+    "category": "Humanoid",
+    "subcategory": "Human",
     "portrait": "PortraitSyndicateSaboteur",
     "abilities": {},
     "kind": "Common",
@@ -19646,8 +19652,8 @@
   },
   {
     "name": "Syndicate Sentry",
-    "category": "Beast",
-    "subcategory": "Cat",
+    "category": "Humanoid",
+    "subcategory": "Human",
     "portrait": "PortraitSyndicateSentry",
     "abilities": {},
     "kind": "Common",
@@ -19655,8 +19661,8 @@
   },
   {
     "name": "Syndicate Shadow Mage",
-    "category": "Beast",
-    "subcategory": "Cat",
+    "category": "Humanoid",
+    "subcategory": "Human",
     "portrait": "PortraitSyndicateShadowMage",
     "abilities": {},
     "kind": "Common",
@@ -19664,8 +19670,8 @@
   },
   {
     "name": "Syndicate Spy",
-    "category": "Beast",
-    "subcategory": "Cat",
+    "category": "Humanoid",
+    "subcategory": "Human",
     "portrait": "PortraitSyndicateSpy",
     "abilities": {},
     "kind": "Common",
@@ -19673,8 +19679,8 @@
   },
   {
     "name": "Syndicate Thief",
-    "category": "Beast",
-    "subcategory": "Cat",
+    "category": "Humanoid",
+    "subcategory": "Human",
     "portrait": "PortraitSyndicateThief",
     "abilities": {},
     "kind": "Common",
@@ -19682,8 +19688,8 @@
   },
   {
     "name": "Syndicate Watchman",
-    "category": "Beast",
-    "subcategory": "Cat",
+    "category": "Humanoid",
+    "subcategory": "Human",
     "portrait": "PortraitSyndicateWatchman",
     "abilities": {},
     "kind": "Common",
@@ -19691,8 +19697,8 @@
   },
   {
     "name": "Syndicate Wizard",
-    "category": "Beast",
-    "subcategory": "Cat",
+    "category": "Humanoid",
+    "subcategory": "Human",
     "portrait": "PortraitSyndicateWizard",
     "abilities": {},
     "kind": "Common",
@@ -19700,8 +19706,8 @@
   },
   {
     "name": "Taerar",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Dragonkin",
+    "subcategory": "Dragon",
     "portrait": "PortraitTaerar",
     "abilities": {
       "Tail Sweep": 0,
@@ -20108,7 +20114,7 @@
   {
     "name": "Targorr The Dread",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Orc",
     "portrait": "PortraitTargorr",
     "abilities": {},
     "kind": "Elite",
@@ -20117,7 +20123,7 @@
   {
     "name": "Tauren",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Tauren",
     "faction": "Thunder Bluff",
     "portrait": "PortraitTauren",
     "stats": {
@@ -20179,7 +20185,7 @@
   {
     "name": "Thauris Balgarr",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Dwarf",
     "portrait": "PortraitThaurisBalgarr",
     "abilities": {},
     "kind": "Rare",
@@ -20188,7 +20194,7 @@
   {
     "name": "Theka the Martyr",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "portrait": "PortraitThekatheMartyr",
     "abilities": {},
     "kind": "Elite",

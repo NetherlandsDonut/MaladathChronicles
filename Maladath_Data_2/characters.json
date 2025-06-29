@@ -1663,7 +1663,8 @@
       "player": {
         "currentQuests": [],
         "completedQuests": [],
-        "level": 1,
+        "level": 2,
+        "experience": 19,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -1791,13 +1792,13 @@
             ]
           },
           "Skinning": {
-            "Item1": 1,
+            "Item1": 2,
             "Item2": [
               "Amateur"
             ]
           },
           "Mining": {
-            "Item1": 1,
+            "Item1": 2,
             "Item2": [
               "Amateur"
             ]
@@ -1859,11 +1860,13 @@
           ],
           "Herbalism": []
         },
+        "unspentTalentPoints": 1,
         "faction": "Darkspear Tribe",
         "name": "Eho",
         "race": "Troll",
         "spec": "Rogue",
         "gender": "Female",
+        "homeLocation": "The Den",
         "abilities": {
           "Dual Wielding Proficiency": 0,
           "One Handed Axe Proficiency": 0,
@@ -1916,6 +1919,34 @@
               "abilities": {
                 "Hearthstone": 1
               }
+            },
+            {
+              "x": 1,
+              "rarity": "Common",
+              "name": "Copper Ore",
+              "icon": "itemorecopper01",
+              "detailedType": "Ore",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 10,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 10,
+              "price": 5
+            },
+            {
+              "x": 2,
+              "rarity": "Common",
+              "name": "Ruined Leather Scraps",
+              "icon": "itemmiscpeltbearruin05",
+              "detailedType": "Organ",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 5,
+              "lvl": 1,
+              "amount": 2,
+              "maxStack": 20,
+              "price": 7
             }
           ],
           "bags": []
@@ -1975,7 +2006,9 @@
         "worldBuffs": []
       },
       "hour": 7,
-      "currentSite": "The Den",
+      "minute": 3,
+      "second": 9,
+      "currentSite": "Valley of Trials",
       "ringOfLaw": "Anub'shiah",
       "forlornCloister": "Fallen Champion",
       "markets": [
@@ -1990,20 +2023,82 @@
           "hoursSinceUpdate": 48
         }
       ],
-      "openedChests": {},
+      "openedChests": {
+        "Valley of Trials": {
+          "area": "Valley of Trials",
+          "inventory": {
+            "items": [
+              {
+                "rarity": "Common",
+                "name": "Flanged Mace",
+                "icon": "itemmace07",
+                "detailedType": "Mace",
+                "type": "One Handed",
+                "source": "RareDrop",
+                "ilvl": 7,
+                "lvl": 2,
+                "minPower": 1.2,
+                "maxPower": 1.4,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 57
+              },
+              {
+                "x": 1,
+                "rarity": "Common",
+                "name": "Earthroot",
+                "icon": "itemmischerb07",
+                "detailedType": "Flowers",
+                "type": "Trade Good",
+                "source": "Quest",
+                "ilvl": 5,
+                "lvl": 1,
+                "amount": 1,
+                "maxStack": 20,
+                "price": 20
+              },
+              {
+                "x": 2,
+                "rarity": "Common",
+                "name": "Ruined Leather Scraps",
+                "icon": "itemmiscpeltbearruin05",
+                "detailedType": "Organ",
+                "type": "Trade Good",
+                "source": "RareDrop",
+                "ilvl": 5,
+                "lvl": 1,
+                "amount": 2,
+                "maxStack": 20,
+                "price": 7
+              }
+            ],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
+        }
+      },
       "fishingSpots": {},
       "fishingSpoils": {},
-      "siteProgress": {},
-      "commonsKilled": {},
+      "siteProgress": {
+        "Valley of Trials": 3
+      },
+      "commonsKilled": {
+        "Scorpid Worker": 2,
+        "Mottled Boar": 1
+      },
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
-        "The Den": 1
+        "The Den": 1,
+        "Valley of Trials": 1
       },
       "unlockedAreas": [],
       "vendorStock": {},
       "banks": {},
-      "startDate": "2025-06-25T15:51:04.7264341+02:00"
+      "startDate": "2025-06-25T15:51:04.7264341+02:00",
+      "lastLoaded": "2025-06-29T20:53:37.8472657+02:00",
+      "lastPlayed": "2025-06-29T20:55:08.4905967+02:00",
+      "timePlayed": "00:01:30.6433310"
     }
   ]
 }
