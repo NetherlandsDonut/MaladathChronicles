@@ -285,7 +285,7 @@ public class Blueprint
                             if (board.CooldownOn(board.spotlightEnemy[index], actionBar) > 0)
                                 AddSmallButtonOverlay("AutoCast");
                         },
-                        null,
+                        (h) => ClearTargettingAbility(),
                         null,
                         (h) => () =>
                         {
@@ -419,13 +419,16 @@ public class Blueprint
                         },
                         (h) =>
                         {
-                            var temp = abilityTargetted;
-                            abilityTargetted = null;
                             if (board.spotlightFriendly[index] == board.whosTurn)
-                                if (abilityObj.EnoughResources(board.participants[board.spotlightFriendly[index]].who))
-                                    if (board.CooldownOn(board.spotlightFriendly[index], actionBar) <= 0)
-                                        StartTargettingAbility(abilityObj);
-                            ClearTargettingAbility(temp == abilityTargetted);
+                            {
+                                var temp = abilityTargetted;
+                                abilityTargetted = null;
+                                    if (abilityObj.EnoughResources(board.participants[board.spotlightFriendly[index]].who))
+                                        if (board.CooldownOn(board.spotlightFriendly[index], actionBar) <= 0)
+                                            StartTargettingAbility(abilityObj);
+                                ClearTargettingAbility(temp == abilityTargetted);
+                            }
+                            else ClearTargettingAbility();
                         },
                         null,
                         (h) => () =>
@@ -512,11 +515,14 @@ public class Blueprint
                             AddSmallButton(item.icon,
                             (h) =>
                             {
-                                foreach (var participant in board.participants)
-                                {
-                                    if (participant == board.participants[board.whosTurn]) board.CallEvents(participant.who, new() { { "Trigger", "ItemUsed" }, { "Triggerer", "Effector" }, { "ItemHash", item.GetHashCode() + "" } });
-                                    else board.CallEvents(participant.who, new() { { "Trigger", "ItemUsed" }, { "Triggerer", "Other" }, { "ItemHash", item.GetHashCode() + "" } });
-                                }
+                                ClearTargettingAbility();
+                                if (board.CooldownOn(0, ability.Key) <= 0)
+                                    foreach (var participant in board.participants)
+                                    {
+                                        if (participant == board.participants[board.whosTurn]) board.CallEvents(participant.who, new() { { "Trigger", "ItemUsed" }, { "Triggerer", "Effector" }, { "ItemHash", item.GetHashCode() + "" } });
+                                        else board.CallEvents(participant.who, new() { { "Trigger", "ItemUsed" }, { "Triggerer", "Other" }, { "ItemHash", item.GetHashCode() + "" } });
+                                    }
+                                else SpawnFallingText(new Vector2(0, 34), "This item is on cooldown", "Red");
                             },
                             null,
                             (h) => () => PrintItemTooltip(item));
@@ -525,6 +531,52 @@ public class Blueprint
                         }
                 });
             }
+        }),
+        new("LocationInfo", () => {
+            SetAnchor(Top);
+            AddRegionGroup();
+            AddHeaderRegion(
+                () =>
+                {
+                    AddSmallButton("MenuFlee", (h) =>
+                    {
+                        ClearTargettingAbility();
+                        board.EndCombat(CDesktop.title == "Game" ? "Flee" : "Quit");
+                    });
+                }
+            );
+            AddRegionGroup();
+            SetRegionGroupWidth(204);
+            AddPaddingRegion(
+                () =>
+                {
+                    AddLine(board != null ? board.area.name : (fishingSpot != null ? fishingSpot.name : "?"), "Gray", "Center");
+                }
+            );
+            AddRegionGroup();
+            AddHeaderRegion(
+                () =>
+                {
+                    AddSmallButton("OtherSettings", (h) =>
+                    {
+                        ClearTargettingAbility();
+                        PlaySound("DesktopMenuOpen", 0.6f);
+                        SpawnDesktopBlueprint("GameMenu");
+                    });
+                }
+            );
+        }),
+        new("TargettingInfo", () => {
+            if (abilityTargetted == null) return;
+            SetAnchor(-122, -108);
+            AddRegionGroup();
+            SetRegionGroupWidth(242);
+            AddPaddingRegion(
+                () =>
+                {
+                    AddLine("Casting " + abilityTargetted.name + "...", "Gray", "Center");
+                }
+            );
         }),
 
         //Character
@@ -2960,7 +3012,7 @@ public class Blueprint
                 AddButtonRegion(() => AddLine("Gather"),
                 (h) =>
                 {
-                    Board.board.results.selectedSkinningLoot = 0;
+                    board.results.selectedSkinningLoot = 0;
                     PlaySound("SkinGather" + random.Next(1, 4));
                     SpawnDesktopBlueprint("SkinningLoot");
                 });
@@ -2993,7 +3045,7 @@ public class Blueprint
                 AddButtonRegion(() => AddLine("Gather"),
                 (h) =>
                 {
-                    Board.board.results.selectedSkinningLoot = 1;
+                    board.results.selectedSkinningLoot = 1;
                     PlaySound("SkinGather" + random.Next(1, 4));
                     SpawnDesktopBlueprint("SkinningLoot");
                 });
@@ -3025,7 +3077,7 @@ public class Blueprint
                 AddButtonRegion(() => AddLine("Gather"),
                 (h) =>
                 {
-                    Board.board.results.selectedSkinningLoot = 2;
+                    board.results.selectedSkinningLoot = 2;
                     PlaySound("SkinGather" + random.Next(1, 4));
                     SpawnDesktopBlueprint("SkinningLoot");
                 });
@@ -6297,35 +6349,6 @@ public class Blueprint
                 AddHeaderRegion(() => AddLine(Keybinds.keybinds[bind].key.ToString()));
             }
         }, true),
-        new("LocationInfo", () => {
-            SetAnchor(Top);
-            AddRegionGroup();
-            AddHeaderRegion(
-                () =>
-                {
-                    AddSmallButton("MenuFlee", (h) => board.EndCombat(CDesktop.title == "Game" ? "Flee" : "Quit"));
-                }
-            );
-            AddRegionGroup();
-            SetRegionGroupWidth(204);
-            AddPaddingRegion(
-                () =>
-                {
-                    AddLine(board != null ? board.area.name : (fishingSpot != null ? fishingSpot.name : "?"), "Gray", "Center");
-                }
-            );
-            AddRegionGroup();
-            AddHeaderRegion(
-                () =>
-                {
-                    AddSmallButton("OtherSettings", (h) =>
-                    {
-                        PlaySound("DesktopMenuOpen", 0.6f);
-                        SpawnDesktopBlueprint("GameMenu");
-                    });
-                }
-            );
-        }),
         new("MapLocationInfo", () => {
             if (currentSave.currentSite != "") return;
             if (currentSave.currentSite == "") return;

@@ -854,7 +854,9 @@ public class Item
             },
             (h) =>
             {
+                if (openedItem == item) return;
                 if (item.indestructible) return;
+                if (movingItem != null) return;
                 if (WindowUp("ConfirmItemDisenchant")) return;
                 if (WindowUp("ConfirmItemDestroy")) return;
                 if (WindowUp("InventorySort")) return;
@@ -925,11 +927,11 @@ public class Item
             AddBigButtonOverlay(settings.newSlotIndicators.Value() ? "OtherItemNewSlot" : "OtherItemUpgrade", 0, 2);
         else if (settings.upgradeIndicators.Value() && item.CanEquip(currentSave.player) && currentSave.player.IsItemAnUpgrade(item))
             AddBigButtonOverlay("OtherItemUpgrade", 0, 2);
-        if (item.maxStack > 1 && item.type != "Currency") SpawnFloatingText(CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (CDesktop.title == "ContainerLoot" ? openedItem.itemsInside : (CDesktop.title == "ChestLoot" ? currentSave.openedChests[SiteHostileArea.area.name].inventory : (CDesktop.title == "MiningLoot" ? Board.board.results.miningLoot : (CDesktop.title == "HerbalismLoot" ? Board.board.results.herbalismLoot : (CDesktop.title == "DisenchantLoot" ? disenchantLoot : (CDesktop.title == "SkinningLoot" ? Board.board.results.skinningLoots[Board.board.results.selectedSkinningLoot] : Board.board.results.inventory))))).items).IndexOf(item), item.amount + "", "", "", "Right");
+        if (item.maxStack > 1 && item.type != "Currency") SpawnFloatingText(CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.position + new Vector3(32, -27) + new Vector3(38, 0) * item.x, item.amount + "", "", "", "Right");
 
         void Click()
         {
-            if (currentSave.player.inventory.CanAddItem(item))
+            if (movingItem == null && currentSave.player.inventory.CanAddItem(item))
             {
                 PlaySound(item.ItemSound("PutDown"), 0.8f);
                 if (CDesktop.title == "CombatResultsLoot")
@@ -938,6 +940,7 @@ public class Item
                     Board.board.results.inventory.items.Remove(item);
                     if (Board.board.results.exclusiveItems.Contains(item.name))
                         Board.board.results.inventory.items.RemoveAll(x => Board.board.results.exclusiveItems.Contains(x.name));
+                    Board.board.results.inventory.ApplySortOrder();
                     if (settings.autoCloseLoot.Value() && Board.board.results.inventory.items.Count == 0)
                     {
                         CloseDesktop("CombatResultsLoot");
@@ -955,6 +958,7 @@ public class Item
                     PlaySound("Mining" + random.Next(1, 6));
                     currentSave.player.inventory.AddItem(item);
                     Board.board.results.miningLoot.items.Remove(item);
+                    Board.board.results.miningLoot.ApplySortOrder();
                     if (settings.autoCloseLoot.Value() && Board.board.results.miningLoot.items.Count == 0)
                     {
                         CloseDesktop("MiningLoot");
@@ -971,6 +975,7 @@ public class Item
                     PlaySound("HerbGather" + random.Next(1, 5));
                     currentSave.player.inventory.AddItem(item);
                     Board.board.results.herbalismLoot.items.Remove(item);
+                    Board.board.results.herbalismLoot.ApplySortOrder();
                     if (settings.autoCloseLoot.Value() && Board.board.results.herbalismLoot.items.Count == 0)
                     {
                         CloseDesktop("HerbalismLoot");
@@ -984,9 +989,10 @@ public class Item
                 }
                 else if (CDesktop.title == "SkinningLoot")
                 {
-                    //PlaySound("SkinGather" + random.Next(1, 4));
+                    PlaySound("SkinGather" + random.Next(1, 4));
                     currentSave.player.inventory.AddItem(item);
                     Board.board.results.skinningLoots[Board.board.results.selectedSkinningLoot].items.Remove(item);
+                    Board.board.results.skinningLoots[Board.board.results.selectedSkinningLoot].ApplySortOrder();
                     if (settings.autoCloseLoot.Value() && Board.board.results.skinningLoots[Board.board.results.selectedSkinningLoot].items.Count == 0)
                     {
                         CloseDesktop("SkinningLoot");
@@ -1004,6 +1010,7 @@ public class Item
                 {
                     currentSave.player.inventory.AddItem(item);
                     disenchantLoot.items.Remove(item);
+                    disenchantLoot.ApplySortOrder();
                     if (settings.autoCloseLoot.Value() && disenchantLoot.items.Count == 0)
                     {
                         CloseDesktop("DisenchantLoot");
@@ -1015,6 +1022,7 @@ public class Item
                 {
                     currentSave.player.inventory.AddItem(item);
                     currentSave.openedChests[SiteHostileArea.area.name].inventory.items.Remove(item);
+                    currentSave.openedChests[SiteHostileArea.area.name].inventory.ApplySortOrder();
                     if (settings.autoCloseLoot.Value() && currentSave.openedChests[SiteHostileArea.area.name].inventory.items.Count == 0)
                     {
                         if (SiteHostileArea.area.instancePart)
@@ -1039,6 +1047,7 @@ public class Item
                 {
                     currentSave.player.inventory.AddItem(item);
                     openedItem.itemsInside.Remove(item);
+                    ApplySortOrder(openedItem.itemsInside);
                     if (settings.autoCloseLoot.Value() && openedItem.itemsInside.Count == 0)
                     {
                         currentSave.player.inventory.items.Remove(openedItem);

@@ -1560,6 +1560,23 @@
               "amount": 1,
               "maxStack": 1,
               "price": 9
+            },
+            {
+              "x": 2,
+              "rarity": "Common",
+              "name": "Minor Healing Potion",
+              "icon": "itempotion49",
+              "combatUse": true,
+              "detailedType": "Potion",
+              "type": "Miscellaneous",
+              "source": "Profession",
+              "ilvl": 5,
+              "amount": 1,
+              "maxStack": 5,
+              "abilities": {
+                "Minor Healing Potion": 1
+              },
+              "price": 5
             }
           ],
           "bags": []
@@ -1654,9 +1671,9 @@
       "vendorStock": {},
       "banks": {},
       "startDate": "2025-06-24T18:33:55.3880698+02:00",
-      "lastLoaded": "2025-06-25T02:06:51.0511593+02:00",
-      "lastPlayed": "2025-06-25T02:06:55.7260937+02:00",
-      "timePlayed": "00:29:27.7488866"
+      "lastLoaded": "2025-07-01T02:34:41.8508314+02:00",
+      "lastPlayed": "2025-07-01T02:34:53.6894067+02:00",
+      "timePlayed": "00:29:39.5874619"
     },
     {
       "playerSide": "Horde",
@@ -1664,7 +1681,7 @@
         "currentQuests": [],
         "completedQuests": [],
         "level": 17,
-        "experience": 14791,
+        "experience": 14811,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -2007,9 +2024,9 @@
         "worldBuffs": []
       },
       "hour": 7,
-      "minute": 12,
-      "second": 1,
-      "currentSite": "Razor Hill",
+      "minute": 16,
+      "second": 49,
+      "currentSite": "Scuttle Coast",
       "ringOfLaw": "Anub'shiah",
       "forlornCloister": "Fallen Champion",
       "markets": [
@@ -2093,15 +2110,16 @@
         "The Den": 1,
         "Valley of Trials": 1,
         "Rocky Desert": 0,
-        "Razor Hill": 1
+        "Razor Hill": 1,
+        "Scuttle Coast": 3
       },
       "unlockedAreas": [],
       "vendorStock": {},
       "banks": {},
       "startDate": "2025-06-25T15:51:04.7264341+02:00",
-      "lastLoaded": "2025-07-01T01:59:00.3872535+02:00",
-      "lastPlayed": "2025-07-01T01:59:40.485278+02:00",
-      "timePlayed": "00:02:10.7413555"
+      "lastLoaded": "2025-07-01T02:34:21.1699356+02:00",
+      "lastPlayed": "2025-07-01T02:34:37.592881+02:00",
+      "timePlayed": "00:03:37.1398844"
     }
   ]
 }

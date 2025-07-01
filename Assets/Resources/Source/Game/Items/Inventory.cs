@@ -163,7 +163,11 @@ public class Inventory
 
     //After sorting the items in the inventory
     //this method applies the order of them and saves it
-    public void ApplySortOrder()
+    public void ApplySortOrder() => ApplySortOrder(items);
+
+    //After sorting the items in the inventory
+    //this method applies the order of them and saves it
+    public static void ApplySortOrder(List<Item> items)
     {
         for (int i = 0; i < items.Count; i++)
             (items[i].x, items[i].y) = (i % 5, i / 5);

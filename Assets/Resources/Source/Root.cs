@@ -99,11 +99,12 @@ public static class Root
     public static (int, int) tileTargetted;
 
     //Pick up an item to move it
-    public static void ClearTargettingAbility(bool shouldClear)
+    public static void ClearTargettingAbility(bool shouldClear = true)
     {
         if (!shouldClear) return;
         abilityTargetted = null;
         Cursor.cursor.SetCursor(CursorType.Default);
+        //CloseWindow("TargettingInfo");
     }
 
     //Pick up an item to move it
@@ -112,6 +113,7 @@ public static class Root
         abilityTargetted = ability;
         if (abilityTargetted.possibleTargets == "Self") FinishTargettingAbility(null);
         else Cursor.cursor.SetCursor(CursorType.Crosshair);
+        //if (abilityTargetted != null) Respawn("TargettingInfo");
     }
 
     //Pick up an item to move it
@@ -140,6 +142,7 @@ public static class Root
         }
         abilityTargetted = null;
         participantTargetted = null;
+        //CloseWindow("TargettingInfo");
     }
 
     //Pick up an item to move it
@@ -163,6 +166,7 @@ public static class Root
         }
         abilityTargetted = null;
         tileTargetted = (0, 0);
+        //CloseWindow("TargettingInfo");
     }
 
     #endregion

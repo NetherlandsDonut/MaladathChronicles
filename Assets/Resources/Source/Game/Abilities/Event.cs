@@ -149,6 +149,7 @@ public class Event
                                 for (int i = 1; i < drop.dropCount; i++) amount += Roll(50) ? 1 : 0;
                                 itemUsed.itemsInside.Add(Item.items.Find(x => x.name == drop.item).CopyItem(amount));
                             }
+                    Inventory.ApplySortOrder(itemUsed.itemsInside);
                 }
                 Item.openedItem = itemUsed;
                 SpawnDesktopBlueprint("ContainerLoot");
