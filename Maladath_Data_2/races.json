@@ -15866,15 +15866,16 @@
   },
   {
     "name": "Ragnaros",
-    "category": "Humanoid",
-    "subcategory": "Human",
-    "portrait": "PortraitRagnarosAlternate",
+    "category": "Elemental",
+    "portrait": "PortraitRagnaros",
     "abilities": {},
     "kind": "Elite",
     "vitality": 5.0
   },
   {
     "name": "Sunscale Lashtail",
+    "category": "Beast",
+    "subcategory": "Raptor",
     "portrait": "PortraitRaptor",
     "abilities": {},
     "kind": "Common",
@@ -17093,17 +17094,17 @@
   },
   {
     "name": "Houndmaster Loksey",
-    "category": "Beast",
-    "subcategory": "Hound",
+    "category": "Humanoid",
+    "subcategory": "Human",
     "portrait": "PortraitScarletHoundmaster",
     "abilities": {},
     "kind": "Elite",
-    "vitality": 1.0
+    "vitality": 3.0
   },
   {
     "name": "Scarlet Beastmaster",
-    "category": "Beast",
-    "subcategory": "Hound",
+    "category": "Humanoid",
+    "subcategory": "Human",
     "portrait": "PortraitScarletHoundmaster",
     "abilities": {},
     "kind": "Common",
@@ -17111,8 +17112,8 @@
   },
   {
     "name": "Scarlet Lumberjack",
-    "category": "Beast",
-    "subcategory": "Hound",
+    "category": "Humanoid",
+    "subcategory": "Human",
     "faction": "Scarlet Crusade",
     "portrait": "PortraitScarletHoundmaster",
     "abilities": {},
@@ -17121,8 +17122,8 @@
   },
   {
     "name": "Scarlet Scout",
-    "category": "Beast",
-    "subcategory": "Hound",
+    "category": "Humanoid",
+    "subcategory": "Human",
     "faction": "Scarlet Crusade",
     "portrait": "PortraitScarletHoundmaster",
     "abilities": {},
@@ -17131,8 +17132,8 @@
   },
   {
     "name": "Scarlet Zealot",
-    "category": "Beast",
-    "subcategory": "Hound",
+    "category": "Humanoid",
+    "subcategory": "Human",
     "portrait": "PortraitScarletHoundmaster",
     "abilities": {},
     "kind": "Common",
@@ -17404,7 +17405,7 @@
   {
     "name": "Scarshield Acolyte",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Orc",
     "faction": "Blackrock Clan",
     "portrait": "PortraitScarshieldAcolyte",
     "abilities": {},
@@ -17414,7 +17415,7 @@
   {
     "name": "Scarshield Legionnaire",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Orc",
     "faction": "Blackrock Clan",
     "portrait": "PortraitScarshieldLegionnaire",
     "abilities": {},
@@ -17424,7 +17425,7 @@
   {
     "name": "Scarshield Spellbinder",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Orc",
     "faction": "Blackrock Clan",
     "portrait": "PortraitScarshieldSpellbinder",
     "abilities": {},
@@ -17434,7 +17435,7 @@
   {
     "name": "Scarshield Warlock",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Orc",
     "portrait": "PortraitScarshieldWarlock",
     "abilities": {},
     "kind": "Common",
@@ -17443,7 +17444,7 @@
   {
     "name": "Scholomance Acolyte",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Night Elf",
     "portrait": "PortraitScholomanceAcolyte",
     "abilities": {},
     "kind": "Common",
@@ -17461,16 +17462,16 @@
   {
     "name": "Scholomance Dark Summoner",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Night Elf",
     "portrait": "PortraitScholomanceDarkSummoner",
-    "abilities": {},
+    "abilities": {},  
     "kind": "Common",
     "vitality": 1.0
   },
   {
     "name": "Scholomance Handler",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Gnome",
     "portrait": "PortraitScholomanceHandler",
     "abilities": {},
     "kind": "Common",
@@ -17479,7 +17480,7 @@
   {
     "name": "Scholomance Necrolyte",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Gnome",
     "portrait": "PortraitScholomanceNecrolyte",
     "abilities": {},
     "kind": "Common",
@@ -17506,7 +17507,7 @@
   {
     "name": "Scholomance Occultist",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Gnome",
     "portrait": "PortraitScholomanceOccultist",
     "abilities": {},
     "kind": "Common",

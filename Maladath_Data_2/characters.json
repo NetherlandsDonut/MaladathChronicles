@@ -1663,8 +1663,8 @@
       "player": {
         "currentQuests": [],
         "completedQuests": [],
-        "level": 2,
-        "experience": 19,
+        "level": 17,
+        "experience": 14791,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -1860,7 +1860,7 @@
           ],
           "Herbalism": []
         },
-        "unspentTalentPoints": 1,
+        "unspentTalentPoints": 16,
         "faction": "Darkspear Tribe",
         "name": "Eho",
         "race": "Troll",
@@ -1904,6 +1904,7 @@
           "Order Mastery": 1
         },
         "inventory": {
+          "money": 123123,
           "items": [
             {
               "rarity": "Common",
@@ -2006,9 +2007,9 @@
         "worldBuffs": []
       },
       "hour": 7,
-      "minute": 3,
-      "second": 9,
-      "currentSite": "Valley of Trials",
+      "minute": 12,
+      "second": 1,
+      "currentSite": "Razor Hill",
       "ringOfLaw": "Anub'shiah",
       "forlornCloister": "Fallen Champion",
       "markets": [
@@ -2090,15 +2091,17 @@
       "elitesKilled": {},
       "siteVisits": {
         "The Den": 1,
-        "Valley of Trials": 1
+        "Valley of Trials": 1,
+        "Rocky Desert": 0,
+        "Razor Hill": 1
       },
       "unlockedAreas": [],
       "vendorStock": {},
       "banks": {},
       "startDate": "2025-06-25T15:51:04.7264341+02:00",
-      "lastLoaded": "2025-06-29T20:53:37.8472657+02:00",
-      "lastPlayed": "2025-06-29T20:55:08.4905967+02:00",
-      "timePlayed": "00:01:30.6433310"
+      "lastLoaded": "2025-07-01T01:59:00.3872535+02:00",
+      "lastPlayed": "2025-07-01T01:59:40.485278+02:00",
+      "timePlayed": "00:02:10.7413555"
     }
   ]
 }

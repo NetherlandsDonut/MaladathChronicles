@@ -5469,6 +5469,7 @@ public class Blueprint
                                             currentSave.player.professionSkills[type.profession].Item2.Add(key.name);
                                             Respawn(h.window.title);
                                             PlaySound("DesktopSkillLearned");
+                                            SpawnFallingText(new Vector2(0, 34), "New skill learned", "Blue");
                                         }
                                     }
                                 }
@@ -5557,11 +5558,12 @@ public class Blueprint
                                     {
                                         //Add the recipe
                                         currentSave.player.inventory.money -= key.price;
+                                        currentSave.player.LearnRecipe(key);
                                         Respawn("PlayerMoney", true);
                                         Respawn("Capital", true);
-                                        currentSave.player.LearnRecipe(key);
                                         Respawn(h.window.title);
                                         PlaySound("DesktopSkillLearned");
+                                        SpawnFallingText(new Vector2(0, 34), "New recipe learned", "Blue");
                                     }
                                 }
                             },

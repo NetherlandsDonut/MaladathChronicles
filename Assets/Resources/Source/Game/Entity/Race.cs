@@ -1,6 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
+
+using UnityEngine;
+
 using static Faction;
 
 public class Race
@@ -11,6 +14,7 @@ public class Race
     {
         side = Faction().side;
         droppedItems = Item.items.FindAll(x => x.droppedBy != null && x.droppedBy.Contains(name)).Select(x => x.name).ToList();
+        if (category == null || category == string.Empty) Debug.Log("ERROR 018: Race lacks category: \"" + name + "\"");
     }
 
     //Name of the race
@@ -55,7 +59,7 @@ public class Race
     //Common enemies usually oscilate around 1.0 vitality with enemies like abominations
     //being really tough and enemies like skeletons being weaker than that. Rare enemies usually
     //oscilate around 2.0 and elite's around 3.0 with raid bosses being exceptionally tough with
-    //vitality reaching up to 6.0 which indidacte hardest fights in the game like Doom Lord Kazzak
+    //vitality reaching up to 6.0 which indicate hardest fights in the game like Doom Lord Kazzak
     public double vitality;
 
     //List of possible item drops by this race
