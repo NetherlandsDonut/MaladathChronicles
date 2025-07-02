@@ -245,7 +245,7 @@ public static class Root
         else if (h.window.title == "PlayerWeaponsInfo")
         {
             var typeWritten = h.region.LBLine().LBText().text;
-            if (movingItem.CanEquip(currentSave.player, true) && ((typeWritten == "Main Hand" || typeWritten == "Off Hand") && (movingItem.type == "One Handed" || movingItem.type == "Two Handed") || typeWritten == "Ranged Weapon" && movingItem.type == "Ranged Weapon"))
+            if (movingItem.CanEquip(currentSave.player, true) && ((typeWritten == "Off Hand" && movingItem.type == "Off Hand") || (typeWritten == "Main Hand" || typeWritten == "Off Hand") && (movingItem.type == "One Handed" || movingItem.type == "Two Handed") || typeWritten == "Ranged Weapon" && movingItem.type == "Ranged Weapon"))
             {
                 movingItem.Equip(currentSave.player, false, typeWritten == "Off Hand");
                 movingItem.x = -1;

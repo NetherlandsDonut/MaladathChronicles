@@ -1127,7 +1127,7 @@ public class Item
             if (currentSave != null)
                 if (currentSave.player.equipment.ContainsKey(item.type))
                     current = currentSave.player.equipment[item.type];
-                else if (item.type == "Two Handed" || item.type == "One Handed")
+                else if (item.type == "Two Handed" || item.type == "One Handed" && Input.GetKey(KeyCode.LeftAlt))
                 {
                     current = currentSave.player.equipment.Get("Main Hand");
                     currentSecond = currentSave.player.equipment.Get("Off Hand");
