@@ -131,12 +131,10 @@ public class SiteHostileArea : Site
             AddSmallButton("Map" + (currentSave.siteVisits.ContainsKey(name) ? type + (recommendedLevel["Horde"] < recommendedLevel["Alliance"] ? "HordeAligned" : (recommendedLevel["Horde"] > recommendedLevel["Alliance"] ? "AllianceAligned" : "")) : "Unknown"),
             (h) =>
             {
-                if (currentSave.activeSkirmish != null) return;
                 CDesktop.cameraDestination = new Vector2(x, y);
             },
             (h) =>
             {
-                if (currentSave.activeSkirmish != null) return;
                 if (h == null) LeadPath();
                 else ExecutePath("HostileArea");
             },
@@ -203,7 +201,6 @@ public class SiteHostileArea : Site
             },
             (h) =>
             {
-                if (currentSave.activeSkirmish != null) return;
                 BuildPath();
             });
             var q = currentSave.player.AvailableQuestsAt(this, true).Count;

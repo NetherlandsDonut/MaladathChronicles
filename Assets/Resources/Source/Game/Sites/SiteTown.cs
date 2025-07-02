@@ -76,12 +76,10 @@ public class SiteTown : Site
             AddSmallButton("Map" + (currentSave.siteVisits.ContainsKey(name) ? Icon() : "Unknown"),
             (h) =>
             {
-                if (currentSave.activeSkirmish != null) return;
                 CDesktop.cameraDestination = new Vector2(x, y);
             },
             (h) =>
             {
-                if (currentSave.activeSkirmish != null) return;
                 if (h == null) LeadPath();
                 else ExecutePath("Town");
             },
@@ -157,7 +155,6 @@ public class SiteTown : Site
             },
             (h) =>
             {
-                if (currentSave.activeSkirmish != null) return;
                 BuildPath();
             });
             var q = currentSave.player.AvailableQuestsAt(this, true).Count;

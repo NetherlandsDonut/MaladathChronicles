@@ -42,7 +42,6 @@ public class MapGrid : MonoBehaviour
     void OnMouseDown()
     {
         if (CDesktop.title != "Map") return;
-        if (currentSave.activeSkirmish != null) return;
         var temp = cursor.transform.position;
         CDesktop.cameraDestination = new Vector2((int)temp.x, (int)temp.y);
     }
@@ -60,7 +59,7 @@ public class MapGrid : MonoBehaviour
     void Update()
     {
         if (updateTextureColors) UpdateTextureColors();
-        if (currentSave != null && currentSave.activeSkirmish == null && sitePathBuilder != null && Vector2.Distance(pathBuilder.Last(), cursor.transform.position - new Vector3(10, -10)) > 10)
+        if (sitePathBuilder != null && Vector2.Distance(pathBuilder.Last(), cursor.transform.position - new Vector3(10, -10)) > 10)
         {
             pathBuilder.Add(cursor.transform.position - new Vector3(10, -10));
             if (pathTest.Item2 != null) Destroy(pathTest.Item2);

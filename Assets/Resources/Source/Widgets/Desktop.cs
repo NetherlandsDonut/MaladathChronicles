@@ -262,204 +262,155 @@ public class Desktop : MonoBehaviour
                         sitesToRespawn.RemoveAt(i);
                     }
                 var temp = screen.transform.localPosition;
-                if (currentSave.activeSkirmish == null)
+                if (mapGrid.queuedPath.Count > 0)
                 {
-                    if (mapGrid.queuedPath.Count > 0)
+                    if (GetKeyDown(KeyCode.Escape))
                     {
-                        if (GetKeyDown(KeyCode.Escape))
+                        if (mapGrid.queuedPath.Count > 1)
                         {
-                            if (mapGrid.queuedPath.Count > 1)
-                            {
-                                mapGrid.queuedPath.FindAll(x => x != mapGrid.queuedPath[0]).SelectMany(x => x.Item2).ToList().ForEach(x => Destroy(x.gameObject));
-                                mapGrid.queuedPath.RemoveAll(x => x != mapGrid.queuedPath[0]);
-                                var siteA = FindSite(x => x.name == mapGrid.queuedPath[0].Item1.sites[0]);
-                                var siteB = FindSite(x => x.name == mapGrid.queuedPath[0].Item1.sites[1]);
-                                mapGrid.queuedSiteOpen = Vector2.Distance(new Vector2(siteA.x, siteA.y), mapGrid.queuedPath[0].Item2.Last().transform.position) < Vector2.Distance(new Vector2(siteB.x, siteB.y), mapGrid.queuedPath[0].Item2.Last().transform.position) ? siteA.name : siteB.name;
-                            }
-                            else
-                            {
-                                pointsForRetreat = mapGrid.queuedPath[0].Item1.points.Count - mapGrid.queuedPath[0].Item2.Count;
-                                var newDestination = mapGrid.queuedPath[0].Item1.sites.Find(x => x != mapGrid.queuedSiteOpen);
-                                for (int i = 0; i < pathsDrawn.Count; i++)
-                                    Destroy(pathsDrawn[i].Item2);
-                                pathsDrawn = new();
-                                var site = FindSite(x => x.name == mapGrid.queuedSiteOpen);
-                                site.LeadPathFrom(newDestination);
-                                site.ExecutePath();
-                                mapGrid.queuedSiteOpen = newDestination;
-                            }
-                        }
-                        if (Vector2.Distance(temp, cameraDestination) > 5)
-                        {
-                            var newPosition = Vector3.Lerp(temp, cameraDestination, Time.deltaTime * currentSave.player.Speed());
-                            cursor.transform.position += newPosition - temp;
-                            screen.transform.localPosition = newPosition;
+                            mapGrid.queuedPath.FindAll(x => x != mapGrid.queuedPath[0]).SelectMany(x => x.Item2).ToList().ForEach(x => Destroy(x.gameObject));
+                            mapGrid.queuedPath.RemoveAll(x => x != mapGrid.queuedPath[0]);
+                            var siteA = FindSite(x => x.name == mapGrid.queuedPath[0].Item1.sites[0]);
+                            var siteB = FindSite(x => x.name == mapGrid.queuedPath[0].Item1.sites[1]);
+                            mapGrid.queuedSiteOpen = Vector2.Distance(new Vector2(siteA.x, siteA.y), mapGrid.queuedPath[0].Item2.Last().transform.position) < Vector2.Distance(new Vector2(siteB.x, siteB.y), mapGrid.queuedPath[0].Item2.Last().transform.position) ? siteA.name : siteB.name;
                         }
                         else
                         {
-                            if (mapGrid.queuedPath.Count > 0)
-                            {
-                                if (mapGrid.queuedPath[0].Item2.Count > 0)
-                                {
-                                    if (mapGrid.queuedPath[0].Item2.Count % 2 == 0)
-                                    {
-                                        var what = mapGrid.groundData[Math.Abs((int)mapGrid.queuedPath[0].Item2[0].position.x / 19), Math.Abs((int)mapGrid.queuedPath[0].Item2[0].position.y / 19)];
-                                        PlaySound("Step" + what + random.Next(1, 6), what == "Sand" ? 0.6f : 0.7f);
-                                    }
-                                    currentSave.AddTime(currentSave.player.TravelPassTime());
-                                    Destroy(mapGrid.queuedPath[0].Item2.First(x => x.name == "PathDot").gameObject);
-                                    mapGrid.queuedPath[0].Item2.RemoveAt(0);
-                                }
-                                if (mapGrid.queuedPath[0].Item2.Count == 0)
-                                    mapGrid.queuedPath.RemoveAt(0);
-                            }
-                            if (mapGrid.queuedPath.Count == 0)
-                            {
-                                UnlockScreen();
-                                currentSave.currentSite = mapGrid.queuedSiteOpen;
-                                var find = FindSite(x => x.name == mapGrid.queuedSiteOpen);
-                                if (!currentSave.Visited(mapGrid.queuedSiteOpen))
-                                {
-                                    currentSave.siteVisits.Add(mapGrid.queuedSiteOpen, 0);
-                                    PlaySound("DesktopZoneDiscovered", 1f);
-                                    currentSave.player.ReceiveExperience(defines.expForExploration);
-                                }
-                                Respawn("Site: " + mapGrid.queuedSiteOpen);
-                                foreach (var connection in paths.FindAll(x => x.sites.Contains(mapGrid.queuedSiteOpen)))
-                                {
-                                    var site = connection.sites.Find(x => x != mapGrid.queuedSiteOpen);
-                                    if (!WindowUp("Site: " + site))
-                                        if (!Respawn("Site: " + site))
-                                            LBWindow().GetComponentsInChildren<Renderer>().ToList().ForEach(x => x.gameObject.AddComponent<FadeIn>());
-                                }
-                                mapGrid.queuedSiteOpen = "";
-                                cameraDestination = new Vector2(find.x, find.y);
-                                Respawn("MapLocationInfo");
-                            }
-                            else
-                            {
-                                var first = mapGrid.queuedPath[0].Item2.First(x => x.name == "PathDot");
-                                cameraDestination = first.position;
-                                if (first.TryGetComponent<SpriteRenderer>(out var r))
-                                {
-                                    var v = new Vector2Int((int)first.localPosition.x, (int)first.localPosition.y);
-                                    var findSkirmish = currentSave.skirmishes.Find(x => Vector2.Distance(v, new Vector2(x.x, x.y)) < 10);
-                                    if (findSkirmish != null)
-                                    {
-                                        currentSave.activeSkirmish = findSkirmish;
-                                        currentSave.skirmishes.Remove(findSkirmish);
-                                    }
-                                    else if ((pointsForRetreat == 0 || --pointsForRetreat == 0) && random.Next(0, 100) < 10)
-                                    {
-                                        currentSave.activeSkirmish = new() { x = v.x, y = v.y };
-                                        var entities = new List<Entity>();
-                                        var destination = FindSite(x => x.name == (mapGrid.queuedPath.Count <= 1 ? mapGrid.queuedSiteOpen : mapGrid.queuedPath[0].Item1.sites.Find(y => !mapGrid.queuedPath[1].Item1.sites.All(z => z != y))));
-                                        currentSave.skirmishFrom = mapGrid.queuedPath[0].Item1.sites.Find(x => x != destination.name);
-                                        var from = FindSite(x => x.name == currentSave.skirmishFrom);
-                                        if (from.commonEncounters != null && from.commonEncounters.Count > 0 && destination.commonEncounters != null && destination.commonEncounters.Count > 0)
-                                        {
-                                            var rand = random.Next(2);
-                                            currentSave.activeSkirmish.area = (rand == 0 ? from : destination).name;
-                                            currentSave.activeSkirmish.otherArea = (rand == 0 ? destination : from).name;
-                                            entities = ((SiteHostileArea)(rand == 0 ? from : destination)).RollEncounters(1);
-                                        }
-                                        else if (from.commonEncounters != null && from.commonEncounters.Count > 0)
-                                        {
-                                            currentSave.activeSkirmish.area = from.name;
-                                            currentSave.activeSkirmish.otherArea = destination.name;
-                                            entities = ((SiteHostileArea)from).RollEncounters(1);
-                                        }
-                                        else if (destination.commonEncounters != null && destination.commonEncounters.Count > 0)
-                                        {
-                                            currentSave.activeSkirmish.area = destination.name;
-                                            currentSave.activeSkirmish.otherArea = from.name;
-                                            entities = ((SiteHostileArea)destination).RollEncounters(1);
-                                        }
-                                        else currentSave.activeSkirmish = null;
-                                        if (currentSave.activeSkirmish != null && entities.Count > 0)
-                                            currentSave.activeSkirmish.entity = entities[0];
-                                    }
-                                    if (currentSave.activeSkirmish != null)
-                                    {
-                                        pointsForRetreat = mapGrid.queuedPath[0].Item1.points.Count - mapGrid.queuedPath[0].Item2.Count;
-                                        r.color = Color.red;
-                                        Respawn("Skirmish");
-                                        UnlockScreen();
-                                    }
-                                    else r.color = Color.green;
-                                }
-                            }
+                            pointsForRetreat = mapGrid.queuedPath[0].Item1.points.Count - mapGrid.queuedPath[0].Item2.Count;
+                            var newDestination = mapGrid.queuedPath[0].Item1.sites.Find(x => x != mapGrid.queuedSiteOpen);
+                            for (int i = 0; i < pathsDrawn.Count; i++)
+                                Destroy(pathsDrawn[i].Item2);
+                            pathsDrawn = new();
+                            var site = FindSite(x => x.name == mapGrid.queuedSiteOpen);
+                            site.LeadPathFrom(newDestination);
+                            site.ExecutePath();
+                            mapGrid.queuedSiteOpen = newDestination;
                         }
+                    }
+                    if (Vector2.Distance(temp, cameraDestination) > 5)
+                    {
+                        var newPosition = Vector3.Lerp(temp, cameraDestination, Time.deltaTime * currentSave.player.Speed());
+                        cursor.transform.position += newPosition - temp;
+                        screen.transform.localPosition = newPosition;
                     }
                     else
                     {
-                        if (!disableCameraBounds) mapGrid.EnforceBoundary();
-                        var newPosition = Vector3.Lerp(temp, cameraDestination, Time.deltaTime * 5);
-                        cursor.transform.position += newPosition - temp;
-                        screen.transform.localPosition = newPosition;
-                        if (screenLocked && Vector3.Distance(screen.transform.localPosition, cameraDestination) <= 5)
+                        if (mapGrid.queuedPath.Count > 0)
                         {
-                            currentSave.siteVisits ??= new();
-                            if (mapGrid.queuedSiteTypeOpen != "SpiritHealer")
+                            if (mapGrid.queuedPath[0].Item2.Count > 0)
                             {
-                                if (currentSave.siteVisits.ContainsKey(currentSave.currentSite))
+                                if (mapGrid.queuedPath[0].Item2.Count % 2 == 0)
                                 {
-                                    currentSave.siteVisits[currentSave.currentSite]++;
-                                    currentSave.player.QuestVisit(currentSave.currentSite);
+                                    var what = mapGrid.groundData[Math.Abs((int)mapGrid.queuedPath[0].Item2[0].position.x / 19), Math.Abs((int)mapGrid.queuedPath[0].Item2[0].position.y / 19)];
+                                    PlaySound("Step" + what + random.Next(1, 6), what == "Sand" ? 0.6f : 0.7f);
                                 }
-                                else currentSave.siteVisits.Add(currentSave.currentSite, 1);
+                                currentSave.AddTime(currentSave.player.TravelPassTime());
+                                Destroy(mapGrid.queuedPath[0].Item2.First(x => x.name == "PathDot").gameObject);
+                                mapGrid.queuedPath[0].Item2.RemoveAt(0);
                             }
-                            else
-                            {
-                                if (!currentSave.siteVisits.ContainsKey(currentSave.currentSite))
-                                {
-                                    currentSave.siteVisits.Add(currentSave.currentSite, 0);
-                                    PlaySound("DesktopZoneDiscovered", 1f);
-                                    currentSave.player.ReceiveExperience(defines.expForExploration);
-                                }
-                                foreach (var connection in paths.FindAll(x => x.sites.Contains(currentSave.currentSite)))
-                                {
-                                    var site = connection.sites.Find(x => x != currentSave.currentSite);
-                                    if (!WindowUp("Site: " + site))
-                                        if (!Respawn("Site: " + site))
-                                            LBWindow().GetComponentsInChildren<Renderer>().ToList().ForEach(x => x.gameObject.AddComponent<FadeIn>());
-                                }
-                            }
-                            Respawn("Site: " + currentSave.currentSite);
-                            UnlockScreen();
-                            if (mapGrid.queuedSiteTypeOpen == "Instance")
-                            {
-                                PlaySound("DesktopInstanceOpen");
-                                SpawnDesktopBlueprint("Instance");
-                            }
-                            else if (mapGrid.queuedSiteTypeOpen == "Complex")
-                            {
-                                PlaySound("DesktopInstanceOpen");
-                                SpawnDesktopBlueprint("Complex");
-                            }
-                            else if (mapGrid.queuedSiteTypeOpen == "HostileArea")
-                            {
-                                PlaySound("DesktopInstanceOpen");
-                                SpawnDesktopBlueprint("HostileArea");
-                            }
-                            else if (mapGrid.queuedSiteTypeOpen == "Town")
-                            {
-                                PlaySound("DesktopInstanceOpen");
-                                SpawnDesktopBlueprint("Town");
-                            }
-                            else if (mapGrid.queuedSiteTypeOpen == "Capital")
-                            {
-                                PlaySound("DesktopInstanceOpen");
-                                SpawnDesktopBlueprint("Capital");
-                            }
-                            if (mapGrid.queuedSiteTypeOpen == "SpiritHealer")
-                            {
-                                StopAmbience();
-                                PlaySound("DesktopRevive");
-                                currentSave.RevivePlayer();
-                            }
-                            mapGrid.queuedSiteTypeOpen = "";
+                            if (mapGrid.queuedPath[0].Item2.Count == 0)
+                                mapGrid.queuedPath.RemoveAt(0);
                         }
+                        if (mapGrid.queuedPath.Count == 0)
+                        {
+                            UnlockScreen();
+                            currentSave.currentSite = mapGrid.queuedSiteOpen;
+                            var find = FindSite(x => x.name == mapGrid.queuedSiteOpen);
+                            if (!currentSave.Visited(mapGrid.queuedSiteOpen))
+                            {
+                                currentSave.siteVisits.Add(mapGrid.queuedSiteOpen, 0);
+                                PlaySound("DesktopZoneDiscovered", 1f);
+                                currentSave.player.ReceiveExperience(defines.expForExploration);
+                            }
+                            Respawn("Site: " + mapGrid.queuedSiteOpen);
+                            foreach (var connection in paths.FindAll(x => x.sites.Contains(mapGrid.queuedSiteOpen)))
+                            {
+                                var site = connection.sites.Find(x => x != mapGrid.queuedSiteOpen);
+                                if (!WindowUp("Site: " + site))
+                                    if (!Respawn("Site: " + site))
+                                        LBWindow().GetComponentsInChildren<Renderer>().ToList().ForEach(x => x.gameObject.AddComponent<FadeIn>());
+                            }
+                            mapGrid.queuedSiteOpen = "";
+                            cameraDestination = new Vector2(find.x, find.y);
+                            Respawn("MapLocationInfo");
+                        }
+                        else
+                        {
+                            var first = mapGrid.queuedPath[0].Item2.First(x => x.name == "PathDot");
+                            cameraDestination = first.position;
+                            if (first.TryGetComponent<SpriteRenderer>(out var r))
+                                r.color = Color.green;
+                        }
+                    }
+                }
+                else
+                {
+                    if (!disableCameraBounds) mapGrid.EnforceBoundary();
+                    var newPosition = Vector3.Lerp(temp, cameraDestination, Time.deltaTime * 5);
+                    cursor.transform.position += newPosition - temp;
+                    screen.transform.localPosition = newPosition;
+                    if (screenLocked && Vector3.Distance(screen.transform.localPosition, cameraDestination) <= 5)
+                    {
+                        currentSave.siteVisits ??= new();
+                        if (mapGrid.queuedSiteTypeOpen != "SpiritHealer")
+                        {
+                            if (currentSave.siteVisits.ContainsKey(currentSave.currentSite))
+                            {
+                                currentSave.siteVisits[currentSave.currentSite]++;
+                                currentSave.player.QuestVisit(currentSave.currentSite);
+                            }
+                            else currentSave.siteVisits.Add(currentSave.currentSite, 1);
+                        }
+                        else
+                        {
+                            if (!currentSave.siteVisits.ContainsKey(currentSave.currentSite))
+                            {
+                                currentSave.siteVisits.Add(currentSave.currentSite, 0);
+                                PlaySound("DesktopZoneDiscovered", 1f);
+                                currentSave.player.ReceiveExperience(defines.expForExploration);
+                            }
+                            foreach (var connection in paths.FindAll(x => x.sites.Contains(currentSave.currentSite)))
+                            {
+                                var site = connection.sites.Find(x => x != currentSave.currentSite);
+                                if (!WindowUp("Site: " + site))
+                                    if (!Respawn("Site: " + site))
+                                        LBWindow().GetComponentsInChildren<Renderer>().ToList().ForEach(x => x.gameObject.AddComponent<FadeIn>());
+                            }
+                        }
+                        Respawn("Site: " + currentSave.currentSite);
+                        UnlockScreen();
+                        if (mapGrid.queuedSiteTypeOpen == "Instance")
+                        {
+                            PlaySound("DesktopInstanceOpen");
+                            SpawnDesktopBlueprint("Instance");
+                        }
+                        else if (mapGrid.queuedSiteTypeOpen == "Complex")
+                        {
+                            PlaySound("DesktopInstanceOpen");
+                            SpawnDesktopBlueprint("Complex");
+                        }
+                        else if (mapGrid.queuedSiteTypeOpen == "HostileArea")
+                        {
+                            PlaySound("DesktopInstanceOpen");
+                            SpawnDesktopBlueprint("HostileArea");
+                        }
+                        else if (mapGrid.queuedSiteTypeOpen == "Town")
+                        {
+                            PlaySound("DesktopInstanceOpen");
+                            SpawnDesktopBlueprint("Town");
+                        }
+                        else if (mapGrid.queuedSiteTypeOpen == "Capital")
+                        {
+                            PlaySound("DesktopInstanceOpen");
+                            SpawnDesktopBlueprint("Capital");
+                        }
+                        if (mapGrid.queuedSiteTypeOpen == "SpiritHealer")
+                        {
+                            StopAmbience();
+                            PlaySound("DesktopRevive");
+                            currentSave.RevivePlayer();
+                        }
+                        mapGrid.queuedSiteTypeOpen = "";
                     }
                 }
             }

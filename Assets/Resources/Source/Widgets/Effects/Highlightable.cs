@@ -52,7 +52,7 @@ public class Highlightable : MonoBehaviour
         else if (pressedState != "None") cursor.SetCursor(Click);
         else if (gameObject.name == "FishingPool") cursor.SetCursor(Hook);
         render.color = defaultColor - new Color(0.1f, 0.1f, 0.1f, 0);
-        if (window != null && window.title.StartsWith("Site: ") && currentSave.activeSkirmish == null)
+        if (window != null && window.title.StartsWith("Site: "))
         {
             if (Input.GetKey(KeyCode.LeftAlt))
             {
@@ -74,7 +74,7 @@ public class Highlightable : MonoBehaviour
             cursor.SetCursor(Default);
         render.color = defaultColor;
         pressedState = "None";
-        if (window != null && window.title.StartsWith("Site: ") && currentSave.activeSkirmish == null)
+        if (window != null && window.title.StartsWith("Site: "))
         {
             for (int i = 0; i < pathsDrawn.Count; i++)
                 Destroy(pathsDrawn[i].Item2);

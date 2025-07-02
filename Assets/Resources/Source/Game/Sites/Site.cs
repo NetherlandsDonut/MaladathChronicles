@@ -169,19 +169,19 @@ public class Site
         mapGrid.queuedPath = new();
         if (currentSave.currentSite == "")
         {
-            var site = FindSite(x => x.name == currentSave.skirmishFrom);
-            var newPoint = new Vector2(site.x, site.y);
             var path = pathsDrawn[0];
+            var site = FindSite(x => x.name == path.Item1.sites.Find(y => y != mapGrid.queuedSiteOpen));
+            var newPoint = new Vector2(site.x, site.y);
             if (path.Item2 != null)
             {
                 var queue = path.Item2.GetComponentsInChildren<Transform>().ToList().FindAll(x => x.name == "PathDot");
                 if (queue.Count > 0)
                 {
                     if (queue.Count > 1 && Vector2.Distance(queue[0].transform.position, newPoint) < Vector2.Distance(queue.Last().transform.position, newPoint)) queue.Reverse();
-                    var forRemoval = queue.Take(queue.Count - pointsForRetreat).ToList();
+                    var forRemoval = queue.Take(queue.Count - pointsForRetreat - 2).ToList();
                     for (int i = 0; i < forRemoval.Count; i++)
                         UnityEngine.Object.Destroy(forRemoval[i].gameObject);
-                    queue = queue.TakeLast(pointsForRetreat).ToList();
+                    queue = queue.TakeLast(pointsForRetreat + 2).ToList();
                     if (queue.Count > 0) newPoint = queue.Last().position;
                     mapGrid.queuedPath.Add((path.Item1, queue));
                 }

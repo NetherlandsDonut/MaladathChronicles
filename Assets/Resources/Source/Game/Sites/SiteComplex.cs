@@ -99,12 +99,10 @@ public class SiteComplex : Site
             AddSmallButton(currentSave.siteVisits.ContainsKey(name) ? "MapComplex" : "MapUnknown",
             (h) =>
             {
-                if (currentSave.activeSkirmish != null) return;
                 CDesktop.cameraDestination = new Vector2(x, y);
             },
             (h) =>
             {
-                if (currentSave.activeSkirmish != null) return;
                 if (zone == "Teldrassil" && zone != FindSite(x => x.name == currentSave.currentSite).zone) return;
                 if (h == null) LeadPath();
                 else ExecutePath("Complex");
@@ -169,7 +167,6 @@ public class SiteComplex : Site
             },
             (h) =>
             {
-                if (currentSave.activeSkirmish != null) return;
                 BuildPath();
             });
             var q = currentSave.player.AvailableQuestsAt(this, true).Count;

@@ -88,12 +88,10 @@ public class SiteInstance : Site
             AddSmallButton(currentSave.siteVisits.ContainsKey(name) ? "Map" + type : "MapUnknown",
             (h) =>
             {
-                if (currentSave.activeSkirmish != null) return;
                 CDesktop.cameraDestination = new Vector2(x, y);
             },
             (h) =>
             {
-                if (currentSave.activeSkirmish != null) return;
                 if (h == null) LeadPath();
                 else ExecutePath("Instance");
             },
@@ -154,7 +152,6 @@ public class SiteInstance : Site
             },
             (h) =>
             {
-                if (currentSave.activeSkirmish != null) return;
                 BuildPath();
             });
             var q = currentSave.player.AvailableQuestsAt(this, true).Count;
