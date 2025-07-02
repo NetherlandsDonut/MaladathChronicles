@@ -167,35 +167,55 @@ public class Site
     public void QueueSitePathTravel()
     {
         mapGrid.queuedPath = new();
-        var site = FindSite(x => x.name == currentSave.currentSite);
-        var newPoint = new Vector2(site.x, site.y);
-        foreach (var path in pathsDrawn)
+        if (currentSave.currentSite == "")
         {
-            if (path.Item2 == null) continue;
-            var queue = path.Item2.GetComponentsInChildren<Transform>().ToList().FindAll(x => x.name == "PathDot");
-            if (queue.Count > 0)
+            var site = FindSite(x => x.name == currentSave.skirmishFrom);
+            var newPoint = new Vector2(site.x, site.y);
+            var path = pathsDrawn[0];
+            if (path.Item2 != null)
             {
-                if (queue.Count > 1 && Vector2.Distance(queue[0].transform.position, newPoint) > Vector2.Distance(queue.Last().transform.position, newPoint)) queue.Reverse();
-                newPoint = queue.Last().position;
-                mapGrid.queuedPath.Add((path.Item1, queue));
+                var queue = path.Item2.GetComponentsInChildren<Transform>().ToList().FindAll(x => x.name == "PathDot");
+                if (queue.Count > 0)
+                {
+                    if (queue.Count > 1 && Vector2.Distance(queue[0].transform.position, newPoint) < Vector2.Distance(queue.Last().transform.position, newPoint)) queue.Reverse();
+                    var forRemoval = queue.Take(queue.Count - pointsForRetreat).ToList();
+                    for (int i = 0; i < forRemoval.Count; i++)
+                        UnityEngine.Object.Destroy(forRemoval[i].gameObject);
+                    queue = queue.TakeLast(pointsForRetreat).ToList();
+                    if (queue.Count > 0) newPoint = queue.Last().position;
+                    mapGrid.queuedPath.Add((path.Item1, queue));
+                }
             }
         }
+        else
+        {
+            var site = FindSite(x => x.name == currentSave.currentSite);
+            var newPoint = new Vector2(site.x, site.y);
+            foreach (var path in pathsDrawn)
+            {
+                if (path.Item2 == null) continue;
+                var queue = path.Item2.GetComponentsInChildren<Transform>().ToList().FindAll(x => x.name == "PathDot");
+                if (queue.Count > 0)
+                {
+                    if (queue.Count > 1 && Vector2.Distance(queue[0].transform.position, newPoint) > Vector2.Distance(queue.Last().transform.position, newPoint)) queue.Reverse();
+                    newPoint = queue.Last().position;
+                    mapGrid.queuedPath.Add((path.Item1, queue));
+                }
+            }
 
-        //?
-        if (pathsDrawn.Count == 0) return;
+            //?
+            if (pathsDrawn.Count == 0) return;
 
-        //Save current site for later use so that we can remember where we were
-        var current = currentSave.currentSite;
+            //Save current site for later use so that we can remember where we were
+            var current = currentSave.currentSite;
 
-        //Set current site to none because the player is traveling between sites
-        currentSave.currentSite = "";
+            //Set current site to none because the player is traveling between sites
+            currentSave.currentSite = "";
 
-        //Respawn the map location
-        Respawn("MapLocationInfo");
-
-        //Respawn the site the player was at a moment ago so that it doesn't have
-        //the green arrow indicating that the player would be still there
-        Respawn("Site: " + current);
+            //Respawn the site the player was at a moment ago so that it doesn't have
+            //the green arrow indicating that the player would be still there
+            Respawn("Site: " + current);
+        }
 
         //Site to be opened
         mapGrid.queuedSiteOpen = name;
@@ -247,10 +267,17 @@ public class Site
         }
     }
 
-    //Lead 
+    //Lead a path
     public void LeadPath()
     {
         var pathing = FindPath(FindSite(x => x.name == currentSave.currentSite), this);
+        if (pathing != null) foreach (var path in pathing) pathsDrawn.Add(path.DrawPath());
+    }
+
+    //Lead a path from a specific site to this one
+    public void LeadPathFrom(string site)
+    {
+        var pathing = FindPath(FindSite(x => x.name == site), this);
         if (pathing != null) foreach (var path in pathing) pathsDrawn.Add(path.DrawPath());
     }
 

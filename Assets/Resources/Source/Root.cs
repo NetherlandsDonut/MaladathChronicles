@@ -75,6 +75,9 @@ public static class Root
     //Position to print out the elite on the screen
     public static float positionOfElite;
 
+    //Point at which player stopped for skirmish
+    public static int pointsForRetreat;
+
     public static float lastFunnyEffectTime;
     public static Vector3 lastFunnyEffectPosition;
     public static List<(int, int)> titleScreenFunnyEffect = new();

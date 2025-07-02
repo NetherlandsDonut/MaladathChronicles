@@ -129,10 +129,14 @@ public class SiteHostileArea : Site
         AddPaddingRegion(() =>
         {
             AddSmallButton("Map" + (currentSave.siteVisits.ContainsKey(name) ? type + (recommendedLevel["Horde"] < recommendedLevel["Alliance"] ? "HordeAligned" : (recommendedLevel["Horde"] > recommendedLevel["Alliance"] ? "AllianceAligned" : "")) : "Unknown"),
-            (h) => { CDesktop.cameraDestination = new Vector2(x, y); },
             (h) =>
             {
-                if (zone == "Teldrassil" && zone != FindSite(x => x.name == currentSave.currentSite).zone) return;
+                if (currentSave.activeSkirmish != null) return;
+                CDesktop.cameraDestination = new Vector2(x, y);
+            },
+            (h) =>
+            {
+                if (currentSave.activeSkirmish != null) return;
                 if (h == null) LeadPath();
                 else ExecutePath("HostileArea");
             },
@@ -197,7 +201,11 @@ public class SiteHostileArea : Site
                     }
                 }
             },
-            (h) => { BuildPath(); });
+            (h) =>
+            {
+                if (currentSave.activeSkirmish != null) return;
+                BuildPath();
+            });
             var q = currentSave.player.AvailableQuestsAt(this, true).Count;
             sitesWithQuestMarkers.Remove(this);
             if (currentSave.currentSite == name)

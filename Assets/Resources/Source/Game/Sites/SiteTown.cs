@@ -74,10 +74,14 @@ public class SiteTown : Site
         AddPaddingRegion(() =>
         {
             AddSmallButton("Map" + (currentSave.siteVisits.ContainsKey(name) ? Icon() : "Unknown"),
-            (h) => CDesktop.cameraDestination = new Vector2(x, y),
             (h) =>
             {
-                if (zone == "Teldrassil" && zone != FindSite(x => x.name == currentSave.currentSite).zone) return;
+                if (currentSave.activeSkirmish != null) return;
+                CDesktop.cameraDestination = new Vector2(x, y);
+            },
+            (h) =>
+            {
+                if (currentSave.activeSkirmish != null) return;
                 if (h == null) LeadPath();
                 else ExecutePath("Town");
             },
@@ -151,7 +155,11 @@ public class SiteTown : Site
                     }
                 }
             },
-            (h) => { BuildPath(); });
+            (h) =>
+            {
+                if (currentSave.activeSkirmish != null) return;
+                BuildPath();
+            });
             var q = currentSave.player.AvailableQuestsAt(this, true).Count;
             sitesWithQuestMarkers.Remove(this);
             if (currentSave.currentSite == name)

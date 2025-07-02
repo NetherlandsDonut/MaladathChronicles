@@ -578,6 +578,54 @@ public class Blueprint
                 }
             );
         }),
+        new("Skirmish", () => {
+            if (currentSave.activeSkirmish == null) return;
+            SetAnchor(Bottom, 0, 35);
+            AddHeaderGroup();
+            SetRegionGroupWidth(204);
+            AddPaddingRegion(
+                () =>
+                {
+                    AddLine("Enemy stands in your way");
+                }
+            );
+            AddRegionGroup();
+            SetRegionGroupWidth(102);
+            AddButtonRegion(
+                () =>
+                {
+                    AddLine("Retreat", "", "Center");
+                },
+                (h) =>
+                {
+                    var newDestination = currentSave.skirmishFrom;
+                    var oldDestination = newDestination == currentSave.activeSkirmish.otherArea ? currentSave.activeSkirmish.area : currentSave.activeSkirmish.otherArea;
+                    currentSave.skirmishes.Add(currentSave.activeSkirmish);
+                    currentSave.activeSkirmish = null;
+                    for (int i = 0; i < pathsDrawn.Count; i++)
+                        UnityEngine.Object.Destroy(pathsDrawn[i].Item2);
+                    pathsDrawn = new();
+                    var site = FindSite(x => x.name == oldDestination);
+                    site.LeadPathFrom(newDestination);
+                    site.ExecutePath();
+                    mapGrid.queuedSiteOpen = newDestination;
+                }
+            );
+            AddRegionGroup();
+            SetRegionGroupWidth(102);
+            AddButtonRegion(
+                () =>
+                {
+                    AddLine("Engage", "", "Center");
+                },
+                (h) =>
+                {
+                    NewBoard(new() { currentSave.activeSkirmish.entity }, FindSite(x => x.name == currentSave.activeSkirmish.area));
+                    currentSave.activeSkirmish = null;
+                    SpawnDesktopBlueprint("Game");
+                }
+            );
+        }, true),
 
         //Character
         new("CharacterInfoWeapons", () => {

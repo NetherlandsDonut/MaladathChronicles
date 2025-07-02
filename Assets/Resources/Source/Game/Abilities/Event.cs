@@ -188,6 +188,12 @@ public class Event
             //This effect consumes one stack of the item
             void EffectTeleportPlayer()
             {
+                //Cancel skirmish engagement when teleporting away
+                if (save.activeSkirmish != null)
+                {
+                    save.skirmishes.Add(save.activeSkirmish);
+                    save.activeSkirmish = null;
+                }
                 string destination = effect.ContainsKey("TeleportDestinaton") ? effect["TeleportDestinaton"] : "None";
                 if (destination == "None") return;
                 else if (destination == "<HomeLocation>") destination = save.player.homeLocation;

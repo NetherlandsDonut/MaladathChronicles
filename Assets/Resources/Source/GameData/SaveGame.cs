@@ -43,6 +43,7 @@ public class SaveGame
             unlockedAreas = new(),
             vendorStock = new(),
             openedChests = new(),
+            skirmishes = new(),
             markets = new()
             {
                 new Market("Alliance Market"),
@@ -219,6 +220,12 @@ public class SaveGame
     //Randomly generated bosses for this run
     public string ringOfLaw, forlornCloister;
 
+    //Site player is traveling from when encountering a skirmish
+    public string skirmishFrom;
+
+    //Active skirmish that the player is caught up in
+    public Skirmish activeSkirmish;
+
     //Markets offering auctions
     public List<Market> markets;
 
@@ -245,6 +252,9 @@ public class SaveGame
 
     //Stores all reputation standings with all factions
     public Dictionary<string, int> factionStanding;
+
+    //Stores all currently active skirmishes on the world map
+    public List<Skirmish> skirmishes;
 
     //Stores amounts of visits to all sites
     //If one is equal at least to 1 the site is considered to be discovered

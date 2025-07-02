@@ -2,7 +2,7 @@
   {
     "name": "Azshara",
     "continent": "Kalimdor",
-    "ambienceDay": "AmbienceForestHighNight",
+    "ambienceDay": "AmbienceForestHighDay",
     "ambienceNight": "AmbienceForestHighNight",
     "miningNodes": [
       "Mithril Vein",
@@ -22,7 +22,7 @@
   {
     "name": "Winterspring",
     "continent": "Kalimdor",
-    "ambienceDay": "AmbienceForestHighNight",
+    "ambienceDay": "AmbienceForestHighDay",
     "ambienceNight": "AmbienceForestHighNight",
     "miningNodes": [
       "Mithril Vein",
@@ -38,13 +38,13 @@
   {
     "name": "Moonglade",
     "continent": "Kalimdor",
-    "ambienceDay": "AmbienceForestHighNight",
+    "ambienceDay": "AmbienceForestHighDay",
     "ambienceNight": "AmbienceForestHighNight"
   },
   {
     "name": "Darkshore",
     "continent": "Kalimdor",
-    "ambienceDay": "AmbienceForestHighNight",
+    "ambienceDay": "AmbienceForestHighDay",
     "ambienceNight": "AmbienceForestHighNight",
     "miningNodes": [
       "Copper Vein",
@@ -75,12 +75,14 @@
   {
     "name": "Ashenvale",
     "continent": "Kalimdor",
-    "ambienceDay": "AmbienceForestHighNight",
+    "ambienceDay": "AmbienceForestHighDay",
     "ambienceNight": "AmbienceForestHighNight",
     "miningNodes": [
       "Copper Vein",
       "Tin Vein",
-      "Iron Vein"
+      "Iron Vein",
+      "Gold Vein",
+      "Silver Vein"
     ],
     "herbs": [
       "Briarthorn",
@@ -102,6 +104,8 @@
     "miningNodes": [
       "Iron Vein",
       "Mithril Vein",
+      "Gold Vein",
+      "Silver Vein",
       "Thorium Vein"
     ],
     "herbs": [
@@ -119,6 +123,8 @@
       "Copper Vein",
       "Tin Vein",
       "Iron Vein",
+      "Gold Vein",
+      "Silver Vein",
       "Mithril Vein"
     ],
     "herbs": [
@@ -142,6 +148,8 @@
       "Copper Vein",
       "Tin Vein",
       "Iron Vein",
+      "Gold Vein",
+      "Silver Vein",
       "Mithril Vein"
     ],
     "herbs": [
@@ -176,6 +184,8 @@
       "Copper Vein",
       "Tin Vein",
       "Iron Vein",
+      "Gold Vein",
+      "Silver Vein",
       "Mithril Vein"
     ],
     "herbs": [
@@ -196,6 +206,8 @@
       "Copper Vein",
       "Tin Vein",
       "Iron Vein",
+      "Gold Vein",
+      "Silver Vein",
       "Mithril Vein"
     ],
     "herbs": [
@@ -211,6 +223,8 @@
     "ambienceNight": "AmbienceMarshNight",
     "miningNodes": [
       "Iron Vein",
+      "Gold Vein",
+      "Silver Vein",
       "Mithril Vein"
     ],
     "herbs": [
@@ -413,6 +427,25 @@
     ]
   },
   {
+    "name": "Alterac Mountains",
+    "continent": "Eastern Kingdoms",
+    "ambienceDay": "AmbienceForestSnowDay",
+    "ambienceNight": "AmbienceForestSnowNight",
+    "miningNodes": [
+      "Iron Vein",
+      "Gold Vein",
+      "Silver Vein"
+    ],
+    "herbs": [
+      "Bruiseweed",
+      "Fadeleaf",
+      "Goldthorn",
+      "Khadgar's Whisker",
+      "Kingsblood",
+      "Liferoot"
+    ]
+  },
+  {
     "name": "Hinterlands",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceForestNormalDay",
@@ -497,7 +530,7 @@
     "name": "Dun Morogh",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceForestSnowDay",
-    "ambienceNight": "AmbienceForestSnowDay",
+    "ambienceNight": "AmbienceForestSnowNight",
     "miningNodes": [
       "Copper Vein"
     ],
@@ -737,61 +770,146 @@
     "name": "Alcaz Island",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceSwampDay",
-    "ambienceNight": "AmbienceMarshNight"
+    "ambienceNight": "AmbienceMarshNight",
+    "miningNodes": [
+      "Iron Vein",
+      "Gold Vein",
+      "Silver Vein",
+      "Mithril Vein"
+    ],
+    "herbs": [
+      "Fadeleaf",
+      "Goldthorn",
+      "Khadgar's Whisker",
+      "Kingsblood",
+      "Liferoot",
+      "Stranglekelp"
+    ]
   },
   {
     "name": "Dire Maul",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceDireMaul",
-    "ambienceNight": "AmbienceDireMaul"
+    "ambienceNight": "AmbienceDireMaul",
+    "herbs": [
+      "Dreamfoil",
+      "Gromsblood",
+      "Ghost Mushroom"
+    ]
   },
   {
     "name": "Shadow Hold",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceScary",
-    "ambienceNight": "AmbienceScary"
+    "ambienceNight": "AmbienceScary",
+    "miningNodes": [
+      "Iron Vein",
+      "Gold Vein",
+      "Mithril Vein",
+      "Truesilver Vein",
+      "Thorium Vein"
+    ]
   },
   {
     "name": "Zul'Farrak",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceDesert",
-    "ambienceNight": "AmbienceDesert"
+    "ambienceNight": "AmbienceDesert",
+    "miningNodes": [
+      "Iron Vein",
+      "Mithril Vein",
+      "Gold Vein",
+      "Silver Vein",
+      "Thorium Vein"
+    ]
   },
   {
     "name": "Ragefire Chasm",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceVolcanicDay",
-    "ambienceNight": "AmbienceVolcanicDay"
+    "ambienceNight": "AmbienceVolcanicDay",
+    "miningNodes": [
+      "Copper Vein",
+      "Silver Vein",
+      "Tin Vein"
+    ]
   },
   {
     "name": "Blackfathom Deeps",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceBlackfathom",
-    "ambienceNight": "AmbienceBlackfathom"
+    "ambienceNight": "AmbienceBlackfathom",
+    "miningNodes": [
+      "Silver Vein",
+      "Tin Vein"
+    ],
+    "herbs": [
+      "Bruiseweed",
+      "Stranglekelp"
+    ]
   },
   {
     "name": "Razorfen Kraul",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceRazorfenKraul",
-    "ambienceNight": "AmbienceRazorfenKraul"
+    "ambienceNight": "AmbienceRazorfenKraul",
+    "miningNodes": [
+      "Iron Vein",
+      "Silver Vein",
+      "Gold Vein"
+    ],
+    "herbs": [
+      "Briarthorn",
+      "Fadeleaf"
+    ]
   },
   {
     "name": "Razorfen Downs",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceRazorfenKraul",
-    "ambienceNight": "AmbienceRazorfenKraul"
+    "ambienceNight": "AmbienceRazorfenKraul",
+    "miningNodes": [
+      "Iron Vein",
+      "Silver Vein",
+      "Gold Vein"
+    ],
+    "herbs": [
+      "Goldthorn",
+      "Grave Moss",
+      "Arthas' Tears"
+    ]
   },
   {
     "name": "Maraudon",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceMineshaft",
-    "ambienceNight": "AmbienceMineshaft"
+    "ambienceNight": "AmbienceMineshaft",
+    "miningNodes": [
+      "Mithril Vein",
+      "Truesilver Vein",
+      "Gold Vein"
+    ],
+    "herbs": [
+      "Blindweed",
+      "Ghost Mushroom",
+      "Stranglekelp"
+    ]
   },
   {
     "name": "Wailing Caverns",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceWailingCaverns",
-    "ambienceNight": "AmbienceWailingCaverns"
+    "ambienceNight": "AmbienceWailingCaverns",
+    "miningNodes": [
+      "Copper Vein",
+      "Silver Vein",
+      "Tin Vein"
+    ],
+    "herbs": [
+      "Bruiseweed",
+      "Earthroot",
+      "Kingsblood"
+    ]
   },
   {
     "name": "Molten Core",
@@ -812,37 +930,89 @@
     "name": "The Deadmines",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceDeadmines",
-    "ambienceNight": "AmbienceDeadmines"
+    "ambienceNight": "AmbienceDeadmines",
+    "miningNodes": [
+      "Copper Vein",
+      "Silver Vein",
+      "Tin Vein"
+    ]
   },
   {
     "name": "Zul'Gurub",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceJungleDay",
-    "ambienceNight": "AmbienceJungleDay"
+    "ambienceNight": "AmbienceJungleDay",
+    "herbs": [
+      "Golden Sansam",
+      "Purple Lotus",
+      "Mountain Silversage",
+      "Sungrass"
+    ]
   },
   {
     "name": "Scarlet Monastery Grounds",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceScary",
-    "ambienceNight": "AmbienceScary"
+    "ambienceNight": "AmbienceScary",
+    "miningNodes": [
+      "Silver Vein",
+      "Tin Vein"
+    ],
+    "herbs": [
+      "Fadeleaf",
+      "Grave Moss",
+      "Kingsblood",
+      "Goldthorn",
+      "Liferoot"
+    ]
   },
   {
     "name": "Scarlet Monastery",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceScary",
-    "ambienceNight": "AmbienceScary"
+    "ambienceNight": "AmbienceScary",
+    "herbs": [
+      "Fadeleaf",
+      "Grave Moss",
+      "Kingsblood",
+      "Goldthorn",
+      "Liferoot"
+    ]
   },
   {
     "name": "Ruins of Stromgarde",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceShadowfangKeep",
-    "ambienceNight": "AmbienceShadowfangKeep"
+    "ambienceNight": "AmbienceShadowfangKeep",
+    "herbs": [
+      "Bruiseweed",
+      "Fadeleaf",
+      "Goldthorn",
+      "Khadgar's Whisker",
+      "Kingsblood"
+    ]
   },
   {
     "name": "Ruins of Alterac",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceForestSnowDay",
-    "ambienceNight": "AmbienceForestSnowDay"
+    "ambienceNight": "AmbienceForestSnowNight",
+    "miningNodes": [
+      "Iron Vein",
+      "Gold Vein",
+      "Mithril Vein",
+      "Truesilver Vein",
+      "Silver Vein"
+    ],
+    "herbs": [
+      "Bruiseweed",
+      "Fadeleaf",
+      "Goldthorn",
+      "Khadgar's Whisker",
+      "Kingsblood",
+      "Liferoot",
+      "Grave Moss"
+    ]
   },
   {
     "name": "Shadowfang Keep",
@@ -866,7 +1036,13 @@
     "name": "Uldaman",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceUldaman",
-    "ambienceNight": "AmbienceUldaman"
+    "ambienceNight": "AmbienceUldaman",
+    "miningNodes": [
+      "Truesilver Vein",
+      "Gold Vein",
+      "Iron Vein",
+      "Mithril Vein"
+    ]
   },
   {
     "name": "Temple of Atal'Hakkar",
@@ -878,13 +1054,30 @@
     "name": "Jintha'Alor",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceForestNormalDay",
-    "ambienceNight": "AmbienceForestNormalNight"
+    "ambienceNight": "AmbienceForestNormalNight",
+    "miningNodes": [
+      "Iron Vein",
+      "Gold Vein",
+      "Mithril Vein",
+      "Truesilver Vein",
+      "Thorium Vein"
+    ],
+    "herbs": [
+      "Golden Sansam",
+      "Goldthorn",
+      "Purple Lotus",
+      "Star Lotus",
+      "Sungrass"
+    ]
   },
   {
     "name": "Blackrock Depths",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceBlackrock",
-    "ambienceNight": "AmbienceBlackrock"
+    "ambienceNight": "AmbienceBlackrock",
+    "miningNodes": [
+      "Dark Iron Vein"
+    ]
   },
   {
     "name": "Blackrock Mountain",
@@ -896,7 +1089,23 @@
     "name": "Tyr's Hand",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbiencePlaguelandsDay",
-    "ambienceNight": "AmbiencePlaguelandsNight"
+    "ambienceNight": "AmbiencePlaguelandsNight",
+    "miningNodes": [
+      "Iron Vein",
+      "Gold Vein",
+      "Mithril Vein",
+      "Truesilver Vein",
+      "Thorium Vein"
+    ],
+    "herbs": [
+      "Arthas' Tears",
+      "Black Lotus",
+      "Dreamfoil",
+      "Golden Sansam",
+      "Mountain Silversage",
+      "Plaguebloom",
+      "Sungrass"
+    ]
   },
   {
     "name": "Lower Blackrock Spire",
@@ -908,7 +1117,20 @@
     "name": "Hearthglen",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbiencePlaguelandsDay",
-    "ambienceNight": "AmbiencePlaguelandsNight"
+    "ambienceNight": "AmbiencePlaguelandsNight",
+    "miningNodes": [
+      "Iron Vein",
+      "Gold Vein",
+      "Mithril Vein",
+      "Truesilver Vein"
+    ],
+    "herbs": [
+      "Arthas' Tears",
+      "Dreamfoil",
+      "Mountain Silversage",
+      "Plaguebloom",
+      "Sungrass"
+    ]
   },
   {
     "name": "Stratholme",
