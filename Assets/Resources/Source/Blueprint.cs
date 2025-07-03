@@ -589,7 +589,7 @@ public class Blueprint
             var main = currentSave.player.GetItemInSlot("Main Hand");
             var off = currentSave.player.GetItemInSlot("Off Hand");
             var mainPower = Math.Round(main == null ? (off == null || off.minPower == 0 ? 1 : 0) : (main.minPower + main.maxPower) / 2, 2);
-            if (off != null)
+            if (off != null && off.minPower != 0)
             {
                 mainPower /= defines.dividerForDualWield;
                 mainPower = Math.Round(mainPower + Math.Round((off.minPower + off.maxPower) / 2, 2) / defines.dividerForDualWield, 2);

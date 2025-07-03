@@ -940,6 +940,7 @@
         "race": "Gnome",
         "spec": "Warrior",
         "gender": "Female",
+        "homeLocation": "Anvilmar",
         "abilities": {
           "Dual Wielding Proficiency": 0,
           "Two Handed Axe Proficiency": 0,
@@ -998,6 +999,35 @@
               "abilities": {
                 "Hearthstone": 1
               }
+            },
+            {
+              "x": 3,
+              "rarity": "Poor",
+              "name": "Worn Wooden Shield",
+              "icon": "itemshield09",
+              "detailedType": "Shield",
+              "type": "Off Hand",
+              "ilvl": 1,
+              "lvl": 1,
+              "armor": 5,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 1
+            },
+            {
+              "x": 1,
+              "rarity": "Common",
+              "name": "Worn Shortsword",
+              "icon": "itemsword04",
+              "detailedType": "Sword",
+              "type": "One Handed",
+              "ilvl": 2,
+              "lvl": 1,
+              "minPower": 1.05,
+              "maxPower": 1.16,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 7
             }
           ],
           "bags": []
@@ -1005,31 +1035,21 @@
         "mounts": [],
         "equipment": {
           "Off Hand": {
-            "rarity": "Poor",
-            "name": "Worn Wooden Shield",
-            "icon": "itemshield09",
-            "detailedType": "Shield",
+            "x": 1,
+            "rarity": "Uncommon",
+            "name": "Journeyman's Stave",
+            "icon": "itemstaff20",
+            "detailedType": "Scepter",
             "type": "Off Hand",
-            "ilvl": 1,
-            "lvl": 1,
-            "armor": 5,
+            "source": "RareDrop",
+            "ilvl": 10,
+            "lvl": 5,
             "amount": 1,
             "maxStack": 1,
-            "price": 1
-          },
-          "Main Hand": {
-            "rarity": "Common",
-            "name": "Worn Shortsword",
-            "icon": "itemsword04",
-            "detailedType": "Sword",
-            "type": "One Handed",
-            "ilvl": 2,
-            "lvl": 1,
-            "minPower": 1.05,
-            "maxPower": 1.16,
-            "amount": 1,
-            "maxStack": 1,
-            "price": 7
+            "price": 439,
+            "stats": {
+              "Stamina": 1
+            }
           },
           "Feet": {
             "rarity": "Common",
@@ -1098,7 +1118,10 @@
       "unlockedAreas": [],
       "vendorStock": {},
       "banks": {},
-      "startDate": "2025-07-03T01:33:12.4124207+02:00"
+      "startDate": "2025-07-03T01:33:12.4124207+02:00",
+      "lastLoaded": "2025-07-03T11:51:40.1769209+02:00",
+      "lastPlayed": "2025-07-03T11:54:52.2665275+02:00",
+      "timePlayed": "00:03:12.0896066"
     }
   ]
 }

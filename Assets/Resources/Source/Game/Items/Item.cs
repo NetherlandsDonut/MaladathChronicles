@@ -1125,13 +1125,13 @@ public class Item
             Item current = null;
             Item currentSecond = null;
             if (currentSave != null)
-                if (currentSave.player.equipment.ContainsKey(item.type))
-                    current = currentSave.player.equipment[item.type];
-                else if (item.type == "Two Handed" || item.type == "One Handed" && Input.GetKey(KeyCode.LeftAlt))
+                if (item.type == "Two Handed" || item.type == "One Handed" && Input.GetKey(KeyCode.LeftAlt) || item.type == "Off Hand")
                 {
                     current = currentSave.player.equipment.Get("Main Hand");
                     currentSecond = currentSave.player.equipment.Get("Off Hand");
                 }
+                else if (currentSave.player.equipment.ContainsKey(item.type))
+                    current = currentSave.player.equipment[item.type];
             AddHeaderRegion(() => AddLine("Stat changes on equip:", "DarkGray"));
             AddPaddingRegion(() =>
             {
@@ -1156,11 +1156,11 @@ public class Item
                         AddText(" Power modifier");
                     }
                 }
-                else if (item.type == "One Handed" || item.type == "Two Handed")
+                else if (item.type == "Off Hand" || item.type == "One Handed" || item.type == "Two Handed")
                 {
-                    var newPower = item.minPower <= 0 ? 1 : (item.minPower + item.maxPower) / 2;
-                    var b1d = Math.Round(!Input.GetKey(KeyCode.LeftAlt) || item.type == "Two Handed" ? newPower : current == null || current.minPower <= 0 ? 0 : (Input.GetKey(KeyCode.LeftAlt) && current.type == "Two Handed" ? 0 : (current.minPower + current.maxPower) / 2), 2);
-                    var b2d = Math.Round(item.type == "Two Handed" ? 0 : Input.GetKey(KeyCode.LeftAlt) ? newPower : currentSecond == null || currentSecond.minPower <= 0 ? 0 : (currentSecond.minPower + currentSecond.maxPower) / 2, 2);
+                    var newPower = item.minPower <= 0 ? 0 : (item.minPower + item.maxPower) / 2;
+                    var b1d = Math.Round((item.type != "Off Hand" && !Input.GetKey(KeyCode.LeftAlt)) || item.type == "Two Handed" ? newPower : current == null || current.minPower <= 0 ? 0 : ((item.type == "Off Hand" || Input.GetKey(KeyCode.LeftAlt)) && current.type == "Two Handed" ? 0 : (current.minPower + current.maxPower) / 2), 2);
+                    var b2d = Math.Round(item.type == "Two Handed" ? 0 : item.type == "Off Hand" || Input.GetKey(KeyCode.LeftAlt) ? newPower : currentSecond == null || currentSecond.minPower <= 0 ? 0 : (currentSecond.minPower + currentSecond.maxPower) / 2, 2);
                     if (b1d == 0 && b2d == 0) b1d = 1;
                     else if (b2d > 0)
                     {
