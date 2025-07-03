@@ -104,6 +104,7 @@
   {
     "name": "Huricanian",
     "category": "Elemental",
+    "subcategory": "Air Elemental",
     "portrait": "PortraitAirElemental",
     "abilities": {},
     "kind": "Rare",
@@ -112,6 +113,7 @@
   {
     "name": "Arcane Torrent",
     "category": "Elemental",
+    "subcategory": "Air Elemental",
     "portrait": "PortraitAirElemental",
     "abilities": {},
     "kind": "Common",
@@ -120,6 +122,7 @@
   {
     "name": "Cyclone Warrior",
     "category": "Elemental",
+    "subcategory": "Air Elemental",
     "portrait": "PortraitAirElemental",
     "abilities": {},
     "kind": "Common",
@@ -128,6 +131,7 @@
   {
     "name": "Thundering Exile",
     "category": "Elemental",
+    "subcategory": "Air Elemental",
     "portrait": "PortraitAirElemental",
     "abilities": {},
     "kind": "Common",
@@ -136,6 +140,7 @@
   {
     "name": "Whirling Invader",
     "category": "Elemental",
+    "subcategory": "Air Elemental",
     "portrait": "PortraitAirElemental",
     "abilities": {},
     "kind": "Common",
@@ -306,8 +311,8 @@
   },
   {
     "name": "Arcane Aberration",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Elemental",
+    "subcategory": "Void Walker",
     "portrait": "PortraitArcaneAberration",
     "abilities": {},
     "kind": "Common",
@@ -316,8 +321,8 @@
   },
   {
     "name": "Residual Monstrosity",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Elemental",
+    "subcategory": "Void Walker",
     "portrait": "PortraitArcaneAberration",
     "abilities": {},
     "kind": "Common",
@@ -1682,6 +1687,7 @@
     "name": "Blackrock Gladiator",
     "category": "Humanoid",
     "subcategory": "Orc",
+    "faction": "Blackrock Clan",
     "portrait": "PortraitBlackrockAmbusher",
     "abilities": {},
     "kind": "Common",
@@ -1692,6 +1698,7 @@
     "name": "Blackrock Champion",
     "category": "Humanoid",
     "subcategory": "Orc",
+    "faction": "Blackrock Clan",
     "portrait": "PortraitBlackrockChampion",
     "abilities": {},
     "kind": "Common",
@@ -1702,6 +1709,7 @@
     "name": "Blackrock Grunt",
     "category": "Humanoid",
     "subcategory": "Orc",
+    "faction": "Blackrock Clan",
     "portrait": "PortraitBlackrockGrunt",
     "abilities": {},
     "kind": "Common",
@@ -1712,6 +1720,7 @@
     "name": "Blackrock Hunter",
     "category": "Humanoid",
     "subcategory": "Orc",
+    "faction": "Blackrock Clan",
     "portrait": "PortraitBlackrockHunter",
     "abilities": {},
     "kind": "Common",
@@ -1722,6 +1731,7 @@
     "name": "Blackrock Outrunner",
     "category": "Humanoid",
     "subcategory": "Orc",
+    "faction": "Blackrock Clan",
     "portrait": "PortraitBlackrockOutrunner",
     "abilities": {},
     "kind": "Common",
@@ -1732,6 +1742,7 @@
     "name": "Blackrock Battlemaster",
     "category": "Humanoid",
     "subcategory": "Orc",
+    "faction": "Blackrock Clan",
     "portrait": "PortraitBlackrockRaider",
     "abilities": {},
     "kind": "Common",
@@ -1742,6 +1753,7 @@
     "name": "Blackrock Sentry",
     "category": "Humanoid",
     "subcategory": "Orc",
+    "faction": "Blackrock Clan",
     "portrait": "PortraitBlackrockSentry",
     "abilities": {},
     "kind": "Common",
@@ -1752,6 +1764,7 @@
     "name": "Blackrock Shadowcaster",
     "category": "Humanoid",
     "subcategory": "Orc",
+    "faction": "Blackrock Clan",
     "portrait": "PortraitBlackrockShadowcaster",
     "abilities": {},
     "kind": "Common",
@@ -1762,6 +1775,7 @@
     "name": "Blackrock Slayer",
     "category": "Humanoid",
     "subcategory": "Orc",
+    "faction": "Blackrock Clan",
     "portrait": "PortraitBlackrockSlayer",
     "abilities": {},
     "kind": "Common",
@@ -1772,6 +1786,7 @@
     "name": "Blackrock Soldier",
     "category": "Humanoid",
     "subcategory": "Orc",
+    "faction": "Blackrock Clan",
     "portrait": "PortraitBlackrockSoldier",
     "abilities": {},
     "kind": "Common",
@@ -1782,6 +1797,7 @@
     "name": "Blackrock Sorcerer",
     "category": "Humanoid",
     "subcategory": "Orc",
+    "faction": "Blackrock Clan",
     "portrait": "PortraitBlackrockSorcerer",
     "abilities": {},
     "kind": "Common",
@@ -1792,6 +1808,7 @@
     "name": "Blackrock Summoner",
     "category": "Humanoid",
     "subcategory": "Orc",
+    "faction": "Blackrock Clan",
     "portrait": "PortraitBlackrockSummoner",
     "abilities": {},
     "kind": "Common",
@@ -1802,6 +1819,7 @@
     "name": "Blackrock Tracker",
     "category": "Humanoid",
     "subcategory": "Orc",
+    "faction": "Blackrock Clan",
     "portrait": "PortraitBlackrockTracker",
     "abilities": {},
     "kind": "Common",
@@ -1812,6 +1830,7 @@
     "name": "Blackrock Warlock",
     "category": "Humanoid",
     "subcategory": "Orc",
+    "faction": "Blackrock Clan",
     "portrait": "PortraitBlackrockWarlock",
     "abilities": {},
     "kind": "Common",
@@ -2902,6 +2921,7 @@
     "name": "Burning Blade Thug",
     "category": "Humanoid",
     "subcategory": "Orc",
+    "faction": "Burning Blade Clan",
     "portrait": "PortraitBurningBladeApprentice",
     "abilities": {},
     "kind": "Common",
@@ -2923,6 +2943,7 @@
     "name": "Burning Blade Neophyte",
     "category": "Humanoid",
     "subcategory": "Orc",
+    "faction": "Burning Blade Clan",
     "portrait": "PortraitBurningBladeConjuror",
     "abilities": {},
     "kind": "Common",
@@ -2933,6 +2954,7 @@
     "name": "Burning Blade Cultist",
     "category": "Humanoid",
     "subcategory": "Orc",
+    "faction": "Burning Blade Clan",
     "portrait": "PortraitBurningBladeCultist",
     "abilities": {},
     "kind": "Common",
@@ -2985,6 +3007,7 @@
     "name": "Burning Blade Shadowmage",
     "category": "Humanoid",
     "subcategory": "Orc",
+    "faction": "Burning Blade Clan",
     "portrait": "PortraitBurningBladeInvoker",
     "abilities": {
       "Corruption": 0,
@@ -2998,6 +3021,7 @@
     "name": "Burning Blade Reaver",
     "category": "Humanoid",
     "subcategory": "Orc",
+    "faction": "Burning Blade Clan",
     "portrait": "PortraitBurningBladeReaver",
     "abilities": {},
     "kind": "Common",
@@ -3018,6 +3042,7 @@
     "name": "Burning Blade Summoner",
     "category": "Humanoid",
     "subcategory": "Orc",
+    "faction": "Burning Blade Clan",
     "portrait": "PortraitBurningBladeSummoner",
     "abilities": {},
     "kind": "Common",
@@ -3844,7 +3869,7 @@
     "portrait": "PortraitHordeShaman",
     "abilities": {},
     "kind": "Common",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 1.0
   },
   {
@@ -6060,7 +6085,7 @@
   {
     "name": "Akkrilus",
     "category": "Demon",
-    "subcategory": "Fel Guard",
+    "subcategory": "Doom Guard",
     "portrait": "PortraitDoomguard",
     "abilities": {},
     "kind": "Rare",
@@ -6069,7 +6094,7 @@
   {
     "name": "Doomguard Commander",
     "category": "Demon",
-    "subcategory": "Fel Guard",
+    "subcategory": "Doom Guard",
     "faction": "The Burning Legion",
     "portrait": "PortraitDoomguard",
     "abilities": {},
@@ -6079,7 +6104,7 @@
   {
     "name": "Doomwarder Captain",
     "category": "Demon",
-    "subcategory": "Fel Guard",
+    "subcategory": "Doom Guard",
     "portrait": "PortraitDoomguard",
     "abilities": {},
     "kind": "Common",
@@ -6520,8 +6545,8 @@
   },
   {
     "name": "Fallen Champion",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Forsaken",
     "portrait": "PortraitFallenChampion",
     "abilities": {},
     "kind": "Elite",
@@ -6541,7 +6566,7 @@
   {
     "name": "Felguard",
     "category": "Demon",
-    "subcategory": "Fel Guard",
+    "subcategory": "Doom Guard",
     "portrait": "PortraitFelGuard",
     "abilities": {},
     "kind": "Common",
@@ -6550,7 +6575,7 @@
   {
     "name": "Felguard Elite",
     "category": "Demon",
-    "subcategory": "Fel Guard",
+    "subcategory": "Doom Guard",
     "faction": "The Burning Legion",
     "portrait": "PortraitFelGuard",
     "abilities": {},
@@ -6560,7 +6585,7 @@
   {
     "name": "Jaedenar Legionnaire",
     "category": "Demon",
-    "subcategory": "Fel Guard",
+    "subcategory": "Doom Guard",
     "faction": "Shadow Council",
     "portrait": "PortraitFelGuard",
     "abilities": {},
@@ -6570,7 +6595,7 @@
   {
     "name": "Lesser Felguard",
     "category": "Demon",
-    "subcategory": "Fel Guard",
+    "subcategory": "Doom Guard",
     "portrait": "PortraitFelGuard",
     "abilities": {},
     "kind": "Common",
@@ -6579,7 +6604,7 @@
   {
     "name": "Kaskk",
     "category": "Demon",
-    "subcategory": "Fel Guard",
+    "subcategory": "Doom Guard",
     "portrait": "PortraitFelGuardBlack",
     "abilities": {},
     "kind": "Rare",
@@ -6588,7 +6613,7 @@
   {
     "name": "Taragaman the Hungerer",
     "category": "Demon",
-    "subcategory": "Fel Guard",
+    "subcategory": "Doom Guard",
     "faction": "Burning Blade Clan",
     "portrait": "PortraitFelGuardBlack",
     "abilities": {},
@@ -6598,7 +6623,7 @@
   {
     "name": "Rathorian",
     "category": "Demon",
-    "subcategory": "Fel Guard",
+    "subcategory": "Doom Guard",
     "portrait": "PortraitFelGuardBlack",
     "abilities": {},
     "kind": "Rare",
@@ -6607,7 +6632,7 @@
   {
     "name": "Hederine Slayer",
     "category": "Demon",
-    "subcategory": "Fel Guard",
+    "subcategory": "Doom Guard",
     "faction": "The Burning Legion",
     "portrait": "PortraitFelGuardYellow",
     "abilities": {},
@@ -9593,7 +9618,7 @@
     "portrait": "PortraitGrimtotemGeomancer",
     "abilities": {},
     "kind": "Common",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 1.0
   },
   {
@@ -9676,7 +9701,7 @@
     "portrait": "PortraitGrimtotemStomper",
     "abilities": {},
     "kind": "Common",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 1.0
   },
   {
@@ -9715,7 +9740,7 @@
     "portrait": "PortraitGurubashiAxeThrower",
     "abilities": {},
     "kind": "Common",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 1.0
   },
   {
@@ -9736,7 +9761,7 @@
     "portrait": "PortraitGurubashiBloodDrinker",
     "abilities": {},
     "kind": "Common",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 1.0
   },
   {
@@ -9747,7 +9772,7 @@
     "portrait": "PortraitGurubashiChampion",
     "abilities": {},
     "kind": "Common",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 1.0
   },
   {
@@ -10129,8 +10154,8 @@
   },
   {
     "name": "Haunted Servitor",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Ghost",
     "portrait": "PortraitHauntedServitor",
     "abilities": {},
     "kind": "Common",
@@ -10275,7 +10300,7 @@
     "portrait": "PortraitHighGeneralAbbendis",
     "abilities": {},
     "kind": "Elite",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 3.0
   },
   {
@@ -10394,21 +10419,21 @@
   {
     "name": "Hitah'ya the Keeper",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "portrait": "PortraitHitahyatheKeeper",
     "abilities": {},
     "kind": "Elite",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 3.0
   },
   {
     "name": "Horde Deforester",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Orc",
     "portrait": "PortraitHordeDeforester",
     "abilities": {},
     "kind": "Common",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 1.0
   },
   {
@@ -10594,7 +10619,7 @@
     "portrait": "PortraitHydromancerVelratha",
     "abilities": {},
     "kind": "Elite",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 3.0
   },
   {
@@ -10767,7 +10792,7 @@
     "portrait": "PortraitIllyannaRavenoak",
     "abilities": {},
     "kind": "Elite",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 3.0
   },
   {
@@ -10955,11 +10980,11 @@
   {
     "name": "Instructor Malicia",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Night Elf",
     "portrait": "PortraitInstructorMalicia",
     "abilities": {},
     "kind": "Elite",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 3.0
   },
   {
@@ -10970,7 +10995,7 @@
     "portrait": "PortraitInterrogatorGestahn",
     "abilities": {},
     "kind": "Elite",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 3.0
   },
   {
@@ -11073,13 +11098,13 @@
     "portrait": "PortraitJandiceBarov",
     "abilities": {},
     "kind": "Elite",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 3.0
   },
   {
     "name": "Jed Runewatcher",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Orc",
     "portrait": "PortraitJedRunewatcher",
     "abilities": {},
     "kind": "Rare",
@@ -22371,7 +22396,7 @@
   {
     "name": "Immol'thar",
     "category": "Demon",
-    "subcategory": "Void Terror",
+    "subcategory": "Core Hound",
     "portrait": "PortraitVoidTerror",
     "abilities": {},
     "kind": "Elite",
@@ -22380,7 +22405,7 @@
   {
     "name": "Voidwalker",
     "category": "Demon",
-    "subcategory": "Voidwalker",
+    "subcategory": "Void Walker",
     "portrait": "PortraitVoidwalker",
     "abilities": {},
     "kind": "Common",
