@@ -6040,6 +6040,7 @@
     "name": "Zaeldar the Outcast",
     "category": "Humanoid",
     "subcategory": "Dire Troll",
+    "faction": "Mossflayer Tribe",
     "portrait": "PortraitDireTrollWhite",
     "abilities": {},
     "kind": "Rare",
@@ -6232,6 +6233,7 @@
   {
     "name": "Whirlwind Stormwalker",
     "category": "Elemental",
+    "subcategory": "Air Elemental",
     "portrait": "PortraitDustDevil",
     "abilities": {},
     "kind": "Common",
@@ -6239,8 +6241,8 @@
   },
   {
     "name": "Dust Stormer",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Elemental",
+    "subcategory": "Air Elemental",
     "portrait": "PortraitDustDevil",
     "abilities": {},
     "kind": "Common",
@@ -6326,6 +6328,7 @@
   {
     "name": "Desert Rumbler",
     "category": "Elemental",
+    "subcategory": "Earth Elemental",
     "portrait": "PortraitEarthElemental",
     "abilities": {},
     "kind": "Common",
@@ -6334,6 +6337,7 @@
   {
     "name": "Elemental Slave",
     "category": "Elemental",
+    "subcategory": "Earth Elemental",
     "portrait": "PortraitEarthElemental",
     "abilities": {},
     "kind": "Common",
@@ -6342,6 +6346,7 @@
   {
     "name": "Land Rager",
     "category": "Elemental",
+    "subcategory": "Earth Elemental",
     "portrait": "PortraitEarthElemental",
     "abilities": {},
     "kind": "Common",
@@ -6350,6 +6355,7 @@
   {
     "name": "Rumbling Exile",
     "category": "Elemental",
+    "subcategory": "Earth Elemental",
     "portrait": "PortraitEarthElemental",
     "abilities": {},
     "kind": "Common",
@@ -6358,6 +6364,7 @@
   {
     "name": "Theradrim Guardian",
     "category": "Elemental",
+    "subcategory": "Earth Elemental",
     "portrait": "PortraitEarthElemental",
     "abilities": {},
     "kind": "Common",
@@ -6366,6 +6373,7 @@
   {
     "name": "Thundering Boulderkin",
     "category": "Elemental",
+    "subcategory": "Earth Elemental",
     "portrait": "PortraitEarthElemental",
     "abilities": {},
     "kind": "Common",
@@ -6374,6 +6382,7 @@
   {
     "name": "Stone Fury",
     "category": "Elemental",
+    "subcategory": "Earth Elemental",
     "portrait": "PortraitEarthElementalDark",
     "abilities": {},
     "kind": "Rare",
@@ -6382,7 +6391,7 @@
   {
     "name": "Goggeroc",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Dwarf",
     "portrait": "PortraitEarthen",
     "abilities": {},
     "kind": "Elite",
@@ -6392,7 +6401,7 @@
   {
     "name": "Earthen Sculptor",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Dwarf",
     "portrait": "PortraitEarthen",
     "abilities": {},
     "kind": "Common",
@@ -6413,7 +6422,7 @@
   {
     "name": "Eldreth Seether",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Night Elf",
     "portrait": "PortraitEldrethSeether",
     "abilities": {},
     "kind": "Common",
@@ -6423,7 +6432,7 @@
   {
     "name": "Eldreth Sorcerer",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Night Elf",
     "portrait": "PortraitEldrethSorcerer",
     "abilities": {},
     "kind": "Common",
@@ -6432,8 +6441,8 @@
   },
   {
     "name": "Emeriss",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Dragonkin",
+    "subcategory": "Dragon",
     "portrait": "PortraitEmeriss",
     "abilities": {
       "Tail Sweep": 0,
@@ -6444,37 +6453,33 @@
       "Corruption of the Earth": 0
     },
     "kind": "Elite",
-    "gender": "Male",
     "vitality": 3.0
   },
   {
     "name": "Baron Charr",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Elemental",
+    "subcategory": "Fire Elemental",
     "portrait": "PortraitEntropicBeast",
     "abilities": {},
     "kind": "Rare",
-    "gender": "Male",
     "vitality": 2.0
   },
   {
     "name": "Entropic Beast",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Elemental",
+    "subcategory": "Fire Elemental",
     "portrait": "PortraitEntropicBeast",
     "abilities": {},
     "kind": "Common",
-    "gender": "Male",
     "vitality": 1.0
   },
   {
     "name": "Entropic Horror",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Elemental",
+    "subcategory": "Fire Elemental",
     "portrait": "PortraitEntropicBeast",
     "abilities": {},
     "kind": "Common",
-    "gender": "Male",
     "vitality": 1.0
   },
   {
@@ -10766,6 +10771,7 @@
   {
     "name": "Kashoch the Reaver",
     "category": "Giant",
+    "subcategory": "Mountain Giant",
     "portrait": "PortraitIceGiant",
     "abilities": {},
     "kind": "Rare",
@@ -10774,6 +10780,7 @@
   {
     "name": "Frostmaul Giant",
     "category": "Giant",
+    "subcategory": "Mountain Giant",
     "portrait": "PortraitIceGiant",
     "abilities": {},
     "kind": "Common",
@@ -10782,6 +10789,7 @@
   {
     "name": "Frostmaul Preserver",
     "category": "Giant",
+    "subcategory": "Mountain Giant",
     "portrait": "PortraitIceGiant",
     "abilities": {},
     "kind": "Common",
@@ -10981,7 +10989,8 @@
   {
     "name": "Infiltrator Hameya",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
+    "faction": "Mossflayer Tribe",
     "portrait": "PortraitInfiltratorHameya",
     "abilities": {},
     "kind": "Rare",
@@ -12268,7 +12277,7 @@
   {
     "name": "Bloodlord Mandokir",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "faction": "Gurubashi Tribe",
     "portrait": "PortraitMandokir",
     "abilities": {},
@@ -12278,8 +12287,8 @@
   },
   {
     "name": "Marduk Blackpool",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Forsaken",
     "portrait": "PortraitMardukBlackpool",
     "abilities": {},
     "kind": "Rare",
@@ -12299,8 +12308,8 @@
   },
   {
     "name": "Arcanite Dragonling",
-    "category": "Dragonkin",
-    "subcategory": "Dragon",
+    "category": "Mechanical",
+    "subcategory": "Robot",
     "portrait": "PortraitMechanicalDragon",
     "abilities": {},
     "kind": "Common",
@@ -12308,8 +12317,8 @@
   },
   {
     "name": "Mechanized Sentry",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Mechanical",
+    "subcategory": "Robot",
     "portrait": "PortraitMechanoStrider",
     "abilities": {},
     "kind": "Common",
@@ -12319,7 +12328,7 @@
   {
     "name": "Mijan",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "portrait": "PortraitMijan",
     "abilities": {},
     "kind": "Elite",
@@ -12329,7 +12338,7 @@
   {
     "name": "Mogh the Undying",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "portrait": "PortraitMoghtheUndying",
     "abilities": {},
     "kind": "Rare",
@@ -12339,6 +12348,7 @@
   {
     "name": "Bael'Gar",
     "category": "Giant",
+    "subcategory": "Mountain Giant",
     "portrait": "PortraitMoltenGiant",
     "abilities": {},
     "kind": "Elite",
@@ -12347,6 +12357,7 @@
   {
     "name": "Golemagg the Incinerator",
     "category": "Giant",
+    "subcategory": "Mountain Giant",
     "portrait": "PortraitMoltenGiant",
     "abilities": {
       "Magma Splash": 0,
@@ -12358,6 +12369,7 @@
   {
     "name": "Magmus",
     "category": "Giant",
+    "subcategory": "Mountain Giant",
     "portrait": "PortraitMoltenGiant",
     "abilities": {},
     "kind": "Elite",
@@ -12366,7 +12378,7 @@
   {
     "name": "Volchan",
     "category": "Giant",
-    "subcategory": "Human",
+    "subcategory": "Mountain Giant",
     "portrait": "PortraitMoltenGiant",
     "abilities": {},
     "kind": "Rare",
@@ -12375,6 +12387,7 @@
   {
     "name": "Molten Destroyer",
     "category": "Giant",
+    "subcategory": "Mountain Giant",
     "portrait": "PortraitMoltenGiant",
     "abilities": {},
     "kind": "Common",
@@ -12383,6 +12396,7 @@
   {
     "name": "Molten Giant",
     "category": "Giant",
+    "subcategory": "Mountain Giant",
     "portrait": "PortraitMoltenGiant",
     "abilities": {},
     "kind": "Common",
@@ -12390,7 +12404,8 @@
   },
   {
     "name": "Morbent Fel",
-    "category": "Demon",
+    "category": "Humanoid",
+    "subcategory": "Human",
     "portrait": "PortraitMorbentFel",
     "abilities": {},
     "kind": "Elite",
@@ -12403,7 +12418,7 @@
     "portrait": "PortraitMorgainetheSly",
     "abilities": {},
     "kind": "Rare",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 2.0
   },
   {
@@ -12419,17 +12434,18 @@
   {
     "name": "Morta'gya the Keeper",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "portrait": "PortraitMortagyatheKeeper",
     "abilities": {},
     "kind": "Elite",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 3.0
   },
   {
     "name": "Mossflayer Cannibal",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
+    "faction": "Mossflayer Tribe",
     "portrait": "PortraitMossflayerCannibal",
     "abilities": {},
     "kind": "Common",
@@ -12439,7 +12455,8 @@
   {
     "name": "Mossflayer Scout",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
+    "faction": "Mossflayer Tribe",
     "portrait": "PortraitMossflayerScout",
     "abilities": {},
     "kind": "Common",
@@ -12449,7 +12466,8 @@
   {
     "name": "Mossflayer Shadowhunter",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
+    "faction": "Mossflayer Tribe",
     "portrait": "PortraitMossflayerShadowhunter",
     "abilities": {},
     "kind": "Common",
@@ -12459,6 +12477,7 @@
   {
     "name": "Landslide",
     "category": "Giant",
+    "subcategory": "Mountain Giant",
     "portrait": "PortraitMountainGiant",
     "abilities": {},
     "kind": "Elite",
@@ -12467,6 +12486,7 @@
   {
     "name": "Anathemus",
     "category": "Giant",
+    "subcategory": "Mountain Giant",
     "portrait": "PortraitMountainGiant",
     "abilities": {},
     "kind": "Rare",
@@ -12475,7 +12495,7 @@
   {
     "name": "Cliff Giant",
     "category": "Giant",
-    "subcategory": "Human",
+    "subcategory": "Mountain Giant",
     "portrait": "PortraitMountainGiant",
     "abilities": {},
     "kind": "Common",
@@ -12484,6 +12504,7 @@
   {
     "name": "Primordial Behemoth",
     "category": "Giant",
+    "subcategory": "Mountain Giant",
     "portrait": "PortraitMountainGiant",
     "abilities": {},
     "kind": "Common",
@@ -12492,7 +12513,7 @@
   {
     "name": "Grimungous",
     "category": "Giant",
-    "subcategory": "Human",
+    "subcategory": "Mountain Giant",
     "portrait": "PortraitMountainGiantBrown",
     "abilities": {},
     "kind": "Rare",
@@ -12501,6 +12522,7 @@
   {
     "name": "Boulderheart",
     "category": "Giant",
+    "subcategory": "Mountain Giant",
     "portrait": "PortraitMountainGiantBrown",
     "abilities": {},
     "kind": "Rare",
@@ -12509,6 +12531,7 @@
   {
     "name": "Cliff Breaker",
     "category": "Giant",
+    "subcategory": "Mountain Giant",
     "portrait": "PortraitMountainGiantBrown",
     "abilities": {},
     "kind": "Common",
@@ -12517,7 +12540,7 @@
   {
     "name": "Land Walker",
     "category": "Giant",
-    "subcategory": "Human",
+    "subcategory": "Mountain Giant",
     "portrait": "PortraitMountainGiantBrown",
     "abilities": {},
     "kind": "Common",
@@ -12526,7 +12549,7 @@
   {
     "name": "Monnos the Elder",
     "category": "Giant",
-    "subcategory": "Human",
+    "subcategory": "Mountain Giant",
     "portrait": "PortraitMountainGiantDark",
     "abilities": {},
     "kind": "Rare",
@@ -13493,201 +13516,201 @@
   {
     "name": "Lady Sesspira",
     "category": "Humanoid",
-    "subcategory": "Naga Siren",
+    "subcategory": "Naga",
     "portrait": "PortraitNagaFemale",
     "abilities": {},
     "kind": "Rare",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 2.0
   },
   {
     "name": "Lady Szallah",
     "category": "Humanoid",
-    "subcategory": "Naga Siren",
+    "subcategory": "Naga",
     "portrait": "PortraitNagaFemale",
     "abilities": {},
     "kind": "Rare",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 2.0
   },
   {
     "name": "Stormscale Siren",
     "category": "Humanoid",
-    "subcategory": "Naga Siren",
+    "subcategory": "Naga",
     "portrait": "PortraitNagaFemale",
     "abilities": {},
     "kind": "Common",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 1.0
   },
   {
     "name": "Blackfathom Sea Witch",
     "category": "Humanoid",
-    "subcategory": "Naga Siren",
+    "subcategory": "Naga",
     "portrait": "PortraitNagaFemale",
     "abilities": {},
     "kind": "Common",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 1.0
   },
   {
     "name": "Daggerspine Siren",
     "category": "Humanoid",
-    "subcategory": "Naga Siren",
+    "subcategory": "Naga",
     "portrait": "PortraitNagaFemale",
     "abilities": {},
     "kind": "Common",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 1.0
   },
   {
     "name": "Daggerspine Sorceress",
     "category": "Humanoid",
-    "subcategory": "Naga Siren",
+    "subcategory": "Naga",
     "portrait": "PortraitNagaFemale",
     "abilities": {},
     "kind": "Common",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 1.0
   },
   {
     "name": "Hatecrest Screamer",
     "category": "Humanoid",
-    "subcategory": "Naga Siren",
+    "subcategory": "Naga",
     "portrait": "PortraitNagaFemale",
     "abilities": {},
     "kind": "Common",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 1.0
   },
   {
     "name": "Hatecrest Siren",
     "category": "Humanoid",
-    "subcategory": "Naga Siren",
+    "subcategory": "Naga",
     "portrait": "PortraitNagaFemale",
     "abilities": {},
     "kind": "Common",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 1.0
   },
   {
     "name": "Hatecrest Sorceress",
     "category": "Humanoid",
-    "subcategory": "Naga Siren",
+    "subcategory": "Naga",
     "portrait": "PortraitNagaFemale",
     "abilities": {},
     "kind": "Common",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 1.0
   },
   {
     "name": "Slitherblade Oracle",
     "category": "Humanoid",
-    "subcategory": "Naga Siren",
+    "subcategory": "Naga",
     "portrait": "PortraitNagaFemale",
     "abilities": {},
     "kind": "Common",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 1.0
   },
   {
     "name": "Slitherblade Seawitch",
     "category": "Humanoid",
-    "subcategory": "Naga Siren",
+    "subcategory": "Naga",
     "portrait": "PortraitNagaFemale",
     "abilities": {},
     "kind": "Common",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 1.0
   },
   {
     "name": "Spitelash Enchantress",
     "category": "Humanoid",
-    "subcategory": "Naga Siren",
+    "subcategory": "Naga",
     "portrait": "PortraitNagaFemale",
     "abilities": {},
     "kind": "Common",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 1.0
   },
   {
     "name": "Spitelash Siren",
     "category": "Humanoid",
-    "subcategory": "Naga Siren",
+    "subcategory": "Naga",
     "portrait": "PortraitNagaFemale",
     "abilities": {},
     "kind": "Common",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 1.0
   },
   {
     "name": "Stormscale Sorceress",
     "category": "Humanoid",
-    "subcategory": "Naga Siren",
+    "subcategory": "Naga",
     "portrait": "PortraitNagaFemale",
     "abilities": {},
     "kind": "Common",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 1.0
   },
   {
     "name": "Wrathtail Sorceress",
     "category": "Humanoid",
-    "subcategory": "Naga Siren",
+    "subcategory": "Naga",
     "portrait": "PortraitNagaFemale",
     "abilities": {},
     "kind": "Common",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 1.0
   },
   {
     "name": "Lady Vespira",
     "category": "Humanoid",
-    "subcategory": "Naga Siren",
+    "subcategory": "Naga",
     "portrait": "PortraitNagaFemaleBlue",
     "abilities": {},
     "kind": "Rare",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 2.0
   },
   {
     "name": "Lady Zephris",
     "category": "Humanoid",
-    "subcategory": "Naga Siren",
+    "subcategory": "Naga",
     "portrait": "PortraitNagaFemaleGreen",
     "abilities": {},
     "kind": "Rare",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 2.0
   },
   {
     "name": "Strashaz Sorceress",
     "category": "Humanoid",
-    "subcategory": "Naga Siren",
+    "subcategory": "Naga",
     "portrait": "PortraitNagaFemaleGreen",
     "abilities": {},
     "kind": "Common",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 1.0
   },
   {
     "name": "Lady Sarevess",
     "category": "Humanoid",
-    "subcategory": "Naga Siren",
+    "subcategory": "Naga",
     "portrait": "PortraitNagaFemaleYellow",
     "abilities": {},
     "kind": "Elite",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 1.0
   },
   {
     "name": "Lady Vespia",
     "category": "Humanoid",
-    "subcategory": "Naga Siren",
+    "subcategory": "Naga",
     "portrait": "PortraitNagaFemaleYellow",
     "abilities": {},
     "kind": "Rare",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 2.0
   },
   {
@@ -13760,7 +13783,7 @@
     "name": "Shadowmage",
     "category": "Humanoid",
     "subcategory": "Human",
-    "portrait": "PortraitNecromancer",
+    "portrait": "PortraitShadowmage",
     "abilities": {},
     "kind": "Common",
     "gender": "Male",
@@ -13770,7 +13793,7 @@
     "name": "Vile Tutor",
     "category": "Humanoid",
     "subcategory": "Human",
-    "portrait": "PortraitNecromancer",
+    "portrait": "PortraitVileTutor",
     "abilities": {},
     "kind": "Common",
     "gender": "Male",
@@ -13778,20 +13801,20 @@
   },
   {
     "name": "Nefarian",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Dragonkin",
+    "subcategory": "Dragon",
     "portrait": "PortraitNefarian",
     "abilities": {
       "Shadowflame Breath": 0
     },
     "kind": "Elite",
-    "gender": "Male",
     "vitality": 4.0
   },
   {
     "name": "Nekrum Gutchewer",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
+    "faction": "Sandfury Tribe",
     "portrait": "PortraitNekrumGutchewer",
     "abilities": {},
     "kind": "Elite",
@@ -18581,6 +18604,7 @@
   {
     "name": "Gorlash",
     "category": "Giant",
+    "subcategory": "Sea Giant",
     "portrait": "PortraitSeaGiant",
     "abilities": {},
     "kind": "Elite",
@@ -18598,6 +18622,7 @@
   {
     "name": "Coast Strider",
     "category": "Giant",
+    "subcategory": "Sea Giant",
     "portrait": "PortraitSeaGiant",
     "abilities": {},
     "kind": "Common",
@@ -18606,6 +18631,7 @@
   {
     "name": "Servant of Arkkoroc",
     "category": "Giant",
+    "subcategory": "Sea Giant",
     "portrait": "PortraitSeaGiant",
     "abilities": {},
     "kind": "Common",
@@ -18614,6 +18640,7 @@
   {
     "name": "Shore Strider",
     "category": "Giant",
+    "subcategory": "Sea Giant",
     "portrait": "PortraitSeaGiant",
     "abilities": {},
     "kind": "Common",
@@ -18622,6 +18649,7 @@
   {
     "name": "Son of Arkkoroc",
     "category": "Giant",
+    "subcategory": "Sea Giant",
     "portrait": "PortraitSeaGiant",
     "abilities": {},
     "kind": "Common",
@@ -18780,6 +18808,7 @@
     "name": "Shadow Hunter Vosh'Gajin",
     "category": "Humanoid",
     "subcategory": "Troll",
+    "faction": "Smolderthorn Tribe",
     "portrait": "PortraitShadowHunterVoshgajin",
     "abilities": {},
     "kind": "Elite",
@@ -18790,6 +18819,7 @@
     "name": "Shadowpriest Sezz'ziz",
     "category": "Humanoid",
     "subcategory": "Troll",
+    "faction": "Sandfury Tribe",
     "portrait": "PortraitShadowpriestSezzziz",
     "abilities": {},
     "kind": "Elite",
@@ -22424,6 +22454,7 @@
     "name": "Warlord Tresh'jin",
     "category": "Humanoid",
     "subcategory": "Troll",
+    "faction": "Mossflayer Tribe",
     "portrait": "PortraitWarlordThreshjin",
     "abilities": {},
     "kind": "Rare",
@@ -22434,6 +22465,7 @@
     "name": "War Master Voone",
     "category": "Humanoid",
     "subcategory": "Troll",
+    "faction": "Smolderthorn Tribe",
     "portrait": "PortraitWarMasterVoone",
     "abilities": {},
     "kind": "Elite",
@@ -22523,6 +22555,7 @@
   {
     "name": "Seeker Aqualon",
     "category": "Elemental",
+    "subcategory": "Water Elemental",
     "portrait": "PortraitWaterElemental",
     "abilities": {},
     "kind": "Rare",
@@ -22531,6 +22564,7 @@
   {
     "name": "Eck'alom",
     "category": "Elemental",
+    "subcategory": "Water Elemental",
     "portrait": "PortraitWaterElemental",
     "abilities": {},
     "kind": "Rare",
@@ -22539,6 +22573,7 @@
   {
     "name": "Baron Aquanis",
     "category": "Elemental",
+    "subcategory": "Water Elemental",
     "portrait": "PortraitWaterElemental",
     "abilities": {},
     "kind": "Elite",
@@ -22547,6 +22582,7 @@
   {
     "name": "Hydrospawn",
     "category": "Elemental",
+    "subcategory": "Water Elemental",
     "portrait": "PortraitWaterElemental",
     "abilities": {},
     "kind": "Elite",
@@ -22555,6 +22591,7 @@
   {
     "name": "Princess Tempestria",
     "category": "Elemental",
+    "subcategory": "Water Elemental",
     "portrait": "PortraitWaterElemental",
     "abilities": {},
     "kind": "Rare",
@@ -22563,6 +22600,7 @@
   {
     "name": "Aqua Guardian",
     "category": "Elemental",
+    "subcategory": "Water Elemental",
     "portrait": "PortraitWaterElemental",
     "abilities": {},
     "kind": "Common",
@@ -22571,6 +22609,7 @@
   {
     "name": "Befouled Water Elemental",
     "category": "Elemental",
+    "subcategory": "Water Elemental",
     "portrait": "PortraitWaterElemental",
     "abilities": {},
     "kind": "Common",
@@ -22579,6 +22618,7 @@
   {
     "name": "Cresting Exile",
     "category": "Elemental",
+    "subcategory": "Water Elemental",
     "portrait": "PortraitWaterElemental",
     "abilities": {},
     "kind": "Common",
@@ -22587,6 +22627,7 @@
   {
     "name": "Sea Elemental",
     "category": "Elemental",
+    "subcategory": "Water Elemental",
     "portrait": "PortraitWaterElemental",
     "abilities": {},
     "kind": "Common",
@@ -22595,6 +22636,7 @@
   {
     "name": "Watery Invader",
     "category": "Elemental",
+    "subcategory": "Water Elemental",
     "portrait": "PortraitWaterElemental",
     "abilities": {},
     "kind": "Common",
@@ -24407,6 +24449,7 @@
     "name": "Zul'Brin Warpbranch",
     "category": "Humanoid",
     "subcategory": "Troll",
+    "faction": "Mossflayer Tribe",
     "portrait": "PortraitZulBrinWarpbranch",
     "abilities": {},
     "kind": "Rare",

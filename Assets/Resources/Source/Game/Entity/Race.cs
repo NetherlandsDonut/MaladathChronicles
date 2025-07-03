@@ -14,8 +14,8 @@ public class Race
     {
         side = Faction().side;
         droppedItems = Item.items.FindAll(x => x.droppedBy != null && x.droppedBy.Contains(name)).Select(x => x.name).ToList();
-        if (subcategory == null || category == string.Empty) Debug.Log("ERROR 018: Race lacks category: \"" + name + "\"");
-        if (subcategory == "Naga Siren") gender = "Female";
+        if (category == null || category == string.Empty) Debug.Log("ERROR 018: Race lacks category: \"" + name + "\"");
+        if (subcategory == "Furbolg") gender = null;
     }
 
     //Name of the race
