@@ -3615,7 +3615,7 @@ public class Blueprint
                     }
                     else
                     {
-                        AddHeaderRegion(() => AddLine("?", "Gray"));
+                        AddHeaderRegion(() => AddLine("?", "DarkGray"));
                         AddPaddingRegion(() => AddLine("Level range: ? - ?", "DimGray"));
                     }
                 }

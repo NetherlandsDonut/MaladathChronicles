@@ -110,9 +110,9 @@ public class Board
 
     public static void NewBoard(List<Entity> enemies, Site area)
     {
-        PlayEnemyLine(enemies.First().EnemyLine("Aggro"));
         board = new Board(6, 6, enemies, area);
         bufferBoard = new BufferBoard();
+        PlayEnemyLine(board.participants.First(x => x.team == 2).who.EnemyLine("Aggro"));
         foreach (var foo in board.participants)
             board.CallEvents(foo.who, new() { { "Trigger", "CombatBegin" } });
     }

@@ -4849,21 +4849,21 @@
         "levelMin": 57
       }
     ],
-    "areaSize": 3,
+    "areaSize": 2,
     "progression": [
       {
         "type": "Boss",
         "bossName": "Ambassador Flamelash",
-        "point": 2
+        "point": 1
       },
       {
         "type": "Area",
         "areaName": "Mold Foundry",
-        "point": 2
+        "point": 1
       },
       {
         "type": "Treasure",
-        "point": 3
+        "point": 2
       }
     ]
   },
@@ -5218,26 +5218,26 @@
         "levelMin": 58
       }
     ],
-    "areaSize": 3,
+    "areaSize": 2,
     "progression": [
       {
         "type": "Boss",
         "bossName": "The Seven",
-        "point": 2
+        "point": 1
       },
       {
         "type": "Area",
         "areaName": "The Iron Hall",
-        "point": 2
+        "point": 1
       },
       {
         "type": "Area",
         "areaName": "Molten Core",
-        "point": 2
+        "point": 1
       },
       {
         "type": "Treasure",
-        "point": 3
+        "point": 2
       }
     ]
   },
@@ -5260,21 +5260,21 @@
         "levelMin": 55
       }
     ],
-    "areaSize": 3,
+    "areaSize": 2,
     "progression": [
       {
         "type": "Area",
         "areaName": "Hall of Crafting",
-        "point": 2
+        "point": 1
       },
       {
         "type": "Boss",
         "bossName": "Lord Incendius",
-        "point": 2
+        "point": 1
       },
       {
         "type": "Treasure",
-        "point": 3
+        "point": 2
       }
     ]
   },
@@ -5394,21 +5394,21 @@
         "levelMin": 58
       }
     ],
-    "areaSize": 3,
+    "areaSize": 2,
     "progression": [
       {
         "type": "Boss",
         "bossName": "Magmus",
-        "point": 2
+        "point": 1
       },
       {
         "type": "Area",
         "areaName": "The Imperial Seat",
-        "point": 2
+        "point": 1
       },
       {
         "type": "Treasure",
-        "point": 3
+        "point": 2
       }
     ]
   },

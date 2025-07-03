@@ -245,7 +245,7 @@ public class SiteHostileArea : Site
                 alreadyGotRare = true;
             }
             else do toAdd = common[random.Next(0, common.Count)];
-                while (list.Exists(x => x.name == toAdd.who));
+                while (common.Count > 1 && list.Exists(x => x.name == toAdd.who));
             list.Add(new Entity(random.Next(toAdd.levelMin, toAdd.levelMax == 0 ? toAdd.levelMin + 1 : toAdd.levelMax + 1), races.Find(y => y.name == toAdd.who)));
         }
         return list;

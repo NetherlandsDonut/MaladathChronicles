@@ -739,9 +739,12 @@
       "player": {
         "currentQuests": [],
         "completedQuests": [],
-        "level": 1,
-        "experience": 100,
-        "uniquesGotten": [],
+        "level": 4,
+        "experience": 64,
+        "uniquesGotten": [
+          "Libram of Truth",
+          "Totem of Rage"
+        ],
         "reputation": {
           "Southsea Pirates": 0,
           "Razormane Tribe": 0,
@@ -936,6 +939,7 @@
           ],
           "Herbalism": []
         },
+        "unspentTalentPoints": 3,
         "faction": "Gnomeregan",
         "name": "Dotkikeck",
         "race": "Gnome",
@@ -1016,19 +1020,130 @@
               "price": 1
             },
             {
-              "x": 1,
-              "rarity": "Common",
-              "name": "Worn Shortsword",
-              "icon": "itemsword04",
-              "detailedType": "Sword",
-              "type": "One Handed",
-              "ilvl": 2,
-              "lvl": 1,
-              "minPower": 1.05,
-              "maxPower": 1.16,
+              "x": 2,
+              "rarity": "Rare",
+              "name": "Totem of Rage",
+              "icon": "itemrelicstotemofrage",
+              "type": "Miscellaneous",
+              "source": "DirectDrop",
+              "ilvl": 57,
               "amount": 1,
               "maxStack": 1,
-              "price": 7
+              "unique": true,
+              "price": 12973,
+              "droppedBy": [
+                "Magmus"
+              ]
+            },
+            {
+              "x": 4,
+              "rarity": "Rare",
+              "name": "Libram of Truth",
+              "icon": "itemrelicslibramoftruth",
+              "type": "Miscellaneous",
+              "source": "DirectDrop",
+              "ilvl": 57,
+              "amount": 1,
+              "maxStack": 1,
+              "unique": true,
+              "price": 13208,
+              "droppedBy": [
+                "Magmus"
+              ]
+            },
+            {
+              "y": 1,
+              "rarity": "Rare",
+              "name": "Lavastone Hammer",
+              "icon": "itemhammer10",
+              "detailedType": "Mace",
+              "type": "Two Handed",
+              "source": "DirectDrop",
+              "ilvl": 58,
+              "lvl": 53,
+              "minPower": 4.9700000000000006,
+              "maxPower": 6.97,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 57079,
+              "stats": {
+                "Strength": 10,
+                "Intellect": 12,
+                "Stamina": 14
+              },
+              "droppedBy": [
+                "Magmus"
+              ]
+            },
+            {
+              "x": 1,
+              "y": 1,
+              "rarity": "Common",
+              "name": "Major Healing Potion",
+              "icon": "itempotion54",
+              "combatUse": true,
+              "detailedType": "Potion",
+              "type": "Miscellaneous",
+              "ilvl": 55,
+              "amount": 1,
+              "maxStack": 5,
+              "abilities": {
+                "Major Healing Potion": 1
+              },
+              "price": 1000
+            },
+            {
+              "x": 2,
+              "y": 1,
+              "rarity": "Uncommon",
+              "name": "Star Ruby",
+              "icon": "itemmiscgemruby02",
+              "detailedType": "Gem",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 50,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 20,
+              "price": 5000
+            },
+            {
+              "x": 3,
+              "y": 1,
+              "rarity": "Common",
+              "name": "Icecap",
+              "icon": "itemmischerbicecap",
+              "detailedType": "Flowers",
+              "type": "Trade Good",
+              "source": "DirectDrop",
+              "ilvl": 58,
+              "lvl": 1,
+              "amount": 2,
+              "maxStack": 20,
+              "price": 250,
+              "droppedBy": [
+                "Spellmaw"
+              ]
+            },
+            {
+              "x": 1,
+              "rarity": "Uncommon",
+              "name": "Mercurial Greaves of the Tiger",
+              "icon": "itemboots02",
+              "randomEnchantment": true,
+              "type": "Feet",
+              "armorClass": "Mail",
+              "source": "RareDrop",
+              "ilvl": 61,
+              "lvl": 56,
+              "armor": 225,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 20168,
+              "stats": {
+                "Agility": 17,
+                "Strength": 17
+              }
             }
           ],
           "bags": []
@@ -1091,9 +1206,9 @@
         "worldBuffs": []
       },
       "hour": 7,
-      "minute": 38,
-      "second": 38,
-      "currentSite": "Ironband's Compound",
+      "minute": 50,
+      "second": 53,
+      "currentSite": "Blackrock Mountain",
       "ringOfLaw": "Eviscerator",
       "forlornCloister": "Ironspine",
       "markets": [
@@ -1108,28 +1223,49 @@
           "hoursSinceUpdate": 48
         }
       ],
-      "openedChests": {},
+      "openedChests": {
+        "The Iron Hall": {
+          "area": "The Iron Hall",
+          "inventory": {
+            "items": [],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
+        }
+      },
       "fishingSpots": {},
       "fishingSpoils": {},
-      "siteProgress": {},
-      "commonsKilled": {},
+      "siteProgress": {
+        "The Iron Hall": 2,
+        "The Imperial Seat": 2
+      },
+      "commonsKilled": {
+        "Ironhand Guardian": 4,
+        "Anvilrage Captain": 2,
+        "Doomforge Dragoon": 2
+      },
       "raresKilled": {},
-      "elitesKilled": {},
+      "elitesKilled": {
+        "Magmus": 1
+      },
       "siteVisits": {
         "Anvilmar": 1,
         "Coldridge Pass": 0,
         "Kharanos": 0,
         "The Tundrid Hills": 0,
         "Helm's Bed Lake": 0,
-        "Ironband's Compound": 2
+        "Ironband's Compound": 2,
+        "Blackrock Mountain": 5
       },
-      "unlockedAreas": [],
+      "unlockedAreas": [
+        "The Imperial Seat"
+      ],
       "vendorStock": {},
       "banks": {},
       "startDate": "2025-07-03T01:33:12.4124207+02:00",
-      "lastLoaded": "2025-07-03T12:04:57.5972502+02:00",
-      "lastPlayed": "2025-07-03T12:06:08.5674378+02:00",
-      "timePlayed": "00:04:23.0597942"
+      "lastLoaded": "2025-07-03T15:11:49.7005811+02:00",
+      "lastPlayed": "2025-07-03T15:15:25.6171682+02:00",
+      "timePlayed": "00:10:58.1786117"
     }
   ]
 }
