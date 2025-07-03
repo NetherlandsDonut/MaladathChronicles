@@ -740,6 +740,7 @@
         "currentQuests": [],
         "completedQuests": [],
         "level": 1,
+        "experience": 100,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -1090,7 +1091,9 @@
         "worldBuffs": []
       },
       "hour": 7,
-      "currentSite": "Anvilmar",
+      "minute": 38,
+      "second": 38,
+      "currentSite": "Ironband's Compound",
       "ringOfLaw": "Eviscerator",
       "forlornCloister": "Ironspine",
       "markets": [
@@ -1113,15 +1116,20 @@
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
-        "Anvilmar": 1
+        "Anvilmar": 1,
+        "Coldridge Pass": 0,
+        "Kharanos": 0,
+        "The Tundrid Hills": 0,
+        "Helm's Bed Lake": 0,
+        "Ironband's Compound": 2
       },
       "unlockedAreas": [],
       "vendorStock": {},
       "banks": {},
       "startDate": "2025-07-03T01:33:12.4124207+02:00",
-      "lastLoaded": "2025-07-03T11:51:40.1769209+02:00",
-      "lastPlayed": "2025-07-03T11:54:52.2665275+02:00",
-      "timePlayed": "00:03:12.0896066"
+      "lastLoaded": "2025-07-03T12:04:57.5972502+02:00",
+      "lastPlayed": "2025-07-03T12:06:08.5674378+02:00",
+      "timePlayed": "00:04:23.0597942"
     }
   ]
 }

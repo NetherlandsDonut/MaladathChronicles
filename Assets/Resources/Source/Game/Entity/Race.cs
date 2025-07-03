@@ -14,7 +14,8 @@ public class Race
     {
         side = Faction().side;
         droppedItems = Item.items.FindAll(x => x.droppedBy != null && x.droppedBy.Contains(name)).Select(x => x.name).ToList();
-        if (category == null || category == string.Empty) Debug.Log("ERROR 018: Race lacks category: \"" + name + "\"");
+        if (subcategory == null || category == string.Empty) Debug.Log("ERROR 018: Race lacks category: \"" + name + "\"");
+        if (subcategory == "Naga Siren") gender = "Female";
     }
 
     //Name of the race
@@ -53,6 +54,9 @@ public class Race
     //Kind of the race, kind of like rarity.
     //This can be one of three values: "Common", "Rare" or "Elite"
     public string kind;
+
+    //Forced gender for this race
+    public string gender;
 
     //Race's vitality which affects how much stamina will the enemy have
     //Generally this determines how hard of a fight an enemy is going to put up against the player.

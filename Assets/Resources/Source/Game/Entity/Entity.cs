@@ -78,6 +78,7 @@ public class Entity
         this.race = name = race.name;
         abilities = race.abilities.ToDictionary(x => x.Key, x => x.Value);
         abilityAITags = race.abilityAITags;
+        gender = race.gender;
         equipment = new();
         worldBuffs = new();
         inventory = new Inventory(new List<string>());

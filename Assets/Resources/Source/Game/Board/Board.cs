@@ -761,7 +761,7 @@ public class Board
                                     currentImportance += a.Value == "Filler" ? 4 : 10;
                         importanceTable[resource.Key] = currentImportance;
                     }
-                    Debug.Log(string.Join('\n', importanceTable.Select(x => x.Key + ": " + x.Value)));
+                    //Debug.Log(string.Join('\n', importanceTable.Select(x => x.Key + ": " + x.Value)));
                     differentFloodings.Shuffle();
                     var orderedFloodings = differentFloodings.OrderByDescending(x => x.Item3.Sum(y => (y.Item3 / 10 + 1) * importanceTable[Resource(y.Item3)])).ToList();
                     var chosenFlooding = orderedFloodings.First();
