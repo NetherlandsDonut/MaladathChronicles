@@ -6073,6 +6073,15 @@
     "vitality": 1.0
   },
   {
+    "name": "The Behemoth",
+    "category": "Humanoid",
+    "subcategory": "Dire Troll",
+    "portrait": "PortraitDireTrollWhite",
+    "abilities": {},
+    "kind": "Elite",
+    "vitality": 3.0
+  },
+  {
     "name": "Gri'lek",
     "category": "Humanoid",
     "subcategory": "Dire Troll",
@@ -6799,6 +6808,15 @@
     "abilities": {},
     "kind": "Rare",
     "vitality": 2.0
+  },
+  {
+    "name": "Overmaster Pyron",
+    "category": "Elemental",
+    "subcategory": "Fire Elemental",
+    "portrait": "PortraitFireElemental",
+    "abilities": {},
+    "kind": "Elite",
+    "vitality": 3.0
   },
   {
     "name": "Ambassador Infernus",
@@ -16974,6 +16992,15 @@
     "vitality": 1.0
   },
   {
+    "name": "Bloodhound Mastiff",
+    "category": "Beast",
+    "subcategory": "Dark Hound",
+    "portrait": "PortraitRedDarkhound",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
+  },
+  {
     "name": "Vaelastrasz the Corrupt",
     "category": "Dragonkin",
     "subcategory": "Dragon",
@@ -22081,6 +22108,17 @@
   },
   {
     "name": "Twilight Master",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "faction": "Twilight's Hammer",
+    "portrait": "PortraitTwilightEmissary",
+    "abilities": {},
+    "kind": "Common",
+    "gender": "Male",
+    "vitality": 1.0
+  },
+  {
+    "name": "Twilight Emissary",
     "category": "Humanoid",
     "subcategory": "Human",
     "faction": "Twilight's Hammer",

@@ -4881,24 +4881,24 @@
       },
       {
         "who": "Anvilrage Soldier",
-        "levelMin": 52,
-        "levelMax": 53
+        "levelMin": 53,
+        "levelMax": 54
       },
       {
         "who": "Anvilrage Footman",
-        "levelMin": 52,
-        "levelMax": 53
+        "levelMin": 53,
+        "levelMax": 54
       },
       {
         "who": "Anvilrage Medic",
-        "levelMin": 52,
-        "levelMax": 53
+        "levelMin": 53,
+        "levelMax": 54
       }
     ],
     "eliteEncounters": [
       {
         "who": "Bael'Gar",
-        "levelMin": 54
+        "levelMin": 55
       }
     ],
     "areaSize": 4,
@@ -4907,11 +4907,6 @@
         "type": "Boss",
         "bossName": "Bael'Gar",
         "point": 3
-      },
-      {
-        "type": "Area",
-        "areaName": "The Black Anvil",
-        "point": 2
       },
       {
         "type": "Treasure",
@@ -4932,9 +4927,9 @@
         "levelMax": 50
       },
       {
-        "who": "Anvilrage Warden",
-        "levelMin": 49,
-        "levelMax": 50
+        "who": "Anvilrage Footman",
+        "levelMin": 50,
+        "levelMax": 51
       },
       {
         "who": "Bloodhound",
@@ -4967,6 +4962,90 @@
     ]
   },
   {
+    "name": "The Masonary",
+    "zone": "Blackrock Depths",
+    "type": "HostileArea",
+    "convertDestinationTo": "Blackrock Mountain",
+    "noNightVariant": true,
+    "commonEncounters": [
+      {
+        "who": "Anvilrage Guardsman",
+        "levelMin": 50,
+        "levelMax": 51
+      },
+      {
+        "who": "Anvilrage Warden",
+        "levelMin": 49,
+        "levelMax": 50
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Overmaster Pyron",
+        "levelMin": 52
+      }
+    ],
+    "areaSize": 2,
+    "progression": [
+      {
+        "type": "Boss",
+        "bossName": "Overmaster Pyron",
+        "point": 1
+      },
+      {
+        "type": "Area",
+        "areaName": "Detention Block",
+        "point": 1
+      },
+      {
+        "type": "Treasure",
+        "point": 2
+      }
+    ]
+  },
+  {
+    "name": "The Grinding Quarry",
+    "zone": "Blackrock Depths",
+    "type": "HostileArea",
+    "convertDestinationTo": "Blackrock Mountain",
+    "noNightVariant": true,
+    "commonEncounters": [
+      {
+        "who": "Anvilrage Overseer",
+        "levelMin": 49,
+        "levelMax": 50
+      },
+      {
+        "who": "Anvilrage Warden",
+        "levelMin": 49,
+        "levelMax": 50
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "The Behemoth",
+        "levelMin": 50
+      }
+    ],
+    "areaSize": 2,
+    "progression": [
+      {
+        "type": "Boss",
+        "bossName": "The Behemoth",
+        "point": 1
+      },
+      {
+        "type": "Area",
+        "areaName": "The Masonary",
+        "point": 1
+      },
+      {
+        "type": "Treasure",
+        "point": 2
+      }
+    ]
+  },
+  {
     "name": "Hall of Crafting",
     "zone": "Blackrock Depths",
     "type": "HostileArea",
@@ -4994,7 +5073,7 @@
       },
       {
         "type": "Area",
-        "areaName": "The Garrison",
+        "areaName": "The Black Anvil",
         "point": 2
       },
       {
@@ -5154,7 +5233,7 @@
       },
       {
         "type": "Area",
-        "areaName": "Dark Iron Highway",
+        "areaName": "East Garrison",
         "point": 2
       },
       {
@@ -5171,19 +5250,24 @@
     "commonEncounters": [
       {
         "who": "Fireguard Destroyer",
-        "levelMin": 55,
-        "levelMax": 56
+        "levelMin": 52,
+        "levelMax": 53
       },
       {
         "who": "Twilight Bodyguard",
-        "levelMin": 55,
-        "levelMax": 56
+        "levelMin": 52,
+        "levelMax": 53
+      },
+      {
+        "who": "Twilight Emissary",
+        "levelMin": 52,
+        "levelMax": 53
       }
     ],
     "eliteEncounters": [
       {
         "who": "Pyromancer Loregrain",
-        "levelMin": 52
+        "levelMin": 53
       }
     ],
     "areaSize": 3,
@@ -5227,9 +5311,35 @@
       },
       {
         "type": "Area",
+        "areaName": "The Molten Bridge",
+        "point": 1
+      },
+      {
+        "type": "Area",
         "areaName": "The Iron Hall",
         "point": 1
       },
+      {
+        "type": "Treasure",
+        "point": 2
+      }
+    ]
+  },
+  {
+    "name": "The Molten Bridge",
+    "zone": "Blackrock Depths",
+    "type": "HostileArea",
+    "convertDestinationTo": "Blackrock Mountain",
+    "noNightVariant": true,
+    "commonEncounters": [
+      {
+        "who": "Fireguard Destroyer",
+        "levelMin": 55,
+        "levelMax": 56
+      }
+    ],
+    "areaSize": 2,
+    "progression": [
       {
         "type": "Area",
         "areaName": "Molten Core",
@@ -5252,6 +5362,11 @@
         "who": "Blazing Fireguard",
         "levelMin": 52,
         "levelMax": 53
+      },
+      {
+        "who": "Anvilrage Soldier",
+        "levelMin": 52,
+        "levelMax": 53
       }
     ],
     "eliteEncounters": [
@@ -5264,7 +5379,7 @@
     "progression": [
       {
         "type": "Area",
-        "areaName": "Hall of Crafting",
+        "areaName": "Dark Iron Highway",
         "point": 1
       },
       {
@@ -5285,15 +5400,25 @@
     "noNightVariant": true,
     "commonEncounters": [
       {
-        "who": "Cannibal Ghoul",
-        "levelMin": 56,
-        "levelMax": 57
+        "who": "Twilight Emissary",
+        "levelMin": 52,
+        "levelMax": 53
+      },
+      {
+        "who": "Twilight Bodyguard",
+        "levelMin": 52,
+        "levelMax": 53
+      },
+      {
+        "who": "Blazing Fireguard",
+        "levelMin": 52,
+        "levelMax": 53
       }
     ],
     "eliteEncounters": [
       {
         "who": "Warder Stilgiss",
-        "levelMin": 57
+        "levelMin": 56
       }
     ],
     "areaSize": 3,
@@ -5316,15 +5441,15 @@
     "noNightVariant": true,
     "commonEncounters": [
       {
-        "who": "Cannibal Ghoul",
+        "who": "Blackbreath Crony",
         "levelMin": 56,
         "levelMax": 57
       }
     ],
     "eliteEncounters": [
       {
-        "who": "Golem Lord Argelmach",
-        "levelMin": 57
+        "who": "Hurley Blackbreath",
+        "levelMin": 55
       }
     ],
     "areaSize": 3,
@@ -5332,6 +5457,11 @@
       {
         "type": "Boss",
         "bossName": "Golem Lord Argelmach",
+        "point": 2
+      },
+      {
+        "type": "Area",
+        "areaName": "Chamber of Enchantment",
         "point": 2
       },
       {
@@ -5427,6 +5557,11 @@
     "areaSize": 3,
     "progression": [
       {
+        "type": "Area",
+        "areaName": "The Iron Hall",
+        "point": 2
+      },
+      {
         "type": "Treasure",
         "point": 3
       }
@@ -5475,7 +5610,7 @@
     ]
   },
   {
-    "name": "The Garrison",
+    "name": "West Garrison",
     "zone": "Blackrock Depths",
     "type": "HostileArea",
     "convertDestinationTo": "Blackrock Mountain",
@@ -5523,6 +5658,93 @@
       {
         "type": "Treasure",
         "point": 3
+      }
+    ]
+  },
+  {
+    "name": "The Domicile",
+    "zone": "Blackrock Depths",
+    "type": "HostileArea",
+    "convertDestinationTo": "Blackrock Mountain",
+    "noNightVariant": true,
+    "commonEncounters": [
+      {
+        "who": "Bloodhound Mastiff",
+        "levelMin": 52,
+        "levelMax": 53
+      },
+      {
+        "who": "Anvilrage Footman",
+        "levelMin": 53,
+        "levelMax": 54
+      },
+      {
+        "who": "Twilight Bodyguard",
+        "levelMin": 53,
+        "levelMax": 54
+      }
+    ],
+    "areaSize": 2,
+    "progression": [
+      {
+        "type": "Area",
+        "areaName": "The Black Vault",
+        "point": 1
+      },
+      {
+        "type": "Area",
+        "areaName": "Hall of Crafting",
+        "point": 1
+      },
+      {
+        "type": "Treasure",
+        "point": 2
+      }
+    ]
+  },
+  {
+    "name": "East Garrison",
+    "zone": "Blackrock Depths",
+    "type": "HostileArea",
+    "convertDestinationTo": "Blackrock Mountain",
+    "noNightVariant": true,
+    "commonEncounters": [
+      {
+        "who": "Anvilrage Guardsman",
+        "levelMin": 50,
+        "levelMax": 51
+      },
+      {
+        "who": "Anvilrage Footman",
+        "levelMin": 51,
+        "levelMax": 52
+      },
+      {
+        "who": "Fireguard",
+        "levelMin": 51,
+        "levelMax": 52
+      }
+    ],
+    "areaSize": 2,
+    "progression": [
+      {
+        "type": "Area",
+        "areaName": "West Garrison",
+        "point": 1
+      },
+      {
+        "type": "Area",
+        "areaName": "Shrine of Thaurissan",
+        "point": 1
+      },
+      {
+        "type": "Area",
+        "areaName": "The Domicile",
+        "point": 1
+      },
+      {
+        "type": "Treasure",
+        "point": 2
       }
     ]
   },

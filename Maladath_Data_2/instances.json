@@ -1,5 +1,97 @@
 [
   {
+    "x": 0,
+    "y": -0,
+    "name": "Naxxramas",
+    "zone": "Naxxramas",
+    "type": "Raid",
+    "wings": [
+      {
+        "name": "The Arachnid Quarte",
+        "areas": [
+          {
+            "OpenByDefault": "True",
+            "AreaName": "Hall of Masks"
+          },
+          {
+            "AreaName": "Hall of Masks"
+          },
+          {
+            "AreaName": "Hall of Masks"
+          },
+          {
+            "AreaName": "Maexxna's Nest"
+          }
+        ]
+      },
+      {
+        "name": "The Plague Quarter",
+        "areas": [
+          {
+            "OpenByDefault": "True",
+            "AreaName": "Hall of Masks"
+          },
+          {
+            "AreaName": "Hall of Masks"
+          },
+          {
+            "AreaName": "Hall of Masks"
+          },
+          {
+            "AreaName": "The Necrotic Vault"
+          }
+        ]
+      },
+      {
+        "name": "The Military Quarter",
+        "areas": [
+          {
+            "OpenByDefault": "True",
+            "AreaName": "Hall of Masks"
+          },
+          {
+            "AreaName": "Hall of Masks"
+          },
+          {
+            "AreaName": "Hall of Masks"
+          },
+          {
+            "AreaName": "The Horsemen's Assembly"
+          }
+        ]
+      },
+      {
+        "name": "The Construct Quarter",
+        "areas": [
+          {
+            "OpenByDefault": "True",
+            "AreaName": "Hall of Masks"
+          },
+          {
+            "AreaName": "Hall of Masks"
+          },
+          {
+            "AreaName": "Hall of Masks"
+          },
+          {
+            "AreaName": "The Halls of Reanimation"
+          }
+        ]
+      },
+      {
+        "name": "Frostwyrm Lair",
+        "areas": [
+          {
+            "AreaName": "Frostwyrm Lair"
+          },
+          {
+            "AreaName": "Kel'Thuzad's Chamber"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "x": 5842,
     "y": -3795,
     "name": "Temple of Atal'Hakkar",
@@ -888,10 +980,16 @@
     "noNightVariant": true,
     "wings": [
       {
-        "name": "Outer City",
+        "name": "Blackrock Caverns",
         "areas": [
           {
             "OpenByDefault": "True",
+            "AreaName": "The Grinding Quarry"
+          },
+          {
+            "AreaName": "The Masonary"
+          },
+          {
             "AreaName": "Detention Block"
           },
           {
@@ -899,23 +997,40 @@
           },
           {
             "AreaName": "Ring of Law"
+          }
+        ]
+      },
+      {
+        "name": "Eastern Shadowforge City",
+        "areas": [
+          {
+            "AreaName": "East Garrison"
           },
           {
-            "AreaName": "Dark Iron Highway"
+            "AreaName": "Shrine of Thaurissan"
+          },
+          {
+            "AreaName": "The Domicile"
+          },
+          {
+            "AreaName": "The Black Vault"
+          },
+          {
+            "AreaName": "Hall of Crafting"
           },
           {
             "AreaName": "The Black Anvil"
           },
           {
-            "AreaName": "Hall of Crafting"
+            "AreaName": "Dark Iron Highway"
           }
         ]
       },
       {
-        "name": "Shadowforge City",
+        "name": "Western Shadowforge City",
         "areas": [
           {
-            "AreaName": "The Garrison"
+            "AreaName": "West Garrison"
           },
           {
             "AreaName": "The Manufactory"
@@ -925,9 +1040,17 @@
           },
           {
             "AreaName": "Mold Foundry"
-          },
+          }
+        ]
+      },
+      {
+        "name": "Inner Shadowforge City",
+        "areas": [
           {
             "AreaName": "Summoners' Tomb"
+          },
+          {
+            "AreaName": "The Molten Bridge"
           },
           {
             "AreaName": "The Iron Hall"

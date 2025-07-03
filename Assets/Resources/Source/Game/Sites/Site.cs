@@ -139,13 +139,28 @@ public class Site
         if (siteType == "Instance")
         {
             instance = (SiteInstance)this;
+            area = null;
+            town = null;
+            complex = null;
+            spiritHealer = null;
             if (staticPagination.ContainsKey("Instance"))
                 staticPagination.Remove("Instance");
         }
-        else if (siteType == "HostileArea") area = (SiteHostileArea)this;
+        else if (siteType == "HostileArea")
+        {
+            instance = null;
+            area = (SiteHostileArea)this;
+            town = null;
+            complex = null;
+            spiritHealer = null;
+        }
         else if (siteType == "Town")
         {
+            instance = null;
+            area = null;
             town = (SiteTown)this;
+            complex = null;
+            spiritHealer = null;
             if (town.capitalRedirect != null)
             {
                 capitalThroughTown = town;
@@ -153,8 +168,22 @@ public class Site
                 siteType = "Capital";
             }
         }
-        else if (siteType == "Complex") complex = (SiteComplex)this;
-        else if (siteType == "SpiritHealer") spiritHealer = (SiteSpiritHealer)this;
+        else if (siteType == "Complex")
+        {
+            instance = null;
+            area = null;
+            town = null;
+            complex = (SiteComplex)this;
+            spiritHealer = null;
+        }
+        else if (siteType == "SpiritHealer")
+        {
+            instance = null;
+            area = null;
+            town = null;
+            complex = null;
+            spiritHealer = (SiteSpiritHealer)this;
+        }
         mapGrid.queuedSiteOpen = name;
         mapGrid.queuedSiteTypeOpen = siteType;
         CDesktop.cameraDestination = new Vector2(x, y);

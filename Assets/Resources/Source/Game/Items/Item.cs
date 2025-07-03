@@ -1025,17 +1025,8 @@ public class Item
                     currentSave.openedChests[SiteHostileArea.area.name].inventory.ApplySortOrder();
                     if (settings.autoCloseLoot.Value() && currentSave.openedChests[SiteHostileArea.area.name].inventory.items.Count == 0)
                     {
-                        if (SiteHostileArea.area.instancePart)
-                        {
-                            CloseDesktop("Instance");
-                            SpawnDesktopBlueprint("Instance");
-                        }
-                        else
-                        {
-                            CloseDesktop("HostileArea");
-                            SpawnDesktopBlueprint("HostileArea");
-                        }
                         CloseDesktop("ChestLoot");
+                        CDesktop.RespawnAll();
                     }
                     else
                     {
