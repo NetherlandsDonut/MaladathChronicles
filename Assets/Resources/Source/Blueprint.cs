@@ -3402,10 +3402,10 @@ public class Blueprint
                 var areas = complex.sites.Where(x => x["SiteType"] == "HostileArea").Select(x => SiteHostileArea.areas.Find(y => y.name == x["SiteName"]).recommendedLevel).ToList();
                 if (areas.Count > 0)
                 {
-                    var min = areas.Min(x => x);
-                    var max = areas.Max(x => x);
-                    if (range.Item1 < min[currentSave.playerSide]) range = (min[currentSave.playerSide], range.Item2);
-                    if (range.Item2 < max[currentSave.playerSide]) range = (range.Item1, max[currentSave.playerSide]);
+                    var min = areas.Min(x => x[currentSave.playerSide]);
+                    var max = areas.Max(x => x[currentSave.playerSide]);
+                    if (range.Item1 < min) range = (min, range.Item2);
+                    if (range.Item2 < max) range = (range.Item1, max);
                 }
                 var ranges = complex.sites.Where(x => x["SiteType"] == "Dungeon" || x["SiteType"] == "Raid").Select(x => instances.Find(y => y.name == x["SiteName"]).LevelRange()).ToList();
                 if (ranges.Count > 0)

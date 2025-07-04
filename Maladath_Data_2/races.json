@@ -11037,6 +11037,28 @@
     "vitality": 3.0
   },
   {
+    "name": "Hurley Blackbreath",
+    "category": "Humanoid",
+    "subcategory": "Dwarf",
+    "faction": "Dark Iron Clan",
+    "portrait": "PortraitDarkIronCommander",
+    "abilities": {},
+    "kind": "Elite",
+    "gender": "Male",
+    "vitality": 3.0
+  },
+  {
+    "name": "Blackbreath Crony",
+    "category": "Humanoid",
+    "subcategory": "Dwarf",
+    "faction": "Dark Iron Clan",
+    "portrait": "PortraitDarkIronWarrior",
+    "abilities": {},
+    "kind": "Common",
+    "gender": "Male",
+    "vitality": 1.0
+  },
+  {
     "name": "Interrogator Vishas",
     "category": "Humanoid",
     "subcategory": "Human",
