@@ -1,5 +1,23 @@
 [
   {
+    "name": "Nightsaber Stalker",
+    "category": "Beast",
+    "subcategory": "Cat",
+    "portrait": "PortraitSaberCatSmall",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
+  },
+  {
+    "name": "Strigid Hunter",
+    "category": "Beast",
+    "subcategory": "Owl",
+    "portrait": "PortraitOwl",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
+  },
+  {
     "name": "7:XT",
     "category": "Mechanical",
     "subcategory": "Robot",

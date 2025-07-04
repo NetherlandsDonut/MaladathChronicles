@@ -16288,6 +16288,29 @@
     "faction": "Darnassus"
   },
   {
+    "people": [
+      {
+        "name": "Nadyia Maneweaver",
+        "gender": "Female",
+        "voiceVariant": 2,
+        "race": "Night Elf",
+        "type": "Journeyman Leatherworker"
+      },
+      {
+        "name": "Radnaal Maneweaver",
+        "gender": "Male",
+        "voiceVariant": 1,
+        "race": "Night Elf",
+        "type": "Skinner"
+      }
+    ],
+    "x": 1109,
+    "y": -467,
+    "name": "Maneweaver Hut",
+    "zone": "Teldrassil",
+    "faction": "Darnassus"
+  },
+  {
     "x": 1409,
     "y": -1873,
     "name": "Maestra's Post",

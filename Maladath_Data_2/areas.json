@@ -1,5 +1,77 @@
 [
   {
+    "name": "Kel'Thuzad's Chamber",
+    "zone": "Naxxramas",
+    "type": "HostileArea",
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
+    "name": "Frostwyrm Lair",
+    "zone": "Naxxramas",
+    "type": "HostileArea",
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
+    "name": "The Halls of Reanimation",
+    "zone": "Naxxramas",
+    "type": "HostileArea",
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
+    "name": "The Horsemen's Assembly",
+    "zone": "Naxxramas",
+    "type": "HostileArea",
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
+    "name": "The Necrotic Vault",
+    "zone": "Naxxramas",
+    "type": "HostileArea",
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
+    "name": "Maexxna's Nest",
+    "zone": "Naxxramas",
+    "type": "HostileArea",
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
     "name": "Hall of Illusions",
     "zone": "Scholomance",
     "type": "HostileArea",
@@ -25579,6 +25651,37 @@
       },
       {
         "who": "Webwood Venomfang",
+        "levelMin": 7,
+        "levelMax": 8
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
+    "x": 1075,
+    "y": -491,
+    "name": "Central Glade",
+    "zone": "Teldrassil",
+    "type": "HostileArea",
+    "commonEncounters": [
+      {
+        "who": "Strigid Screecher",
+        "levelMin": 7,
+        "levelMax": 8
+      },
+      {
+        "who": "Strigid Hunter",
+        "levelMin": 8,
+        "levelMax": 9
+      },
+      {
+        "who": "Nightsaber Stalker",
         "levelMin": 7,
         "levelMax": 8
       }
