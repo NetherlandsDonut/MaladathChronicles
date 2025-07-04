@@ -294,7 +294,7 @@ public class Quest
             else
             {
                 AddHeaderRegion(() => AddLine("Details:"));
-                foreach (var condition in conditions)
+                foreach (var condition in currentSave.player.currentQuests.Find(x => x.questID == questID).conditions)
                     condition.Print(CDesktop.title == "QuestLog");
             }
         }

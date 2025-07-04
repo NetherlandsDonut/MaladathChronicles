@@ -540,7 +540,7 @@ public class Board
                                         if (!Quest.sitesToRespawn.Contains(end)) Quest.sitesToRespawn.Add(end);
                                     }
                             winParticipant.who.QuestKill(enemy.name);
-                            if (!output.EndsWith(" ")) SpawnFallingText(new Vector2(0, -72), output, "Yellow");
+                            if (!output.EndsWith(" ")) SpawnFallingText(new Vector2(0, 34), output, "Yellow");
                         }
             }
             else if (result == "Team2Won")

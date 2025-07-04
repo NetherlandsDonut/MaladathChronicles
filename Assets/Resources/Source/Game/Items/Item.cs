@@ -374,7 +374,25 @@ public class Item
         else if (type == "Recipe")
         {
             var recipe = Recipe.recipes.Find(x => name.Contains(x.name));
-            if (recipe != null) return entity.professionSkills.ContainsKey(recipe.profession) && entity.professionSkills[recipe.profession].Item1 >= recipe.learnedAt && !entity.learnedRecipes.ContainsKey(recipe.name);
+            if (recipe != null)
+            {
+                if (!entity.professionSkills.ContainsKey(recipe.profession))
+                {
+                    SpawnFallingText(new Vector2(0, 34), "You don't know the required profession", "Red");
+                    return false;
+                }
+                else if (entity.professionSkills[recipe.profession].Item1 < recipe.learnedAt)
+                {
+                    SpawnFallingText(new Vector2(0, 34), "You don't have enough skill in the profession", "Red");
+                    return false;
+                }
+                else if (entity.learnedRecipes[recipe.profession].Contains(recipe.name))
+                {
+                    SpawnFallingText(new Vector2(0, 34), "You already know this recipe", "Red");
+                    return false;
+                }
+                else return true;
+            }
             else Debug.Log("ERROR 007: Did not find a dedicated recipe to item: \"" + name + "\"");
         }
         else if (abilities != null)
@@ -428,6 +446,7 @@ public class Item
             var recipe = Recipe.recipes.Find(x => name.Contains(x.name));
             entity.LearnRecipe(recipe);
             PlaySound("DesktopSkillLearned");
+            SpawnFallingText(new Vector2(0, 34), "New recipe learned", "Blue");
             if (amount > 1) amount--;
             else entity.inventory.items.Remove(this);
         }

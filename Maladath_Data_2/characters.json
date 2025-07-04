@@ -739,17 +739,6 @@
       "player": {
         "currentQuests": [
           {
-            "questID": 7,
-            "conditions": [
-              {
-                "type": "Kill",
-                "name": "Kobold Vermin",
-                "amount": 3,
-                "amountDone": 1
-              }
-            ]
-          },
-          {
             "questID": 18,
             "conditions": [
               {
@@ -758,13 +747,24 @@
                 "amount": 3
               }
             ]
+          },
+          {
+            "questID": 7,
+            "conditions": [
+              {
+                "type": "Kill",
+                "name": "Kobold Vermin",
+                "amount": 3,
+                "amountDone": 2
+              }
+            ]
           }
         ],
         "completedQuests": [
           783
         ],
-        "level": 4,
-        "experience": 1478,
+        "level": 5,
+        "experience": 2428,
         "uniquesGotten": [
           "Libram of Truth",
           "Totem of Rage"
@@ -841,15 +841,16 @@
         },
         "professionSkills": {
           "Leatherworking": {
-            "Item1": 1,
+            "Item1": 3,
             "Item2": [
               "Amateur"
             ]
           },
           "Blacksmithing": {
-            "Item1": 1,
+            "Item1": 10,
             "Item2": [
-              "Amateur"
+              "Amateur",
+              "Apprentice"
             ]
           },
           "Alchemy": {
@@ -901,13 +902,13 @@
             ]
           },
           "Mining": {
-            "Item1": 3,
+            "Item1": 15,
             "Item2": [
               "Amateur"
             ]
           },
           "Herbalism": {
-            "Item1": 2,
+            "Item1": 5,
             "Item2": [
               "Amateur"
             ]
@@ -926,7 +927,8 @@
             "Rough Sharpening Stone",
             "Rough Weightstone",
             "Rough Copper Vest",
-            "Copper Bracers"
+            "Copper Bracers",
+            "Copper Chain Pants"
           ],
           "Alchemy": [
             "Minor Healing Potion",
@@ -951,7 +953,8 @@
           ],
           "Cooking": [
             "Charred Wolf Meat",
-            "Roasted Boar Meat"
+            "Roasted Boar Meat",
+            "Brilliant Smallfish"
           ],
           "Fishing": [],
           "First Aid": [
@@ -963,7 +966,7 @@
           ],
           "Herbalism": []
         },
-        "unspentTalentPoints": 3,
+        "unspentTalentPoints": 4,
         "faction": "Gnomeregan",
         "name": "Dotkikeck",
         "race": "Gnome",
@@ -1013,7 +1016,7 @@
           "Order Mastery": 1
         },
         "inventory": {
-          "money": 109429,
+          "money": 108950,
           "items": [
             {
               "rarity": "Common",
@@ -1032,72 +1035,6 @@
             },
             {
               "x": 1,
-              "rarity": "Uncommon",
-              "name": "Lesser Magic Essence",
-              "icon": "itemenchantessencemagicsmall",
-              "detailedType": "Essence",
-              "type": "Trade Good",
-              "ilvl": 10,
-              "lvl": 1,
-              "amount": 2,
-              "maxStack": 10
-            },
-            {
-              "x": 2,
-              "rarity": "Common",
-              "name": "Strange Dust",
-              "icon": "itemenchantduststrange",
-              "detailedType": "Dust",
-              "type": "Trade Good",
-              "ilvl": 10,
-              "lvl": 1,
-              "amount": 1,
-              "maxStack": 20
-            },
-            {
-              "x": 3,
-              "rarity": "Common",
-              "name": "Ruined Leather Scraps",
-              "icon": "itemmiscpeltbearruin05",
-              "detailedType": "Organ",
-              "type": "Trade Good",
-              "source": "RareDrop",
-              "ilvl": 5,
-              "lvl": 1,
-              "amount": 3,
-              "maxStack": 20,
-              "price": 7
-            },
-            {
-              "x": 4,
-              "rarity": "Common",
-              "name": "Rough Stone",
-              "icon": "itemstone06",
-              "detailedType": "Rock",
-              "type": "Trade Good",
-              "source": "RareDrop",
-              "ilvl": 5,
-              "lvl": 1,
-              "amount": 3,
-              "maxStack": 20,
-              "price": 2
-            },
-            {
-              "y": 1,
-              "rarity": "Common",
-              "name": "Copper Ore",
-              "icon": "itemorecopper01",
-              "detailedType": "Ore",
-              "type": "Trade Good",
-              "source": "RareDrop",
-              "ilvl": 10,
-              "lvl": 1,
-              "amount": 5,
-              "maxStack": 10,
-              "price": 5
-            },
-            {
-              "x": 1,
               "y": 1,
               "rarity": "Common",
               "name": "Silverleaf",
@@ -1107,7 +1044,7 @@
               "source": "RareDrop",
               "ilvl": 5,
               "lvl": 1,
-              "amount": 1,
+              "amount": 3,
               "maxStack": 20,
               "price": 10
             },
@@ -1125,6 +1062,71 @@
               "amount": 2,
               "maxStack": 20,
               "price": 20
+            },
+            {
+              "x": 3,
+              "y": 1,
+              "rarity": "Common",
+              "name": "Copper Bar",
+              "icon": "itemingot02",
+              "detailedType": "Ingot",
+              "type": "Trade Good",
+              "source": "Profession",
+              "ilvl": 10,
+              "lvl": 1,
+              "amount": 2,
+              "maxStack": 20,
+              "price": 10
+            },
+            {
+              "y": 1,
+              "rarity": "Common",
+              "name": "Peacebloom",
+              "icon": "itemmiscflower02",
+              "detailedType": "Flowers",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 5,
+              "lvl": 1,
+              "amount": 3,
+              "maxStack": 20,
+              "price": 10
+            },
+            {
+              "x": 1,
+              "rarity": "Common",
+              "name": "Copper Ore",
+              "icon": "itemorecopper01",
+              "detailedType": "Ore",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 10,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 10,
+              "price": 5
+            },
+            {
+              "x": 2,
+              "rarity": "Common",
+              "name": "Recipe: Brilliant Smallfish",
+              "icon": "itemscroll03",
+              "detailedType": "Scroll",
+              "type": "Recipe",
+              "amount": 1,
+              "maxStack": 1,
+              "price": 10
+            },
+            {
+              "x": 3,
+              "rarity": "Common",
+              "name": "Recipe: Longjaw Mud Snapper",
+              "icon": "itemscroll03",
+              "detailedType": "Scroll",
+              "type": "Recipe",
+              "amount": 1,
+              "maxStack": 1,
+              "price": 100
             }
           ],
           "bags": []
@@ -1156,15 +1158,19 @@
             "price": 1
           },
           "Chest": {
+            "y": 1,
             "rarity": "Common",
-            "name": "Recruit's Shirt",
-            "icon": "itemshirt05",
+            "name": "Rough Copper Vest",
+            "icon": "itemchestchain",
             "type": "Chest",
-            "ilvl": 1,
-            "lvl": 1,
+            "armorClass": "Mail",
+            "source": "Profession",
+            "ilvl": 7,
+            "lvl": 2,
+            "armor": 81,
             "amount": 1,
             "maxStack": 1,
-            "price": 1
+            "price": 32
           },
           "Back": {
             "x": 3,
@@ -1180,26 +1186,42 @@
             "amount": 1,
             "maxStack": 1,
             "price": 11
+          },
+          "Wrists": {
+            "y": 1,
+            "rarity": "Common",
+            "name": "Copper Bracers",
+            "icon": "itembracer03",
+            "type": "Wrists",
+            "armorClass": "Mail",
+            "source": "Profession",
+            "ilvl": 7,
+            "lvl": 2,
+            "armor": 35,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 17
           }
         },
         "worldBuffs": []
       },
-      "hour": 8,
-      "minute": 17,
-      "second": 12,
-      "currentSite": "Northshire Valley",
+      "day": 1,
+      "hour": 18,
+      "minute": 46,
+      "second": 36,
+      "currentSite": "Goldshire",
       "ringOfLaw": "Eviscerator",
       "forlornCloister": "Ironspine",
       "markets": [
         {
           "name": "Alliance Market",
           "auctions": [],
-          "hoursSinceUpdate": 49
+          "hoursSinceUpdate": 83
         },
         {
           "name": "Horde Market",
           "auctions": [],
-          "hoursSinceUpdate": 49
+          "hoursSinceUpdate": 83
         }
       ],
       "openedChests": {
@@ -1225,14 +1247,14 @@
       "siteProgress": {
         "The Iron Hall": 2,
         "The Imperial Seat": 2,
-        "Northshire Valley": 3
+        "Northshire Valley": 9
       },
       "commonsKilled": {
         "Ironhand Guardian": 4,
         "Anvilrage Captain": 2,
         "Doomforge Dragoon": 2,
-        "Kobold Vermin": 1,
-        "Young Wolf": 2
+        "Kobold Vermin": 5,
+        "Young Wolf": 4
       },
       "raresKilled": {},
       "elitesKilled": {
@@ -1253,8 +1275,9 @@
         "Thorium Point": 2,
         "Ironforge": 4,
         "Stormwind City": 1,
-        "Northshire Abbey": 1,
-        "Northshire Valley": 1
+        "Northshire Abbey": 2,
+        "Northshire Valley": 3,
+        "Goldshire": 3
       },
       "unlockedAreas": [
         "The Imperial Seat"
@@ -1465,165 +1488,130 @@
             "maxAmount": 2,
             "restockSpeed": 40
           }
+        ],
+        "Goldshire:Tharynn Bouden": [
+          {
+            "item": "Coarse Thread",
+            "amount": 20,
+            "maxAmount": 20,
+            "restockSpeed": 10
+          },
+          {
+            "item": "Bleach",
+            "amount": 10,
+            "maxAmount": 10,
+            "restockSpeed": 20
+          },
+          {
+            "item": "Red Dye",
+            "amount": 10,
+            "maxAmount": 10,
+            "restockSpeed": 20
+          },
+          {
+            "item": "Blue Dye",
+            "amount": 10,
+            "maxAmount": 10,
+            "restockSpeed": 20
+          },
+          {
+            "item": "Mild Spices",
+            "amount": 20,
+            "maxAmount": 20,
+            "restockSpeed": 10
+          },
+          {
+            "item": "Weak Flux",
+            "amount": 10,
+            "maxAmount": 10,
+            "restockSpeed": 10
+          },
+          {
+            "item": "Empty Vial",
+            "amount": 20,
+            "maxAmount": 20,
+            "restockSpeed": 10
+          },
+          {
+            "item": "Salt",
+            "amount": 10,
+            "maxAmount": 10,
+            "restockSpeed": 10
+          },
+          {
+            "item": "Copper Rod",
+            "amount": 5,
+            "maxAmount": 5,
+            "restockSpeed": 20
+          },
+          {
+            "item": "Pattern: Blue Linen Vest",
+            "amount": 1,
+            "maxAmount": 1,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Recipe: Brilliant Smallfish",
+            "maxAmount": 1,
+            "minutesLeft": 30,
+            "restockSpeed": 30
+          },
+          {
+            "item": "Recipe: Longjaw Mud Snapper",
+            "maxAmount": 1,
+            "minutesLeft": 30,
+            "restockSpeed": 30
+          }
+        ],
+        "Northshire Abbey:Brother Danil": [
+          {
+            "item": "Refreshing Spring Water",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Rough Arrow",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Light Shot",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Small Throwing Knife",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Crude Throwing Axe",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Tough Hunk of Bread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       },
       "banks": {},
       "buyback": {
-        "items": [
-          {
-            "rarity": "Rare",
-            "name": "Lavastone Hammer",
-            "icon": "itemhammer10",
-            "detailedType": "Mace",
-            "type": "Two Handed",
-            "source": "DirectDrop",
-            "ilvl": 58,
-            "lvl": 53,
-            "minPower": 4.9700000000000006,
-            "maxPower": 6.97,
-            "amount": 1,
-            "minutesLeft": 19,
-            "maxStack": 1,
-            "price": 57079,
-            "stats": {
-              "Strength": 10,
-              "Intellect": 12,
-              "Stamina": 14
-            },
-            "droppedBy": [
-              "Magmus"
-            ]
-          },
-          {
-            "x": 2,
-            "rarity": "Uncommon",
-            "name": "Mercurial Greaves of the Tiger",
-            "icon": "itemboots02",
-            "randomEnchantment": true,
-            "type": "Feet",
-            "armorClass": "Mail",
-            "source": "RareDrop",
-            "ilvl": 61,
-            "lvl": 56,
-            "armor": 225,
-            "amount": 1,
-            "minutesLeft": 19,
-            "maxStack": 1,
-            "price": 20168,
-            "stats": {
-              "Agility": 17,
-              "Strength": 17
-            }
-          },
-          {
-            "y": 1,
-            "rarity": "Common",
-            "name": "Icecap",
-            "icon": "itemmischerbicecap",
-            "detailedType": "Flowers",
-            "type": "Trade Good",
-            "source": "DirectDrop",
-            "ilvl": 58,
-            "lvl": 1,
-            "amount": 2,
-            "minutesLeft": 19,
-            "maxStack": 20,
-            "price": 250,
-            "droppedBy": [
-              "Spellmaw"
-            ]
-          },
-          {
-            "x": 1,
-            "y": 1,
-            "rarity": "Poor",
-            "name": "Worn Wooden Shield",
-            "icon": "itemshield09",
-            "detailedType": "Shield",
-            "type": "Off Hand",
-            "ilvl": 1,
-            "lvl": 1,
-            "armor": 5,
-            "amount": 1,
-            "minutesLeft": 19,
-            "maxStack": 1,
-            "price": 1
-          },
-          {
-            "x": 2,
-            "y": 1,
-            "rarity": "Rare",
-            "name": "Libram of Truth",
-            "icon": "itemrelicslibramoftruth",
-            "type": "Miscellaneous",
-            "source": "DirectDrop",
-            "ilvl": 57,
-            "amount": 1,
-            "minutesLeft": 19,
-            "maxStack": 1,
-            "unique": true,
-            "price": 13208,
-            "droppedBy": [
-              "Magmus"
-            ]
-          },
-          {
-            "x": 1,
-            "rarity": "Uncommon",
-            "name": "Star Ruby",
-            "icon": "itemmiscgemruby02",
-            "detailedType": "Gem",
-            "type": "Trade Good",
-            "source": "RareDrop",
-            "ilvl": 50,
-            "lvl": 1,
-            "amount": 1,
-            "minutesLeft": 19,
-            "maxStack": 20,
-            "price": 5000
-          },
-          {
-            "x": 3,
-            "rarity": "Rare",
-            "name": "Totem of Rage",
-            "icon": "itemrelicstotemofrage",
-            "type": "Miscellaneous",
-            "source": "DirectDrop",
-            "ilvl": 57,
-            "amount": 1,
-            "minutesLeft": 19,
-            "maxStack": 1,
-            "unique": true,
-            "price": 12973,
-            "droppedBy": [
-              "Magmus"
-            ]
-          },
-          {
-            "x": 4,
-            "rarity": "Common",
-            "name": "Major Healing Potion",
-            "icon": "itempotion54",
-            "combatUse": true,
-            "detailedType": "Potion",
-            "type": "Miscellaneous",
-            "ilvl": 55,
-            "amount": 1,
-            "minutesLeft": 19,
-            "maxStack": 5,
-            "abilities": {
-              "Major Healing Potion": 1
-            },
-            "price": 1000
-          }
-        ],
+        "items": [],
         "bags": [],
         "ignoreSpaceChecks": true
       },
       "startDate": "2025-07-03T01:33:12.4124207+02:00",
-      "lastLoaded": "2025-07-04T15:22:42.8421729+02:00",
-      "lastPlayed": "2025-07-04T15:23:55.0312769+02:00",
-      "timePlayed": "00:21:40.1271093"
+      "lastLoaded": "2025-07-04T17:16:54.7708249+02:00",
+      "lastPlayed": "2025-07-04T17:16:59.6956951+02:00",
+      "timePlayed": "00:30:08.5857581"
     }
   ]
 }

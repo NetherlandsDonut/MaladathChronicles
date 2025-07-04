@@ -963,15 +963,50 @@ public class Blueprint
         }),
         new("ExperienceBar", () => {
             SetAnchor(Bottom);
-            var experience = currentSave == null ? 0 : (int)(319 * (currentSave.player.experience / (double)currentSave.player.ExperienceNeeded()));
-            AddRegionGroup();
-            SetRegionGroupWidth(experience * 2);
-            SetRegionGroupHeight(12);
-            AddPaddingRegion(() => { SetRegionBackground(Experience); });
-            AddRegionGroup();
-            SetRegionGroupWidth((319 - experience) * 2);
-            SetRegionGroupHeight(12);
-            AddPaddingRegion(() => { SetRegionBackground(ExperienceNone); });
+            if (board != null && board.results != null && board.results.experience != null && board.results.experience.ContainsKey(currentSave.player) && board.results.experience[currentSave.player] > 0)
+            {
+                var add = board.results.experience[currentSave.player];
+                var experience = currentSave == null ? 0 : (int)(319 * ((currentSave.player.experience - add) / (double)currentSave.player.ExperienceNeeded()));
+                var newExperience = currentSave == null ? 0 : (int)(319 * (add / (double)currentSave.player.ExperienceNeeded()));
+                if (experience < 0)
+                {
+                    AddRegionGroup();
+                    SetRegionGroupWidth((experience + newExperience - 1) * 2);
+                    SetRegionGroupHeight(12);
+                    AddPaddingRegion(() => { SetRegionBackground(ExperienceNew); });
+                    AddRegionGroup();
+                    SetRegionGroupWidth((319 - experience - newExperience + 1) * 2);
+                    SetRegionGroupHeight(12);
+                    AddPaddingRegion(() => { SetRegionBackground(ExperienceNone); });
+                }
+                else
+                {
+                    AddRegionGroup();
+                    SetRegionGroupWidth(experience * 2);
+                    SetRegionGroupHeight(12);
+                    AddPaddingRegion(() => { SetRegionBackground(Experience); });
+                    AddRegionGroup();
+                    SetRegionGroupWidth(newExperience * 2);
+                    SetRegionGroupHeight(12);
+                    AddPaddingRegion(() => { SetRegionBackground(ExperienceNew); });
+                    AddRegionGroup();
+                    SetRegionGroupWidth((319 - experience - newExperience) * 2);
+                    SetRegionGroupHeight(12);
+                    AddPaddingRegion(() => { SetRegionBackground(ExperienceNone); });
+                }
+            }
+            else
+            {
+                var experience = currentSave == null ? 0 : (int)(319 * (currentSave.player.experience / (double)currentSave.player.ExperienceNeeded()));
+                AddRegionGroup();
+                SetRegionGroupWidth(experience * 2);
+                SetRegionGroupHeight(12);
+                AddPaddingRegion(() => { SetRegionBackground(Experience); });
+                AddRegionGroup();
+                SetRegionGroupWidth((319 - experience) * 2);
+                SetRegionGroupHeight(12);
+                AddPaddingRegion(() => { SetRegionBackground(ExperienceNone); });
+            }
         }, true),
         new("ExperienceBarBorder", () => {
             SetAnchor(Bottom);
@@ -2848,6 +2883,8 @@ public class Blueprint
                             CloseSave();
                             SaveGames();
                             CloseDesktop("CombatResults");
+                            board = null;
+                            Respawn("ExperienceBar", true);
                             CloseDesktop("Map");
                             CloseDesktop("TitleScreen");
                             SpawnDesktopBlueprint("TitleScreen");
@@ -2871,6 +2908,8 @@ public class Blueprint
                                 SpawnDesktopBlueprint("HostileArea");
                             }
                             CloseDesktop("CombatResults");
+                            board = null;
+                            Respawn("ExperienceBar", true);
                         }
                     });
             });
@@ -2917,6 +2956,8 @@ public class Blueprint
                     CloseDesktop("Instance");
                     CloseDesktop("HostileArea");
                     CloseDesktop("CombatResults");
+                    board = null;
+                    Respawn("ExperienceBar", true);
                     SpawnDesktopBlueprint("TitleScreen");
                 }
                 else
@@ -2944,7 +2985,12 @@ public class Blueprint
                             PlaySound("DesktopInventoryOpen");
                             SpawnDesktopBlueprint("CombatResultsLoot");
                         }
-                        else CloseDesktop("CombatResults");
+                        else
+                        {
+                            CloseDesktop("CombatResults");
+                            board = null;
+                            Respawn("ExperienceBar", true);
+                        }
                     }
                     else
                     {
@@ -2960,6 +3006,8 @@ public class Blueprint
                             var top = sites.Take(5).OrderBy(x => FindPath(x, curr, true).Count).ToList();
                             distances.Find(x => x.x.name == top[0].name).x.QueueSiteOpen("SpiritHealer");
                         }
+                        board = null;
+                        Respawn("ExperienceBar", true);
                     }
                 }
             });
@@ -7025,6 +7073,8 @@ public class Blueprint
                 {
                     PlaySound("DesktopInstanceClose");
                     CloseDesktop("CombatResults");
+                    board = null;
+                    Respawn("ExperienceBar", true);
                 }
             });
         }),
@@ -7074,7 +7124,6 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
-            //SpawnWindowBlueprint("PlayerEquipmentInfo");
             SpawnWindowBlueprint("LootInfo");
             SpawnWindowBlueprint("CombatResultsLoot");
             SpawnWindowBlueprint("Inventory");
@@ -7106,7 +7155,6 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
-            //SpawnWindowBlueprint("PlayerEquipmentInfo");
             SpawnWindowBlueprint("LootInfo");
             SpawnWindowBlueprint("ContainerLoot");
             SpawnWindowBlueprint("Inventory");
@@ -7152,7 +7200,6 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
-            //SpawnWindowBlueprint("PlayerEquipmentInfo");
             SpawnWindowBlueprint("LootInfo");
             SpawnWindowBlueprint("Inventory");
             SpawnWindowBlueprint("ExperienceBarBorder");
@@ -7194,7 +7241,6 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
-            //SpawnWindowBlueprint("PlayerEquipmentInfo");
             SpawnWindowBlueprint("LootInfo");
             SpawnWindowBlueprint("Inventory");
             SpawnWindowBlueprint("ExperienceBarBorder");
@@ -7236,7 +7282,6 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
-            //SpawnWindowBlueprint("PlayerEquipmentInfo");
             SpawnWindowBlueprint("LootInfo");
             SpawnWindowBlueprint("Inventory");
             SpawnWindowBlueprint("ExperienceBarBorder");
@@ -7268,7 +7313,6 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
-            //SpawnWindowBlueprint("PlayerEquipmentInfo");
             SpawnWindowBlueprint("ChestInfo");
             SpawnWindowBlueprint("ChestLoot");
             SpawnWindowBlueprint("Inventory");
@@ -7310,7 +7354,6 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
-            //SpawnWindowBlueprint("PlayerEquipmentInfo");
             SpawnWindowBlueprint("LootInfo");
             SpawnWindowBlueprint("Inventory");
             SpawnWindowBlueprint("ExperienceBarBorder");

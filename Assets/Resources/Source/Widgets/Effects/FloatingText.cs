@@ -81,12 +81,12 @@ public class FloatingText : MonoBehaviour
         {
             var textBorder = new GameObject("TextBorder", typeof(SpriteRenderer));
             textBorder.transform.parent = newObject.transform;
-            textBorder.transform.localPosition = new Vector3(-2, 4, -0.04f);
+            textBorder.transform.localPosition = new Vector3(-2, 2, -0.04f);
             var xPlus = pixelList.Min(x => x.Item1);
             var texture = new Texture2D(pixelList.Max(x => x.Item1) - xPlus + 5, 19, TextureFormat.ARGB32, true) { filterMode = FilterMode.Point };
             for (int i = 0; i < texture.width; i++)
                 for (int j = 0; j < texture.height; j++)
-                    if (pixelList.Contains((i + xPlus, j))) texture.SetPixel(i, j, Coloring.colors[borderColor == "" ? "FullBlack" : borderColor]);
+                    if (pixelList.Contains((i + xPlus, j - 2))) texture.SetPixel(i, j, Coloring.colors[borderColor == "" ? "FullBlack" : borderColor]);
                     else texture.SetPixel(i, j, new Color(0, 0, 0, 0));
             texture.Apply();
             var sprite = Sprite.Create(texture, new Rect(Vector2.zero, new Vector2(texture.width, texture.height)), new Vector2(0, 1), 1);

@@ -375,7 +375,7 @@ public class SaveGame
 
     public void CallEvents(Dictionary<string, string> trigger)
     {
-        //Callinig events on player abilities seems useless at the moment, maybe in the future
+        //Calling events on player abilities seems useless at the moment, maybe in the future
         //foreach (var ability in player.abilities.Select(x => (Ability.abilities.Find(y => y.name == x.Key), x.Value)))
         //    ability.Item1.ExecuteEvents(this, trigger, ability.Value);
 

@@ -618,12 +618,12 @@ public static class Root
 
     public static void SetRegionGroupWidth(int width)
     {
-        CDesktop.LBWindow().LBRegionGroup().setWidth = width;
+        CDesktop.LBWindow().LBRegionGroup().setWidth = width < 0 ? 0 : width;
     }
 
     public static void SetRegionGroupHeight(int height)
     {
-        CDesktop.LBWindow().LBRegionGroup().setHeight = height;
+        CDesktop.LBWindow().LBRegionGroup().setHeight = height < 0 ? 0 : height;
     }
 
     #endregion
@@ -969,7 +969,7 @@ public static class Root
     {
         var region = CDesktop.LBWindow().LBRegionGroup().LBRegion();
         var button = region.LBBigButton().gameObject;
-        return AddBigButtonOverlay(button, "Sprites/ButtonsBig/" + overlay, time, sortingOrder);
+        return AddBigButtonOverlay(button, overlay, time, sortingOrder);
     }
 
     public static void BigButtonFlipX()
@@ -1493,6 +1493,7 @@ public static class Root
         Button,
         ButtonRed,
         Experience,
+        ExperienceNew,
         ExperienceNone,
         ExperienceRested,
         ProgressDone,
