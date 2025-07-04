@@ -2339,21 +2339,21 @@ public class Blueprint
                 var index = i;
                 if (quests.Count > index + thisWindow.pagination())
                 {
+                    var questTemp = Quest.quests.Find(x => x.questID == quests[index + thisWindow.pagination()].questID);
                     AddButtonRegion(() =>
                     {
-                        var quest = quests[index + thisWindow.pagination()];
-                        AddLine((settings.questLevel.Value() ? "[" + quest.questLevel + "] " : "") + quest.name, "Black");
-                        AddSmallButton(quest.ZoneIcon());
+                        AddLine((settings.questLevel.Value() ? "[" + questTemp.questLevel + "] " : "") + questTemp.name, "Black");
+                        AddSmallButton(questTemp.ZoneIcon());
                     },
                     (h) =>
                     {
-                        quest = quests[index + thisWindow.pagination()];
+                        quest = questTemp;
                         if (staticPagination.ContainsKey("Quest"))
                             staticPagination.Remove("Quest");
                         Respawn("Quest");
                         PlaySound("DesktopInstanceOpen");
                     });
-                    var color = ColorQuestLevel(quests[index + thisWindow.pagination()].questLevel);
+                    var color = ColorQuestLevel(questTemp.questLevel);
                     if (color != null) SetRegionBackgroundAsImage("SkillUp" + color);
                 }
                 else if (quests.Count == index + thisWindow.pagination())
@@ -2430,7 +2430,7 @@ public class Blueprint
             AddButtonRegion(() => AddLine("By name", "Black"),
             (h) =>
             {
-                currentSave.player.currentQuests = currentSave.player.currentQuests.OrderBy(x => x.name).ToList();
+                currentSave.player.currentQuests = currentSave.player.currentQuests.OrderBy(x => quests.Find(y => y.questID == x.questID).name).ToList();
                 CloseWindow("QuestSort");
                 CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.4f);
@@ -2438,7 +2438,7 @@ public class Blueprint
             AddButtonRegion(() => AddLine("By quest level", "Black"),
             (h) =>
             {
-                currentSave.player.currentQuests = currentSave.player.currentQuests.OrderBy(x => x.questLevel).ToList();
+                currentSave.player.currentQuests = currentSave.player.currentQuests.OrderBy(x => quests.Find(y => y.questID == x.questID).questLevel).ToList();
                 CloseWindow("QuestSort");
                 CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.4f);
@@ -2446,7 +2446,7 @@ public class Blueprint
             AddButtonRegion(() => AddLine("By zone", "Black"),
             (h) =>
             {
-                currentSave.player.currentQuests = currentSave.player.currentQuests.OrderBy(x => x.zone).ToList();
+                currentSave.player.currentQuests = currentSave.player.currentQuests.OrderBy(x => quests.Find(y => y.questID == x.questID).zone).ToList();
                 CloseWindow("QuestSort");
                 CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.4f);
@@ -4446,7 +4446,7 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    PlaySound("DesktopInventoryOpen");
+                    PlaySound("DesktopMenuOpen");
                     CloseWindow(h.window);
                     CloseWindow("Town");
                     SpawnWindowBlueprint("FlightMaster");
@@ -5086,7 +5086,7 @@ public class Blueprint
                 {
                     CloseWindow("FlightMaster");
                     Respawn("Person");
-                    PlaySound("DesktopInstanceClose");
+                    PlaySound("DesktopMenuClose");
                 });
             });
             AddHeaderRegion(() =>
@@ -5138,7 +5138,7 @@ public class Blueprint
 
                         //Switch desktop to map
                         SwitchDesktop("Map");
-                        
+
                         Respawn("Site: " + town.name);
                         Respawn("Site: " + currentSave.currentSite);
                         if (destination.x == 0 || destination.y == 0)
@@ -5158,9 +5158,24 @@ public class Blueprint
                         var price = distance / 50 * 10;
                         SetAnchor(Center);
                         AddHeaderGroup();
-                        SetRegionGroupWidth(188);
-                        AddPaddingRegion(() => AddLine(list[index + thisWindow.pagination()].capitalRedirect ?? list[index + thisWindow.pagination()].name));
-                        PrintPriceRegion(price, 38, 38, 49);
+                        SetRegionGroupWidth(182);
+                        AddPaddingRegion(() =>
+                        {
+                            AddLine("Take a flight path to:", "DarkGray");
+                        });
+                        AddHeaderRegion(() =>
+                        {
+                            AddLine(destination.capitalRedirect ?? destination.convertDestinationTo ?? destination.name);
+                            AddSmallButton("Zone" + destination.zone.Clean());
+                        });
+                        if (price > 0)
+                        {
+                            AddPaddingRegion(() =>
+                            {
+                                AddLine("For the price of:", "DarkGray");
+                            });
+                            PrintPriceRegion(price, 38, 38, 49);
+                        }
                     });
                 else AddPaddingRegion(() => AddLine());
             }
@@ -6050,7 +6065,7 @@ public class Blueprint
                 AddLine("", "Gray", "Center");
                 AddLine("Maladath", "Epic", "Center");
                 AddLine("Chronicles", "Epic", "Center");
-                AddLine("0.7.2", "DimGray", "Center");
+                AddLine("0.7.35", "DimGray", "Center");
                 AddLine("", "Gray", "Center");
                 AddLine("", "Gray", "Center");
                 AddLine("", "Gray", "Center");
@@ -6867,7 +6882,7 @@ public class Blueprint
         }),
         new("Map", () => 
         {
-            PlaySound("DesktopOpenSave", 0.4f);
+            PlaySound("DesktopOpenSave", 0.3f);
             SetDesktopBackground("LoadingScreens/" + (CDesktop.cameraDestination.x < 2470 ? "Kalimdor" : "EasternKingdoms"));
             loadingBar = new GameObject[2];
             loadingBar[0] = new GameObject("LoadingBarBegin", typeof(SpriteRenderer));
@@ -7375,7 +7390,7 @@ public class Blueprint
                     }
                     else if (CloseWindow("FlightMaster"))
                     {
-                        PlaySound("DesktopInstanceClose");
+                        PlaySound("DesktopMenuClose");
                         Respawn("Person");
                     }
                     else if (CloseWindow("ProfessionRecipeTrainer"))

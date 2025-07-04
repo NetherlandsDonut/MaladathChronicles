@@ -412,7 +412,7 @@ public class Item
                     CloseDesktop("EquipmentScreen");
                     if (currentSave.player.currentQuests.Exists(x => x.questID == quest.questID))
                     {
-                        Quest.quest = currentSave.player.currentQuests.Find(x => x.questID == quest.questID);
+                        Quest.quest = Quest.quests.Find(x => x.questID == quest.questID);
                         SpawnWindowBlueprint("Quest");
                     }
                     else

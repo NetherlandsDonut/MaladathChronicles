@@ -536,7 +536,7 @@ public class Board
                                             if (output.EndsWith(" ")) output += con.amountDone + 1 + "/" + con.amount;
                                             else output += ", " + con.amountDone + 1 + "/" + con.amount;
                                         }
-                                        var end = Site.FindSite(x => x.name == quest.siteEnd);
+                                        var end = Site.FindSite(x => x.name == Quest.quests.Find(y => y.questID == quest.questID).siteEnd);
                                         if (!Quest.sitesToRespawn.Contains(end)) Quest.sitesToRespawn.Add(end);
                                     }
                             winParticipant.who.QuestKill(enemy.name);

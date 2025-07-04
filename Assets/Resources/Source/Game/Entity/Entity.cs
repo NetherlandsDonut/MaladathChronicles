@@ -111,7 +111,7 @@ public class Entity
     #region Questing
 
     //List of all accepted quests
-    public List<Quest> currentQuests;
+    public List<ActiveQuest> currentQuests;
     
     //List of all completed quests so they cannot be taken again
     //Also thanks to this you can accept quests that require
@@ -121,7 +121,7 @@ public class Entity
     //Removes a quest from the quest log
     public void RemoveQuest(Quest quest)
     {
-        currentQuests.Remove(quest);
+        currentQuests.Remove(currentQuests.Find(x => x.questID == quest.questID));
         if (quest.providedItems != null)
         {
             var all = inventory.items.Concat(SaveGame.currentSave.banks.SelectMany(x => x.Value.items)).ToList();
@@ -141,6 +141,7 @@ public class Entity
         foreach (var site in newSitesToRespawn)
             if (site.capitalRedirect != null)
                 sitesRelated.AddRange(SiteTown.towns.Where(x => x.capitalRedirect == site.capitalRedirect));
+            else sitesRelated.Add(site);
         foreach (var site in sitesRelated.Distinct())
             if (!sitesToRespawn.Contains(site)) sitesToRespawn.Add(site);
     }
@@ -180,6 +181,7 @@ public class Entity
         foreach (var site in newSitesToRespawn)
             if (site.capitalRedirect != null)
                 sitesRelated.AddRange(SiteTown.towns.Where(x => x.capitalRedirect == site.capitalRedirect));
+            else sitesRelated.Add(site);
         foreach (var site in sitesRelated.Distinct())
             if (!sitesToRespawn.Contains(site)) sitesToRespawn.Add(site);
     }
@@ -200,9 +202,10 @@ public class Entity
         if (quest.reputationGain != null)
             foreach (var rep in quest.reputationGain)
                 AddReputation(rep.Key, rep.Value);
-        currentQuests.Remove(quest);
-        completedQuests.Add(quest.questID);
-        foreach (var item in quest.conditions.Where(x => x.type == "Item"))
+        var activeQuest = currentQuests.Find(x => x.questID == quest.questID);
+        currentQuests.Remove(activeQuest);
+        completedQuests.Add(activeQuest.questID);
+        foreach (var item in activeQuest.conditions.Where(x => x.type == "Item"))
             if (!item.isItemNotTaken) inventory.RemoveItem(item.name, item.amount);
         var newSitesToRespawn = new List<Site>();
         var find = Site.FindSite(x => x.name == quest.siteEnd);
@@ -217,6 +220,7 @@ public class Entity
         foreach (var site in newSitesToRespawn)
             if (site.capitalRedirect != null)
                 sitesRelated.AddRange(SiteTown.towns.Where(x => x.capitalRedirect == site.capitalRedirect));
+            else sitesRelated.Add(site);
         foreach (var site in sitesRelated.Distinct())
             if (!sitesToRespawn.Contains(site)) sitesToRespawn.Add(site);
     }
@@ -323,12 +327,15 @@ public class Entity
     {
         var list = new List<Quest>();
         foreach (var quest in currentQuests)
-            if (quest.conditions.All(x => x.IsDone()) && quest.siteEnd == site.name)
+        {
+            var questTemp = quests.Find(x => x.questID == quest.questID);
+            if (quest.conditions.All(x => x.IsDone()) && questTemp.siteEnd == site.name)
             {
-                list.Add(quest);
+                list.Add(questTemp);
                 if (oneIsEnough)
                     return list;
             }
+        }
         return list;
     }
 
@@ -398,7 +405,7 @@ public class Entity
                     }
                     if (yes)
                     {
-                        list.Add(quest);
+                        list.Add(quests.Find(x => x.questID == quest.questID));
                         break;
                     }
                     if (oneIsEnough && list.Count > 0)
@@ -439,7 +446,7 @@ public class Entity
 
     public void QuestKill(string who)
     {
-        var changed = new List<Quest>();
+        var changed = new List<ActiveQuest>();
         foreach (var quest in currentQuests)
             foreach (var condition in quest.conditions)
                 if (condition.status != "Done" && condition.type == "Kill" && condition.name == who)
@@ -459,13 +466,13 @@ public class Entity
                     sitesToRespawn.Add(site);
             foreach (var quest in changed)
                 if (quest.conditions.All(x => x.IsDone()))
-                    sitesToRespawn.Add(Site.FindSite(x => x.name == quest.siteEnd));
+                    sitesToRespawn.Add(Site.FindSite(x => x.name == quests.Find(y => y.questID == quest.questID).siteEnd));
         }
     }
 
     public void QuestVisit(string site)
     {
-        var changed = new List<Quest>();
+        var changed = new List<ActiveQuest>();
         foreach (var quest in currentQuests)
             foreach (var condition in quest.conditions)
                 if (condition.type == "Visit" && condition.name == site)
@@ -476,7 +483,7 @@ public class Entity
                 }
         foreach (var quest in changed)
             if (quest.conditions.All(x => x.IsDone()))
-                sitesToRespawn.Add(Site.FindSite(x => x.name == quest.siteEnd));
+                sitesToRespawn.Add(Site.FindSite(x => x.name == quests.Find(y => y.questID == quest.questID).siteEnd));
     }
 
     #endregion

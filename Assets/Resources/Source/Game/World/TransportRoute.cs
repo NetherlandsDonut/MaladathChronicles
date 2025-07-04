@@ -41,12 +41,27 @@ public class TransportRoute
     //Transport mouseover information
     public void PrintTooltip()
     {
+        var destination = Site.FindSite(x => x.name == sites.Find(x => x != currentSave.currentSite && (SiteTown.town == null || x != SiteTown.town.name)));
         SetAnchor(Anchor.Center);
         AddHeaderGroup();
-        SetRegionGroupWidth(188);
-        AddHeaderRegion(() => AddLine(means));
-        AddPaddingRegion(() => AddLine(sites.Find(x => x != currentSave.currentSite)));
-        PrintPriceRegion(price, 38, 38, 49);
+        SetRegionGroupWidth(182);
+        AddPaddingRegion(() =>
+        {
+            AddLine("Take a " + (means.ToLower().Contains("teleport") ? "teleporter" : means.ToLower()) + " to:", "DarkGray");
+        });
+        AddHeaderRegion(() =>
+        {
+            AddLine(destination.capitalRedirect ?? destination.convertDestinationTo ?? destination.name);
+            AddSmallButton("Zone" + destination.zone.Clean());
+        });
+        if (price > 0)
+        {
+            AddPaddingRegion(() =>
+            {
+                AddLine("For the price of:", "DarkGray");
+            });
+            PrintPriceRegion(price, 38, 38, 49);
+        }
     }
 
     //EXTERNAL FILE: List containing all paths in-game

@@ -737,10 +737,34 @@
     {
       "playerSide": "Alliance",
       "player": {
-        "currentQuests": [],
-        "completedQuests": [],
+        "currentQuests": [
+          {
+            "questID": 7,
+            "conditions": [
+              {
+                "type": "Kill",
+                "name": "Kobold Vermin",
+                "amount": 3,
+                "amountDone": 1
+              }
+            ]
+          },
+          {
+            "questID": 18,
+            "conditions": [
+              {
+                "type": "Item",
+                "name": "Red Burlap Bandana",
+                "amount": 3
+              }
+            ]
+          }
+        ],
+        "completedQuests": [
+          783
+        ],
         "level": 4,
-        "experience": 164,
+        "experience": 1478,
         "uniquesGotten": [
           "Libram of Truth",
           "Totem of Rage"
@@ -753,7 +777,7 @@
           "Woodpaw Tribe": 0,
           "The Burning Legion": 0,
           "Darkspear Tribe": 0,
-          "Stormwind": 4250,
+          "Stormwind": 4325,
           "Timbermaw Tribe": 4050,
           "Magram Clan": 0,
           "Gelkis Clan": 0,
@@ -871,19 +895,19 @@
             ]
           },
           "Skinning": {
-            "Item1": 1,
+            "Item1": 3,
             "Item2": [
               "Amateur"
             ]
           },
           "Mining": {
-            "Item1": 1,
+            "Item1": 3,
             "Item2": [
               "Amateur"
             ]
           },
           "Herbalism": {
-            "Item1": 1,
+            "Item1": 2,
             "Item2": [
               "Amateur"
             ]
@@ -989,7 +1013,7 @@
           "Order Mastery": 1
         },
         "inventory": {
-          "money": 109929,
+          "money": 109429,
           "items": [
             {
               "rarity": "Common",
@@ -1029,6 +1053,78 @@
               "lvl": 1,
               "amount": 1,
               "maxStack": 20
+            },
+            {
+              "x": 3,
+              "rarity": "Common",
+              "name": "Ruined Leather Scraps",
+              "icon": "itemmiscpeltbearruin05",
+              "detailedType": "Organ",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 5,
+              "lvl": 1,
+              "amount": 3,
+              "maxStack": 20,
+              "price": 7
+            },
+            {
+              "x": 4,
+              "rarity": "Common",
+              "name": "Rough Stone",
+              "icon": "itemstone06",
+              "detailedType": "Rock",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 5,
+              "lvl": 1,
+              "amount": 3,
+              "maxStack": 20,
+              "price": 2
+            },
+            {
+              "y": 1,
+              "rarity": "Common",
+              "name": "Copper Ore",
+              "icon": "itemorecopper01",
+              "detailedType": "Ore",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 10,
+              "lvl": 1,
+              "amount": 5,
+              "maxStack": 10,
+              "price": 5
+            },
+            {
+              "x": 1,
+              "y": 1,
+              "rarity": "Common",
+              "name": "Silverleaf",
+              "icon": "itemmischerb10",
+              "detailedType": "Flowers",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 5,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 20,
+              "price": 10
+            },
+            {
+              "x": 2,
+              "y": 1,
+              "rarity": "Common",
+              "name": "Earthroot",
+              "icon": "itemmischerb07",
+              "detailedType": "Flowers",
+              "type": "Trade Good",
+              "source": "Quest",
+              "ilvl": 5,
+              "lvl": 1,
+              "amount": 2,
+              "maxStack": 20,
+              "price": 20
             }
           ],
           "bags": []
@@ -1069,14 +1165,29 @@
             "amount": 1,
             "maxStack": 1,
             "price": 1
+          },
+          "Back": {
+            "x": 3,
+            "y": 1,
+            "rarity": "Common",
+            "name": "Wispy Cloak",
+            "icon": "itemmisccape11",
+            "type": "Back",
+            "source": "RareDrop",
+            "ilvl": 6,
+            "lvl": 1,
+            "armor": 6,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 11
           }
         },
         "worldBuffs": []
       },
       "hour": 8,
-      "minute": 6,
-      "second": 53,
-      "currentSite": "Thorium Point",
+      "minute": 17,
+      "second": 12,
+      "currentSite": "Northshire Valley",
       "ringOfLaw": "Eviscerator",
       "forlornCloister": "Ironspine",
       "markets": [
@@ -1099,18 +1210,29 @@
             "bags": [],
             "ignoreSpaceChecks": true
           }
+        },
+        "Northshire Valley": {
+          "area": "Northshire Valley",
+          "inventory": {
+            "items": [],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
         }
       },
       "fishingSpots": {},
       "fishingSpoils": {},
       "siteProgress": {
         "The Iron Hall": 2,
-        "The Imperial Seat": 2
+        "The Imperial Seat": 2,
+        "Northshire Valley": 3
       },
       "commonsKilled": {
         "Ironhand Guardian": 4,
         "Anvilrage Captain": 2,
-        "Doomforge Dragoon": 2
+        "Doomforge Dragoon": 2,
+        "Kobold Vermin": 1,
+        "Young Wolf": 2
       },
       "raresKilled": {},
       "elitesKilled": {
@@ -1128,7 +1250,11 @@
         "The Sea of Cinders": 0,
         "The Cauldron": 1,
         "The Slag Pit": 1,
-        "Thorium Point": 1
+        "Thorium Point": 2,
+        "Ironforge": 4,
+        "Stormwind City": 1,
+        "Northshire Abbey": 1,
+        "Northshire Valley": 1
       },
       "unlockedAreas": [
         "The Imperial Seat"
@@ -1356,7 +1482,7 @@
             "minPower": 4.9700000000000006,
             "maxPower": 6.97,
             "amount": 1,
-            "minutesLeft": 30,
+            "minutesLeft": 19,
             "maxStack": 1,
             "price": 57079,
             "stats": {
@@ -1381,7 +1507,7 @@
             "lvl": 56,
             "armor": 225,
             "amount": 1,
-            "minutesLeft": 30,
+            "minutesLeft": 19,
             "maxStack": 1,
             "price": 20168,
             "stats": {
@@ -1400,7 +1526,7 @@
             "ilvl": 58,
             "lvl": 1,
             "amount": 2,
-            "minutesLeft": 30,
+            "minutesLeft": 19,
             "maxStack": 20,
             "price": 250,
             "droppedBy": [
@@ -1419,7 +1545,7 @@
             "lvl": 1,
             "armor": 5,
             "amount": 1,
-            "minutesLeft": 30,
+            "minutesLeft": 19,
             "maxStack": 1,
             "price": 1
           },
@@ -1433,7 +1559,7 @@
             "source": "DirectDrop",
             "ilvl": 57,
             "amount": 1,
-            "minutesLeft": 30,
+            "minutesLeft": 19,
             "maxStack": 1,
             "unique": true,
             "price": 13208,
@@ -1452,7 +1578,7 @@
             "ilvl": 50,
             "lvl": 1,
             "amount": 1,
-            "minutesLeft": 30,
+            "minutesLeft": 19,
             "maxStack": 20,
             "price": 5000
           },
@@ -1465,7 +1591,7 @@
             "source": "DirectDrop",
             "ilvl": 57,
             "amount": 1,
-            "minutesLeft": 30,
+            "minutesLeft": 19,
             "maxStack": 1,
             "unique": true,
             "price": 12973,
@@ -1483,7 +1609,7 @@
             "type": "Miscellaneous",
             "ilvl": 55,
             "amount": 1,
-            "minutesLeft": 30,
+            "minutesLeft": 19,
             "maxStack": 5,
             "abilities": {
               "Major Healing Potion": 1
@@ -1495,9 +1621,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2025-07-03T01:33:12.4124207+02:00",
-      "lastLoaded": "2025-07-03T18:27:16.9915805+02:00",
-      "lastPlayed": "2025-07-03T18:28:57.5746837+02:00",
-      "timePlayed": "00:15:31.2965900"
+      "lastLoaded": "2025-07-04T15:22:42.8421729+02:00",
+      "lastPlayed": "2025-07-04T15:23:55.0312769+02:00",
+      "timePlayed": "00:21:40.1271093"
     }
   ]
 }

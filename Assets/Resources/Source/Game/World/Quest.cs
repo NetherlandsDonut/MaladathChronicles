@@ -410,38 +410,23 @@ public class Quest
     }
 
     //Copies a quest to a new one for the player to take
-    public Quest CopyQuest()
+    public ActiveQuest CopyQuest()
     {
-        var newQuest = new Quest();
-        newQuest.name = name;
-        if (classes != null)
-            newQuest.classes = classes.ToList();
-        if (races != null)
-            newQuest.races = races.ToList();
-        if (rewards != null)
-            newQuest.rewards = rewards.ToDictionary(x => x.Key, x => x.Value);
-        newQuest.previous = previous;
-        newQuest.questLevel = questLevel;
-        newQuest.requiredLevel = requiredLevel;
-        if (reputationGain != null)
-            newQuest.reputationGain = reputationGain.ToDictionary(x => x.Key, x => x.Value);
-        newQuest.description = description;
-        newQuest.objective = objective;
-        newQuest.completion = completion;
+        var newQuest = new ActiveQuest();
         newQuest.conditions = new();
         if (conditions != null)
             foreach (var condition in conditions)
                 newQuest.conditions.Add(new() { name = condition.name, amount = condition.amount, type = condition.type });
-        newQuest.faction = faction;
-        newQuest.requiredRank = requiredRank;
-        newQuest.experience = experience;
-        newQuest.money = money;
-        newQuest.siteStart = siteStart;
-        newQuest.siteEnd = siteEnd;
-        if (providedItems != null)
-            newQuest.providedItems = providedItems.ToDictionary(x => x.Key, x => x.Value);
         newQuest.questID = questID;
-        newQuest.zone = zone;
         return newQuest;
     }
+}
+
+public class ActiveQuest
+{
+    //ID of the quest
+    public int questID;
+
+    //Conditions for completing the quest
+    public List<QuestCondition> conditions;
 }

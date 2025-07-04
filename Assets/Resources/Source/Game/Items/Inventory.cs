@@ -137,7 +137,7 @@ public class Inventory
                             if (output.EndsWith(" ")) output += sumBefore + added + "/" + con.amount;
                             else output += ", " + sumBefore + added + "/" + con.amount;
                         }
-                        var end = Site.FindSite(x => x.name == quest.siteEnd);
+                        var end = Site.FindSite(x => x.name == quests.Find(y => y.questID == quest.questID).siteEnd);
                         if (!sitesToRespawn.Contains(end)) sitesToRespawn.Add(end);
                     }
             if (!output.EndsWith(" "))
