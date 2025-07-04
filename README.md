@@ -948,5 +948,69 @@ v0.7.20
           Added many new sites to Barrens, Stonetalon Mountains, Ashenvale, Feralas, Darkshore and one lacking to Stromgarde Ruins.
 v0.7.21
  26.04.25 Added beast taming
+v0.7.22
+ 27.04.25 Cannot explore capital's districts unless you are at least neutral now just like with towns
+          Improved message on being unfriendly with towns
+          Made Timbermaw unfriendly on start
+v0.7.23
+ 28.04.25 Fixed input windows respawning even if they were closed
+          Changed character creation screen a bit
+          Fixed input line leaving behind the marker character
+v0.7.24
+ 29.04.25 Vendor now shows items that cannot be equipped by your character in red
+          Item comparison now compares dual wielded weapons to a two handed weapon
+v0.7.25
+ 30.04.25 Made items in buyback go dark instead of going bright
+          Changed the red tint for buttons a bit to make it darker
+v0.7.26
+ 07.05.25 Introduced a new faster pathfinding system
+v0.7.27
+ 23.06.25 Fixed loot after combat showing a random's entity name
+          Added separate equipment of a ranged weapon
+          Removed old weapon damage and speed and replaced it fully with power scaling
+          Fixed item comparisons for damage
+          Added separate variable that determines which weapons are used to calculate scaling for damage, ranged or melee
+          Money in towns/capitals now has the same width as in inventory
+          That money bar will not show now if the town isnt going to talk with the player
+          Changed price regions to not inlcude an empty region at the end
+          Mount prices now fit in the region dedicated to it
+v0.7.28
+ 24.06.25 Made armor inline with the armor class
+          Character screen now includes info about weapon modifiers for power scaling
+          Made all professions available for the player and made them start at amateur levels to make it possible to start without training
+          Fixed resistances being calculated as fraction of 100% instead as fraction of 1% making almost each invincible
+          Fixed ranged weapon comparison not working correctly
+          Adjusted entity AI
+v0.7.29
+ 25.06.25 Fixed sounds for moving guns around
+          Items can be dragged into equipment slots
+          Bags can now be dragged into slots to equip them
+v0.7.30
+ 26.06.25 Added sneaking status. Sneaking entities are not targettable
+v0.7.31
+ 28.06.25 Skinning now works with more than one enemy defeated
+          Rearranged combat result windows
+          Added two new portraits
+v0.7.32
+ 29.06.25 Made loot bigger to fit more items and moved it to left
+v0.7.33
+ 01.07.25 Popup text appears when learning a new profession level or a recipe
+          Player can no longer lose items by holding them in hand and clicking on the last loot item with automatic loot window closing
+          Fixed item count printing on loot items
+          Fixed container items having their items squished into one slot
+          Fixed a bug where the player could destroy the container they were currently opening and where the player could destroy items while moving around a different one
+v0.7.34
+ 03.07.25 Added two missing ambience tracks
+          Added cancelling movement while in the midst of it
+          Added nine new portraits
+          Added sounds for all gendered races, golems, robots, void walkers, elementals, giants
+          Fixed not being able to drag off hands into the off hand slot
+          Fixed furbolg having genders (They don't ;3)
+          Enemy aggro sound is now played by the enemy that is first to move
+          Fixed game freezing when trying to get two enemies with only one being available in the pool
+          Remapped Blackrock Depths
+          Fixed chest auto close closing area as well
+v0.7.35
+ 04.07.25 Fixed a bug that made complexes with areas glitch out the game
 ```
 </details>
