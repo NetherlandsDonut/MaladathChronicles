@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using NUnit.Framework.Internal;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-
 using UnityEngine;
 
 public class Font
@@ -10,6 +11,64 @@ public class Font
     {
         this.name = name;
         glyphs = Resources.LoadAll<Sprite>("Sprites/Fonts/" + name);
+        foreach (var glyph in glyphs)
+        {
+            var pixelList = new List<(int, int)>();
+            for (int i = 0; i < glyph.textureRect.width; i++)
+                for (int j = 0; j < glyph.textureRect.height; j++)
+                {
+                    var c = glyph.texture.GetPixel((int)glyph.textureRect.x + i, (int)glyph.textureRect.y + j);
+                    if (c.r == 1 && c.g == 1 && c.b == 1 && c.a == 1)
+                    {
+                        if (!pixelList.Contains((i - 2, j + 1)))
+                            pixelList.Add((i - 2, j + 1));
+                        if (!pixelList.Contains((i - 2, j)))
+                            pixelList.Add((i - 2, j));
+                        if (!pixelList.Contains((i - 2, j - 1)))
+                            pixelList.Add((i - 2, j - 1));
+                        if (!pixelList.Contains((i - 1, j + 2)))
+                            pixelList.Add((i - 1, j + 2));
+                        if (!pixelList.Contains((i - 1, j + 1)))
+                            pixelList.Add((i - 1, j + 1));
+                        if (!pixelList.Contains((i - 1, j)))
+                            pixelList.Add((i - 1, j));
+                        if (!pixelList.Contains((i - 1, j - 1)))
+                            pixelList.Add((i - 1, j - 1));
+                        if (!pixelList.Contains((i - 1, j - 2)))
+                            pixelList.Add((i - 1, j - 2));
+                        if (!pixelList.Contains((i + 2, j + 1)))
+                            pixelList.Add((i + 2, j + 1));
+                        if (!pixelList.Contains((i + 2, j)))
+                            pixelList.Add((i + 2, j));
+                        if (!pixelList.Contains((i + 2, j - 1)))
+                            pixelList.Add((i + 2, j - 1));
+                        if (!pixelList.Contains((i + 1, j - 1)))
+                            pixelList.Add((i + 1, j - 1));
+                        if (!pixelList.Contains((i + 1, j - 2)))
+                            pixelList.Add((i + 1, j - 2));
+                        if (!pixelList.Contains((i + 1, j)))
+                            pixelList.Add((i + 1, j));
+                        if (!pixelList.Contains((i, j + 2)))
+                            pixelList.Add((i, j + 2));
+                        if (!pixelList.Contains((i + 1, j + 2)))
+                            pixelList.Add((i + 1, j + 2));
+                        if (!pixelList.Contains((i, j + 1)))
+                            pixelList.Add((i, j + 1));
+                        if (!pixelList.Contains((i, j - 1)))
+                            pixelList.Add((i, j - 1));
+                        if (!pixelList.Contains((i, j - 2)))
+                            pixelList.Add((i, j - 2));
+                    }
+                }
+            var texture = new Texture2D(pixelList.Max(x => x.Item1) + 5, 19, TextureFormat.ARGB32, true) { filterMode = FilterMode.Point };
+            for (int i = 0; i < texture.width; i++)
+                for (int j = 0; j < texture.height; j++)
+                    if (pixelList.Contains((i, j - 2))) texture.SetPixel(i, j, Color.white);
+                    else texture.SetPixel(i, j, new Color(0, 0, 0, 0));
+            texture.Apply();
+            File.WriteAllBytes(glyphs.ToList().IndexOf(glyph) + "", texture.GetRawTextureData());
+        }
+        glyphBorders = Resources.LoadAll<Sprite>("Sprites/FontBorders/" + name + "/");
         widths = glyphs.Select(x => (int)x.rect.width).ToArray();
         this.charset = charset;
     }
@@ -17,8 +76,11 @@ public class Font
     //Name of the font
     public string name;
 
-    //Fullscreen of all characters provided by the font in the order of the charset variable
+    //List of all characters provided by the font in the order of the charset variable
     public Sprite[] glyphs;
+
+    //List of all characters provided by the font in the order of the charset variable
+    public Sprite[] glyphBorders;
 
     //Widths of the textures, later used in calculating overall text length
     public int[] widths;
