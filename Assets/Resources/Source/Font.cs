@@ -1,4 +1,4 @@
-﻿using NUnit.Framework.Internal;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -11,64 +11,64 @@ public class Font
     {
         this.name = name;
         glyphs = Resources.LoadAll<Sprite>("Sprites/Fonts/" + name);
-        foreach (var glyph in glyphs)
-        {
-            var pixelList = new List<(int, int)>();
-            for (int i = 0; i < glyph.textureRect.width; i++)
-                for (int j = 0; j < glyph.textureRect.height; j++)
-                {
-                    var c = glyph.texture.GetPixel((int)glyph.textureRect.x + i, (int)glyph.textureRect.y + j);
-                    if (c.r == 1 && c.g == 1 && c.b == 1 && c.a == 1)
-                    {
-                        if (!pixelList.Contains((i - 2, j + 1)))
-                            pixelList.Add((i - 2, j + 1));
-                        if (!pixelList.Contains((i - 2, j)))
-                            pixelList.Add((i - 2, j));
-                        if (!pixelList.Contains((i - 2, j - 1)))
-                            pixelList.Add((i - 2, j - 1));
-                        if (!pixelList.Contains((i - 1, j + 2)))
-                            pixelList.Add((i - 1, j + 2));
-                        if (!pixelList.Contains((i - 1, j + 1)))
-                            pixelList.Add((i - 1, j + 1));
-                        if (!pixelList.Contains((i - 1, j)))
-                            pixelList.Add((i - 1, j));
-                        if (!pixelList.Contains((i - 1, j - 1)))
-                            pixelList.Add((i - 1, j - 1));
-                        if (!pixelList.Contains((i - 1, j - 2)))
-                            pixelList.Add((i - 1, j - 2));
-                        if (!pixelList.Contains((i + 2, j + 1)))
-                            pixelList.Add((i + 2, j + 1));
-                        if (!pixelList.Contains((i + 2, j)))
-                            pixelList.Add((i + 2, j));
-                        if (!pixelList.Contains((i + 2, j - 1)))
-                            pixelList.Add((i + 2, j - 1));
-                        if (!pixelList.Contains((i + 1, j - 1)))
-                            pixelList.Add((i + 1, j - 1));
-                        if (!pixelList.Contains((i + 1, j - 2)))
-                            pixelList.Add((i + 1, j - 2));
-                        if (!pixelList.Contains((i + 1, j)))
-                            pixelList.Add((i + 1, j));
-                        if (!pixelList.Contains((i, j + 2)))
-                            pixelList.Add((i, j + 2));
-                        if (!pixelList.Contains((i + 1, j + 2)))
-                            pixelList.Add((i + 1, j + 2));
-                        if (!pixelList.Contains((i, j + 1)))
-                            pixelList.Add((i, j + 1));
-                        if (!pixelList.Contains((i, j - 1)))
-                            pixelList.Add((i, j - 1));
-                        if (!pixelList.Contains((i, j - 2)))
-                            pixelList.Add((i, j - 2));
-                    }
-                }
-            var texture = new Texture2D(pixelList.Max(x => x.Item1) + 5, 19, TextureFormat.ARGB32, true) { filterMode = FilterMode.Point };
-            for (int i = 0; i < texture.width; i++)
-                for (int j = 0; j < texture.height; j++)
-                    if (pixelList.Contains((i, j - 2))) texture.SetPixel(i, j, Color.white);
-                    else texture.SetPixel(i, j, new Color(0, 0, 0, 0));
-            texture.Apply();
-            File.WriteAllBytes(glyphs.ToList().IndexOf(glyph) + "", texture.GetRawTextureData());
-        }
-        glyphBorders = Resources.LoadAll<Sprite>("Sprites/FontBorders/" + name + "/");
+        //foreach (var glyph in glyphs)
+        //{
+        //    var pixelList = new List<(int, int)>();
+        //    for (int i = 0; i < glyph.textureRect.width; i++)
+        //        for (int j = 0; j < glyph.textureRect.height; j++)
+        //        {
+        //            var c = glyph.texture.GetPixel((int)glyph.textureRect.x + i, (int)glyph.textureRect.y + j);
+        //            if (c.r == 1 && c.g == 1 && c.b == 1 && c.a == 1)
+        //            {
+        //                if (!pixelList.Contains((i - 2, j + 1)))
+        //                    pixelList.Add((i - 2, j + 1));
+        //                if (!pixelList.Contains((i - 2, j)))
+        //                    pixelList.Add((i - 2, j));
+        //                if (!pixelList.Contains((i - 2, j - 1)))
+        //                    pixelList.Add((i - 2, j - 1));
+        //                if (!pixelList.Contains((i - 1, j + 2)))
+        //                    pixelList.Add((i - 1, j + 2));
+        //                if (!pixelList.Contains((i - 1, j + 1)))
+        //                    pixelList.Add((i - 1, j + 1));
+        //                if (!pixelList.Contains((i - 1, j)))
+        //                    pixelList.Add((i - 1, j));
+        //                if (!pixelList.Contains((i - 1, j - 1)))
+        //                    pixelList.Add((i - 1, j - 1));
+        //                if (!pixelList.Contains((i - 1, j - 2)))
+        //                    pixelList.Add((i - 1, j - 2));
+        //                if (!pixelList.Contains((i + 2, j + 1)))
+        //                    pixelList.Add((i + 2, j + 1));
+        //                if (!pixelList.Contains((i + 2, j)))
+        //                    pixelList.Add((i + 2, j));
+        //                if (!pixelList.Contains((i + 2, j - 1)))
+        //                    pixelList.Add((i + 2, j - 1));
+        //                if (!pixelList.Contains((i + 1, j - 1)))
+        //                    pixelList.Add((i + 1, j - 1));
+        //                if (!pixelList.Contains((i + 1, j - 2)))
+        //                    pixelList.Add((i + 1, j - 2));
+        //                if (!pixelList.Contains((i + 1, j)))
+        //                    pixelList.Add((i + 1, j));
+        //                if (!pixelList.Contains((i, j + 2)))
+        //                    pixelList.Add((i, j + 2));
+        //                if (!pixelList.Contains((i + 1, j + 2)))
+        //                    pixelList.Add((i + 1, j + 2));
+        //                if (!pixelList.Contains((i, j + 1)))
+        //                    pixelList.Add((i, j + 1));
+        //                if (!pixelList.Contains((i, j - 1)))
+        //                    pixelList.Add((i, j - 1));
+        //                if (!pixelList.Contains((i, j - 2)))
+        //                    pixelList.Add((i, j - 2));
+        //            }
+        //        }
+        //    var texture = new Texture2D(pixelList.Count == 0 ? 4 : pixelList.Max(x => x.Item1) + 3, 19, TextureFormat.ARGB32, true) { filterMode = FilterMode.Point };
+        //    for (int i = 0; i < texture.width; i++)
+        //        for (int j = 0; j < texture.height; j++)
+        //            if (pixelList.Contains((i - 2, j - 2))) texture.SetPixel(i, j, Color.white);
+        //            else texture.SetPixel(i, j, new Color(0, 0, 0, 0));
+        //    texture.Apply();
+        //    File.WriteAllBytes("C:\\Users\\ragan\\Documents\\Projects\\Unity\\MaladathChronicles\\Assets\\Resources\\Sprites\\FontBorders\\Tahoma Bold\\" + glyphs.ToList().IndexOf(glyph) + ".png", texture.EncodeToPNG());
+        //}
+        glyphBorders = Resources.LoadAll<Sprite>("Sprites/FontBorders/" + name + "/").OrderBy(x => int.Parse(x.name)).ToArray();
         widths = glyphs.Select(x => (int)x.rect.width).ToArray();
         this.charset = charset;
     }
@@ -101,6 +101,16 @@ public class Font
         if (index == -1) { Debug.LogError("This character was not found in the charset: " + character); return null; }
         else if (fonts[name].glyphs.Length < index) { Debug.LogError("This character was not found in the font glyph set: " + character); return null; }
         return fonts[name].glyphs[index];
+    }
+
+    //Returns a texture corresponding to the given character
+    //based on the order of the characters in the charset variable
+    public Sprite GetGlyphBorder(char character)
+    {
+        var index = charset.IndexOf(character);
+        if (index == -1) { Debug.LogError("This character was not found in the charset: " + character); return null; }
+        else if (fonts[name].glyphBorders.Length < index) { Debug.LogError("This character was not found in the font glyph set: " + character); return null; }
+        return fonts[name].glyphBorders[index];
     }
 
     //Current font loaded into memory
