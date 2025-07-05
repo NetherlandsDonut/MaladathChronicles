@@ -104,7 +104,7 @@ public class SitePath
     //EXTERNAL FILE: List containing all paths in-game
     public static List<SitePath> paths;
 
-    //EXTERNAL FILE: List containing all paths in-game
+    //Pathfinding data
     public static Dictionary<SitePath, (int distance, SitePath parent)> pathInfo;
 
     //Finds the path with the least points in between the two given sites

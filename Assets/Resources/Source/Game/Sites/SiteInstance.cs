@@ -92,6 +92,7 @@ public class SiteInstance : Site
             },
             (h) =>
             {
+                if (sitePathBuilder != null) return;
                 if (h == null) LeadPath();
                 else ExecutePath("Instance");
             },

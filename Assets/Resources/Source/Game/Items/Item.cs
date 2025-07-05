@@ -182,7 +182,7 @@ public class Item
         {
             if (entity.equipment.ContainsKey("Off Hand") && entity.equipment.ContainsKey("Main Hand") && entity.inventory.BagSpace() - entity.inventory.items.Count < 1)
                 SpawnFallingText(new Vector2(0, 34), "Inventory full", "Red");
-            else 
+            else
             {
                 unequiped.AddRange(entity.Unequip(new() { "Off Hand", "Main Hand" }));
                 EquipInto(entity, "Main Hand");
@@ -257,12 +257,10 @@ public class Item
     //For example it will say that a Paladin cannot equip a cloth item
     public bool CanEquip(Entity entity, bool downgradeArmor = false)
     {
-        if (type == "Miscellaneous" || type == "Trade Good" || type == "Recipe")
-            return false;
-        if (specs != null && !specs.Contains(entity.spec))
-            return false;
-        if (type == "Bag")
-            return entity.inventory.bags.Count < defines.maxBagsEquipped;
+        if (lvl > entity.level) return false;
+        if (type == "Miscellaneous" || type == "Trade Good" || type == "Recipe") return false;
+        if (specs != null && !specs.Contains(entity.spec)) return false;
+        if (type == "Bag") return entity.inventory.bags.Count < defines.maxBagsEquipped;
         else if (armorClass != null)
         {
             if (downgradeArmor)
@@ -297,68 +295,43 @@ public class Item
             }
             else return entity.abilities.ContainsKey(armorClass + " Proficiency");
         }
-        else if (type == "Pouch")
-            return entity.abilities.ContainsKey("Pouch Proficiency");
-        else if (type == "Quiver")
-            return entity.abilities.ContainsKey("Quiver Proficiency");
-        else if (type == "Libram")
-            return entity.abilities.ContainsKey("Libram Proficiency");
-        else if (type == "Totem")
-            return entity.abilities.ContainsKey("Totem Proficiency");
-        else if (type == "Idol")
-            return entity.abilities.ContainsKey("Idol Proficiency");
+        else if (type == "Pouch") return entity.abilities.ContainsKey("Pouch Proficiency");
+        else if (type == "Quiver") return entity.abilities.ContainsKey("Quiver Proficiency");
+        else if (type == "Libram") return entity.abilities.ContainsKey("Libram Proficiency");
+        else if (type == "Totem") return entity.abilities.ContainsKey("Totem Proficiency");
+        else if (type == "Idol") return entity.abilities.ContainsKey("Idol Proficiency");
         else if (type == "Two Handed")
         {
-            if (detailedType == "Sword")
-                return entity.abilities.ContainsKey("Two Handed Sword Proficiency");
-            else if (detailedType == "Axe")
-                return entity.abilities.ContainsKey("Two Handed Axe Proficiency");
-            else if (detailedType == "Mace")
-                return entity.abilities.ContainsKey("Two Handed Mace Proficiency");
-            else if (detailedType == "Polearm")
-                return entity.abilities.ContainsKey("Polearm Proficiency");
-            else if (detailedType == "Staff")
-                return entity.abilities.ContainsKey("Staff Proficiency");
-            else
-                return true;
+            if (detailedType == "Sword") return entity.abilities.ContainsKey("Two Handed Sword Proficiency");
+            else if (detailedType == "Axe") return entity.abilities.ContainsKey("Two Handed Axe Proficiency");
+            else if (detailedType == "Mace") return entity.abilities.ContainsKey("Two Handed Mace Proficiency");
+            else if (detailedType == "Polearm") return entity.abilities.ContainsKey("Polearm Proficiency");
+            else if (detailedType == "Staff") return entity.abilities.ContainsKey("Staff Proficiency");
+            else return true;
         }
         else if (type == "Off Hand")
         {
-            if (detailedType == "Shield")
-                return entity.abilities.ContainsKey("Shield Proficiency");
-            else
-                return entity.abilities.ContainsKey("Off Hand Proficiency");
+            if (detailedType == "Shield") return entity.abilities.ContainsKey("Shield Proficiency");
+            else return entity.abilities.ContainsKey("Off Hand Proficiency");
         }
         else if (type == "Ranged Weapon")
         {
-            if (detailedType == "Bow")
-                return entity.abilities.ContainsKey("Bow Proficiency");
-            else if (detailedType == "Crossbow")
-                return entity.abilities.ContainsKey("Crossbow Proficiency");
-            else if (detailedType == "Gun")
-                return entity.abilities.ContainsKey("Gun Proficiency");
-            else
-                return true;
+            if (detailedType == "Bow") return entity.abilities.ContainsKey("Bow Proficiency");
+            else if (detailedType == "Crossbow") return entity.abilities.ContainsKey("Crossbow Proficiency");
+            else if (detailedType == "Gun") return entity.abilities.ContainsKey("Gun Proficiency");
+            else return true;
         }
         else if (type == "One Handed")
         {
-            if (detailedType == "Dagger")
-                return entity.abilities.ContainsKey("Dagger Proficiency");
-            else if (detailedType == "Sword")
-                return entity.abilities.ContainsKey("One Handed Sword Proficiency");
-            else if (detailedType == "Axe")
-                return entity.abilities.ContainsKey("One Handed Axe Proficiency");
-            else if (detailedType == "Mace")
-                return entity.abilities.ContainsKey("One Handed Mace Proficiency");
-            else if (detailedType == "Wand")
-                return entity.abilities.ContainsKey("Wand Proficiency");
-            else if (detailedType == "Fist Weapon")
-                return entity.abilities.ContainsKey("Fist Weapon Proficiency");
-            else
-                return true;
+            if (detailedType == "Dagger") return entity.abilities.ContainsKey("Dagger Proficiency");
+            else if (detailedType == "Sword") return entity.abilities.ContainsKey("One Handed Sword Proficiency");
+            else if (detailedType == "Axe") return entity.abilities.ContainsKey("One Handed Axe Proficiency");
+            else if (detailedType == "Mace") return entity.abilities.ContainsKey("One Handed Mace Proficiency");
+            else if (detailedType == "Wand") return entity.abilities.ContainsKey("Wand Proficiency");
+            else if (detailedType == "Fist Weapon") return entity.abilities.ContainsKey("Fist Weapon Proficiency");
+            else return true;
         }
-        else
-            return true;
+        else return true;
     }
 
     #endregion
@@ -374,25 +347,7 @@ public class Item
         else if (type == "Recipe")
         {
             var recipe = Recipe.recipes.Find(x => name.Contains(x.name));
-            if (recipe != null)
-            {
-                if (!entity.professionSkills.ContainsKey(recipe.profession))
-                {
-                    SpawnFallingText(new Vector2(0, 34), "You don't know the required profession", "Red");
-                    return false;
-                }
-                else if (entity.professionSkills[recipe.profession].Item1 < recipe.learnedAt)
-                {
-                    SpawnFallingText(new Vector2(0, 34), "You don't have enough skill in the profession", "Red");
-                    return false;
-                }
-                else if (entity.learnedRecipes[recipe.profession].Contains(recipe.name))
-                {
-                    SpawnFallingText(new Vector2(0, 34), "You already know this recipe", "Red");
-                    return false;
-                }
-                else return true;
-            }
+            if (recipe != null) return true;
             else Debug.Log("ERROR 007: Did not find a dedicated recipe to item: \"" + name + "\"");
         }
         else if (abilities != null)
@@ -444,11 +399,20 @@ public class Item
         else if (type == "Recipe")
         {
             var recipe = Recipe.recipes.Find(x => name.Contains(x.name));
-            entity.LearnRecipe(recipe);
-            PlaySound("DesktopSkillLearned");
-            SpawnFallingText(new Vector2(0, 34), "New recipe learned", "Blue");
-            if (amount > 1) amount--;
-            else entity.inventory.items.Remove(this);
+            if (!entity.professionSkills.ContainsKey(recipe.profession))
+                SpawnFallingText(new Vector2(0, 34), "You don't know the required profession", "Red");
+            else if (entity.professionSkills[recipe.profession].Item1 < recipe.learnedAt)
+                SpawnFallingText(new Vector2(0, 34), "Not enough skill in the profession", "Red");
+            else if (entity.learnedRecipes[recipe.profession].Contains(recipe.name))
+                SpawnFallingText(new Vector2(0, 34), "You already know this recipe", "Red");
+            else
+            {
+                entity.LearnRecipe(recipe);
+                PlaySound("DesktopSkillLearned");
+                SpawnFallingText(new Vector2(0, 34), "New recipe learned", "Blue");
+                if (amount > 1) amount--;
+                else entity.inventory.items.Remove(this);
+            }
         }
         else currentSave.CallEvents(new() { { "Trigger", "ItemUsed" }, { "ItemHash", GetHashCode() + "" } });
     }
@@ -531,7 +495,8 @@ public class Item
                 if (WindowUp("ConfirmItemDestroy")) return;
                 if (WindowUp("InventorySort")) return;
                 if (WindowUp("BankSort")) return;
-                if (movingItem == null && currentSave.player.inventory.CanAddItem(item))
+                var canAdd = currentSave.player.inventory.CanAddItem(item);
+                if (movingItem == null && canAdd)
                 {
                     if (item.amount > 1 && Input.GetKey(KeyCode.LeftShift))
                     {
@@ -566,6 +531,7 @@ public class Item
                         Respawn("Bank");
                     }
                 }
+                else if (movingItem == null && !canAdd) SpawnFallingText(new Vector2(0, 34), "Inventory is full", "Red");
             },
             (h) => () =>
             {
@@ -602,7 +568,11 @@ public class Item
                             splitDelegate = () =>
                             {
                                 var amount = int.Parse(String.splitAmount.value == "" ? "0" : String.splitAmount.value);
-                                if (amount <= 0) return;
+                                if (amount <= 0)
+                                {
+                                    SpawnFallingText(new Vector2(0, 34), "Invalid amount", "Red");
+                                    return;
+                                }
                                 if (amount > item.amount) amount = item.amount;
                                 if (currentSave.player.inventory.money >= item.price * amount)
                                 {
@@ -624,9 +594,10 @@ public class Item
                                     Respawn("Inventory");
                                     Respawn("VendorBuyback");
                                 }
+                                else SpawnFallingText(new Vector2(0, 34), "Not enough money to buy back", "Red");
                             };
                         }
-                        else if (currentSave.player.inventory.money >= item.price * item.amount)
+                        else if (item.amount > 0 && currentSave.player.inventory.money >= item.price * item.amount)
                         {
                             PlaySound("DesktopTransportPay");
                             var price = item.price * item.amount;
@@ -635,8 +606,9 @@ public class Item
                             currentSave.player.inventory.AddItem(item);
                             Respawn("Inventory");
                         }
+                        else if (item.amount > 0) SpawnFallingText(new Vector2(0, 34), "Not enough money to buy back", "Red");
                     }
-                    else if (stockItem != null && stockItem.amount > 0)
+                    else if (stockItem != null)
                     {
                         if (item.amount > 1 && Input.GetKey(KeyCode.LeftShift))
                         {
@@ -646,7 +618,11 @@ public class Item
                             splitDelegate = () =>
                             {
                                 var amount = int.Parse(String.splitAmount.value == "" ? "0" : String.splitAmount.value);
-                                if (amount <= 0) return;
+                                if (amount <= 0)
+                                {
+                                    SpawnFallingText(new Vector2(0, 34), "Invalid amount", "Red");
+                                    return;
+                                }
                                 if (amount > item.amount) amount = item.amount;
                                 if (currentSave.player.inventory.money >= item.price * amount * 4)
                                 {
@@ -658,9 +634,10 @@ public class Item
                                     Respawn("Inventory");
                                     Respawn("Vendor");
                                 }
+                                else SpawnFallingText(new Vector2(0, 34), "Not enough money", "Red");
                             };
                         }
-                        else if (currentSave.player.inventory.money >= item.price * 4)
+                        else if (stockItem.amount > 0 && currentSave.player.inventory.money >= item.price * 4)
                         {
                             PlaySound("DesktopTransportPay");
                             stockItem.amount -= 1;
@@ -669,8 +646,11 @@ public class Item
                             currentSave.player.inventory.money -= item.price * 4;
                             Respawn("Inventory");
                         }
+                        else if (stockItem.amount <= 0) SpawnFallingText(new Vector2(0, 34), "No more items in stock", "Red");
+                        else SpawnFallingText(new Vector2(0, 34), "Not enough money", "Red");
                     }
                 }
+                else SpawnFallingText(new Vector2(0, 34), "Inventory is full", "Red");
             },
             (h) => () =>
             {
@@ -807,7 +787,8 @@ public class Item
                 }
                 else if (WindowUp("Bank"))
                 {
-                    if (currentSave.banks[town.name].CanAddItem(item))
+                    var canAdd = currentSave.banks[town.name].CanAddItem(item);
+                    if (movingItem == null && canAdd)
                         if (item.amount > 1 && Input.GetKey(KeyCode.LeftShift))
                         {
                             String.splitAmount.Set("1");
@@ -841,6 +822,7 @@ public class Item
                             Respawn("Inventory");
                             Respawn("Bank");
                         }
+                    else if (movingItem == null && !canAdd) SpawnFallingText(new Vector2(0, 34), "Bank space is full", "Red");
                 }
                 else
                 {
@@ -1071,6 +1053,7 @@ public class Item
                     }
                 }
             }
+            else SpawnFallingText(new Vector2(0, 34), "Inventory is full", "Red");
         }
     }
 

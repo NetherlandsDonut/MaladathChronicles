@@ -5173,7 +5173,11 @@ public class Blueprint
 
                         if (price > 0)
                         {
-                            if (price > currentSave.player.inventory.money) return;
+                            if (price > currentSave.player.inventory.money)
+                            { 
+                                SpawnFallingText(new Vector2(0, 34), "Not enough money", "Red");
+                                return;
+                            }
                             PlaySound("DesktopTransportPay");
                             currentSave.player.inventory.money -= price;
                         }
@@ -5560,34 +5564,41 @@ public class Blueprint
                             {
                                 var key = levels[index + thisWindow.pagination()];
 
-                                //If player is high enough level and has the money..
-                                if (currentSave.player.level >= key.requiredLevel && currentSave.player.inventory.money >= key.price)
+                                //If player is high enough level..
+                                if (currentSave.player.level >= key.requiredLevel)
                                 {
-                                    //If has the profession and at a proper level..
-                                    if (key.requiredSkill == 0 || currentSave.player.professionSkills.ContainsKey(type.profession) && currentSave.player.professionSkills[type.profession].Item1 >= key.requiredSkill)
+                                    //If player has the money..
+                                    if (currentSave.player.inventory.money >= key.price)
                                     {
-                                        //If doesnt have the level yet..
-                                        if (!currentSave.player.professionSkills.ContainsKey(type.profession) || currentSave.player.professionSkills.ContainsKey(type.profession) && !currentSave.player.professionSkills[type.profession].Item2.Contains(key.name))
+                                        //If has the profession and at a proper level..
+                                        if (key.requiredSkill == 0 || currentSave.player.professionSkills.ContainsKey(type.profession) && currentSave.player.professionSkills[type.profession].Item1 >= key.requiredSkill)
                                         {
-                                            //Learn the level
-                                            currentSave.player.inventory.money -= key.price;
-                                            Respawn("PlayerMoney", true);
-                                            Respawn("Capital", true);
-                                            if (!currentSave.player.professionSkills.ContainsKey(type.profession))
+                                            //If doesnt have the level yet..
+                                            if (!currentSave.player.professionSkills.ContainsKey(type.profession) || currentSave.player.professionSkills.ContainsKey(type.profession) && !currentSave.player.professionSkills[type.profession].Item2.Contains(key.name))
                                             {
-                                                currentSave.player.professionSkills.Add(type.profession, (1, new()));
-                                                if (!currentSave.player.learnedRecipes.ContainsKey(type.profession))
-                                                    currentSave.player.learnedRecipes.Add(type.profession, new());
-                                                foreach (var recipe in professions.Find(x => x.name == type.profession).defaultRecipes)
-                                                    currentSave.player.LearnRecipe(type.profession, recipe);
+                                                //Learn the level
+                                                currentSave.player.inventory.money -= key.price;
+                                                Respawn("PlayerMoney", true);
+                                                Respawn("Capital", true);
+                                                if (!currentSave.player.professionSkills.ContainsKey(type.profession))
+                                                {
+                                                    currentSave.player.professionSkills.Add(type.profession, (1, new()));
+                                                    if (!currentSave.player.learnedRecipes.ContainsKey(type.profession))
+                                                        currentSave.player.learnedRecipes.Add(type.profession, new());
+                                                    foreach (var recipe in professions.Find(x => x.name == type.profession).defaultRecipes)
+                                                        currentSave.player.LearnRecipe(type.profession, recipe);
+                                                }
+                                                currentSave.player.professionSkills[type.profession].Item2.Add(key.name);
+                                                Respawn(h.window.title);
+                                                PlaySound("DesktopSkillLearned");
+                                                SpawnFallingText(new Vector2(0, 34), "New skill learned", "Blue");
                                             }
-                                            currentSave.player.professionSkills[type.profession].Item2.Add(key.name);
-                                            Respawn(h.window.title);
-                                            PlaySound("DesktopSkillLearned");
-                                            SpawnFallingText(new Vector2(0, 34), "New skill learned", "Blue");
                                         }
+                                        else SpawnFallingText(new Vector2(0, 34), "Not enough skill in the profession", "Red");
                                     }
+                                    else SpawnFallingText(new Vector2(0, 34), "Not enough money", "Red");
                                 }
+                                else SpawnFallingText(new Vector2(0, 34), "Level too low", "Red");
                             },
                             null,
                             (h) => () =>
@@ -5665,22 +5676,34 @@ public class Blueprint
                             {
                                 var key = list[index + thisWindow.pagination()];
 
-                                //If player has the money and has the profession and at a proper level..
-                                if (currentSave.player.inventory.money >= key.price && currentSave.player.professionSkills.ContainsKey(key.profession) && currentSave.player.professionSkills[key.profession].Item1 >= key.learnedAt)
+                                //If player has the profession..
+                                if (currentSave.player.professionSkills.ContainsKey(key.profession))
                                 {
-                                    //If doesnt have the recipe..
-                                    if (!currentSave.player.learnedRecipes.ContainsKey(type.profession) || currentSave.player.learnedRecipes.ContainsKey(type.profession) && !currentSave.player.learnedRecipes[type.profession].Contains(key.name))
+                                    //If player has the profession at a proper level..
+                                    if (currentSave.player.professionSkills[key.profession].Item1 >= key.learnedAt)
                                     {
-                                        //Add the recipe
-                                        currentSave.player.inventory.money -= key.price;
-                                        currentSave.player.LearnRecipe(key);
-                                        Respawn("PlayerMoney", true);
-                                        Respawn("Capital", true);
-                                        Respawn(h.window.title);
-                                        PlaySound("DesktopSkillLearned");
-                                        SpawnFallingText(new Vector2(0, 34), "New recipe learned", "Blue");
+                                        //If player has the money..
+                                        if (currentSave.player.inventory.money >= key.price)
+                                        {
+                                            //If doesnt have the recipe..
+                                            if (!currentSave.player.learnedRecipes.ContainsKey(type.profession) || currentSave.player.learnedRecipes.ContainsKey(type.profession) && !currentSave.player.learnedRecipes[type.profession].Contains(key.name))
+                                            {
+                                                //Add the recipe
+                                                currentSave.player.inventory.money -= key.price;
+                                                currentSave.player.LearnRecipe(key);
+                                                Respawn("PlayerMoney", true);
+                                                Respawn("Capital", true);
+                                                Respawn(h.window.title);
+                                                PlaySound("DesktopSkillLearned");
+                                                SpawnFallingText(new Vector2(0, 34), "New recipe learned", "Blue");
+                                            }
+                                            else SpawnFallingText(new Vector2(0, 34), "You already know this recipe", "Red");
+                                        }
+                                        else SpawnFallingText(new Vector2(0, 34), "Not enough money", "Red");
                                     }
+                                    else SpawnFallingText(new Vector2(0, 34), "Not enough skill in the profession", "Red");
                                 }
+                                else SpawnFallingText(new Vector2(0, 34), "You don't know the required profession", "Red");
                             },
                             null,
                             (h) => () =>

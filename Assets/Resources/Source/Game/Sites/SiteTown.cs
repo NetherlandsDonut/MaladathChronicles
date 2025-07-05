@@ -80,6 +80,7 @@ public class SiteTown : Site
             },
             (h) =>
             {
+                if (sitePathBuilder != null) return;
                 if (h == null) LeadPath();
                 else ExecutePath("Town");
             },

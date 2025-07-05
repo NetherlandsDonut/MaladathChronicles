@@ -314,9 +314,9 @@
         "worldBuffs": []
       },
       "hour": 7,
-      "minute": 33,
-      "second": 36,
-      "currentSite": "Central Nightsong Woods",
+      "minute": 34,
+      "second": 6,
+      "currentSite": "Twilight Post",
       "ringOfLaw": "Eviscerator",
       "forlornCloister": "Azshir the Sleepless",
       "markets": [
@@ -932,7 +932,7 @@
         "The Swarming Pillar": 1,
         "Twilight Base Camp": 1,
         "Twilight Outpost": 1,
-        "Twilight Post": 1,
+        "Twilight Post": 3,
         "Ambermill": 1,
         "Beren's Peril": 1,
         "Deep Elem Mine": 1,
@@ -1441,9 +1441,9 @@
       "vendorStock": {},
       "banks": {},
       "startDate": "2025-07-04T19:40:44.3363655+02:00",
-      "lastLoaded": "2025-07-05T03:19:10.8919205+02:00",
-      "lastPlayed": "2025-07-05T03:22:00.4814979+02:00",
-      "timePlayed": "00:17:04.1505380"
+      "lastLoaded": "2025-07-05T12:19:30.3008425+02:00",
+      "lastPlayed": "2025-07-05T12:22:40.4258508+02:00",
+      "timePlayed": "00:20:14.2755463"
     }
   ]
 }

@@ -275,10 +275,6 @@ public class Site
         {
             pathBuilder.Add(new Vector2(x, y));
             paths.RemoveAll(x => x.sites.Contains(sitePathBuilder.name) && x.sites.Contains(name));
-            if (pathsConnectedToSite.ContainsKey(sitePathBuilder.name))
-                pathsConnectedToSite[sitePathBuilder.name].RemoveAll(x => x.sites.Contains(name));
-            if (pathsConnectedToSite.ContainsKey(name))
-                pathsConnectedToSite[name].RemoveAll(x => x.sites.Contains(sitePathBuilder.name));
             paths.Add(new SitePath()
             {
                 sites = new() { sitePathBuilder.name, name },
@@ -286,10 +282,16 @@ public class Site
             });
             paths.Last().Initialise();
             if (pathsConnectedToSite.ContainsKey(sitePathBuilder.name))
+            {
+                pathsConnectedToSite[sitePathBuilder.name].Remove(paths.Last());
                 pathsConnectedToSite[sitePathBuilder.name].Add(paths.Last());
+            }
             else pathsConnectedToSite.Add(sitePathBuilder.name, new() { paths.Last() });
             if (pathsConnectedToSite.ContainsKey(name))
+            {
+                pathsConnectedToSite[name].Remove(paths.Last());
                 pathsConnectedToSite[name].Add(paths.Last());
+            }
             else pathsConnectedToSite.Add(name, new() { paths.Last() });
             pathsDrawn.Add(paths.Last().DrawPath());
             sitePathBuilder = null;

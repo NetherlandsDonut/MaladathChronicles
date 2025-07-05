@@ -135,6 +135,7 @@ public class SiteHostileArea : Site
             },
             (h) =>
             {
+                if (sitePathBuilder != null) return;
                 if (h == null) LeadPath();
                 else ExecutePath("HostileArea");
             },

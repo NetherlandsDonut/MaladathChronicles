@@ -103,7 +103,7 @@ public class SiteComplex : Site
             },
             (h) =>
             {
-                if (zone == "Teldrassil" && zone != FindSite(x => x.name == currentSave.currentSite).zone) return;
+                if (sitePathBuilder != null) return;
                 if (h == null) LeadPath();
                 else ExecutePath("Complex");
             },
