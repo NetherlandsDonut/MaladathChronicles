@@ -283,13 +283,13 @@ public class Site
             paths.Last().Initialise();
             if (pathsConnectedToSite.ContainsKey(sitePathBuilder.name))
             {
-                pathsConnectedToSite[sitePathBuilder.name].Remove(paths.Last());
+                pathsConnectedToSite[sitePathBuilder.name].RemoveAll(x => x.sites.Contains(name) && x.sites.Contains(sitePathBuilder.name));
                 pathsConnectedToSite[sitePathBuilder.name].Add(paths.Last());
             }
             else pathsConnectedToSite.Add(sitePathBuilder.name, new() { paths.Last() });
             if (pathsConnectedToSite.ContainsKey(name))
             {
-                pathsConnectedToSite[name].Remove(paths.Last());
+                pathsConnectedToSite[name].RemoveAll(x => x.sites.Contains(name) && x.sites.Contains(sitePathBuilder.name));
                 pathsConnectedToSite[name].Add(paths.Last());
             }
             else pathsConnectedToSite.Add(name, new() { paths.Last() });
