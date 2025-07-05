@@ -114,6 +114,9 @@ public class PersonType
     //Affiliation of the npc with a specific profession
     public string profession;
 
+    //Affiliation of the npc with a specific profession specialization
+    public string specialization;
+
     //Range of the profession recipes this person can teach the player
     public int skillCap;
 

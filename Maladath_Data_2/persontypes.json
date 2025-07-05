@@ -135,6 +135,11 @@
     "category": "Vendor"
   },
   {
+    "type": "Alchemy Supplies",
+    "icon": "ItemDrink06",
+    "category": "Vendor"
+  },
+  {
     "type": "Leatherworking & Tailoring Supplies",
     "icon": "ItemMiscPeltBear02",
     "category": "Vendor"
@@ -302,6 +307,30 @@
     "skillCap": 255
   },
   {
+    "type": "Master Elemental Leatherworker",
+    "icon": "TradeLeatherworking",
+    "category": "Profession Trainer",
+    "profession": "Leatherworking",
+    "specialization": "Elemental Leatherworking",
+    "skillCap": 300
+  },
+  {
+    "type": "Master Dragonscale Leatherworker",
+    "icon": "TradeLeatherworking",
+    "category": "Profession Trainer",
+    "profession": "Leatherworking",
+    "specialization": "Dragonscale Leatherworking",
+    "skillCap": 300
+  },
+  {
+    "type": "Master Tribal Leatherworker",
+    "icon": "TradeLeatherworking",
+    "category": "Profession Trainer",
+    "profession": "Leatherworking",
+    "specialization": "Tribal Leatherworking",
+    "skillCap": 300
+  },
+  {
     "type": "Artisan Leatherworker",
     "icon": "TradeLeatherworking",
     "category": "Profession Trainer",
@@ -386,6 +415,13 @@
     "skillCap": 255
   },
   {
+    "type": "Master Shadoweave Tailor",
+    "icon": "TradeTailoring",
+    "category": "Profession Trainer",
+    "profession": "Tailoring",
+    "skillCap": 225
+  },
+  {
     "type": "Artisan Tailor",
     "icon": "TradeTailoring",
     "category": "Profession Trainer",
@@ -440,6 +476,22 @@
     "category": "Profession Trainer",
     "profession": "Engineering",
     "skillCap": 255
+  },
+  {
+    "type": "Master Gnomish Engineer",
+    "icon": "TradeEngineering",
+    "category": "Profession Trainer",
+    "profession": "Engineering",
+    "specialization": "Gnomish Engineering",
+    "skillCap": 300
+  },
+  {
+    "type": "Master Goblin Engineer",
+    "icon": "TradeEngineering",
+    "category": "Profession Trainer",
+    "profession": "Engineering",
+    "specialization": "Goblin Engineering",
+    "skillCap": 300
   },
   {
     "type": "Artisan Engineer",

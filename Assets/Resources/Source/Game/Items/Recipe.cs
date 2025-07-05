@@ -95,6 +95,9 @@ public class Recipe
     //Profession this recipe belongs to
     public string profession;
 
+    //Profession specialization this recipe belongs to
+    public string specialization;
+
     //Whether this recipe is a an enchantment process
     public bool enchantment;
 

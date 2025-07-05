@@ -700,6 +700,51 @@
         "voiceVariant": 1,
         "race": "Orc",
         "type": "Expert Alchemist"
+      },
+      {
+        "name": "Kor'geld",
+        "gender": "Male",
+        "voiceVariant": 2,
+        "race": "Orc",
+        "type": "Alchemy Supplies",
+        "itemsSold": [
+        {
+          "item": "Empty Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Leaded Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Recipe: Free Action Potion",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Crystal Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Recipe: Elixir of Superior Defense",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Imbued Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
       }
     ],
     "name": "The Drag",
@@ -807,18 +852,6 @@
           },
           {
             "item": "Blacksmith Hammer",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Engineer's Ink",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Blank Parchment",
             "amount": 2,
             "maxAmount": 2,
             "restockSpeed": 40
@@ -2094,18 +2127,6 @@
             "restockSpeed": 40
           },
           {
-            "item": "Engineer's Ink",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Blank Parchment",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
             "item": "Schematic: Thorium Grenade",
             "amount": 2,
             "maxAmount": 2,
@@ -2119,6 +2140,12 @@
           },
           {
             "item": "Schematic: Blue Firework",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Plans: Inlaid Mithril Cylinder",
             "amount": 2,
             "maxAmount": 2,
             "restockSpeed": 40
@@ -2169,6 +2196,51 @@
         "voiceVariant": 1,
         "race": "Gnome",
         "type": "Master Gnome Engineer"
+      },
+      {
+        "name": "Soolie Berryfizz",
+        "gender": "Female",
+        "voiceVariant": 2,
+        "race": "Gnome",
+        "type": "Alchemy Supplies",
+        "itemsSold": [
+        {
+          "item": "Empty Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Leaded Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Recipe: Free Action Potion",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Crystal Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Recipe: Elixir of Superior Defense",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Imbued Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
       }
     ],
     "name": "Tinker Town",
@@ -4574,6 +4646,57 @@
             "restockSpeed": 40
           }
         ]
+      },
+      {
+        "name": "Ulthir",
+        "gender": "Male",
+        "voiceVariant": 2,
+        "race": "Night Elf",
+        "type": "Alchemy Supplies",
+        "itemsSold": [
+        {
+          "item": "Empty Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Leaded Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Recipe: Free Action Potion",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Recipe: Great Rage Potion",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Crystal Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Recipe: Superior Mana Potion",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Imbued Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
       }
     ],
     "name": "Craftsmen's Terrace",
@@ -5407,7 +5530,8 @@
         "gender": "Female",
         "voiceVariant": 1,
         "race": "Human",
-        "type": "Master Shadoweave Tailor"
+        "type": "Master Shadoweave Tailor",
+        "hidden": true
       },
       {
         "name": "Tel'Athir",
@@ -5446,6 +5570,93 @@
         "voiceVariant": 2,
         "race": "Human",
         "type": "Artisan Tailor"
+      },
+      {
+        "name": "Maria Lumere",
+        "gender": "Female",
+        "voiceVariant": 3,
+        "race": "Human",
+        "type": "Alchemy Supplies",
+        "itemsSold": [
+        {
+          "item": "Silverleaf",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mageroyal",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Peacebloom",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Earthroot",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bruiseweed",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Wild Steelbloom",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Kingsblood",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Liferoot",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Empty Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Leaded Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Crystal Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Recipe: Elixir of Shadow Power",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Imbued Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
       }
     ],
     "name": "Mage Quarter",
@@ -5782,18 +5993,6 @@
           },
           {
             "item": "Blacksmith Hammer",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Engineer's Ink",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Blank Parchment",
             "amount": 2,
             "maxAmount": 2,
             "restockSpeed": 40
@@ -6890,6 +7089,39 @@
             "restockSpeed": 40
           }
         ]
+      },
+      {
+        "name": "Mani Winterhoof",
+        "gender": "Female",
+        "voiceVariant": 2,
+        "race": "Tauren",
+        "type": "Alchemy Supplies",
+        "itemsSold": [
+        {
+          "item": "Empty Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Leaded Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Crystal Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Imbued Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
       }
     ],
     "name": "Middle Rise",
@@ -7897,6 +8129,51 @@
         "voiceVariant": 1,
         "race": "Forsaken",
         "type": "Artisan Alchemist"
+      },
+      {
+        "name": "Algernon",
+        "gender": "Male",
+        "voiceVariant": 2,
+        "race": "Forsaken",
+        "type": "Alchemy Supplies",
+        "itemsSold": [
+          {
+            "item": "Empty Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Leaded Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Crystal Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Elixir of Shadow Power",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Superior Mana Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Imbued Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
+        ]
       }
     ],
     "name": "The Apothecarium",
@@ -8003,18 +8280,6 @@
           },
           {
             "item": "Blacksmith Hammer",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Engineer's Ink",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Blank Parchment",
             "amount": 2,
             "maxAmount": 2,
             "restockSpeed": 40
@@ -8694,7 +8959,8 @@
         "gender": "Female",
         "voiceVariant": 2,
         "race": "Forsaken",
-        "type": "Master Shadoweave Tailor"
+        "type": "Master Shadoweave Tailor",
+        "hidden": true
       },
       {
         "name": "Lizbeth Cromwell",
@@ -10097,13 +10363,7 @@
             "restockSpeed": 40
           },
           {
-            "item": "Engineer's Ink",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Blank Parchment",
+            "item": "Plans: Inlaid Mithril Cylinder",
             "amount": 2,
             "maxAmount": 2,
             "restockSpeed": 40
@@ -12529,6 +12789,57 @@
             "restockSpeed": 40
           }
         ]
+      },
+      {
+        "name": "Nandar Branson",
+        "gender": "Male",
+        "voiceVariant": 1,
+        "race": "Human",
+        "type": "Alchemy Supplies",
+        "itemsSold": [
+        {
+          "item": "Greater Healing Potion",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Empty Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Leaded Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mana Potion",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Recipe: Fire Protection Potion",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Crystal Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Imbued Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
       }
     ],
     "x": 5171,
@@ -12830,18 +13141,6 @@
           },
           {
             "item": "Blacksmith Hammer",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Engineer's Ink",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Blank Parchment",
             "amount": 2,
             "maxAmount": 2,
             "restockSpeed": 40
@@ -14094,6 +14393,51 @@
             "restockSpeed": 40
           }
         ]
+      },
+      {
+        "name": "Uma Bartulm",
+        "gender": "Female",
+        "voiceVariant": 3,
+        "race": "Human",
+        "type": "Alchemy Supplies",
+        "itemsSold": [
+        {
+          "item": "Greater Healing Potion",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Empty Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Leaded Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mana Potion",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Crystal Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Imbued Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
       }
     ],
     "x": 2360,
@@ -14520,18 +14864,6 @@
             "amount": 2,
             "maxAmount": 2,
             "restockSpeed": 40
-          },
-          {
-            "item": "Engineer's Ink",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Blank Parchment",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
           }
         ]
       },
@@ -14816,6 +15148,45 @@
             "restockSpeed": 40
           }
         ]
+      },
+      {
+        "name": "Dewin Shimmerdawn",
+        "gender": "Male",
+        "voiceVariant": 1,
+        "race": "Night Elf",
+        "type": "Alchemy Supplies",
+        "itemsSold": [
+        {
+          "item": "Healing Potion",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Empty Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Leaded Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Crystal Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Imbued Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
       }
     ],
     "x": 5232,
@@ -14936,6 +15307,57 @@
             "maxAmount": 2,
             "restockSpeed": 40
           }
+        ]
+      },
+      {
+        "name": "Nina Lightbrew",
+        "gender": "Female",
+        "voiceVariant": 2,
+        "race": "Human",
+        "type": "Alchemy Supplies",
+        "itemsSold": [
+        {
+          "item": "Empty Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Leaded Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Superior Healing Potion",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Greater Mana Potion",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Crystal Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Recipe: Elixir of Demonslaying",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Imbued Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
         ]
       }
     ],
@@ -15066,18 +15488,6 @@
             "amount": 2,
             "maxAmount": 2,
             "restockSpeed": 40
-          },
-          {
-            "item": "Engineer's Ink",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Blank Parchment",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
           }
         ]
       }
@@ -15093,7 +15503,7 @@
     "y": -2089,
     "name": "Faldir's Cove",
     "zone": "Arathi Highlands",
-    "faction": "Booty Bay",
+    "faction": "Steamwheedle Cartel",
     "fishing": true
   },
   {
@@ -15403,6 +15813,57 @@
             "maxAmount": 2,
             "restockSpeed": 40
           }
+        ]
+      },
+      {
+        "name": "Drovnar Strongbrew",
+        "gender": "Male",
+        "voiceVariant": 3,
+        "race": "Dwarf",
+        "type": "Alchemy Supplies",
+        "itemsSold": [
+        {
+          "item": "Greater Healing Potion",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Empty Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Leaded Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mana Potion",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Recipe: Frost Protection Potion",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Crystal Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Imbued Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
         ]
       }
     ],
@@ -17355,6 +17816,57 @@
             "restockSpeed": 40
           }
         ]
+      },
+      {
+        "name": "Harklan Moongrove",
+        "gender": "Male",
+        "voiceVariant": 3,
+        "race": "Night Elf",
+        "type": "Alchemy Supplies",
+        "itemsSold": [
+        {
+          "item": "Healing Potion",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Empty Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Leaded Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Lesser Mana Potion",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Recipe: Shadow Protection Potion",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Crystal Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Imbued Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
       }
     ],
     "x": 1694,
@@ -18546,6 +19058,63 @@
             "restockSpeed": 40
           }
         ]
+      },
+      {
+        "name": "Logannas",
+        "gender": "Male",
+        "voiceVariant": 2,
+        "race": "Night Elf",
+        "type": "Alchemy Supplies",
+        "itemsSold": [
+        {
+          "item": "Empty Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Leaded Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Superior Healing Potion",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Recipe: Nature Protection Potion",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Greater Mana Potion",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Crystal Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Recipe: Ghost Dye",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Imbued Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
       }
     ],
     "x": 779,
@@ -18690,7 +19259,7 @@
         "gender": "Female",
         "voiceVariant": 2,
         "race": "Night Elf",
-        "type": "Tribal Leatherworking Trainer"
+        "type": "Master Tribal Leatherworker"
       },
       {
         "name": "Brienna Starglow",
@@ -20409,18 +20978,6 @@
           },
           {
             "item": "Blacksmith Hammer",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Engineer's Ink",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Blank Parchment",
             "amount": 2,
             "maxAmount": 2,
             "restockSpeed": 40
@@ -23632,6 +24189,57 @@
             "restockSpeed": 40
           }
         ]
+      },
+      {
+        "name": "Rartar",
+        "gender": "Male",
+        "voiceVariant": 3,
+        "race": "Orc",
+        "type": "Alchemy Supplies",
+        "itemsSold": [
+        {
+          "item": "Empty Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Leaded Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Superior Healing Potion",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Greater Mana Potion",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Crystal Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Recipe: Elixir of Demonslaying",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Imbued Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
       }
     ],
     "x": 5719,
@@ -25976,6 +26584,63 @@
             "restockSpeed": 40
           }
         ]
+      },
+      {
+        "name": "Bronk",
+        "gender": "Male",
+        "voiceVariant": 2,
+        "race": "Tauren",
+        "type": "Alchemy Supplies",
+        "itemsSold": [
+        {
+          "item": "Empty Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Leaded Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Superior Healing Potion",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Recipe: Nature Protection Potion",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Greater Mana Potion",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Crystal Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Recipe: Ghost Dye",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Imbued Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
       }
     ],
     "x": 1409,
@@ -27997,6 +28662,75 @@
             "maxAmount": 2,
             "restockSpeed": 40
           }
+        ]
+      },
+      {
+        "name": "Selina Weston",
+        "gender": "Female",
+        "voiceVariant": 3,
+        "race": "Forsaken",
+        "type": "Alchemy Supplies",
+        "itemsSold": [
+        {
+          "item": "Silverleaf",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mageroyal",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Lesser Healing Potion",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Peacebloom",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Earthroot",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bruiseweed",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Empty Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Leaded Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Crystal Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Imbued Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
         ]
       }
     ],
@@ -31691,18 +32425,6 @@
             "restockSpeed": 40
           },
           {
-            "item": "Engineer's Ink",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Blank Parchment",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
             "item": "Schematic: Masterwork Target Dummy",
             "amount": 2,
             "maxAmount": 2,
@@ -32040,6 +32762,63 @@
           },
           {
             "item": "Platemail Armor",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
+        ]
+      },
+      {
+        "name": "Evie Whirlbrew",
+        "gender": "Female",
+        "voiceVariant": 2,
+        "race": "Goblin",
+        "type": "Alchemy Supplies",
+        "itemsSold": [
+          {
+            "item": "Empty Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Leaded Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Superior Healing Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Greater Mana Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Crystal Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Major Healing Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Goblin Rocket Fuel",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Imbued Vial",
             "amount": 2,
             "maxAmount": 2,
             "restockSpeed": 40
@@ -32548,6 +33327,75 @@
             "restockSpeed": 40
           }
         ]
+      },
+      {
+        "name": "Alchemist Pestlezugg",
+        "gender": "Male",
+        "voiceVariant": 2,
+        "race": "Goblin",
+        "type": "Alchemy Supplies",
+        "itemsSold": [
+          {
+            "item": "Empty Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Leaded Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Nature Protection Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Crystal Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Philosopher's Stone",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Transmute Iron to Gold",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Transmute Mithril to Truesilver",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Transmute Arcanite",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Goblin Rocket Fuel",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Imbued Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
+        ]
       }
     ],
     "x": 2225,
@@ -33017,18 +33865,6 @@
           },
           {
             "item": "Blacksmith Hammer",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Engineer's Ink",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Blank Parchment",
             "amount": 2,
             "maxAmount": 2,
             "restockSpeed": 40
@@ -33734,18 +34570,6 @@
             "restockSpeed": 40
           },
           {
-            "item": "Engineer's Ink",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
-            "item": "Blank Parchment",
-            "amount": 2,
-            "maxAmount": 2,
-            "restockSpeed": 40
-          },
-          {
             "item": "Schematic: Accurate Scope",
             "amount": 2,
             "maxAmount": 2,
@@ -34009,6 +34833,69 @@
             "maxAmount": 2,
             "restockSpeed": 40
           }
+        ]
+      },
+      {
+        "name": "Glyx Brewright",
+        "gender": "Male",
+        "voiceVariant": 3,
+        "race": "Goblin",
+        "type": "Alchemy Supplies",
+        "itemsSold": [
+        {
+          "item": "Greater Healing Potion",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Empty Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Leaded Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mana Potion",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Recipe: Frost Protection Potion",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Recipe: Nature Protection Potion",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Recipe: Goblin Rocket Fuel",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Crystal Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Imbued Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
         ]
       }
     ],

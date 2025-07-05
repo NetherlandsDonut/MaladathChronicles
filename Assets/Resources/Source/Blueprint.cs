@@ -5632,7 +5632,7 @@ public class Blueprint
             var thisWindow = CDesktop.LBWindow();
             var type = personTypes.Find(x => x.type == person.type);
             var profession = professions.Find(x => x.name == type.profession);
-            var list = recipes.FindAll(x => x.profession == type.profession && x.price > 0 && (x.learnedAt <= type.skillCap || type.skillCap == 0));
+            var list = recipes.FindAll(x => x.profession == type.profession && (x.specialization == null || x.specialization == type.specialization) && x.price > 0 && (x.learnedAt <= type.skillCap || type.skillCap == 0));
             if (currentSave.player.learnedRecipes.ContainsKey(type.profession))
                 list = list.FindAll(x => !currentSave.player.learnedRecipes[type.profession].Contains(x.name));
             thisWindow.SetPagination(() => list.Count, rowAmount);
@@ -8056,6 +8056,7 @@ public class Blueprint
         {
             var moved = false;
             var window = CDesktop.windows.Find(x => x.maxPaginationReq != null);
+            if (window == null) return;
             for (int i = Input.GetKey(LeftShift) && !window.paginateFullPages ? window.perPage - 1 : 0; i >= 0; i--)
                 if (window.pagination() > 0)
                 {
@@ -8073,6 +8074,7 @@ public class Blueprint
         {
             var moved = false;
             var window = CDesktop.windows.Find(x => x.maxPaginationReq != null);
+            if (window == null) return;
             for (int i = Input.GetKey(LeftShift) && !window.paginateFullPages ? window.perPage - 1 : 0; i >= 0; i--)
                 if (window.pagination() < window.maxPagination())
                 {

@@ -1,15 +1,15 @@
 {
   "selectedRealm": "Whitemane",
   "selectedRealmRanking": "Whitemane",
-  "selectedCharacter": "Amanaya",
+  "selectedCharacter": "Tergir",
   "pixelPerfectVision": {
     "value": "True"
   },
   "music": {
-    "value": "True"
+    "value": "False"
   },
   "soundEffects": {
-    "value": "True"
+    "value": "False"
   },
   "rarityIndicators": {
     "value": "True"

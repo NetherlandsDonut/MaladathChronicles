@@ -10342,25 +10342,9 @@
     }
   },
   {
-    "name": "Goblin Rocket Fuel Recipe",
-    "profession": "Engineering",
-    "skillUpOrange": 205,
-    "skillUpYellow": 205,
-    "skillUpGreen": 205,
-    "skillUpGray": 205,
-    "price": 1000,
-    "learnedAt": 205,
-    "reagents": {
-      "Blank Parchment": 1,
-      "Engineer's Ink": 1
-    },
-    "results": {
-      "Recipe: Goblin Rocket Fuel": 1
-    }
-  },
-  {
     "name": "Goblin Mining Helmet",
     "profession": "Engineering",
+    "specialization": "Goblin Engineering",
     "skillUpOrange": 205,
     "skillUpYellow": 225,
     "skillUpGreen": 235,
@@ -10379,6 +10363,7 @@
   {
     "name": "Goblin Construction Helmet",
     "profession": "Engineering",
+    "specialization": "Goblin Engineering",
     "skillUpOrange": 205,
     "skillUpYellow": 225,
     "skillUpGreen": 235,
@@ -10397,6 +10382,7 @@
   {
     "name": "Goblin Sapper Charge",
     "profession": "Engineering",
+    "specialization": "Goblin Engineering",
     "skillUpOrange": 205,
     "skillUpYellow": 205,
     "skillUpGreen": 225,
@@ -10413,25 +10399,9 @@
     }
   },
   {
-    "name": "Inlaid Mithril Cylinder Plans",
-    "profession": "Engineering",
-    "skillUpOrange": 205,
-    "skillUpYellow": 205,
-    "skillUpGreen": 205,
-    "skillUpGray": 205,
-    "price": 1500,
-    "learnedAt": 205,
-    "reagents": {
-      "Blank Parchment": 1,
-      "Engineer's Ink": 1
-    },
-    "results": {
-      "Plans: Inlaid Mithril Cylinder": 1
-    }
-  },
-  {
     "name": "Gnomish Shrink Ray",
     "profession": "Engineering",
+    "specialization": "Gnomish Engineering",
     "skillUpOrange": 205,
     "skillUpYellow": 225,
     "skillUpGreen": 235,
@@ -10466,6 +10436,7 @@
   {
     "name": "Pet Bombling",
     "profession": "Engineering",
+    "specialization": "Goblin Engineering",
     "skillUpOrange": 205,
     "skillUpYellow": 205,
     "skillUpGreen": 205,
@@ -10771,6 +10742,7 @@
   {
     "name": "Gnomish Goggles",
     "profession": "Engineering",
+    "specialization": "Gnomish Engineering",
     "skillUpOrange": 210,
     "skillUpYellow": 230,
     "skillUpGreen": 240,
@@ -10791,6 +10763,7 @@
   {
     "name": "Gnomish Net-o-Matic Projector",
     "profession": "Engineering",
+    "specialization": "Gnomish Engineering",
     "skillUpOrange": 210,
     "skillUpYellow": 230,
     "skillUpGreen": 240,
@@ -11104,6 +11077,7 @@
   {
     "name": "Gnomish Harm Prevention Belt",
     "profession": "Engineering",
+    "specialization": "Gnomish Engineering",
     "skillUpOrange": 215,
     "skillUpYellow": 235,
     "skillUpGreen": 245,
@@ -11634,6 +11608,7 @@
   {
     "name": "Goblin Rocket Boots",
     "profession": "Engineering",
+    "specialization": "Gnomish Engineering",
     "skillUpOrange": 225,
     "skillUpYellow": 245,
     "skillUpGreen": 255,
@@ -11688,6 +11663,7 @@
   {
     "name": "Goblin Mortar",
     "profession": "Engineering",
+    "specialization": "Goblin Engineering",
     "skillUpYellow": 225,
     "skillUpGreen": 235,
     "skillUpGray": 245,
@@ -11843,6 +11819,7 @@
   {
     "name": "Dragonscale Gauntlets",
     "profession": "Leatherworking",
+    "specialization": "Dragonscale Leatherworking",
     "skillUpOrange": 225,
     "skillUpYellow": 245,
     "skillUpGreen": 255,
@@ -11862,6 +11839,7 @@
   {
     "name": "Wolfshead Helm",
     "profession": "Leatherworking",
+    "specialization": "Tribal Leatherworking",
     "skillUpOrange": 225,
     "skillUpYellow": 245,
     "skillUpGreen": 255,
@@ -12232,6 +12210,7 @@
   {
     "name": "Goblin Bomb Dispenser",
     "profession": "Engineering",
+    "specialization": "Goblin Engineering",
     "skillUpOrange": 230,
     "skillUpYellow": 230,
     "skillUpGreen": 250,
@@ -12252,6 +12231,7 @@
   {
     "name": "Gnomish Battle Chicken",
     "profession": "Engineering",
+    "specialization": "Gnomish Engineering",
     "skillUpOrange": 230,
     "skillUpYellow": 250,
     "skillUpGreen": 260,
@@ -12308,6 +12288,7 @@
   {
     "name": "Gauntlets of the Sea",
     "profession": "Leatherworking",
+    "specialization": "Elemental Leatherworking",
     "skillUpOrange": 230,
     "skillUpYellow": 250,
     "skillUpGreen": 260,
@@ -12613,6 +12594,7 @@
   {
     "name": "The Big One",
     "profession": "Engineering",
+    "specialization": "Goblin Engineering",
     "skillUpOrange": 235,
     "skillUpYellow": 235,
     "skillUpGreen": 255,
@@ -12632,6 +12614,7 @@
   {
     "name": "Gnomish Mind Control Cap",
     "profession": "Engineering",
+    "specialization": "Gnomish Engineering",
     "skillUpOrange": 235,
     "skillUpYellow": 255,
     "skillUpGreen": 265,
@@ -12931,6 +12914,7 @@
   {
     "name": "Gnomish Death Ray",
     "profession": "Engineering",
+    "specialization": "Gnomish Engineering",
     "skillUpOrange": 240,
     "skillUpYellow": 260,
     "skillUpGreen": 270,
@@ -12951,6 +12935,7 @@
   {
     "name": "Goblin Dragon Gun",
     "profession": "Engineering",
+    "specialization": "Goblin Engineering",
     "skillUpOrange": 240,
     "skillUpYellow": 260,
     "skillUpGreen": 270,
@@ -13322,6 +13307,7 @@
   {
     "name": "Goblin Rocket Helmet",
     "profession": "Engineering",
+    "specialization": "Goblin Engineering",
     "skillUpOrange": 245,
     "skillUpYellow": 265,
     "skillUpGreen": 275,
@@ -13871,6 +13857,7 @@
   {
     "name": "Helm of Fire",
     "profession": "Leatherworking",
+    "specialization": "Elemental Leatherworking",
     "skillUpOrange": 250,
     "skillUpYellow": 270,
     "skillUpGreen": 280,
@@ -13891,6 +13878,7 @@
   {
     "name": "Feathered Breastplate",
     "profession": "Leatherworking",
+    "specialization": "Tribal Leatherworking",
     "skillUpOrange": 250,
     "skillUpYellow": 270,
     "skillUpGreen": 280,
@@ -14162,6 +14150,7 @@
   {
     "name": "Dragonscale Breastplate",
     "profession": "Leatherworking",
+    "specialization": "Dragonscale Leatherworking",
     "skillUpOrange": 255,
     "skillUpYellow": 275,
     "skillUpGreen": 285,
@@ -14407,6 +14396,7 @@
   {
     "name": "World Enlarger",
     "profession": "Engineering",
+    "specialization": "Gnomish Engineering",
     "skillUpOrange": 260,
     "skillUpYellow": 260,
     "skillUpGreen": 265,
@@ -16138,6 +16128,7 @@
   {
     "name": "Green Dragonscale Gauntlets",
     "profession": "Leatherworking",
+    "specialization": "Dragonscale Leatherworking",
     "skillUpOrange": 280,
     "skillUpYellow": 300,
     "skillUpGreen": 310,
@@ -16412,10 +16403,12 @@
   {
     "name": "Dimensional Ripper - Everlook",
     "profession": "Engineering",
+    "specialization": "Goblin Engineering",
     "skillUpYellow": 285,
     "skillUpGreen": 295,
     "skillUpGray": 305,
     "learnedAt": 285,
+    "price": 6000,
     "reagents": {
       "Mithril Bar": 10,
       "Truesilver Transformer": 1,
@@ -16430,10 +16423,12 @@
   {
     "name": "Ultrasafe Transporter - Gadgetzan",
     "profession": "Engineering",
+    "specialization": "Gnomish Engineering",
     "skillUpYellow": 285,
     "skillUpGreen": 295,
     "skillUpGray": 305,
     "learnedAt": 285,
+    "price": 6000,
     "reagents": {
       "Mithril Bar": 12,
       "Truesilver Transformer": 2,
@@ -20147,6 +20142,7 @@
   {
     "name": "Blue Dragonscale Leggings",
     "profession": "Leatherworking",
+    "specialization": "Dragonscale Leatherworking",
     "skillUpOrange": 300,
     "skillUpYellow": 320,
     "skillUpGreen": 330,
