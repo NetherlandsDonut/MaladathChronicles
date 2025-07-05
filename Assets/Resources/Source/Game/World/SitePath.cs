@@ -1,8 +1,7 @@
-using System.Linq;
 using System.Collections.Generic;
-
+using System.IO;
+using System.Linq;
 using UnityEngine;
-
 using static Defines;
 
 public class SitePath
@@ -123,13 +122,17 @@ public class SitePath
         //Get all the branching paths from the starting site
         var possiblePaths = pathsConnectedToSite[from.name].ToList();
 
-        //If we already reach the destination on the first branching
-        //then just return the path that matches the condition and end it
-        var findWinner = possiblePaths.Find(x => x.sites.Any(y => y == to.name));
-        if (findWinner != null) return new() { findWinner };
-
         //From the starting branchings get the node information
         pathInfo = possiblePaths.ToDictionary(x => x, x => (x.points.Count, (SitePath)null));
+
+        //If we already reach the destination on the first branching
+        //add it as the current best path, it's possible that this isn't the shortest path
+        var findWinner = possiblePaths.Find(x => x.sites.Any(y => y == to.name));
+        if (findWinner != null)
+        {
+            possiblePaths.Remove(findWinner);
+            bestPath.Add(findWinner);
+        }
 
         //Continue searching while best the path still wasn't chosen
         while (possiblePaths.Count > 0)
@@ -169,7 +172,8 @@ public class SitePath
                         break;
                     }
 
-                    //Add this branched path to the list to be checked
+                    //Add this branched path to the list to be checked if we still didn't find any
+                    //winner path or if we already found one and this path is still shorter so it has a chance
                     if (bestPath.Count == 0 || pathInfo[bestPath[0]].distance > pathInfo[path].distance) possiblePaths.Add(path);
                 }
 

@@ -314,9 +314,9 @@
         "worldBuffs": []
       },
       "hour": 7,
-      "minute": 23,
-      "second": 34,
-      "currentSite": "Maneweaver Hut",
+      "minute": 33,
+      "second": 36,
+      "currentSite": "Central Nightsong Woods",
       "ringOfLaw": "Eviscerator",
       "forlornCloister": "Azshir the Sleepless",
       "markets": [
@@ -1317,7 +1317,7 @@
         "Dolanaar": 1,
         "Maneweaver Hut": 1,
         "Maestra's Post": 1,
-        "Astranaar": 1,
+        "Astranaar": 2,
         "Starfall Village": 1,
         "Silverwing Outpost": 1,
         "Silverwind Refuge": 1,
@@ -1441,9 +1441,9 @@
       "vendorStock": {},
       "banks": {},
       "startDate": "2025-07-04T19:40:44.3363655+02:00",
-      "lastLoaded": "2025-07-04T20:08:55.1359045+02:00",
-      "lastPlayed": "2025-07-04T20:14:29.5247065+02:00",
-      "timePlayed": "00:14:14.5609606"
+      "lastLoaded": "2025-07-05T03:19:10.8919205+02:00",
+      "lastPlayed": "2025-07-05T03:22:00.4814979+02:00",
+      "timePlayed": "00:17:04.1505380"
     }
   ]
 }
