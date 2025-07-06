@@ -37,6 +37,10 @@ public class SiteTown : Site
         }
         foreach (var foo in flightPaths)
             foo.Value?.Remove(this);
+        if (people != null)
+            foreach (var foo in people)
+                if (foo.category != null && foo.category.category == "Class Trainer")
+                    foo.hidden = true;
         pathsConnectedToSite.Remove(name);
         transportationConnectedToSite.Remove(name);
         if (x != 0 && y != 0)

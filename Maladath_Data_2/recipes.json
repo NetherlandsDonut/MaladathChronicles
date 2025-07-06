@@ -16407,8 +16407,8 @@
     "skillUpYellow": 285,
     "skillUpGreen": 295,
     "skillUpGray": 305,
-    "learnedAt": 285,
     "price": 6000,
+    "learnedAt": 285,
     "reagents": {
       "Mithril Bar": 10,
       "Truesilver Transformer": 1,
@@ -16427,8 +16427,8 @@
     "skillUpYellow": 285,
     "skillUpGreen": 295,
     "skillUpGray": 305,
-    "learnedAt": 285,
     "price": 6000,
+    "learnedAt": 285,
     "reagents": {
       "Mithril Bar": 12,
       "Truesilver Transformer": 2,

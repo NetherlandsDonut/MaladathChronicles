@@ -519,7 +519,7 @@
         "Camp Mojache": 5,
         "Grom'gol Base Camp": 3,
         "Booty Bay": 3,
-        "Gadgetzan": 4
+        "Gadgetzan": 5
       },
       "unlockedAreas": [
         "Cavern of Mists"
@@ -607,9 +607,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2025-07-05T16:29:06.4976161+02:00",
-      "lastLoaded": "2025-07-05T20:17:38.8523829+02:00",
-      "lastPlayed": "2025-07-05T20:19:10.0954714+02:00",
-      "timePlayed": "00:55:18.7061931"
+      "lastLoaded": "2025-07-05T21:07:49.396796+02:00",
+      "lastPlayed": "2025-07-05T21:08:04.2434143+02:00",
+      "timePlayed": "00:55:33.5528114"
     },
     {
       "playerSide": "Alliance",

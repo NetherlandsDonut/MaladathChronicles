@@ -6,7 +6,8 @@
         "gender": "Female",
         "voiceVariant": 1,
         "race": "Orc",
-        "type": "Shaman Trainer"
+        "type": "Shaman Trainer",
+        "hidden": true
       }
     ],
     "name": "Grommash Hold",
@@ -24,14 +25,16 @@
         "gender": "Male",
         "voiceVariant": 3,
         "race": "Orc",
-        "type": "Rogue Trainer"
+        "type": "Rogue Trainer",
+        "hidden": true
       },
       {
         "name": "Grol'dar",
         "gender": "Male",
         "voiceVariant": 1,
         "race": "Orc",
-        "type": "Warlock Trainer"
+        "type": "Warlock Trainer",
+        "hidden": true
       }
     ],
     "name": "The Cleft of Shadow",
@@ -708,42 +711,42 @@
         "race": "Orc",
         "type": "Alchemy Supplies",
         "itemsSold": [
-        {
-          "item": "Empty Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Leaded Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Recipe: Free Action Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Crystal Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Recipe: Elixir of Superior Defense",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Imbued Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Empty Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Leaded Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Free Action Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Crystal Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Elixir of Superior Defense",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Imbued Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       }
     ],
@@ -1196,7 +1199,8 @@
         "gender": "Male",
         "voiceVariant": 1,
         "race": "Orc",
-        "type": "Warrior Trainer"
+        "type": "Warrior Trainer",
+        "hidden": true
       },
       {
         "name": "Xon'cha",
@@ -1270,7 +1274,8 @@
         "gender": "Male",
         "voiceVariant": 3,
         "race": "Orc",
-        "type": "Hunter Trainer"
+        "type": "Hunter Trainer",
+        "hidden": true
       },
       {
         "name": "Brakgul Deathbringer",
@@ -1294,14 +1299,16 @@
         "gender": "Male",
         "voiceVariant": 2,
         "race": "Troll",
-        "type": "Priest Trainer"
+        "type": "Priest Trainer",
+        "hidden": true
       },
       {
         "name": "Deino",
         "gender": "Male",
         "voiceVariant": 2,
         "race": "Troll",
-        "type": "Mage Trainer"
+        "type": "Mage Trainer",
+        "hidden": true
       },
       {
         "name": "Arnok",
@@ -1315,7 +1322,8 @@
         "gender": "Male",
         "voiceVariant": 2,
         "race": "Troll",
-        "type": "Portal Trainer"
+        "type": "Portal Trainer",
+        "hidden": true
       }
     ],
     "name": "The Valley of Spirits",
@@ -2195,7 +2203,7 @@
         "gender": "Male",
         "voiceVariant": 1,
         "race": "Gnome",
-        "type": "Master Gnome Engineer"
+        "type": "Master Gnomish Engineer"
       },
       {
         "name": "Soolie Berryfizz",
@@ -2204,42 +2212,42 @@
         "race": "Gnome",
         "type": "Alchemy Supplies",
         "itemsSold": [
-        {
-          "item": "Empty Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Leaded Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Recipe: Free Action Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Crystal Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Recipe: Elixir of Superior Defense",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Imbued Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Empty Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Leaded Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Free Action Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Crystal Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Elixir of Superior Defense",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Imbued Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       }
     ],
@@ -2344,14 +2352,16 @@
         "gender": "Male",
         "voiceVariant": 2,
         "race": "Dwarf",
-        "type": "Rogue Trainer"
+        "type": "Rogue Trainer",
+        "hidden": true
       },
       {
         "name": "Alexander Calder",
         "gender": "Male",
         "voiceVariant": 2,
         "race": "Human",
-        "type": "Warlock Trainer"
+        "type": "Warlock Trainer",
+        "hidden": true
       }
     ],
     "name": "The Forlorn Cavern",
@@ -2517,14 +2527,16 @@
         "gender": "Male",
         "voiceVariant": 3,
         "race": "Dwarf",
-        "type": "Warrior Trainer"
+        "type": "Warrior Trainer",
+        "hidden": true
       },
       {
         "name": "Olmin Burningbeard",
         "gender": "Male",
         "voiceVariant": 1,
         "race": "Dwarf",
-        "type": "Hunter Trainer"
+        "type": "Hunter Trainer",
+        "hidden": true
       }
     ],
     "name": "The Military Ward",
@@ -2542,28 +2554,32 @@
         "gender": "Male",
         "voiceVariant": 2,
         "race": "Dwarf",
-        "type": "Paladin Trainer"
+        "type": "Paladin Trainer",
+        "hidden": true
       },
       {
         "name": "High Priest Rohan",
         "gender": "Male",
         "voiceVariant": 1,
         "race": "Dwarf",
-        "type": "Priest Trainer"
+        "type": "Priest Trainer",
+        "hidden": true
       },
       {
         "name": "Bink",
         "gender": "Female",
         "voiceVariant": 3,
         "race": "Gnome",
-        "type": "Mage Trainer"
+        "type": "Mage Trainer",
+        "hidden": true
       },
       {
         "name": "Milstaff Stormeye",
         "gender": "Male",
         "voiceVariant": 1,
         "race": "Gnome",
-        "type": "Portal Trainer"
+        "type": "Portal Trainer",
+        "hidden": true
       }
     ],
     "name": "The Mystic Ward",
@@ -3034,14 +3050,16 @@
         "gender": "Female",
         "voiceVariant": 1,
         "race": "Night Elf",
-        "type": "Priest Trainer"
+        "type": "Priest Trainer",
+        "hidden": true
       },
       {
         "name": "Elissa Dumas",
         "gender": "Female",
         "voiceVariant": 1,
         "race": "Human",
-        "type": "Portal Trainer"
+        "type": "Portal Trainer",
+        "hidden": true
       }
     ],
     "name": "The Temple of The Moon",
@@ -4654,48 +4672,48 @@
         "race": "Night Elf",
         "type": "Alchemy Supplies",
         "itemsSold": [
-        {
-          "item": "Empty Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Leaded Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Recipe: Free Action Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Recipe: Great Rage Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Crystal Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Recipe: Superior Mana Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Imbued Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Empty Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Leaded Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Free Action Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Great Rage Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Crystal Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Superior Mana Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Imbued Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       }
     ],
@@ -4713,7 +4731,8 @@
         "gender": "Male",
         "voiceVariant": 1,
         "race": "Night Elf",
-        "type": "Druid Trainer"
+        "type": "Druid Trainer",
+        "hidden": true
       },
       {
         "name": "Alassin",
@@ -4727,14 +4746,16 @@
         "gender": "Male",
         "voiceVariant": 3,
         "race": "Night Elf",
-        "type": "Rogue Trainer"
+        "type": "Rogue Trainer",
+        "hidden": true
       },
       {
         "name": "Jeen'ra Nightrunner",
         "gender": "Female",
         "voiceVariant": 1,
         "race": "Night Elf",
-        "type": "Hunter Trainer"
+        "type": "Hunter Trainer",
+        "hidden": true
       }
     ],
     "name": "Cenarion Enclave",
@@ -4751,7 +4772,8 @@
         "gender": "Male",
         "voiceVariant": 2,
         "race": "Night Elf",
-        "type": "Warrior Trainer"
+        "type": "Warrior Trainer",
+        "hidden": true
       },
       {
         "name": "Aethalas",
@@ -5304,7 +5326,8 @@
         "gender": "Male",
         "voiceVariant": 1,
         "race": "Night Elf",
-        "type": "Druid Trainer"
+        "type": "Druid Trainer",
+        "hidden": true
       },
       {
         "name": "Shylamiir",
@@ -5578,84 +5601,84 @@
         "race": "Human",
         "type": "Alchemy Supplies",
         "itemsSold": [
-        {
-          "item": "Silverleaf",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Mageroyal",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Peacebloom",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Earthroot",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Bruiseweed",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Wild Steelbloom",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Kingsblood",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Liferoot",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Empty Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Leaded Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Crystal Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Recipe: Elixir of Shadow Power",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Imbued Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Silverleaf",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mageroyal",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Peacebloom",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Earthroot",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Bruiseweed",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Wild Steelbloom",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Kingsblood",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Liferoot",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Empty Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Leaded Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Crystal Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Elixir of Shadow Power",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Imbued Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       }
     ],
@@ -5880,14 +5903,16 @@
         "gender": "Male",
         "voiceVariant": 2,
         "race": "Human",
-        "type": "Paladin Trainer"
+        "type": "Paladin Trainer",
+        "hidden": true
       },
       {
         "name": "High Priestess Laurena",
         "gender": "Female",
         "voiceVariant": 3,
         "race": "Human",
-        "type": "Priest Trainer"
+        "type": "Priest Trainer",
+        "hidden": true
       },
       {
         "name": "Shaina Fuller",
@@ -6027,7 +6052,8 @@
         "gender": "Female",
         "voiceVariant": 3,
         "race": "Dwarf",
-        "type": "Hunter Trainer"
+        "type": "Hunter Trainer",
+        "hidden": true
       },
       {
         "name": "Gelman Stonehand",
@@ -7097,30 +7123,30 @@
         "race": "Tauren",
         "type": "Alchemy Supplies",
         "itemsSold": [
-        {
-          "item": "Empty Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Leaded Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Crystal Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Imbued Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Empty Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Leaded Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Crystal Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Imbued Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       }
     ],
@@ -7975,21 +8001,24 @@
         "gender": "Male",
         "voiceVariant": 1,
         "race": "Forsaken",
-        "type": "Priest Trainer"
+        "type": "Priest Trainer",
+        "hidden": true
       },
       {
         "name": "Archmage Shymm",
         "gender": "Male",
         "voiceVariant": 3,
         "race": "Forsaken",
-        "type": "Mage Trainer"
+        "type": "Mage Trainer",
+        "hidden": true
       },
       {
         "name": "Birgitte Cranston",
         "gender": "Female",
         "voiceVariant": 2,
         "race": "Forsaken",
-        "type": "Portal Trainer"
+        "type": "Portal Trainer",
+        "hidden": true
       }
     ],
     "name": "The Pools of Vision",
@@ -8007,7 +8036,8 @@
         "gender": "Female",
         "voiceVariant": 1,
         "race": "Tauren",
-        "type": "Shaman Trainer"
+        "type": "Shaman Trainer",
+        "hidden": true
       },
       {
         "name": "Pand Stonebinder",
@@ -8031,7 +8061,8 @@
         "gender": "Female",
         "voiceVariant": 2,
         "race": "Tauren",
-        "type": "Hunter Trainer"
+        "type": "Hunter Trainer",
+        "hidden": true
       },
       {
         "name": "Taim Ragetotem",
@@ -8045,7 +8076,8 @@
         "gender": "Male",
         "voiceVariant": 3,
         "race": "Tauren",
-        "type": "Warrior Trainer"
+        "type": "Warrior Trainer",
+        "hidden": true
       }
     ],
     "name": "Hunter Rise",
@@ -8062,7 +8094,8 @@
         "gender": "Female",
         "voiceVariant": 3,
         "race": "Tauren",
-        "type": "Druid Trainer"
+        "type": "Druid Trainer",
+        "hidden": true
       }
     ],
     "name": "Elder Rise",
@@ -8191,7 +8224,8 @@
         "gender": "Male",
         "voiceVariant": 2,
         "race": "Forsaken",
-        "type": "Rogue Trainer"
+        "type": "Rogue Trainer",
+        "hidden": true
       },
       {
         "name": "Elizabeth Van Talen",
@@ -8661,21 +8695,24 @@
         "gender": "Male",
         "voiceVariant": 3,
         "race": "Forsaken",
-        "type": "Warlock Trainer"
+        "type": "Warlock Trainer",
+        "hidden": true
       },
       {
         "name": "Anastasia Hartwell",
         "gender": "Female",
         "voiceVariant": 1,
         "race": "Forsaken",
-        "type": "Mage Trainer"
+        "type": "Mage Trainer",
+        "hidden": true
       },
       {
         "name": "Lexington Mortaim",
         "gender": "Male",
         "voiceVariant": 1,
         "race": "Forsaken",
-        "type": "Portal Trainer"
+        "type": "Portal Trainer",
+        "hidden": true
       },
       {
         "name": "Sheldon Von Croy",
@@ -9062,7 +9099,8 @@
         "gender": "Male",
         "voiceVariant": 2,
         "race": "Forsaken",
-        "type": "Warrior Trainer"
+        "type": "Warrior Trainer",
+        "hidden": true
       },
       {
         "name": "Mirelle Tremayne",
@@ -10391,35 +10429,40 @@
         "gender": "Male",
         "voiceVariant": 3,
         "race": "Human",
-        "type": "Warrior Trainer"
+        "type": "Warrior Trainer",
+        "hidden": true
       },
       {
         "name": "Lord Tony Romano",
         "gender": "Male",
         "voiceVariant": 3,
         "race": "Human",
-        "type": "Rogue Trainer"
+        "type": "Rogue Trainer",
+        "hidden": true
       },
       {
         "name": "Demisette Cloyce",
         "gender": "Female",
         "voiceVariant": 1,
         "race": "Human",
-        "type": "Warlock Trainer"
+        "type": "Warlock Trainer",
+        "hidden": true
       },
       {
         "name": "Jennea Cannon",
         "gender": "Female",
         "voiceVariant": 2,
         "race": "Human",
-        "type": "Mage Trainer"
+        "type": "Mage Trainer",
+        "hidden": true
       },
       {
         "name": "Larimaine Purdue",
         "gender": "Female",
         "voiceVariant": 2,
         "race": "Human",
-        "type": "Portal Trainer"
+        "type": "Portal Trainer",
+        "hidden": true
       },
       {
         "name": "Dungar Longdrink",
@@ -11136,42 +11179,48 @@
         "gender": "Female",
         "voiceVariant": 3,
         "race": "Human",
-        "type": "Warrior Trainer"
+        "type": "Warrior Trainer",
+        "hidden": true
       },
       {
         "name": "Brother Wilhelm",
         "gender": "Male",
         "voiceVariant": 2,
         "race": "Human",
-        "type": "Paladin Trainer"
+        "type": "Paladin Trainer",
+        "hidden": true
       },
       {
         "name": "Keryn Sylvius",
         "gender": "Female",
         "voiceVariant": 3,
         "race": "Human",
-        "type": "Rogue Trainer"
+        "type": "Rogue Trainer",
+        "hidden": true
       },
       {
         "name": "Priestess Josetta",
         "gender": "Female",
         "voiceVariant": 2,
         "race": "Human",
-        "type": "Priest Trainer"
+        "type": "Priest Trainer",
+        "hidden": true
       },
       {
         "name": "Maximillian Crowe",
         "gender": "Male",
         "voiceVariant": 3,
         "race": "Human",
-        "type": "Warlock Trainer"
+        "type": "Warlock Trainer",
+        "hidden": true
       },
       {
         "name": "Zaldimar Wefhellt",
         "gender": "Male",
         "voiceVariant": 2,
         "race": "Human",
-        "type": "Mage Trainer"
+        "type": "Mage Trainer",
+        "hidden": true
       },
       {
         "name": "Farley",
@@ -12797,48 +12846,48 @@
         "race": "Human",
         "type": "Alchemy Supplies",
         "itemsSold": [
-        {
-          "item": "Greater Healing Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Empty Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Leaded Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Mana Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Recipe: Fire Protection Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Crystal Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Imbued Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Greater Healing Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Empty Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Leaded Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mana Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Fire Protection Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Crystal Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Imbued Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       }
     ],
@@ -13942,14 +13991,16 @@
         "gender": "Male",
         "voiceVariant": 3,
         "race": "Human",
-        "type": "Warrior Trainer"
+        "type": "Warrior Trainer",
+        "hidden": true
       },
       {
         "name": "Brother Karman",
         "gender": "Male",
         "voiceVariant": 2,
         "race": "Human",
-        "type": "Paladin Trainer"
+        "type": "Paladin Trainer",
+        "hidden": true
       },
       {
         "name": "Baldruc",
@@ -14401,42 +14452,42 @@
         "race": "Human",
         "type": "Alchemy Supplies",
         "itemsSold": [
-        {
-          "item": "Greater Healing Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Empty Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Leaded Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Mana Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Crystal Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Imbued Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Greater Healing Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Empty Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Leaded Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mana Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Crystal Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Imbued Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       }
     ],
@@ -15156,36 +15207,36 @@
         "race": "Night Elf",
         "type": "Alchemy Supplies",
         "itemsSold": [
-        {
-          "item": "Healing Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Empty Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Leaded Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Crystal Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Imbued Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Healing Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Empty Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Leaded Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Crystal Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Imbued Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       }
     ],
@@ -15316,48 +15367,48 @@
         "race": "Human",
         "type": "Alchemy Supplies",
         "itemsSold": [
-        {
-          "item": "Empty Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Leaded Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Superior Healing Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Greater Mana Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Crystal Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Recipe: Elixir of Demonslaying",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Imbued Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Empty Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Leaded Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Superior Healing Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Greater Mana Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Crystal Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Elixir of Demonslaying",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Imbued Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       }
     ],
@@ -15822,48 +15873,48 @@
         "race": "Dwarf",
         "type": "Alchemy Supplies",
         "itemsSold": [
-        {
-          "item": "Greater Healing Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Empty Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Leaded Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Mana Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Recipe: Frost Protection Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Crystal Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Imbued Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Greater Healing Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Empty Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Leaded Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mana Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Frost Protection Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Crystal Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Imbued Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       }
     ],
@@ -16361,35 +16412,40 @@
         "gender": "Female",
         "voiceVariant": 3,
         "race": "Night Elf",
-        "type": "Warrior Trainer"
+        "type": "Warrior Trainer",
+        "hidden": true
       },
       {
         "name": "Kal",
         "gender": "Male",
         "voiceVariant": 3,
         "race": "Night Elf",
-        "type": "Druid Trainer"
+        "type": "Druid Trainer",
+        "hidden": true
       },
       {
         "name": "Jannok Breezesong",
         "gender": "Male",
         "voiceVariant": 2,
         "race": "Night Elf",
-        "type": "Rogue Trainer"
+        "type": "Rogue Trainer",
+        "hidden": true
       },
       {
         "name": "Laurna Morninglight",
         "gender": "Female",
         "voiceVariant": 3,
         "race": "Night Elf",
-        "type": "Priest Trainer"
+        "type": "Priest Trainer",
+        "hidden": true
       },
       {
         "name": "Dazalar",
         "gender": "Male",
         "voiceVariant": 1,
         "race": "Night Elf",
-        "type": "Hunter Trainer"
+        "type": "Hunter Trainer",
+        "hidden": true
       },
       {
         "name": "Keldamyr",
@@ -17560,7 +17616,8 @@
         "gender": "Male",
         "voiceVariant": 2,
         "race": "Night Elf",
-        "type": "Warrior Trainer"
+        "type": "Warrior Trainer",
+        "hidden": true
       },
       {
         "name": "Jayla",
@@ -17824,48 +17881,48 @@
         "race": "Night Elf",
         "type": "Alchemy Supplies",
         "itemsSold": [
-        {
-          "item": "Healing Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Empty Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Leaded Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Lesser Mana Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Recipe: Shadow Protection Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Crystal Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Imbued Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Healing Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Empty Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Leaded Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Lesser Mana Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Shadow Protection Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Crystal Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Imbued Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       }
     ],
@@ -18513,14 +18570,16 @@
         "gender": "Male",
         "voiceVariant": 3,
         "race": "Night Elf",
-        "type": "Druid Trainer"
+        "type": "Druid Trainer",
+        "hidden": true
       },
       {
         "name": "Kaerbrus",
         "gender": "Male",
         "voiceVariant": 3,
         "race": "Night Elf",
-        "type": "Hunter Trainer"
+        "type": "Hunter Trainer",
+        "hidden": true
       },
       {
         "name": "Mishellena",
@@ -19066,54 +19125,54 @@
         "race": "Night Elf",
         "type": "Alchemy Supplies",
         "itemsSold": [
-        {
-          "item": "Empty Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Leaded Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Superior Healing Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Recipe: Nature Protection Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Greater Mana Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Crystal Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Recipe: Ghost Dye",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Imbued Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Empty Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Leaded Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Superior Healing Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Nature Protection Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Greater Mana Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Crystal Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Ghost Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Imbued Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       }
     ],
@@ -20268,7 +20327,8 @@
         "gender": "Male",
         "voiceVariant": 2,
         "race": "Dwarf",
-        "type": "Hunter Trainer"
+        "type": "Hunter Trainer",
+        "hidden": true
       },
       {
         "name": "Cliff Hadin",
@@ -20655,49 +20715,56 @@
         "gender": "Male",
         "voiceVariant": 2,
         "race": "Dwarf",
-        "type": "Warrior Trainer"
+        "type": "Warrior Trainer",
+        "hidden": true
       },
       {
         "name": "Azar Stronghammer",
         "gender": "Male",
         "voiceVariant": 3,
         "race": "Dwarf",
-        "type": "Paladin Trainer"
+        "type": "Paladin Trainer",
+        "hidden": true
       },
       {
         "name": "Hogral Bakkan",
         "gender": "Male",
         "voiceVariant": 3,
         "race": "Dwarf",
-        "type": "Rogue Trainer"
+        "type": "Rogue Trainer",
+        "hidden": true
       },
       {
         "name": "Maxal Anvon",
         "gender": "Male",
         "voiceVariant": 3,
         "race": "Dwarf",
-        "type": "Priest Trainer"
+        "type": "Priest Trainer",
+        "hidden": true
       },
       {
         "name": "Grif Wildheart",
         "gender": "Male",
         "voiceVariant": 3,
         "race": "Dwarf",
-        "type": "Hunter Trainer"
+        "type": "Hunter Trainer",
+        "hidden": true
       },
       {
         "name": "Gimrizz Shadowcog",
         "gender": "Male",
         "voiceVariant": 2,
         "race": "Gnome",
-        "type": "Warlock Trainer"
+        "type": "Warlock Trainer",
+        "hidden": true
       },
       {
         "name": "Magis Sparkmantle",
         "gender": "Male",
         "voiceVariant": 2,
         "race": "Gnome",
-        "type": "Mage Trainer"
+        "type": "Mage Trainer",
+        "hidden": true
       },
       {
         "name": "Belm",
@@ -22049,42 +22116,48 @@
         "gender": "Male",
         "voiceVariant": 2,
         "race": "Orc",
-        "type": "Warrior Trainer"
+        "type": "Warrior Trainer",
+        "hidden": true
       },
       {
         "name": "Kaplak",
         "gender": "Male",
         "voiceVariant": 1,
         "race": "Orc",
-        "type": "Rogue Trainer"
+        "type": "Rogue Trainer",
+        "hidden": true
       },
       {
         "name": "Tai'Jin",
         "gender": "Female",
         "voiceVariant": 3,
         "race": "Troll",
-        "type": "Priest Trainer"
+        "type": "Priest Trainer",
+        "hidden": true
       },
       {
         "name": "Swart",
         "gender": "Male",
         "voiceVariant": 2,
         "race": "Orc",
-        "type": "Shaman Trainer"
+        "type": "Shaman Trainer",
+        "hidden": true
       },
       {
         "name": "Thotar",
         "gender": "Male",
         "voiceVariant": 2,
         "race": "Orc",
-        "type": "Hunter Trainer"
+        "type": "Hunter Trainer",
+        "hidden": true
       },
       {
         "name": "Dhugru Gorelust",
         "gender": "Male",
         "voiceVariant": 1,
         "race": "Orc",
-        "type": "Warlock Trainer"
+        "type": "Warlock Trainer",
+        "hidden": true
       },
       {
         "name": "Grosk",
@@ -23096,7 +23169,8 @@
         "gender": "Male",
         "voiceVariant": 3,
         "race": "Orc",
-        "type": "Hunter Trainer"
+        "type": "Hunter Trainer",
+        "hidden": true
       },
       {
         "name": "Thulbek",
@@ -23735,28 +23809,32 @@
         "gender": "Male",
         "voiceVariant": 2,
         "race": "Orc",
-        "type": "Warrior Trainer"
+        "type": "Warrior Trainer",
+        "hidden": true
       },
       {
         "name": "Haromm",
         "gender": "Male",
         "voiceVariant": 2,
         "race": "Orc",
-        "type": "Shaman Trainer"
+        "type": "Shaman Trainer",
+        "hidden": true
       },
       {
         "name": "Ogromm",
         "gender": "Male",
         "voiceVariant": 2,
         "race": "Orc",
-        "type": "Hunter Trainer"
+        "type": "Hunter Trainer",
+        "hidden": true
       },
       {
         "name": "Kartosh",
         "gender": "Male",
         "voiceVariant": 2,
         "race": "Orc",
-        "type": "Warlock Trainer"
+        "type": "Warlock Trainer",
+        "hidden": true
       },
       {
         "name": "Breyk",
@@ -24197,48 +24275,48 @@
         "race": "Orc",
         "type": "Alchemy Supplies",
         "itemsSold": [
-        {
-          "item": "Empty Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Leaded Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Superior Healing Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Greater Mana Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Crystal Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Recipe: Elixir of Demonslaying",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Imbued Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Empty Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Leaded Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Superior Healing Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Greater Mana Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Crystal Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Elixir of Demonslaying",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Imbued Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       }
     ],
@@ -24439,7 +24517,8 @@
         "gender": "Male",
         "voiceVariant": 2,
         "race": "Troll",
-        "type": "Mage Trainer"
+        "type": "Mage Trainer",
+        "hidden": true
       },
       {
         "name": "Mishiki",
@@ -25329,28 +25408,32 @@
         "gender": "Male",
         "voiceVariant": 3,
         "race": "Tauren",
-        "type": "Warrior Trainer"
+        "type": "Warrior Trainer",
+        "hidden": true
       },
       {
         "name": "Gennia Runetotem",
         "gender": "Female",
         "voiceVariant": 3,
         "race": "Tauren",
-        "type": "Druid Trainer"
+        "type": "Druid Trainer",
+        "hidden": true
       },
       {
         "name": "Narm Skychaser",
         "gender": "Male",
         "voiceVariant": 3,
         "race": "Tauren",
-        "type": "Shaman Trainer"
+        "type": "Shaman Trainer",
+        "hidden": true
       },
       {
         "name": "Reban Freerunner",
         "gender": "Male",
         "voiceVariant": 2,
         "race": "Tauren",
-        "type": "Hunter Trainer"
+        "type": "Hunter Trainer",
+        "hidden": true
       },
       {
         "name": "Kauth",
@@ -25996,7 +26079,8 @@
         "gender": "Male",
         "voiceVariant": 2,
         "race": "Tauren",
-        "type": "Druid Trainer"
+        "type": "Druid Trainer",
+        "hidden": true
       },
       {
         "name": "Shyn",
@@ -26592,54 +26676,54 @@
         "race": "Tauren",
         "type": "Alchemy Supplies",
         "itemsSold": [
-        {
-          "item": "Empty Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Leaded Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Superior Healing Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Recipe: Nature Protection Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Greater Mana Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Crystal Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Recipe: Ghost Dye",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Imbued Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Empty Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Leaded Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Superior Healing Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Nature Protection Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Greater Mana Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Crystal Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Ghost Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Imbued Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       }
     ],
@@ -28316,35 +28400,40 @@
         "gender": "Male",
         "voiceVariant": 2,
         "race": "Forsaken",
-        "type": "Warrior Trainer"
+        "type": "Warrior Trainer",
+        "hidden": true
       },
       {
         "name": "Marion Call",
         "gender": "Female",
         "voiceVariant": 3,
         "race": "Forsaken",
-        "type": "Rogue Trainer"
+        "type": "Rogue Trainer",
+        "hidden": true
       },
       {
         "name": "Dark Cleric Beryl",
         "gender": "Male",
         "voiceVariant": 1,
         "race": "Forsaken",
-        "type": "Priest Trainer"
+        "type": "Priest Trainer",
+        "hidden": true
       },
       {
         "name": "Rupert Boch",
         "gender": "Male",
         "voiceVariant": 2,
         "race": "Forsaken",
-        "type": "Warlock Trainer"
+        "type": "Warlock Trainer",
+        "hidden": true
       },
       {
         "name": "Cain Firesong",
         "gender": "Male",
         "voiceVariant": 1,
         "race": "Forsaken",
-        "type": "Mage Trainer"
+        "type": "Mage Trainer",
+        "hidden": true
       },
       {
         "name": "Renee",
@@ -28671,66 +28760,66 @@
         "race": "Forsaken",
         "type": "Alchemy Supplies",
         "itemsSold": [
-        {
-          "item": "Silverleaf",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Mageroyal",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Lesser Healing Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Peacebloom",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Earthroot",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Bruiseweed",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Empty Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Leaded Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Crystal Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Imbued Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Silverleaf",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mageroyal",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Lesser Healing Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Peacebloom",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Earthroot",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Bruiseweed",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Empty Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Leaded Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Crystal Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Imbued Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       }
     ],
@@ -30797,7 +30886,8 @@
         "gender": "Male",
         "voiceVariant": 2,
         "race": "Night Elf",
-        "type": "Druid Trainer"
+        "type": "Druid Trainer",
+        "hidden": true
       },
       {
         "name": "Sindrayl",
@@ -34021,7 +34111,8 @@
         "gender": "Male",
         "voiceVariant": 2,
         "race": "Human",
-        "type": "Rogue Trainer"
+        "type": "Rogue Trainer",
+        "hidden": true
       },
       {
         "name": "Gringer",
@@ -34842,60 +34933,60 @@
         "race": "Goblin",
         "type": "Alchemy Supplies",
         "itemsSold": [
-        {
-          "item": "Greater Healing Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Empty Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Leaded Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Mana Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Recipe: Frost Protection Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Recipe: Nature Protection Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Recipe: Goblin Rocket Fuel",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Crystal Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Imbued Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Greater Healing Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Empty Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Leaded Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mana Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Frost Protection Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Nature Protection Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Goblin Rocket Fuel",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Crystal Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Imbued Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       }
     ],

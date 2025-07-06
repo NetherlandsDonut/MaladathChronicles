@@ -304,7 +304,7 @@
     "icon": "TradeLeatherworking",
     "category": "Profession Trainer",
     "profession": "Leatherworking",
-    "skillCap": 255
+    "skillCap": 300
   },
   {
     "type": "Master Elemental Leatherworker",
@@ -356,7 +356,7 @@
     "icon": "TradeBlacksmithing",
     "category": "Profession Trainer",
     "profession": "Blacksmithing",
-    "skillCap": 255
+    "skillCap": 300
   },
   {
     "type": "Artisan Blacksmith",
@@ -384,7 +384,7 @@
     "icon": "TradeAlchemy",
     "category": "Profession Trainer",
     "profession": "Alchemy",
-    "skillCap": 255
+    "skillCap": 300
   },
   {
     "type": "Artisan Alchemist",
@@ -412,7 +412,7 @@
     "icon": "TradeTailoring",
     "category": "Profession Trainer",
     "profession": "Tailoring",
-    "skillCap": 255
+    "skillCap": 300
   },
   {
     "type": "Master Shadoweave Tailor",
@@ -447,7 +447,7 @@
     "icon": "TradeEnchanting",
     "category": "Profession Trainer",
     "profession": "Enchanting",
-    "skillCap": 255
+    "skillCap": 300
   },
   {
     "type": "Artisan Enchanter",
@@ -475,7 +475,7 @@
     "icon": "TradeEngineering",
     "category": "Profession Trainer",
     "profession": "Engineering",
-    "skillCap": 255
+    "skillCap": 300
   },
   {
     "type": "Master Gnomish Engineer",
