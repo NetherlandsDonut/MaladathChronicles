@@ -199,7 +199,6 @@ public class Item
         else if (type == "One Handed")
         {
             var mainHand = entity.GetItemInSlot("Main Hand");
-            var offHand = entity.GetItemInSlot("Off Hand");
 
             //If slot is chosen automatically..
             if (autoSlotting)
@@ -255,12 +254,9 @@ public class Item
     //While [downgradeArmor] is set to false this function does not allow
     //people downgrading their preferred armor class
     //For example it will say that a Paladin cannot equip a cloth item
-    public bool CanEquip(Entity entity, bool downgradeArmor = false)
+    public bool HasProficiency(Entity entity, bool downgradeArmor = false)
     {
-        if (lvl > entity.level) return false;
         if (type == "Miscellaneous" || type == "Trade Good" || type == "Recipe") return false;
-        if (specs != null && !specs.Contains(entity.spec)) return false;
-        if (type == "Bag") return entity.inventory.bags.Count < defines.maxBagsEquipped;
         else if (armorClass != null)
         {
             if (downgradeArmor)
@@ -334,20 +330,294 @@ public class Item
         else return true;
     }
 
+    //Checks whether a chosen entity can equip this item
+    //While [downgradeArmor] is set to false this function does not allow
+    //people downgrading their preferred armor class
+    //For example it will say that a Paladin cannot equip a cloth item
+    public bool CanEquip(Entity entity, bool downgradeArmor, bool showWhyNot)
+    {
+        if (type == "Miscellaneous" || type == "Trade Good" || type == "Recipe") return false;
+        bool result = true;
+        if (specs != null && !specs.Contains(entity.spec))
+        {
+            if (showWhyNot)
+                SpawnFallingText(new Vector2(0, 34), "Your class can't equip this item", "Red");
+            result = false;
+        }
+        if (result)
+        {
+            if (type == "Bag")
+            {
+                if (entity.inventory.bags.Count >= defines.maxBagsEquipped)
+                {
+                    if (showWhyNot)
+                        SpawnFallingText(new Vector2(0, 34), "No more free bag slots", "Red");
+                    result = false;
+                }
+            }
+            else if (armorClass != null)
+            {
+                if (downgradeArmor)
+                {
+                    if (armorClass == "Plate")
+                    {
+                        if (!entity.abilities.ContainsKey("Plate Proficiency"))
+                        {
+                            if (showWhyNot)
+                                SpawnFallingText(new Vector2(0, 34), "You can't wear plate armor", "Red");
+                            result = false;
+                        }
+                    }
+                    else if (armorClass == "Mail")
+                    {
+                        if (!entity.abilities.ContainsKey("Mail Proficiency") && !entity.abilities.ContainsKey("Plate Proficiency"))
+                        {
+                            if (showWhyNot)
+                                SpawnFallingText(new Vector2(0, 34), "You can't wear mail armor", "Red");
+                            result = false;
+                        }
+                    }
+                    else if (armorClass == "Leather")
+                    {
+                        if (!entity.abilities.ContainsKey("Leather Proficiency") && !entity.abilities.ContainsKey("Mail Proficiency") && !entity.abilities.ContainsKey("Plate Proficiency"))
+                        {
+                            if (showWhyNot)
+                                SpawnFallingText(new Vector2(0, 34), "You can't wear leather armor", "Red");
+                            result = false;
+                        }
+                    }
+                    else if (armorClass == "Cloth")
+                    {
+                        if (!entity.abilities.ContainsKey("Cloth Proficiency") && !entity.abilities.ContainsKey("Leather Proficiency") && !entity.abilities.ContainsKey("Mail Proficiency") && !entity.abilities.ContainsKey("Plate Proficiency"))
+                        {
+                            if (showWhyNot)
+                                SpawnFallingText(new Vector2(0, 34), "You can't wear cloth armor", "Red");
+                            result = false;
+                        }
+                    }
+                }
+                else if (!entity.abilities.ContainsKey(armorClass + " Proficiency"))
+                {
+                    if (showWhyNot)
+                        SpawnFallingText(new Vector2(0, 34), "You can't wear " + armorClass + " armor", "Red");
+                    result = false;
+                }
+            }
+            else if (type == "Pouch")
+            {
+                result = entity.abilities.ContainsKey("Pouch Proficiency");
+                if (!result && showWhyNot)
+                    SpawnFallingText(new Vector2(0, 34), "You can't use ammo pouches", "Red");
+            }
+            else if (type == "Quiver")
+            {
+                result = entity.abilities.ContainsKey("Quiver Proficiency");
+                if (!result && showWhyNot)
+                    SpawnFallingText(new Vector2(0, 34), "You can't use quivers", "Red");
+            }
+            else if (type == "Libram")
+            {
+                result = entity.abilities.ContainsKey("Libram Proficiency");
+                if (!result && showWhyNot)
+                    SpawnFallingText(new Vector2(0, 34), "You can't use librams", "Red");
+            }
+            else if (type == "Totem")
+            {
+                result = entity.abilities.ContainsKey("Totem Proficiency");
+                if (!result && showWhyNot)
+                    SpawnFallingText(new Vector2(0, 34), "You can't use totems", "Red");
+            }
+            else if (type == "Idol")
+            {
+                result = entity.abilities.ContainsKey("Idol Proficiency");
+                if (!result && showWhyNot)
+                    SpawnFallingText(new Vector2(0, 34), "You can't use idols", "Red");
+            }
+            else if (type == "Two Handed")
+            {
+                if (detailedType == "Sword")
+                {
+                    result = entity.abilities.ContainsKey("Two Handed Sword Proficiency");
+                    if (!result && showWhyNot)
+                        SpawnFallingText(new Vector2(0, 34), "You can't use two handed swords", "Red");
+                }
+                else if (detailedType == "Axe")
+                {
+                    result = entity.abilities.ContainsKey("Two Handed Axe Proficiency");
+                    if (!result && showWhyNot)
+                        SpawnFallingText(new Vector2(0, 34), "You can't use two handed axes", "Red");
+                }
+                else if (detailedType == "Mace")
+                {
+                    result = entity.abilities.ContainsKey("Two Handed Mace Proficiency");
+                    if (!result && showWhyNot)
+                        SpawnFallingText(new Vector2(0, 34), "You can't use two handed maces", "Red");
+                }
+                else if (detailedType == "Polearm")
+                {
+                    result = entity.abilities.ContainsKey("Polearm Proficiency");
+                    if (!result && showWhyNot)
+                        SpawnFallingText(new Vector2(0, 34), "You can't use polearms", "Red");
+                }
+                else if (detailedType == "Staff")
+                {
+                    result = entity.abilities.ContainsKey("Staff Proficiency");
+                    if (!result && showWhyNot)
+                        SpawnFallingText(new Vector2(0, 34), "You can't use staves", "Red");
+                }
+                else
+                {
+                    result = false;
+                    if (showWhyNot)
+                        SpawnFallingText(new Vector2(0, 34), "You can't use two handed weapons", "Red");
+                }
+            }
+            else if (type == "Off Hand")
+            {
+                if (detailedType == "Shield") result = entity.abilities.ContainsKey("Shield Proficiency");
+                else result = entity.abilities.ContainsKey("Off Hand Proficiency");
+            }
+            else if (type == "Ranged Weapon")
+            {
+                if (detailedType == "Bow")
+                {
+                    result = entity.abilities.ContainsKey("Bow Proficiency");
+                    if (!result && showWhyNot)
+                        SpawnFallingText(new Vector2(0, 34), "You can't use bows", "Red");
+                }
+                else if (detailedType == "Crossbow")
+                {
+                    result = entity.abilities.ContainsKey("Crossbow Proficiency");
+                    if (!result && showWhyNot)
+                        SpawnFallingText(new Vector2(0, 34), "You can't use crossbows", "Red");
+                }
+                else if (detailedType == "Gun")
+                {
+                    result = entity.abilities.ContainsKey("Gun Proficiency");
+                    if (!result && showWhyNot)
+                        SpawnFallingText(new Vector2(0, 34), "You can't use guns", "Red");
+                }
+                else
+                {
+                    result = false;
+                    if (showWhyNot)
+                        SpawnFallingText(new Vector2(0, 34), "You can't use ranged weapons", "Red");
+                }
+            }
+            else if (type == "One Handed")
+            {
+                if (detailedType == "Dagger")
+                {
+                    result = entity.abilities.ContainsKey("Dagger Proficiency");
+                    if (!result && showWhyNot)
+                        SpawnFallingText(new Vector2(0, 34), "You can't use daggers", "Red");
+                }
+                else if (detailedType == "Sword")
+                {
+                    result = entity.abilities.ContainsKey("One Handed Sword Proficiency");
+                    if (!result && showWhyNot)
+                        SpawnFallingText(new Vector2(0, 34), "You can't use one handed swords", "Red");
+                }
+                else if (detailedType == "Axe")
+                {
+                    result = entity.abilities.ContainsKey("One Handed Axe Proficiency");
+                    if (!result && showWhyNot)
+                        SpawnFallingText(new Vector2(0, 34), "You can't use one handed axes", "Red");
+                }
+                else if (detailedType == "Mace")
+                {
+                    result = entity.abilities.ContainsKey("One Handed Mace Proficiency");
+                    if (!result && showWhyNot)
+                        SpawnFallingText(new Vector2(0, 34), "You can't use one handed maces", "Red");
+                }
+                else if (detailedType == "Wand")
+                {
+                    result = entity.abilities.ContainsKey("Wand Proficiency");
+                    if (!result && showWhyNot)
+                        SpawnFallingText(new Vector2(0, 34), "You can't use wands", "Red");
+                }
+                else if (detailedType == "Fist Weapon")
+                {
+                    result = entity.abilities.ContainsKey("Fist Weapon Proficiency");
+                    if (!result && showWhyNot)
+                        SpawnFallingText(new Vector2(0, 34), "You can't use fist weapons", "Red");
+                }
+                else
+                {
+                    result = false;
+                    if (showWhyNot)
+                        SpawnFallingText(new Vector2(0, 34), "You can't use one handed weapons", "Red");
+                }
+            }
+        }
+        if (result && lvl > entity.level)
+        {
+            if (showWhyNot)
+                SpawnFallingText(new Vector2(0, 34), "You don't meet the level requirements", "Red");
+            result = false;
+        }
+        return result;
+    }
+
     #endregion
 
     #region Using
-
+    
     //Tells whether a chosen entity can use this item
     //This does not include equipping it
-    public bool CanUse(Entity entity)
+    public bool CanUse(Entity entity, bool showWhyNot)
     {
         if (questsStarted != null && questsStarted.Count > 0)
-            return true;
+        {
+            var quest = Quest.quests.FindAll(x => questsStarted.Contains(x.questID)).Find(x => currentSave.player.CanSeeItemQuest(x));
+            if (currentSave.player.completedQuests.Contains(quest.questID))
+            {
+                if (showWhyNot)
+                {
+                    PlaySound("QuestFailed");
+                    SpawnFallingText(new Vector2(0, 34), "Quest already completed", "Red");
+                }
+            }
+            else if (quest.requiredLevel > currentSave.player.level)
+            {
+                if (showWhyNot)
+                {
+                    PlaySound("QuestFailed");
+                    SpawnFallingText(new Vector2(0, 34), "Requires level " + quest.requiredLevel, "Red");
+                }
+            }
+            else if (quest.faction != null && !currentSave.player.IsRankHighEnough(currentSave.player.ReputationRank(quest.faction), quest.requiredRank))
+            {
+                if (showWhyNot)
+                {
+                    PlaySound("QuestFailed");
+                    SpawnFallingText(new Vector2(0, 34), "Requires " + quest.requiredRank + " with " + quest.faction, "Red");
+                }
+            }
+            else return true;
+        }
         else if (type == "Recipe")
         {
             var recipe = Recipe.recipes.Find(x => name.Contains(x.name));
-            if (recipe != null) return true;
+            if (recipe != null)
+            {
+                if (!entity.professionSkills.ContainsKey(recipe.profession))
+                {
+                    if (showWhyNot)
+                        SpawnFallingText(new Vector2(0, 34), "You don't know the required profession", "Red");
+                }
+                else if (entity.professionSkills[recipe.profession].Item1 < recipe.learnedAt)
+                {
+                    if (showWhyNot)
+                        SpawnFallingText(new Vector2(0, 34), "Not enough skill in the profession", "Red");
+                }
+                else if (entity.learnedRecipes[recipe.profession].Contains(recipe.name))
+                {
+                    if (showWhyNot)
+                        SpawnFallingText(new Vector2(0, 34), "You already know this recipe", "Red");
+                }
+                else return true;
+            }
             else Debug.Log("ERROR 007: Did not find a dedicated recipe to item: \"" + name + "\"");
         }
         else if (abilities != null)
@@ -370,49 +640,28 @@ public class Item
             }
             else
             {
-                var message = "";
-                if (currentSave.player.completedQuests.Contains(quest.questID)) message = "Already completed";
-                else if (quest.requiredLevel > currentSave.player.level) message = "Requires level " + quest.requiredLevel;
-                else if (quest.faction != null && !currentSave.player.IsRankHighEnough(currentSave.player.ReputationRank(quest.faction), quest.requiredRank)) message = "Requires " + quest.requiredRank + " with " + quest.faction;
-                if (message != "")
+                SpawnDesktopBlueprint("QuestLog");
+                CloseDesktop("EquipmentScreen");
+                if (currentSave.player.currentQuests.Exists(x => x.questID == quest.questID))
                 {
-                    PlaySound("QuestFailed");
-                    SpawnFallingText(new Vector2(0, 34), message, "Red");
+                    Quest.quest = Quest.quests.Find(x => x.questID == quest.questID);
+                    SpawnWindowBlueprint("Quest");
                 }
                 else
                 {
-                    SpawnDesktopBlueprint("QuestLog");
-                    CloseDesktop("EquipmentScreen");
-                    if (currentSave.player.currentQuests.Exists(x => x.questID == quest.questID))
-                    {
-                        Quest.quest = Quest.quests.Find(x => x.questID == quest.questID);
-                        SpawnWindowBlueprint("Quest");
-                    }
-                    else
-                    {
-                        Quest.quest = quest;
-                        SpawnWindowBlueprint("QuestAdd");
-                    }
+                    Quest.quest = quest;
+                    SpawnWindowBlueprint("QuestAdd");
                 }
             }
         }
         else if (type == "Recipe")
         {
             var recipe = Recipe.recipes.Find(x => name.Contains(x.name));
-            if (!entity.professionSkills.ContainsKey(recipe.profession))
-                SpawnFallingText(new Vector2(0, 34), "You don't know the required profession", "Red");
-            else if (entity.professionSkills[recipe.profession].Item1 < recipe.learnedAt)
-                SpawnFallingText(new Vector2(0, 34), "Not enough skill in the profession", "Red");
-            else if (entity.learnedRecipes[recipe.profession].Contains(recipe.name))
-                SpawnFallingText(new Vector2(0, 34), "You already know this recipe", "Red");
-            else
-            {
-                entity.LearnRecipe(recipe);
-                PlaySound("DesktopSkillLearned");
-                SpawnFallingText(new Vector2(0, 34), "New recipe learned", "Blue");
-                if (amount > 1) amount--;
-                else entity.inventory.items.Remove(this);
-            }
+            entity.LearnRecipe(recipe);
+            PlaySound("DesktopSkillLearned");
+            SpawnFallingText(new Vector2(0, 34), "New recipe learned", "Blue");
+            if (amount > 1) amount--;
+            else entity.inventory.items.Remove(this);
         }
         else currentSave.CallEvents(new() { { "Trigger", "ItemUsed" }, { "ItemHash", GetHashCode() + "" } });
     }
@@ -676,7 +925,7 @@ public class Item
             AddBigButtonOverlay("QuestStarter" + (status == "Can" ? "" : (status == "Active" ? "Active" : "Off")), 0, 4);
         }
         if (item.amount == 0) SetBigButtonToGrayscale();
-        else if (item.IsWearable() && !item.CanEquip(currentSave.player, true)) SetBigButtonToRed();
+        else if (item.IsWearable() && !item.HasProficiency(currentSave.player, true)) SetBigButtonToRed();
         if (stockItem != null || item.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.position + new Vector3(32, -27) + new Vector3(38, 0) * ((buyback != null ? currentSave.buyback.items.IndexOf(buyback) : currentSave.vendorStock[town.name + ":" + Person.person.name].FindIndex(x => x.item == item.name)) % 5), item.amount + (false && buyback == null ?  "/" + currentSave.vendorStock[town.name + ":" + Person.person.name].Find(x => x.item == item.name).maxAmount : ""), "", "", "Right");
         if (stockItem != null && item.amount == 0 && stockItem.minutesLeft > 0) AddBigButtonCooldownOverlay(stockItem.minutesLeft / (double)stockItem.restockSpeed);
         else if (buyback != null && buyback.minutesLeft > 0) AddBigButtonBuybackOverlay(buyback.minutesLeft / (double)defines.buybackDecay);
@@ -826,7 +1075,7 @@ public class Item
                 }
                 else
                 {
-                    if (item.CanEquip(currentSave.player, true))
+                    if (item.CanEquip(currentSave.player, true, true))
                     {
                         PlaySound(item.ItemSound("PickUp"), 0.8f);
                         item.Equip(currentSave.player, false, Input.GetKey(KeyCode.LeftAlt));
@@ -834,7 +1083,7 @@ public class Item
                         Respawn("PlayerEquipmentInfo", true);
                         Respawn("PlayerWeaponsInfo", true);
                     }
-                    else if (item.CanUse(currentSave.player))
+                    else if (item.CanUse(currentSave.player, true))
                     {
                         PlaySound(item.ItemSound("Use"), 0.8f);
                         item.Use(currentSave.player);
@@ -883,9 +1132,9 @@ public class Item
             }
             AddBigButtonOverlay("QuestStarter" + (status == "Can" ? "" : (status == "Active" ? "Active" : "Off")), 0, 4);
         }
-        if (item.CanEquip(currentSave.player) && currentSave.player.IsItemNewSlot(item) && (settings.upgradeIndicators.Value() || settings.newSlotIndicators.Value()))
+        if (item.CanEquip(currentSave.player, false, false) && currentSave.player.IsItemNewSlot(item) && (settings.upgradeIndicators.Value() || settings.newSlotIndicators.Value()))
             AddBigButtonOverlay(settings.newSlotIndicators.Value() ? "OtherItemNewSlot" : "OtherItemUpgrade", 0, 2);
-        else if (settings.upgradeIndicators.Value() && item.CanEquip(currentSave.player) && currentSave.player.IsItemAnUpgrade(item))
+        else if (settings.upgradeIndicators.Value() && item.CanEquip(currentSave.player, false, false) && currentSave.player.IsItemAnUpgrade(item))
             AddBigButtonOverlay("OtherItemUpgrade", 0, 2);
         if (Cursor.cursor.color == "Pink" && !item.IsDisenchantable()) SetBigButtonToGrayscale();
         else if (Cursor.cursor.color == "Pink") AddBigButtonOverlay("OtherGlowDisenchantable" + item.rarity, 0, 2);
@@ -924,9 +1173,9 @@ public class Item
             }
             AddBigButtonOverlay("QuestStarter" + (status == "Can" ? "" : (status == "Active" ? "Active" : "Off")), 0, 4);
         }
-        if (item.CanEquip(currentSave.player) && currentSave.player.IsItemNewSlot(item) && (settings.upgradeIndicators.Value() || settings.newSlotIndicators.Value()))
+        if (item.CanEquip(currentSave.player, false, false) && currentSave.player.IsItemNewSlot(item) && (settings.upgradeIndicators.Value() || settings.newSlotIndicators.Value()))
             AddBigButtonOverlay(settings.newSlotIndicators.Value() ? "OtherItemNewSlot" : "OtherItemUpgrade", 0, 2);
-        else if (settings.upgradeIndicators.Value() && item.CanEquip(currentSave.player) && currentSave.player.IsItemAnUpgrade(item))
+        else if (settings.upgradeIndicators.Value() && item.CanEquip(currentSave.player, false, false) && currentSave.player.IsItemAnUpgrade(item))
             AddBigButtonOverlay("OtherItemUpgrade", 0, 2);
         if (item.maxStack > 1 && item.type != "Currency") SpawnFloatingText(CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.position + new Vector3(32, -27) + new Vector3(38, 0) * item.x, item.amount + "", "", "", "Right");
 
@@ -1084,7 +1333,7 @@ public class Item
             {
                 var copy = item.CopyItem(1);
                 copy.specs = null;
-                AddLine(item.armorClass + " ", currentSave != null && !copy.CanEquip(currentSave.player, true) ? "DangerousRed" : "Gray");
+                AddLine(item.armorClass + " ", currentSave != null && !copy.HasProficiency(currentSave.player, true) ? "DangerousRed" : "Gray");
                 AddText(item.type);
             }
             else if (item.minPower > 0)

@@ -129,7 +129,7 @@ public static class Root
         else if (abilityTargetted.possibleTargets == "Friendly" && participantTargetted.team != board.participants[board.whosTurn].team) SpawnFallingText(new Vector2(0, 34), "This ability can only target friendly targets", "Red");
         else
         {
-            var notMet = abilityTargetted.ConditionsNotMet("AbilityCast", abilityTargetted, board.participants[board.whosTurn].combatAbilities[abilityTargetted], SaveGame.currentSave, board);
+            var notMet = abilityTargetted.ConditionsNotMet("AbilityCast", abilityTargetted, board.participants[board.whosTurn].combatAbilities[abilityTargetted], currentSave, board);
             if (notMet.Count == 0)
             {
                 foreach (var participant in board.participants)
@@ -229,7 +229,7 @@ public static class Root
     {
         if (h.window.title == "PlayerEquipmentInfo")
         {
-            if (movingItem.CanEquip(currentSave.player, true) && h.region.LBLine().LBText().text == movingItem.type)
+            if (movingItem.CanEquip(currentSave.player, true, true) && h.region.LBLine().LBText().text == movingItem.type)
             {
                 movingItem.Equip(currentSave.player, false, false);
                 movingItem.x = -1;
@@ -245,7 +245,7 @@ public static class Root
         else if (h.window.title == "PlayerWeaponsInfo")
         {
             var typeWritten = h.region.LBLine().LBText().text;
-            if (movingItem.CanEquip(currentSave.player, true) && ((typeWritten == "Off Hand" && movingItem.type == "Off Hand") || (typeWritten == "Main Hand" || typeWritten == "Off Hand") && (movingItem.type == "One Handed" || movingItem.type == "Two Handed") || typeWritten == "Ranged Weapon" && movingItem.type == "Ranged Weapon"))
+            if (movingItem.CanEquip(currentSave.player, true, false) && ((typeWritten == "Off Hand" && movingItem.type == "Off Hand") || (typeWritten == "Main Hand" || typeWritten == "Off Hand") && (movingItem.type == "One Handed" || movingItem.type == "Two Handed") || typeWritten == "Ranged Weapon" && movingItem.type == "Ranged Weapon"))
             {
                 movingItem.Equip(currentSave.player, false, typeWritten == "Off Hand");
                 movingItem.x = -1;
@@ -815,7 +815,7 @@ public static class Root
                     if (WindowUp("InventorySort")) return;
                     if (WindowUp("ConfirmItemDisenchant")) return;
                     if (WindowUp("ConfirmItemDestroy")) return;
-                    if (item.CanUse(currentSave.player))
+                    if (item.CanUse(currentSave.player, true))
                     {
                         PlaySound(item.ItemSound("Use"), 0.8f);
                         item.Use(currentSave.player);

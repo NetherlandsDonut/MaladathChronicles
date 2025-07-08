@@ -61,7 +61,7 @@ public class Entity
         {
             Item item;
             do item = Item.items[random.Next(Item.items.Count)].CopyItem();
-            while (!item.CanEquip(this) || item.lvl - level < -5 || item.lvl > level);
+            while (!item.CanEquip(this, false, false) || item.lvl - level < -5 || item.lvl > level);
             inventory.AddItem(item);
         }
         equipment = new Dictionary<string, Item>();
@@ -818,7 +818,7 @@ public class Entity
             var item1 = GetItemInSlot("Main Hand");
             var item2 = GetItemInSlot("Off Hand");
             var temp = inventory.items.OrderByDescending(x => x.ilvl);
-            var item3 = temp.Count() > 0 ? temp.First(x => x.CanEquip(this) && x.type == "One Handed") : null;
+            var item3 = temp.Count() > 0 ? temp.First(x => x.CanEquip(this, false, true) && x.type == "One Handed") : null;
             if (item1 != null && item2 == null)
                 return item1.type == "Two Handed" && item3 != null ? item.ilvl / 2 + item3.ilvl / 2 > item1.ilvl : false;
             else if (item2 != null)
@@ -849,7 +849,7 @@ public class Entity
     public void EquipAllItems()
     {
         for (int i = inventory.items.Count - 1; i >= 0; i--)
-            if (inventory.items[i].CanEquip(this, true))
+            if (inventory.items[i].CanEquip(this, true, false))
                 inventory.items[i].Equip(this, true, false);
     }
 

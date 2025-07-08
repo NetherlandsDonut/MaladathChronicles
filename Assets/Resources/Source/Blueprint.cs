@@ -501,13 +501,13 @@ public class Blueprint
         new("PlayerQuickUse", () => {
             SetAnchor(Bottom, 0, 9);
             var entity = board.participants[board.whosTurn].who;
-            if (entity.inventory.items.FindAll(x => x.combatUse && !x.CanEquip(entity)).Count == 0) return;
+            if (entity.inventory.items.FindAll(x => x.combatUse).Count == 0) return;
             else
             {
                 AddRegionGroup();
                 AddPaddingRegion(() =>
                 {
-                    foreach (var item in entity.inventory.items.FindAll(x => x.combatUse && !x.CanEquip(entity)))
+                    foreach (var item in entity.inventory.items.FindAll(x => x.combatUse))
                         if (item != null && item.abilities != null && item.combatUse)
                         {
                             var ability = item.abilities.ToList()[0];
@@ -2626,7 +2626,7 @@ public class Blueprint
                     else
                         AddSmallButton("OtherEmpty", (h) =>
                         {
-                            if (movingItem != null && movingItem.CanEquip(currentSave.player, true) && movingItem.type == "Bag")
+                            if (movingItem != null && movingItem.CanEquip(currentSave.player, true, true) && movingItem.type == "Bag")
                             {
                                 movingItem.Equip(currentSave.player, true, false);
                                 movingItem.x = -1;
