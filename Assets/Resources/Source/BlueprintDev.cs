@@ -4265,7 +4265,7 @@ public static class BlueprintDev
             (h) =>
             {
                 race.genderedPortrait ^= true;
-                });
+            });
             if (race.genderedPortrait)
             {
                 AddPaddingRegion(() => AddLine("Portraits:", "DarkGray"));

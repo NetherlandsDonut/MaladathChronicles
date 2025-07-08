@@ -112,16 +112,16 @@ public class SaveGame
 
     #region Time and day
 
-    //Day in-game
+    //Day in game
     public int day;
 
-    //Hour in-game
+    //Hour in game
     public int hour;
 
-    //Minute in-game
+    //Minute in game
     public int minute;
 
-    //Seconds in-game
+    //Seconds in game
     public int second;
 
     //Indicates whether it is night at the moment or not

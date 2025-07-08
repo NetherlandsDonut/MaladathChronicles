@@ -54,7 +54,7 @@ public class Highlightable : MonoBehaviour
         render.color = defaultColor - new Color(0.1f, 0.1f, 0.1f, 0);
         if (window != null && window.title.StartsWith("Site: "))
         {
-            if (Input.GetKey(KeyCode.LeftAlt))
+            if (debug && Input.GetKey(KeyCode.LeftAlt))
             {
                 var site = window.title[(window.title.IndexOf("Site: ") + 6)..];
                 if (pathsConnectedToSite.ContainsKey(site))

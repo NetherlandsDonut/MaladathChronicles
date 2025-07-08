@@ -78,6 +78,9 @@ public static class Root
     //Point at which player stopped for skirmish
     public static int pointsForRetreat;
 
+    //Indicates whether the debug mode is active
+    public static bool debug;
+
     public static float lastFunnyEffectTime;
     public static Vector3 lastFunnyEffectPosition;
     public static List<(int, int)> titleScreenFunnyEffect = new();
@@ -1146,10 +1149,10 @@ public static class Root
     {
         Dictionary<string, int> dic = new();
         var rising = false;
-        if (chartPage == "Damage Dealt") dic = Board.board.log.damageDealt;
-        else if (chartPage == "Damage Taken") dic = Board.board.log.damageTaken;
-        else if (chartPage == "Healing Received") dic = Board.board.log.healingReceived;
-        else if (chartPage == "Elements Used") dic = Board.board.log.elementsUsed;
+        if (chartPage == "Damage Dealt") dic = board.log.damageDealt;
+        else if (chartPage == "Damage Taken") dic = board.log.damageTaken;
+        else if (chartPage == "Healing Received") dic = board.log.healingReceived;
+        else if (chartPage == "Elements Used") dic = board.log.elementsUsed;
         var temp = dic.Count * (settings.chartBigIcons.Value() ? 38 : 19);
         if (temp == 0)
         {
@@ -1206,10 +1209,10 @@ public static class Root
     {
         Dictionary<string, int> dic = new();
         var rising = false;
-        if (chartPage == "Damage Dealt") dic = Board.board.log.damageDealt;
-        else if (chartPage == "Damage Taken") dic = Board.board.log.damageTaken;
-        else if (chartPage == "Healing Received") dic = Board.board.log.healingReceived;
-        else if (chartPage == "Elements Used") dic = Board.board.log.elementsUsed;
+        if (chartPage == "Damage Dealt") dic = board.log.damageDealt;
+        else if (chartPage == "Damage Taken") dic = board.log.damageTaken;
+        else if (chartPage == "Healing Received") dic = board.log.healingReceived;
+        else if (chartPage == "Elements Used") dic = board.log.elementsUsed;
         var temp = dic.Count * (settings.chartBigIcons.Value() ? 38 : 19);
         if (temp > 0)
         {
@@ -1468,6 +1471,15 @@ public static class Root
         if (number >= 4) return "IV" + ToRoman(number - 4);
         if (number >= 1) return "I" + ToRoman(number - 1);
         return "";
+    }
+
+    //Converts a number into the roman notation
+    public static string FormatTime(int seconds, int minutes = 0)
+    {
+        var sec = seconds + minutes * 60;
+        var min = sec / 60;
+        sec %= 60;
+        return (min * 60 + " minutes ") + sec + " seconds";
     }
 
     #endregion

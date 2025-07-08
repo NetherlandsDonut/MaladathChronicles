@@ -19,7 +19,7 @@ public class String
     public string RemoveNextOne(int i) => value = value.Remove(i, 1);
 
     public void Clear() => value = "";
-    public void Paste() => value = GUIUtility.systemCopyBuffer.Replace("\b", "").Replace("\r", "").Replace("\n", "");
+    public void Paste() => value += GUIUtility.systemCopyBuffer.Replace("\b", "").Replace("\r", "").Replace("\n", "");
     public void Set(string value) => backupValue = this.value = value;
     public void Confirm() => backupValue = value;
     public void Reset() => value = backupValue;

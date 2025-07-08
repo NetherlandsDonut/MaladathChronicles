@@ -2154,10 +2154,18 @@ public class Blueprint
                 }
                 SetRegionAsGroupExtender();
             });
-            if (currentSave.player.CanCraft(recipe) > 0 && (!recipe.enchantment || enchantmentTarget != null))
+            AddHeaderRegion(() =>
+            {
+                AddLine("Time required:", "Gray");
+                AddLine(FormatTime(60 * recipe.reagents.Sum(x => x.Value)) + " seconds", "Gray", "Right");
+            });
+            var canCraft = currentSave.player.CanCraft(recipe, true, false) > 0;
+            var canCraftWithSpace = currentSave.player.CanCraft(recipe, true, true) > 0;
+            if (canCraftWithSpace && (!recipe.enchantment || enchantmentTarget != null))
                 AddButtonRegion(() => AddLine(recipe.enchantment ? "Enchant" : "Craft"),
                 (h) =>
                 {
+                    currentSave.AddTime(60 * recipe.reagents.Sum(x => x.Value));
                     var crafted = currentSave.player.Craft(recipe);
                     var skill = currentSave.player.professionSkills;
                     var isMaxed = skill[recipe.profession].Item1 == profession.levels.FindAll(x => skill[recipe.profession].Item2.Contains(x.name)).Max(x => x.maxSkill);
@@ -2189,8 +2197,14 @@ public class Blueprint
                     CloseWindow("CraftingRecipe");
                     SpawnWindowBlueprint("CraftingRecipe");
                 });
+            else if (canCraft && (!recipe.enchantment || enchantmentTarget != null))
+                AddButtonRegion(() => AddLine(recipe.enchantment ? "Enchant" : "Craft"),
+                (h) =>
+                {
+                    SpawnFallingText(new Vector2(0, 34), "Inventory is full", "Red");
+                });
             else
-                AddPaddingRegion(() => AddLine(recipe.enchantment ? "Enchant" : "Craft", "DarkGray"));
+                AddPaddingRegion(() => AddLine(recipe.enchantment ? "Enchant" : "Craft"));
         }),
         new("CraftingSort", () => {
             SetAnchor(Center);
@@ -6863,7 +6877,7 @@ public class Blueprint
             SpawnWindowBlueprint("TitleScreenMenu");
             AddHotkey("Open console", () =>
             {
-                if (SpawnWindowBlueprint("Console") != null)
+                if (debug && SpawnWindowBlueprint("Console") != null)
                 {
                     PlaySound("DesktopTooltipShow", 0.4f);
                     CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
@@ -6889,7 +6903,7 @@ public class Blueprint
             SpawnWindowBlueprint("CharacterInfo");
             AddHotkey("Open console", () =>
             {
-                if (SpawnWindowBlueprint("Console") != null)
+                if (debug && SpawnWindowBlueprint("Console") != null)
                 {
                     PlaySound("DesktopTooltipShow", 0.4f);
                     CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
@@ -6915,7 +6929,7 @@ public class Blueprint
             SpawnWindowBlueprint("RealmRoster");
             AddHotkey("Open console", () =>
             {
-                if (SpawnWindowBlueprint("Console") != null)
+                if (debug && SpawnWindowBlueprint("Console") != null)
                 {
                     PlaySound("DesktopTooltipShow", 0.4f);
                     CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
@@ -6939,7 +6953,7 @@ public class Blueprint
             SpawnWindowBlueprint("CharacterCreationWho");
             AddHotkey("Open console", () =>
             {
-                if (SpawnWindowBlueprint("Console") != null)
+                if (debug && SpawnWindowBlueprint("Console") != null)
                 {
                     PlaySound("DesktopTooltipShow", 0.4f);
                     CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
@@ -7019,7 +7033,7 @@ public class Blueprint
             });
             AddHotkey("Open console", () =>
             {
-                if (SpawnWindowBlueprint("Console") != null)
+                if (debug && SpawnWindowBlueprint("Console") != null)
                 {
                     PlaySound("DesktopTooltipShow", 0.4f);
                     CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
@@ -7365,7 +7379,7 @@ public class Blueprint
             var s = currentSave.player.professionSkills["Enchanting"];
             if (!enchantingSkillChange)
             {
-                currentSave.AddTime(20);
+                currentSave.AddTime(30);
                 enchantingSkillChange = true;
                 if (s.Item1 < 70 && s.Item1 < professions.Find(x => x.name == "Enchanting").levels.FindAll(x => s.Item2.Contains(x.name)).Max(x => x.maxSkill))
                 {

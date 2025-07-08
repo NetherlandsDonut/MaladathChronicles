@@ -164,8 +164,17 @@ public class Desktop : MonoBehaviour
             CloseDesktop("GameSimulation");
             CDesktop.UnlockScreen();
         }
-        if (GetKey(KeyCode.LeftControl) && GetKey(KeyCode.Tab) && GetKeyDown(KeyCode.LeftAlt)) ReloadAssets();
-        if (!GameSettings.settings.music.Value() && ambience.volume > 0) ambience.volume -= 0.002f;
+        if (GetKey(KeyCode.F) && GetKey(KeyCode.U) && GetKeyDown(KeyCode.R))
+        {
+            SpawnFallingText(new Vector2(0, 34), "Debug mode has been turned " + (debug ? "off" : "on"), "Red");
+            debug ^= true;
+        };
+        if (debug && GetKey(KeyCode.LeftControl) && GetKey(KeyCode.Tab) && GetKeyDown(KeyCode.LeftAlt)) ReloadAssets();
+        if (!GameSettings.settings.music.Value())
+        {
+            if (ambience.volume > 0)
+                ambience.volume -= 0.002f;
+        }
         else if (queuedAmbience.Item1 != ambience.clip)
         {
             if (ambience.volume > 0) ambience.volume -= 0.002f;
@@ -519,13 +528,25 @@ public class Desktop : MonoBehaviour
                         inputLineMarker++;
                         didSomething = true;
                     }
-                    else if (GetKey(KeyCode.A) && GetKey(KeyCode.LeftControl))
+                    else if (GetKeyDown(KeyCode.A) && GetKey(KeyCode.LeftControl))
                     {
                         inputDestination.Clear();
                         inputLineMarker = 0;
                         didSomething = true;
                     }
-                    else if (GetKey(KeyCode.V) && GetKey(KeyCode.LeftControl))
+                    else if (GetKeyDown(KeyCode.X) && GetKey(KeyCode.LeftControl))
+                    {
+                        GUIUtility.systemCopyBuffer = inputDestination.value;
+                        inputDestination.Clear();
+                        inputLineMarker = 0;
+                        didSomething = true;
+                    }
+                    else if (GetKeyDown(KeyCode.C) && GetKey(KeyCode.LeftControl))
+                    {
+                        GUIUtility.systemCopyBuffer = inputDestination.value;
+                        didSomething = true;
+                    }
+                    else if (GetKeyDown(KeyCode.V) && GetKey(KeyCode.LeftControl))
                     {
                         inputDestination.Paste();
                         inputLineMarker = inputDestination.Value().Length;

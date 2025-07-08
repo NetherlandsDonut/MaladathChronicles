@@ -160,7 +160,8 @@ public class SiteTown : Site
             },
             (h) =>
             {
-                BuildPath();
+                if (debug)
+                    BuildPath();
             });
             var q = currentSave.player.AvailableQuestsAt(this, true).Count;
             sitesWithQuestMarkers.Remove(this);
