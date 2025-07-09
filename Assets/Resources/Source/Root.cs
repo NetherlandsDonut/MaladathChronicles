@@ -130,6 +130,7 @@ public static class Root
         if (abilityTargetted.possibleTargets == "Tile") SpawnFallingText(new Vector2(0, 34), "This ability can only target the board", "Red");
         else if (abilityTargetted.possibleTargets == "Enemies" && participantTargetted.team == board.participants[board.whosTurn].team) SpawnFallingText(new Vector2(0, 34), "This ability can only target enemies", "Red");
         else if (abilityTargetted.possibleTargets == "Friendly" && participantTargetted.team != board.participants[board.whosTurn].team) SpawnFallingText(new Vector2(0, 34), "This ability can only target friendly targets", "Red");
+        else if (!participantTargetted.who.CanBeTargetted(true)) { }
         else
         {
             var notMet = abilityTargetted.ConditionsNotMet("AbilityCast", abilityTargetted, board.participants[board.whosTurn].combatAbilities[abilityTargetted], currentSave, board);

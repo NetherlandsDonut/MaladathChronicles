@@ -1363,9 +1363,25 @@ public class Entity
     }
 
     //Tells whether the entity can be targetted by an ability
-    public bool CanBeTargetted()
+    public bool CanBeTargetted(bool showWhyNot)
     {
-        return !Stats().Any(x => x.Key == "Stealth" && x.Value > 0);
+        if (dead)
+        {
+            SpawnFallingText(new Vector2(0, 34), "Target is dead", "Red");
+            return false;
+        }
+        if (IsStealthed())
+        {
+            SpawnFallingText(new Vector2(0, 34), "Target is stealthed", "Red");
+            return false;
+        }
+        return true;
+    }
+
+    //Tells whether the entity can be targetted by an ability
+    public bool IsStealthed()
+    {
+        return !dead && Stats().Where(x => x.Key == "Stealth").Sum(x => x.Value) > 0;
     }
 
     //Kills this entity in combat

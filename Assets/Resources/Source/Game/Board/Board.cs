@@ -254,7 +254,7 @@ public class Board
         else
         {
             foreach (var participant in ofTeam == 1 ? spotlightEnemy : spotlightFriendly)
-                if (participants[participant].who.CanBeTargetted())
+                if (participants[participant].who.CanBeTargetted(false))
                     return participants[participant];
         }
         return null;

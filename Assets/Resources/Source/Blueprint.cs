@@ -242,7 +242,7 @@ public class Blueprint
                         if (abilityTargetted != null) FinishTargettingAbility(participant);
                         else ChangeSpotlight(index);
                     });
-                    if (!participant.who.CanBeTargetted())
+                    if (participant.who.IsStealthed())
                     {
                         var button = CDesktop.LBWindow().LBRegionGroup().LBRegion().LBBigButton().gameObject;
                         AddBigButtonOverlay(button, "SneakingBig", 0, 1);
@@ -375,7 +375,7 @@ public class Blueprint
                             else ChangeSpotlight(index);
                         });
                     }
-                    if (!participant.who.CanBeTargetted())
+                    if (participant.who.IsStealthed())
                     {
                         var button = CDesktop.LBWindow().LBRegionGroup().LBRegion().LBBigButton().gameObject;
                         AddBigButtonOverlay(button, "SneakingBig", 0, 1);

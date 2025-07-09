@@ -31,11 +31,11 @@ public class Ability
     public bool HasValidTarget(CombatParticipant participant)
     {
         if (possibleTargets == "Friendly")
-            return Board.board.participants.Any(x => x.who.CanBeTargetted() && x.team == participant.team && participant != x);
+            return Board.board.participants.Any(x => x.who.CanBeTargetted(false) && x.team == participant.team && participant != x);
         else if (possibleTargets == "Enemies")
-            return Board.board.participants.Any(x => x.who.CanBeTargetted() && x.team != participant.team);
+            return Board.board.participants.Any(x => x.who.CanBeTargetted(false) && x.team != participant.team);
         else if (possibleTargets == "Entity")
-            return Board.board.participants.Any(x => x.who.CanBeTargetted());
+            return Board.board.participants.Any(x => x.who.CanBeTargetted(false));
         else if (possibleTargets == "Self") return true;
         else if (possibleTargets == "Tile") return true;
         else return false;
@@ -212,7 +212,7 @@ public class Ability
             });
             AddPaddingRegion(() =>
             {
-                AddBigButton(item != null ? (item.icon == null ? "OtherUnknown" : item.icon) : (ability.icon == null ? "OtherUnknown" : ability.icon));
+                AddBigButton(item != null ? (item.icon ?? "OtherUnknown") : (ability.icon ?? "OtherUnknown"));
                 AddLine("Cooldown: ", "DarkGray");
                 AddText(ability.cooldown == 0 ? "None" : ability.cooldown + (ability.cooldown == 1 ? " turn" : " turns"), "Gray");
                 if (CDesktop.title == "Game" || CDesktop.title == "GameSimulation")
