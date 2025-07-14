@@ -19763,8 +19763,9 @@
   },
   {
     "name": "Avatar of Hakkar",
-    "category": "Beast",
-    "subcategory": "Wind Serpent",
+    "category": "Undead",
+    "subcategory": "Skeleton",
+    "voice": "Avatar of Hakkar",
     "portrait": "PortraitSkeletalWindSerpent",
     "abilities": {},
     "kind": "Elite",

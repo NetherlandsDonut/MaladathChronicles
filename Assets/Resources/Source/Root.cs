@@ -117,6 +117,8 @@ public static class Root
     public static void StartTargettingAbility(Ability ability)
     {
         abilityTargetted = ability;
+        if (ability.targettingSound != null)
+            PlaySound(ability.targettingSound);
         if (abilityTargetted.possibleTargets == "Self") FinishTargettingAbility(null);
         else Cursor.cursor.SetCursor(CursorType.Crosshair);
         //if (abilityTargetted != null) Respawn("TargettingInfo");

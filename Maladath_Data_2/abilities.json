@@ -636,6 +636,7 @@
     "name": "Arcane Shot",
     "icon": "AbilityArcaneShot",
     "possibleTargets": "Enemies",
+    "targettingSound": "<WeaponLoad>",
     "tags": [
       "BasicDamage"
     ],
@@ -671,7 +672,7 @@
         ],
         "effects": [
           {
-            "SoundEffect": "AbilityFireballCast",
+            "SoundEffect": "<WeaponFire>",
             "ShatterTarget": "Effector",
             "ShatterDensity": "1",
             "ShatterSpeed": "3",
@@ -691,7 +692,7 @@
             "ShatterDegree": "40",
             "SoundEffect": "AbilityFireballImpact",
             "AnimationType": "Missile",
-            "TrailStrength": "13",
+            "TrailStrength": "0",
             "AnimationSpeed": "2",
             "Await": "4"
           },
@@ -10180,6 +10181,7 @@
   {
     "name": "Fireball",
     "icon": "AbilityFireball",
+    "targettingSound": "PrecastFire",
     "possibleTargets": "Enemies",
     "tags": [
       "BasicDamage"

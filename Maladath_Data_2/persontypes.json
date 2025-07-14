@@ -60,6 +60,16 @@
     "category": "Vendor"
   },
   {
+    "type": "Cooking Supplies",
+    "icon": "ItemMiscFoodWheat02",
+    "category": "Vendor"
+  },
+  {
+    "type": "Blacksmithing Supplies",
+    "icon": "ItemStoneGrindingStone01",
+    "category": "Vendor"
+  },
+  {
     "type": "Engineering Supplies & General Goods",
     "icon": "ItemMiscGear08",
     "category": "Vendor"

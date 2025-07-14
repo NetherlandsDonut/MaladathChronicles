@@ -617,7 +617,7 @@
         "currentQuests": [],
         "completedQuests": [],
         "level": 60,
-        "experience": 119038463,
+        "experience": 119038483,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -751,13 +751,13 @@
             ]
           },
           "Mining": {
-            "Item1": 1,
+            "Item1": 2,
             "Item2": [
               "Amateur"
             ]
           },
           "Herbalism": {
-            "Item1": 1,
+            "Item1": 2,
             "Item2": [
               "Amateur"
             ]
@@ -813,7 +813,7 @@
           ],
           "Herbalism": []
         },
-        "unspentTalentPoints": 59,
+        "unspentTalentPoints": 52,
         "faction": "Stormwind",
         "name": "Christine",
         "race": "Human",
@@ -827,9 +827,13 @@
           "Off Hand Proficiency": 0,
           "Dagger Proficiency": 0,
           "Wand Proficiency": 0,
-          "Fireball": 0,
+          "Fireball": 3,
           "Frostbolt": 0,
-          "Arcane Missiles": 0
+          "Arcane Missiles": 0,
+          "Blazing Barrier": 0,
+          "Hot Streak": 0,
+          "Scorch": 0,
+          "Fire Blast": 0
         },
         "currentActionSet": "Default",
         "actionBars": {
@@ -873,6 +877,34 @@
               "abilities": {
                 "Hearthstone": 1
               }
+            },
+            {
+              "x": 2,
+              "rarity": "Common",
+              "name": "Peacebloom",
+              "icon": "itemmiscflower02",
+              "detailedType": "Flowers",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 5,
+              "lvl": 1,
+              "amount": 3,
+              "maxStack": 20,
+              "price": 10
+            },
+            {
+              "x": 3,
+              "rarity": "Common",
+              "name": "Copper Ore",
+              "icon": "itemorecopper01",
+              "detailedType": "Ore",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 10,
+              "lvl": 1,
+              "amount": 2,
+              "maxStack": 10,
+              "price": 5
             },
             {
               "x": 1,
@@ -950,9 +982,9 @@
         "worldBuffs": []
       },
       "hour": 7,
-      "minute": 6,
-      "second": 46,
-      "currentSite": "Stormwind City",
+      "minute": 12,
+      "second": 41,
+      "currentSite": "Northshire Valley",
       "ringOfLaw": "Grizzle",
       "forlornCloister": "Ironspine",
       "markets": [
@@ -970,14 +1002,19 @@
       "openedChests": {},
       "fishingSpots": {},
       "fishingSpoils": {},
-      "siteProgress": {},
-      "commonsKilled": {},
+      "siteProgress": {
+        "Northshire Valley": 1
+      },
+      "commonsKilled": {
+        "Kobold Vermin": 1
+      },
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
         "Northshire Abbey": 1,
         "Goldshire": 0,
-        "Stormwind City": 4
+        "Stormwind City": 4,
+        "Northshire Valley": 1
       },
       "unlockedAreas": [],
       "vendorStock": {
@@ -1244,7 +1281,7 @@
             "item": "Polished Scale Leggings",
             "amount": 1,
             "maxAmount": 2,
-            "minutesLeft": 40,
+            "minutesLeft": 34,
             "restockSpeed": 40
           },
           {
@@ -1424,9 +1461,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2025-07-05T19:27:41.7766963+02:00",
-      "lastLoaded": "2025-07-08T13:19:29.8614241+02:00",
-      "lastPlayed": "2025-07-08T13:20:48.2759187+02:00",
-      "timePlayed": "00:06:44.7437558"
+      "lastLoaded": "2025-07-14T13:44:37.9076019+02:00",
+      "lastPlayed": "2025-07-14T13:44:39.4758241+02:00",
+      "timePlayed": "00:08:09.5929333"
     },
     {
       "playerSide": "Horde",
@@ -2860,6 +2897,396 @@
       "lastLoaded": "2025-07-08T13:20:50.2763645+02:00",
       "lastPlayed": "2025-07-08T13:23:18.4214738+02:00",
       "timePlayed": "00:02:45.6615776"
+    },
+    {
+      "playerSide": "Alliance",
+      "player": {
+        "currentQuests": [],
+        "completedQuests": [],
+        "level": 17,
+        "experience": 14343,
+        "uniquesGotten": [],
+        "reputation": {
+          "Southsea Pirates": 0,
+          "Razormane Tribe": 0,
+          "Pandaren": 0,
+          "Grimtotem Tribe": 0,
+          "Woodpaw Tribe": 0,
+          "The Burning Legion": 0,
+          "Darkspear Tribe": 0,
+          "Stormwind": 4250,
+          "Timbermaw Tribe": 4050,
+          "Magram Clan": 0,
+          "Gelkis Clan": 0,
+          "Kolkar Clan": 0,
+          "Orgrimmar": 0,
+          "Frostwolf Clan": 0,
+          "The Defiler's": 0,
+          "Thunder Bluff": 0,
+          "Undercity": 0,
+          "Ironforge": 4600,
+          "Dark Iron Clan": 0,
+          "Wildhammer Clan": 4250,
+          "Winterfall Tribe": 0,
+          "Gnomeregan": 4250,
+          "Darnassus": 4250,
+          "Bloodsail Buccaneers": 0,
+          "Syndicate": 0,
+          "Warsong Outriders": 0,
+          "Stormpike Guard": 4250,
+          "Silverwing Sentinels": 4250,
+          "The League of Arathor": 4250,
+          "Defias Brotherhood": 0,
+          "Dalaran": 4250,
+          "Burning Blade Clan": 0,
+          "Burning Legion": 0,
+          "Shadow Council": 0,
+          "Gordunni Ogres": 0,
+          "Blackrock Clan": 0,
+          "Dragonmaw Clan": 0,
+          "Black Tooth Grin Clan": 0,
+          "Gurubashi Tribe": 0,
+          "Sandfury Tribe": 0,
+          "Twilight's Hammer": 0,
+          "Grimtotem Clan": 0,
+          "Razorfen Tribe": 0,
+          "Stonemaul Ogres": 0,
+          "Dustbelcher Ogres": 0,
+          "Deadwind Ogres": 0,
+          "Venture Co.": 0,
+          "Southsea Freebooters": 0,
+          "Atal'ai Tribe": 0,
+          "Qiraji Empire": 0,
+          "Scarlet Crusade": 0,
+          "Vilebranch Tribe": 0,
+          "Witherbark Tribe": 0,
+          "Mossflayer Tribe": 0,
+          "Frostmane Tribe": 0,
+          "Bloodscalp Tribe": 0,
+          "Skullsplitter Tribe": 0,
+          "Shatterspear Tribe": 0,
+          "Rot Hide Tribe": 0,
+          "Scourge": 0,
+          "Smolderthorn Tribe": 0,
+          "Revantusk Tribe": 0,
+          "Blackpaw Tribe": 0,
+          "Maraudine Clan": 0,
+          "Mosshide Tribe": 0,
+          "Deadwood Tribe": 0,
+          "Bloodtooth Tribe": 0,
+          "Bristleback Tribe": 0
+        },
+        "professionSkills": {
+          "Leatherworking": {
+            "Item1": 1,
+            "Item2": [
+              "Amateur"
+            ]
+          },
+          "Blacksmithing": {
+            "Item1": 1,
+            "Item2": [
+              "Amateur"
+            ]
+          },
+          "Alchemy": {
+            "Item1": 1,
+            "Item2": [
+              "Amateur"
+            ]
+          },
+          "Tailoring": {
+            "Item1": 1,
+            "Item2": [
+              "Amateur"
+            ]
+          },
+          "Enchanting": {
+            "Item1": 1,
+            "Item2": [
+              "Amateur"
+            ]
+          },
+          "Engineering": {
+            "Item1": 1,
+            "Item2": [
+              "Amateur"
+            ]
+          },
+          "Cooking": {
+            "Item1": 1,
+            "Item2": [
+              "Amateur"
+            ]
+          },
+          "Fishing": {
+            "Item1": 1,
+            "Item2": [
+              "Amateur"
+            ]
+          },
+          "First Aid": {
+            "Item1": 1,
+            "Item2": [
+              "Amateur"
+            ]
+          },
+          "Skinning": {
+            "Item1": 1,
+            "Item2": [
+              "Amateur"
+            ]
+          },
+          "Mining": {
+            "Item1": 1,
+            "Item2": [
+              "Amateur"
+            ]
+          },
+          "Herbalism": {
+            "Item1": 1,
+            "Item2": [
+              "Amateur"
+            ]
+          }
+        },
+        "learnedRecipes": {
+          "Leatherworking": [
+            "Light Leather",
+            "Light Armor Kit",
+            "Handstitched Leather Vest",
+            "Handstitched Leather Cloak",
+            "Handstitched Leather Bracers",
+            "Handstitched Leather Boots"
+          ],
+          "Blacksmithing": [
+            "Rough Sharpening Stone",
+            "Rough Weightstone",
+            "Rough Copper Vest",
+            "Copper Bracers"
+          ],
+          "Alchemy": [
+            "Minor Healing Potion",
+            "Elixir of Lion's Strength",
+            "Elixir of Minor Defense"
+          ],
+          "Tailoring": [
+            "Bolt of Linen Cloth",
+            "Brown Linen Shirt",
+            "Linen Cloak",
+            "Simple Linen Pants"
+          ],
+          "Enchanting": [
+            "Runed Copper Rod",
+            "Enchant Bracer - Minor Deflect",
+            "Enchant Bracer - Minor Health"
+          ],
+          "Engineering": [
+            "Rough Blasting Powder",
+            "Rough Dynamite",
+            "Crafted Light Shot"
+          ],
+          "Cooking": [
+            "Charred Wolf Meat",
+            "Roasted Boar Meat"
+          ],
+          "Fishing": [],
+          "First Aid": [
+            "Linen Bandage"
+          ],
+          "Skinning": [],
+          "Mining": [
+            "Smelt Copper"
+          ],
+          "Herbalism": []
+        },
+        "unspentTalentPoints": 15,
+        "faction": "Ironforge",
+        "name": "Immil",
+        "race": "Dwarf",
+        "spec": "Hunter",
+        "gender": "Female",
+        "homeLocation": "Anvilmar",
+        "abilities": {
+          "Stoneform": 0,
+          "Dual Wielding Proficiency": 0,
+          "Two Handed Axe Proficiency": 0,
+          "Two Handed Sword Proficiency": 0,
+          "Polearm Proficiency": 0,
+          "Quiver Proficiency": 0,
+          "Pouch Proficiency": 0,
+          "Bow Proficiency": 0,
+          "Crossbow Proficiency": 0,
+          "Gun Proficiency": 0,
+          "Leather Proficiency": 0,
+          "Mail Proficiency": 0,
+          "One Handed Axe Proficiency": 0,
+          "One Handed Mace Proficiency": 0,
+          "One Handed Sword Proficiency": 0,
+          "Fist Weapon Proficiency": 0,
+          "Off Hand Proficiency": 0,
+          "Dagger Proficiency": 0,
+          "Aimed Shot": 0,
+          "Tame Beast": 0,
+          "Raptor Strike": 0,
+          "Arcane Shot": 0
+        },
+        "currentActionSet": "Default",
+        "actionBars": {
+          "Default": [
+            "Aimed Shot",
+            "Stoneform",
+            "Tame Beast",
+            "Arcane Shot"
+          ]
+        },
+        "stats": {
+          "Stamina": 24,
+          "Strength": 22,
+          "Agility": 19,
+          "Intellect": 19,
+          "Spirit": 20,
+          "Earth Mastery": 3,
+          "Fire Mastery": 2,
+          "Air Mastery": 3,
+          "Water Mastery": 1,
+          "Frost Mastery": 2,
+          "Lightning Mastery": 2,
+          "Arcane Mastery": 1,
+          "Decay Mastery": 1,
+          "Shadow Mastery": 1,
+          "Order Mastery": 3
+        },
+        "inventory": {
+          "items": [
+            {
+              "rarity": "Common",
+              "name": "Hearthstone",
+              "icon": "itemmiscrune01",
+              "detailedType": "Rune",
+              "type": "Miscellaneous",
+              "ilvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "indestructible": true,
+              "unique": true,
+              "abilities": {
+                "Hearthstone": 1
+              }
+            }
+          ],
+          "bags": []
+        },
+        "mounts": [],
+        "equipment": {
+          "Ranged Weapon": {
+            "rarity": "Common",
+            "name": "Old Blunderbuss",
+            "icon": "itemrifle01",
+            "detailedType": "Gun",
+            "type": "Ranged Weapon",
+            "ilvl": 2,
+            "lvl": 1,
+            "minPower": 1.09,
+            "maxPower": 1.22,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 5
+          },
+          "Main Hand": {
+            "rarity": "Common",
+            "name": "Worn Axe",
+            "icon": "itemaxe11",
+            "detailedType": "Axe",
+            "type": "One Handed",
+            "ilvl": 2,
+            "lvl": 1,
+            "minPower": 1.05,
+            "maxPower": 1.15,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 7
+          },
+          "Feet": {
+            "rarity": "Common",
+            "name": "Rugged Trapper's Boots",
+            "icon": "itemboots06",
+            "type": "Feet",
+            "ilvl": 1,
+            "lvl": 1,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1
+          },
+          "Legs": {
+            "rarity": "Poor",
+            "name": "Rugged Trapper's Pants",
+            "icon": "itempants02",
+            "type": "Legs",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 2,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1
+          },
+          "Chest": {
+            "rarity": "Common",
+            "name": "Rugged Trapper's Shirt",
+            "icon": "itemshirt01",
+            "type": "Chest",
+            "ilvl": 1,
+            "lvl": 1,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1
+          }
+        },
+        "worldBuffs": []
+      },
+      "hour": 7,
+      "minute": 4,
+      "second": 33,
+      "currentSite": "Blackrock Pass",
+      "ringOfLaw": "Anub'shiah",
+      "forlornCloister": "Fallen Champion",
+      "markets": [
+        {
+          "name": "Alliance Market",
+          "auctions": [],
+          "hoursSinceUpdate": 48
+        },
+        {
+          "name": "Horde Market",
+          "auctions": [],
+          "hoursSinceUpdate": 48
+        }
+      ],
+      "openedChests": {},
+      "fishingSpots": {},
+      "fishingSpoils": {},
+      "siteProgress": {
+        "Coldridge Valley": 2
+      },
+      "commonsKilled": {
+        "Rockjaw Trogg": 1,
+        "Small Crag Boar": 1
+      },
+      "raresKilled": {},
+      "elitesKilled": {},
+      "siteVisits": {
+        "Anvilmar": 1,
+        "Coldridge Valley": 1,
+        "Blackrock Pass": 4
+      },
+      "unlockedAreas": [],
+      "vendorStock": {},
+      "banks": {},
+      "startDate": "2025-07-14T13:44:43.9191194+02:00",
+      "lastLoaded": "2025-07-14T14:47:54.2389778+02:00",
+      "lastPlayed": "2025-07-14T14:54:03.2845263+02:00",
+      "timePlayed": "00:11:06.7898825"
     }
   ]
 }

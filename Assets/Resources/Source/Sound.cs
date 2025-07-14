@@ -1,5 +1,6 @@
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
+
 using UnityEngine;
 
 using static GameSettings;
@@ -14,9 +15,23 @@ public static class Sound
     {
         if (soundsPlayedThisFrame.Contains(path)) return;
         if (!settings.soundEffects.Value()) return;
-        if (!sounds.ContainsKey(path)) return;
-        soundEffects.PlayOneShot(sounds[path], volume);
-        soundsPlayedThisFrame.Add(path);
+        var soundToPlay = path.Replace("<", "").Replace(">", "");
+        if (path == "<WeaponLoad>")
+        {
+            var eq = Board.board.participants[Board.board.whosTurn].who.equipment;
+            var rangedWeapon = eq.ContainsKey("Ranged Weapon") ? eq["Ranged Weapon"] : null;
+            if (rangedWeapon != null) soundToPlay = rangedWeapon.detailedType + "Load";
+        }
+        else if (path == "<WeaponFire>")
+        {
+            var eq = Board.board.participants[Board.board.whosTurn].who.equipment;
+            var rangedWeapon = eq.ContainsKey("Ranged Weapon") ? eq["Ranged Weapon"] : null;
+            if (rangedWeapon != null) soundToPlay = rangedWeapon.detailedType + "Fire";
+        }
+        var find = sounds.Where(x => x.Key.StartsWith(soundToPlay));
+        if (find.Count() == 0) return;
+        soundEffects.PlayOneShot(find.ToList()[Root.random.Next(find.Count())].Value, volume);
+        soundsPlayedThisFrame.Add(soundToPlay);
     }
 
     //Plays a singular sound effect

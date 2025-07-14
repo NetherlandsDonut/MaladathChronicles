@@ -1,7 +1,7 @@
 {
   "selectedRealm": "Whitemane",
   "selectedRealmRanking": "Whitemane",
-  "selectedCharacter": "Linda",
+  "selectedCharacter": "Immil",
   "pixelPerfectVision": {
     "value": "True"
   },
@@ -9,7 +9,7 @@
     "value": "False"
   },
   "soundEffects": {
-    "value": "False"
+    "value": "True"
   },
   "rarityIndicators": {
     "value": "True"

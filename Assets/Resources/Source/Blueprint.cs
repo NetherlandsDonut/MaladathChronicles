@@ -200,7 +200,8 @@ public class Blueprint
                                 board.finishedMoving = true;
                                 board.FloodDestroy(list);
                             }
-                        });
+                        },
+                        (h) => ClearTargettingAbility());
                     }
                 });
             }
@@ -241,7 +242,8 @@ public class Blueprint
                     {
                         if (abilityTargetted != null) FinishTargettingAbility(participant);
                         else ChangeSpotlight(index);
-                    });
+                    },
+                    (h) => ClearTargettingAbility());
                     if (participant.who.IsStealthed())
                     {
                         var button = CDesktop.LBWindow().LBRegionGroup().LBRegion().LBBigButton().gameObject;
@@ -261,7 +263,8 @@ public class Blueprint
                 {
                     if (abilityTargetted != null) FinishTargettingAbility(participant);
                     else ChangeSpotlight(index);
-                });
+                },
+                (h) => ClearTargettingAbility());
                 foreach (var actionBar in participant.who.actionBars[participant.who.currentActionSet])
                 {
                     var abilityObj = abilities.Find(x => x.name == actionBar);
@@ -286,7 +289,7 @@ public class Blueprint
                                 AddSmallButtonOverlay("AutoCast");
                         },
                         (h) => ClearTargettingAbility(),
-                        null,
+                        (h) => ClearTargettingAbility(),
                         (h) => () =>
                         {
                             PrintAbilityTooltip(board.participants[board.spotlightEnemy[index]].who, abilityObj, board.participants[board.spotlightEnemy[index]].who.abilities[abilityObj.name]);
@@ -365,7 +368,8 @@ public class Blueprint
                         {
                             if (abilityTargetted != null) FinishTargettingAbility(participant);
                             else ChangeSpotlight(index);
-                        });
+                        },
+                        (h) => ClearTargettingAbility());
                     else
                     {
                         var race = races.Find(x => x.name == participant.who.race);
@@ -373,7 +377,8 @@ public class Blueprint
                         {
                             if (abilityTargetted != null) FinishTargettingAbility(board.participants[board.spotlightFriendly[index]]);
                             else ChangeSpotlight(index);
-                        });
+                        },
+                        (h) => ClearTargettingAbility());
                     }
                     if (participant.who.IsStealthed())
                     {
@@ -394,7 +399,8 @@ public class Blueprint
                 {
                     if (abilityTargetted != null) FinishTargettingAbility(participant);
                     else ChangeSpotlight(index);
-                });
+                },
+                (h) => ClearTargettingAbility());
                 foreach (var actionBar in participant.who.actionBars[board.participants[index].who.currentActionSet])
                 {
                     var abilityObj = abilities.Find(x => x.name == actionBar);
@@ -421,16 +427,15 @@ public class Blueprint
                         {
                             if (board.spotlightFriendly[index] == board.whosTurn)
                             {
-                                var temp = abilityTargetted;
-                                abilityTargetted = null;
-                                    if (abilityObj.EnoughResources(board.participants[board.spotlightFriendly[index]].who))
-                                        if (board.CooldownOn(board.spotlightFriendly[index], actionBar) <= 0)
-                                            StartTargettingAbility(abilityObj);
-                                ClearTargettingAbility(temp == abilityTargetted);
+                                if (abilityTargetted != null)
+                                    ClearTargettingAbility(true);
+                                else if (abilityObj.EnoughResources(board.participants[board.spotlightFriendly[index]].who))
+                                    if (board.CooldownOn(board.spotlightFriendly[index], actionBar) <= 0)
+                                        StartTargettingAbility(abilityObj);
                             }
                             else ClearTargettingAbility();
                         },
-                        null,
+                        (h) => ClearTargettingAbility(),
                         (h) => () =>
                         {
                             PrintAbilityTooltip(board.participants[board.spotlightFriendly[index]].who, abilityObj, board.participants[board.spotlightFriendly[index]].who.abilities.ContainsKey(abilityObj.name) ? board.participants[board.spotlightFriendly[index]].who.abilities[abilityObj.name] : 0);
@@ -463,10 +468,10 @@ public class Blueprint
                         (h) =>
                         {
                             var temp = abilityTargetted;
-                            abilityTargetted = null;
-                            if (abilityObj.EnoughResources(board.participants[board.spotlightFriendly[index]].who) && board.CooldownOn(board.spotlightFriendly[index], ability.Key) <= 0)
+                            if (abilityTargetted != null)
+                                ClearTargettingAbility(true);
+                            else if (abilityObj.EnoughResources(board.participants[board.spotlightFriendly[index]].who) && board.CooldownOn(board.spotlightFriendly[index], ability.Key) <= 0)
                                 StartTargettingAbility(abilityObj);
-                            ClearTargettingAbility(temp == abilityTargetted);
                         },
                         null,
                         (h) => () =>
@@ -542,7 +547,8 @@ public class Blueprint
                     {
                         ClearTargettingAbility();
                         board.EndCombat(CDesktop.title == "Game" ? "Flee" : "Quit");
-                    });
+                    },
+                    (h) => ClearTargettingAbility());
                 }
             );
             AddRegionGroup();
@@ -562,7 +568,8 @@ public class Blueprint
                         ClearTargettingAbility();
                         PlaySound("DesktopMenuOpen", 0.6f);
                         SpawnDesktopBlueprint("GameMenu");
-                    });
+                    },
+                    (h) => ClearTargettingAbility());
                 }
             );
         }),

@@ -267,6 +267,9 @@ public class Ability
     //Icon of the ability in action bars and spellbook
     public string icon;
 
+    //Sound that is played when the player begins to target someone usign this ability
+    public string targettingSound;
+
     //Provides information on how many turns will the ability be disabled after casting
     public int cooldown;
 

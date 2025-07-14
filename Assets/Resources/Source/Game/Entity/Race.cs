@@ -23,6 +23,9 @@ public class Race
     //Category this race belongs to
     public string category, subcategory;
 
+    //Voice lines for this race, if null, they are based on subcategory
+    public string voice;
+
     //Faction of the race
     //Killing entities of this race will grant negative reputation with this faction
     //and grant positive reputation standing with factions that are it's main enemies

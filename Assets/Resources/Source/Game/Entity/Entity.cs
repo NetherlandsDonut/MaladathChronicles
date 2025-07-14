@@ -1296,7 +1296,8 @@ public class Entity
     //Play a sound by this entityin combat
     public string EnemyLine(string type)
     {
-        var foo = Race().subcategory.Clean();
+        var race = Race();
+        var foo = (race.voice ?? race.subcategory).Clean();
         if (foo == "Cat") foo = "Tiger";
         else if (foo == "Worg") foo = "Wolf";
         else if (foo == "Coyote") foo = "Wolf";
