@@ -1301,6 +1301,7 @@ public class Entity
         if (foo == "Cat") foo = "Tiger";
         else if (foo == "Worg") foo = "Wolf";
         else if (foo == "Coyote") foo = "Wolf";
+        else if (foo == "Gargoyle") foo = "Bat";
         else if (foo == "Chimaera") foo = "Hydra";
         else if (foo == "Scorpid") foo = "Silithid";
         else if (foo == "Larva") foo = "Borer";

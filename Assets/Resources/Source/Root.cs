@@ -151,6 +151,8 @@ public static class Root
         }
         abilityTargetted = null;
         participantTargetted = null;
+        Respawn("EnemyBattleInfo");
+        Respawn("FriendlyBattleInfo");
         //CloseWindow("TargettingInfo");
     }
 

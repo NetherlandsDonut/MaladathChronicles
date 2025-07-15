@@ -199,6 +199,7 @@ public class Blueprint
                                 var list = board.FloodCount(h.region.bigButtons.FindIndex(x => x.GetComponent<Highlightable>() == h), h.region.regionGroup.regions.IndexOf(h.region));
                                 board.finishedMoving = true;
                                 board.FloodDestroy(list);
+                                Respawn("FriendlyBattleInfo");
                             }
                         },
                         (h) => ClearTargettingAbility());

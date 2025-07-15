@@ -2903,9 +2903,11 @@
       "player": {
         "currentQuests": [],
         "completedQuests": [],
-        "level": 18,
-        "experience": 18523,
-        "uniquesGotten": [],
+        "level": 23,
+        "experience": 9033,
+        "uniquesGotten": [
+          "Prison Cell Key"
+        ],
         "reputation": {
           "Southsea Pirates": 0,
           "Razormane Tribe": 0,
@@ -3002,7 +3004,7 @@
             ]
           },
           "Enchanting": {
-            "Item1": 1,
+            "Item1": 2,
             "Item2": [
               "Amateur"
             ]
@@ -3100,7 +3102,7 @@
           ],
           "Herbalism": []
         },
-        "unspentTalentPoints": 16,
+        "unspentTalentPoints": 21,
         "faction": "Ironforge",
         "name": "Immil",
         "race": "Dwarf",
@@ -3173,9 +3175,155 @@
               "abilities": {
                 "Hearthstone": 1
               }
+            },
+            {
+              "x": 1,
+              "rarity": "Rare",
+              "name": "Small Brilliant Shard",
+              "icon": "itemenchantshardbrilliantsmall",
+              "detailedType": "Shard",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 50,
+              "lvl": 1,
+              "amount": 2,
+              "maxStack": 20,
+              "price": 3500
+            },
+            {
+              "y": 1,
+              "rarity": "Uncommon",
+              "name": "Lesser Eternal Essence",
+              "icon": "itemenchantessenceeternalsmall",
+              "detailedType": "Essence",
+              "type": "Trade Good",
+              "ilvl": 50,
+              "lvl": 1,
+              "amount": 2,
+              "maxStack": 10,
+              "price": 2000
+            },
+            {
+              "x": 1,
+              "y": 1,
+              "rarity": "Rare",
+              "name": "Pattern: Cloak of Fire",
+              "icon": "itemscroll03",
+              "detailedType": "Scroll",
+              "type": "Recipe",
+              "source": "DirectDrop",
+              "amount": 1,
+              "maxStack": 1,
+              "price": 10000,
+              "droppedBy": [
+                "Overmaster Pyron"
+              ]
+            },
+            {
+              "x": 4,
+              "rarity": "Common",
+              "name": "Sungrass",
+              "icon": "itemmischerb18",
+              "detailedType": "Flowers",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 46,
+              "lvl": 1,
+              "amount": 3,
+              "maxStack": 20,
+              "price": 60
+            },
+            {
+              "x": 2,
+              "y": 1,
+              "rarity": "Common",
+              "name": "Felcloth",
+              "icon": "itemfabricfelrag",
+              "detailedType": "Cloth",
+              "type": "Trade Good",
+              "ilvl": 50,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 20,
+              "price": 2000
+            },
+            {
+              "x": 2,
+              "rarity": "Common",
+              "name": "Dream Dust",
+              "icon": "itemenchantdustdream",
+              "detailedType": "Dust",
+              "type": "Trade Good",
+              "ilvl": 45,
+              "lvl": 1,
+              "amount": 7,
+              "maxStack": 20,
+              "price": 1500
+            },
+            {
+              "x": 3,
+              "y": 1,
+              "rarity": "Common",
+              "name": "Mageweave Cloth",
+              "icon": "itemfabricmageweave01",
+              "detailedType": "Cloth",
+              "type": "Trade Good",
+              "source": "Quest",
+              "ilvl": 40,
+              "lvl": 1,
+              "amount": 4,
+              "maxStack": 20,
+              "price": 250
+            },
+            {
+              "x": 3,
+              "rarity": "Common",
+              "name": "Runecloth",
+              "icon": "itemfabricpurplefire01",
+              "detailedType": "Cloth",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 50,
+              "lvl": 1,
+              "amount": 2,
+              "maxStack": 20,
+              "price": 400
+            },
+            {
+              "y": 2,
+              "rarity": "Common",
+              "name": "Prison Cell Key",
+              "icon": "itemmisckey10",
+              "detailedType": "Key",
+              "type": "Miscellaneous",
+              "source": "DirectDrop",
+              "ilvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "indestructible": true,
+              "unique": true,
+              "droppedBy": [
+                "High Interrogator Gerstahn"
+              ]
             }
           ],
-          "bags": []
+          "bags": [
+            {
+              "x": -1,
+              "y": -1,
+              "rarity": "Common",
+              "name": "Large Knapsack",
+              "icon": "itemmiscbag07red",
+              "type": "Bag",
+              "source": "GeneralDrop",
+              "ilvl": 35,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 5000,
+              "bagSpace": 5
+            }
+          ]
         },
         "mounts": [],
         "equipment": {
@@ -3243,12 +3391,21 @@
             "price": 1
           }
         },
-        "worldBuffs": []
+        "worldBuffs": [
+          {
+            "buff": "Scroll of Stamina IV @ Scroll of Stamina",
+            "minutesLeft": 714
+          },
+          {
+            "buff": "Scroll of Intellect III @ Scroll of Intellect",
+            "minutesLeft": 716
+          }
+        ]
       },
       "hour": 7,
-      "minute": 4,
-      "second": 33,
-      "currentSite": "Blackrock Pass",
+      "minute": 28,
+      "second": 23,
+      "currentSite": "Blackrock Mountain",
       "ringOfLaw": "Anub'shiah",
       "forlornCloister": "Fallen Champion",
       "markets": [
@@ -3263,22 +3420,90 @@
           "hoursSinceUpdate": 48
         }
       ],
-      "openedChests": {},
+      "openedChests": {
+        "Blackrock Pass": {
+          "area": "Blackrock Pass",
+          "inventory": {
+            "items": [],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
+        },
+        "The Grinding Quarry": {
+          "area": "The Grinding Quarry",
+          "inventory": {
+            "items": [],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
+        },
+        "The Masonary": {
+          "area": "The Masonary",
+          "inventory": {
+            "items": [
+              {
+                "rarity": "Common",
+                "name": "Dark Iron Ore",
+                "icon": "itemoremithril01",
+                "detailedType": "Ore",
+                "type": "Trade Good",
+                "source": "RareDrop",
+                "ilvl": 50,
+                "lvl": 1,
+                "amount": 3,
+                "maxStack": 10,
+                "price": 500
+              },
+              {
+                "x": 1,
+                "rarity": "Uncommon",
+                "name": "Star Ruby",
+                "icon": "itemmiscgemruby02",
+                "detailedType": "Gem",
+                "type": "Trade Good",
+                "source": "RareDrop",
+                "ilvl": 50,
+                "lvl": 1,
+                "amount": 1,
+                "maxStack": 20,
+                "price": 5000
+              }
+            ],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
+        }
+      },
       "fishingSpots": {},
       "fishingSpoils": {},
       "siteProgress": {
-        "Coldridge Valley": 2
+        "Coldridge Valley": 2,
+        "Blackrock Pass": 3,
+        "The Grinding Quarry": 2,
+        "The Masonary": 2,
+        "Detention Block": 2
       },
       "commonsKilled": {
         "Rockjaw Trogg": 1,
-        "Small Crag Boar": 1
+        "Small Crag Boar": 1,
+        "Obsidian Elemental": 2,
+        "Flamekin Sprite": 1,
+        "Anvilrage Overseer": 3,
+        "Anvilrage Warden": 4,
+        "Anvilrage Guardsman": 2,
+        "Anvilrage Footman": 2,
+        "Bloodhound": 1
       },
       "raresKilled": {},
-      "elitesKilled": {},
+      "elitesKilled": {
+        "The Behemoth": 1,
+        "Overmaster Pyron": 1,
+        "High Interrogator Gerstahn": 1
+      },
       "siteVisits": {
         "Anvilmar": 1,
         "Coldridge Valley": 1,
-        "Blackrock Pass": 5,
+        "Blackrock Pass": 6,
         "Kel'Thuzad's Chamber": 1,
         "Frostwyrm Lair": 1,
         "The Halls of Reanimation": 1,
@@ -4364,7 +4589,7 @@
         "Blackwing Lair": 1,
         "Ruins of Ahn'Qiraj": 1,
         "Temple of Ahn'Qiraj": 1,
-        "Blackrock Mountain": 1,
+        "Blackrock Mountain": 3,
         "Jintha'Alor": 1,
         "Tyr's Hand": 1,
         "Hearthglen": 1,
@@ -4374,13 +4599,17 @@
         "Jaedenar Grounds": 1,
         "Alcaz Island": 1
       },
-      "unlockedAreas": [],
+      "unlockedAreas": [
+        "The Masonary",
+        "Detention Block",
+        "Halls of the Law"
+      ],
       "vendorStock": {},
       "banks": {},
       "startDate": "2025-07-14T13:44:43.9191194+02:00",
-      "lastLoaded": "2025-07-15T03:34:08.7562438+02:00",
-      "lastPlayed": "2025-07-15T03:35:01.2234483+02:00",
-      "timePlayed": "00:11:59.2570870"
+      "lastLoaded": "2025-07-15T13:31:20.2443627+02:00",
+      "lastPlayed": "2025-07-15T13:38:20.2216743+02:00",
+      "timePlayed": "00:18:59.2343986"
     }
   ]
 }

@@ -7671,8 +7671,8 @@
   },
   {
     "name": "Kirtonos the Herald",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Gargoyle",
     "faction": "Scourge",
     "portrait": "PortraitGargoyle",
     "abilities": {},
@@ -7682,8 +7682,8 @@
   },
   {
     "name": "Gish the Unmoving",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Gargoyle",
     "portrait": "PortraitGargoyle",
     "abilities": {},
     "kind": "Rare",
@@ -7692,8 +7692,8 @@
   },
   {
     "name": "Putrid Gargoyle",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Gargoyle",
     "faction": "Scourge",
     "portrait": "PortraitGargoyle",
     "abilities": {
@@ -7706,8 +7706,8 @@
   },
   {
     "name": "Rockwing Gargoyle",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Gargoyle",
     "portrait": "PortraitGargoyle",
     "abilities": {},
     "kind": "Common",
@@ -7737,7 +7737,7 @@
   {
     "name": "Gasher",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "portrait": "PortraitGasher",
     "abilities": {},
     "kind": "Elite",
@@ -7747,7 +7747,7 @@
   {
     "name": "Gath'Ilzogg",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Orc",
     "portrait": "PortraitGathIlzogg",
     "abilities": {},
     "kind": "Elite",
@@ -7757,7 +7757,7 @@
   {
     "name": "Gazz'uz",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Orc",
     "portrait": "PortraitGazzuz",
     "abilities": {},
     "kind": "Elite",
@@ -7767,7 +7767,7 @@
   {
     "name": "General Angerforge",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Dwarf",
     "faction": "Dark Iron Clan",
     "portrait": "PortraitGeneralAngerforge",
     "abilities": {},
@@ -7778,7 +7778,7 @@
   {
     "name": "General Twinbraid",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Dwarf",
     "portrait": "PortraitGeneralTwinbraid",
     "abilities": {},
     "kind": "Elite",
