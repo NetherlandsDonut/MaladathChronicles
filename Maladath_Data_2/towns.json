@@ -1454,42 +1454,42 @@
         "race": "Dwarf",
         "type": "Blacksmithing Supplies",
         "itemsSold": [
-        {
-          "item": "Weak Flux",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Mining Pick",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Strong Flux",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Coal",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Blacksmith Hammer",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Elemental Flux",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Weak Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mining Pick",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Strong Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Coal",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Blacksmith Hammer",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Elemental Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       },
       {
@@ -6121,48 +6121,48 @@
         "race": "Dwarf",
         "type": "Blacksmithing Supplies",
         "itemsSold": [
-        {
-          "item": "Weak Flux",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Mining Pick",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Strong Flux",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Coal",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Blacksmith Hammer",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Plans: Hardened Iron Shortsword",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Elemental Flux",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Weak Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mining Pick",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Strong Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Coal",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Blacksmith Hammer",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Plans: Hardened Iron Shortsword",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Elemental Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       }
     ],
@@ -7711,42 +7711,42 @@
         "race": "Tauren",
         "type": "Blacksmithing Supplies",
         "itemsSold": [
-        {
-          "item": "Weak Flux",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Mining Pick",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Strong Flux",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Coal",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Blacksmith Hammer",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Elemental Flux",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Weak Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mining Pick",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Strong Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Coal",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Blacksmith Hammer",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Elemental Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       },
       {
@@ -11973,42 +11973,42 @@
         "race": "Human",
         "type": "Cooking Supplies",
         "itemsSold": [
-        {
-          "item": "Refreshing Spring Water",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Mild Spices",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Hot Spices",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Soothing Spices",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Recipe: Smoked Sagefish",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Recipe: Sagefish Delight",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Refreshing Spring Water",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mild Spices",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Hot Spices",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Soothing Spices",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Smoked Sagefish",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Sagefish Delight",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       },
       {
@@ -16795,54 +16795,54 @@
         "race": "Night Elf",
         "type": "Cooking Supplies",
         "itemsSold": [
-        {
-          "item": "Refreshing Spring Water",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Mild Spices",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Hot Spices",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Soothing Spices",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Recipe: Brilliant Smallfish",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Recipe: Longjaw Mud Snapper",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Recipe: Smoked Sagefish",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Recipe: Sagefish Delight",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Refreshing Spring Water",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mild Spices",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Hot Spices",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Soothing Spices",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Brilliant Smallfish",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Longjaw Mud Snapper",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Smoked Sagefish",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Sagefish Delight",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       },
       {
@@ -18332,42 +18332,42 @@
         "race": "Dwarf",
         "type": "Blacksmithing Supplies",
         "itemsSold": [
-        {
-          "item": "Weak Flux",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Mining Pick",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Strong Flux",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Coal",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Blacksmith Hammer",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Elemental Flux",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Weak Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mining Pick",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Strong Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Coal",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Blacksmith Hammer",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Elemental Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       },
       {
@@ -20057,48 +20057,48 @@
         "race": "Dwarf",
         "type": "Blacksmithing Supplies",
         "itemsSold": [
-        {
-          "item": "Weak Flux",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Mining Pick",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Strong Flux",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Coal",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Blacksmith Hammer",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Plans: Mithril Scale Bracers",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Elemental Flux",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Weak Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mining Pick",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Strong Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Coal",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Blacksmith Hammer",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Plans: Mithril Scale Bracers",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Elemental Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       },
       {
@@ -20386,30 +20386,30 @@
         "race": "Dwarf",
         "type": "Mining Supplies",
         "itemsSold": [
-        {
-          "item": "Weak Flux",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Mining Pick",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Strong Flux",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Coal",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Weak Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mining Pick",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Strong Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Coal",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       },
       {
@@ -21298,42 +21298,42 @@
         "race": "Dwarf",
         "type": "Blacksmithing Supplies",
         "itemsSold": [
-        {
-          "item": "Weak Flux",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Mining Pick",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Strong Flux",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Coal",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Blacksmith Hammer",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Elemental Flux",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Weak Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mining Pick",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Strong Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Coal",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Blacksmith Hammer",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Elemental Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       },
       {
@@ -24219,48 +24219,48 @@
         "race": "Goblin",
         "type": "Blacksmithing Supplies",
         "itemsSold": [
-        {
-          "item": "Weak Flux",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Mining Pick",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Strong Flux",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Coal",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Blacksmith Hammer",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Plans: Solid Iron Maul",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Elemental Flux",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Weak Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mining Pick",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Strong Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Coal",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Blacksmith Hammer",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Plans: Solid Iron Maul",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Elemental Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       }
     ],
@@ -24431,48 +24431,48 @@
         "race": "Orc",
         "type": "Blacksmithing Supplies",
         "itemsSold": [
-        {
-          "item": "Weak Flux",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Mining Pick",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Strong Flux",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Coal",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Blacksmith Hammer",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Plans: Mithril Scale Bracers",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Elemental Flux",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Weak Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mining Pick",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Strong Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Coal",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Blacksmith Hammer",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Plans: Mithril Scale Bracers",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Elemental Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       },
       {
@@ -25491,60 +25491,60 @@
         "race": "Troll",
         "type": "Cooking Supplies",
         "itemsSold": [
-        {
-          "item": "Refreshing Spring Water",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Mild Spices",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Hot Spices",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Soothing Spices",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Recipe: Rockscale Cod",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Expert Cookbook",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Recipe: Mithril Head Trout",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Recipe: Smoked Sagefish",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Recipe: Sagefish Delight",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Refreshing Spring Water",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mild Spices",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Hot Spices",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Soothing Spices",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Rockscale Cod",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Expert Cookbook",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Mithril Head Trout",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Smoked Sagefish",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Sagefish Delight",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       },
       {
@@ -25910,42 +25910,42 @@
         "race": "Orc",
         "type": "Blacksmithing Supplies",
         "itemsSold": [
-        {
-          "item": "Weak Flux",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Mining Pick",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Strong Flux",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Coal",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Blacksmith Hammer",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Elemental Flux",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Weak Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mining Pick",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Strong Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Coal",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Blacksmith Hammer",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Elemental Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       },
       {
@@ -33719,48 +33719,48 @@
         "race": "Goblin",
         "type": "Blacksmithing Supplies",
         "itemsSold": [
-        {
-          "item": "Weak Flux",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Mining Pick",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Strong Flux",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Coal",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Blacksmith Hammer",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Plans: Golden Scale Coif",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Elemental Flux",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Weak Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mining Pick",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Strong Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Coal",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Blacksmith Hammer",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Plans: Golden Scale Coif",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Elemental Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       },
       {
@@ -35038,42 +35038,42 @@
         "race": "Orc",
         "type": "Blacksmithing Supplies",
         "itemsSold": [
-        {
-          "item": "Weak Flux",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Mining Pick",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Strong Flux",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Coal",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Blacksmith Hammer",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Elemental Flux",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Weak Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mining Pick",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Strong Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Coal",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Blacksmith Hammer",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Elemental Flux",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       },
       {
