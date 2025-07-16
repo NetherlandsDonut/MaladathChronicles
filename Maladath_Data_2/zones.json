@@ -1,6 +1,7 @@
 [
   {
     "name": "Azshara",
+    "icon": "Azshara",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceForestHighDay",
     "ambienceNight": "AmbienceForestHighNight",
@@ -21,6 +22,7 @@
   },
   {
     "name": "Winterspring",
+    "icon": "Winterspring",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceForestHighDay",
     "ambienceNight": "AmbienceForestHighNight",
@@ -37,12 +39,14 @@
   },
   {
     "name": "Moonglade",
+    "icon": "Moonglade",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceForestHighDay",
     "ambienceNight": "AmbienceForestHighNight"
   },
   {
     "name": "Darkshore",
+    "icon": "Darkshore",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceForestHighDay",
     "ambienceNight": "AmbienceForestHighNight",
@@ -62,6 +66,7 @@
   },
   {
     "name": "Teldrassil",
+    "icon": "Teldrassil",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceForestNormalDay",
     "ambienceNight": "AmbienceForestNormalNight",
@@ -73,7 +78,25 @@
     ]
   },
   {
+    "name": "Darnassus",
+    "icon": "Teldrassil",
+    "continent": "Kalimdor",
+    "musicDay": [
+      "MusicDarnassus1",
+      "MusicDarnassus2",
+      "MusicDarnassus3"
+    ],
+    "musicNight": [
+      "MusicDarnassus1",
+      "MusicDarnassus2",
+      "MusicDarnassus3"
+    ],
+    "ambienceDay": "AmbienceForestNormalDay",
+    "ambienceNight": "AmbienceForestNormalNight"
+  },
+  {
     "name": "Ashenvale",
+    "icon": "Ashenvale",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceForestHighDay",
     "ambienceNight": "AmbienceForestHighNight",
@@ -98,6 +121,7 @@
   },
   {
     "name": "Tanaris",
+    "icon": "Tanaris",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceDesert",
     "ambienceNight": "AmbienceDesert",
@@ -116,6 +140,7 @@
   },
   {
     "name": "The Barrens",
+    "icon": "The Barrens",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceGrasslandsDay",
     "ambienceNight": "AmbienceForestNormalNight",
@@ -141,6 +166,7 @@
   },
   {
     "name": "Stonetalon Mountains",
+    "icon": "Stonetalon Mountains",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceForestNormalDay",
     "ambienceNight": "AmbienceForestNormalNight",
@@ -162,6 +188,7 @@
   },
   {
     "name": "Mulgore",
+    "icon": "Mulgore",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceGrasslandsDay",
     "ambienceNight": "AmbienceForestNormalNight",
@@ -176,7 +203,25 @@
     ]
   },
   {
+    "name": "Thunder Bluff",
+    "icon": "Mulgore",
+    "continent": "Kalimdor",
+    "musicDay": [
+      "MusicThunderBluff1",
+      "MusicThunderBluff2",
+      "MusicThunderBluff3"
+    ],
+    "musicNight": [
+      "MusicThunderBluff1",
+      "MusicThunderBluff2",
+      "MusicThunderBluff3"
+    ],
+    "ambienceDay": "AmbienceThunderBluff",
+    "ambienceNight": "AmbienceForestNormalNight"
+  },
+  {
     "name": "Desolace",
+    "icon": "Desolace",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceDesert",
     "ambienceNight": "AmbienceDesert",
@@ -199,6 +244,7 @@
   },
   {
     "name": "Thousand Needles",
+    "icon": "Thousand Needles",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceStrongWind",
     "ambienceNight": "AmbienceStrongWind",
@@ -218,6 +264,7 @@
   },
   {
     "name": "Dustwallow Marsh",
+    "icon": "Dustwallow Marsh",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceSwampDay",
     "ambienceNight": "AmbienceMarshNight",
@@ -238,6 +285,7 @@
   },
   {
     "name": "Feralas",
+    "icon": "Feralas",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceJungleDay",
     "ambienceNight": "AmbienceJungleNight",
@@ -259,6 +307,7 @@
   },
   {
     "name": "Silithus",
+    "icon": "Silithus",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceDesert",
     "ambienceNight": "AmbienceDesert",
@@ -277,6 +326,7 @@
   },
   {
     "name": "Un'Goro Crater",
+    "icon": "Un'Goro Crater",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceJungleDay",
     "ambienceNight": "AmbienceJungleNight",
@@ -295,6 +345,7 @@
   },
   {
     "name": "Durotar",
+    "icon": "Durotar",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceDesert",
     "ambienceNight": "AmbienceDesert",
@@ -309,7 +360,19 @@
     ]
   },
   {
+    "name": "Orgrimmar",
+    "icon": "Durotar",
+    "continent": "Kalimdor",
+    "musicDay": [
+      "MusicOrgrimmar1",
+      "MusicOrgrimmar2"
+    ],
+    "ambienceDay": "AmbienceDesert",
+    "ambienceNight": "AmbienceDesert"
+  },
+  {
     "name": "Felwood",
+    "icon": "Felwood",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceForestScaryDay",
     "ambienceNight": "AmbienceForestScaryNight",
@@ -332,6 +395,7 @@
   },
   {
     "name": "Eastern Plaguelands",
+    "icon": "Eastern Plaguelands",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbiencePlaguelandsDay",
     "ambienceNight": "AmbiencePlaguelandsNight",
@@ -354,6 +418,7 @@
   },
   {
     "name": "Western Plaguelands",
+    "icon": "Western Plaguelands",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbiencePlaguelandsDay",
     "ambienceNight": "AmbiencePlaguelandsNight",
@@ -373,6 +438,7 @@
   },
   {
     "name": "Tirisfal Glades",
+    "icon": "Tirisfal Glades",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceForestScaryDay",
     "ambienceNight": "AmbienceForestScaryNight",
@@ -386,7 +452,25 @@
     ]
   },
   {
+    "name": "Undercity",
+    "icon": "Tirisfal Glades",
+    "continent": "Eastern Kingdoms",
+    "musicDay": [
+      "MusicUndercity1",
+      "MusicUndercity2",
+      "MusicUndercity3"
+    ],
+    "musicNight": [
+      "MusicUndercity1",
+      "MusicUndercity2",
+      "MusicUndercity3"
+    ],
+    "ambienceDay": "AmbienceUndercity",
+    "ambienceNight": "AmbienceUndercity"
+  },
+  {
     "name": "Silverpine Forest",
+    "icon": "Silverpine Forest",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceForestScaryDay",
     "ambienceNight": "AmbienceForestScaryNight",
@@ -407,6 +491,7 @@
   },
   {
     "name": "Arathi Highlands",
+    "icon": "Arathi Highlands",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceGrasslandsDay",
     "ambienceNight": "AmbienceForestNormalNight",
@@ -428,6 +513,7 @@
   },
   {
     "name": "Alterac Mountains",
+    "icon": "Alterac Mountains",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceForestSnowDay",
     "ambienceNight": "AmbienceForestSnowNight",
@@ -447,6 +533,7 @@
   },
   {
     "name": "Hinterlands",
+    "icon": "Hinterlands",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceForestNormalDay",
     "ambienceNight": "AmbienceForestNormalNight",
@@ -469,6 +556,7 @@
   },
   {
     "name": "Hillsbrad Foothills",
+    "icon": "Hillsbrad Foothills",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceForestNormalDay",
     "ambienceNight": "AmbienceForestNormalNight",
@@ -492,6 +580,7 @@
   },
   {
     "name": "Loch Modan",
+    "icon": "Loch Modan",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceForestNormalDay",
     "ambienceNight": "AmbienceForestNormalNight",
@@ -511,6 +600,7 @@
   },
   {
     "name": "Redridge Mountains",
+    "icon": "Redridge Mountains",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceForestNormalDay",
     "ambienceNight": "AmbienceForestNormalNight",
@@ -528,6 +618,7 @@
   },
   {
     "name": "Dun Morogh",
+    "icon": "Dun Morogh",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceForestSnowDay",
     "ambienceNight": "AmbienceForestSnowNight",
@@ -541,7 +632,25 @@
     ]
   },
   {
+    "name": "Ironforge",
+    "icon": "Dun Morogh",
+    "continent": "Eastern Kingdoms",
+    "musicDay": [
+      "MusicIronforge1",
+      "MusicIronforge2",
+      "MusicIronforge3"
+    ],
+    "musicNight": [
+      "MusicIronforge1",
+      "MusicIronforge2",
+      "MusicIronforge3"
+    ],
+    "ambienceDay": "AmbienceBlackrock",
+    "ambienceNight": "AmbienceBlackrock"
+  },
+  {
     "name": "Wetlands",
+    "icon": "Wetlands",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceSwampDay",
     "ambienceNight": "AmbienceSwampNight",
@@ -565,6 +674,7 @@
   },
   {
     "name": "Searing Gorge",
+    "icon": "Searing Gorge",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceVolcanicDay",
     "ambienceNight": "AmbienceVolcanicNight",
@@ -581,6 +691,7 @@
   },
   {
     "name": "Burning Steppes",
+    "icon": "Burning Steppes",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceVolcanicDay",
     "ambienceNight": "AmbienceVolcanicNight",
@@ -600,6 +711,7 @@
   },
   {
     "name": "Duskwood",
+    "icon": "Duskwood",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceForestScaryDay",
     "ambienceNight": "AmbienceForestScaryNight",
@@ -621,6 +733,7 @@
   },
   {
     "name": "Westfall",
+    "icon": "Westfall",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbiencePlainsDay",
     "ambienceNight": "AmbiencePlainsNight",
@@ -641,6 +754,7 @@
   },
   {
     "name": "Elwynn Forest",
+    "icon": "Elwynn Forest",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceForestNormalDay",
     "ambienceNight": "AmbienceForestNormalNight",
@@ -654,7 +768,35 @@
     ]
   },
   {
+    "name": "Stormwind City",
+    "icon": "Elwynn Forest",
+    "continent": "Eastern Kingdoms",
+    "musicDay": [
+      "MusicStormwind1",
+      "MusicStormwind2",
+      "MusicStormwind3",
+      "MusicStormwind4",
+      "MusicStormwind6",
+      "MusicStormwind7",
+      "MusicForTheAlliance2",
+      "MusicForTheAlliance3"
+    ],
+    "musicNight": [
+      "MusicStormwind1",
+      "MusicStormwind2",
+      "MusicStormwind3",
+      "MusicStormwind4",
+      "MusicStormwind6",
+      "MusicStormwind7",
+      "MusicForTheAlliance2",
+      "MusicForTheAlliance3"
+    ],
+    "ambienceDay": "AmbienceForestNormalDay",
+    "ambienceNight": "AmbienceForestNormalNight"
+  },
+  {
     "name": "Badlands",
+    "icon": "Badlands",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceStrongWind",
     "ambienceNight": "AmbienceStrongWind",
@@ -676,6 +818,7 @@
   },
   {
     "name": "Swamp of Sorrows",
+    "icon": "Swamp of Sorrows",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceSwampDay",
     "ambienceNight": "AmbienceSwampNight",
@@ -697,6 +840,7 @@
   },
   {
     "name": "Deadwind Pass",
+    "icon": "Deadwind Pass",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceDeadwindPass",
     "ambienceNight": "AmbienceDeadwindPass",
@@ -710,6 +854,7 @@
   },
   {
     "name": "Blasted Lands",
+    "icon": "Blasted Lands",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceBlastedLands",
     "ambienceNight": "AmbienceBlastedLands",
@@ -726,6 +871,7 @@
   },
   {
     "name": "Stranglethorn Vale",
+    "icon": "Stranglethorn Vale",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceJungleDay",
     "ambienceNight": "AmbienceJungleNight",
@@ -750,24 +896,28 @@
   },
   {
     "name": "Temple of Ahn'Qiraj",
+    "icon": "Temple of Ahn'Qiraj",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceAhnQirajUndergrounds",
     "ambienceNight": "AmbienceAhnQirajUndergrounds"
   },
   {
     "name": "Ruins of Ahn'Qiraj",
+    "icon": "Ruins of Ahn'Qiraj",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceAhnQirajExterior",
     "ambienceNight": "AmbienceAhnQirajExterior"
   },
   {
     "name": "Onyxia's Lair",
+    "icon": "Onyxia's Lair",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceOnyxiasLair",
     "ambienceNight": "AmbienceOnyxiasLair"
   },
   {
     "name": "Alcaz Island",
+    "icon": "Alcaz Island",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceSwampDay",
     "ambienceNight": "AmbienceMarshNight",
@@ -788,6 +938,7 @@
   },
   {
     "name": "Dire Maul",
+    "icon": "Dire Maul",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceDireMaul",
     "ambienceNight": "AmbienceDireMaul",
@@ -799,6 +950,7 @@
   },
   {
     "name": "Shadow Hold",
+    "icon": "Shadow Hold",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceScary",
     "ambienceNight": "AmbienceScary",
@@ -812,6 +964,7 @@
   },
   {
     "name": "Zul'Farrak",
+    "icon": "Zul'Farrak",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceDesert",
     "ambienceNight": "AmbienceDesert",
@@ -825,6 +978,7 @@
   },
   {
     "name": "Ragefire Chasm",
+    "icon": "Ragefire Chasm",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceVolcanicDay",
     "ambienceNight": "AmbienceVolcanicDay",
@@ -836,6 +990,7 @@
   },
   {
     "name": "Blackfathom Deeps",
+    "icon": "Blackfathom Deeps",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceBlackfathom",
     "ambienceNight": "AmbienceBlackfathom",
@@ -850,6 +1005,7 @@
   },
   {
     "name": "Razorfen Kraul",
+    "icon": "Razorfen Kraul",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceRazorfenKraul",
     "ambienceNight": "AmbienceRazorfenKraul",
@@ -865,6 +1021,7 @@
   },
   {
     "name": "Razorfen Downs",
+    "icon": "Razorfen Downs",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceRazorfenKraul",
     "ambienceNight": "AmbienceRazorfenKraul",
@@ -881,6 +1038,7 @@
   },
   {
     "name": "Maraudon",
+    "icon": "Maraudon",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceMineshaft",
     "ambienceNight": "AmbienceMineshaft",
@@ -897,6 +1055,7 @@
   },
   {
     "name": "Wailing Caverns",
+    "icon": "Wailing Caverns",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceWailingCaverns",
     "ambienceNight": "AmbienceWailingCaverns",
@@ -913,6 +1072,7 @@
   },
   {
     "name": "Molten Core",
+    "icon": "Molten Core",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceMoltenCore",
     "ambienceNight": "AmbienceMoltenCore",
@@ -922,12 +1082,14 @@
   },
   {
     "name": "Blackwing Lair",
+    "icon": "Blackwing Lair",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceBlackwingLair",
     "ambienceNight": "AmbienceBlackwingLair"
   },
   {
     "name": "The Deadmines",
+    "icon": "The Deadmines",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceDeadmines",
     "ambienceNight": "AmbienceDeadmines",
@@ -939,6 +1101,7 @@
   },
   {
     "name": "Zul'Gurub",
+    "icon": "Zul'Gurub",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceJungleDay",
     "ambienceNight": "AmbienceJungleDay",
@@ -951,6 +1114,7 @@
   },
   {
     "name": "Scarlet Monastery Grounds",
+    "icon": "Scarlet Monastery Grounds",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceScary",
     "ambienceNight": "AmbienceScary",
@@ -968,6 +1132,7 @@
   },
   {
     "name": "Scarlet Monastery",
+    "icon": "Scarlet Monastery",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceScary",
     "ambienceNight": "AmbienceScary",
@@ -981,6 +1146,7 @@
   },
   {
     "name": "Ruins of Stromgarde",
+    "icon": "Ruins of Stromgarde",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceShadowfangKeep",
     "ambienceNight": "AmbienceShadowfangKeep",
@@ -994,6 +1160,7 @@
   },
   {
     "name": "Ruins of Alterac",
+    "icon": "Ruins of Alterac",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceForestSnowDay",
     "ambienceNight": "AmbienceForestSnowNight",
@@ -1016,24 +1183,28 @@
   },
   {
     "name": "Shadowfang Keep",
+    "icon": "Shadowfang Keep",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceShadowfangKeep",
     "ambienceNight": "AmbienceShadowfangKeep"
   },
   {
     "name": "The Stockade",
+    "icon": "The Stockade",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceTheStockade",
     "ambienceNight": "AmbienceTheStockade"
   },
   {
     "name": "Gnomeregan",
+    "icon": "Gnomeregan",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceGnomeregan",
     "ambienceNight": "AmbienceGnomeregan"
   },
   {
     "name": "Uldaman",
+    "icon": "Uldaman",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceUldaman",
     "ambienceNight": "AmbienceUldaman",
@@ -1046,12 +1217,14 @@
   },
   {
     "name": "Temple of Atal'Hakkar",
+    "icon": "Temple of Atal'Hakkar",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceSunkenTemple",
     "ambienceNight": "AmbienceSunkenTemple"
   },
   {
     "name": "Jintha'Alor",
+    "icon": "Jintha'Alor",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceForestNormalDay",
     "ambienceNight": "AmbienceForestNormalNight",
@@ -1072,6 +1245,7 @@
   },
   {
     "name": "Blackrock Depths",
+    "icon": "Blackrock Depths",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceBlackrock",
     "ambienceNight": "AmbienceBlackrock",
@@ -1081,12 +1255,14 @@
   },
   {
     "name": "Blackrock Mountain",
+    "icon": "Blackrock Mountain",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceBlackrock",
     "ambienceNight": "AmbienceBlackrock"
   },
   {
     "name": "Tyr's Hand",
+    "icon": "Tyr's Hand",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbiencePlaguelandsDay",
     "ambienceNight": "AmbiencePlaguelandsNight",
@@ -1109,12 +1285,14 @@
   },
   {
     "name": "Lower Blackrock Spire",
+    "icon": "Lower Blackrock Spire",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceBlackrock",
     "ambienceNight": "AmbienceBlackrock"
   },
   {
     "name": "Hearthglen",
+    "icon": "Hearthglen",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbiencePlaguelandsDay",
     "ambienceNight": "AmbiencePlaguelandsNight",
@@ -1134,18 +1312,21 @@
   },
   {
     "name": "Stratholme",
+    "icon": "Stratholme",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceStratholme",
     "ambienceNight": "AmbienceStratholme"
   },
   {
     "name": "Scholomance",
+    "icon": "Scholomance",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceSpooky",
     "ambienceNight": "AmbienceSpooky"
   },
   {
     "name": "Upper Blackrock Spire",
+    "icon": "Upper Blackrock Spire",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceBlackrock",
     "ambienceNight": "AmbienceBlackrock"

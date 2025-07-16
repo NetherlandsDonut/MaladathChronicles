@@ -728,23 +728,22 @@ public class Entity
     }
 
     //Resets entity's resources to their base amount
-    //This value is 0 at default but grows with spirit stat
-    //which provides starting resources for combat
+    //This value is 0 at default
     public void ResetResources()
     {
         var stats = Stats();
         resources = new()
         {
-            { "Earth", stats["Earth Mastery"] * stats["Spirit"] * stats["Spirit"] / 2048 },
-            { "Fire", stats["Fire Mastery"] * stats["Spirit"] * stats["Spirit"] / 2048 },
-            { "Air", stats["Air Mastery"] * stats["Spirit"] * stats["Spirit"] / 2048 },
-            { "Water", stats["Water Mastery"] * stats["Spirit"] * stats["Spirit"] / 2048 },
-            { "Frost", stats["Frost Mastery"] * stats["Spirit"] * stats["Spirit"] / 2048 },
-            { "Lightning", stats["Lightning Mastery"] * stats["Spirit"] * stats["Spirit"] / 2048 },
-            { "Arcane", stats["Arcane Mastery"] * stats["Spirit"] * stats["Spirit"] / 2048 },
-            { "Decay", stats["Decay Mastery"] * stats["Spirit"] * stats["Spirit"] / 2048 },
-            { "Order", stats["Order Mastery"] * stats["Spirit"] * stats["Spirit"] / 2048 },
-            { "Shadow", stats["Shadow Mastery"] * stats["Spirit"] * stats["Spirit"] / 2048 },
+            { "Earth", 0 },
+            { "Fire", 0 },
+            { "Air", 0 },
+            { "Water", 0 },
+            { "Frost",  0 },
+            { "Lightning", 0 },
+            { "Arcane", 0 },
+            { "Decay", 0 },
+            { "Order", 0 },
+            { "Shadow", 0 },
         };
     }
 

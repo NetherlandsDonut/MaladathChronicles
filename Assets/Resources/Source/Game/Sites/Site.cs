@@ -37,11 +37,13 @@ public class Site
     //It's mostly utilised by towns
     public string faction;
 
+    //Music track that will start playing when
+    //the site is opened by the player
+    public List<string> musicDay, musicNight;
+
     //Ambience track that will start playing when
-    //the site is opened by the player.
-    //If this value is empty then current ambience
-    //will not be interrupted and will continue to play
-    public string ambience;
+    //the site is opened by the player
+    public string ambienceDay, ambienceNight;
 
     //If set, when flight travelling to this site,
     //on map you will be put on this specified site

@@ -91,11 +91,12 @@ public class Starter : MonoBehaviour
         //All sound effects loaded up
         sounds = Resources.LoadAll<AudioClip>("Sounds/").ToDictionary(x => x.name, x => x);
 
-        //This is audio source for all music or ambience played in the background.
+        //Those two are audio sources for all music and ambience played in the background.
         //Tracks played through this medium are looped and can be changed in volume during playing
         //Whenever a new track is ought to be played throught these means it is first queued.
         //Queued track will force the current one to be smoothly silenced.
         //After that the queued track will starting playing again, smoothly increased in volume
+        music = sources.First(x => x.name == "Music");
         ambience = sources.First(x => x.name == "Ambience");
 
         //In case of Unity debugging set data directory

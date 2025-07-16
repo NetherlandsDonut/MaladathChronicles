@@ -1,12 +1,11 @@
-using System.Linq;
+using NUnit.Framework;
 using System.Collections.Generic;
-
+using System.Linq;
 using UnityEngine;
-
-using static Root;
-using static Sound;
-using static SaveGame;
 using static Coloring;
+using static Root;
+using static SaveGame;
+using static Sound;
 
 public class Quest
 {
@@ -103,7 +102,7 @@ public class Quest
     public List<QuestCondition> conditions;
 
     //Zone icon for the quest
-    public string ZoneIcon() => "Zone" + zone.Clean();
+    public string ZoneIcon() => "Zone" + Zone.zones.Find(x => x.name == zone).icon.Clean();
     
     //Currently chosen quest reward by player
     public static string chosenReward;

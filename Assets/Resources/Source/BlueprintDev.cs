@@ -135,6 +135,7 @@ public static class BlueprintDev
                 Serialize(abilities, "abilities", false, false, prefix);
                 Serialize(buffs, "buffs", false, false, prefix);
                 Serialize(areas, "areas", false, false, prefix);
+                Serialize(SiteCapital.capitals, "capitals", false, false, prefix);
                 Serialize(instances, "instances", false, false, prefix);
                 Serialize(complexes, "complexes", false, false, prefix);
                 Serialize(towns, "towns", false, false, prefix);
@@ -339,12 +340,12 @@ public static class BlueprintDev
             AddPaddingRegion(() => AddLine("Ambience:", "DarkGray"));
             AddButtonRegion(() =>
             {
-                AddLine(area.ambience == null ? "None" : area.ambience.Substring(8) + ".ogg");
-                if (area.ambience != "None")
-                    AddSmallButton("OtherSound", (h) =>
-                    {
-                        PlayAmbience(area.ambience);
-                    });
+                //AddLine(area.ambience == null ? "None" : area.ambience.Substring(8) + ".ogg");
+                //if (area.ambience != "None")
+                //    AddSmallButton("OtherSound", (h) =>
+                //    {
+                //        PlayAmbience(area.ambience);
+                //    });
             },
             (h) =>
             {
@@ -488,12 +489,12 @@ public static class BlueprintDev
             AddPaddingRegion(() => AddLine("Ambience:", "DarkGray"));
             AddButtonRegion(() =>
             {
-                AddLine(town.ambience == null ? "None" : town.ambience.Substring(8) + ".ogg");
-                if (town.ambience != "None")
-                    AddSmallButton("OtherSound", (h) =>
-                    {
-                        PlayAmbience(town.ambience);
-                    });
+                //AddLine(town.ambience == null ? "None" : town.ambience.Substring(8) + ".ogg");
+                //if (town.ambience != "None")
+                //    AddSmallButton("OtherSound", (h) =>
+                //    {
+                //        PlayAmbience(town.ambience);
+                //    });
             },
             (h) =>
             {
@@ -667,12 +668,12 @@ public static class BlueprintDev
             AddPaddingRegion(() => AddLine("Ambience:", "DarkGray"));
             AddButtonRegion(() =>
             {
-                AddLine(instance.ambience == null ? "None" : instance.ambience.Substring(8) + ".ogg");
-                if (instance.ambience != "None")
-                    AddSmallButton("OtherSound", (h) =>
-                    {
-                        PlayAmbience(instance.ambience);
-                    });
+                //AddLine(instance.ambience == null ? "None" : instance.ambience.Substring(8) + ".ogg");
+                //if (instance.ambience != "None")
+                //    AddSmallButton("OtherSound", (h) =>
+                //    {
+                //        PlayAmbience(instance.ambience);
+                //    });
             },
             (h) =>
             {
@@ -829,12 +830,12 @@ public static class BlueprintDev
             AddPaddingRegion(() => AddLine("Ambience:", "DarkGray"));
             AddButtonRegion(() =>
             {
-                AddLine(complex.ambience == null ? "None" : complex.ambience.Substring(8) + ".ogg");
-                if (complex.ambience != "None")
-                    AddSmallButton("OtherSound", (h) =>
-                    {
-                        PlayAmbience(complex.ambience);
-                    });
+                //AddLine(complex.ambience == null ? "None" : complex.ambience.Substring(8) + ".ogg");
+                //if (complex.ambience != "None")
+                //    AddSmallButton("OtherSound", (h) =>
+                //    {
+                //        PlayAmbience(complex.ambience);
+                //    });
             },
             (h) =>
             {
@@ -921,25 +922,25 @@ public static class BlueprintDev
                 (h) =>
                 {
                     var foo = Assets.assets.ambience[index + thisWindow.pagination()];
-                    CloseWindow("ObjectManagerAmbienceList");
-                    if (area != null)
-                    {
-                        area.ambience = foo.Replace(".ogg", "");
-                        Respawn("ObjectManagerHostileArea");
-                        SpawnWindowBlueprint("ObjectManagerHostileAreas");
-                    }
-                    else if (instance != null)
-                    {
-                        instance.ambience = foo.Replace(".ogg", "");
-                        Respawn("ObjectManagerInstance");
-                        SpawnWindowBlueprint("ObjectManagerInstances");
-                    }
-                    else if (complex != null)
-                    {
-                        complex.ambience = foo.Replace(".ogg", "");
-                        Respawn("ObjectManagerComplex");
-                        SpawnWindowBlueprint("ObjectManagerComplexes");
-                    }
+                    //CloseWindow("ObjectManagerAmbienceList");
+                    //if (area != null)
+                    //{
+                    //    area.ambience = foo.Replace(".ogg", "");
+                    //    Respawn("ObjectManagerHostileArea");
+                    //    SpawnWindowBlueprint("ObjectManagerHostileAreas");
+                    //}
+                    //else if (instance != null)
+                    //{
+                    //    instance.ambience = foo.Replace(".ogg", "");
+                    //    Respawn("ObjectManagerInstance");
+                    //    SpawnWindowBlueprint("ObjectManagerInstances");
+                    //}
+                    //else if (complex != null)
+                    //{
+                    //    complex.ambience = foo.Replace(".ogg", "");
+                    //    Respawn("ObjectManagerComplex");
+                    //    SpawnWindowBlueprint("ObjectManagerComplexes");
+                    //}
                 });
             }
             AddPaddingRegion(() =>
@@ -5069,6 +5070,7 @@ public static class BlueprintDev
             Serialize(instances, "instances", true, false, prefix);
             Serialize(complexes, "complexes", true, false, prefix);
             Serialize(towns, "towns", true, false, prefix);
+            Serialize(SiteCapital.capitals, "capitals", true, false, prefix);
             Serialize(items, "items", true, false, prefix);
             Serialize(itemSets, "sets", true, false, prefix);
             Serialize(mounts, "mounts", true, false, prefix);

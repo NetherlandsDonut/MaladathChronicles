@@ -13,6 +13,7 @@ public class GameSettings
         selectedCharacter ??= "";
         pixelPerfectVision ??= new Bool(false);
         music ??= new Bool(true);
+        ambience ??= new Bool(true);
         soundEffects ??= new Bool(true);
         chartBigIcons ??= new Bool(true);
         fastCascading ??= new Bool(true);
@@ -42,6 +43,9 @@ public class GameSettings
 
     //Indicates whether program plays music in the background
     public Bool music;
+
+    //Indicates whether program plays ambience in the background
+    public Bool ambience;
 
     //Indicates whether program plays sound effects
     public Bool soundEffects;

@@ -541,7 +541,7 @@ public class InputLine : MonoBehaviour
                 var mount = Mount.mounts.Find(x => x.name.ToLower() == which);
                 if (mount != null && !currentSave.player.mounts.Contains(mount.name))
                 {
-                    Sound.PlaySound("DesktopButtonPressRight");
+                    Sound.PlaySound("DesktopButtonRight");
                     currentSave.player.mounts.Add(mount.name);
                 }
             }
@@ -551,7 +551,7 @@ public class InputLine : MonoBehaviour
                 var mount = Mount.mounts.Find(x => x.name.ToLower() == which);
                 if (mount != null && currentSave.player.mounts.Contains(mount.name))
                 {
-                    Sound.PlaySound("DesktopButtonPressRight");
+                    Sound.PlaySound("DesktopButtonRight");
                     currentSave.player.mounts.Remove(mount.name);
                 }
             }
@@ -646,7 +646,7 @@ public class InputLine : MonoBehaviour
                 var amount = int.Parse(foo.Value()[3..]);
                 if (currentSave.player.professionSkills.ContainsKey(profession))
                     currentSave.player.professionSkills[profession] = (amount, currentSave.player.professionSkills[profession].Item2);
-                Sound.PlaySound("DesktopButtonPressRight");
+                Sound.PlaySound("DesktopButtonRight");
             }
         }
     }

@@ -52,7 +52,13 @@ public class Person
     //General type of the person that is used for grouping npc's in towns
     [NonSerialized] public PersonCategory category;
 
-    public List<StockItem> ExportStock() => itemsSold.Select(x => x.Copy()).ToList();
+    //Generates the vendor stock for the save game for the specific vendor
+    public List<StockItem> ExportStock()
+    {
+        var copiedStock = itemsSold.Select(x => x.Copy());
+        var existingItems = copiedStock.Where(x => Item.items.Exists(y => y.name == x.item));
+        return existingItems.ToList();
+    }
 
     //Play a sound by this vendor
     public string VoiceLine(string type) => race.Clean() + gender + voiceVariant + type;

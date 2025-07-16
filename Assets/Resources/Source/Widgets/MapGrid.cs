@@ -75,17 +75,15 @@ public class MapGrid : MonoBehaviour
     public void SwitchMapTexture(bool deadOn)
     {
         desktops.Find(x => x.title == "Map").windows.FindAll(x => x.title.StartsWith("Site: ")).ForEach(x => x.gameObject.SetActive(x.title.Contains("SpiritHealer") == deadOn));
-        if (deadOn) PlayAmbience("AmbienceGhost");
+        if (deadOn)
+        {
+            StopMusic();
+            PlayAmbience("AmbienceGhost");
+        }
         else if (ambience.clip != null && ambience.clip.name == "AmbienceGhost")
         {
+            StopMusic();
             StopAmbience();
-            var area = FindSite(x => x.name == currentSave.currentSite);
-            if (area.ambience == null)
-            {
-                var zone = Zone.zones.Find(x => x.name == area.zone);
-                if (zone != null) PlayAmbience(currentSave.IsNight() ? zone.ambienceNight : zone.ambienceDay);
-            }
-            else PlayAmbience(area.ambience);
         }
         texture.gameObject.SetActive(!deadOn);
         textureDead.gameObject.SetActive(deadOn);

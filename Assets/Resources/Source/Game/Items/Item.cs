@@ -826,6 +826,7 @@ public class Item
                                 if (currentSave.player.inventory.money >= item.price * amount)
                                 {
                                     PlaySound("DesktopTransportPay");
+                                    currentSave.AddTime(10);
                                     currentSave.player.inventory.money -= item.price * amount;
                                     if (amount == item.amount)
                                     {
@@ -850,6 +851,7 @@ public class Item
                         {
                             PlaySound("DesktopTransportPay");
                             var price = item.price * item.amount;
+                            currentSave.AddTime(10);
                             currentSave.player.inventory.money -= price;
                             currentSave.buyback.items.Remove(item);
                             currentSave.player.inventory.AddItem(item);
@@ -878,6 +880,7 @@ public class Item
                                     PlaySound("DesktopTransportPay");
                                     stockItem.amount -= amount;
                                     if (stockItem.minutesLeft == 0) stockItem.minutesLeft = stockItem.restockSpeed;
+                                    currentSave.AddTime(10);
                                     currentSave.player.inventory.AddItem(item.CopyItem(amount));
                                     currentSave.player.inventory.money -= item.price * amount * 4;
                                     Respawn("Inventory");
@@ -891,6 +894,7 @@ public class Item
                             PlaySound("DesktopTransportPay");
                             stockItem.amount -= 1;
                             if (stockItem.minutesLeft == 0) stockItem.minutesLeft = stockItem.restockSpeed;
+                            currentSave.AddTime(10);
                             currentSave.player.inventory.AddItem(item.CopyItem(1));
                             currentSave.player.inventory.money -= item.price * 4;
                             Respawn("Inventory");
@@ -1024,6 +1028,7 @@ public class Item
                         {
                             PlaySound("DesktopTransportPay");
                             PlaySound(item.ItemSound("PutDown"));
+                            currentSave.AddTime(10);
                             currentSave.buyback ??= new(true);
                             currentSave.player.inventory.money += item.price * item.amount;
                             if (!item.indestructible)
@@ -1205,7 +1210,7 @@ public class Item
                 }
                 else if (CDesktop.title == "MiningLoot")
                 {
-                    PlaySound("Mining" + random.Next(1, 6));
+                    PlaySound("Mining");
                     currentSave.player.inventory.AddItem(item);
                     Board.board.results.miningLoot.items.Remove(item);
                     Board.board.results.miningLoot.ApplySortOrder();
@@ -1222,7 +1227,7 @@ public class Item
                 }
                 else if (CDesktop.title == "HerbalismLoot")
                 {
-                    PlaySound("HerbGather" + random.Next(1, 5));
+                    PlaySound("HerbGather");
                     currentSave.player.inventory.AddItem(item);
                     Board.board.results.herbalismLoot.items.Remove(item);
                     Board.board.results.herbalismLoot.ApplySortOrder();
@@ -1239,7 +1244,7 @@ public class Item
                 }
                 else if (CDesktop.title == "SkinningLoot")
                 {
-                    PlaySound("SkinGather" + random.Next(1, 4));
+                    PlaySound("SkinGather");
                     currentSave.player.inventory.AddItem(item);
                     Board.board.results.skinningLoots[Board.board.results.selectedSkinningLoot].items.Remove(item);
                     Board.board.results.skinningLoots[Board.board.results.selectedSkinningLoot].ApplySortOrder();

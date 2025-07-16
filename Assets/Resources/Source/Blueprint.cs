@@ -3083,7 +3083,7 @@ public class Blueprint
                 (h) =>
                 {
                     board.results.selectedSkinningLoot = 0;
-                    PlaySound("SkinGather" + random.Next(1, 4));
+                    PlaySound("SkinGather");
                     SpawnDesktopBlueprint("SkinningLoot");
                 });
             else AddPaddingRegion(() => AddLine("Gather", "DarkGray"));
@@ -3179,7 +3179,7 @@ public class Blueprint
                 AddButtonRegion(() => AddLine("Gather"),
                 (h) =>
                 {
-                    PlaySound("VeinCrack" + random.Next(1, 4), 0.6f);
+                    PlaySound("VeinCrack", 0.6f);
                     SpawnDesktopBlueprint("MiningLoot");
                 });
             }
@@ -3231,7 +3231,7 @@ public class Blueprint
                 AddButtonRegion(() => AddLine("Gather"),
                 (h) =>
                 {
-                    PlaySound("HerbGather" + random.Next(1, 5));
+                    PlaySound("HerbGather");
                     SpawnDesktopBlueprint("HerbalismLoot");
                 });
             }
@@ -3444,12 +3444,23 @@ public class Blueprint
             if (WindowUp("Quest")) return;
             if (WindowUp("QuestAdd")) return;
             if (WindowUp("QuestTurn")) return;
-            if (complex.ambience == null)
+            var isNight = currentSave.IsNight();
+            var music = isNight ? complex.musicDay : complex.musicNight;
+            var ambience = isNight ? complex.ambienceDay : complex.ambienceNight;
+            if (music == null)
             {
                 var zone = zones.Find(x => x.name == complex.zone);
-                if (zone != null) PlayAmbience(currentSave.IsNight() ? zone.ambienceNight : zone.ambienceDay);
+                if (zone != null) PlayMusic(isNight ? zone.musicNight : zone.musicDay);
+                else StopMusic();
             }
-            else PlayAmbience(complex.ambience);
+            else PlayMusic(music);
+            if (ambience == null)
+            {
+                var zone = zones.Find(x => x.name == complex.zone);
+                if (zone != null) PlayAmbience(isNight ? zone.ambienceNight : zone.ambienceDay);
+                else StopAmbience();
+            }
+            else PlayAmbience(ambience);
             SetAnchor(TopRight, -19, -38);
             AddRegionGroup();
             SetRegionGroupWidth(190);
@@ -3501,12 +3512,23 @@ public class Blueprint
             if (WindowUp("QuestTurn")) return;
             if (WindowUp("Inventory")) return;
             if (capital == null) return;
-            if (capital.ambience == null)
+            var isNight = currentSave.IsNight();
+            var music = isNight ? capital.musicDay : capital.musicNight;
+            var ambience = isNight ? capital.ambienceDay : capital.ambienceNight;
+            if (music == null)
             {
                 var zone = zones.Find(x => x.name == capital.zone);
-                if (zone != null) PlayAmbience(currentSave.IsNight() ? zone.ambienceNight : zone.ambienceDay);
+                if (zone != null) PlayMusic(isNight ? zone.musicNight : zone.musicDay);
+                else StopMusic();
             }
-            else PlayAmbience(capital.ambience);
+            else PlayMusic(music);
+            if (ambience == null)
+            {
+                var zone = zones.Find(x => x.name == capital.zone);
+                if (zone != null) PlayAmbience(isNight ? zone.ambienceNight : zone.ambienceDay);
+                else StopAmbience();
+            }
+            else PlayAmbience(ambience);
             SetAnchor(TopRight, -19, -38);
             AddRegionGroup();
             SetRegionGroupWidth(190);
@@ -3534,12 +3556,23 @@ public class Blueprint
             if (WindowUp("QuestTurn")) return;
             if (WindowUp("Inventory")) return;
             if (capital == null) return;
-            if (capital.ambience == null)
+            var isNight = currentSave.IsNight();
+            var music = isNight ? capital.musicDay : capital.musicNight;
+            var ambience = isNight ? capital.ambienceDay : capital.ambienceNight;
+            if (music == null)
             {
                 var zone = zones.Find(x => x.name == capital.zone);
-                if (zone != null) PlayAmbience(currentSave.IsNight() ? zone.ambienceNight : zone.ambienceDay);
+                if (zone != null) PlayMusic(isNight ? zone.musicNight : zone.musicDay);
+                else StopMusic();
             }
-            else PlayAmbience(capital.ambience);
+            else PlayMusic(music);
+            if (ambience == null)
+            {
+                var zone = zones.Find(x => x.name == capital.zone);
+                if (zone != null) PlayAmbience(isNight ? zone.ambienceNight : zone.ambienceDay);
+                else StopAmbience();
+            }
+            else PlayAmbience(ambience);
             SetAnchor(TopRight, -19, -38);
             AddRegionGroup();
             SetRegionGroupWidth(190);
@@ -3588,12 +3621,23 @@ public class Blueprint
             if (WindowUp("Quest")) return;
             if (WindowUp("QuestAdd")) return;
             if (WindowUp("QuestTurn")) return;
-            if (instance.ambience == null)
+            var isNight = currentSave.IsNight();
+            var music = isNight ? instance.musicDay : instance.musicNight;
+            var ambience = isNight ? instance.ambienceDay : instance.ambienceNight;
+            if (music == null)
             {
                 var zone = zones.Find(x => x.name == instance.zone);
-                if (zone != null) PlayAmbience(currentSave.IsNight() ? zone.ambienceNight : zone.ambienceDay);
+                if (zone != null) PlayMusic(isNight ? zone.musicNight : zone.musicDay);
+                else StopMusic();
             }
-            else PlayAmbience(instance.ambience);
+            else PlayMusic(music);
+            if (ambience == null)
+            {
+                var zone = zones.Find(x => x.name == instance.zone);
+                if (zone != null) PlayAmbience(isNight ? zone.ambienceNight : zone.ambienceDay);
+                else StopAmbience();
+            }
+            else PlayAmbience(ambience);
             SetAnchor(TopRight, -19, -38);
             AddRegionGroup();
             SetRegionGroupWidth(190);
@@ -3756,14 +3800,25 @@ public class Blueprint
         }),
 
         //Hostile Area
-        new("HostileArea", () => 
+        new("HostileArea", () =>
         {
-            if (area.ambience == null)
+            var isNight = currentSave.IsNight();
+            var music = isNight ? area.musicDay : area.musicNight;
+            var ambience = isNight ? area.ambienceDay : area.ambienceNight;
+            if (music == null)
             {
                 var zone = zones.Find(x => x.name == area.zone);
-                if (zone != null) PlayAmbience(currentSave.IsNight() ? zone.ambienceNight : zone.ambienceDay);
+                if (zone != null) PlayMusic(isNight ? zone.musicNight : zone.musicDay);
+                else StopMusic();
             }
-            else PlayAmbience(area.ambience);
+            else PlayMusic(music);
+            if (ambience == null)
+            {
+                var zone = zones.Find(x => x.name == area.zone);
+                if (zone != null) PlayAmbience(isNight ? zone.ambienceNight : zone.ambienceDay);
+                else StopAmbience();
+            }
+            else PlayAmbience(ambience);
             SetAnchor(TopLeft, 19, -38);
             AddHeaderGroup();
             SetRegionGroupWidth(190);
@@ -4076,9 +4131,25 @@ public class Blueprint
         }),
 
         //Town
-        new("Town", () => 
+        new("Town", () =>
         {
-            PlayAmbience(town.ambience);
+            var isNight = currentSave.IsNight();
+            var music = isNight ? town.musicDay : town.musicNight;
+            var ambience = isNight ? town.ambienceDay : town.ambienceNight;
+            if (music == null)
+            {
+                var zone = zones.Find(x => x.name == town.zone);
+                if (zone != null) PlayMusic(isNight ? zone.musicNight : zone.musicDay);
+                else StopMusic();
+            }
+            else PlayMusic(music);
+            if (ambience == null)
+            {
+                var zone = zones.Find(x => x.name == town.zone);
+                if (zone != null) PlayAmbience(isNight ? zone.ambienceNight : zone.ambienceDay);
+                else StopAmbience();
+            }
+            else PlayAmbience(ambience);
             SetAnchor(TopLeft, 19, -38);
             AddRegionGroup();
             SetRegionGroupWidth(190);
@@ -4267,9 +4338,25 @@ public class Blueprint
                     }
             }
         }),
-        new("TownHostile", () => 
+        new("TownHostile", () =>
         {
-            PlayAmbience(town.ambience);
+            var isNight = currentSave.IsNight();
+            var music = isNight ? town.musicDay : town.musicNight;
+            var ambience = isNight ? town.ambienceDay : town.ambienceNight;
+            if (music == null)
+            {
+                var zone = zones.Find(x => x.name == town.zone);
+                if (zone != null) PlayMusic(isNight ? zone.musicNight : zone.musicDay);
+                else StopMusic();
+            }
+            else PlayMusic(music);
+            if (ambience == null)
+            {
+                var zone = zones.Find(x => x.name == town.zone);
+                if (zone != null) PlayAmbience(isNight ? zone.ambienceNight : zone.ambienceDay);
+                else StopAmbience();
+            }
+            else PlayAmbience(ambience);
             SetAnchor(TopLeft, 19, -38);
             AddRegionGroup();
             SetRegionGroupWidth(190);
@@ -4619,6 +4706,7 @@ public class Blueprint
                 {
                     CloseWindow("Vendor");
                     CloseWindow("Inventory");
+                    CloseWindow("InventorySort");
                     Respawn("PlayerMoney", true);
                     Respawn("Capital", true);
                     Respawn("Person");
@@ -4663,6 +4751,7 @@ public class Blueprint
                 {
                     CloseWindow("VendorBuyback");
                     CloseWindow("Inventory");
+                    CloseWindow("InventorySort");
                     Respawn("PlayerMoney", true);
                     Respawn("Capital", true);
                     Respawn("Person");
@@ -5024,7 +5113,9 @@ public class Blueprint
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseWindow("Bank");
+                    CloseWindow("BankSort");
                     CloseWindow("Inventory");
+                    CloseWindow("InventorySort");
                     Respawn("Person");
                     PlaySound("DesktopInventoryClose");
                 });
@@ -5174,7 +5265,8 @@ public class Blueprint
                         if (currentSave.siteVisits.ContainsKey(destination.convertDestinationTo ?? destination.name))
                         {
                             AddLine(destination.capitalRedirect ?? destination.convertDestinationTo ?? destination.name);
-                            AddSmallButton("Zone" + destination.zone.Clean());
+                            var zone = zones.Find(x => x.name == destination.zone);
+                            AddSmallButton("Zone" + zone.icon.Clean());
                         }
                         else
                         {
@@ -5186,12 +5278,11 @@ public class Blueprint
                     (h) =>
                     {
                         var destination = list[index + thisWindow.pagination()];
-                        currentSave.currentSite = destination.convertDestinationTo ?? destination.name;
-
                         var siteOfDestination = towns.Find(x => x.name == (destination.convertDestinationTo ?? destination.name));
                         var fromWhere = towns.Find(x => x.name == currentSave.currentSite);
+                        currentSave.currentSite = destination.convertDestinationTo ?? destination.name;
                         var distance = Math.Abs(siteOfDestination.x - fromWhere.x) + Math.Abs(siteOfDestination.y - fromWhere.y);
-                        var price = distance / 10 * 10;
+                        var price = distance / 50 * 10;
 
                         if (price > 0)
                         {
@@ -5240,7 +5331,8 @@ public class Blueprint
                         AddHeaderRegion(() =>
                         {
                             AddLine(destination.capitalRedirect ?? destination.convertDestinationTo ?? destination.name);
-                            AddSmallButton("Zone" + destination.zone.Clean());
+                            var zone = zones.Find(x => x.name == destination.zone);
+                            AddSmallButton("Zone" + zone.icon.Clean());
                         });
                         if (price > 0)
                         {
@@ -5814,7 +5906,8 @@ public class Blueprint
             );
             AddHeaderRegion(() =>
             {
-                AddBigButton("Zone" + site.zone.Clean());
+                var zone = zones.Find(x => x.name == site.zone);
+                AddBigButton("Zone" + zone.icon.Clean());
                 AddLine("Skill to fish: ", "DarkGray");
                 AddText(fishingSpot.skillToFish + "", currentSave.player.professionSkills["Fishing"].Item1 < fishingSpot.skillToFish ? "DangerousRed" : "HalfGray");
             });
@@ -6376,6 +6469,16 @@ public class Blueprint
             });
             AddButtonRegion(() =>
             {
+                AddCheckbox(settings.ambience);
+                AddLine("Ambience");
+            },
+            (h) =>
+            {
+                settings.ambience.Invert();
+                CDesktop.RespawnAll();
+            });
+            AddButtonRegion(() =>
+            {
                 AddCheckbox(settings.soundEffects);
                 AddLine("Sound effects");
             },
@@ -6881,7 +6984,8 @@ public class Blueprint
     {
         new("TitleScreen", () => 
         {
-            PlayAmbience("AmbienceMainScreen", 0.2f, true);
+            StopAmbience(false);
+            PlayMusic(new() { "MusicMainScreen" }, 0.2f, true);
             SpawnWindowBlueprint("TitleScreenMenu");
             AddHotkey("Open console", () =>
             {

@@ -545,6 +545,7 @@ public class Board
             }
             else if (result == "Team2Won")
             {
+                StopMusic();
                 StopAmbience();
                 PlaySound("Death");
                 if (Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore)

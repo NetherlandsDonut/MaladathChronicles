@@ -1,12 +1,15 @@
 {
   "selectedRealm": "Whitemane",
   "selectedRealmRanking": "Whitemane",
-  "selectedCharacter": "Immil",
+  "selectedCharacter": "Christine",
   "pixelPerfectVision": {
     "value": "True"
   },
   "music": {
-    "value": "False"
+    "value": "True"
+  },
+  "ambience": {
+    "value": "True"
   },
   "soundEffects": {
     "value": "True"

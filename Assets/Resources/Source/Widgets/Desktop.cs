@@ -170,14 +170,55 @@ public class Desktop : MonoBehaviour
             debug ^= true;
         };
         if (debug && GetKey(KeyCode.LeftControl) && GetKey(KeyCode.Tab) && GetKeyDown(KeyCode.LeftAlt)) ReloadAssets();
+
+        //If music is turned off, lower the volume to 0
         if (!GameSettings.settings.music.Value())
         {
+            if (music.volume > 0)
+                music.volume -= 0.001f;
+        }
+
+        //If we arent currently playing the right track
+        else if (queuedMusic.Item1 != music.clip)
+        {
+            //Lower the volume
+            if (music.volume > 0) music.volume -= 0.001f;
+
+            //If the volume reaches 0, switch track
+            else
+            {
+                music.clip = queuedMusic.Item1;
+                music.Play();
+            }
+        }
+
+        //If we are playing the right track
+        else if (queuedMusic.Item1 == music.clip)
+        {
+            //If no music is playing switch the track to the next one
+            if (!music.isPlaying && musicList != null && musicList.Count > 0)
+            {
+                var newIndex = musicList.IndexOf(music.clip) + 1;
+                if (newIndex == musicList.Count) newIndex = 0;
+                queuedMusic = (musicList[newIndex], 0.2f, false);
+                music.clip = null;
+            }
+
+            //If the volume isnt what it's supposed to be at
+            if (music.volume < queuedMusic.Item2)
+            {
+                if (queuedMusic.Item3 && music.clip != queuedMusic.Item1) music.volume = queuedMusic.Item2;
+                else music.volume += 0.001f;
+            }
+        }
+        if (!GameSettings.settings.ambience.Value())
+        {
             if (ambience.volume > 0)
-                ambience.volume -= 0.002f;
+                ambience.volume -= 0.001f;
         }
         else if (queuedAmbience.Item1 != ambience.clip)
         {
-            if (ambience.volume > 0) ambience.volume -= 0.002f;
+            if (ambience.volume > 0) ambience.volume -= 0.001f;
             else
             {
                 ambience.clip = queuedAmbience.Item1;
@@ -187,7 +228,7 @@ public class Desktop : MonoBehaviour
         else if (queuedAmbience.Item1 == ambience.clip && ambience.volume < queuedAmbience.Item2)
         {
             if (queuedAmbience.Item3 && ambience.clip != queuedAmbience.Item1) ambience.volume = queuedAmbience.Item2;
-            else ambience.volume += 0.002f;
+            else ambience.volume += 0.001f;
         }
         if (loadSites != null && loadSites.Count > 0)
             for (int i = 0; i < 10; i++)
@@ -311,7 +352,7 @@ public class Desktop : MonoBehaviour
                                 if (mapGrid.queuedPath[0].Item2.Count % 2 == 0)
                                 {
                                     var what = mapGrid.groundData[Math.Abs((int)mapGrid.queuedPath[0].Item2[0].position.x / 19), Math.Abs((int)mapGrid.queuedPath[0].Item2[0].position.y / 19)];
-                                    PlaySound("Step" + what + random.Next(1, 6), what == "Sand" ? 0.6f : 0.7f);
+                                    PlaySound("Step" + what, what == "Sand" ? 0.6f : 0.7f);
                                 }
                                 currentSave.AddTime(currentSave.player.TravelPassTime());
                                 Destroy(mapGrid.queuedPath[0].Item2.First(x => x.name == "PathDot").gameObject);

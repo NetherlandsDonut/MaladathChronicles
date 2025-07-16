@@ -52,7 +52,8 @@ public class TransportRoute
         AddHeaderRegion(() =>
         {
             AddLine(destination.capitalRedirect ?? destination.convertDestinationTo ?? destination.name);
-            AddSmallButton("Zone" + destination.zone.Clean());
+            var zone = Zone.zones.Find(x => x.name == destination.zone);
+            AddSmallButton("Zone" + zone.icon.Clean());
         });
         if (price > 0)
         {

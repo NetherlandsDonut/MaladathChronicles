@@ -1282,7 +1282,8 @@ public static class Root
                 {
                     if (staticPagination.ContainsKey("QuestAdd"))
                         staticPagination.Remove("QuestAdd");
-                    if (!Respawn("QuestAdd")) PlaySound("DesktopWriteQuest" + random.Next(1, 4));
+                    PlaySound("DesktopWriteQuest");
+                    Respawn("QuestAdd");
                     CloseWindow("QuestTurn");
                 }
                 else if (f == "Turn")
@@ -1291,7 +1292,8 @@ public static class Root
                         staticPagination.Remove("QuestTurn");
                     if (quest.rewards != null && quest.rewards.Count == 1) Quest.chosenReward = quest.rewards.ToList()[0].Key;
                     else Quest.chosenReward = null;
-                    if (!Respawn("QuestTurn")) PlaySound("DesktopWriteQuest" + random.Next(1, 4));
+                    PlaySound("DesktopWriteQuest");
+                    Respawn("QuestTurn");
                     CloseWindow("QuestAdd");
                 }
                 Respawn("Chest", true);

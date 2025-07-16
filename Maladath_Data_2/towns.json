@@ -11,9 +11,8 @@
       }
     ],
     "name": "Grommash Hold",
-    "zone": "Durotar",
+    "zone": "Orgrimmar",
     "faction": "Orgrimmar",
-    "ambience": "MusicOrgrimmar",
     "convertDestinationTo": "Orgrimmar Main Gates",
     "noNightVariant": true,
     "capitalRedirect": "Orgrimmar"
@@ -38,9 +37,8 @@
       }
     ],
     "name": "The Cleft of Shadow",
-    "zone": "Durotar",
+    "zone": "Orgrimmar",
     "faction": "Orgrimmar",
-    "ambience": "MusicOrgrimmar",
     "convertDestinationTo": "Orgrimmar Main Gates",
     "capitalRedirect": "Orgrimmar"
   },
@@ -751,18 +749,16 @@
       }
     ],
     "name": "The Drag",
-    "zone": "Durotar",
+    "zone": "Orgrimmar",
     "faction": "Orgrimmar",
-    "ambience": "MusicOrgrimmar",
     "convertDestinationTo": "Orgrimmar Main Gates",
     "capitalRedirect": "Orgrimmar"
   },
   {
     "people": [],
     "name": "The Valley of Wisdom",
-    "zone": "Durotar",
+    "zone": "Orgrimmar",
     "faction": "Orgrimmar",
-    "ambience": "MusicOrgrimmar",
     "convertDestinationTo": "Orgrimmar Main Gates",
     "capitalRedirect": "Orgrimmar"
   },
@@ -1286,9 +1282,8 @@
       }
     ],
     "name": "The Valley of Honor",
-    "zone": "Durotar",
+    "zone": "Orgrimmar",
     "faction": "Orgrimmar",
-    "ambience": "MusicOrgrimmar",
     "convertDestinationTo": "Orgrimmar Main Gates",
     "capitalRedirect": "Orgrimmar"
   },
@@ -1327,18 +1322,16 @@
       }
     ],
     "name": "The Valley of Spirits",
-    "zone": "Durotar",
+    "zone": "Orgrimmar",
     "faction": "Orgrimmar",
-    "ambience": "MusicOrgrimmar",
     "convertDestinationTo": "Orgrimmar Main Gates",
     "capitalRedirect": "Orgrimmar"
   },
   {
     "people": [],
     "name": "The High Seat",
-    "zone": "Dun Morogh",
+    "zone": "Ironforge",
     "faction": "Ironforge",
-    "ambience": "MusicIronforge",
     "convertDestinationTo": "Ironforge",
     "noNightVariant": true,
     "capitalRedirect": "Ironforge"
@@ -2073,9 +2066,8 @@
       }
     ],
     "name": "The Great Forge",
-    "zone": "Dun Morogh",
+    "zone": "Ironforge",
     "faction": "Ironforge",
-    "ambience": "MusicIronforge",
     "convertDestinationTo": "Ironforge",
     "noNightVariant": true,
     "capitalRedirect": "Ironforge"
@@ -2297,9 +2289,8 @@
       }
     ],
     "name": "Tinker Town",
-    "zone": "Dun Morogh",
+    "zone": "Ironforge",
     "faction": "Ironforge",
-    "ambience": "MusicIronforge",
     "convertDestinationTo": "Ironforge",
     "noNightVariant": true,
     "capitalRedirect": "Ironforge"
@@ -2307,9 +2298,8 @@
   {
     "people": [],
     "name": "Hall of Explorers",
-    "zone": "Dun Morogh",
+    "zone": "Ironforge",
     "faction": "Ironforge",
-    "ambience": "MusicIronforge",
     "convertDestinationTo": "Ironforge",
     "noNightVariant": true,
     "capitalRedirect": "Ironforge"
@@ -2410,9 +2400,8 @@
       }
     ],
     "name": "The Forlorn Cavern",
-    "zone": "Dun Morogh",
+    "zone": "Ironforge",
     "faction": "Ironforge",
-    "ambience": "MusicIronforge",
     "convertDestinationTo": "Ironforge",
     "noNightVariant": true,
     "capitalRedirect": "Ironforge"
@@ -2585,9 +2574,8 @@
       }
     ],
     "name": "The Military Ward",
-    "zone": "Dun Morogh",
+    "zone": "Ironforge",
     "faction": "Ironforge",
-    "ambience": "MusicIronforge",
     "convertDestinationTo": "Ironforge",
     "noNightVariant": true,
     "capitalRedirect": "Ironforge"
@@ -2628,9 +2616,8 @@
       }
     ],
     "name": "The Mystic Ward",
-    "zone": "Dun Morogh",
+    "zone": "Ironforge",
     "faction": "Ironforge",
-    "ambience": "MusicIronforge",
     "convertDestinationTo": "Ironforge",
     "noNightVariant": true,
     "capitalRedirect": "Ironforge"
@@ -3081,9 +3068,8 @@
       }
     ],
     "name": "The Commons",
-    "zone": "Dun Morogh",
+    "zone": "Ironforge",
     "faction": "Ironforge",
-    "ambience": "MusicIronforge",
     "convertDestinationTo": "Ironforge",
     "noNightVariant": true,
     "capitalRedirect": "Ironforge"
@@ -3108,9 +3094,8 @@
       }
     ],
     "name": "The Temple of The Moon",
-    "zone": "Teldrassil",
+    "zone": "Darnassus",
     "faction": "Darnassus",
-    "ambience": "MusicDarnassus",
     "convertDestinationTo": "Darnassus",
     "capitalRedirect": "Darnassus"
   },
@@ -3538,9 +3523,8 @@
       }
     ],
     "name": "Tradesmen's Terrace",
-    "zone": "Teldrassil",
+    "zone": "Darnassus",
     "faction": "Darnassus",
-    "ambience": "MusicDarnassus",
     "convertDestinationTo": "Darnassus",
     "capitalRedirect": "Darnassus"
   },
@@ -4763,9 +4747,8 @@
       }
     ],
     "name": "Craftsmen's Terrace",
-    "zone": "Teldrassil",
+    "zone": "Darnassus",
     "faction": "Darnassus",
-    "ambience": "MusicDarnassus",
     "convertDestinationTo": "Darnassus",
     "capitalRedirect": "Darnassus"
   },
@@ -4804,9 +4787,8 @@
       }
     ],
     "name": "Cenarion Enclave",
-    "zone": "Teldrassil",
+    "zone": "Darnassus",
     "faction": "Darnassus",
-    "ambience": "MusicDarnassus",
     "convertDestinationTo": "Darnassus",
     "capitalRedirect": "Darnassus"
   },
@@ -4829,9 +4811,8 @@
       }
     ],
     "name": "Warrior's Terrace",
-    "zone": "Teldrassil",
+    "zone": "Darnassus",
     "faction": "Darnassus",
-    "ambience": "MusicDarnassus",
     "convertDestinationTo": "Darnassus",
     "capitalRedirect": "Darnassus"
   },
@@ -4853,9 +4834,8 @@
       }
     ],
     "name": "The Temple Gardens",
-    "zone": "Teldrassil",
+    "zone": "Darnassus",
     "faction": "Darnassus",
-    "ambience": "MusicDarnassus",
     "convertDestinationTo": "Darnassus",
     "capitalRedirect": "Darnassus"
   },
@@ -4870,9 +4850,8 @@
       }
     ],
     "name": "Stormwind Keep",
-    "zone": "Elwynn Forest",
+    "zone": "Stormwind City",
     "faction": "Stormwind",
-    "ambience": "MusicStormwind",
     "convertDestinationTo": "Stormwind City",
     "capitalRedirect": "Stormwind City"
   },
@@ -4950,9 +4929,8 @@
       }
     ],
     "name": "The Canals",
-    "zone": "Elwynn Forest",
+    "zone": "Stormwind City",
     "faction": "Stormwind",
-    "ambience": "MusicStormwind",
     "convertDestinationTo": "Stormwind City",
     "capitalRedirect": "Stormwind City"
   },
@@ -5358,9 +5336,8 @@
       }
     ],
     "name": "Old Town",
-    "zone": "Elwynn Forest",
+    "zone": "Stormwind City",
     "faction": "Stormwind",
-    "ambience": "MusicStormwind",
     "convertDestinationTo": "Stormwind City",
     "capitalRedirect": "Stormwind City"
   },
@@ -5383,9 +5360,8 @@
       }
     ],
     "name": "The Park",
-    "zone": "Elwynn Forest",
+    "zone": "Stormwind City",
     "faction": "Stormwind",
-    "ambience": "MusicStormwind",
     "convertDestinationTo": "Stormwind City",
     "capitalRedirect": "Stormwind City"
   },
@@ -5728,9 +5704,8 @@
       }
     ],
     "name": "Mage Quarter",
-    "zone": "Elwynn Forest",
+    "zone": "Stormwind City",
     "faction": "Stormwind",
-    "ambience": "MusicStormwind",
     "convertDestinationTo": "Stormwind City",
     "capitalRedirect": "Stormwind City"
   },
@@ -5968,9 +5943,8 @@
       }
     ],
     "name": "Cathedral Square",
-    "zone": "Elwynn Forest",
+    "zone": "Stormwind City",
     "faction": "Stormwind",
-    "ambience": "MusicStormwind",
     "convertDestinationTo": "Stormwind City",
     "capitalRedirect": "Stormwind City"
   },
@@ -6167,9 +6141,8 @@
       }
     ],
     "name": "Dwarven District",
-    "zone": "Elwynn Forest",
+    "zone": "Stormwind City",
     "faction": "Stormwind",
-    "ambience": "MusicStormwind",
     "convertDestinationTo": "Stormwind City",
     "capitalRedirect": "Stormwind City"
   },
@@ -6255,9 +6228,8 @@
       }
     ],
     "name": "Higher Rise",
-    "zone": "Mulgore",
+    "zone": "Thunder Bluff",
     "faction": "Thunder Bluff",
-    "ambience": "MusicThunderBluff",
     "convertDestinationTo": "Thunder Bluff",
     "capitalRedirect": "Thunder Bluff"
   },
@@ -7247,9 +7219,8 @@
       }
     ],
     "name": "Middle Rise",
-    "zone": "Mulgore",
+    "zone": "Thunder Bluff",
     "faction": "Thunder Bluff",
-    "ambience": "MusicThunderBluff",
     "convertDestinationTo": "Thunder Bluff",
     "capitalRedirect": "Thunder Bluff"
   },
@@ -8129,9 +8100,8 @@
       }
     ],
     "name": "Lower Rise",
-    "zone": "Mulgore",
+    "zone": "Thunder Bluff",
     "faction": "Thunder Bluff",
-    "ambience": "MusicThunderBluff",
     "convertDestinationTo": "Thunder Bluff",
     "capitalRedirect": "Thunder Bluff"
   },
@@ -8163,9 +8133,8 @@
       }
     ],
     "name": "The Pools of Vision",
-    "zone": "Mulgore",
+    "zone": "Thunder Bluff",
     "faction": "Thunder Bluff",
-    "ambience": "MusicThunderBluff",
     "convertDestinationTo": "Thunder Bluff",
     "noNightVariant": true,
     "capitalRedirect": "Thunder Bluff"
@@ -8189,9 +8158,8 @@
       }
     ],
     "name": "Spirit Rise",
-    "zone": "Mulgore",
+    "zone": "Thunder Bluff",
     "faction": "Thunder Bluff",
-    "ambience": "MusicThunderBluff",
     "convertDestinationTo": "Thunder Bluff",
     "capitalRedirect": "Thunder Bluff"
   },
@@ -8222,9 +8190,8 @@
       }
     ],
     "name": "Hunter Rise",
-    "zone": "Mulgore",
+    "zone": "Thunder Bluff",
     "faction": "Thunder Bluff",
-    "ambience": "MusicThunderBluff",
     "convertDestinationTo": "Thunder Bluff",
     "capitalRedirect": "Thunder Bluff"
   },
@@ -8240,9 +8207,8 @@
       }
     ],
     "name": "Elder Rise",
-    "zone": "Mulgore",
+    "zone": "Thunder Bluff",
     "faction": "Thunder Bluff",
-    "ambience": "MusicThunderBluff",
     "convertDestinationTo": "Thunder Bluff",
     "capitalRedirect": "Thunder Bluff"
   },
@@ -8257,9 +8223,8 @@
       }
     ],
     "name": "The Royal Quarter",
-    "zone": "Tirisfal Glades",
+    "zone": "Undercity",
     "faction": "Undercity",
-    "ambience": "MusicUndercity",
     "convertDestinationTo": "Undercity",
     "noNightVariant": true,
     "capitalRedirect": "Undercity"
@@ -8351,9 +8316,8 @@
       }
     ],
     "name": "The Apothecarium",
-    "zone": "Tirisfal Glades",
+    "zone": "Undercity",
     "faction": "Undercity",
-    "ambience": "MusicUndercity",
     "convertDestinationTo": "Undercity",
     "noNightVariant": true,
     "capitalRedirect": "Undercity"
@@ -8624,9 +8588,8 @@
       }
     ],
     "name": "The Rogues' Quarter",
-    "zone": "Tirisfal Glades",
+    "zone": "Undercity",
     "faction": "Undercity",
-    "ambience": "MusicUndercity",
     "convertDestinationTo": "Undercity",
     "noNightVariant": true,
     "capitalRedirect": "Undercity"
@@ -9226,9 +9189,8 @@
       }
     ],
     "name": "The Magic Quarter",
-    "zone": "Tirisfal Glades",
+    "zone": "Undercity",
     "faction": "Undercity",
-    "ambience": "MusicUndercity",
     "convertDestinationTo": "Undercity",
     "noNightVariant": true,
     "capitalRedirect": "Undercity"
@@ -9771,9 +9733,8 @@
       }
     ],
     "name": "The War Quarter",
-    "zone": "Tirisfal Glades",
+    "zone": "Undercity",
     "faction": "Undercity",
-    "ambience": "MusicUndercity",
     "convertDestinationTo": "Undercity",
     "noNightVariant": true,
     "capitalRedirect": "Undercity"
@@ -10336,9 +10297,8 @@
       }
     ],
     "name": "The Trade Quarter",
-    "zone": "Tirisfal Glades",
+    "zone": "Undercity",
     "faction": "Undercity",
-    "ambience": "MusicUndercity",
     "convertDestinationTo": "Undercity",
     "noNightVariant": true,
     "capitalRedirect": "Undercity"
@@ -11076,9 +11036,8 @@
       }
     ],
     "name": "Trade District",
-    "zone": "Elwynn Forest",
+    "zone": "Stormwind City",
     "faction": "Stormwind",
-    "ambience": "MusicStormwind",
     "convertDestinationTo": "Stormwind City",
     "capitalRedirect": "Stormwind City"
   },
@@ -11086,9 +11045,8 @@
     "x": 4975,
     "y": -3517,
     "name": "Stormwind City",
-    "zone": "Elwynn Forest",
+    "zone": "Stormwind City",
     "faction": "Stormwind",
-    "ambience": "MusicStormwind",
     "convertDestinationTo": "Stormwind City",
     "fishing": true,
     "capitalRedirect": "Stormwind City"
@@ -16114,9 +16072,8 @@
     "x": 938,
     "y": -504,
     "name": "Darnassus",
-    "zone": "Teldrassil",
+    "zone": "Darnassus",
     "faction": "Darnassus",
-    "ambience": "MusicDarnassus",
     "convertDestinationTo": "Darnassus",
     "fishing": true,
     "capitalRedirect": "Darnassus"
@@ -20223,9 +20180,8 @@
     "x": 5231,
     "y": -2694,
     "name": "Ironforge",
-    "zone": "Dun Morogh",
+    "zone": "Ironforge",
     "faction": "Ironforge",
-    "ambience": "MusicIronforge",
     "convertDestinationTo": "Ironforge",
     "capitalRedirect": "Ironforge"
   },
@@ -22172,9 +22128,8 @@
       }
     ],
     "name": "The Valley of Strength",
-    "zone": "Durotar",
+    "zone": "Orgrimmar",
     "faction": "Orgrimmar",
-    "ambience": "MusicOrgrimmar",
     "convertDestinationTo": "Orgrimmar Main Gates",
     "capitalRedirect": "Orgrimmar"
   },
@@ -22182,18 +22137,16 @@
     "x": 2343,
     "y": -2248,
     "name": "Orgrimmar Main Gates",
-    "zone": "Durotar",
+    "zone": "Orgrimmar",
     "faction": "Orgrimmar",
-    "ambience": "MusicOrgrimmar",
     "capitalRedirect": "Orgrimmar"
   },
   {
     "x": 2241,
     "y": -2192,
     "name": "Orgrimmar Side Entrence",
-    "zone": "Durotar",
+    "zone": "Orgrimmar",
     "faction": "Orgrimmar",
-    "ambience": "MusicOrgrimmar",
     "capitalRedirect": "Orgrimmar"
   },
   {
@@ -26012,9 +25965,8 @@
     "x": 1418,
     "y": -2794,
     "name": "Thunder Bluff Southern Lift",
-    "zone": "Mulgore",
+    "zone": "Thunder Bluff",
     "faction": "Thunder Bluff",
-    "ambience": "MusicThunderBluff",
     "convertDestinationTo": "Thunder Bluff",
     "capitalRedirect": "Thunder Bluff"
   },
@@ -26022,9 +25974,8 @@
     "x": 1460,
     "y": -2741,
     "name": "Thunder Bluff Northern Lift",
-    "zone": "Mulgore",
+    "zone": "Thunder Bluff",
     "faction": "Thunder Bluff",
-    "ambience": "MusicThunderBluff",
     "convertDestinationTo": "Thunder Bluff",
     "capitalRedirect": "Thunder Bluff"
   },
@@ -28638,9 +28589,8 @@
     "x": 5011,
     "y": -1341,
     "name": "Undercity",
-    "zone": "Tirisfal Glades",
+    "zone": "Undercity",
     "faction": "Undercity",
-    "ambience": "MusicUndercity",
     "convertDestinationTo": "Undercity",
     "noNightVariant": true,
     "capitalRedirect": "Undercity"

@@ -23872,7 +23872,6 @@
     "name": "King's Square",
     "zone": "Stratholme",
     "type": "HostileArea",
-    "ambience": "AmbienceStratholme",
     "convertDestinationTo": "Stratholme",
     "noNightVariant": true,
     "commonEncounters": [
@@ -31983,7 +31982,6 @@
     "name": "Darkwhisper Gorge",
     "zone": "Winterspring",
     "type": "HostileArea",
-    "ambience": "AmbienceSpooky",
     "commonEncounters": [
       {
         "who": "Hederine Initiate",

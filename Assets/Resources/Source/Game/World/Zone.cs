@@ -5,8 +5,16 @@ public class Zone
     //Name of the zone
     public string name;
 
+    //Icon of the zone
+    public string icon;
+
     //Landmass this zone is residing on
     public string continent;
+
+    //General music tracks played when entering sites
+    //in this specific zone. They can be overwritten with
+    //site-specific music tracks
+    public List<string> musicDay, musicNight;
 
     //General ambience track played when entering sites
     //in this specific zone. It can be overwritten with

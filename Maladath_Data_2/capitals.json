@@ -9,9 +9,9 @@
       "The Royal Quarter"
     ],
     "name": "Undercity",
-    "zone": "Tirisfal Glades",
-    "faction": "Undercity",
-    "ambience": "MusicUndercity"
+    "zone": "Undercity",
+    "type": "Capital",
+    "faction": "Undercity"
   },
   {
     "districts": [
@@ -25,8 +25,8 @@
     ],
     "name": "Thunder Bluff",
     "zone": "Mulgore",
-    "faction": "Thunder Bluff",
-    "ambience": "MusicThunderBluff"
+    "type": "Capital",
+    "faction": "Thunder Bluff"
   },
   {
     "districts": [
@@ -40,9 +40,9 @@
       "Stormwind Keep"
     ],
     "name": "Stormwind City",
-    "zone": "Elwynn Forest",
-    "faction": "Stormwind",
-    "ambience": "MusicStormwind"
+    "zone": "Stormwind City",
+    "type": "Capital",
+    "faction": "Stormwind"
   },
   {
     "districts": [
@@ -54,9 +54,9 @@
       "The Temple of The Moon"
     ],
     "name": "Darnassus",
-    "zone": "Teldrassil",
-    "faction": "Darnassus",
-    "ambience": "MusicDarnassus"
+    "zone": "Darnassus",
+    "type": "Capital",
+    "faction": "Darnassus"
   },
   {
     "districts": [
@@ -70,9 +70,9 @@
       "The High Seat"
     ],
     "name": "Ironforge",
-    "zone": "Dun Morogh",
-    "faction": "Ironforge",
-    "ambience": "MusicIronforge"
+    "zone": "Ironforge",
+    "type": "Capital",
+    "faction": "Ironforge"
   },
   {
     "districts": [
@@ -85,8 +85,8 @@
       "Grommash Hold"
     ],
     "name": "Orgrimmar",
-    "zone": "Durotar",
-    "faction": "Orgrimmar",
-    "ambience": "MusicOrgrimmar"
+    "zone": "Orgrimmar",
+    "type": "Capital",
+    "faction": "Orgrimmar"
   }
 ]
