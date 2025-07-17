@@ -530,6 +530,7 @@ public class Desktop : MonoBehaviour
                             PlaySound("DesktopMenuClose");
                             inputDestination.Reset();
                             ExecuteQuit(inputDestination);
+                            Respawn(tempStore, true);
                             didSomething = true;
                         }
                     }
@@ -598,7 +599,7 @@ public class Desktop : MonoBehaviour
                         var a = inputLineMarker;
                         if (c == '\b')
                         {
-                            if (inputLineMarker > 0 && length > 0)
+                            if (inputLineMarker > 0 && inputLineMarker <= length)
                                 inputDestination.RemovePreviousOne(inputLineMarker--);
                         }
                         else if (c != '\n' && c != '\r' && inputDestination.CheckInput(c))

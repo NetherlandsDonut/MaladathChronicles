@@ -100,20 +100,20 @@ public class Highlightable : MonoBehaviour
         render.color = defaultColor - (mouseOver == this ? new Color(0.1f, 0.1f, 0.1f, 0) : new Color(0, 0, 0, 0));
         if (pressedState == "Left" && pressEvent != null)
         {
+            pressEvent(this);
             var l = GetComponent<LineSmallButton>();
             if (l != null && l.texture == "OtherClose") PlaySound("DesktopButtonClose");
             else PlaySound("DesktopButtonLeft", 0.8f);
-            pressEvent(this);
         }
         else if (pressedState == "Right" && rightPressEvent != null)
         {
-            PlaySound("DesktopButtonRight", 0.5f);
             rightPressEvent(this);
+            PlaySound("DesktopButtonRight", 0.5f);
         }
         else if (pressedState == "Middle" && middlePressEvent != null)
         {
-            PlaySound("DesktopButtonRight", 0.5f);
             middlePressEvent(this);
+            PlaySound("DesktopButtonRight", 0.5f);
         }
         pressedState = "None";
         if (window != null) window.Respawn(true);

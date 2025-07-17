@@ -1,20 +1,18 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
-
+using System.Linq;
 using UnityEngine;
-
-using static Item;
-using static Sound;
-using static Board;
-using static MapGrid;
-using static SaveGame;
-using static Coloring;
+using UnityEngine.Rendering.PostProcessing;
 using static Blueprint;
+using static Board;
+using static Coloring;
 using static GameSettings;
-
+using static Item;
+using static MapGrid;
 using static Root.Anchor;
 using static Root.RegionBackgroundType;
+using static SaveGame;
+using static Sound;
 
 public static class Root
 {
@@ -56,6 +54,125 @@ public static class Root
 
     //Amount of objects to be loaded in the loading screen
     public static int loadingScreenObjectLoadAim;
+
+    //Category of items player is viewing
+    public static string auctionCategory;
+
+    public static Bool showSwords = new(true);
+    public static Bool showAxes = new(true);
+    public static Bool showMaces = new(true);
+    public static Bool showPolearms = new(true);
+    public static Bool showStaves = new(true);
+    public static Bool showDaggers = new(true);
+    public static Bool showWands = new(true);
+
+    public static Bool showCloth = new(true);
+    public static Bool showLeather = new(true);
+    public static Bool showMail = new(true);
+    public static Bool showPlate = new(true);
+
+    public static Bool showNonShield = new(true);
+    public static Bool showShield = new(true);
+
+    public static Bool showBows = new(true);
+    public static Bool showCrossbows = new(true);
+    public static Bool showGuns = new(true);
+
+    public static Bool showHead = new(true);
+    public static Bool showShoulders = new(true);
+    public static Bool showBack = new(true);
+    public static Bool showChest = new(true);
+    public static Bool showWrists = new(true);
+    public static Bool showHands = new(true);
+    public static Bool showWaist = new(true);
+    public static Bool showLegs = new(true);
+    public static Bool showFeet = new(true);
+
+    public static Bool showNeck = new(true);
+    public static Bool showFinger = new(true);
+    public static Bool showTrinket = new(true);
+
+    public static Bool showFood = new(true);
+    public static Bool showScrolls = new(true);
+    public static Bool showPotions = new(true);
+    public static Bool showCombatPotions = new(true);
+
+    //Updates viewed list of auction offer groups
+    public static void UpdateAuctionGroupList()
+    {
+        Market.exploredAuctionsGroups = new();
+        var foo = Faction.factions.Find(x => x.name == SiteTown.town.faction).side;
+        if (foo == "Neutral" || foo == "Horde")
+        {
+            var woo = currentSave.markets.Find(x => x.name == "Horde Market");
+            woo.UpdateMarket();
+            foreach (var type in woo.auctions.GroupBy(x => x.item.name).ToDictionary(x => x.Key, x => x.ToList()))
+                if (!Market.exploredAuctionsGroups.TryAdd(type.Key, type.Value))
+                    Market.exploredAuctionsGroups[type.Key].AddRange(type.Value);
+        }
+        if (foo == "Neutral" || foo == "Alliance")
+        {
+            var woo = currentSave.markets.Find(x => x.name == "Alliance Market");
+            woo.UpdateMarket();
+            foreach (var type in woo.auctions.GroupBy(x => x.item.name).ToDictionary(x => x.Key, x => x.ToList()))
+                if (!Market.exploredAuctionsGroups.TryAdd(type.Key, type.Value))
+                    Market.exploredAuctionsGroups[type.Key].AddRange(type.Value);
+        }
+        var keys = Market.exploredAuctionsGroups.Select(x => x.Key).ToList();
+        for (int i = keys.Count - 1; i >= 0; i--)
+        {
+            var remove = false;
+            var item = items.Find(x => x.name == keys[i]);
+            if (auctionCategory == "Two handed weapons")
+            {
+                if (item.type != "Two Handed") remove = true;
+            }
+            else if (auctionCategory == "One handed weapons")
+            {
+                if (item.type != "One Handed") remove = true;
+            }
+            else if (auctionCategory == "Off hands")
+            {
+                if (item.type != "Off Hand") remove = true;
+            }
+            else if (auctionCategory == "Ranged weapons")
+            {
+                if (item.type != "Ranged Weapon") remove = true;
+            }
+            else if (auctionCategory == "Armor")
+            {
+                if (item.armorClass == null || item.armorClass == string.Empty) remove = true;
+            }
+            else if (auctionCategory == "Jewelry")
+            {
+                if (item.type != "Neck" && item.type != "Finger" && item.type != "Trinket") remove = true;
+            }
+            else if (auctionCategory == "Consumeables")
+            {
+                if ((item.detailedType != "Potion" && item.detailedType != "Food" && item.detailedType != "Scroll") || item.abilities.Count == 0) remove = true;
+            }
+            else if (auctionCategory == "Profession recipes")
+            {
+                if (item.type != "Recipe") remove = true;
+            }
+            else if (auctionCategory == "Trade goods")
+            {
+                if (item.type != "Trade Good") remove = true;
+            }
+            else if (auctionCategory == "Other")
+            {
+                if (item.type != "Miscellaneous" || item.abilities.Count > 0) remove = true;
+            }
+            if (remove) Market.exploredAuctionsGroups.Remove(keys[i]);
+        }
+        Market.exploredAuctionsGroups = Market.exploredAuctionsGroups.OrderBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
+    }
+
+    //Price for a group at auction house
+    public static int[] auctionPriceToDisplay;
+
+    //Amount of the lowest price offers at auction house
+    public static int[] auctionAmountToDisplay;
 
     //Sites to load
     public static List<Blueprint> loadSites;
@@ -753,15 +870,20 @@ public static class Root
         CDesktop.LBWindow().LBRegionGroup().LBRegion().backgroundImage = Resources.Load<Sprite>("Sprites/RegionReplacements/" + replacement);
     }
 
-    public static void PrintPriceRegion(int price, int width1, int width2, int width3)
+    public static void PrintPriceRegion(int price, int width1, int width2, int width3, bool showEvenOnZero = true)
     {
         var last = "";
         var lacking = 0;
         if (price > 9999) { Foo("ItemCoinsGold", price / 10000 + "", "Gold", width1); last = "Gold"; } else lacking += width1 + 19;
         if (price / 100 % 100 > 0) { Foo("ItemCoinsSilver", price / 100 % 100 + "", "Silver", width2); last = "Silver"; } else lacking += width2 + 19;
-        if (price % 100 > 0 || price == 0) { Foo("ItemCoinsCopper", price % 100 + "", "Copper", width3); last = "Copper"; } else lacking += width3 + 19;
+        if (price % 100 > 0 || (showEvenOnZero && price == 0)) { Foo("ItemCoinsCopper", price % 100 + "", "Copper", width3); last = "Copper"; } else lacking += width3 + 19;
         var showDisenchant = CDesktop.LBWindow().title == "Inventory" && currentSave.player.professionSkills.ContainsKey("Enchanting");
-        SetRegionGroupWidth(lacking + (last == "Gold" ? width1 : (last == "Silver" ? width2 : width3)) - (showDisenchant ? 19 : 0));
+        if (last == "")
+        {
+            AddRegionGroup();
+            AddPaddingRegion(() => AddLine());
+        }
+        SetRegionGroupWidth(lacking + (last == "Gold" ? width1 : (last == "Silver" ? width2 : (last == "Copper" ? width3 : 0))) - (showDisenchant ? 19 : 0));
         if (showDisenchant)
         {
             AddRegionGroup();

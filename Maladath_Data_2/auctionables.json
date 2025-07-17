@@ -1,14 +1,62 @@
 [
   {
     "item": "Rough Stone",
-    "minPrice": 1000,
-    "maxPrice": 100000,
+    "minPrice": 40,
+    "maxPrice": 85,
     "frequency": 80
   },
   {
     "item": "Sulfuron Ingot",
-    "minPrice": 1000000,
-    "maxPrice": 7000000,
+    "minPrice": 300000,
+    "maxPrice": 400000,
     "frequency": 10
+  },
+  {
+    "item": "Minor Healing Potion",
+    "minPrice": 10,
+    "maxPrice": 40,
+    "frequency": 30
+  },
+  {
+    "item": "Lesser Healing Potion",
+    "minPrice": 40,
+    "maxPrice": 120,
+    "frequency": 30
+  },
+  {
+    "item": "Healing Potion",
+    "minPrice": 400,
+    "maxPrice": 760,
+    "frequency": 30
+  },
+  {
+    "item": "Greater Healing Potion",
+    "minPrice": 600,
+    "maxPrice": 1000,
+    "frequency": 30
+  },
+  {
+    "item": "Major Healing Potion",
+    "minPrice": 4400,
+    "maxPrice": 7000,
+    "frequency": 30
+  },
+  {
+    "item": "Elixir of Firepower",
+    "minPrice": 1800,
+    "maxPrice": 2700,
+    "frequency": 15
+  },
+  {
+    "item": "Firestarter",
+    "minPrice": 8000,
+    "maxPrice": 13000,
+    "frequency": 3
+  },
+  {
+    "item": "Stoneraven",
+    "minPrice": 90000,
+    "maxPrice": 200000,
+    "frequency": 2
   }
 ]

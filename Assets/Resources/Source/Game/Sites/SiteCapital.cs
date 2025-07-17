@@ -53,6 +53,7 @@ public class SiteCapital : Site
             PlaySound("DesktopInstanceOpen");
             CloseDesktop("Town");
             SpawnDesktopBlueprint("Town");
+            SpawnTransition();
         });
     }
 }

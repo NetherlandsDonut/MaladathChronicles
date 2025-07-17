@@ -1316,6 +1316,9 @@ public class Item
     //Left Control makes the viewed item change to the recipe resulting item if possible
     public static void PrintItemTooltip(Item item, bool compare = false, double priceMultiplier = 1)
     {
+        if (WindowUp("InventorySettings")) return;
+        if (WindowUp("InventorySort")) return;
+        if (WindowUp("BankSort")) return;
         if (CDesktop.title == "Game") SetAnchor(Anchor.Bottom, 0, 37);
         else SetAnchor(-92, 142);
         AddHeaderGroup();

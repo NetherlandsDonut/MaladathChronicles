@@ -3511,6 +3511,8 @@ public class Blueprint
             if (WindowUp("QuestAdd")) return;
             if (WindowUp("QuestTurn")) return;
             if (WindowUp("Inventory")) return;
+            if (WindowUp("AuctionHouseOffersGroups")) return;
+            if (WindowUp("AuctionHouseOffers")) return;
             if (capital == null) return;
             var isNight = currentSave.IsNight();
             var music = isNight ? capital.musicDay : capital.musicNight;
@@ -4289,6 +4291,7 @@ public class Blueprint
                                     Person.person = person;
                                     CloseWindow(h.window.title);
                                     Respawn("Person");
+                                    CloseWindow("Capital");
                                     CloseWindow("QuestAdd");
                                     CloseWindow("QuestTurn");
                                     CloseWindow("TownQuestAvailable");
@@ -4312,6 +4315,7 @@ public class Blueprint
                                 Person.person = person;
                                 CloseWindow(h.window.title);
                                 Respawn("Person");
+                                CloseWindow("Capital");
                                 CloseWindow("QuestAdd");
                                 CloseWindow("QuestTurn");
                                 CloseWindow("TownQuestAvailable");
@@ -4332,6 +4336,7 @@ public class Blueprint
                         {
                             personCategory = group.Key;
                             CloseWindow("Person");
+                            Respawn("Capital");
                             Respawn("Persons");
                             PlaySound("DesktopInstanceOpen");
                         });
@@ -4496,28 +4501,15 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    Market.exploredAuctionsGroups = new();
-                    var foo = factions.Find(x => x.name == town.faction).side;
-                    if (foo == "Neutral" || foo == "Horde")
-                    {
-                        var woo = currentSave.markets.Find(x => x.name == "Horde Market");
-                        woo.UpdateMarket();
-                        foreach (var type in woo.auctions.GroupBy(x => x.item.name).ToDictionary(x => x.Key, x => x.ToList()))
-                            if (!Market.exploredAuctionsGroups.TryAdd(type.Key, type.Value))
-                                Market.exploredAuctionsGroups[type.Key].AddRange(type.Value);
-                    }
-                    if (foo == "Neutral" || foo == "Alliance")
-                    {
-                        var woo = currentSave.markets.Find(x => x.name == "Alliance Market");
-                        woo.UpdateMarket();
-                        foreach (var type in woo.auctions.GroupBy(x => x.item.name).ToDictionary(x => x.Key, x => x.ToList()))
-                            if (!Market.exploredAuctionsGroups.TryAdd(type.Key, type.Value))
-                                Market.exploredAuctionsGroups[type.Key].AddRange(type.Value);
-                    }
+                    auctionCategory = "";
+                    UpdateAuctionGroupList();
                     PlaySound("DesktopAuctionOpen", 0.4f);
                     SpawnWindowBlueprint("AuctionHouseOffersGroups");
+                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                    SpawnWindowBlueprint("AuctionHouseFilteringMain");
                     CloseWindow(h.window);
                     CloseWindow("Town");
+                    Respawn("Capital", true);
                 });
             }
             else if (type.category == "Innkeeper")
@@ -4634,18 +4626,15 @@ public class Blueprint
                     Respawn("ExperienceBar");
                 });
             }
-            AddButtonRegion(() =>
-            {
-                AddLine("Goodbye");
-            },
+            AddButtonRegion(() => AddLine("Goodbye"),
             (h) =>
             {
                 PlayVoiceLine(person.VoiceLine("Farewell"));
                 PlaySound("DesktopInstanceClose");
                 person = null;
                 CloseWindow(h.window);
-                if (personCategory != null) Respawn("Persons");
                 Respawn("Town");
+                Respawn("Capital");
                 Respawn("Persons", true);
                 Respawn("TownQuestAvailable");
                 Respawn("TownQuestDone");
@@ -4680,6 +4669,7 @@ public class Blueprint
                 {
                     Person.person = person;
                     Respawn("Person");
+                    CloseWindow("Capital");
                     CloseWindow("Persons");
                     CloseWindow("Town");
                     CloseWindow("QuestAdd");
@@ -4708,7 +4698,6 @@ public class Blueprint
                     CloseWindow("Inventory");
                     CloseWindow("InventorySort");
                     Respawn("PlayerMoney", true);
-                    Respawn("Capital", true);
                     Respawn("Person");
                     PlaySound("DesktopInventoryClose");
                 });
@@ -4753,7 +4742,6 @@ public class Blueprint
                     CloseWindow("Inventory");
                     CloseWindow("InventorySort");
                     Respawn("PlayerMoney", true);
-                    Respawn("Capital", true);
                     Respawn("Person");
                     PlaySound("DesktopInventoryClose");
                 });
@@ -5347,92 +5335,8 @@ public class Blueprint
             }
             AddPaginationLine();
         }),
-        new("AuctionHouse", () => {
-            //SetAnchor(TopLeft, 19, -38);
-            //var destinations = town.flightPaths[side].FindAll(x => x != town).OrderBy(x => !currentSave.siteVisits.ContainsKey(x.name)).ThenBy(x => x.zone).ThenBy(x => x.name).ToList();
-            //AddRegionGroup(() => destinations.Count, 12);
-            //SetRegionGroupWidth(190);
-            //SetRegionGroupHeight(281);
-            //AddHeaderRegion(() =>
-            //{
-            //    var type = personTypes.Find(x => x.type == person.type);
-            //    AddLine(person.type + " ", "Gray");
-            //    AddText(person.name);
-            //    AddSmallButton("OtherClose", (h) =>
-            //    {
-            //        CloseWindow("FlightMaster");
-            //        Respawn("Person");
-            //        PlaySound("DesktopInstanceClose");
-            //    });
-            //});
-            //AddHeaderRegion(() =>
-            //{
-            //    AddLine("Possible destinations:");
-            //});
-            //var regionGroup = CDesktop.LBWindow().LBRegionGroup();
-            //for (int i = 0; i < 12; i++)
-            //{
-            //    var index = i;
-            //    if (destinations.Count > index + thisWindow.pagination())
-            //        AddButtonRegion(() =>
-            //        {
-            //            var destination = destinations[index + thisWindow.pagination()];
-            //            if (currentSave.siteVisits.ContainsKey(destination.name))
-            //            {
-            //                AddLine(destination.name);
-            //                AddSmallButton("Zone" + destination.zone.Clean());
-            //            }
-            //            else
-            //            {
-            //                SetRegionBackground(Header);
-            //                AddLine("?", "DarkGray");
-            //                AddSmallButton("OtherDisabled");
-            //            }
-            //        },
-            //        (h) =>
-            //        {
-            //            var destination = destinations[index + thisWindow.pagination()];
-            //            currentSave.currentSite = destination.name;
-            //            Respawn("Site: " + town.name);
-            //            Respawn("Site: " + currentSave.currentSite);
-            //            town = destination;
-
-            //            //if (transport.price > 0)
-            //            //{
-            //            //    if (transport.price > currentSave.player.inventory.money) return;
-            //            //    PlaySound("DesktopTransportPay");
-            //            //    currentSave.player.inventory.money -= transport.price;
-            //            //}
-
-            //            //Close town screen as we're beginning to travel on map
-            //            CloseDesktop("Town");
-
-            //            //Switch desktop to map
-            //            SwitchDesktop("Map");
-
-            //            //Move camera to the newly visited town
-            //            CDesktop.cameraDestination = new Vector2(town.x, town.y);
-
-            //            ////Find current site
-            //            //var current = FindSite(x => x.name == currentSave.currentSite);
-
-            //            ////Lead path to the destination
-            //            //LeadPath(new SitePath() { means = "Flight", sites = new() { current.name, town.name }, points = new() { (town.x, town.y), (current.x, current.y) }, spacing = 9999 }, true);
-
-            //            ////Queue moving player to the destination
-            //            //town.ExecutePath("Town");
-            //        });
-            //    else if (destinations.Count == index + thisWindow.pagination())
-            //        AddPaddingRegion(() =>
-            //        {
-            //            SetRegionAsGroupExtender();
-            //            AddLine("");
-            //        });
-            //}
-            //AddPaginationLine();
-        }),
         new("AuctionHouseOffersGroups", () => {
-            var rowAmount = 12;
+            var rowAmount = 6;
             var thisWindow = CDesktop.LBWindow();
             var list = Market.exploredAuctionsGroups.ToList();
             thisWindow.SetPagination(() => list.Count, rowAmount);
@@ -5448,39 +5352,44 @@ public class Blueprint
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseWindow("AuctionHouseOffersGroups");
+                    CloseWindow("AuctionHouseFilteringMain");
+                    CloseWindow("AuctionHouseFilteringTwoHandedWeapons");
+                    CloseWindow("AuctionHouseFilteringOneHandedWeapons");
+                    CloseWindow("AuctionHouseFilteringOffHands");
+                    CloseWindow("AuctionHouseFilteringRangedWeapons");
+                    CloseWindow("AuctionHouseFilteringArmorClass");
+                    CloseWindow("AuctionHouseFilteringArmorType");
+                    CloseWindow("AuctionHouseFilteringJewelry");
+                    CloseWindow("AuctionHouseFilteringConsumeables");
+                    for (int i = 0; i < 12; i++) { var index = i; CloseWindow("AuctionHousePrice" + index); }
                     Respawn("Person");
                     PlaySound("DesktopInstanceClose");
                 });
             });
             AddHeaderRegion(() =>
             {
-                AddLine("Available auctions:");
-                AddSmallButton("OtherReverse", (h) =>
-                {
-                    Market.exploredAuctions.Reverse();
-                    CloseWindow("AuctionHouseOffersGroups");
-                    Respawn("AuctionHouseOffersGroups");
-                    PlaySound("DesktopInventorySort", 0.4f);
-                });
+                AddLine("Auctioned items:");
                 if (!WindowUp("AuctionHouseOffersSettings") && !WindowUp("AuctionHouseOffersSort"))
                     AddSmallButton("OtherSort", (h) =>
                     {
                         SpawnWindowBlueprint("AuctionHouseOffersSort");
-                        CloseWindow("AuctionHouseOffersGroups");
-                        Respawn("AuctionHouseOffersGroups");
+                        Respawn("AuctionHouseOffersGroups", true);
+                        for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
                     });
                 else
                     AddSmallButton("OtherSortOff");
-                if (!WindowUp("AuctionHouseOffersSettings") && !WindowUp("AuctionHouseOffersSort"))
-                    AddSmallButton("OtherSettings", (h) =>
-                    {
-                        SpawnWindowBlueprint("AuctionHouseOffersSettings");
-                        CloseWindow("AuctionHouseOffersGroups");
-                        Respawn("AuctionHouseOffersGroups");
-                    });
-                else
-                    AddSmallButton("OtherSettingsOff");
+                //if (!WindowUp("AuctionHouseOffersSettings") && !WindowUp("AuctionHouseOffersSort"))
+                //    AddSmallButton("OtherSettings", (h) =>
+                //    {
+                //        SpawnWindowBlueprint("AuctionHouseOffersSettings");
+                //        Respawn("AuctionHouseOffersGroups", true);
+                //        for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                //    });
+                //else
+                //    AddSmallButton("OtherSettingsOff");
             });
+            auctionPriceToDisplay = new int[12];
+            auctionAmountToDisplay = new int[12];
             var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             for (int i = 0; i < rowAmount; i++)
             {
@@ -5490,8 +5399,10 @@ public class Blueprint
                     {
                         var offerGroupKey = Market.exploredAuctionsGroups.Keys.ToList()[index + thisWindow.pagination()];
                         var offerGroup = Market.exploredAuctionsGroups[offerGroupKey];
-                        var offerGroupFirst = Market.exploredAuctionsGroups[offerGroupKey][0];
-                        AddLine(offerGroupFirst.item.name + " x" + offerGroup.Count);
+                        var offerGroupFirst = Market.exploredAuctionsGroups[offerGroupKey].OrderBy(x => x.price).ToList()[0];
+                        auctionPriceToDisplay[index] = offerGroupFirst.price;
+                        auctionAmountToDisplay[index] = offerGroup.Where(x => x.price == offerGroupFirst.price).Sum(x => x.item.amount);
+                        AddLine(offerGroupFirst.item.name + " x" + offerGroup.Sum(x => x.item.amount));
                         AddSmallButton(offerGroupFirst.item.icon);
                     },
                     (h) =>
@@ -5500,16 +5411,824 @@ public class Blueprint
                         Market.exploredAuctions = Market.exploredAuctionsGroups[offerGroupKey].OrderBy(x => x.price).ToList();
                         CloseWindow("AuctionHouseOffersGroups");
                         SpawnWindowBlueprint("AuctionHouseOffers");
+                        String.splitAmount.Set("1");
+                        SpawnWindowBlueprint("AuctionHouseBuy");
                         SpawnWindowBlueprint("AuctionHouseChosenItem");
+                        for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
                     },
                     null, (h) => () =>
                     {
                         var offerGroupKey = Market.exploredAuctionsGroups.Keys.ToList()[index + thisWindow.pagination()];
                         PrintItemTooltip(Market.exploredAuctionsGroups[offerGroupKey][0].item);
                     });
-                else AddPaddingRegion(() => AddLine());
+                else
+                    AddPaddingRegion(() => AddLine());
+                AddPaddingRegion(() => AddLine());
             }
             AddPaginationLine();
+        }),
+        new("AuctionHouseFilteringMain", () => {
+            var thisWindow = CDesktop.LBWindow();
+            SetAnchor(TopRight, -19, -38);
+            AddRegionGroup();
+            SetRegionGroupWidth(190);
+            SetRegionGroupHeight(262);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Auction categories:", "Gray");
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Two handed weapons");
+            },
+            (h) =>
+            {
+                auctionCategory = "Two handed weapons";
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                CloseWindow("AuctionHouseFilteringMain");
+                Respawn("AuctionHouseFilteringTwoHandedWeapons");
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("One handed weapons");
+            },
+            (h) =>
+            {
+                auctionCategory = "One handed weapons";
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                CloseWindow("AuctionHouseFilteringMain");
+                Respawn("AuctionHouseFilteringOneHandedWeapons");
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Off hands");
+            },
+            (h) =>
+            {
+                auctionCategory = "Off hands";
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                CloseWindow("AuctionHouseFilteringMain");
+                Respawn("AuctionHouseFilteringOffHands");
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Ranged weapons");
+            },
+            (h) =>
+            {
+                auctionCategory = "Ranged weapons";
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                CloseWindow("AuctionHouseFilteringMain");
+                Respawn("AuctionHouseFilteringRangedWeapons");
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Armor");
+            },
+            (h) =>
+            {
+                auctionCategory = "Armor";
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                CloseWindow("AuctionHouseFilteringMain");
+                Respawn("AuctionHouseFilteringArmorClass");
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Jewelry");
+            },
+            (h) =>
+            {
+                auctionCategory = "Jewelry";
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                CloseWindow("AuctionHouseFilteringMain");
+                Respawn("AuctionHouseFilteringJewelry");
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Consumeables");
+            },
+            (h) =>
+            {
+                auctionCategory = "Consumeables";
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                CloseWindow("AuctionHouseFilteringMain");
+                Respawn("AuctionHouseFilteringConsumeables");
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Profession recipes");
+            },
+            (h) =>
+            {
+                auctionCategory = "Profession recipes";
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Trade goods");
+            },
+            (h) =>
+            {
+                auctionCategory = "Trade goods";
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Other");
+            },
+            (h) =>
+            {
+                auctionCategory = "Other";
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddPaddingRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+            });
+        }),
+        new("AuctionHouseFilteringTwoHandedWeapons", () => {
+            var thisWindow = CDesktop.LBWindow();
+            SetAnchor(TopRight, -19, -38);
+            AddRegionGroup();
+            SetRegionGroupWidth(190);
+            SetRegionGroupHeight(262);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Auction categories:", "Gray");
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    auctionCategory = "";
+                    UpdateAuctionGroupList();
+                    CloseWindow(h.window.title);
+                    Respawn("AuctionHouseOffersGroups", true);
+                    Respawn("AuctionHouseFilteringMain");
+                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                });
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine(auctionCategory + ":", "Gray");
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(showSwords);
+                AddLine("Swords");
+            },
+            (h) =>
+            {
+                showSwords.Invert();
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(showAxes);
+                AddLine("Axes");
+            },
+            (h) =>
+            {
+                showAxes.Invert();
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(showMaces);
+                AddLine("Maces");
+            },
+            (h) =>
+            {
+                showMaces.Invert();
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(showPolearms);
+                AddLine("Polearms");
+            },
+            (h) =>
+            {
+                showPolearms.Invert();
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(showStaves);
+                AddLine("Staves");
+            },
+            (h) =>
+            {
+                showStaves.Invert();
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddPaddingRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+            });
+        }),
+        new("AuctionHouseFilteringOneHandedWeapons", () => {
+            var thisWindow = CDesktop.LBWindow();
+            SetAnchor(TopRight, -19, -38);
+            AddRegionGroup();
+            SetRegionGroupWidth(190);
+            SetRegionGroupHeight(262);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Auction categories:", "Gray");
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    auctionCategory = "";
+                    UpdateAuctionGroupList();
+                    CloseWindow(h.window.title);
+                    Respawn("AuctionHouseOffersGroups", true);
+                    Respawn("AuctionHouseFilteringMain");
+                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                });
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine(auctionCategory + ":", "Gray");
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(showSwords);
+                AddLine("Swords");
+            },
+            (h) =>
+            {
+                showSwords.Invert();
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(showAxes);
+                AddLine("Axes");
+            },
+            (h) =>
+            {
+                showAxes.Invert();
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(showMaces);
+                AddLine("Maces");
+            },
+            (h) =>
+            {
+                showMaces.Invert();
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(showDaggers);
+                AddLine("Daggers");
+            },
+            (h) =>
+            {
+                showDaggers.Invert();
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(showWands);
+                AddLine("Wands");
+            },
+            (h) =>
+            {
+                showWands.Invert();
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddPaddingRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+            });
+        }),
+        new("AuctionHouseFilteringOffHands", () => {
+            var thisWindow = CDesktop.LBWindow();
+            SetAnchor(TopRight, -19, -38);
+            AddRegionGroup();
+            SetRegionGroupWidth(190);
+            SetRegionGroupHeight(262);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Auction categories:", "Gray");
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    auctionCategory = "";
+                    UpdateAuctionGroupList();
+                    CloseWindow(h.window.title);
+                    Respawn("AuctionHouseOffersGroups", true);
+                    Respawn("AuctionHouseFilteringMain");
+                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                });
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine(auctionCategory + ":", "Gray");
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(showNonShield);
+                AddLine("Not shields");
+            },
+            (h) =>
+            {
+                showNonShield.Invert();
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(showShield);
+                AddLine("Shield");
+            },
+            (h) =>
+            {
+                showShield.Invert();
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddPaddingRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+            });
+        }),
+        new("AuctionHouseFilteringRangedWeapons", () => {
+            var thisWindow = CDesktop.LBWindow();
+            SetAnchor(TopRight, -19, -38);
+            AddRegionGroup();
+            SetRegionGroupWidth(190);
+            SetRegionGroupHeight(262);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Auction categories:", "Gray");
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    auctionCategory = "";
+                    UpdateAuctionGroupList();
+                    CloseWindow(h.window.title);
+                    Respawn("AuctionHouseOffersGroups", true);
+                    Respawn("AuctionHouseFilteringMain");
+                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                });
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine(auctionCategory + ":", "Gray");
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(showBows);
+                AddLine("Bows");
+            },
+            (h) =>
+            {
+                showBows.Invert();
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(showCrossbows);
+                AddLine("Crossbows");
+            },
+            (h) =>
+            {
+                showCrossbows.Invert();
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(showGuns);
+                AddLine("Guns");
+            },
+            (h) =>
+            {
+                showGuns.Invert();
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddPaddingRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+            });
+        }),
+        new("AuctionHouseFilteringArmorClass", () => {
+            var thisWindow = CDesktop.LBWindow();
+            SetAnchor(TopRight, -19, -38);
+            AddHeaderGroup();
+            SetRegionGroupWidth(190);
+            SetRegionGroupHeight(233);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Auction categories:", "Gray");
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    auctionCategory = "";
+                    UpdateAuctionGroupList();
+                    CloseWindow(h.window.title);
+                    Respawn("AuctionHouseOffersGroups", true);
+                    Respawn("AuctionHouseFilteringMain");
+                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                });
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Armor class:", "Gray");
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(showCloth);
+                AddLine("Cloth");
+            },
+            (h) =>
+            {
+                showCloth.Invert();
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(showLeather);
+                AddLine("Leather");
+            },
+            (h) =>
+            {
+                showLeather.Invert();
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(showMail);
+                AddLine("Mail");
+            },
+            (h) =>
+            {
+                showMail.Invert();
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(showPlate);
+                AddLine("Plate");
+            },
+            (h) =>
+            {
+                showPlate.Invert();
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddPaddingRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+            });
+            AddRegionGroup();
+            SetRegionGroupWidth(95);
+            AddPaddingRegion(() => AddLine("Armor class", "", "Center"));
+            AddRegionGroup();
+            SetRegionGroupWidth(95);
+            AddButtonRegion(() => AddLine("Armor type", "", "Center"), (h) =>
+            {
+                CloseWindow("AuctionHouseFilteringArmorClass");
+                Respawn("AuctionHouseFilteringArmorType");
+            });
+        }),
+        new("AuctionHouseFilteringArmorType", () => {
+            var thisWindow = CDesktop.LBWindow();
+            SetAnchor(TopRight, -19, -38);
+            AddHeaderGroup();
+            SetRegionGroupWidth(190);
+            SetRegionGroupHeight(233);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Auction categories:", "Gray");
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    auctionCategory = "";
+                    UpdateAuctionGroupList();
+                    CloseWindow(h.window.title);
+                    Respawn("AuctionHouseOffersGroups", true);
+                    Respawn("AuctionHouseFilteringMain");
+                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                });
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Armor type:", "Gray");
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(showHead);
+                AddLine("Head");
+            },
+            (h) =>
+            {
+                showHead.Invert();
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(showShoulders);
+                AddLine("Shoulders");
+            },
+            (h) =>
+            {
+                showShoulders.Invert();
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(showBack);
+                AddLine("Back");
+            },
+            (h) =>
+            {
+                showBack.Invert();
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(showChest);
+                AddLine("Chest");
+            },
+            (h) =>
+            {
+                showChest.Invert();
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(showWrists);
+                AddLine("Wrists");
+            },
+            (h) =>
+            {
+                showWrists.Invert();
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(showHands);
+                AddLine("Hands");
+            },
+            (h) =>
+            {
+                showHands.Invert();
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(showWaist);
+                AddLine("Waist");
+            },
+            (h) =>
+            {
+                showWaist.Invert();
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(showLegs);
+                AddLine("Legs");
+            },
+            (h) =>
+            {
+                showLegs.Invert();
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(showFeet);
+                AddLine("Feet");
+            },
+            (h) =>
+            {
+                showFeet.Invert();
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddPaddingRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+            });
+            AddRegionGroup();
+            SetRegionGroupWidth(95);
+            AddButtonRegion(() => AddLine("Armor class", "", "Center"), (h) =>
+            {
+                CloseWindow("AuctionHouseFilteringArmorType");
+                Respawn("AuctionHouseFilteringArmorClass");
+            });
+            AddRegionGroup();
+            SetRegionGroupWidth(95);
+            AddPaddingRegion(() => AddLine("Armor type", "", "Center"));
+        }),
+        new("AuctionHouseFilteringJewelry", () => {
+            var thisWindow = CDesktop.LBWindow();
+            SetAnchor(TopRight, -19, -38);
+            AddRegionGroup();
+            SetRegionGroupWidth(190);
+            SetRegionGroupHeight(262);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Auction categories:", "Gray");
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    auctionCategory = "";
+                    UpdateAuctionGroupList();
+                    CloseWindow(h.window.title);
+                    Respawn("AuctionHouseOffersGroups", true);
+                    Respawn("AuctionHouseFilteringMain");
+                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                });
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine(auctionCategory + ":", "Gray");
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(showNeck);
+                AddLine("Neck");
+            },
+            (h) =>
+            {
+                showNeck.Invert();
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(showFinger);
+                AddLine("Finger");
+            },
+            (h) =>
+            {
+                showFinger.Invert();
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(showTrinket);
+                AddLine("Trinket");
+            },
+            (h) =>
+            {
+                showTrinket.Invert();
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddPaddingRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+            });
+        }),
+        new("AuctionHouseFilteringConsumeables", () => {
+            var thisWindow = CDesktop.LBWindow();
+            SetAnchor(TopRight, -19, -38);
+            AddRegionGroup();
+            SetRegionGroupWidth(190);
+            SetRegionGroupHeight(262);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Auction categories:", "Gray");
+                AddSmallButton("OtherReverse", (h) =>
+                {
+                    auctionCategory = "";
+                    UpdateAuctionGroupList();
+                    CloseWindow(h.window.title);
+                    Respawn("AuctionHouseOffersGroups", true);
+                    Respawn("AuctionHouseFilteringMain");
+                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                });
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine(auctionCategory + ":", "Gray");
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(showFood);
+                AddLine("Food");
+            },
+            (h) =>
+            {
+                showFood.Invert();
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(showScrolls);
+                AddLine("Scrolls");
+            },
+            (h) =>
+            {
+                showScrolls.Invert();
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(showPotions);
+                AddLine("Potions");
+            },
+            (h) =>
+            {
+                showPotions.Invert();
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(showCombatPotions);
+                AddLine("Combat potions");
+            },
+            (h) =>
+            {
+                showCombatPotions.Invert();
+                UpdateAuctionGroupList();
+                Respawn("AuctionHouseOffersGroups", true);
+                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            });
+            AddPaddingRegion(() =>
+            {
+                SetRegionAsGroupExtender();
+            });
         }),
         new("AuctionHouseOffers", () => {
             var rowAmount = 12;
@@ -5528,42 +6247,31 @@ public class Blueprint
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseWindow("AuctionHouseOffers");
+                    CloseWindow("AuctionHouseBuy");
                     CloseWindow("AuctionHouseChosenItem");
                     Respawn("AuctionHouseOffersGroups");
+                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
                     PlaySound("DesktopInstanceClose");
                 });
             });
             AddHeaderRegion(() =>
             {
                 AddLine("Available auctions:");
-                if (!WindowUp("AuctionHouseOffersSettings"))
-                    AddSmallButton("OtherSettings", (h) =>
-                    {
-                        SpawnWindowBlueprint("AuctionHouseOffersSettings");
-                        CloseWindow("AuctionHouseOffers");
-                        Respawn("AuctionHouseOffers");
-                    });
-                else
-                    AddSmallButton("OtherSettingsOff");
+                AddLine("x" + Market.exploredAuctions.Sum(x => x.item.amount), "DarkGray", "Right");
             });
-            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
+            auctionPriceToDisplay = new int[12];
+            auctionAmountToDisplay = new int[12];
             for (int i = 0; i < rowAmount; i++)
             {
                 var index = i;
                 if (list.Count > index + thisWindow.pagination())
-                    AddPaddingRegion(() =>
-                    {
-                        var offer = Market.exploredAuctions[index + thisWindow.pagination()];
-                        AddLine("x" + offer.item.amount);
-                        AddText(" each for ", "DarkGray");
-                        if (offer.price / 10000 > 0) AddText(offer.price / 10000 + " ", "Gold");
-                        if (offer.price % 10000 / 100 > 0) AddText(offer.price % 10000 / 100 + " ", "Silver");
-                        if (offer.price % 100 > 0) AddText(offer.price % 100 + "", "Copper");
-                        if (settings.sourcedMarket.Value())
-                            AddSmallButton(offer.market == "Alliance Market" ? "FactionAlliance" : (offer.market == "Horde Market" ? "FactionHorde" : "ItemMiscQuestionMark"));
-                    });
-                else AddPaddingRegion(() => AddLine());
+                {
+                    var offer = Market.exploredAuctions[index + thisWindow.pagination()];
+                    auctionPriceToDisplay[index] = offer.price;
+                    auctionAmountToDisplay[index] = offer.item.amount;
+                }
             }
+            AddPaddingRegion(() => SetRegionAsGroupExtender());
             AddPaginationLine();
         }),
         new("AuctionHouseChosenItem", () => {
@@ -5585,15 +6293,15 @@ public class Blueprint
             AddButtonRegion(() => AddLine("By item name", "Black"),
             (h) =>
             {
-                Market.exploredAuctions = Market.exploredAuctions.OrderBy(x => x.item.name).ToList();
+                Market.exploredAuctionsGroups = Market.exploredAuctionsGroups.OrderBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
                 CloseWindow("AuctionHouseOffersSort");
                 CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.4f);
             });
-            AddButtonRegion(() => AddLine("By unit price", "Black"),
+            AddButtonRegion(() => AddLine("By minimum unit price", "Black"),
             (h) =>
             {
-                Market.exploredAuctions = Market.exploredAuctions.OrderByDescending(x => x.price).ToList();
+                Market.exploredAuctionsGroups = Market.exploredAuctionsGroups.OrderByDescending(x => x.Value.Min(y => y.price)).ToDictionary(x => x.Key, x => x.Value);
                 CloseWindow("AuctionHouseOffersSort");
                 CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.4f);
@@ -5622,6 +6330,49 @@ public class Blueprint
                 settings.sourcedMarket.Invert();
                 CDesktop.RespawnAll();
             });
+        }),
+        new("AuctionHouseBuy", () => {
+            SetAnchor(Bottom, 0, 35);
+            AddHeaderGroup();
+            SetRegionGroupWidth(182);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Buyout amount:", "DarkGray");
+                AddInputLine(String.splitAmount);
+            });
+            AddButtonRegion(() => AddLine("Buy x" + (String.splitAmount.Value() == "" ? 0 : String.splitAmount.Value()), "Black"),
+            (h) =>
+            {
+                String.splitAmount.Set("1");
+                CDesktop.RespawnAll();
+            });
+            int currentPrice = 0, emptied = 0;
+            int planned = String.splitAmount.Value() == "" ? 0 : int.Parse(String.splitAmount.Value());
+            int toBuy = planned;
+            while (toBuy > 0)
+            {
+                if (emptied == Market.exploredAuctions.Count)
+                {
+                    toBuy = 0;
+                    String.splitAmount.Set("" + Market.exploredAuctions.Sum(x => x.item.amount));
+                    inputLineMarker = String.splitAmount.Value().Length;
+                    break;
+                }
+                var temp = Market.exploredAuctions[emptied++];
+                for (int i = 0; i < toBuy && i < temp.item.amount; i++)
+                    if (currentSave.player.inventory.money >= currentPrice + temp.price)
+                    {
+                        toBuy--;
+                        currentPrice += temp.price;
+                    }
+                    else
+                    {
+                        String.splitAmount.Set(planned - toBuy + "");
+                        toBuy = 0;
+                        break;
+                    }
+            }
+            PrintPriceRegion(currentPrice, 38, 38, 49);
         }),
         new("ProfessionLevelTrainer", () => {
             var rowAmount = 6;
@@ -5856,6 +6607,97 @@ public class Blueprint
             if (WindowUp("QuestTurn")) return;
             SetAnchor(BottomRight, -19, 35);
             PrintPriceRegion(currentSave.player.inventory.money, 38, 38, 57);
+        }),
+        new("AuctionHousePrice0", () => {
+            SetAnchor(-301, WindowUp("AuctionHouseOffers") ? 104 : 85);
+            DisableShadows();
+            PrintPriceRegion(auctionPriceToDisplay[0], 38, 38, 57, false);
+            if (auctionAmountToDisplay[0] > 0)
+                AddLine("x" + auctionAmountToDisplay[0], "DarkGray", "Right");
+        }),
+        new("AuctionHousePrice1", () => {
+            SetAnchor(-301, WindowUp("AuctionHouseOffers") ? 85 : 47);
+            DisableShadows();
+            PrintPriceRegion(auctionPriceToDisplay[1], 38, 38, 57, false);
+            if (auctionAmountToDisplay[1] > 0)
+                AddLine("x" + auctionAmountToDisplay[1], "DarkGray", "Right");
+        }),
+        new("AuctionHousePrice2", () => {
+            SetAnchor(-301, WindowUp("AuctionHouseOffers") ? 66 : 9);
+            DisableShadows();
+            PrintPriceRegion(auctionPriceToDisplay[2], 38, 38, 57, false);
+            if (auctionAmountToDisplay[2] > 0)
+                AddLine("x" + auctionAmountToDisplay[2], "DarkGray", "Right");
+        }),
+        new("AuctionHousePrice3", () => {
+            //if (auctionCategory == "") return;
+            SetAnchor(-301, WindowUp("AuctionHouseOffers") ? 47 : -29);
+            DisableShadows();
+            PrintPriceRegion(auctionPriceToDisplay[3], 38, 38, 57, false);
+            if (auctionAmountToDisplay[3] > 0)
+                AddLine("x" + auctionAmountToDisplay[3], "DarkGray", "Right");
+        }),
+        new("AuctionHousePrice4", () => {
+            SetAnchor(-301, WindowUp("AuctionHouseOffers") ? 28 : -67);
+            DisableShadows();
+            PrintPriceRegion(auctionPriceToDisplay[4], 38, 38, 57, false);
+            if (auctionAmountToDisplay[4] > 0)
+                AddLine("x" + auctionAmountToDisplay[4], "DarkGray", "Right");
+        }),
+        new("AuctionHousePrice5", () => {
+            SetAnchor(-301, WindowUp("AuctionHouseOffers") ? 9 : -105);
+            DisableShadows();
+            PrintPriceRegion(auctionPriceToDisplay[5], 38, 38, 57, false);
+            if (auctionAmountToDisplay[5] > 0)
+                AddLine("x" + auctionAmountToDisplay[5], "DarkGray", "Right");
+        }),
+        new("AuctionHousePrice6", () => {
+            if (!WindowUp("AuctionHouseOffers")) return;
+            SetAnchor(-301, -10);
+            DisableShadows();
+            PrintPriceRegion(auctionPriceToDisplay[6], 38, 38, 57, false);
+            if (auctionAmountToDisplay[6] > 0)
+                AddLine("x" + auctionAmountToDisplay[6], "DarkGray", "Right");
+        }),
+        new("AuctionHousePrice7", () => {
+            if (!WindowUp("AuctionHouseOffers")) return;
+            SetAnchor(-301, -29);
+            DisableShadows();
+            PrintPriceRegion(auctionPriceToDisplay[7], 38, 38, 57, false);
+            if (auctionAmountToDisplay[7] > 0)
+                AddLine("x" + auctionAmountToDisplay[7], "DarkGray", "Right");
+        }),
+        new("AuctionHousePrice8", () => {
+            if (!WindowUp("AuctionHouseOffers")) return;
+            SetAnchor(-301, -48);
+            DisableShadows();
+            PrintPriceRegion(auctionPriceToDisplay[8], 38, 38, 57, false);
+            if (auctionAmountToDisplay[8] > 0)
+                AddLine("x" + auctionAmountToDisplay[8], "DarkGray", "Right");
+        }),
+        new("AuctionHousePrice9", () => {
+            if (!WindowUp("AuctionHouseOffers")) return;
+            SetAnchor(-301, -67);
+            DisableShadows();
+            PrintPriceRegion(auctionPriceToDisplay[9], 38, 38, 57, false);
+            if (auctionAmountToDisplay[9] > 0)
+                AddLine("x" + auctionAmountToDisplay[9], "DarkGray", "Right");
+        }),
+        new("AuctionHousePrice10", () => {
+            if (!WindowUp("AuctionHouseOffers")) return;
+            SetAnchor(-301, -86);
+            DisableShadows();
+            PrintPriceRegion(auctionPriceToDisplay[10], 38, 38, 57, false);
+            if (auctionAmountToDisplay[10] > 0)
+                AddLine("x" + auctionAmountToDisplay[10], "DarkGray", "Right");
+        }),
+        new("AuctionHousePrice11", () => {
+            if (!WindowUp("AuctionHouseOffers")) return;
+            SetAnchor(-301, -105);
+            DisableShadows();
+            PrintPriceRegion(auctionPriceToDisplay[11], 38, 38, 57, false);
+            if (auctionAmountToDisplay[11] > 0)
+                AddLine("x" + auctionAmountToDisplay[11], "DarkGray", "Right");
         }),
 
         //Fishing
@@ -7566,7 +8408,6 @@ public class Blueprint
                             PlaySound("DesktopCharacterSheetClose");
                         CloseWindow("VendorBuyback");
                         Respawn("PlayerMoney", true);
-                        Respawn("Capital", true);
                         Respawn("Person");
                     }
                     else if (CloseWindow("MakeInnHome"))
@@ -7603,6 +8444,7 @@ public class Blueprint
                         person = null;
                         if (personCategory != null) Respawn("Persons");
                         Respawn("Town");
+                        Respawn("Capital");
                         Respawn("Persons", true);
                         Respawn("TownQuestAvailable");
                         Respawn("TownQuestDone");
@@ -8145,7 +8987,11 @@ public class Blueprint
             var temp = window.pagination();
             window.IncrementPagination();
             if (temp != window.pagination())
+            {
                 PlaySound("DesktopChangePage", 0.6f);
+                if (WindowUp("AuctionHouseOffers") || WindowUp("AuctionHouseOffersGroups"))
+                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            }
             window.Respawn();
         });
         AddHotkey("Move camera east", () =>
@@ -8155,7 +9001,11 @@ public class Blueprint
             var temp = window.pagination();
             window.IncrementPaginationEuler();
             if (temp != window.pagination())
+            {
                 PlaySound("DesktopChangePage", 0.6f);
+                if (WindowUp("AuctionHouseOffers") || WindowUp("AuctionHouseOffersGroups"))
+                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            }
             window.Respawn();
         }, false);
         AddHotkey("Move camera west", () =>
@@ -8165,7 +9015,11 @@ public class Blueprint
             var temp = window.pagination();
             window.DecrementPagination();
             if (temp != window.pagination())
+            {
                 PlaySound("DesktopChangePage", 0.6f);
+                if (WindowUp("AuctionHouseOffers") || WindowUp("AuctionHouseOffersGroups"))
+                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            }
             window.Respawn();
         });
         AddHotkey("Move camera west", () =>
@@ -8175,7 +9029,11 @@ public class Blueprint
             var temp = window.pagination();
             window.DecrementPaginationEuler();
             if (temp != window.pagination())
+            {
                 PlaySound("DesktopChangePage", 0.6f);
+                if (WindowUp("AuctionHouseOffers") || WindowUp("AuctionHouseOffersGroups"))
+                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+            }
             window.Respawn();
         }, false);
         AddHotkey(PageUp, () =>
@@ -8194,6 +9052,8 @@ public class Blueprint
             {
                 PlaySound("DesktopChangePage", 0.6f);
                 window.Respawn();
+                if (WindowUp("AuctionHouseOffers") || WindowUp("AuctionHouseOffersGroups"))
+                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             }
         });
         AddHotkey(PageDown, () =>
@@ -8212,6 +9072,8 @@ public class Blueprint
             {
                 PlaySound("DesktopChangePage", 0.6f);
                 window.Respawn();
+                if (WindowUp("AuctionHouseOffers") || WindowUp("AuctionHouseOffersGroups"))
+                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             }
         });
     }
