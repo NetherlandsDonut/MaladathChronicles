@@ -1125,7 +1125,7 @@ public static class Root
     {
         text ??= "";
         var newObject = new GameObject("FallingText", typeof(FloatingText));
-        newObject.transform.parent = CDesktop.transform;
+        newObject.transform.parent = CDesktop.screen.transform;
         newObject.transform.localPosition = position;
         newObject.AddComponent<Rigidbody2D>().gravityScale = 2.0f;
         newObject.AddComponent<Shatter>().Initiate(7);
