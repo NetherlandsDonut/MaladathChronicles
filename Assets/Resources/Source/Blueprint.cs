@@ -3551,6 +3551,8 @@ public class Blueprint
             });
             foreach (var town in capital.districts)
                 PrintCapitalTown(town);
+            if (capital.instance != null)
+                PrintCapitalInstance(capital.instance);
         }),
         new("CapitalHostile", () =>
         {
@@ -3653,6 +3655,7 @@ public class Blueprint
                     var title = CDesktop.title;
                     CloseDesktop(title);
                     if (instance.complexPart) SpawnDesktopBlueprint("Complex");
+                    else if (instance.capitalRedirect != null) SpawnDesktopBlueprint("Capital");
                     else
                     {
                         PlaySound("DesktopInstanceClose");
@@ -3917,7 +3920,7 @@ public class Blueprint
                             currentSave.siteVisits.Add(currentSave.currentSite, 0);
                             PlaySound("DesktopZoneDiscovered", 1f);
                             currentSave.player.ReceiveExperience(defines.expForExploration);
-                            foreach (var connection in paths.FindAll(x => x.sites.Contains(currentSave.currentSite)))
+                            foreach (var connection in paths.FindAll(x => x.sites.Contains(currentSave.currentSite)).Where(x => x.onlyFor == null || x.onlyFor == currentSave.playerSide))
                             {
                                 var site = connection.sites.Find(x => x != currentSave.currentSite);
                                 if (!WindowUp("Site: " + site))
@@ -4232,7 +4235,7 @@ public class Blueprint
                             currentSave.siteVisits.Add(currentSave.currentSite, 0);
                             PlaySound("DesktopZoneDiscovered", 1f);
                             currentSave.player.ReceiveExperience(defines.expForExploration);
-                            foreach (var connection in paths.FindAll(x => x.sites.Contains(currentSave.currentSite)))
+                            foreach (var connection in paths.FindAll(x => x.sites.Contains(currentSave.currentSite)).Where(x => x.onlyFor == null || x.onlyFor == currentSave.playerSide))
                             {
                                 var site = connection.sites.Find(x => x != currentSave.currentSite);
                                 if (!WindowUp("Site: " + site))
@@ -8569,6 +8572,11 @@ public class Blueprint
                 {
                     CloseDesktop("Instance");
                     SpawnDesktopBlueprint("Complex");
+                }
+                else if (instance.capitalRedirect != null)
+                {
+                    CloseDesktop("Instance");
+                    SpawnDesktopBlueprint("Capital");
                 }
                 else
                 {

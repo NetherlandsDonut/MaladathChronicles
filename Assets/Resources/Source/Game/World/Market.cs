@@ -44,7 +44,7 @@ public class Market
             //and check which were lucky to be have someone auction them
             foreach (var foo in auctionables)
                 if (Roll(foo.frequency))
-                    auctions.Add(new Auction(name, foo));
+                    auctions.Add(new Auction(foo));
 
             //Decrease timer by one
             hoursSinceUpdate -= 1;

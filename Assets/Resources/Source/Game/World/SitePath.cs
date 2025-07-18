@@ -29,6 +29,9 @@ public class SitePath
     //List of all points in between the two sites
     public List<(int, int)> points;
 
+    //Side of the conflict this path is available only to
+    public string onlyFor;
+
     //Collection of all paths connected to each site
     public static Dictionary<string, List<SitePath>> pathsConnectedToSite = new();
 
@@ -111,6 +114,9 @@ public class SitePath
     //Finds the path with the least points in between the two given sites
     public static List<SitePath> FindPath(Site from, Site to, bool ignoreProgress = false)
     {
+        //Side on which the player is
+        var playerSide = SaveGame.currentSave.playerSide;
+
         //If either the starting site or the end site don't exist, return an empty path
         if (from == null || to == null) return new();
 
@@ -121,7 +127,7 @@ public class SitePath
         if (!pathsConnectedToSite.ContainsKey(from.name)) return new();
 
         //Get all the branching paths from the starting site
-        var possiblePaths = pathsConnectedToSite[from.name].ToList();
+        var possiblePaths = pathsConnectedToSite[from.name].Where(x => x.onlyFor == null || x.onlyFor == playerSide).ToList();
 
         //From the starting branchings get the node information
         pathInfo = possiblePaths.ToDictionary(x => x, x => (x.points.Count, (SitePath)null));
@@ -154,7 +160,7 @@ public class SitePath
             if (!ignoreProgress && !SaveGame.currentSave.siteVisits.ContainsKey(whereAreWe)) continue;
 
             //New paths branching out from this path being taken
-            var newPaths = pathsConnectedToSite[whereAreWe].Where(x => x != currentPath);
+            var newPaths = pathsConnectedToSite[whereAreWe].Where(x => x != currentPath && (x.onlyFor == null || x.onlyFor == playerSide));
 
             //For each path that branches out..
             foreach (var path in newPaths)

@@ -27,6 +27,10 @@ public class SiteCapital : Site
     //List of towns
     public List<string> districts;
 
+    //Instance inside of this capital
+    //There are two examples of this in the game
+    public string instance;
+
     //Currently opened capital
     public static SiteCapital capital;
 
@@ -54,6 +58,26 @@ public class SiteCapital : Site
             PlaySound("DesktopInstanceOpen");
             CloseDesktop("Town");
             SpawnDesktopBlueprint("Town");
+            SpawnTransition();
+        });
+    }
+
+    //Prints a single district out of all accessible
+    public static void PrintCapitalInstance(string instance)
+    {
+        var find = SiteInstance.instances.Find(x => x.name == instance);
+        AddButtonRegion(() =>
+        {
+            AddLine(find.name);
+            AddSmallButton("Site" + find.type);
+        },
+        (h) =>
+        {
+            SiteInstance.instance = find;
+            PlaySound("DesktopInstanceOpen");
+            CloseDesktop("Capital");
+            CloseDesktop("Town");
+            SpawnDesktopBlueprint("Instance");
             SpawnTransition();
         });
     }

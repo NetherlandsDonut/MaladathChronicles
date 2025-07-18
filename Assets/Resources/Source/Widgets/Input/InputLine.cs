@@ -477,25 +477,25 @@ public class InputLine : MonoBehaviour
             {
                 var expSum = 0;
                 foreach (var site in SiteHostileArea.areas)
-                    if (!currentSave.siteVisits.ContainsKey(site.name))
+                    if (site.x != 0 && site.y != 0 && !currentSave.siteVisits.ContainsKey(site.name))
                     {
                         currentSave.siteVisits.Add(site.name, 1);
                         expSum += defines.expForExploration;
                     }
                 foreach (var site in SiteTown.towns)
-                    if (!currentSave.siteVisits.ContainsKey(site.name))
+                    if (site.x != 0 && site.y != 0 && !currentSave.siteVisits.ContainsKey(site.name))
                     {
                         currentSave.siteVisits.Add(site.name, 1);
                         expSum += defines.expForExploration;
                     }
                 foreach (var site in SiteInstance.instances)
-                    if (!currentSave.siteVisits.ContainsKey(site.name))
+                    if (site.x != 0 && site.y != 0 && !currentSave.siteVisits.ContainsKey(site.name))
                     {
                         currentSave.siteVisits.Add(site.name, 1);
                         expSum += defines.expForExploration;
                     }
                 foreach (var site in SiteComplex.complexes)
-                    if (!currentSave.siteVisits.ContainsKey(site.name))
+                    if (site.x != 0 && site.y != 0 && !currentSave.siteVisits.ContainsKey(site.name))
                     {
                         currentSave.siteVisits.Add(site.name, 1);
                         expSum += defines.expForExploration;
@@ -521,10 +521,12 @@ public class InputLine : MonoBehaviour
                         currentSave.player.ReceiveExperience(defines.expForExploration);
                     }
                     Respawn("Site: " + site.name);
-                    foreach (var connection in SitePath.paths.FindAll(x => x.sites.Contains(site.name)))
+                    foreach (var connection in SitePath.paths.FindAll(x => x.sites.Contains(site.name)).Where(x => x.onlyFor == null || x.onlyFor == currentSave.playerSide))
                     {
-                        var didRespawn = Respawn("Site: " + connection.sites.Find(x => x != site.name));
-                        if (!didRespawn) CDesktop.LBWindow().GetComponentsInChildren<Renderer>().ToList().ForEach(x => x.gameObject.AddComponent<FadeIn>());
+                        var siteRespawn = connection.sites.Find(x => x != site.name);
+                        if (!WindowUp("Site: " + siteRespawn))
+                            if (!Respawn("Site: " + siteRespawn))
+                                CDesktop.LBWindow().GetComponentsInChildren<Renderer>().ToList().ForEach(x => x.gameObject.AddComponent<FadeIn>());
                     }
                     CDesktop.LockScreen();
                 }

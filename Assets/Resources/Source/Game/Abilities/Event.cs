@@ -205,14 +205,16 @@ public class Event
                     save.player.ReceiveExperience(defines.expForExploration);
                 }
                 Respawn("Site: " + destination);
-                foreach (var connection in SitePath.paths.FindAll(x => x.sites.Contains(destination)))
+                foreach (var connection in SitePath.paths.FindAll(x => x.sites.Contains(destination)).Where(x => x.onlyFor == null || x.onlyFor == SaveGame.currentSave.playerSide))
                 {
-                    var didRespawn = Respawn("Site: " + connection.sites.Find(x => x != destination));
-                    if (!didRespawn) CDesktop.LBWindow().GetComponentsInChildren<Renderer>().ToList().ForEach(x => x.gameObject.AddComponent<FadeIn>());
+                    var site = connection.sites.Find(x => x != destination);
+                    if (!WindowUp("Site: " + site))
+                        if (!Respawn("Site: " + site))
+                            CDesktop.LBWindow().GetComponentsInChildren<Renderer>().ToList().ForEach(x => x.gameObject.AddComponent<FadeIn>());
                 }
                 Respawn("Site: " + prevSite);
-                var site = Site.FindSite(x => x.name == save.currentSite);
-                CDesktop.cameraDestination = new Vector2(site.x, site.y);
+                var newSite = Site.FindSite(x => x.name == save.currentSite);
+                CDesktop.cameraDestination = new Vector2(newSite.x, newSite.y);
             }
         }
     }

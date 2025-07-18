@@ -151,11 +151,10 @@
     ]
   },
   {
-    "x": 4891,
-    "y": -3459,
     "name": "The Stockade",
     "zone": "The Stockade",
     "type": "Dungeon",
+    "convertDestinationTo": "Stormwind City",
     "noNightVariant": true,
     "wings": [
       {
@@ -173,14 +172,14 @@
           }
         ]
       }
-    ]
+    ],
+    "capitalRedirect": "Stormwind City"
   },
   {
-    "x": 2348,
-    "y": -2158,
     "name": "Ragefire Chasm",
     "zone": "Ragefire Chasm",
     "type": "Dungeon",
+    "convertDestinationTo": "Orgrimmar",
     "noNightVariant": true,
     "wings": [
       {
@@ -198,7 +197,8 @@
           }
         ]
       }
-    ]
+    ],
+    "capitalRedirect": "Orgrimmar"
   },
   {
     "x": 4935,

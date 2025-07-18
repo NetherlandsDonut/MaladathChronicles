@@ -373,7 +373,7 @@ public class Desktop : MonoBehaviour
                                 currentSave.player.ReceiveExperience(defines.expForExploration);
                             }
                             Respawn("Site: " + mapGrid.queuedSiteOpen);
-                            foreach (var connection in paths.FindAll(x => x.sites.Contains(mapGrid.queuedSiteOpen)))
+                            foreach (var connection in paths.FindAll(x => x.sites.Contains(mapGrid.queuedSiteOpen)).Where(x => x.onlyFor == null || x.onlyFor == currentSave.playerSide))
                             {
                                 var site = connection.sites.Find(x => x != mapGrid.queuedSiteOpen);
                                 if (!WindowUp("Site: " + site))
@@ -419,7 +419,7 @@ public class Desktop : MonoBehaviour
                                 PlaySound("DesktopZoneDiscovered", 1f);
                                 currentSave.player.ReceiveExperience(defines.expForExploration);
                             }
-                            foreach (var connection in paths.FindAll(x => x.sites.Contains(currentSave.currentSite)))
+                            foreach (var connection in paths.FindAll(x => x.sites.Contains(currentSave.currentSite)).Where(x => x.onlyFor == null || x.onlyFor == currentSave.playerSide))
                             {
                                 var site = connection.sites.Find(x => x != currentSave.currentSite);
                                 if (!WindowUp("Site: " + site))

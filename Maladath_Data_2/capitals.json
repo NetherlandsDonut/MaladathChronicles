@@ -39,6 +39,7 @@
       "The Canals",
       "Stormwind Keep"
     ],
+    "instance": "The Stockade",
     "name": "Stormwind City",
     "zone": "Stormwind City",
     "type": "Capital",
@@ -84,6 +85,7 @@
       "The Cleft of Shadow",
       "Grommash Hold"
     ],
+    "instance": "Ragefire Chasm",
     "name": "Orgrimmar",
     "zone": "Orgrimmar",
     "type": "Capital",
