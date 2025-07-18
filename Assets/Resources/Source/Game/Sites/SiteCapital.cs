@@ -49,6 +49,7 @@ public class SiteCapital : Site
         },
         (h) =>
         {
+            if (SiteTown.town == find) return;
             SiteTown.town = find;
             PlaySound("DesktopInstanceOpen");
             CloseDesktop("Town");
