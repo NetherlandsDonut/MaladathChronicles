@@ -5,6 +5,10 @@
 ![Alt Text](https://github.com/NetherlandsDonut/MaladathChronicles/blob/main/Media/Image2.png)
 ![Alt Text](https://github.com/NetherlandsDonut/MaladathChronicles/blob/main/Media/Image3.png)
 ![Alt Text](https://github.com/NetherlandsDonut/MaladathChronicles/blob/main/Media/Image4.png)
+![Alt Text](https://github.com/NetherlandsDonut/MaladathChronicles/blob/main/Media/Image5.png)
+![Alt Text](https://github.com/NetherlandsDonut/MaladathChronicles/blob/main/Media/Image6.png)
+![Alt Text](https://github.com/NetherlandsDonut/MaladathChronicles/blob/main/Media/Image7.png)
+![Alt Text](https://github.com/NetherlandsDonut/MaladathChronicles/blob/main/Media/Image8.png)
   
 ## Changelog
 
@@ -1012,5 +1016,53 @@ v0.7.34
           Fixed chest auto close closing area as well
 v0.7.35
  04.07.25 Fixed a bug that made complexes with areas glitch out the game
+v0.7.36
+ 05.07.25 Made the pathfinding algorithm wait a moment till it finds possibly a better solution instead of finishing after getting to the destination on first the branch
+          Player can't equip items above their level now
+          Added a lot of failed interaction messages
+          Fixed some errors with path building
+          Added specialisations for leatherworking and engineering
+v0.7.37
+ 08.07.25 Informative item equipping
+          Added debug mode instead of having debugging tools active all the time
+          Time passes now when crafting items
+          Fixed ambience being flickery with sound jumping from zero volume to minimum volume with it turned off
+v0.7.38
+ 09.07.25 Can't target dead entities now
+          Informative targetting
+v0.7.39
+ 10.07.25 Added blacksmithing suppliers
+ 14.07.25 Added option for races to have specific voice lines
+          Added Avatar of Hakkar sounds
+          Added weapon loading and firing sounds
+          Added cooking suppliers
+          General sound effects can now have variants
+          Fixed all instances of cursor stopping to look like it's targetting while it was still targetting
+v0.7.40
+ 15.07.25 Fixed quest markers not being synchronised
+          Added prices for disenchanting items
+          Fixed player UI not refreshing after picking up elements or using abilities
+v0.7.41
+ 16.07.25 Separated music and ambience
+          Added music to capital towns
+          Added separate zones for capital cities
+          Made zones not nessecarily have icons based on names. Instead, a new variable called icon was added
+          Fixed left mouse button sounding like right click sometimes
+          Time is now passing each time you buy or sell an item
+          Spirit no longer increases starting resources in combat
+          Vendor stock no longer generates items which don't exist in game
+          Fixed elemental flux lacking an icon
+          Fixed flight paths costing a different amount than was shown
+v0.7.42
+ 17.07.25 Fixed falling text not appearing correctly on the map screen
+v0.7.43
+ 17.07.25 Remade auction house UI
+ 18.07.25 Player can now buy auctions
+v0.7.44
+ 19.07.25 Moved Stockades inside Stormwind and Ragefire inside Orgrimmar
+          Added an option for paths being available only for a specific side
+          Minor adjustments to map texture
+          Added more images for github
+
 ```
 </details>
