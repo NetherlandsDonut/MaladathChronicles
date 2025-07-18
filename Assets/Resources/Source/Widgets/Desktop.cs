@@ -602,7 +602,7 @@ public class Desktop : MonoBehaviour
                             if (inputLineMarker > 0 && inputLineMarker <= length)
                                 inputDestination.RemovePreviousOne(inputLineMarker--);
                         }
-                        else if (c != '\n' && c != '\r' && inputDestination.CheckInput(c))
+                        else if (c != '\n' && c != '\r' && inputDestination.CheckInput(c, inputLineMarker))
                         {
                             inputDestination.Insert(inputLineMarker, inputDestination.inputType == InputType.StrictLetters ? (inputDestination.Value().Length == 0 ? char.ToUpper(c) : char.ToLower(c)) : (inputDestination.inputType == InputType.Capitals ? char.ToUpper(c) : c));
                             inputLineMarker++;

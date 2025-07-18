@@ -25,7 +25,6 @@ public class InputLine : MonoBehaviour
         text = new GameObject("InputText", typeof(InputText)).GetComponent<InputText>();
         text.transform.parent = transform;
         text.Initialise(this, refText);
-
         this.region.inputLine = this;
     }
 

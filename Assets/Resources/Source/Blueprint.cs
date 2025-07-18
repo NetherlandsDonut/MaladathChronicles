@@ -3476,30 +3476,31 @@ public class Blueprint
                     SwitchDesktop("Map");
                 });
             });
-            AddPaddingRegion(() =>
+            var range = (0, 0);
+            var areas = complex.sites.Where(x => x["SiteType"] == "HostileArea").Select(x => SiteHostileArea.areas.Find(y => y.name == x["SiteName"]).recommendedLevel).ToList();
+            if (areas.Count > 0)
             {
-                AddLine("Level range: ", "DarkGray");
-                var range = (0, 0);
-                var areas = complex.sites.Where(x => x["SiteType"] == "HostileArea").Select(x => SiteHostileArea.areas.Find(y => y.name == x["SiteName"]).recommendedLevel).ToList();
-                if (areas.Count > 0)
+                var min = areas.Min(x => x[currentSave.playerSide]);
+                var max = areas.Max(x => x[currentSave.playerSide]);
+                if (range.Item1 < min) range = (min, range.Item2);
+                if (range.Item2 < max) range = (range.Item1, max);
+            }
+            var ranges = complex.sites.Where(x => x["SiteType"] == "Dungeon" || x["SiteType"] == "Raid").Select(x => instances.Find(y => y.name == x["SiteName"]).LevelRange()).ToList();
+            if (ranges.Count > 0)
+            {
+                var min = ranges.Min(x => x.Item1);
+                var max = ranges.Max(x => x.Item2);
+                if (range.Item1 < min) range = (min, range.Item2);
+                if (range.Item2 < max) range = (range.Item1, max);
+            }
+            if (range.Item2 > 0)
+                AddPaddingRegion(() =>
                 {
-                    var min = areas.Min(x => x[currentSave.playerSide]);
-                    var max = areas.Max(x => x[currentSave.playerSide]);
-                    if (range.Item1 < min) range = (min, range.Item2);
-                    if (range.Item2 < max) range = (range.Item1, max);
-                }
-                var ranges = complex.sites.Where(x => x["SiteType"] == "Dungeon" || x["SiteType"] == "Raid").Select(x => instances.Find(y => y.name == x["SiteName"]).LevelRange()).ToList();
-                if (ranges.Count > 0)
-                {
-                    var min = ranges.Min(x => x.Item1);
-                    var max = ranges.Max(x => x.Item2);
-                    if (range.Item1 < min) range = (min, range.Item2);
-                    if (range.Item2 < max) range = (range.Item1, max);
-                }
-                AddText(range.Item1 + "", ColorEntityLevel(currentSave.player, range.Item1));
-                AddText(" - ", "DarkGray");
-                AddText(range.Item2 + "", ColorEntityLevel(currentSave.player, range.Item2));
-            });
+                    AddLine("Level range: ", "DarkGray");
+                    AddText(range.Item1 + "", ColorEntityLevel(currentSave.player, range.Item1));
+                    AddText(" - ", "DarkGray");
+                    AddText(range.Item2 + "", ColorEntityLevel(currentSave.player, range.Item2));
+                });
             foreach (var site in complex.sites)
                 PrintComplexSite(site);
         }),
@@ -6340,14 +6341,8 @@ public class Blueprint
                 AddLine("Buyout amount:", "DarkGray");
                 AddInputLine(String.splitAmount);
             });
-            AddButtonRegion(() => AddLine("Buy x" + (String.splitAmount.Value() == "" ? 0 : String.splitAmount.Value()), "Black"),
-            (h) =>
-            {
-                String.splitAmount.Set("1");
-                CDesktop.RespawnAll();
-            });
-            int currentPrice = 0, emptied = 0;
             int planned = String.splitAmount.Value() == "" ? 0 : int.Parse(String.splitAmount.Value());
+            int currentPrice = 0, emptied = 0;
             int toBuy = planned;
             while (toBuy > 0)
             {
@@ -6359,7 +6354,7 @@ public class Blueprint
                     break;
                 }
                 var temp = Market.exploredAuctions[emptied++];
-                for (int i = 0; i < toBuy && i < temp.item.amount; i++)
+                for (int i = 0; toBuy > 0 && i < temp.item.amount; i++)
                     if (currentSave.player.inventory.money >= currentPrice + temp.price)
                     {
                         toBuy--;
@@ -6372,6 +6367,38 @@ public class Blueprint
                         break;
                     }
             }
+            AddButtonRegion(() => AddLine("Buy x" + (String.splitAmount.Value() == "" ? 0 : String.splitAmount.Value()), "Black"),
+            (h) =>
+            {
+                int planned = String.splitAmount.Value() == "" ? 0 : int.Parse(String.splitAmount.Value());
+                int currentPrice = 0, emptied = 0;
+                int toBuy = planned;
+                while (toBuy > 0)
+                {
+                    var temp = Market.exploredAuctions[emptied++];
+                    while (toBuy > 0 && temp.item.amount > 0)
+                    {
+                        toBuy--;
+                        temp.item.amount--;
+                        currentPrice += temp.price;
+                    }
+                }
+                currentSave.player.inventory.money -= currentPrice;
+                PlaySound("DesktopTransportPay");
+                Market.exploredAuctions.RemoveAll(x => x.item.amount == 0);
+                String.splitAmount.Set("1");
+                UpdateAuctionGroupList();
+                if (Market.exploredAuctions.Count > 0)
+                    Respawn("AuctionHouseOffers");
+                else
+                {
+                    CloseWindow("AuctionHouseOffers");
+                    CloseWindow("AuctionHouseBuy");
+                    CloseWindow("AuctionHouseChosenItem");
+                    Respawn("AuctionHouseOffersGroups");
+                }
+                CDesktop.RespawnAll();
+            });
             PrintPriceRegion(currentPrice, 38, 38, 49);
         }),
         new("ProfessionLevelTrainer", () => {

@@ -323,6 +323,7 @@ public class Window : MonoBehaviour
                         print = print.Insert(inputLineMarker > print.Length ? print.Length : inputLineMarker, defines.markerCharacter);
                     else
                     {
+                        if (print == "" && (region.inputLine.text.text.inputType == InputType.Numbers || region.inputLine.text.text.inputType == InputType.Decimal)) print = "0";
                         if (region.inputLine.align != "Right") print += " ";
                         if (region.inputLine.align != "Left") print = " " + print;
                     }

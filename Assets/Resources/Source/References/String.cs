@@ -24,13 +24,13 @@ public class String
     public void Confirm() => backupValue = value;
     public void Reset() => value = backupValue;
 
-    public bool CheckInput(char letter) => inputType switch
+    public bool CheckInput(char letter, int position) => inputType switch
     {
         Letters => char.IsLetter(letter) || letter == ' ' && value.Length != 0 && value.Last() != ' ' || letter == '\'' && value.Length != 0 && value.Last() != '\'',
         StrictLetters => char.IsLetter(letter) || letter == '\'' && value.Length != 0 && value.Last() != '\'',
         Capitals => char.IsLetter(letter) || letter == ' ' && value.Length != 0 && value.Last() != ' ',
-        Numbers => char.IsDigit(letter),
-        Decimal => char.IsDigit(letter) || letter == ',' && !Value().Contains(','),
+        Numbers => (position > 0 || letter != '0') && char.IsDigit(letter),
+        Decimal => (position > 0 || letter != '0') && char.IsDigit(letter) || position > 0 && letter == ',' && !Value().Contains(','),
         _ => true,
     };
 

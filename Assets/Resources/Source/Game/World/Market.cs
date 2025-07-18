@@ -26,13 +26,18 @@ public class Market
     //Updates the market
     public void UpdateMarket()
     {
+        //Remove all auctions with no items left
+        for (int i = auctions.Count - 1; i >= 0; i--)
+            if (auctions[i].item.amount <= 0)
+                auctions.RemoveAt(i);
+
         //As long as there are leftover hours of update..
         while (hoursSinceUpdate > 0)
         {
             //Decrease hours left for all active auctions by one
             //and remove all of which time is up
             for (int i = auctions.Count - 1; i >= 0; i--)
-                if (--auctions[i].hoursLeft <= 0)
+                if (--auctions[i].hoursLeft <= 0 || auctions[i].item.amount <= 0)
                     auctions.RemoveAt(i);
 
             //Go through all possible items that can be auctioned
