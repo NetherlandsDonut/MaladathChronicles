@@ -11,7 +11,7 @@ public class Market
     {
         this.name = name;
         auctions = new();
-        hoursSinceUpdate = 48;
+        hoursSinceUpdate = 24;
     }
 
     //Name of the market
@@ -26,10 +26,11 @@ public class Market
     //Updates the market
     public void UpdateMarket()
     {
-        //Remove all auctions with no items left
-        for (int i = auctions.Count - 1; i >= 0; i--)
-            if (auctions[i].item.amount <= 0)
-                auctions.RemoveAt(i);
+        if (hoursSinceUpdate >= 24)
+        {
+            hoursSinceUpdate = 24;
+            auctions = new();
+        }
 
         //As long as there are leftover hours of update..
         while (hoursSinceUpdate > 0)
@@ -41,13 +42,13 @@ public class Market
                     auctions.RemoveAt(i);
 
             //Go through all possible items that can be auctioned
-            //and check which were lucky to be have someone auction them
+            //and check which were lucky to be auctioned by someone
             foreach (var foo in auctionables)
                 if (Roll(foo.frequency))
                     auctions.Add(new Auction(foo));
 
             //Decrease timer by one
-            hoursSinceUpdate -= 1;
+            hoursSinceUpdate--;
         }
     }
 

@@ -473,6 +473,31 @@ public class InputLine : MonoBehaviour
                 disableCameraBounds = true;
             else if (foo.Value() == "enablebounds")
                 disableCameraBounds = false;
+            else if (foo.Value() == "generateauctionables")
+            {
+                Auctionable.auctionables = new();
+                foreach (var item in Item.items)
+                {
+                    if (item.unique) continue;
+                    if (item.price == 0) continue;
+                    if (item.source == "Quest") continue;
+                    if (item.type == "Miscellaneous" && (item.abilities == null || item.abilities.Count == 0)) continue;
+                    if (item.rarity == "Poor") continue;
+                    if (item.indestructible == true) continue;
+                    if (item.questsStarted != null) continue;
+                    if (item.droppedBy != null) continue;
+                    Auctionable.auctionables.Add(new()
+                    {
+                        item = item.name,
+                        minPrice = (int)(item.price * 6.2),
+                        maxPrice = (int)(item.price * 16.3),
+                        frequency = item.maxStack > 10 ? (item.rarity == "Common" ? 20 : (item.rarity == "Uncommon" || item.rarity == "Poor" ? 12 : (item.rarity == "Rare" ? 5 : (item.rarity == "Epic" ? 2 : 0)))) :
+                                    (item.maxStack > 1 ? (item.rarity == "Common" ? 10 : (item.rarity == "Uncommon" || item.rarity == "Poor" ? 6 : (item.rarity == "Rare" ? 3 : (item.rarity == "Epic" ? 1 : 0)))) :
+                                                         (item.rarity == "Common" ? 3 : (item.rarity == "Uncommon" || item.rarity == "Poor" ? 2 : (item.rarity == "Rare" ? 1 : (item.rarity == "Epic" ? 0 : 0)))))
+                    });
+                }
+                Serialization.Serialize(Auctionable.auctionables, "auctionables");
+            }
             else if (foo.Value() == "exploreall")
             {
                 var expSum = 0;

@@ -6404,7 +6404,10 @@ public class Blueprint
                     currentSave.player.inventory.money -= currentPrice;
                     Market.exploredAuctions.RemoveAll(x => x.item.amount == 0);
                     String.splitAmount.Set("1");
-                    UpdateAuctionGroupList();
+                    foreach (var market in currentSave.markets)
+                        for (int i = market.auctions.Count - 1; i >= 0; i--)
+                            if (market.auctions[i].item.amount <= 0)
+                                market.auctions.RemoveAt(i);
                     if (Market.exploredAuctions.Count > 0)
                         Respawn("AuctionHouseOffers");
                     else

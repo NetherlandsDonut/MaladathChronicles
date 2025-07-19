@@ -9,7 +9,7 @@ public class Auction
         price = random.Next(auctionable.minPrice, auctionable.maxPrice);
         var foo = Item.items.Find(x => x.name == auctionable.item);
         item = foo.CopyItem(random.Next(1, foo.maxStack + 1));
-        hoursLeft = 48;
+        hoursLeft = 24;
     }
 
     //Auctioned items
