@@ -6374,33 +6374,48 @@ public class Blueprint
             (h) =>
             {
                 int planned = String.splitAmount.Value() == "" ? 0 : int.Parse(String.splitAmount.Value());
-                int currentPrice = 0, emptied = 0;
-                int toBuy = planned;
-                while (toBuy > 0)
+                if (planned <= 0) return;
+                var items = new List<Item>() { Market.exploredAuctions[0].item.CopyItem(1) }.Multilate(planned);
+                if (!currentSave.player.inventory.CanAddItems(items))
                 {
-                    var temp = Market.exploredAuctions[emptied++];
-                    while (toBuy > 0 && temp.item.amount > 0)
-                    {
-                        toBuy--;
-                        temp.item.amount--;
-                        currentPrice += temp.price;
-                    }
+                    SpawnFallingText(new Vector2(0, 34), "Inventory full", "Red");
                 }
-                currentSave.player.inventory.money -= currentPrice;
-                PlaySound("DesktopTransportPay");
-                Market.exploredAuctions.RemoveAll(x => x.item.amount == 0);
-                String.splitAmount.Set("1");
-                UpdateAuctionGroupList();
-                if (Market.exploredAuctions.Count > 0)
-                    Respawn("AuctionHouseOffers");
                 else
                 {
-                    CloseWindow("AuctionHouseOffers");
-                    CloseWindow("AuctionHouseBuy");
-                    CloseWindow("AuctionHouseChosenItem");
-                    Respawn("AuctionHouseOffersGroups");
+                    int currentPrice = 0, emptied = 0;
+                    int toBuy = planned;
+                    while (toBuy > 0)
+                    {
+                        var temp = Market.exploredAuctions[emptied++];
+                        while (toBuy > 0 && temp.item.amount > 0)
+                        {
+                            toBuy--;
+                            temp.item.amount--;
+                            currentPrice += temp.price;
+                        }
+                    }
+                    if (currentPrice > 0)
+                        PlaySound("DesktopTransportPay");
+                    foreach (var item in items)
+                    {
+                        currentSave.player.inventory.AddItem(item);
+                        PlaySound(item.ItemSound("PutDown"), 0.8f);
+                    }
+                    currentSave.player.inventory.money -= currentPrice;
+                    Market.exploredAuctions.RemoveAll(x => x.item.amount == 0);
+                    String.splitAmount.Set("1");
+                    UpdateAuctionGroupList();
+                    if (Market.exploredAuctions.Count > 0)
+                        Respawn("AuctionHouseOffers");
+                    else
+                    {
+                        CloseWindow("AuctionHouseOffers");
+                        CloseWindow("AuctionHouseBuy");
+                        CloseWindow("AuctionHouseChosenItem");
+                        Respawn("AuctionHouseOffersGroups");
+                    }
+                    CDesktop.RespawnAll();
                 }
-                CDesktop.RespawnAll();
             });
             PrintPriceRegion(currentPrice, 38, 38, 49);
         }),
@@ -8027,7 +8042,7 @@ public class Blueprint
             {
                 var whereTo = FindSite(x => x.name == currentSave.currentSite);
                 CDesktop.cameraDestination = new Vector2(whereTo.x, whereTo.y);
-            });
+            }, false);
 
             void MoveCamera(Vector2 amount)
             {

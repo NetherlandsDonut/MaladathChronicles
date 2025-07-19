@@ -1011,7 +1011,7 @@ public static class Root
     {
         var region = CDesktop.LBWindow().LBRegionGroup().LBRegion();
         var button = region.LBSmallButton().gameObject;
-        button.GetComponent<SpriteRenderer>().material = Resources.Load<Material>("Shaders/Red");
+        button.GetComponent<SpriteRenderer>().material = Resources.Load<Material>("Shaders/Redscale");
     }
 
     public static void SetSmallButtonToGrayscale()
@@ -1085,7 +1085,7 @@ public static class Root
     {
         var region = CDesktop.LBWindow().LBRegionGroup().LBRegion();
         var button = region.LBBigButton().gameObject;
-        button.GetComponent<SpriteRenderer>().material = Resources.Load<Material>("Shaders/Red");
+        button.GetComponent<SpriteRenderer>().material = Resources.Load<Material>("Shaders/Redscale");
     }
 
     public static void SetBigButtonToGrayscale()

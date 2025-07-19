@@ -4,9 +4,24 @@
     {
       "playerSide": "Alliance",
       "player": {
-        "currentQuests": [],
-        "completedQuests": [],
+        "currentQuests": [
+          {
+            "questID": 7,
+            "conditions": [
+              {
+                "type": "Kill",
+                "name": "Kobold Vermin",
+                "amount": 3,
+                "amountDone": 1
+              }
+            ]
+          }
+        ],
+        "completedQuests": [
+          783
+        ],
         "level": 1,
+        "experience": 373,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -16,7 +31,7 @@
           "Woodpaw Tribe": 0,
           "The Burning Legion": 0,
           "Darkspear Tribe": 0,
-          "Stormwind": 4600,
+          "Stormwind": 4675,
           "Timbermaw Tribe": 4050,
           "Magram Clan": 0,
           "Gelkis Clan": 0,
@@ -140,13 +155,13 @@
             ]
           },
           "Mining": {
-            "Item1": 1,
+            "Item1": 2,
             "Item2": [
               "Amateur"
             ]
           },
           "Herbalism": {
-            "Item1": 1,
+            "Item1": 2,
             "Item2": [
               "Amateur"
             ]
@@ -207,6 +222,7 @@
         "race": "Human",
         "spec": "Mage",
         "gender": "Female",
+        "homeLocation": "Northshire Abbey",
         "abilities": {
           "Staff Proficiency": 0,
           "Cloth Proficiency": 0,
@@ -259,6 +275,34 @@
               "abilities": {
                 "Hearthstone": 1
               }
+            },
+            {
+              "x": 1,
+              "rarity": "Common",
+              "name": "Copper Ore",
+              "icon": "itemorecopper01",
+              "detailedType": "Ore",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 10,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 10,
+              "price": 5
+            },
+            {
+              "x": 2,
+              "rarity": "Common",
+              "name": "Peacebloom",
+              "icon": "itemmiscflower02",
+              "detailedType": "Flowers",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 5,
+              "lvl": 1,
+              "amount": 2,
+              "maxStack": 20,
+              "price": 10
             }
           ],
           "bags": []
@@ -320,7 +364,9 @@
         "worldBuffs": []
       },
       "hour": 7,
-      "currentSite": "Northshire Abbey",
+      "minute": 58,
+      "second": 25,
+      "currentSite": "Valorwind Lake",
       "ringOfLaw": "Grizzle",
       "forlornCloister": "Ironspine",
       "markets": [
@@ -338,17 +384,37 @@
       "openedChests": {},
       "fishingSpots": {},
       "fishingSpoils": {},
-      "siteProgress": {},
-      "commonsKilled": {},
+      "siteProgress": {
+        "Northshire Valley": 1
+      },
+      "commonsKilled": {
+        "Kobold Vermin": 1
+      },
       "raresKilled": {},
       "elitesKilled": {},
       "siteVisits": {
-        "Northshire Abbey": 1
+        "Northshire Abbey": 2,
+        "Northshire Valley": 1,
+        "Goldshire": 0,
+        "Jansen Stead": 1,
+        "Stormwind City": 0,
+        "Sentinel Hill": 0,
+        "Moonbrook": 0,
+        "The Deadmines": 1,
+        "Westfall Crossing": 1,
+        "Raven Hill": 1,
+        "Quel'Lithien Lodge": 2,
+        "Quel'Danil Lodge": 3,
+        "Hiri'watha": 0,
+        "Valorwind Lake": 0
       },
       "unlockedAreas": [],
       "vendorStock": {},
       "banks": {},
-      "startDate": "2025-07-19T00:31:00.9723616+02:00"
+      "startDate": "2025-07-19T00:31:00.9723616+02:00",
+      "lastLoaded": "2025-07-19T09:25:34.4132571+02:00",
+      "lastPlayed": "2025-07-19T09:35:29.0167992+02:00",
+      "timePlayed": "00:09:54.6035421"
     }
   ],
   "Gehennas": [],

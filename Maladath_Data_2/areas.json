@@ -25988,13 +25988,13 @@
     "name": "Qiraji Imperial Seat",
     "zone": "Temple of Ahn'Qiraj",
     "type": "HostileArea",
-    "convertDestinationTo": "Temple of Ahn'Qiraj",
     "musicDay": [
       "MusicAhnQirajTriangleRoom"
     ],
     "musicNight": [
       "MusicAhnQirajTriangleRoom"
     ],
+    "convertDestinationTo": "Temple of Ahn'Qiraj",
     "noNightVariant": true,
     "commonEncounters": [
       {
@@ -26140,13 +26140,13 @@
     "name": "Vault of C'Thun",
     "zone": "Temple of Ahn'Qiraj",
     "type": "HostileArea",
-    "convertDestinationTo": "Temple of Ahn'Qiraj",
     "musicDay": [
       "MusicAhnQirajCthun"
     ],
     "musicNight": [
       "MusicAhnQirajCthun"
     ],
+    "convertDestinationTo": "Temple of Ahn'Qiraj",
     "noNightVariant": true,
     "commonEncounters": [
       {
@@ -32593,8 +32593,6 @@
     "name": "Altar of the Blood God",
     "zone": "Zul'Gurub",
     "type": "HostileArea",
-    "convertDestinationTo": "Zul'Gurub",
-    "noNightVariant": true,
     "musicDay": [
       "MusicHakkar1",
       "MusicHakkar2"
@@ -32603,6 +32601,8 @@
       "MusicHakkar1",
       "MusicHakkar2"
     ],
+    "convertDestinationTo": "Zul'Gurub",
+    "noNightVariant": true,
     "commonEncounters": [
       {
         "who": "Gurubashi Champion",

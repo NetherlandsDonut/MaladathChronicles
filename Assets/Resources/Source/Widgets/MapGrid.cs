@@ -17,9 +17,6 @@ public class MapGrid : MonoBehaviour
     //Holds reference to the texture of the map
     public SpriteRenderer texture;
 
-    //Holds reference to the texture of the map of the ghost realm
-    public SpriteRenderer textureDead;
-
     //When this is true desktop on update will try to change map color slowly
     public bool updateTextureColors;
 
@@ -85,8 +82,7 @@ public class MapGrid : MonoBehaviour
             StopMusic();
             StopAmbience();
         }
-        texture.gameObject.SetActive(!deadOn);
-        textureDead.gameObject.SetActive(deadOn);
+        texture.material = Resources.Load<Material>(deadOn ? "Shaders/Deadscale" : "Shaders/Default");
     }
 
     //Bounds camera to be in a specified proximity of any sites in reach
