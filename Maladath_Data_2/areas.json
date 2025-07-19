@@ -25989,6 +25989,12 @@
     "zone": "Temple of Ahn'Qiraj",
     "type": "HostileArea",
     "convertDestinationTo": "Temple of Ahn'Qiraj",
+    "musicDay": [
+      "MusicAhnQirajTriangleRoom"
+    ],
+    "musicNight": [
+      "MusicAhnQirajTriangleRoom"
+    ],
     "noNightVariant": true,
     "commonEncounters": [
       {
@@ -26135,6 +26141,12 @@
     "zone": "Temple of Ahn'Qiraj",
     "type": "HostileArea",
     "convertDestinationTo": "Temple of Ahn'Qiraj",
+    "musicDay": [
+      "MusicAhnQirajCthun"
+    ],
+    "musicNight": [
+      "MusicAhnQirajCthun"
+    ],
     "noNightVariant": true,
     "commonEncounters": [
       {
@@ -32583,6 +32595,14 @@
     "type": "HostileArea",
     "convertDestinationTo": "Zul'Gurub",
     "noNightVariant": true,
+    "musicDay": [
+      "MusicHakkar1",
+      "MusicHakkar2"
+    ],
+    "musicNight": [
+      "MusicHakkar1",
+      "MusicHakkar2"
+    ],
     "commonEncounters": [
       {
         "who": "Gurubashi Champion",

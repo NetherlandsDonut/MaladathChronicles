@@ -31,6 +31,9 @@ public static class Sound
         //Get all audio clips for the list
         musicList = paths.Select(x => Resources.Load<AudioClip>("Music/" + x)).ToList();
 
+        //Remove all tracks which weren't found
+        musicList.RemoveAll(x => x == null);
+
         //If no tracks are on the list, cancel
         if (musicList.Count == 0)
         {

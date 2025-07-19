@@ -26,6 +26,15 @@
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceForestHighDay",
     "ambienceNight": "AmbienceForestHighNight",
+    "musicDay": [
+      "MusicSnowDay1",
+      "MusicSnowDay2",
+      "MusicSnowDay3"
+    ],
+    "musicNight": [
+      "MusicSnowNight1",
+      "MusicSnowNight2"
+    ],
     "miningNodes": [
       "Mithril Vein",
       "Truesilver Vein",
@@ -144,6 +153,16 @@
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceGrasslandsDay",
     "ambienceNight": "AmbienceForestNormalNight",
+    "musicDay": [
+      "MusicBarrenDay1",
+      "MusicBarrenDay2",
+      "MusicBarrenDay3"
+    ],
+    "musicNight": [
+      "MusicBarrenNight1",
+      "MusicBarrenNight2",
+      "MusicBarrenNight3"
+    ],
     "miningNodes": [
       "Copper Vein",
       "Tin Vein",
@@ -268,6 +287,15 @@
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceSwampDay",
     "ambienceNight": "AmbienceMarshNight",
+    "musicDay": [
+      "MusicSoggyDay1",
+      "MusicSoggyDay2"
+    ],
+    "musicNight": [
+      "MusicSoggyNight1",
+      "MusicSoggyNight2",
+      "MusicSoggyNight3"
+    ],
     "miningNodes": [
       "Iron Vein",
       "Gold Vein",
@@ -349,6 +377,14 @@
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceDesert",
     "ambienceNight": "AmbienceDesert",
+    "musicDay": [
+      "MusicPlainsDay1",
+      "MusicPlainsDay2"
+    ],
+    "musicNight": [
+      "MusicPlainsNight1",
+      "MusicPlainsNight2"
+    ],
     "miningNodes": [
       "Copper Vein"
     ],
@@ -439,6 +475,16 @@
   {
     "name": "Tirisfal Glades",
     "icon": "Tirisfal Glades",
+    "musicDay": [
+      "MusicEvilForestDay1",
+      "MusicEvilForestDay2",
+      "MusicEvilForestDay3"
+    ],
+    "musicNight": [
+      "MusicEvilForestNight1",
+      "MusicEvilForestNight2",
+      "MusicEvilForestNight3"
+    ],
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceForestScaryDay",
     "ambienceNight": "AmbienceForestScaryNight",
@@ -471,6 +517,16 @@
   {
     "name": "Silverpine Forest",
     "icon": "Silverpine Forest",
+    "musicDay": [
+      "MusicEvilForestDay1",
+      "MusicEvilForestDay2",
+      "MusicEvilForestDay3"
+    ],
+    "musicNight": [
+      "MusicEvilForestNight1",
+      "MusicEvilForestNight2",
+      "MusicEvilForestNight3"
+    ],
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceForestScaryDay",
     "ambienceNight": "AmbienceForestScaryNight",
@@ -495,6 +551,14 @@
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceGrasslandsDay",
     "ambienceNight": "AmbienceForestNormalNight",
+    "musicDay": [
+      "MusicPlainsDay1",
+      "MusicPlainsDay2"
+    ],
+    "musicNight": [
+      "MusicPlainsNight1",
+      "MusicPlainsNight2"
+    ],
     "miningNodes": [
       "Iron Vein",
       "Gold Vein",
@@ -514,6 +578,15 @@
   {
     "name": "Alterac Mountains",
     "icon": "Alterac Mountains",
+    "musicDay": [
+      "MusicSnowDay1",
+      "MusicSnowDay2",
+      "MusicSnowDay3"
+    ],
+    "musicNight": [
+      "MusicSnowNight1",
+      "MusicSnowNight2"
+    ],
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceForestSnowDay",
     "ambienceNight": "AmbienceForestSnowNight",
@@ -559,6 +632,16 @@
     "icon": "Hillsbrad Foothills",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceForestNormalDay",
+    "musicDay": [
+      "MusicForestDay1",
+      "MusicForestDay2",
+      "MusicForestDay3"
+    ],
+    "musicNight": [
+      "MusicForestNight1",
+      "MusicForestNight2",
+      "MusicForestNight3"
+    ],
     "ambienceNight": "AmbienceForestNormalNight",
     "miningNodes": [
       "Copper Vein",
@@ -584,6 +667,16 @@
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceForestNormalDay",
     "ambienceNight": "AmbienceForestNormalNight",
+    "musicDay": [
+      "MusicForestDay1",
+      "MusicForestDay2",
+      "MusicForestDay3"
+    ],
+    "musicNight": [
+      "MusicForestNight1",
+      "MusicForestNight2",
+      "MusicForestNight3"
+    ],
     "miningNodes": [
       "Copper Vein",
       "Tin Vein",
@@ -604,6 +697,16 @@
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceForestNormalDay",
     "ambienceNight": "AmbienceForestNormalNight",
+    "musicDay": [
+      "MusicForestDay1",
+      "MusicForestDay2",
+      "MusicForestDay3"
+    ],
+    "musicNight": [
+      "MusicForestNight1",
+      "MusicForestNight2",
+      "MusicForestNight3"
+    ],
     "miningNodes": [
       "Copper Vein",
       "Tin Vein",
@@ -622,6 +725,14 @@
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceForestSnowDay",
     "ambienceNight": "AmbienceForestSnowNight",
+    "musicDay": [
+      "MusicMountainDay1",
+      "MusicMountainDay2"
+    ],
+    "musicNight": [
+      "MusicMountainNight1",
+      "MusicMountainNight2"
+    ],
     "miningNodes": [
       "Copper Vein"
     ],
@@ -654,6 +765,15 @@
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceSwampDay",
     "ambienceNight": "AmbienceSwampNight",
+    "musicDay": [
+      "MusicSoggyDay1",
+      "MusicSoggyDay2"
+    ],
+    "musicNight": [
+      "MusicSoggyNight1",
+      "MusicSoggyNight2",
+      "MusicSoggyNight3"
+    ],
     "miningNodes": [
       "Copper Vein",
       "Tin Vein",
@@ -675,6 +795,14 @@
   {
     "name": "Searing Gorge",
     "icon": "Searing Gorge",
+    "musicDay": [
+      "MusicVolcanicDay1",
+      "MusicVolcanicDay2"
+    ],
+    "musicNight": [
+      "MusicVolcanicNight1",
+      "MusicVolcanicNight2"
+    ],
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceVolcanicDay",
     "ambienceNight": "AmbienceVolcanicNight",
@@ -695,6 +823,14 @@
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceVolcanicDay",
     "ambienceNight": "AmbienceVolcanicNight",
+    "musicDay": [
+      "MusicVolcanicDay1",
+      "MusicVolcanicDay2"
+    ],
+    "musicNight": [
+      "MusicVolcanicNight1",
+      "MusicVolcanicNight2"
+    ],
     "miningNodes": [
       "Mithril Vein",
       "Truesilver Vein",
@@ -715,6 +851,16 @@
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceForestScaryDay",
     "ambienceNight": "AmbienceForestScaryNight",
+    "musicDay": [
+      "MusicEvilForestDay1",
+      "MusicEvilForestDay2",
+      "MusicEvilForestDay3"
+    ],
+    "musicNight": [
+      "MusicEvilForestNight1",
+      "MusicEvilForestNight2",
+      "MusicEvilForestNight3"
+    ],
     "miningNodes": [
       "Tin Vein",
       "Silver Vein",
@@ -734,6 +880,14 @@
   {
     "name": "Westfall",
     "icon": "Westfall",
+    "musicDay": [
+      "MusicPlainsDay1",
+      "MusicPlainsDay2"
+    ],
+    "musicNight": [
+      "MusicPlainsNight1",
+      "MusicPlainsNight2"
+    ],
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbiencePlainsDay",
     "ambienceNight": "AmbiencePlainsNight",
@@ -755,6 +909,16 @@
   {
     "name": "Elwynn Forest",
     "icon": "Elwynn Forest",
+    "musicDay": [
+      "MusicForestDay1",
+      "MusicForestDay2",
+      "MusicForestDay3"
+    ],
+    "musicNight": [
+      "MusicForestNight1",
+      "MusicForestNight2",
+      "MusicForestNight3"
+    ],
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceForestNormalDay",
     "ambienceNight": "AmbienceForestNormalNight",
@@ -800,6 +964,16 @@
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceStrongWind",
     "ambienceNight": "AmbienceStrongWind",
+    "musicDay": [
+      "MusicBarrenDay1",
+      "MusicBarrenDay2",
+      "MusicBarrenDay3"
+    ],
+    "musicNight": [
+      "MusicBarrenNight1",
+      "MusicBarrenNight2",
+      "MusicBarrenNight3"
+    ],
     "miningNodes": [
       "Iron Vein",
       "Gold Vein",
@@ -822,6 +996,15 @@
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceSwampDay",
     "ambienceNight": "AmbienceSwampNight",
+    "musicDay": [
+      "MusicSoggyDay1",
+      "MusicSoggyDay2"
+    ],
+    "musicNight": [
+      "MusicSoggyNight1",
+      "MusicSoggyNight2",
+      "MusicSoggyNight3"
+    ],
     "miningNodes": [
       "Iron Vein",
       "Gold Vein",
@@ -841,6 +1024,16 @@
   {
     "name": "Deadwind Pass",
     "icon": "Deadwind Pass",
+    "musicDay": [
+      "MusicEvilForestDay1",
+      "MusicEvilForestDay2",
+      "MusicEvilForestDay3"
+    ],
+    "musicNight": [
+      "MusicEvilForestNight1",
+      "MusicEvilForestNight2",
+      "MusicEvilForestNight3"
+    ],
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceDeadwindPass",
     "ambienceNight": "AmbienceDeadwindPass",
@@ -858,6 +1051,14 @@
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceBlastedLands",
     "ambienceNight": "AmbienceBlastedLands",
+    "musicDay": [
+      "MusicVolcanicDay1",
+      "MusicVolcanicDay2"
+    ],
+    "musicNight": [
+      "MusicVolcanicNight1",
+      "MusicVolcanicNight2"
+    ],
     "miningNodes": [
       "Mithril Vein",
       "Truesilver Vein",
@@ -875,6 +1076,16 @@
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceJungleDay",
     "ambienceNight": "AmbienceJungleNight",
+    "musicDay": [
+      "MusicJungleDay1",
+      "MusicJungleDay2",
+      "MusicJungleDay3"
+    ],
+    "musicNight": [
+      "MusicJungleNight1",
+      "MusicJungleNight2",
+      "MusicJungleNight3"
+    ],
     "miningNodes": [
       "Tin Vein",
       "Silver Vein",
@@ -899,6 +1110,16 @@
     "icon": "Temple of Ahn'Qiraj",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceAhnQirajUndergrounds",
+    "musicDay": [
+      "MusicAhnQirajUnderground1",
+      "MusicAhnQirajUnderground2",
+      "MusicAhnQirajUnderground3"
+    ],
+    "musicNight": [
+      "MusicAhnQirajUnderground1",
+      "MusicAhnQirajUnderground2",
+      "MusicAhnQirajUnderground3"
+    ],
     "ambienceNight": "AmbienceAhnQirajUndergrounds"
   },
   {
@@ -906,6 +1127,18 @@
     "icon": "Ruins of Ahn'Qiraj",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceAhnQirajExterior",
+    "musicDay": [
+      "MusicAhnQirajExterior1",
+      "MusicAhnQirajExterior2",
+      "MusicAhnQirajExterior3",
+      "MusicAhnQirajExterior4"
+    ],
+    "musicNight": [
+      "MusicAhnQirajExterior1",
+      "MusicAhnQirajExterior2",
+      "MusicAhnQirajExterior3",
+      "MusicAhnQirajExterior4"
+    ],
     "ambienceNight": "AmbienceAhnQirajExterior"
   },
   {
@@ -913,7 +1146,15 @@
     "icon": "Onyxia's Lair",
     "continent": "Kalimdor",
     "ambienceDay": "AmbienceOnyxiasLair",
-    "ambienceNight": "AmbienceOnyxiasLair"
+    "ambienceNight": "AmbienceOnyxiasLair",
+    "musicDay": [
+      "MusicVolcanicNight1",
+      "MusicVolcanicNight2"
+    ],
+    "musicNight": [
+      "MusicVolcanicNight1",
+      "MusicVolcanicNight2"
+    ]
   },
   {
     "name": "Alcaz Island",
@@ -1093,6 +1334,16 @@
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceDeadmines",
     "ambienceNight": "AmbienceDeadmines",
+    "musicDay": [
+      "MusicDeadmines1",
+      "MusicDeadmines2",
+      "MusicDeadmines3"
+    ],
+    "musicNight": [
+      "MusicDeadmines1",
+      "MusicDeadmines2",
+      "MusicDeadmines3"
+    ],
     "miningNodes": [
       "Copper Vein",
       "Silver Vein",
@@ -1105,6 +1356,24 @@
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceJungleDay",
     "ambienceNight": "AmbienceJungleDay",
+    "musicDay": [
+      "MusicZulGurub1",
+      "MusicZulGurub2",
+      "MusicZulGurub3",
+      "MusicZulGurub4",
+      "MusicZulGurub5",
+      "MusicZulGurub6",
+      "MusicZulGurub7"
+    ],
+    "musicNight": [
+      "MusicZulGurub1",
+      "MusicZulGurub2",
+      "MusicZulGurub3",
+      "MusicZulGurub4",
+      "MusicZulGurub5",
+      "MusicZulGurub6",
+      "MusicZulGurub7"
+    ],
     "herbs": [
       "Golden Sansam",
       "Purple Lotus",
@@ -1186,6 +1455,16 @@
     "icon": "Shadowfang Keep",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceShadowfangKeep",
+    "musicDay": [
+      "MusicEvilForestDay1",
+      "MusicEvilForestDay2",
+      "MusicEvilForestDay3"
+    ],
+    "musicNight": [
+      "MusicEvilForestNight1",
+      "MusicEvilForestNight2",
+      "MusicEvilForestNight3"
+    ],
     "ambienceNight": "AmbienceShadowfangKeep"
   },
   {
@@ -1200,6 +1479,14 @@
     "icon": "Gnomeregan",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceGnomeregan",
+    "musicDay": [
+      "MusicGnomeregan1",
+      "MusicGnomeregan2"
+    ],
+    "musicNight": [
+      "MusicGnomeregan1",
+      "MusicGnomeregan2"
+    ],
     "ambienceNight": "AmbienceGnomeregan"
   },
   {
@@ -1208,6 +1495,16 @@
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceUldaman",
     "ambienceNight": "AmbienceUldaman",
+    "musicDay": [
+      "MusicVolcanicDay1",
+      "MusicVolcanicDay2",
+      "MusicVolcanicNight1"
+    ],
+    "musicNight": [
+      "MusicVolcanicDay1",
+      "MusicVolcanicDay2",
+      "MusicVolcanicNight1"
+    ],
     "miningNodes": [
       "Truesilver Vein",
       "Gold Vein",
@@ -1220,6 +1517,20 @@
     "icon": "Temple of Atal'Hakkar",
     "continent": "Eastern Kingdoms",
     "ambienceDay": "AmbienceSunkenTemple",
+    "musicDay": [
+      "MusicSoggyDay1",
+      "MusicSoggyDay2",
+      "MusicSoggyNight1",
+      "MusicSoggyNight2",
+      "MusicSoggyNight3"
+    ],
+    "musicNight": [
+      "MusicSoggyDay1",
+      "MusicSoggyDay2",
+      "MusicSoggyNight1",
+      "MusicSoggyNight2",
+      "MusicSoggyNight3"
+    ],
     "ambienceNight": "AmbienceSunkenTemple"
   },
   {

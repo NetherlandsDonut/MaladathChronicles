@@ -14639,7 +14639,16 @@
     "y": -3294,
     "name": "Theramore Isle",
     "zone": "Dustwallow Marsh",
-    "faction": "Stormwind"
+    "faction": "Stormwind",
+    "musicDay": [
+      "MusicTheramoreDay1",
+      "MusicTheramoreDay2",
+      "MusicTheramoreDay3"
+    ],
+    "musicNight": [
+      "MusicTheramoreNight1",
+      "MusicTheramoreNight2"
+    ]
   },
   {
     "people": [
