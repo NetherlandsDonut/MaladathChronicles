@@ -7141,7 +7141,7 @@ public class Blueprint
                 AddLine("", "Gray", "Center");
                 AddLine("Maladath", "Epic", "Center");
                 AddLine("Chronicles", "Epic", "Center");
-                AddLine("0.7.35", "DimGray", "Center");
+                AddLine("0.7.45", "DimGray", "Center");
                 AddLine("", "Gray", "Center");
                 AddLine("", "Gray", "Center");
                 AddLine("", "Gray", "Center");

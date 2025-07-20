@@ -369,7 +369,7 @@ public class Board
                     //Drop items
                     var directDrop = enemyRace.droppedItems.Select(x => Item.items.Find(y => y.name == x)).Where(x => !x.unique || !currentSave.player.uniquesGotten.Contains(x.name)).Where(x => x.specDropRestriction == null || x.specDropRestriction.Contains(currentSave.player.spec)).Where(x => x.raceDropRestriction == null || x.raceDropRestriction.Contains(currentSave.player.race)).ToList();
                     var wearableDirect = directDrop.Where(x => x.IsWearable()).ToList();
-                    var equipableDirect = wearableDirect.Where(x => x.CanEquip(currentSave.player, false, false)).ToList();
+                    var equipableDirect = wearableDirect.Where(x => x.CanEquip(currentSave.player, false, false, true)).ToList();
 
                     //One wearable item drop with priority on something you can equip
                     if (equipableDirect.Count > 0)
@@ -387,7 +387,7 @@ public class Board
                         var worldDrop = Item.items.FindAll(x => (x.dropRange == null && x.lvl >= enemy.level - 6 && x.lvl <= enemy.level || x.dropRange != null && enemy.level >= int.Parse(x.dropRange.Split('-')[0]) && enemy.level <= int.Parse(x.dropRange.Split('-')[1])) && x.source == "RareDrop");
                         var instance = area.instancePart ? SiteInstance.instances.Find(x => x.wings.Any(y => y.areas.Any(z => z["AreaName"] == area.name))) : null;
                         var zoneDrop = instance == null || instance.zoneDrop == null ? new() : Item.items.FindAll(x => instance.zoneDrop.Contains(x.name));
-                        var everything = zoneDrop.Concat(worldDrop).Where(x => x.CanEquip(currentSave.player, false, false) && (!x.unique || !currentSave.player.uniquesGotten.Contains(x.name)));
+                        var everything = zoneDrop.Concat(worldDrop).Where(x => (!x.onlyWithQuest || currentSave.player.currentQuests.Any(y => y.conditions.Any(z => z.type == "Item" && z.name == x.name))) && x.CanEquip(currentSave.player, false, false, true) && (!x.unique || !currentSave.player.uniquesGotten.Contains(x.name)));
                         var dropGray = everything.Where(x => x.rarity == "Poor").ToList();
                         var dropWhite = everything.Where(x => x.rarity == "Common").ToList();
                         var dropGreen = everything.Where(x => x.rarity == "Uncommon").ToList();

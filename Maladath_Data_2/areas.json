@@ -16646,7 +16646,7 @@
     ],
     "eliteEncounters": [
       {
-        "who": "Sulfuron Harbringer",
+        "who": "Sulfuron Harbinger",
         "levelMin": 60
       },
       {
@@ -16662,7 +16662,7 @@
     "progression": [
       {
         "type": "Boss",
-        "bossName": "Sulfuron Harbringer",
+        "bossName": "Sulfuron Harbinger",
         "point": 2
       },
       {

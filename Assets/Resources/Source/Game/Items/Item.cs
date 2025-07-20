@@ -120,6 +120,9 @@ public class Item
     //Can player have more than one of these items
     public bool unique;
 
+    //Can player drop this item only when they have a quest for it?
+    public bool onlyWithQuest;
+
     //Items contained inside of the item
     public List<Item> itemsInside;
 
@@ -334,7 +337,7 @@ public class Item
     //While [downgradeArmor] is set to false this function does not allow
     //people downgrading their preferred armor class
     //For example it will say that a Paladin cannot equip a cloth item
-    public bool CanEquip(Entity entity, bool downgradeArmor, bool showWhyNot)
+    public bool CanEquip(Entity entity, bool downgradeArmor, bool showWhyNot, bool ignoreLevel = false)
     {
         if (type == "Miscellaneous" || type == "Trade Good" || type == "Recipe") return false;
         bool result = true;
@@ -550,7 +553,7 @@ public class Item
                 }
             }
         }
-        if (result && lvl > entity.level)
+        if (!ignoreLevel && result && lvl > entity.level)
         {
             if (showWhyNot)
                 SpawnFallingText(new Vector2(0, 34), "You don't meet the level requirements", "Red");
