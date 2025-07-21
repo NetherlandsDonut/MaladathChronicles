@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using static Quest;
 using static Defines;
+using Microsoft.Unity.VisualStudio.Editor;
 
 //Iventory is a space for storing money and items
 //It's used by entities and banks
@@ -204,7 +205,11 @@ public class Inventory
     #region Management
 
     //Returns the amount of bag space inventory has
-    public int BagSpace() => bags.Sum(x => x.bagSpace) + defines.backpackSpace;
+    public int BagSpace()
+    {
+        var theorySpace = bags.Sum(x => x.bagSpace) + defines.backpackSpace;
+        return theorySpace > 30 ? 30 : theorySpace;
+    }
 
     //If true, functions don't look at empty space in bags
     public bool ignoreSpaceChecks;

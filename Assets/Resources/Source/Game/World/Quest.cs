@@ -92,6 +92,9 @@ public class Quest
     //Item rewards for this quest
     public Dictionary<string, int> rewards;
 
+    //Unique items required to make this quest appear
+    public List<string> requiredUniqueItems;
+
     //Amount of reputation awarded to the quest faction
     public Dictionary<string, int> reputationGain;
 
@@ -335,7 +338,7 @@ public class Quest
                     if (!currentSave.player.inventory.CanAddItem(item))
                     {
                         PlaySound("QuestFailed");
-                        SpawnFallingText(new Vector2(0, 34), "Inventory full", "Red");
+                        SpawnFallingText(new Vector2(0, 34), "Inventory is full", "Red");
                     }
                     else
                     {
@@ -355,7 +358,7 @@ public class Quest
                     else if (!currentSave.player.inventory.CanAddItem(item))
                     {
                         PlaySound("QuestFailed");
-                        SpawnFallingText(new Vector2(0, 34), "Inventory full", "Red");
+                        SpawnFallingText(new Vector2(0, 34), "Inventory is full", "Red");
                     }
                     else
                     {

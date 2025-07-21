@@ -3691,6 +3691,8 @@ public class Blueprint
                         (h) =>
                         {
                             SiteHostileArea.area = find;
+                            if (currentSave.player.QuestsAt(SiteHostileArea.area).Count == 0)
+                                CloseWindow("HostileAreaQuestTracker");
                             Respawn("HostileArea");
                             Respawn("HostileAreaProgress");
                             Respawn("HostileAreaDenizens");
@@ -3792,6 +3794,8 @@ public class Blueprint
                     (h) =>
                     {
                         SiteHostileArea.area = find;
+                        if (currentSave.player.QuestsAt(SiteHostileArea.area).Count == 0)
+                            CloseWindow("HostileAreaQuestTracker");
                         Respawn("HostileArea");
                         Respawn("HostileAreaProgress");
                         Respawn("HostileAreaDenizens");
@@ -6378,7 +6382,7 @@ public class Blueprint
                 var items = new List<Item>() { Market.exploredAuctions[0].item.CopyItem(1) }.Multilate(planned);
                 if (!currentSave.player.inventory.CanAddItems(items))
                 {
-                    SpawnFallingText(new Vector2(0, 34), "Inventory full", "Red");
+                    SpawnFallingText(new Vector2(0, 34), "Inventory is full", "Red");
                 }
                 else
                 {

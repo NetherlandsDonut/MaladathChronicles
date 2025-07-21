@@ -1,5 +1,14 @@
 [
   {
+    "name": "Prince Thunderaan",
+    "category": "Elemental",
+    "subcategory": "Air Elemental",
+    "portrait": "PortraitPrinceThunderaan",
+    "abilities": {},
+    "kind": "Elite",
+    "vitality": 3.5
+  },
+  {
     "name": "Nightsaber Stalker",
     "category": "Beast",
     "subcategory": "Cat",

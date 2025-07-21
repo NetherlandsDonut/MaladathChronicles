@@ -75,6 +75,7 @@ public static class Coloring
         { "Pink",           new Color32(218, 065, 226, 255) },
         { "CursorEnemy",    new Color32(255, 000, 000, 255) },
         { "CursorFriend",   new Color32(000, 155, 255, 255) },
+        { "Quote",          new Color32(194, 159, 000, 255) },
 
         //Class colors
         { "Druid",          new Color32(184, 090, 007, 255) },

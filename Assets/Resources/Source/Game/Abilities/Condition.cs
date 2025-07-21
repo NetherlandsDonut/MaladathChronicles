@@ -42,10 +42,10 @@ public class Condition
 
         string Moo(string input)
         {
-            var effector = board.participants[board.whosTurn];
-            var other = board.Target(effector.team);
+            var effector = board?.participants[board.whosTurn];
+            var other = board?.Target(effector.team);
             if (!input.StartsWith("@")) return input;
-            else return input switch
+            else return input.Split("~")[0] switch
             {
                 //Board related 
                 "@turn" => board.turn + "",
@@ -140,6 +140,7 @@ public class Condition
                 "@maxhealth" => save != null ? save.player.MaxHealth() + "" : "",
                 "@class" => save != null ? save.player.spec : "",
                 "@lvl" => save != null ? save.player.level + "" : "",
+                "@itemcount" => save != null ? save.player.inventory.items.Sum(x => x.name == input.Split("~")[1].Replace("_", " ") ? x.amount : 0) + "" : "0",
 
                 _ => input,
             };

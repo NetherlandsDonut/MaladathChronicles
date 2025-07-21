@@ -379,10 +379,16 @@ public class SaveGame
         //foreach (var ability in player.abilities.Select(x => (Ability.abilities.Find(y => y.name == x.Key), x.Value)))
         //    ability.Item1.ExecuteEvents(this, trigger, ability.Value);
 
+        //For now I see no need for all items to be checked for interactions when you use a specific one
         foreach (var item in player.inventory.items.Concat(player.equipment.Select(x => x.Value)).ToList())
-            if (item.abilities != null)
+            if (item.GetHashCode() + "" == trigger["ItemHash"] && item.abilities != null)
                 foreach (var ability in item.abilities.Select(x => (Ability.abilities.Find(y => y.name == x.Key), x.Value)))
-                    ability.Item1.ExecuteEvents(this, trigger, item, ability.Value);
+                {
+                    var notMet = ability.Item1.ConditionsNotMet(trigger["Trigger"], ability.Item1, ability.Value, currentSave, Board.board);
+                    if (notMet.Count == 0)
+                        ability.Item1.ExecuteEvents(this, trigger, item, ability.Value);
+                    else SpawnFallingText(new UnityEngine.Vector2(0, 34), notMet[0].failedMessage, "Red");
+                }
 
         //Calling events on player buffs is not done yet
         //foreach (var buff in player.buffs)

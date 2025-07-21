@@ -34,9 +34,16 @@ public class Event
         //Define entities that take place in the event's effects
         var effector = save.player;
 
+        //Some effects have the power the break the sequence of execution.
+        //For example AddItem effect will stop further execution if something goes wrong with it
+        var breakFurtherExecution = false;
+
         //Main loop of executing effects, each effect is calculated here separately
         foreach (var effect in effects)
         {
+            //Stops execution of effects if something went wrong
+            if (breakFurtherExecution) break;
+
             //Collect all effect data from object
             string type = effect.ContainsKey("Effect") ? effect["Effect"] : "None";
             string affect = effect.ContainsKey("Affect") ? effect["Affect"] : "None";
@@ -77,6 +84,8 @@ public class Event
                 else if (type == "AddWorldBuff") EffectAddWorldBuff();
                 else if (type == "RemoveWorldBuff") EffectRemoveWorldBuff();
                 else if (type == "TeleportPlayer") EffectTeleportPlayer();
+                else if (type == "AddItem") breakFurtherExecution = EffectAddItem();
+                else if (type == "RemoveItem") EffectRemoveItem();
                 else if (type == "Combat") EffectCombat();
                 else if (type == "Loot") EffectLoot();
 
@@ -215,6 +224,40 @@ public class Event
                 Respawn("Site: " + prevSite);
                 var newSite = Site.FindSite(x => x.name == save.currentSite);
                 CDesktop.cameraDestination = new Vector2(newSite.x, newSite.y);
+            }
+
+            //This effect consumes one stack of the item
+            bool EffectAddItem()
+            {
+                string itemName = effect.ContainsKey("ItemName") ? effect["ItemName"] : "None";
+                int itemAmount = effect.ContainsKey("ItemAmount") ? int.Parse(effect["ItemAmount"]) : 1;
+                if (itemName == "None") return true;
+                var findItem = Item.items.Find(x => x.name == itemName);
+                if (findItem == null) return true;
+                if (itemAmount <= 0) return true;
+                var items = new List<Item>() { findItem.CopyItem() }.Multilate(itemAmount);
+                var canAdd = save.player.inventory.CanAddItems(items);
+                if (!canAdd)
+                {
+                    SpawnFallingText(new Vector2(0, 34), "Inventory is full", "Red");
+                    return true;
+                }
+                foreach (var item in items)
+                {
+                    save.player.inventory.AddItem(item);
+                    PlaySound(item.ItemSound("PutDown"), 0.8f);
+                }
+                return false;
+            }
+
+            //This effect consumes one stack of the item
+            void EffectRemoveItem()
+            {
+                string itemName = effect.ContainsKey("ItemName") ? effect["ItemName"] : "None";
+                int itemAmount = effect.ContainsKey("ItemAmount") ? int.Parse(effect["ItemAmount"]) : 1;
+                if (itemName == "None") return;
+                if (itemAmount <= 0) return;
+                save.player.inventory.RemoveItem(itemName, itemAmount);
             }
         }
     }

@@ -250,7 +250,6 @@ public class Ability
 
     public void PrintDescription(Entity effector, int width, int rank)
     {
-
         if (description != null) description.Print(effector, width, RankVariables(rank));
         else AddHeaderRegion(() =>
         {

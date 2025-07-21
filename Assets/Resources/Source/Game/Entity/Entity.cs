@@ -136,7 +136,8 @@ public class Entity
         foreach (var site in WhereCanQuestBeDone(quest))
             if (!newSitesToRespawn.Contains(site))
                 newSitesToRespawn.Add(site);
-        newSitesToRespawn.Add(Site.FindSite(x => x.name == quest.siteStart));
+        var findSite = Site.FindSite(x => x.name == quest.siteStart);
+        if (findSite != null) newSitesToRespawn.Add(findSite);
         var sitesRelated = new List<Site>();
         foreach (var site in newSitesToRespawn)
             if (site.capitalRedirect != null)
@@ -172,11 +173,11 @@ public class Entity
         foreach (var site in WhereCanQuestBeDone(quest))
             if (!newSitesToRespawn.Contains(site)) newSitesToRespawn.Add(site);
         var find = Site.FindSite(x => x.name == quest.siteStart);
-        if (!newSitesToRespawn.Contains(find)) newSitesToRespawn.Add(find);
+        if (find != null && !newSitesToRespawn.Contains(find)) newSitesToRespawn.Add(find);
         find = Site.FindSite(x => x.name == quest.siteEnd);
-        if (!newSitesToRespawn.Contains(find)) newSitesToRespawn.Add(find);
+        if (find != null && !newSitesToRespawn.Contains(find)) newSitesToRespawn.Add(find);
         foreach (var site in newSitesToRespawn)
-            if (!sitesToRespawn.Contains(site)) sitesToRespawn.Add(site);
+            if (site != null && !sitesToRespawn.Contains(site)) sitesToRespawn.Add(site);
         var sitesRelated = new List<Site>();
         foreach (var site in newSitesToRespawn)
             if (site.capitalRedirect != null)
@@ -234,6 +235,7 @@ public class Entity
         if (quest.previous != null && quest.previous.All(x => !completedQuests.Contains(x))) return false;
         if (quest.races != null && !quest.races.Contains(race)) return false;
         if (quest.classes != null && !quest.classes.Contains(spec)) return false;
+        if (quest.requiredUniqueItems != null && !quest.requiredUniqueItems.Any(x => uniquesGotten.Contains(x))) return false;
         if (quest.faction != null && !IsRankHighEnough(ReputationRank(quest.faction), quest.requiredRank)) return false;
         else if (quest.faction == null && site.faction != null && !IsRankHighEnough(ReputationRank(site.faction), "Neutral")) return false;
         return true;

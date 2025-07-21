@@ -190,6 +190,7 @@ public class SiteInstance : Site
             (h) =>
             {
                 area = find;
+                CloseWindow("HostileAreaQuestTracker");
                 Respawn("HostileArea");
                 Respawn("HostileAreaProgress");
                 Respawn("HostileAreaDenizens");
@@ -219,6 +220,7 @@ public class SiteInstance : Site
                 {
                     if (area.Item1 == null) return;
                     SiteHostileArea.area = area.Item1;
+                    CloseWindow("HostileAreaQuestTracker");
                     Respawn("HostileArea");
                     Respawn("HostileAreaProgress");
                     Respawn("HostileAreaDenizens");

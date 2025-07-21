@@ -184,7 +184,7 @@ public class Item
         if (type == "Two Handed")
         {
             if (entity.equipment.ContainsKey("Off Hand") && entity.equipment.ContainsKey("Main Hand") && entity.inventory.BagSpace() - entity.inventory.items.Count < 1)
-                SpawnFallingText(new Vector2(0, 34), "Inventory full", "Red");
+                SpawnFallingText(new Vector2(0, 34), "Inventory is full", "Red");
             else
             {
                 unequiped.AddRange(entity.Unequip(new() { "Off Hand", "Main Hand" }));
@@ -1113,12 +1113,16 @@ public class Item
             (h) =>
             {
                 if (openedItem == item) return;
-                if (item.indestructible) return;
                 if (movingItem != null) return;
                 if (WindowUp("ConfirmItemDisenchant")) return;
                 if (WindowUp("ConfirmItemDestroy")) return;
                 if (WindowUp("InventorySort")) return;
                 if (WindowUp("BankSort")) return;
+                if (item.indestructible)
+                {
+                    SpawnFallingText(new Vector2(0, 34), "This item cannot be destroyed", "Red");
+                    return;
+                }
                 itemToDestroy = item;
                 PlaySound("DesktopMenuOpen", 0.6f);
                 SpawnWindowBlueprint("ConfirmItemDestroy");
@@ -1478,16 +1482,16 @@ public class Item
             });
         }
         if (item.specs != null)
-            AddHeaderRegion(() =>
+        {
+            var desc = new Description() { regions = new() { new() { regionType = "Header", isExtender = true, contents = new() { new() { { "Text", "Classes:" }, { "Color", "DarkGray" } } } } } };
+            foreach (var spec in item.specs)
             {
-                AddLine("Classes: ", "DarkGray");
-                foreach (var spec in item.specs)
-                {
-                    AddText(spec, spec);
-                    if (spec != item.specs.Last())
-                        AddText(", ", "DarkGray");
-                }
-            });
+                desc.regions[0].contents.Add(new() { { "Text", spec }, { "Color", spec }, { "Spacing", "No" } });
+                if (spec != item.specs.Last())
+                    desc.regions[0].contents.Add(new() { { "Text", "," }, { "Color", "DarkGray" } });
+            }
+            desc.Print(currentSave.player, 182, new(), false);
+        }
         if (item.abilities != null)
             foreach (var ability in item.abilities)
             {

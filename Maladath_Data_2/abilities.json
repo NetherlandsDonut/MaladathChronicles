@@ -2021,6 +2021,156 @@
     }
   },
   {
+    "name": "Join Left Binds of the Wind",
+    "possibleTargets": "Self",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddItem",
+            "ItemName": "Binds of the Wind"
+          },
+          {
+            "Effect": "RemoveItem",
+            "ItemName": "Left Binds of the Wind"
+          },
+          {
+            "Effect": "RemoveItem",
+            "ItemName": "Right Binds of the Wind"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "@itemcount~Right_Binds_of_the_Wind >= 1",
+            "failedMessage": "You lack the required items"
+          },
+          {
+            "condition": "@itemcount~Left_Binds_of_the_Wind >= 1",
+            "failedMessage": "You lack the required items"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "isExtender": true,
+          "contents": [
+            {
+              "Color": "Quote",
+              "Text": "\"Left half of the Thunderaan's prison.\""
+            }
+          ]
+        },
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Loosely join together the left and the right parts of the Thunderaan's eternal prison."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Join Right Binds of the Wind",
+    "possibleTargets": "Self",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddItem",
+            "ItemName": "Binds of the Wind"
+          },
+          {
+            "Effect": "RemoveItem",
+            "ItemName": "Left Binds of the Wind"
+          },
+          {
+            "Effect": "RemoveItem",
+            "ItemName": "Right Binds of the Wind"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "@itemcount~Right_Binds_of_the_Wind >= 1",
+            "failedMessage": "You lack the required items"
+          },
+          {
+            "condition": "@itemcount~Left_Binds_of_the_Wind >= 1",
+            "failedMessage": "You lack the required items"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "isExtender": true,
+          "contents": [
+            {
+              "Color": "Quote",
+              "Text": "\"Right half of the Thunderaan's prison.\""
+            }
+          ]
+        },
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Loosely join together the left and the right parts of the Thunderaan's eternal prison."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Binds of the Wind",
+    "possibleTargets": "Self",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "isExtender": true,
+          "contents": [
+            {
+              "Color": "Quote",
+              "Text": "\"Both halves of the Thunderaan's prison.\""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "name": "Ultrasafe Transporter: Gadgetzan",
     "possibleTargets": "Self",
     "tags": [],
