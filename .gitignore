@@ -103,3 +103,7 @@ crashlytics-build.properties
 /Assets/Resources/Source/.VSCodeCounter/*
 /Warcraft Elements_Data_2/Backup/*
 /Maladath_Data_2/Backup
+/Assets/Resources/PerformanceTestRunInfo.json
+/Assets/Resources/PerformanceTestRunInfo.json.meta
+/Assets/Resources/PerformanceTestRunSettings.json
+/Assets/Resources/PerformanceTestRunSettings.json.meta
