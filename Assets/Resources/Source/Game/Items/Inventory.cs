@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 using static Quest;
 using static Defines;
-using Microsoft.Unity.VisualStudio.Editor;
 
 //Iventory is a space for storing money and items
 //It's used by entities and banks
