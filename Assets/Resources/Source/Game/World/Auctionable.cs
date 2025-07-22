@@ -12,7 +12,7 @@ public class Auctionable
     public int maxPrice;
 
     //Chance to see this item enter market each hour
-    public int frequency;
+    public float frequency;
 
     //Currently opened auctionable
     public static Auctionable auctionable;

@@ -379,7 +379,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -667,7 +668,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -770,7 +772,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -1192,7 +1195,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -1410,7 +1415,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -1445,7 +1451,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -1477,7 +1484,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -1512,7 +1520,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -1544,7 +1553,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -1579,7 +1589,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -2021,6 +2032,90 @@
     }
   },
   {
+    "name": "Breakdown Greater Magic Essence",
+    "possibleTargets": "Self",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddItem",
+            "ItemName": "Lesser Magic Essence",
+            "ItemAmount": "3"
+          },
+          {
+            "Effect": "RemoveItem",
+            "ItemName": "Greater Magic Essence"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "isExtender": true,
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Turn a greater magic essence into three lesser ones."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Form Greater Magic Essence",
+    "possibleTargets": "Self",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddItem",
+            "ItemName": "Greater Magic Essence"
+          },
+          {
+            "Effect": "RemoveItem",
+            "ItemName": "Lesser Magic Essence",
+            "ItemAmount": "3"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "isExtender": true,
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Turn three lesser magic essences into a greater one."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "name": "Join Left Binds of the Wind",
     "possibleTargets": "Self",
     "tags": [],
@@ -2155,6 +2250,7 @@
     "ranks": [
       {}
     ],
+    "events": [],
     "description": {
       "regions": [
         {
@@ -7010,7 +7106,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -7388,7 +7485,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -7459,7 +7558,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -7514,7 +7615,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -7551,7 +7654,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -7708,7 +7813,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -7739,7 +7846,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -7771,7 +7880,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -7844,7 +7954,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -7933,7 +8044,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -7975,7 +8088,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -8035,7 +8149,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -8122,7 +8237,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -8189,7 +8305,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -8241,7 +8358,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -8292,7 +8411,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -8355,8 +8476,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Other",
-            "AbilityName": "Any"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -8457,7 +8578,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -8494,7 +8617,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -8566,7 +8690,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -8638,7 +8763,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -8697,7 +8823,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -8732,7 +8859,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -8763,7 +8892,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -8804,7 +8935,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -8852,7 +8985,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -8896,7 +9030,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -8965,7 +9101,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -9072,7 +9210,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -9114,7 +9254,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -9203,7 +9345,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -9355,7 +9499,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -9431,7 +9577,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -9462,7 +9609,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -9538,7 +9687,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -9739,7 +9890,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -9936,7 +10088,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -10017,7 +10171,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -10105,7 +10260,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -10167,7 +10324,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -10198,7 +10356,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -10239,7 +10399,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -10276,7 +10438,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -10358,7 +10521,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -10432,7 +10596,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -10587,7 +10753,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -10623,7 +10790,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -10703,7 +10871,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -10872,7 +11042,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -10921,7 +11093,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -10962,7 +11136,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -10984,7 +11160,7 @@
   {
     "name": "Frostbolt",
     "icon": "AbilityFrostbolt",
-    "possibleTargets": "Self",
+    "possibleTargets": "Enemies",
     "tags": [
       "Damage"
     ],
@@ -10998,7 +11174,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -11131,7 +11309,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -11169,7 +11349,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -11246,7 +11428,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -11277,7 +11461,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -11394,7 +11580,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -11455,7 +11643,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -11514,7 +11703,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -11677,7 +11868,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -11714,7 +11907,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -11752,7 +11947,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -11795,7 +11992,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -11893,7 +12092,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -12001,7 +12201,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -12254,7 +12455,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -12402,7 +12605,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -12509,7 +12714,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -12555,7 +12762,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -12600,7 +12808,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -12637,7 +12847,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -12759,7 +12971,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -12934,7 +13148,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -12965,7 +13181,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -12996,7 +13214,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -13095,7 +13315,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -13234,7 +13456,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -13275,7 +13499,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -13316,7 +13542,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -13529,7 +13757,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -13600,7 +13830,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -13700,7 +13932,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -13780,7 +14013,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -13877,7 +14111,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -13925,7 +14161,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -14044,7 +14281,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -14109,7 +14348,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -14236,7 +14477,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -14371,7 +14614,7 @@
           {
             "Trigger": "AbilityCast",
             "Triggerer": "Effector",
-            "AbilityName": "Ice Lance"
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -14423,7 +14666,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -14480,7 +14725,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -14545,7 +14791,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -14633,7 +14881,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -14671,7 +14921,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -14708,7 +14960,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -14763,7 +15017,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -14794,7 +15050,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -14951,7 +15209,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -15009,7 +15268,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -15271,7 +15532,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -15310,7 +15573,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -15368,7 +15633,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -15422,7 +15689,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -15460,7 +15729,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -15541,7 +15812,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -15605,7 +15878,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -15642,7 +15917,9 @@
       {
         "triggers": [
           {
-            "Trigger": "AbilityCast"
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -15693,7 +15970,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -15797,7 +16075,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -15855,7 +16134,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -15906,7 +16186,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -15960,7 +16241,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [
@@ -16000,7 +16282,8 @@
         "triggers": [
           {
             "Trigger": "AbilityCast",
-            "Triggerer": "Effector"
+            "Triggerer": "Effector",
+            "AbilityName": "This"
           }
         ],
         "effects": [

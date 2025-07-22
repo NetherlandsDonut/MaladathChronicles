@@ -481,20 +481,23 @@ public class InputLine : MonoBehaviour
                     if (item.unique) continue;
                     if (item.price == 0) continue;
                     if (item.source == "Quest") continue;
+                    if (item.source == "DirectDrop") continue;
                     if (item.type == "Miscellaneous" && (item.abilities == null || item.abilities.Count == 0)) continue;
                     if (item.rarity == "Poor") continue;
                     if (item.indestructible == true) continue;
                     if (item.questsStarted != null) continue;
                     if (item.droppedBy != null) continue;
-                    Auctionable.auctionables.Add(new()
+                    var newAuctionable = new Auctionable()
                     {
                         item = item.name,
                         minPrice = (int)(item.price * 6.2),
                         maxPrice = (int)(item.price * 16.3),
                         frequency = item.maxStack > 10 ? (item.rarity == "Common" ? 20 : (item.rarity == "Uncommon" || item.rarity == "Poor" ? 12 : (item.rarity == "Rare" ? 5 : (item.rarity == "Epic" ? 2 : 0)))) :
                                     (item.maxStack > 1 ? (item.rarity == "Common" ? 10 : (item.rarity == "Uncommon" || item.rarity == "Poor" ? 6 : (item.rarity == "Rare" ? 3 : (item.rarity == "Epic" ? 1 : 0)))) :
-                                                         (item.rarity == "Common" ? 3 : (item.rarity == "Uncommon" || item.rarity == "Poor" ? 2 : (item.rarity == "Rare" ? 1 : (item.rarity == "Epic" ? 0 : 0)))))
-                    });
+                                                         (item.rarity == "Common" ? 3 : (item.rarity == "Uncommon" || item.rarity == "Poor" ? (item.source == "Profession" ? 2.5f : 1.5f) : (item.rarity == "Rare" ? (item.source == "Profession" ? 1.2f : 0.8f) : (item.rarity == "Epic" ? (item.source == "Profession" ? 0.05f : 0) : 0)))))
+                    };
+                    if (newAuctionable.frequency > 0)
+                        Auctionable.auctionables.Add(newAuctionable);
                 }
                 Serialization.Serialize(Auctionable.auctionables, "auctionables");
             }

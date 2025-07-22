@@ -111,7 +111,7 @@ public class Ability
                     else if (trigger["Trigger"] == "AbilityCast" || trigger["Trigger"] == "Cooldown")
                     {
                         string abilityName = trigger.ContainsKey("AbilityName") ? trigger["AbilityName"] : "None";
-                        string abilityNameData = triggerData.ContainsKey("AbilityName") ? (triggerData["AbilityName"] == "This" ? name : triggerData["AbilityName"]) : name;
+                        string abilityNameData = triggerData.ContainsKey("AbilityName") ? (triggerData["AbilityName"] == "This" ? name : triggerData["AbilityName"]) : "Any";
                         string triggerer = trigger.ContainsKey("Triggerer") ? trigger["Triggerer"] : "None";
                         string triggererData = triggerData.ContainsKey("Triggerer") ? triggerData["Triggerer"] : "Effector";
                         execute = (abilityName == abilityNameData || abilityNameData == "Any") && triggerer == triggererData;

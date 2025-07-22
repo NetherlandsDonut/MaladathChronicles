@@ -687,13 +687,22 @@ public class Item
         return true;
     }
 
+    //Predicts disenchanting loot based on this item
+    public List<GeneralDrop> PredictDisenchantLoot()
+    {
+        var rarities = new List<string>() { "Uncommon" };
+        if (rarity == "Rare" || rarity == "Epic") rarities.Add("Rare");
+        if (rarity == "Epic") rarities.Add("Epic");
+        return GeneralDrop.generalDrops.FindAll(x => x.dropStart <= ilvl && x.dropEnd >= ilvl && rarities.Any(y => x.category == "Disenchant " + y));
+    }
+
     //Generates disenchanting loot based on this item
     public Inventory GenerateDisenchantLoot()
     {
         var rarities = new List<string>() { "Uncommon" };
         if (rarity == "Rare" || rarity == "Epic") rarities.Add("Rare");
         if (rarity == "Epic") rarities.Add("Epic");
-        var drops = GeneralDrop.generalDrops.FindAll(x => x.dropStart <= itemToDisenchant.ilvl && x.dropEnd >= itemToDisenchant.ilvl && rarities.Any(y => x.category == "Disenchant " + y));
+        var drops = GeneralDrop.generalDrops.FindAll(x => x.dropStart <= ilvl && x.dropEnd >= ilvl && rarities.Any(y => x.category == "Disenchant " + y));
         var inv = new Inventory(true);
         if (drops.Count > 0)
             foreach (var drop in drops)
@@ -1334,6 +1343,22 @@ public class Item
         {
             var recipe = Recipe.recipes.Find(x => item.name.Contains(x.name));
             if (recipe != null) item = items.Find(x => x.name == recipe.results.First().Key).CopyItem(recipe.results.First().Value);
+        }
+        if (Cursor.cursor.color == "Pink")
+        {
+            var drops = item.PredictDisenchantLoot();
+            if (drops.Count > 0)
+            {
+                AddHeaderRegion(() => AddLine("Guaranteed spoils:"));
+                foreach (var drop in drops)
+                    AddPaddingRegion(() =>
+                    {
+                        var findDrop = items.Find(x => x.name == drop.item);
+                        AddLine(findDrop.name, findDrop.rarity);
+                        AddSmallButton(findDrop.icon);
+                    });
+                AddEmptyRegion();
+            }
         }
         var split = item.name.Split(", ");
         AddHeaderRegion(() =>

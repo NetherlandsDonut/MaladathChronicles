@@ -444,7 +444,8 @@
         "Rugged Trapper's Pants",
         "Rugged Trapper's Boots",
         "Worn Dagger",
-        "Worn Shortbow"
+        "Worn Shortbow",
+        "Light Quiver"
       ],
       "Dwarf": [
         "Hearthstone",
@@ -452,7 +453,8 @@
         "Rugged Trapper's Pants",
         "Rugged Trapper's Boots",
         "Worn Axe",
-        "Old Blunderbuss"
+        "Old Blunderbuss",
+        "Small Ammo Pouch"
       ],
       "Night Elf": [
         "Hearthstone",
@@ -460,7 +462,8 @@
         "Rugged Trapper's Pants",
         "Rugged Trapper's Boots",
         "Worn Dagger",
-        "Worn Shortbow"
+        "Worn Shortbow",
+        "Light Quiver"
       ],
       "Orc": [
         "Hearthstone",
@@ -468,21 +471,24 @@
         "Trapper's Pants",
         "Trapper's Boots",
         "Worn Axe",
-        "Worn Shortbow"
+        "Worn Shortbow",
+        "Light Quiver"
       ],
       "Tauren": [
         "Hearthstone",
         "Trapper's Shirt",
         "Trapper's Pants",
         "Worn Axe",
-        "Old Blunderbuss"
+        "Old Blunderbuss",
+        "Small Ammo Pouch"
       ],
       "Troll": [
         "Hearthstone",
         "Trapper's Shirt",
         "Trapper's Pants",
         "Worn Axe",
-        "Worn Shortbow"
+        "Worn Shortbow",
+        "Light Quiver"
       ]
     },
     "stats": {

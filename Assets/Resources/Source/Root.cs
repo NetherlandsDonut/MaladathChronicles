@@ -122,7 +122,9 @@ public static class Root
         for (int i = keys.Count - 1; i >= 0; i--)
         {
             var remove = false;
-            var item = items.Find(x => x.name == keys[i]);
+            if (Market.exploredAuctionsGroups[keys[i]].Count == 0) continue;
+            var item = Market.exploredAuctionsGroups[keys[i]][0].item;
+            if (item == null) continue;
             if (auctionCategory == "Two handed weapons")
             {
                 if (item.type != "Two Handed") remove = true;
@@ -236,7 +238,8 @@ public static class Root
         abilityTargetted = ability;
         if (ability.targettingSound != null)
             PlaySound(ability.targettingSound);
-        if (abilityTargetted.possibleTargets == "Self") FinishTargettingAbility(null);
+        if (abilityTargetted.possibleTargets == "Self")
+            FinishTargettingAbility(board.participants[board.whosTurn]);
         else Cursor.cursor.SetCursor(CursorType.Crosshair);
         //if (abilityTargetted != null) Respawn("TargettingInfo");
     }
@@ -1541,7 +1544,7 @@ public static class Root
 
     #region General
 
-    //Rolls a chance with a provided % of something happening [0 - 100]
+    //Rolls a chance with a provided % of something happening [0,001 - 100]
     public static bool Roll(double chance) => chance > 0 && (chance >= 100 || random.Next(0, 100000) < chance * 1000);
 
     //Set what highlightible object mouse is currently hovering over
