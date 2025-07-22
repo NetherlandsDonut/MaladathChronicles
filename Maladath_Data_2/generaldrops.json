@@ -2136,24 +2136,10 @@
     "requiredProfession": "Enchanting",
     "requiredSkill": 1,
     "item": "Lesser Magic Essence",
-    "rarity": 80.0,
+    "rarity": 100.0,
     "category": "Disenchant Uncommon",
     "dropStart": 5,
-    "dropEnd": 15,
-    "dropCount": 1,
-    "tags": [
-      "Dust",
-      "CommonMaterial"
-    ]
-  },
-  {
-    "requiredProfession": "Enchanting",
-    "requiredSkill": 1,
-    "item": "Lesser Magic Essence",
-    "rarity": 80.0,
-    "category": "Disenchant Uncommon",
-    "dropStart": 5,
-    "dropEnd": 15,
+    "dropEnd": 9,
     "dropCount": 1,
     "tags": [
       "Essence",
@@ -2163,8 +2149,22 @@
   {
     "requiredProfession": "Enchanting",
     "requiredSkill": 1,
+    "item": "Lesser Magic Essence",
+    "rarity": 100.0,
+    "category": "Disenchant Uncommon",
+    "dropStart": 10,
+    "dropEnd": 15,
+    "dropCount": 2,
+    "tags": [
+      "Essence",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
     "item": "Greater Magic Essence",
-    "rarity": 80.0,
+    "rarity": 100.0,
     "category": "Disenchant Uncommon",
     "dropStart": 16,
     "dropEnd": 25,
@@ -2178,10 +2178,10 @@
     "requiredProfession": "Enchanting",
     "requiredSkill": 1,
     "item": "Lesser Astral Essence",
-    "rarity": 80.0,
+    "rarity": 100.0,
     "category": "Disenchant Uncommon",
     "dropStart": 21,
-    "dropEnd": 25,
+    "dropEnd": 22,
     "dropCount": 1,
     "tags": [
       "Essence",
@@ -2191,8 +2191,22 @@
   {
     "requiredProfession": "Enchanting",
     "requiredSkill": 1,
+    "item": "Lesser Astral Essence",
+    "rarity": 100.0,
+    "category": "Disenchant Uncommon",
+    "dropStart": 23,
+    "dropEnd": 25,
+    "dropCount": 2,
+    "tags": [
+      "Essence",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
     "item": "Greater Astral Essence",
-    "rarity": 80.0,
+    "rarity": 100.0,
     "category": "Disenchant Uncommon",
     "dropStart": 26,
     "dropEnd": 30,
@@ -2206,10 +2220,10 @@
     "requiredProfession": "Enchanting",
     "requiredSkill": 1,
     "item": "Lesser Mystic Essence",
-    "rarity": 80.0,
+    "rarity": 100.0,
     "category": "Disenchant Uncommon",
     "dropStart": 31,
-    "dropEnd": 35,
+    "dropEnd": 32,
     "dropCount": 1,
     "tags": [
       "Essence",
@@ -2219,8 +2233,22 @@
   {
     "requiredProfession": "Enchanting",
     "requiredSkill": 1,
+    "item": "Lesser Mystic Essence",
+    "rarity": 100.0,
+    "category": "Disenchant Uncommon",
+    "dropStart": 33,
+    "dropEnd": 35,
+    "dropCount": 2,
+    "tags": [
+      "Essence",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
     "item": "Greater Mystic Essence",
-    "rarity": 80.0,
+    "rarity": 100.0,
     "category": "Disenchant Uncommon",
     "dropStart": 36,
     "dropEnd": 40,
@@ -2234,10 +2262,10 @@
     "requiredProfession": "Enchanting",
     "requiredSkill": 1,
     "item": "Lesser Nether Essence",
-    "rarity": 80.0,
+    "rarity": 100.0,
     "category": "Disenchant Uncommon",
     "dropStart": 41,
-    "dropEnd": 45,
+    "dropEnd": 42,
     "dropCount": 1,
     "tags": [
       "Essence",
@@ -2247,8 +2275,22 @@
   {
     "requiredProfession": "Enchanting",
     "requiredSkill": 1,
+    "item": "Lesser Nether Essence",
+    "rarity": 100.0,
+    "category": "Disenchant Uncommon",
+    "dropStart": 43,
+    "dropEnd": 45,
+    "dropCount": 2,
+    "tags": [
+      "Essence",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
     "item": "Greater Nether Essence",
-    "rarity": 80.0,
+    "rarity": 100.0,
     "category": "Disenchant Uncommon",
     "dropStart": 46,
     "dropEnd": 50,
@@ -2262,10 +2304,10 @@
     "requiredProfession": "Enchanting",
     "requiredSkill": 1,
     "item": "Lesser Eternal Essence",
-    "rarity": 80.0,
+    "rarity": 100.0,
     "category": "Disenchant Uncommon",
     "dropStart": 51,
-    "dropEnd": 55,
+    "dropEnd": 52,
     "dropCount": 1,
     "tags": [
       "Essence",
@@ -2275,8 +2317,22 @@
   {
     "requiredProfession": "Enchanting",
     "requiredSkill": 1,
+    "item": "Lesser Eternal Essence",
+    "rarity": 100.0,
+    "category": "Disenchant Uncommon",
+    "dropStart": 53,
+    "dropEnd": 55,
+    "dropCount": 2,
+    "tags": [
+      "Essence",
+      "CommonMaterial"
+    ]
+  },
+  {
+    "requiredProfession": "Enchanting",
+    "requiredSkill": 1,
     "item": "Greater Eternal Essence",
-    "rarity": 80.0,
+    "rarity": 100.0,
     "category": "Disenchant Uncommon",
     "dropStart": 56,
     "dropEnd": 60,
@@ -2290,14 +2346,13 @@
     "requiredProfession": "Enchanting",
     "requiredSkill": 1,
     "item": "Greater Eternal Essence",
-    "rarity": 80.0,
+    "rarity": 100.0,
     "category": "Disenchant Uncommon",
     "dropStart": 61,
     "dropEnd": 999,
     "dropCount": 2,
     "tags": [
-      "Essence",
-      "CommonMaterial"
+      "Essence"
     ]
   },
   {
@@ -2422,7 +2477,7 @@
     "dropEnd": 999,
     "dropCount": 1,
     "tags": [
-      "Shard"
+      "Crystal"
     ]
   },
   {
@@ -2435,7 +2490,7 @@
     "dropEnd": 999,
     "dropCount": 1,
     "tags": [
-      "Shard"
+      "Crystal"
     ]
   },
   {

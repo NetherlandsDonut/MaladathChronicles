@@ -4219,7 +4219,7 @@ public class Blueprint
                         }
 
                         //Set the new site as current
-                        currentSave.currentSite = destination.convertDestinationTo != null ? destination.convertDestinationTo : destination.name;
+                        currentSave.currentSite = destination.convertDestinationTo ?? destination.name;
 
                         currentSave.AddTime(transport.time);
                         transport.PlayPathEndSound();

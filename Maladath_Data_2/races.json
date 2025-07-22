@@ -22157,9 +22157,9 @@
   {
     "name": "Twilight Acolyte",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Dwarf",
     "faction": "Twilight's Hammer",
-    "portrait": "PortraitTwilightDisciple",
+    "portrait": "PortraitTwilightAcolyte",
     "abilities": {},
     "kind": "Common",
     "gender": "Male",
@@ -22167,8 +22167,8 @@
   },
   {
     "name": "Twilight Disciple",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Forsaken",
     "portrait": "PortraitTwilightDisciple",
     "abilities": {},
     "kind": "Common",
@@ -22177,10 +22177,10 @@
   },
   {
     "name": "Twilight Master",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Forsaken",
     "faction": "Twilight's Hammer",
-    "portrait": "PortraitTwilightEmissary",
+    "portrait": "PortraitTwilightMaster",
     "abilities": {},
     "kind": "Common",
     "gender": "Male",
@@ -22200,20 +22200,20 @@
   {
     "name": "Twilight Aquamancer",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Orc",
     "faction": "Twilight's Hammer",
-    "portrait": "PortraitTwilightFlamereaver",
+    "portrait": "PortraitTwilightAquamancer",
     "abilities": {},
     "kind": "Common",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 1.0
   },
   {
     "name": "Twilight Elementalist",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Tauren",
     "faction": "Twilight's Hammer",
-    "portrait": "PortraitTwilightFlamereaver",
+    "portrait": "PortraitTwilightElementalist",
     "abilities": {},
     "kind": "Common",
     "gender": "Male",
@@ -22222,34 +22222,34 @@
   {
     "name": "Twilight Geolord",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Dwarf",
     "faction": "Twilight's Hammer",
     "portrait": "PortraitTwilightGeolord",
     "abilities": {},
     "kind": "Common",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 1.0
   },
   {
     "name": "Twilight Geomancer",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Night Elf",
     "faction": "Twilight's Hammer",
     "portrait": "PortraitTwilightGeomancer",
     "abilities": {},
     "kind": "Common",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 1.0
   },
   {
     "name": "Twilight Avenger",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Dwarf",
     "faction": "Twilight's Hammer",
-    "portrait": "PortraitTwilightIdolater",
+    "portrait": "PortraitTwilightAvenger",
     "abilities": {},
     "kind": "Common",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 1.0
   },
   {
@@ -22260,7 +22260,7 @@
     "portrait": "PortraitTwilightIdolater",
     "abilities": {},
     "kind": "Common",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 1.0
   },
   {
@@ -22271,7 +22271,7 @@
     "portrait": "PortraitTwilightKeeperMayna",
     "abilities": {},
     "kind": "Elite",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 3.0
   },
   {
@@ -22288,7 +22288,7 @@
   {
     "name": "Twilight Lord Kelris",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Orc",
     "faction": "Twilight's Hammer",
     "portrait": "PortraitTwilightLordKelris",
     "abilities": {},

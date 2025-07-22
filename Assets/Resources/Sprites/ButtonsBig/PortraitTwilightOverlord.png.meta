@@ -132,6 +132,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
     nameFileIdTable:
       PortraitTwilightOverlord_0: -6978767383809680753
   mipmapLimitGroupName: 

@@ -132,6 +132,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
     nameFileIdTable:
       PortraitTwilightDisciple_0: 7482068886058427824
   mipmapLimitGroupName: 

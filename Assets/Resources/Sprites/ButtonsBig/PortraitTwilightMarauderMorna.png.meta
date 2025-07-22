@@ -132,6 +132,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
     nameFileIdTable:
       PortraitTwilightMarauderMorna_0: -8974353243650213578
   mipmapLimitGroupName: 

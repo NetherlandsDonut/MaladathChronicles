@@ -335,7 +335,7 @@ public static class Root
         movingItemFrom = window;
         var bigButtonIndex = h == null ? movingItemX : h.region.bigButtons.IndexOf(h.GetComponent<LineBigButton>());
         var regionIndex = h == null ? movingItemY : h.window.headerGroup.regions.IndexOf(h.region) - (movingItemFrom == "Bank" ? 2 : 1);
-        movingItem = (movingItemFrom == "Bank" ? SaveGame.currentSave.banks[SiteTown.town.name].items : SaveGame.currentSave.player.inventory.items).Find(x => x.x == bigButtonIndex && x.y == regionIndex);
+        movingItem = (movingItemFrom == "Bank" ? currentSave.banks[SiteTown.town.name].items : currentSave.player.inventory.items).Find(x => x.x == bigButtonIndex && x.y == regionIndex);
         movingItemSplitOff = false;
         if (amount != 0 && amount < movingItem.amount)
         {
@@ -343,8 +343,8 @@ public static class Root
             movingItem = movingItem.CopyItem(amount);
             movingItemSplitOff = true;
         }
-        else if (movingItemFrom == "Bank") SaveGame.currentSave.banks[SiteTown.town.name].items.Remove(movingItem);
-        else SaveGame.currentSave.player.inventory.items.Remove(movingItem);
+        else if (movingItemFrom == "Bank") currentSave.banks[SiteTown.town.name].items.Remove(movingItem);
+        else currentSave.player.inventory.items.Remove(movingItem);
         PlaySound(movingItem.ItemSound("PickUp"), 0.8f);
         Cursor.cursor.iconAttached.SetActive(true);
         Cursor.cursor.iconAttached.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Buttons/" + movingItem.icon);
@@ -892,14 +892,20 @@ public static class Root
             AddRegionGroup();
             AddPaddingRegion(() =>
             {
-                if (CDesktop.title == "EquipmentScreen")
+                if (CDesktop.title != "DisenchantLoot")
                     AddSmallButton(Cursor.cursor.color != "Pink" ? "ItemDisenchant" : "OtherCloseDisenchant", (h) =>
                     {
                         if (Cursor.cursor.color != "Pink")
                             Cursor.cursor.SetColor("Pink");
                         else Cursor.cursor.ResetColor();
-                        Respawn("PlayerEquipmentInfo");
-                        Respawn("PlayerWeaponsInfo");
+                        Respawn("PlayerEquipmentInfo", true);
+                        Respawn("PlayerWeaponsInfo", true);
+                        Respawn("CombatResultsLoot", true);
+                        Respawn("ContainerLoot", true);
+                        Respawn("MiningLoot", true);
+                        Respawn("HerbalismLoot", true);
+                        Respawn("SkinningLoot", true);
+                        Respawn("ChestLoot", true);
                     });
                 else
                 {

@@ -2116,6 +2116,342 @@
     }
   },
   {
+    "name": "Breakdown Greater Astral Essence",
+    "possibleTargets": "Self",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddItem",
+            "ItemName": "Lesser Astral Essence",
+            "ItemAmount": "3"
+          },
+          {
+            "Effect": "RemoveItem",
+            "ItemName": "Greater Astral Essence"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "isExtender": true,
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Turn a greater astral essence into three lesser ones."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Form Greater Astral Essence",
+    "possibleTargets": "Self",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddItem",
+            "ItemName": "Greater Astral Essence"
+          },
+          {
+            "Effect": "RemoveItem",
+            "ItemName": "Lesser Astral Essence",
+            "ItemAmount": "3"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "isExtender": true,
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Turn three lesser astral essences into a greater one."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Breakdown Greater Mystic Essence",
+    "possibleTargets": "Self",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddItem",
+            "ItemName": "Lesser Mystic Essence",
+            "ItemAmount": "3"
+          },
+          {
+            "Effect": "RemoveItem",
+            "ItemName": "Greater Mystic Essence"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "isExtender": true,
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Turn a greater mystic essence into three lesser ones."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Form Greater Mystic Essence",
+    "possibleTargets": "Self",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddItem",
+            "ItemName": "Greater Mystic Essence"
+          },
+          {
+            "Effect": "RemoveItem",
+            "ItemName": "Lesser Mystic Essence",
+            "ItemAmount": "3"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "isExtender": true,
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Turn three lesser mystic essences into a greater one."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Breakdown Greater Nether Essence",
+    "possibleTargets": "Self",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddItem",
+            "ItemName": "Lesser Nether Essence",
+            "ItemAmount": "3"
+          },
+          {
+            "Effect": "RemoveItem",
+            "ItemName": "Greater Nether Essence"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "isExtender": true,
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Turn a greater nether essence into three lesser ones."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Form Greater Nether Essence",
+    "possibleTargets": "Self",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddItem",
+            "ItemName": "Greater Nether Essence"
+          },
+          {
+            "Effect": "RemoveItem",
+            "ItemName": "Lesser Nether Essence",
+            "ItemAmount": "3"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "isExtender": true,
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Turn three lesser nether essences into a greater one."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Breakdown Greater Eternal Essence",
+    "possibleTargets": "Self",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddItem",
+            "ItemName": "Lesser Eternal Essence",
+            "ItemAmount": "3"
+          },
+          {
+            "Effect": "RemoveItem",
+            "ItemName": "Greater Eternal Essence"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "isExtender": true,
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Turn a greater eternal essence into three lesser ones."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Form Greater Eternal Essence",
+    "possibleTargets": "Self",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddItem",
+            "ItemName": "Greater Eternal Essence"
+          },
+          {
+            "Effect": "RemoveItem",
+            "ItemName": "Lesser Eternal Essence",
+            "ItemAmount": "3"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "isExtender": true,
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Turn three lesser eternal essences into a greater one."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "name": "Join Left Binds of the Wind",
     "possibleTargets": "Self",
     "tags": [],
