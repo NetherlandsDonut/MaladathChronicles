@@ -1731,9 +1731,9 @@ public class Item
     public void SetRandomEnchantment()
     {
         if (!randomEnchantment) return;
+        randomEnchantment = false;
         var enchantment = GenerateEnchantment();
         if (enchantment == null) return;
-        randomEnchantment = false;
         name += " " + enchantment.suffix;
         if (enchantment.stats.Count > 0)
         {

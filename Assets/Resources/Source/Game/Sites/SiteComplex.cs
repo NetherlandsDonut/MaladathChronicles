@@ -148,7 +148,6 @@ public class SiteComplex : Site
                             AddSmallButton("Site" + site["SiteType"]);
                         });
                     else AddHeaderRegion(() => AddLine("?", "DimGray"));
-
                 }
                 var q = currentSave.player.QuestsAt(this);
                 if (q.Count > 0)
