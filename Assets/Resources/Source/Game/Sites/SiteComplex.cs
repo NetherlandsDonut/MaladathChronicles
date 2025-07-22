@@ -140,11 +140,16 @@ public class SiteComplex : Site
                     AddText(range.Item2 + "", ColorEntityLevel(currentSave.player, range.Item2));
                 });
                 foreach (var site in complex.sites)
-                    AddHeaderRegion(() =>
-                    {
-                        AddLine(site["SiteName"], "HalfGray");
-                        AddSmallButton("Site" + site["SiteType"]);
-                    });
+                {
+                    if (showAreasUnconditional || !site.ContainsKey("OpenByDefault") || site.ContainsKey("OpenByDefault") && site["OpenByDefault"] == "True" || currentSave.unlockedAreas.Contains(site["SiteName"]))
+                        AddHeaderRegion(() =>
+                        {
+                            AddLine(site["SiteName"], "HalfGray");
+                            AddSmallButton("Site" + site["SiteType"]);
+                        });
+                    else AddHeaderRegion(() => AddLine("?", "DimGray"));
+
+                }
                 var q = currentSave.player.QuestsAt(this);
                 if (q.Count > 0)
                 {

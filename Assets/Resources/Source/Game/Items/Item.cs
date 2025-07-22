@@ -1733,6 +1733,7 @@ public class Item
         if (!randomEnchantment) return;
         var enchantment = GenerateEnchantment();
         if (enchantment == null) return;
+        randomEnchantment = false;
         name += " " + enchantment.suffix;
         if (enchantment.stats.Count > 0)
         {
