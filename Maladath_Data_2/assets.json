@@ -1990,6 +1990,10 @@
     "ZeppelinStop.ogg"
   ],
   "itemIcons": [
+    "ItemAlchemyVial02.png",
+    "ItemAlchemyVial03.png",
+    "ItemAlchemyVial04.png",
+    "ItemAlchemyVial05.png",
     "ItemAmmoArrow01.png",
     "ItemAmmoArrow02.png",
     "ItemAmmoBullet01.png",

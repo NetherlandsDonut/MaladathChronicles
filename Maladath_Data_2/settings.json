@@ -6,13 +6,13 @@
     "value": "True"
   },
   "music": {
-    "value": "True"
+    "value": "False"
   },
   "ambience": {
-    "value": "True"
+    "value": "False"
   },
   "soundEffects": {
-    "value": "True"
+    "value": "False"
   },
   "rarityIndicators": {
     "value": "True"
