@@ -3066,6 +3066,17 @@
     "vitality": 3.0
   },
   {
+    "name": "Yarrog Baneshadow",
+    "category": "Humanoid",
+    "subcategory": "Orc",
+    "faction": "Burning Blade Clan",
+    "portrait": "PortraitYarrogBaneshadow",
+    "abilities": {},
+    "kind": "Elite",
+    "gender": "Male",
+    "vitality": 3.0
+  },
+  {
     "name": "Burning Blade Summoner",
     "category": "Humanoid",
     "subcategory": "Orc",

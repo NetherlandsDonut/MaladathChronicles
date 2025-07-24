@@ -2421,21 +2421,21 @@ public class Blueprint
                     });
             }
             AddPaginationLine();
-        }),
+        }, true),
         new("Quest", () => {
             SetAnchor(TopRight, -19, -38);
             quest.Print();
-        }),
+        }, true),
         new("QuestAdd", () => {
             SetAnchor(TopRight, -19, -38);
             quest.Print("Add");
-        }),
+        }, true),
         new("QuestTurn", () => {
             SetAnchor(TopRight, -19, -38);
             quest.Print("Turn");
-        }),
+        }, true),
         new("QuestConfirmAbandon", () => {
-            SetAnchor(-92, 142);
+            SetAnchor(Top, 0, -38);
             AddHeaderGroup();
             SetRegionGroupWidth(182);
             AddPaddingRegion(() =>
@@ -2508,7 +2508,7 @@ public class Blueprint
                 CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.4f);
             });
-        }),
+        }, true),
         new("QuestSettings", () => {
             SetAnchor(Center);
             AddRegionGroup();
@@ -2532,7 +2532,7 @@ public class Blueprint
                 settings.questLevel.Invert();
                 CDesktop.RespawnAll();
             });
-        }),
+        }, true),
 
         //Inventory
         new("PlayerEquipmentInfo", () => {
@@ -6954,12 +6954,30 @@ public class Blueprint
                 CloseDesktop("BestiaryScreen");
                 CloseDesktop("CraftingScreen");
                 CloseDesktop("CharacterSheet");
-                if (CDesktop.title != "QuestLog")
-                    SpawnDesktopBlueprint("QuestLog");
+                CloseDesktop("Town");
+                CloseDesktop("Capital");
+                CloseDesktop("HostileArea");
+                CloseDesktop("Instance");
+                CloseDesktop("Complex");
+                SwitchDesktop("Map");
+                SpawnTransition();
+                if (WindowUp("QuestList"))
+                {
+                    PlaySound("DesktopSpellbookClose");
+                    RemoveDesktopBackground();
+                    CloseWindow("QuestList");
+                    CloseWindow("QuestSettings");
+                    CloseWindow("QuestSort");
+                    CloseWindow("Quest");
+                    CloseWindow("QuestAdd");
+                    CloseWindow("QuestTurn");
+                    CloseWindow("QuestConfirmAbandon");
+                }
                 else
                 {
-                    CloseDesktop(CDesktop.title);
-                    PlaySound("DesktopSpellbookClose");
+                    PlaySound("DesktopInventoryOpen");
+                    SetDesktopBackground("Backgrounds/RuggedLeather", true, true);
+                    Respawn("QuestList");
                 }
             });
             SetAnchor(Top);
@@ -6974,7 +6992,17 @@ public class Blueprint
                     CloseDesktop("SpellbookScreen");
                     CloseDesktop("TalentScreen");
                     CloseDesktop("CraftingScreen");
-                    CloseDesktop("QuestLog");
+                    if (WindowUp("QuestList"))
+                    {
+                        RemoveDesktopBackground();
+                        CloseWindow("QuestList");
+                        CloseWindow("QuestSettings");
+                        CloseWindow("QuestSort");
+                        CloseWindow("Quest");
+                        CloseWindow("QuestAdd");
+                        CloseWindow("QuestTurn");
+                        CloseWindow("QuestConfirmAbandon");
+                    }
                     if (CDesktop.title != "CharacterSheet")
                         SpawnDesktopBlueprint("CharacterSheet");
                     else
@@ -6991,7 +7019,17 @@ public class Blueprint
                         CloseDesktop("TalentScreen");
                         CloseDesktop("CraftingScreen");
                         CloseDesktop("CharacterSheet");
-                        CloseDesktop("QuestLog");
+                        if (WindowUp("QuestList"))
+                        {
+                            RemoveDesktopBackground();
+                            CloseWindow("QuestList");
+                            CloseWindow("QuestSettings");
+                            CloseWindow("QuestSort");
+                            CloseWindow("Quest");
+                            CloseWindow("QuestAdd");
+                            CloseWindow("QuestTurn");
+                            CloseWindow("QuestConfirmAbandon");
+                        }
                         if (desktops.All(x => x.title != "ContainerLoot"))
                             if (CDesktop.title != "EquipmentScreen")
                                 SpawnDesktopBlueprint("EquipmentScreen");
@@ -7009,7 +7047,17 @@ public class Blueprint
                     CloseDesktop("TalentScreen");
                     CloseDesktop("CraftingScreen");
                     CloseDesktop("CharacterSheet");
-                    CloseDesktop("QuestLog");
+                    if (WindowUp("QuestList"))
+                    {
+                        RemoveDesktopBackground();
+                        CloseWindow("QuestList");
+                        CloseWindow("QuestSettings");
+                        CloseWindow("QuestSort");
+                        CloseWindow("Quest");
+                        CloseWindow("QuestAdd");
+                        CloseWindow("QuestTurn");
+                        CloseWindow("QuestConfirmAbandon");
+                    }
                     if (CDesktop.title != "SpellbookScreen")
                         SpawnDesktopBlueprint("SpellbookScreen");
                     else
@@ -7025,7 +7073,17 @@ public class Blueprint
                     CloseDesktop("EquipmentScreen");
                     CloseDesktop("CraftingScreen");
                     CloseDesktop("CharacterSheet");
-                    CloseDesktop("QuestLog");
+                    if (WindowUp("QuestList"))
+                    {
+                        RemoveDesktopBackground();
+                        CloseWindow("QuestList");
+                        CloseWindow("QuestSettings");
+                        CloseWindow("QuestSort");
+                        CloseWindow("Quest");
+                        CloseWindow("QuestAdd");
+                        CloseWindow("QuestTurn");
+                        CloseWindow("QuestConfirmAbandon");
+                    }
                     if (CDesktop.title != "TalentScreen")
                     {
                         PlaySound("DesktopTalentScreenOpen");
@@ -7037,20 +7095,39 @@ public class Blueprint
                         PlaySound("DesktopTalentScreenClose");
                     }
                 });
-                AddSmallButton(CDesktop.title == "QuestLog" ? "OtherClose" : "MenuQuestLog", (h) =>
+                AddSmallButton(WindowUp("QuestList") ? "OtherClose" : "MenuQuestLog", (h) =>
                 {
-                    CloseDesktop("BestiaryScreen");
-                    CloseDesktop("EquipmentScreen");
-                    CloseDesktop("SpellbookScreen");
                     CloseDesktop("TalentScreen");
+                    CloseDesktop("SpellbookScreen");
+                    CloseDesktop("EquipmentScreen");
+                    CloseDesktop("BestiaryScreen");
                     CloseDesktop("CraftingScreen");
                     CloseDesktop("CharacterSheet");
-                    if (CDesktop.title != "QuestLog")
-                        SpawnDesktopBlueprint("QuestLog");
+                    CloseDesktop("Town");
+                    CloseDesktop("Capital");
+                    CloseDesktop("HostileArea");
+                    CloseDesktop("Instance");
+                    CloseDesktop("Complex");
+                    SwitchDesktop("Map");
+                    SpawnTransition();
+                    if (WindowUp("QuestList"))
+                    {
+                        PlaySound("DesktopSpellbookClose");
+                        RemoveDesktopBackground();
+                        CloseWindow("QuestList");
+                        CloseWindow("QuestSettings");
+                        CloseWindow("QuestSort");
+                        CloseWindow("Quest");
+                        CloseWindow("QuestAdd");
+                        CloseWindow("QuestTurn");
+                        CloseWindow("QuestConfirmAbandon");
+                    }
                     else
                     {
-                        CloseDesktop(CDesktop.title);
-                        PlaySound("DesktopSpellbookClose");
+                        PlaySound("DesktopInventoryOpen");
+                        SetDesktopBackground("Backgrounds/RuggedLeather", true, true);
+                        Respawn("QuestList");
+                        Respawn("MapToolbar");
                     }
                 });
                 AddSmallButton(CDesktop.title == "CraftingScreen" ? "OtherClose" : "MenuCrafting", (h) =>
@@ -7060,7 +7137,17 @@ public class Blueprint
                     CloseDesktop("EquipmentScreen");
                     CloseDesktop("BestiaryScreen");
                     CloseDesktop("CharacterSheet");
-                    CloseDesktop("QuestLog");
+                    if (WindowUp("QuestList"))
+                    {
+                        RemoveDesktopBackground();
+                        CloseWindow("QuestList");
+                        CloseWindow("QuestSettings");
+                        CloseWindow("QuestSort");
+                        CloseWindow("Quest");
+                        CloseWindow("QuestAdd");
+                        CloseWindow("QuestTurn");
+                        CloseWindow("QuestConfirmAbandon");
+                    }
                     if (CDesktop.title != "CraftingScreen")
                         SpawnDesktopBlueprint("CraftingScreen");
                     else
@@ -7076,7 +7163,17 @@ public class Blueprint
                     CloseDesktop("EquipmentScreen");
                     CloseDesktop("CraftingScreen");
                     CloseDesktop("CharacterSheet");
-                    CloseDesktop("QuestLog");
+                    if (WindowUp("QuestList"))
+                    {
+                        RemoveDesktopBackground();
+                        CloseWindow("QuestList");
+                        CloseWindow("QuestSettings");
+                        CloseWindow("QuestSort");
+                        CloseWindow("Quest");
+                        CloseWindow("QuestAdd");
+                        CloseWindow("QuestTurn");
+                        CloseWindow("QuestConfirmAbandon");
+                    }
                     if (CDesktop.title != "BestiaryScreen")
                         SpawnDesktopBlueprint("BestiaryScreen");
                     else
@@ -7117,6 +7214,11 @@ public class Blueprint
                     AddText(" talent point" + (currentSave.player.unspentTalentPoints == 1 ? "!" : "s!"), "Gray");
                 }
                 AddSmallButton("OtherSettings", (h) =>
+                {
+                    PlaySound("DesktopMenuOpen", 0.6f);
+                    SpawnDesktopBlueprint("GameMenu");
+                });
+                AddSmallButton("OtherSearch", (h) =>
                 {
                     PlaySound("DesktopMenuOpen", 0.6f);
                     SpawnDesktopBlueprint("GameMenu");
@@ -8026,8 +8128,38 @@ public class Blueprint
             }, false);
             AddHotkey("Open menu / Back", () =>
             {
-                PlaySound("DesktopMenuOpen", 0.6f);
-                SpawnDesktopBlueprint("GameMenu");
+                if (CloseWindow("QuestSort"))
+                {
+                    PlaySound("DesktopInstanceClose");
+                    Respawn("QuestList");
+                }
+                else if (CloseWindow("QuestSettings"))
+                {
+                    PlaySound("DesktopInstanceClose");
+                    Respawn("QuestList");
+                }
+                else if (CloseWindow("QuestConfirmAbandon"))
+                {
+                    PlaySound("DesktopMenuClose");
+                    Respawn("Quest");
+                    Respawn("QuestList");
+                }
+                else if (CloseWindow("Quest"))
+                {
+                    quest = null;
+                    Respawn("QuestList");
+                    PlaySound("DesktopInstanceClose");
+                }
+                else if (CloseWindow("QuestList"))
+                {
+                    PlaySound("DesktopSpellbookClose");
+                    RemoveDesktopBackground();
+                }
+                else
+                {
+                    PlaySound("DesktopMenuOpen", 0.6f);
+                    SpawnDesktopBlueprint("GameMenu");
+                }
             });
             AddHotkey(Delete, () =>
             {
@@ -8785,44 +8917,8 @@ public class Blueprint
         }),
         new("QuestLog", () => 
         {
-            PlaySound("DesktopInventoryOpen");
-            SetDesktopBackground("Backgrounds/RuggedLeather");
-            SpawnWindowBlueprint("MapToolbarShadow");
-            SpawnWindowBlueprint("MapToolbarClockLeft");
-            SpawnWindowBlueprint("MapToolbar");
-            SpawnWindowBlueprint("MapToolbarClockRight");
-            SpawnWindowBlueprint("ExperienceBarBorder");
-            SpawnWindowBlueprint("ExperienceBar");
-            SpawnWindowBlueprint("QuestList");
             AddHotkey("Open menu / Back", () =>
             {
-                if (CloseWindow("QuestSort"))
-                {
-                    PlaySound("DesktopInstanceClose");
-                    Respawn("QuestList");
-                }
-                else if (CloseWindow("QuestSettings"))
-                {
-                    PlaySound("DesktopInstanceClose");
-                    Respawn("QuestList");
-                }
-                else if (CloseWindow("QuestConfirmAbandon"))
-                {
-                    PlaySound("DesktopMenuClose");
-                    Respawn("Quest");
-                    Respawn("QuestList");
-                }
-                else if (CloseWindow("Quest"))
-                {
-                    quest = null;
-                    Respawn("QuestList");
-                    PlaySound("DesktopInstanceClose");
-                }
-                else
-                {
-                    PlaySound("DesktopSpellbookClose");
-                    CloseDesktop("QuestLog");
-                }
             });
             AddPaginationHotkeys();
         }),

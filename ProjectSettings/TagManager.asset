@@ -59,6 +59,9 @@ TagManager:
   - name: ScaledBarsSecond
     uniqueID: 2180983635
     locked: 0
+  - name: DesktopBackgroundUpper
+    uniqueID: 499479879
+    locked: 0
   - name: UpperShadows
     uniqueID: 4196828451
     locked: 0

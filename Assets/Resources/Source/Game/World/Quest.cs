@@ -283,11 +283,12 @@ public class Quest
                     AddLine(siteEnd, "HalfGray");
                     AddSmallButton("ItemMiscMap01", (h) =>
                     {
+                        CloseDesktop("Town");
+                        CloseDesktop("Capital");
                         CloseDesktop("HostileArea");
                         CloseDesktop("Instance");
                         CloseDesktop("Complex");
                         SwitchDesktop("Map");
-                        CloseDesktop("QuestLog");
                         var where = Site.FindSite(x => x.name == siteEnd);
                         CDesktop.cameraDestination = new Vector2(where.x, where.y);
                     });
@@ -297,7 +298,7 @@ public class Quest
             {
                 AddHeaderRegion(() => AddLine("Details:"));
                 foreach (var condition in currentSave.player.currentQuests.Find(x => x.questID == questID).conditions)
-                    condition.Print(CDesktop.title == "QuestLog");
+                    condition.Print(CDesktop.title == "Map");
             }
         }
         if (rewards != null)

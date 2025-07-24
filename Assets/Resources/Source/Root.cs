@@ -493,8 +493,12 @@ public static class Root
         LBDesktop = newDesktop;
         newDesktop.Initialise(title);
         desktops.Add(newDesktop);
-        newDesktop.screen = new GameObject("Camera", typeof(Camera), typeof(SpriteRenderer)).GetComponent<Camera>();
+        newDesktop.screen = new GameObject("Camera", typeof(Camera), typeof(SpriteRenderer), typeof(BoxCollider2D)).GetComponent<Camera>();
         newDesktop.screen.transform.parent = newDesktop.transform;
+        var box2d = newDesktop.screen.GetComponent<BoxCollider2D>();
+        box2d.offset = new(0, 0);
+        box2d.size = new(640, 360);
+        box2d.enabled = false;
         var screenOffsetter = new GameObject("CameraOffset");
         screenOffsetter.transform.parent = newDesktop.transform;
         screenOffsetter.transform.localPosition = new Vector2(10, -9);
@@ -601,11 +605,15 @@ public static class Root
 
     public static void RemoveDesktopBackground(bool followCamera = true)
     {
-        if (followCamera) CDesktop.screen.GetComponent<SpriteRenderer>().sprite = null;
+        if (followCamera)
+        {
+            CDesktop.screen.GetComponent<SpriteRenderer>().sprite = null;
+            CDesktop.screen.GetComponent<BoxCollider2D>().enabled = false;
+        }
         else CDesktop.GetComponent<SpriteRenderer>().sprite = null;
     }
 
-    public static void SetDesktopBackground(string texture, bool followCamera = true)
+    public static void SetDesktopBackground(string texture, bool followCamera = true, bool upperBackground = false)
     {
         var sprite = Resources.Load<Sprite>("Sprites/Fullscreen/" + texture);
         var temp = (followCamera ? CDesktop.screen.gameObject : CDesktop.gameObject).GetComponent<SpriteRenderer>();
@@ -615,6 +623,8 @@ public static class Root
             if (temp.sprite != null)
                 SpawnTransition();
             temp.sprite = sprite;
+            temp.sortingLayerName = "DesktopBackground" + (upperBackground ? "Upper" : "");
+            if (followCamera) temp.GetComponent<BoxCollider2D>().enabled = upperBackground;
         }
     }
 

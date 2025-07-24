@@ -9336,8 +9336,19 @@
         "levelMax": 5
       }
     ],
+    "eliteEncounters": [
+      {
+        "who": "Yarrog Baneshadow",
+        "levelMin": 5
+      }
+    ],
     "areaSize": 3,
     "progression": [
+      {
+        "type": "Boss",
+        "bossName": "Yarrog Baneshadow",
+        "point": 2
+      },
       {
         "type": "Treasure",
         "point": 3
