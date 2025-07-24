@@ -2365,7 +2365,6 @@ public class Blueprint
                 AddSmallButton("OtherReverse", (h) =>
                 {
                     currentSave.player.currentQuests.Reverse();
-                    CloseWindow("QuestList");
                     Respawn("QuestList");
                     PlaySound("DesktopInventorySort", 0.4f);
                 });
@@ -2373,7 +2372,6 @@ public class Blueprint
                     AddSmallButton("OtherSort", (h) =>
                     {
                         SpawnWindowBlueprint("QuestSort");
-                        CloseWindow("QuestList");
                         Respawn("Quest", true);
                         Respawn("QuestList");
                     });
@@ -2383,7 +2381,6 @@ public class Blueprint
                     AddSmallButton("OtherSettings", (h) =>
                     {
                         SpawnWindowBlueprint("QuestSettings");
-                        CloseWindow("QuestList");
                         Respawn("Quest", true);
                         Respawn("QuestList");
                     });
@@ -2458,7 +2455,7 @@ public class Blueprint
                 quest = null;
                 CloseWindow("QuestConfirmAbandon");
                 CloseWindow("Quest");
-                Respawn("QuestList");
+                Respawn("QuestList", true);
             });
             AddRegionGroup();
             SetRegionGroupWidth(91);
@@ -2467,8 +2464,8 @@ public class Blueprint
             {
                 PlaySound("DesktopMenuClose");
                 CloseWindow("QuestConfirmAbandon");
-                Respawn("Quest");
-                Respawn("QuestList");
+                Respawn("QuestList", true);
+                Respawn("Quest", true);
             });
         }, true),
         new("QuestSort", () => {
@@ -2481,7 +2478,8 @@ public class Blueprint
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseWindow("QuestSort");
-                    CDesktop.RespawnAll();
+                    Respawn("QuestList", true);
+                    Respawn("Quest", true);
                 });
             });
             AddButtonRegion(() => AddLine("By name", "Black"),
@@ -2489,7 +2487,8 @@ public class Blueprint
             {
                 currentSave.player.currentQuests = currentSave.player.currentQuests.OrderBy(x => quests.Find(y => y.questID == x.questID).name).ToList();
                 CloseWindow("QuestSort");
-                CDesktop.RespawnAll();
+                Respawn("QuestList", true);
+                Respawn("Quest", true);
                 PlaySound("DesktopInventorySort", 0.4f);
             });
             AddButtonRegion(() => AddLine("By quest level", "Black"),
@@ -2497,7 +2496,8 @@ public class Blueprint
             {
                 currentSave.player.currentQuests = currentSave.player.currentQuests.OrderBy(x => quests.Find(y => y.questID == x.questID).questLevel).ToList();
                 CloseWindow("QuestSort");
-                CDesktop.RespawnAll();
+                Respawn("QuestList", true);
+                Respawn("Quest", true);
                 PlaySound("DesktopInventorySort", 0.4f);
             });
             AddButtonRegion(() => AddLine("By zone", "Black"),
@@ -2505,7 +2505,8 @@ public class Blueprint
             {
                 currentSave.player.currentQuests = currentSave.player.currentQuests.OrderBy(x => quests.Find(y => y.questID == x.questID).zone).ToList();
                 CloseWindow("QuestSort");
-                CDesktop.RespawnAll();
+                Respawn("QuestList", true);
+                Respawn("Quest", true);
                 PlaySound("DesktopInventorySort", 0.4f);
             });
         }, true),
@@ -2519,7 +2520,8 @@ public class Blueprint
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseWindow("QuestSettings");
-                    CDesktop.RespawnAll();
+                    Respawn("QuestList", true);
+                    Respawn("Quest", true);
                 });
             });
             AddButtonRegion(() =>
@@ -2530,7 +2532,8 @@ public class Blueprint
             (h) =>
             {
                 settings.questLevel.Invert();
-                CDesktop.RespawnAll();
+                Respawn("QuestList", true);
+                Respawn("Quest", true);
             });
         }, true),
 
@@ -4008,7 +4011,11 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    SpawnDesktopBlueprint("QuestLog");
+                    SwitchDesktop("Map");
+                    PlaySound("DesktopInventoryOpen");
+                    SetDesktopBackground("Backgrounds/RuggedLeather", true, true);
+                    Respawn("QuestList");
+                    Respawn("MapToolbar");
                     Quest.quest = quest;
                     if (staticPagination.ContainsKey("Quest"))
                         staticPagination.Remove("Quest");
@@ -6660,97 +6667,6 @@ public class Blueprint
             SetAnchor(BottomRight, -19, 35);
             PrintPriceRegion(currentSave.player.inventory.money, 38, 38, 57);
         }),
-        new("AuctionHousePrice0", () => {
-            SetAnchor(-301, WindowUp("AuctionHouseOffers") ? 104 : 85);
-            DisableShadows();
-            PrintPriceRegion(auctionPriceToDisplay[0], 38, 38, 57, false);
-            if (auctionAmountToDisplay[0] > 0)
-                AddLine("x" + auctionAmountToDisplay[0], "DarkGray", "Right");
-        }),
-        new("AuctionHousePrice1", () => {
-            SetAnchor(-301, WindowUp("AuctionHouseOffers") ? 85 : 47);
-            DisableShadows();
-            PrintPriceRegion(auctionPriceToDisplay[1], 38, 38, 57, false);
-            if (auctionAmountToDisplay[1] > 0)
-                AddLine("x" + auctionAmountToDisplay[1], "DarkGray", "Right");
-        }),
-        new("AuctionHousePrice2", () => {
-            SetAnchor(-301, WindowUp("AuctionHouseOffers") ? 66 : 9);
-            DisableShadows();
-            PrintPriceRegion(auctionPriceToDisplay[2], 38, 38, 57, false);
-            if (auctionAmountToDisplay[2] > 0)
-                AddLine("x" + auctionAmountToDisplay[2], "DarkGray", "Right");
-        }),
-        new("AuctionHousePrice3", () => {
-            //if (auctionCategory == "") return;
-            SetAnchor(-301, WindowUp("AuctionHouseOffers") ? 47 : -29);
-            DisableShadows();
-            PrintPriceRegion(auctionPriceToDisplay[3], 38, 38, 57, false);
-            if (auctionAmountToDisplay[3] > 0)
-                AddLine("x" + auctionAmountToDisplay[3], "DarkGray", "Right");
-        }),
-        new("AuctionHousePrice4", () => {
-            SetAnchor(-301, WindowUp("AuctionHouseOffers") ? 28 : -67);
-            DisableShadows();
-            PrintPriceRegion(auctionPriceToDisplay[4], 38, 38, 57, false);
-            if (auctionAmountToDisplay[4] > 0)
-                AddLine("x" + auctionAmountToDisplay[4], "DarkGray", "Right");
-        }),
-        new("AuctionHousePrice5", () => {
-            SetAnchor(-301, WindowUp("AuctionHouseOffers") ? 9 : -105);
-            DisableShadows();
-            PrintPriceRegion(auctionPriceToDisplay[5], 38, 38, 57, false);
-            if (auctionAmountToDisplay[5] > 0)
-                AddLine("x" + auctionAmountToDisplay[5], "DarkGray", "Right");
-        }),
-        new("AuctionHousePrice6", () => {
-            if (!WindowUp("AuctionHouseOffers")) return;
-            SetAnchor(-301, -10);
-            DisableShadows();
-            PrintPriceRegion(auctionPriceToDisplay[6], 38, 38, 57, false);
-            if (auctionAmountToDisplay[6] > 0)
-                AddLine("x" + auctionAmountToDisplay[6], "DarkGray", "Right");
-        }),
-        new("AuctionHousePrice7", () => {
-            if (!WindowUp("AuctionHouseOffers")) return;
-            SetAnchor(-301, -29);
-            DisableShadows();
-            PrintPriceRegion(auctionPriceToDisplay[7], 38, 38, 57, false);
-            if (auctionAmountToDisplay[7] > 0)
-                AddLine("x" + auctionAmountToDisplay[7], "DarkGray", "Right");
-        }),
-        new("AuctionHousePrice8", () => {
-            if (!WindowUp("AuctionHouseOffers")) return;
-            SetAnchor(-301, -48);
-            DisableShadows();
-            PrintPriceRegion(auctionPriceToDisplay[8], 38, 38, 57, false);
-            if (auctionAmountToDisplay[8] > 0)
-                AddLine("x" + auctionAmountToDisplay[8], "DarkGray", "Right");
-        }),
-        new("AuctionHousePrice9", () => {
-            if (!WindowUp("AuctionHouseOffers")) return;
-            SetAnchor(-301, -67);
-            DisableShadows();
-            PrintPriceRegion(auctionPriceToDisplay[9], 38, 38, 57, false);
-            if (auctionAmountToDisplay[9] > 0)
-                AddLine("x" + auctionAmountToDisplay[9], "DarkGray", "Right");
-        }),
-        new("AuctionHousePrice10", () => {
-            if (!WindowUp("AuctionHouseOffers")) return;
-            SetAnchor(-301, -86);
-            DisableShadows();
-            PrintPriceRegion(auctionPriceToDisplay[10], 38, 38, 57, false);
-            if (auctionAmountToDisplay[10] > 0)
-                AddLine("x" + auctionAmountToDisplay[10], "DarkGray", "Right");
-        }),
-        new("AuctionHousePrice11", () => {
-            if (!WindowUp("AuctionHouseOffers")) return;
-            SetAnchor(-301, -105);
-            DisableShadows();
-            PrintPriceRegion(auctionPriceToDisplay[11], 38, 38, 57, false);
-            if (auctionAmountToDisplay[11] > 0)
-                AddLine("x" + auctionAmountToDisplay[11], "DarkGray", "Right");
-        }),
 
         //Fishing
         new("FishingBoardFrame", () => {
@@ -6851,7 +6767,17 @@ public class Blueprint
                 CloseDesktop("BestiaryScreen");
                 CloseDesktop("CraftingScreen");
                 CloseDesktop("CharacterSheet");
-                CloseDesktop("QuestLog");
+                if (WindowUp("QuestList"))
+                {
+                    RemoveDesktopBackground();
+                    CloseWindow("QuestList");
+                    CloseWindow("QuestSettings");
+                    CloseWindow("QuestSort");
+                    CloseWindow("Quest");
+                    CloseWindow("QuestAdd");
+                    CloseWindow("QuestTurn");
+                    CloseWindow("QuestConfirmAbandon");
+                }
                 if (CDesktop.title != "TalentScreen")
                 {
                     PlaySound("DesktopTalentScreenOpen");
@@ -6870,7 +6796,17 @@ public class Blueprint
                 CloseDesktop("BestiaryScreen");
                 CloseDesktop("CraftingScreen");
                 CloseDesktop("CharacterSheet");
-                CloseDesktop("QuestLog");
+                if (WindowUp("QuestList"))
+                {
+                    RemoveDesktopBackground();
+                    CloseWindow("QuestList");
+                    CloseWindow("QuestSettings");
+                    CloseWindow("QuestSort");
+                    CloseWindow("Quest");
+                    CloseWindow("QuestAdd");
+                    CloseWindow("QuestTurn");
+                    CloseWindow("QuestConfirmAbandon");
+                }
                 if (CDesktop.title != "SpellbookScreen")
                     SpawnDesktopBlueprint("SpellbookScreen");
                 else
@@ -6886,7 +6822,17 @@ public class Blueprint
                 CloseDesktop("BestiaryScreen");
                 CloseDesktop("CraftingScreen");
                 CloseDesktop("CharacterSheet");
-                CloseDesktop("QuestLog");
+                if (WindowUp("QuestList"))
+                {
+                    RemoveDesktopBackground();
+                    CloseWindow("QuestList");
+                    CloseWindow("QuestSettings");
+                    CloseWindow("QuestSort");
+                    CloseWindow("Quest");
+                    CloseWindow("QuestAdd");
+                    CloseWindow("QuestTurn");
+                    CloseWindow("QuestConfirmAbandon");
+                }
                 if (CDesktop.title != "ContainerLoot")
                 {
                     if (CDesktop.title != "EquipmentScreen")
@@ -6905,7 +6851,17 @@ public class Blueprint
                 CloseDesktop("EquipmentScreen");
                 CloseDesktop("CraftingScreen");
                 CloseDesktop("CharacterSheet");
-                CloseDesktop("QuestLog");
+                if (WindowUp("QuestList"))
+                {
+                    RemoveDesktopBackground();
+                    CloseWindow("QuestList");
+                    CloseWindow("QuestSettings");
+                    CloseWindow("QuestSort");
+                    CloseWindow("Quest");
+                    CloseWindow("QuestAdd");
+                    CloseWindow("QuestTurn");
+                    CloseWindow("QuestConfirmAbandon");
+                }
                 if (CDesktop.title != "BestiaryScreen")
                     SpawnDesktopBlueprint("BestiaryScreen");
                 else
@@ -6921,7 +6877,17 @@ public class Blueprint
                 CloseDesktop("EquipmentScreen");
                 CloseDesktop("BestiaryScreen");
                 CloseDesktop("CharacterSheet");
-                CloseDesktop("QuestLog");
+                if (WindowUp("QuestList"))
+                {
+                    RemoveDesktopBackground();
+                    CloseWindow("QuestList");
+                    CloseWindow("QuestSettings");
+                    CloseWindow("QuestSort");
+                    CloseWindow("Quest");
+                    CloseWindow("QuestAdd");
+                    CloseWindow("QuestTurn");
+                    CloseWindow("QuestConfirmAbandon");
+                }
                 if (CDesktop.title != "CraftingScreen")
                     SpawnDesktopBlueprint("CraftingScreen");
                 else
@@ -6937,7 +6903,17 @@ public class Blueprint
                 CloseDesktop("EquipmentScreen");
                 CloseDesktop("BestiaryScreen");
                 CloseDesktop("CraftingScreen");
-                CloseDesktop("QuestLog");
+                if (WindowUp("QuestList"))
+                {
+                    RemoveDesktopBackground();
+                    CloseWindow("QuestList");
+                    CloseWindow("QuestSettings");
+                    CloseWindow("QuestSort");
+                    CloseWindow("Quest");
+                    CloseWindow("QuestAdd");
+                    CloseWindow("QuestTurn");
+                    CloseWindow("QuestConfirmAbandon");
+                }
                 if (CDesktop.title != "CharacterSheet")
                     SpawnDesktopBlueprint("CharacterSheet");
                 else
@@ -6978,6 +6954,7 @@ public class Blueprint
                     PlaySound("DesktopInventoryOpen");
                     SetDesktopBackground("Backgrounds/RuggedLeather", true, true);
                     Respawn("QuestList");
+                    Respawn("MapToolbar");
                 }
             });
             SetAnchor(Top);
@@ -7127,7 +7104,6 @@ public class Blueprint
                         PlaySound("DesktopInventoryOpen");
                         SetDesktopBackground("Backgrounds/RuggedLeather", true, true);
                         Respawn("QuestList");
-                        Respawn("MapToolbar");
                     }
                 });
                 AddSmallButton(CDesktop.title == "CraftingScreen" ? "OtherClose" : "MenuCrafting", (h) =>
@@ -7372,7 +7348,6 @@ public class Blueprint
                     CloseDesktop("Complex");
                     CloseDesktop("FishingGame");
                     CloseDesktop("CharacterSheet");
-                    CloseDesktop("QuestLog");
                     CloseDesktop("TalentScreen");
                     CloseDesktop("SpellbookScreen");
                     CloseDesktop("EquipmentScreen");
@@ -8091,6 +8066,7 @@ public class Blueprint
             AddHotkey("Move camera east", () => { MoveCamera(new Vector2(EuelerGrowth(), 0)); }, false, false);
             AddHotkey(UpArrow, () =>
             {
+                if (!debug) return;
                 var site = FindSite(x => x.name == currentSave.currentSite);
                 site.y += (int)Math.Sqrt(EuelerGrowth());
                 var find = windowBlueprints.Find(x => x.title == "Site: " + site.name);
@@ -8101,6 +8077,7 @@ public class Blueprint
             }, false);
             AddHotkey(LeftArrow, () =>
             {
+                if (!debug) return;
                 var site = FindSite(x => x.name == currentSave.currentSite);
                 site.x -= (int)Math.Sqrt(EuelerGrowth());
                 var find = windowBlueprints.Find(x => x.title == "Site: " + site.name);
@@ -8110,6 +8087,7 @@ public class Blueprint
             }, false);
             AddHotkey(DownArrow, () =>
             {
+                if (!debug) return;
                 var site = FindSite(x => x.name == currentSave.currentSite);
                 site.y -= (int)Math.Sqrt(EuelerGrowth());
                 var find = windowBlueprints.Find(x => x.title == "Site: " + site.name);
@@ -8119,6 +8097,7 @@ public class Blueprint
             }, false);
             AddHotkey(RightArrow, () =>
             {
+                if (!debug) return;
                 var site = FindSite(x => x.name == currentSave.currentSite);
                 site.x += (int)Math.Sqrt(EuelerGrowth());
                 var find = windowBlueprints.Find(x => x.title == "Site: " + site.name);
@@ -8185,8 +8164,8 @@ public class Blueprint
 
             void MoveCamera(Vector2 amount)
             {
+                if (WindowUp("QuestList")) return;
                 var temp = CDesktop.cameraDestination + amount * 2;
-                //temp = new Vector2Int((int)temp.x, (int)temp.y) / mapGridSize;
                 CDesktop.cameraDestination = new Vector2(temp.x, temp.y);
             }
         }),
@@ -8914,13 +8893,6 @@ public class Blueprint
                 PlaySound("DesktopCharacterSheetClose");
                 CloseDesktop("CharacterSheet");
             });
-        }),
-        new("QuestLog", () => 
-        {
-            AddHotkey("Open menu / Back", () =>
-            {
-            });
-            AddPaginationHotkeys();
         }),
         new("TalentScreen", () => 
         {

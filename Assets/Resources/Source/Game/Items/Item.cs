@@ -643,8 +643,12 @@ public class Item
             }
             else
             {
-                SpawnDesktopBlueprint("QuestLog");
+                SwitchDesktop("Map");
                 CloseDesktop("EquipmentScreen");
+                PlaySound("DesktopInventoryOpen");
+                SetDesktopBackground("Backgrounds/RuggedLeather", true, true);
+                Respawn("QuestList");
+                Respawn("MapToolbar");
                 if (currentSave.player.currentQuests.Exists(x => x.questID == quest.questID))
                 {
                     Quest.quest = Quest.quests.Find(x => x.questID == quest.questID);

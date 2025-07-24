@@ -15,12 +15,12 @@
   },
   {
     "districts": [
-      "Elder Rise",
-      "Hunter Rise",
+      "Lower Rise",
       "Spirit Rise",
       "The Pools of Vision",
-      "Lower Rise",
       "Middle Rise",
+      "Hunter Rise",
+      "Elder Rise",
       "Higher Rise"
     ],
     "name": "Thunder Bluff",
@@ -47,11 +47,11 @@
   },
   {
     "districts": [
-      "The Temple Gardens",
       "Warrior's Terrace",
-      "Cenarion Enclave",
       "Craftsmen's Terrace",
       "Tradesmen's Terrace",
+      "The Temple Gardens",
+      "Cenarion Enclave",
       "The Temple of The Moon"
     ],
     "name": "Darnassus",

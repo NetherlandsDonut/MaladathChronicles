@@ -341,6 +341,29 @@ public class Starter : MonoBehaviour
             paths[i].Initialise();
         for (int i = 0; i < transportRoutes.Count; i++)
             transportRoutes[i].Initialise();
+        for (int i = 0; i < 12; i++)
+        {
+            var index = i;
+            if (index < 6)
+                Blueprint.windowBlueprints.Add(new("AuctionHousePrice" + index, () =>
+                {
+                    if (!WindowUp("AuctionHouseOffers")) return;
+                    SetAnchor(-301, 104 - 19 * index);
+                    DisableShadows();
+                    PrintPriceRegion(auctionPriceToDisplay[index], 38, 38, 57, false);
+                    if (auctionAmountToDisplay[index] > 0)
+                        AddLine("x" + auctionAmountToDisplay[index], "DarkGray", "Right");
+                }));
+            else
+                Blueprint.windowBlueprints.Add(new("AuctionHousePrice" + index, () =>
+                {
+                    SetAnchor(-301, WindowUp("AuctionHouseOffers") ? 104 - 19 * index : 85 - 38 * index);
+                    DisableShadows();
+                    PrintPriceRegion(auctionPriceToDisplay[index], 38, 38, 57, false);
+                    if (auctionAmountToDisplay[index] > 0)
+                        AddLine("x" + auctionAmountToDisplay[index], "DarkGray", "Right");
+                }));
+        }
         var elements = new List<string> { "Fire", "Water", "Earth", "Air", "Frost", "Lightning", "Arcane", "Decay", "Order", "Shadow" };
         foreach (var element in elements)
         {

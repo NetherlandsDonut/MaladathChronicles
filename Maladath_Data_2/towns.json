@@ -13,7 +13,7 @@
     "name": "Grommash Hold",
     "zone": "Orgrimmar",
     "faction": "Orgrimmar",
-    "convertDestinationTo": "Orgrimmar Main Gates",
+    "convertDestinationTo": "Orgrimmar",
     "noNightVariant": true,
     "capitalRedirect": "Orgrimmar"
   },
@@ -39,7 +39,7 @@
     "name": "The Cleft of Shadow",
     "zone": "Orgrimmar",
     "faction": "Orgrimmar",
-    "convertDestinationTo": "Orgrimmar Main Gates",
+    "convertDestinationTo": "Orgrimmar",
     "capitalRedirect": "Orgrimmar"
   },
   {
@@ -751,7 +751,7 @@
     "name": "The Drag",
     "zone": "Orgrimmar",
     "faction": "Orgrimmar",
-    "convertDestinationTo": "Orgrimmar Main Gates",
+    "convertDestinationTo": "Orgrimmar",
     "capitalRedirect": "Orgrimmar"
   },
   {
@@ -759,7 +759,7 @@
     "name": "The Valley of Wisdom",
     "zone": "Orgrimmar",
     "faction": "Orgrimmar",
-    "convertDestinationTo": "Orgrimmar Main Gates",
+    "convertDestinationTo": "Orgrimmar",
     "capitalRedirect": "Orgrimmar"
   },
   {
@@ -1284,7 +1284,7 @@
     "name": "The Valley of Honor",
     "zone": "Orgrimmar",
     "faction": "Orgrimmar",
-    "convertDestinationTo": "Orgrimmar Main Gates",
+    "convertDestinationTo": "Orgrimmar",
     "capitalRedirect": "Orgrimmar"
   },
   {
@@ -1324,7 +1324,7 @@
     "name": "The Valley of Spirits",
     "zone": "Orgrimmar",
     "faction": "Orgrimmar",
-    "convertDestinationTo": "Orgrimmar Main Gates",
+    "convertDestinationTo": "Orgrimmar",
     "capitalRedirect": "Orgrimmar"
   },
   {
@@ -22139,21 +22139,13 @@
     "name": "The Valley of Strength",
     "zone": "Orgrimmar",
     "faction": "Orgrimmar",
-    "convertDestinationTo": "Orgrimmar Main Gates",
+    "convertDestinationTo": "Orgrimmar",
     "capitalRedirect": "Orgrimmar"
   },
   {
     "x": 2343,
     "y": -2248,
-    "name": "Orgrimmar Main Gates",
-    "zone": "Orgrimmar",
-    "faction": "Orgrimmar",
-    "capitalRedirect": "Orgrimmar"
-  },
-  {
-    "x": 2241,
-    "y": -2192,
-    "name": "Orgrimmar Side Entrence",
+    "name": "Orgrimmar",
     "zone": "Orgrimmar",
     "faction": "Orgrimmar",
     "capitalRedirect": "Orgrimmar"
@@ -25974,15 +25966,6 @@
     "x": 1418,
     "y": -2794,
     "name": "Thunder Bluff Southern Lift",
-    "zone": "Thunder Bluff",
-    "faction": "Thunder Bluff",
-    "convertDestinationTo": "Thunder Bluff",
-    "capitalRedirect": "Thunder Bluff"
-  },
-  {
-    "x": 1460,
-    "y": -2741,
-    "name": "Thunder Bluff Northern Lift",
     "zone": "Thunder Bluff",
     "faction": "Thunder Bluff",
     "convertDestinationTo": "Thunder Bluff",
