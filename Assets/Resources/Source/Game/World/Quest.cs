@@ -11,6 +11,19 @@ public class Quest
 {
     public void Initialise()
     {
+        if (zone == null)
+        {
+            if (siteStart != null)
+            {
+                var find = Site.FindSite(x => x.name == siteStart);
+                if (find != null) zone = find.zone;
+            }
+            else if (siteEnd != null)
+            {
+                var find = Site.FindSite(x => x.name == siteEnd);
+                if (find != null) zone = find.zone;
+            }
+        }
         if (siteStart != null)
         {
             var find = Site.FindSite(x => x.name == siteStart);
@@ -105,7 +118,7 @@ public class Quest
     public List<QuestCondition> conditions;
 
     //Zone icon for the quest
-    public string ZoneIcon() => "Zone" + Zone.zones.Find(x => x.name == zone).icon.Clean();
+    public string ZoneIcon() => zone != null ? "Zone" + Zone.zones.Find(x => x.name == zone).icon.Clean() : "OtherUnknown";
     
     //Currently chosen quest reward by player
     public static string chosenReward;
