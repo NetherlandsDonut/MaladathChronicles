@@ -2165,7 +2165,7 @@ public class Blueprint
             AddHeaderRegion(() =>
             {
                 AddLine("Time required:", "Gray");
-                AddLine(FormatTime(60 * recipe.reagents.Sum(x => x.Value)) + " seconds", "Gray", "Right");
+                AddLine(FormatTime(60 * recipe.reagents.Sum(x => x.Value)), "Gray", "Right");
             });
             var canCraft = currentSave.player.CanCraft(recipe, true, false) > 0;
             var canCraftWithSpace = currentSave.player.CanCraft(recipe, true, true) > 0;
@@ -2640,6 +2640,7 @@ public class Blueprint
                 {
                     var index = i;
                     if (currentSave.player.inventory.bags.Count > index)
+                    {
                         AddSmallButton(currentSave.player.inventory.bags[index].icon,
                             (h) =>
                             {
@@ -2647,7 +2648,13 @@ public class Blueprint
                                     currentSave.player.UnequipBag(index);
                             },
                             null,
-                            (h) => () => PrintItemTooltip(currentSave.player.inventory.bags[index]));
+                            (h) => () => PrintItemTooltip(currentSave.player.inventory.bags[index])
+                        );
+                        if (Cursor.cursor.color == "Pink")
+                            if (!currentSave.player.inventory.bags[index].IsDisenchantable())
+                                SetSmallButtonToGrayscale();
+                            else SetSmallButtonToRed();
+                    }
                     else
                         AddSmallButton("OtherEmpty", (h) =>
                         {
@@ -6936,7 +6943,6 @@ public class Blueprint
                 CloseDesktop("Instance");
                 CloseDesktop("Complex");
                 SwitchDesktop("Map");
-                SpawnTransition();
                 if (WindowUp("QuestList"))
                 {
                     PlaySound("DesktopSpellbookClose");
@@ -6951,6 +6957,7 @@ public class Blueprint
                 }
                 else
                 {
+                    SpawnTransition(true, 2, true);
                     PlaySound("DesktopInventoryOpen");
                     SetDesktopBackground("Backgrounds/RuggedLeather", true, true);
                     Respawn("QuestList");
@@ -7086,7 +7093,6 @@ public class Blueprint
                     CloseDesktop("Instance");
                     CloseDesktop("Complex");
                     SwitchDesktop("Map");
-                    SpawnTransition();
                     if (WindowUp("QuestList"))
                     {
                         PlaySound("DesktopSpellbookClose");
@@ -7101,10 +7107,12 @@ public class Blueprint
                     }
                     else
                     {
+                        SpawnTransition(true, 2, true);
                         PlaySound("DesktopInventoryOpen");
                         SetDesktopBackground("Backgrounds/RuggedLeather", true, true);
                         Respawn("QuestList");
                     }
+                    Respawn("MapToolbar");
                 });
                 AddSmallButton(CDesktop.title == "CraftingScreen" ? "OtherClose" : "MenuCrafting", (h) =>
                 {
@@ -8133,6 +8141,7 @@ public class Blueprint
                 {
                     PlaySound("DesktopSpellbookClose");
                     RemoveDesktopBackground();
+                    Respawn("MapToolbar");
                 }
                 else
                 {

@@ -591,13 +591,13 @@ public static class Root
         loadingScreenObjectLoadAim = loadSites.Count;
     }
 
-    public static void SpawnTransition(bool single = true, float speed = 2f)
+    public static void SpawnTransition(bool single = true, float speed = 2f, bool useCutout = false)
     {
         if (CDesktop.transition != null && single) return;
         var transition = new GameObject("CameraTransition", typeof(SpriteRenderer), typeof(Shatter));
         transition.transform.parent = CDesktop.screen.transform;
         transition.transform.localPosition = new Vector3(0, 0, -0.01f);
-        transition.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fullscreen/Camera/CameraTransition");
+        transition.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Fullscreen/Camera/CameraTransition" + (useCutout ? "Cutout" : ""));
         transition.GetComponent<SpriteRenderer>().sortingLayerName = "CameraBorder";
         transition.GetComponent<Shatter>().Initiate(speed, 0, transition.GetComponent<SpriteRenderer>());
         CDesktop.transition = transition;
@@ -1627,7 +1627,7 @@ public static class Root
         var sec = seconds + minutes * 60;
         var min = sec / 60;
         sec %= 60;
-        return (min * 60 + " minutes ") + sec + " seconds";
+        return (min > 0 ? (min > 1 ? min + " minutes" : min + " minute") : "") + (sec > 0 && min > 0 ? " " : "") + (sec > 0 ? (sec > 1 ? sec + " seconds" : sec + " second") : "");
     }
 
     #endregion
