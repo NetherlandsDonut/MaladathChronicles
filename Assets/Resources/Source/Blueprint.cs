@@ -6957,7 +6957,7 @@ public class Blueprint
                 }
                 else
                 {
-                    SpawnTransition(true, 2, true);
+                    //SpawnTransition(true, 2, true);
                     PlaySound("DesktopInventoryOpen");
                     SetDesktopBackground("Backgrounds/RuggedLeather", true, true);
                     Respawn("QuestList");
@@ -7107,7 +7107,7 @@ public class Blueprint
                     }
                     else
                     {
-                        SpawnTransition(true, 2, true);
+                        //SpawnTransition(true, 2, true);
                         PlaySound("DesktopInventoryOpen");
                         SetDesktopBackground("Backgrounds/RuggedLeather", true, true);
                         Respawn("QuestList");
@@ -7202,11 +7202,13 @@ public class Blueprint
                     PlaySound("DesktopMenuOpen", 0.6f);
                     SpawnDesktopBlueprint("GameMenu");
                 });
-                AddSmallButton("OtherSearch", (h) =>
-                {
-                    PlaySound("DesktopMenuOpen", 0.6f);
-                    SpawnDesktopBlueprint("GameMenu");
-                });
+                if (CDesktop.title == "Map" && !WindowUp("QuestList"))
+                    AddSmallButton("OtherSearch", (h) =>
+                    {
+                        PlaySound("DesktopMenuOpen", 0.6f);
+                        SpawnDesktopBlueprint("GameMenu");
+                    });
+                else AddSmallButton("OtherSearchOff");
             });
         }, true),
         new("WorldBuffs", () => {

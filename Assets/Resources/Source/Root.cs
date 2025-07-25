@@ -536,7 +536,7 @@ public static class Root
         var windows = CDesktop != null ? CDesktop.windows.Select(x => x.title).ToList() : null;
         if (movingItem != null && CDesktop != null && CDesktop.windows.Any(x => x.title == "Inventory")) CloseMovingItem();
         if (CDesktop != null && CDesktop.title == "GameKeybinds") Serialization.Serialize(Keybinds.keybinds, "keybinds");
-        if (mouseOver != null) mouseOver.OnMouseExit();
+        if (mouseOver != null) mouseOver.Exit();
         if (CDesktop != null) CDesktop.gameObject.SetActive(false);
         var find = desktops.Find(x => x.title == name);
         if (find != null) CDesktop = find;
@@ -1627,7 +1627,7 @@ public static class Root
         var sec = seconds + minutes * 60;
         var min = sec / 60;
         sec %= 60;
-        return (min > 0 ? (min > 1 ? min + " minutes" : min + " minute") : "") + (sec > 0 && min > 0 ? " " : "") + (sec > 0 ? (sec > 1 ? sec + " seconds" : sec + " second") : "");
+        return (min > 0 ? (min > 1 ? min + " Minutes" : min + " Minute") : "") + (sec > 0 && min > 0 ? " " : "") + (sec > 0 ? (sec > 1 ? sec + " Seconds" : sec + " Second") : "");
     }
 
     #endregion

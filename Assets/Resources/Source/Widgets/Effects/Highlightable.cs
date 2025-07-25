@@ -40,7 +40,7 @@ public class Highlightable : MonoBehaviour
         if (region != null) window = region.regionGroup.window;
     }
 
-    public void OnMouseEnter()
+    public void Enter()
     {
         if (defaultColor.a == 0) defaultColor = GetComponent<SpriteRenderer>().color;
         if (cursor.IsNow(None)) return;
@@ -64,7 +64,7 @@ public class Highlightable : MonoBehaviour
         }
     }
 
-    public void OnMouseExit()
+    public void Exit()
     {
         if (cursor.IsNow(None)) return;
         SetMouseOver(null);

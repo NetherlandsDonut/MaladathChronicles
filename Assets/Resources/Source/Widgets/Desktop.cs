@@ -143,6 +143,47 @@ public class Desktop : MonoBehaviour
                     AnimatedSprite.globalIndex = 0;
             }
         }
+
+        //Mouse detection on objects
+        if (screen != null)
+        {
+            var curScreenSpace = (Vector2)mousePosition;
+            if (curScreenSpace.y < Screen.height && curScreenSpace.y >= 0 && curScreenSpace.x < Screen.width && curScreenSpace.x >= 0)
+            {
+                var curPosition = CDesktop.screen.ScreenToWorldPoint(curScreenSpace);
+                var hits = Physics2D.LinecastAll(new Vector2(curPosition.x, curPosition.y), new Vector2(curPosition.x, curPosition.y)).Where(x => x.collider != null).ToList();
+                if (hits.Count > 0)
+                {
+                    var hitObjects = hits.Select(x => x.collider.gameObject.GetComponent<Highlightable>()).Where(x => x != null);
+                    if (!hitObjects.Contains(mouseOver))
+                    {
+                        if (mouseOver != null)
+                        {
+                            Debug.Log("Left " + mouseOver.transform.name);
+                            mouseOver.Exit();
+                        }
+                        mouseOver = hitObjects.First();
+                        Debug.Log("Entered " + mouseOver.transform.name);
+                        mouseOver.Enter();
+                    }
+                }
+                else if (mouseOver != null)
+                {
+                    Debug.Log("Left " + mouseOver.transform.name);
+                    mouseOver.Exit();
+                    mouseOver = null;
+                }
+                if (mouseOver != null)
+                {
+                    if (GetMouseButtonDown(0)) mouseOver.MouseDown("Left");
+                    else if (GetMouseButtonDown(1)) mouseOver.MouseDown("Right");
+                    else if (GetMouseButtonDown(2)) mouseOver.MouseDown("Middle");
+                    else if (GetMouseButtonUp(0)) mouseOver.MouseUp("Left");
+                    else if (GetMouseButtonUp(1)) mouseOver.MouseUp("Right");
+                    else if (GetMouseButtonUp(2)) mouseOver.MouseUp("Middle");
+                }
+            }
+        }
     }
 
     public void Update()
@@ -150,15 +191,6 @@ public class Desktop : MonoBehaviour
         if (GetKey(KeyCode.LeftControl) && GetKeyDown(KeyCode.S)) GameSettings.settings.soundEffects.Invert();
         if (GetKey(KeyCode.LeftControl) && GetKeyDown(KeyCode.M)) GameSettings.settings.music.Invert();
         if (GetKeyDown(KeyCode.LeftShift) || GetKeyUp(KeyCode.LeftShift) || GetKeyDown(KeyCode.LeftControl) || GetKeyUp(KeyCode.LeftControl) || GetKeyDown(KeyCode.LeftAlt) || GetKeyUp(KeyCode.LeftAlt)) CloseWindow("Tooltip");
-        if (mouseOver != null)
-        {
-            if (GetMouseButtonDown(0)) mouseOver.MouseDown("Left");
-            else if (GetMouseButtonDown(1)) mouseOver.MouseDown("Right");
-            else if (GetMouseButtonDown(2)) mouseOver.MouseDown("Middle");
-            else if (GetMouseButtonUp(0)) mouseOver.MouseUp("Left");
-            else if (GetMouseButtonUp(1)) mouseOver.MouseUp("Right");
-            else if (GetMouseButtonUp(2)) mouseOver.MouseUp("Middle");
-        }
         if (title == "GameSimulation" && GetKeyDown(KeyCode.Escape))
         {
             CloseDesktop("GameSimulation");
