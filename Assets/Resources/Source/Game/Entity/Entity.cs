@@ -132,19 +132,7 @@ public class Entity
             foreach (var bank in SaveGame.currentSave.banks)
                 bank.Value.items.RemoveAll(x => x.amount <= 0);
         }
-        var newSitesToRespawn = new List<Site>();
-        foreach (var site in WhereCanQuestBeDone(quest))
-            if (!newSitesToRespawn.Contains(site))
-                newSitesToRespawn.Add(site);
-        var findSite = Site.FindSite(x => x.name == quest.siteStart);
-        if (findSite != null) newSitesToRespawn.Add(findSite);
-        var sitesRelated = new List<Site>();
-        foreach (var site in newSitesToRespawn)
-            if (site.capitalRedirect != null)
-                sitesRelated.AddRange(SiteTown.towns.Where(x => x.capitalRedirect == site.capitalRedirect));
-            else sitesRelated.Add(site);
-        foreach (var site in sitesRelated.Distinct())
-            if (!sitesToRespawn.Contains(site)) sitesToRespawn.Add(site);
+        quest.UpdateRelatedSites();
     }
 
     //Adds new quest to the quest log
@@ -169,22 +157,7 @@ public class Entity
         if (quest.providedItems != null)
             foreach (var item in quest.providedItems)
                 inventory.AddItem(Item.items.Find(x => x.name == item.Key).CopyItem(item.Value));
-        var newSitesToRespawn = new List<Site>();
-        foreach (var site in WhereCanQuestBeDone(quest))
-            if (!newSitesToRespawn.Contains(site)) newSitesToRespawn.Add(site);
-        var find = Site.FindSite(x => x.name == quest.siteStart);
-        if (find != null && !newSitesToRespawn.Contains(find)) newSitesToRespawn.Add(find);
-        find = Site.FindSite(x => x.name == quest.siteEnd);
-        if (find != null && !newSitesToRespawn.Contains(find)) newSitesToRespawn.Add(find);
-        foreach (var site in newSitesToRespawn)
-            if (site != null && !sitesToRespawn.Contains(site)) sitesToRespawn.Add(site);
-        var sitesRelated = new List<Site>();
-        foreach (var site in newSitesToRespawn)
-            if (site.capitalRedirect != null)
-                sitesRelated.AddRange(SiteTown.towns.Where(x => x.capitalRedirect == site.capitalRedirect));
-            else sitesRelated.Add(site);
-        foreach (var site in sitesRelated.Distinct())
-            if (!sitesToRespawn.Contains(site)) sitesToRespawn.Add(site);
+        quest.UpdateRelatedSites();
     }
 
     //Check if a specific quest is done
@@ -208,22 +181,7 @@ public class Entity
         completedQuests.Add(activeQuest.questID);
         foreach (var item in activeQuest.conditions.Where(x => x.type == "Item"))
             if (!item.isItemNotTaken) inventory.RemoveItem(item.name, item.amount);
-        var newSitesToRespawn = new List<Site>();
-        var find = Site.FindSite(x => x.name == quest.siteEnd);
-        if (!newSitesToRespawn.Contains(find)) newSitesToRespawn.Add(find);
-        var nextQuests = quests.FindAll(x => x.previous != null && x.previous.Contains(quest.questID));
-        foreach (var nextQuest in nextQuests)
-        {
-            find = Site.FindSite(x => x.name == nextQuest.siteStart);
-            if (!newSitesToRespawn.Contains(find)) sitesToRespawn.Add(find);
-        }
-        var sitesRelated = new List<Site>();
-        foreach (var site in newSitesToRespawn)
-            if (site.capitalRedirect != null)
-                sitesRelated.AddRange(SiteTown.towns.Where(x => x.capitalRedirect == site.capitalRedirect));
-            else sitesRelated.Add(site);
-        foreach (var site in sitesRelated.Distinct())
-            if (!sitesToRespawn.Contains(site)) sitesToRespawn.Add(site);
+        quest.UpdateRelatedSites();
     }
 
     //Check if this entity can pick up a specific quest
@@ -268,13 +226,13 @@ public class Entity
         };
     }
 
-    //Check if any quest can be done at a target site
-    public List<Site> WhereCanQuestBeDone(Quest quest)
+    //Provides a list of sites where the quest can be completed
+    public List<Site> WhereCanQuestBeDone(Quest quest, bool ignoreCompletion = false)
     {
         var list = new List<Site>();
         if (quest.conditions != null)
             foreach (var condition in quest.conditions)
-                if (!condition.IsDone())
+                if (!condition.IsDone() || ignoreCompletion)
                     list.AddRange(condition.Where());
         return list.Distinct().ToList();
     }
@@ -461,15 +419,8 @@ public class Entity
                             changed.Add(quest);
                     }
                 }
-        if (changed.Count > 0)
-        {
-            foreach (var site in sitesWithQuestMarkers)
-                if (!sitesToRespawn.Contains(site))
-                    sitesToRespawn.Add(site);
-            foreach (var quest in changed)
-                if (quest.conditions.All(x => x.IsDone()))
-                    sitesToRespawn.Add(Site.FindSite(x => x.name == quests.Find(y => y.questID == quest.questID).siteEnd));
-        }
+        foreach (var quest in changed.Select((x => quests.Find(y => y.questID == x.questID))))
+            quest.UpdateRelatedSites();
     }
 
     public void QuestVisit(string site)
@@ -483,9 +434,8 @@ public class Entity
                     if (!changed.Contains(quest))
                         changed.Add(quest);
                 }
-        foreach (var quest in changed)
-            if (quest.conditions.All(x => x.IsDone()))
-                sitesToRespawn.Add(Site.FindSite(x => x.name == quests.Find(y => y.questID == quest.questID).siteEnd));
+        foreach (var quest in changed.Select((x => quests.Find(y => y.questID == x.questID))))
+            quest.UpdateRelatedSites();
     }
 
     #endregion

@@ -9724,7 +9724,10 @@
         "type": "Treasure",
         "point": 3
       }
-    ]
+    ],
+    "chestBonus": {
+      "Gnomish Tools": 1
+    }
   },
   {
     "x": 2432,
@@ -27493,6 +27496,11 @@
         "who": "Dreadmaw Crocolisk",
         "levelMin": 11,
         "levelMax": 12
+      },
+      {
+        "who": "Venomtail Scorpid",
+        "levelMin": 9,
+        "levelMax": 10
       }
     ],
     "areaSize": 3,

@@ -6,13 +6,13 @@
     "value": "True"
   },
   "music": {
-    "value": "False"
+    "value": "True"
   },
   "ambience": {
-    "value": "False"
+    "value": "True"
   },
   "soundEffects": {
-    "value": "False"
+    "value": "True"
   },
   "rarityIndicators": {
     "value": "True"
@@ -45,7 +45,7 @@
     "value": "False"
   },
   "autoCloseLoot": {
-    "value": "True"
+    "value": "False"
   },
   "runsInBackground": {
     "value": "True"

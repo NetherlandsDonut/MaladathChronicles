@@ -124,24 +124,24 @@ public class Inventory
             AddNewItem(item.CopyItem(item.amount));
         if (SaveGame.currentSave != null && SaveGame.currentSave.player.inventory == this)
         {
+            var changed = new List<ActiveQuest>();
             var output = item.name + ": ";
             foreach (var quest in SaveGame.currentSave.player.currentQuests)
                 foreach (var con in quest.conditions)
                     if (con.type == "Item" && con.name == item.name)
                     {
-                        foreach (var site in con.Where())
-                            if (!sitesToRespawn.Contains(site))
-                                sitesToRespawn.Add(site);
                         if (sumBefore < con.amount)
                         {
                             if (output.EndsWith(" ")) output += sumBefore + added + "/" + con.amount;
                             else output += ", " + sumBefore + added + "/" + con.amount;
+                            if (sumBefore + added >= con.amount)
+                                changed.Add(quest);
                         }
-                        var end = Site.FindSite(x => x.name == quests.Find(y => y.questID == quest.questID).siteEnd);
-                        if (!sitesToRespawn.Contains(end)) sitesToRespawn.Add(end);
                     }
             if (!output.EndsWith(" "))
                 Root.SpawnFallingText(new UnityEngine.Vector2(0, 34), output, "Yellow");
+            foreach (var quest in changed.Select((x => quests.Find(y => y.questID == x.questID))))
+                quest.UpdateRelatedSites();
         }
     }
 

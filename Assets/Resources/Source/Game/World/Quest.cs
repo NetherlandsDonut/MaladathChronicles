@@ -1,11 +1,12 @@
-using NUnit.Framework;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
+
 using UnityEngine;
-using static Coloring;
+
 using static Root;
-using static SaveGame;
 using static Sound;
+using static SaveGame;
+using static Coloring;
 
 public class Quest
 {
@@ -45,6 +46,32 @@ public class Quest
             }
             else Debug.Log("ERROR 016: Quest starting item was not found: \"" + itemStart + "\"");
         }
+    }
+
+    //Adds all related to this quest sites to the respawn queue
+    public void UpdateRelatedSites()
+    {
+        //Prepare a list of all sites to respawn
+        var sitesToRespawn = new List<Site>();
+
+        //Add all sites where the quest's objectives can be done
+        foreach (var site in currentSave.player.WhereCanQuestBeDone(this, true))
+            if (!sitesToRespawn.Contains(site))
+                if (site.convertDestinationTo != null) sitesToRespawn.Add(Site.FindSite(x => x.name == site.convertDestinationTo));
+                else sitesToRespawn.Add(site);
+
+        //If starting site exists, add it to the list
+        var findSite = Site.FindSite(x => x.name == siteStart);
+        if (findSite != null) sitesToRespawn.Add(findSite.convertDestinationTo == null ? findSite : Site.FindSite(x => x.name == findSite.convertDestinationTo));
+
+        //If ending site exists, add it to the list
+        findSite = Site.FindSite(x => x.name == siteEnd);
+        if (findSite != null) sitesToRespawn.Add(findSite.convertDestinationTo == null ? findSite : Site.FindSite(x => x.name == findSite.convertDestinationTo));
+
+        //Add all distinct direct relations to respawn queue
+        foreach (var site in sitesToRespawn)
+            if (!Quest.sitesToRespawn.Contains(site))
+                Quest.sitesToRespawn.Add(site);
     }
 
     //ID of the quest
@@ -205,25 +232,28 @@ public class Quest
             AddHeaderRegion(() =>
             {
                 AddLine("Description: ", "Gray");
-                AddText(thisWindow.pagination() + 1 + "", "HalfGray");
-                AddText(" / ", "DarkGray");
-                AddText(thisWindow.maxPagination() + 1 + "", "HalfGray");
-                AddSmallButton("OtherNextPage", (h) =>
+                if (thisWindow.maxPagination() > 0)
                 {
-                    if (thisWindow.pagination() < thisWindow.maxPagination())
+                    AddText(thisWindow.pagination() + 1 + "", "HalfGray");
+                    AddText(" / ", "DarkGray");
+                    AddText(thisWindow.maxPagination() + 1 + "", "HalfGray");
+                    AddSmallButton("OtherNextPage", (h) =>
                     {
-                        PlaySound("DesktopChangePage", 0.6f);
-                        thisWindow.IncrementPagination();
-                    }
-                });
-                AddSmallButton("OtherPreviousPage", (h) =>
-                {
-                    if (thisWindow.pagination() > 0)
+                        if (thisWindow.pagination() < thisWindow.maxPagination())
+                        {
+                            PlaySound("DesktopChangePage", 0.6f);
+                            thisWindow.IncrementPagination();
+                        }
+                    });
+                    AddSmallButton("OtherPreviousPage", (h) =>
                     {
-                        PlaySound("DesktopChangePage", 0.6f);
-                        thisWindow.DecrementPagination();
-                    }
-                });
+                        if (thisWindow.pagination() > 0)
+                        {
+                            PlaySound("DesktopChangePage", 0.6f);
+                            thisWindow.DecrementPagination();
+                        }
+                    });
+                }
             });
             new Description()
             {
@@ -241,25 +271,28 @@ public class Quest
             AddHeaderRegion(() =>
             {
                 AddLine("Description: ", "Gray");
-                AddText(thisWindow.pagination() + 1 + "", "HalfGray");
-                AddText(" / ", "DarkGray");
-                AddText(thisWindow.maxPagination() + 1 + "", "HalfGray");
-                AddSmallButton("OtherNextPage", (h) =>
+                if (thisWindow.maxPagination() > 0)
                 {
-                    if (thisWindow.pagination() < thisWindow.maxPagination())
+                    AddText(thisWindow.pagination() + 1 + "", "HalfGray");
+                    AddText(" / ", "DarkGray");
+                    AddText(thisWindow.maxPagination() + 1 + "", "HalfGray");
+                    AddSmallButton("OtherNextPage", (h) =>
                     {
-                        PlaySound("DesktopChangePage", 0.6f);
-                        thisWindow.IncrementPagination();
-                    }
-                });
-                AddSmallButton("OtherPreviousPage", (h) =>
-                {
-                    if (thisWindow.pagination() > 0)
+                        if (thisWindow.pagination() < thisWindow.maxPagination())
+                        {
+                            PlaySound("DesktopChangePage", 0.6f);
+                            thisWindow.IncrementPagination();
+                        }
+                    });
+                    AddSmallButton("OtherPreviousPage", (h) =>
                     {
-                        PlaySound("DesktopChangePage", 0.6f);
-                        thisWindow.DecrementPagination();
-                    }
-                });
+                        if (thisWindow.pagination() > 0)
+                        {
+                            PlaySound("DesktopChangePage", 0.6f);
+                            thisWindow.DecrementPagination();
+                        }
+                    });
+                }
             });
             new Description()
             {
@@ -421,15 +454,18 @@ public class Quest
                     Respawn("Instance", true);
                     Respawn("Complex", true);
                 }
-                else PlaySound("QuestFailed", 0.4f);
+                else
+                {
+                    PlaySound("QuestFailed");
+                    SpawnFallingText(new Vector2(0, 34), "Inventory is full", "Red");
+                }
             });
     }
 
     //Copies a quest to a new one for the player to take
     public ActiveQuest CopyQuest()
     {
-        var newQuest = new ActiveQuest();
-        newQuest.conditions = new();
+        var newQuest = new ActiveQuest { conditions = new() };
         if (conditions != null)
             foreach (var condition in conditions)
                 newQuest.conditions.Add(new() { name = condition.name, amount = condition.amount, type = condition.type });

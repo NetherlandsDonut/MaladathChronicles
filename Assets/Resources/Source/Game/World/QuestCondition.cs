@@ -1,5 +1,5 @@
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
 
 using UnityEngine;
 
@@ -88,7 +88,8 @@ public class QuestCondition
                     CloseDesktop("Instance");
                     CloseDesktop("Complex");
                     SwitchDesktop("Map");
-                    CDesktop.cameraDestination = new Vector2(where[0].x, where[0].y);
+                    var index = questMarkerOrder++ % where.Count;
+                    CDesktop.cameraDestination = new Vector2(where[index].x, where[index].y);
                 });
         });
     }

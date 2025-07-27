@@ -55,6 +55,10 @@ public static class Root
     //Amount of objects to be loaded in the loading screen
     public static int loadingScreenObjectLoadAim;
 
+    //Every time a quest marker is viewed,
+    //this is increased by one to cycle through all possible objective sites
+    public static byte questMarkerOrder;
+
     //Category of items player is viewing
     public static string auctionCategory;
 
