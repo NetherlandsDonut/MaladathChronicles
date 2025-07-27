@@ -11609,7 +11609,7 @@
     "vitality": 2.0
   },
   {
-    "name": "Kul'Tiras Marine",
+    "name": "Kul Tiras Marine",
     "category": "Humanoid",
     "subcategory": "Human",
     "portrait": "PortraitKulTirasMarine",
@@ -11619,7 +11619,7 @@
     "vitality": 1.0
   },
   {
-    "name": "Kul'Tiras Sailor",
+    "name": "Kul Tiras Sailor",
     "category": "Humanoid",
     "subcategory": "Human",
     "portrait": "PortraitKulTirasSailor",

@@ -38,6 +38,8 @@ public class Inventory
     {
         int left = amount;
         var matching = items.FindAll(x => x.name == name);
+        var sumBefore = matching.Sum(x => x.amount);
+        var sumAfter = sumBefore - left < 0 ? 0 : sumBefore - left;
         for (int i = matching.Count - 1; i >= 0 && left > 0; i--)
         {
             var temp = matching[i].amount;
@@ -48,6 +50,52 @@ public class Inventory
                 matching.Remove(matching[i]);
             }
             left -= temp;
+        }
+        if (SaveGame.currentSave != null && SaveGame.currentSave.player.inventory == this)
+        {
+            var changed = new List<ActiveQuest>();
+            var output = name + ": ";
+            foreach (var quest in SaveGame.currentSave.player.currentQuests)
+                foreach (var con in quest.conditions)
+                    if (con.type == "Item" && con.name == name)
+                    {
+                        if (sumBefore != sumAfter && (sumBefore < con.amount || sumAfter < con.amount))
+                        {
+                            if (output.EndsWith(" ")) output += sumAfter + "/" + con.amount;
+                            else output += ", " + sumAfter + "/" + con.amount;
+                            if (sumBefore >= con.amount && sumAfter < con.amount)
+                                changed.Add(quest);
+                        }
+                    }
+            foreach (var quest in changed.Select((x => quests.Find(y => y.questID == x.questID))))
+                quest.UpdateRelatedSites();
+        }
+    }
+
+    //Removes a specific amount of an item from the inventory
+    public void RemoveItem(Item item)
+    {
+        var sumBefore = items.Where(x => x.name == item.name).Sum(x => x.amount);
+        var sumAfter = sumBefore - item.amount;
+        items.Remove(item);
+        if (SaveGame.currentSave != null && SaveGame.currentSave.player.inventory == this)
+        {
+            var changed = new List<ActiveQuest>();
+            var output = item.name + ": ";
+            foreach (var quest in SaveGame.currentSave.player.currentQuests)
+                foreach (var con in quest.conditions)
+                    if (con.type == "Item" && con.name == item.name)
+                    {
+                        if (sumBefore != sumAfter && (sumBefore < con.amount || sumAfter < con.amount))
+                        {
+                            if (output.EndsWith(" ")) output += sumAfter + "/" + con.amount;
+                            else output += ", " + sumAfter + "/" + con.amount;
+                            if (sumBefore >= con.amount && sumAfter < con.amount)
+                                changed.Add(quest);
+                        }
+                    }
+            foreach (var quest in changed.Select((x => quests.Find(y => y.questID == x.questID))))
+                quest.UpdateRelatedSites();
         }
     }
 
@@ -175,6 +223,8 @@ public class Inventory
 
     //Decays items that have duration left of their existance
     //This is used mainly for buyback items from vendors
+    //BEWARE NOT TO DECAY PLAYER INVENTORY, because of quest items
+    //and issues regarding split items resetting the timer
     public void DecayItems(int minutes)
     {
         for (int i = items.Count - 1; i >= 0; i--)

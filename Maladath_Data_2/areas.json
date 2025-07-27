@@ -9849,12 +9849,12 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Kul'Tiras Sailor",
+        "who": "Kul Tiras Sailor",
         "levelMin": 5,
         "levelMax": 6
       },
       {
-        "who": "Kul'Tiras Marine",
+        "who": "Kul Tiras Marine",
         "levelMin": 6,
         "levelMax": 7
       }

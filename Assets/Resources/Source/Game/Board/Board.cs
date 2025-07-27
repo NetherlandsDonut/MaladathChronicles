@@ -367,7 +367,7 @@ public class Board
                     }
 
                     //Drop items
-                    var directDrop = enemyRace.droppedItems.Select(x => Item.items.Find(y => y.name == x)).Where(x => !x.unique || !currentSave.player.uniquesGotten.Contains(x.name)).Where(x => x.specDropRestriction == null || x.specDropRestriction.Contains(currentSave.player.spec)).Where(x => x.raceDropRestriction == null || x.raceDropRestriction.Contains(currentSave.player.race)).ToList();
+                    var directDrop = enemyRace.droppedItems.Select(x => Item.items.Find(y => y.name == x)).Where(x => (!x.onlyWithQuest || currentSave.player.currentQuests.Any(y => y.conditions.Any(z => z.type == "Item" && z.name == x.name))) && (!x.unique || !currentSave.player.uniquesGotten.Contains(x.name))).Where(x => x.specDropRestriction == null || x.specDropRestriction.Contains(currentSave.player.spec)).Where(x => x.raceDropRestriction == null || x.raceDropRestriction.Contains(currentSave.player.race)).ToList();
                     var wearableDirect = directDrop.Where(x => x.IsWearable()).ToList();
                     var equipableDirect = wearableDirect.Where(x => x.CanEquip(currentSave.player, false, false, true)).ToList();
 

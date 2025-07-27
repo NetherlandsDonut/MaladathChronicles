@@ -2815,7 +2815,7 @@ public class Blueprint
             {
                 if (currentSave.player.uniquesGotten.Contains(itemToDestroy.name))
                     currentSave.player.uniquesGotten.Remove(itemToDestroy.name);
-                currentSave.player.inventory.items.Remove(itemToDestroy);
+                currentSave.player.inventory.RemoveItem(itemToDestroy);
                 PlaySound("DesktopMenuClose");
                 CloseWindow("ConfirmItemDestroy");
                 itemToDestroy = null;
@@ -2852,7 +2852,7 @@ public class Blueprint
             {
                 PlaySound("Disenchant");
                 currentSave.AddTime(30);
-                currentSave.player.inventory.items.Remove(itemToDisenchant);
+                currentSave.player.inventory.RemoveItem(itemToDisenchant);
                 CloseWindow("ConfirmItemDisenchant");
                 Respawn("Inventory");
                 disenchantLoot = itemToDisenchant.GenerateDisenchantLoot();
@@ -3417,7 +3417,7 @@ public class Blueprint
                         AddSmallButton("OtherClose", (h) =>
                         {
                             if (openedItem.itemsInside.Count == 0)
-                                currentSave.player.inventory.items.Remove(openedItem);
+                                currentSave.player.inventory.RemoveItem(openedItem);
                             openedItem = null;
                             PlaySound("DesktopInventoryClose");
                             CloseDesktop("ContainerLoot");
