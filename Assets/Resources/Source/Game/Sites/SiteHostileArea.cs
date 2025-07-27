@@ -182,10 +182,10 @@ public class SiteHostileArea : Site
                 //    });
                 var q = currentSave.player.QuestsAt(this);
                 if (q.Count > 0)
-                {
-                    AddEmptyRegion();
                     foreach (var quest in q)
                     {
+                        AddSmallEmptyRegion();
+                        AddSmallEmptyRegion();
                         var con = quest.conditions.FindAll(x => !x.IsDone() && x.Where().Contains(this));
                         AddPaddingRegion(() =>
                         {
@@ -198,12 +198,10 @@ public class SiteHostileArea : Site
                             foreach (var condition in con)
                                 condition.Print(false);
                     }
-                }
             },
             (h) =>
             {
-                if (debug)
-                    BuildPath();
+                if (debug) BuildPath();
             });
             var q = currentSave.player.AvailableQuestsAt(this, true).Count;
             sitesWithQuestMarkers.Remove(this);

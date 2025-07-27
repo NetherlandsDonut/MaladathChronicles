@@ -1,5 +1,14 @@
 [
   {
+    "name": "Durotar Tiger",
+    "category": "Beast",
+    "subcategory": "Cat",
+    "portrait": "PortraitTiger",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
+  },
+  {
     "name": "Prince Thunderaan",
     "category": "Elemental",
     "subcategory": "Air Elemental",

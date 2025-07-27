@@ -9414,8 +9414,8 @@
     ]
   },
   {
-    "x": 2568,
-    "y": -2769,
+    "x": 2513,
+    "y": -2725,
     "name": "Echo Isles",
     "zone": "Durotar",
     "type": "HostileArea",
@@ -9426,6 +9426,28 @@
         "levelMin": 8,
         "levelMax": 9
       },
+      {
+        "who": "Durotar Tiger",
+        "levelMin": 7,
+        "levelMax": 8
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ]
+  },
+  {
+    "x": 2568,
+    "y": -2769,
+    "name": "Zalazane Camp",
+    "zone": "Durotar",
+    "type": "HostileArea",
+    "fishing": true,
+    "commonEncounters": [
       {
         "who": "Voodoo Troll",
         "levelMin": 8,
