@@ -9,9 +9,9 @@ using static Root.Anchor;
 
 using static Quest;
 using static Faction;
-using static Coloring;
 using static SaveGame;
-using static SiteHostileArea;
+using static SiteArea;
+using static Coloring;
 
 public class SiteInstance : Site
 {
@@ -34,7 +34,7 @@ public class SiteInstance : Site
                     foreach (var area in wing.areas)
                         if (area.ContainsKey("AreaName"))
                             if (!areas.Exists(x => x.name == area["AreaName"]))
-                                areas.Insert(0, new SiteHostileArea()
+                                areas.Insert(0, new SiteArea()
                                 {
                                     name = area["AreaName"],
                                     commonEncounters = new(),
@@ -111,7 +111,7 @@ public class SiteInstance : Site
                     AddText(" - ", "DarkGray");
                     AddText(range.Item2 + "", ColorEntityLevel(currentSave.player, range.Item2));
                 });
-                var areas = wings.SelectMany(x => x.areas.Select(y => SiteHostileArea.areas.Find(z => z.name == y["AreaName"])));
+                var areas = wings.SelectMany(x => x.areas.Select(y => SiteArea.areas.Find(z => z.name == y["AreaName"])));
                 var side = currentSave.playerSide;
                 var total = areas.SelectMany(x => x.CommonEncounters(side) ?? new()).Distinct().ToList();
                 total.AddRange(areas.SelectMany(x => x.eliteEncounters ?? new()).Distinct().ToList());
@@ -177,31 +177,6 @@ public class SiteInstance : Site
         return "Areas/Area" + name.Clean() + (save != null && save.IsNight() && !noNightVariant ? "Night" : "");
     }
 
-    public static void PrintInstanceSite(Dictionary<string, string> site)
-    {
-        var find = areas.Find(x => x.name == site["AreaName"]);
-        if (find != null && (showAreasUnconditional || site.ContainsKey("OpenByDefault") && site["OpenByDefault"] == "True" || currentSave.unlockedAreas.Contains(find.name)))
-            AddButtonRegion(() =>
-            {
-                AddLine(find.name);
-                if (currentSave.siteProgress.ContainsKey(find.name) && find.areaSize == currentSave.siteProgress[find.name])
-                    SetRegionBackgroundAsImage("ClearedArea");
-            },
-            (h) =>
-            {
-                area = find;
-                CloseWindow("HostileAreaQuestTracker");
-                Respawn("HostileArea");
-                Respawn("HostileAreaProgress");
-                Respawn("HostileAreaDenizens");
-                Respawn("HostileAreaElites");
-                Respawn("Chest");
-                SetDesktopBackground(area.Background());
-            });
-        else
-            AddPaddingRegion(() => AddLine("?", "DimGray"));
-    }
-
     public static void PrintInstanceWing(SiteInstance instance, InstanceWing wing)
     {
         //if (instance.wings.Count > 1)
@@ -219,12 +194,11 @@ public class SiteInstance : Site
                 (h) =>
                 {
                     if (area.Item1 == null) return;
-                    SiteHostileArea.area = area.Item1;
-                    CloseWindow("HostileAreaQuestTracker");
-                    Respawn("HostileArea");
-                    Respawn("HostileAreaProgress");
-                    Respawn("HostileAreaDenizens");
-                    Respawn("HostileAreaElites");
+                    SiteArea.area = area.Item1;
+                    CloseWindow("TownQuestTracker");
+                    Respawn("Town");
+                    Respawn("TownProgress");
+                    Respawn("TownElites");
                     Respawn("Chest");
                     SetDesktopBackground("Areas/Area" + (instance.name + area.Item1.name).Clean() + (area.Item1.specialClearBackground && area.Item1.eliteEncounters.All(x => currentSave.elitesKilled.ContainsKey(x.who)) ? "Cleared" : ""));
                 });

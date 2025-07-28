@@ -263,11 +263,11 @@ public class Entity
     }
 
     //Check if any new quest can be aquired at a target site
-    public List<Quest> AvailableQuestsAt(SiteTown town, bool oneIsEnough = false)
+    public List<Quest> AvailableQuestsAt(SiteArea town, bool oneIsEnough = false)
     {
         var list = new List<Quest>();
         if (town.capitalRedirect != null && (town.x != 0 || town.y != 0))
-            foreach (var capitalSite in SiteTown.towns.FindAll(x => x.capitalRedirect == town.capitalRedirect))
+            foreach (var capitalSite in SiteArea.areas.FindAll(x => x.capitalRedirect == town.capitalRedirect))
                 list = list.Concat(AvailableQuestsAt((Site)capitalSite, oneIsEnough)).ToList();
         else list = AvailableQuestsAt((Site)town, oneIsEnough);
         return list;
@@ -310,11 +310,11 @@ public class Entity
     }
 
     //Check if any quest can be done at a target site
-    public List<Quest> QuestsDoneAt(SiteTown town, bool oneIsEnough = false)
+    public List<Quest> QuestsDoneAt(SiteArea town, bool oneIsEnough = false)
     {
         var list = new List<Quest>();
         if (town.capitalRedirect != null && (town.x != 0 || town.y != 0))
-            foreach (var site in SiteTown.towns.Where(x => x.capitalRedirect == town.capitalRedirect))
+            foreach (var site in SiteArea.areas.Where(x => x.capitalRedirect == town.capitalRedirect))
                 list = list.Concat(QuestsDoneAt((Site)site, oneIsEnough)).ToList();
         else list = QuestsDoneAt((Site)town, oneIsEnough);
         return list.Distinct().ToList();
@@ -385,11 +385,11 @@ public class Entity
     }
 
     //Check if any quest can be done at a target site
-    public List<Quest> QuestsAt(SiteTown town, bool oneIsEnough = false)
+    public List<Quest> QuestsAt(SiteArea town, bool oneIsEnough = false)
     {
         var list = new List<Quest>();
         if (town.capitalRedirect != null && (town.x != 0 || town.y != 0))
-            foreach (var site in SiteTown.towns.Where(x => x.capitalRedirect == town.capitalRedirect))
+            foreach (var site in SiteArea.areas.Where(x => x.capitalRedirect == town.capitalRedirect))
                 list = list.Concat(QuestsAt((Site)site, oneIsEnough)).ToList();
         else list = QuestsAt((Site)town, oneIsEnough);
         return list.Distinct().ToList();

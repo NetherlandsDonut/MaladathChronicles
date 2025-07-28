@@ -9,7 +9,7 @@ using static Sound;
 using static ItemSet;
 using static Defines;
 using static SaveGame;
-using static SiteTown;
+using static SiteArea;
 using static Coloring;
 using static Inventory;
 using static GameSettings;
@@ -799,7 +799,7 @@ public class Item
                             if (amount >= item.amount)
                             {
                                 currentSave.player.inventory.AddItem(item);
-                                currentSave.banks[town.name].items.Remove(item);
+                                currentSave.banks[area.name].items.Remove(item);
                             }
                             else
                             {
@@ -814,7 +814,7 @@ public class Item
                     {
                         PlaySound(item.ItemSound("PickUp"), 0.8f);
                         currentSave.player.inventory.AddItem(item);
-                        currentSave.banks[town.name].items.Remove(item);
+                        currentSave.banks[area.name].items.Remove(item);
                         Respawn("Inventory");
                         Respawn("Bank");
                     }
@@ -969,7 +969,7 @@ public class Item
         }
         if (item.amount == 0) SetBigButtonToGrayscale();
         else if (item.IsWearable() && !item.HasProficiency(currentSave.player, true)) SetBigButtonToRed();
-        if (stockItem != null || item.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.position + new Vector3(32, -27) + new Vector3(38, 0) * ((buyback != null ? currentSave.buyback.items.IndexOf(buyback) : currentSave.vendorStock[town.name + ":" + Person.person.name].FindIndex(x => x.item == item.name)) % 5), item.amount + (false && buyback == null ?  "/" + currentSave.vendorStock[town.name + ":" + Person.person.name].Find(x => x.item == item.name).maxAmount : ""), "", "", "Right");
+        if (stockItem != null || item.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.position + new Vector3(32, -27) + new Vector3(38, 0) * ((buyback != null ? currentSave.buyback.items.IndexOf(buyback) : currentSave.vendorStock[area.name + ":" + Person.person.name].FindIndex(x => x.item == item.name)) % 5), item.amount + (false && buyback == null ?  "/" + currentSave.vendorStock[area.name + ":" + Person.person.name].Find(x => x.item == item.name).maxAmount : ""), "", "", "Right");
         if (stockItem != null && item.amount == 0 && stockItem.minutesLeft > 0) AddBigButtonCooldownOverlay(stockItem.minutesLeft / (double)stockItem.restockSpeed);
         else if (buyback != null && buyback.minutesLeft > 0) AddBigButtonBuybackOverlay(buyback.minutesLeft / (double)defines.buybackDecay);
     }
@@ -1086,7 +1086,7 @@ public class Item
                 }
                 else if (WindowUp("Bank"))
                 {
-                    var canAdd = currentSave.banks[town.name].CanAddItem(item);
+                    var canAdd = currentSave.banks[area.name].CanAddItem(item);
                     if (movingItem == null && canAdd)
                         if (item.amount > 1 && Input.GetKey(KeyCode.LeftShift))
                         {
@@ -1101,12 +1101,12 @@ public class Item
                                 if (amount > item.amount) amount = item.amount;
                                 if (amount == item.amount)
                                 {
-                                    currentSave.banks[town.name].AddItem(item);
+                                    currentSave.banks[area.name].AddItem(item);
                                     currentSave.player.inventory.items.Remove(item);
                                 }
                                 else
                                 {
-                                    currentSave.banks[town.name].AddItem(item.CopyItem(amount));
+                                    currentSave.banks[area.name].AddItem(item.CopyItem(amount));
                                     item.amount -= amount;
                                 }
                                 Respawn("Inventory");
@@ -1116,7 +1116,7 @@ public class Item
                         else
                         {
                             PlaySound(item.ItemSound("PutDown"), 0.8f);
-                            currentSave.banks[town.name].AddItem(item);
+                            currentSave.banks[area.name].AddItem(item);
                             currentSave.player.inventory.items.Remove(item);
                             Respawn("Inventory");
                             Respawn("Bank");
@@ -1329,9 +1329,9 @@ public class Item
                     else if (CDesktop.title == "ChestLoot")
                     {
                         currentSave.player.inventory.AddItem(item);
-                        currentSave.openedChests[SiteHostileArea.area.name].inventory.items.Remove(item);
-                        currentSave.openedChests[SiteHostileArea.area.name].inventory.ApplySortOrder();
-                        if (settings.autoCloseLoot.Value() && currentSave.openedChests[SiteHostileArea.area.name].inventory.items.Count == 0)
+                        currentSave.openedChests[area.name].inventory.items.Remove(item);
+                        currentSave.openedChests[area.name].inventory.ApplySortOrder();
+                        if (settings.autoCloseLoot.Value() && currentSave.openedChests[area.name].inventory.items.Count == 0)
                         {
                             CloseDesktop("ChestLoot");
                             CDesktop.RespawnAll();

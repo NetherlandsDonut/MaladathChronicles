@@ -7,12 +7,11 @@ using UnityEditor;
 using static Root;
 using static Defines;
 using static MapGrid;
-using static SiteTown;
+using static SiteArea;
 using static SiteComplex;
 using static SiteInstance;
 using static GameSettings;
 using static Serialization;
-using static SiteHostileArea;
 
 public class SaveGame
 {
@@ -93,7 +92,6 @@ public class SaveGame
     {
         var sum = 0;
         var allSites = new List<Site>();
-        for (int i = 0; i < towns.Count; i++) allSites.Add(towns[i]);
         for (int i = 0; i < areas.Count; i++) allSites.Add(areas[i]);
         for (int i = 0; i < complexes.Count; i++) allSites.Add(complexes[i]);
         for (int i = 0; i < instances.Count; i++) allSites.Add(instances[i]);
@@ -260,7 +258,7 @@ public class SaveGame
     //Stores all inventory of all vendors in game
     public Dictionary<string, List<StockItem>> vendorStock;
     
-    //Stores all bank accounts of this character in towns
+    //Stores all bank accounts of this character in areas
     public Dictionary<string, Inventory> banks;
 
     //List of items available for buying back from vendors

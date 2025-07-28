@@ -36,10 +36,9 @@ using static SiteCapital;
 using static FishingSpot;
 using static GameSettings;
 using static PersonCategory;
-using static SiteHostileArea;
 using static SiteInstance;
 using static SiteComplex;
-using static SiteTown;
+using static SiteArea;
 
 public class Blueprint
 {
@@ -77,8 +76,6 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 var allSites = new List<Site>();
-                for (int i = 0; i < towns.Count; i++)
-                    allSites.Add(towns[i]);
                 for (int i = 0; i < areas.Count; i++)
                     allSites.Add(areas[i]);
                 for (int i = 0; i < complexes.Count; i++)
@@ -126,8 +123,6 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 var allSites = new List<Site>();
-                for (int i = 0; i < towns.Count; i++)
-                    allSites.Add(towns[i]);
                 for (int i = 0; i < areas.Count; i++)
                     allSites.Add(areas[i]);
                 for (int i = 0; i < complexes.Count; i++)
@@ -1060,17 +1055,15 @@ public class Blueprint
             for (int i = 0; i < 2; i++)
             {
                 var index = i;
-                AddPaddingRegion(
-                    () =>
+                AddPaddingRegion(() =>
+                {
+                    for (int j = 0; j < 5; j++)
                     {
-                        for (int j = 0; j < 5; j++)
-                        {
-                            var findItem = currentSave.openedChests[area.name].inventory.items.Find(x => x.y == index && x.x == j);
-                            if (findItem != null) PrintLootItem(findItem);
-                            else AddBigButton("OtherDisabled");
-                        }
+                        var findItem = currentSave.openedChests[area.name].inventory.items.Find(x => x.y == index && x.x == j);
+                        if (findItem != null) PrintLootItem(findItem);
+                        else AddBigButton("OtherDisabled");
                     }
-                );
+                });
             }
         }),
 
@@ -2927,17 +2920,16 @@ public class Blueprint
                             {
                                 CloseDesktop("Instance");
                                 SpawnDesktopBlueprint("Instance");
-                                Respawn("HostileArea");
-                                Respawn("HostileAreaProgress");
-                                Respawn("HostileAreaDenizens");
-                                Respawn("HostileAreaElites");
+                                Respawn("Town");
+                                Respawn("TownProgress");
+                                Respawn("TownElites");
                                 Respawn("Chest");
                                 SetDesktopBackground(area.Background());
                             }
                             else
                             {
-                                CloseDesktop("HostileArea");
-                                SpawnDesktopBlueprint("HostileArea");
+                                CloseDesktop("Town");
+                                SpawnDesktopBlueprint("Town");
                             }
                             CloseDesktop("CombatResults");
                             board = null;
@@ -2986,7 +2978,7 @@ public class Blueprint
                     CloseDesktop("Map");
                     CloseDesktop("Complex");
                     CloseDesktop("Instance");
-                    CloseDesktop("HostileArea");
+                    CloseDesktop("Town");
                     CloseDesktop("CombatResults");
                     board = null;
                     Respawn("ExperienceBar", true);
@@ -3000,17 +2992,16 @@ public class Blueprint
                         {
                             CloseDesktop("Instance");
                             SpawnDesktopBlueprint("Instance");
-                            Respawn("HostileArea");
-                            Respawn("HostileAreaProgress");
-                            Respawn("HostileAreaDenizens");
-                            Respawn("HostileAreaElites");
+                            Respawn("Town");
+                            Respawn("TownProgress");
+                            Respawn("TownElites");
                             Respawn("Chest");
                             SetDesktopBackground(area.Background());
                         }
                         else
                         {
-                            CloseDesktop("HostileArea");
-                            SpawnDesktopBlueprint("HostileArea");
+                            CloseDesktop("Town");
+                            SpawnDesktopBlueprint("Town");
                         }
                         if (board.results.inventory.items.Count > 0)
                         {
@@ -3030,7 +3021,7 @@ public class Blueprint
                         if (board.results.result == "Team2Won")
                         {
                             if (area.instancePart) CloseDesktop("Instance");
-                            else CloseDesktop("HostileArea");
+                            else CloseDesktop("Town");
                             var curr = FindSite(x => x.name == currentSave.currentSite);
                             var vect = new Vector2(curr.x, curr.y);
                             var distances = SiteSpiritHealer.spiritHealers.Select(x => (x, Vector2.Distance(new Vector2(x.x, x.y), vect))).OrderBy(x => x.Item2).ToList();
@@ -3474,7 +3465,7 @@ public class Blueprint
             SetAnchor(TopRight, -19, -38);
             AddRegionGroup();
             SetRegionGroupWidth(190);
-            AddHeaderRegion(() =>
+            AddHeaderRegion(() => 
             {
                 AddLine(complex.name, "Gray");
                 AddSmallButton("OtherClose",
@@ -3487,7 +3478,7 @@ public class Blueprint
                 });
             });
             var range = (0, 0);
-            var areas = complex.sites.Where(x => x["SiteType"] == "HostileArea").Select(x => SiteHostileArea.areas.Find(y => y.name == x["SiteName"]).recommendedLevel).ToList();
+            var areas = complex.sites.Where(x => x["SiteType"] == "HostileArea").Select(x => SiteArea.areas.Find(y => y.name == x["SiteName"]).recommendedLevel).Where(x => x[currentSave.playerSide] > 0).ToList();
             if (areas.Count > 0)
             {
                 var min = areas.Min(x => x[currentSave.playerSide]);
@@ -3625,7 +3616,7 @@ public class Blueprint
                     AddLine("towards you. Consider", "HalfGray");
                     AddLine("improving your reputation", "HalfGray");
                     AddLine("with ", "HalfGray");
-                    AddLine(town.faction, "Unfriendly");
+                    AddLine(area.faction, "Unfriendly");
                     AddLine("in order to be welcomed here", "HalfGray");
                 });
         }),
@@ -3700,16 +3691,17 @@ public class Blueprint
                         },
                         (h) =>
                         {
-                            SiteHostileArea.area = find;
-                            if (currentSave.player.QuestsAt(SiteHostileArea.area).Count == 0)
-                                CloseWindow("HostileAreaQuestTracker");
-                            Respawn("HostileArea");
-                            Respawn("HostileAreaProgress");
-                            Respawn("HostileAreaDenizens");
-                            Respawn("HostileAreaElites");
-                            Respawn("HostileAreaQuestAvailable");
-                            Respawn("HostileAreaQuestDone");
+                            SiteArea.area = find;
+                            if (currentSave.player.QuestsAt(SiteArea.area).Count == 0)
+                                CloseWindow("TownQuestTracker");
+                            Respawn("Town");
+                            Respawn("TownProgress");
+                            Respawn("TownElites");
+                            Respawn("TownQuestAvailable");
+                            Respawn("TownQuestDone");
                             Respawn("Chest");
+                            CloseWindow("Person");
+                            CloseWindow("Persons");
                             SetDesktopBackground(find.Background());
                         });
                     else AddHeaderRegion(() => AddLine("?", "DimGray"));
@@ -3769,13 +3761,12 @@ public class Blueprint
                     wing = null;
                     area = null;
                     SetDesktopBackground(instance.Background());
-                    CloseWindow("HostileArea");
-                    CloseWindow("HostileAreaQuestTracker");
-                    CloseWindow("HostileAreaProgress");
-                    CloseWindow("HostileAreaDenizens");
-                    CloseWindow("HostileAreaElites");
-                    CloseWindow("HostileAreaQuestAvailable");
-                    CloseWindow("HostileAreaQuestDone");
+                    CloseWindow("Town");
+                    CloseWindow("TownQuestTracker");
+                    CloseWindow("TownProgress");
+                    CloseWindow("TownElites");
+                    CloseWindow("TownQuestAvailable");
+                    CloseWindow("TownQuestDone");
                     CloseWindow("Chest");
                     CloseWindow("InstanceWing");
                     Respawn("Instance");
@@ -3803,24 +3794,25 @@ public class Blueprint
                     },
                     (h) =>
                     {
-                        SiteHostileArea.area = find;
-                        if (currentSave.player.QuestsAt(SiteHostileArea.area).Count == 0)
-                            CloseWindow("HostileAreaQuestTracker");
-                        Respawn("HostileArea");
-                        Respawn("HostileAreaProgress");
-                        Respawn("HostileAreaDenizens");
-                        Respawn("HostileAreaElites");
-                        Respawn("HostileAreaQuestAvailable");
-                        Respawn("HostileAreaQuestDone");
+                        SiteArea.area = find;
+                        if (currentSave.player.QuestsAt(SiteArea.area).Count == 0)
+                            CloseWindow("TownQuestTracker");
+                        Respawn("Town");
+                        Respawn("TownProgress");
+                        Respawn("TownElites");
+                        Respawn("TownQuestAvailable");
+                        Respawn("TownQuestDone");
                         Respawn("Chest");
+                        CloseWindow("Person");
+                        CloseWindow("Persons");
                         SetDesktopBackground(find.Background());
                     });
                 else AddHeaderRegion(() => AddLine("?", "DimGray"));
             }
         }),
 
-        //Hostile Area
-        new("HostileArea", () =>
+        //Town
+        new("Town", () =>
         {
             var isNight = currentSave.IsNight();
             var music = isNight ? area.musicDay : area.musicNight;
@@ -3840,51 +3832,32 @@ public class Blueprint
             }
             else PlayAmbience(ambience);
             SetAnchor(TopLeft, 19, -38);
-            AddHeaderGroup();
+            AddRegionGroup();
             SetRegionGroupWidth(190);
-            AddHeaderRegion(() => 
+            AddHeaderRegion(() =>
             {
                 AddLine(area.name, "Gray");
                 AddSmallButton("OtherClose",
                 (h) =>
                 {
+                    var title = CDesktop.title;
+                    CloseDesktop(title);
                     PlaySound("DesktopInstanceClose");
-                    if (area.instancePart)
-                    {
-                        if (wing != null) SetDesktopBackground(wing.Background());
-                        else SetDesktopBackground(instance.Background());
-                        CloseWindow(h.window);
-                        CloseWindow("HostileAreaProgress");
-                        CloseWindow("HostileAreaDenizens");
-                        CloseWindow("HostileAreaElites");
-                        CloseWindow("HostileAreaQuestAvailable");
-                        CloseWindow("HostileAreaQuestDone");
-                        CloseWindow("QuestAdd");
-                        CloseWindow("QuestTurn");
-                        CloseWindow("Chest");
-                    }
-                    else if (area.complexPart)
-                    {
-                        SetDesktopBackground(complex.Background());
-                        CloseWindow(h.window);
-                        CloseWindow("HostileAreaProgress");
-                        CloseWindow("HostileAreaDenizens");
-                        CloseWindow("HostileAreaElites");
-                        CloseWindow("Chest");
-                    }
-                    else CloseDesktop("HostileArea");
+                    if (capital != null) area = capitalThroughTown;
+                    else SwitchDesktop("Map");
                 });
-                if (area.fishing)
-                    AddSmallButton("OtherFish" + (!currentSave.player.professionSkills.ContainsKey("Fishing") ? "Off" : ""),
-                    (h) =>
-                    {
-                        if (currentSave.player.professionSkills.ContainsKey("Fishing"))
-                        {
-                            fishingSpot = fishingSpots.Find(x => x.name == area.name);
-                            SpawnDesktopBlueprint("FishingGame");
-                        }
-                    });
+                //if (town.fishing)
+                //    AddSmallButton("OtherFish" + (!currentSave.player.professionSkills.ContainsKey("Fishing") ? "Off" : ""),
+                //    (h) =>
+                //    {
+                //        if (currentSave.player.professionSkills.ContainsKey("Fishing"))
+                //        {
+                //            fishingSpot = fishingSpots.Find(x => x.name == town.name);
+                //            SpawnDesktopBlueprint("FishingGame");
+                //        }
+                //    });
             });
+            if (WindowUp("Persons")) return;
             if (transportationConnectedToSite.ContainsKey(area.name))
             {
                 var transportOptions = transportationConnectedToSite[area.name];
@@ -3903,322 +3876,6 @@ public class Blueprint
                     {
                         //Set the destination
                         var destination = FindSite(x => x.name != area.name && transport.sites.Contains(x.name));
-
-                        //Pay the toll
-                        if (transport.price > 0)
-                        {
-                            if (transport.price > currentSave.player.inventory.money)
-                            {
-                                SpawnFallingText(new Vector2(0, 34), "Not enough money", "Red");
-                                return;
-                            }
-                            PlaySound("DesktopTransportPay");
-                            currentSave.player.inventory.money -= transport.price;
-                        }
-
-                        //Set the new site as current
-                        currentSave.currentSite = destination.convertDestinationTo != null ? destination.convertDestinationTo : destination.name;
-
-                        currentSave.AddTime(transport.time);
-                        transport.PlayPathEndSound();
-
-                        //Close town screen as we're beginning to travel on map
-                        CloseDesktop("HostileArea");
-
-                        //Switch desktop to map
-                        SwitchDesktop("Map");
-
-                        //Explore the site if it wasnt explored
-                        if (!currentSave.Visited(currentSave.currentSite))
-                        {
-                            currentSave.siteVisits.Add(currentSave.currentSite, 0);
-                            PlaySound("DesktopZoneDiscovered", 1f);
-                            currentSave.player.ReceiveExperience(defines.expForExploration);
-                            foreach (var connection in paths.FindAll(x => x.sites.Contains(currentSave.currentSite)).Where(x => x.onlyFor == null || x.onlyFor == currentSave.playerSide))
-                            {
-                                var site = connection.sites.Find(x => x != currentSave.currentSite);
-                                if (!WindowUp("Site: " + site))
-                                    if (!Respawn("Site: " + site))
-                                        CDesktop.LBWindow().GetComponentsInChildren<Renderer>().ToList().ForEach(x => x.gameObject.AddComponent<FadeIn>());
-                            }
-                        }
-
-                        if (area.instancePart) Respawn("Site: " + instances.Find(x => x.wings.Any(z => z.areas.Exists(y => y["AreaName"] == area.name))));
-                        else if (area.complexPart) Respawn("Site: " + complexes.Find(x => x.sites.Exists(y => y["SiteName"] == area.name)));
-                        else Respawn("Site: " + area.name);
-
-                        var areaOfDestination = areas.Find(x => x.name == currentSave.currentSite);
-                        var townOfDestination = towns.Find(x => x.name == currentSave.currentSite);
-                        if (townOfDestination != null)
-                        {
-                            town = townOfDestination;
-                            if (town.capitalRedirect != null) Respawn("Site: " + town.capitalRedirect);
-                            else Respawn("Site: " + currentSave.currentSite);
-                        }
-                        else if (areaOfDestination != null)
-                        {
-                            area = areaOfDestination;
-                            if (area.instancePart) Respawn("Site: " + instances.Find(x => x.wings.Any(z => z.areas.Exists(y => y["AreaName"] == area.name))));
-                            else if (area.complexPart) Respawn("Site: " + complexes.Find(x => x.sites.Exists(y => y["SiteName"] == area.name)));
-                            else Respawn("Site: " + currentSave.currentSite);
-                        }
-
-                        //Move camera to the newly visited town
-                        CDesktop.cameraDestination = townOfDestination != null ? new Vector2(townOfDestination.x, townOfDestination.y) : new Vector2(areaOfDestination.x, areaOfDestination.y);
-                    },
-                    null,
-                    (h) => () => { transport.PrintTooltip(); });
-                }
-            }
-            var levelHigherThanZero = area.recommendedLevel[currentSave.playerSide] > 0;
-            var tracker = WindowUp("HostileAreaQuestTracker");
-            var questsHere = currentSave.player.QuestsAt(area).Count > 0;
-            if (levelHigherThanZero || tracker || questsHere)
-            {
-                AddPaddingRegion(() =>
-                {
-                    if (levelHigherThanZero)
-                    {
-                        AddLine("Recommended level: ", "HalfGray");
-                        AddText(area.recommendedLevel[currentSave.playerSide] + "", ColorEntityLevel(currentSave.player, area.recommendedLevel[currentSave.playerSide]));
-                    }
-                    if (tracker) AddSmallButton("OtherQuestClose", (h) =>
-                        {
-                            CloseWindow("HostileAreaQuestTracker");
-                            Respawn("HostileAreaQuestAvailable");
-                        });
-                    else if (questsHere) AddSmallButton("OtherQuestOpen", (h) =>
-                        {
-                            CloseWindow("HostileAreaQuestAvailable");
-                            Respawn("HostileAreaQuestTracker");
-                        });
-                });
-                if (levelHigherThanZero)
-                    AddButtonRegion(() => AddLine("Explore", "Black"),
-                    (h) =>
-                    {
-                        NewBoard(area.RollEncounters(area.instancePart ? 2 : 1), area);
-                        SpawnDesktopBlueprint("Game");
-                    });
-            }
-        }),
-        new("HostileAreaQuestTracker", () => 
-        {
-            SetAnchor(Top, 0, -38);
-            AddRegionGroup();
-            SetRegionGroupWidth(182);
-            var q = currentSave.player.QuestsAt(area);
-            foreach (var quest in q)
-            {
-                var con = quest.conditions.FindAll(x => !x.IsDone() && x.Where().Contains(area));
-                AddButtonRegion(() =>
-                {
-                    AddLine(quest.name, "Black");
-                    AddSmallButton(quest.ZoneIcon());
-                },
-                (h) =>
-                {
-                    SwitchDesktop("Map");
-                    PlaySound("DesktopInventoryOpen");
-                    SetDesktopBackground("Backgrounds/RuggedLeather", true, true);
-                    Respawn("QuestList");
-                    Respawn("MapToolbar");
-                    Quest.quest = quest;
-                    if (staticPagination.ContainsKey("Quest"))
-                        staticPagination.Remove("Quest");
-                    Respawn("Quest");
-                });
-                var color = ColorQuestLevel(quest.questLevel);
-                if (color != null) SetRegionBackgroundAsImage("SkillUp" + color);
-                if (con.Count > 0)
-                    foreach (var condition in con)
-                        condition.Print(false);
-            }
-        }),
-        new("HostileAreaProgress", () => 
-        {
-            if (area.recommendedLevel[currentSave.playerSide] == 0) return;
-            SetAnchor(BottomLeft, 19, 35);
-            AddHeaderGroup();
-            SetRegionGroupWidth(190);
-            AddHeaderRegion(() => AddLine("Exploration progress:", "HalfGray"));
-            var thickness = 5;
-            if (area.progression != null && area.progression.Count > 0)
-                for (int i = 0; i <= area.areaSize; i++)
-                {
-                    var index = i;
-                    if (index > 0)
-                    {
-                        var progressions = area.progression.FindAll(x => x.point == index);
-                        var printType = "";
-                        if (progressions.Exists(x => x.type == "Boss") && progressions.Exists(x => x.type == "Area" && x.all)) printType = "BossAreaAll";
-                        else if (progressions.Exists(x => x.type == "Boss") && progressions.Exists(x => x.type == "Area")) printType = "BossArea";
-                        else if (progressions.Exists(x => x.type == "Treasure") && progressions.Exists(x => x.type == "Area" && x.all)) printType = "TreasureAreaAll";
-                        else if (progressions.Exists(x => x.type == "Treasure") && progressions.Exists(x => x.type == "Area")) printType = "TreasureArea";
-                        else if (progressions.Exists(x => x.type == "Boss")) printType = "Boss";
-                        else if (progressions.Exists(x => x.type == "Treasure")) printType = "Treasure";
-                        else if (progressions.Exists(x => x.type == "Area" && x.all)) printType = "AreaAll";
-                        else if (progressions.Exists(x => x.type == "Area")) printType = "Area";
-                        if (printType != "")
-                        {
-                            var marker = new GameObject("ProgressionMarker", typeof(SpriteRenderer));
-                            marker.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/Progress" + printType);
-                            marker.transform.parent = CDesktop.LBWindow().LBRegionGroup().LBRegion().transform;
-                            marker.transform.localPosition = new Vector3(1 + CDesktop.LBWindow().LBRegionGroup().setWidth, -3 - thickness);
-                        }
-                    }
-                    if (i < area.areaSize)
-                    {
-                        AddRegionGroup();
-                        var setWidth = (i == area.areaSize - 1 ? 190 % area.areaSize : 0) + 190 / area.areaSize;
-                        SetRegionGroupWidth(setWidth);
-                        SetRegionGroupHeight(thickness);
-                        AddPaddingRegion(() =>
-                        {
-                            var temp = currentSave.siteProgress.ContainsKey(area.name) ? currentSave.siteProgress[area.name] : 0;
-                            if (temp > index)
-                            {
-                                SetRegionBackground(ProgressDone);
-                                positionOfElite = CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.position.x + setWidth;
-                            }
-                            else SetRegionBackground(ProgressEmpty);
-                        });
-                    }
-                }
-        }),
-        new("HostileAreaDenizens", () => 
-        {
-            var common = area.CommonEncounters(currentSave.playerSide);
-            if (common == null || common.Count == 0) return;
-            var hostileArea = CDesktop.windows.Find(x => x.title == "HostileArea");
-            SetAnchor(TopLeft, 19, -38 - hostileArea.yOffset);
-            AddRegionGroup();
-            SetRegionGroupWidth(190);
-            foreach (var encounter in common)
-                AddHeaderRegion(() =>
-                {
-                    AddLine(encounter.who, "DarkGray", "Right");
-                    var race = races.Find(x => x.name == encounter.who);
-                    AddSmallButton(race == null ? "OtherUnknown" : race.portrait);
-                });
-        }),
-        new("HostileAreaElites", () => 
-        {
-            if (area.eliteEncounters == null || area.eliteEncounters.Count == 0) return;
-            var boss = area.progression.Find(x => x.type == "Boss" && currentSave.siteProgress.ContainsKey(area.name) && x.point == currentSave.siteProgress[area.name]);
-            if (boss == null) return;
-            var bossName = boss.bossName == "<RingofLaw>" ? currentSave.ringOfLaw : (boss.bossName == "<ForlornCloister>" ? currentSave.forlornCloister : boss.bossName);
-            if (boss == null || currentSave.elitesKilled.ContainsKey(bossName)) return;
-            var encounter = area.eliteEncounters.Find(x => x.who == bossName);
-            if (encounter == null) return;
-            SetAnchor(-301 + positionOfElite - 19, -69);
-            AddRegionGroup();
-            AddPaddingRegion(() =>
-            {
-                var race = races.Find(x => x.name == encounter.who);
-                SpawnFloatingText(new Vector3(6, -9), encounter.levelMin - 10 > currentSave.player.level ? "??" : "" + encounter.levelMin, ColorEntityLevel(currentSave.player, encounter.levelMin), "DimGray", "Left");
-                AddBigButton(race == null ? "OtherUnknown" : race.portrait,
-                (h) =>
-                {
-                    NewBoard(new() { area.RollEncounter(encounter) }, area);
-                    SpawnDesktopBlueprint("Game");
-                },
-                null,
-                (h) => () =>
-                {
-                    SetAnchor(-301 + positionOfElite + 19, -69);
-                    AddHeaderGroup();
-                    SetRegionGroupHeight(36);
-                    AddHeaderRegion(() => AddLine(race.name));
-                    AddPaddingRegion(() => AddLine("Defeat this elite to progress  ", "DarkGray"));
-                });
-                var marker = new GameObject("EliteMarker", typeof(SpriteRenderer));
-                marker.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/ProgressBossExpander");
-                marker.GetComponent<SpriteRenderer>().sortingOrder = -1;
-                marker.transform.parent = CDesktop.LBWindow().LBRegionGroup().LBRegion().transform;
-                marker.transform.localPosition = new Vector3(20, -45);
-            });
-        }),
-        new("HostileAreaQuestAvailable", () => 
-        {
-            var quests = currentSave.player.AvailableQuestsAt(area).OrderBy(x => x.questLevel).ToList();
-            if (quests.Count == 0) return;
-            SetAnchor(Top, 0, -38);
-            AddQuestList(quests);
-        }),
-        new("HostileAreaQuestDone", () => 
-        {
-            var quests = currentSave.player.QuestsDoneAt(area).OrderBy(x => x.questLevel).ToList();
-            if (quests.Count == 0) return;
-            SetAnchor(Bottom, 0, 35);
-            AddQuestList(quests, "Turn");
-        }),
-
-        //Town
-        new("Town", () =>
-        {
-            var isNight = currentSave.IsNight();
-            var music = isNight ? town.musicDay : town.musicNight;
-            var ambience = isNight ? town.ambienceDay : town.ambienceNight;
-            if (music == null)
-            {
-                var zone = zones.Find(x => x.name == town.zone);
-                if (zone != null) PlayMusic(isNight ? zone.musicNight : zone.musicDay);
-                else StopMusic();
-            }
-            else PlayMusic(music);
-            if (ambience == null)
-            {
-                var zone = zones.Find(x => x.name == town.zone);
-                if (zone != null) PlayAmbience(isNight ? zone.ambienceNight : zone.ambienceDay);
-                else StopAmbience();
-            }
-            else PlayAmbience(ambience);
-            SetAnchor(TopLeft, 19, -38);
-            AddRegionGroup();
-            SetRegionGroupWidth(190);
-            AddHeaderRegion(() =>
-            {
-                AddLine(town.name, "Gray");
-                AddSmallButton("OtherClose",
-                (h) =>
-                {
-                    var title = CDesktop.title;
-                    CloseDesktop(title);
-                    PlaySound("DesktopInstanceClose");
-                    if (capital != null) town = capitalThroughTown;
-                    else SwitchDesktop("Map");
-                });
-                if (town.fishing)
-                    AddSmallButton("OtherFish" + (!currentSave.player.professionSkills.ContainsKey("Fishing") ? "Off" : ""),
-                    (h) =>
-                    {
-                        if (currentSave.player.professionSkills.ContainsKey("Fishing"))
-                        {
-                            fishingSpot = fishingSpots.Find(x => x.name == town.name);
-                            SpawnDesktopBlueprint("FishingGame");
-                        }
-                    });
-            });
-            if (WindowUp("Persons")) return;
-            if (transportationConnectedToSite.ContainsKey(town.name))
-            {
-                var transportOptions = transportationConnectedToSite[town.name];
-                AddPaddingRegion(() => { AddLine("Transportation:", "HalfGray"); });
-                foreach (var transport in transportOptions)
-                {
-                    if (transport.sites.Count < 2) continue;
-                    var destination = FindSite(x => x.name != town.name && transport.sites.Contains(x.name));
-                    if (destination == null) continue;
-                    AddButtonRegion(() =>
-                    {
-                        AddLine(destination.capitalRedirect ?? destination.convertDestinationTo ?? destination.name, "Black");
-                        AddSmallButton("Transport" + transport.means);
-                    },
-                    (h) =>
-                    {
-                        //Set the destination
-                        var destination = FindSite(x => x.name != town.name && transport.sites.Contains(x.name));
 
                         //Pay the toll
                         if (transport.price > 0)
@@ -4262,35 +3919,28 @@ public class Blueprint
                             }
                         }
 
-                        if (town.capitalRedirect != null) Respawn("Site: " + town.capitalRedirect);
-                        else Respawn("Site: " + town.name);
+                        if (area.capitalRedirect != null) Respawn("Site: " + area.capitalRedirect);
+                        else Respawn("Site: " + area.name);
 
-                        var areaOfDestination = areas.Find(x => x.name == currentSave.currentSite);
-                        var townOfDestination = towns.Find(x => x.name == currentSave.currentSite);
+                        var townOfDestination = areas.Find(x => x.name == currentSave.currentSite);
                         if (townOfDestination != null)
                         {
-                            town = townOfDestination;
-                            if (town.capitalRedirect != null) Respawn("Site: " + town.capitalRedirect);
+                            area = townOfDestination;
+                            if (area.capitalRedirect != null) Respawn("Site: " + area.capitalRedirect);
                             else Respawn("Site: " + currentSave.currentSite);
-                        }
-                        else if (areaOfDestination != null)
-                        {
-                            area = areaOfDestination;
-                            if (area.instancePart) Respawn("Site: " + instances.Find(x => x.wings.Any(z => z.areas.Exists(y => y["AreaName"] == area.name))));
-                            else if (area.complexPart) Respawn("Site: " + complexes.Find(x => x.sites.Exists(y => y["SiteName"] == area.name)));
-                            else Respawn("Site: " + currentSave.currentSite);
-                        }
 
-                        //Move camera to the newly visited town
-                        CDesktop.cameraDestination = townOfDestination != null ? new Vector2(townOfDestination.x, townOfDestination.y) : new Vector2(areaOfDestination.x, areaOfDestination.y);
+                            //Move camera to the newly visited town
+                            CDesktop.cameraDestination = new Vector2(area.x, area.y);
+                        }
                     },
                     null,
                     (h) => () => { transport.PrintTooltip(); });
                 }
             }
-            if (town.people != null)
+            var validPeople = area.people == null ? new() : area.people.Where(x => !x.hidden && (x.faction == null || currentSave.player.reputation[x.faction] >= 4200)).OrderBy(x => x.type).ToList();
+            if (validPeople.Count > 0)
             {
-                var groups = town.people.Where(x => !x.hidden).OrderBy(x => x.type).GroupBy(x => x.category).OrderBy(x => x.Count()).ThenBy(x => x.Key != null ? x.Key.priority : 0);
+                var groups = validPeople.GroupBy(x => x.category).OrderBy(x => x.Count()).ThenBy(x => x.Key != null ? x.Key.priority : 0);
                 AddPaddingRegion(() => { AddLine("Points of interest:", "HalfGray"); });
                 foreach (var group in groups)
                     if (group.Key == null) continue;
@@ -4318,6 +3968,8 @@ public class Blueprint
                                     CloseWindow("QuestTurn");
                                     CloseWindow("TownQuestAvailable");
                                     CloseWindow("TownQuestDone");
+                                    CloseWindow("TownProgress");
+                                    CloseWindow("TownElites");
                                     PlayVoiceLine(person.VoiceLine("Greeting"));
                                     PlaySound("DesktopInstanceOpen");
                                 });
@@ -4330,7 +3982,7 @@ public class Blueprint
                             AddButtonRegion(() =>
                             {
                                 AddLine(person.name, "Black");
-                                AddSmallButton(personType != null ? personType.icon + (personType.factionVariant ? factions.Find(x => x.name == town.faction).side : "") : "OtherUnknown");
+                                AddSmallButton(personType != null ? personType.icon + (personType.factionVariant ? factions.Find(x => x.name == area.faction).side : "") : "OtherUnknown");
                             },
                             (h) =>
                             {
@@ -4342,6 +3994,8 @@ public class Blueprint
                                 CloseWindow("QuestTurn");
                                 CloseWindow("TownQuestAvailable");
                                 CloseWindow("TownQuestDone");
+                                CloseWindow("TownProgress");
+                                CloseWindow("TownElites");
                                 PlayVoiceLine(person.VoiceLine("Greeting"));
                                 PlaySound("DesktopInstanceOpen");
                             });
@@ -4352,7 +4006,7 @@ public class Blueprint
                         AddButtonRegion(() =>
                         {
                             AddLine(group.Key.category + "s (" + group.Count() + ")", "Black");
-                            AddSmallButton(person.category != null ? person.category.icon + (person.category.factionVariant ? factions.Find(x => x.name == town.faction).side : "") : "OtherUnknown");
+                            AddSmallButton(person.category != null ? person.category.icon + (person.category.factionVariant ? factions.Find(x => x.name == area.faction).side : "") : "OtherUnknown");
                         },
                         (h) =>
                         {
@@ -4364,22 +4018,53 @@ public class Blueprint
                         });
                     }
             }
+            var levelHigherThanZero = area.recommendedLevel[currentSave.playerSide] > 0;
+            var tracker = WindowUp("TownQuestTracker");
+            var questsHere = currentSave.player.QuestsAt(area).Count > 0;
+            if (levelHigherThanZero || tracker || questsHere)
+                AddPaddingRegion(() =>
+                {
+                    if (levelHigherThanZero)
+                    {
+                        AddLine("Recommended level: ", "HalfGray");
+                        AddText(area.recommendedLevel[currentSave.playerSide] + "", ColorEntityLevel(currentSave.player, area.recommendedLevel[currentSave.playerSide]));
+                    }
+                    if (tracker) AddSmallButton("OtherQuestClose", (h) =>
+                    {
+                        CloseWindow("TownQuestTracker");
+                        Respawn("TownQuestAvailable");
+                    });
+                    else if (questsHere) AddSmallButton("OtherQuestOpen", (h) =>
+                    {
+                        CloseWindow("TownQuestAvailable");
+                        Respawn("TownQuestTracker");
+                    });
+                });
+            var common = area.CommonEncounters(currentSave.playerSide);
+            if (common != null && common.Count > 0)
+                foreach (var encounter in common)
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine(encounter.who, "DarkGray", "Right");
+                        var race = races.Find(x => x.name == encounter.who);
+                        AddSmallButton(race == null ? "OtherUnknown" : race.portrait);
+                    });
         }),
         new("TownHostile", () =>
         {
             var isNight = currentSave.IsNight();
-            var music = isNight ? town.musicDay : town.musicNight;
-            var ambience = isNight ? town.ambienceDay : town.ambienceNight;
+            var music = isNight ? area.musicDay : area.musicNight;
+            var ambience = isNight ? area.ambienceDay : area.ambienceNight;
             if (music == null)
             {
-                var zone = zones.Find(x => x.name == town.zone);
+                var zone = zones.Find(x => x.name == area.zone);
                 if (zone != null) PlayMusic(isNight ? zone.musicNight : zone.musicDay);
                 else StopMusic();
             }
             else PlayMusic(music);
             if (ambience == null)
             {
-                var zone = zones.Find(x => x.name == town.zone);
+                var zone = zones.Find(x => x.name == area.zone);
                 if (zone != null) PlayAmbience(isNight ? zone.ambienceNight : zone.ambienceDay);
                 else StopAmbience();
             }
@@ -4389,7 +4074,7 @@ public class Blueprint
             SetRegionGroupWidth(190);
             AddHeaderRegion(() =>
             {
-                AddLine(town.name);
+                AddLine(area.name);
                 AddSmallButton("OtherClose",
                 (h) =>
                 {
@@ -4401,7 +4086,7 @@ public class Blueprint
             });
             AddPaddingRegion(() =>
             {
-                var rank = currentSave.player.ReputationRank(town.faction);
+                var rank = currentSave.player.ReputationRank(area.faction);
                 if (rank == "Hated")
                 {
                     AddLine("This town's folk consider you", "HalfGray");
@@ -4418,21 +4103,150 @@ public class Blueprint
                     AddLine("towards you. Consider", "HalfGray");
                     AddLine("improving your reputation", "HalfGray");
                     AddLine("with ", "HalfGray");
-                    AddText(town.faction, "Unfriendly");
+                    AddText(area.faction, "Unfriendly");
                     AddLine("in order to be welcomed here", "HalfGray");
                 }
             });
         }),
+        new("TownProgress", () =>
+        {
+            if (area.recommendedLevel[currentSave.playerSide] == 0) return;
+            SetAnchor(BottomLeft, 19, 35);
+            AddHeaderGroup();
+            SetRegionGroupWidth(190);
+            var currentProgress = currentSave.siteProgress.ContainsKey(area.name) ? currentSave.siteProgress[area.name] : 0;
+            AddButtonRegion(() =>
+            {
+                AddLine("Explore", "Black");
+            },
+            (h) =>
+            {
+                NewBoard(area.RollEncounters(area.instancePart ? 2 : 1), area);
+                SpawnDesktopBlueprint("Game");
+            });
+            var thickness = 5;
+            if (area.progression != null && area.progression.Count > 0)
+                for (int i = 0; i <= area.areaSize; i++)
+                {
+                    var index = i;
+                    if (index > 0)
+                    {
+                        var progressions = area.progression.FindAll(x => x.point == index);
+                        var printType = "";
+                        if (progressions.Exists(x => x.type == "Boss") && progressions.Exists(x => x.type == "Area" && x.all)) printType = "BossAreaAll";
+                        else if (progressions.Exists(x => x.type == "Boss") && progressions.Exists(x => x.type == "Area")) printType = "BossArea";
+                        else if (progressions.Exists(x => x.type == "Treasure") && progressions.Exists(x => x.type == "Area" && x.all)) printType = "TreasureAreaAll";
+                        else if (progressions.Exists(x => x.type == "Treasure") && progressions.Exists(x => x.type == "Area")) printType = "TreasureArea";
+                        else if (progressions.Exists(x => x.type == "Boss")) printType = "Boss";
+                        else if (progressions.Exists(x => x.type == "Treasure")) printType = "Treasure";
+                        else if (progressions.Exists(x => x.type == "Area" && x.all)) printType = "AreaAll";
+                        else if (progressions.Exists(x => x.type == "Area")) printType = "Area";
+                        if (printType != "")
+                        {
+                            var marker = new GameObject("ProgressionMarker", typeof(SpriteRenderer));
+                            marker.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/Progress" + printType);
+                            marker.transform.parent = CDesktop.LBWindow().LBRegionGroup().LBRegion().transform;
+                            marker.transform.localPosition = new Vector3(1 + CDesktop.LBWindow().LBRegionGroup().setWidth, -3 - thickness);
+                        }
+                    }
+                    if (i < area.areaSize)
+                    {
+                        AddRegionGroup();
+                        var setWidth = (i == area.areaSize - 1 ? 190 % area.areaSize : 0) + 190 / area.areaSize;
+                        SetRegionGroupWidth(setWidth);
+                        SetRegionGroupHeight(thickness);
+                        AddPaddingRegion(() =>
+                        {
+                            if (currentProgress > index)
+                            {
+                                SetRegionBackground(ProgressDone);
+                                positionOfElite = CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.position.x + setWidth;
+                            }
+                            else SetRegionBackground(ProgressEmpty);
+                        });
+                    }
+                }
+        }),
+        new("TownElites", () =>
+        {
+            if (area.eliteEncounters == null || area.eliteEncounters.Count == 0) return;
+            var boss = area.progression.Find(x => x.type == "Boss" && currentSave.siteProgress.ContainsKey(area.name) && x.point == currentSave.siteProgress[area.name]);
+            if (boss == null) return;
+            var bossName = boss.bossName == "<RingofLaw>" ? currentSave.ringOfLaw : (boss.bossName == "<ForlornCloister>" ? currentSave.forlornCloister : boss.bossName);
+            if (boss == null || currentSave.elitesKilled.ContainsKey(bossName)) return;
+            var encounter = area.eliteEncounters.Find(x => x.who == bossName);
+            if (encounter == null) return;
+            SetAnchor(-301 + positionOfElite - 19, -69);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                var race = races.Find(x => x.name == encounter.who);
+                SpawnFloatingText(new Vector3(6, -9), encounter.levelMin - 10 > currentSave.player.level ? "??" : "" + encounter.levelMin, ColorEntityLevel(currentSave.player, encounter.levelMin), "DimGray", "Left");
+                AddBigButton(race == null ? "OtherUnknown" : race.portrait,
+                (h) =>
+                {
+                    NewBoard(new() { area.RollEncounter(encounter) }, area);
+                    SpawnDesktopBlueprint("Game");
+                },
+                null,
+                (h) => () =>
+                {
+                    SetAnchor(-301 + positionOfElite + 19, -69);
+                    AddHeaderGroup();
+                    SetRegionGroupHeight(36);
+                    AddHeaderRegion(() => AddLine(race.name));
+                    AddPaddingRegion(() => AddLine("Defeat this elite to progress  ", "DarkGray"));
+                });
+                var marker = new GameObject("EliteMarker", typeof(SpriteRenderer));
+                marker.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/ProgressBossExpander");
+                marker.GetComponent<SpriteRenderer>().sortingOrder = -1;
+                marker.transform.parent = CDesktop.LBWindow().LBRegionGroup().LBRegion().transform;
+                marker.transform.localPosition = new Vector3(20, -45);
+            });
+        }),
+        new("TownQuestTracker", () =>
+        {
+            SetAnchor(Top, 0, -38);
+            AddRegionGroup();
+            SetRegionGroupWidth(182);
+            var q = currentSave.player.QuestsAt(area);
+            foreach (var quest in q)
+            {
+                var con = quest.conditions.FindAll(x => !x.IsDone() && x.Where().Contains(area));
+                AddButtonRegion(() =>
+                {
+                    AddLine(quest.name, "Black");
+                    AddSmallButton(quest.ZoneIcon());
+                },
+                (h) =>
+                {
+                    SwitchDesktop("Map");
+                    PlaySound("DesktopInventoryOpen");
+                    SetDesktopBackground("Backgrounds/RuggedLeather", true, true);
+                    Respawn("QuestList");
+                    Respawn("MapToolbar");
+                    Quest.quest = quest;
+                    if (staticPagination.ContainsKey("Quest"))
+                        staticPagination.Remove("Quest");
+                    Respawn("Quest");
+                });
+                var color = ColorQuestLevel(quest.questLevel);
+                if (color != null) SetRegionBackgroundAsImage("SkillUp" + color);
+                if (con.Count > 0)
+                    foreach (var condition in con)
+                        condition.Print(false);
+            }
+        }),
         new("TownQuestAvailable", () => 
         {
-            var quests = currentSave.player.AvailableQuestsAt(town).OrderBy(x => x.questLevel).ToList();
+            var quests = currentSave.player.AvailableQuestsAt(area).OrderBy(x => x.questLevel).ToList();
             if (quests.Count == 0) return;
             SetAnchor(Top, 0, -38);
             AddQuestList(quests);
         }),
         new("TownQuestDone", () => 
         {
-            var quests = currentSave.player.QuestsDoneAt(town).OrderBy(x => x.questLevel).ToList();
+            var quests = currentSave.player.QuestsDoneAt(area).OrderBy(x => x.questLevel).ToList();
             if (quests.Count == 0) return;
             SetAnchor(Bottom, 0, 35);
             AddQuestList(quests, "Turn");
@@ -4446,7 +4260,7 @@ public class Blueprint
             {
                 AddLine(person.type + " ", "Gray");
                 AddText(person.name);
-                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == town.faction).side : ""));
+                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == area.faction).side : ""));
             });
             if (type.category == "Class Trainer")
             {
@@ -4504,8 +4318,8 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    if (!currentSave.banks.ContainsKey(town.name))
-                        currentSave.banks.Add(town.name, new() { items = new() });
+                    if (!currentSave.banks.ContainsKey(area.name))
+                        currentSave.banks.Add(area.name, new() { items = new() });
                     PlaySound("DesktopBankOpen", 0.4f);
                     CloseWindow(h.window);
                     CloseWindow("Town");
@@ -4540,7 +4354,7 @@ public class Blueprint
                 {
                     AddLine("I want to rest in this inn");
                 });
-                if (currentSave.player.homeLocation != town.name)
+                if (currentSave.player.homeLocation != area.name)
                     AddButtonRegion(() =>
                     {
                         AddLine("I want this inn to be my home");
@@ -4596,7 +4410,7 @@ public class Blueprint
                     Respawn("ExperienceBarBorder");
                     Respawn("ExperienceBar");
                 });
-                if (mounts.Count(x => !currentSave.player.mounts.Contains(x.name) && x.factions != null && x.factions.Contains(person.faction == null ? town.faction : person.faction)) > 0)
+                if (mounts.Count(x => !currentSave.player.mounts.Contains(x.name) && x.factions != null && x.factions.Contains(person.faction == null ? area.faction : person.faction)) > 0)
                     AddButtonRegion(() =>
                     {
                         AddLine("I want to buy a new mount");
@@ -4633,8 +4447,8 @@ public class Blueprint
                 },
                 (h) =>
                 {
-                    if (!currentSave.vendorStock.ContainsKey(town.name + ":" + person.name) && person.itemsSold != null && person.itemsSold.Count > 0)
-                        currentSave.vendorStock.Add(town.name + ":" + person.name, person.ExportStock());
+                    if (!currentSave.vendorStock.ContainsKey(area.name + ":" + person.name) && person.itemsSold != null && person.itemsSold.Count > 0)
+                        currentSave.vendorStock.Add(area.name + ":" + person.name, person.ExportStock());
                     PlayVoiceLine(person.VoiceLine("Vendor"));
                     PlaySound("DesktopInventoryOpen");
                     PlaySound("DesktopCharacterSheetOpen");
@@ -4660,6 +4474,8 @@ public class Blueprint
                 Respawn("Persons", true);
                 Respawn("TownQuestAvailable");
                 Respawn("TownQuestDone");
+                Respawn("TownProgress");
+                Respawn("TownElites");
             });
         }, true),
         new("Persons", () => {
@@ -4678,14 +4494,14 @@ public class Blueprint
                     PlaySound("DesktopInstanceClose");
                 });
             });
-            var people = town.people.FindAll(x => x.category == personCategory && !x.hidden);
+            var people = area.people.FindAll(x => x.category == personCategory && !x.hidden);
             foreach (var person in people)
             {
                 var personType = personTypes.Find(x => x.type == person.type);
                 AddButtonRegion(() =>
                 {
                     AddLine(person.name, "Black");
-                    AddSmallButton(personType != null ? personType.icon + (personType.factionVariant ? factions.Find(x => x.name == town.faction).side : "") : "OtherUnknown");
+                    AddSmallButton(personType != null ? personType.icon + (personType.factionVariant ? factions.Find(x => x.name == area.faction).side : "") : "OtherUnknown");
                 },
                 (h) =>
                 {
@@ -4708,7 +4524,7 @@ public class Blueprint
             SetAnchor(TopLeft, 19, -38);
             AddHeaderGroup();
             SetRegionGroupWidth(190);
-            var items = currentSave.vendorStock[town.name + ":" + person.name];
+            var items = currentSave.vendorStock[area.name + ":" + person.name];
             AddHeaderRegion(() =>
             {
                 var type = personTypes.Find(x => x.type == person.type);
@@ -4800,7 +4616,7 @@ public class Blueprint
             {
                 AddLine(person.type + " ", "Gray");
                 AddText(person.name);
-                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == town.faction).side : ""));
+                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == area.faction).side : ""));
             });
             AddPaddingRegion(() =>
             {
@@ -4844,7 +4660,7 @@ public class Blueprint
             {
                 AddLine(person.type + " ", "Gray");
                 AddText(person.name);
-                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == town.faction).side : ""));
+                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == area.faction).side : ""));
             });
             AddPaddingRegion(() =>
             {
@@ -4852,7 +4668,7 @@ public class Blueprint
                 AddLine("home from ", "DarkGray");
                 AddText(currentSave.player.homeLocation, "LightGray");
                 AddLine("to ", "DarkGray");
-                AddText(town.name, "LightGray");
+                AddText(area.name, "LightGray");
                 AddText("?", "DarkGray");
                 AddLine("");
             });
@@ -4877,7 +4693,7 @@ public class Blueprint
             (h) =>
             {
                 PlaySound("DesktopHomeLocation");
-                currentSave.player.homeLocation = town.name;
+                currentSave.player.homeLocation = area.name;
                 CloseWindow("MakeInnHome");
                 Respawn("Person");
             });
@@ -4969,7 +4785,7 @@ public class Blueprint
         new("MountVendor", () => {
             var rowAmount = 6;
             var thisWindow = CDesktop.LBWindow();
-            var mounts = Mount.mounts.FindAll(x => !currentSave.player.mounts.Contains(x.name) && x.factions != null && x.factions.Contains(person.faction == null ? town.faction : person.faction)).OrderBy(x => x.speed).ThenBy(x => x.price).ThenBy(x => x.name).ToList();
+            var mounts = Mount.mounts.FindAll(x => !currentSave.player.mounts.Contains(x.name) && x.factions != null && x.factions.Contains(person.faction == null ? area.faction : person.faction)).OrderBy(x => x.speed).ThenBy(x => x.price).ThenBy(x => x.name).ToList();
             var list = mounts;
             thisWindow.SetPagination(() => list.Count, rowAmount);
             SetAnchor(TopLeft, 19, -38);
@@ -5114,7 +4930,7 @@ public class Blueprint
             SetAnchor(TopLeft, 19, -38);
             AddHeaderGroup();
             SetRegionGroupHeight(281);
-            var items = currentSave.banks[town.name].items;
+            var items = currentSave.banks[area.name].items;
             AddHeaderRegion(() =>
             {
                 var type = personTypes.Find(x => x.type == person.type);
@@ -5183,8 +4999,8 @@ public class Blueprint
             },
             (h) =>
             {
-                currentSave.banks[town.name].items = currentSave.banks[town.name].items.OrderBy(x => x.name).ToList();
-                currentSave.banks[town.name].ApplySortOrder();
+                currentSave.banks[area.name].items = currentSave.banks[area.name].items.OrderBy(x => x.name).ToList();
+                currentSave.banks[area.name].ApplySortOrder();
                 CloseWindow("BankSort");
                 CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.4f);
@@ -5195,8 +5011,8 @@ public class Blueprint
             },
             (h) =>
             {
-                currentSave.banks[town.name].items = currentSave.banks[town.name].items.OrderBy(x => x.amount).ToList();
-                currentSave.banks[town.name].ApplySortOrder();
+                currentSave.banks[area.name].items = currentSave.banks[area.name].items.OrderBy(x => x.amount).ToList();
+                currentSave.banks[area.name].ApplySortOrder();
                 CloseWindow("BankSort");
                 CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.4f);
@@ -5207,8 +5023,8 @@ public class Blueprint
             },
             (h) =>
             {
-                currentSave.banks[town.name].items = currentSave.banks[town.name].items.OrderByDescending(x => x.ilvl).ToList();
-                currentSave.banks[town.name].ApplySortOrder();
+                currentSave.banks[area.name].items = currentSave.banks[area.name].items.OrderByDescending(x => x.ilvl).ToList();
+                currentSave.banks[area.name].ApplySortOrder();
                 CloseWindow("BankSort");
                 CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.4f);
@@ -5219,8 +5035,8 @@ public class Blueprint
             },
             (h) =>
             {
-                currentSave.banks[town.name].items = currentSave.banks[town.name].items.OrderByDescending(x => x.price).ToList();
-                currentSave.banks[town.name].ApplySortOrder();
+                currentSave.banks[area.name].items = currentSave.banks[area.name].items.OrderByDescending(x => x.price).ToList();
+                currentSave.banks[area.name].ApplySortOrder();
                 CloseWindow("BankSort");
                 CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.4f);
@@ -5231,8 +5047,8 @@ public class Blueprint
             },
             (h) =>
             {
-                currentSave.banks[town.name].items = currentSave.banks[town.name].items.OrderByDescending(x => x.type).ToList();
-                currentSave.banks[town.name].ApplySortOrder();
+                currentSave.banks[area.name].items = currentSave.banks[area.name].items.OrderByDescending(x => x.type).ToList();
+                currentSave.banks[area.name].ApplySortOrder();
                 CloseWindow("BankSort");
                 CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.4f);
@@ -5242,7 +5058,7 @@ public class Blueprint
             var rowAmount = 12;
             var thisWindow = CDesktop.LBWindow();
             var side = currentSave.playerSide;
-            var list = town.flightPaths[side].FindAll(x => x != town).OrderBy(x => !currentSave.siteVisits.ContainsKey(x.convertDestinationTo ?? x.name)).ThenBy(x => x.zone).ThenBy(x => x.name).ToList();
+            var list = area.flightPaths[side].FindAll(x => x != area).OrderBy(x => !currentSave.siteVisits.ContainsKey(x.convertDestinationTo ?? x.name)).ThenBy(x => x.zone).ThenBy(x => x.name).ToList();
             thisWindow.SetPagination(() => list.Count, rowAmount);
             SetAnchor(TopLeft, 19, -38);
             AddRegionGroup();
@@ -5288,8 +5104,8 @@ public class Blueprint
                     (h) =>
                     {
                         var destination = list[index + thisWindow.pagination()];
-                        var siteOfDestination = towns.Find(x => x.name == (destination.convertDestinationTo ?? destination.name));
-                        var fromWhere = towns.Find(x => x.name == currentSave.currentSite);
+                        var siteOfDestination = areas.Find(x => x.name == (destination.convertDestinationTo ?? destination.name));
+                        var fromWhere = areas.Find(x => x.name == currentSave.currentSite);
                         currentSave.currentSite = destination.convertDestinationTo ?? destination.name;
                         var distance = Math.Abs(siteOfDestination.x - fromWhere.x) + Math.Abs(siteOfDestination.y - fromWhere.y);
                         var price = distance / 50 * 10;
@@ -5314,21 +5130,21 @@ public class Blueprint
                         //Switch desktop to map
                         SwitchDesktop("Map");
 
-                        Respawn("Site: " + town.name);
+                        Respawn("Site: " + area.name);
                         Respawn("Site: " + currentSave.currentSite);
                         if (destination.x == 0 || destination.y == 0)
-                            town = towns.Find(x => x.name == destination.convertDestinationTo);
-                        else town = destination;
+                            area = areas.Find(x => x.name == destination.convertDestinationTo);
+                        else area = destination;
 
                         //Move camera to the newly visited town
-                        CDesktop.cameraDestination = destination.convertDestinationTo != null ? new Vector2(towns.Find(x => x.name == destination.convertDestinationTo).x, towns.Find(x => x.name == destination.convertDestinationTo).y) : new Vector2(town.x, town.y);
+                        CDesktop.cameraDestination = destination.convertDestinationTo != null ? new Vector2(areas.Find(x => x.name == destination.convertDestinationTo).x, areas.Find(x => x.name == destination.convertDestinationTo).y) : new Vector2(area.x, area.y);
                     },
                     null,
                     (h) => () =>
                     {
                         var destination = list[index + thisWindow.pagination()];
-                        var siteOfDestination = towns.Find(x => x.name == (destination.convertDestinationTo ?? destination.name));
-                        var fromWhere = towns.Find(x => x.name == currentSave.currentSite);
+                        var siteOfDestination = areas.Find(x => x.name == (destination.convertDestinationTo ?? destination.name));
+                        var fromWhere = areas.Find(x => x.name == currentSave.currentSite);
                         var distance = Math.Abs(siteOfDestination.x - fromWhere.x) + Math.Abs(siteOfDestination.y - fromWhere.y);
                         var price = distance / 50 * 10;
                         SetAnchor(Center);
@@ -6458,7 +6274,7 @@ public class Blueprint
             {
                 AddLine(person.type + " ", "Gray");
                 AddText(person.name);
-                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == town.faction).side : ""));
+                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == area.faction).side : ""));
             });
             AddHeaderRegion(() =>
             {
@@ -6575,7 +6391,7 @@ public class Blueprint
             {
                 AddLine(person.type + " ", "Gray");
                 AddText(person.name);
-                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == town.faction).side : ""));
+                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == area.faction).side : ""));
             });
             AddHeaderRegion(() =>
             {
@@ -6663,16 +6479,6 @@ public class Blueprint
                     });
             }
             AddPaginationLine();
-        }),
-        new("PlayerMoney", () => {
-            if (WindowUp("TownHostile")) return;
-            if (WindowUp("CapitalHostile")) return;
-            if (WindowUp("Inventory")) return;
-            if (WindowUp("Quest")) return;
-            if (WindowUp("QuestAdd")) return;
-            if (WindowUp("QuestTurn")) return;
-            SetAnchor(BottomRight, -19, 35);
-            PrintPriceRegion(currentSave.player.inventory.money, 38, 38, 57);
         }),
 
         //Fishing
@@ -6939,7 +6745,6 @@ public class Blueprint
                 CloseDesktop("CharacterSheet");
                 CloseDesktop("Town");
                 CloseDesktop("Capital");
-                CloseDesktop("HostileArea");
                 CloseDesktop("Instance");
                 CloseDesktop("Complex");
                 SwitchDesktop("Map");
@@ -7089,7 +6894,6 @@ public class Blueprint
                     CloseDesktop("CharacterSheet");
                     CloseDesktop("Town");
                     CloseDesktop("Capital");
-                    CloseDesktop("HostileArea");
                     CloseDesktop("Instance");
                     CloseDesktop("Complex");
                     SwitchDesktop("Map");
@@ -7349,7 +7153,6 @@ public class Blueprint
                 {
                     CloseSave();
                     SaveGames();
-                    CloseDesktop("HostileArea");
                     CloseDesktop("Town");
                     CloseDesktop("Capital");
                     CloseDesktop("Instance");
@@ -8178,42 +7981,6 @@ public class Blueprint
                 CDesktop.cameraDestination = new Vector2(temp.x, temp.y);
             }
         }),
-        new("HostileArea", () => 
-        {
-            SetDesktopBackground(area.Background());
-            SpawnWindowBlueprint("HostileArea");
-            SpawnWindowBlueprint("HostileAreaProgress");
-            SpawnWindowBlueprint("HostileAreaDenizens");
-            SpawnWindowBlueprint("HostileAreaElites");
-            SpawnWindowBlueprint("HostileAreaQuestAvailable");
-            SpawnWindowBlueprint("HostileAreaQuestDone");
-            SpawnWindowBlueprint("MapToolbarShadow");
-            SpawnWindowBlueprint("MapToolbarClockLeft");
-            SpawnWindowBlueprint("MapToolbar");
-            SpawnWindowBlueprint("MapToolbarClockRight");
-            SpawnWindowBlueprint("ExperienceBarBorder");
-            SpawnWindowBlueprint("ExperienceBar");
-            SpawnWindowBlueprint("Chest");
-            AddHotkey("Open menu / Back", () =>
-            {
-                if (CloseWindow("HostileAreaQuestTracker"))
-                {
-                    PlaySound("DesktopButtonClose");
-                    Respawn("HostileArea");
-                    Respawn("HostileAreaQuestAvailable");
-                }
-                else if (area.complexPart)
-                {
-                    CloseDesktop("HostileArea");
-                    SpawnDesktopBlueprint("Complex");
-                }
-                else
-                {
-                    PlaySound("DesktopInstanceClose");
-                    CloseDesktop("HostileArea");
-                }
-            });
-        }),
         new("CombatResults", () => 
         {
             SetDesktopBackground(board.area.Background());
@@ -8542,9 +8309,9 @@ public class Blueprint
         new("Town", () => 
         {
             personCategory = null;
-            SetDesktopBackground(town.Background());
+            SetDesktopBackground(area.Background());
             SpawnWindowBlueprint("Capital");
-            if (currentSave.player.Reputation(town.faction) >= 4200)
+            if (currentSave.player.Reputation(area.faction) >= 4200)
             {
                 SpawnWindowBlueprint("Town");
                 AddHotkey(Tab, () =>
@@ -8632,10 +8399,10 @@ public class Blueprint
                         PlaySound("DesktopInstanceClose");
                         if (capital != null)
                         {
-                            town = capitalThroughTown;
+                            area = capitalThroughTown;
                             SwitchDesktop("Capital");
                         }
-                        else town = null;
+                        else area = null;
                         CloseDesktop("Town");
                     }
                 });
@@ -8646,10 +8413,12 @@ public class Blueprint
                 AddHotkey("Open menu / Back", () =>
                 {
                     PlaySound("DesktopInstanceClose");
-                    town = null;
+                    area = null;
                     CloseDesktop("Town");
                 });
             }
+            SpawnWindowBlueprint("TownProgress");
+            SpawnWindowBlueprint("TownElites");
             SpawnWindowBlueprint("TownQuestAvailable");
             SpawnWindowBlueprint("TownQuestDone");
             SpawnWindowBlueprint("PlayerMoney");
@@ -8659,6 +8428,7 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockRight");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
+            SpawnWindowBlueprint("Chest");
             AddPaginationHotkeys();
         }),
         new("Instance", () => 
@@ -8674,30 +8444,29 @@ public class Blueprint
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey("Open menu / Back", () =>
             {
-                if (CloseWindow("HostileAreaQuestTracker"))
+                if (CloseWindow("TownQuestTracker"))
                 {
                     PlaySound("DesktopButtonClose");
-                    Respawn("HostileArea");
-                    Respawn("HostileAreaQuestAvailable");
+                    Respawn("Town");
+                    Respawn("TownQuestAvailable");
                 }
                 else if (CloseWindow("QuestAdd") || CloseWindow("QuestTurn"))
                 {
                     PlaySound("DesktopButtonClose");
-                    Respawn("HostileArea");
-                    Respawn("HostileAreaQuestAvailable");
-                    Respawn("HostileAreaQuestDone");
+                    Respawn("Town");
+                    Respawn("TownQuestAvailable");
+                    Respawn("TownQuestDone");
                     Respawn("InstanceWing", true);
                     Respawn("Instance");
                 }
-                else if (CloseWindow("HostileArea"))
+                else if (CloseWindow("Town"))
                 {
                     area = null;
-                    CloseWindow("HostileAreaQuestTracker");
-                    CloseWindow("HostileAreaQuestAvailable");
-                    CloseWindow("HostileAreaQuestDone");
-                    CloseWindow("HostileAreaProgress");
-                    CloseWindow("HostileAreaDenizens");
-                    CloseWindow("HostileAreaElites");
+                    CloseWindow("TownQuestTracker");
+                    CloseWindow("TownQuestAvailable");
+                    CloseWindow("TownQuestDone");
+                    CloseWindow("TownProgress");
+                    CloseWindow("TownElites");
                     CloseWindow("Chest");
                     PlaySound("DesktopButtonClose");
                     if (wing != null) SetDesktopBackground(wing.Background());
@@ -8740,29 +8509,28 @@ public class Blueprint
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey("Open menu / Back", () =>
             {
-                if (CloseWindow("HostileAreaQuestTracker"))
+                if (CloseWindow("TownQuestTracker"))
                 {
                     PlaySound("DesktopButtonClose");
-                    Respawn("HostileArea");
-                    Respawn("HostileAreaQuestAvailable");
+                    Respawn("Town");
+                    Respawn("TownQuestAvailable");
                 }
                 else if (CloseWindow("QuestAdd") || CloseWindow("QuestTurn"))
                 {
                     PlaySound("DesktopButtonClose");
-                    Respawn("HostileArea");
-                    Respawn("HostileAreaQuestAvailable");
-                    Respawn("HostileAreaQuestDone");
+                    Respawn("Town");
+                    Respawn("TownQuestAvailable");
+                    Respawn("TownQuestDone");
                     Respawn("Complex");
                 }
-                else if (CloseWindow("HostileArea"))
+                else if (CloseWindow("Town"))
                 {
                     area = null;
                     PlaySound("DesktopButtonClose");
-                    CloseWindow("HostileAreaQuestAvailable");
-                    CloseWindow("HostileAreaQuestDone");
-                    CloseWindow("HostileAreaProgress");
-                    CloseWindow("HostileAreaDenizens");
-                    CloseWindow("HostileAreaElites");
+                    CloseWindow("TownQuestAvailable");
+                    CloseWindow("TownQuestDone");
+                    CloseWindow("TownProgress");
+                    CloseWindow("TownElites");
                     CloseWindow("Chest");
                     SetDesktopBackground(complex.Background());
                 }
@@ -8775,8 +8543,8 @@ public class Blueprint
         }),
         new("Capital", () => 
         {
-            SetDesktopBackground(town.Background());
-            if (currentSave.player.Reputation(town.faction) >= 4200) SpawnWindowBlueprint("Capital");
+            SetDesktopBackground(area.Background());
+            if (currentSave.player.Reputation(area.faction) >= 4200) SpawnWindowBlueprint("Capital");
             else SpawnWindowBlueprint("CapitalHostile");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");

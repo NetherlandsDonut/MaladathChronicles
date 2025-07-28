@@ -331,7 +331,6 @@ public class Quest
                     {
                         CloseDesktop("Town");
                         CloseDesktop("Capital");
-                        CloseDesktop("HostileArea");
                         CloseDesktop("Instance");
                         CloseDesktop("Complex");
                         SwitchDesktop("Map");
@@ -421,9 +420,7 @@ public class Quest
                     currentSave.player.TurnQuest(this);
                     PlaySound("QuestTurn");
                     CloseWindow(h.window);
-                    Respawn("HostileAreaQuestAvailable", true);
                     Respawn("TownQuestAvailable", true);
-                    Respawn("HostileAreaQuestDone", true);
                     Respawn("TownQuestDone", true);
                     Respawn("Chest", true);
                     Respawn("PlayerMoney", true);
@@ -441,12 +438,10 @@ public class Quest
                     PlaySound("QuestAdd", 0.4f);
                     currentSave.player.AddQuest(quest);
                     CloseWindow(h.window);
-                    Respawn("HostileAreaQuestAvailable", true);
                     Respawn("TownQuestAvailable", true);
-                    Respawn("HostileAreaQuestDone", true);
                     Respawn("TownQuestDone", true);
                     Respawn("Capital", true);
-                    Respawn("HostileArea", true);
+                    Respawn("Town", true);
                     Respawn("QuestList", true);
                     Respawn("PlayerMoney", true);
                     Respawn("Chest", true);

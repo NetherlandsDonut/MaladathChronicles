@@ -4,15 +4,15 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
+using static Race;
 using static Root;
 using static MapGrid;
-using static SiteTown;
+using static SiteArea;
 using static SaveGame;
 using static SitePath;
 using static SiteCapital;
 using static SiteComplex;
 using static SiteInstance;
-using static SiteHostileArea;
 using static SiteSpiritHealer;
 
 public class Site
@@ -34,7 +34,7 @@ public class Site
 
     //Faction that controls this site.
     //This is very optional and rare to be used.
-    //It's mostly utilised by towns
+    //It's mostly utilised by areas
     public string faction;
 
     //Music track that will start playing when
@@ -116,6 +116,36 @@ public class Site
     //Returns path to a texture that is the background visual of this site
     public virtual string Background() => "";
 
+    public List<Encounter> CommonEncounters(string side) => commonEncounters?.Where(x => x.side == side || x.side == null).ToList();
+
+    public List<Encounter> RareEncounters(string side) => rareEncounters?.Where(x => x.side == side || x.side == null).ToList();
+
+    public List<Entity> RollEncounters(int amount)
+    {
+        var alreadyGotRare = false;
+        var list = new List<Entity>();
+        var common = CommonEncounters(currentSave.playerSide);
+        var rare = RareEncounters(currentSave.playerSide);
+        Encounter toAdd = null;
+        for (int i = 0; i < amount; i++)
+        {
+            if (rare != null && !alreadyGotRare && Roll(5))
+            {
+                toAdd = rare[random.Next(0, rare.Count)];
+                alreadyGotRare = true;
+            }
+            else do toAdd = common[random.Next(0, common.Count)];
+                while (common.Count > 1 && list.Exists(x => x.name == toAdd.who));
+            list.Add(new Entity(random.Next(toAdd.levelMin, toAdd.levelMax == 0 ? toAdd.levelMin + 1 : toAdd.levelMax + 1), races.Find(y => y.name == toAdd.who)));
+        }
+        return list;
+    }
+
+    public Entity RollEncounter(Encounter boss)
+    {
+        return new Entity(boss.levelMax != 0 ? random.Next(boss.levelMin, boss.levelMax + 1) : boss.levelMin, races.Find(x => x.name == boss.who));
+    }
+
     //Queue opening of this site.
     //After calling this the screen is locked and camera will pan there slowly.
     //After reaching the site the screen will change accordingly to the site type
@@ -131,9 +161,7 @@ public class Site
         {
             var fI = instances.Find(x => x.name == name);
             if (fI != null) siteType = "Instance";
-            var fH = areas.Find(x => x.name == name);
-            if (fH != null) siteType = "HostileArea";
-            var fT = towns.Find(x => x.name == name);
+            var fT = areas.Find(x => x.name == name);
             if (fT != null) siteType = "Town";
             var fC = complexes.Find(x => x.name == name);
             if (fC != null) siteType = "Complex";
@@ -142,31 +170,21 @@ public class Site
         {
             instance = (SiteInstance)this;
             area = null;
-            town = null;
             complex = null;
             spiritHealer = null;
             if (staticPagination.ContainsKey("Instance"))
                 staticPagination.Remove("Instance");
         }
-        else if (siteType == "HostileArea")
-        {
-            instance = null;
-            area = (SiteHostileArea)this;
-            town = null;
-            complex = null;
-            spiritHealer = null;
-        }
         else if (siteType == "Town")
         {
             instance = null;
-            area = null;
-            town = (SiteTown)this;
+            area = (SiteArea)this;
             complex = null;
             spiritHealer = null;
-            if (town.capitalRedirect != null)
+            if (area.capitalRedirect != null)
             {
-                capitalThroughTown = town;
-                capital = capitals.Find(x => x.name == town.capitalRedirect);
+                capitalThroughTown = area;
+                capital = capitals.Find(x => x.name == area.capitalRedirect);
                 siteType = "Capital";
             }
         }
@@ -174,7 +192,6 @@ public class Site
         {
             instance = null;
             area = null;
-            town = null;
             complex = (SiteComplex)this;
             spiritHealer = null;
         }
@@ -182,7 +199,6 @@ public class Site
         {
             instance = null;
             area = null;
-            town = null;
             complex = null;
             spiritHealer = (SiteSpiritHealer)this;
         }
@@ -335,9 +351,7 @@ public class Site
     //Finds a site using a predicate
     public static Site FindSite(Predicate<Site> predicate)
     {
-        var area = areas.Find(predicate);
-        if (area != null) return area;
-        var town = towns.Find(predicate);
+        var town = areas.Find(predicate);
         if (town != null) return town;
         var instance = instances.Find(predicate);
         if (instance != null) return instance;
@@ -345,4 +359,21 @@ public class Site
         if (complex != null) return complex;
         return null;
     }
+}
+
+public class Encounter
+{
+    //What race this encounter is
+    public string who;
+
+    //For which side this encounter is available,
+    //leave this blank to be available to everyone
+    public string side;
+
+    //Level range of the encounter,
+    //when a single level is desired just leave levelMax blank
+    public int levelMin, levelMax;
+
+    //Currently selected encounter
+    public static Encounter encounter;
 }

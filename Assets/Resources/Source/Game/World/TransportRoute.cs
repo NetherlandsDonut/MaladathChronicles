@@ -41,7 +41,7 @@ public class TransportRoute
     //Transport mouseover information
     public void PrintTooltip()
     {
-        var destination = Site.FindSite(x => x.name == sites.Find(x => x != currentSave.currentSite && (SiteTown.town == null || x != SiteTown.town.name)));
+        var destination = Site.FindSite(x => x.name == sites.Find(x => x != currentSave.currentSite && (SiteArea.area == null || x != SiteArea.area.name)));
         SetAnchor(Anchor.Center);
         AddHeaderGroup();
         SetRegionGroupWidth(182);

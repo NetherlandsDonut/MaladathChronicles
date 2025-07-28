@@ -13,7 +13,7 @@ public class Chest
     public Inventory inventory;
 
     //Generate chest
-    public static Chest GenerateChest(SiteHostileArea area)
+    public static Chest GenerateChest(SiteArea area)
     {
         var chest = new Chest
         {
@@ -79,8 +79,8 @@ public class Chest
         chest.GetComponent<Highlightable>().Initialise(null,
             (h) =>
             {
-                if (!currentSave.openedChests.ContainsKey(SiteHostileArea.area.name))
-                    currentSave.openedChests.Add(SiteHostileArea.area.name, GenerateChest(SiteHostileArea.area));
+                if (!currentSave.openedChests.ContainsKey(SiteArea.area.name))
+                    currentSave.openedChests.Add(SiteArea.area.name, GenerateChest(SiteArea.area));
                 Sound.PlaySound("DesktopOpenChest");
                 SpawnDesktopBlueprint("ChestLoot");
             },

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 using static Root;
 using static Sound;
-using static SiteTown;
+using static SiteArea;
 
 public class SiteCapital : Site
 {
@@ -13,8 +13,8 @@ public class SiteCapital : Site
         type ??= "Capital";
         if (districts != null)
             foreach (var town in districts)
-                if (!towns.Exists(x => x.name == town))
-                    towns.Insert(0, new SiteTown()
+                if (!areas.Exists(x => x.name == town))
+                    areas.Insert(0, new SiteArea()
                     {
                         name = town,
                         zone = this.zone,
@@ -24,7 +24,7 @@ public class SiteCapital : Site
         SitePath.pathsConnectedToSite.Remove(name);
     }
 
-    //List of towns
+    //List of areas
     public List<string> districts;
 
     //Instance inside of this capital
@@ -35,7 +35,7 @@ public class SiteCapital : Site
     public static SiteCapital capital;
 
     //Currently opened town from which we get to the capital
-    public static SiteTown capitalThroughTown;
+    public static SiteArea capitalThroughTown;
 
     //EXTERNAL FILE: List containing all complexes in-game
     public static List<SiteCapital> capitals;
@@ -46,15 +46,15 @@ public class SiteCapital : Site
     //Prints a single district out of all accessible
     public static void PrintCapitalTown(string town)
     {
-        var find = towns.Find(x => x.name == town);
+        var find = areas.Find(x => x.name == town);
         AddButtonRegion(() =>
         {
             AddLine(town);
         },
         (h) =>
         {
-            if (SiteTown.town == find) return;
-            SiteTown.town = find;
+            if (SiteArea.area == find) return;
+            SiteArea.area = find;
             PlaySound("DesktopInstanceOpen");
             CloseDesktop("Town");
             SpawnDesktopBlueprint("Town");

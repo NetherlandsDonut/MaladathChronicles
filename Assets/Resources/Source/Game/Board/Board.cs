@@ -8,11 +8,11 @@ using static Sound;
 using static Shatter;
 using static Defines;
 using static SaveGame;
+using static SiteArea;
 using static BufferBoard;
 using static GameSettings;
 using static CursorRemote;
 using static FlyingMissile;
-using static SiteHostileArea;
 
 public class Board
 {
@@ -86,7 +86,7 @@ public class Board
         participants[0].who.InitialiseCombat();
         participants[1].who = new Entity(60, possible[random.Next(possible.Count)]);
         whosTurn = 0;
-        area = areas[random.Next(areas.Count)];
+        area = SiteArea.areas[random.Next(SiteArea.areas.Count)];
         participants[0].who.currentActionSet = "Default";
         participants[0].combatAbilities = participants[0].who.AbilitiesInCombat();
         foreach (var a in abilities)
@@ -485,7 +485,7 @@ public class Board
                 //Exit board view
                 if (area != null && area.instancePart) SwitchDesktop("Instance");
                 else if (area != null && area.complexPart) SwitchDesktop("Complex");
-                else SwitchDesktop("HostileArea");
+                else SwitchDesktop("Town");
                 CDesktop.RespawnAll();
 
                 //Grant experience for defeating the enemy
@@ -570,7 +570,7 @@ public class Board
                 PlaySound("RunAwayBitch");
                 if (area != null && area.instancePart) SwitchDesktop("Instance");
                 else if (area != null && area.complexPart) SwitchDesktop("Complex");
-                else SwitchDesktop("HostileArea");
+                else SwitchDesktop("Town");
                 Respawn("MapToolbarClockLeft");
                 Respawn("MapToolbarClockRight");
             }

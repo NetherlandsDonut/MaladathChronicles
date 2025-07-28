@@ -8,11 +8,11 @@ using static Root.Anchor;
 
 using static Quest;
 using static Faction;
+using static SiteArea;
 using static SaveGame;
 using static Coloring;
 using static SiteInstance;
 using static GameSettings;
-using static SiteHostileArea;
 
 public class SiteComplex : Site
 {
@@ -35,7 +35,7 @@ public class SiteComplex : Site
                     if (site["SiteType"] == "HostileArea")
                     {
                         if (!areas.Exists(x => x.name == site["SiteName"]))
-                            areas.Insert(0, new SiteHostileArea()
+                            areas.Insert(0, new SiteArea()
                             {
                                 name = site["SiteName"],
                                 commonEncounters = new(),
@@ -119,7 +119,7 @@ public class SiteComplex : Site
                 {
                     AddLine("Level range: ", "DarkGray");
                     var range = (0, 0);
-                    var areas = sites.Where(x => x["SiteType"] == "HostileArea").Select(x => SiteHostileArea.areas.Find(y => y.name == x["SiteName"]).recommendedLevel).ToList();
+                    var areas = sites.Where(x => x["SiteType"] == "HostileArea").Select(x => SiteArea.areas.Find(y => y.name == x["SiteName"]).recommendedLevel).Where(x => x[currentSave.playerSide] > 0).ToList();
                     if (areas.Count > 0)
                     {
                         var min = areas.Min(x => x[currentSave.playerSide]);
@@ -194,20 +194,21 @@ public class SiteComplex : Site
             AddButtonRegion(() =>
             {
                 AddLine(site["SiteName"]);
-                AddSmallButton("Site" + site["SiteType"]);
+                AddSmallButton(site.ContainsKey("SiteIcon") ? site["SiteIcon"] : "Site" + site["SiteType"]);
             },
             (h) =>
             {
                 if (site["SiteType"] == "HostileArea")
                 {
                     area = areas.Find(x => x.name == site["SiteName"]);
-                    Respawn("HostileArea");
-                    Respawn("HostileAreaQuestAvailable");
-                    Respawn("HostileAreaQuestDone");
-                    Respawn("HostileAreaProgress");
-                    Respawn("HostileAreaDenizens");
-                    Respawn("HostileAreaElites");
+                    Respawn("Town");
+                    Respawn("TownQuestAvailable");
+                    Respawn("TownQuestDone");
+                    Respawn("TownProgress");
+                    Respawn("TownElites");
                     Respawn("Chest");
+                    CloseWindow("Person");
+                    CloseWindow("Persons");
                     SetDesktopBackground(area.Background());
                 }
                 else

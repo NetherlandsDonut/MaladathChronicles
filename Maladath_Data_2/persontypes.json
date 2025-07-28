@@ -85,6 +85,11 @@
     "category": "Vendor"
   },
   {
+    "type": "Mushroom Farmer",
+    "icon": "ItemMushroom05",
+    "category": "Vendor"
+  },
+  {
     "type": "Weapons Merchant",
     "icon": "ItemThrowingKnife05",
     "category": "Vendor"
@@ -180,6 +185,11 @@
     "category": "Vendor"
   },
   {
+    "type": "Apprentice Clothier",
+    "icon": "ItemChestCloth22",
+    "category": "Vendor"
+  },
+  {
     "type": "Light Armor Merchant",
     "icon": "ItemChestLeather02",
     "category": "Vendor"
@@ -236,7 +246,12 @@
   },
   {
     "type": "Fishing Supplies",
-    "icon": "ItemFishingpole02",
+    "icon": "ItemMiscBag07Blue",
+    "category": "Vendor"
+  },
+  {
+    "type": "Special Goods",
+    "icon": "ItemMiscBag19",
     "category": "Vendor"
   },
   {

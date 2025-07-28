@@ -125,6 +125,11 @@
     "side": "Alliance"
   },
   {
+    "name": "Stromgarde",
+    "icon": "FactionStromgarde",
+    "side": "Alliance"
+  },
+  {
     "name": "Dark Iron Clan",
     "icon": "FactionDarkIron",
     "side": "Hostile"

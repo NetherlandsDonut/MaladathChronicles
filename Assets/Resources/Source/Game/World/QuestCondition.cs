@@ -1,10 +1,12 @@
 using System.Linq;
 using System.Collections.Generic;
 
+using UnityEditor;
 using UnityEngine;
 
 using static Root;
 using static SaveGame;
+using static SiteArea;
 
 public class QuestCondition
 {
@@ -39,11 +41,11 @@ public class QuestCondition
     public List<Site> Where()
     {
         var list = new List<Site>();
-        if (type == "Kill") list = SiteHostileArea.areas.FindAll(x => x.commonEncounters != null && x.commonEncounters.Exists(x => x.who == name) || x.rareEncounters != null && x.rareEncounters.Exists(x => x.who == name) || x.eliteEncounters != null && x.eliteEncounters.Exists(x => x.who == name)).Select(x => (Site)x).ToList();
+        if (type == "Kill") list = areas.FindAll(x => x.commonEncounters != null && x.commonEncounters.Exists(x => x.who == name) || x.rareEncounters != null && x.rareEncounters.Exists(x => x.who == name) || x.eliteEncounters != null && x.eliteEncounters.Exists(x => x.who == name)).Select(x => (Site)x).ToList();
         else if (type == "Item")
         {
             var races = Item.items.Find(x => x.name == name).droppedBy;
-            if (races != null) list = SiteHostileArea.areas.FindAll(x => x.commonEncounters != null && x.commonEncounters.Any(x => races.Contains(x.who)) || x.rareEncounters != null && x.rareEncounters.Any(x => races.Contains(x.who)) || x.eliteEncounters != null && x.eliteEncounters.Any(x => races.Contains(x.who))).Select(x => (Site)x).ToList();
+            if (races != null) list = areas.FindAll(x => x.commonEncounters != null && x.commonEncounters.Any(x => races.Contains(x.who)) || x.rareEncounters != null && x.rareEncounters.Any(x => races.Contains(x.who)) || x.eliteEncounters != null && x.eliteEncounters.Any(x => races.Contains(x.who))).Select(x => (Site)x).ToList();
         }
         else if (type == "Visit")
         {
@@ -84,7 +86,7 @@ public class QuestCondition
             if (markerButton && where.Count > 0)
                 AddSmallButton("ItemMiscMap01", (h) =>
                 {
-                    CloseDesktop("HostileArea");
+                    CloseDesktop("Town");
                     CloseDesktop("Instance");
                     CloseDesktop("Complex");
                     SwitchDesktop("Map");

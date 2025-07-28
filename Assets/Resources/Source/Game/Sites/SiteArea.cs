@@ -7,13 +7,14 @@ using UnityEngine;
 using static Root;
 using static Root.Anchor;
 
+using static Race;
 using static Quest;
 using static Faction;
 using static SaveGame;
 using static SitePath;
 using static Coloring;
 
-public class SiteTown : Site
+public class SiteArea : Site
 {
     //Initialisation method to fill automatic values
     //and remove empty collections to avoid serialising them later
@@ -33,41 +34,101 @@ public class SiteTown : Site
         {
             if (!flightPaths.ContainsKey(foo.side))
                 flightPaths.Add(foo.side, new());
-            flightPaths[foo.side].AddRange(foo.sites.Select(x => towns.Find(y => y.name == x)));
+            flightPaths[foo.side].AddRange(foo.sites.Select(x => areas.Find(y => y.name == x)));
         }
-        foreach (var foo in flightPaths)
-            foo.Value?.Remove(this);
-        if (people != null)
-            foreach (var foo in people)
-                if (foo.category != null && foo.category.category == "Class Trainer")
-                    foo.hidden = true;
+        foreach (var foo in flightPaths) foo.Value?.Remove(this);
+        if (commonEncounters != null)
+            foreach (var encounter in commonEncounters)
+                if (!races.Exists(x => x.name == encounter.who))
+                    races.Insert(0, new Race()
+                    {
+                        name = encounter.who,
+                        abilities = new(),
+                        kind = "Common",
+                        portrait = "PortraitChicken",
+                        vitality = 1.0,
+                    });
+                else if (races.Find(x => x.name == encounter.who).kind != "Common")
+                    Debug.Log("ERROR 010: " + encounter.who + " isn't a common enemy");
+        if (rareEncounters != null)
+            foreach (var encounter in rareEncounters)
+                if (!races.Exists(x => x.name == encounter.who))
+                    races.Insert(0, new Race()
+                    {
+                        name = encounter.who,
+                        abilities = new(),
+                        kind = "Rare",
+                        portrait = "PortraitParrot",
+                        vitality = 2.0,
+                    });
+                else if (races.Find(x => x.name == encounter.who).kind != "Rare")
+                    Debug.Log("ERROR 011: " + encounter.who + " isn't a rare enemy");
+        if (eliteEncounters != null)
+            foreach (var encounter in eliteEncounters)
+                if (!races.Exists(x => x.name == encounter.who))
+                    races.Insert(0, new Race()
+                    {
+                        name = encounter.who,
+                        abilities = new(),
+                        kind = "Elite",
+                        portrait = "PortraitCow",
+                        vitality = 3.0,
+                    });
+                else if (races.Find(x => x.name == encounter.who).kind != "Elite")
+                    Debug.Log("ERROR 012: " + encounter.who + " isn't an elite enemy");
+        var all = new List<Encounter>();
+        if (commonEncounters != null)
+            if (commonEncounters.Count > 0)
+                all.AddRange(commonEncounters);
+            else commonEncounters = null;
+        if (rareEncounters != null)
+            if (rareEncounters.Count > 0)
+                all.AddRange(rareEncounters);
+            else rareEncounters = null;
+        if (eliteEncounters != null)
+            if (eliteEncounters.Count > 0)
+                all.AddRange(eliteEncounters);
+            else eliteEncounters = null;
+        recommendedLevel = new();
+        if (all.Count > 0)
+        {
+            var allianceOnes = all.Where(x => (x.side == null || x.side == "Alliance") && x.levelMin > 0).ToList();
+            recommendedLevel.Add("Alliance", allianceOnes.Count == 0 ? 0 : (int)allianceOnes.Average(x => x.levelMax != 0 ? (x.levelMin + x.levelMax) / 2.0 : x.levelMin));
+            var hordeOnes = all.Where(x => (x.side == null || x.side == "Horde") && x.levelMin > 0).ToList();
+            recommendedLevel.Add("Horde", hordeOnes.Count == 0 ? 0 : (int)hordeOnes.Average(x => x.levelMax != 0 ? (x.levelMin + x.levelMax) / 2.0 : x.levelMin));
+        }
+        else
+        {
+            recommendedLevel.Add("Alliance", new());
+            recommendedLevel.Add("Horde", new());
+        }
         pathsConnectedToSite.Remove(name);
         transportationConnectedToSite.Remove(name);
-        if (x != 0 && y != 0)
-            Blueprint.windowBlueprints.Add(new Blueprint("Site: " + name, () => PrintSite()));
+        Blueprint.windowBlueprints.RemoveAll(x => x.title == "Site: " + name);
+        if (x != 0 && y != 0) Blueprint.windowBlueprints.Add(new Blueprint("Site: " + name, () => PrintSite()));
     }
 
     public string Icon() 
     {
         var f = factions.Find(x => x.name == faction);
         if (f != null) return f.Icon();
-        else return "HostileArea";
+        else return currentSave.siteVisits.ContainsKey(name) ? type + (recommendedLevel["Horde"] < recommendedLevel["Alliance"] ? "HordeAligned" : (recommendedLevel["Horde"] > recommendedLevel["Alliance"] ? "AllianceAligned" : "")) : "Unknown";
     }
 
     //List of NPC's that are inside of this town
     public List<Person> people;
 
     //List of town flight paths, these are generated automatically
-    [NonSerialized] public Dictionary<string, List<SiteTown>> flightPaths;
+    [NonSerialized] public Dictionary<string, List<SiteArea>> flightPaths;
 
     //Currently opened town
-    public static SiteTown town;
+    public static SiteArea area;
 
-    //EXTERNAL FILE: List containing all towns in-game
-    public static List<SiteTown> towns;
+    //EXTERNAL FILE: List containing all areas in-game
+    public static List<SiteArea> areas;
 
-    //List of all filtered towns by input search
-    public static List<SiteTown> townsSearch;
+    //List of all filtered areas by input search
+    public static List<SiteArea> areasSearch;
 
     //Prints the site on the world map
     public override void PrintSite()
@@ -97,7 +158,7 @@ public class SiteTown : Site
                 var f = factions.Find(x => x.name == faction);
                 var side = f == null ? "Neutral" : f.side;
                 AddHeaderRegion(() => AddLine(name, ColorReputation(currentSave.player.Reputation(faction))));
-                var peopleTogether = capitalRedirect != null ? towns.Where(x => x.capitalRedirect == capitalRedirect).SelectMany(x => x.people ?? new()).ToList() : people;
+                var peopleTogether = capitalRedirect != null ? areas.Where(x => x.capitalRedirect == capitalRedirect).SelectMany(x => x.people ?? new()).ToList() : people;
                 if (peopleTogether != null && peopleTogether.Count > 0)
                 {
                     var legit = peopleTogether.Where(x => !x.hidden && PersonType.personTypes.Exists(y => y.type == x.type)).OrderBy(x => x.category.priority).ThenBy(x => x.type).ToList();

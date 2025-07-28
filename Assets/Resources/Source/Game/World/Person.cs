@@ -49,7 +49,7 @@ public class Person
     //Based on this variable vendor's stock will be resupplied
     public List<StockItem> itemsSold;
 
-    //General type of the person that is used for grouping npc's in towns
+    //General type of the person that is used for grouping npc's in areas
     [NonSerialized] public PersonCategory category;
 
     //Generates the vendor stock for the save game for the specific vendor
@@ -111,7 +111,7 @@ public class PersonType
     //Icon of this person type shown next to npc
     public string icon;
 
-    //General type of the person that is used for grouping npc's in towns
+    //General type of the person that is used for grouping npc's in areas
     public string category;
 
     //Indicates whether this person type has different icons depending on faction

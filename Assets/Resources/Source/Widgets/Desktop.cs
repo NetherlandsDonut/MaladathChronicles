@@ -275,7 +275,7 @@ public class Desktop : MonoBehaviour
                 if (titleScreenFunnyEffect.Count == 0)
                 {
                     Site rSite;
-                    do rSite = SiteHostileArea.areas[random.Next(SiteHostileArea.areas.Count)];
+                    do rSite = SiteArea.areas[random.Next(SiteArea.areas.Count)];
                     while (!pathsConnectedToSite.ContainsKey(rSite.name) || pathsConnectedToSite[rSite.name].All(x => x.points.Count < 15));
                     var foo = pathsConnectedToSite[rSite.name].Where(x => x.points.Count >= 15).ToList();
                     titleScreenFunnyEffect = foo[random.Next(foo.Count)].points.ToList();
@@ -438,11 +438,6 @@ public class Desktop : MonoBehaviour
                         {
                             PlaySound("DesktopInstanceOpen");
                             SpawnDesktopBlueprint("Complex");
-                        }
-                        else if (mapGrid.queuedSiteTypeOpen == "HostileArea")
-                        {
-                            PlaySound("DesktopInstanceOpen");
-                            SpawnDesktopBlueprint("HostileArea");
                         }
                         else if (mapGrid.queuedSiteTypeOpen == "Town")
                         {
@@ -646,11 +641,6 @@ public class Desktop : MonoBehaviour
                                 Spec.specsSearch = Spec.specs.FindAll(x => x.name.ToLower().Contains(val));
                                 Respawn("ObjectManagerSpecs");
                             }
-                            else if (WindowUp("ObjectManagerHostileAreas"))
-                            {
-                                SiteHostileArea.areasSearch = SiteHostileArea.areas.FindAll(x => x.name.ToLower().Contains(val));
-                                Respawn("ObjectManagerHostileAreas");
-                            }
                             else if (WindowUp("ObjectManagerInstances"))
                             {
                                 SiteInstance.instancesSearch = SiteInstance.instances.FindAll(x => x.name.ToLower().Contains(val));
@@ -663,7 +653,7 @@ public class Desktop : MonoBehaviour
                             }
                             else if (WindowUp("ObjectManagerTowns"))
                             {
-                                SiteTown.townsSearch = SiteTown.towns.FindAll(x => x.name.ToLower().Contains(val));
+                                SiteArea.areasSearch = SiteArea.areas.FindAll(x => x.name.ToLower().Contains(val));
                                 Respawn("ObjectManagerTowns");
                             }
                             else if (WindowUp("ObjectManagerFactions"))

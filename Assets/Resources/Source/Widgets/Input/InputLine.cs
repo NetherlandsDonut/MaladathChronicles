@@ -458,7 +458,7 @@ public class InputLine : MonoBehaviour
             if (foo.Value() == "d")
                 SpawnDesktopBlueprint("DevPanel");
             else if (foo.Value() == "avglvl")
-                Debug.Log(string.Join('\n', SiteHostileArea.areas.FindAll(x => x.recommendedLevel[currentSave.playerSide] > 0).GroupBy(x => x.zone).Select(x => (x.Key, x.Average(y => y.recommendedLevel[currentSave.playerSide]))).OrderBy(x => x.Item2).Select(x => x.Key + ": " + System.Math.Round(x.Item2))));
+                Debug.Log(string.Join('\n', SiteArea.areas.FindAll(x => x.recommendedLevel[currentSave.playerSide] > 0).GroupBy(x => x.zone).Select(x => (x.Key, x.Average(y => y.recommendedLevel[currentSave.playerSide]))).OrderBy(x => x.Item2).Select(x => x.Key + ": " + System.Math.Round(x.Item2))));
             else if (foo.Value() == "showlockedareas")
                 showAreasUnconditional = true;
             else if (foo.Value() == "hidelockedareas")
@@ -504,13 +504,7 @@ public class InputLine : MonoBehaviour
             else if (foo.Value() == "exploreall")
             {
                 var expSum = 0;
-                foreach (var site in SiteHostileArea.areas)
-                    if (site.x != 0 && site.y != 0 && !currentSave.siteVisits.ContainsKey(site.name))
-                    {
-                        currentSave.siteVisits.Add(site.name, 1);
-                        expSum += defines.expForExploration;
-                    }
-                foreach (var site in SiteTown.towns)
+                foreach (var site in SiteArea.areas)
                     if (site.x != 0 && site.y != 0 && !currentSave.siteVisits.ContainsKey(site.name))
                     {
                         currentSave.siteVisits.Add(site.name, 1);

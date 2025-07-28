@@ -418,7 +418,7 @@ public class Window : MonoBehaviour
                             region.borders[1].transform.localPosition -= new Vector3(0, 3, 0);
                             region.borders[2].transform.localPosition -= new Vector3(0, 3, 0);
                         }
-                        if (title == "HostileAreaProgress")
+                        if (title == "TownProgress")
                             if (regionGroup != headerGroup)
                             {
                                 Destroy(region.borders[4]);
@@ -476,7 +476,7 @@ public class Window : MonoBehaviour
                         region.shadows[3].transform.localPosition = new Vector3(8, region.borders[3].transform.localPosition.y - 2, 0.9f);
                         region.shadows[4].transform.localPosition = new Vector3(4, region.borders[3].transform.localPosition.y - 2, 0.9f);
                         region.shadows[2].GetComponent<SpriteRenderer>().sprite = shadowSprites[5];
-                        if (title == "HostileAreaProgress")
+                        if (title == "TownProgress")
                             if (regionGroup != headerGroup)
                             {
                                 Destroy(region.shadows[0]);

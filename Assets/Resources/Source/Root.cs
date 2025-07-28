@@ -105,7 +105,7 @@ public static class Root
     public static void UpdateAuctionGroupList()
     {
         Market.exploredAuctionsGroups = new();
-        var foo = Faction.factions.Find(x => x.name == SiteTown.town.faction).side;
+        var foo = Faction.factions.Find(x => x.name == SiteArea.area.faction).side;
         if (foo == "Neutral" || foo == "Horde")
         {
             var woo = currentSave.markets.Find(x => x.name == "Horde Market");
@@ -325,7 +325,7 @@ public static class Root
     //Close moving item on closing of a window or switch of a desktop
     public static void CloseMovingItem()
     {
-        if (movingItemFrom == "Bank") SaveGame.currentSave.banks[SiteTown.town.name].items.Add(movingItem);
+        if (movingItemFrom == "Bank") SaveGame.currentSave.banks[SiteArea.area.name].items.Add(movingItem);
         else SaveGame.currentSave.player.inventory.items.Add(movingItem);
         Cursor.cursor.iconAttached.SetActive(false);
         movingItem = null;
@@ -339,7 +339,7 @@ public static class Root
         movingItemFrom = window;
         var bigButtonIndex = h == null ? movingItemX : h.region.bigButtons.IndexOf(h.GetComponent<LineBigButton>());
         var regionIndex = h == null ? movingItemY : h.window.headerGroup.regions.IndexOf(h.region) - (movingItemFrom == "Bank" ? 2 : 1);
-        movingItem = (movingItemFrom == "Bank" ? currentSave.banks[SiteTown.town.name].items : currentSave.player.inventory.items).Find(x => x.x == bigButtonIndex && x.y == regionIndex);
+        movingItem = (movingItemFrom == "Bank" ? currentSave.banks[SiteArea.area.name].items : currentSave.player.inventory.items).Find(x => x.x == bigButtonIndex && x.y == regionIndex);
         movingItemSplitOff = false;
         if (amount != 0 && amount < movingItem.amount)
         {
@@ -347,7 +347,7 @@ public static class Root
             movingItem = movingItem.CopyItem(amount);
             movingItemSplitOff = true;
         }
-        else if (movingItemFrom == "Bank") currentSave.banks[SiteTown.town.name].items.Remove(movingItem);
+        else if (movingItemFrom == "Bank") currentSave.banks[SiteArea.area.name].items.Remove(movingItem);
         else currentSave.player.inventory.items.Remove(movingItem);
         PlaySound(movingItem.ItemSound("PickUp"), 0.8f);
         Cursor.cursor.iconAttached.SetActive(true);
@@ -392,7 +392,7 @@ public static class Root
         }
         else
         {
-            if (h.window.title == "Bank") currentSave.banks[SiteTown.town.name].AddNewItem(movingItem);
+            if (h.window.title == "Bank") currentSave.banks[SiteArea.area.name].AddNewItem(movingItem);
             else currentSave.player.inventory.AddNewItem(movingItem);
             var bigButtonIndex = h.region.bigButtons.IndexOf(h.GetComponent<LineBigButton>());
             var regionIndex = h.window.headerGroup.regions.IndexOf(h.region) - (h.window.title == "Bank" ? 2 : 1);
@@ -413,7 +413,7 @@ public static class Root
     {
         var bigButtonIndex = h.region.bigButtons.IndexOf(h.GetComponent<LineBigButton>());
         var regionIndex = h.window.headerGroup.regions.IndexOf(h.region) - (h.window.title == "Bank" ? 2 : 1);
-        var temp = (h.window.title == "Bank" ? currentSave.banks[SiteTown.town.name].items : currentSave.player.inventory.items).Find(x => x.x == bigButtonIndex && x.y == regionIndex);
+        var temp = (h.window.title == "Bank" ? currentSave.banks[SiteArea.area.name].items : currentSave.player.inventory.items).Find(x => x.x == bigButtonIndex && x.y == regionIndex);
         PlaySound(movingItem.ItemSound("PutDown"), 0.8f);
         if (temp.name == movingItem.name && temp.amount + movingItem.amount <= temp.maxStack)
         {
@@ -428,18 +428,18 @@ public static class Root
         }
         else if (!movingItemSplitOff)
         {
-            if (h.window.title == "Bank") currentSave.banks[SiteTown.town.name].AddNewItem(movingItem);
+            if (h.window.title == "Bank") currentSave.banks[SiteArea.area.name].AddNewItem(movingItem);
             else currentSave.player.inventory.AddNewItem(movingItem);
             movingItem.x = bigButtonIndex;
             movingItem.y = regionIndex;
             movingItem = temp;
-            if (h.window.title == "Bank") currentSave.banks[SiteTown.town.name].items.Remove(movingItem);
+            if (h.window.title == "Bank") currentSave.banks[SiteArea.area.name].items.Remove(movingItem);
             else currentSave.player.inventory.items.Remove(movingItem);
             Cursor.cursor.iconAttached.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Buttons/" + movingItem.icon);
         }
         else
         {
-            if (movingItemFrom == "Bank") currentSave.banks[SiteTown.town.name].AddItem(movingItem);
+            if (movingItemFrom == "Bank") currentSave.banks[SiteArea.area.name].AddItem(movingItem);
             else currentSave.player.inventory.AddItem(movingItem);
             movingItem = null;
             Cursor.cursor.iconAttached.SetActive(false);
@@ -557,13 +557,11 @@ public static class Root
             Cursor.cursor.transform.position += (Vector3)CDesktop.cameraDestination - CDesktop.screen.transform.localPosition;
             CDesktop.screen.transform.localPosition = (Vector3)CDesktop.cameraDestination;
         }
-        if (WindowUp("HostileArea"))
+        if (WindowUp("Town"))
         {
-            CloseWindow("HostileAreaQuestTracker");
-            Respawn("HostileArea");
+            CloseWindow("TownQuestTracker");
+            Respawn("Town");
         }
-        Respawn("HostileAreaQuestAvailable", true);
-        Respawn("HostileAreaQuestDone", true);
         Respawn("TownQuestAvailable", true);
         Respawn("TownQuestDone", true);
         CloseWindow("QuestAdd");

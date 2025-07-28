@@ -111,11 +111,13 @@
     "sites": [
       {
         "SiteType": "HostileArea",
-        "SiteName": "North Town"
+        "SiteName": "North Town",
+        "SiteIcon": "FactionAlliance"
       },
       {
         "SiteType": "HostileArea",
-        "SiteName": "The Sanctum"
+        "SiteName": "The Sanctum",
+        "SiteIcon": "FactionAlliance"
       },
       {
         "SiteType": "HostileArea",

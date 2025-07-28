@@ -152,16 +152,14 @@ public class Starter : MonoBehaviour
         Keybinds.keybinds ??= new();
         Keybinds.AddMissingKeybinds();
         Serialize(Keybinds.keybinds, "keybinds");
-        Deserialize(ref SiteHostileArea.areas, "areas", false, prefix);
-        SiteHostileArea.areas ??= new();
         Deserialize(ref instances, "instances", false, prefix);
         instances ??= new();
         Deserialize(ref complexes, "complexes", false, prefix);
         complexes ??= new();
         Deserialize(ref SiteCapital.capitals, "capitals", false, prefix);
         SiteCapital.capitals ??= new();
-        Deserialize(ref SiteTown.towns, "towns", false, prefix);
-        SiteTown.towns ??= new();
+        Deserialize(ref SiteArea.areas, "areas", false, prefix);
+        SiteArea.areas ??= new();
         Deserialize(ref Realm.realms, "realms", false, prefix);
         Realm.realms ??= new();
         Deserialize(ref PersonType.personTypes, "persontypes", false, prefix);
@@ -303,10 +301,8 @@ public class Starter : MonoBehaviour
         //Because this will increase in size with time and will require more time to process
         #region Initialise Objects
 
-        for (int i = 0; i < SiteTown.towns.Count; i++)
-            SiteTown.towns[i].Initialise();
-        for (int i = 0; i < SiteHostileArea.areas.Count; i++)
-            SiteHostileArea.areas[i].Initialise();
+        for (int i = 0; i < SiteArea.areas.Count; i++)
+            SiteArea.areas[i].Initialise();
         for (int i = 0; i < instances.Count; i++)
             instances[i].Initialise();
         for (int i = 0; i < SiteCapital.capitals.Count; i++)
