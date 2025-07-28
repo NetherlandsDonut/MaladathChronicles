@@ -1163,7 +1163,23 @@
     {
       "playerSide": "Alliance",
       "player": {
-        "currentQuests": [],
+        "currentQuests": [
+          {
+            "questID": 685,
+            "conditions": [
+              {
+                "type": "Item",
+                "name": "Otto's Head",
+                "amount": 1
+              },
+              {
+                "type": "Item",
+                "name": "Falconcrest's Head",
+                "amount": 1
+              }
+            ]
+          }
+        ],
         "completedQuests": [],
         "level": 60,
         "experience": 10706055,
@@ -1265,7 +1281,7 @@
             ]
           },
           "Enchanting": {
-            "Item1": 1,
+            "Item1": 2,
             "Item2": [
               "Amateur"
             ]
@@ -1424,24 +1440,6 @@
               }
             },
             {
-              "x": 2,
-              "rarity": "Uncommon",
-              "name": "Aurora Sphere",
-              "icon": "itemmiscgempearl02",
-              "detailedType": "Gem",
-              "type": "Off Hand",
-              "source": "RareDrop",
-              "ilvl": 41,
-              "lvl": 36,
-              "amount": 1,
-              "maxStack": 1,
-              "price": 5811,
-              "stats": {
-                "Intellect": 7,
-                "Spirit": 4
-              }
-            },
-            {
               "x": 3,
               "rarity": "Common",
               "name": "Mageweave Cloth",
@@ -1518,18 +1516,59 @@
             },
             {
               "x": 2,
+              "rarity": "Common",
+              "name": "Vision Dust",
+              "icon": "itemenchantdustvision",
+              "detailedType": "Dust",
+              "type": "Trade Good",
+              "source": "DirectDrop",
+              "ilvl": 35,
+              "lvl": 1,
+              "amount": 3,
+              "maxStack": 20,
+              "price": 460
+            },
+            {
+              "x": 3,
               "y": 1,
-              "rarity": "Poor",
-              "name": "Apprentice's Pants",
+              "rarity": "Uncommon",
+              "name": "Lesser Nether Essence",
+              "icon": "itemenchantessencenethersmall",
+              "detailedType": "Essence",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 40,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 10,
+              "abilities": {
+                "Form Greater Nether Essence": 1
+              },
+              "price": 620
+            },
+            {
+              "x": 2,
+              "y": 1,
+              "rarity": "Rare",
+              "name": "Stoneweaver Leggings",
               "icon": "itempants01",
               "type": "Legs",
               "armorClass": "Cloth",
-              "ilvl": 1,
-              "lvl": 1,
-              "armor": 2,
+              "source": "DirectDrop",
+              "ilvl": 40,
+              "lvl": 35,
+              "armor": 51,
               "amount": 1,
               "maxStack": 1,
-              "price": 1
+              "price": 5094,
+              "stats": {
+                "Intellect": 8,
+                "Stamina": 9,
+                "Spirit": 15
+              },
+              "droppedBy": [
+                "Ironaya"
+              ]
             }
           ],
           "bags": []
@@ -1564,30 +1603,6 @@
             "amount": 1,
             "maxStack": 1,
             "price": 1
-          },
-          "Legs": {
-            "x": 2,
-            "y": 1,
-            "rarity": "Rare",
-            "name": "Stoneweaver Leggings",
-            "icon": "itempants01",
-            "type": "Legs",
-            "armorClass": "Cloth",
-            "source": "DirectDrop",
-            "ilvl": 40,
-            "lvl": 35,
-            "armor": 51,
-            "amount": 1,
-            "maxStack": 1,
-            "price": 5094,
-            "stats": {
-              "Intellect": 8,
-              "Stamina": 9,
-              "Spirit": 15
-            },
-            "droppedBy": [
-              "Ironaya"
-            ]
           },
           "Chest": {
             "rarity": "Poor",
@@ -1629,8 +1644,9 @@
         "worldBuffs": []
       },
       "hour": 7,
-      "minute": 4,
-      "currentSite": "Uldaman",
+      "minute": 16,
+      "second": 27,
+      "currentSite": "Cold Hearth Manor",
       "ringOfLaw": "Eviscerator",
       "forlornCloister": "Azshir the Sleepless",
       "markets": [
@@ -1650,14 +1666,16 @@
       "fishingSpoils": {},
       "siteProgress": {
         "Hall of the Keepers": 2,
-        "Map Chamber": 2
+        "Map Chamber": 2,
+        "Cold Hearth Manor": 1
       },
       "commonsKilled": {
         "Stonevault Oracle": 3,
         "Stonevault Ambusher": 1,
         "Stonevault Pillager": 1,
         "Stonevault Rockchewer": 2,
-        "Stonevault Cave Lurker": 1
+        "Stonevault Cave Lurker": 1,
+        "Rotting Dead": 1
       },
       "raresKilled": {},
       "elitesKilled": {
@@ -1666,7 +1684,7 @@
       },
       "siteVisits": {
         "Northshire Abbey": 1,
-        "Cold Hearth Manor": 1,
+        "Cold Hearth Manor": 4,
         "Raynewood Retreat": 1,
         "Shindigger's Camp": 1,
         "Caer Darrow": 1,
@@ -1676,7 +1694,7 @@
         "Grove of the Ancients": 1,
         "Go'Shek Farm": 1,
         "Hillsbrad": 1,
-        "Dabyrie's Farmstead": 1,
+        "Dabyrie's Farmstead": 2,
         "Azurelode Mine": 1,
         "Westbrook Garrison": 1,
         "Goldshire": 1,
@@ -1691,7 +1709,7 @@
         "Morgan's Vigil": 1,
         "Flame Crest": 1,
         "Faldir's Cove": 1,
-        "Refuge Point": 1,
+        "Refuge Point": 2,
         "Darnassus": 1,
         "Aldrassil": 1,
         "Rut'theran Village": 1,
@@ -1796,7 +1814,7 @@
         "Circle of East Binding": 1,
         "The Drowned Reef": 1,
         "Circle of Inner Binding": 1,
-        "Circle of Outer Binding": 1,
+        "Circle of Outer Binding": 2,
         "Circle of West Binding": 1,
         "Arathi Outer Road": 1,
         "Thoradin's Wall": 1,
@@ -1870,7 +1888,7 @@
         "Lethlor Ravine": 1,
         "Mirage Flats": 1,
         "The Dustbowl": 1,
-        "The Maker's Terrace": 1,
+        "The Maker's Terrace": 2,
         "Valley of Fangs": 1,
         "Red Wasteland": 1,
         "Dreadmaul Hold": 1,
@@ -2445,7 +2463,7 @@
         "Maraudon": 1,
         "Stratholme": 1,
         "Wailing Caverns": 1,
-        "Uldaman": 3,
+        "Uldaman": 4,
         "Razorfen Downs": 1,
         "Razorfen Kraul": 1,
         "The Deadmines": 1,
@@ -2460,7 +2478,7 @@
         "Jintha'Alor": 1,
         "Tyr's Hand": 1,
         "Hearthglen": 1,
-        "Ruins of Stromgarde": 4,
+        "Ruins of Stromgarde": 7,
         "Ruins of Alterac": 1,
         "Scarlet Monastery Grounds": 1,
         "Jaedenar Grounds": 1,
@@ -2649,9 +2667,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2025-07-28T14:11:46.6190465+02:00",
-      "lastLoaded": "2025-07-28T14:33:54.5745968+02:00",
-      "lastPlayed": "2025-07-28T14:38:19.3373815+02:00",
-      "timePlayed": "00:07:11.0912782"
+      "lastLoaded": "2025-07-28T23:23:33.7514533+02:00",
+      "lastPlayed": "2025-07-28T23:25:32.1190074+02:00",
+      "timePlayed": "00:50:32.4718733"
     }
   ],
   "Gehennas": [],

@@ -439,10 +439,10 @@ public class Desktop : MonoBehaviour
                             PlaySound("DesktopInstanceOpen");
                             SpawnDesktopBlueprint("Complex");
                         }
-                        else if (mapGrid.queuedSiteTypeOpen == "Town")
+                        else if (mapGrid.queuedSiteTypeOpen == "Area")
                         {
                             PlaySound("DesktopInstanceOpen");
-                            SpawnDesktopBlueprint("Town");
+                            SpawnDesktopBlueprint("Area");
                         }
                         else if (mapGrid.queuedSiteTypeOpen == "Capital")
                         {
@@ -640,21 +640,6 @@ public class Desktop : MonoBehaviour
                             {
                                 Spec.specsSearch = Spec.specs.FindAll(x => x.name.ToLower().Contains(val));
                                 Respawn("ObjectManagerSpecs");
-                            }
-                            else if (WindowUp("ObjectManagerInstances"))
-                            {
-                                SiteInstance.instancesSearch = SiteInstance.instances.FindAll(x => x.name.ToLower().Contains(val));
-                                Respawn("ObjectManagerInstances");
-                            }
-                            else if (WindowUp("ObjectManagerComplexes"))
-                            {
-                                SiteComplex.complexesSearch = SiteComplex.complexes.FindAll(x => x.name.ToLower().Contains(val));
-                                Respawn("ObjectManagerComplexes");
-                            }
-                            else if (WindowUp("ObjectManagerTowns"))
-                            {
-                                SiteArea.areasSearch = SiteArea.areas.FindAll(x => x.name.ToLower().Contains(val));
-                                Respawn("ObjectManagerTowns");
                             }
                             else if (WindowUp("ObjectManagerFactions"))
                             {

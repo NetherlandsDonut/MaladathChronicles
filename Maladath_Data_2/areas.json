@@ -9,54 +9,68 @@
         "type": "Journeyman Tailor"
       },
       {
+        "name": "Bowen Brisboise",
+        "gender": "Male",
+        "voiceVariant": 2,
+        "race": "Forsaken",
+        "type": "Journeyman Tailor"
+      },
+      {
+        "name": "Bowen Brisboise",
+        "gender": "Male",
+        "voiceVariant": 2,
+        "race": "Forsaken",
+        "type": "Journeyman Tailor"
+      },
+      {
         "name": "Constance Brisboise",
         "gender": "Female",
         "voiceVariant": 1,
         "race": "Forsaken",
         "type": "Apprentice Clothier",
         "itemsSold": [
-        {
-          "item": "Woven Vest",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Woven Pants",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Woven Boots",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Woven Gloves",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Woven Belt",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Woven Bracers",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Pattern: Blue Linen Vest",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Woven Vest",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Woven Pants",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Woven Boots",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Woven Gloves",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Woven Belt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Woven Bracers",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pattern: Blue Linen Vest",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       }
     ],
@@ -29318,42 +29332,42 @@
         "race": "Forsaken",
         "type": "Mushroom Farmer",
         "itemsSold": [
-        {
-          "item": "Forest Mushroom Cap",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Red-speckled Mushroom",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Spongy Morel",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Delicious Cave Mold",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Raw Black Truffle",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Dried King Bolete",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Forest Mushroom Cap",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Red-speckled Mushroom",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Spongy Morel",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Delicious Cave Mold",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Raw Black Truffle",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Dried King Bolete",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       },
       {
@@ -44858,18 +44872,23 @@
     "commonEncounters": [
       {
         "who": "Burning Blade Felsworn",
-        "levelMin": 32,
-        "levelMax": 33
+        "levelMin": 31,
+        "levelMax": 32
       },
       {
         "who": "Burning Blade Shadowmage",
-        "levelMin": 32,
-        "levelMax": 33
+        "levelMin": 31,
+        "levelMax": 32
       },
       {
         "who": "Burning Blade Reaver",
         "levelMin": 30,
         "levelMax": 31
+      },
+      {
+        "who": "Burning Blade Adept",
+        "levelMin": 31,
+        "levelMax": 32
       }
     ],
     "rareEncounters": [
@@ -55578,48 +55597,48 @@
         "race": "Goblin",
         "type": "Alchemy Supplies",
         "itemsSold": [
-        {
-          "item": "Greater Healing Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Empty Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Leaded Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Mana Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Crystal Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Recipe: Frost Oil",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Imbued Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Greater Healing Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Empty Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Leaded Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mana Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Crystal Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Frost Oil",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Imbued Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       }
     ],
@@ -55665,177 +55684,177 @@
         "gender": "Male",
         "voiceVariant": 3,
         "race": "Human",
-        "type": "Special Goods",
         "faction": "Stromgarde",
+        "type": "Special Goods",
         "itemsSold": [
-        {
-          "item": "Healing Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Scroll of Strength",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Scroll of Protection II",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Scroll of Stamina II",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Scroll of Spirit II",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Scroll of Intellect II",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Scroll of Agility",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Lesser Mana Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Infernal Stone",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Expert First Aid - Under Wraps",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Manual: Heavy Silk Bandage",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Manual: Mageweave Bandage",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Demonic Figurine",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Arcane Powder",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Wild Berries",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Wild Thornroot",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Holy Candle",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Sacred Candle",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Ankh",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Rune of Teleportation",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Rune of Portals",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Symbol of Divinity",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Maple Seed",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Stranglethorn Seed",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Ashwood Seed",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Hornbeam Seed",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Ironwood Seed",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Symbol of Kings",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Healing Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Scroll of Strength",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Scroll of Protection II",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Scroll of Stamina II",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Scroll of Spirit II",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Scroll of Intellect II",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Scroll of Agility",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Lesser Mana Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Infernal Stone",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Expert First Aid - Under Wraps",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Manual: Heavy Silk Bandage",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Manual: Mageweave Bandage",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Demonic Figurine",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Arcane Powder",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Wild Berries",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Wild Thornroot",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Holy Candle",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Sacred Candle",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Ankh",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Rune of Teleportation",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Rune of Portals",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Symbol of Divinity",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Maple Seed",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Stranglethorn Seed",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Ashwood Seed",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Hornbeam Seed",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Ironwood Seed",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Symbol of Kings",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       }
     ],
@@ -55870,7 +55889,6 @@
       {
         "type": "Boss",
         "bossName": "Lieutenant Valorcall",
-        "side": "Horde",
         "point": 2
       },
       {
@@ -66088,54 +66106,54 @@
         "race": "Forsaken",
         "type": "Fishing Supplies",
         "itemsSold": [
-        {
-          "item": "Fishing Pole",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Recipe: Brilliant Smallfish",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Recipe: Slitherskin Mackerel",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Strong Fishing Pole",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Shiny Bauble",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Nightcrawlers",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Bright Baubles",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Aquadynamic Fish Attractor",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Fishing Pole",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Brilliant Smallfish",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Slitherskin Mackerel",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Strong Fishing Pole",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Shiny Bauble",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Nightcrawlers",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Bright Baubles",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Aquadynamic Fish Attractor",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       }
     ],

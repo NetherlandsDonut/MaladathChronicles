@@ -485,7 +485,7 @@ public class Board
                 //Exit board view
                 if (area != null && area.instancePart) SwitchDesktop("Instance");
                 else if (area != null && area.complexPart) SwitchDesktop("Complex");
-                else SwitchDesktop("Town");
+                else SwitchDesktop("Area");
                 CDesktop.RespawnAll();
 
                 //Grant experience for defeating the enemy
@@ -570,7 +570,7 @@ public class Board
                 PlaySound("RunAwayBitch");
                 if (area != null && area.instancePart) SwitchDesktop("Instance");
                 else if (area != null && area.complexPart) SwitchDesktop("Complex");
-                else SwitchDesktop("Town");
+                else SwitchDesktop("Area");
                 Respawn("MapToolbarClockLeft");
                 Respawn("MapToolbarClockRight");
             }

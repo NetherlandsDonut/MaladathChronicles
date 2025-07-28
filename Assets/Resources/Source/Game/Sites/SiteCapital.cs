@@ -35,7 +35,7 @@ public class SiteCapital : Site
     public static SiteCapital capital;
 
     //Currently opened town from which we get to the capital
-    public static SiteArea capitalThroughTown;
+    public static SiteArea capitalThroughArea;
 
     //EXTERNAL FILE: List containing all complexes in-game
     public static List<SiteCapital> capitals;
@@ -56,8 +56,8 @@ public class SiteCapital : Site
             if (SiteArea.area == find) return;
             SiteArea.area = find;
             PlaySound("DesktopInstanceOpen");
-            CloseDesktop("Town");
-            SpawnDesktopBlueprint("Town");
+            CloseDesktop("Area");
+            SpawnDesktopBlueprint("Area");
             SpawnTransition();
         });
     }
@@ -76,7 +76,7 @@ public class SiteCapital : Site
             SiteInstance.instance = find;
             PlaySound("DesktopInstanceOpen");
             CloseDesktop("Capital");
-            CloseDesktop("Town");
+            CloseDesktop("Area");
             SpawnDesktopBlueprint("Instance");
             SpawnTransition();
         });

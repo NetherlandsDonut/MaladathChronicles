@@ -2801,6 +2801,7 @@
     "name": "Risen Construct",
     "category": "Undead",
     "subcategory": "Undead",
+    "faction": "Scourge",
     "portrait": "PortraitBoneConstruct",
     "abilities": {},
     "kind": "Common",
@@ -2936,10 +2937,10 @@
     "category": "Humanoid",
     "subcategory": "Orc",
     "faction": "Burning Blade Clan",
-    "portrait": "PortraitBurningBladeAdept",
+    "portrait": "PortraitBurningBladeAcolyte",
     "abilities": {},
     "kind": "Common",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 1.0
   },
   {
@@ -3054,6 +3055,20 @@
     "vitality": 1.0
   },
   {
+    "name": "Burning Blade Adept",
+    "category": "Humanoid",
+    "subcategory": "Orc",
+    "faction": "Burning Blade Clan",
+    "portrait": "PortraitBurningBladeAdept",
+    "abilities": {
+      "Corruption": 0,
+      "Shadow Bolt": 0
+    },
+    "kind": "Common",
+    "gender": "Female",
+    "vitality": 1.0
+  },
+  {
     "name": "Burning Blade Reaver",
     "category": "Humanoid",
     "subcategory": "Orc",
@@ -3061,7 +3076,7 @@
     "portrait": "PortraitBurningBladeReaver",
     "abilities": {},
     "kind": "Common",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 1.0
   },
   {
@@ -3071,7 +3086,7 @@
     "portrait": "PortraitMarezCowl",
     "abilities": {},
     "kind": "Elite",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 3.0
   },
   {

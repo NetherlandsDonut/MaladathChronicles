@@ -201,11 +201,14 @@ public class SiteComplex : Site
                 if (site["SiteType"] == "HostileArea")
                 {
                     area = areas.Find(x => x.name == site["SiteName"]);
-                    Respawn("Town");
-                    Respawn("TownQuestAvailable");
-                    Respawn("TownQuestDone");
-                    Respawn("TownProgress");
-                    Respawn("TownElites");
+                    if (currentSave.player.QuestsAt(area).Count == 0)
+                        CloseWindow("AreaQuestTracker");
+                    else Respawn("AreaQuestTracker", true);
+                    Respawn("Area");
+                    Respawn("AreaQuestAvailable");
+                    Respawn("AreaQuestDone");
+                    Respawn("AreaProgress");
+                    Respawn("AreaElites");
                     Respawn("Chest");
                     CloseWindow("Person");
                     CloseWindow("Persons");

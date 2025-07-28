@@ -25,7 +25,6 @@ using static Defines;
 using static Faction;
 using static Ability;
 using static Enchant;
-using static MapGrid;
 using static SitePath;
 using static SaveGame;
 using static Coloring;
@@ -2833,6 +2832,7 @@ public class Blueprint
             {
                 AddLine("You are about to disenchant", "", "Center");
                 AddLine(itemToDisenchant.name, itemToDisenchant.rarity, "Center");
+                AddLine("which is going to destroy the item", "", "Center");
             });
             AddRegionGroup();
             SetRegionGroupWidth(91);
@@ -2920,16 +2920,16 @@ public class Blueprint
                             {
                                 CloseDesktop("Instance");
                                 SpawnDesktopBlueprint("Instance");
-                                Respawn("Town");
-                                Respawn("TownProgress");
-                                Respawn("TownElites");
+                                Respawn("Area");
+                                Respawn("AreaProgress");
+                                Respawn("AreaElites");
                                 Respawn("Chest");
                                 SetDesktopBackground(area.Background());
                             }
                             else
                             {
-                                CloseDesktop("Town");
-                                SpawnDesktopBlueprint("Town");
+                                CloseDesktop("Area");
+                                SpawnDesktopBlueprint("Area");
                             }
                             CloseDesktop("CombatResults");
                             board = null;
@@ -2978,7 +2978,7 @@ public class Blueprint
                     CloseDesktop("Map");
                     CloseDesktop("Complex");
                     CloseDesktop("Instance");
-                    CloseDesktop("Town");
+                    CloseDesktop("Area");
                     CloseDesktop("CombatResults");
                     board = null;
                     Respawn("ExperienceBar", true);
@@ -2992,16 +2992,16 @@ public class Blueprint
                         {
                             CloseDesktop("Instance");
                             SpawnDesktopBlueprint("Instance");
-                            Respawn("Town");
-                            Respawn("TownProgress");
-                            Respawn("TownElites");
+                            Respawn("Area");
+                            Respawn("AreaProgress");
+                            Respawn("AreaElites");
                             Respawn("Chest");
                             SetDesktopBackground(area.Background());
                         }
                         else
                         {
-                            CloseDesktop("Town");
-                            SpawnDesktopBlueprint("Town");
+                            CloseDesktop("Area");
+                            SpawnDesktopBlueprint("Area");
                         }
                         if (board.results.inventory.items.Count > 0)
                         {
@@ -3021,7 +3021,7 @@ public class Blueprint
                         if (board.results.result == "Team2Won")
                         {
                             if (area.instancePart) CloseDesktop("Instance");
-                            else CloseDesktop("Town");
+                            else CloseDesktop("Area");
                             var curr = FindSite(x => x.name == currentSave.currentSite);
                             var vect = new Vector2(curr.x, curr.y);
                             var distances = SiteSpiritHealer.spiritHealers.Select(x => (x, Vector2.Distance(new Vector2(x.x, x.y), vect))).OrderBy(x => x.Item2).ToList();
@@ -3543,15 +3543,15 @@ public class Blueprint
                 (h) =>
                 {
                     PlaySound("DesktopInstanceClose");
-                    CloseDesktop("Town");
+                    CloseDesktop("Area");
                     CloseDesktop("Capital");
                     SwitchDesktop("Map");
-                    capitalThroughTown = null;
+                    capitalThroughArea = null;
                     capital = null;
                 });
             });
-            foreach (var town in capital.districts)
-                PrintCapitalTown(town);
+            foreach (var area in capital.districts)
+                PrintCapitalTown(area);
             if (capital.instance != null)
                 PrintCapitalInstance(capital.instance);
         }),
@@ -3589,10 +3589,10 @@ public class Blueprint
                 (h) =>
                 {
                     PlaySound("DesktopInstanceClose");
-                    CloseDesktop("Town");
+                    CloseDesktop("Area");
                     CloseDesktop("Capital");
                     SwitchDesktop("Map");
-                    capitalThroughTown = null;
+                    capitalThroughArea = null;
                     capital = null;
                 });
             });
@@ -3693,12 +3693,13 @@ public class Blueprint
                         {
                             SiteArea.area = find;
                             if (currentSave.player.QuestsAt(SiteArea.area).Count == 0)
-                                CloseWindow("TownQuestTracker");
-                            Respawn("Town");
-                            Respawn("TownProgress");
-                            Respawn("TownElites");
-                            Respawn("TownQuestAvailable");
-                            Respawn("TownQuestDone");
+                                CloseWindow("AreaQuestTracker");
+                            else Respawn("AreaQuestTracker", true);
+                            Respawn("Area");
+                            Respawn("AreaProgress");
+                            Respawn("AreaElites");
+                            Respawn("AreaQuestAvailable");
+                            Respawn("AreaQuestDone");
                             Respawn("Chest");
                             CloseWindow("Person");
                             CloseWindow("Persons");
@@ -3761,12 +3762,12 @@ public class Blueprint
                     wing = null;
                     area = null;
                     SetDesktopBackground(instance.Background());
-                    CloseWindow("Town");
-                    CloseWindow("TownQuestTracker");
-                    CloseWindow("TownProgress");
-                    CloseWindow("TownElites");
-                    CloseWindow("TownQuestAvailable");
-                    CloseWindow("TownQuestDone");
+                    CloseWindow("Area");
+                    CloseWindow("AreaQuestTracker");
+                    CloseWindow("AreaProgress");
+                    CloseWindow("AreaElites");
+                    CloseWindow("AreaQuestAvailable");
+                    CloseWindow("AreaQuestDone");
                     CloseWindow("Chest");
                     CloseWindow("InstanceWing");
                     Respawn("Instance");
@@ -3786,7 +3787,7 @@ public class Blueprint
                 var area = wing.areas[index];
                 var find = areas.Find(x => x.name == area["AreaName"]);
                 if (find != null && (showAreasUnconditional || area.ContainsKey("OpenByDefault") && area["OpenByDefault"] == "True" || currentSave.unlockedAreas.Contains(find.name)))
-                    AddButtonRegion(() =>
+                    AddButtonRegion(() => 
                     {
                         AddLine(find.name);
                         if (currentSave.siteProgress.ContainsKey(find.name) && find.areaSize == currentSave.siteProgress[find.name])
@@ -3796,12 +3797,13 @@ public class Blueprint
                     {
                         SiteArea.area = find;
                         if (currentSave.player.QuestsAt(SiteArea.area).Count == 0)
-                            CloseWindow("TownQuestTracker");
-                        Respawn("Town");
-                        Respawn("TownProgress");
-                        Respawn("TownElites");
-                        Respawn("TownQuestAvailable");
-                        Respawn("TownQuestDone");
+                            CloseWindow("AreaQuestTracker");
+                        else Respawn("AreaQuestTracker", true);
+                        Respawn("Area");
+                        Respawn("AreaProgress");
+                        Respawn("AreaElites");
+                        Respawn("AreaQuestAvailable");
+                        Respawn("AreaQuestDone");
                         Respawn("Chest");
                         CloseWindow("Person");
                         CloseWindow("Persons");
@@ -3811,8 +3813,8 @@ public class Blueprint
             }
         }),
 
-        //Town
-        new("Town", () =>
+        //Area
+        new("Area", () =>
         {
             var isNight = currentSave.IsNight();
             var music = isNight ? area.musicDay : area.musicNight;
@@ -3843,16 +3845,16 @@ public class Blueprint
                     var title = CDesktop.title;
                     CloseDesktop(title);
                     PlaySound("DesktopInstanceClose");
-                    if (capital != null) area = capitalThroughTown;
+                    if (capital != null) area = capitalThroughArea;
                     else SwitchDesktop("Map");
                 });
-                //if (town.fishing)
+                //if (area.fishing)
                 //    AddSmallButton("OtherFish" + (!currentSave.player.professionSkills.ContainsKey("Fishing") ? "Off" : ""),
                 //    (h) =>
                 //    {
                 //        if (currentSave.player.professionSkills.ContainsKey("Fishing"))
                 //        {
-                //            fishingSpot = fishingSpots.Find(x => x.name == town.name);
+                //            fishingSpot = fishingSpots.Find(x => x.name == area.name);
                 //            SpawnDesktopBlueprint("FishingGame");
                 //        }
                 //    });
@@ -3895,8 +3897,8 @@ public class Blueprint
                         currentSave.AddTime(transport.time);
                         transport.PlayPathEndSound();
 
-                        //Close town screen as we're beginning to travel on map
-                        CloseDesktop("Town");
+                        //Close area screen as we're beginning to travel on map
+                        CloseDesktop("Area");
                         CloseDesktop("Capital");
 
                         capital = null;
@@ -3922,14 +3924,14 @@ public class Blueprint
                         if (area.capitalRedirect != null) Respawn("Site: " + area.capitalRedirect);
                         else Respawn("Site: " + area.name);
 
-                        var townOfDestination = areas.Find(x => x.name == currentSave.currentSite);
-                        if (townOfDestination != null)
+                        var areaOfDestination = areas.Find(x => x.name == currentSave.currentSite);
+                        if (areaOfDestination != null)
                         {
-                            area = townOfDestination;
+                            area = areaOfDestination;
                             if (area.capitalRedirect != null) Respawn("Site: " + area.capitalRedirect);
                             else Respawn("Site: " + currentSave.currentSite);
 
-                            //Move camera to the newly visited town
+                            //Move camera to the newly visited area
                             CDesktop.cameraDestination = new Vector2(area.x, area.y);
                         }
                     },
@@ -3966,10 +3968,10 @@ public class Blueprint
                                     CloseWindow("Capital");
                                     CloseWindow("QuestAdd");
                                     CloseWindow("QuestTurn");
-                                    CloseWindow("TownQuestAvailable");
-                                    CloseWindow("TownQuestDone");
-                                    CloseWindow("TownProgress");
-                                    CloseWindow("TownElites");
+                                    CloseWindow("AreaQuestAvailable");
+                                    CloseWindow("AreaQuestDone");
+                                    CloseWindow("AreaProgress");
+                                    CloseWindow("AreaElites");
                                     PlayVoiceLine(person.VoiceLine("Greeting"));
                                     PlaySound("DesktopInstanceOpen");
                                 });
@@ -3986,16 +3988,18 @@ public class Blueprint
                             },
                             (h) =>
                             {
+                                personCategory = null;
                                 Person.person = person;
                                 CloseWindow(h.window.title);
                                 Respawn("Person");
                                 CloseWindow("Capital");
                                 CloseWindow("QuestAdd");
                                 CloseWindow("QuestTurn");
-                                CloseWindow("TownQuestAvailable");
-                                CloseWindow("TownQuestDone");
-                                CloseWindow("TownProgress");
-                                CloseWindow("TownElites");
+                                CloseWindow("AreaQuestAvailable");
+                                CloseWindow("AreaQuestDone");
+                                CloseWindow("AreaProgress");
+                                CloseWindow("AreaElites");
+                                CloseWindow("Chest");
                                 PlayVoiceLine(person.VoiceLine("Greeting"));
                                 PlaySound("DesktopInstanceOpen");
                             });
@@ -4005,21 +4009,28 @@ public class Blueprint
                         var person = group.First();
                         AddButtonRegion(() =>
                         {
-                            AddLine(group.Key.category + "s (" + group.Count() + ")", "Black");
+                            AddLine(group.Key.category + "s (" + group.Count() + ")");
                             AddSmallButton(person.category != null ? person.category.icon + (person.category.factionVariant ? factions.Find(x => x.name == area.faction).side : "") : "OtherUnknown");
                         },
                         (h) =>
                         {
                             personCategory = group.Key;
                             CloseWindow("Person");
-                            Respawn("Capital");
                             Respawn("Persons");
+                            CloseWindow("Capital");
+                            CloseWindow("QuestAdd");
+                            CloseWindow("QuestTurn");
+                            CloseWindow("AreaQuestAvailable");
+                            CloseWindow("AreaQuestDone");
+                            CloseWindow("AreaProgress");
+                            CloseWindow("AreaElites");
+                            CloseWindow("Chest");
                             PlaySound("DesktopInstanceOpen");
                         });
                     }
             }
             var levelHigherThanZero = area.recommendedLevel[currentSave.playerSide] > 0;
-            var tracker = WindowUp("TownQuestTracker");
+            var tracker = WindowUp("AreaQuestTracker");
             var questsHere = currentSave.player.QuestsAt(area).Count > 0;
             if (levelHigherThanZero || tracker || questsHere)
                 AddPaddingRegion(() =>
@@ -4031,13 +4042,13 @@ public class Blueprint
                     }
                     if (tracker) AddSmallButton("OtherQuestClose", (h) =>
                     {
-                        CloseWindow("TownQuestTracker");
-                        Respawn("TownQuestAvailable");
+                        CloseWindow("AreaQuestTracker");
+                        Respawn("AreaQuestAvailable");
                     });
                     else if (questsHere) AddSmallButton("OtherQuestOpen", (h) =>
                     {
-                        CloseWindow("TownQuestAvailable");
-                        Respawn("TownQuestTracker");
+                        CloseWindow("AreaQuestAvailable");
+                        Respawn("AreaQuestTracker");
                     });
                 });
             var common = area.CommonEncounters(currentSave.playerSide);
@@ -4050,7 +4061,7 @@ public class Blueprint
                         AddSmallButton(race == null ? "OtherUnknown" : race.portrait);
                     });
         }),
-        new("TownHostile", () =>
+        new("AreaHostile", () =>
         {
             var isNight = currentSave.IsNight();
             var music = isNight ? area.musicDay : area.musicNight;
@@ -4108,7 +4119,7 @@ public class Blueprint
                 }
             });
         }),
-        new("TownProgress", () =>
+        new("AreaProgress", () =>
         {
             if (area.recommendedLevel[currentSave.playerSide] == 0) return;
             SetAnchor(BottomLeft, 19, 35);
@@ -4167,7 +4178,7 @@ public class Blueprint
                     }
                 }
         }),
-        new("TownElites", () =>
+        new("AreaElites", () =>
         {
             if (area.eliteEncounters == null || area.eliteEncounters.Count == 0) return;
             var boss = area.progression.Find(x => x.type == "Boss" && currentSave.siteProgress.ContainsKey(area.name) && x.point == currentSave.siteProgress[area.name]);
@@ -4204,7 +4215,7 @@ public class Blueprint
                 marker.transform.localPosition = new Vector3(20, -45);
             });
         }),
-        new("TownQuestTracker", () =>
+        new("AreaQuestTracker", () =>
         {
             SetAnchor(Top, 0, -38);
             AddRegionGroup();
@@ -4237,14 +4248,14 @@ public class Blueprint
                         condition.Print(false);
             }
         }),
-        new("TownQuestAvailable", () => 
+        new("AreaQuestAvailable", () => 
         {
             var quests = currentSave.player.AvailableQuestsAt(area).OrderBy(x => x.questLevel).ToList();
             if (quests.Count == 0) return;
             SetAnchor(Top, 0, -38);
             AddQuestList(quests);
         }),
-        new("TownQuestDone", () => 
+        new("AreaQuestDone", () => 
         {
             var quests = currentSave.player.QuestsDoneAt(area).OrderBy(x => x.questLevel).ToList();
             if (quests.Count == 0) return;
@@ -4286,7 +4297,7 @@ public class Blueprint
                 {
                     PlaySound("DesktopInstanceOpen", 0.4f);
                     CloseWindow(h.window);
-                    CloseWindow("Town");
+                    CloseWindow("Area");
                     Respawn("ProfessionLevelTrainer");
                 });
                 var pr = professions.Find(x => x.name == type.profession);
@@ -4303,7 +4314,7 @@ public class Blueprint
                         {
                             PlaySound("DesktopInstanceOpen", 0.4f);
                             CloseWindow(h.window);
-                            CloseWindow("Town");
+                            CloseWindow("Area");
                             SpawnWindowBlueprint("ProfessionRecipeTrainer");
                             Respawn("ExperienceBarBorder");
                             Respawn("ExperienceBar");
@@ -4322,7 +4333,7 @@ public class Blueprint
                         currentSave.banks.Add(area.name, new() { items = new() });
                     PlaySound("DesktopBankOpen", 0.4f);
                     CloseWindow(h.window);
-                    CloseWindow("Town");
+                    CloseWindow("Area");
                     SpawnWindowBlueprint("Bank");
                     SpawnWindowBlueprint("Inventory");
                     Respawn("PlayerMoney", true);
@@ -4344,7 +4355,7 @@ public class Blueprint
                     for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
                     SpawnWindowBlueprint("AuctionHouseFilteringMain");
                     CloseWindow(h.window);
-                    CloseWindow("Town");
+                    CloseWindow("Area");
                     Respawn("Capital", true);
                 });
             }
@@ -4403,7 +4414,7 @@ public class Blueprint
                 {
                     PlaySound("DesktopInventoryOpen");
                     CloseWindow(h.window);
-                    CloseWindow("Town");
+                    CloseWindow("Area");
                     SpawnWindowBlueprint("MountCollection");
                     if (mounts.Find(x => x.name == currentSave.player.mount) != null)
                         SpawnWindowBlueprint("CurrentMount");
@@ -4419,7 +4430,7 @@ public class Blueprint
                     {
                         PlaySound("DesktopInventoryOpen");
                         CloseWindow(h.window);
-                        CloseWindow("Town");
+                        CloseWindow("Area");
                         SpawnWindowBlueprint("MountVendor");
                     });
             }
@@ -4433,7 +4444,7 @@ public class Blueprint
                 {
                     PlaySound("DesktopMenuOpen");
                     CloseWindow(h.window);
-                    CloseWindow("Town");
+                    CloseWindow("Area");
                     SpawnWindowBlueprint("FlightMaster");
                     if (mounts.Find(x => x.name == currentSave.player.mount) != null)
                         SpawnWindowBlueprint("CurrentMount");
@@ -4453,7 +4464,7 @@ public class Blueprint
                     PlaySound("DesktopInventoryOpen");
                     PlaySound("DesktopCharacterSheetOpen");
                     CloseWindow(h.window);
-                    CloseWindow("Town");
+                    CloseWindow("Area");
                     SpawnWindowBlueprint("Vendor");
                     SpawnWindowBlueprint("Inventory");
                     Respawn("PlayerMoney", true);
@@ -4469,13 +4480,16 @@ public class Blueprint
                 PlaySound("DesktopInstanceClose");
                 person = null;
                 CloseWindow(h.window);
-                Respawn("Town");
+                if (personCategory != null) Respawn("Persons");
+                Respawn("Area");
                 Respawn("Capital");
-                Respawn("Persons", true);
-                Respawn("TownQuestAvailable");
-                Respawn("TownQuestDone");
-                Respawn("TownProgress");
-                Respawn("TownElites");
+                Respawn("QuestAdd");
+                Respawn("QuestTurn");
+                Respawn("AreaProgress");
+                Respawn("AreaElites");
+                Respawn("AreaQuestAvailable");
+                Respawn("AreaQuestDone");
+                Respawn("Chest");
             });
         }, true),
         new("Persons", () => {
@@ -4484,13 +4498,20 @@ public class Blueprint
             SetRegionGroupWidth(190);
             AddPaddingRegion(() =>
             {
-                AddLine(personCategory.category + "s:", "Gray");
+                AddLine(personCategory.category + "s:", "HalfGray");
                 AddSmallButton("OtherReverse",
                 (h) =>
                 {
                     personCategory = null;
                     CloseWindow(h.window.title);
-                    Respawn("Town");
+                    Respawn("Area");
+                    Respawn("Capital");
+                    Respawn("QuestAdd");
+                    Respawn("QuestTurn");
+                    Respawn("AreaProgress");
+                    Respawn("AreaElites");
+                    Respawn("AreaQuestAvailable");
+                    Respawn("AreaQuestDone");
                     PlaySound("DesktopInstanceClose");
                 });
             });
@@ -4509,11 +4530,13 @@ public class Blueprint
                     Respawn("Person");
                     CloseWindow("Capital");
                     CloseWindow("Persons");
-                    CloseWindow("Town");
+                    CloseWindow("Area");
                     CloseWindow("QuestAdd");
                     CloseWindow("QuestTurn");
-                    CloseWindow("TownQuestAvailable");
-                    CloseWindow("TownQuestDone");
+                    CloseWindow("AreaProgress");
+                    CloseWindow("AreaElites");
+                    CloseWindow("AreaQuestAvailable");
+                    CloseWindow("AreaQuestDone");
                     PlayVoiceLine(person.VoiceLine("Greeting"));
                     PlaySound("DesktopInstanceOpen");
                 });
@@ -5121,8 +5144,8 @@ public class Blueprint
                             currentSave.player.inventory.money -= price;
                         }
 
-                        //Close town screen as we're beginning to travel on map
-                        CloseDesktop("Town");
+                        //Close area screen as we're beginning to travel on map
+                        CloseDesktop("Area");
                         CloseDesktop("Capital");
 
                         capital = null;
@@ -5136,7 +5159,7 @@ public class Blueprint
                             area = areas.Find(x => x.name == destination.convertDestinationTo);
                         else area = destination;
 
-                        //Move camera to the newly visited town
+                        //Move camera to the newly visited area
                         CDesktop.cameraDestination = destination.convertDestinationTo != null ? new Vector2(areas.Find(x => x.name == destination.convertDestinationTo).x, areas.Find(x => x.name == destination.convertDestinationTo).y) : new Vector2(area.x, area.y);
                     },
                     null,
@@ -6743,7 +6766,7 @@ public class Blueprint
                 CloseDesktop("BestiaryScreen");
                 CloseDesktop("CraftingScreen");
                 CloseDesktop("CharacterSheet");
-                CloseDesktop("Town");
+                CloseDesktop("Area");
                 CloseDesktop("Capital");
                 CloseDesktop("Instance");
                 CloseDesktop("Complex");
@@ -6892,7 +6915,7 @@ public class Blueprint
                     CloseDesktop("BestiaryScreen");
                     CloseDesktop("CraftingScreen");
                     CloseDesktop("CharacterSheet");
-                    CloseDesktop("Town");
+                    CloseDesktop("Area");
                     CloseDesktop("Capital");
                     CloseDesktop("Instance");
                     CloseDesktop("Complex");
@@ -7153,7 +7176,7 @@ public class Blueprint
                 {
                     CloseSave();
                     SaveGames();
-                    CloseDesktop("Town");
+                    CloseDesktop("Area");
                     CloseDesktop("Capital");
                     CloseDesktop("Instance");
                     CloseDesktop("Complex");
@@ -8306,14 +8329,14 @@ public class Blueprint
                 }
             });
         }),
-        new("Town", () => 
+        new("Area", () => 
         {
             personCategory = null;
             SetDesktopBackground(area.Background());
             SpawnWindowBlueprint("Capital");
             if (currentSave.player.Reputation(area.faction) >= 4200)
             {
-                SpawnWindowBlueprint("Town");
+                SpawnWindowBlueprint("Area");
                 AddHotkey(Tab, () =>
                 {
                     if (CloseWindow("Vendor"))
@@ -8382,45 +8405,57 @@ public class Blueprint
                         PlaySound("DesktopInstanceClose");
                         person = null;
                         if (personCategory != null) Respawn("Persons");
-                        Respawn("Town");
+                        Respawn("Area");
                         Respawn("Capital");
-                        Respawn("Persons", true);
-                        Respawn("TownQuestAvailable");
-                        Respawn("TownQuestDone");
+                        Respawn("QuestAdd");
+                        Respawn("QuestTurn");
+                        Respawn("AreaProgress");
+                        Respawn("AreaElites");
+                        Respawn("AreaQuestAvailable");
+                        Respawn("AreaQuestDone");
+                        Respawn("Chest");
                     }
                     else if (CloseWindow("Persons"))
                     {
                         PlaySound("DesktopInstanceClose");
                         personCategory = null;
-                        Respawn("Town");
+                        Respawn("Area");
+                        Respawn("Capital");
+                        Respawn("QuestAdd");
+                        Respawn("QuestTurn");
+                        Respawn("AreaProgress");
+                        Respawn("AreaElites");
+                        Respawn("AreaQuestAvailable");
+                        Respawn("AreaQuestDone");
+                        Respawn("Chest");
                     }
                     else
                     {
                         PlaySound("DesktopInstanceClose");
                         if (capital != null)
                         {
-                            area = capitalThroughTown;
+                            area = capitalThroughArea;
                             SwitchDesktop("Capital");
                         }
                         else area = null;
-                        CloseDesktop("Town");
+                        CloseDesktop("Area");
                     }
                 });
             }
             else
             {
-                SpawnWindowBlueprint("TownHostile");
+                SpawnWindowBlueprint("AreaHostile");
                 AddHotkey("Open menu / Back", () =>
                 {
                     PlaySound("DesktopInstanceClose");
                     area = null;
-                    CloseDesktop("Town");
+                    CloseDesktop("Area");
                 });
             }
-            SpawnWindowBlueprint("TownProgress");
-            SpawnWindowBlueprint("TownElites");
-            SpawnWindowBlueprint("TownQuestAvailable");
-            SpawnWindowBlueprint("TownQuestDone");
+            SpawnWindowBlueprint("AreaProgress");
+            SpawnWindowBlueprint("AreaElites");
+            SpawnWindowBlueprint("AreaQuestAvailable");
+            SpawnWindowBlueprint("AreaQuestDone");
             SpawnWindowBlueprint("PlayerMoney");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
@@ -8444,29 +8479,29 @@ public class Blueprint
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey("Open menu / Back", () =>
             {
-                if (CloseWindow("TownQuestTracker"))
+                if (CloseWindow("AreaQuestTracker"))
                 {
                     PlaySound("DesktopButtonClose");
-                    Respawn("Town");
-                    Respawn("TownQuestAvailable");
+                    Respawn("Area");
+                    Respawn("AreaQuestAvailable");
                 }
                 else if (CloseWindow("QuestAdd") || CloseWindow("QuestTurn"))
                 {
                     PlaySound("DesktopButtonClose");
-                    Respawn("Town");
-                    Respawn("TownQuestAvailable");
-                    Respawn("TownQuestDone");
+                    Respawn("Area");
+                    Respawn("AreaQuestAvailable");
+                    Respawn("AreaQuestDone");
                     Respawn("InstanceWing", true);
                     Respawn("Instance");
                 }
-                else if (CloseWindow("Town"))
+                else if (CloseWindow("Area"))
                 {
                     area = null;
-                    CloseWindow("TownQuestTracker");
-                    CloseWindow("TownQuestAvailable");
-                    CloseWindow("TownQuestDone");
-                    CloseWindow("TownProgress");
-                    CloseWindow("TownElites");
+                    CloseWindow("AreaQuestTracker");
+                    CloseWindow("AreaQuestAvailable");
+                    CloseWindow("AreaQuestDone");
+                    CloseWindow("AreaProgress");
+                    CloseWindow("AreaElites");
                     CloseWindow("Chest");
                     PlaySound("DesktopButtonClose");
                     if (wing != null) SetDesktopBackground(wing.Background());
@@ -8509,28 +8544,28 @@ public class Blueprint
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey("Open menu / Back", () =>
             {
-                if (CloseWindow("TownQuestTracker"))
+                if (CloseWindow("AreaQuestTracker"))
                 {
                     PlaySound("DesktopButtonClose");
-                    Respawn("Town");
-                    Respawn("TownQuestAvailable");
+                    Respawn("Area");
+                    Respawn("AreaQuestAvailable");
                 }
                 else if (CloseWindow("QuestAdd") || CloseWindow("QuestTurn"))
                 {
                     PlaySound("DesktopButtonClose");
-                    Respawn("Town");
-                    Respawn("TownQuestAvailable");
-                    Respawn("TownQuestDone");
+                    Respawn("Area");
+                    Respawn("AreaQuestAvailable");
+                    Respawn("AreaQuestDone");
                     Respawn("Complex");
                 }
-                else if (CloseWindow("Town"))
+                else if (CloseWindow("Area"))
                 {
                     area = null;
                     PlaySound("DesktopButtonClose");
-                    CloseWindow("TownQuestAvailable");
-                    CloseWindow("TownQuestDone");
-                    CloseWindow("TownProgress");
-                    CloseWindow("TownElites");
+                    CloseWindow("AreaQuestAvailable");
+                    CloseWindow("AreaQuestDone");
+                    CloseWindow("AreaProgress");
+                    CloseWindow("AreaElites");
                     CloseWindow("Chest");
                     SetDesktopBackground(complex.Background());
                 }
@@ -8557,7 +8592,7 @@ public class Blueprint
             {
                 PlaySound("DesktopInstanceClose");
                 CloseDesktop("Capital");
-                capitalThroughTown = null;
+                capitalThroughArea = null;
                 capital = null;
             });
         }),

@@ -195,10 +195,10 @@ public class SiteInstance : Site
                 {
                     if (area.Item1 == null) return;
                     SiteArea.area = area.Item1;
-                    CloseWindow("TownQuestTracker");
-                    Respawn("Town");
-                    Respawn("TownProgress");
-                    Respawn("TownElites");
+                    CloseWindow("AreaQuestTracker");
+                    Respawn("Area");
+                    Respawn("AreaProgress");
+                    Respawn("AreaElites");
                     Respawn("Chest");
                     SetDesktopBackground("Areas/Area" + (instance.name + area.Item1.name).Clean() + (area.Item1.specialClearBackground && area.Item1.eliteEncounters.All(x => currentSave.elitesKilled.ContainsKey(x.who)) ? "Cleared" : ""));
                 });

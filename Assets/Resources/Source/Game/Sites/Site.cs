@@ -162,7 +162,7 @@ public class Site
             var fI = instances.Find(x => x.name == name);
             if (fI != null) siteType = "Instance";
             var fT = areas.Find(x => x.name == name);
-            if (fT != null) siteType = "Town";
+            if (fT != null) siteType = "Area";
             var fC = complexes.Find(x => x.name == name);
             if (fC != null) siteType = "Complex";
         }
@@ -175,7 +175,7 @@ public class Site
             if (staticPagination.ContainsKey("Instance"))
                 staticPagination.Remove("Instance");
         }
-        else if (siteType == "Town")
+        else if (siteType == "Area")
         {
             instance = null;
             area = (SiteArea)this;
@@ -183,7 +183,7 @@ public class Site
             spiritHealer = null;
             if (area.capitalRedirect != null)
             {
-                capitalThroughTown = area;
+                capitalThroughArea = area;
                 capital = capitals.Find(x => x.name == area.capitalRedirect);
                 siteType = "Capital";
             }

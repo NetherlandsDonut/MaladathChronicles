@@ -115,13 +115,13 @@ public class SiteArea : Site
         else return currentSave.siteVisits.ContainsKey(name) ? type + (recommendedLevel["Horde"] < recommendedLevel["Alliance"] ? "HordeAligned" : (recommendedLevel["Horde"] > recommendedLevel["Alliance"] ? "AllianceAligned" : "")) : "Unknown";
     }
 
-    //List of NPC's that are inside of this town
+    //List of NPC's that are inside of this area
     public List<Person> people;
 
-    //List of town flight paths, these are generated automatically
+    //List of area flight paths, these are generated automatically
     [NonSerialized] public Dictionary<string, List<SiteArea>> flightPaths;
 
-    //Currently opened town
+    //Currently opened area
     public static SiteArea area;
 
     //EXTERNAL FILE: List containing all areas in-game
@@ -147,7 +147,7 @@ public class SiteArea : Site
             {
                 if (sitePathBuilder != null) return;
                 if (h == null) LeadPath();
-                else ExecutePath("Town");
+                else ExecutePath("Area");
             },
             (h) => () =>
             {

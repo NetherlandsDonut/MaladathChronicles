@@ -557,13 +557,13 @@ public static class Root
             Cursor.cursor.transform.position += (Vector3)CDesktop.cameraDestination - CDesktop.screen.transform.localPosition;
             CDesktop.screen.transform.localPosition = (Vector3)CDesktop.cameraDestination;
         }
-        if (WindowUp("Town"))
+        if (WindowUp("Area"))
         {
-            CloseWindow("TownQuestTracker");
-            Respawn("Town");
+            CloseWindow("AreaQuestTracker");
+            Respawn("Area");
         }
-        Respawn("TownQuestAvailable", true);
-        Respawn("TownQuestDone", true);
+        Respawn("AreaQuestAvailable", true);
+        Respawn("AreaQuestDone", true);
         CloseWindow("QuestAdd");
         CloseWindow("QuestTurn");
         if (CDesktop.title == "Map") Respawn("WorldBuffs", true);

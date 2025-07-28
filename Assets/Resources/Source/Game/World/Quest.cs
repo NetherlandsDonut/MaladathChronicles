@@ -329,7 +329,7 @@ public class Quest
                     AddLine(siteEnd, "HalfGray");
                     AddSmallButton("ItemMiscMap01", (h) =>
                     {
-                        CloseDesktop("Town");
+                        CloseDesktop("Area");
                         CloseDesktop("Capital");
                         CloseDesktop("Instance");
                         CloseDesktop("Complex");
@@ -420,8 +420,8 @@ public class Quest
                     currentSave.player.TurnQuest(this);
                     PlaySound("QuestTurn");
                     CloseWindow(h.window);
-                    Respawn("TownQuestAvailable", true);
-                    Respawn("TownQuestDone", true);
+                    Respawn("AreaQuestAvailable", true);
+                    Respawn("AreaQuestDone", true);
                     Respawn("Chest", true);
                     Respawn("PlayerMoney", true);
                     Respawn("Capital", true);
@@ -438,10 +438,10 @@ public class Quest
                     PlaySound("QuestAdd", 0.4f);
                     currentSave.player.AddQuest(quest);
                     CloseWindow(h.window);
-                    Respawn("TownQuestAvailable", true);
-                    Respawn("TownQuestDone", true);
+                    Respawn("AreaQuestAvailable", true);
+                    Respawn("AreaQuestDone", true);
                     Respawn("Capital", true);
-                    Respawn("Town", true);
+                    Respawn("Area", true);
                     Respawn("QuestList", true);
                     Respawn("PlayerMoney", true);
                     Respawn("Chest", true);

@@ -71,7 +71,7 @@ public class QuestCondition
     {
         var line = "";
         var then = "";
-        var where = markerButton ? Where() : new();
+        var where = markerButton ? Where().Select(x => x.convertDestinationTo != null ? Site.FindSite(y => y.name == x.convertDestinationTo) : x).Distinct().ToList() : new();
         if (type == "Item")
         {
             var sum = currentSave.player.inventory.items.Sum(x => x.name == name ? x.amount : 0);
@@ -86,7 +86,7 @@ public class QuestCondition
             if (markerButton && where.Count > 0)
                 AddSmallButton("ItemMiscMap01", (h) =>
                 {
-                    CloseDesktop("Town");
+                    CloseDesktop("Area");
                     CloseDesktop("Instance");
                     CloseDesktop("Complex");
                     SwitchDesktop("Map");
