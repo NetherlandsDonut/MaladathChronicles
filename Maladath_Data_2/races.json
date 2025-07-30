@@ -12091,7 +12091,7 @@
   {
     "name": "Lord Cobrahn",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Night Elf",
     "portrait": "PortraitLordCobrahn",
     "abilities": {},
     "kind": "Elite",
@@ -12100,8 +12100,8 @@
   },
   {
     "name": "Lord Kazzak",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Demon",
+    "subcategory": "Doom Guard",
     "faction": "The Burning Legion",
     "portrait": "PortraitLordKazzak",
     "abilities": {},
@@ -12122,7 +12122,7 @@
   {
     "name": "Lord Pythas",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Night Elf",
     "portrait": "PortraitLordPythas",
     "abilities": {},
     "kind": "Elite",
@@ -12132,7 +12132,7 @@
   {
     "name": "Lord Serpentis",
     "category": "Beast",
-    "subcategory": "Wind Serpent",
+    "subcategory": "Night Elf",
     "portrait": "PortraitLordSerpentis",
     "abilities": {},
     "kind": "Elite",
@@ -12161,7 +12161,7 @@
   {
     "name": "Loro",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "portrait": "PortraitLoro",
     "abilities": {},
     "kind": "Elite",
@@ -12171,7 +12171,7 @@
   {
     "name": "Magister Kalendris",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Night Elf",
     "portrait": "PortraitMagisterKalendris",
     "abilities": {},
     "kind": "Elite",
@@ -12392,6 +12392,46 @@
     "kind": "Elite",
     "gender": "Male",
     "vitality": 3.0
+  },
+  {
+    "name": "Dabyrie Laborer",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "portrait": "PortraitDabyrieLaborer",
+    "abilities": {},
+    "kind": "Common",
+    "gender": "Male",
+    "vitality": 1.0
+  },
+  {
+    "name": "Dabyrie Militia",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "portrait": "PortraitDabyrieMilitia",
+    "abilities": {},
+    "kind": "Common",
+    "gender": "Male",
+    "vitality": 1.0
+  },
+  {
+    "name": "Hammerfall Grunt",
+    "category": "Humanoid",
+    "subcategory": "Orc",
+    "portrait": "PortraitHammerfallGrunt",
+    "abilities": {},
+    "kind": "Common",
+    "gender": "Male",
+    "vitality": 1.0
+  },
+  {
+    "name": "Hammerfall Peon",
+    "category": "Humanoid",
+    "subcategory": "Orc",
+    "portrait": "PortraitHammerfallPeon",
+    "abilities": {},
+    "kind": "Common",
+    "gender": "Male",
+    "vitality": 1.0
   },
   {
     "name": "Malformed Defias Drone",

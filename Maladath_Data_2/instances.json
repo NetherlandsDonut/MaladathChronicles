@@ -559,6 +559,10 @@
         "areas": [
           {
             "OpenByDefault": "True",
+            "AreaName": "Druid Hideout"
+          },
+          {
+            "OpenByDefault": "True",
             "AreaName": "Deviate Grotto"
           },
           {

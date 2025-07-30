@@ -3661,7 +3661,11 @@ public class Blueprint
                     var title = CDesktop.title;
                     CloseDesktop(title);
                     if (instance.complexPart) SpawnDesktopBlueprint("Complex");
-                    else if (instance.capitalRedirect != null) SpawnDesktopBlueprint("Capital");
+                    else if (instance.capitalRedirect != null)
+                    {
+                        area = areas.Find(x => x.name == instance.capitalRedirect);
+                        SpawnDesktopBlueprint("Capital");
+                    }
                     else
                     {
                         PlaySound("DesktopInstanceClose");
@@ -8540,6 +8544,7 @@ public class Blueprint
                 }
                 else if (instance.capitalRedirect != null)
                 {
+                    area = areas.Find(x => x.name == instance.capitalRedirect);
                     CloseDesktop("Instance");
                     SpawnDesktopBlueprint("Capital");
                 }

@@ -1182,7 +1182,7 @@
         ],
         "completedQuests": [],
         "level": 60,
-        "experience": 10706055,
+        "experience": 10706095,
         "uniquesGotten": [],
         "reputation": {
           "Southsea Pirates": 0,
@@ -1645,9 +1645,9 @@
         "worldBuffs": []
       },
       "hour": 7,
-      "minute": 32,
-      "second": 34,
-      "currentSite": "Terrordale",
+      "minute": 46,
+      "second": 20,
+      "currentSite": "Wailing Caverns",
       "ringOfLaw": "Eviscerator",
       "forlornCloister": "Azshir the Sleepless",
       "markets": [
@@ -1691,7 +1691,7 @@
         "Caer Darrow": 1,
         "Ravenholdt Manor": 1,
         "Misty Reed Post": 1,
-        "Stormwind City": 1,
+        "Stormwind City": 3,
         "Grove of the Ancients": 1,
         "Go'Shek Farm": 1,
         "Hillsbrad": 1,
@@ -2048,7 +2048,7 @@
         "Plaguewood Gate": 1,
         "Plaguewood": 1,
         "Plaguewood Tower": 1,
-        "Quel'Lithien Lodge": 1,
+        "Quel'Lithien Lodge": 3,
         "Terrordale": 2,
         "Terrorweb Tunnel": 1,
         "The Infectis Scar": 1,
@@ -2136,7 +2136,7 @@
         "Zun'watha": 1,
         "Hiri'watha": 1,
         "Plaguemist Ravine": 1,
-        "Quel'Danil Lodge": 1,
+        "Quel'Danil Lodge": 2,
         "Seradane": 1,
         "Shadra'Alor": 1,
         "Shaol'watha": 1,
@@ -2463,7 +2463,7 @@
         "Scholomance": 1,
         "Maraudon": 1,
         "Stratholme": 1,
-        "Wailing Caverns": 1,
+        "Wailing Caverns": 4,
         "Uldaman": 4,
         "Razorfen Downs": 1,
         "Razorfen Kraul": 1,
@@ -2483,7 +2483,9 @@
         "Ruins of Alterac": 1,
         "Scarlet Monastery Grounds": 1,
         "Jaedenar Grounds": 1,
-        "Alcaz Island": 1
+        "Alcaz Island": 1,
+        "Zipcoil Retreat": 3,
+        "Goblin Camp": 1
       },
       "unlockedAreas": [
         "Map Chamber",
@@ -2718,9 +2720,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2025-07-28T14:11:46.6190465+02:00",
-      "lastLoaded": "2025-07-30T20:09:38.4588047+02:00",
-      "lastPlayed": "2025-07-30T20:10:31.2828512+02:00",
-      "timePlayed": "01:06:50.5244968"
+      "lastLoaded": "2025-07-31T01:17:21.4134821+02:00",
+      "lastPlayed": "2025-07-31T01:19:52.0020864+02:00",
+      "timePlayed": "01:14:33.5544704"
     }
   ],
   "Gehennas": [],

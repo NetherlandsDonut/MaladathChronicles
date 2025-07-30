@@ -5,6 +5,11 @@
     "category": "Vendor"
   },
   {
+    "type": "Quartermaster",
+    "icon": "ItemMiscBag17",
+    "category": "Vendor"
+  },
+  {
     "type": "Baker",
     "icon": "ItemMiscFood12",
     "category": "Vendor"

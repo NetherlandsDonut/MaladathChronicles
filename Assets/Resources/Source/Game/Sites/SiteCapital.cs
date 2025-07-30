@@ -53,8 +53,8 @@ public class SiteCapital : Site
         },
         (h) =>
         {
-            if (SiteArea.area == find) return;
-            SiteArea.area = find;
+            if (area == find) return;
+            area = find;
             PlaySound("DesktopInstanceOpen");
             CloseDesktop("Area");
             SpawnDesktopBlueprint("Area");

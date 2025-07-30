@@ -107,6 +107,7 @@ public class SiteComplex : Site
                 if (h == null) LeadPath();
                 else ExecutePath("Complex");
             },
+            !currentSave.siteVisits.ContainsKey(name) ? null :
             (h) => () =>
             {
                 if (!currentSave.siteVisits.ContainsKey(name)) return;

@@ -53,7 +53,7 @@ public class SiteInstance : Site
     //Suggested level range for the player to enter this instance
     private (int, int) LevelRange(List<string> localAreas)
     {
-        var temp = areas.FindAll(x => localAreas.Contains(x.name));
+        var temp = areas.FindAll(x => localAreas.Contains(x.name)).Where(x => x.recommendedLevel[currentSave.playerSide] > 0);
         if (temp.Count() == 0) return (0, 0);
         return (temp.Min(x => x.recommendedLevel[currentSave.playerSide]), temp.Max(x => x.recommendedLevel[currentSave.playerSide]));
     }
@@ -96,6 +96,7 @@ public class SiteInstance : Site
                 if (h == null) LeadPath();
                 else ExecutePath("Instance");
             },
+            !currentSave.siteVisits.ContainsKey(name) ? null :
             (h) => () =>
             {
                 if (!currentSave.siteVisits.ContainsKey(name)) return;
@@ -114,23 +115,26 @@ public class SiteInstance : Site
                 var areas = wings.SelectMany(x => x.areas.Select(y => SiteArea.areas.Find(z => z.name == y["AreaName"])));
                 var side = currentSave.playerSide;
                 var total = areas.SelectMany(x => x.CommonEncounters(side) ?? new()).Distinct().ToList();
-                total.AddRange(areas.SelectMany(x => x.eliteEncounters ?? new()).Distinct().ToList());
-                total.AddRange(areas.SelectMany(x => x.rareEncounters ?? new()).Distinct().ToList());
+                //total.AddRange(areas.SelectMany(x => x.eliteEncounters ?? new()).Distinct().ToList());
+                //total.AddRange(areas.SelectMany(x => x.rareEncounters ?? new()).Distinct().ToList());
                 var races = total.Select(x => Race.races.Find(y => y.name == x.who).portrait).Distinct().ToList();
-                var perRow = 9;
-                if (races.Count > 0)
-                    for (int i = 0; i < Math.Ceiling(races.Count / (double)perRow); i++)
+                var currentRow = 0;
+                var currentAmount = 0;
+                while (races.Count > 0)
+                {
+                    if (currentAmount == 0 && currentRow == 0)
+                        AddPaddingRegion(() => AddLine("Hostiles:", "HalfGray"));
+                    else if (currentAmount == 0)
+                        AddPaddingRegion(() => { });
+                    AddSmallButton(races[0]);
+                    currentAmount++;
+                    if (currentRow == 0 && currentAmount == 5 || currentRow > 0 && currentAmount == 9)
                     {
-                        var ind = i;
-                        AddPaddingRegion(() =>
-                        {
-                            for (int j = 0; j < perRow && j < races.Count - ind * perRow; j++)
-                            {
-                                var jnd = j;
-                                AddSmallButton(races[jnd + ind * perRow]);
-                            }
-                        });
+                        currentRow++;
+                        currentAmount = 0;
                     }
+                    races.RemoveAt(0);
+                }
                 var q = currentSave.player.QuestsAt(this);
                 if (q.Count > 0)
                 {
