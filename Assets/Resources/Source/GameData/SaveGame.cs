@@ -382,9 +382,9 @@ public class SaveGame
             if (item.GetHashCode() + "" == trigger["ItemHash"] && item.abilities != null)
                 foreach (var ability in item.abilities.Select(x => (Ability.abilities.Find(y => y.name == x.Key), x.Value)))
                 {
-                    var notMet = ability.Item1.ConditionsNotMet(trigger["Trigger"], ability.Item1, ability.Value, currentSave, Board.board);
+                    var notMet = ability.Item1.ConditionsNotMet(trigger, ability.Item1, currentSave, Board.board);
                     if (notMet.Count == 0)
-                        ability.Item1.ExecuteEvents(this, trigger, item, ability.Value);
+                        ability.Item1.ExecuteEvents(this, trigger, item);
                     else SpawnFallingText(new UnityEngine.Vector2(0, 34), notMet[0].failedMessage, "Red");
                 }
 

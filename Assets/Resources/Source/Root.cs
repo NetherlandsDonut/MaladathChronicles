@@ -259,13 +259,13 @@ public static class Root
         else if (!participantTargetted.who.CanBeTargetted(true)) { }
         else
         {
-            var notMet = abilityTargetted.ConditionsNotMet("AbilityCast", abilityTargetted, board.participants[board.whosTurn].combatAbilities[abilityTargetted], currentSave, board);
+            var notMet = abilityTargetted.ConditionsNotMet(new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Other" }, { "AbilityName", abilityTargetted.name }, { "AbilityRank", board.participants[board.whosTurn].combatAbilities[abilityTargetted] + "" } }, abilityTargetted, currentSave, board);
             if (notMet.Count == 0)
             {
                 foreach (var participant in board.participants)
                 {
-                    if (participant == board.participants[board.whosTurn]) board.CallEvents(participant.who, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Effector" }, { "AbilityName", abilityTargetted.name } });
-                    else board.CallEvents(participant.who, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Other" }, { "AbilityName", abilityTargetted.name } });
+                    if (participant == board.participants[board.whosTurn]) board.CallEvents(participant.who, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Effector" }, { "AbilityName", abilityTargetted.name }, { "AbilityRank", board.participants[board.whosTurn].combatAbilities[abilityTargetted] + "" } });
+                    else board.CallEvents(participant.who, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Other" }, { "AbilityName", abilityTargetted.name }, { "AbilityRank", board.participants[board.whosTurn].combatAbilities[abilityTargetted] + "" } });
                 }
                 board.participants[board.whosTurn].who.DetractResources(abilityTargetted.cost);
                 foreach (var element in abilityTargetted.cost)
@@ -292,8 +292,8 @@ public static class Root
             tileTargetted = (x, y);
             foreach (var participant in board.participants)
             {
-                if (participant == board.participants[board.whosTurn]) board.CallEvents(participant.who, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Effector" }, { "AbilityName", abilityTargetted.name } });
-                else board.CallEvents(participant.who, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Other" }, { "AbilityName", abilityTargetted.name } });
+                if (participant == board.participants[board.whosTurn]) board.CallEvents(participant.who, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Effector" }, { "AbilityName", abilityTargetted.name }, { "AbilityRank", board.participants[board.whosTurn].combatAbilities[abilityTargetted] + "" } });
+                else board.CallEvents(participant.who, new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Other" }, { "AbilityName", abilityTargetted.name }, { "AbilityRank", board.participants[board.whosTurn].combatAbilities[abilityTargetted] + "" } });
             }
             board.participants[board.whosTurn].who.DetractResources(abilityTargetted.cost);
             foreach (var element in abilityTargetted.cost)
@@ -564,6 +564,7 @@ public static class Root
         }
         Respawn("AreaQuestAvailable", true);
         Respawn("AreaQuestDone", true);
+        CloseWindow("Quest");
         CloseWindow("QuestAdd");
         CloseWindow("QuestTurn");
         if (CDesktop.title == "Map") Respawn("WorldBuffs", true);
@@ -668,10 +669,16 @@ public static class Root
         if (WindowUp(blueprint.title)) return null;
         AddWindow(blueprint.title, blueprint.upperUI);
         blueprint.actions();
-        if (resetSearch && CDesktop.LBWindow().maxPaginationReq != null) String.search.Set("");
-        CDesktop.LBWindow().Rebuild();
-        CDesktop.LBWindow().ResetPosition();
-        return CDesktop.LBWindow();
+        var lb = CDesktop.LBWindow();
+        if (resetSearch && lb.maxPaginationReq != null) String.search.Set("");
+        lb.Rebuild();
+        lb.ResetPosition();
+        if (lb.regionGroups.Count == 0)
+        {
+            CloseWindow(lb.title);
+            return null;
+        }
+        return lb;
     }
 
     public static bool WindowUp(string title) => CDesktop.windows.Exists(x => x.title == title);

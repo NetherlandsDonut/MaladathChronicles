@@ -1720,6 +1720,43 @@
     }
   },
   {
+    "name": "Crazy Grab Bag",
+    "possibleTargets": "Self",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Loot",
+            "GeneralDrop": "Crazy Grab Bag"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "isExtender": true,
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: See what's inside"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "name": "Red Sack of Gems",
     "possibleTargets": "Self",
     "tags": [],
@@ -11542,9 +11579,6 @@
             "AnimationType": "Missile",
             "TrailStrength": "8",
             "AnimationSpeed": "1"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }

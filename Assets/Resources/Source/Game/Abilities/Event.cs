@@ -29,7 +29,7 @@ public class Event
 
     #region Execution
 
-    public void ExecuteEffects(SaveGame save, Item itemUsed, Dictionary<string, string> triggerBase, Dictionary<string, string> variables, Ability abilityUsed, int abilityRank)
+    public void ExecuteEffects(SaveGame save, Item itemUsed, Dictionary<string, string> triggerBase, Dictionary<string, string> variables, Ability abilityUsed)
     {
         //Define entities that take place in the event's effects
         var effector = save.player;
@@ -438,7 +438,7 @@ public class Event
                 var target = affect == "Effector" ? effector : other;
                 var pos = new Vector3(1, -1) + Board.board.PortraitPosition(Board.board.participants.IndexOf(target));
                 if (target.team == 1 && Board.board.spotlightFriendly[0] != Board.board.participants.IndexOf(target) || target.team == 2 && Board.board.spotlightEnemy[0] != Board.board.participants.IndexOf(target)) pos *= 2;
-                target.who.AddBuff(buffs.Find(x => x.name == buffName), buffDuration, SpawnBuffObject(pos, icon, target.who), sourceRank);
+                target.who.AddBuff(buffs.Find(x => x.name == buffName), buffDuration, SpawnBuffObject(pos, icon, target.who), int.TryParse(trigger["AbilityRank"], out int parse) ? parse : 0);
                 foreach (var participant in board.participants)
                     if (participant == target) board.CallEvents(participant.who, new() { { "Trigger", "BuffAdd" }, { "Triggerer", "Effector" }, { "BuffName", buffName } });
                     else board.CallEvents(participant.who, new() { { "Trigger", "BuffAdd" }, { "Triggerer", "Other" }, { "BuffName", buffName } });

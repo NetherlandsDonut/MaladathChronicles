@@ -154,6 +154,7 @@ public class Blueprint
         //Game
         new("BoardFrame", () => {
             SetAnchor(-115, 146);
+            AddRegionGroup();
             var boardBackground = new GameObject("BoardBackground", typeof(SpriteRenderer), typeof(SpriteMask));
             boardBackground.transform.parent = CDesktop.LBWindow().transform;
             boardBackground.transform.localPosition = new Vector2(-17, 17);
@@ -1025,6 +1026,7 @@ public class Blueprint
             if (WindowUp("Quest")) return;
             if (WindowUp("QuestAdd")) return;
             if (WindowUp("QuestTurn")) return;
+            AddRegionGroup();
             if (area == null || !currentSave.siteProgress.ContainsKey(area.name) || !area.progression.Any(x => x.type == "Treasure")) return;
             if (area.progression.First(x => x.type == "Treasure").point > currentSave.siteProgress[area.name] || currentSave.openedChests.ContainsKey(area.name) && currentSave.openedChests[area.name].inventory.items.Count == 0) return;
             SetAnchor(259, -111);
@@ -2412,14 +2414,17 @@ public class Blueprint
             AddPaginationLine();
         }, true),
         new("Quest", () => {
+            if (quest == null) return;
             SetAnchor(TopRight, -19, -38);
             quest.Print();
         }, true),
         new("QuestAdd", () => {
+            if (quest == null) return;
             SetAnchor(TopRight, -19, -38);
             quest.Print("Add");
         }, true),
         new("QuestTurn", () => {
+            if (quest == null) return;
             SetAnchor(TopRight, -19, -38);
             quest.Print("Turn");
         }, true),
@@ -4481,15 +4486,20 @@ public class Blueprint
                 person = null;
                 CloseWindow(h.window);
                 if (personCategory != null) Respawn("Persons");
+                else CloseWindow("Persons");
                 Respawn("Area");
                 Respawn("Capital");
+                Respawn("Quest");
                 Respawn("QuestAdd");
                 Respawn("QuestTurn");
-                Respawn("AreaProgress");
-                Respawn("AreaElites");
                 Respawn("AreaQuestAvailable");
                 Respawn("AreaQuestDone");
-                Respawn("Chest");
+                if (!WindowUp("Persons"))
+                {
+                    Respawn("AreaProgress");
+                    Respawn("AreaElites");
+                    Respawn("Chest");
+                }
             });
         }, true),
         new("Persons", () => {
@@ -4506,12 +4516,14 @@ public class Blueprint
                     CloseWindow(h.window.title);
                     Respawn("Area");
                     Respawn("Capital");
+                    Respawn("Quest");
                     Respawn("QuestAdd");
                     Respawn("QuestTurn");
                     Respawn("AreaProgress");
                     Respawn("AreaElites");
                     Respawn("AreaQuestAvailable");
                     Respawn("AreaQuestDone");
+                    Respawn("Chest");
                     PlaySound("DesktopInstanceClose");
                 });
             });
@@ -6507,6 +6519,7 @@ public class Blueprint
         //Fishing
         new("FishingBoardFrame", () => {
             SetAnchor(-115, 146);
+            AddRegionGroup();
             var boardBackground = new GameObject("BoardBackground", typeof(SpriteRenderer), typeof(SpriteMask));
             boardBackground.transform.parent = CDesktop.LBWindow().transform;
             boardBackground.transform.localPosition = new Vector2(-17, 17);
@@ -8405,15 +8418,20 @@ public class Blueprint
                         PlaySound("DesktopInstanceClose");
                         person = null;
                         if (personCategory != null) Respawn("Persons");
+                        else CloseWindow("Persons");
                         Respawn("Area");
                         Respawn("Capital");
+                        Respawn("Quest");
                         Respawn("QuestAdd");
                         Respawn("QuestTurn");
-                        Respawn("AreaProgress");
-                        Respawn("AreaElites");
                         Respawn("AreaQuestAvailable");
                         Respawn("AreaQuestDone");
-                        Respawn("Chest");
+                        if (!WindowUp("Persons"))
+                        {
+                            Respawn("AreaProgress");
+                            Respawn("AreaElites");
+                            Respawn("Chest");
+                        }
                     }
                     else if (CloseWindow("Persons"))
                     {
@@ -8421,6 +8439,7 @@ public class Blueprint
                         personCategory = null;
                         Respawn("Area");
                         Respawn("Capital");
+                        Respawn("Quest");
                         Respawn("QuestAdd");
                         Respawn("QuestTurn");
                         Respawn("AreaProgress");

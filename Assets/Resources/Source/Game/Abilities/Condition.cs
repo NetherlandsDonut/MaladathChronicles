@@ -15,19 +15,19 @@ public class Condition
     public List<Condition> subs;
 
     //Checks if condition is met
-    public bool IsMet(Ability ability, int abilityRank, SaveGame save, Board board)
+    public bool IsMet(Ability ability, Dictionary<string, string> trigger, SaveGame save, Board board)
     {
         if (condition == null) return true;
         var c = condition;
         if (c == "") return true;
-        else if (c == "all") return subs == null || subs.Count == 0 || subs.All(x => x.IsMet(ability, abilityRank, save, board));
-        else if (c == "any") return subs == null || subs.Count == 0 || subs.Any(x => x.IsMet(ability, abilityRank, save, board));
+        else if (c == "all") return subs == null || subs.Count == 0 || subs.All(x => x.IsMet(ability, trigger, save, board));
+        else if (c == "any") return subs == null || subs.Count == 0 || subs.Any(x => x.IsMet(ability, trigger, save, board));
         else
         {
             var args = c.Split(" ").Select(x => Moo(x)).ToList();
             if (args.Count > 2)
             {
-                var variables = ability.RankVariables(abilityRank);
+                var variables = ability.RankVariables(int.TryParse(trigger["AbilityRank"], out int parse) ? parse : 0);
                 if (args[0].StartsWith("#") && variables.ContainsKey(args[0]))
                     args[0] = variables[args[0]].Replace(".", ",");
                 if (args[2].StartsWith("#") && variables.ContainsKey(args[2]))
@@ -49,6 +49,20 @@ public class Condition
             {
                 //Board related 
                 "@turn" => board.turn + "",
+
+                //Casted ability related
+                "@castedabilityrank" => trigger["AbilityRank"],
+                "@castedabilitypossibletargets" => Ability.abilities.Find(x => x.name == trigger["AbilityName"]).possibleTargets,
+                "@castedabilitycostshadow" => Ability.abilities.Find(x => x.name == trigger["AbilityName"]).cost["Shadow"] + "",
+                "@castedabilitycostfire" => Ability.abilities.Find(x => x.name == trigger["AbilityName"]).cost["Fire"] + "",
+                "@castedabilitycostwater" => Ability.abilities.Find(x => x.name == trigger["AbilityName"]).cost["Water"] + "",
+                "@castedabilitycostearth" => Ability.abilities.Find(x => x.name == trigger["AbilityName"]).cost["Earth"] + "",
+                "@castedabilitycostair" => Ability.abilities.Find(x => x.name == trigger["AbilityName"]).cost["Air"] + "",
+                "@castedabilitycostarcane" => Ability.abilities.Find(x => x.name == trigger["AbilityName"]).cost["Arcane"] + "",
+                "@castedabilitycostlightning" => Ability.abilities.Find(x => x.name == trigger["AbilityName"]).cost["Lightning"] + "",
+                "@castedabilitycostfrost" => Ability.abilities.Find(x => x.name == trigger["AbilityName"]).cost["Frost"] + "",
+                "@castedabilitycostdecay" => Ability.abilities.Find(x => x.name == trigger["AbilityName"]).cost["Decay"] + "",
+                "@castedabilitycostorder" => Ability.abilities.Find(x => x.name == trigger["AbilityName"]).cost["Order"] + "",
 
                 //Caster related
                 "@effectorteam" => effector.team + "",
