@@ -1736,7 +1736,9 @@
         "effects": [
           {
             "Effect": "Loot",
-            "GeneralDrop": "Crazy Grab Bag"
+            "GeneralDrop": "Crazy Grab Bag",
+            "GeneralDropShuffle": "True",
+            "GeneralDropLimit": "1"
           }
         ]
       }

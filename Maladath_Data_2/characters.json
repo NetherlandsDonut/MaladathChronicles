@@ -1423,6 +1423,7 @@
           "Order Mastery": 3
         },
         "inventory": {
+          "money": 900900,
           "items": [
             {
               "rarity": "Common",
@@ -1646,7 +1647,7 @@
       "hour": 7,
       "minute": 32,
       "second": 34,
-      "currentSite": "Ruins of Ahn'Qiraj",
+      "currentSite": "Terrordale",
       "ringOfLaw": "Eviscerator",
       "forlornCloister": "Azshir the Sleepless",
       "markets": [
@@ -2048,7 +2049,7 @@
         "Plaguewood": 1,
         "Plaguewood Tower": 1,
         "Quel'Lithien Lodge": 1,
-        "Terrordale": 1,
+        "Terrordale": 2,
         "Terrorweb Tunnel": 1,
         "The Infectis Scar": 1,
         "The Marris Stead": 1,
@@ -2717,9 +2718,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2025-07-28T14:11:46.6190465+02:00",
-      "lastLoaded": "2025-07-30T12:49:09.8779525+02:00",
-      "lastPlayed": "2025-07-30T13:04:35.1065295+02:00",
-      "timePlayed": "01:05:57.7004503"
+      "lastLoaded": "2025-07-30T20:09:38.4588047+02:00",
+      "lastPlayed": "2025-07-30T20:10:31.2828512+02:00",
+      "timePlayed": "01:06:50.5244968"
     }
   ],
   "Gehennas": [],

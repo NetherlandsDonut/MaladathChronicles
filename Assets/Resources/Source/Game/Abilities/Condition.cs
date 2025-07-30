@@ -27,7 +27,7 @@ public class Condition
             var args = c.Split(" ").Select(x => Moo(x)).ToList();
             if (args.Count > 2)
             {
-                var variables = ability.RankVariables(int.TryParse(trigger["AbilityRank"], out int parse) ? parse : 0);
+                var variables = ability.RankVariables(trigger.ContainsKey("AbilityRank") && int.TryParse(trigger["AbilityRank"], out int parse) ? parse : 0);
                 if (args[0].StartsWith("#") && variables.ContainsKey(args[0]))
                     args[0] = variables[args[0]].Replace(".", ",");
                 if (args[2].StartsWith("#") && variables.ContainsKey(args[2]))

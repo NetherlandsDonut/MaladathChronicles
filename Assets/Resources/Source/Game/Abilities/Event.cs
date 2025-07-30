@@ -140,6 +140,8 @@ public class Event
                 {
                     itemUsed.itemsInside = new();
                     string generalDrop = effect.ContainsKey("GeneralDrop") ? effect["GeneralDrop"] : "None";
+                    bool generalDropShuffle = effect.ContainsKey("GeneralDropShuffle") && effect["GeneralDropShuffle"] == "True";
+                    int generalDropLimit = effect.ContainsKey("GeneralDropLimit") ? int.Parse(effect["GeneralDropLimit"]) : 0;
                     int minMoney = effect.ContainsKey("MinMoney") ? int.Parse(effect["MinMoney"]) : 0;
                     int maxMoney = effect.ContainsKey("MaxMoney") ? int.Parse(effect["MaxMoney"]) : 0;
                     if (maxMoney > 0 && minMoney >= 0)
@@ -150,6 +152,7 @@ public class Event
                         else itemUsed.itemsInside.Add(Item.items.Find(x => x.name == "Copper").CopyItem(amount));
                     }
                     var drops = GeneralDrop.generalDrops.FindAll(x => x.category == generalDrop);
+                    if (generalDropShuffle) drops.Shuffle();
                     if (drops != null && drops.Count > 0)
                         foreach (var drop in drops)
                             if (Roll(drop.rarity))
@@ -158,6 +161,9 @@ public class Event
                                 for (int i = 1; i < drop.dropCount; i++) amount += Roll(50) ? 1 : 0;
                                 itemUsed.itemsInside.Add(Item.items.Find(x => x.name == drop.item).CopyItem(amount));
                             }
+                    if (generalDropLimit != 0)
+                        itemUsed.itemsInside = itemUsed.itemsInside.Take(generalDropLimit).ToList();
+                    itemUsed.itemsInside.ForEach(x => x.SetRandomEnchantment());
                     Inventory.ApplySortOrder(itemUsed.itemsInside);
                 }
                 Item.openedItem = itemUsed;

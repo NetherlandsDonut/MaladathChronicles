@@ -65,7 +65,7 @@ public class Ability
                         execute = item != null && item.GetHashCode() + "" == itemHash && (sitePresence == "" || save.currentSite == sitePresence);
                     }
             if (execute && (trigger.ContainsKey("IgnoreConditions") && trigger["IgnoreConditions"] == "Yes" || AreConditionsMet(trigger, eve, save, null)))
-                eve.ExecuteEffects(save, item, trigger, RankVariables(int.TryParse(trigger["AbilityRank"], out int parse) ? parse : 0), this);
+                eve.ExecuteEffects(save, item, trigger, RankVariables(trigger.ContainsKey("AbilityRank") && int.TryParse(trigger["AbilityRank"], out int parse) ? parse : 0), this);
         }
     }
 
@@ -151,7 +151,7 @@ public class Ability
                 if (trigger.ContainsKey("IgnoreConditions") && trigger["IgnoreConditions"] == "Yes" || AreConditionsMet(trigger, eve, null, board))
                 {
                     board.PutOnCooldown(entitySource, this);
-                    var rank = int.TryParse(trigger["AbilityRank"], out int parse) ? parse : 0;
+                    var rank = trigger.ContainsKey("AbilityRank") && int.TryParse(trigger["AbilityRank"], out int parse) ? parse : 0;
                     eve.ExecuteEffects(board, icon, trigger, RankVariables(rank), name, rank);
                 }
         }
@@ -200,7 +200,7 @@ public class Ability
             AddHeaderRegion(() => AddLine("Ability not found.", "Red"));
             AddRegionGroup();
             SetRegionGroupWidth(width);
-            AddPaddingRegion(() => { AddLine(); });
+            AddPaddingRegion(() => AddLine());
         }
         else
         {
@@ -230,20 +230,14 @@ public class Ability
                     if (cost.Value > 0)
                     {
                         AddRegionGroup();
-                        AddHeaderRegion(() =>
-                        {
-                            AddSmallButton("Element" + cost.Key + "Rousing");
-                        });
+                        AddHeaderRegion(() => AddSmallButton("Element" + cost.Key + "Rousing"));
                         AddRegionGroup();
                         SetRegionGroupWidth(33);
-                        AddHeaderRegion(() =>
-                        {
-                            AddLine(cost.Value + "", effector != null && effector.resources != null ? cost.Value > effector.resources[cost.Key] ? "Red" : "Green" : "Gray");
-                        });
+                        AddHeaderRegion(() => AddLine(cost.Value + "", effector != null && effector.resources != null ? cost.Value > effector.resources[cost.Key] ? "Red" : "Green" : "Gray"));
                     }
             AddRegionGroup();
             SetRegionGroupWidth(width - (ability.cost == null ? 0 : ability.cost.Count(x => x.Value > 0)) * 52);
-            AddPaddingRegion(() => { AddLine(); });
+            AddPaddingRegion(() => AddLine());
         }
     }
 

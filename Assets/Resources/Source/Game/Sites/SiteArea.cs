@@ -1,18 +1,16 @@
 using System;
-using System.Linq;
 using System.Collections.Generic;
-
+using System.Linq;
+using UnityEditor.PackageManager;
 using UnityEngine;
-
+using static Coloring;
+using static Faction;
+using static Quest;
+using static Race;
 using static Root;
 using static Root.Anchor;
-
-using static Race;
-using static Quest;
-using static Faction;
 using static SaveGame;
 using static SitePath;
-using static Coloring;
 
 public class SiteArea : Site
 {
@@ -180,21 +178,23 @@ public class SiteArea : Site
                     var legit = peopleTogether.Where(x => !x.hidden && PersonType.personTypes.Exists(y => y.type == x.type)).OrderBy(x => x.category.priority).ThenBy(x => x.type).ToList();
                     var types = legit.Select(x => PersonType.personTypes.Find(y => y.type == x.type)).Where(x => x != null).ToList();
                     var icons = types.Distinct().Select(x => x.icon + (x.factionVariant ? factions.Find(x => x.name == faction)?.side : "")).ToList();
-                    var perRow = 9;
-                    if (icons.Count > 0)
-                        for (int i = 0; i < Math.Ceiling(icons.Count / (double)perRow); i++)
+                    var currentRow = 0;
+                    var currentAmount = 0;
+                    while (icons.Count > 0)
+                    {
+                        if (currentAmount == 0 && currentRow == 0)
+                            AddPaddingRegion(() => AddLine("NPC's:", "HalfGray"));
+                        else if (currentAmount == 0)
+                            AddPaddingRegion(() => { });
+                        AddSmallButton(icons[0]);
+                        currentAmount++;
+                        if (currentRow == 0 && currentAmount == 6 || currentRow > 0 && currentAmount == 9)
                         {
-                            var ind = i;
-                            AddPaddingRegion(() =>
-                            {
-                                for (int j = perRow - 1; j >= 0; j--)
-                                    if (j < icons.Count - ind * perRow)
-                                    {
-                                        var jnd = j;
-                                        AddSmallButton(icons[jnd + ind * perRow]);
-                                    }
-                            });
+                            currentRow++;
+                            currentAmount = 0;
                         }
+                        icons.RemoveAt(0);
+                    }
                 }
                 var q = currentSave.player.QuestsDoneAt(this);
                 if (q.Count > 0)

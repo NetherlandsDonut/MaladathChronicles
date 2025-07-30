@@ -20776,54 +20776,54 @@
         "race": "Human",
         "type": "Leather Armor Merchant",
         "itemsSold": [
-        {
-          "item": "Tanned Leather Boots",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Tanned Leather Gloves",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Tanned Leather Pants",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Tanned Leather Jerkin",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Tanned Leather Belt",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Tanned Leather Bracers",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Agile Boots",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Stable Boots",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Tanned Leather Boots",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Tanned Leather Gloves",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Tanned Leather Pants",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Tanned Leather Jerkin",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Tanned Leather Belt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Tanned Leather Bracers",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Agile Boots",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Stable Boots",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       },
       {
@@ -20833,108 +20833,108 @@
         "race": "Dwarf",
         "type": "General Goods",
         "itemsSold": [
-        {
-          "item": "Refreshing Spring Water",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Ice Cold Milk",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Rough Arrow",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Sharp Arrow",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Light Shot",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Heavy Shot",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Balanced Throwing Dagger",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Small Throwing Knife",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Crude Throwing Axe",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Weighted Throwing Axe",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Simple Wood",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Flint and Tinder",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Small Brown Pouch",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Brown Leather Satchel",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Red Ribboned Wrapping Paper",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Recipe: Rage Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Recipe: Holy Protection Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Refreshing Spring Water",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Ice Cold Milk",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Rough Arrow",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Sharp Arrow",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Light Shot",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Heavy Shot",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Balanced Throwing Dagger",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Small Throwing Knife",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Crude Throwing Axe",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Weighted Throwing Axe",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Simple Wood",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Flint and Tinder",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Small Brown Pouch",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Brown Leather Satchel",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Red Ribboned Wrapping Paper",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Rage Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Holy Protection Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       },
       {
@@ -23804,97 +23804,97 @@
         "voiceVariant": 2,
         "race": "Orc",
         "type": "Weaponsmith & Armorcrafter",
-"itemsSold": [
-        {
-          "item": "Scalemail Vest",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Scalemail Pants",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Scalemail Boots",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Scalemail Gloves",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Scalemail Bracers",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Scalemail Belt",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Enamelled Broadsword",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Feral Blade",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Ironwood Maul",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Heavy Spiked Mace",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Fiery Cloak",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Heavy Runed Cloak",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Antiquated Cloak",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Mighty Chain Pants",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Legionnaire's Leggings",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+        "itemsSold": [
+          {
+            "item": "Scalemail Vest",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Scalemail Pants",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Scalemail Boots",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Scalemail Gloves",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Scalemail Bracers",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Scalemail Belt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Enamelled Broadsword",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Feral Blade",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Ironwood Maul",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Heavy Spiked Mace",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Fiery Cloak",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Heavy Runed Cloak",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Antiquated Cloak",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mighty Chain Pants",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Legionnaire's Leggings",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       }
     ],
@@ -24293,72 +24293,72 @@
         "race": "Orc",
         "type": "Weaponsmith",
         "itemsSold": [
-        {
-          "item": "Broadsword",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Flamberge",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Crescent Axe",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Bullova",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Truncheon",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "War Hammer",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Main Gauche",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Battle Staff",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Plans: Massive Iron Axe",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Daring Dirk",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Midnight Axe",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Broadsword",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Flamberge",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Crescent Axe",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Bullova",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Truncheon",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "War Hammer",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Main Gauche",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Battle Staff",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Plans: Massive Iron Axe",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Daring Dirk",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Midnight Axe",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       }
     ],
@@ -30463,108 +30463,108 @@
         "race": "Forsaken",
         "type": "Leatherworking Supplies",
         "itemsSold": [
-        {
-          "item": "Coarse Thread",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Fine Thread",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Black Dye",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Red Dye",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Green Dye",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Salt",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Silken Thread",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Gray Dye",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Yellow Dye",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Purple Dye",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Blue Dye",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Orange Dye",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Skinning Knife",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Pattern: Green Leather Armor",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Heavy Silken Thread",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Pink Dye",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Rune Thread",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Coarse Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Fine Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Black Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Red Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Green Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Salt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Silken Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Gray Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Yellow Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Purple Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Blue Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Orange Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Skinning Knife",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pattern: Green Leather Armor",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Heavy Silken Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pink Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Rune Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       },
       {
@@ -30981,54 +30981,54 @@
         "race": "Forsaken",
         "type": "Leather Armor Merchant",
         "itemsSold": [
-        {
-          "item": "Tanned Leather Boots",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Tanned Leather Gloves",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Tanned Leather Pants",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Tanned Leather Jerkin",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Tanned Leather Belt",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Tanned Leather Bracers",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Agile Boots",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Stable Boots",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Tanned Leather Boots",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Tanned Leather Gloves",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Tanned Leather Pants",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Tanned Leather Jerkin",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Tanned Leather Belt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Tanned Leather Bracers",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Agile Boots",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Stable Boots",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       },
       {
@@ -35269,54 +35269,54 @@
         "race": "Orc",
         "type": "Weapon Merchant",
         "itemsSold": [
-        {
-          "item": "Broadsword",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Flamberge",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Main Gauche",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Falchion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Zweihander",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Rondel",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Plans: Hardened Iron Shortsword",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Daring Dirk",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Broadsword",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Flamberge",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Main Gauche",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Falchion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Zweihander",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Rondel",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Plans: Hardened Iron Shortsword",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Daring Dirk",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       },
       {
@@ -37179,90 +37179,90 @@
         "race": "Goblin",
         "type": "Special Goods",
         "itemsSold": [
-        {
-          "item": "Dacian Falx",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Longsword",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Maul",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Flail",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Battle Axe",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Double Axe",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Long Staff",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Kris",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Blessed Claymore",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Executioner's Sword",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Fireproof Orb",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Strength of Will",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Orb of Power",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Schematic: Goblin Jumper Cables",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Dacian Falx",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Longsword",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Maul",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Flail",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Battle Axe",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Double Axe",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Long Staff",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Kris",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Blessed Claymore",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Executioner's Sword",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Fireproof Orb",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Strength of Will",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Orb of Power",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Schematic: Goblin Jumper Cables",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       }
     ],
@@ -47893,48 +47893,48 @@
         "race": "Goblin",
         "type": "Alchemy Supplies",
         "itemsSold": [
-        {
-          "item": "Healing Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Empty Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Leaded Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Lesser Mana Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Recipe: Shadow Oil",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Crystal Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Imbued Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Healing Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Empty Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Leaded Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Lesser Mana Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Shadow Oil",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Crystal Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Imbued Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       }
     ],
@@ -60575,90 +60575,90 @@
         "race": "Goblin",
         "type": "Special Goods",
         "itemsSold": [
-        {
-          "item": "Polished Scale Belt",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Polished Scale Boots",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Polished Scale Bracers",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Polished Scale Gloves",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Polished Scale Leggings",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Polished Scale Vest",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Wizard's Belt",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Nightwind Belt",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Dreamer's Belt",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Saber Leggings",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Stalking Pants",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Mystic Sarong",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Glorious Shoulders",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Elite Shoulders",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Polished Scale Belt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Polished Scale Boots",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Polished Scale Bracers",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Polished Scale Gloves",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Polished Scale Leggings",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Polished Scale Vest",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Wizard's Belt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Nightwind Belt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Dreamer's Belt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Saber Leggings",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Stalking Pants",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Mystic Sarong",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Glorious Shoulders",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Elite Shoulders",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       }
     ],
@@ -61994,102 +61994,102 @@
         "race": "Human",
         "type": "Tailoring Supplies",
         "itemsSold": [
-        {
-          "item": "Coarse Thread",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Fine Thread",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Bleach",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Black Dye",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Red Dye",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Green Dye",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Silken Thread",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Gray Dye",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Yellow Dye",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Purple Dye",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Blue Dye",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Orange Dye",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Heavy Silken Thread",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Pink Dye",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Pattern: Admiral's Hat",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Rune Thread",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Coarse Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Fine Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Bleach",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Black Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Red Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Green Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Silken Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Gray Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Yellow Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Purple Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Blue Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Orange Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Heavy Silken Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pink Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pattern: Admiral's Hat",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Rune Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       }
     ],
@@ -68755,150 +68755,150 @@
         "race": "Night Elf",
         "type": "Leatherworking Supplies",
         "itemsSold": [
-        {
-          "item": "Cured Leather Armor",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Cured Leather Pants",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Cured Leather Boots",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Cured Leather Gloves",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Cured Leather Belt",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Cured Leather Bracers",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Coarse Thread",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Fine Thread",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Black Dye",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Red Dye",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Green Dye",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Salt",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Silken Thread",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Gray Dye",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Yellow Dye",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Purple Dye",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Blue Dye",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Orange Dye",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Pattern: Deviate Scale Cloak",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Pattern: Deviate Scale Gloves",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Skinning Knife",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Heavy Silken Thread",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Pink Dye",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Rune Thread",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Cured Leather Armor",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Cured Leather Pants",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Cured Leather Boots",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Cured Leather Gloves",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Cured Leather Belt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Cured Leather Bracers",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Coarse Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Fine Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Black Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Red Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Green Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Salt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Silken Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Gray Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Yellow Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Purple Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Blue Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Orange Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pattern: Deviate Scale Cloak",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pattern: Deviate Scale Gloves",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Skinning Knife",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Heavy Silken Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pink Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Rune Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       }
     ],
@@ -69862,60 +69862,60 @@
         "race": "Human",
         "type": "Special Goods",
         "itemsSold": [
-        {
-          "item": "Tanned Leather Boots",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Tanned Leather Gloves",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Tanned Leather Pants",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Tanned Leather Jerkin",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Tanned Leather Belt",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Tanned Leather Bracers",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Agile Boots",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Stable Boots",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Recipe: Rage Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Tanned Leather Boots",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Tanned Leather Gloves",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Tanned Leather Pants",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Tanned Leather Jerkin",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Tanned Leather Belt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Tanned Leather Bracers",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Agile Boots",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Stable Boots",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Recipe: Rage Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       }
     ],
@@ -70619,72 +70619,72 @@
         "race": "Goblin",
         "type": "Alchemy Supplies",
         "itemsSold": [
-        {
-          "item": "Mageroyal",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Healing Potion",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Earthroot",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Bruiseweed",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Wild Steelbloom",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Kingsblood",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Liferoot",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Empty Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Leaded Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Crystal Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        },
-        {
-          "item": "Imbued Vial",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40
-        }
+          {
+            "item": "Mageroyal",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Healing Potion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Earthroot",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Bruiseweed",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Wild Steelbloom",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Kingsblood",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Liferoot",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Empty Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Leaded Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Crystal Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Imbued Vial",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
         ]
       }
     ],

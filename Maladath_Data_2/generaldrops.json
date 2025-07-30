@@ -65,7 +65,6 @@
     "category": "Demon",
     "dropStart": 50,
     "dropEnd": 60,
-    "dropCount": 1,
     "tags": [
       "Cloth",
       "RareMaterial"
@@ -267,7 +266,6 @@
     "category": "The Beast",
     "dropStart": 60,
     "dropEnd": 60,
-    "dropCount": 1,
     "tags": [
       "Main",
       "Hide"
@@ -279,7 +277,6 @@
     "inclusive": true,
     "dropStart": 46,
     "dropEnd": 60,
-    "dropCount": 1,
     "tags": [
       "Bag"
     ]
@@ -290,7 +287,6 @@
     "inclusive": true,
     "dropStart": 39,
     "dropEnd": 53,
-    "dropCount": 1,
     "tags": [
       "Bag"
     ]
@@ -301,7 +297,6 @@
     "inclusive": true,
     "dropStart": 39,
     "dropEnd": 60,
-    "dropCount": 1,
     "tags": [
       "Bag"
     ]
@@ -312,7 +307,6 @@
     "inclusive": true,
     "dropStart": 30,
     "dropEnd": 49,
-    "dropCount": 1,
     "tags": [
       "Bag"
     ]
@@ -323,7 +317,6 @@
     "inclusive": true,
     "dropStart": 19,
     "dropEnd": 32,
-    "dropCount": 1,
     "tags": [
       "Bag"
     ]
@@ -334,7 +327,6 @@
     "inclusive": true,
     "dropStart": 19,
     "dropEnd": 32,
-    "dropCount": 1,
     "tags": [
       "Bag"
     ]
@@ -345,7 +337,6 @@
     "inclusive": true,
     "dropStart": 19,
     "dropEnd": 32,
-    "dropCount": 1,
     "tags": [
       "Bag"
     ]
@@ -356,7 +347,6 @@
     "inclusive": true,
     "dropStart": 19,
     "dropEnd": 32,
-    "dropCount": 1,
     "tags": [
       "Bag"
     ]
@@ -367,7 +357,6 @@
     "inclusive": true,
     "dropStart": 9,
     "dropEnd": 25,
-    "dropCount": 1,
     "tags": [
       "Bag"
     ]
@@ -378,7 +367,6 @@
     "inclusive": true,
     "dropStart": 9,
     "dropEnd": 25,
-    "dropCount": 1,
     "tags": [
       "Bag"
     ]
@@ -389,7 +377,6 @@
     "inclusive": true,
     "dropStart": 9,
     "dropEnd": 25,
-    "dropCount": 1,
     "tags": [
       "Bag"
     ]
@@ -400,7 +387,6 @@
     "inclusive": true,
     "dropStart": 9,
     "dropEnd": 25,
-    "dropCount": 1,
     "tags": [
       "Bag"
     ]
@@ -411,7 +397,6 @@
     "inclusive": true,
     "dropStart": 1,
     "dropEnd": 17,
-    "dropCount": 1,
     "tags": [
       "Bag"
     ]
@@ -422,7 +407,6 @@
     "inclusive": true,
     "dropStart": 1,
     "dropEnd": 17,
-    "dropCount": 1,
     "tags": [
       "Bag"
     ]
@@ -433,7 +417,6 @@
     "inclusive": true,
     "dropStart": 1,
     "dropEnd": 17,
-    "dropCount": 1,
     "tags": [
       "Bag"
     ]
@@ -444,7 +427,6 @@
     "inclusive": true,
     "dropStart": 1,
     "dropEnd": 17,
-    "dropCount": 1,
     "tags": [
       "Bag"
     ]
@@ -455,7 +437,6 @@
     "inclusive": true,
     "dropStart": 1,
     "dropEnd": 17,
-    "dropCount": 1,
     "tags": [
       "Bag"
     ]
@@ -466,7 +447,6 @@
     "inclusive": true,
     "dropStart": 5,
     "dropEnd": 12,
-    "dropCount": 1,
     "tags": [
       "Potion"
     ]
@@ -477,7 +457,6 @@
     "inclusive": true,
     "dropStart": 13,
     "dropEnd": 24,
-    "dropCount": 1,
     "tags": [
       "Potion"
     ]
@@ -488,7 +467,6 @@
     "inclusive": true,
     "dropStart": 25,
     "dropEnd": 36,
-    "dropCount": 1,
     "tags": [
       "Potion"
     ]
@@ -499,7 +477,6 @@
     "inclusive": true,
     "dropStart": 37,
     "dropEnd": 48,
-    "dropCount": 1,
     "tags": [
       "Potion"
     ]
@@ -510,7 +487,6 @@
     "inclusive": true,
     "dropStart": 49,
     "dropEnd": 60,
-    "dropCount": 1,
     "tags": [
       "Potion"
     ]
@@ -521,7 +497,6 @@
     "inclusive": true,
     "dropStart": 5,
     "dropEnd": 12,
-    "dropCount": 1,
     "tags": [
       "Potion"
     ]
@@ -532,7 +507,6 @@
     "inclusive": true,
     "dropStart": 13,
     "dropEnd": 24,
-    "dropCount": 1,
     "tags": [
       "Potion"
     ]
@@ -543,7 +517,6 @@
     "inclusive": true,
     "dropStart": 25,
     "dropEnd": 36,
-    "dropCount": 1,
     "tags": [
       "Potion"
     ]
@@ -554,7 +527,6 @@
     "inclusive": true,
     "dropStart": 37,
     "dropEnd": 48,
-    "dropCount": 1,
     "tags": [
       "Potion"
     ]
@@ -565,7 +537,6 @@
     "inclusive": true,
     "dropStart": 49,
     "dropEnd": 60,
-    "dropCount": 1,
     "tags": [
       "Potion"
     ]
@@ -576,7 +547,6 @@
     "inclusive": true,
     "dropStart": 5,
     "dropEnd": 15,
-    "dropCount": 1,
     "tags": [
       "Scroll"
     ]
@@ -587,7 +557,6 @@
     "inclusive": true,
     "dropStart": 5,
     "dropEnd": 15,
-    "dropCount": 1,
     "tags": [
       "Scroll"
     ]
@@ -598,7 +567,6 @@
     "inclusive": true,
     "dropStart": 10,
     "dropEnd": 20,
-    "dropCount": 1,
     "tags": [
       "Scroll"
     ]
@@ -609,7 +577,6 @@
     "inclusive": true,
     "dropStart": 10,
     "dropEnd": 20,
-    "dropCount": 1,
     "tags": [
       "Scroll"
     ]
@@ -620,7 +587,6 @@
     "inclusive": true,
     "dropStart": 15,
     "dropEnd": 25,
-    "dropCount": 1,
     "tags": [
       "Scroll"
     ]
@@ -631,7 +597,6 @@
     "inclusive": true,
     "dropStart": 15,
     "dropEnd": 25,
-    "dropCount": 1,
     "tags": [
       "Scroll"
     ]
@@ -642,7 +607,6 @@
     "inclusive": true,
     "dropStart": 16,
     "dropEnd": 30,
-    "dropCount": 1,
     "tags": [
       "Scroll"
     ]
@@ -653,7 +617,6 @@
     "inclusive": true,
     "dropStart": 16,
     "dropEnd": 30,
-    "dropCount": 1,
     "tags": [
       "Scroll"
     ]
@@ -664,7 +627,6 @@
     "inclusive": true,
     "dropStart": 21,
     "dropEnd": 35,
-    "dropCount": 1,
     "tags": [
       "Scroll"
     ]
@@ -675,7 +637,6 @@
     "inclusive": true,
     "dropStart": 21,
     "dropEnd": 35,
-    "dropCount": 1,
     "tags": [
       "Scroll"
     ]
@@ -686,7 +647,6 @@
     "inclusive": true,
     "dropStart": 26,
     "dropEnd": 40,
-    "dropCount": 1,
     "tags": [
       "Scroll"
     ]
@@ -697,7 +657,6 @@
     "inclusive": true,
     "dropStart": 26,
     "dropEnd": 40,
-    "dropCount": 1,
     "tags": [
       "Scroll"
     ]
@@ -708,7 +667,6 @@
     "inclusive": true,
     "dropStart": 31,
     "dropEnd": 45,
-    "dropCount": 1,
     "tags": [
       "Scroll"
     ]
@@ -719,7 +677,6 @@
     "inclusive": true,
     "dropStart": 31,
     "dropEnd": 45,
-    "dropCount": 1,
     "tags": [
       "Scroll"
     ]
@@ -730,7 +687,6 @@
     "inclusive": true,
     "dropStart": 36,
     "dropEnd": 50,
-    "dropCount": 1,
     "tags": [
       "Scroll"
     ]
@@ -741,7 +697,6 @@
     "inclusive": true,
     "dropStart": 36,
     "dropEnd": 50,
-    "dropCount": 1,
     "tags": [
       "Scroll"
     ]
@@ -752,7 +707,6 @@
     "inclusive": true,
     "dropStart": 41,
     "dropEnd": 55,
-    "dropCount": 1,
     "tags": [
       "Scroll"
     ]
@@ -763,7 +717,6 @@
     "inclusive": true,
     "dropStart": 41,
     "dropEnd": 55,
-    "dropCount": 1,
     "tags": [
       "Scroll"
     ]
@@ -774,7 +727,6 @@
     "inclusive": true,
     "dropStart": 46,
     "dropEnd": 60,
-    "dropCount": 1,
     "tags": [
       "Scroll"
     ]
@@ -785,7 +737,6 @@
     "inclusive": true,
     "dropStart": 46,
     "dropEnd": 60,
-    "dropCount": 1,
     "tags": [
       "Scroll"
     ]
@@ -796,7 +747,6 @@
     "inclusive": true,
     "dropStart": 51,
     "dropEnd": 60,
-    "dropCount": 1,
     "tags": [
       "Scroll"
     ]
@@ -807,7 +757,6 @@
     "inclusive": true,
     "dropStart": 51,
     "dropEnd": 60,
-    "dropCount": 1,
     "tags": [
       "Scroll"
     ]
@@ -818,7 +767,6 @@
     "inclusive": true,
     "dropStart": 56,
     "dropEnd": 60,
-    "dropCount": 1,
     "tags": [
       "Scroll"
     ]
@@ -829,7 +777,6 @@
     "inclusive": true,
     "dropStart": 56,
     "dropEnd": 60,
-    "dropCount": 1,
     "tags": [
       "Scroll"
     ]
@@ -871,7 +818,6 @@
     "category": "Copper Vein",
     "dropStart": 1,
     "dropEnd": 15,
-    "dropCount": 1,
     "tags": [
       "Gem",
       "RareMaterial"
@@ -885,7 +831,6 @@
     "category": "Copper Vein",
     "dropStart": 1,
     "dropEnd": 15,
-    "dropCount": 1,
     "tags": [
       "Gem",
       "RareMaterial"
@@ -899,7 +844,6 @@
     "category": "Copper Vein",
     "dropStart": 1,
     "dropEnd": 15,
-    "dropCount": 1,
     "tags": [
       "Gem",
       "RareMaterial"
@@ -942,7 +886,6 @@
     "category": "Tin Vein",
     "dropStart": 16,
     "dropEnd": 25,
-    "dropCount": 1,
     "tags": [
       "Gem",
       "RareMaterial"
@@ -956,7 +899,6 @@
     "category": "Tin Vein",
     "dropStart": 16,
     "dropEnd": 25,
-    "dropCount": 1,
     "tags": [
       "Gem",
       "RareMaterial"
@@ -970,7 +912,6 @@
     "category": "Tin Vein",
     "dropStart": 16,
     "dropEnd": 25,
-    "dropCount": 1,
     "tags": [
       "Gem",
       "RareMaterial"
@@ -984,7 +925,6 @@
     "category": "Tin Vein",
     "dropStart": 16,
     "dropEnd": 25,
-    "dropCount": 1,
     "tags": [
       "Gem",
       "RareMaterial"
@@ -1084,7 +1024,6 @@
     "category": "Iron Vein",
     "dropStart": 26,
     "dropEnd": 40,
-    "dropCount": 1,
     "tags": [
       "Gem",
       "RareMaterial"
@@ -1098,7 +1037,6 @@
     "category": "Iron Vein",
     "dropStart": 26,
     "dropEnd": 40,
-    "dropCount": 1,
     "tags": [
       "Gem",
       "RareMaterial"
@@ -1112,7 +1050,6 @@
     "category": "Iron Vein",
     "dropStart": 26,
     "dropEnd": 40,
-    "dropCount": 1,
     "tags": [
       "Gem",
       "RareMaterial"
@@ -1126,7 +1063,6 @@
     "category": "Iron Vein",
     "dropStart": 26,
     "dropEnd": 40,
-    "dropCount": 1,
     "tags": [
       "Gem",
       "RareMaterial"
@@ -1226,7 +1162,6 @@
     "category": "Mithril Vein",
     "dropStart": 36,
     "dropEnd": 50,
-    "dropCount": 1,
     "tags": [
       "Gem",
       "RareMaterial"
@@ -1240,7 +1175,6 @@
     "category": "Mithril Vein",
     "dropStart": 36,
     "dropEnd": 50,
-    "dropCount": 1,
     "tags": [
       "Gem",
       "RareMaterial"
@@ -1254,7 +1188,6 @@
     "category": "Mithril Vein",
     "dropStart": 36,
     "dropEnd": 50,
-    "dropCount": 1,
     "tags": [
       "Gem",
       "RareMaterial"
@@ -1268,7 +1201,6 @@
     "category": "Mithril Vein",
     "dropStart": 36,
     "dropEnd": 50,
-    "dropCount": 1,
     "tags": [
       "Gem",
       "RareMaterial"
@@ -1297,7 +1229,6 @@
     "category": "Truesilver Vein",
     "dropStart": 36,
     "dropEnd": 50,
-    "dropCount": 1,
     "tags": [
       "Gem",
       "RareMaterial"
@@ -1311,7 +1242,6 @@
     "category": "Truesilver Vein",
     "dropStart": 36,
     "dropEnd": 50,
-    "dropCount": 1,
     "tags": [
       "Gem",
       "RareMaterial"
@@ -1325,7 +1255,6 @@
     "category": "Truesilver Vein",
     "dropStart": 36,
     "dropEnd": 50,
-    "dropCount": 1,
     "tags": [
       "Gem",
       "RareMaterial"
@@ -1368,7 +1297,6 @@
     "category": "Thorium Vein",
     "dropStart": 51,
     "dropEnd": 60,
-    "dropCount": 1,
     "tags": [
       "Gem",
       "RareMaterial"
@@ -1382,7 +1310,6 @@
     "category": "Thorium Vein",
     "dropStart": 51,
     "dropEnd": 60,
-    "dropCount": 1,
     "tags": [
       "Gem",
       "RareMaterial"
@@ -1396,7 +1323,6 @@
     "category": "Thorium Vein",
     "dropStart": 51,
     "dropEnd": 60,
-    "dropCount": 1,
     "tags": [
       "Gem",
       "RareMaterial"
@@ -1410,7 +1336,6 @@
     "category": "Thorium Vein",
     "dropStart": 51,
     "dropEnd": 60,
-    "dropCount": 1,
     "tags": [
       "Gem",
       "RareMaterial"
@@ -1424,7 +1349,6 @@
     "category": "Thorium Vein",
     "dropStart": 51,
     "dropEnd": 60,
-    "dropCount": 1,
     "tags": [
       "Gem",
       "RareMaterial"
@@ -1438,7 +1362,6 @@
     "category": "Thorium Vein",
     "dropStart": 51,
     "dropEnd": 60,
-    "dropCount": 1,
     "tags": [
       "Gem",
       "RareMaterial"
@@ -1481,7 +1404,6 @@
     "category": "Dark Iron Vein",
     "dropStart": 51,
     "dropEnd": 60,
-    "dropCount": 1,
     "tags": [
       "Gem",
       "RareMaterial"
@@ -1495,7 +1417,6 @@
     "category": "Dark Iron Vein",
     "dropStart": 51,
     "dropEnd": 60,
-    "dropCount": 1,
     "tags": [
       "Gem",
       "RareMaterial"
@@ -1956,7 +1877,6 @@
     "category": "Black Lotus",
     "dropStart": 50,
     "dropEnd": 60,
-    "dropCount": 1,
     "tags": [
       "Main",
       "Herb",
@@ -2140,7 +2060,6 @@
     "category": "Disenchant Uncommon",
     "dropStart": 5,
     "dropEnd": 9,
-    "dropCount": 1,
     "tags": [
       "Essence",
       "CommonMaterial"
@@ -2168,7 +2087,6 @@
     "category": "Disenchant Uncommon",
     "dropStart": 16,
     "dropEnd": 25,
-    "dropCount": 1,
     "tags": [
       "Essence",
       "CommonMaterial"
@@ -2182,7 +2100,6 @@
     "category": "Disenchant Uncommon",
     "dropStart": 21,
     "dropEnd": 22,
-    "dropCount": 1,
     "tags": [
       "Essence",
       "CommonMaterial"
@@ -2210,7 +2127,6 @@
     "category": "Disenchant Uncommon",
     "dropStart": 26,
     "dropEnd": 30,
-    "dropCount": 1,
     "tags": [
       "Essence",
       "CommonMaterial"
@@ -2224,7 +2140,6 @@
     "category": "Disenchant Uncommon",
     "dropStart": 31,
     "dropEnd": 32,
-    "dropCount": 1,
     "tags": [
       "Essence",
       "CommonMaterial"
@@ -2252,7 +2167,6 @@
     "category": "Disenchant Uncommon",
     "dropStart": 36,
     "dropEnd": 40,
-    "dropCount": 1,
     "tags": [
       "Essence",
       "CommonMaterial"
@@ -2266,7 +2180,6 @@
     "category": "Disenchant Uncommon",
     "dropStart": 41,
     "dropEnd": 42,
-    "dropCount": 1,
     "tags": [
       "Essence",
       "CommonMaterial"
@@ -2294,7 +2207,6 @@
     "category": "Disenchant Uncommon",
     "dropStart": 46,
     "dropEnd": 50,
-    "dropCount": 1,
     "tags": [
       "Essence",
       "CommonMaterial"
@@ -2308,7 +2220,6 @@
     "category": "Disenchant Uncommon",
     "dropStart": 51,
     "dropEnd": 52,
-    "dropCount": 1,
     "tags": [
       "Essence",
       "CommonMaterial"
@@ -2336,7 +2247,6 @@
     "category": "Disenchant Uncommon",
     "dropStart": 56,
     "dropEnd": 60,
-    "dropCount": 1,
     "tags": [
       "Essence",
       "CommonMaterial"
@@ -2363,7 +2273,6 @@
     "category": "Disenchant Rare",
     "dropStart": 16,
     "dropEnd": 25,
-    "dropCount": 1,
     "tags": [
       "Shard",
       "RareMaterial"
@@ -2377,7 +2286,6 @@
     "category": "Disenchant Rare",
     "dropStart": 26,
     "dropEnd": 30,
-    "dropCount": 1,
     "tags": [
       "Shard",
       "RareMaterial"
@@ -2391,7 +2299,6 @@
     "category": "Disenchant Rare",
     "dropStart": 31,
     "dropEnd": 35,
-    "dropCount": 1,
     "tags": [
       "Shard",
       "RareMaterial"
@@ -2405,7 +2312,6 @@
     "category": "Disenchant Rare",
     "dropStart": 36,
     "dropEnd": 40,
-    "dropCount": 1,
     "tags": [
       "Shard",
       "RareMaterial"
@@ -2419,7 +2325,6 @@
     "category": "Disenchant Rare",
     "dropStart": 41,
     "dropEnd": 45,
-    "dropCount": 1,
     "tags": [
       "Shard",
       "RareMaterial"
@@ -2433,7 +2338,6 @@
     "category": "Disenchant Rare",
     "dropStart": 46,
     "dropEnd": 50,
-    "dropCount": 1,
     "tags": [
       "Shard",
       "RareMaterial"
@@ -2447,7 +2351,6 @@
     "category": "Disenchant Rare",
     "dropStart": 51,
     "dropEnd": 55,
-    "dropCount": 1,
     "tags": [
       "Shard",
       "RareMaterial"
@@ -2461,7 +2364,6 @@
     "category": "Disenchant Rare",
     "dropStart": 56,
     "dropEnd": 999,
-    "dropCount": 1,
     "tags": [
       "Shard",
       "RareMaterial"
@@ -2475,7 +2377,6 @@
     "category": "Disenchant Rare",
     "dropStart": 56,
     "dropEnd": 999,
-    "dropCount": 1,
     "tags": [
       "Crystal"
     ]
@@ -2488,7 +2389,6 @@
     "category": "Disenchant Epic",
     "dropStart": 56,
     "dropEnd": 999,
-    "dropCount": 1,
     "tags": [
       "Crystal"
     ]
@@ -2496,26 +2396,22 @@
   {
     "item": "Old Moneybag",
     "rarity": 100.0,
-    "category": "A Sack of Coins",
-    "dropCount": 1
+    "category": "A Sack of Coins"
   },
   {
     "item": "Huge Emerald",
     "rarity": 100.0,
-    "category": "Green Sack of Gems",
-    "dropCount": 1
+    "category": "Green Sack of Gems"
   },
   {
     "item": "Golden Pearl",
     "rarity": 3.0,
-    "category": "Green Sack of Gems",
-    "dropCount": 1
+    "category": "Green Sack of Gems"
   },
   {
     "item": "Black Pearl",
     "rarity": 29.0,
-    "category": "Green Sack of Gems",
-    "dropCount": 1
+    "category": "Green Sack of Gems"
   },
   {
     "item": "Star Ruby",
@@ -2544,14 +2440,12 @@
   {
     "item": "Black Pearl",
     "rarity": 2.0,
-    "category": "Sack of Gems",
-    "dropCount": 1
+    "category": "Sack of Gems"
   },
   {
     "item": "Aquamarine",
     "rarity": 5.0,
-    "category": "Sack of Gems",
-    "dropCount": 1
+    "category": "Sack of Gems"
   },
   {
     "item": "Citrine",
@@ -2610,20 +2504,17 @@
   {
     "item": "Arcane Crystal",
     "rarity": 100.0,
-    "category": "Yellow Sack of Gems",
-    "dropCount": 1
+    "category": "Yellow Sack of Gems"
   },
   {
     "item": "Golden Pearl",
     "rarity": 5.0,
-    "category": "Yellow Sack of Gems",
-    "dropCount": 1
+    "category": "Yellow Sack of Gems"
   },
   {
     "item": "Black Pearl",
     "rarity": 29.0,
-    "category": "Yellow Sack of Gems",
-    "dropCount": 1
+    "category": "Yellow Sack of Gems"
   },
   {
     "item": "Jade",
@@ -2652,14 +2543,12 @@
   {
     "item": "Large Opal",
     "rarity": 100.0,
-    "category": "Red Sack of Gems",
-    "dropCount": 1
+    "category": "Red Sack of Gems"
   },
   {
     "item": "Golden Pearl",
     "rarity": 6.0,
-    "category": "Red Sack of Gems",
-    "dropCount": 1
+    "category": "Red Sack of Gems"
   },
   {
     "item": "Aquamarine",
@@ -2688,20 +2577,17 @@
   {
     "item": "Black Pearl",
     "rarity": 19.0,
-    "category": "Red Sack of Gems",
-    "dropCount": 1
+    "category": "Red Sack of Gems"
   },
   {
     "item": "Azerothian Diamond",
     "rarity": 100.0,
-    "category": "Gray Sack of Gems",
-    "dropCount": 1
+    "category": "Gray Sack of Gems"
   },
   {
     "item": "Golden Pearl",
     "rarity": 4.0,
-    "category": "Gray Sack of Gems",
-    "dropCount": 1
+    "category": "Gray Sack of Gems"
   },
   {
     "item": "Star Ruby",
@@ -2730,20 +2616,17 @@
   {
     "item": "Black Pearl",
     "rarity": 8.0,
-    "category": "Gray Sack of Gems",
-    "dropCount": 1
+    "category": "Gray Sack of Gems"
   },
   {
     "item": "Blue Sapphire",
     "rarity": 100.0,
-    "category": "Blue Sack of Gems",
-    "dropCount": 1
+    "category": "Blue Sack of Gems"
   },
   {
     "item": "Golden Pearl",
     "rarity": 4.0,
-    "category": "Blue Sack of Gems",
-    "dropCount": 1
+    "category": "Blue Sack of Gems"
   },
   {
     "item": "Star Ruby",
@@ -2772,7 +2655,331 @@
   {
     "item": "Black Pearl",
     "rarity": 5.0,
-    "category": "Blue Sack of Gems",
-    "dropCount": 1
+    "category": "Blue Sack of Gems"
+  },
+  {
+    "item": "Mystical Leggings",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Commander's Girdle",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Adventurer's Bracers",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Commander's Boots",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Elegant Circlet",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Emerald Sabatons",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Engraved Breastplate",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "High Councillor's Boots",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Ornate Breastplate",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Adventurer's Cape",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Commander's Gauntlets",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Councillor's Boots",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Elegant Leggings",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Emerald Vambraces",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Engraved Girdle",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Imbued Plate Leggings",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Master's Cloak",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Ornate Circlet",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Templar Crown",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Templar Pauldrons",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Wanderer's Armor",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Wanderer's Boots",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Commander's Helm",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Commander's Vambraces",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Councillor's Pants",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Elegant Bracers",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Elegant Cloak",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Engraved Bracers",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Engraved Helm",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Engraved Leggings",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Engraved Pauldrons",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Masterwork Cape",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Mercurial Cloak",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Mercurial Girdle",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Mercurial Greaves",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Mighty Cloak",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Mighty Girdle",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Nightshade Boots",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Nightshade Cloak",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Ornate Greaves",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Ornate Pauldrons",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Swashbuckler's Breastplate",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Swashbuckler's Leggings",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Commander's Pauldrons",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Councillor's Shoulders",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Councillor's Tunic",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Elegant Belt",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Elegant Mantle",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Emerald Helm",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Emerald Legplates",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Engraved Boots",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "High Councillor's Bracers",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "High Councillor's Gloves",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "High Councillor's Sash",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Hyperion Girdle",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Mercurial Bracers",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Mighty Armsplints",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Mighty Boots",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Mystical Armor",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Nightshade Girdle",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Nightshade Gloves",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Nightshade Helmet",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Ornate Legguards",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Templar Chestplate",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
+  },
+  {
+    "item": "Wanderer's Leggings",
+    "rarity": 100.0,
+    "category": "Crazy Grab Bag"
   }
 ]
