@@ -90,11 +90,6 @@
     "category": "Vendor"
   },
   {
-    "type": "Weapons Merchant",
-    "icon": "ItemThrowingKnife05",
-    "category": "Vendor"
-  },
-  {
     "type": "Engineering Supplies",
     "icon": "ItemMiscGear08",
     "category": "Vendor"
@@ -272,6 +267,11 @@
   {
     "type": "Weaponsmith",
     "icon": "ItemHammer17",
+    "category": "Vendor"
+  },
+  {
+    "type": "Weaponsmith & Armorcrafter",
+    "icon": "ItemMace02",
     "category": "Vendor"
   },
   {

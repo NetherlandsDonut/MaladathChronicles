@@ -156,8 +156,24 @@ public class SiteArea : Site
                 AddRegionGroup();
                 SetRegionGroupWidth(171);
                 var f = factions.Find(x => x.name == faction);
-                var side = f == null ? "Neutral" : f.side;
-                AddHeaderRegion(() => AddLine(name, ColorReputation(currentSave.player.Reputation(faction))));
+                AddHeaderRegion(() => AddLine(name, faction == null ? "" : ColorReputation(currentSave.player.Reputation(faction))));
+                if (recommendedLevel[currentSave.playerSide] > 0)
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Recommended level: ", "DarkGray");
+                        AddText(recommendedLevel[currentSave.playerSide] + "", ColorEntityLevel(currentSave.player, recommendedLevel[currentSave.playerSide]));
+                    });
+                var common = CommonEncounters(currentSave.playerSide);
+                if (common != null && common.Count > 0)
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine("Hostiles: ", "HalfGray");
+                        foreach (var enemy in common)
+                        {
+                            var race = races.Find(x => x.name == enemy.who);
+                            AddSmallButton(race == null ? "OtherUnknown" : race.portrait);
+                        }
+                    });
                 var peopleTogether = capitalRedirect != null ? areas.Where(x => x.capitalRedirect == capitalRedirect).SelectMany(x => x.people ?? new()).ToList() : people;
                 if (peopleTogether != null && peopleTogether.Count > 0)
                 {
