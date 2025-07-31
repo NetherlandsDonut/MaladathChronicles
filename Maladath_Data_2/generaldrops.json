@@ -273,7 +273,7 @@
   },
   {
     "item": "Traveler's Backpack",
-    "rarity": 0.5,
+    "rarity": 0.2,
     "inclusive": true,
     "dropStart": 46,
     "dropEnd": 60,
@@ -283,7 +283,7 @@
   },
   {
     "item": "Troll-hide Bag",
-    "rarity": 0.5,
+    "rarity": 0.2,
     "inclusive": true,
     "dropStart": 39,
     "dropEnd": 53,
@@ -293,7 +293,7 @@
   },
   {
     "item": "Journeyman's Backpack",
-    "rarity": 0.5,
+    "rarity": 0.2,
     "inclusive": true,
     "dropStart": 39,
     "dropEnd": 60,
@@ -303,7 +303,7 @@
   },
   {
     "item": "Large Knapsack",
-    "rarity": 0.5,
+    "rarity": 0.2,
     "inclusive": true,
     "dropStart": 30,
     "dropEnd": 49,
@@ -313,7 +313,7 @@
   },
   {
     "item": "Large Blue Sack",
-    "rarity": 0.5,
+    "rarity": 0.2,
     "inclusive": true,
     "dropStart": 19,
     "dropEnd": 32,
@@ -323,7 +323,7 @@
   },
   {
     "item": "Large Red Sack",
-    "rarity": 0.5,
+    "rarity": 0.2,
     "inclusive": true,
     "dropStart": 19,
     "dropEnd": 32,
@@ -333,7 +333,7 @@
   },
   {
     "item": "Large Brown Sack",
-    "rarity": 0.5,
+    "rarity": 0.2,
     "inclusive": true,
     "dropStart": 19,
     "dropEnd": 32,
@@ -343,7 +343,7 @@
   },
   {
     "item": "Large Green Sack",
-    "rarity": 0.5,
+    "rarity": 0.2,
     "inclusive": true,
     "dropStart": 19,
     "dropEnd": 32,
@@ -353,7 +353,7 @@
   },
   {
     "item": "Blue Leather Bag",
-    "rarity": 0.5,
+    "rarity": 0.2,
     "inclusive": true,
     "dropStart": 9,
     "dropEnd": 25,
@@ -363,7 +363,7 @@
   },
   {
     "item": "Red Leather Bag",
-    "rarity": 0.5,
+    "rarity": 0.2,
     "inclusive": true,
     "dropStart": 9,
     "dropEnd": 25,
@@ -373,7 +373,7 @@
   },
   {
     "item": "Green Leather Bag",
-    "rarity": 0.5,
+    "rarity": 0.2,
     "inclusive": true,
     "dropStart": 9,
     "dropEnd": 25,
@@ -383,7 +383,7 @@
   },
   {
     "item": "White Leather Bag",
-    "rarity": 0.5,
+    "rarity": 0.2,
     "inclusive": true,
     "dropStart": 9,
     "dropEnd": 25,
@@ -393,7 +393,7 @@
   },
   {
     "item": "Small Red Pouch",
-    "rarity": 0.5,
+    "rarity": 0.2,
     "inclusive": true,
     "dropStart": 1,
     "dropEnd": 17,
@@ -403,7 +403,7 @@
   },
   {
     "item": "Small Blue Pouch",
-    "rarity": 0.5,
+    "rarity": 0.2,
     "inclusive": true,
     "dropStart": 1,
     "dropEnd": 17,
@@ -413,7 +413,7 @@
   },
   {
     "item": "Small Brown Pouch",
-    "rarity": 0.5,
+    "rarity": 0.2,
     "inclusive": true,
     "dropStart": 1,
     "dropEnd": 17,
@@ -423,7 +423,7 @@
   },
   {
     "item": "Small Green Pouch",
-    "rarity": 0.5,
+    "rarity": 0.2,
     "inclusive": true,
     "dropStart": 1,
     "dropEnd": 17,
@@ -433,7 +433,7 @@
   },
   {
     "item": "Small Black Pouch",
-    "rarity": 0.5,
+    "rarity": 0.2,
     "inclusive": true,
     "dropStart": 1,
     "dropEnd": 17,

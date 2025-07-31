@@ -1360,6 +1360,15 @@ public class Entity
 
         //Remove not death resistant world buffs from player that just died
         foreach (var buff in toRemove2) RemoveWorldBuff(buff);
+
+        //Zero out the resources for this entity
+        resources = resources.ToDictionary(x => x.Key, x => 0);
+
+        //Update the resource bars
+        Board.board.UpdateResourceBars(Board.board.participants.FindIndex(x => x.who == this), resources.Keys.ToList());
+
+        //Respawn the UI
+        Respawn((Board.board.participants.Find(x => x.who == this).team == 1 ? "Player" : "Enemy") + "BattleInfo");
     }
 
     //Tames this entity in combat
