@@ -1383,7 +1383,7 @@ public class Item
             var recipe = Recipe.recipes.Find(x => item.name.Contains(x.name));
             if (recipe != null) item = items.Find(x => x.name == recipe.results.First().Key).CopyItem(recipe.results.First().Value);
         }
-        if (Cursor.cursor.color == "Pink")
+        if (Cursor.cursor.color == "Pink" && item.IsDisenchantable())
         {
             var drops = item.PredictDisenchantLoot();
             if (drops.Count > 0)

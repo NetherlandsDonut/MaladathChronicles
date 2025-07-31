@@ -547,6 +547,7 @@ public static class Root
         if (CDesktop != null)
         {
             if (name == "Map") mapGrid.UpdateTextureColors(true);
+            if (name == "Map" && loadingBar == null) Respawn("WorldBuffs");
             CDesktop.gameObject.SetActive(true);
             desktops.Remove(CDesktop);
             desktops.Insert(0, CDesktop);
@@ -911,7 +912,7 @@ public static class Root
             AddRegionGroup();
             AddPaddingRegion(() =>
             {
-                if (CDesktop.title != "DisenchantLoot")
+                if (CDesktop.title != "DisenchantLoot" && !WindowUp("SplitItem") && !WindowUp("ConfirmItemDisenchant") && !WindowUp("ConfirmItemDestroy") && !WindowUp("InventorySettings") && !WindowUp("InventorySort"))
                     AddSmallButton(Cursor.cursor.color != "Pink" ? "ItemDisenchant" : "OtherCloseDisenchant", (h) =>
                     {
                         if (Cursor.cursor.color != "Pink")

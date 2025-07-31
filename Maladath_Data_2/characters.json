@@ -1455,22 +1455,6 @@
               "price": 250
             },
             {
-              "x": 4,
-              "rarity": "Common",
-              "name": "Scroll of Intellect III",
-              "icon": "itemscroll01",
-              "detailedType": "Scroll",
-              "type": "Miscellaneous",
-              "source": "RareDrop",
-              "ilvl": 45,
-              "amount": 1,
-              "maxStack": 5,
-              "abilities": {
-                "Scroll of Intellect III": 1
-              },
-              "price": 112
-            },
-            {
               "y": 1,
               "rarity": "Common",
               "name": "Silk Cloth",
@@ -1642,7 +1626,12 @@
             ]
           }
         },
-        "worldBuffs": []
+        "worldBuffs": [
+          {
+            "buff": "Scroll of Intellect III @ Scroll of Intellect",
+            "minutesLeft": 720
+          }
+        ]
       },
       "hour": 7,
       "minute": 46,
@@ -2720,9 +2709,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2025-07-28T14:11:46.6190465+02:00",
-      "lastLoaded": "2025-07-31T01:17:21.4134821+02:00",
-      "lastPlayed": "2025-07-31T01:19:52.0020864+02:00",
-      "timePlayed": "01:14:33.5544704"
+      "lastLoaded": "2025-07-31T12:51:15.3706076+02:00",
+      "lastPlayed": "2025-07-31T12:51:22.4087725+02:00",
+      "timePlayed": "01:15:48.4663534"
     }
   ],
   "Gehennas": [],

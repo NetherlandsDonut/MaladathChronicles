@@ -1272,6 +1272,7 @@ public class Blueprint
                 AddButtonRegion(() => AddLine("Enter World", "", "Center"),
                 (h) =>
                 {
+                    loadingBar = new GameObject[2];
                     Login();
                     SpawnDesktopBlueprint("Map");
                     CloseDesktop("LoginScreen");
@@ -2798,8 +2799,8 @@ public class Blueprint
             SetRegionGroupWidth(182);
             AddPaddingRegion(() =>
             {
-                AddLine("You are about to destroy", "", "Center");
-                AddLine(itemToDestroy.name, itemToDestroy.rarity, "Center");
+                AddLine("You are about to destroy", "HalfGray", "Center");
+                AddLine(itemToDestroy.name + (itemToDestroy.amount > 1 ? " x" + itemToDestroy.amount : ""), itemToDestroy.rarity, "Center");
             });
             AddRegionGroup();
             SetRegionGroupWidth(91);
@@ -2835,9 +2836,9 @@ public class Blueprint
             SetRegionGroupWidth(182);
             AddPaddingRegion(() =>
             {
-                AddLine("You are about to disenchant", "", "Center");
-                AddLine(itemToDisenchant.name, itemToDisenchant.rarity, "Center");
-                AddLine("which is going to destroy the item", "", "Center");
+                AddLine("You are about to disenchant", "HalfGray", "Center");
+                AddLine(itemToDisenchant.name + (itemToDisenchant.amount > 1 ? " x" + itemToDisenchant.amount : ""), itemToDisenchant.rarity, "Center");
+                AddLine("The item will be destroyed", "HalfGray", "Center");
             });
             AddRegionGroup();
             SetRegionGroupWidth(91);
@@ -7046,11 +7047,11 @@ public class Blueprint
                     PlaySound("DesktopMenuOpen", 0.6f);
                     SpawnDesktopBlueprint("GameMenu");
                 });
-                AddSmallButton("OtherSearch", (h) =>
-                {
-                    PlaySound("DesktopMenuOpen", 0.6f);
-                    SpawnDesktopBlueprint("GameMenu");
-                });
+                //AddSmallButton("OtherSearch", (h) =>
+                //{
+                //    PlaySound("DesktopMenuOpen", 0.6f);
+                //    SpawnDesktopBlueprint("GameMenu");
+                //});
             });
         }, true),
         new("WorldBuffs", () => {
@@ -8806,7 +8807,25 @@ public class Blueprint
             {
                 if (CloseWindow("InventorySort"))
                 {
-                    PlaySound("DesktopInstanceClose");
+                    PlaySound("DesktopMenuClose");
+                    Respawn("Inventory", true);
+                }
+                else if (CloseWindow("InventorySettings"))
+                {
+                    PlaySound("DesktopMenuClose");
+                    Respawn("Inventory", true);
+                }
+                else if (CloseWindow("ConfirmItemDestroy"))
+                {
+                    itemToDestroy = null;
+                    PlaySound("DesktopMenuClose");
+                    Respawn("Inventory", true);
+                }
+                else if (CloseWindow("ConfirmItemDisenchant"))
+                {
+                    itemToDisenchant = null;
+                    PlaySound("DesktopMenuClose");
+                    Respawn("Inventory", true);
                 }
                 else if (Cursor.cursor.color == "Pink")
                 {
@@ -8925,17 +8944,6 @@ public class Blueprint
             {
                 PlaySound("DesktopButtonClose");
                 CloseDesktop("RankingScreen");
-            });
-        }),
-        new("CardGame", () => 
-        {
-            SetDesktopBackground("Backgrounds/SkyRed");
-            SpawnWindowBlueprint("CardTest");
-            SpawnWindowBlueprint("ExperienceBarBorder");
-            AddHotkey("Open menu / Back", () =>
-            {
-                PlaySound("DesktopButtonClose");
-                CloseDesktop("CardGame");
             });
         })
     };
