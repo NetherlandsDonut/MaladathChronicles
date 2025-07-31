@@ -324,7 +324,8 @@ public class Board
         for (int i = 0; i < field.GetLength(0); i++)
             for (int j = 0; j < field.GetLength(1); j++)
                 field[i, j] = -1;
-        CDesktop.LockScreen();
+        var find = desktops.Find(x => x.title == "Game");
+        if (find != null) find.LockScreen();
     }
 
     public void UpdateHealthBars()
@@ -576,8 +577,6 @@ public class Board
             }
         }
         else CloseDesktop("GameSimulation");
-        if (CDesktop.screenLocked)
-            CDesktop.UnlockScreen();
     }
 
     public void AnimateBoard()

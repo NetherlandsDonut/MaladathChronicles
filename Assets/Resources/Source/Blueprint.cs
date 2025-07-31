@@ -4189,7 +4189,7 @@ public class Blueprint
         }),
         new("AreaElites", () =>
         {
-            if (area.eliteEncounters == null || area.eliteEncounters.Count == 0) return;
+            if (area == null || area.eliteEncounters == null || area.eliteEncounters.Count == 0) return;
             var boss = area.progression.Find(x => x.type == "Boss" && currentSave.siteProgress.ContainsKey(area.name) && x.point == currentSave.siteProgress[area.name]);
             if (boss == null) return;
             var bossName = boss.bossName == "<RingofLaw>" ? currentSave.ringOfLaw : (boss.bossName == "<ForlornCloister>" ? currentSave.forlornCloister : boss.bossName);
@@ -8045,6 +8045,7 @@ public class Blueprint
                     CloseDesktop("CombatResults");
                     board = null;
                     Respawn("ExperienceBar", true);
+                    Respawn("AreaElites");
                 }
             });
         }),
