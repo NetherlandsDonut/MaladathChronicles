@@ -107,7 +107,7 @@ public class SiteComplex : Site
                 if (h == null) LeadPath();
                 else ExecutePath("Complex");
             },
-            !currentSave.siteVisits.ContainsKey(name) ? null :
+            //!currentSave.siteVisits.ContainsKey(name) ? null :
             (h) => () =>
             {
                 if (!currentSave.siteVisits.ContainsKey(name)) return;
@@ -140,15 +140,29 @@ public class SiteComplex : Site
                     AddText(" - ", "DarkGray");
                     AddText(range.Item2 + "", ColorEntityLevel(currentSave.player, range.Item2));
                 });
-                foreach (var site in complex.sites)
+                var areas2 = complex.sites.Where(x => x["SiteType"] != "Dungeon" && x["SiteType"] != "Raid").Select(x => FindSite(y => y.name == x["SiteName"])).ToList();
+                var instances2 = complex.sites.Where(x => x["SiteType"] == "Dungeon" || x["SiteType"] == "Raid").Select(x => FindSite(y => y.name == x["SiteName"])).ToList();
+                foreach (var instance in instances2)
+                    areas2.AddRange(instance.wings.SelectMany(x => x.areas).Select(x => FindSite(y => y.name == x["AreaName"])));
+                var tempasd = areas2.SelectMany(x => x.CommonEncounters(currentSave.playerSide)).ToList();
+                var common = tempasd.Select(x => Race.races.Find(y => y.name == x.who)).ToList();
+                var portraits = common.Where(x => x != null).Select(x => x.portrait).Distinct().ToList();
+                var currentRow = 0;
+                var currentAmount = 0;
+                while (portraits != null && portraits.Count > 0)
                 {
-                    if (showAreasUnconditional || !site.ContainsKey("OpenByDefault") || site.ContainsKey("OpenByDefault") && site["OpenByDefault"] == "True" || currentSave.unlockedAreas.Contains(site["SiteName"]))
-                        AddHeaderRegion(() =>
-                        {
-                            AddLine(site["SiteName"], "HalfGray");
-                            AddSmallButton("Site" + site["SiteType"]);
-                        });
-                    else AddHeaderRegion(() => AddLine("?", "DimGray"));
+                    if (currentAmount == 0 && currentRow == 0)
+                        AddPaddingRegion(() => AddLine("Hostiles:", "HalfGray"));
+                    if (currentAmount == 0)
+                        AddPaddingRegion(() => ReverseButtons());
+                    AddSmallButton(portraits[0]);
+                    currentAmount++;
+                    if (currentRow == 0 && currentAmount == 9 || currentRow > 0 && currentAmount == 9)
+                    {
+                        currentRow++;
+                        currentAmount = 0;
+                    }
+                    portraits.RemoveAt(0);
                 }
                 var q = currentSave.player.QuestsAt(this);
                 if (q.Count > 0)

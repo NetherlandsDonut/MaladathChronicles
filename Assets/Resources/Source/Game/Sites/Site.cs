@@ -116,9 +116,9 @@ public class Site
     //Returns path to a texture that is the background visual of this site
     public virtual string Background() => "";
 
-    public List<Encounter> CommonEncounters(string side) => commonEncounters?.Where(x => x.side == side || x.side == null).ToList();
+    public List<Encounter> CommonEncounters(string side) => commonEncounters == null ? new() : commonEncounters?.Where(x => x.side == side || x.side == null).ToList();
 
-    public List<Encounter> RareEncounters(string side) => rareEncounters?.Where(x => x.side == side || x.side == null).ToList();
+    public List<Encounter> RareEncounters(string side) => rareEncounters == null ? new() : rareEncounters?.Where(x => x.side == side || x.side == null).ToList();
 
     public List<Entity> RollEncounters(int amount)
     {

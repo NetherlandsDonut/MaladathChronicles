@@ -8,7 +8,9 @@
         "completedQuests": [],
         "level": 60,
         "experience": 8366725,
-        "uniquesGotten": [],
+        "uniquesGotten": [
+          "Befouled Bloodstone Orb"
+        ],
         "reputation": {
           "Southsea Pirates": 0,
           "Razormane Tribe": 0,
@@ -269,6 +271,129 @@
               "abilities": {
                 "Hearthstone": 1
               }
+            },
+            {
+              "x": 2,
+              "rarity": "Common",
+              "name": "Scroll of Stamina III",
+              "icon": "itemscroll07",
+              "detailedType": "Scroll",
+              "type": "Miscellaneous",
+              "source": "RareDrop",
+              "ilvl": 45,
+              "amount": 1,
+              "maxStack": 5,
+              "abilities": {
+                "Scroll of Intellect III": 1
+              },
+              "price": 112
+            },
+            {
+              "x": 3,
+              "rarity": "Uncommon",
+              "name": "Symbolic Crown",
+              "icon": "itemcrown02",
+              "type": "Head",
+              "armorClass": "Plate",
+              "source": "RareDrop",
+              "ilvl": 43,
+              "lvl": 40,
+              "armor": 310,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 4120,
+              "stats": {
+                "Stamina": 16,
+                "Spirit": 5
+              }
+            },
+            {
+              "x": 4,
+              "rarity": "Common",
+              "name": "Befouled Bloodstone Orb",
+              "icon": "itemmiscorb03",
+              "detailedType": "Orb",
+              "type": "Miscellaneous",
+              "source": "DirectDrop",
+              "ilvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "indestructible": true,
+              "unique": true,
+              "droppedBy": [
+                "Marez Cowl"
+              ]
+            },
+            {
+              "y": 1,
+              "rarity": "Common",
+              "name": "Silk Cloth",
+              "icon": "itemfabricsilk01",
+              "detailedType": "Cloth",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 30,
+              "lvl": 1,
+              "amount": 3,
+              "maxStack": 20,
+              "price": 150
+            },
+            {
+              "x": 1,
+              "y": 1,
+              "rarity": "Uncommon",
+              "name": "Silk Wizard Hat",
+              "icon": "itemhelmet15",
+              "type": "Head",
+              "armorClass": "Cloth",
+              "source": "DirectDrop",
+              "ilvl": 37,
+              "lvl": 32,
+              "armor": 40,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 2720,
+              "stats": {
+                "Intellect": 10,
+                "Spirit": 9
+              },
+              "droppedBy": [
+                "Syndicate Magus"
+              ]
+            },
+            {
+              "x": 3,
+              "y": 1,
+              "rarity": "Common",
+              "name": "Firebloom",
+              "icon": "itemmischerb19",
+              "detailedType": "Flowers",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 41,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 20,
+              "price": 250
+            },
+            {
+              "x": 1,
+              "rarity": "Uncommon",
+              "name": "Ancient Belt of the Boar",
+              "icon": "itembelt10",
+              "type": "Waist",
+              "armorClass": "Mail",
+              "source": "RareDrop",
+              "ilvl": 41,
+              "lvl": 36,
+              "armor": 132,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 3585,
+              "stats": {
+                "Strength": 9,
+                "Spirit": 9
+              }
             }
           ],
           "bags": []
@@ -325,10 +450,16 @@
             "price": 1
           }
         },
-        "worldBuffs": []
+        "worldBuffs": [
+          {
+            "buff": "Scroll of Agility II @ Scroll of Agility",
+            "minutesLeft": 720
+          }
+        ]
       },
       "hour": 7,
-      "currentSite": "Ruins of Stromgarde",
+      "minute": 1,
+      "currentSite": "Jaedenar Grounds",
       "ringOfLaw": "Gorosh the Dervish",
       "forlornCloister": "Ironspine",
       "markets": [
@@ -343,13 +474,43 @@
           "hoursSinceUpdate": 24
         }
       ],
-      "openedChests": {},
+      "openedChests": {
+        "Eastern Town": {
+          "area": "Eastern Town",
+          "inventory": {
+            "items": [
+              {
+                "rarity": "Common",
+                "name": "Grave Moss",
+                "icon": "itemmiscdust02",
+                "detailedType": "Dust",
+                "type": "Trade Good",
+                "ilvl": 24,
+                "lvl": 1,
+                "amount": 1,
+                "maxStack": 20,
+                "price": 25
+              }
+            ],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
+        }
+      },
       "fishingSpots": {},
       "fishingSpoils": {},
-      "siteProgress": {},
-      "commonsKilled": {},
+      "siteProgress": {
+        "Eastern Town": 3
+      },
+      "commonsKilled": {
+        "Syndicate Prowler": 1,
+        "Syndicate Conjuror": 1,
+        "Syndicate Magus": 1
+      },
       "raresKilled": {},
-      "elitesKilled": {},
+      "elitesKilled": {
+        "Marez Cowl": 1
+      },
       "siteVisits": {
         "The Den": 1,
         "Cold Hearth Manor": 1,
@@ -1146,19 +1307,19 @@
         "Jintha'Alor": 1,
         "Tyr's Hand": 1,
         "Hearthglen": 1,
-        "Ruins of Stromgarde": 3,
+        "Ruins of Stromgarde": 4,
         "Ruins of Alterac": 1,
         "Scarlet Monastery Grounds": 1,
-        "Jaedenar Grounds": 1,
+        "Jaedenar Grounds": 2,
         "Alcaz Island": 1
       },
       "unlockedAreas": [],
       "vendorStock": {},
       "banks": {},
       "startDate": "2025-07-28T14:04:17.4977464+02:00",
-      "lastLoaded": "2025-07-28T14:11:33.927385+02:00",
-      "lastPlayed": "2025-07-28T14:11:41.5717919+02:00",
-      "timePlayed": "00:00:33.2710906"
+      "lastLoaded": "2025-07-31T18:06:51.748824+02:00",
+      "lastPlayed": "2025-07-31T18:08:31.6706312+02:00",
+      "timePlayed": "00:03:00.1438293"
     },
     {
       "playerSide": "Alliance",
@@ -2709,9 +2870,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2025-07-28T14:11:46.6190465+02:00",
-      "lastLoaded": "2025-07-31T12:51:15.3706076+02:00",
-      "lastPlayed": "2025-07-31T12:51:22.4087725+02:00",
-      "timePlayed": "01:15:48.4663534"
+      "lastLoaded": "2025-07-31T12:52:51.2943095+02:00",
+      "lastPlayed": "2025-07-31T12:52:58.5442801+02:00",
+      "timePlayed": "01:15:55.7163240"
     }
   ],
   "Gehennas": [],

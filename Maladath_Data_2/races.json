@@ -14247,7 +14247,7 @@
     "name": "Boulderfist Lord",
     "category": "Humanoid",
     "subcategory": "Ogre",
-    "portrait": "PortraitOgre",
+    "portrait": "PortraitOgrePale",
     "abilities": {},
     "kind": "Common",
     "vitality": 1.0
@@ -14265,7 +14265,7 @@
     "name": "Boulderfist Mauler",
     "category": "Humanoid",
     "subcategory": "Ogre",
-    "portrait": "PortraitOgre",
+    "portrait": "PortraitOgrePale",
     "abilities": {},
     "kind": "Common",
     "vitality": 1.0
@@ -14283,7 +14283,7 @@
     "name": "Boulderfist Shaman",
     "category": "Humanoid",
     "subcategory": "Ogre",
-    "portrait": "PortraitOgre",
+    "portrait": "PortraitOgreAlternate",
     "abilities": {},
     "kind": "Common",
     "vitality": 1.0
@@ -14629,6 +14629,15 @@
     "abilities": {},
     "kind": "Rare",
     "vitality": 2.0
+  },
+  {
+    "name": "Kor'gresh Coldrage",
+    "category": "Humanoid",
+    "subcategory": "Ogre",
+    "portrait": "PortraitOgreAlternateTwoheads",
+    "abilities": {},
+    "kind": "Elite",
+    "vitality": 3.0
   },
   {
     "name": "Mosh'Ogg Brute",

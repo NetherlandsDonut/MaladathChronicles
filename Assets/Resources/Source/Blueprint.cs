@@ -2932,6 +2932,16 @@ public class Blueprint
                                 Respawn("Chest");
                                 SetDesktopBackground(area.Background());
                             }
+                            else if (area.complexPart)
+                            {
+                                CloseDesktop("Complex");
+                                SpawnDesktopBlueprint("Complex");
+                                Respawn("Area");
+                                Respawn("AreaProgress");
+                                Respawn("AreaElites");
+                                Respawn("Chest");
+                                SetDesktopBackground(area.Background());
+                            }
                             else
                             {
                                 CloseDesktop("Area");
@@ -3004,6 +3014,16 @@ public class Blueprint
                             Respawn("Chest");
                             SetDesktopBackground(area.Background());
                         }
+                        else if (board.area.complexPart)
+                        {
+                            CloseDesktop("Complex");
+                            SpawnDesktopBlueprint("Complex");
+                            Respawn("Area");
+                            Respawn("AreaProgress");
+                            Respawn("AreaElites");
+                            Respawn("Chest");
+                            SetDesktopBackground(area.Background());
+                        }
                         else
                         {
                             CloseDesktop("Area");
@@ -3027,6 +3047,7 @@ public class Blueprint
                         if (board.results.result == "Team2Won")
                         {
                             if (area.instancePart) CloseDesktop("Instance");
+                            else if (area.complexPart) CloseDesktop("Complex");
                             else CloseDesktop("Area");
                             var curr = FindSite(x => x.name == currentSave.currentSite);
                             var vect = new Vector2(curr.x, curr.y);
@@ -3856,6 +3877,30 @@ public class Blueprint
                     CloseDesktop(title);
                     PlaySound("DesktopInstanceClose");
                     if (capital != null) area = capitalThroughArea;
+                    else if (instance != null)
+                    {
+                        area = null;
+                        CloseWindow("AreaQuestTracker");
+                        CloseWindow("AreaQuestAvailable");
+                        CloseWindow("AreaQuestDone");
+                        CloseWindow("AreaProgress");
+                        CloseWindow("AreaElites");
+                        CloseWindow("Chest");
+                        PlaySound("DesktopButtonClose");
+                        if (wing != null) SetDesktopBackground(wing.Background());
+                        else SetDesktopBackground(instance.Background());
+                    }
+                    else if (complex != null)
+                    {
+                        area = null;
+                        PlaySound("DesktopButtonClose");
+                        CloseWindow("AreaQuestAvailable");
+                        CloseWindow("AreaQuestDone");
+                        CloseWindow("AreaProgress");
+                        CloseWindow("AreaElites");
+                        CloseWindow("Chest");
+                        SetDesktopBackground(complex.Background());
+                    }
                     else SwitchDesktop("Map");
                 });
                 //if (area.fishing)

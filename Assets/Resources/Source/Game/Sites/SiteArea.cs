@@ -166,15 +166,18 @@ public class SiteArea : Site
                     });
                 var common = CommonEncounters(currentSave.playerSide);
                 if (common != null && common.Count > 0)
+                {
+                    AddPaddingRegion(() => AddLine("Hostiles: ", "HalfGray"));
                     AddPaddingRegion(() =>
                     {
-                        AddLine("Hostiles: ", "HalfGray");
+                        ReverseButtons();
                         foreach (var enemy in common)
                         {
                             var race = races.Find(x => x.name == enemy.who);
                             AddSmallButton(race == null ? "OtherUnknown" : race.portrait);
                         }
                     });
+                }
                 var peopleTogether = capitalRedirect != null ? areas.Where(x => x.capitalRedirect == capitalRedirect).SelectMany(x => x.people ?? new()).ToList() : people;
                 if (peopleTogether != null && peopleTogether.Count > 0)
                 {
@@ -187,11 +190,11 @@ public class SiteArea : Site
                     {
                         if (currentAmount == 0 && currentRow == 0)
                             AddPaddingRegion(() => AddLine("NPC's:", "HalfGray"));
-                        else if (currentAmount == 0)
-                            AddPaddingRegion(() => { });
+                        if (currentAmount == 0)
+                            AddPaddingRegion(() => ReverseButtons());
                         AddSmallButton(icons[0]);
                         currentAmount++;
-                        if (currentRow == 0 && currentAmount == 5 || currentRow > 0 && currentAmount == 9)
+                        if (currentRow == 0 && currentAmount == 9 || currentRow > 0 && currentAmount == 9)
                         {
                             currentRow++;
                             currentAmount = 0;

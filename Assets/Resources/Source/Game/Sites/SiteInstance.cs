@@ -124,11 +124,11 @@ public class SiteInstance : Site
                 {
                     if (currentAmount == 0 && currentRow == 0)
                         AddPaddingRegion(() => AddLine("Hostiles:", "HalfGray"));
-                    else if (currentAmount == 0)
-                        AddPaddingRegion(() => { });
+                    if (currentAmount == 0)
+                        AddPaddingRegion(() => ReverseButtons());
                     AddSmallButton(races[0]);
                     currentAmount++;
-                    if (currentRow == 0 && currentAmount == 5 || currentRow > 0 && currentAmount == 9)
+                    if (currentRow == 0 && currentAmount == 9 || currentRow > 0 && currentAmount == 9)
                     {
                         currentRow++;
                         currentAmount = 0;

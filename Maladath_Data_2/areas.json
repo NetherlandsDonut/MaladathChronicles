@@ -39863,8 +39863,19 @@
         "levelMin": 39
       }
     ],
+    "eliteEncounters": [
+      {
+        "who": "Kor'gresh Coldrage",
+        "levelMin": 39
+      }
+    ],
     "areaSize": 3,
     "progression": [
+      {
+        "type": "Boss",
+        "bossName": "Kor'gresh Coldrage",
+        "point": 2
+      },
       {
         "type": "Treasure",
         "point": 3
