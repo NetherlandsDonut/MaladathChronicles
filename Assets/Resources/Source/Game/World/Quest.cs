@@ -104,8 +104,20 @@ public class Quest
     //Site where the quest is available for pickup
     public string siteStart;
 
+    //Name of the object/person that player is interacting with to get the quest. When itemStart is set instead of siteStart then the name used will be the item name instead
+    public string startTalkName;
+
+    //Portrait that appears on the screen when the player is trying to accept the quest. When itemStart is set instead of siteStart then the portrait used will be the item icon instead
+    public string startTalkPortrait;
+
     //Site where the quest can be handed in
     public string siteEnd;
+
+    //Name of the object/person player is handing the quest over to
+    public string endTalkName;
+
+    //Portrait that appears on the screen when the player is handing in the quest
+    public string endTalkPortrait;
 
     //Zone of the quest
     public string zone;
