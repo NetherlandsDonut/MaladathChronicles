@@ -6249,13 +6249,6 @@
   {
     "people": [
       {
-        "name": "Tal",
-        "gender": "Male",
-        "voiceVariant": 2,
-        "race": "Tauren",
-        "type": "Flight Master"
-      },
-      {
         "name": "Kah Mistrunner",
         "gender": "Male",
         "voiceVariant": 3,
@@ -6328,6 +6321,22 @@
       }
     ],
     "name": "Higher Rise",
+    "zone": "Thunder Bluff",
+    "faction": "Thunder Bluff",
+    "convertDestinationTo": "Thunder Bluff",
+    "capitalRedirect": "Thunder Bluff"
+  },
+  {
+    "people": [
+      {
+        "name": "Tal",
+        "gender": "Male",
+        "voiceVariant": 2,
+        "race": "Tauren",
+        "type": "Flight Master"
+      }
+    ],
+    "name": "Wind Rider Roost",
     "zone": "Thunder Bluff",
     "faction": "Thunder Bluff",
     "convertDestinationTo": "Thunder Bluff",
@@ -17166,20 +17175,6 @@
         "voiceVariant": 3,
         "race": "Night Elf",
         "type": "Cook"
-      },
-      {
-        "name": "Radnaal Maneweaver",
-        "gender": "Male",
-        "voiceVariant": 1,
-        "race": "Night Elf",
-        "type": "Skinner"
-      },
-      {
-        "name": "Nadyia Maneweaver",
-        "gender": "Female",
-        "voiceVariant": 1,
-        "race": "Night Elf",
-        "type": "Journeyman Leatherworker"
       },
       {
         "name": "Nyoma",

@@ -352,6 +352,11 @@
         "SiteType": "HostileArea",
         "SiteName": "Higher Rise",
         "SiteIcon": "FactionHorde"
+      },
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "Wind Rider Roost",
+        "SiteIcon": "FactionHorde"
       }
     ]
   },

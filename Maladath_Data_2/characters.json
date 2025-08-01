@@ -4,10 +4,29 @@
     {
       "playerSide": "Horde",
       "player": {
-        "currentQuests": [],
+        "currentQuests": [
+          {
+            "questID": 1361,
+            "conditions": []
+          },
+          {
+            "questID": 3504,
+            "conditions": [
+              {
+                "type": "Item",
+                "name": "Sealed Letter to Ag'tor",
+                "amount": 1
+              }
+            ]
+          },
+          {
+            "questID": 1823,
+            "conditions": []
+          }
+        ],
         "completedQuests": [],
         "level": 60,
-        "experience": 8366725,
+        "experience": 8366825,
         "uniquesGotten": [
           "Befouled Bloodstone Orb"
         ],
@@ -256,7 +275,7 @@
           "Order Mastery": 1
         },
         "inventory": {
-          "money": 123123,
+          "money": 122553,
           "items": [
             {
               "rarity": "Common",
@@ -395,6 +414,20 @@
                 "Strength": 9,
                 "Spirit": 9
               }
+            },
+            {
+              "x": 2,
+              "y": 1,
+              "rarity": "Common",
+              "name": "Sealed Letter to Ag'tor",
+              "icon": "itemletter13",
+              "detailedType": "Letter",
+              "type": "Miscellaneous",
+              "ilvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "indestructible": true,
+              "unique": true
             }
           ],
           "bags": []
@@ -454,13 +487,14 @@
         "worldBuffs": [
           {
             "buff": "Scroll of Agility II @ Scroll of Agility",
-            "minutesLeft": 720
+            "minutesLeft": 711
           }
         ]
       },
       "hour": 7,
-      "minute": 1,
-      "currentSite": "Jaedenar Grounds",
+      "minute": 10,
+      "second": 48,
+      "currentSite": "Stormwind City",
       "ringOfLaw": "Gorosh the Dervish",
       "forlornCloister": "Ironspine",
       "markets": [
@@ -520,14 +554,14 @@
         "Caer Darrow": 1,
         "Ravenholdt Manor": 1,
         "Misty Reed Post": 1,
-        "Stormwind City": 1,
+        "Stormwind City": 4,
         "Grove of the Ancients": 1,
         "Go'Shek Farm": 1,
         "Hillsbrad": 1,
         "Dabyrie's Farmstead": 1,
         "Azurelode Mine": 1,
         "Westbrook Garrison": 1,
-        "Goldshire": 1,
+        "Goldshire": 3,
         "Lakeshire": 1,
         "Northshire Abbey": 1,
         "Southshore": 1,
@@ -570,11 +604,11 @@
         "Amberstill Ranch": 1,
         "Anvilmar": 1,
         "Algaz Station": 1,
-        "Orgrimmar": 1,
+        "Orgrimmar": 6,
         "Razor Hill": 1,
         "Zoram'gar Outpost": 1,
         "The Crossroads": 1,
-        "Bloodvenom Post": 1,
+        "Bloodvenom Post": 3,
         "Valormok": 1,
         "The Mor'shan Rampart": 1,
         "Grom'gol Base Camp": 1,
@@ -1312,15 +1346,20 @@
         "Ruins of Alterac": 1,
         "Scarlet Monastery Grounds": 1,
         "Jaedenar Grounds": 3,
-        "Alcaz Island": 1
+        "Alcaz Island": 1,
+        "Zipcoil Retreat": 1,
+        "Gadgetspring Hut": 1,
+        "Ranthals Camp": 1,
+        "Goblin Camp": 1,
+        "Thunder Bluff": 2
       },
       "unlockedAreas": [],
       "vendorStock": {},
       "banks": {},
       "startDate": "2025-07-28T14:04:17.4977464+02:00",
-      "lastLoaded": "2025-08-01T14:00:57.1125164+02:00",
-      "lastPlayed": "2025-08-01T14:01:08.997714+02:00",
-      "timePlayed": "00:03:12.0290269"
+      "lastLoaded": "2025-08-01T15:03:11.9127348+02:00",
+      "lastPlayed": "2025-08-01T15:12:37.155648+02:00",
+      "timePlayed": "00:12:37.2709234"
     },
     {
       "playerSide": "Alliance",

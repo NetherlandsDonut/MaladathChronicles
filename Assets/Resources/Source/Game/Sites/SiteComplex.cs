@@ -122,76 +122,158 @@ public class SiteComplex : Site
                 SetRegionGroupWidth(171);
                 AddHeaderRegion(() => { AddLine(name, faction == null ? "" : ColorReputation(currentSave.player.Reputation(faction))); });
                 complex = this;
-                var range = (99, 0);
-                var areas1 = complex.sites.Where(x => x["SiteType"] == "HostileArea").Select(x => areas.Find(y => y.name == x["SiteName"]).recommendedLevel).Where(x => x[currentSave.playerSide] > 0).ToList();
-                if (areas1.Count > 0)
+                if (complex.type == "Capital")
                 {
-                    var min = areas1.Min(x => x[currentSave.playerSide]);
-                    var max = areas1.Max(x => x[currentSave.playerSide]);
-                    if (range.Item1 > min) range = (min, range.Item2);
-                    if (range.Item2 < max) range = (range.Item1, max);
-                }
-                var ranges = complex.sites.Where(x => x["SiteType"] == "Dungeon" || x["SiteType"] == "Raid").Select(x => instances.Find(y => y.name == x["SiteName"]).LevelRange()).ToList();
-                if (ranges.Count > 0)
-                {
-                    var min = ranges.Min(x => x.Item1);
-                    var max = ranges.Max(x => x.Item2);
-                    if (range.Item1 > min) range = (min, range.Item2);
-                    if (range.Item2 < max) range = (range.Item1, max);
-                }
-                if (range.Item2 > 0)
-                    AddPaddingRegion(() =>
+                    var currentRow = 0;
+                    var currentAmount = 0;
+                    var areas2 = complex.sites.Where(x => x["SiteType"] != "Dungeon" && x["SiteType"] != "Raid").Select(x => areas.Find(y => y.name == x["SiteName"])).ToList();
+                    var instances2 = complex.sites.Where(x => x["SiteType"] == "Dungeon" || x["SiteType"] == "Raid").Select(x => instances.Find(y => y.name == x["SiteName"])).ToList();
+                    foreach (var instance in instances2)
+                        areas2.AddRange(instance.wings.SelectMany(x => x.areas).Select(x => areas.Find(y => y.name == x["AreaName"])));
+                    var common = areas2.SelectMany(x => x.CommonEncounters(currentSave.playerSide)).Select(x => Race.races.Find(y => y.name == x.who)).ToList();
+                    var people = areas2.SelectMany(x => x.people ?? new()).ToList();
+                    if (people != null && people.Count > 0)
                     {
-                        AddLine("Level range: ", "DarkGray");
-                        AddText(range.Item1 + "", ColorEntityLevel(currentSave.player, range.Item1));
-                        AddText(" - ", "DarkGray");
-                        AddText(range.Item2 + "", ColorEntityLevel(currentSave.player, range.Item2));
-                    });
-                var areas2 = complex.sites.Where(x => x["SiteType"] != "Dungeon" && x["SiteType"] != "Raid").Select(x => areas.Find(y => y.name == x["SiteName"])).ToList();
-                var instances2 = complex.sites.Where(x => x["SiteType"] == "Dungeon" || x["SiteType"] == "Raid").Select(x => instances.Find(y => y.name == x["SiteName"])).ToList();
-                foreach (var instance in instances2)
-                    areas2.AddRange(instance.wings.SelectMany(x => x.areas).Select(x => areas.Find(y => y.name == x["AreaName"])));
-                var common = areas2.SelectMany(x => x.CommonEncounters(currentSave.playerSide)).Select(x => Race.races.Find(y => y.name == x.who)).ToList();
-                var portraits = common.Where(x => x != null).Select(x => x.portrait).Distinct().ToList();
-                var currentRow = 0;
-                var currentAmount = 0;
-                while (portraits != null && portraits.Count > 0)
-                {
-                    if (currentAmount == 0 && currentRow == 0)
-                        AddPaddingRegion(() => AddLine("Hostiles:", "HalfGray"));
-                    if (currentAmount == 0)
-                        AddPaddingRegion(() => ReverseButtons());
-                    AddSmallButton(portraits[0]);
-                    currentAmount++;
-                    if (currentRow == 0 && currentAmount == 9 || currentRow > 0 && currentAmount == 9)
-                    {
-                        currentRow++;
-                        currentAmount = 0;
+                        var legit = people.Where(x => !x.hidden && PersonType.personTypes.Exists(y => y.type == x.type)).OrderBy(x => x.category.priority).ThenBy(x => x.type).ToList();
+                        var types = legit.Select(x => PersonType.personTypes.Find(y => y.type == x.type)).Where(x => x != null).ToList();
+                        var icons = types.Distinct().Select(x => x.icon + (x.factionVariant ? factions.Find(x => x.name == faction)?.side : "")).ToList();
+                        while (icons.Count > 0)
+                        {
+                            if (currentAmount == 0 && currentRow == 0)
+                                AddPaddingRegion(() => AddLine("NPC's:", "HalfGray"));
+                            if (currentAmount == 0)
+                                AddPaddingRegion(() => ReverseButtons());
+                            AddSmallButton(icons[0]);
+                            currentAmount++;
+                            if (currentRow == 0 && currentAmount == 9 || currentRow > 0 && currentAmount == 9)
+                            {
+                                currentRow++;
+                                currentAmount = 0;
+                            }
+                            icons.RemoveAt(0);
+                        }
                     }
-                    portraits.RemoveAt(0);
+                    var range = (99, 0);
+                    var areas1 = complex.sites.Where(x => x["SiteType"] == "HostileArea").Select(x => areas.Find(y => y.name == x["SiteName"]).recommendedLevel).Where(x => x[currentSave.playerSide] > 0).ToList();
+                    if (areas1.Count > 0)
+                    {
+                        var min = areas1.Min(x => x[currentSave.playerSide]);
+                        var max = areas1.Max(x => x[currentSave.playerSide]);
+                        if (range.Item1 > min) range = (min, range.Item2);
+                        if (range.Item2 < max) range = (range.Item1, max);
+                    }
+                    var ranges = complex.sites.Where(x => x["SiteType"] == "Dungeon" || x["SiteType"] == "Raid").Select(x => instances.Find(y => y.name == x["SiteName"]).LevelRange()).ToList();
+                    if (ranges.Count > 0)
+                    {
+                        var min = ranges.Min(x => x.Item1);
+                        var max = ranges.Max(x => x.Item2);
+                        if (range.Item1 > min) range = (min, range.Item2);
+                        if (range.Item2 < max) range = (range.Item1, max);
+                    }
+                    if (range.Item2 > 0)
+                    {
+                        AddEmptyRegion();
+                        AddHeaderRegion(() => { AddLine(complex.sites.Find(x => x["SiteType"] == "Dungeon")["SiteName"]); });
+                        AddPaddingRegion(() =>
+                        {
+                            AddLine("Level range: ", "DarkGray");
+                            AddText(range.Item1 + "", ColorEntityLevel(currentSave.player, range.Item1));
+                            AddText(" - ", "DarkGray");
+                            AddText(range.Item2 + "", ColorEntityLevel(currentSave.player, range.Item2));
+                        });
+                        var portraits = common.Where(x => x != null).Select(x => x.portrait).Distinct().ToList();
+                        currentRow = 0;
+                        currentAmount = 0;
+                        while (portraits != null && portraits.Count > 0)
+                        {
+                            if (currentAmount == 0 && currentRow == 0)
+                                AddPaddingRegion(() => AddLine("Hostiles:", "HalfGray"));
+                            if (currentAmount == 0)
+                                AddPaddingRegion(() => ReverseButtons());
+                            AddSmallButton(portraits[0]);
+                            currentAmount++;
+                            if (currentRow == 0 && currentAmount == 9 || currentRow > 0 && currentAmount == 9)
+                            {
+                                currentRow++;
+                                currentAmount = 0;
+                            }
+                            portraits.RemoveAt(0);
+                        }
+                    }
                 }
-                var people = areas2.SelectMany(x => x.people ?? new()).ToList();
-                if (people != null && people.Count > 0)
+                else
                 {
-                    var legit = people.Where(x => !x.hidden && PersonType.personTypes.Exists(y => y.type == x.type)).OrderBy(x => x.category.priority).ThenBy(x => x.type).ToList();
-                    var types = legit.Select(x => PersonType.personTypes.Find(y => y.type == x.type)).Where(x => x != null).ToList();
-                    var icons = types.Distinct().Select(x => x.icon + (x.factionVariant ? factions.Find(x => x.name == faction)?.side : "")).ToList();
-                    currentRow = 0;
-                    currentAmount = 0;
-                    while (icons.Count > 0)
+                    var range = (99, 0);
+                    var areas1 = complex.sites.Where(x => x["SiteType"] == "HostileArea").Select(x => areas.Find(y => y.name == x["SiteName"]).recommendedLevel).Where(x => x[currentSave.playerSide] > 0).ToList();
+                    if (areas1.Count > 0)
+                    {
+                        var min = areas1.Min(x => x[currentSave.playerSide]);
+                        var max = areas1.Max(x => x[currentSave.playerSide]);
+                        if (range.Item1 > min) range = (min, range.Item2);
+                        if (range.Item2 < max) range = (range.Item1, max);
+                    }
+                    var ranges = complex.sites.Where(x => x["SiteType"] == "Dungeon" || x["SiteType"] == "Raid").Select(x => instances.Find(y => y.name == x["SiteName"]).LevelRange()).ToList();
+                    if (ranges.Count > 0)
+                    {
+                        var min = ranges.Min(x => x.Item1);
+                        var max = ranges.Max(x => x.Item2);
+                        if (range.Item1 > min) range = (min, range.Item2);
+                        if (range.Item2 < max) range = (range.Item1, max);
+                    }
+                    if (range.Item2 > 0)
+                        AddPaddingRegion(() =>
+                        {
+                            AddLine("Level range: ", "DarkGray");
+                            AddText(range.Item1 + "", ColorEntityLevel(currentSave.player, range.Item1));
+                            AddText(" - ", "DarkGray");
+                            AddText(range.Item2 + "", ColorEntityLevel(currentSave.player, range.Item2));
+                        });
+                    var areas2 = complex.sites.Where(x => x["SiteType"] != "Dungeon" && x["SiteType"] != "Raid").Select(x => areas.Find(y => y.name == x["SiteName"])).ToList();
+                    var instances2 = complex.sites.Where(x => x["SiteType"] == "Dungeon" || x["SiteType"] == "Raid").Select(x => instances.Find(y => y.name == x["SiteName"])).ToList();
+                    foreach (var instance in instances2)
+                        areas2.AddRange(instance.wings.SelectMany(x => x.areas).Select(x => areas.Find(y => y.name == x["AreaName"])));
+                    var common = areas2.SelectMany(x => x.CommonEncounters(currentSave.playerSide)).Select(x => Race.races.Find(y => y.name == x.who)).ToList();
+                    var portraits = common.Where(x => x != null).Select(x => x.portrait).Distinct().ToList();
+                    var currentRow = 0;
+                    var currentAmount = 0;
+                    while (portraits != null && portraits.Count > 0)
                     {
                         if (currentAmount == 0 && currentRow == 0)
-                            AddPaddingRegion(() => AddLine("NPC's:", "HalfGray"));
+                            AddPaddingRegion(() => AddLine("Hostiles:", "HalfGray"));
                         if (currentAmount == 0)
                             AddPaddingRegion(() => ReverseButtons());
-                        AddSmallButton(icons[0]);
+                        AddSmallButton(portraits[0]);
                         currentAmount++;
                         if (currentRow == 0 && currentAmount == 9 || currentRow > 0 && currentAmount == 9)
                         {
                             currentRow++;
                             currentAmount = 0;
                         }
-                        icons.RemoveAt(0);
+                        portraits.RemoveAt(0);
+                    }
+                    var people = areas2.SelectMany(x => x.people ?? new()).ToList();
+                    if (people != null && people.Count > 0)
+                    {
+                        var legit = people.Where(x => !x.hidden && PersonType.personTypes.Exists(y => y.type == x.type)).OrderBy(x => x.category.priority).ThenBy(x => x.type).ToList();
+                        var types = legit.Select(x => PersonType.personTypes.Find(y => y.type == x.type)).Where(x => x != null).ToList();
+                        var icons = types.Distinct().Select(x => x.icon + (x.factionVariant ? factions.Find(x => x.name == faction)?.side : "")).ToList();
+                        currentRow = 0;
+                        currentAmount = 0;
+                        while (icons.Count > 0)
+                        {
+                            if (currentAmount == 0 && currentRow == 0)
+                                AddPaddingRegion(() => AddLine("NPC's:", "HalfGray"));
+                            if (currentAmount == 0)
+                                AddPaddingRegion(() => ReverseButtons());
+                            AddSmallButton(icons[0]);
+                            currentAmount++;
+                            if (currentRow == 0 && currentAmount == 9 || currentRow > 0 && currentAmount == 9)
+                            {
+                                currentRow++;
+                                currentAmount = 0;
+                            }
+                            icons.RemoveAt(0);
+                        }
                     }
                 }
                 var q = currentSave.player.QuestsAt(this);
@@ -249,7 +331,8 @@ public class SiteComplex : Site
                     if (currentSave.player.QuestsAt(area).Count == 0)
                         CloseWindow("AreaQuestTracker");
                     else Respawn("AreaQuestTracker", true);
-                    Respawn("Area");
+                    if (currentSave.player.Reputation(area.faction) >= 4200) Respawn("Area");
+                    else Respawn("AreaHostile");
                     Respawn("AreaQuestAvailable");
                     Respawn("AreaQuestDone");
                     Respawn("AreaProgress");
