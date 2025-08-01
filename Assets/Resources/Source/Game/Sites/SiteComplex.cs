@@ -16,6 +16,12 @@ using static GameSettings;
 
 public class SiteComplex : Site
 {
+    //List of all sites that this complex contains
+    //Keys provide information what type of site it is
+    //Values provide information what is the name of the site
+    //EXAMPLE: { "SiteType": "Raid", "SiteName": "Molten Core" }
+    public List<Dictionary<string, string>> sites;
+
     //Initialisation method to fill automatic values
     //and remove empty collections to avoid serialising them later
     public override void Initialise()
@@ -96,7 +102,7 @@ public class SiteComplex : Site
         AddRegionGroup();
         AddPaddingRegion(() =>
         {
-            AddSmallButton(currentSave.siteVisits.ContainsKey(name) ? "MapComplex" : "MapUnknown",
+            AddSmallButton(currentSave.siteVisits.ContainsKey(name) ? (type == "Capital" ? "MapFaction" + factions.Find(x => x.name == faction).side : "MapComplex") : "MapUnknown",
             (h) =>
             {
                 CDesktop.cameraDestination = new Vector2(x, y);
@@ -114,38 +120,38 @@ public class SiteComplex : Site
                 SetAnchor(TopLeft, 19, -38);
                 AddRegionGroup();
                 SetRegionGroupWidth(171);
-                AddHeaderRegion(() => { AddLine(name, "Gray"); });
+                AddHeaderRegion(() => { AddLine(name, faction == null ? "" : ColorReputation(currentSave.player.Reputation(faction))); });
                 complex = this;
-                AddPaddingRegion(() =>
+                var range = (99, 0);
+                var areas1 = complex.sites.Where(x => x["SiteType"] == "HostileArea").Select(x => areas.Find(y => y.name == x["SiteName"]).recommendedLevel).Where(x => x[currentSave.playerSide] > 0).ToList();
+                if (areas1.Count > 0)
                 {
-                    AddLine("Level range: ", "DarkGray");
-                    var range = (0, 0);
-                    var areas = sites.Where(x => x["SiteType"] == "HostileArea").Select(x => SiteArea.areas.Find(y => y.name == x["SiteName"]).recommendedLevel).Where(x => x[currentSave.playerSide] > 0).ToList();
-                    if (areas.Count > 0)
+                    var min = areas1.Min(x => x[currentSave.playerSide]);
+                    var max = areas1.Max(x => x[currentSave.playerSide]);
+                    if (range.Item1 > min) range = (min, range.Item2);
+                    if (range.Item2 < max) range = (range.Item1, max);
+                }
+                var ranges = complex.sites.Where(x => x["SiteType"] == "Dungeon" || x["SiteType"] == "Raid").Select(x => instances.Find(y => y.name == x["SiteName"]).LevelRange()).ToList();
+                if (ranges.Count > 0)
+                {
+                    var min = ranges.Min(x => x.Item1);
+                    var max = ranges.Max(x => x.Item2);
+                    if (range.Item1 > min) range = (min, range.Item2);
+                    if (range.Item2 < max) range = (range.Item1, max);
+                }
+                if (range.Item2 > 0)
+                    AddPaddingRegion(() =>
                     {
-                        var min = areas.Min(x => x[currentSave.playerSide]);
-                        var max = areas.Max(x => x[currentSave.playerSide]);
-                        if (range.Item1 < min) range = (min, range.Item2);
-                        if (range.Item2 < max) range = (range.Item1, max);
-                    }
-                    var ranges = sites.Where(x => x["SiteType"] == "Dungeon" || x["SiteType"] == "Raid").Select(x => instances.Find(y => y.name == x["SiteName"]).LevelRange()).ToList();
-                    if (ranges.Count > 0)
-                    {
-                        var min = ranges.Min(x => x.Item1);
-                        var max = ranges.Max(x => x.Item2);
-                        if (range.Item1 < min) range = (min, range.Item2);
-                        if (range.Item2 < max) range = (range.Item1, max);
-                    }
-                    AddText(range.Item1 + "", ColorEntityLevel(currentSave.player, range.Item1));
-                    AddText(" - ", "DarkGray");
-                    AddText(range.Item2 + "", ColorEntityLevel(currentSave.player, range.Item2));
-                });
-                var areas2 = complex.sites.Where(x => x["SiteType"] != "Dungeon" && x["SiteType"] != "Raid").Select(x => FindSite(y => y.name == x["SiteName"])).ToList();
-                var instances2 = complex.sites.Where(x => x["SiteType"] == "Dungeon" || x["SiteType"] == "Raid").Select(x => FindSite(y => y.name == x["SiteName"])).ToList();
+                        AddLine("Level range: ", "DarkGray");
+                        AddText(range.Item1 + "", ColorEntityLevel(currentSave.player, range.Item1));
+                        AddText(" - ", "DarkGray");
+                        AddText(range.Item2 + "", ColorEntityLevel(currentSave.player, range.Item2));
+                    });
+                var areas2 = complex.sites.Where(x => x["SiteType"] != "Dungeon" && x["SiteType"] != "Raid").Select(x => areas.Find(y => y.name == x["SiteName"])).ToList();
+                var instances2 = complex.sites.Where(x => x["SiteType"] == "Dungeon" || x["SiteType"] == "Raid").Select(x => instances.Find(y => y.name == x["SiteName"])).ToList();
                 foreach (var instance in instances2)
-                    areas2.AddRange(instance.wings.SelectMany(x => x.areas).Select(x => FindSite(y => y.name == x["AreaName"])));
-                var tempasd = areas2.SelectMany(x => x.CommonEncounters(currentSave.playerSide)).ToList();
-                var common = tempasd.Select(x => Race.races.Find(y => y.name == x.who)).ToList();
+                    areas2.AddRange(instance.wings.SelectMany(x => x.areas).Select(x => areas.Find(y => y.name == x["AreaName"])));
+                var common = areas2.SelectMany(x => x.CommonEncounters(currentSave.playerSide)).Select(x => Race.races.Find(y => y.name == x.who)).ToList();
                 var portraits = common.Where(x => x != null).Select(x => x.portrait).Distinct().ToList();
                 var currentRow = 0;
                 var currentAmount = 0;
@@ -163,6 +169,30 @@ public class SiteComplex : Site
                         currentAmount = 0;
                     }
                     portraits.RemoveAt(0);
+                }
+                var people = areas2.SelectMany(x => x.people ?? new()).ToList();
+                if (people != null && people.Count > 0)
+                {
+                    var legit = people.Where(x => !x.hidden && PersonType.personTypes.Exists(y => y.type == x.type)).OrderBy(x => x.category.priority).ThenBy(x => x.type).ToList();
+                    var types = legit.Select(x => PersonType.personTypes.Find(y => y.type == x.type)).Where(x => x != null).ToList();
+                    var icons = types.Distinct().Select(x => x.icon + (x.factionVariant ? factions.Find(x => x.name == faction)?.side : "")).ToList();
+                    currentRow = 0;
+                    currentAmount = 0;
+                    while (icons.Count > 0)
+                    {
+                        if (currentAmount == 0 && currentRow == 0)
+                            AddPaddingRegion(() => AddLine("NPC's:", "HalfGray"));
+                        if (currentAmount == 0)
+                            AddPaddingRegion(() => ReverseButtons());
+                        AddSmallButton(icons[0]);
+                        currentAmount++;
+                        if (currentRow == 0 && currentAmount == 9 || currentRow > 0 && currentAmount == 9)
+                        {
+                            currentRow++;
+                            currentAmount = 0;
+                        }
+                        icons.RemoveAt(0);
+                    }
                 }
                 var q = currentSave.player.QuestsAt(this);
                 if (q.Count > 0)

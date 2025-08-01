@@ -238,12 +238,12 @@ public class Entity
     }
 
     //Check if new quests can be aquired at a target site
-    public List<Quest> AvailableQuestsAt(Site site, bool oneIsEnough = false)
+    public List<Quest> AvailableQuestsAt(SiteArea area, bool oneIsEnough = false)
     {
         var list = new List<Quest>();
-        if (site.questsStarted != null)
-            foreach (var quest in site.questsStarted)
-                if (CanSeeQuest(quest, site))
+        if (area.questsStarted != null)
+            foreach (var quest in area.questsStarted)
+                if (CanSeeQuest(quest, area))
                 {
                     list.Add(quest);
                     if (oneIsEnough)
@@ -258,19 +258,8 @@ public class Entity
         var list = new List<Quest>();
         foreach (var site in complex.sites.Select(x => (Site.FindSite(y => y.name == x["SiteName"]), x["SiteType"])))
             if (site.Item2 == "Dungeon" || site.Item2 == "Raid") list = list.Concat(AvailableQuestsAt((SiteInstance)site.Item1, oneIsEnough)).ToList();
-            else list = list.Concat(AvailableQuestsAt(site.Item1, oneIsEnough)).ToList();
+            else list = list.Concat(AvailableQuestsAt((SiteArea)site.Item1, oneIsEnough)).ToList();
         return list.Distinct().ToList();
-    }
-
-    //Check if any new quest can be aquired at a target site
-    public List<Quest> AvailableQuestsAt(SiteArea town, bool oneIsEnough = false)
-    {
-        var list = new List<Quest>();
-        if (town.capitalRedirect != null && (town.x != 0 || town.y != 0))
-            foreach (var capitalSite in SiteArea.areas.FindAll(x => x.capitalRedirect == town.capitalRedirect))
-                list = list.Concat(AvailableQuestsAt((Site)capitalSite, oneIsEnough)).ToList();
-        else list = AvailableQuestsAt((Site)town, oneIsEnough);
-        return list;
     }
 
     //Check if any quest can be done at a target site
@@ -278,18 +267,18 @@ public class Entity
     {
         var list = new List<Quest>();
         foreach (var site in instance.wings.SelectMany(x => x.areas.Select(z => Site.FindSite(y => y.name == z["AreaName"]))))
-            list = list.Concat(AvailableQuestsAt(site, oneIsEnough)).ToList();
+            list = list.Concat(AvailableQuestsAt((SiteArea)site, oneIsEnough)).ToList();
         return list.Distinct().ToList();
     }
 
     //Check if any quest can be handed in at a target site
-    public List<Quest> QuestsDoneAt(Site site, bool oneIsEnough = false)
+    public List<Quest> QuestsDoneAt(SiteArea area, bool oneIsEnough = false)
     {
         var list = new List<Quest>();
         foreach (var quest in currentQuests)
         {
             var questTemp = quests.Find(x => x.questID == quest.questID);
-            if (quest.conditions.All(x => x.IsDone()) && questTemp.siteEnd == site.name)
+            if (quest.conditions.All(x => x.IsDone()) && questTemp.siteEnd == area.name)
             {
                 list.Add(questTemp);
                 if (oneIsEnough)
@@ -305,18 +294,7 @@ public class Entity
         var list = new List<Quest>();
         foreach (var site in complex.sites.Select(x => (Site.FindSite(y => y.name == x["SiteName"]), x["SiteType"])))
             if (site.Item2 == "Dungeon" || site.Item2 == "Raid") list = list.Concat(QuestsDoneAt((SiteInstance)site.Item1, oneIsEnough)).ToList();
-            else list = list.Concat(QuestsDoneAt(site.Item1, oneIsEnough)).ToList();
-        return list.Distinct().ToList();
-    }
-
-    //Check if any quest can be done at a target site
-    public List<Quest> QuestsDoneAt(SiteArea town, bool oneIsEnough = false)
-    {
-        var list = new List<Quest>();
-        if (town.capitalRedirect != null && (town.x != 0 || town.y != 0))
-            foreach (var site in SiteArea.areas.Where(x => x.capitalRedirect == town.capitalRedirect))
-                list = list.Concat(QuestsDoneAt((Site)site, oneIsEnough)).ToList();
-        else list = QuestsDoneAt((Site)town, oneIsEnough);
+            else list = list.Concat(QuestsDoneAt((SiteArea)site.Item1, oneIsEnough)).ToList();
         return list.Distinct().ToList();
     }
 
@@ -325,12 +303,12 @@ public class Entity
     {
         var list = new List<Quest>();
         foreach (var site in instance.wings.SelectMany(x => x.areas.Select(z => Site.FindSite(y => y.name == z["AreaName"]))))
-            list = list.Concat(QuestsDoneAt(site, oneIsEnough)).ToList();
+            list = list.Concat(QuestsDoneAt((SiteArea)site, oneIsEnough)).ToList();
         return list.Distinct().ToList();
     }
 
     //Check if any quest can be done at a target site
-    public List<Quest> QuestsAt(Site site, bool oneIsEnough = false)
+    public List<Quest> QuestsAt(SiteArea area, bool oneIsEnough = false)
     {
         var list = new List<Quest>();
         foreach (var quest in currentQuests)
@@ -338,15 +316,15 @@ public class Entity
                 if (!condition.IsDone())
                 {
                     var yes = false;
-                    if (condition.type == "Visit" && condition.name == site.name)
+                    if (condition.type == "Visit" && condition.name == area.name)
                         yes = true;
                     else if (condition.type == "Kill")
                     {
-                        if (site.commonEncounters != null && site.commonEncounters.Exists(x => x.who == condition.name))
+                        if (area.commonEncounters != null && area.commonEncounters.Exists(x => x.who == condition.name))
                             yes = true;
-                        else if (site.rareEncounters != null && site.rareEncounters.Exists(x => x.who == condition.name))
+                        else if (area.rareEncounters != null && area.rareEncounters.Exists(x => x.who == condition.name))
                             yes = true;
-                        else if (site.eliteEncounters != null && site.eliteEncounters.Exists(x => x.who == condition.name))
+                        else if (area.eliteEncounters != null && area.eliteEncounters.Exists(x => x.who == condition.name))
                             yes = true;
                     }
                     else if (condition.type == "Item")
@@ -354,13 +332,13 @@ public class Entity
                         var item = Item.items.Find(x => x.name == condition.name);
                         if (item == null) Debug.Log("ERROR 015: Item for quest was not found: \"" + item.name + "\"");
                         else if (item.droppedBy == null) { }
-                        else if (site.commonEncounters != null && site.commonEncounters.Any(x => item.droppedBy.Contains(x.who)))
+                        else if (area.commonEncounters != null && area.commonEncounters.Any(x => item.droppedBy.Contains(x.who)))
                             yes = true;
-                        else if (site.rareEncounters != null && site.rareEncounters.Any(x => item.droppedBy.Contains(x.who)))
+                        else if (area.rareEncounters != null && area.rareEncounters.Any(x => item.droppedBy.Contains(x.who)))
                             yes = true;
-                        else if (site.eliteEncounters != null && site.eliteEncounters.Any(x => item.droppedBy.Contains(x.who)))
+                        else if (area.eliteEncounters != null && area.eliteEncounters.Any(x => item.droppedBy.Contains(x.who)))
                             yes = true;
-                        else if (site.chestBonus != null && site.chestBonus.ContainsKey(condition.name))
+                        else if (area.chestBonus != null && area.chestBonus.ContainsKey(condition.name))
                             yes = true;
                     }
                     if (yes)
@@ -380,18 +358,7 @@ public class Entity
         var list = new List<Quest>();
         foreach (var site in complex.sites.Select(x => (Site.FindSite(y => y.name == x["SiteName"]), x["SiteType"])))
             if (site.Item2 == "Dungeon" || site.Item2 == "Raid") list = list.Concat(QuestsAt((SiteInstance)site.Item1, oneIsEnough)).ToList();
-            else list = list.Concat(QuestsAt(site.Item1, oneIsEnough)).ToList();
-        return list.Distinct().ToList();
-    }
-
-    //Check if any quest can be done at a target site
-    public List<Quest> QuestsAt(SiteArea town, bool oneIsEnough = false)
-    {
-        var list = new List<Quest>();
-        if (town.capitalRedirect != null && (town.x != 0 || town.y != 0))
-            foreach (var site in SiteArea.areas.Where(x => x.capitalRedirect == town.capitalRedirect))
-                list = list.Concat(QuestsAt((Site)site, oneIsEnough)).ToList();
-        else list = QuestsAt((Site)town, oneIsEnough);
+            else list = list.Concat(QuestsAt((SiteArea)site.Item1, oneIsEnough)).ToList();
         return list.Distinct().ToList();
     }
 
@@ -400,7 +367,7 @@ public class Entity
     {
         var list = new List<Quest>();
         foreach (var site in instance.wings.SelectMany(x => x.areas.Select(z => Site.FindSite(y => y.name == z["AreaName"]))))
-            list = list.Concat(QuestsAt(site, oneIsEnough)).ToList();
+            list = list.Concat(QuestsAt((SiteArea)site, oneIsEnough)).ToList();
         return list.Distinct().ToList();
     }
 

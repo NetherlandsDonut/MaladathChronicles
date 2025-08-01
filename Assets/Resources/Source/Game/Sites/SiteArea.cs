@@ -115,6 +115,9 @@ public class SiteArea : Site
         else return currentSave.siteVisits.ContainsKey(name) ? type + (recommendedLevel["Horde"] < recommendedLevel["Alliance"] ? "HordeAligned" : (recommendedLevel["Horde"] > recommendedLevel["Alliance"] ? "AllianceAligned" : "")) : "Unknown";
     }
 
+    //Additional items inside of the exploration chest
+    public Dictionary<string, int> chestBonus;
+
     //List of NPC's that are inside of this area
     public List<Person> people;
 
@@ -149,7 +152,7 @@ public class SiteArea : Site
                 if (h == null) LeadPath();
                 else ExecutePath("Area");
             },
-            !currentSave.siteVisits.ContainsKey(name) ? null :
+            //!currentSave.siteVisits.ContainsKey(name) ? null :
             (h) => () =>
             {
                 if (!currentSave.siteVisits.ContainsKey(name)) return;
@@ -178,10 +181,9 @@ public class SiteArea : Site
                         }
                     });
                 }
-                var peopleTogether = capitalRedirect != null ? areas.Where(x => x.capitalRedirect == capitalRedirect).SelectMany(x => x.people ?? new()).ToList() : people;
-                if (peopleTogether != null && peopleTogether.Count > 0)
+                if (people != null && people.Count > 0)
                 {
-                    var legit = peopleTogether.Where(x => !x.hidden && PersonType.personTypes.Exists(y => y.type == x.type)).OrderBy(x => x.category.priority).ThenBy(x => x.type).ToList();
+                    var legit = people.Where(x => !x.hidden && PersonType.personTypes.Exists(y => y.type == x.type)).OrderBy(x => x.category.priority).ThenBy(x => x.type).ToList();
                     var types = legit.Select(x => PersonType.personTypes.Find(y => y.type == x.type)).Where(x => x != null).ToList();
                     var icons = types.Distinct().Select(x => x.icon + (x.factionVariant ? factions.Find(x => x.name == faction)?.side : "")).ToList();
                     var currentRow = 0;
@@ -266,4 +268,53 @@ public class SiteArea : Site
         var save = currentSave ?? saves[GameSettings.settings.selectedRealm].Find(x => x.player.name == GameSettings.settings.selectedCharacter);
         return "Areas/Area" + (zone + name).Clean() + (save != null && save.IsNight() && !noNightVariant ? "Night" : "");
     }
+
+    public List<Entity> RollEncounters(int amount)
+    {
+        var alreadyGotRare = false;
+        var list = new List<Entity>();
+        var common = CommonEncounters(currentSave.playerSide);
+        var rare = RareEncounters(currentSave.playerSide);
+        Encounter toAdd = null;
+        for (int i = 0; i < amount; i++)
+        {
+            if (rare != null && !alreadyGotRare && Roll(5))
+            {
+                toAdd = rare[random.Next(0, rare.Count)];
+                alreadyGotRare = true;
+            }
+            else do toAdd = common[random.Next(0, common.Count)];
+                while (common.Count > 1 && list.Exists(x => x.name == toAdd.who));
+            list.Add(new Entity(random.Next(toAdd.levelMin, toAdd.levelMax == 0 ? toAdd.levelMin + 1 : toAdd.levelMax + 1), races.Find(y => y.name == toAdd.who)));
+        }
+        return list;
+    }
+
+    public Entity RollEncounter(Encounter boss)
+    {
+        return new Entity(boss.levelMax != 0 ? random.Next(boss.levelMin, boss.levelMax + 1) : boss.levelMin, races.Find(x => x.name == boss.who));
+    }
+
+    //Tells program whether this area has a special
+    //clear background that is shown only after clearing the area
+    public bool specialClearBackground;
+
+    //List of possible common encounters in this area
+    public List<Encounter> commonEncounters;
+
+    public List<Encounter> CommonEncounters(string side) => commonEncounters == null ? new() : commonEncounters?.Where(x => x.side == side || x.side == null).ToList();
+
+    //List of possible rare encounters in this area
+    public List<Encounter> rareEncounters;
+
+    public List<Encounter> RareEncounters(string side) => rareEncounters == null ? new() : rareEncounters?.Where(x => x.side == side || x.side == null).ToList();
+
+    //List of special elite encounters in this area
+    public List<Encounter> eliteEncounters;
+
+    //Size of the area
+    public int areaSize;
+
+    //List of of progression points in the area
+    public List<AreaProgression> progression;
 }

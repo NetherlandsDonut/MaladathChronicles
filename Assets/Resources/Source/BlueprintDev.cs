@@ -59,24 +59,17 @@ public static class BlueprintDev
                 racesSearch = races;
                 SpawnDesktopBlueprint("ObjectManagerRaces");
             });
-            AddButtonRegion(() => AddLine("Specs"), (h) =>
-            {
-                specsSearch = specs;
-                SpawnDesktopBlueprint("ObjectManagerSpecs");
-            });
             AddButtonRegion(() => AddLine("Abilities"), (h) =>
             {
                 abilitiesSearch = abilities;
                 SpawnDesktopBlueprint("ObjectManagerAbilities");
             });
-            AddButtonRegion(() => AddLine("Buffs"),
-            (h) =>
+            AddButtonRegion(() => AddLine("Buffs"), (h) =>
             {
                 buffsSearch = buffs;
                 SpawnDesktopBlueprint("ObjectManagerBuffs");
             });
-            AddButtonRegion(() => AddLine("Items"),
-            (h) =>
+            AddButtonRegion(() => AddLine("Items"), (h) =>
             {
                 itemsSearch = items;
                 SpawnDesktopBlueprint("ObjectManagerItems");
@@ -113,7 +106,6 @@ public static class BlueprintDev
                 Serialize(specs, "Specs", false, false, prefix);
                 Serialize(abilities, "abilities", false, false, prefix);
                 Serialize(buffs, "buffs", false, false, prefix);
-                Serialize(SiteCapital.capitals, "capitals", false, false, prefix);
                 Serialize(instances, "instances", false, false, prefix);
                 Serialize(complexes, "complexes", false, false, prefix);
                 Serialize(areas, "areas", false, false, prefix);
@@ -3798,143 +3790,6 @@ public static class BlueprintDev
             });
             AddPaddingRegion(() => { });
         }),
-        new("ObjectManagerSpecs", () => {
-            var rowAmount = 10;
-            var thisWindow = CDesktop.LBWindow();
-            var list = specsSearch;
-            thisWindow.SetPagination(() => list.Count, rowAmount);
-            SetAnchor(TopLeft);
-            AddRegionGroup();
-            SetRegionGroupWidth(171);
-            SetRegionGroupHeight(354);
-            //if (spec != null)
-            //{
-            //    var index = specs.IndexOf(spec);
-            //    if (index >= 10)
-            //        CDesktop.LBWindow().LBRegionGroup().SetPagination(index / 10);
-            //}
-            AddHeaderRegion(() =>
-            {
-                AddLine("Specs:");
-                AddSmallButton("OtherClose", (h) =>
-                {
-                    spec = null; specsSearch = null;
-                    CloseDesktop("ObjectManagerSpecs");
-                });
-                AddSmallButton("OtherReverse", (h) =>
-                {
-                    specs.Reverse();
-                    specsSearch.Reverse();
-                    Respawn("ObjectManagerSpecs");
-                    PlaySound("DesktopInventorySort", 0.4f);
-                });
-            });
-            AddPaddingRegion(() =>
-            {
-                AddLine("Search:", "DarkGray");
-                AddInputLine(String.search);
-            });
-            AddPaginationLine();
-            for (int i = 0; i < 10; i++)
-            {
-                var index = i;
-                AddButtonRegion(() =>
-                {
-                    if (specsSearch.Count > index + thisWindow.pagination())
-                    {
-                        SetRegionBackground(Button);
-                        var foo = specsSearch[index + thisWindow.pagination()];
-                        AddLine(foo.name);
-                        AddSmallButton(foo.icon);
-                    }
-                    else
-                    {
-                        SetRegionBackground(Padding);
-                        AddLine();
-                    }
-                },
-                (h) =>
-                {
-                    spec = specsSearch[index + 10 * thisWindow.pagination()];
-                    String.objectName.Set(spec.name);
-                    Respawn("ObjectManagerSpec");
-                });
-            }
-            AddPaddingRegion(() =>
-            {
-                SetRegionAsGroupExtender();
-                AddLine(specs.Count + " specs", "DarkGray");
-                if (specs.Count != specsSearch.Count)
-                    AddLine(specsSearch.Count + " found in search", "DarkGray");
-            });
-            //AddButtonRegion(() =>
-            //{
-            //    AddLine("Create a new class");
-            //},
-            //(h) =>
-            //{
-            //    spec = new Spec()
-            //    {
-            //        name = "Spec #" + specs.Count,
-            //        icon = "PortraitChicken",
-            //        startingEquipment = new(),
-            //        abilities = new(),
-            //        rules = new()
-            //        {
-            //            { "Melee Attack Power per Strength", 2.0 },
-            //            { "Ranged Attack Power per Strength", 0.0 },
-            //            { "Critical Strike per Strength", 0.0 },
-            //            { "Melee Attack Power per Agility", 2.0 },
-            //            { "Ranged Attack Power per Agility", 0.0 },
-            //            { "Critical Strike per Agility", 0.03 },
-            //            { "Spell Power per Intellect", 1.0 },
-            //            { "Spell Critical per Intellect", 0.03 },
-            //            { "Stamina per Level", 3.0 },
-            //            { "Strength per Level", 3.0 },
-            //            { "Agility per Level", 3.0 },
-            //            { "Intellect per Level", 0.0 }
-            //        },
-            //        talentTrees = new()
-            //    };
-            //    specs.Add(spec);
-            //    specsSearch = specs.FindAll(x => x.name.ToLower().Contains(String.search.Value().ToLower()));
-            //    String.objectName.Set(spec.name);
-            //    CloseWindow("ObjectManagerSpec");
-            //    SpawnWindowBlueprint("ObjectManagerSpec");
-            //    h.window.Rebuild();
-            //});
-        }),
-        new("ObjectManagerSpec", () => {
-            SetAnchor(TopRight);
-            AddRegionGroup();
-            SetRegionGroupWidth(171);
-            SetRegionGroupHeight(354);
-            AddPaddingRegion(() => AddLine("Spec:", "DarkGray"));
-            AddPaddingRegion(() =>
-            {
-                AddInputLine(String.objectName, spec.name);
-            });
-            AddPaddingRegion(() => AddLine("Icon:", "DarkGray"));
-            AddHeaderRegion(() =>
-            {
-                AddLine(spec.icon + ".png");
-                AddSmallButton(spec.icon);
-            });
-            //AddButtonRegion(() =>
-            //{
-            //    AddLine(spec.icon + ".png");
-            //    AddSmallButton(spec.icon);
-            //},
-            //(h) =>
-            //{
-            //    if (!WindowUp("ObjectManagerIconList"))
-            //    {
-            //        CloseWindow("ObjectManagerSpecs");
-            //        SpawnWindowBlueprint("ObjectManagerIconList");
-            //    }
-            //});
-            AddPaddingRegion(() => { });
-        }),
     };
 
     public static List<Blueprint> desktopBlueprints = new()
@@ -3950,7 +3805,6 @@ public static class BlueprintDev
             Serialize(areas, "areas", true, false, prefix);
             Serialize(instances, "instances", true, false, prefix);
             Serialize(complexes, "complexes", true, false, prefix);
-            Serialize(SiteCapital.capitals, "capitals", true, false, prefix);
             Serialize(items, "items", true, false, prefix);
             Serialize(itemSets, "sets", true, false, prefix);
             Serialize(mounts, "mounts", true, false, prefix);
@@ -4031,13 +3885,6 @@ public static class BlueprintDev
             SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
             SpawnWindowBlueprint("ObjectManagerRaces");
             AddHotkey("Open menu / Back", () => { race = null; racesSearch = null; CloseDesktop("ObjectManagerRaces"); });
-            AddPaginationHotkeys();
-        }),
-        new("ObjectManagerSpecs", () =>
-        {
-            SetDesktopBackground("Areas/AreaTheCelestialPlanetarium");
-            SpawnWindowBlueprint("ObjectManagerSpecs");
-            AddHotkey("Open menu / Back", () => { spec = null; specsSearch = null; CloseDesktop("ObjectManagerSpecs"); });
             AddPaginationHotkeys();
         }),
         new("ObjectManagerAbilities", () =>

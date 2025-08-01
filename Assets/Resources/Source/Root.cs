@@ -1449,7 +1449,6 @@ public static class Root
                 }
                 Respawn("Chest", true);
                 Respawn("PlayerMoney", true);
-                Respawn("Capital", true);
                 Respawn("InstanceWing", true);
                 Respawn("Instance", true);
                 Respawn("Complex", true);

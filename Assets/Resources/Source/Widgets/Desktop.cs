@@ -98,6 +98,7 @@ public class Desktop : MonoBehaviour
     public void ReloadAssets()
     {
         PlaySound("DesktopMagicClick");
+        loadingBar = new GameObject[2];
         Starter.LoadData();
         if (Board.board != null)
             foreach (var participant in Board.board.participants)
@@ -443,11 +444,6 @@ public class Desktop : MonoBehaviour
                         {
                             PlaySound("DesktopInstanceOpen");
                             SpawnDesktopBlueprint("Area");
-                        }
-                        else if (mapGrid.queuedSiteTypeOpen == "Capital")
-                        {
-                            PlaySound("DesktopInstanceOpen");
-                            SpawnDesktopBlueprint("Capital");
                         }
                         if (mapGrid.queuedSiteTypeOpen == "SpiritHealer")
                         {

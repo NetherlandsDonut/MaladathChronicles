@@ -45,22 +45,16 @@ public class TransportRoute
         SetAnchor(Anchor.Center);
         AddHeaderGroup();
         SetRegionGroupWidth(182);
-        AddPaddingRegion(() =>
-        {
-            AddLine("Take a " + (means.ToLower().Contains("teleport") ? "teleporter" : means.ToLower()) + " to:", "DarkGray");
-        });
+        AddPaddingRegion(() => AddLine("Take a " + (means.ToLower().Contains("teleport") ? "teleporter" : means.ToLower()) + " to:", "DarkGray"));
         AddHeaderRegion(() =>
         {
-            AddLine(destination.capitalRedirect ?? destination.convertDestinationTo ?? destination.name);
+            AddLine(destination.convertDestinationTo ?? destination.name);
             var zone = Zone.zones.Find(x => x.name == destination.zone);
             AddSmallButton("Zone" + zone.icon.Clean());
         });
         if (price > 0)
         {
-            AddPaddingRegion(() =>
-            {
-                AddLine("For the price of:", "DarkGray");
-            });
+            AddPaddingRegion(() => AddLine("For the price of:", "DarkGray"));
             PrintPriceRegion(price, 38, 38, 49);
         }
     }

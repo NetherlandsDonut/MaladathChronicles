@@ -11447,16 +11447,6 @@
     "capitalRedirect": "Stormwind City"
   },
   {
-    "x": 4975,
-    "y": -3517,
-    "name": "Stormwind City",
-    "zone": "Stormwind City",
-    "faction": "Stormwind",
-    "convertDestinationTo": "Stormwind City",
-    "fishing": true,
-    "capitalRedirect": "Stormwind City"
-  },
-  {
     "people": [
       {
         "name": "Ullanna",
@@ -16525,16 +16515,6 @@
     "faction": "Stormwind"
   },
   {
-    "x": 938,
-    "y": -504,
-    "name": "Darnassus",
-    "zone": "Darnassus",
-    "faction": "Darnassus",
-    "convertDestinationTo": "Darnassus",
-    "fishing": true,
-    "capitalRedirect": "Darnassus"
-  },
-  {
     "people": [
       {
         "name": "Janna Brightmoon",
@@ -20633,15 +20613,6 @@
     "faction": "Wildhammer Clan"
   },
   {
-    "x": 5231,
-    "y": -2694,
-    "name": "Ironforge",
-    "zone": "Ironforge",
-    "faction": "Ironforge",
-    "convertDestinationTo": "Ironforge",
-    "capitalRedirect": "Ironforge"
-  },
-  {
     "people": [
       {
         "name": "Thorgrum Borrelson",
@@ -22755,14 +22726,6 @@
     "zone": "Orgrimmar",
     "faction": "Orgrimmar",
     "convertDestinationTo": "Orgrimmar",
-    "capitalRedirect": "Orgrimmar"
-  },
-  {
-    "x": 2343,
-    "y": -2248,
-    "name": "Orgrimmar",
-    "zone": "Orgrimmar",
-    "faction": "Orgrimmar",
     "capitalRedirect": "Orgrimmar"
   },
   {
@@ -26703,15 +26666,6 @@
     "faction": "Orgrimmar"
   },
   {
-    "x": 1418,
-    "y": -2794,
-    "name": "Thunder Bluff Southern Lift",
-    "zone": "Thunder Bluff",
-    "faction": "Thunder Bluff",
-    "convertDestinationTo": "Thunder Bluff",
-    "capitalRedirect": "Thunder Bluff"
-  },
-  {
     "people": [
       {
         "name": "Krang Stonehoof",
@@ -29316,16 +29270,6 @@
     "name": "Ghost Walker Post",
     "zone": "Desolace",
     "faction": "Thunder Bluff"
-  },
-  {
-    "x": 5011,
-    "y": -1341,
-    "name": "Undercity",
-    "zone": "Undercity",
-    "faction": "Undercity",
-    "convertDestinationTo": "Undercity",
-    "noNightVariant": true,
-    "capitalRedirect": "Undercity"
   },
   {
     "people": [
@@ -40875,11 +40819,6 @@
         "levelMax": 27
       },
       {
-        "who": "Felmusk Shadowhunter",
-        "levelMin": 26,
-        "levelMax": 27
-      },
-      {
         "who": "Felmusk Rogue",
         "levelMin": 26,
         "levelMax": 27
@@ -41082,22 +41021,22 @@
     "type": "HostileArea",
     "commonEncounters": [
       {
-        "who": "Blackheart Trickster",
+        "who": "Bleakheart Trickster",
         "levelMin": 27,
         "levelMax": 28
       },
       {
-        "who": "Blackheart Shadowstalker",
+        "who": "Bleakheart Shadowstalker",
         "levelMin": 27,
         "levelMax": 28
       },
       {
-        "who": "Blackheart Satyr",
+        "who": "Bleakheart Satyr",
         "levelMin": 27,
         "levelMax": 28
       },
       {
-        "who": "Blackheart Hellcaller",
+        "who": "Bleakheart Hellcaller",
         "levelMin": 27,
         "levelMax": 28
       }
@@ -41730,7 +41669,7 @@
     ],
     "rareEncounters": [
       {
-        "who": "Master Feardread",
+        "who": "Master Feardred",
         "levelMin": 53
       }
     ],
@@ -54080,7 +54019,7 @@
         "levelMax": 49
       },
       {
-        "who": "Vilebranch Riding Wolf",
+        "who": "Vilebranch Raiding Wolf",
         "levelMin": 48,
         "levelMax": 49
       }
@@ -69556,7 +69495,7 @@
         "levelMax": 53
       },
       {
-        "who": "Frenzied Pterrodax",
+        "who": "Frenzied Pterrordax",
         "levelMin": 52,
         "levelMax": 53
       }

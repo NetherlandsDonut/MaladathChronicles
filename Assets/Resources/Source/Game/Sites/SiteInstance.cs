@@ -15,6 +15,12 @@ using static Coloring;
 
 public class SiteInstance : Site
 {
+    //List of items that can drop from enemies in this instance
+    public List<string> zoneDrop;
+
+    //Instance wings that store all the instance's areas
+    public List<InstanceWing> wings;
+
     //Initialisation method to fill automatic values
     //and remove empty collections to avoid serialising them later
     public override void Initialise()

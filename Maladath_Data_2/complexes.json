@@ -220,5 +220,283 @@
         "SiteName": "Alcaz Dungeon"
       }
     ]
+  },
+  {
+    "x": 2343,
+    "y": -2248,
+    "name": "Orgrimmar",
+    "zone": "Orgrimmar",
+    "faction": "Orgrimmar",
+    "type": "Capital",
+    "sites": [
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "The Valley of Strength",
+        "SiteIcon": "FactionHorde"
+      },
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "The Valley of Spirits",
+        "SiteIcon": "FactionHorde"
+      },
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "The Valley of Honor",
+        "SiteIcon": "FactionHorde"
+      },
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "The Valley of Wisdom",
+        "SiteIcon": "FactionHorde"
+      },
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "The Drag",
+        "SiteIcon": "FactionHorde"
+      },
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "The Cleft of Shadow",
+        "SiteIcon": "FactionHorde"
+      },
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "Grommash Hold",
+        "SiteIcon": "FactionHorde"
+      },
+      {
+        "SiteType": "Dungeon",
+        "SiteName": "Ragefire Chasm"
+      }
+    ]
+  },
+  {
+    "x": 5011,
+    "y": -1341,
+    "name": "Undercity",
+    "zone": "Undercity",
+    "faction": "Undercity",
+    "type": "Capital",
+    "sites": [
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "The Trade Quarter",
+        "SiteIcon": "FactionHorde"
+      },
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "The War Quarter",
+        "SiteIcon": "FactionHorde"
+      },
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "The Magic Quarter",
+        "SiteIcon": "FactionHorde"
+      },
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "The Rogues' Quarter",
+        "SiteIcon": "FactionHorde"
+      },
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "The Apothecarium",
+        "SiteIcon": "FactionHorde"
+      },
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "The Royal Quarter",
+        "SiteIcon": "FactionHorde"
+      }
+    ]
+  },
+  {
+    "x": 1418,
+    "y": -2794,
+    "name": "Thunder Bluff",
+    "zone": "Thunder Bluff",
+    "faction": "Thunder Bluff",
+    "type": "Capital",
+    "sites": [
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "Lower Rise",
+        "SiteIcon": "FactionHorde"
+      },
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "Spirit Rise",
+        "SiteIcon": "FactionHorde"
+      },
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "The Pools of Vision",
+        "SiteIcon": "FactionHorde"
+      },
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "Middle Rise",
+        "SiteIcon": "FactionHorde"
+      },
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "Hunter Rise",
+        "SiteIcon": "FactionHorde"
+      },
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "Elder Rise",
+        "SiteIcon": "FactionHorde"
+      },
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "Higher Rise",
+        "SiteIcon": "FactionHorde"
+      }
+    ]
+  },
+  {
+    "x": 4975,
+    "y": -3517,
+    "name": "Stormwind City",
+    "zone": "Stormwind City",
+    "faction": "Stormwind",
+    "type": "Capital",
+    "sites": [
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "Trade District",
+        "SiteIcon": "FactionAlliance"
+      },
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "Mage Quarter",
+        "SiteIcon": "FactionAlliance"
+      },
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "The Park",
+        "SiteIcon": "FactionAlliance"
+      },
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "Old Town",
+        "SiteIcon": "FactionAlliance"
+      },
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "Dwarven District",
+        "SiteIcon": "FactionAlliance"
+      },
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "Cathedral Square",
+        "SiteIcon": "FactionAlliance"
+      },
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "The Canals",
+        "SiteIcon": "FactionAlliance"
+      },
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "Stormwind Keep",
+        "SiteIcon": "FactionAlliance"
+      },
+      {
+        "SiteType": "Dungeon",
+        "SiteName": "The Stockade"
+      }
+    ]
+  },
+  {
+    "x": 5231,
+    "y": -2694,
+    "name": "Ironforge",
+    "zone": "Ironforge",
+    "faction": "Ironforge",
+    "type": "Capital",
+    "sites": [
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "The Commons",
+        "SiteIcon": "FactionAlliance"
+      },
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "The Mystic Ward",
+        "SiteIcon": "FactionAlliance"
+      },
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "The Military Ward",
+        "SiteIcon": "FactionAlliance"
+      },
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "The Forlorn Cavern",
+        "SiteIcon": "FactionAlliance"
+      },
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "Hall of Explorers",
+        "SiteIcon": "FactionAlliance"
+      },
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "Tinker Town",
+        "SiteIcon": "FactionAlliance"
+      },
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "The Great Forge",
+        "SiteIcon": "FactionAlliance"
+      },
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "The High Seat",
+        "SiteIcon": "FactionAlliance"
+      }
+    ]
+  },
+  {
+    "x": 938,
+    "y": -504,
+    "name": "Darnassus",
+    "zone": "Darnassus",
+    "faction": "Darnassus",
+    "type": "Capital",
+    "sites": [
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "Warrior's Terrace",
+        "SiteIcon": "FactionAlliance"
+      },
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "Craftsmen's Terrace",
+        "SiteIcon": "FactionAlliance"
+      },
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "Tradesmen's Terrace",
+        "SiteIcon": "FactionAlliance"
+      },
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "The Temple Gardens",
+        "SiteIcon": "FactionAlliance"
+      },
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "Cenarion Enclave",
+        "SiteIcon": "FactionAlliance"
+      },
+      {
+        "SiteType": "HostileArea",
+        "SiteName": "The Temple of The Moon",
+        "SiteIcon": "FactionAlliance"
+      }
+    ]
   }
 ]

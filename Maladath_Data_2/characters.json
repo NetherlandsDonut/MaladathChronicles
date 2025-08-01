@@ -256,6 +256,7 @@
           "Order Mastery": 1
         },
         "inventory": {
+          "money": 123123,
           "items": [
             {
               "rarity": "Common",
@@ -1310,16 +1311,16 @@
         "Ruins of Stromgarde": 4,
         "Ruins of Alterac": 1,
         "Scarlet Monastery Grounds": 1,
-        "Jaedenar Grounds": 2,
+        "Jaedenar Grounds": 3,
         "Alcaz Island": 1
       },
       "unlockedAreas": [],
       "vendorStock": {},
       "banks": {},
       "startDate": "2025-07-28T14:04:17.4977464+02:00",
-      "lastLoaded": "2025-07-31T18:06:51.748824+02:00",
-      "lastPlayed": "2025-07-31T18:08:31.6706312+02:00",
-      "timePlayed": "00:03:00.1438293"
+      "lastLoaded": "2025-08-01T14:00:57.1125164+02:00",
+      "lastPlayed": "2025-08-01T14:01:08.997714+02:00",
+      "timePlayed": "00:03:12.0290269"
     },
     {
       "playerSide": "Alliance",

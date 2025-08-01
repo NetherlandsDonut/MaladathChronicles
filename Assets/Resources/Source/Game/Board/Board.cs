@@ -18,7 +18,7 @@ public class Board
 {
     #region Initialisation
 
-    public Board(int x, int y, List<Entity> enemies, Site area = null)
+    public Board(int x, int y, List<Entity> enemies, SiteArea area = null)
     {
         turn = 1;
         whosTurn = 0;
@@ -108,7 +108,7 @@ public class Board
         Reset();
     }
 
-    public static void NewBoard(List<Entity> enemies, Site area)
+    public static void NewBoard(List<Entity> enemies, SiteArea area)
     {
         board = new Board(6, 6, enemies, area);
         bufferBoard = new BufferBoard();
@@ -185,7 +185,7 @@ public class Board
     public List<Action> actions;
 
     //Are where the combat takes place
-    public Site area;
+    public SiteArea area;
 
     //
     public List<int> spotlightFriendly;

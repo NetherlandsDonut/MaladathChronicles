@@ -10,7 +10,6 @@ using static MapGrid;
 using static SiteArea;
 using static SaveGame;
 using static SitePath;
-using static SiteCapital;
 using static SiteComplex;
 using static SiteInstance;
 using static SiteSpiritHealer;
@@ -56,25 +55,6 @@ public class Site
     //Is fishing possible at this site
     public bool fishing;
 
-    //Tells program whether this area has a special
-    //clear background that is shown only after clearing the area
-    public bool specialClearBackground;
-
-    //List of possible common encounters in this area
-    public List<Encounter> commonEncounters;
-
-    //List of possible rare encounters in this area
-    public List<Encounter> rareEncounters;
-
-    //List of special elite encounters in this area
-    public List<Encounter> eliteEncounters;
-
-    //Size of the area
-    public int areaSize;
-
-    //List of of progression points in the area
-    public List<AreaProgression> progression;
-
     //Automatically calculated number that suggests
     //at which level player should enter this area
     [NonSerialized] public Dictionary<string, int> recommendedLevel;
@@ -88,24 +68,6 @@ public class Site
     //List of quests that can be started here
     [NonSerialized] public List<Quest> questsStarted;
 
-    //Instance wings that store all the instance's areas
-    public List<InstanceWing> wings;
-
-    //List of items that can drop from enemies in this instance
-    public List<string> zoneDrop;
-
-    //Additional items inside of the exploration chest
-    public Dictionary<string, int> chestBonus;
-
-    //List of all sites that this complex contains
-    //Keys provide information what type of site it is
-    //Values provide information what is the name of the site
-    //EXAMPLE: { "SiteType": "Raid", "SiteName": "Molten Core" }
-    public List<Dictionary<string, string>> sites;
-
-    //Capital city this site opens up instead of opening itself
-    public string capitalRedirect;
-
     //Initialisation method to fill automatic values
     //and remove empty collections to avoid serialising them later
     public virtual void Initialise() { }
@@ -115,36 +77,6 @@ public class Site
 
     //Returns path to a texture that is the background visual of this site
     public virtual string Background() => "";
-
-    public List<Encounter> CommonEncounters(string side) => commonEncounters == null ? new() : commonEncounters?.Where(x => x.side == side || x.side == null).ToList();
-
-    public List<Encounter> RareEncounters(string side) => rareEncounters == null ? new() : rareEncounters?.Where(x => x.side == side || x.side == null).ToList();
-
-    public List<Entity> RollEncounters(int amount)
-    {
-        var alreadyGotRare = false;
-        var list = new List<Entity>();
-        var common = CommonEncounters(currentSave.playerSide);
-        var rare = RareEncounters(currentSave.playerSide);
-        Encounter toAdd = null;
-        for (int i = 0; i < amount; i++)
-        {
-            if (rare != null && !alreadyGotRare && Roll(5))
-            {
-                toAdd = rare[random.Next(0, rare.Count)];
-                alreadyGotRare = true;
-            }
-            else do toAdd = common[random.Next(0, common.Count)];
-                while (common.Count > 1 && list.Exists(x => x.name == toAdd.who));
-            list.Add(new Entity(random.Next(toAdd.levelMin, toAdd.levelMax == 0 ? toAdd.levelMin + 1 : toAdd.levelMax + 1), races.Find(y => y.name == toAdd.who)));
-        }
-        return list;
-    }
-
-    public Entity RollEncounter(Encounter boss)
-    {
-        return new Entity(boss.levelMax != 0 ? random.Next(boss.levelMin, boss.levelMax + 1) : boss.levelMin, races.Find(x => x.name == boss.who));
-    }
 
     //Queue opening of this site.
     //After calling this the screen is locked and camera will pan there slowly.
@@ -181,12 +113,6 @@ public class Site
             area = (SiteArea)this;
             complex = null;
             spiritHealer = null;
-            if (area.capitalRedirect != null)
-            {
-                capitalThroughArea = area;
-                capital = capitals.Find(x => x.name == area.capitalRedirect);
-                siteType = "Capital";
-            }
         }
         else if (siteType == "Complex")
         {
@@ -351,12 +277,12 @@ public class Site
     //Finds a site using a predicate
     public static Site FindSite(Predicate<Site> predicate)
     {
-        var town = areas.Find(predicate);
-        if (town != null) return town;
-        var instance = instances.Find(predicate);
-        if (instance != null) return instance;
         var complex = complexes.Find(predicate);
         if (complex != null) return complex;
+        var instance = instances.Find(predicate);
+        if (instance != null) return instance;
+        var area = areas.Find(predicate);
+        if (area != null) return area;
         return null;
     }
 }

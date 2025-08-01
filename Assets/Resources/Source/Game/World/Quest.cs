@@ -188,8 +188,8 @@ public class Quest
                     AddSmallButton("OtherClose", (h) =>
                     {
                         CloseWindow("Quest");
-                        Respawn("Chest", true);
-                        Respawn("Capital", true);
+                        Respawn("Chest");
+                        Respawn("Complex");
                         Respawn("PlayerMoney", true);
                         PlaySound("DesktopInstanceClose");
                     });
@@ -200,8 +200,8 @@ public class Quest
                     AddSmallButton("OtherClose", (h) =>
                     {
                         CloseWindow("Quest");
-                        Respawn("Chest", true);
-                        Respawn("Capital", true);
+                        Respawn("Chest");
+                        Respawn("Complex");
                         Respawn("PlayerMoney", true);
                         PlaySound("DesktopInstanceClose");
                     });
@@ -217,12 +217,11 @@ public class Quest
                 {
                     CloseWindow("Quest" + f);
                     PlaySound("DesktopInstanceClose");
-                    Respawn("Chest", true);
-                    Respawn("Capital", true);
+                    Respawn("Chest");
                     Respawn("PlayerMoney", true);
-                    Respawn("Complex", true);
+                    Respawn("Complex");
                     Respawn("InstanceWing", true);
-                    Respawn("Instance", true);
+                    Respawn("Instance");
                 });
         });
         if (color != null) SetRegionBackgroundAsImage("SkillUp" + color + "Long");
@@ -330,7 +329,6 @@ public class Quest
                     AddSmallButton("ItemMiscMap01", (h) =>
                     {
                         CloseDesktop("Area");
-                        CloseDesktop("Capital");
                         CloseDesktop("Instance");
                         CloseDesktop("Complex");
                         SwitchDesktop("Map");
@@ -424,10 +422,9 @@ public class Quest
                     Respawn("AreaQuestDone", true);
                     Respawn("Chest", true);
                     Respawn("PlayerMoney", true);
-                    Respawn("Capital", true);
                     Respawn("InstanceWing", true);
-                    Respawn("Instance", true);
-                    Respawn("Complex", true);
+                    Respawn("Instance");
+                    Respawn("Complex");
                 }
             });
         if (f == "Add")
@@ -440,14 +437,13 @@ public class Quest
                     CloseWindow(h.window);
                     Respawn("AreaQuestAvailable", true);
                     Respawn("AreaQuestDone", true);
-                    Respawn("Capital", true);
                     Respawn("Area", true);
                     Respawn("QuestList", true);
                     Respawn("PlayerMoney", true);
                     Respawn("Chest", true);
                     Respawn("InstanceWing", true);
-                    Respawn("Instance", true);
-                    Respawn("Complex", true);
+                    Respawn("Instance");
+                    Respawn("Complex");
                 }
                 else
                 {

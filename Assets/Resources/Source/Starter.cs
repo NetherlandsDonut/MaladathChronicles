@@ -156,8 +156,6 @@ public class Starter : MonoBehaviour
         instances ??= new();
         Deserialize(ref complexes, "complexes", false, prefix);
         complexes ??= new();
-        Deserialize(ref SiteCapital.capitals, "capitals", false, prefix);
-        SiteCapital.capitals ??= new();
         Deserialize(ref SiteArea.areas, "areas", false, prefix);
         SiteArea.areas ??= new();
         Deserialize(ref Realm.realms, "realms", false, prefix);
@@ -315,8 +313,6 @@ public class Starter : MonoBehaviour
             SiteArea.areas[i].Initialise();
         for (int i = 0; i < instances.Count; i++)
             instances[i].Initialise();
-        for (int i = 0; i < SiteCapital.capitals.Count; i++)
-            SiteCapital.capitals[i].Initialise();
         for (int i = 0; i < complexes.Count; i++)
             complexes[i].Initialise();
         for (int i = 0; i < Spec.specs.Count; i++)

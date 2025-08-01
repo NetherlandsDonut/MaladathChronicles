@@ -125,7 +125,7 @@ public class Event
                     else if (race.kind == "Elite" && (save.elitesKilled.ContainsKey(race.name) ? save.elitesKilled[race.name] : 0) < killCap) can = true;
                     if (can)
                     {
-                        Board.NewBoard(new() { new Entity(level, race) }, Site.FindSite(x => x.name == save.currentSite));
+                        Board.NewBoard(new() { new Entity(level, race) }, SiteArea.areas.Find(x => x.name == save.currentSite));
                         SpawnDesktopBlueprint("Game");
                         CloseDesktop("EquipmentScreen");
                     }
