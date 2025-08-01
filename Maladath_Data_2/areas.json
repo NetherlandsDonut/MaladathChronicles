@@ -2671,6 +2671,120 @@
         "race": "Dwarf",
         "type": "Hunter Trainer",
         "hidden": true
+      },
+      {
+        "name": "Sognar Cliffbeard",
+        "gender": "Male",
+        "voiceVariant": 2,
+        "race": "Dwarf",
+        "type": "Meat Vendor",
+        "itemsSold": [
+        {
+          "item": "Tough Jerky",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Haunch of Meat",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mutton Chop",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Wild Hog Shank",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Cured Ham Steak",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Roasted Quail",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
+      },
+      {
+        "name": "Hegnar Swiftaxe",
+        "gender": "Male",
+        "voiceVariant": 3,
+        "race": "Dwarf",
+        "type": "Axe Merchant",
+        "itemsSold": [
+        {
+          "item": "Hatchet",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Battle Axe",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Double Axe",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Tabar",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bearded Axe",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Cleaver",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Crescent Axe",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bullova",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Francisca",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Great Axe",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
       }
     ],
     "name": "The Military Ward",
@@ -3202,6 +3316,132 @@
   {
     "people": [
       {
+        "name": "Ealyshia Dewwhisper",
+        "gender": "Female",
+        "voiceVariant": 2,
+        "race": "Night Elf",
+        "type": "Two Handed Weapon Merchant",
+        "itemsSold": [
+        {
+          "item": "Flamberge",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bullova",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "War Hammer",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Zweihander",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Great Axe",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "War Maul",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
+      },
+      {
+        "name": "Jaeana",
+        "gender": "Female",
+        "voiceVariant": 3,
+        "race": "Night Elf",
+        "type": "Meat Vendor",
+        "itemsSold": [
+        {
+          "item": "Tough Jerky",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Refreshing Spring Water",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Ice Cold Milk",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Melon Juice",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Moonberry Juice",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Sweet Nectar",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Haunch of Meat",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mutton Chop",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Wild Hog Shank",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Cured Ham Steak",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Morning Glory Dew",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Roasted Quail",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
+      },
+      {
         "name": "Melea",
         "gender": "Female",
         "voiceVariant": 2,
@@ -3619,6 +3859,81 @@
             "maxAmount": 2,
             "restockSpeed": 40
           }
+        ]
+      },
+      {
+        "name": "Glorandiir",
+        "gender": "Male",
+        "voiceVariant": 3,
+        "race": "Night Elf",
+        "type": "Axe Merchant",
+        "itemsSold": [
+        {
+          "item": "Hatchet",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Battle Axe",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Double Axe",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Tabar",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bearded Axe",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Cleaver",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Crescent Axe",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bullova",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Francisca",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Great Axe",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Merciless Axe",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
         ]
       }
     ],
@@ -5433,6 +5748,51 @@
         "voiceVariant": 1,
         "race": "Human",
         "type": "Cook"
+      },
+      {
+        "name": "Gerik Koen",
+        "gender": "Male",
+        "voiceVariant": 3,
+        "race": "Human",
+        "type": "Two Handed Weapon Merchant",
+        "itemsSold": [
+        {
+          "item": "Flamberge",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bullova",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "War Hammer",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Zweihander",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Great Axe",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "War Maul",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
       }
     ],
     "name": "Old Town",
@@ -6238,6 +6598,39 @@
             "restockSpeed": 40
           }
         ]
+      },
+      {
+        "name": "Kathrum Axehand",
+        "gender": "Male",
+        "voiceVariant": 2,
+        "race": "Dwarf",
+        "type": "Axe Merchant",
+        "itemsSold": [
+        {
+          "item": "Crescent Axe",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bullova",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Francisca",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Great Axe",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
       }
     ],
     "name": "Dwarven District",
@@ -6248,6 +6641,303 @@
   },
   {
     "people": [
+      {
+        "name": "Hogor Thunderhoof",
+        "gender": "Male",
+        "voiceVariant": 1,
+        "race": "Tauren",
+        "type": "Gun Trader",
+        "itemsSold": [
+        {
+          "item": "Ornate Blunderbuss",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Solid Blunderbuss",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Hunter's Boomstick",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Light Shot",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Heavy Shot",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Large Bore Blunderbuss",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "BKP 2700 \"Enforcer\"",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Solid Shot",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Small Shot Pouch",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Accurate Slugs",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
+      },
+      {
+        "name": "Delgo Ragetotem",
+        "gender": "Male",
+        "voiceVariant": 3,
+        "race": "Tauren",
+        "type": "Axe Merchant",
+        "itemsSold": [
+        {
+          "item": "Hatchet",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Battle Axe",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Double Axe",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Tabar",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bearded Axe",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Cleaver",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Crescent Axe",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bullova",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Francisca",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Great Axe",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Merciless Axe",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
+      },
+      {
+        "name": "Etu Ragetotem",
+        "gender": "Male",
+        "voiceVariant": 2,
+        "race": "Tauren",
+        "type": "Mace & Staff Merchant",
+        "itemsSold": [
+        {
+          "item": "Mace",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Quarter Staff",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Maul",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Flail",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Long Staff",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Giant Mace",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Rock Hammer",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Hammer",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Gnarled Staff",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
+      },
+      {
+        "name": "Ohanko",
+        "gender": "Male",
+        "voiceVariant": 1,
+        "race": "Tauren",
+        "type": "Two Handed Weapon Merchant",
+        "itemsSold": [
+        {
+          "item": "Flamberge",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bullova",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "War Hammer",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Zweihander",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Great Axe",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "War Maul",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
+      },
+      {
+        "name": "Kaga Mistrunner",
+        "gender": "Female",
+        "voiceVariant": 1,
+        "race": "Tauren",
+        "type": "Meat Vendor",
+        "itemsSold": [
+        {
+          "item": "Tough Jerky",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Haunch of Meat",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mutton Chop",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Wild Hog Shank",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Cured Ham Steak",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Roasted Quail",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
+      },
       {
         "name": "Kah Mistrunner",
         "gender": "Male",
@@ -6261,6 +6951,93 @@
         "voiceVariant": 3,
         "race": "Tauren",
         "type": "Cook"
+      },
+      {
+        "name": "Kard Ragetotem",
+        "gender": "Male",
+        "voiceVariant": 2,
+        "race": "Tauren",
+        "type": "Sword & Dagger Merchant",
+        "itemsSold": [
+        {
+          "item": "Cutlass",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Dacian Falx",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Longsword",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Claymore",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Espadon",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Scimitar",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Jambiya",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Poniard",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Kris",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Broadsword",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Main Gauche",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Falchion",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Rondel",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
       },
       {
         "name": "Sewa Mistrunner",
@@ -9764,7 +10541,7 @@
         "gender": "Male",
         "voiceVariant": 3,
         "race": "Forsaken",
-        "type": "Gun Merchant",
+        "type": "Gun Trader",
         "itemsSold": [
           {
             "item": "Ornate Blunderbuss",
@@ -12237,6 +13014,51 @@
   {
     "people": [
       {
+        "name": "Sherman Femmel",
+        "gender": "Male",
+        "voiceVariant": 2,
+        "race": "Human",
+        "type": "Butcher",
+        "itemsSold": [
+        {
+          "item": "Tough Jerky",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Haunch of Meat",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mutton Chop",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Wild Hog Shank",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Cured Ham Steak",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Roasted Quail",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
+      },
+      {
         "name": "Ariena Stormfeather",
         "gender": "Female",
         "voiceVariant": 3,
@@ -13039,6 +13861,51 @@
   },
   {
     "people": [
+      {
+        "name": "Bront Coldcleave",
+        "gender": "Male",
+        "voiceVariant": 1,
+        "race": "Human",
+        "type": "Butcher",
+        "itemsSold": [
+        {
+          "item": "Tough Jerky",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Haunch of Meat",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mutton Chop",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Wild Hog Shank",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Cured Ham Steak",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Roasted Quail",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
+      },
       {
         "name": "Darla Harris",
         "gender": "Female",
@@ -16159,6 +17026,57 @@
   {
     "people": [
       {
+        "name": "Narj Deepslice",
+        "gender": "Male",
+        "voiceVariant": 3,
+        "race": "Dwarf",
+        "type": "Butcher",
+        "itemsSold": [
+        {
+          "item": "Tough Jerky",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Haunch of Meat",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mutton Chop",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Wild Hog Shank",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Cured Ham Steak",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Recipe: Barbecued Buzzard Wing",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Roasted Quail",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
+      },
+      {
         "name": "Cedrik Prose",
         "gender": "Male",
         "voiceVariant": 2,
@@ -18242,6 +19160,63 @@
   },
   {
     "people": [
+      {
+        "name": "Ulthaan",
+        "gender": "Male",
+        "voiceVariant": 3,
+        "race": "Night Elf",
+        "type": "Butcher",
+        "itemsSold": [
+        {
+          "item": "Tough Jerky",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Haunch of Meat",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Recipe: Big Bear Steak",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mutton Chop",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Wild Hog Shank",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Cured Ham Steak",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Recipe: Lean Venison",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Roasted Quail",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
+      },
       {
         "name": "Danlaar Nightstride",
         "gender": "Male",
@@ -22462,6 +23437,51 @@
   {
     "people": [
       {
+        "name": "Olvia",
+        "gender": "Female",
+        "voiceVariant": 1,
+        "race": "Orc",
+        "type": "Meat Vendor",
+        "itemsSold": [
+        {
+          "item": "Tough Jerky",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Haunch of Meat",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mutton Chop",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Wild Hog Shank",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Cured Ham Steak",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Roasted Quail",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
+      },
+      {
         "name": "Karus",
         "gender": "Male",
         "voiceVariant": 3,
@@ -22714,6 +23734,69 @@
             "maxAmount": 2,
             "restockSpeed": 40
           }
+        ]
+      },
+      {
+        "name": "Kaja",
+        "gender": "Female",
+        "voiceVariant": 1,
+        "race": "Tauren",
+        "type": "Gun Trader",
+        "itemsSold": [
+        {
+          "item": "Ornate Blunderbuss",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Hunter's Boomstick",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Light Shot",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Heavy Shot",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Large Bore Blunderbuss",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "BKP 2700 \"Enforcer\"",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Solid Shot",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Small Shot Pouch",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Accurate Slugs",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
         ]
       }
     ],
@@ -23055,6 +24138,93 @@
   },
   {
     "people": [
+      {
+        "name": "Grimtak",
+        "gender": "Male",
+        "voiceVariant": 3,
+        "race": "Orc",
+        "type": "Butcher",
+        "itemsSold": [
+        {
+          "item": "Tough Jerky",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Refreshing Spring Water",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Ice Cold Milk",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Melon Juice",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Moonberry Juice",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Sweet Nectar",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Haunch of Meat",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mutton Chop",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Wild Hog Shank",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Cured Ham Steak",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Recipe: Scorpid Surprise",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Morning Glory Dew",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Roasted Quail",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
+      },
       {
         "name": "Tarshaw Jaggedscar",
         "gender": "Male",
@@ -23500,6 +24670,57 @@
   },
   {
     "people": [
+      {
+        "name": "Zargh",
+        "gender": "Male",
+        "voiceVariant": 1,
+        "race": "Orc",
+        "type": "Butcher",
+        "itemsSold": [
+        {
+          "item": "Tough Jerky",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Haunch of Meat",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Recipe: Hot Lion Chops",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mutton Chop",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Wild Hog Shank",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Cured Ham Steak",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Roasted Quail",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
+      },
       {
         "name": "Boorand Plainswind",
         "gender": "Male",
@@ -25500,6 +26721,111 @@
   {
     "people": [
       {
+        "name": "Ogg'marr",
+        "gender": "Male",
+        "voiceVariant": 1,
+        "race": "Ogre",
+        "type": "Butcher",
+        "itemsSold": [
+        {
+          "item": "Tough Jerky",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Refreshing Spring Water",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Ice Cold Milk",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Melon Juice",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Moonberry Juice",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Sweet Nectar",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Haunch of Meat",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mutton Chop",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Wild Hog Shank",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Cured Ham Steak",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Morning Glory Dew",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Roasted Quail",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Recipe: Roast Raptor",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Recipe: Carrion Surprise",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Recipe: Dragonbreath Chili",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Recipe: Heavy Crocolisk Stew",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
+      },
+      {
         "name": "Shardi",
         "gender": "Female",
         "voiceVariant": 3,
@@ -26654,6 +27980,89 @@
     "fishing": true
   },
   {
+    "people": [
+      {
+        "name": "Denni'ka",
+        "gender": "Female",
+        "voiceVariant": 1,
+        "race": "Troll",
+        "type": "Butcher",
+        "itemsSold": [
+        {
+          "item": "Tough Jerky",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Refreshing Spring Water",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Ice Cold Milk",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Melon Juice",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Moonberry Juice",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Sweet Nectar",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Haunch of Meat",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mutton Chop",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Wild Hog Shank",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Cured Ham Steak",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Morning Glory Dew",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Roasted Quail",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
+      }
+    ],
     "x": 1520,
     "y": -2565,
     "name": "Malaka'jin",
@@ -27995,6 +29404,51 @@
   {
     "people": [
       {
+        "name": "Gahroot",
+        "gender": "Male",
+        "voiceVariant": 2,
+        "race": "Tauren",
+        "type": "Butcher",
+        "itemsSold": [
+        {
+          "item": "Tough Jerky",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Haunch of Meat",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mutton Chop",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Wild Hog Shank",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Cured Ham Steak",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Roasted Quail",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
+      },
+      {
         "name": "Omusa Thunderhorn",
         "gender": "Female",
         "voiceVariant": 1,
@@ -28260,6 +29714,87 @@
   },
   {
     "people": [
+      {
+        "name": "Turhaw",
+        "gender": "Male",
+        "voiceVariant": 1,
+        "race": "Orc",
+        "type": "Butcher",
+        "itemsSold": [
+        {
+          "item": "Tough Jerky",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Refreshing Spring Water",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Ice Cold Milk",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Melon Juice",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Moonberry Juice",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Sweet Nectar",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Haunch of Meat",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mutton Chop",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Wild Hog Shank",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Cured Ham Steak",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Morning Glory Dew",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Roasted Quail",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
+      },
       {
         "name": "Nyse",
         "gender": "Female",
@@ -28742,6 +30277,51 @@
         "voiceVariant": 1,
         "race": "Tauren",
         "type": "Flight Master"
+      },
+      {
+        "name": "Krond",
+        "gender": "Male",
+        "voiceVariant": 2,
+        "race": "Orc",
+        "type": "Butcher",
+        "itemsSold": [
+        {
+          "item": "Tough Jerky",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Haunch of Meat",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mutton Chop",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Wild Hog Shank",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Cured Ham Steak",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Roasted Quail",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
       },
       {
         "name": "Jayka",
@@ -30265,6 +31845,51 @@
   },
   {
     "people": [
+      {
+        "name": "Uttnar",
+        "gender": "Male",
+        "voiceVariant": 2,
+        "race": "Orc",
+        "type": "Butcher",
+        "itemsSold": [
+        {
+          "item": "Tough Jerky",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Haunch of Meat",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mutton Chop",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Wild Hog Shank",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Cured Ham Steak",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Roasted Quail",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+        ]
+      },
       {
         "name": "Urda",
         "gender": "Female",

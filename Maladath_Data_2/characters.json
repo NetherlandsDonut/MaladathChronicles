@@ -382,21 +382,6 @@
               ]
             },
             {
-              "x": 3,
-              "y": 1,
-              "rarity": "Common",
-              "name": "Firebloom",
-              "icon": "itemmischerb19",
-              "detailedType": "Flowers",
-              "type": "Trade Good",
-              "source": "RareDrop",
-              "ilvl": 41,
-              "lvl": 1,
-              "amount": 1,
-              "maxStack": 20,
-              "price": 250
-            },
-            {
               "x": 1,
               "rarity": "Uncommon",
               "name": "Ancient Belt of the Boar",
@@ -428,6 +413,26 @@
               "maxStack": 1,
               "indestructible": true,
               "unique": true
+            },
+            {
+              "x": 3,
+              "y": 1,
+              "rarity": "Rare",
+              "name": "Vilerend Slicer",
+              "icon": "abilitywhirlwind",
+              "detailedType": "Fist Weapon",
+              "type": "One Handed",
+              "source": "DirectDrop",
+              "ilvl": 51,
+              "lvl": 46,
+              "minPower": 3.36,
+              "maxPower": 5.43,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 30656,
+              "droppedBy": [
+                "The Behemoth"
+              ]
             }
           ],
           "bags": []
@@ -487,14 +492,18 @@
         "worldBuffs": [
           {
             "buff": "Scroll of Agility II @ Scroll of Agility",
-            "minutesLeft": 711
+            "minutesLeft": 709
+          },
+          {
+            "buff": "Scroll of Strength III @ Scroll of Strength",
+            "minutesLeft": 719
           }
         ]
       },
       "hour": 7,
-      "minute": 10,
-      "second": 48,
-      "currentSite": "Stormwind City",
+      "minute": 12,
+      "second": 3,
+      "currentSite": "Blackrock Mountain",
       "ringOfLaw": "Gorosh the Dervish",
       "forlornCloister": "Ironspine",
       "markets": [
@@ -535,16 +544,20 @@
       "fishingSpots": {},
       "fishingSpoils": {},
       "siteProgress": {
-        "Eastern Town": 3
+        "Eastern Town": 3,
+        "The Grinding Quarry": 1
       },
       "commonsKilled": {
         "Syndicate Prowler": 1,
         "Syndicate Conjuror": 1,
-        "Syndicate Magus": 1
+        "Syndicate Magus": 1,
+        "Anvilrage Warden": 1,
+        "Anvilrage Overseer": 1
       },
       "raresKilled": {},
       "elitesKilled": {
-        "Marez Cowl": 1
+        "Marez Cowl": 1,
+        "The Behemoth": 1
       },
       "siteVisits": {
         "The Den": 1,
@@ -554,7 +567,7 @@
         "Caer Darrow": 1,
         "Ravenholdt Manor": 1,
         "Misty Reed Post": 1,
-        "Stormwind City": 4,
+        "Stormwind City": 7,
         "Grove of the Ancients": 1,
         "Go'Shek Farm": 1,
         "Hillsbrad": 1,
@@ -1338,7 +1351,7 @@
         "Zul'Gurub": 1,
         "Ruins of Ahn'Qiraj": 1,
         "Temple of Ahn'Qiraj": 1,
-        "Blackrock Mountain": 1,
+        "Blackrock Mountain": 3,
         "Jintha'Alor": 1,
         "Tyr's Hand": 1,
         "Hearthglen": 1,
@@ -1353,13 +1366,15 @@
         "Goblin Camp": 1,
         "Thunder Bluff": 2
       },
-      "unlockedAreas": [],
+      "unlockedAreas": [
+        "The Masonary"
+      ],
       "vendorStock": {},
       "banks": {},
       "startDate": "2025-07-28T14:04:17.4977464+02:00",
-      "lastLoaded": "2025-08-01T15:03:11.9127348+02:00",
-      "lastPlayed": "2025-08-01T15:12:37.155648+02:00",
-      "timePlayed": "00:12:37.2709234"
+      "lastLoaded": "2025-08-01T15:49:00.7114494+02:00",
+      "lastPlayed": "2025-08-01T15:56:08.3279908+02:00",
+      "timePlayed": "00:19:44.8859232"
     },
     {
       "playerSide": "Alliance",

@@ -125,8 +125,28 @@
     "category": "Vendor"
   },
   {
+    "type": "Axe Merchant",
+    "icon": "ItemAxe04",
+    "category": "Vendor"
+  },
+  {
     "type": "Weaponsmith & Gunsmith",
     "icon": "ItemRifle03",
+    "category": "Vendor"
+  },
+  {
+    "type": "Two Handed Weapon Merchant",
+    "icon": "ItemSword19",
+    "category": "Vendor"
+  },
+  {
+    "type": "Mace & Staff Merchant",
+    "icon": "ItemMace01",
+    "category": "Vendor"
+  },
+  {
+    "type": "Sword & Dagger Merchant",
+    "icon": "ItemShortBlade14",
     "category": "Vendor"
   },
   {
@@ -135,7 +155,7 @@
     "category": "Vendor"
   },
   {
-    "type": "Gun Merchant",
+    "type": "Gun Trader",
     "icon": "ItemRifle01",
     "category": "Vendor"
   },

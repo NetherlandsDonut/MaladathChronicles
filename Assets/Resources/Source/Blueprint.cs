@@ -3468,6 +3468,7 @@ public class Blueprint
         //Complex
         new("Complex", () =>
         {
+            if (complex == null) return;
             if (WindowUp("Quest")) return;
             if (WindowUp("QuestAdd")) return;
             if (WindowUp("QuestTurn")) return;
@@ -3520,7 +3521,7 @@ public class Blueprint
                 if (range.Item1 > min) range = (min, range.Item2);
                 if (range.Item2 < max) range = (range.Item1, max);
             }
-            if (range.Item2 > 0)
+            if (range.Item2 > 0 && complex.type != "Capital")
                 AddPaddingRegion(() =>
                 {
                     AddLine("Level range: ", "DarkGray");
@@ -3927,7 +3928,6 @@ public class Blueprint
                                 Person.person = person;
                                 CloseWindow(h.window.title);
                                 Respawn("Person");
-                                CloseWindow("Complex");
                                 CloseWindow("QuestAdd");
                                 CloseWindow("QuestTurn");
                                 CloseWindow("AreaQuestAvailable");
