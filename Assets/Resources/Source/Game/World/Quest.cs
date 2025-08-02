@@ -379,6 +379,8 @@ public class Quest
                         if (WindowUp("CraftingSettings")) return;
                         Item.PrintItemTooltip(find, Input.GetKey(KeyCode.LeftShift));
                     });
+                    if (GameSettings.settings.rarityIndicators.Value())
+                        AddBigButtonOverlay("OtherRarity" + find.rarity + (GameSettings.settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 3);
                     if (find.type != "Miscellaneous" && find.type != "Trade Good" && find.type != "Recipe" && !find.HasProficiency(currentSave.player, true)) { SetBigButtonToRed(); AddBigButtonOverlay("OtherGridBlurred"); }
                     if (find.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.position + new Vector3(32, -27) + new Vector3(38, 0) * (rewards.Keys.ToList().IndexOf(item.Key) % 5), item.Value + "", "", "", "Right");
                     if (find.name == chosenReward && rewards.Count > 1) AddBigButtonOverlay("OtherGlowChosen");

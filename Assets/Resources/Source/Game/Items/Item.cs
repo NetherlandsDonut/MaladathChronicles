@@ -1395,6 +1395,8 @@ public class Item
                         var findDrop = items.Find(x => x.name == drop.item);
                         AddLine(findDrop.name, findDrop.rarity);
                         AddSmallButton(findDrop.icon);
+                        if (settings.rarityIndicators.Value())
+                            AddSmallButtonOverlay("OtherRarity" + findDrop.rarity, 0, 2);
                     });
                 AddEmptyRegion();
             }
@@ -1404,6 +1406,8 @@ public class Item
         {
             AddLine(split[0], item.rarity);
             AddSmallButton(item.icon);
+            if (settings.rarityIndicators.Value())
+                AddSmallButtonOverlay("OtherRarity" + item.rarity, 0, 2);
         });
         if (split.Length > 1) AddHeaderRegion(() => { AddLine("\"" + split[1] + "\"", item.rarity); });
         AddPaddingRegion(() =>

@@ -4200,17 +4200,7 @@ public class Blueprint
             });
             if (type.category == "Class Trainer")
             {
-                if (person.type.ToLower().Contains(currentSave.player.spec.ToLower()))
-                    AddButtonRegion(() =>
-                    {
-                        AddLine("I want to reset my talents");
-                    },
-                    (h) =>
-                    {
-                        PlaySound("DesktopInstanceOpen");
-                        CloseWindow(h.window);
-                        Respawn("ResetTalents");
-                    });
+                if (person.type.ToLower().Contains(currentSave.player.spec.ToLower())) { }
             }
             else if (type.category == "Profession Trainer")
             {
@@ -4559,50 +4549,6 @@ public class Blueprint
             SetRegionGroupWidth(95);
             AddPaddingRegion(() => AddLine("Buyback", "", "Center"));
         }, true),
-        new("ResetTalents", () => {
-            SetAnchor(TopLeft, 19, -38);
-            AddHeaderGroup();
-            SetRegionGroupWidth(190);
-            var type = personTypes.Find(x => x.type == person.type);
-            AddHeaderRegion(() =>
-            {
-                AddLine(person.type + " ", "Gray");
-                AddText(person.name);
-                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == area.faction).side : ""));
-            });
-            AddPaddingRegion(() =>
-            {
-                AddLine("Do you want to reset your", "DarkGray");
-                AddLine("talents and regain all", "DarkGray");
-                AddLine("spent points?", "DarkGray");
-            });
-            AddRegionGroup();
-            SetRegionGroupWidth(95);
-            AddButtonRegion(() =>
-            {
-                AddLine("Cancel", "", "Center");
-            },
-            (h) =>
-            {
-                PlaySound("DesktopInstanceClose");
-                CloseWindow("ResetTalents");
-                Respawn("Person");
-            });
-            AddRegionGroup();
-            SetRegionGroupWidth(95);
-            AddButtonRegion(() =>
-            {
-                AddLine("Yes", "", "Center");
-            },
-            (h) =>
-            {
-                PlaySound("DesktopHomeLocation");
-                currentSave.player.ResetTalents();
-                CloseWindow("ResetTalents");
-                Respawn("Person");
-                Respawn("MapToolbarClockRight", true);
-            });
-        }),
         new("MakeInnHome", () => {
             SetAnchor(TopLeft, 19, -38);
             AddHeaderGroup();
@@ -5195,12 +5141,14 @@ public class Blueprint
                         auctionAmountToDisplay[index] = offerGroup.Where(x => x.price == offerGroupFirst.price).Sum(x => x.item.amount);
                         AddLine(offerGroupFirst.item.name + " x" + offerGroup.Sum(x => x.item.amount));
                         AddSmallButton(offerGroupFirst.item.icon);
+                        if (settings.rarityIndicators.Value())
+                            AddSmallButtonOverlay("OtherRarity" + offerGroupFirst.item.rarity, 0, 2);
                     },
                     (h) =>
                     {
-                        var offerGroupKey = Market.exploredAuctionsGroups.Keys.ToList()[index + thisWindow.pagination()];
-                        Market.exploredAuctions = Market.exploredAuctionsGroups[offerGroupKey].OrderBy(x => x.price).ToList();
-                        CloseWindow("AuctionHouseOffersGroups");
+                        Market.auctionGroup = Market.exploredAuctionsGroups.Keys.ToList()[index + thisWindow.pagination()];
+                        Market.exploredAuctions = Market.exploredAuctionsGroups[Market.auctionGroup].OrderBy(x => x.price).ToList();
+                        CloseWindow("AuctionHouseOffersGroups", false);
                         SpawnWindowBlueprint("AuctionHouseOffers");
                         String.splitAmount.Set("1");
                         SpawnWindowBlueprint("AuctionHouseBuy");
@@ -6029,7 +5977,7 @@ public class Blueprint
             {
                 AddCheckbox(showPotions);
                 AddLine("Potions");
-                AddSmallButton("ItemPotion08");
+                AddSmallButton("ItemPotion33");
             },
             (h) =>
             {
@@ -6224,12 +6172,15 @@ public class Blueprint
                         PlaySound(item.ItemSound("PutDown"), 0.8f);
                     }
                     currentSave.player.inventory.money -= currentPrice;
-                    Market.exploredAuctions.RemoveAll(x => x.item.amount == 0);
                     String.splitAmount.Set("1");
                     foreach (var market in currentSave.markets)
                         for (int i = market.auctions.Count - 1; i >= 0; i--)
                             if (market.auctions[i].item.amount <= 0)
                                 market.auctions.RemoveAt(i);
+                    Market.exploredAuctions.RemoveAll(x => x.item.amount == 0);
+                    Market.exploredAuctionsGroups[Market.auctionGroup].RemoveAll(x => x.item.amount == 0);
+                    if (Market.exploredAuctionsGroups[Market.auctionGroup].Count == 0)
+                        Market.exploredAuctionsGroups.Remove(Market.auctionGroup);
                     if (Market.exploredAuctions.Count > 0)
                         Respawn("AuctionHouseOffers");
                     else
@@ -8313,7 +8264,21 @@ public class Blueprint
                 });
                 AddHotkey("Open menu / Back", () =>
                 {
-                    if (CloseWindow("BankSort"))
+                    if (CloseWindow("AreaQuestTracker"))
+                    {
+                        PlaySound("DesktopButtonClose");
+                        Respawn("Area");
+                        Respawn("AreaQuestAvailable");
+                    }
+                    else if (CloseWindow("QuestAdd") || CloseWindow("QuestTurn"))
+                    {
+                        PlaySound("DesktopButtonClose");
+                        Respawn("Area");
+                        Respawn("AreaQuestAvailable");
+                        Respawn("AreaQuestDone");
+                        Respawn("Complex");
+                    }
+                    else if (CloseWindow("BankSort"))
                     {
                         PlaySound("DesktopInstanceClose");
                     }
@@ -8337,11 +8302,6 @@ public class Blueprint
                     {
                         PlaySound("DesktopInstanceClose");
                         CloseWindow("MakeInnHome");
-                        Respawn("Person");
-                    }
-                    else if (CloseWindow("ResetTalents"))
-                    {
-                        PlaySound("DesktopInstanceClose");
                         Respawn("Person");
                     }
                     else if (CloseWindow("FlightMaster"))
@@ -8373,7 +8333,17 @@ public class Blueprint
                         CloseWindow("AuctionHouseFilteringArmorType");
                         CloseWindow("AuctionHouseFilteringJewelry");
                         CloseWindow("AuctionHouseFilteringConsumeables");
+                        for (int i = 0; i < 12; i++) { var index = i; CloseWindow("AuctionHousePrice" + index); }
                         Respawn("Person");
+                    }
+                    else if (CloseWindow("AuctionHouseOffers"))
+                    {
+                        CloseWindow("AuctionHouseOffers");
+                        CloseWindow("AuctionHouseBuy");
+                        CloseWindow("AuctionHouseChosenItem");
+                        Respawn("AuctionHouseOffersGroups");
+                        for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                        PlaySound("DesktopInstanceClose");
                     }
                     else if (CloseWindow("Person"))
                     {
@@ -8534,6 +8504,108 @@ public class Blueprint
                     Respawn("AreaQuestDone");
                     Respawn("Complex");
                 }
+                else if (CloseWindow("BankSort"))
+                {
+                    PlaySound("DesktopInstanceClose");
+                }
+                else if (CloseWindow("MountCollection"))
+                {
+                    PlaySound("DesktopInstanceClose");
+                    CloseWindow("CurrentMount");
+                    Respawn("Person");
+                }
+                else if (CloseWindow("Inventory"))
+                {
+                    PlaySound("DesktopInventoryClose");
+                    CloseWindow("Bank");
+                    if (CloseWindow("Vendor"))
+                        PlaySound("DesktopCharacterSheetClose");
+                    CloseWindow("VendorBuyback");
+                    Respawn("PlayerMoney");
+                    Respawn("Person");
+                }
+                else if (CloseWindow("MakeInnHome"))
+                {
+                    PlaySound("DesktopInstanceClose");
+                    CloseWindow("MakeInnHome");
+                    Respawn("Person");
+                }
+                else if (CloseWindow("FlightMaster"))
+                {
+                    PlaySound("DesktopMenuClose");
+                    Respawn("Person");
+                }
+                else if (CloseWindow("ProfessionRecipeTrainer"))
+                {
+                    PlaySound("DesktopInstanceClose");
+                    CloseWindow("ProfessionRecipeTrainer");
+                    Respawn("Person");
+                }
+                else if (CloseWindow("ProfessionLevelTrainer"))
+                {
+                    PlaySound("DesktopInstanceClose");
+                    CloseWindow("ProfessionLevelTrainer");
+                    Respawn("Person");
+                }
+                else if (CloseWindow("AuctionHouseOffersGroups"))
+                {
+                    PlaySound("DesktopInstanceClose");
+                    CloseWindow("AuctionHouseFilteringMain");
+                    CloseWindow("AuctionHouseFilteringTwoHandedWeapons");
+                    CloseWindow("AuctionHouseFilteringOneHandedWeapons");
+                    CloseWindow("AuctionHouseFilteringOffHands");
+                    CloseWindow("AuctionHouseFilteringRangedWeapons");
+                    CloseWindow("AuctionHouseFilteringArmorClass");
+                    CloseWindow("AuctionHouseFilteringArmorType");
+                    CloseWindow("AuctionHouseFilteringJewelry");
+                    CloseWindow("AuctionHouseFilteringConsumeables");
+                    for (int i = 0; i < 12; i++) { var index = i; CloseWindow("AuctionHousePrice" + index); }
+                    Respawn("Person");
+                }
+                else if (CloseWindow("AuctionHouseOffers"))
+                {
+                    CloseWindow("AuctionHouseOffers");
+                    CloseWindow("AuctionHouseBuy");
+                    CloseWindow("AuctionHouseChosenItem");
+                    Respawn("AuctionHouseOffersGroups");
+                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                    PlaySound("DesktopInstanceClose");
+                }
+                else if (CloseWindow("Person"))
+                {
+                    PlaySound("DesktopInstanceClose");
+                    person = null;
+                    if (personCategory != null) Respawn("Persons");
+                    else CloseWindow("Persons");
+                    Respawn("Area");
+                    Respawn("Complex");
+                    Respawn("Quest");
+                    Respawn("QuestAdd");
+                    Respawn("QuestTurn");
+                    Respawn("AreaQuestAvailable");
+                    Respawn("AreaQuestDone");
+                    if (!WindowUp("Persons"))
+                    {
+                        Respawn("AreaProgress");
+                        Respawn("AreaElites");
+                        Respawn("Chest");
+                    }
+                }
+                else if (CloseWindow("Persons"))
+                {
+                    PlaySound("DesktopInstanceClose");
+                    personCategory = null;
+                    Respawn("Area");
+                    Respawn("Complex");
+                    Respawn("Quest");
+                    Respawn("QuestAdd");
+                    Respawn("QuestTurn");
+                    Respawn("AreaProgress");
+                    Respawn("AreaElites");
+                    Respawn("AreaQuestAvailable");
+                    Respawn("AreaQuestDone");
+                    Respawn("Chest");
+                }
                 else if (CloseWindow("Area"))
                 {
                     area = null;
@@ -8551,6 +8623,7 @@ public class Blueprint
                     CloseDesktop("Complex");
                 }
             });
+            AddPaginationHotkeys();
         }),
         new("Game", () => 
         {

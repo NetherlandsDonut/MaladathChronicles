@@ -339,6 +339,7 @@ public class Starter : MonoBehaviour
             if (index >= 6)
                 Blueprint.windowBlueprints.Add(new("AuctionHousePrice" + index, () =>
                 {
+                    if (auctionPriceToDisplay == null || auctionPriceToDisplay.Length <= index) return;
                     if (!WindowUp("AuctionHouseOffers")) return;
                     SetAnchor(-301, 104 - 19 * index);
                     DisableShadows();
@@ -349,6 +350,7 @@ public class Starter : MonoBehaviour
             else
                 Blueprint.windowBlueprints.Add(new("AuctionHousePrice" + index, () =>
                 {
+                    if (auctionPriceToDisplay == null || auctionPriceToDisplay.Length <= index) return;
                     SetAnchor(-301, WindowUp("AuctionHouseOffers") ? 104 - 19 * index : 85 - 38 * index);
                     DisableShadows();
                     PrintPriceRegion(auctionPriceToDisplay[index], 38, 38, 57, false);

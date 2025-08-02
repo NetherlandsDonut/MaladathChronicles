@@ -440,6 +440,8 @@
         "mounts": [],
         "equipment": {
           "Main Hand": {
+            "x": 3,
+            "y": 1,
             "rarity": "Common",
             "name": "Worn Battleaxe",
             "icon": "itemaxe09",
@@ -492,18 +494,18 @@
         "worldBuffs": [
           {
             "buff": "Scroll of Agility II @ Scroll of Agility",
-            "minutesLeft": 701
+            "minutesLeft": 689
           },
           {
             "buff": "Scroll of Strength III @ Scroll of Strength",
-            "minutesLeft": 711
+            "minutesLeft": 699
           }
         ]
       },
       "hour": 7,
-      "minute": 20,
-      "second": 53,
-      "currentSite": "Orgrimmar",
+      "minute": 32,
+      "second": 19,
+      "currentSite": "Razor Hill",
       "ringOfLaw": "Gorosh the Dervish",
       "forlornCloister": "Ironspine",
       "markets": [
@@ -617,8 +619,8 @@
         "Amberstill Ranch": 1,
         "Anvilmar": 1,
         "Algaz Station": 1,
-        "Orgrimmar": 7,
-        "Razor Hill": 1,
+        "Orgrimmar": 8,
+        "Razor Hill": 3,
         "Zoram'gar Outpost": 1,
         "The Crossroads": 1,
         "Bloodvenom Post": 3,
@@ -1369,12 +1371,152 @@
       "unlockedAreas": [
         "The Masonary"
       ],
-      "vendorStock": {},
+      "vendorStock": {
+        "The Drag:Borya": [
+          {
+            "item": "Pattern: Invoker's Cord",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pattern: Invoker's Mantle",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Coarse Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Fine Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Bleach",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Black Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Red Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Green Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Silken Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Gray Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Yellow Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Purple Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pattern: Red Woolen Bag",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Blue Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Orange Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pattern: Blue Linen Vest",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pattern: Blue Overalls",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Heavy Silken Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pink Dye",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pattern: Lavender Mageweave Shirt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Pattern: Pink Mageweave Shirt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Rune Thread",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
+        ]
+      },
       "banks": {},
+      "buyback": {
+        "items": [],
+        "bags": [],
+        "ignoreSpaceChecks": true
+      },
       "startDate": "2025-07-28T14:04:17.4977464+02:00",
-      "lastLoaded": "2025-08-02T01:31:52.4693147+02:00",
-      "lastPlayed": "2025-08-02T01:32:06.854254+02:00",
-      "timePlayed": "00:48:30.0279102"
+      "lastLoaded": "2025-08-02T15:18:26.870439+02:00",
+      "lastPlayed": "2025-08-02T15:28:43.0774633+02:00",
+      "timePlayed": "01:00:35.7889909"
     },
     {
       "playerSide": "Alliance",

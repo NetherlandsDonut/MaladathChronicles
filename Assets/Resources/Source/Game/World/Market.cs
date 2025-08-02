@@ -52,6 +52,8 @@ public class Market
         }
     }
 
+    public static string auctionGroup;
+
     public static List<Auction> exploredAuctions;
 
     public static Dictionary<string, List<Auction>> exploredAuctionsGroups;

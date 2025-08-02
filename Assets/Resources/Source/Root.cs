@@ -676,9 +676,11 @@ public static class Root
         lb.ResetPosition();
         if (lb.regionGroups.Count == 0)
         {
-            CloseWindow(lb.title);
+            CloseWindow(lb.title, false);
             return null;
         }
+        if (blueprint.title == "AuctionHouseOffersGroups" || blueprint.title == "AuctionHouseOffers")
+            for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
         return lb;
     }
 
