@@ -2532,6 +2532,38 @@ public class Blueprint
                 Respawn("QuestList", true);
                 Respawn("Quest", true);
             });
+            AddButtonRegion(() =>
+            {
+                AddLine("Show low level quests on map", "Black");
+                AddCheckbox(settings.showLowLevelQuests);
+            },
+            (h) =>
+            {
+                settings.showLowLevelQuests.Invert();
+                if (!settings.showLowLevelQuests.Value())
+                    foreach (var site in sitesWithQuestMarkers.ToArray())
+                        Respawn("Site: " + site.name);
+                else
+                {
+                    var list = new List<string>();
+                    foreach (var complex in complexes)
+                        if (currentSave.player.AvailableQuestsAt(complex, true).Count > 0)
+                            list.Add(complex.name);
+                    foreach (var instance in instances)
+                        if (!instance.complexPart)
+                            if (currentSave.player.AvailableQuestsAt(instance, true).Count > 0)
+                                list.Add(instance.name);
+                    foreach (var area in areas)
+                        if (!area.complexPart && !area.instancePart)
+                            if (currentSave.player.AvailableQuestsAt(area, true).Count > 0)
+                                list.Add(area.name);
+                    list = list.Distinct().ToList();
+                    foreach (var site in list)
+                        Respawn("Site: " + site);
+                }
+                Respawn("QuestList", true);
+                Respawn("Quest", true);
+            });
         }, true),
 
         //Inventory

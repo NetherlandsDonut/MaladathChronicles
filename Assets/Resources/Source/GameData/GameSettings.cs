@@ -11,7 +11,7 @@ public class GameSettings
         selectedRealm ??= "";
         selectedRealmRanking ??= "";
         selectedCharacter ??= "";
-        pixelPerfectVision ??= new Bool(false);
+        pixelPerfectVision ??= new Bool(true);
         music ??= new Bool(true);
         ambience ??= new Bool(true);
         soundEffects ??= new Bool(true);
@@ -22,11 +22,12 @@ public class GameSettings
         questLevel ??= new Bool(false);
         sourcedMarket ??= new Bool(false);
         autoCloseLoot ??= new Bool(false);
-        rarityIndicators ??= new Bool(false);
+        rarityIndicators ??= new Bool(true);
         bigRarityIndicators ??= new Bool(false);
         upgradeIndicators ??= new Bool(false);
         newSlotIndicators ??= new Bool(false);
         runsInBackground ??= new Bool(false);
+        showLowLevelQuests ??= new Bool(true);
     }
 
     //Currently selected realm in login screen
@@ -58,6 +59,9 @@ public class GameSettings
 
     //Indicates whether quest level is shown in the quest log list
     public Bool questLevel;
+
+    //Indicates whether low level quests are displayed on the map
+    public Bool showLowLevelQuests;
 
     //Indicates whether quest level is shown in the quest log list
     public Bool sourcedMarket;

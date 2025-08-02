@@ -1077,7 +1077,7 @@ public static class Root
     {
         var newObject = new GameObject("SmallButtonOverlay", typeof(SpriteRenderer));
         newObject.transform.parent = onWhat.transform;
-        newObject.transform.localPosition = new Vector3(overlay == "PlayerLocationFromBelow" || overlay == "EnemyLocationFromBelow" || overlay == "FriendLocationFromBelow" || overlay == "PlayerLocationSmall" || overlay == "AvailableQuest" ? 1 : (overlay == "YellowGlowBig" ? 0.5f : 0), overlay == "AvailableQuest" ? -8.5f : (overlay == "PlayerLocationSmall" || overlay == "PlayerLocationFromBelow" ? -6f : (overlay == "YellowGlowBig" ? -0.5f : 0)), -0.01f);
+        newObject.transform.localPosition = new Vector3(overlay == "PlayerLocationFromBelow" || overlay == "EnemyLocationFromBelow" || overlay == "FriendLocationFromBelow" || overlay == "PlayerLocationSmall" || overlay.StartsWith("AvailableQuest") ? 1 : (overlay == "YellowGlowBig" ? 0.5f : 0), overlay.StartsWith("AvailableQuest") ? -8.5f : (overlay == "PlayerLocationSmall" || overlay == "PlayerLocationFromBelow" ? -6f : (overlay == "YellowGlowBig" ? -0.5f : 0)), -0.01f);
         if (overlay == "Cooldown") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Other/Cooldown", true);
         else if (overlay == "YellowGlow") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Other/YellowGlow", true);
         else if (overlay == "YellowGlowBig") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Other/YellowGlowBig", true, 0.07f);
@@ -1086,7 +1086,11 @@ public static class Root
         else if (overlay == "EnemyLocationFromBelow") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Other/EnemyLocationFromBelow", true, 0.07f);
         else if (overlay == "FriendLocationFromBelow") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Other/FriendLocationFromBelow", true, 0.07f);
         else if (overlay == "PlayerLocationSmall") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Other/PlayerLocationSmall", true, 0.07f);
-        else if (overlay == "AvailableQuest") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Other/AvailableQuest", true, 0.07f);
+        else if (overlay == "AvailableQuestLow") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Other/AvailableQuestLow", true, 0.07f);
+        else if (overlay == "AvailableQuestNormal") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Other/AvailableQuestNormal", true, 0.07f);
+        else if (overlay == "AvailableQuestReturn") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Other/AvailableQuestReturn", true, 0.07f);
+        else if (overlay == "AvailableQuestReturnLow") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Other/AvailableQuestReturnLow", true, 0.07f);
+        else if (overlay == "AvailableQuestReturnNormal") newObject.AddComponent<AnimatedSprite>().Initiate("Sprites/Other/AvailableQuestReturnNormal", true, 0.07f);
         else newObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Buttons/" + overlay);
         newObject.GetComponent<SpriteRenderer>().sortingOrder = sortingOrder;
         newObject.GetComponent<SpriteRenderer>().sortingLayerName = CDesktop.LBWindow().layer;

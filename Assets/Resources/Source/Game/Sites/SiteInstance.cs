@@ -166,17 +166,21 @@ public class SiteInstance : Site
                 if (debug)
                     BuildPath();
             });
-            var q = currentSave.player.AvailableQuestsAt(this, true).Count;
+            var news = currentSave.player.AvailableQuestsAt(this);
             sitesWithQuestMarkers.Remove(this);
             if (currentSave.currentSite == name)
                 AddSmallButtonOverlay("PlayerLocationFromBelow", 0, 3);
-            var a = q > 0;
-            var b = currentSave.player.QuestsAt(this, true).Count > 0;
-            if (a || b) sitesWithQuestMarkers.Add(this);
-            if (a) AddSmallButtonOverlay("AvailableQuest", 0, 3);
-            if (b) AddSmallButtonOverlay("QuestMarker", 0, 3);
-            if (currentSave.player.QuestsDoneAt(this, true).Count > 0)
-                AddSmallButtonOverlay("YellowGlowBig", 0, 2);
+            var todos = currentSave.player.QuestsAt(this, true);
+            var normals = news.Count(x => currentSave.player.WillGetExperience(x.questLevel)) > 0;
+            var lows = news.Count(x => !currentSave.player.WillGetExperience(x.questLevel)) > 0;
+            var returns = currentSave.player.QuestsDoneAt(this, true).Count > 0;
+            if (todos.Count > 0 || normals || (lows && GameSettings.settings.showLowLevelQuests.Value()) || returns) sitesWithQuestMarkers.Add(this);
+            if (returns && normals) AddSmallButtonOverlay("AvailableQuestReturnNormal", 0, 3);
+            else if (returns && lows && GameSettings.settings.showLowLevelQuests.Value()) AddSmallButtonOverlay("AvailableQuestReturnLow", 0, 3);
+            else if (returns) AddSmallButtonOverlay("AvailableQuestReturn", 0, 3);
+            else if (normals) AddSmallButtonOverlay("AvailableQuestNormal", 0, 3);
+            else if (lows && GameSettings.settings.showLowLevelQuests.Value()) AddSmallButtonOverlay("AvailableQuestLow", 0, 3);
+            if (todos.Count > 0) AddSmallButtonOverlay("QuestMarker", 0, 3);
         });
     }
 
