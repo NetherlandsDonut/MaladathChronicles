@@ -212,16 +212,6 @@ public class Starter : MonoBehaviour
         fishingSpots ??= new();
         Deserialize(ref defines, "defines", false, prefix);
         defines ??= new();
-        //var list = "Mystical Leggings, Commander's Girdle, Adventurer's Bracers, Commander's Boots, Elegant Circlet, Emerald Sabatons, Engraved Breastplate, High Councillor's Boots, Ornate Breastplate, Adventurer's Cape, Commander's Gauntlets, Councillor's Boots, Elegant Leggings, Emerald Vambraces, Engraved Girdle, Imbued Plate Leggings, Master's Cloak, Ornate Circlet, Templar Crown, Templar Pauldrons, Wanderer's Armor, Wanderer's Boots, Commander's Helm, Commander's Vambraces, Councillor's Pants, Elegant Bracers, Elegant Cloak, Engraved Bracers, Engraved Helm, Engraved Leggings, Engraved Pauldrons, Masterwork Cape, Mercurial Cloak, Mercurial Girdle, Mercurial Greaves, Mighty Cloak, Mighty Girdle, Nightshade Boots, Nightshade Cloak, Ornate Greaves, Ornate Pauldrons, Swashbuckler's Breastplate, Swashbuckler's Leggings, Commander's Pauldrons, Councillor's Shoulders, Councillor's Tunic, Elegant Belt, Elegant Mantle, Emerald Helm, Emerald Legplates, Engraved Boots, High Councillor's Bracers, High Councillor's Gloves, High Councillor's Sash, Hyperion Girdle, Mercurial Bracers, Mighty Armsplints, Mighty Boots, Mystical Armor, Nightshade Girdle, Nightshade Gloves, Nightshade Helmet, Ornate Legguards, Templar Chestplate, Wanderer's Leggings";
-        //var split = list.Split(", ").ToList();
-        //foreach (var a in split)
-        //    GeneralDrop.generalDrops.Add(new()
-        //    {
-        //        item = a,
-        //        rarity = 100,
-        //        category = "Crazy Grab Bag",
-        //        dropCount = 1
-        //    });
         var file = Resources.Load<Sprite>("Sprites/Map/Ground").texture;
         mapGrid.groundData = new string[file.width, file.height];
         for (int i = 0; i < file.width; i++)
@@ -346,7 +336,7 @@ public class Starter : MonoBehaviour
         for (int i = 0; i < 12; i++)
         {
             var index = i;
-            if (index < 6)
+            if (index >= 6)
                 Blueprint.windowBlueprints.Add(new("AuctionHousePrice" + index, () =>
                 {
                     if (!WindowUp("AuctionHouseOffers")) return;

@@ -1,11 +1,5 @@
 [
   {
-    "x": 5282,
-    "y": -3210,
-    "name": "Blackrock Mountain",
-    "zone": "Blackrock Mountain",
-    "type": "Complex",
-    "noNightVariant": true,
     "sites": [
       {
         "SiteType": "Dungeon",
@@ -29,14 +23,15 @@
         "SiteName": "Blackwing Lair",
         "OpenByDefault": "False"
       }
-    ]
+    ],
+    "x": 5282,
+    "y": -3210,
+    "name": "Blackrock Mountain",
+    "zone": "Blackrock Mountain",
+    "type": "Complex",
+    "noNightVariant": true
   },
   {
-    "x": 5906,
-    "y": -1718,
-    "name": "Jintha'Alor",
-    "zone": "Jintha'Alor",
-    "type": "Complex",
     "sites": [
       {
         "SiteType": "HostileArea",
@@ -54,14 +49,14 @@
         "SiteType": "HostileArea",
         "SiteName": "Keepers' Shrine"
       }
-    ]
+    ],
+    "x": 5906,
+    "y": -1718,
+    "name": "Jintha'Alor",
+    "zone": "Jintha'Alor",
+    "type": "Complex"
   },
   {
-    "x": 6125,
-    "y": -1326,
-    "name": "Tyr's Hand",
-    "zone": "Tyr's Hand",
-    "type": "Complex",
     "sites": [
       {
         "SiteType": "HostileArea",
@@ -79,14 +74,14 @@
         "SiteType": "HostileArea",
         "SiteName": "Scarlet Basilica"
       }
-    ]
+    ],
+    "x": 6125,
+    "y": -1326,
+    "name": "Tyr's Hand",
+    "zone": "Tyr's Hand",
+    "type": "Complex"
   },
   {
-    "x": 5395,
-    "y": -1108,
-    "name": "Hearthglen",
-    "zone": "Hearthglen",
-    "type": "Complex",
     "sites": [
       {
         "SiteType": "HostileArea",
@@ -100,14 +95,14 @@
         "SiteType": "HostileArea",
         "SiteName": "Mardenholde Keep"
       }
-    ]
+    ],
+    "x": 5395,
+    "y": -1108,
+    "name": "Hearthglen",
+    "zone": "Hearthglen",
+    "type": "Complex"
   },
   {
-    "x": 5428,
-    "y": -1977,
-    "name": "Ruins of Stromgarde",
-    "zone": "Ruins of Stromgarde",
-    "type": "Complex",
     "sites": [
       {
         "SiteType": "HostileArea",
@@ -135,14 +130,14 @@
         "SiteType": "HostileArea",
         "SiteName": "Stromgarde Keep"
       }
-    ]
+    ],
+    "x": 5428,
+    "y": -1977,
+    "name": "Ruins of Stromgarde",
+    "zone": "Ruins of Stromgarde",
+    "type": "Complex"
   },
   {
-    "x": 5147,
-    "y": -1543,
-    "name": "Ruins of Alterac",
-    "zone": "Ruins of Alterac",
-    "type": "Complex",
     "sites": [
       {
         "SiteType": "HostileArea",
@@ -156,14 +151,14 @@
         "SiteType": "HostileArea",
         "SiteName": "Alterac Keep"
       }
-    ]
+    ],
+    "x": 5147,
+    "y": -1543,
+    "name": "Ruins of Alterac",
+    "zone": "Ruins of Alterac",
+    "type": "Complex"
   },
   {
-    "x": 5204,
-    "y": -1104,
-    "name": "Scarlet Monastery Grounds",
-    "zone": "Scarlet Monastery Grounds",
-    "type": "Complex",
     "sites": [
       {
         "SiteType": "HostileArea",
@@ -181,14 +176,14 @@
         "SiteType": "Dungeon",
         "SiteName": "Scarlet Monastery"
       }
-    ]
+    ],
+    "x": 5204,
+    "y": -1104,
+    "name": "Scarlet Monastery Grounds",
+    "zone": "Scarlet Monastery Grounds",
+    "type": "Complex"
   },
   {
-    "x": 1559,
-    "y": -1549,
-    "name": "Jaedenar Grounds",
-    "zone": "Jaedenar Grounds",
-    "type": "Complex",
     "sites": [
       {
         "SiteType": "HostileArea",
@@ -202,14 +197,14 @@
         "SiteType": "Dungeon",
         "SiteName": "Shadow Hold"
       }
-    ]
+    ],
+    "x": 1559,
+    "y": -1549,
+    "name": "Jaedenar Grounds",
+    "zone": "Jaedenar Grounds",
+    "type": "Complex"
   },
   {
-    "x": 2470,
-    "y": -3074,
-    "name": "Alcaz Island",
-    "zone": "Alcaz Island",
-    "type": "Complex",
     "sites": [
       {
         "SiteType": "HostileArea",
@@ -219,15 +214,14 @@
         "SiteType": "HostileArea",
         "SiteName": "Alcaz Dungeon"
       }
-    ]
+    ],
+    "x": 2470,
+    "y": -3074,
+    "name": "Alcaz Island",
+    "zone": "Alcaz Island",
+    "type": "Complex"
   },
   {
-    "x": 2343,
-    "y": -2248,
-    "name": "Orgrimmar",
-    "zone": "Orgrimmar",
-    "faction": "Orgrimmar",
-    "type": "Capital",
     "sites": [
       {
         "SiteType": "HostileArea",
@@ -268,15 +262,15 @@
         "SiteType": "Dungeon",
         "SiteName": "Ragefire Chasm"
       }
-    ]
+    ],
+    "x": 2343,
+    "y": -2248,
+    "name": "Orgrimmar",
+    "zone": "Orgrimmar",
+    "type": "Capital",
+    "faction": "Orgrimmar"
   },
   {
-    "x": 5011,
-    "y": -1341,
-    "name": "Undercity",
-    "zone": "Undercity",
-    "faction": "Undercity",
-    "type": "Capital",
     "sites": [
       {
         "SiteType": "HostileArea",
@@ -308,15 +302,15 @@
         "SiteName": "The Royal Quarter",
         "SiteIcon": "FactionHorde"
       }
-    ]
+    ],
+    "x": 5011,
+    "y": -1341,
+    "name": "Undercity",
+    "zone": "Undercity",
+    "type": "Capital",
+    "faction": "Undercity"
   },
   {
-    "x": 1418,
-    "y": -2794,
-    "name": "Thunder Bluff",
-    "zone": "Thunder Bluff",
-    "faction": "Thunder Bluff",
-    "type": "Capital",
     "sites": [
       {
         "SiteType": "HostileArea",
@@ -358,15 +352,15 @@
         "SiteName": "Wind Rider Roost",
         "SiteIcon": "FactionHorde"
       }
-    ]
+    ],
+    "x": 1418,
+    "y": -2794,
+    "name": "Thunder Bluff",
+    "zone": "Thunder Bluff",
+    "type": "Capital",
+    "faction": "Thunder Bluff"
   },
   {
-    "x": 4975,
-    "y": -3517,
-    "name": "Stormwind City",
-    "zone": "Stormwind City",
-    "faction": "Stormwind",
-    "type": "Capital",
     "sites": [
       {
         "SiteType": "HostileArea",
@@ -412,15 +406,15 @@
         "SiteType": "Dungeon",
         "SiteName": "The Stockade"
       }
-    ]
+    ],
+    "x": 4975,
+    "y": -3517,
+    "name": "Stormwind City",
+    "zone": "Stormwind City",
+    "type": "Capital",
+    "faction": "Stormwind"
   },
   {
-    "x": 5231,
-    "y": -2694,
-    "name": "Ironforge",
-    "zone": "Ironforge",
-    "faction": "Ironforge",
-    "type": "Capital",
     "sites": [
       {
         "SiteType": "HostileArea",
@@ -462,15 +456,15 @@
         "SiteName": "The High Seat",
         "SiteIcon": "FactionAlliance"
       }
-    ]
+    ],
+    "x": 5231,
+    "y": -2694,
+    "name": "Ironforge",
+    "zone": "Ironforge",
+    "type": "Capital",
+    "faction": "Ironforge"
   },
   {
-    "x": 938,
-    "y": -504,
-    "name": "Darnassus",
-    "zone": "Darnassus",
-    "faction": "Darnassus",
-    "type": "Capital",
     "sites": [
       {
         "SiteType": "HostileArea",
@@ -502,6 +496,12 @@
         "SiteName": "The Temple of The Moon",
         "SiteIcon": "FactionAlliance"
       }
-    ]
+    ],
+    "x": 938,
+    "y": -504,
+    "name": "Darnassus",
+    "zone": "Darnassus",
+    "type": "Capital",
+    "faction": "Darnassus"
   }
 ]

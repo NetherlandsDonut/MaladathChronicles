@@ -1,8 +1,5 @@
 [
   {
-    "name": "Naxxramas",
-    "zone": "Naxxramas",
-    "type": "Raid",
     "wings": [
       {
         "name": "The Arachnid Quarte",
@@ -87,14 +84,12 @@
           }
         ]
       }
-    ]
+    ],
+    "name": "Naxxramas",
+    "zone": "Naxxramas",
+    "type": "Raid"
   },
   {
-    "x": 5842,
-    "y": -3795,
-    "name": "Temple of Atal'Hakkar",
-    "zone": "Temple of Atal'Hakkar",
-    "type": "Dungeon",
     "wings": [
       {
         "name": "Upper Temple",
@@ -148,14 +143,14 @@
           }
         ]
       }
-    ]
+    ],
+    "x": 5842,
+    "y": -3795,
+    "name": "Temple of Atal'Hakkar",
+    "zone": "Temple of Atal'Hakkar",
+    "type": "Dungeon"
   },
   {
-    "name": "The Stockade",
-    "zone": "The Stockade",
-    "type": "Dungeon",
-    "convertDestinationTo": "Stormwind City",
-    "noNightVariant": true,
     "wings": [
       {
         "name": "The Stockade",
@@ -173,14 +168,13 @@
         ]
       }
     ],
-    "capitalRedirect": "Stormwind City"
+    "name": "The Stockade",
+    "zone": "The Stockade",
+    "type": "Dungeon",
+    "convertDestinationTo": "Stormwind City",
+    "noNightVariant": true
   },
   {
-    "name": "Ragefire Chasm",
-    "zone": "Ragefire Chasm",
-    "type": "Dungeon",
-    "convertDestinationTo": "Orgrimmar",
-    "noNightVariant": true,
     "wings": [
       {
         "name": "Ragefire Chasm",
@@ -198,15 +192,13 @@
         ]
       }
     ],
-    "capitalRedirect": "Orgrimmar"
+    "name": "Ragefire Chasm",
+    "zone": "Ragefire Chasm",
+    "type": "Dungeon",
+    "convertDestinationTo": "Orgrimmar",
+    "noNightVariant": true
   },
   {
-    "x": 4935,
-    "y": -2725,
-    "name": "Gnomeregan",
-    "zone": "Gnomeregan",
-    "type": "Dungeon",
-    "noNightVariant": true,
     "wings": [
       {
         "name": "Gnomeregan",
@@ -229,14 +221,29 @@
           }
         ]
       }
-    ]
+    ],
+    "x": 4935,
+    "y": -2725,
+    "name": "Gnomeregan",
+    "zone": "Gnomeregan",
+    "type": "Dungeon",
+    "noNightVariant": true
   },
   {
-    "x": 4734,
-    "y": -1715,
-    "name": "Shadowfang Keep",
-    "zone": "Shadowfang Keep",
-    "type": "Dungeon",
+    "zoneDrop": [
+      "Gloomshroud Armor",
+      "Duskbringer",
+      "Necrology Robes",
+      "Shadowfang",
+      "Assassin's Blade",
+      "Night Reaver",
+      "Guillotine Axe",
+      "Witching Stave",
+      "Mindthrust Bracers",
+      "Face Smasher",
+      "Black Malice",
+      "Eerie Stable Lantern"
+    ],
     "wings": [
       {
         "name": "Shadowfang Keep",
@@ -269,26 +276,13 @@
         ]
       }
     ],
-    "zoneDrop": [
-      "Gloomshroud Armor",
-      "Duskbringer",
-      "Necrology Robes",
-      "Shadowfang",
-      "Assassin's Blade",
-      "Night Reaver",
-      "Guillotine Axe",
-      "Witching Stave",
-      "Mindthrust Bracers",
-      "Face Smasher",
-      "Black Malice",
-      "Eerie Stable Lantern"
-    ]
+    "x": 4734,
+    "y": -1715,
+    "name": "Shadowfang Keep",
+    "zone": "Shadowfang Keep",
+    "type": "Dungeon"
   },
   {
-    "name": "Shadow Hold",
-    "zone": "Shadow Hold",
-    "type": "Dungeon",
-    "convertDestinationTo": "Jaedenar Grounds",
     "wings": [
       {
         "name": "Shadow Hold",
@@ -311,14 +305,52 @@
           }
         ]
       }
-    ]
+    ],
+    "name": "Shadow Hold",
+    "zone": "Shadow Hold",
+    "type": "Dungeon",
+    "convertDestinationTo": "Jaedenar Grounds"
   },
   {
-    "x": 5585,
-    "y": -1411,
-    "name": "Scholomance",
-    "zone": "Scholomance",
-    "type": "Dungeon",
+    "zoneDrop": [
+      "Totem of Sustaining",
+      "Libram of Divinity",
+      "Bonebrace Hauberk",
+      "Bloodmail Hauberk",
+      "Bloodmail Legguards",
+      "Bloodmail Belt",
+      "Bloodmail Gauntlets",
+      "Bloodmail Boots",
+      "Deathbone Girdle",
+      "Deathbone Sabatons",
+      "Deathbone Gauntlets",
+      "Deathbone Legguards",
+      "Deathbone Chestplate",
+      "Necropile Robe",
+      "Necropile Cuffs",
+      "Necropile Boots",
+      "Necropile Leggings",
+      "Necropile Mantle",
+      "Cadaverous Belt",
+      "Cadaverous Armor",
+      "Cadaverous Leggings",
+      "Cadaverous Gloves",
+      "Cadaverous Walkers",
+      "Ancient Bone Bow",
+      "Burial Shawl",
+      "Ghoul Skin Leggings",
+      "Hammer of the Vesper",
+      "Dimly Opalescent Ring",
+      "Belt of the Ordained",
+      "Magister's Gloves",
+      "Dreadmist Wraps",
+      "Innervating Band",
+      "Malefic Bracers",
+      "Lightforge Bracers",
+      "Icy Tomb Spaulders",
+      "Tattered Leather Hood",
+      "Coldstone Slippers"
+    ],
     "wings": [
       {
         "name": "Upper Complex",
@@ -373,52 +405,13 @@
         ]
       }
     ],
-    "zoneDrop": [
-      "Totem of Sustaining",
-      "Libram of Divinity",
-      "Bonebrace Hauberk",
-      "Bloodmail Hauberk",
-      "Bloodmail Legguards",
-      "Bloodmail Belt",
-      "Bloodmail Gauntlets",
-      "Bloodmail Boots",
-      "Deathbone Girdle",
-      "Deathbone Sabatons",
-      "Deathbone Gauntlets",
-      "Deathbone Legguards",
-      "Deathbone Chestplate",
-      "Necropile Robe",
-      "Necropile Cuffs",
-      "Necropile Boots",
-      "Necropile Leggings",
-      "Necropile Mantle",
-      "Cadaverous Belt",
-      "Cadaverous Armor",
-      "Cadaverous Leggings",
-      "Cadaverous Gloves",
-      "Cadaverous Walkers",
-      "Ancient Bone Bow",
-      "Burial Shawl",
-      "Ghoul Skin Leggings",
-      "Hammer of the Vesper",
-      "Dimly Opalescent Ring",
-      "Belt of the Ordained",
-      "Magister's Gloves",
-      "Dreadmist Wraps",
-      "Innervating Band",
-      "Malefic Bracers",
-      "Lightforge Bracers",
-      "Icy Tomb Spaulders",
-      "Tattered Leather Hood",
-      "Coldstone Slippers"
-    ]
+    "x": 5585,
+    "y": -1411,
+    "name": "Scholomance",
+    "zone": "Scholomance",
+    "type": "Dungeon"
   },
   {
-    "x": 859,
-    "y": -2816,
-    "name": "Maraudon",
-    "zone": "Maraudon",
-    "type": "Dungeon",
     "wings": [
       {
         "name": "Orange Crystal Caverns",
@@ -464,14 +457,40 @@
           }
         ]
       }
-    ]
+    ],
+    "x": 859,
+    "y": -2816,
+    "name": "Maraudon",
+    "zone": "Maraudon",
+    "type": "Dungeon"
   },
   {
-    "x": 5750,
-    "y": -984,
-    "name": "Stratholme",
-    "zone": "Stratholme",
-    "type": "Dungeon",
+    "zoneDrop": [
+      "Star of Mystaria",
+      "Demonshear",
+      "Wyrmtongue Shoulders",
+      "Crown of Tyranny",
+      "Gift of the Elven Magi",
+      "Fire Striders",
+      "Hammer of the Grand Crusader",
+      "Grand Crusader's Helm",
+      "Shroud of the Nathrezim",
+      "Flamescarred Girdle",
+      "Lavawalker Greaves",
+      "Pattern: Truefaith Vestments",
+      "Plaguehound Leggings",
+      "Band of Mending",
+      "Morlune's Bracer",
+      "Recipe: Flask of Distilled Wisdom",
+      "Stratholme Militia Shoulderguard",
+      "Lightforge Boots",
+      "Gracious Cape",
+      "Juno's Shadow",
+      "Plaguebat Fur Gloves",
+      "Devout Bracers",
+      "Sacred Cloth Leggings",
+      "Frayed Abomination Stitching"
+    ],
     "wings": [
       {
         "name": "Main Gate",
@@ -519,40 +538,13 @@
         ]
       }
     ],
-    "zoneDrop": [
-      "Star of Mystaria",
-      "Demonshear",
-      "Wyrmtongue Shoulders",
-      "Crown of Tyranny",
-      "Gift of the Elven Magi",
-      "Fire Striders",
-      "Hammer of the Grand Crusader",
-      "Grand Crusader's Helm",
-      "Shroud of the Nathrezim",
-      "Flamescarred Girdle",
-      "Lavawalker Greaves",
-      "Pattern: Truefaith Vestments",
-      "Plaguehound Leggings",
-      "Band of Mending",
-      "Morlune's Bracer",
-      "Recipe: Flask of Distilled Wisdom",
-      "Stratholme Militia Shoulderguard",
-      "Lightforge Boots",
-      "Gracious Cape",
-      "Juno's Shadow",
-      "Plaguebat Fur Gloves",
-      "Devout Bracers",
-      "Sacred Cloth Leggings",
-      "Frayed Abomination Stitching"
-    ]
+    "x": 5750,
+    "y": -984,
+    "name": "Stratholme",
+    "zone": "Stratholme",
+    "type": "Dungeon"
   },
   {
-    "x": 1866,
-    "y": -2706,
-    "name": "Wailing Caverns",
-    "zone": "Wailing Caverns",
-    "type": "Dungeon",
-    "noNightVariant": true,
     "wings": [
       {
         "name": "Wailing Caverns",
@@ -585,15 +577,30 @@
           }
         ]
       }
-    ]
+    ],
+    "x": 1866,
+    "y": -2706,
+    "name": "Wailing Caverns",
+    "zone": "Wailing Caverns",
+    "type": "Dungeon",
+    "noNightVariant": true
   },
   {
-    "x": 5704,
-    "y": -2885,
-    "name": "Uldaman",
-    "zone": "Uldaman",
-    "type": "Dungeon",
-    "noNightVariant": true,
+    "zoneDrop": [
+      "The Jackhammer",
+      "Spaulders of a Lost Age",
+      "Digmaster 5000",
+      "Pendulum of Doom",
+      "Miner's Hat of the Deep",
+      "Shadowforge Bushmaster",
+      "Papal Fez",
+      "Stonevault Bonebreaker",
+      "Skullplate Bracers",
+      "Ginn-su Sword",
+      "Monolithic Bow",
+      "Obsidian Cleaver",
+      "Annealed Blade"
+    ],
     "wings": [
       {
         "name": "Uldaman",
@@ -620,29 +627,25 @@
         ]
       }
     ],
-    "zoneDrop": [
-      "The Jackhammer",
-      "Spaulders of a Lost Age",
-      "Digmaster 5000",
-      "Pendulum of Doom",
-      "Miner's Hat of the Deep",
-      "Shadowforge Bushmaster",
-      "Papal Fez",
-      "Stonevault Bonebreaker",
-      "Skullplate Bracers",
-      "Ginn-su Sword",
-      "Monolithic Bow",
-      "Obsidian Cleaver",
-      "Annealed Blade"
-    ]
+    "x": 5704,
+    "y": -2885,
+    "name": "Uldaman",
+    "zone": "Uldaman",
+    "type": "Dungeon",
+    "noNightVariant": true
   },
   {
-    "x": 1980,
-    "y": -3502,
-    "name": "Razorfen Downs",
-    "zone": "Razorfen Downs",
-    "type": "Dungeon",
-    "noNightVariant": true,
+    "zoneDrop": [
+      "Corpseshroud",
+      "Death's Head Vestment",
+      "Manslayer",
+      "Freezing Shard",
+      "Quillward Harness",
+      "Quillshooter",
+      "Thoughtcast Boots",
+      "Ebony Boneclub",
+      "Boneslasher"
+    ],
     "wings": [
       {
         "name": "Razorfen Downs",
@@ -666,25 +669,26 @@
         ]
       }
     ],
-    "zoneDrop": [
-      "Corpseshroud",
-      "Death's Head Vestment",
-      "Manslayer",
-      "Freezing Shard",
-      "Quillward Harness",
-      "Quillshooter",
-      "Thoughtcast Boots",
-      "Ebony Boneclub",
-      "Boneslasher"
-    ]
+    "x": 1980,
+    "y": -3502,
+    "name": "Razorfen Downs",
+    "zone": "Razorfen Downs",
+    "type": "Dungeon",
+    "noNightVariant": true
   },
   {
-    "x": 1792,
-    "y": -3421,
-    "name": "Razorfen Kraul",
-    "zone": "Razorfen Kraul",
-    "type": "Dungeon",
-    "noNightVariant": true,
+    "zoneDrop": [
+      "Vendetta",
+      "Avenger's Armor",
+      "Mantle of Thieves",
+      "Pugilist Bracers",
+      "Slaghammer",
+      "Plains Ring",
+      "Sword of Decay",
+      "Pysan's Old Greatsword",
+      "Wolfclaw Gloves",
+      "Staff of the Shade"
+    ],
     "wings": [
       {
         "name": "Razorfen Kraul",
@@ -711,26 +715,20 @@
         ]
       }
     ],
-    "zoneDrop": [
-      "Vendetta",
-      "Avenger's Armor",
-      "Mantle of Thieves",
-      "Pugilist Bracers",
-      "Slaghammer",
-      "Plains Ring",
-      "Sword of Decay",
-      "Pysan's Old Greatsword",
-      "Wolfclaw Gloves",
-      "Staff of the Shade"
-    ]
+    "x": 1792,
+    "y": -3421,
+    "name": "Razorfen Kraul",
+    "zone": "Razorfen Kraul",
+    "type": "Dungeon",
+    "noNightVariant": true
   },
   {
-    "x": 4748,
-    "y": -3931,
-    "name": "The Deadmines",
-    "zone": "The Deadmines",
-    "type": "Dungeon",
-    "noNightVariant": true,
+    "zoneDrop": [
+      "Blackwater Cutlass",
+      "Silk-threaded Trousers",
+      "Blackened Defias Leggings",
+      "Blackened Defias Gloves"
+    ],
     "wings": [
       {
         "name": "The Deadmines",
@@ -754,20 +752,28 @@
         ]
       }
     ],
-    "zoneDrop": [
-      "Blackwater Cutlass",
-      "Silk-threaded Trousers",
-      "Blackened Defias Leggings",
-      "Blackened Defias Gloves"
-    ]
+    "x": 4748,
+    "y": -3931,
+    "name": "The Deadmines",
+    "zone": "The Deadmines",
+    "type": "Dungeon",
+    "noNightVariant": true
   },
   {
-    "x": 1269,
-    "y": -1692,
-    "name": "Blackfathom Deeps",
-    "zone": "Blackfathom Deeps",
-    "type": "Dungeon",
-    "noNightVariant": true,
+    "zoneDrop": [
+      "Axe of the Enforcer",
+      "Crested Scepter",
+      "Martyr's Chain",
+      "Onyx Claymore",
+      "Grimclaw",
+      "Ring of Precision",
+      "Scholarly Robes",
+      "Doomspike",
+      "Tree Bark Jacket",
+      "Staff of the Friar",
+      "Staff of the Blessed Seer",
+      "Evocator's Blade"
+    ],
     "wings": [
       {
         "name": "Submerged Caverns",
@@ -802,27 +808,27 @@
         ]
       }
     ],
-    "zoneDrop": [
-      "Axe of the Enforcer",
-      "Crested Scepter",
-      "Martyr's Chain",
-      "Onyx Claymore",
-      "Grimclaw",
-      "Ring of Precision",
-      "Scholarly Robes",
-      "Doomspike",
-      "Tree Bark Jacket",
-      "Staff of the Friar",
-      "Staff of the Blessed Seer",
-      "Evocator's Blade"
-    ]
+    "x": 1269,
+    "y": -1692,
+    "name": "Blackfathom Deeps",
+    "zone": "Blackfathom Deeps",
+    "type": "Dungeon",
+    "noNightVariant": true
   },
   {
-    "x": 1178,
-    "y": -3439,
-    "name": "Dire Maul",
-    "zone": "Dire Maul",
-    "type": "Dungeon",
+    "zoneDrop": [
+      "Redoubt Cloak",
+      "Gordok Bracers of Power",
+      "Rod of the Ogre Magi",
+      "Counterattack Lodestone",
+      "Barrier Shield",
+      "Ogre Forged Hauberk",
+      "Unyielding Maul",
+      "Mindsurge Robe",
+      "Tarnished Elven Ring",
+      "Cyclone Spaulders",
+      "Elemental Plate Girdle"
+    ],
     "wings": [
       {
         "name": "Eastern Wing",
@@ -876,25 +882,34 @@
         ]
       }
     ],
-    "zoneDrop": [
-      "Redoubt Cloak",
-      "Gordok Bracers of Power",
-      "Rod of the Ogre Magi",
-      "Counterattack Lodestone",
-      "Barrier Shield",
-      "Ogre Forged Hauberk",
-      "Unyielding Maul",
-      "Mindsurge Robe",
-      "Tarnished Elven Ring",
-      "Cyclone Spaulders",
-      "Elemental Plate Girdle"
-    ]
+    "x": 1178,
+    "y": -3439,
+    "name": "Dire Maul",
+    "zone": "Dire Maul",
+    "type": "Dungeon"
   },
   {
-    "name": "Scarlet Monastery",
-    "zone": "Scarlet Monastery",
-    "type": "Dungeon",
-    "convertDestinationTo": "Scarlet Monastery Grounds",
+    "zoneDrop": [
+      "Scarlet Leggings",
+      "Fight Club",
+      "Ruthless Shiv",
+      "Warchief Kilt",
+      "Swampchill Fetish",
+      "Flintrock Shoulders",
+      "Archon Chestpiece",
+      "Steelclaw Reaver",
+      "Sliverblade",
+      "Windweaver Staff",
+      "Scarlet Belt",
+      "Mark of Kern",
+      "Tainted Pierce",
+      "Scarlet Wristguards",
+      "Scarlet Boots",
+      "Beguiler Robes",
+      "Chesterfall Musket",
+      "Watchman Pauldrons",
+      "Resplendent Guardian"
+    ],
     "wings": [
       {
         "name": "Graveyard",
@@ -952,34 +967,46 @@
         ]
       }
     ],
-    "zoneDrop": [
-      "Scarlet Leggings",
-      "Fight Club",
-      "Ruthless Shiv",
-      "Warchief Kilt",
-      "Swampchill Fetish",
-      "Flintrock Shoulders",
-      "Archon Chestpiece",
-      "Steelclaw Reaver",
-      "Sliverblade",
-      "Windweaver Staff",
-      "Scarlet Belt",
-      "Mark of Kern",
-      "Tainted Pierce",
-      "Scarlet Wristguards",
-      "Scarlet Boots",
-      "Beguiler Robes",
-      "Chesterfall Musket",
-      "Watchman Pauldrons",
-      "Resplendent Guardian"
-    ]
+    "name": "Scarlet Monastery",
+    "zone": "Scarlet Monastery",
+    "type": "Dungeon",
+    "convertDestinationTo": "Scarlet Monastery Grounds"
   },
   {
-    "name": "Blackrock Depths",
-    "zone": "Blackrock Depths",
-    "type": "Dungeon",
-    "convertDestinationTo": "Blackrock Mountain",
-    "noNightVariant": true,
+    "zoneDrop": [
+      "Ironweave Mantle",
+      "Swiftwalker Boots",
+      "Hands of the Exalted Herald",
+      "High Priestess Boots",
+      "Ebonsteel Spaulders",
+      "Magmus Stone",
+      "Cinderhide Armsplints",
+      "Emberplate Armguards",
+      "Impervious Giant",
+      "Blood-etched Blade",
+      "Ghostshroud",
+      "Deathdealer Breastplate",
+      "Legplates of the Eternal Guardian",
+      "Haunting Specter Leggings",
+      "Coal Miner Boots",
+      "Golem Skull Helm",
+      "Rubidium Hammer",
+      "Wraith Scythe",
+      "Spire of the Stoneshaper",
+      "Mar Alom's Grip",
+      "Stoneshield Cloak",
+      "Plans: Dark Iron Sunderer",
+      "Blisterbane Wrap",
+      "Battlechaser's Greaves",
+      "Doomforged Straightedge",
+      "Aristocratic Cuffs",
+      "Ribsplitter",
+      "Runed Golem Shackles",
+      "The Judge's Gavel",
+      "Braincage",
+      "Searing Needle",
+      "Funeral Pyre Vestment"
+    ],
     "wings": [
       {
         "name": "Blackrock Caverns",
@@ -1063,47 +1090,30 @@
         ]
       }
     ],
-    "zoneDrop": [
-      "Ironweave Mantle",
-      "Swiftwalker Boots",
-      "Hands of the Exalted Herald",
-      "High Priestess Boots",
-      "Ebonsteel Spaulders",
-      "Magmus Stone",
-      "Cinderhide Armsplints",
-      "Emberplate Armguards",
-      "Impervious Giant",
-      "Blood-etched Blade",
-      "Ghostshroud",
-      "Deathdealer Breastplate",
-      "Legplates of the Eternal Guardian",
-      "Haunting Specter Leggings",
-      "Coal Miner Boots",
-      "Golem Skull Helm",
-      "Rubidium Hammer",
-      "Wraith Scythe",
-      "Spire of the Stoneshaper",
-      "Mar Alom's Grip",
-      "Stoneshield Cloak",
-      "Plans: Dark Iron Sunderer",
-      "Blisterbane Wrap",
-      "Battlechaser's Greaves",
-      "Doomforged Straightedge",
-      "Aristocratic Cuffs",
-      "Ribsplitter",
-      "Runed Golem Shackles",
-      "The Judge's Gavel",
-      "Braincage",
-      "Searing Needle",
-      "Funeral Pyre Vestment"
-    ]
-  },
-  {
-    "name": "Lower Blackrock Spire",
-    "zone": "Lower Blackrock Spire",
+    "name": "Blackrock Depths",
+    "zone": "Blackrock Depths",
     "type": "Dungeon",
     "convertDestinationTo": "Blackrock Mountain",
-    "noNightVariant": true,
+    "noNightVariant": true
+  },
+  {
+    "zoneDrop": [
+      "Draconian Deflector",
+      "Wildfire Cape",
+      "Gyth's Skull",
+      "Tribal War Feathers",
+      "Heart of the Scale",
+      "Slaghide Gauntlets",
+      "Wind Dancer Boots",
+      "Recipe: Greater Fire Protection Potion",
+      "Cord of Elements",
+      "Beaststalker's Belt",
+      "Magister's Bindings",
+      "Devout Belt",
+      "Dreadmist Bracers",
+      "Shadowcraft Belt",
+      "Bracers of Valor"
+    ],
     "wings": [
       {
         "name": "Lower Wing",
@@ -1136,6 +1146,13 @@
         ]
       }
     ],
+    "name": "Lower Blackrock Spire",
+    "zone": "Lower Blackrock Spire",
+    "type": "Dungeon",
+    "convertDestinationTo": "Blackrock Mountain",
+    "noNightVariant": true
+  },
+  {
     "zoneDrop": [
       "Draconian Deflector",
       "Wildfire Cape",
@@ -1152,14 +1169,7 @@
       "Dreadmist Bracers",
       "Shadowcraft Belt",
       "Bracers of Valor"
-    ]
-  },
-  {
-    "name": "Upper Blackrock Spire",
-    "zone": "Upper Blackrock Spire",
-    "type": "Dungeon",
-    "convertDestinationTo": "Blackrock Mountain",
-    "noNightVariant": true,
+    ],
     "wings": [
       {
         "name": "Upper Wing",
@@ -1189,30 +1199,13 @@
         ]
       }
     ],
-    "zoneDrop": [
-      "Draconian Deflector",
-      "Wildfire Cape",
-      "Gyth's Skull",
-      "Tribal War Feathers",
-      "Heart of the Scale",
-      "Slaghide Gauntlets",
-      "Wind Dancer Boots",
-      "Recipe: Greater Fire Protection Potion",
-      "Cord of Elements",
-      "Beaststalker's Belt",
-      "Magister's Bindings",
-      "Devout Belt",
-      "Dreadmist Bracers",
-      "Shadowcraft Belt",
-      "Bracers of Valor"
-    ]
+    "name": "Upper Blackrock Spire",
+    "zone": "Upper Blackrock Spire",
+    "type": "Dungeon",
+    "convertDestinationTo": "Blackrock Mountain",
+    "noNightVariant": true
   },
   {
-    "x": 2045,
-    "y": -3894,
-    "name": "Zul'Farrak",
-    "zone": "Zul'Farrak",
-    "type": "Dungeon",
     "wings": [
       {
         "name": "Zul'Farrak",
@@ -1238,15 +1231,14 @@
           }
         ]
       }
-    ]
+    ],
+    "x": 2045,
+    "y": -3894,
+    "name": "Zul'Farrak",
+    "zone": "Zul'Farrak",
+    "type": "Dungeon"
   },
   {
-    "x": 2209,
-    "y": -3485,
-    "name": "Onyxia's Lair",
-    "zone": "Onyxia's Lair",
-    "type": "Raid",
-    "noNightVariant": true,
     "wings": [
       {
         "name": "Onyxia's Lair",
@@ -1257,14 +1249,35 @@
           }
         ]
       }
-    ]
+    ],
+    "x": 2209,
+    "y": -3485,
+    "name": "Onyxia's Lair",
+    "zone": "Onyxia's Lair",
+    "type": "Raid",
+    "noNightVariant": true
   },
   {
-    "name": "Molten Core",
-    "zone": "Molten Core",
-    "type": "Raid",
-    "convertDestinationTo": "Blackrock Mountain",
-    "noNightVariant": true,
+    "zoneDrop": [
+      "Arcanist Bindings",
+      "Arcanist Belt",
+      "Felheart Bracers",
+      "Felheart Belt",
+      "Girdle of Prophecy",
+      "Vambraces of Prophecy",
+      "Nightslayer Bracelets",
+      "Nightslayer Belt",
+      "Cenarion Belt",
+      "Cenarion Bracers",
+      "Earthfury Belt",
+      "Earthfury Bracers",
+      "Giantstalker's Bracers",
+      "Giantstalker's Belt",
+      "Lawbringer Bracers",
+      "Lawbringer Belt",
+      "Bracers of Might",
+      "Belt of Might"
+    ],
     "wings": [
       {
         "name": "Molten Core",
@@ -1291,33 +1304,31 @@
         ]
       }
     ],
-    "zoneDrop": [
-      "Arcanist Bindings",
-      "Arcanist Belt",
-      "Felheart Bracers",
-      "Felheart Belt",
-      "Girdle of Prophecy",
-      "Vambraces of Prophecy",
-      "Nightslayer Bracelets",
-      "Nightslayer Belt",
-      "Cenarion Belt",
-      "Cenarion Bracers",
-      "Earthfury Belt",
-      "Earthfury Bracers",
-      "Giantstalker's Bracers",
-      "Giantstalker's Belt",
-      "Lawbringer Bracers",
-      "Lawbringer Belt",
-      "Bracers of Might",
-      "Belt of Might"
-    ]
+    "name": "Molten Core",
+    "zone": "Molten Core",
+    "type": "Raid",
+    "convertDestinationTo": "Blackrock Mountain",
+    "noNightVariant": true
   },
   {
-    "x": 5291,
-    "y": -4097,
-    "name": "Zul'Gurub",
-    "zone": "Zul'Gurub",
-    "type": "Raid",
+    "zoneDrop": [
+      "Sceptre of Smiting",
+      "Zulian Hacker",
+      "Zulian Ceremonial Staff",
+      "Shadow Panther Hide Gloves",
+      "Shadow Panther Hide Belt",
+      "Gurubashi Helm",
+      "Cloak of the Hakkari Worshipers",
+      "Might of the Tribe",
+      "Zulian Scepter of Rites",
+      "Sacrificial Gauntlets",
+      "Gloves of the Tormented",
+      "Belt of Untapped Power",
+      "Blooddrenched Mask",
+      "Zulian Headdress",
+      "Band of Servitude",
+      "Seal of the Gurubashi Berserker"
+    ],
     "wings": [
       {
         "name": "Lower",
@@ -1353,31 +1364,21 @@
         ]
       }
     ],
-    "zoneDrop": [
-      "Sceptre of Smiting",
-      "Zulian Hacker",
-      "Zulian Ceremonial Staff",
-      "Shadow Panther Hide Gloves",
-      "Shadow Panther Hide Belt",
-      "Gurubashi Helm",
-      "Cloak of the Hakkari Worshipers",
-      "Might of the Tribe",
-      "Zulian Scepter of Rites",
-      "Sacrificial Gauntlets",
-      "Gloves of the Tormented",
-      "Belt of Untapped Power",
-      "Blooddrenched Mask",
-      "Zulian Headdress",
-      "Band of Servitude",
-      "Seal of the Gurubashi Berserker"
-    ]
+    "x": 5291,
+    "y": -4097,
+    "name": "Zul'Gurub",
+    "zone": "Zul'Gurub",
+    "type": "Raid"
   },
   {
-    "name": "Blackwing Lair",
-    "zone": "Blackwing Lair",
-    "type": "Raid",
-    "convertDestinationTo": "Blackrock Mountain",
-    "noNightVariant": true,
+    "zoneDrop": [
+      "Draconic Maul",
+      "Doom's Edge",
+      "Band of Dark Dominion",
+      "Essence Gatherer",
+      "Cloak of Draconic Might",
+      "Boots of Pure Thought"
+    ],
     "wings": [
       {
         "name": "Lower",
@@ -1404,22 +1405,24 @@
         ]
       }
     ],
-    "zoneDrop": [
-      "Draconic Maul",
-      "Doom's Edge",
-      "Band of Dark Dominion",
-      "Essence Gatherer",
-      "Cloak of Draconic Might",
-      "Boots of Pure Thought"
-    ]
+    "name": "Blackwing Lair",
+    "zone": "Blackwing Lair",
+    "type": "Raid",
+    "convertDestinationTo": "Blackrock Mountain",
+    "noNightVariant": true
   },
   {
-    "x": 1119,
-    "y": -4331,
-    "name": "Ruins of Ahn'Qiraj",
-    "zone": "Ruins of Ahn'Qiraj",
-    "type": "Raid",
-    "noNightVariant": true,
+    "zoneDrop": [
+      "Silithid Husked Launcher",
+      "Antenna of Invigoration",
+      "The Lost Kris of Zedd",
+      "Helm of the Holy Avenger",
+      "Coif of Elemental Fury",
+      "Polished Obsidian Pauldrons",
+      "Gavel of Qiraji Authority",
+      "Fury of the Forgotten Swarm",
+      "Treads of the Wandering Nomad"
+    ],
     "wings": [
       {
         "name": "Ruins of Ahn'Qiraj",
@@ -1446,25 +1449,23 @@
         ]
       }
     ],
-    "zoneDrop": [
-      "Silithid Husked Launcher",
-      "Antenna of Invigoration",
-      "The Lost Kris of Zedd",
-      "Helm of the Holy Avenger",
-      "Coif of Elemental Fury",
-      "Polished Obsidian Pauldrons",
-      "Gavel of Qiraji Authority",
-      "Fury of the Forgotten Swarm",
-      "Treads of the Wandering Nomad"
-    ]
+    "x": 1119,
+    "y": -4331,
+    "name": "Ruins of Ahn'Qiraj",
+    "zone": "Ruins of Ahn'Qiraj",
+    "type": "Raid",
+    "noNightVariant": true
   },
   {
-    "x": 1045,
-    "y": -4275,
-    "name": "Temple of Ahn'Qiraj",
-    "zone": "Temple of Ahn'Qiraj",
-    "type": "Raid",
-    "noNightVariant": true,
+    "zoneDrop": [
+      "Ritssyn's Ring of Chaos",
+      "Anubisath Warhammer",
+      "Garb of Royal Ascension",
+      "Neretzek, The Blood Drinker",
+      "Gloves of the Immortal",
+      "Gloves of the Redeemed Prophecy",
+      "Shard of the Fallen Star"
+    ],
     "wings": [
       {
         "name": "Temple of Ahn'Qiraj",
@@ -1494,14 +1495,11 @@
         ]
       }
     ],
-    "zoneDrop": [
-      "Ritssyn's Ring of Chaos",
-      "Anubisath Warhammer",
-      "Garb of Royal Ascension",
-      "Neretzek, The Blood Drinker",
-      "Gloves of the Immortal",
-      "Gloves of the Redeemed Prophecy",
-      "Shard of the Fallen Star"
-    ]
+    "x": 1045,
+    "y": -4275,
+    "name": "Temple of Ahn'Qiraj",
+    "zone": "Temple of Ahn'Qiraj",
+    "type": "Raid",
+    "noNightVariant": true
   }
 ]

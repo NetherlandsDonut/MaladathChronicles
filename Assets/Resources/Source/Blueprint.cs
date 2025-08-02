@@ -3928,6 +3928,7 @@ public class Blueprint
                                 Person.person = person;
                                 CloseWindow(h.window.title);
                                 Respawn("Person");
+                                CloseWindow("Complex");
                                 CloseWindow("QuestAdd");
                                 CloseWindow("QuestTurn");
                                 CloseWindow("AreaQuestAvailable");
@@ -3952,7 +3953,6 @@ public class Blueprint
                             personCategory = group.Key;
                             CloseWindow("Person");
                             Respawn("Persons");
-                            CloseWindow("Complex");
                             CloseWindow("QuestAdd");
                             CloseWindow("QuestTurn");
                             CloseWindow("AreaQuestAvailable");
@@ -8455,6 +8455,7 @@ public class Blueprint
                 }
                 else if (instance.complexPart)
                 {
+                    PlaySound("DesktopButtonClose");
                     CloseDesktop("Instance");
                     SpawnDesktopBlueprint("Complex");
                 }

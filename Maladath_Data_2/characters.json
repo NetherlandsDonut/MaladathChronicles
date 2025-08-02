@@ -492,18 +492,18 @@
         "worldBuffs": [
           {
             "buff": "Scroll of Agility II @ Scroll of Agility",
-            "minutesLeft": 709
+            "minutesLeft": 701
           },
           {
             "buff": "Scroll of Strength III @ Scroll of Strength",
-            "minutesLeft": 719
+            "minutesLeft": 711
           }
         ]
       },
       "hour": 7,
-      "minute": 12,
-      "second": 3,
-      "currentSite": "Blackrock Mountain",
+      "minute": 20,
+      "second": 53,
+      "currentSite": "Orgrimmar",
       "ringOfLaw": "Gorosh the Dervish",
       "forlornCloister": "Ironspine",
       "markets": [
@@ -617,7 +617,7 @@
         "Amberstill Ranch": 1,
         "Anvilmar": 1,
         "Algaz Station": 1,
-        "Orgrimmar": 6,
+        "Orgrimmar": 7,
         "Razor Hill": 1,
         "Zoram'gar Outpost": 1,
         "The Crossroads": 1,
@@ -748,7 +748,7 @@
         "Ruins of Eldarath": 1,
         "Shadowsong Shrine": 1,
         "Southridge Beach": 1,
-        "Temple of Arkkoran": 1,
+        "Temple of Arkkoran": 2,
         "Thalassian Base Camp": 1,
         "The Ruined Reaches": 1,
         "The Shattered Strand": 1,
@@ -778,8 +778,8 @@
         "Altar of Storms": 1,
         "Blackrock Pass": 1,
         "Blackrock Stronghold": 1,
-        "Gates of Blackrock": 1,
-        "Draco'dar": 1,
+        "Gates of Blackrock": 8,
+        "Draco'dar": 2,
         "Firegut Blockade": 1,
         "Dreadmaul Rock": 1,
         "Firegut Hold": 1,
@@ -1362,7 +1362,7 @@
         "Alcaz Island": 1,
         "Zipcoil Retreat": 1,
         "Gadgetspring Hut": 1,
-        "Ranthals Camp": 1,
+        "Ranthals Camp": 3,
         "Goblin Camp": 1,
         "Thunder Bluff": 2
       },
@@ -1372,9 +1372,9 @@
       "vendorStock": {},
       "banks": {},
       "startDate": "2025-07-28T14:04:17.4977464+02:00",
-      "lastLoaded": "2025-08-01T15:49:00.7114494+02:00",
-      "lastPlayed": "2025-08-01T15:56:08.3279908+02:00",
-      "timePlayed": "00:19:44.8859232"
+      "lastLoaded": "2025-08-02T01:31:52.4693147+02:00",
+      "lastPlayed": "2025-08-02T01:32:06.854254+02:00",
+      "timePlayed": "00:48:30.0279102"
     },
     {
       "playerSide": "Alliance",
