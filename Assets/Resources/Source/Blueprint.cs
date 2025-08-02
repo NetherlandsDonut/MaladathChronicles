@@ -1028,7 +1028,7 @@ public class Blueprint
             AddRegionGroup();
             if (area == null || !currentSave.siteProgress.ContainsKey(area.name) || !area.progression.Any(x => x.type == "Treasure")) return;
             if (area.progression.First(x => x.type == "Treasure").point > currentSave.siteProgress[area.name] || currentSave.openedChests.ContainsKey(area.name) && currentSave.openedChests[area.name].inventory.items.Count == 0) return;
-            SetAnchor(259, -111);
+            SetAnchor(-254, -64);
             Chest.SpawnChestObject(new Vector2(0, 0), "Chest");
         }),
         new("ChestInfo", () => {
@@ -3950,13 +3950,6 @@ public class Blueprint
                             personCategory = group.Key;
                             CloseWindow("Person");
                             Respawn("Persons");
-                            CloseWindow("QuestAdd");
-                            CloseWindow("QuestTurn");
-                            CloseWindow("AreaQuestAvailable");
-                            CloseWindow("AreaQuestDone");
-                            CloseWindow("AreaProgress");
-                            CloseWindow("AreaElites");
-                            CloseWindow("Chest");
                             PlaySound("DesktopInstanceOpen");
                         });
                     }
@@ -4268,7 +4261,7 @@ public class Blueprint
                     CloseWindow("Area");
                     SpawnWindowBlueprint("Bank");
                     SpawnWindowBlueprint("Inventory");
-                    Respawn("PlayerMoney", true);
+                    Respawn("PlayerMoney");
                 });
             }
             else if (type.category == "Auctioneer")
@@ -4397,7 +4390,7 @@ public class Blueprint
                     CloseWindow("Area");
                     SpawnWindowBlueprint("Vendor");
                     SpawnWindowBlueprint("Inventory");
-                    Respawn("PlayerMoney", true);
+                    Respawn("PlayerMoney");
                     Respawn("ExperienceBarBorder");
                     Respawn("ExperienceBar");
                 });
@@ -4494,7 +4487,7 @@ public class Blueprint
                     CloseWindow("Vendor");
                     CloseWindow("Inventory");
                     CloseWindow("InventorySort");
-                    Respawn("PlayerMoney", true);
+                    Respawn("PlayerMoney");
                     Respawn("Person");
                     PlaySound("DesktopInventoryClose");
                 });
@@ -4538,7 +4531,7 @@ public class Blueprint
                     CloseWindow("VendorBuyback");
                     CloseWindow("Inventory");
                     CloseWindow("InventorySort");
-                    Respawn("PlayerMoney", true);
+                    Respawn("PlayerMoney");
                     Respawn("Person");
                     PlaySound("DesktopInventoryClose");
                 });
@@ -4788,7 +4781,7 @@ public class Blueprint
                                     if (currentSave.player.inventory.money >= mount.price)
                                     {
                                         currentSave.player.inventory.money -= mount.price;
-                                        Respawn("PlayerMoney", true);
+                                        Respawn("PlayerMoney");
                                         currentSave.player.mounts.Add(mount.name);
                                         Respawn("MountVendor");
                                         PlaySound("DesktopTransportPay");
@@ -5391,6 +5384,7 @@ public class Blueprint
             {
                 AddCheckbox(showSwords);
                 AddLine("Swords");
+                AddSmallButton("ItemSword19");
             },
             (h) =>
             {
@@ -5403,6 +5397,7 @@ public class Blueprint
             {
                 AddCheckbox(showAxes);
                 AddLine("Axes");
+                AddSmallButton("ItemAxe21");
             },
             (h) =>
             {
@@ -5415,6 +5410,7 @@ public class Blueprint
             {
                 AddCheckbox(showMaces);
                 AddLine("Maces");
+                AddSmallButton("ItemHammer17");
             },
             (h) =>
             {
@@ -5427,6 +5423,7 @@ public class Blueprint
             {
                 AddCheckbox(showPolearms);
                 AddLine("Polearms");
+                AddSmallButton("ItemSpear06");
             },
             (h) =>
             {
@@ -5439,6 +5436,7 @@ public class Blueprint
             {
                 AddCheckbox(showStaves);
                 AddLine("Staves");
+                AddSmallButton("ItemStaff27");
             },
             (h) =>
             {
@@ -5479,6 +5477,7 @@ public class Blueprint
             {
                 AddCheckbox(showSwords);
                 AddLine("Swords");
+                AddSmallButton("ItemSword20");
             },
             (h) =>
             {
@@ -5491,6 +5490,7 @@ public class Blueprint
             {
                 AddCheckbox(showAxes);
                 AddLine("Axes");
+                AddSmallButton("ItemAxe01");
             },
             (h) =>
             {
@@ -5503,6 +5503,7 @@ public class Blueprint
             {
                 AddCheckbox(showMaces);
                 AddLine("Maces");
+                AddSmallButton("ItemMace01");
             },
             (h) =>
             {
@@ -5515,6 +5516,7 @@ public class Blueprint
             {
                 AddCheckbox(showDaggers);
                 AddLine("Daggers");
+                AddSmallButton("ItemShortBlade14");
             },
             (h) =>
             {
@@ -5527,6 +5529,7 @@ public class Blueprint
             {
                 AddCheckbox(showWands);
                 AddLine("Wands");
+                AddSmallButton("ItemWand02");
             },
             (h) =>
             {
@@ -5566,7 +5569,8 @@ public class Blueprint
             AddButtonRegion(() =>
             {
                 AddCheckbox(showNonShield);
-                AddLine("Not shields");
+                AddLine("Non shield");
+                AddSmallButton("ItemMiscLantern01");
             },
             (h) =>
             {
@@ -5579,6 +5583,7 @@ public class Blueprint
             {
                 AddCheckbox(showShield);
                 AddLine("Shield");
+                AddSmallButton("ItemShield04");
             },
             (h) =>
             {
@@ -5619,6 +5624,7 @@ public class Blueprint
             {
                 AddCheckbox(showBows);
                 AddLine("Bows");
+                AddSmallButton("ItemBow02");
             },
             (h) =>
             {
@@ -5631,6 +5637,7 @@ public class Blueprint
             {
                 AddCheckbox(showCrossbows);
                 AddLine("Crossbows");
+                AddSmallButton("ItemCrossbow02");
             },
             (h) =>
             {
@@ -5643,6 +5650,7 @@ public class Blueprint
             {
                 AddCheckbox(showGuns);
                 AddLine("Guns");
+                AddSmallButton("ItemRifle02");
             },
             (h) =>
             {
@@ -5683,6 +5691,7 @@ public class Blueprint
             {
                 AddCheckbox(showCloth);
                 AddLine("Cloth");
+                AddSmallButton("ItemMiscWartornScrapCloth");
             },
             (h) =>
             {
@@ -5695,6 +5704,7 @@ public class Blueprint
             {
                 AddCheckbox(showLeather);
                 AddLine("Leather");
+                AddSmallButton("ItemMiscWartornScrapLeather");
             },
             (h) =>
             {
@@ -5707,6 +5717,7 @@ public class Blueprint
             {
                 AddCheckbox(showMail);
                 AddLine("Mail");
+                AddSmallButton("ItemMiscWartornScrapChain");
             },
             (h) =>
             {
@@ -5719,6 +5730,7 @@ public class Blueprint
             {
                 AddCheckbox(showPlate);
                 AddLine("Plate");
+                AddSmallButton("ItemMiscWartornScrapPlate");
             },
             (h) =>
             {
@@ -5769,6 +5781,7 @@ public class Blueprint
             {
                 AddCheckbox(showHead);
                 AddLine("Head");
+                AddSmallButton("ItemMiscDesecratedMailHelm");
             },
             (h) =>
             {
@@ -5781,6 +5794,7 @@ public class Blueprint
             {
                 AddCheckbox(showShoulders);
                 AddLine("Shoulders");
+                AddSmallButton("ItemMiscDesecratedMailShoulder");
             },
             (h) =>
             {
@@ -5793,6 +5807,7 @@ public class Blueprint
             {
                 AddCheckbox(showBack);
                 AddLine("Back");
+                AddSmallButton("ItemMiscDesecratedCape");
             },
             (h) =>
             {
@@ -5805,6 +5820,7 @@ public class Blueprint
             {
                 AddCheckbox(showChest);
                 AddLine("Chest");
+                AddSmallButton("ItemMiscDesecratedMailChest");
             },
             (h) =>
             {
@@ -5817,6 +5833,7 @@ public class Blueprint
             {
                 AddCheckbox(showWrists);
                 AddLine("Wrists");
+                AddSmallButton("ItemMiscDesecratedMailBracer");
             },
             (h) =>
             {
@@ -5829,6 +5846,7 @@ public class Blueprint
             {
                 AddCheckbox(showHands);
                 AddLine("Hands");
+                AddSmallButton("ItemMiscDesecratedMailGlove");
             },
             (h) =>
             {
@@ -5841,6 +5859,7 @@ public class Blueprint
             {
                 AddCheckbox(showWaist);
                 AddLine("Waist");
+                AddSmallButton("ItemMiscDesecratedMailBelt");
             },
             (h) =>
             {
@@ -5853,6 +5872,7 @@ public class Blueprint
             {
                 AddCheckbox(showLegs);
                 AddLine("Legs");
+                AddSmallButton("ItemMiscDesecratedMailPants");
             },
             (h) =>
             {
@@ -5865,6 +5885,7 @@ public class Blueprint
             {
                 AddCheckbox(showFeet);
                 AddLine("Feet");
+                AddSmallButton("ItemMiscDesecratedMailBoots");
             },
             (h) =>
             {
@@ -5915,6 +5936,7 @@ public class Blueprint
             {
                 AddCheckbox(showNeck);
                 AddLine("Neck");
+                AddSmallButton("ItemJewelryNecklace15");
             },
             (h) =>
             {
@@ -5927,6 +5949,7 @@ public class Blueprint
             {
                 AddCheckbox(showFinger);
                 AddLine("Finger");
+                AddSmallButton("ItemJewelryRing19");
             },
             (h) =>
             {
@@ -5939,6 +5962,7 @@ public class Blueprint
             {
                 AddCheckbox(showTrinket);
                 AddLine("Trinket");
+                AddSmallButton("ItemBox03");
             },
             (h) =>
             {
@@ -5979,6 +6003,7 @@ public class Blueprint
             {
                 AddCheckbox(showFood);
                 AddLine("Food");
+                AddSmallButton("ItemMiscFood68");
             },
             (h) =>
             {
@@ -5991,6 +6016,7 @@ public class Blueprint
             {
                 AddCheckbox(showScrolls);
                 AddLine("Scrolls");
+                AddSmallButton("ItemScroll07");
             },
             (h) =>
             {
@@ -6003,6 +6029,7 @@ public class Blueprint
             {
                 AddCheckbox(showPotions);
                 AddLine("Potions");
+                AddSmallButton("ItemPotion08");
             },
             (h) =>
             {
@@ -6015,6 +6042,7 @@ public class Blueprint
             {
                 AddCheckbox(showCombatPotions);
                 AddLine("Combat potions");
+                AddSmallButton("ItemPotion51");
             },
             (h) =>
             {
@@ -6285,7 +6313,7 @@ public class Blueprint
                                             {
                                                 //Learn the level
                                                 currentSave.player.inventory.money -= key.price;
-                                                Respawn("PlayerMoney", true);
+                                                Respawn("PlayerMoney");
                                                 if (!currentSave.player.professionSkills.ContainsKey(type.profession))
                                                 {
                                                     currentSave.player.professionSkills.Add(type.profession, (1, new()));
@@ -6397,7 +6425,7 @@ public class Blueprint
                                                 //Add the recipe
                                                 currentSave.player.inventory.money -= key.price;
                                                 currentSave.player.LearnRecipe(key);
-                                                Respawn("PlayerMoney", true);
+                                                Respawn("PlayerMoney");
                                                 Respawn(h.window.title);
                                                 PlaySound("DesktopSkillLearned");
                                                 SpawnFallingText(new Vector2(0, 34), "New recipe learned", "Blue");
@@ -8302,7 +8330,7 @@ public class Blueprint
                         if (CloseWindow("Vendor"))
                             PlaySound("DesktopCharacterSheetClose");
                         CloseWindow("VendorBuyback");
-                        Respawn("PlayerMoney", true);
+                        Respawn("PlayerMoney");
                         Respawn("Person");
                     }
                     else if (CloseWindow("MakeInnHome"))
