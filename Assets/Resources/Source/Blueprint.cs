@@ -6696,6 +6696,7 @@ public class Blueprint
                     CloseWindow("QuestAdd");
                     CloseWindow("QuestTurn");
                     CloseWindow("QuestConfirmAbandon");
+                    Respawn("WorldBuffs");
                 }
                 else
                 {
@@ -6704,6 +6705,7 @@ public class Blueprint
                     SetDesktopBackground("Backgrounds/RuggedLeather", true, true);
                     Respawn("QuestList");
                     Respawn("MapToolbar");
+                    CloseWindow("WorldBuffs");
                 }
             });
             SetAnchor(Top);
@@ -6844,6 +6846,7 @@ public class Blueprint
                         CloseWindow("QuestAdd");
                         CloseWindow("QuestTurn");
                         CloseWindow("QuestConfirmAbandon");
+                        Respawn("WorldBuffs");
                     }
                     else
                     {
@@ -6851,6 +6854,7 @@ public class Blueprint
                         PlaySound("DesktopInventoryOpen");
                         SetDesktopBackground("Backgrounds/RuggedLeather", true, true);
                         Respawn("QuestList");
+                        CloseWindow("WorldBuffs");
                     }
                     Respawn("MapToolbar");
                 });
@@ -7880,6 +7884,7 @@ public class Blueprint
                     PlaySound("DesktopSpellbookClose");
                     RemoveDesktopBackground();
                     Respawn("MapToolbar");
+                    Respawn("WorldBuffs");
                 }
                 else
                 {
