@@ -155,7 +155,7 @@ public static class Root
             }
             else if (auctionCategory == "Consumeables")
             {
-                if ((item.detailedType != "Potion" && item.detailedType != "Food" && item.detailedType != "Scroll") || item.abilities.Count == 0) remove = true;
+                if ((item.detailedType != "Potion" && item.detailedType != "Food" && item.detailedType != "Scroll") || item.abilities == null) remove = true;
             }
             else if (auctionCategory == "Profession recipes")
             {
@@ -167,7 +167,7 @@ public static class Root
             }
             else if (auctionCategory == "Other")
             {
-                if (item.type != "Miscellaneous" || item.abilities.Count > 0) remove = true;
+                if (item.type != "Miscellaneous" || item.abilities != null) remove = true;
             }
             if (remove) Market.exploredAuctionsGroups.Remove(keys[i]);
         }

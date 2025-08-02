@@ -2894,6 +2894,15 @@ public class Blueprint
                 );
             }
         }),
+        new("PlayerMoney", () => {
+            if (WindowUp("TownHostile")) return;
+            if (WindowUp("Inventory")) return;
+            if (WindowUp("Quest")) return;
+            if (WindowUp("QuestAdd")) return;
+            if (WindowUp("QuestTurn")) return;
+            SetAnchor(BottomRight, -19, 35);
+            PrintPriceRegion(currentSave.player.inventory.money, 38, 38, 57);
+        }),
 
         //Combat Results
         new("CombatResults", () => {
@@ -3756,7 +3765,7 @@ public class Blueprint
                 {
                     CloseDesktop("Area");
                     PlaySound("DesktopInstanceClose");
-                    if (instance != null)
+                    if (instance != null || complex != null)
                     {
                         area = null;
                         CloseWindow("Area");
@@ -3765,24 +3774,12 @@ public class Blueprint
                         CloseWindow("AreaQuestDone");
                         CloseWindow("AreaProgress");
                         CloseWindow("AreaElites");
+                        CloseWindow("Persons");
                         CloseWindow("Chest");
                         PlaySound("DesktopButtonClose");
-                        if (wing != null) SetDesktopBackground(wing.Background());
-                        else SetDesktopBackground(instance.Background());
                     }
-                    else if (complex != null)
-                    {
-                        area = null;
-                        PlaySound("DesktopButtonClose");
-                        CloseWindow("Area");
-                        CloseWindow("AreaQuestTracker");
-                        CloseWindow("AreaQuestAvailable");
-                        CloseWindow("AreaQuestDone");
-                        CloseWindow("AreaProgress");
-                        CloseWindow("AreaElites");
-                        CloseWindow("Chest");
-                        SetDesktopBackground(complex.Background());
-                    }
+                    if (instance != null) SetDesktopBackground(wing != null ? wing.Background() : instance.Background());
+                    else if (complex != null) SetDesktopBackground(complex.Background());
                     else SwitchDesktop("Map");
                 });
                 //if (area.fishing)
@@ -8336,6 +8333,20 @@ public class Blueprint
                         CloseWindow("ProfessionLevelTrainer");
                         Respawn("Person");
                     }
+                    else if (CloseWindow("AuctionHouseOffersGroups"))
+                    {
+                        PlaySound("DesktopInstanceClose");
+                        CloseWindow("AuctionHouseFilteringMain");
+                        CloseWindow("AuctionHouseFilteringTwoHandedWeapons");
+                        CloseWindow("AuctionHouseFilteringOneHandedWeapons");
+                        CloseWindow("AuctionHouseFilteringOffHands");
+                        CloseWindow("AuctionHouseFilteringRangedWeapons");
+                        CloseWindow("AuctionHouseFilteringArmorClass");
+                        CloseWindow("AuctionHouseFilteringArmorType");
+                        CloseWindow("AuctionHouseFilteringJewelry");
+                        CloseWindow("AuctionHouseFilteringConsumeables");
+                        Respawn("Person");
+                    }
                     else if (CloseWindow("Person"))
                     {
                         PlaySound("DesktopInstanceClose");
@@ -8410,6 +8421,7 @@ public class Blueprint
             SetDesktopBackground(instance.Background());
             if (wing != null) SpawnWindowBlueprint("InstanceWing");
             SpawnWindowBlueprint("Instance");
+            SpawnWindowBlueprint("PlayerMoney");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
@@ -8471,6 +8483,7 @@ public class Blueprint
         {
             SetDesktopBackground(complex.Background());
             SpawnWindowBlueprint("Complex");
+            SpawnWindowBlueprint("PlayerMoney");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");

@@ -345,7 +345,7 @@ public class Starter : MonoBehaviour
                     PrintPriceRegion(auctionPriceToDisplay[index], 38, 38, 57, false);
                     if (auctionAmountToDisplay[index] > 0)
                         AddLine("x" + auctionAmountToDisplay[index], "DarkGray", "Right");
-                }));
+                }, true));
             else
                 Blueprint.windowBlueprints.Add(new("AuctionHousePrice" + index, () =>
                 {
@@ -354,7 +354,7 @@ public class Starter : MonoBehaviour
                     PrintPriceRegion(auctionPriceToDisplay[index], 38, 38, 57, false);
                     if (auctionAmountToDisplay[index] > 0)
                         AddLine("x" + auctionAmountToDisplay[index], "DarkGray", "Right");
-                }));
+                }, true));
         }
         var elements = new List<string> { "Fire", "Water", "Earth", "Air", "Frost", "Lightning", "Arcane", "Decay", "Order", "Shadow" };
         foreach (var element in elements)

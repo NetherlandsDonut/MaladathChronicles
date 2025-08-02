@@ -269,27 +269,47 @@ public class SiteArea : Site
         return "Areas/Area" + (zone + name).Clean() + (save != null && save.IsNight() && !noNightVariant ? "Night" : "");
     }
 
+    //Rolls an encounter list for a new battle based on this area denizens
     public List<Entity> RollEncounters(int amount)
     {
+        //Flag for when a rare mob is already in the list
         var alreadyGotRare = false;
+
+        //List of all enemies to have combat with
         var list = new List<Entity>();
+
+        //Possible enemies in this area
         var common = CommonEncounters(currentSave.playerSide);
         var rare = RareEncounters(currentSave.playerSide);
+
+        //Mob encounter to add to the list next
         Encounter toAdd = null;
+
+        //Generate as many enemies as expected
         for (int i = 0; i < amount; i++)
         {
-            if (rare != null && !alreadyGotRare && Roll(5))
+            //If there is a rare mob in this area try rolling for it
+            if (rare != null && rare.Count > 0 && !alreadyGotRare && Roll(5))
             {
+                //Set the rare mob as the one to add to combat
                 toAdd = rare[random.Next(0, rare.Count)];
+
+                //Set this flag to avoid getting two rare enemies in one combat!
                 alreadyGotRare = true;
             }
+
+            //If no rare mob was rolled add a random common enemy
+            //Mobs will not repeat unless there is more different ones available
             else do toAdd = common[random.Next(0, common.Count)];
-                while (common.Count > 1 && list.Exists(x => x.name == toAdd.who));
+            while (list.Count < common.Count && list.Exists(x => x.name == toAdd.who));
+
+            //Add the curretly selected enemy to combat list
             list.Add(new Entity(random.Next(toAdd.levelMin, toAdd.levelMax == 0 ? toAdd.levelMin + 1 : toAdd.levelMax + 1), races.Find(y => y.name == toAdd.who)));
         }
         return list;
     }
 
+    //Rolls a new boss encounter based on clicked boss fight
     public Entity RollEncounter(Encounter boss)
     {
         return new Entity(boss.levelMax != 0 ? random.Next(boss.levelMin, boss.levelMax + 1) : boss.levelMin, races.Find(x => x.name == boss.who));
