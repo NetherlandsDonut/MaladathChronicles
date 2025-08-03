@@ -176,6 +176,9 @@ public class Starter : MonoBehaviour
         PVPRank.pvpRanks ??= new();
         Deserialize(ref Item.items, "items", false, prefix);
         Item.items ??= new();
+        var ccc = Item.items.GroupBy(x => x.name).Where(x => x.Count() > 1);
+        foreach (var item in ccc)
+            Debug.Log(item.Key);
         Deserialize(ref Ability.abilities, "abilities", false, prefix);
         Ability.abilities ??= new();
         Deserialize(ref Buff.buffs, "buffs", false, prefix);

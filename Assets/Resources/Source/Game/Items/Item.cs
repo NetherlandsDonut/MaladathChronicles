@@ -1393,7 +1393,7 @@ public class Item
                     AddPaddingRegion(() =>
                     {
                         var findDrop = items.Find(x => x.name == drop.item);
-                        AddLine(findDrop.name, findDrop.rarity);
+                        AddLine(findDrop.name.CutTail(), findDrop.rarity);
                         AddSmallButton(findDrop.icon);
                         if (settings.rarityIndicators.Value())
                             AddSmallButtonOverlay("OtherRarity" + findDrop.rarity, 0, 2);

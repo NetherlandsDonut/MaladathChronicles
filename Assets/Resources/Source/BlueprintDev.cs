@@ -1898,7 +1898,7 @@ public static class BlueprintDev
                     {
                         SetRegionBackground(Button);
                         var foo = itemsSearch[index + thisWindow.pagination()];
-                        AddLine(foo.name);
+                        AddLine(foo.name.CutTail());
                         AddSmallButton(foo.icon);
                         AddSmallButtonOverlay("OtherRarity" + foo.rarity + "Big");
                     }

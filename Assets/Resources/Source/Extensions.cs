@@ -29,6 +29,12 @@ public static class Extensions
         return text?.Replace("'", "").Replace(".", "").Replace(" ", "");
     }
 
+    //Cuts the tail of a string to be displayed without the suffix
+    public static string CutTail(this string text)
+    {
+        return text[..text.LastIndexOf("!")];
+    }
+
     //Removes all nasty characters from a string (Usually used for accessing files with names based of something)
     public static string ToFirstUpper(this string text)
     {

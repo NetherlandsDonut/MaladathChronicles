@@ -2307,7 +2307,7 @@ public class Blueprint
                     AddButtonRegion(() =>
                     {
                         var item = possibleItems[index + thisWindow.pagination()];
-                        AddLine(item.name);
+                        AddLine(item.name.CutTail());
                         AddSmallButton(item.icon, null, null,
                         (h) => () =>
                         {
@@ -2831,7 +2831,7 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddLine("You are about to destroy", "HalfGray", "Center");
-                AddLine(itemToDestroy.name + (itemToDestroy.amount > 1 ? " x" + itemToDestroy.amount : ""), itemToDestroy.rarity, "Center");
+                AddLine(itemToDestroy.name.CutTail() + (itemToDestroy.amount > 1 ? " x" + itemToDestroy.amount : ""), itemToDestroy.rarity, "Center");
             });
             AddRegionGroup();
             SetRegionGroupWidth(91);
@@ -2868,7 +2868,7 @@ public class Blueprint
             AddPaddingRegion(() =>
             {
                 AddLine("You are about to disenchant", "HalfGray", "Center");
-                AddLine(itemToDisenchant.name + (itemToDisenchant.amount > 1 ? " x" + itemToDisenchant.amount : ""), itemToDisenchant.rarity, "Center");
+                AddLine(itemToDisenchant.name.CutTail() + (itemToDisenchant.amount > 1 ? " x" + itemToDisenchant.amount : ""), itemToDisenchant.rarity, "Center");
                 AddLine("The item will be destroyed", "HalfGray", "Center");
             });
             AddRegionGroup();
@@ -3141,7 +3141,7 @@ public class Blueprint
             {
                 var drop = GeneralDrop.generalDrops.Find(x => x.category == board.results.skinningNodes[0].Item1 && x.tags.Contains("Main"));
                 var item = items.Find(x => x.name == drop.item);
-                AddLine(item.name);
+                AddLine(item.name.CutTail());
                 AddLine("Required skill: ", "DarkGray");
                 AddText("" + board.results.skinningNodes[0].Item2, can ? "Gray" : "DangerousRed");
                 AddBigButton(item.icon);
@@ -3174,7 +3174,7 @@ public class Blueprint
             {
                 var drop = GeneralDrop.generalDrops.Find(x => x.category == board.results.skinningNodes[1].Item1 && x.tags.Contains("Main"));
                 var item = items.Find(x => x.name == drop.item);
-                AddLine(item.name);
+                AddLine(item.name.CutTail());
                 AddLine("Required skill: ", "DarkGray");
                 AddText("" + board.results.skinningNodes[1].Item2, can ? "Gray" : "DangerousRed");
                 AddBigButton(item.icon);
@@ -3206,7 +3206,7 @@ public class Blueprint
             {
                 var drop = GeneralDrop.generalDrops.Find(x => x.category == board.results.skinningNodes[2].Item1 && x.tags.Contains("Main"));
                 var item = items.Find(x => x.name == drop.item);
-                AddLine(item.name);
+                AddLine(item.name.CutTail());
                 AddLine("Required skill: ", "DarkGray");
                 AddText("" + board.results.skinningNodes[2].Item2, can ? "Gray" : "DangerousRed");
                 AddBigButton(item.icon);
@@ -3471,7 +3471,7 @@ public class Blueprint
                     }
                     else if (CDesktop.title == "ContainerLoot")
                     {
-                        AddLine(openedItem.name + ":");
+                        AddLine(openedItem.name.CutTail() + ":");
                         AddSmallButton("OtherClose", (h) =>
                         {
                             if (openedItem.itemsInside.Count == 0)
@@ -5171,7 +5171,7 @@ public class Blueprint
                         var offerGroupFirst = Market.exploredAuctionsGroups[offerGroupKey].OrderBy(x => x.price).ToList()[0];
                         auctionPriceToDisplay[index] = offerGroupFirst.price;
                         auctionAmountToDisplay[index] = offerGroup.Where(x => x.price == offerGroupFirst.price).Sum(x => x.item.amount);
-                        AddLine(offerGroupFirst.item.name + " x" + offerGroup.Sum(x => x.item.amount));
+                        AddLine(offerGroupFirst.item.name.CutTail() + " x" + offerGroup.Sum(x => x.item.amount));
                         AddSmallButton(offerGroupFirst.item.icon);
                         if (settings.rarityIndicators.Value())
                             AddSmallButtonOverlay("OtherRarity" + offerGroupFirst.item.rarity, 0, 2);

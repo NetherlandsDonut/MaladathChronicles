@@ -953,7 +953,7 @@ public static class Root
             AddHeaderRegion(() =>
             {
                 ReverseButtons();
-                AddLine(item.name, item.rarity, "Left");
+                AddLine(item.name.CutTail(), item.rarity, "Left");
                 AddSmallButton(item.icon,
                 (h) =>
                 {
