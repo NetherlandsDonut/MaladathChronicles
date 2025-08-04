@@ -7,8 +7,8 @@ using UnityEngine;
 using static Root;
 using static Buff;
 using static Sound;
-using static Defines;
 using static Shatter;
+using static Defines;
 using static FlyingBuff;
 using static FlyingMissile;
 
@@ -112,20 +112,39 @@ public class Event
             //This effect starts a combat with a specific enemy
             void EffectCombat()
             {
+                if (desktops.Exists(x => x.title == "CombatResults"))
+                {
+                    SpawnFallingText(new Vector2(0, 34), "Can't do that right now", "Red");
+                    return;
+                }
                 var target = effector;
+                string sourceLocalEnemies = effect.ContainsKey("CombatEnemySourceLocal") ? effect["CombatEnemySourceLocal"] : "False";
+                string combatSpecialLoot = effect.ContainsKey("CombatSpecialLoot") ? effect["CombatSpecialLoot"] : "";
+                int combatSpecialLootAmount = int.Parse(effect.ContainsKey("CombatSpecialLootAmount") ? effect["CombatSpecialLootAmount"] : "1");
                 string enemy = effect.ContainsKey("CombatEnemy") ? effect["CombatEnemy"] : "None";
-                int level = effect.ContainsKey("CombatEnemyLevel") ? int.Parse(effect["CombatEnemyLevel"]) : 1;
-                int killCap = effect.ContainsKey("CombatKillCap") ? int.Parse(effect["CombatKillCap"]) : 999;
+                int level = effect.ContainsKey("CombatEnemyLevel") ? int.Parse(effect["CombatEnemyLevel"]) : 0;
+                int killCap = effect.ContainsKey("CombatKillCap") ? int.Parse(effect["CombatKillCap"]) : 0;
                 var race = Race.races.Find(x => x.name == enemy);
+                if (race == null && sourceLocalEnemies == "True" && SiteArea.area != null)
+                {
+                    var commons = SiteArea.area.CommonEncounters(save.playerSide);
+                    if (commons.Count > 0)
+                    {
+                        var random = commons[Root.random.Next(commons.Count)];
+                        race = Race.races.Find(x => x.name == random.who);
+                        level = Root.random.Next(random.levelMin, random.levelMax == 0 ? random.levelMin + 1 : random.levelMax + 1);
+                    }
+                }
                 if (race != null)
                 {
                     var can = false;
-                    if (race.kind == "Common" && (save.commonsKilled.ContainsKey(race.name) ? save.commonsKilled[race.name] : 0) < killCap) can = true;
-                    else if (race.kind == "Rare" && (save.raresKilled.ContainsKey(race.name) ? save.raresKilled[race.name] : 0) < killCap) can = true;
-                    else if (race.kind == "Elite" && (save.elitesKilled.ContainsKey(race.name) ? save.elitesKilled[race.name] : 0) < killCap) can = true;
+                    if (race.kind == "Common" && (killCap <= 0 || (save.commonsKilled.ContainsKey(race.name) ? save.commonsKilled[race.name] : 0) < killCap)) can = true;
+                    else if (race.kind == "Rare" && (killCap <= 0 || (save.raresKilled.ContainsKey(race.name) ? save.raresKilled[race.name] : 0) < killCap)) can = true;
+                    else if (race.kind == "Elite" && (killCap <= 0 || (save.elitesKilled.ContainsKey(race.name) ? save.elitesKilled[race.name] : 0) < killCap)) can = true;
                     if (can)
                     {
-                        Board.NewBoard(new() { new Entity(level, race) }, SiteArea.areas.Find(x => x.name == save.currentSite));
+                        var entity = new Entity(level, race) { specialLoot = Item.items.Find(x => x.name == combatSpecialLoot).CopyItem(combatSpecialLootAmount) };
+                        Board.NewBoard(new() { entity }, SiteArea.areas.Find(x => x.name == save.currentSite));
                         SpawnDesktopBlueprint("Game");
                         CloseDesktop("EquipmentScreen");
                     }

@@ -1438,6 +1438,9 @@ public class Entity
     //Common, Rare and Elite
     public string kind;
 
+    //Additional special loot asigned to the entity
+    public Item specialLoot;
+
     #endregion
 
     //Name of the entity

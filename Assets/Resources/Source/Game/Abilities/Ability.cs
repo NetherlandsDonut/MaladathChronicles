@@ -61,8 +61,7 @@ public class Ability
                     if (trigger["Trigger"] == "ItemUsed")
                     {
                         string itemHash = trigger.ContainsKey("ItemHash") ? trigger["ItemHash"] : "";
-                        string sitePresence = triggerData.ContainsKey("SitePresence") ? triggerData["SitePresence"] : "";
-                        execute = item != null && item.GetHashCode() + "" == itemHash && (sitePresence == "" || save.currentSite == sitePresence);
+                        execute = item != null && item.GetHashCode() + "" == itemHash;
                     }
             if (execute && (trigger.ContainsKey("IgnoreConditions") && trigger["IgnoreConditions"] == "Yes" || AreConditionsMet(trigger, eve, save, null)))
                 eve.ExecuteEffects(save, item, trigger, RankVariables(trigger.ContainsKey("AbilityRank") && int.TryParse(trigger["AbilityRank"], out int parse) ? parse : 0), this);

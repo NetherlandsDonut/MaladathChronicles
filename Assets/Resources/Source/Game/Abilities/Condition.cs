@@ -24,7 +24,7 @@ public class Condition
         else if (c == "any") return subs == null || subs.Count == 0 || subs.Any(x => x.IsMet(ability, trigger, save, board));
         else
         {
-            var args = c.Split(" ").Select(x => Moo(x)).ToList();
+            var args = c.Split(" ").Select(x => Moo(x).Replace("_", " ")).ToList();
             if (args.Count > 2)
             {
                 var variables = ability.RankVariables(trigger.ContainsKey("AbilityRank") && int.TryParse(trigger["AbilityRank"], out int parse) ? parse : 0);
@@ -155,6 +155,11 @@ public class Condition
                 "@class" => save != null ? save.player.spec : "",
                 "@lvl" => save != null ? save.player.level + "" : "",
                 "@itemcount" => save != null ? save.player.inventory.items.Sum(x => x.name == input.Split("~")[1].Replace("_", " ") ? x.amount : 0) + "" : "0",
+
+                //Game related
+                "@currentarea" => SiteArea.area != null ? SiteArea.area.name : "",
+                "@currentinstance" => SiteInstance.instance != null ? SiteInstance.instance.name : "",
+                "@currentcomplex" => SiteComplex.complex != null ? SiteComplex.complex.name : "",
 
                 _ => input,
             };

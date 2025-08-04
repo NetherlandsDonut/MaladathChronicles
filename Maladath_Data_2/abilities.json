@@ -1954,8 +1954,7 @@
       {
         "triggers": [
           {
-            "Trigger": "ItemUsed",
-            "SitePresence": "Darkcloud Pinnacle"
+            "Trigger": "ItemUsed"
           }
         ],
         "effects": [
@@ -1964,6 +1963,12 @@
             "CombatEnemy": "Arikara",
             "CombatEnemyLevel": "28",
             "CombatKillCap": "1"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "@currentarea == Darkcloud_Pinnacle",
+            "failedMessage": "You have to be at the Darkcloud Pinnacle"
           }
         ]
       }
@@ -1984,6 +1989,50 @@
     }
   },
   {
+    "name": "Orwin's Shovel",
+    "possibleTargets": "Self",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Combat",
+            "CombatEnemySourceLocal": "True",
+            "CombatSpecialLoot": "Gordunni Cobalt"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "@currentarea == Gordunni_Outpost",
+            "failedMessage": "You have to be at the Gordunni Outpost"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "isExtender": true,
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Dig for Gordunni cobalt at the Gordunni Outpost in northern Feralas."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "name": "Encased Corrupt Ooze",
     "possibleTargets": "Self",
     "tags": [],
@@ -1994,8 +2043,7 @@
       {
         "triggers": [
           {
-            "Trigger": "ItemUsed",
-            "SitePresence": "Lakkari Tar Pits"
+            "Trigger": "ItemUsed"
           }
         ],
         "effects": [
@@ -2004,6 +2052,12 @@
             "CombatEnemy": "Gargantuan Ooze",
             "CombatEnemyLevel": "56",
             "CombatKillCap": "1"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "@currentarea == Lakkari_Tar_Pits",
+            "failedMessage": "You have to be at the Lakkari Tar Pits"
           }
         ]
       }

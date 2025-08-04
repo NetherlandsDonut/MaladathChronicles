@@ -32,7 +32,7 @@ public static class Extensions
     //Cuts the tail of a string to be displayed without the suffix
     public static string CutTail(this string text)
     {
-        return text[..text.LastIndexOf("!")];
+        return text.Contains("!") ? text[..text.LastIndexOf("!")] : text;
     }
 
     //Removes all nasty characters from a string (Usually used for accessing files with names based of something)

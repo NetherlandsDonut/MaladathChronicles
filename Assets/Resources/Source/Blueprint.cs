@@ -3795,6 +3795,7 @@ public class Blueprint
                 AddSmallButton("OtherClose",
                 (h) =>
                 {
+                    area = null;
                     CloseDesktop("Area");
                     PlaySound("DesktopInstanceClose");
                     if (instance != null || complex != null)

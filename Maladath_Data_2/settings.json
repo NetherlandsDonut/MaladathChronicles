@@ -23,6 +23,9 @@
   "questLevel": {
     "value": "False"
   },
+  "showLowLevelQuests": {
+    "value": "True"
+  },
   "sourcedMarket": {
     "value": "True"
   },

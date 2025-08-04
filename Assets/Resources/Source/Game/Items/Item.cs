@@ -1467,7 +1467,7 @@ public class Item
                 if (a1 - a2 - a3 != 0)
                 {
                     var balance = a1 - a2 - a3;
-                    AddLine((balance > 0 ? "+" : "") + balance, balance > 0 ? "Uncommon" : "DangerousRed");
+                    AddLine((balance > 0 ? "+" : "") + balance, balance > 0 ? "Uncommon" : "DangerousRed", "Right");
                     AddText(" Armor");
                 }
                 if (item.type == "Ranged Weapon")
