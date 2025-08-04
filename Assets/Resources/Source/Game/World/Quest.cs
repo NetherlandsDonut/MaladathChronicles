@@ -473,7 +473,7 @@ public class Quest
         var newQuest = new ActiveQuest { conditions = new() };
         if (conditions != null)
             foreach (var condition in conditions)
-                newQuest.conditions.Add(new() { name = condition.name, amount = condition.amount, type = condition.type });
+                newQuest.conditions.Add(new() { name = condition.name, amount = condition.amount, type = condition.type, sites = condition.sites?.ToList() });
         newQuest.questID = questID;
         return newQuest;
     }

@@ -316,7 +316,9 @@ public class Entity
                 if (!condition.IsDone())
                 {
                     var yes = false;
-                    if (condition.type == "Visit" && condition.name == area.name)
+                    if (condition.sites != null && condition.sites.Contains(area.name))
+                        yes = true;
+                    else if (condition.type == "Visit" && condition.name == area.name)
                         yes = true;
                     else if (condition.type == "Kill")
                     {

@@ -29,6 +29,11 @@ public class QuestCondition
     //Does the quest refrain from taking away this item
     public bool isItemNotTaken;
 
+    //Custom list of the sites this condition can be done at
+    //For now this is mostly utilised by conditions which can be only done
+    //by using an item from the inventory at a specific location
+    public List<string> sites;
+
     //Checks whether this condition is already fulfilled
     public bool IsDone()
     {
@@ -40,6 +45,7 @@ public class QuestCondition
     //Tell the player where this condition can be fulfilled
     public List<Site> Where()
     {
+        if (sites != null) return sites.Select(x => Site.FindSite(y => y.name == x)).Distinct().ToList();
         var list = new List<Site>();
         if (type == "Kill") list = areas.FindAll(x => x.commonEncounters != null && x.commonEncounters.Exists(x => x.who == name) || x.rareEncounters != null && x.rareEncounters.Exists(x => x.who == name) || x.eliteEncounters != null && x.eliteEncounters.Exists(x => x.who == name)).Select(x => (Site)x).ToList();
         else if (type == "Item")
@@ -63,7 +69,7 @@ public class QuestCondition
             list = list.Concat(complexes).Concat(instances).ToList();
             return list.FindAll(x => x != null);
         }
-        else return list;
+        else return list.Distinct().ToList();
     }
 
     //Checks whether this condition is already fulfilled
@@ -71,7 +77,7 @@ public class QuestCondition
     {
         var line = "";
         var then = "";
-        var where = markerButton ? Where().Select(x => x.convertDestinationTo != null ? Site.FindSite(y => y.name == x.convertDestinationTo) : x).Distinct().ToList() : new();
+        var where = markerButton ? Where() : new();
         if (type == "Item")
         {
             var sum = currentSave.player.inventory.items.Sum(x => x.name == name ? x.amount : 0);
