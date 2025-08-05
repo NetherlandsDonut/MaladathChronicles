@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+using static Root;
 using static SaveGame;
 
 public static class Coloring
@@ -21,14 +22,14 @@ public static class Coloring
     //Returns color based around player's reputation with a faction
     public static string ColorReputation(int progress)
     {
-             if (progress >= 8400) return "Exalted";
-        else if (progress >= 6300) return "Revered";
-        else if (progress >= 5100) return "Honored";
-        else if (progress >= 4500) return "Friendly";
-        else if (progress >= 4200) return "Neutral";
-        else if (progress >= 3900) return "Unfriendly";
-        else if (progress >= 3600) return "Hostile";
-        else                       return "Hated";
+             if (progress >= ReputationRankToAmount("Exalted")) return "Exalted";
+        else if (progress >= ReputationRankToAmount("Revered")) return "Revered";
+        else if (progress >= ReputationRankToAmount("Honored")) return "Honored";
+        else if (progress >= ReputationRankToAmount("Friendly")) return "Friendly";
+        else if (progress >= ReputationRankToAmount("Neutral")) return "Neutral";
+        else if (progress >= ReputationRankToAmount("Unfriendly")) return "Unfriendly";
+        else if (progress >= ReputationRankToAmount("Hostile")) return "Hostile";
+        else return "Hated";
     }
 
     public static string ColorQuestLevel(int level)

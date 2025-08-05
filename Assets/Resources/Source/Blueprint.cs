@@ -3905,7 +3905,7 @@ public class Blueprint
                     (h) => () => { transport.PrintTooltip(); });
                 }
             }
-            var validPeople = area.people == null ? new() : area.people.Where(x => !x.hidden && (x.faction == null || currentSave.player.reputation[x.faction] >= 4200)).OrderBy(x => x.type).ToList();
+            var validPeople = area.people == null ? new() : area.people.Where(x => !x.hidden && (x.faction == null || currentSave.player.Reputation(x.faction) >= ReputationRankToAmount("Neutral"))).OrderBy(x => x.type).ToList();
             if (validPeople.Count > 0)
             {
                 var groups = validPeople.GroupBy(x => x.category).OrderBy(x => x.Count()).ThenBy(x => x.Key != null ? x.Key.priority : 0);
@@ -8284,7 +8284,7 @@ public class Blueprint
         {
             personCategory = null;
             SetDesktopBackground(area.Background());
-            if (currentSave.player.Reputation(area.faction) >= 4200)
+            if (currentSave.player.Reputation(area.faction) >= ReputationRankToAmount("Neutral"))
             {
                 SpawnWindowBlueprint("Area");
                 AddHotkey(Tab, () =>

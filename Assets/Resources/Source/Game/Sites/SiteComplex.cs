@@ -335,7 +335,7 @@ public class SiteComplex : Site
                     if (currentSave.player.QuestsAt(area).Count == 0)
                         CloseWindow("AreaQuestTracker");
                     else Respawn("AreaQuestTracker", true);
-                    if (currentSave.player.Reputation(area.faction) >= 4200) Respawn("Area");
+                    if (currentSave.player.Reputation(area.faction) >= ReputationRankToAmount("Neutral")) Respawn("Area");
                     else Respawn("AreaHostile");
                     Respawn("AreaQuestAvailable");
                     Respawn("AreaQuestDone");

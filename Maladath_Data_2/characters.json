@@ -505,7 +505,7 @@
       "hour": 7,
       "minute": 32,
       "second": 19,
-      "currentSite": "Camp Mojache",
+      "currentSite": "Blackrock Mountain",
       "ringOfLaw": "Gorosh the Dervish",
       "forlornCloister": "Ironspine",
       "markets": [
@@ -1353,7 +1353,7 @@
         "Zul'Gurub": 1,
         "Ruins of Ahn'Qiraj": 1,
         "Temple of Ahn'Qiraj": 1,
-        "Blackrock Mountain": 3,
+        "Blackrock Mountain": 5,
         "Jintha'Alor": 1,
         "Tyr's Hand": 1,
         "Hearthglen": 1,
@@ -1514,9 +1514,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2025-07-28T14:04:17.4977464+02:00",
-      "lastLoaded": "2025-08-04T12:32:45.7332731+02:00",
-      "lastPlayed": "2025-08-04T12:33:32.1388042+02:00",
-      "timePlayed": "01:01:27.0818035"
+      "lastLoaded": "2025-08-05T12:56:51.6294981+02:00",
+      "lastPlayed": "2025-08-05T12:57:08.8189931+02:00",
+      "timePlayed": "01:01:44.2712985"
     },
     {
       "playerSide": "Alliance",

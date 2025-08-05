@@ -11159,6 +11159,27 @@
     "vitality": 1.0
   },
   {
+    "name": "Ribbly's Crony",
+    "category": "Humanoid",
+    "subcategory": "Tauren",
+    "portrait": "PortraitRibblysCrony",
+    "abilities": {},
+    "kind": "Common",
+    "gender": "Male",
+    "vitality": 1.0
+  },
+  {
+    "name": "Grim Patron",
+    "category": "Humanoid",
+    "subcategory": "Dwarf",
+    "faction": "Dark Iron Clan",
+    "portrait": "PortraitGrimPatron",
+    "abilities": {},
+    "kind": "Common",
+    "gender": "Male",
+    "vitality": 1.0
+  },
+  {
     "name": "Interrogator Vishas",
     "category": "Humanoid",
     "subcategory": "Human",
@@ -11728,6 +11749,16 @@
     "category": "Humanoid",
     "subcategory": "Human",
     "portrait": "PortraitLadyMoongazer",
+    "abilities": {},
+    "kind": "Rare",
+    "gender": "Male",
+    "vitality": 2.0
+  },
+  {
+    "name": "Plugger Spazzring",
+    "category": "Humanoid",
+    "subcategory": "Gnome",
+    "portrait": "PortraitPluggerSpazzring",
     "abilities": {},
     "kind": "Rare",
     "gender": "Male",

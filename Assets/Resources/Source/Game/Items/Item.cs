@@ -900,7 +900,8 @@ public class Item
                     }
                     else if (stockItem != null)
                     {
-                        if (item.amount > 1 && Input.GetKey(KeyCode.LeftShift))
+                        if (stockItem.reputationRequired != null && Person.person.faction != null && currentSave.player.Reputation(Person.person.faction) < ReputationRankToAmount(stockItem.reputationRequired)) SpawnFallingText(new Vector2(0, 34), "You need to be " + stockItem.reputationRequired.ToLower() + " with " + Person.person.faction, "Red");
+                        else if (item.amount > 1 && Input.GetKey(KeyCode.LeftShift))
                         {
                             String.splitAmount.Set(item.amount + "");
                             SpawnWindowBlueprint("SplitItem");

@@ -1636,6 +1636,19 @@ public static class Root
         return "";
     }
 
+    //Converts a reputation rank to the minimum required amount of reputation
+    public static int ReputationRankToAmount(string rank)
+    {
+        if (rank == "Exalted") return 8400;
+        else if (rank == "Revered") return 6300;
+        else if (rank == "Honored") return 5100;
+        else if (rank == "Friendly") return 4500;
+        else if (rank == "Neutral") return 4200;
+        else if (rank == "Unfriendly") return 3900;
+        else if (rank == "Hostile") return 3600;
+        else return 0;
+    }
+
     //Converts a number into the roman notation
     public static string FormatTime(int seconds, int minutes = 0)
     {

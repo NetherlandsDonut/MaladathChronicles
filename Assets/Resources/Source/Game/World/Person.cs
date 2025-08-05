@@ -91,6 +91,9 @@ public class StockItem
     //Speed of this item being restocked
     public int restockSpeed;
 
+    //Reputation standing required with the faction of this npc to buy this item
+    public string reputationRequired;
+
     public StockItem Copy()
     {
         var newItem = new StockItem();
@@ -99,6 +102,7 @@ public class StockItem
         newItem.maxAmount = maxAmount;
         newItem.minutesLeft = minutesLeft;
         newItem.restockSpeed = restockSpeed;
+        newItem.reputationRequired = reputationRequired;
         return newItem;
     }
 }

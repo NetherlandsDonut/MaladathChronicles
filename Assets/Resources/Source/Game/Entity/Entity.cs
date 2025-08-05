@@ -814,13 +814,13 @@ public class Entity
     public string ReputationRank(string faction)
     {
         int amount = Reputation(faction);
-        if (amount >= 8400) return "Exalted";
-        else if (amount >= 6300) return "Revered";
-        else if (amount >= 5100) return "Honored";
-        else if (amount >= 4500) return "Friendly";
-        else if (amount >= 4200) return "Neutral";
-        else if (amount >= 3900) return "Unfriendly";
-        else if (amount >= 3600) return "Hostile";
+        if (amount >= ReputationRankToAmount("Exalted")) return "Exalted";
+        else if (amount >= ReputationRankToAmount("Revered")) return "Revered";
+        else if (amount >= ReputationRankToAmount("Honored")) return "Honored";
+        else if (amount >= ReputationRankToAmount("Friendly")) return "Friendly";
+        else if (amount >= ReputationRankToAmount("Neutral")) return "Neutral";
+        else if (amount >= ReputationRankToAmount("Unfriendly")) return "Unfriendly";
+        else if (amount >= ReputationRankToAmount("Hostile")) return "Hostile";
         else return "Hated";
     }
 
