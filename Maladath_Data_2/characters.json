@@ -26,7 +26,7 @@
         ],
         "completedQuests": [],
         "level": 60,
-        "experience": 8366825,
+        "experience": 8366965,
         "uniquesGotten": [
           "Befouled Bloodstone Orb"
         ],
@@ -505,7 +505,7 @@
       "hour": 7,
       "minute": 32,
       "second": 19,
-      "currentSite": "Blackrock Mountain",
+      "currentSite": "Morgan's Vigil",
       "ringOfLaw": "Gorosh the Dervish",
       "forlornCloister": "Ironspine",
       "markets": [
@@ -586,7 +586,7 @@
         "Theramore Isle": 1,
         "Menethil Harbor": 1,
         "Nethergarde Keep": 1,
-        "Morgan's Vigil": 1,
+        "Morgan's Vigil": 3,
         "Flame Crest": 1,
         "Faldir's Cove": 1,
         "Refuge Point": 1,
@@ -665,7 +665,7 @@
         "Marshal's Refuge": 1,
         "Timbermaw Hold": 1,
         "Bear's Head": 1,
-        "Bronzebeard Encampment": 1,
+        "Bronzebeard Encampment": 2,
         "Orgrimmar Legion Camp": 1,
         "Valor's Rest": 1,
         "Ironforge Brigade Outpost": 1,
@@ -972,7 +972,7 @@
         "Shatter Scar Vale": 1,
         "Dream Bough": 1,
         "Feral Scar Vale": 1,
-        "Frayfeather Highlands": 1,
+        "Frayfeather Highlands": 2,
         "Gordunni Outpost": 1,
         "Grimtotem Compound": 1,
         "High Wilderness": 1,
@@ -1341,7 +1341,7 @@
         "Scholomance": 1,
         "Maraudon": 1,
         "Stratholme": 1,
-        "Wailing Caverns": 1,
+        "Wailing Caverns": 2,
         "Uldaman": 1,
         "Razorfen Downs": 1,
         "Razorfen Kraul": 1,
@@ -1366,7 +1366,14 @@
         "Gadgetspring Hut": 1,
         "Ranthals Camp": 3,
         "Goblin Camp": 1,
-        "Thunder Bluff": 2
+        "Thunder Bluff": 2,
+        "Caverns of Time": 3,
+        "Mirage Raceway": 2,
+        "Falfarren Moonwell": 1,
+        "Bloodmage Camp": 2,
+        "Fray Island": 3,
+        "Thungrim's Forge": 2,
+        "Southsea Encampment": 2
       },
       "unlockedAreas": [
         "The Masonary"
@@ -1514,9 +1521,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2025-07-28T14:04:17.4977464+02:00",
-      "lastLoaded": "2025-08-05T12:56:51.6294981+02:00",
-      "lastPlayed": "2025-08-05T12:57:08.8189931+02:00",
-      "timePlayed": "01:01:44.2712985"
+      "lastLoaded": "2025-08-05T15:39:02.4430549+02:00",
+      "lastPlayed": "2025-08-05T15:46:02.5685638+02:00",
+      "timePlayed": "01:21:15.9756215"
     },
     {
       "playerSide": "Alliance",

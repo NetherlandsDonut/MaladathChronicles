@@ -16850,6 +16850,144 @@
         "voiceVariant": 2,
         "race": "Dwarf",
         "type": "Flight Master"
+      },
+      {
+        "name": "Gabrielle Chase",
+        "gender": "Female",
+        "voiceVariant": 2,
+        "race": "Human",
+        "type": "Food & Drink Vendor",
+        "itemsSold": [
+          {
+            "item": "Refreshing Spring Water",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Dalaran Sharp",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Dwarven Mild",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Ice Cold Milk",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Melon Juice",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Moonberry Juice",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Stormwind Brie",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Sweet Nectar",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Darnassian Bleu",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Fine Aged Cheddar",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Morning Glory Dew",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Alterac Swiss",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
+        ]
+      },
+      {
+        "name": "Felder Stover",
+        "gender": "Male",
+        "voiceVariant": 1,
+        "race": "Human",
+        "type": "Weaponsmith",
+        "itemsSold": [
+          {
+            "item": "Falchion",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Zweihander",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Francisca",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Great Axe",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Morning Star",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "War Maul",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "Rondel",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          },
+          {
+            "item": "War Staff",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40
+          }
+        ]
       }
     ],
     "x": 5620,
@@ -36665,6 +36803,20 @@
     "faction": "Steamwheedle Cartel"
   },
   {
+    "x": 2408,
+    "y": -4195,
+    "name": "Caverns of Time",
+    "zone": "Tanaris",
+    "faction": "Brood of Nozdormu"
+  },
+  {
+    "x": 2246,
+    "y": -3801,
+    "name": "Mirage Raceway",
+    "zone": "Thousand Needles",
+    "faction": "Steamwheedle Cartel"
+  },
+  {
     "people": [
       {
         "name": "Bragok",
@@ -42138,6 +42290,32 @@
   {
     "commonEncounters": [
       {
+        "who": "Ghostpaw Howler",
+        "levelMin": 24,
+        "levelMax": 25
+      },
+      {
+        "who": "Wildthorn Venomspitter",
+        "levelMin": 24,
+        "levelMax": 25
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ],
+    "x": 1854,
+    "y": -2116,
+    "name": "Falfarren Moonwell",
+    "zone": "Ashenvale",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
         "who": "Elder Ashenvale Bear",
         "levelMin": 26,
         "levelMax": 27
@@ -45354,205 +45532,205 @@
         "gender": "Male",
         "voiceVariant": 3,
         "race": "Dwarf",
-        "type": "Quartermaster",
         "faction": "Thorium Brotherhood",
+        "type": "Quartermaster",
         "itemsSold": [
-        {
-          "item": "Pattern: Flarecore Mantle",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40,
-          "reputationRequired": "Honored"
-        },
-        {
-          "item": "Pattern: Flarecore Gloves",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40,
-          "reputationRequired": "Friendly"
-        },
-        {
-          "item": "Pattern: Corehound Boots",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40,
-          "reputationRequired": "Friendly"
-        },
-        {
-          "item": "Pattern: Molten Helm",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40,
-          "reputationRequired": "Friendly"
-        },
-        {
-          "item": "Pattern: Black Dragonscale Boots",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40,
-          "reputationRequired": "Honored"
-        },
-        {
-          "item": "Plans: Fiery Chain Girdle",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40,
-          "reputationRequired": "Honored"
-        },
-        {
-          "item": "Plans: Dark Iron Bracers",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40,
-          "reputationRequired": "Friendly"
-        },
-        {
-          "item": "Plans: Dark Iron Leggings",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40,
-          "reputationRequired": "Revered"
-        },
-        {
-          "item": "Plans: Fiery Chain Shoulders",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40,
-          "reputationRequired": "Revered"
-        },
-        {
-          "item": "Plans: Dark Iron Reaver",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40,
-          "reputationRequired": "Honored"
-        },
-        {
-          "item": "Plans: Dark Iron Destroyer",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40,
-          "reputationRequired": "Honored"
-        },
-        {
-          "item": "Plans: Dark Iron Helm",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40,
-          "reputationRequired": "Honored"
-        },
-        {
-          "item": "Plans: Dark Iron Gauntlets",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40,
-          "reputationRequired": "Revered"
-        },
-        {
-          "item": "Plans: Black Amnesty",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40,
-          "reputationRequired": "Revered"
-        },
-        {
-          "item": "Plans: Blackfury",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40,
-          "reputationRequired": "Revered"
-        },
-        {
-          "item": "Plans: Ebon Hand",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40,
-          "reputationRequired": "Exalted"
-        },
-        {
-          "item": "Plans: Blackguard",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40,
-          "reputationRequired": "Exalted"
-        },
-        {
-          "item": "Plans: Nightfall",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40,
-          "reputationRequired": "Exalted"
-        },
-        {
-          "item": "Pattern: Flarecore Robe",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40,
-          "reputationRequired": "Honored"
-        },
-        {
-          "item": "Pattern: Flarecore Leggings",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40,
-          "reputationRequired": "Revered"
-        },
-        {
-          "item": "Pattern: Lava Belt",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40,
-          "reputationRequired": "Honored"
-        },
-        {
-          "item": "Pattern: Chromatic Gauntlets",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40,
-          "reputationRequired": "Revered"
-        },
-        {
-          "item": "Pattern: Corehound Belt",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40,
-          "reputationRequired": "Revered"
-        },
-        {
-          "item": "Pattern: Molten Belt",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40,
-          "reputationRequired": "Revered"
-        },
-        {
-          "item": "Formula: Enchant Weapon - Strength",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40,
-          "reputationRequired": "Honored"
-        },
-        {
-          "item": "Formula: Enchant Weapon - Mighty Spirit",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40,
-          "reputationRequired": "Honored"
-        },
-        {
-          "item": "Formula: Enchant Weapon - Mighty Intellect",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40,
-          "reputationRequired": "Revered"
-        },
-        {
-          "item": "Plans: Dark Iron Boots",
-          "amount": 2,
-          "maxAmount": 2,
-          "restockSpeed": 40,
-          "reputationRequired": "Exalted"
-        }
+          {
+            "item": "Pattern: Flarecore Mantle",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40,
+            "reputationRequired": "Honored"
+          },
+          {
+            "item": "Pattern: Flarecore Gloves",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40,
+            "reputationRequired": "Friendly"
+          },
+          {
+            "item": "Pattern: Corehound Boots",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40,
+            "reputationRequired": "Friendly"
+          },
+          {
+            "item": "Pattern: Molten Helm",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40,
+            "reputationRequired": "Friendly"
+          },
+          {
+            "item": "Pattern: Black Dragonscale Boots",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40,
+            "reputationRequired": "Honored"
+          },
+          {
+            "item": "Plans: Fiery Chain Girdle",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40,
+            "reputationRequired": "Honored"
+          },
+          {
+            "item": "Plans: Dark Iron Bracers",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40,
+            "reputationRequired": "Friendly"
+          },
+          {
+            "item": "Plans: Dark Iron Leggings",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40,
+            "reputationRequired": "Revered"
+          },
+          {
+            "item": "Plans: Fiery Chain Shoulders",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40,
+            "reputationRequired": "Revered"
+          },
+          {
+            "item": "Plans: Dark Iron Reaver",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40,
+            "reputationRequired": "Honored"
+          },
+          {
+            "item": "Plans: Dark Iron Destroyer",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40,
+            "reputationRequired": "Honored"
+          },
+          {
+            "item": "Plans: Dark Iron Helm",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40,
+            "reputationRequired": "Honored"
+          },
+          {
+            "item": "Plans: Dark Iron Gauntlets",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40,
+            "reputationRequired": "Revered"
+          },
+          {
+            "item": "Plans: Black Amnesty",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40,
+            "reputationRequired": "Revered"
+          },
+          {
+            "item": "Plans: Blackfury",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40,
+            "reputationRequired": "Revered"
+          },
+          {
+            "item": "Plans: Ebon Hand",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40,
+            "reputationRequired": "Exalted"
+          },
+          {
+            "item": "Plans: Blackguard",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40,
+            "reputationRequired": "Exalted"
+          },
+          {
+            "item": "Plans: Nightfall",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40,
+            "reputationRequired": "Exalted"
+          },
+          {
+            "item": "Pattern: Flarecore Robe",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40,
+            "reputationRequired": "Honored"
+          },
+          {
+            "item": "Pattern: Flarecore Leggings",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40,
+            "reputationRequired": "Revered"
+          },
+          {
+            "item": "Pattern: Lava Belt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40,
+            "reputationRequired": "Honored"
+          },
+          {
+            "item": "Pattern: Chromatic Gauntlets",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40,
+            "reputationRequired": "Revered"
+          },
+          {
+            "item": "Pattern: Corehound Belt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40,
+            "reputationRequired": "Revered"
+          },
+          {
+            "item": "Pattern: Molten Belt",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40,
+            "reputationRequired": "Revered"
+          },
+          {
+            "item": "Formula: Enchant Weapon - Strength",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40,
+            "reputationRequired": "Honored"
+          },
+          {
+            "item": "Formula: Enchant Weapon - Mighty Spirit",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40,
+            "reputationRequired": "Honored"
+          },
+          {
+            "item": "Formula: Enchant Weapon - Mighty Intellect",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40,
+            "reputationRequired": "Revered"
+          },
+          {
+            "item": "Plans: Dark Iron Boots",
+            "amount": 2,
+            "maxAmount": 2,
+            "restockSpeed": 40,
+            "reputationRequired": "Exalted"
+          }
         ]
       }
     ],
@@ -45573,6 +45751,12 @@
         "levelMax": 56
       }
     ],
+    "rareEncounters": [
+      {
+        "who": "Plugger Spazzring",
+        "levelMin": 55
+      }
+    ],
     "eliteEncounters": [
       {
         "who": "Phalanx",
@@ -45581,12 +45765,6 @@
       {
         "who": "Hurley Blackbreath",
         "levelMin": 56
-      }
-    ],
-    "rareEncounters": [
-      {
-        "who": "Plugger Spazzring",
-        "levelMin": 55
       }
     ],
     "areaSize": 4,
@@ -46216,6 +46394,13 @@
     "x": 5678,
     "y": -3947,
     "name": "Red Wasteland",
+    "zone": "Blasted Lands",
+    "type": "HostileArea"
+  },
+  {
+    "x": 5648,
+    "y": -3888,
+    "name": "Bloodmage Camp",
     "zone": "Blasted Lands",
     "type": "HostileArea"
   },
@@ -68451,17 +68636,19 @@
     "type": "HostileArea"
   },
   {
-    "areaSize": 3,
-    "progression": [
-      {
-        "type": "Treasure",
-        "point": 3
-      }
-    ],
+    "x": 2329,
+    "y": -2868,
     "name": "Fray Island",
     "zone": "The Barrens",
     "type": "HostileArea",
     "fishing": true
+  },
+  {
+    "x": 2094,
+    "y": -2616,
+    "name": "Thungrim's Forge",
+    "zone": "The Barrens",
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [
@@ -69142,6 +69329,32 @@
     "zone": "The Barrens",
     "type": "HostileArea",
     "fishing": true
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Southsea Privateer",
+        "levelMin": 14,
+        "levelMax": 15
+      },
+      {
+        "who": "Southsea Cutthroat",
+        "levelMin": 14,
+        "levelMax": 15
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ],
+    "x": 2188,
+    "y": -2820,
+    "name": "Southsea Encampment",
+    "zone": "The Barrens",
+    "type": "HostileArea"
   },
   {
     "commonEncounters": [

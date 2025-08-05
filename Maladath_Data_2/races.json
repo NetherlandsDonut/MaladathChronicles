@@ -1,5 +1,44 @@
 [
   {
+    "name": "Southsea Cutthroat",
+    "category": "Humanoid",
+    "subcategory": "Troll",
+    "faction": "Southsea Pirates",
+    "portrait": "PortraitSouthseaCutthroat",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
+  },
+  {
+    "name": "Southsea Privateer",
+    "category": "Humanoid",
+    "subcategory": "Human",
+    "faction": "Southsea Pirates",
+    "portrait": "PortraitSouthseaPrivateer",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
+  },
+  {
+    "name": "Phalanx",
+    "category": "Mechanical",
+    "subcategory": "Golem",
+    "faction": "Dark Iron Clan",
+    "portrait": "PortraitGolemOrange",
+    "abilities": {},
+    "kind": "Elite",
+    "vitality": 3.0
+  },
+  {
+    "name": "Ghostpaw Howler",
+    "category": "Beast",
+    "subcategory": "Wolf",
+    "portrait": "PortraitWolf",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
+  },
+  {
     "name": "Durotar Tiger",
     "category": "Beast",
     "subcategory": "Cat",
