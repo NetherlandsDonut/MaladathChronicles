@@ -1512,7 +1512,7 @@ public class Item
                 }
                 a1 = item.block;
                 a2 = current == null ? 0 : current.block;
-                a3 = current == null ? 0 : current.block;
+                a3 = currentSecond == null ? 0 : currentSecond.block;
                 if (a1 - a2 - a3 != 0)
                 {
                     var balance = a1 - a2 - a3;
@@ -1524,7 +1524,7 @@ public class Item
                     {
                         statsRecorded.Add(stat.Key);
                         a2 = current != null && current.stats != null ? current.stats.Get(stat.Key) : 0;
-                        a2 = currentSecond != null && currentSecond.stats != null ? current.stats.Get(stat.Key) : 0;
+                        a3 = currentSecond != null && currentSecond.stats != null ? currentSecond.stats.Get(stat.Key) : 0;
                         var balance = stat.Value - a2 - a3;
                         if (balance != 0)
                         {

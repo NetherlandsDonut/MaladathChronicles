@@ -45528,6 +45528,7 @@
         "point": 3
       }
     ],
+    "chestVariant": 5,
     "name": "The Black Vault",
     "zone": "Blackrock Depths",
     "type": "HostileArea",

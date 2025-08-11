@@ -396,6 +396,22 @@
               "price": 120
             },
             {
+              "x": 1,
+              "y": 1,
+              "rarity": "Common",
+              "name": "Worn Battleaxe",
+              "icon": "itemaxe09",
+              "detailedType": "Axe",
+              "type": "Two Handed",
+              "ilvl": 2,
+              "lvl": 1,
+              "minPower": 1.1,
+              "maxPower": 1.17,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 8
+            },
+            {
               "x": 3,
               "y": 1,
               "rarity": "Uncommon",
@@ -413,22 +429,6 @@
                 "Agility": 15,
                 "Spirit": 15
               }
-            },
-            {
-              "x": 1,
-              "y": 1,
-              "rarity": "Common",
-              "name": "Worn Battleaxe",
-              "icon": "itemaxe09",
-              "detailedType": "Axe",
-              "type": "Two Handed",
-              "ilvl": 2,
-              "lvl": 1,
-              "minPower": 1.1,
-              "maxPower": 1.17,
-              "amount": 1,
-              "maxStack": 1,
-              "price": 8
             }
           ],
           "bags": []
@@ -532,7 +532,7 @@
             }
           },
           "Back": {
-            "x": 2,
+            "x": 3,
             "y": 1,
             "rarity": "Uncommon",
             "name": "Vibrant Silk Cape",
@@ -557,22 +557,22 @@
         "worldBuffs": [
           {
             "buff": "Scroll of Agility II @ Scroll of Agility",
-            "minutesLeft": 506
+            "minutesLeft": 495
           },
           {
             "buff": "Scroll of Strength III @ Scroll of Strength",
-            "minutesLeft": 516
+            "minutesLeft": 505
           },
           {
             "buff": "Scroll of Intellect III @ Scroll of Intellect",
-            "minutesLeft": 548
+            "minutesLeft": 537
           }
         ]
       },
       "hour": 10,
-      "minute": 35,
-      "second": 22,
-      "currentSite": "Ruins of Aboraz",
+      "minute": 46,
+      "second": 54,
+      "currentSite": "Blackrock Mountain",
       "ringOfLaw": "Gorosh the Dervish",
       "forlornCloister": "Ironspine",
       "markets": [
@@ -1465,6 +1465,75 @@
             "bags": [],
             "ignoreSpaceChecks": true
           }
+        },
+        "Lower Hall of Blackhand": {
+          "area": "Lower Hall of Blackhand",
+          "inventory": {
+            "items": [
+              {
+                "rarity": "Uncommon",
+                "name": "Ebonhold Gauntlets",
+                "icon": "itemgauntlets15",
+                "type": "Hands",
+                "armorClass": "Mail",
+                "source": "RareDrop",
+                "ilvl": 54,
+                "lvl": 49,
+                "armor": 183,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 8927,
+                "stats": {
+                  "Intellect": 7,
+                  "Spirit": 14
+                }
+              },
+              {
+                "x": 1,
+                "rarity": "Common",
+                "name": "Grave Moss",
+                "icon": "itemmiscdust02",
+                "detailedType": "Dust",
+                "type": "Trade Good",
+                "ilvl": 24,
+                "lvl": 1,
+                "amount": 2,
+                "maxStack": 20,
+                "price": 25
+              },
+              {
+                "x": 2,
+                "rarity": "Uncommon",
+                "name": "Arcane Crystal",
+                "icon": "itemmiscgemtopaz01",
+                "detailedType": "Gem",
+                "type": "Trade Good",
+                "ilvl": 60,
+                "lvl": 1,
+                "amount": 1,
+                "maxStack": 20,
+                "price": 2000
+              },
+              {
+                "x": 3,
+                "rarity": "Common",
+                "name": "Scroll of Stamina IV",
+                "icon": "itemscroll07",
+                "detailedType": "Scroll",
+                "type": "Miscellaneous",
+                "source": "RareDrop",
+                "ilvl": 60,
+                "amount": 1,
+                "maxStack": 5,
+                "abilities": {
+                  "Scroll of Stamina IV": 1
+                },
+                "price": 112
+              }
+            ],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
         }
       },
       "fishingSpots": {},
@@ -1483,7 +1552,8 @@
         "Hall of the Keepers": 3,
         "Scarab Terrace": 3,
         "The Scarab Wall": 3,
-        "Ruins of Aboraz": 3
+        "Ruins of Aboraz": 3,
+        "Lower Hall of Blackhand": 2
       },
       "commonsKilled": {
         "Syndicate Prowler": 1,
@@ -1512,7 +1582,10 @@
         "Cyclone Warrior": 1,
         "Rock Stalker": 2,
         "Zanzil Hunter": 2,
-        "Zanzil Witch Doctor": 1
+        "Zanzil Witch Doctor": 1,
+        "Scarshield Spellbinder": 1,
+        "Scarshield Acolyte": 2,
+        "Scarshield Legionnaire": 1
       },
       "raresKilled": {
         "Singer": 1
@@ -2089,10 +2162,10 @@
         "Windshear Mine": 1,
         "Balia'mah Ruins": 1,
         "Bloodsail Compound": 1,
-        "Crystal Shore": 1,
+        "Crystal Shore": 2,
         "Venture Co. Hideout": 1,
         "Crystalvein Mine": 1,
-        "Jaguero Isle": 4,
+        "Jaguero Isle": 5,
         "Kal'ai Ruins": 1,
         "Kurzen's Compound": 1,
         "Lake Nazferiti": 1,
@@ -2101,7 +2174,7 @@
         "Mosh'Ogg Ogre Mound": 1,
         "Janeiro's Point": 1,
         "Nek'mani Wellspring": 1,
-        "Ruins of Aboraz": 3,
+        "Ruins of Aboraz": 4,
         "Ruins of Jubuwal": 1,
         "Gurubashi Arena Grounds": 1,
         "Ruins of Zul'Kunda": 1,
@@ -2113,7 +2186,7 @@
         "Bloodsail Cove": 1,
         "Tkashi Ruins": 1,
         "Venture Co. Base Camp": 1,
-        "Wild Shore": 11,
+        "Wild Shore": 12,
         "Ziata'jai Ruins": 1,
         "Central Stranglethorn Jungle": 1,
         "Zuuldaia Ruins": 1,
@@ -2316,7 +2389,7 @@
         "Zul'Gurub": 1,
         "Ruins of Ahn'Qiraj": 4,
         "Temple of Ahn'Qiraj": 1,
-        "Blackrock Mountain": 5,
+        "Blackrock Mountain": 7,
         "Jintha'Alor": 1,
         "Tyr's Hand": 1,
         "Hearthglen": 1,
@@ -2341,7 +2414,8 @@
       "unlockedAreas": [
         "The Masonary",
         "Map Chamber",
-        "General's Terrace"
+        "General's Terrace",
+        "Hordemar City"
       ],
       "vendorStock": {
         "The Drag:Borya": [
@@ -2486,9 +2560,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2025-07-28T14:04:17.4977464+02:00",
-      "lastLoaded": "2025-08-11T14:54:43.346705+02:00",
-      "lastPlayed": "2025-08-11T15:00:26.0909515+02:00",
-      "timePlayed": "02:17:08.3851338"
+      "lastLoaded": "2025-08-11T15:22:56.1902045+02:00",
+      "lastPlayed": "2025-08-11T15:26:10.9033753+02:00",
+      "timePlayed": "02:20:23.0983046"
     },
     {
       "playerSide": "Alliance",
