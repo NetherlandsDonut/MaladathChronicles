@@ -70,10 +70,12 @@ public class Chest
     }
 
     //Spawns a clickable chest object that leads the user to the chest loot screen
-    public static GameObject SpawnChestObject(Vector3 position, string chestTexture)
+    public static GameObject SpawnChestObject(Vector3 position)
     {
-        var chest = Object.Instantiate(Resources.Load<GameObject>("Prefabs/PrefabChest"));
-        chest.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/ButtonsSpecial/Chest/" + chestTexture);
+        var zone = Zone.zones.Find(x => x.name == SiteArea.area.zone);
+        var chestID = SiteArea.area.chestVariant != 0 ? SiteArea.area.chestVariant : (zone.chestVariant != 0 ? zone.chestVariant : 6);
+        var chest = Object.Instantiate(Resources.Load<GameObject>("Prefabs/PrefabChest" + chestID));
+        //chest.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/ButtonsSpecial/Chest/" + chestTexture);
         chest.transform.parent = CDesktop.LBWindow().transform;
         chest.transform.position = position;
         chest.GetComponent<Highlightable>().Initialise(null,
@@ -81,7 +83,7 @@ public class Chest
             {
                 if (!currentSave.openedChests.ContainsKey(SiteArea.area.name))
                     currentSave.openedChests.Add(SiteArea.area.name, GenerateChest(SiteArea.area));
-                Sound.PlaySound("DesktopOpenChest");
+                Sound.PlaySound("DesktopChest" + chestID + "Open");
                 SpawnDesktopBlueprint("ChestLoot");
             },
             null, null, null

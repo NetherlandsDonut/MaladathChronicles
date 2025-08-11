@@ -1,16 +1,18 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Emit;
+using System.Collections.Generic;
+
 using UnityEngine;
-using static Coloring;
-using static Faction;
-using static Quest;
-using static Race;
+
 using static Root;
 using static Root.Anchor;
+
+using static Race;
+using static Quest;
+using static Faction;
 using static SaveGame;
 using static SitePath;
+using static Coloring;
 
 public class SiteArea : Site
 {
@@ -112,6 +114,10 @@ public class SiteArea : Site
         if (f != null) return f.Icon();
         else return currentSave.siteVisits.ContainsKey(name) ? type + (recommendedLevel["Horde"] < recommendedLevel["Alliance"] ? "HordeAligned" : (recommendedLevel["Horde"] > recommendedLevel["Alliance"] ? "AllianceAligned" : "")) : "Unknown";
     }
+
+    //Graphical variant of the treasure chest in this area
+    //This variable overrides the zone chestVariant
+    public int chestVariant;
 
     //Additional items inside of the exploration chest
     public Dictionary<string, int> chestBonus;

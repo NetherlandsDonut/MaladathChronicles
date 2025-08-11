@@ -1028,8 +1028,8 @@ public class Blueprint
             AddRegionGroup();
             if (area == null || !currentSave.siteProgress.ContainsKey(area.name) || !area.progression.Any(x => x.type == "Treasure")) return;
             if (area.progression.First(x => x.type == "Treasure").point > currentSave.siteProgress[area.name] || currentSave.openedChests.ContainsKey(area.name) && currentSave.openedChests[area.name].inventory.items.Count == 0) return;
-            SetAnchor(-254, -64);
-            Chest.SpawnChestObject(new Vector2(0, 0), "Chest");
+            SetAnchor(-301, -103);
+            Chest.SpawnChestObject(new Vector2(0, 0));
         }),
         new("ChestInfo", () => {
             SetAnchor(TopLeft, 19, -38);
@@ -1041,7 +1041,9 @@ public class Blueprint
                     AddLine(area.name + " spoils:");
                     AddSmallButton("OtherClose", (h) =>
                     {
-                        PlaySound("DesktopCloseChest");
+                        var zone = Zone.zones.Find(x => x.name == SiteArea.area.zone);
+                        var chestID = SiteArea.area.chestVariant != 0 ? SiteArea.area.chestVariant : (zone.chestVariant != 0 ? zone.chestVariant : 6);
+                        PlaySound("DesktopChest" + chestID + "Close");
                         CloseDesktop("ChestLoot");
                         Respawn("Chest");
                     });
@@ -8234,7 +8236,9 @@ public class Blueprint
                 }
                 else
                 {
-                    PlaySound("DesktopCloseChest");
+                    var zone = Zone.zones.Find(x => x.name == SiteArea.area.zone);
+                    var chestID = SiteArea.area.chestVariant != 0 ? SiteArea.area.chestVariant : (zone.chestVariant != 0 ? zone.chestVariant : 6);
+                    PlaySound("DesktopChest" + chestID + "Close");
                     CloseDesktop("ChestLoot");
                 }
             });

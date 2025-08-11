@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 24f3a7c7b1b94b84aa7c61d3ecfedd06, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3d8543df324577b42a1d6c67b08d7210, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 1889248176837836586}
   - component: {fileID: 3877104983001890549}
   m_Layer: 7
-  m_Name: PrefabChest
+  m_Name: PrefabChest9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -166,7 +166,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 864fc61a5b8948c4180118d3c6e29e7e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c1743543bafcf054cbac47bb614a61e7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -231,8 +231,8 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 94, y: 78}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 86, y: 57}
     newSize: {x: 17, y: 17}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -240,43 +240,17 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 28, y: 25}
-      - {x: 22, y: 32}
-      - {x: 14, y: 32}
-      - {x: 9, y: 34}
-      - {x: 6, y: 37}
-      - {x: -14, y: 37}
-      - {x: -19, y: 32}
-      - {x: -32, y: 32}
-      - {x: -35, y: 29}
-      - {x: -38, y: 19}
-      - {x: -44, y: 5}
-      - {x: -45, y: 4}
-      - {x: -45, y: 3}
-      - {x: -38, y: -3}
-      - {x: -40, y: -5}
-      - {x: -40, y: -13}
-      - {x: -39, y: -14}
-      - {x: -39, y: -16}
-      - {x: -38, y: -17}
-      - {x: -38, y: -20}
-      - {x: -35, y: -23}
-      - {x: -33, y: -23}
-      - {x: -22, y: -31}
-      - {x: 1, y: -31}
-      - {x: 2, y: -30}
-      - {x: 6, y: -30}
-      - {x: 10, y: -28}
-      - {x: 16, y: -27}
-      - {x: 21, y: -25}
-      - {x: 26, y: -25}
-      - {x: 28, y: -23}
-      - {x: 31, y: -8}
-      - {x: 32, y: -4}
-      - {x: 34, y: -1}
-      - {x: 39, y: 0}
-      - {x: 40, y: 4}
-      - {x: 38, y: 6}
-      - {x: 37, y: 9}
-      - {x: 31, y: 17}
+    - - {x: 77.90699, y: 42.835217}
+      - {x: 78.85631, y: 48.861023}
+      - {x: 56.736202, y: 54.93287}
+      - {x: 48.871567, y: 54.77975}
+      - {x: 38.863914, y: 52.644016}
+      - {x: 2.2202492, y: 48.004715}
+      - {x: 2.0194998, y: 43.135933}
+      - {x: 3.0643504, y: 41.496033}
+      - {x: 2.8504868, y: 16.86685}
+      - {x: 25.287844, y: 6.944294}
+      - {x: 30.40638, y: 6.914007}
+      - {x: 46.036953, y: 10.9951315}
+      - {x: 77.70789, y: 17.047157}
   m_UseDelaunayMesh: 0

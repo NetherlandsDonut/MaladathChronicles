@@ -3,6 +3,7 @@
     "name": "Azshara",
     "icon": "Azshara",
     "continent": "Kalimdor",
+    "chestVariant": 2,
     "musicDay": [
       "MusicMountainDay1",
       "MusicMountainDay2"
@@ -32,6 +33,7 @@
     "name": "Winterspring",
     "icon": "Winterspring",
     "continent": "Kalimdor",
+    "chestVariant": 2,
     "musicDay": [
       "MusicSnowDay1",
       "MusicSnowDay2",
@@ -58,6 +60,7 @@
     "name": "Moonglade",
     "icon": "Moonglade",
     "continent": "Kalimdor",
+    "chestVariant": 6,
     "musicDay": [
       "MusicEnchantedForest1",
       "MusicEnchantedForest2",
@@ -79,6 +82,7 @@
     "name": "Darkshore",
     "icon": "Darkshore",
     "continent": "Kalimdor",
+    "chestVariant": 6,
     "musicDay": [
       "MusicForestNight1",
       "MusicForestNight2",
@@ -109,6 +113,7 @@
     "name": "Teldrassil",
     "icon": "Teldrassil",
     "continent": "Kalimdor",
+    "chestVariant": 6,
     "musicDay": [
       "MusicEnchantedForest1",
       "MusicEnchantedForest2",
@@ -136,6 +141,7 @@
     "name": "Darnassus",
     "icon": "Teldrassil",
     "continent": "Kalimdor",
+    "chestVariant": 6,
     "musicDay": [
       "MusicDarnassus1",
       "MusicDarnassus2",
@@ -153,6 +159,7 @@
     "name": "Ashenvale",
     "icon": "Ashenvale",
     "continent": "Kalimdor",
+    "chestVariant": 6,
     "musicDay": [
       "MusicEnchantedForest1",
       "MusicEnchantedForest2",
@@ -192,6 +199,7 @@
     "name": "Tanaris",
     "icon": "Tanaris",
     "continent": "Kalimdor",
+    "chestVariant": 9,
     "musicDay": [
       "MusicDesertDay1",
       "MusicDesertDay2",
@@ -221,6 +229,7 @@
     "name": "The Barrens",
     "icon": "The Barrens",
     "continent": "Kalimdor",
+    "chestVariant": 1,
     "musicDay": [
       "MusicBarrenDay1",
       "MusicBarrenDay2",
@@ -257,6 +266,7 @@
     "name": "Stonetalon Mountains",
     "icon": "Stonetalon Mountains",
     "continent": "Kalimdor",
+    "chestVariant": 1,
     "musicDay": [
       "MusicPlainsDay1",
       "MusicPlainsDay2"
@@ -287,6 +297,7 @@
     "name": "Mulgore",
     "icon": "Mulgore",
     "continent": "Kalimdor",
+    "chestVariant": 1,
     "musicDay": [
       "MusicPlainsDay1",
       "MusicPlainsDay2"
@@ -311,6 +322,7 @@
     "name": "Thunder Bluff",
     "icon": "Mulgore",
     "continent": "Kalimdor",
+    "chestVariant": 6,
     "musicDay": [
       "MusicThunderBluff1",
       "MusicThunderBluff2",
@@ -328,6 +340,7 @@
     "name": "Desolace",
     "icon": "Desolace",
     "continent": "Kalimdor",
+    "chestVariant": 2,
     "musicDay": [
       "MusicBarrenDay1",
       "MusicBarrenDay2",
@@ -361,6 +374,7 @@
     "name": "Thousand Needles",
     "icon": "Thousand Needles",
     "continent": "Kalimdor",
+    "chestVariant": 1,
     "musicDay": [
       "MusicPlainsDay1",
       "MusicPlainsDay2"
@@ -389,6 +403,7 @@
     "name": "Dustwallow Marsh",
     "icon": "Dustwallow Marsh",
     "continent": "Kalimdor",
+    "chestVariant": 2,
     "musicDay": [
       "MusicSoggyDay1",
       "MusicSoggyDay2"
@@ -419,6 +434,7 @@
     "name": "Feralas",
     "icon": "Feralas",
     "continent": "Kalimdor",
+    "chestVariant": 2,
     "musicDay": [
       "MusicEnchantedForest1",
       "MusicEnchantedForest2",
@@ -455,6 +471,7 @@
     "name": "Silithus",
     "icon": "Silithus",
     "continent": "Kalimdor",
+    "chestVariant": 2,
     "musicDay": [
       "MusicDesertDay1",
       "MusicDesertDay2",
@@ -484,6 +501,7 @@
     "name": "Un'Goro Crater",
     "icon": "Un'Goro Crater",
     "continent": "Kalimdor",
+    "chestVariant": 4,
     "musicDay": [
       "MusicJungleDay1",
       "MusicJungleDay2",
@@ -513,6 +531,7 @@
     "name": "Durotar",
     "icon": "Durotar",
     "continent": "Kalimdor",
+    "chestVariant": 6,
     "musicDay": [
       "MusicPlainsDay1",
       "MusicPlainsDay2"
@@ -537,6 +556,7 @@
     "name": "Orgrimmar",
     "icon": "Durotar",
     "continent": "Kalimdor",
+    "chestVariant": 6,
     "musicDay": [
       "MusicOrgrimmar1",
       "MusicOrgrimmar2"
@@ -548,6 +568,7 @@
     "name": "Felwood",
     "icon": "Felwood",
     "continent": "Kalimdor",
+    "chestVariant": 2,
     "musicDay": [
       "MusicCursedLand1",
       "MusicCursedLand2",
@@ -585,6 +606,7 @@
     "name": "Eastern Plaguelands",
     "icon": "Eastern Plaguelands",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 2,
     "musicDay": [
       "MusicCursedLand1",
       "MusicCursedLand2",
@@ -622,6 +644,7 @@
     "name": "Western Plaguelands",
     "icon": "Western Plaguelands",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 2,
     "musicDay": [
       "MusicCursedLand1",
       "MusicCursedLand2",
@@ -656,6 +679,7 @@
     "name": "Tirisfal Glades",
     "icon": "Tirisfal Glades",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 6,
     "musicDay": [
       "MusicEvilForestDay1",
       "MusicEvilForestDay2",
@@ -681,6 +705,7 @@
     "name": "Undercity",
     "icon": "Tirisfal Glades",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 6,
     "musicDay": [
       "MusicUndercity1",
       "MusicUndercity2",
@@ -698,6 +723,7 @@
     "name": "Silverpine Forest",
     "icon": "Silverpine Forest",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 6,
     "musicDay": [
       "MusicEvilForestDay1",
       "MusicEvilForestDay2",
@@ -729,6 +755,7 @@
     "name": "Arathi Highlands",
     "icon": "Arathi Highlands",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 6,
     "musicDay": [
       "MusicPlainsDay1",
       "MusicPlainsDay2"
@@ -759,6 +786,7 @@
     "name": "Alterac Mountains",
     "icon": "Alterac Mountains",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 6,
     "musicDay": [
       "MusicSnowDay1",
       "MusicSnowDay2",
@@ -788,6 +816,7 @@
     "name": "Hinterlands",
     "icon": "Hinterlands",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 6,
     "musicDay": [
       "MusicForestDay1",
       "MusicForestDay2",
@@ -821,6 +850,7 @@
     "name": "Hillsbrad Foothills",
     "icon": "Hillsbrad Foothills",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 6,
     "musicDay": [
       "MusicForestDay1",
       "MusicForestDay2",
@@ -855,6 +885,7 @@
     "name": "Loch Modan",
     "icon": "Loch Modan",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 6,
     "musicDay": [
       "MusicForestDay1",
       "MusicForestDay2",
@@ -885,6 +916,7 @@
     "name": "Redridge Mountains",
     "icon": "Redridge Mountains",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 9,
     "musicDay": [
       "MusicForestDay1",
       "MusicForestDay2",
@@ -913,6 +945,7 @@
     "name": "Dun Morogh",
     "icon": "Dun Morogh",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 6,
     "musicDay": [
       "MusicMountainDay1",
       "MusicMountainDay2"
@@ -936,6 +969,7 @@
     "name": "Ironforge",
     "icon": "Dun Morogh",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 6,
     "musicDay": [
       "MusicIronforge1",
       "MusicIronforge2",
@@ -953,6 +987,7 @@
     "name": "Wetlands",
     "icon": "Wetlands",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 1,
     "musicDay": [
       "MusicSoggyDay1",
       "MusicSoggyDay2"
@@ -986,6 +1021,7 @@
     "name": "Searing Gorge",
     "icon": "Searing Gorge",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 2,
     "musicDay": [
       "MusicVolcanicDay1",
       "MusicVolcanicDay2"
@@ -1011,6 +1047,7 @@
     "name": "Burning Steppes",
     "icon": "Burning Steppes",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 2,
     "musicDay": [
       "MusicVolcanicDay1",
       "MusicVolcanicDay2"
@@ -1039,6 +1076,7 @@
     "name": "Duskwood",
     "icon": "Duskwood",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 2,
     "musicDay": [
       "MusicEvilForestDay1",
       "MusicEvilForestDay2",
@@ -1071,6 +1109,7 @@
     "name": "Westfall",
     "icon": "Westfall",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 1,
     "musicDay": [
       "MusicPlainsDay1",
       "MusicPlainsDay2"
@@ -1100,6 +1139,7 @@
     "name": "Elwynn Forest",
     "icon": "Elwynn Forest",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 6,
     "musicDay": [
       "MusicForestDay1",
       "MusicForestDay2",
@@ -1125,6 +1165,7 @@
     "name": "Stormwind City",
     "icon": "Elwynn Forest",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 6,
     "musicDay": [
       "MusicStormwind1",
       "MusicStormwind2",
@@ -1152,6 +1193,7 @@
     "name": "Badlands",
     "icon": "Badlands",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 1,
     "musicDay": [
       "MusicBarrenDay1",
       "MusicBarrenDay2",
@@ -1184,6 +1226,7 @@
     "name": "Swamp of Sorrows",
     "icon": "Swamp of Sorrows",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 4,
     "musicDay": [
       "MusicSoggyDay1",
       "MusicSoggyDay2"
@@ -1215,6 +1258,7 @@
     "name": "Deadwind Pass",
     "icon": "Deadwind Pass",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 2,
     "musicDay": [
       "MusicEvilForestDay1",
       "MusicEvilForestDay2",
@@ -1239,6 +1283,7 @@
     "name": "Blasted Lands",
     "icon": "Blasted Lands",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 2,
     "musicDay": [
       "MusicVolcanicDay1",
       "MusicVolcanicDay2"
@@ -1264,6 +1309,7 @@
     "name": "Stranglethorn Vale",
     "icon": "Stranglethorn Vale",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 4,
     "musicDay": [
       "MusicJungleDay1",
       "MusicJungleDay2",
@@ -1299,6 +1345,7 @@
     "name": "Temple of Ahn'Qiraj",
     "icon": "Temple of Ahn'Qiraj",
     "continent": "Kalimdor",
+    "chestVariant": 10,
     "musicDay": [
       "MusicAhnQirajUnderground1",
       "MusicAhnQirajUnderground2",
@@ -1316,6 +1363,7 @@
     "name": "Ruins of Ahn'Qiraj",
     "icon": "Ruins of Ahn'Qiraj",
     "continent": "Kalimdor",
+    "chestVariant": 10,
     "musicDay": [
       "MusicAhnQirajExterior1",
       "MusicAhnQirajExterior2",
@@ -1335,6 +1383,7 @@
     "name": "Onyxia's Lair",
     "icon": "Onyxia's Lair",
     "continent": "Kalimdor",
+    "chestVariant": 2,
     "musicDay": [
       "MusicVolcanicNight1",
       "MusicVolcanicNight2"
@@ -1350,6 +1399,7 @@
     "name": "Alcaz Island",
     "icon": "Alcaz Island",
     "continent": "Kalimdor",
+    "chestVariant": 6,
     "musicDay": [
       "MusicSoggyDay1",
       "MusicSoggyDay2"
@@ -1380,6 +1430,7 @@
     "name": "Dire Maul",
     "icon": "Dire Maul",
     "continent": "Kalimdor",
+    "chestVariant": 6,
     "musicDay": [
       "MusicForestNight1",
       "MusicForestNight2",
@@ -1402,6 +1453,7 @@
     "name": "Shadow Hold",
     "icon": "Shadow Hold",
     "continent": "Kalimdor",
+    "chestVariant": 2,
     "musicDay": [
       "MusicHaunted1",
       "MusicHaunted2",
@@ -1426,6 +1478,7 @@
     "name": "Zul'Farrak",
     "icon": "Zul'Farrak",
     "continent": "Kalimdor",
+    "chestVariant": 7,
     "musicDay": [
       "MusicDesertDay1",
       "MusicDesertDay2",
@@ -1450,6 +1503,7 @@
     "name": "Ragefire Chasm",
     "icon": "Ragefire Chasm",
     "continent": "Kalimdor",
+    "chestVariant": 2,
     "musicDay": [
       "MusicVolcanicNight1",
       "MusicVolcanicNight2"
@@ -1470,6 +1524,7 @@
     "name": "Blackfathom Deeps",
     "icon": "Blackfathom Deeps",
     "continent": "Kalimdor",
+    "chestVariant": 2,
     "musicDay": [
       "MusicDesertNight1",
       "MusicDesertNight2",
@@ -1495,6 +1550,7 @@
     "name": "Razorfen Kraul",
     "icon": "Razorfen Kraul",
     "continent": "Kalimdor",
+    "chestVariant": 2,
     "musicDay": [
       "MusicBarrenDay1",
       "MusicBarrenDay2",
@@ -1521,6 +1577,7 @@
     "name": "Razorfen Downs",
     "icon": "Razorfen Downs",
     "continent": "Kalimdor",
+    "chestVariant": 2,
     "musicDay": [
       "MusicBarrenNight1",
       "MusicBarrenNight2",
@@ -1548,6 +1605,7 @@
     "name": "Maraudon",
     "icon": "Maraudon",
     "continent": "Kalimdor",
+    "chestVariant": 2,
     "musicDay": [
       "MusicJungleNight1",
       "MusicJungleNight2",
@@ -1581,6 +1639,7 @@
     "name": "Wailing Caverns",
     "icon": "Wailing Caverns",
     "continent": "Kalimdor",
+    "chestVariant": 2,
     "musicDay": [
       "MusicWailingCaverns1",
       "MusicWailingCaverns2"
@@ -1606,6 +1665,7 @@
     "name": "Molten Core",
     "icon": "Molten Core",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 8,
     "musicDay": [
       "MusicHaunted1",
       "MusicHaunted2",
@@ -1626,6 +1686,7 @@
     "name": "Blackwing Lair",
     "icon": "Blackwing Lair",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 5,
     "musicDay": [
       "MusicHaunted1",
       "MusicHaunted2",
@@ -1643,6 +1704,7 @@
     "name": "The Deadmines",
     "icon": "The Deadmines",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 6,
     "musicDay": [
       "MusicDeadmines1",
       "MusicDeadmines2",
@@ -1665,6 +1727,7 @@
     "name": "Zul'Gurub",
     "icon": "Zul'Gurub",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 7,
     "musicDay": [
       "MusicZulGurub1",
       "MusicZulGurub2",
@@ -1696,6 +1759,7 @@
     "name": "Scarlet Monastery Grounds",
     "icon": "Scarlet Monastery Grounds",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 6,
     "ambienceDay": "AmbienceScary",
     "ambienceNight": "AmbienceScary",
     "miningNodes": [
@@ -1714,6 +1778,7 @@
     "name": "Scarlet Monastery",
     "icon": "Scarlet Monastery",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 6,
     "ambienceDay": "AmbienceScary",
     "ambienceNight": "AmbienceScary",
     "herbs": [
@@ -1728,6 +1793,7 @@
     "name": "Ruins of Stromgarde",
     "icon": "Ruins of Stromgarde",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 6,
     "ambienceDay": "AmbienceShadowfangKeep",
     "ambienceNight": "AmbienceShadowfangKeep",
     "herbs": [
@@ -1742,6 +1808,7 @@
     "name": "Ruins of Alterac",
     "icon": "Ruins of Alterac",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 6,
     "ambienceDay": "AmbienceForestSnowDay",
     "ambienceNight": "AmbienceForestSnowNight",
     "miningNodes": [
@@ -1765,6 +1832,7 @@
     "name": "Shadowfang Keep",
     "icon": "Shadowfang Keep",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 2,
     "musicDay": [
       "MusicEvilForestDay1",
       "MusicEvilForestDay2",
@@ -1782,6 +1850,7 @@
     "name": "The Stockade",
     "icon": "The Stockade",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 6,
     "ambienceDay": "AmbienceTheStockade",
     "ambienceNight": "AmbienceTheStockade"
   },
@@ -1789,6 +1858,7 @@
     "name": "Gnomeregan",
     "icon": "Gnomeregan",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 3,
     "musicDay": [
       "MusicGnomeregan1",
       "MusicGnomeregan2"
@@ -1804,6 +1874,7 @@
     "name": "Uldaman",
     "icon": "Uldaman",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 8,
     "musicDay": [
       "MusicVolcanicDay1",
       "MusicVolcanicDay2",
@@ -1827,6 +1898,7 @@
     "name": "Temple of Atal'Hakkar",
     "icon": "Temple of Atal'Hakkar",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 4,
     "musicDay": [
       "MusicSoggyDay1",
       "MusicSoggyDay2",
@@ -1848,6 +1920,7 @@
     "name": "Jintha'Alor",
     "icon": "Jintha'Alor",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 7,
     "ambienceDay": "AmbienceForestNormalDay",
     "ambienceNight": "AmbienceForestNormalNight",
     "miningNodes": [
@@ -1869,6 +1942,7 @@
     "name": "Blackrock Depths",
     "icon": "Blackrock Depths",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 3,
     "ambienceDay": "AmbienceBlackrock",
     "ambienceNight": "AmbienceBlackrock",
     "miningNodes": [
@@ -1879,6 +1953,7 @@
     "name": "Blackrock Mountain",
     "icon": "Blackrock Mountain",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 3,
     "ambienceDay": "AmbienceBlackrock",
     "ambienceNight": "AmbienceBlackrock"
   },
@@ -1886,6 +1961,7 @@
     "name": "Tyr's Hand",
     "icon": "Tyr's Hand",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 6,
     "ambienceDay": "AmbiencePlaguelandsDay",
     "ambienceNight": "AmbiencePlaguelandsNight",
     "miningNodes": [
@@ -1909,6 +1985,7 @@
     "name": "Lower Blackrock Spire",
     "icon": "Lower Blackrock Spire",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 3,
     "ambienceDay": "AmbienceBlackrock",
     "ambienceNight": "AmbienceBlackrock"
   },
@@ -1916,6 +1993,7 @@
     "name": "Hearthglen",
     "icon": "Hearthglen",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 6,
     "ambienceDay": "AmbiencePlaguelandsDay",
     "ambienceNight": "AmbiencePlaguelandsNight",
     "miningNodes": [
@@ -1936,6 +2014,7 @@
     "name": "Stratholme",
     "icon": "Stratholme",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 2,
     "ambienceDay": "AmbienceStratholme",
     "ambienceNight": "AmbienceStratholme"
   },
@@ -1943,6 +2022,7 @@
     "name": "Scholomance",
     "icon": "Scholomance",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 2,
     "ambienceDay": "AmbienceSpooky",
     "ambienceNight": "AmbienceSpooky"
   },
@@ -1950,6 +2030,7 @@
     "name": "Upper Blackrock Spire",
     "icon": "Upper Blackrock Spire",
     "continent": "Eastern Kingdoms",
+    "chestVariant": 3,
     "ambienceDay": "AmbienceBlackrock",
     "ambienceNight": "AmbienceBlackrock"
   }

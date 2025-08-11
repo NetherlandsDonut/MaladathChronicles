@@ -11,6 +11,9 @@ public class Zone
     //Landmass this zone is residing on
     public string continent;
 
+    //Graphical variant of the treasure chest in areas of this zone
+    public int chestVariant;
+
     //General music tracks played when entering sites
     //in this specific zone. They can be overwritten with
     //site-specific music tracks

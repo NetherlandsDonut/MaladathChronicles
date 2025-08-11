@@ -41629,6 +41629,7 @@
     "type": "HostileArea"
   },
   {
+    "chestVariant": 2,
     "chestBonus": {
       "Elven Gems": 1
     },
@@ -41865,6 +41866,7 @@
     "type": "HostileArea"
   },
   {
+    "chestVariant": 3,
     "commonEncounters": [
       {
         "who": "Dark Iron Saboteur",
@@ -42183,6 +42185,7 @@
     "type": "EmeraldBough"
   },
   {
+    "chestVariant": 2,
     "commonEncounters": [
       {
         "who": "Searing Infernal",
@@ -42214,6 +42217,7 @@
     "type": "HostileArea"
   },
   {
+    "chestVariant": 2,
     "commonEncounters": [
       {
         "who": "Felguard",
@@ -42307,8 +42311,8 @@
         "point": 3
       }
     ],
-    "x": 1854,
-    "y": -2116,
+    "x": 1812,
+    "y": -2146,
     "name": "Falfarren Moonwell",
     "zone": "Ashenvale",
     "type": "HostileArea"
@@ -42398,6 +42402,7 @@
     "type": "HostileArea"
   },
   {
+    "chestVariant": 2,
     "commonEncounters": [
       {
         "who": "Felslayer",
@@ -44160,6 +44165,7 @@
     "type": "HostileArea"
   },
   {
+    "chestVariant": 3,
     "commonEncounters": [
       {
         "who": "Shadowforge Warrior",
@@ -44392,6 +44398,7 @@
     "type": "HostileArea"
   },
   {
+    "chestVariant": 2,
     "commonEncounters": [
       {
         "who": "Scalding Whelp",
@@ -44555,6 +44562,7 @@
     "type": "HostileArea"
   },
   {
+    "chestVariant": 3,
     "commonEncounters": [
       {
         "who": "Shadowforge Surveyor",
@@ -46945,6 +46953,7 @@
     "type": "HostileArea"
   },
   {
+    "chestVariant": 3,
     "commonEncounters": [
       {
         "who": "Thaurissan Spy",
@@ -49168,6 +49177,7 @@
     "type": "HostileArea"
   },
   {
+    "chestVariant": 3,
     "commonEncounters": [
       {
         "who": "Snow Leopard",
@@ -49306,6 +49316,7 @@
     "fishing": true
   },
   {
+    "chestVariant": 3,
     "commonEncounters": [
       {
         "who": "Rockjaw Bonesnapper",
@@ -50066,6 +50077,7 @@
     ],
     "x": 2499,
     "y": -2508,
+    "chestVariant": 3,
     "name": "Scuttle Coast",
     "zone": "Durotar",
     "type": "HostileArea",
@@ -50222,6 +50234,7 @@
     ],
     "x": 2483,
     "y": -2574,
+    "chestVariant": 9,
     "name": "Tiragarde Keep",
     "zone": "Durotar",
     "type": "HostileArea"
@@ -50315,6 +50328,7 @@
     "type": "HostileArea"
   },
   {
+    "chestVariant": 9,
     "commonEncounters": [
       {
         "who": "Defias Night Blade",
@@ -51055,6 +51069,7 @@
     "type": "HostileArea"
   },
   {
+    "chestVariant": 9,
     "commonEncounters": [
       {
         "who": "Defias Night Blade",
@@ -55784,6 +55799,7 @@
     "fishing": true
   },
   {
+    "chestVariant": 4,
     "commonEncounters": [
       {
         "who": "Jade Ooze",
@@ -55868,6 +55884,7 @@
     "type": "HostileArea"
   },
   {
+    "chestVariant": 7,
     "commonEncounters": [
       {
         "who": "Witherbark Sadist",
@@ -55894,6 +55911,7 @@
     "type": "HostileArea"
   },
   {
+    "chestVariant": 7,
     "commonEncounters": [
       {
         "who": "Witherbark Scalper",
@@ -55920,6 +55938,7 @@
     "type": "HostileArea"
   },
   {
+    "chestVariant": 7,
     "commonEncounters": [
       {
         "who": "Witherbark Venomblood",
@@ -56193,6 +56212,7 @@
     "type": "EmeraldBough"
   },
   {
+    "chestVariant": 7,
     "commonEncounters": [
       {
         "who": "Witherbark Broodguard",
@@ -56230,6 +56250,7 @@
     "type": "HostileArea"
   },
   {
+    "chestVariant": 4,
     "commonEncounters": [
       {
         "who": "Silvermane Stalker",
@@ -56267,6 +56288,7 @@
     "type": "HostileArea"
   },
   {
+    "chestVariant": 4,
     "commonEncounters": [
       {
         "who": "Jade Ooze",
@@ -56293,6 +56315,7 @@
     "type": "HostileArea"
   },
   {
+    "chestVariant": 4,
     "commonEncounters": [
       {
         "who": "Jade Ooze",
@@ -56319,6 +56342,7 @@
     "type": "HostileArea"
   },
   {
+    "chestVariant": 4,
     "commonEncounters": [
       {
         "who": "Saltwater Snapjaw",
@@ -56391,6 +56415,7 @@
     "fishing": true
   },
   {
+    "chestVariant": 3,
     "commonEncounters": [
       {
         "who": "Berserk Trogg",
@@ -61296,6 +61321,7 @@
     "type": "HostileArea"
   },
   {
+    "chestVariant": 3,
     "commonEncounters": [
       {
         "who": "Dark Iron Geologist",
@@ -61412,6 +61438,7 @@
     "type": "HostileArea"
   },
   {
+    "chestVariant": 3,
     "commonEncounters": [
       {
         "who": "Dark Iron Geologist",
@@ -61457,6 +61484,7 @@
     "type": "HostileArea"
   },
   {
+    "chestVariant": 3,
     "commonEncounters": [
       {
         "who": "Heavy War Golem",
@@ -61503,6 +61531,7 @@
     "type": "HostileArea"
   },
   {
+    "chestVariant": 3,
     "commonEncounters": [
       {
         "who": "Incendosaur",
@@ -64142,6 +64171,7 @@
     "type": "HostileArea"
   },
   {
+    "chestVariant": 9,
     "commonEncounters": [
       {
         "who": "Bloodsail Swashbuckler",
@@ -64169,6 +64199,7 @@
     "fishing": true
   },
   {
+    "chestVariant": 9,
     "commonEncounters": [
       {
         "who": "Southern Strand Crawler",
@@ -64202,6 +64233,7 @@
     "fishing": true
   },
   {
+    "chestVariant": 3,
     "commonEncounters": [
       {
         "who": "Venture Co. Surveyor",
@@ -64233,6 +64265,7 @@
     "type": "HostileArea"
   },
   {
+    "chestVariant": 1,
     "commonEncounters": [
       {
         "who": "Thrashtail Basilisk",
@@ -64265,6 +64298,7 @@
     "type": "HostileArea"
   },
   {
+    "chestVariant": 1,
     "commonEncounters": [
       {
         "who": "Skymane Gorilla",
@@ -64339,6 +64373,7 @@
     "type": "HostileArea"
   },
   {
+    "chestVariant": 1,
     "commonEncounters": [
       {
         "who": "Kurzen Headshrinker",
@@ -64419,6 +64454,7 @@
     "fishing": true
   },
   {
+    "chestVariant": 2,
     "commonEncounters": [
       {
         "who": "Elder Mistvale Gorilla",
@@ -64488,6 +64524,7 @@
     "fishing": true
   },
   {
+    "chestVariant": 6,
     "commonEncounters": [
       {
         "who": "Mosh'Ogg Warrior",
@@ -64942,6 +64979,7 @@
     "fishing": true
   },
   {
+    "chestVariant": 1,
     "commonEncounters": [
       {
         "who": "Bloodsail Mage",
@@ -65001,6 +65039,7 @@
     "type": "HostileArea"
   },
   {
+    "chestVariant": 3,
     "commonEncounters": [
       {
         "who": "Venture Co. Workboss",
@@ -65028,6 +65067,7 @@
     "fishing": true
   },
   {
+    "chestVariant": 9,
     "people": [
       {
         "name": "Cowardly Crosby",
@@ -66529,6 +66569,7 @@
     "type": "HostileArea"
   },
   {
+    "chestVariant": 7,
     "commonEncounters": [
       {
         "who": "Sandfury Hideskinner",
@@ -71155,6 +71196,7 @@
     "convertDestinationTo": "Tyr's Hand"
   },
   {
+    "chestVariant": 3,
     "commonEncounters": [
       {
         "who": "Shadowforge Darkcaster",
@@ -71431,6 +71473,7 @@
     "noNightVariant": true
   },
   {
+    "chestVariant": 2,
     "commonEncounters": [
       {
         "who": "Living Blaze",
@@ -71468,6 +71511,7 @@
     "type": "HostileArea"
   },
   {
+    "chestVariant": 2,
     "commonEncounters": [
       {
         "who": "Un'Goro Gorilla",
@@ -71736,6 +71780,7 @@
     "fishing": true
   },
   {
+    "chestVariant": 2,
     "commonEncounters": [
       {
         "who": "Frenzied Pterrordax",
@@ -73596,6 +73641,7 @@
     "type": "HostileArea"
   },
   {
+    "chestVariant": 3,
     "commonEncounters": [
       {
         "who": "Dark Iron Dwarf",
@@ -73641,6 +73687,7 @@
     "type": "HostileArea"
   },
   {
+    "chestVariant": 2,
     "commonEncounters": [
       {
         "who": "Crimson Ooze",

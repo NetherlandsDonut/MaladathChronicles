@@ -22,6 +22,16 @@
           {
             "questID": 1823,
             "conditions": []
+          },
+          {
+            "questID": 671,
+            "conditions": [
+              {
+                "type": "Item",
+                "name": "Bloodstone Amulet",
+                "amount": 4
+              }
+            ]
           }
         ],
         "completedQuests": [],
@@ -278,38 +288,37 @@
           "money": 122553,
           "items": [
             {
-              "rarity": "Common",
-              "name": "Hearthstone",
-              "icon": "itemmiscrune01",
-              "detailedType": "Rune",
-              "type": "Miscellaneous",
-              "ilvl": 1,
-              "amount": 1,
-              "maxStack": 1,
-              "indestructible": true,
-              "unique": true,
-              "abilities": {
-                "Hearthstone": 1
-              }
-            },
-            {
               "x": 2,
               "rarity": "Common",
-              "name": "Scroll of Stamina III",
-              "icon": "itemscroll07",
-              "detailedType": "Scroll",
+              "name": "Bloodstone Amulet",
+              "icon": "itemjewelrynecklace05",
               "type": "Miscellaneous",
-              "source": "RareDrop",
-              "ilvl": 45,
-              "amount": 1,
-              "maxStack": 5,
-              "abilities": {
-                "Scroll of Intellect III": 1
-              },
-              "price": 112
+              "source": "DirectDrop",
+              "ilvl": 1,
+              "amount": 2,
+              "maxStack": 20,
+              "droppedBy": [
+                "Syndicate Highwayman",
+                "Syndicate Pathstalker",
+                "Syndicate Mercenary"
+              ]
             },
             {
-              "x": 3,
+              "y": 1,
+              "rarity": "Common",
+              "name": "Silk Cloth",
+              "icon": "itemfabricsilk01",
+              "detailedType": "Cloth",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 30,
+              "lvl": 1,
+              "amount": 3,
+              "maxStack": 20,
+              "price": 150
+            },
+            {
+              "x": 1,
               "rarity": "Uncommon",
               "name": "Symbolic Crown",
               "icon": "itemcrown02",
@@ -326,6 +335,19 @@
                 "Stamina": 16,
                 "Spirit": 5
               }
+            },
+            {
+              "x": 3,
+              "rarity": "Common",
+              "name": "Sealed Letter to Ag'tor",
+              "icon": "itemletter13",
+              "detailedType": "Letter",
+              "type": "Miscellaneous",
+              "ilvl": 1,
+              "amount": 1,
+              "maxStack": 1,
+              "indestructible": true,
+              "unique": true
             },
             {
               "x": 4,
@@ -345,94 +367,68 @@
               ]
             },
             {
-              "y": 1,
               "rarity": "Common",
-              "name": "Silk Cloth",
-              "icon": "itemfabricsilk01",
-              "detailedType": "Cloth",
-              "type": "Trade Good",
-              "source": "RareDrop",
-              "ilvl": 30,
-              "lvl": 1,
-              "amount": 3,
-              "maxStack": 20,
-              "price": 150
-            },
-            {
-              "x": 1,
-              "y": 1,
-              "rarity": "Uncommon",
-              "name": "Silk Wizard Hat",
-              "icon": "itemhelmet15",
-              "type": "Head",
-              "armorClass": "Cloth",
-              "source": "DirectDrop",
-              "ilvl": 37,
-              "lvl": 32,
-              "armor": 40,
+              "name": "Hearthstone",
+              "icon": "itemmiscrune01",
+              "detailedType": "Rune",
+              "type": "Miscellaneous",
+              "ilvl": 1,
               "amount": 1,
               "maxStack": 1,
-              "price": 2720,
-              "stats": {
-                "Intellect": 10,
-                "Spirit": 9
-              },
-              "droppedBy": [
-                "Syndicate Magus"
-              ]
-            },
-            {
-              "x": 1,
-              "rarity": "Uncommon",
-              "name": "Ancient Belt of the Boar",
-              "icon": "itembelt10",
-              "type": "Waist",
-              "armorClass": "Mail",
-              "source": "RareDrop",
-              "ilvl": 41,
-              "lvl": 36,
-              "armor": 132,
-              "amount": 1,
-              "maxStack": 1,
-              "price": 3585,
-              "stats": {
-                "Strength": 9,
-                "Spirit": 9
+              "indestructible": true,
+              "unique": true,
+              "abilities": {
+                "Hearthstone": 1
               }
             },
             {
               "x": 2,
               "y": 1,
               "rarity": "Common",
-              "name": "Sealed Letter to Ag'tor",
-              "icon": "itemletter13",
-              "detailedType": "Letter",
+              "name": "Mana Potion",
+              "icon": "itempotion72",
+              "detailedType": "Potion",
               "type": "Miscellaneous",
-              "ilvl": 1,
+              "source": "Profession",
+              "ilvl": 32,
               "amount": 1,
-              "maxStack": 1,
-              "indestructible": true,
-              "unique": true
+              "maxStack": 5,
+              "price": 120
             },
             {
               "x": 3,
               "y": 1,
-              "rarity": "Rare",
-              "name": "Vilerend Slicer",
-              "icon": "abilitywhirlwind",
-              "detailedType": "Fist Weapon",
-              "type": "One Handed",
-              "source": "DirectDrop",
-              "ilvl": 51,
-              "lvl": 46,
-              "minPower": 3.36,
-              "maxPower": 5.43,
+              "rarity": "Uncommon",
+              "name": "Magnificent Cloak of the Wolf",
+              "icon": "itemmisccape18",
+              "type": "Back",
+              "source": "RareDrop",
+              "ilvl": 56,
+              "lvl": 51,
+              "armor": 36,
               "amount": 1,
               "maxStack": 1,
-              "price": 30656,
-              "droppedBy": [
-                "The Behemoth"
-              ]
+              "price": 9782,
+              "stats": {
+                "Agility": 15,
+                "Spirit": 15
+              }
+            },
+            {
+              "x": 1,
+              "y": 1,
+              "rarity": "Common",
+              "name": "Worn Battleaxe",
+              "icon": "itemaxe09",
+              "detailedType": "Axe",
+              "type": "Two Handed",
+              "ilvl": 2,
+              "lvl": 1,
+              "minPower": 1.1,
+              "maxPower": 1.17,
+              "amount": 1,
+              "maxStack": 1,
+              "price": 8
             }
           ],
           "bags": []
@@ -440,20 +436,24 @@
         "mounts": [],
         "equipment": {
           "Main Hand": {
-            "x": 3,
+            "x": 1,
             "y": 1,
-            "rarity": "Common",
-            "name": "Worn Battleaxe",
-            "icon": "itemaxe09",
-            "detailedType": "Axe",
-            "type": "Two Handed",
-            "ilvl": 2,
-            "lvl": 1,
-            "minPower": 1.1,
-            "maxPower": 1.17,
+            "rarity": "Rare",
+            "name": "Vilerend Slicer",
+            "icon": "abilitywhirlwind",
+            "detailedType": "Fist Weapon",
+            "type": "One Handed",
+            "source": "DirectDrop",
+            "ilvl": 51,
+            "lvl": 46,
+            "minPower": 3.36,
+            "maxPower": 5.43,
             "amount": 1,
             "maxStack": 1,
-            "price": 8
+            "price": 30656,
+            "droppedBy": [
+              "The Behemoth"
+            ]
           },
           "Feet": {
             "rarity": "Common",
@@ -489,35 +489,102 @@
             "amount": 1,
             "maxStack": 1,
             "price": 1
+          },
+          "Head": {
+            "x": 1,
+            "rarity": "Uncommon",
+            "name": "Silk Wizard Hat",
+            "icon": "itemhelmet15",
+            "type": "Head",
+            "armorClass": "Cloth",
+            "source": "DirectDrop",
+            "ilvl": 37,
+            "lvl": 32,
+            "armor": 40,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 2720,
+            "stats": {
+              "Intellect": 10,
+              "Spirit": 9
+            },
+            "droppedBy": [
+              "Syndicate Magus"
+            ]
+          },
+          "Waist": {
+            "x": 1,
+            "rarity": "Uncommon",
+            "name": "Ancient Belt of the Boar",
+            "icon": "itembelt10",
+            "type": "Waist",
+            "armorClass": "Mail",
+            "source": "RareDrop",
+            "ilvl": 41,
+            "lvl": 36,
+            "armor": 132,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 3585,
+            "stats": {
+              "Strength": 9,
+              "Spirit": 9
+            }
+          },
+          "Back": {
+            "x": 2,
+            "y": 1,
+            "rarity": "Uncommon",
+            "name": "Vibrant Silk Cape",
+            "icon": "itemmisccape02",
+            "type": "Back",
+            "source": "DirectDrop",
+            "ilvl": 33,
+            "lvl": 28,
+            "armor": 23,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1778,
+            "stats": {
+              "Intellect": 1,
+              "Spirit": 7
+            },
+            "droppedBy": [
+              "Singer"
+            ]
           }
         },
         "worldBuffs": [
           {
             "buff": "Scroll of Agility II @ Scroll of Agility",
-            "minutesLeft": 689
+            "minutesLeft": 506
           },
           {
             "buff": "Scroll of Strength III @ Scroll of Strength",
-            "minutesLeft": 699
+            "minutesLeft": 516
+          },
+          {
+            "buff": "Scroll of Intellect III @ Scroll of Intellect",
+            "minutesLeft": 548
           }
         ]
       },
-      "hour": 7,
-      "minute": 32,
-      "second": 19,
-      "currentSite": "Morgan's Vigil",
+      "hour": 10,
+      "minute": 35,
+      "second": 22,
+      "currentSite": "Ruins of Aboraz",
       "ringOfLaw": "Gorosh the Dervish",
       "forlornCloister": "Ironspine",
       "markets": [
         {
           "name": "Alliance Market",
           "auctions": [],
-          "hoursSinceUpdate": 24
+          "hoursSinceUpdate": 27
         },
         {
           "name": "Horde Market",
           "auctions": [],
-          "hoursSinceUpdate": 24
+          "hoursSinceUpdate": 27
         }
       ],
       "openedChests": {
@@ -541,25 +608,921 @@
             "bags": [],
             "ignoreSpaceChecks": true
           }
+        },
+        "Firegut Blockade": {
+          "area": "Firegut Blockade",
+          "inventory": {
+            "items": [
+              {
+                "rarity": "Uncommon",
+                "name": "Crusader's Pauldrons of the Bear",
+                "icon": "itemshoulder28",
+                "type": "Shoulders",
+                "armorClass": "Mail",
+                "source": "RareDrop",
+                "ilvl": 53,
+                "lvl": 48,
+                "armor": 216,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 12314,
+                "stats": {
+                  "Stamina": 14,
+                  "Strength": 14
+                }
+              },
+              {
+                "x": 1,
+                "rarity": "Common",
+                "name": "Rugged Hide",
+                "icon": "itemmiscpeltbearruin02",
+                "detailedType": "Organ",
+                "type": "Trade Good",
+                "source": "RareDrop",
+                "ilvl": 50,
+                "lvl": 1,
+                "amount": 1,
+                "maxStack": 10,
+                "price": 500
+              },
+              {
+                "x": 2,
+                "rarity": "Uncommon",
+                "name": "Black Lotus",
+                "icon": "itemmischerbblacklotus",
+                "detailedType": "Flowers",
+                "type": "Trade Good",
+                "source": "DirectDrop",
+                "ilvl": 60,
+                "lvl": 1,
+                "amount": 1,
+                "maxStack": 20,
+                "price": 1000,
+                "droppedBy": [
+                  "Mushgog"
+                ]
+              },
+              {
+                "x": 3,
+                "rarity": "Common",
+                "name": "Scroll of Spirit IV",
+                "icon": "itemscroll01",
+                "detailedType": "Scroll",
+                "type": "Miscellaneous",
+                "source": "RareDrop",
+                "ilvl": 55,
+                "amount": 1,
+                "maxStack": 5,
+                "abilities": {
+                  "Scroll of Spirit IV": 1
+                },
+                "price": 100
+              }
+            ],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
+        },
+        "Northfold Manor": {
+          "area": "Northfold Manor",
+          "inventory": {
+            "items": [
+              {
+                "rarity": "Uncommon",
+                "name": "Twilight Cape of the Wolf",
+                "icon": "itemmisccape13",
+                "type": "Back",
+                "source": "RareDrop",
+                "ilvl": 35,
+                "lvl": 30,
+                "armor": 23,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 2111,
+                "stats": {
+                  "Agility": 7,
+                  "Spirit": 7
+                }
+              },
+              {
+                "x": 1,
+                "rarity": "Common",
+                "name": "Briarthorn",
+                "icon": "itemmiscroot01",
+                "type": "Trade Good",
+                "source": "RareDrop",
+                "ilvl": 15,
+                "lvl": 1,
+                "amount": 3,
+                "maxStack": 20,
+                "price": 25
+              },
+              {
+                "x": 2,
+                "rarity": "Uncommon",
+                "name": "Gold Ore",
+                "icon": "itemorecopper01",
+                "detailedType": "Ore",
+                "type": "Trade Good",
+                "source": "Quest",
+                "ilvl": 25,
+                "lvl": 1,
+                "amount": 2,
+                "maxStack": 10,
+                "price": 500
+              },
+              {
+                "x": 3,
+                "rarity": "Common",
+                "name": "Scroll of Stamina II",
+                "icon": "itemscroll07",
+                "detailedType": "Scroll",
+                "type": "Miscellaneous",
+                "source": "RareDrop",
+                "ilvl": 30,
+                "amount": 1,
+                "maxStack": 5,
+                "abilities": {
+                  "Scroll of Stamina II": 1
+                },
+                "price": 75
+              }
+            ],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
+        },
+        "Demon Fall Canyon": {
+          "area": "Demon Fall Canyon",
+          "inventory": {
+            "items": [
+              {
+                "rarity": "Uncommon",
+                "name": "Sage's Cloak of the Tiger",
+                "icon": "itemmisccape16",
+                "type": "Back",
+                "source": "RareDrop",
+                "ilvl": 28,
+                "lvl": 23,
+                "armor": 21,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 1120,
+                "stats": {
+                  "Agility": 6,
+                  "Strength": 6
+                }
+              },
+              {
+                "x": 1,
+                "rarity": "Common",
+                "name": "Goldthorn",
+                "icon": "itemmischerb15",
+                "detailedType": "Flowers",
+                "type": "Trade Good",
+                "source": "RareDrop",
+                "ilvl": 34,
+                "lvl": 1,
+                "amount": 1,
+                "maxStack": 20,
+                "price": 150
+              },
+              {
+                "x": 2,
+                "rarity": "Common",
+                "name": "Medium Hide",
+                "icon": "itemmiscpeltboarruin02",
+                "detailedType": "Leather",
+                "type": "Trade Good",
+                "source": "RareDrop",
+                "ilvl": 20,
+                "lvl": 1,
+                "amount": 1,
+                "maxStack": 10,
+                "price": 125
+              },
+              {
+                "x": 3,
+                "rarity": "Common",
+                "name": "Scroll of Strength II",
+                "icon": "itemscroll02",
+                "detailedType": "Scroll",
+                "type": "Miscellaneous",
+                "source": "RareDrop",
+                "ilvl": 35,
+                "amount": 1,
+                "maxStack": 5,
+                "abilities": {
+                  "Scroll of Strength II": 1
+                },
+                "price": 87
+              }
+            ],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
+        },
+        "Felfire Hill": {
+          "area": "Felfire Hill",
+          "inventory": {
+            "items": [
+              {
+                "rarity": "Uncommon",
+                "name": "Combat Cloak",
+                "icon": "itemmisccape14",
+                "type": "Back",
+                "source": "RareDrop",
+                "ilvl": 32,
+                "lvl": 27,
+                "armor": 22,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 1658,
+                "stats": {
+                  "Stamina": 6,
+                  "Spirit": 2
+                }
+              },
+              {
+                "x": 1,
+                "rarity": "Common",
+                "name": "Wool Cloth",
+                "icon": "itemfabricwool01",
+                "detailedType": "Cloth",
+                "type": "Trade Good",
+                "source": "RareDrop",
+                "ilvl": 15,
+                "lvl": 1,
+                "amount": 1,
+                "maxStack": 20,
+                "price": 33
+              },
+              {
+                "x": 2,
+                "rarity": "Common",
+                "name": "Stranglekelp",
+                "icon": "itemmischerb11",
+                "detailedType": "Flowers",
+                "type": "Trade Good",
+                "source": "RareDrop",
+                "ilvl": 20,
+                "lvl": 1,
+                "amount": 1,
+                "maxStack": 20,
+                "price": 100
+              },
+              {
+                "x": 3,
+                "rarity": "Common",
+                "name": "Scroll of Protection II",
+                "icon": "itemscroll07",
+                "detailedType": "Scroll",
+                "type": "Miscellaneous",
+                "source": "RareDrop",
+                "ilvl": 25,
+                "amount": 1,
+                "maxStack": 5,
+                "abilities": {
+                  "Scroll of Protection II": 1
+                },
+                "price": 62
+              }
+            ],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
+        },
+        "Wild Shore": {
+          "area": "Wild Shore",
+          "inventory": {
+            "items": [
+              {
+                "rarity": "Uncommon",
+                "name": "Champion's Gauntlets of the Bear",
+                "icon": "itemgauntlets29",
+                "type": "Hands",
+                "armorClass": "Mail",
+                "source": "RareDrop",
+                "ilvl": 46,
+                "lvl": 41,
+                "armor": 158,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 5479,
+                "stats": {
+                  "Stamina": 11,
+                  "Strength": 11
+                }
+              },
+              {
+                "x": 1,
+                "rarity": "Common",
+                "name": "Purple Lotus",
+                "icon": "itemmischerb17",
+                "detailedType": "Flowers",
+                "type": "Trade Good",
+                "source": "RareDrop",
+                "ilvl": 42,
+                "lvl": 1,
+                "amount": 1,
+                "maxStack": 20,
+                "price": 300
+              },
+              {
+                "x": 2,
+                "rarity": "Common",
+                "name": "Liferoot",
+                "icon": "itemmiscroot02",
+                "type": "Trade Good",
+                "source": "RareDrop",
+                "ilvl": 30,
+                "lvl": 1,
+                "amount": 2,
+                "maxStack": 20,
+                "price": 75
+              },
+              {
+                "x": 3,
+                "rarity": "Common",
+                "name": "Scroll of Intellect III",
+                "icon": "itemscroll01",
+                "detailedType": "Scroll",
+                "type": "Miscellaneous",
+                "source": "RareDrop",
+                "ilvl": 45,
+                "amount": 1,
+                "maxStack": 5,
+                "abilities": {
+                  "Scroll of Intellect III": 1
+                },
+                "price": 112
+              }
+            ],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
+        },
+        "Jaguero Isle": {
+          "area": "Jaguero Isle",
+          "inventory": {
+            "items": [
+              {
+                "rarity": "Uncommon",
+                "name": "Glorious Belt of the Bear",
+                "icon": "itembelt11",
+                "type": "Waist",
+                "armorClass": "Plate",
+                "source": "RareDrop",
+                "ilvl": 55,
+                "lvl": 50,
+                "armor": 295,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 6502,
+                "stats": {
+                  "Stamina": 15,
+                  "Strength": 15
+                }
+              },
+              {
+                "x": 1,
+                "rarity": "Uncommon",
+                "name": "Greater Nether Essence",
+                "icon": "itemenchantessencenetherlarge",
+                "detailedType": "Essence",
+                "type": "Trade Good",
+                "source": "RareDrop",
+                "ilvl": 45,
+                "lvl": 1,
+                "amount": 1,
+                "maxStack": 10,
+                "abilities": {
+                  "Breakdown Greater Nether Essence": 1
+                },
+                "price": 1860
+              },
+              {
+                "x": 2,
+                "rarity": "Common",
+                "name": "Blindweed",
+                "icon": "itemmischerb14",
+                "detailedType": "Flowers",
+                "type": "Trade Good",
+                "source": "RareDrop",
+                "ilvl": 47,
+                "lvl": 1,
+                "amount": 1,
+                "maxStack": 20,
+                "price": 375
+              },
+              {
+                "x": 3,
+                "rarity": "Common",
+                "name": "Scroll of Spirit IV",
+                "icon": "itemscroll01",
+                "detailedType": "Scroll",
+                "type": "Miscellaneous",
+                "source": "RareDrop",
+                "ilvl": 55,
+                "amount": 1,
+                "maxStack": 5,
+                "abilities": {
+                  "Scroll of Spirit IV": 1
+                },
+                "price": 100
+              }
+            ],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
+        },
+        "The Vice": {
+          "area": "The Vice",
+          "inventory": {
+            "items": [
+              {
+                "rarity": "Uncommon",
+                "name": "Emerald Legplates of the Gorilla",
+                "icon": "itempants03",
+                "type": "Legs",
+                "armorClass": "Plate",
+                "source": "RareDrop",
+                "ilvl": 59,
+                "lvl": 54,
+                "armor": 491,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 15723,
+                "stats": {
+                  "Strength": 16,
+                  "Intellect": 16
+                }
+              },
+              {
+                "x": 1,
+                "rarity": "Common",
+                "name": "Wildvine",
+                "icon": "itemmischerb03",
+                "detailedType": "Flowers",
+                "type": "Trade Good",
+                "source": "RareDrop",
+                "ilvl": 40,
+                "lvl": 1,
+                "amount": 2,
+                "maxStack": 20,
+                "price": 5
+              },
+              {
+                "x": 2,
+                "rarity": "Rare",
+                "name": "Large Brilliant Shard",
+                "icon": "itemenchantshardbrilliantlarge",
+                "detailedType": "Shard",
+                "type": "Trade Good",
+                "ilvl": 55,
+                "lvl": 1,
+                "amount": 1,
+                "maxStack": 20,
+                "price": 2500
+              },
+              {
+                "x": 3,
+                "rarity": "Common",
+                "name": "Scroll of Protection IV",
+                "icon": "itemscroll07",
+                "detailedType": "Scroll",
+                "type": "Miscellaneous",
+                "source": "RareDrop",
+                "ilvl": 55,
+                "amount": 1,
+                "maxStack": 5,
+                "abilities": {
+                  "Scroll of Protection IV": 1
+                },
+                "price": 100
+              }
+            ],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
+        },
+        "The Maker's Terrace": {
+          "area": "The Maker's Terrace",
+          "inventory": {
+            "items": [
+              {
+                "rarity": "Uncommon",
+                "name": "Gloom Reaper of the Bear",
+                "icon": "itemaxe08",
+                "detailedType": "Axe",
+                "type": "One Handed",
+                "source": "RareDrop",
+                "ilvl": 37,
+                "lvl": 32,
+                "minPower": 2.37,
+                "maxPower": 3.56,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 8964,
+                "stats": {
+                  "Stamina": 8,
+                  "Strength": 8
+                }
+              },
+              {
+                "x": 1,
+                "rarity": "Common",
+                "name": "Wild Steelbloom",
+                "icon": "itemmiscflower01",
+                "detailedType": "Flowers",
+                "type": "Trade Good",
+                "source": "DirectDrop",
+                "ilvl": 22,
+                "lvl": 1,
+                "amount": 1,
+                "maxStack": 20,
+                "price": 50,
+                "droppedBy": [
+                  "Corporal Keeshan"
+                ]
+              },
+              {
+                "x": 2,
+                "rarity": "Common",
+                "name": "Heavy Leather",
+                "icon": "itemmiscleatherscrap07",
+                "detailedType": "Leather",
+                "type": "Trade Good",
+                "ilvl": 30,
+                "lvl": 1,
+                "amount": 1,
+                "maxStack": 20,
+                "price": 150
+              },
+              {
+                "x": 3,
+                "rarity": "Common",
+                "name": "Scroll of Spirit III",
+                "icon": "itemscroll01",
+                "detailedType": "Scroll",
+                "type": "Miscellaneous",
+                "source": "RareDrop",
+                "ilvl": 40,
+                "amount": 1,
+                "maxStack": 5,
+                "abilities": {
+                  "Scroll of Spirit III": 1
+                },
+                "price": 100
+              }
+            ],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
+        },
+        "Hall of the Keepers": {
+          "area": "Hall of the Keepers",
+          "inventory": {
+            "items": [
+              {
+                "rarity": "Uncommon",
+                "name": "Steadfast Legplates of the Bear",
+                "icon": "itempants08",
+                "type": "Legs",
+                "armorClass": "Mail",
+                "source": "RareDrop",
+                "ilvl": 41,
+                "lvl": 36,
+                "armor": 205,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 6909,
+                "stats": {
+                  "Stamina": 9,
+                  "Strength": 9
+                }
+              },
+              {
+                "x": 1,
+                "rarity": "Common",
+                "name": "Fadeleaf",
+                "icon": "itemmischerb12",
+                "detailedType": "Flowers",
+                "type": "Trade Good",
+                "source": "RareDrop",
+                "ilvl": 32,
+                "lvl": 1,
+                "amount": 1,
+                "maxStack": 20,
+                "price": 125
+              },
+              {
+                "x": 2,
+                "rarity": "Uncommon",
+                "name": "Gold Ore",
+                "icon": "itemoregold01",
+                "detailedType": "Ore",
+                "type": "Trade Good",
+                "source": "Quest",
+                "ilvl": 25,
+                "lvl": 1,
+                "amount": 1,
+                "maxStack": 10,
+                "price": 500
+              },
+              {
+                "x": 3,
+                "rarity": "Common",
+                "name": "Scroll of Agility II",
+                "icon": "itemscroll02",
+                "detailedType": "Scroll",
+                "type": "Miscellaneous",
+                "source": "RareDrop",
+                "ilvl": 35,
+                "amount": 1,
+                "maxStack": 5,
+                "abilities": {
+                  "Scroll of Agility II": 1
+                },
+                "price": 87
+              }
+            ],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
+        },
+        "Scarab Terrace": {
+          "area": "Scarab Terrace",
+          "inventory": {
+            "items": [
+              {
+                "rarity": "Uncommon",
+                "name": "Imbued Plate Helmet",
+                "icon": "itemhelmet06",
+                "type": "Head",
+                "armorClass": "Plate",
+                "source": "RareDrop",
+                "ilvl": 59,
+                "lvl": 54,
+                "armor": 456,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 11750,
+                "stats": {
+                  "Agility": 17,
+                  "Stamina": 17
+                }
+              },
+              {
+                "x": 1,
+                "rarity": "Common",
+                "name": "Thick Hide",
+                "icon": "itemmiscpeltbearruin01",
+                "detailedType": "Organ",
+                "type": "Trade Good",
+                "source": "RareDrop",
+                "ilvl": 40,
+                "lvl": 1,
+                "amount": 2,
+                "maxStack": 10,
+                "price": 500
+              },
+              {
+                "x": 2,
+                "rarity": "Common",
+                "name": "Felcloth",
+                "icon": "itemfabricfelrag",
+                "detailedType": "Cloth",
+                "type": "Trade Good",
+                "ilvl": 50,
+                "lvl": 1,
+                "amount": 1,
+                "maxStack": 20,
+                "price": 2000
+              },
+              {
+                "x": 3,
+                "rarity": "Common",
+                "name": "Scroll of Agility IV",
+                "icon": "itemscroll02",
+                "detailedType": "Scroll",
+                "type": "Miscellaneous",
+                "source": "RareDrop",
+                "ilvl": 65,
+                "amount": 1,
+                "maxStack": 5,
+                "abilities": {
+                  "Scroll of Agility IV": 1
+                },
+                "price": 125
+              }
+            ],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
+        },
+        "The Scarab Wall": {
+          "area": "The Scarab Wall",
+          "inventory": {
+            "items": [
+              {
+                "rarity": "Uncommon",
+                "name": "Mercurial Gauntlets of the Tiger",
+                "icon": "itemgauntlets26",
+                "type": "Hands",
+                "armorClass": "Mail",
+                "source": "RareDrop",
+                "ilvl": 61,
+                "lvl": 56,
+                "armor": 204,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 12713,
+                "stats": {
+                  "Agility": 17,
+                  "Strength": 17
+                }
+              },
+              {
+                "x": 1,
+                "rarity": "Common",
+                "name": "Thick Hide",
+                "icon": "itemmiscpeltbearruin01",
+                "detailedType": "Organ",
+                "type": "Trade Good",
+                "source": "RareDrop",
+                "ilvl": 40,
+                "lvl": 1,
+                "amount": 2,
+                "maxStack": 10,
+                "price": 500
+              },
+              {
+                "x": 2,
+                "rarity": "Common",
+                "name": "Wildvine",
+                "icon": "itemmischerb03",
+                "detailedType": "Flowers",
+                "type": "Trade Good",
+                "source": "RareDrop",
+                "ilvl": 40,
+                "lvl": 1,
+                "amount": 2,
+                "maxStack": 20,
+                "price": 5
+              },
+              {
+                "x": 3,
+                "rarity": "Common",
+                "name": "Major Healing Potion",
+                "icon": "itempotion54",
+                "combatUse": true,
+                "detailedType": "Potion",
+                "type": "Miscellaneous",
+                "ilvl": 55,
+                "amount": 1,
+                "maxStack": 5,
+                "abilities": {
+                  "Major Healing Potion": 1
+                },
+                "price": 1000
+              }
+            ],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
+        },
+        "Ruins of Aboraz": {
+          "area": "Ruins of Aboraz",
+          "inventory": {
+            "items": [
+              {
+                "rarity": "Uncommon",
+                "name": "Valorous Gauntlets",
+                "icon": "itemgauntlets29",
+                "type": "Hands",
+                "armorClass": "Plate",
+                "source": "RareDrop",
+                "ilvl": 47,
+                "lvl": 42,
+                "armor": 284,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 3901,
+                "stats": {
+                  "Strength": 14,
+                  "Stamina": 2
+                }
+              },
+              {
+                "x": 1,
+                "rarity": "Common",
+                "name": "Mageweave Cloth",
+                "icon": "itemfabricmageweave01",
+                "detailedType": "Cloth",
+                "type": "Trade Good",
+                "source": "Quest",
+                "ilvl": 40,
+                "lvl": 1,
+                "amount": 1,
+                "maxStack": 20,
+                "price": 250
+              },
+              {
+                "x": 2,
+                "rarity": "Uncommon",
+                "name": "Truesilver Ore",
+                "icon": "itemoretruesilver01",
+                "detailedType": "Ore",
+                "type": "Trade Good",
+                "source": "DirectDrop",
+                "ilvl": 40,
+                "lvl": 1,
+                "amount": 1,
+                "maxStack": 10,
+                "price": 500,
+                "droppedBy": [
+                  "Kalaran Windblade"
+                ]
+              },
+              {
+                "x": 3,
+                "rarity": "Common",
+                "name": "Scroll of Protection III",
+                "icon": "itemscroll07",
+                "detailedType": "Scroll",
+                "type": "Miscellaneous",
+                "source": "RareDrop",
+                "ilvl": 40,
+                "amount": 1,
+                "maxStack": 5,
+                "abilities": {
+                  "Scroll of Protection III": 1
+                },
+                "price": 100
+              }
+            ],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
         }
       },
       "fishingSpots": {},
       "fishingSpoils": {},
       "siteProgress": {
         "Eastern Town": 3,
-        "The Grinding Quarry": 1
+        "The Grinding Quarry": 1,
+        "Firegut Blockade": 3,
+        "Northfold Manor": 3,
+        "Demon Fall Canyon": 3,
+        "Felfire Hill": 3,
+        "Wild Shore": 3,
+        "Jaguero Isle": 3,
+        "The Vice": 3,
+        "The Maker's Terrace": 3,
+        "Hall of the Keepers": 3,
+        "Scarab Terrace": 3,
+        "The Scarab Wall": 3,
+        "Ruins of Aboraz": 3
       },
       "commonsKilled": {
         "Syndicate Prowler": 1,
         "Syndicate Conjuror": 1,
         "Syndicate Magus": 1,
         "Anvilrage Warden": 1,
-        "Anvilrage Overseer": 1
+        "Anvilrage Overseer": 1,
+        "Firegut Ogre Mage": 2,
+        "Firegut Ogre": 1,
+        "Syndicate Highwayman": 1,
+        "Syndicate Mercenary": 1,
+        "Felguard": 4,
+        "Searing Infernal": 2,
+        "Bloodsail Warlock": 2,
+        "Southern Strand Crawler": 1,
+        "Jaguero Stalker": 1,
+        "Skymane Gorilla": 2,
+        "Deadwind Ogre Mage": 3,
+        "Shadowforge Surveyor": 2,
+        "Shadowforge Ruffian": 1,
+        "Stonevault Oracle": 2,
+        "Stonevault Pillager": 2,
+        "Stonevault Ambusher": 2,
+        "Qiraji Gladiator": 3,
+        "Qiraji Swarmguard": 3,
+        "Cyclone Warrior": 1,
+        "Rock Stalker": 2,
+        "Zanzil Hunter": 2,
+        "Zanzil Witch Doctor": 1
       },
-      "raresKilled": {},
+      "raresKilled": {
+        "Singer": 1
+      },
       "elitesKilled": {
         "Marez Cowl": 1,
-        "The Behemoth": 1
+        "The Behemoth": 1,
+        "King Mukla": 1,
+        "Revelosh": 1,
+        "Kurinnaxx": 1
       },
       "siteVisits": {
         "The Den": 1,
@@ -577,7 +1540,7 @@
         "Azurelode Mine": 1,
         "Westbrook Garrison": 1,
         "Goldshire": 3,
-        "Lakeshire": 1,
+        "Lakeshire": 2,
         "Northshire Abbey": 1,
         "Southshore": 1,
         "Darkshire": 1,
@@ -586,7 +1549,7 @@
         "Theramore Isle": 1,
         "Menethil Harbor": 1,
         "Nethergarde Keep": 1,
-        "Morgan's Vigil": 3,
+        "Morgan's Vigil": 4,
         "Flame Crest": 1,
         "Faldir's Cove": 1,
         "Refuge Point": 1,
@@ -648,7 +1611,7 @@
         "The Bulwark": 1,
         "Shadow Grave": 1,
         "Brill": 1,
-        "Hammerfall": 1,
+        "Hammerfall": 2,
         "Tarren Mill": 1,
         "The Sepulcher": 1,
         "Cenarion Hold": 1,
@@ -698,7 +1661,7 @@
         "Arathi Outer Road": 1,
         "Thoradin's Wall": 1,
         "Drywhisker Gorge": 1,
-        "Northfold Manor": 1,
+        "Northfold Manor": 2,
         "Thandol Span": 1,
         "Devyr's Hill": 1,
         "Witherbark Village": 1,
@@ -708,12 +1671,12 @@
         "Orendil's Retreat": 1,
         "Bloodtooth Camp": 1,
         "Bough Shadow": 1,
-        "Demon Fall Canyon": 1,
-        "Demon Fall Ridge": 1,
+        "Demon Fall Canyon": 2,
+        "Demon Fall Ridge": 2,
         "Falfarren River": 1,
         "The Shady Nook": 1,
         "Fallen Sky Lake": 1,
-        "Felfire Hill": 1,
+        "Felfire Hill": 2,
         "Fire Scar Shrine": 1,
         "Greenpaw Village": 1,
         "Iris Lake": 1,
@@ -767,7 +1730,7 @@
         "Lethlor Ravine": 1,
         "Mirage Flats": 1,
         "The Dustbowl": 1,
-        "The Maker's Terrace": 1,
+        "The Maker's Terrace": 3,
         "Valley of Fangs": 1,
         "Red Wasteland": 1,
         "Dreadmaul Hold": 1,
@@ -782,7 +1745,7 @@
         "Blackrock Stronghold": 1,
         "Gates of Blackrock": 8,
         "Draco'dar": 2,
-        "Firegut Blockade": 1,
+        "Firegut Blockade": 2,
         "Dreadmaul Rock": 1,
         "Firegut Hold": 1,
         "Ruins of Thaurissan": 1,
@@ -809,7 +1772,7 @@
         "Deadman's Crossing": 1,
         "Karazhan": 1,
         "Sleeping Gorge": 1,
-        "The Vice": 1,
+        "The Vice": 3,
         "Bolgan's Hole": 1,
         "Ethel Rethor": 1,
         "Central Wastes": 1,
@@ -1084,7 +2047,7 @@
         "Southwind Village": 1,
         "The Crystal Vale": 1,
         "Deathclasp Lair": 1,
-        "The Scarab Wall": 1,
+        "The Scarab Wall": 2,
         "The Swarming Pillar": 1,
         "Twilight Base Camp": 1,
         "Twilight Outpost": 1,
@@ -1129,7 +2092,7 @@
         "Crystal Shore": 1,
         "Venture Co. Hideout": 1,
         "Crystalvein Mine": 1,
-        "Jaguero Isle": 1,
+        "Jaguero Isle": 4,
         "Kal'ai Ruins": 1,
         "Kurzen's Compound": 1,
         "Lake Nazferiti": 1,
@@ -1138,7 +2101,7 @@
         "Mosh'Ogg Ogre Mound": 1,
         "Janeiro's Point": 1,
         "Nek'mani Wellspring": 1,
-        "Ruins of Aboraz": 1,
+        "Ruins of Aboraz": 3,
         "Ruins of Jubuwal": 1,
         "Gurubashi Arena Grounds": 1,
         "Ruins of Zul'Kunda": 1,
@@ -1150,7 +2113,7 @@
         "Bloodsail Cove": 1,
         "Tkashi Ruins": 1,
         "Venture Co. Base Camp": 1,
-        "Wild Shore": 1,
+        "Wild Shore": 11,
         "Ziata'jai Ruins": 1,
         "Central Stranglethorn Jungle": 1,
         "Zuuldaia Ruins": 1,
@@ -1342,7 +2305,7 @@
         "Maraudon": 1,
         "Stratholme": 1,
         "Wailing Caverns": 2,
-        "Uldaman": 1,
+        "Uldaman": 2,
         "Razorfen Downs": 1,
         "Razorfen Kraul": 1,
         "The Deadmines": 1,
@@ -1351,7 +2314,7 @@
         "Zul'Farrak": 1,
         "Onyxia's Lair": 1,
         "Zul'Gurub": 1,
-        "Ruins of Ahn'Qiraj": 1,
+        "Ruins of Ahn'Qiraj": 4,
         "Temple of Ahn'Qiraj": 1,
         "Blackrock Mountain": 5,
         "Jintha'Alor": 1,
@@ -1369,14 +2332,16 @@
         "Thunder Bluff": 2,
         "Caverns of Time": 3,
         "Mirage Raceway": 2,
-        "Falfarren Moonwell": 1,
+        "Falfarren Moonwell": 4,
         "Bloodmage Camp": 2,
         "Fray Island": 3,
         "Thungrim's Forge": 2,
         "Southsea Encampment": 2
       },
       "unlockedAreas": [
-        "The Masonary"
+        "The Masonary",
+        "Map Chamber",
+        "General's Terrace"
       ],
       "vendorStock": {
         "The Drag:Borya": [
@@ -1521,9 +2486,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2025-07-28T14:04:17.4977464+02:00",
-      "lastLoaded": "2025-08-05T15:39:02.4430549+02:00",
-      "lastPlayed": "2025-08-05T15:46:02.5685638+02:00",
-      "timePlayed": "01:21:15.9756215"
+      "lastLoaded": "2025-08-11T14:54:43.346705+02:00",
+      "lastPlayed": "2025-08-11T15:00:26.0909515+02:00",
+      "timePlayed": "02:17:08.3851338"
     },
     {
       "playerSide": "Alliance",
