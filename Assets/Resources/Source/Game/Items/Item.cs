@@ -1479,7 +1479,7 @@ public class Item
                     {
                         var balance = Math.Round(newPower - oldPower, 2);
                         AddLine(((balance > 0 ? "+" : "") + balance).Replace(",", "."), balance > 0 ? "Uncommon" : "DangerousRed");
-                        AddText(" Power modifier");
+                        AddText(" Power mod.");
                     }
                 }
                 else if (item.type == "Off Hand" || item.type == "One Handed" || item.type == "Two Handed")
@@ -1507,7 +1507,7 @@ public class Item
                     {
                         var balance = Math.Round(bd - ad, 2);
                         AddLine(((balance > 0 ? "+" : "") + balance).Replace(",", "."), balance > 0 ? "Uncommon" : "DangerousRed");
-                        AddText(" Power modifier");
+                        AddText(" Power mod.");
                     }
                 }
                 a1 = item.block;

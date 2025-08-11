@@ -159,8 +159,8 @@ public class Buff
         AddPaddingRegion(() =>
         {
             AddBigButton(worldBuff.Buff.icon);
-            AddLine("Minutes left: ", "DarkGray");
-            AddText(worldBuff.minutesLeft + "");
+            AddLine("Time left: ", "DarkGray");
+            AddText(Root.FormatTime(0, worldBuff.minutesLeft));
         });
         worldBuff.Buff.PrintDescription(SaveGame.currentSave.player, worldBuff.rank);
         AddRegionGroup();

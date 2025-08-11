@@ -1650,12 +1650,13 @@ public static class Root
     }
 
     //Converts a number into the roman notation
-    public static string FormatTime(int seconds, int minutes = 0)
+    public static string FormatTime(int seconds, int minutes = 0, int hours = 0)
     {
-        var sec = seconds + minutes * 60;
-        var min = sec / 60;
+        var sec = seconds + minutes * 60 + hours * 3600;
+        var min = sec % 3600 / 60;
+        var hou = sec / 3600;
         sec %= 60;
-        return (min > 0 ? (min > 1 ? min + " minutes" : min + " minute") : "") + (sec > 0 && min > 0 ? " " : "") + (sec > 0 ? (sec > 1 ? sec + " seconds" : sec + " second") : "");
+        return (hou > 0 ? (hou > 1 ? hou + " hours" : hou + " hour") : "") + (min > 0 && hou > 0 ? " " : "") + (min > 0 ? (min > 1 ? min + " minutes" : min + " minute") : "") + (sec > 0 && (min > 0 || hou > 0) ? " " : "") + (sec > 0 ? (sec > 1 ? sec + " seconds" : sec + " second") : "");
     }
 
     #endregion

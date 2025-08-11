@@ -557,22 +557,22 @@
         "worldBuffs": [
           {
             "buff": "Scroll of Agility II @ Scroll of Agility",
-            "minutesLeft": 495
+            "minutesLeft": 487
           },
           {
             "buff": "Scroll of Strength III @ Scroll of Strength",
-            "minutesLeft": 505
+            "minutesLeft": 497
           },
           {
             "buff": "Scroll of Intellect III @ Scroll of Intellect",
-            "minutesLeft": 537
+            "minutesLeft": 529
           }
         ]
       },
       "hour": 10,
-      "minute": 46,
-      "second": 54,
-      "currentSite": "Blackrock Mountain",
+      "minute": 54,
+      "second": 20,
+      "currentSite": "Draco'dar",
       "ringOfLaw": "Gorosh the Dervish",
       "forlornCloister": "Ironspine",
       "markets": [
@@ -1534,6 +1534,77 @@
             "bags": [],
             "ignoreSpaceChecks": true
           }
+        },
+        "Gates of Blackrock": {
+          "area": "Gates of Blackrock",
+          "inventory": {
+            "items": [
+              {
+                "rarity": "Rare",
+                "name": "Serathil",
+                "icon": "itemaxe08",
+                "detailedType": "Axe",
+                "type": "One Handed",
+                "source": "RareDrop",
+                "ilvl": 61,
+                "lvl": 56,
+                "minPower": 3.79,
+                "maxPower": 6.21,
+                "armor": 100,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 53957,
+                "stats": {
+                  "Strength": 9
+                }
+              },
+              {
+                "x": 1,
+                "rarity": "Common",
+                "name": "Dark Iron Ore",
+                "icon": "itemoremithril01",
+                "detailedType": "Ore",
+                "type": "Trade Good",
+                "source": "RareDrop",
+                "ilvl": 50,
+                "lvl": 1,
+                "amount": 1,
+                "maxStack": 10,
+                "price": 500
+              },
+              {
+                "x": 2,
+                "rarity": "Common",
+                "name": "Dreamfoil",
+                "icon": "itemmischerbdreamfoil",
+                "detailedType": "Flowers",
+                "type": "Trade Good",
+                "ilvl": 54,
+                "lvl": 1,
+                "amount": 1,
+                "maxStack": 20,
+                "price": 100
+              },
+              {
+                "x": 3,
+                "rarity": "Common",
+                "name": "Major Healing Potion",
+                "icon": "itempotion54",
+                "combatUse": true,
+                "detailedType": "Potion",
+                "type": "Miscellaneous",
+                "ilvl": 55,
+                "amount": 1,
+                "maxStack": 5,
+                "abilities": {
+                  "Major Healing Potion": 1
+                },
+                "price": 1000
+              }
+            ],
+            "bags": [],
+            "ignoreSpaceChecks": true
+          }
         }
       },
       "fishingSpots": {},
@@ -1553,7 +1624,9 @@
         "Scarab Terrace": 3,
         "The Scarab Wall": 3,
         "Ruins of Aboraz": 3,
-        "Lower Hall of Blackhand": 2
+        "Lower Hall of Blackhand": 2,
+        "Gates of Blackrock": 3,
+        "Draco'dar": 2
       },
       "commonsKilled": {
         "Syndicate Prowler": 1,
@@ -1585,10 +1658,13 @@
         "Zanzil Witch Doctor": 1,
         "Scarshield Spellbinder": 1,
         "Scarshield Acolyte": 2,
-        "Scarshield Legionnaire": 1
+        "Scarshield Legionnaire": 1,
+        "Flamescale Dragonspawn": 1,
+        "Flamescale Wyrmkin": 3
       },
       "raresKilled": {
-        "Singer": 1
+        "Singer": 1,
+        "Hematos": 1
       },
       "elitesKilled": {
         "Marez Cowl": 1,
@@ -1816,8 +1892,8 @@
         "Altar of Storms": 1,
         "Blackrock Pass": 1,
         "Blackrock Stronghold": 1,
-        "Gates of Blackrock": 8,
-        "Draco'dar": 2,
+        "Gates of Blackrock": 10,
+        "Draco'dar": 3,
         "Firegut Blockade": 2,
         "Dreadmaul Rock": 1,
         "Firegut Hold": 1,
@@ -2560,9 +2636,9 @@
         "ignoreSpaceChecks": true
       },
       "startDate": "2025-07-28T14:04:17.4977464+02:00",
-      "lastLoaded": "2025-08-11T15:22:56.1902045+02:00",
-      "lastPlayed": "2025-08-11T15:26:10.9033753+02:00",
-      "timePlayed": "02:20:23.0983046"
+      "lastLoaded": "2025-08-11T15:47:55.0437219+02:00",
+      "lastPlayed": "2025-08-11T15:53:59.0437996+02:00",
+      "timePlayed": "02:26:27.0983823"
     },
     {
       "playerSide": "Alliance",

@@ -288,7 +288,7 @@ public class SiteArea : Site
 
         //Possible enemies in this area
         var common = CommonEncounters(currentSave.playerSide);
-        var rare = RareEncounters(currentSave.playerSide);
+        var rare = RareEncounters(currentSave.playerSide).Where(x => !currentSave.raresKilled.ContainsKey(x.who)).ToList();
 
         //Mob encounter to add to the list next
         Encounter toAdd = null;
