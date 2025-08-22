@@ -4211,6 +4211,38 @@ public class Blueprint
                     auctionCategory = "";
                     UpdateAuctionGroupList();
                     PlaySound("DesktopAuctionOpen", 0.4f);
+                    showSwords = new(true);
+                    showAxes = new(true);
+                    showMaces = new(true);
+                    showPolearms = new(true);
+                    showStaves = new(true);
+                    showDaggers = new(true);
+                    showWands = new(true);
+                    showCloth = new(true);
+                    showLeather = new(true);
+                    showMail = new(true);
+                    showPlate = new(true);
+                    showNonShield = new(true);
+                    showShield = new(true);
+                    showBows = new(true);
+                    showCrossbows = new(true);
+                    showGuns = new(true);
+                    showHead = new(true);
+                    showShoulders = new(true);
+                    showBack = new(true);
+                    showChest = new(true);
+                    showWrists = new(true);
+                    showHands = new(true);
+                    showWaist = new(true);
+                    showLegs = new(true);
+                    showFeet = new(true);
+                    showNeck = new(true);
+                    showFinger = new(true);
+                    showTrinket = new(true);
+                    showFood = new(true);
+                    showScrolls = new(true);
+                    showPotions = new(true);
+                    showBattleElixirs = new(true);
                     SpawnWindowBlueprint("AuctionHouseOffersGroups");
                     for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
                     SpawnWindowBlueprint("AuctionHouseFilteringMain");
@@ -5934,13 +5966,13 @@ public class Blueprint
             });
             AddButtonRegion(() =>
             {
-                AddCheckbox(showCombatPotions);
-                AddLine("Combat potions");
+                AddCheckbox(showBattleElixirs);
+                AddLine("Battle elixirs");
                 AddSmallButton("ItemPotion51");
             },
             (h) =>
             {
-                showCombatPotions.Invert();
+                showBattleElixirs.Invert();
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
                 for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
@@ -8726,6 +8758,14 @@ public class Blueprint
                         CloseWindow("ProfessionLevelTrainer");
                         Respawn("Person");
                     }
+                    else if (CloseWindow("AuctionHouseFilteringTwoHandedWeapons") || CloseWindow("AuctionHouseFilteringOneHandedWeapons") || CloseWindow("AuctionHouseFilteringOffHands") || CloseWindow("AuctionHouseFilteringRangedWeapons") || CloseWindow("AuctionHouseFilteringArmorClass") || CloseWindow("AuctionHouseFilteringArmorType") || CloseWindow("AuctionHouseFilteringJewelry") || CloseWindow("AuctionHouseFilteringConsumeables"))
+                    {
+                        auctionCategory = "";
+                        UpdateAuctionGroupList();
+                        Respawn("AuctionHouseOffersGroups", true);
+                        Respawn("AuctionHouseFilteringMain");
+                        for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                    }
                     else if (CloseWindow("AuctionHouseOffersGroups"))
                     {
                         PlaySound("DesktopInstanceClose");
@@ -8891,6 +8931,14 @@ public class Blueprint
                     CloseWindow("ProfessionLevelTrainer");
                     Respawn("Person");
                 }
+                else if (CloseWindow("AuctionHouseFilteringTwoHandedWeapons") || CloseWindow("AuctionHouseFilteringOneHandedWeapons") || CloseWindow("AuctionHouseFilteringOffHands") || CloseWindow("AuctionHouseFilteringRangedWeapons") || CloseWindow("AuctionHouseFilteringArmorClass") || CloseWindow("AuctionHouseFilteringArmorType") || CloseWindow("AuctionHouseFilteringJewelry") || CloseWindow("AuctionHouseFilteringConsumeables"))
+                {
+                    auctionCategory = "";
+                    UpdateAuctionGroupList();
+                    Respawn("AuctionHouseOffersGroups", true);
+                    Respawn("AuctionHouseFilteringMain");
+                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                }
                 else if (CloseWindow("AuctionHouseOffersGroups"))
                 {
                     PlaySound("DesktopInstanceClose");
@@ -9054,6 +9102,14 @@ public class Blueprint
                     PlaySound("DesktopInstanceClose");
                     CloseWindow("ProfessionLevelTrainer");
                     Respawn("Person");
+                }
+                else if (CloseWindow("AuctionHouseFilteringTwoHandedWeapons") || CloseWindow("AuctionHouseFilteringOneHandedWeapons") || CloseWindow("AuctionHouseFilteringOffHands") || CloseWindow("AuctionHouseFilteringRangedWeapons") || CloseWindow("AuctionHouseFilteringArmorClass") || CloseWindow("AuctionHouseFilteringArmorType") || CloseWindow("AuctionHouseFilteringJewelry") || CloseWindow("AuctionHouseFilteringConsumeables"))
+                {
+                    auctionCategory = "";
+                    UpdateAuctionGroupList();
+                    Respawn("AuctionHouseOffersGroups", true);
+                    Respawn("AuctionHouseFilteringMain");
+                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
                 }
                 else if (CloseWindow("AuctionHouseOffersGroups"))
                 {

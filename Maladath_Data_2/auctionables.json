@@ -1356,30 +1356,6 @@
     "frequency": 0.8
   },
   {
-    "item": "Outrunner's Bow",
-    "minPrice": 255384,
-    "maxPrice": 671413,
-    "frequency": 0.8
-  },
-  {
-    "item": "Outrider's Bow",
-    "minPrice": 272868,
-    "maxPrice": 717379,
-    "frequency": 0.8
-  },
-  {
-    "item": "Lorekeeper's Staff",
-    "minPrice": 441619,
-    "maxPrice": 1161032,
-    "frequency": 0.8
-  },
-  {
-    "item": "Advisor's Gnarled Staff",
-    "minPrice": 435060,
-    "maxPrice": 1143787,
-    "frequency": 0.8
-  },
-  {
     "item": "Darkrune Breastplate",
     "minPrice": 142916,
     "maxPrice": 375731,
@@ -7158,30 +7134,6 @@
     "frequency": 3.0
   },
   {
-    "item": "Lorekeeper's Staff",
-    "minPrice": 259507,
-    "maxPrice": 682252,
-    "frequency": 0.8
-  },
-  {
-    "item": "Outrunner's Bow",
-    "minPrice": 149525,
-    "maxPrice": 393107,
-    "frequency": 0.8
-  },
-  {
-    "item": "Advisor's Gnarled Staff",
-    "minPrice": 249209,
-    "maxPrice": 655178,
-    "frequency": 0.8
-  },
-  {
-    "item": "Outrider's Bow",
-    "minPrice": 149525,
-    "maxPrice": 393107,
-    "frequency": 0.8
-  },
-  {
     "item": "Truesilver Champion",
     "minPrice": 238997,
     "maxPrice": 628332,
@@ -12666,30 +12618,6 @@
     "frequency": 1.5
   },
   {
-    "item": "Advisor's Gnarled Staff",
-    "minPrice": 123218,
-    "maxPrice": 323946,
-    "frequency": 0.8
-  },
-  {
-    "item": "Outrunner's Bow",
-    "minPrice": 73928,
-    "maxPrice": 194361,
-    "frequency": 0.8
-  },
-  {
-    "item": "Outrider's Bow",
-    "minPrice": 73928,
-    "maxPrice": 194361,
-    "frequency": 0.8
-  },
-  {
-    "item": "Lorekeeper's Staff",
-    "minPrice": 128786,
-    "maxPrice": 338583,
-    "frequency": 0.8
-  },
-  {
     "item": "Monk's Staff",
     "minPrice": 103168,
     "maxPrice": 271232,
@@ -17706,30 +17634,6 @@
     "frequency": 1.5
   },
   {
-    "item": "Outrider's Bow",
-    "minPrice": 31818,
-    "maxPrice": 83651,
-    "frequency": 0.8
-  },
-  {
-    "item": "Advisor's Gnarled Staff",
-    "minPrice": 53034,
-    "maxPrice": 139430,
-    "frequency": 0.8
-  },
-  {
-    "item": "Outrunner's Bow",
-    "minPrice": 31818,
-    "maxPrice": 83651,
-    "frequency": 0.8
-  },
-  {
-    "item": "Lorekeeper's Staff",
-    "minPrice": 55638,
-    "maxPrice": 146276,
-    "frequency": 0.8
-  },
-  {
     "item": "Holy Shroud",
     "minPrice": 12288,
     "maxPrice": 32306,
@@ -22168,30 +22072,6 @@
     "minPrice": 4972,
     "maxPrice": 13072,
     "frequency": 1.5
-  },
-  {
-    "item": "Advisor's Gnarled Staff",
-    "minPrice": 18860,
-    "maxPrice": 49584,
-    "frequency": 0.8
-  },
-  {
-    "item": "Outrider's Bow",
-    "minPrice": 11315,
-    "maxPrice": 29747,
-    "frequency": 0.8
-  },
-  {
-    "item": "Lorekeeper's Staff",
-    "minPrice": 18860,
-    "maxPrice": 49584,
-    "frequency": 0.8
-  },
-  {
-    "item": "Outrunner's Bow",
-    "minPrice": 11315,
-    "maxPrice": 29747,
-    "frequency": 0.8
   },
   {
     "item": "Cured Leather Armor",
@@ -28320,12 +28200,6 @@
     "frequency": 3.0
   },
   {
-    "item": "Squire's Shirt",
-    "minPrice": 6,
-    "maxPrice": 16,
-    "frequency": 3.0
-  },
-  {
     "item": "Recruit's Shirt",
     "minPrice": 6,
     "maxPrice": 16,
@@ -28362,12 +28236,6 @@
     "frequency": 3.0
   },
   {
-    "item": "Recruit's Boots",
-    "minPrice": 6,
-    "maxPrice": 16,
-    "frequency": 3.0
-  },
-  {
     "item": "Footpad's Shirt",
     "minPrice": 6,
     "maxPrice": 16,
@@ -28393,12 +28261,6 @@
   },
   {
     "item": "Acolyte's Shoes",
-    "minPrice": 6,
-    "maxPrice": 16,
-    "frequency": 3.0
-  },
-  {
-    "item": "Thug Boots",
     "minPrice": 6,
     "maxPrice": 16,
     "frequency": 3.0
@@ -28441,12 +28303,6 @@
   },
   {
     "item": "Small Ammo Pouch",
-    "minPrice": 6,
-    "maxPrice": 16,
-    "frequency": 3.0
-  },
-  {
-    "item": "Thug Shirt",
     "minPrice": 6,
     "maxPrice": 16,
     "frequency": 3.0
@@ -28500,12 +28356,6 @@
     "frequency": 3.0
   },
   {
-    "item": "Primitive Mantle",
-    "minPrice": 6,
-    "maxPrice": 16,
-    "frequency": 3.0
-  },
-  {
     "item": "Squire's Shirt",
     "minPrice": 6,
     "maxPrice": 16,
@@ -28543,12 +28393,6 @@
   },
   {
     "item": "Apprentice's Shirt",
-    "minPrice": 6,
-    "maxPrice": 16,
-    "frequency": 3.0
-  },
-  {
-    "item": "Recruit's Shirt",
     "minPrice": 6,
     "maxPrice": 16,
     "frequency": 3.0
@@ -28618,30 +28462,6 @@
     "minPrice": 6,
     "maxPrice": 16,
     "frequency": 3.0
-  },
-  {
-    "item": "Gray Sack of Gems",
-    "minPrice": 34174,
-    "maxPrice": 89845,
-    "frequency": 1.5
-  },
-  {
-    "item": "Yellow Sack of Gems",
-    "minPrice": 1320,
-    "maxPrice": 3471,
-    "frequency": 1.5
-  },
-  {
-    "item": "Red Sack of Gems",
-    "minPrice": 29592,
-    "maxPrice": 77799,
-    "frequency": 1.5
-  },
-  {
-    "item": "Blue Sack of Gems",
-    "minPrice": 29524,
-    "maxPrice": 77620,
-    "frequency": 1.5
   },
   {
     "item": "Huge Venom Sac",
@@ -31182,12 +31002,6 @@
     "frequency": 3.0
   },
   {
-    "item": "Pattern: Warbear Woolies",
-    "minPrice": 31000,
-    "maxPrice": 81500,
-    "frequency": 3.0
-  },
-  {
     "item": "Pattern: Heavy Scorpid Belt",
     "minPrice": 31000,
     "maxPrice": 81500,
@@ -32025,12 +31839,6 @@
     "item": "Pattern: Warbear Woolies",
     "minPrice": 31000,
     "maxPrice": 81500,
-    "frequency": 3.0
-  },
-  {
-    "item": "Pattern: Warbear Harness",
-    "minPrice": 24800,
-    "maxPrice": 65200,
     "frequency": 3.0
   },
   {

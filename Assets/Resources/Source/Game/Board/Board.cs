@@ -412,8 +412,8 @@ public class Board
                     else
                     {
                         var worldDrop = Item.items.FindAll(x => (x.dropRange == null && x.lvl >= enemy.level - 6 && x.lvl <= enemy.level || x.dropRange != null && enemy.level >= int.Parse(x.dropRange.Split('-')[0]) && enemy.level <= int.Parse(x.dropRange.Split('-')[1])) && x.source == "RareDrop");
-                        var instance = area.instancePart ? SiteInstance.instances.Find(x => x.wings.Any(y => y.areas.Any(z => z["AreaName"] == area.name))) : null;
-                        var zoneDrop = instance == null || instance.zoneDrop == null ? new() : Item.items.FindAll(x => instance.zoneDrop.Contains(x.name));
+                        var zone = Zone.zones.Find(x => x.name == area.zone);
+                        var zoneDrop = zone == null || zone.zoneDrops == null ? new() : Item.items.FindAll(x => zone.zoneDrops.Contains(x.name));
                         var everything = zoneDrop.Concat(worldDrop).Where(x => (!x.onlyWithQuest || currentSave.player.currentQuests.Any(y => y.conditions.Any(z => z.type == "Item" && z.name == x.name))) && x.CanEquip(currentSave.player, false, false, true) && (!x.unique || !currentSave.player.uniquesGotten.Contains(x.name)));
                         var dropGray = everything.Where(x => x.rarity == "Poor").ToList();
                         var dropWhite = everything.Where(x => x.rarity == "Common").ToList();

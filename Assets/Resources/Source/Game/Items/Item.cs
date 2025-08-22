@@ -1688,6 +1688,7 @@ public class Item
         else if (detailedType == "Orb") result = "Wand";
         else if (detailedType == "Pouch") result = "Bag";
         else if (detailedType == "Potion") result = "Liquid";
+        else if (detailedType == "Battle Elixir") result = "Liquid";
         else if (detailedType == "Flowers") result = "Herb";
         else if (detailedType == "Torch") result = "WoodSmall";
         else if (detailedType == "Tool") result = "MetalSmall";

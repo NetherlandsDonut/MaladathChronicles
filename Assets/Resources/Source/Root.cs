@@ -114,7 +114,7 @@ public static class Root
     public static Bool showFood = new(true);
     public static Bool showScrolls = new(true);
     public static Bool showPotions = new(true);
-    public static Bool showCombatPotions = new(true);
+    public static Bool showBattleElixirs = new(true);
 
     //Updates viewed list of auction offer groups
     public static void UpdateAuctionGroupList()
@@ -147,30 +147,65 @@ public static class Root
             if (auctionCategory == "Two handed weapons")
             {
                 if (item.type != "Two Handed") remove = true;
+                else if (item.detailedType == "Sword" && !showSwords.Value()) remove = true;
+                else if (item.detailedType == "Axe" && !showAxes.Value()) remove = true;
+                else if (item.detailedType == "Mace" && !showMaces.Value()) remove = true;
+                else if (item.detailedType == "Polearm" && !showPolearms.Value()) remove = true;
+                else if (item.detailedType == "Staff" && !showStaves.Value()) remove = true;
             }
             else if (auctionCategory == "One handed weapons")
             {
                 if (item.type != "One Handed") remove = true;
+                else if (item.detailedType == "Sword" && !showSwords.Value()) remove = true;
+                else if (item.detailedType == "Axe" && !showAxes.Value()) remove = true;
+                else if (item.detailedType == "Mace" && !showMaces.Value()) remove = true;
+                else if (item.detailedType == "Dagger" && !showDaggers.Value()) remove = true;
+                else if (item.detailedType == "Wand" && !showWands.Value()) remove = true;
             }
             else if (auctionCategory == "Off hands")
             {
                 if (item.type != "Off Hand") remove = true;
+                else if (item.detailedType != "Shield" && !showNonShield.Value()) remove = true;
+                else if (item.detailedType == "Shield" && !showShield.Value()) remove = true;
             }
             else if (auctionCategory == "Ranged weapons")
             {
                 if (item.type != "Ranged Weapon") remove = true;
+                else if (item.detailedType == "Gun" && !showGuns.Value()) remove = true;
+                else if (item.detailedType == "Bow" && !showBows.Value()) remove = true;
+                else if (item.detailedType == "Crossbow" && !showCrossbows.Value()) remove = true;
             }
             else if (auctionCategory == "Armor")
             {
                 if (item.armorClass == null || item.armorClass == string.Empty) remove = true;
+                else if (item.armorClass == "Plate" && !showPlate.Value()) remove = true;
+                else if (item.armorClass == "Mail" && !showMail.Value()) remove = true;
+                else if (item.armorClass == "Leather" && !showLeather.Value()) remove = true;
+                else if (item.armorClass == "Cloth" && !showCloth.Value()) remove = true;
+                else if (item.type == "Head" && !showHead.Value()) remove = true;
+                else if (item.type == "Back" && !showBack.Value()) remove = true;
+                else if (item.type == "Shoulders" && !showShoulders.Value()) remove = true;
+                else if (item.type == "Chest" && !showChest.Value()) remove = true;
+                else if (item.type == "Hands" && !showHands.Value()) remove = true;
+                else if (item.type == "Waist" && !showWaist.Value()) remove = true;
+                else if (item.type == "Wrists" && !showWrists.Value()) remove = true;
+                else if (item.type == "Legs" && !showLegs.Value()) remove = true;
+                else if (item.type == "Feet" && !showFeet.Value()) remove = true;
             }
             else if (auctionCategory == "Jewelry")
             {
                 if (item.type != "Neck" && item.type != "Finger" && item.type != "Trinket") remove = true;
+                else if (item.type == "Neck" && !showNeck.Value()) remove = true;
+                else if (item.type == "Finger" && !showFinger.Value()) remove = true;
+                else if (item.type == "Trinket" && !showTrinket.Value()) remove = true;
             }
             else if (auctionCategory == "Consumeables")
             {
-                if ((item.detailedType != "Potion" && item.detailedType != "Food" && item.detailedType != "Scroll") || item.abilities == null) remove = true;
+                if ((item.detailedType != "Potion" && item.detailedType != "Food" && item.detailedType != "Scroll" && item.detailedType != "Battle Elixir") || item.abilities == null) remove = true;
+                else if (item.detailedType == "Potion" && !showPotions.Value()) remove = true;
+                else if (item.detailedType == "Food" && !showFood.Value()) remove = true;
+                else if (item.detailedType == "Scroll" && !showScrolls.Value()) remove = true;
+                else if (item.detailedType == "Battle Elixir" && !showBattleElixirs.Value()) remove = true;
             }
             else if (auctionCategory == "Profession recipes")
             {

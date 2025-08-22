@@ -1342,6 +1342,15 @@
     ]
   },
   {
+    "zoneDrops": [
+      "Ritssyn's Ring of Chaos",
+      "Anubisath Warhammer",
+      "Garb of Royal Ascension",
+      "Neretzek, The Blood Drinker",
+      "Gloves of the Immortal",
+      "Gloves of the Redeemed Prophecy",
+      "Shard of the Fallen Star"
+    ],
     "name": "Temple of Ahn'Qiraj",
     "icon": "Temple of Ahn'Qiraj",
     "continent": "Kalimdor",
@@ -1360,6 +1369,17 @@
     "ambienceNight": "AmbienceAhnQirajUndergrounds"
   },
   {
+    "zoneDrops": [
+      "Silithid Husked Launcher",
+      "Antenna of Invigoration",
+      "The Lost Kris of Zedd",
+      "Helm of the Holy Avenger",
+      "Coif of Elemental Fury",
+      "Polished Obsidian Pauldrons",
+      "Gavel of Qiraji Authority",
+      "Fury of the Forgotten Swarm",
+      "Treads of the Wandering Nomad"
+    ],
     "name": "Ruins of Ahn'Qiraj",
     "icon": "Ruins of Ahn'Qiraj",
     "continent": "Kalimdor",
@@ -1427,6 +1447,19 @@
     ]
   },
   {
+    "zoneDrops": [
+      "Redoubt Cloak",
+      "Gordok Bracers of Power",
+      "Rod of the Ogre Magi",
+      "Counterattack Lodestone",
+      "Barrier Shield",
+      "Ogre Forged Hauberk",
+      "Unyielding Maul",
+      "Mindsurge Robe",
+      "Tarnished Elven Ring",
+      "Cyclone Spaulders",
+      "Elemental Plate Girdle"
+    ],
     "name": "Dire Maul",
     "icon": "Dire Maul",
     "continent": "Kalimdor",
@@ -1521,6 +1554,20 @@
     ]
   },
   {
+    "zoneDrops": [
+      "Axe of the Enforcer",
+      "Crested Scepter",
+      "Martyr's Chain",
+      "Onyx Claymore",
+      "Grimclaw",
+      "Ring of Precision",
+      "Scholarly Robes",
+      "Doomspike",
+      "Tree Bark Jacket",
+      "Staff of the Friar",
+      "Staff of the Blessed Seer",
+      "Evocator's Blade"
+    ],
     "name": "Blackfathom Deeps",
     "icon": "Blackfathom Deeps",
     "continent": "Kalimdor",
@@ -1547,6 +1594,18 @@
     ]
   },
   {
+    "zoneDrops": [
+      "Vendetta",
+      "Avenger's Armor",
+      "Mantle of Thieves",
+      "Pugilist Bracers",
+      "Slaghammer",
+      "Plains Ring",
+      "Sword of Decay",
+      "Pysan's Old Greatsword",
+      "Wolfclaw Gloves",
+      "Staff of the Shade"
+    ],
     "name": "Razorfen Kraul",
     "icon": "Razorfen Kraul",
     "continent": "Kalimdor",
@@ -1574,6 +1633,17 @@
     ]
   },
   {
+    "zoneDrops": [
+      "Corpseshroud",
+      "Death's Head Vestment",
+      "Manslayer",
+      "Freezing Shard",
+      "Quillward Harness",
+      "Quillshooter",
+      "Thoughtcast Boots",
+      "Ebony Boneclub",
+      "Boneslasher"
+    ],
     "name": "Razorfen Downs",
     "icon": "Razorfen Downs",
     "continent": "Kalimdor",
@@ -1662,6 +1732,26 @@
     ]
   },
   {
+    "zoneDrops": [
+      "Arcanist Bindings",
+      "Arcanist Belt",
+      "Felheart Bracers",
+      "Felheart Belt",
+      "Girdle of Prophecy",
+      "Vambraces of Prophecy",
+      "Nightslayer Bracelets",
+      "Nightslayer Belt",
+      "Cenarion Belt",
+      "Cenarion Bracers",
+      "Earthfury Belt",
+      "Earthfury Bracers",
+      "Giantstalker's Bracers",
+      "Giantstalker's Belt",
+      "Lawbringer Bracers",
+      "Lawbringer Belt",
+      "Bracers of Might",
+      "Belt of Might"
+    ],
     "name": "Molten Core",
     "icon": "Molten Core",
     "continent": "Eastern Kingdoms",
@@ -1683,6 +1773,14 @@
     ]
   },
   {
+    "zoneDrops": [
+      "Draconic Maul",
+      "Doom's Edge",
+      "Band of Dark Dominion",
+      "Essence Gatherer",
+      "Cloak of Draconic Might",
+      "Boots of Pure Thought"
+    ],
     "name": "Blackwing Lair",
     "icon": "Blackwing Lair",
     "continent": "Eastern Kingdoms",
@@ -1701,6 +1799,12 @@
     "ambienceNight": "AmbienceBlackwingLair"
   },
   {
+    "zoneDrops": [
+      "Blackwater Cutlass",
+      "Silk-threaded Trousers",
+      "Blackened Defias Leggings",
+      "Blackened Defias Gloves"
+    ],
     "name": "The Deadmines",
     "icon": "The Deadmines",
     "continent": "Eastern Kingdoms",
@@ -1724,6 +1828,24 @@
     ]
   },
   {
+    "zoneDrops": [
+      "Sceptre of Smiting",
+      "Zulian Hacker",
+      "Zulian Ceremonial Staff",
+      "Shadow Panther Hide Gloves",
+      "Shadow Panther Hide Belt",
+      "Gurubashi Helm",
+      "Cloak of the Hakkari Worshipers",
+      "Might of the Tribe",
+      "Zulian Scepter of Rites",
+      "Sacrificial Gauntlets",
+      "Gloves of the Tormented",
+      "Belt of Untapped Power",
+      "Blooddrenched Mask",
+      "Zulian Headdress",
+      "Band of Servitude",
+      "Seal of the Gurubashi Berserker"
+    ],
     "name": "Zul'Gurub",
     "icon": "Zul'Gurub",
     "continent": "Eastern Kingdoms",
@@ -1775,6 +1897,27 @@
     ]
   },
   {
+    "zoneDrops": [
+      "Scarlet Leggings",
+      "Fight Club",
+      "Ruthless Shiv",
+      "Warchief Kilt",
+      "Swampchill Fetish",
+      "Flintrock Shoulders",
+      "Archon Chestpiece",
+      "Steelclaw Reaver",
+      "Sliverblade",
+      "Windweaver Staff",
+      "Scarlet Belt",
+      "Mark of Kern",
+      "Tainted Pierce",
+      "Scarlet Wristguards",
+      "Scarlet Boots",
+      "Beguiler Robes",
+      "Chesterfall Musket",
+      "Watchman Pauldrons",
+      "Resplendent Guardian"
+    ],
     "name": "Scarlet Monastery",
     "icon": "Scarlet Monastery",
     "continent": "Eastern Kingdoms",
@@ -1844,7 +1987,21 @@
       "MusicEvilForestNight3"
     ],
     "ambienceDay": "AmbienceShadowfangKeep",
-    "ambienceNight": "AmbienceShadowfangKeep"
+    "ambienceNight": "AmbienceShadowfangKeep",
+    "zoneDrops": [
+      "Gloomshroud Armor",
+      "Duskbringer",
+      "Necrology Robes",
+      "Shadowfang",
+      "Assassin's Blade",
+      "Night Reaver",
+      "Guillotine Axe",
+      "Witching Stave",
+      "Mindthrust Bracers",
+      "Face Smasher",
+      "Black Malice",
+      "Eerie Stable Lantern"
+    ]
   },
   {
     "name": "The Stockade",
@@ -1871,6 +2028,21 @@
     "ambienceNight": "AmbienceGnomeregan"
   },
   {
+    "zoneDrops": [
+      "The Jackhammer",
+      "Spaulders of a Lost Age",
+      "Digmaster 5000",
+      "Pendulum of Doom",
+      "Miner's Hat of the Deep",
+      "Shadowforge Bushmaster",
+      "Papal Fez",
+      "Stonevault Bonebreaker",
+      "Skullplate Bracers",
+      "Ginn-su Sword",
+      "Monolithic Bow",
+      "Obsidian Cleaver",
+      "Annealed Blade"
+    ],
     "name": "Uldaman",
     "icon": "Uldaman",
     "continent": "Eastern Kingdoms",
@@ -1939,6 +2111,40 @@
     ]
   },
   {
+    "zoneDrops": [
+      "Ironweave Mantle",
+      "Swiftwalker Boots",
+      "Hands of the Exalted Herald",
+      "High Priestess Boots",
+      "Ebonsteel Spaulders",
+      "Magmus Stone",
+      "Cinderhide Armsplints",
+      "Emberplate Armguards",
+      "Impervious Giant",
+      "Blood-etched Blade",
+      "Ghostshroud",
+      "Deathdealer Breastplate",
+      "Legplates of the Eternal Guardian",
+      "Haunting Specter Leggings",
+      "Coal Miner Boots",
+      "Golem Skull Helm",
+      "Rubidium Hammer",
+      "Wraith Scythe",
+      "Spire of the Stoneshaper",
+      "Mar Alom's Grip",
+      "Stoneshield Cloak",
+      "Plans: Dark Iron Sunderer",
+      "Blisterbane Wrap",
+      "Battlechaser's Greaves",
+      "Doomforged Straightedge",
+      "Aristocratic Cuffs",
+      "Ribsplitter",
+      "Runed Golem Shackles",
+      "The Judge's Gavel",
+      "Braincage",
+      "Searing Needle",
+      "Funeral Pyre Vestment"
+    ],
     "name": "Blackrock Depths",
     "icon": "Blackrock Depths",
     "continent": "Eastern Kingdoms",
@@ -1982,6 +2188,23 @@
     ]
   },
   {
+    "zoneDrops": [
+      "Draconian Deflector",
+      "Wildfire Cape",
+      "Gyth's Skull",
+      "Tribal War Feathers",
+      "Heart of the Scale",
+      "Slaghide Gauntlets",
+      "Wind Dancer Boots",
+      "Recipe: Greater Fire Protection Potion",
+      "Cord of Elements",
+      "Beaststalker's Belt",
+      "Magister's Bindings",
+      "Devout Belt",
+      "Dreadmist Bracers",
+      "Shadowcraft Belt",
+      "Bracers of Valor"
+    ],
     "name": "Lower Blackrock Spire",
     "icon": "Lower Blackrock Spire",
     "continent": "Eastern Kingdoms",
@@ -2011,6 +2234,32 @@
     ]
   },
   {
+    "zoneDrops": [
+      "Star of Mystaria",
+      "Demonshear",
+      "Wyrmtongue Shoulders",
+      "Crown of Tyranny",
+      "Gift of the Elven Magi",
+      "Fire Striders",
+      "Hammer of the Grand Crusader",
+      "Grand Crusader's Helm",
+      "Shroud of the Nathrezim",
+      "Flamescarred Girdle",
+      "Lavawalker Greaves",
+      "Pattern: Truefaith Vestments",
+      "Plaguehound Leggings",
+      "Band of Mending",
+      "Morlune's Bracer",
+      "Recipe: Flask of Distilled Wisdom",
+      "Stratholme Militia Shoulderguard",
+      "Lightforge Boots",
+      "Gracious Cape",
+      "Juno's Shadow",
+      "Plaguebat Fur Gloves",
+      "Devout Bracers",
+      "Sacred Cloth Leggings",
+      "Frayed Abomination Stitching"
+    ],
     "name": "Stratholme",
     "icon": "Stratholme",
     "continent": "Eastern Kingdoms",
@@ -2024,7 +2273,46 @@
     "continent": "Eastern Kingdoms",
     "chestVariant": 2,
     "ambienceDay": "AmbienceSpooky",
-    "ambienceNight": "AmbienceSpooky"
+    "ambienceNight": "AmbienceSpooky",
+    "zoneDrops": [
+      "Totem of Sustaining",
+      "Libram of Divinity",
+      "Bonebrace Hauberk",
+      "Bloodmail Hauberk",
+      "Bloodmail Legguards",
+      "Bloodmail Belt",
+      "Bloodmail Gauntlets",
+      "Bloodmail Boots",
+      "Deathbone Girdle",
+      "Deathbone Sabatons",
+      "Deathbone Gauntlets",
+      "Deathbone Legguards",
+      "Deathbone Chestplate",
+      "Necropile Robe",
+      "Necropile Cuffs",
+      "Necropile Boots",
+      "Necropile Leggings",
+      "Necropile Mantle",
+      "Cadaverous Belt",
+      "Cadaverous Armor",
+      "Cadaverous Leggings",
+      "Cadaverous Gloves",
+      "Cadaverous Walkers",
+      "Ancient Bone Bow",
+      "Burial Shawl",
+      "Ghoul Skin Leggings",
+      "Hammer of the Vesper",
+      "Dimly Opalescent Ring",
+      "Belt of the Ordained",
+      "Magister's Gloves",
+      "Dreadmist Wraps",
+      "Innervating Band",
+      "Malefic Bracers",
+      "Lightforge Bracers",
+      "Icy Tomb Spaulders",
+      "Tattered Leather Hood",
+      "Coldstone Slippers"
+    ]
   },
   {
     "name": "Upper Blackrock Spire",
@@ -2032,6 +2320,23 @@
     "continent": "Eastern Kingdoms",
     "chestVariant": 3,
     "ambienceDay": "AmbienceBlackrock",
-    "ambienceNight": "AmbienceBlackrock"
+    "ambienceNight": "AmbienceBlackrock",
+    "zoneDrops": [
+      "Draconian Deflector",
+      "Wildfire Cape",
+      "Gyth's Skull",
+      "Tribal War Feathers",
+      "Heart of the Scale",
+      "Slaghide Gauntlets",
+      "Wind Dancer Boots",
+      "Recipe: Greater Fire Protection Potion",
+      "Cord of Elements",
+      "Beaststalker's Belt",
+      "Magister's Bindings",
+      "Devout Belt",
+      "Dreadmist Bracers",
+      "Shadowcraft Belt",
+      "Bracers of Valor"
+    ]
   }
 ]

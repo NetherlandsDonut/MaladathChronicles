@@ -40819,6 +40819,9 @@
         "point": 3
       }
     ],
+    "chestBonus": {
+      "Pattern: Black Dragonscale Breastplate": 1
+    },
     "name": "The Storehouse",
     "zone": "Lower Blackrock Spire",
     "type": "HostileArea",
@@ -53933,6 +53936,9 @@
     "y": -1620,
     "name": "Ruins of Constellas",
     "zone": "Felwood",
+    "chestBonus": {
+      "Recipe: Elixir of the Mongoose": 1
+    },
     "type": "HostileArea"
   },
   {
@@ -61403,6 +61409,9 @@
     ],
     "x": 5240,
     "y": -3004,
+    "chestBonus": {
+      "Recipe: Transmute Fire to Earth": 1
+    },
     "name": "Firewatch Ridge",
     "zone": "Searing Gorge",
     "type": "HostileArea"
@@ -71156,6 +71165,9 @@
         "point": 3
       }
     ],
+    "chestBonus": {
+      "Recipe: Elixir of the Sages": 1
+    },
     "name": "Tyr's Hand Abbey",
     "zone": "Tyr's Hand",
     "type": "HostileArea",

@@ -30,6 +30,9 @@ public class Zone
     //List of herbs that can be found while exploring the zone
     public List<string> herbs;
 
+    //List of items that can drop from enemies in this zone
+    public List<string> zoneDrops;
+
     //Currently opened zone
     public static Zone zone;
 
