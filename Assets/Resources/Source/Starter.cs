@@ -57,9 +57,9 @@ public class Starter : MonoBehaviour
         //unless you call CloseDesktop() which will remove it from the list and wipe it's data
         desktops = new();
 
-        //List of in-game settings that describe visual style of the game,
-        //control how the audio works and other things for personalisation and user info storage
-        settings = new GameSettings();
+        ////List of in-game settings that describe visual style of the game,
+        ////control how the audio works and other things for personalisation and user info storage
+        //settings = new GameSettings();
 
         //List of animated falling elements on the board
         //This list needs to be empty for user to be able to perform actions
@@ -116,19 +116,13 @@ public class Starter : MonoBehaviour
 
         //Get user settings..
         Deserialize(ref settings, "settings", false, prefix);
-        settings ??= new();
-        settings.FillNulls();
-        Application.runInBackground = settings.runsInBackground.Value();
-
-        //Settings file contains last selected character and it's realm.
-        //If the game content doesn't posses either the realm or the character that is supposed
-        //to be on that realm, program will reset those values to default so the user
-        //won't have a non existant character selected in the logging screen
-        if (!saves.Any(x => x.Value.Exists(y => y.player.name == settings.selectedCharacter)))
+        if (settings == null)
         {
-            settings.selectedCharacter = "";
-            settings.selectedRealm = "";
+            firstLaunch = true;
+            settings = new();
         }
+        else settings.FillNulls();
+        Application.runInBackground = settings.runsInBackground.Value();
 
         #endregion
 
@@ -158,8 +152,8 @@ public class Starter : MonoBehaviour
         complexes ??= new();
         Deserialize(ref SiteArea.areas, "areas", false, prefix);
         SiteArea.areas ??= new();
-        Deserialize(ref Realm.realms, "realms", false, prefix);
-        Realm.realms ??= new();
+        Deserialize(ref BossPool.bossPools, "bosspools", false, prefix);
+        BossPool.bossPools ??= new();
         Deserialize(ref PersonType.personTypes, "persontypes", false, prefix);
         PersonType.personTypes ??= new();
         Deserialize(ref PersonCategory.personCategories, "personcategories", false, prefix);
@@ -316,8 +310,6 @@ public class Starter : MonoBehaviour
             ItemSet.itemSets[i].Initialise();
         for (int i = 0; i < Race.races.Count; i++)
             Race.races[i].Initialise();
-        for (int i = 0; i < Realm.realms.Count; i++)
-            Realm.realms[i].Initialise();
         for (int i = 0; i < Ability.abilities.Count; i++)
             Ability.abilities[i].Initialise();
         for (int i = 0; i < Buff.buffs.Count; i++)

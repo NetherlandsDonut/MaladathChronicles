@@ -1,18 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
+
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
-using static Blueprint;
-using static Board;
-using static Coloring;
-using static GameSettings;
-using static Item;
-using static MapGrid;
+
 using static Root.Anchor;
 using static Root.RegionBackgroundType;
-using static SaveGame;
+
+using static Item;
 using static Sound;
+using static Board;
+using static MapGrid;
+using static SaveGame;
+using static Coloring;
+using static Blueprint;
+using static GameSettings;
 
 public static class Root
 {
@@ -40,10 +42,20 @@ public static class Root
     //Row for the icons in the chart
     public static Region iconRow;
 
+    //Determines whether this is the first launch of the game
+    public static bool firstLaunch;
+
+    //Creation variables for character creation
     public static string creationRace;
     public static string creationSpec;
     public static string creationGender;
+    public static int creationPortrait;
+    public static Bool creationPermadeath;
+    public static Bool creationClassicItemStacking;
+    public static Bool creationAutomaticallyDecidedBossLoot;
+    public static Bool creationNoOpenWorldOppositeFactionEncounters;
 
+    //Currently mouse overed highlightable element
     public static Highlightable mouseOver;
 
     //Loading bar elements
@@ -61,6 +73,9 @@ public static class Root
 
     //Category of items player is viewing
     public static string auctionCategory;
+
+    //Currently selected save game
+    public static SaveGame selectedSave;
 
     public static Bool showSwords = new(true);
     public static Bool showAxes = new(true);
@@ -325,8 +340,8 @@ public static class Root
     //Close moving item on closing of a window or switch of a desktop
     public static void CloseMovingItem()
     {
-        if (movingItemFrom == "Bank") SaveGame.currentSave.banks[SiteArea.area.name].items.Add(movingItem);
-        else SaveGame.currentSave.player.inventory.items.Add(movingItem);
+        if (movingItemFrom == "Bank") currentSave.banks[SiteArea.area.name].items.Add(movingItem);
+        else currentSave.player.inventory.items.Add(movingItem);
         Cursor.cursor.iconAttached.SetActive(false);
         movingItem = null;
         Respawn("Inventory", true);
@@ -415,7 +430,7 @@ public static class Root
         var regionIndex = h.window.headerGroup.regions.IndexOf(h.region) - (h.window.title == "Bank" ? 2 : 1);
         var temp = (h.window.title == "Bank" ? currentSave.banks[SiteArea.area.name].items : currentSave.player.inventory.items).Find(x => x.x == bigButtonIndex && x.y == regionIndex);
         PlaySound(movingItem.ItemSound("PutDown"), 0.8f);
-        if (temp.name == movingItem.name && temp.amount + movingItem.amount <= temp.maxStack)
+        if (temp.name == movingItem.name && (!currentSave.classicItemStacking.Value() || temp.amount + movingItem.amount <= temp.maxStack))
         {
             temp.amount += movingItem.amount;
             movingItem = null;
@@ -1116,7 +1131,7 @@ public static class Root
 
     #region BigButtons
 
-    public static void SetBigButtonToRed()
+    public static void SetBigButtonToRedscale()
     {
         var region = CDesktop.LBWindow().LBRegionGroup().LBRegion();
         var button = region.LBBigButton().gameObject;
@@ -1550,8 +1565,8 @@ public static class Root
     public static void IncrementPaginationEuler(this Window w)
     {
         w.PreparePagination();
-        if (w.paginateFullPages) staticPagination[w.title] += ((int)Math.Round(EuelerGrowth()) / 2) * w.perPage;
-        else staticPagination[w.title] += (int)Math.Round(EuelerGrowth()) / 2;
+        if (w.paginateFullPages) staticPagination[w.title] += ((int)Math.Round(Eueler()) / 2) * w.perPage;
+        else staticPagination[w.title] += (int)Math.Round(Eueler()) / 2;
         w.CorrectPagination();
     }
 
@@ -1566,8 +1581,8 @@ public static class Root
     public static void DecrementPaginationEuler(this Window w)
     {
         w.PreparePagination();
-        if (w.paginateFullPages) staticPagination[w.title] -= ((int)Math.Round(EuelerGrowth()) / 2) * w.perPage;
-        else staticPagination[w.title] -= (int)Math.Round(EuelerGrowth()) / 2;
+        if (w.paginateFullPages) staticPagination[w.title] -= ((int)Math.Round(Eueler()) / 2) * w.perPage;
+        else staticPagination[w.title] -= (int)Math.Round(Eueler()) / 2;
         w.CorrectPagination();
     }
 
@@ -1588,7 +1603,7 @@ public static class Root
     }
 
     //Euler function
-    public static float EuelerGrowth()
+    public static float Eueler()
     {
         return (float)Math.Pow(keyStack / 150.0 + 1.0, Math.E);
     }
@@ -1613,27 +1628,6 @@ public static class Root
         if (compare == "!=") return x != y;
         if (compare == "<>") return x != y;
         return false;
-    }
-
-    //Converts a number into the roman notation
-    public static string ToRoman(int number)
-    {
-        if (number < 0 || number > 3999) return "";
-        if (number < 1) return string.Empty;
-        if (number >= 1000) return "M" + ToRoman(number - 1000);
-        if (number >= 900) return "CM" + ToRoman(number - 900);
-        if (number >= 500) return "D" + ToRoman(number - 500);
-        if (number >= 400) return "CD" + ToRoman(number - 400);
-        if (number >= 100) return "C" + ToRoman(number - 100);
-        if (number >= 90) return "XC" + ToRoman(number - 90);
-        if (number >= 50) return "L" + ToRoman(number - 50);
-        if (number >= 40) return "XL" + ToRoman(number - 40);
-        if (number >= 10) return "X" + ToRoman(number - 10);
-        if (number >= 9) return "IX" + ToRoman(number - 9);
-        if (number >= 5) return "V" + ToRoman(number - 5);
-        if (number >= 4) return "IV" + ToRoman(number - 4);
-        if (number >= 1) return "I" + ToRoman(number - 1);
-        return "";
     }
 
     //Converts a reputation rank to the minimum required amount of reputation

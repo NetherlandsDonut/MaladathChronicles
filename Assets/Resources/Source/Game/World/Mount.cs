@@ -33,7 +33,7 @@ public class Mount
       AddPaddingRegion(() =>
       {
          AddBigButton(mount.icon);
-         if (rider.level < (mount.speed == 7 ? defines.lvlRequiredFastMounts : defines.lvlRequiredVeryFastMounts)) { SetBigButtonToRed(); AddBigButtonOverlay("OtherGridBlurred"); }
+         if (rider.level < (mount.speed == 7 ? defines.lvlRequiredFastMounts : defines.lvlRequiredVeryFastMounts)) { SetBigButtonToRedscale(); AddBigButtonOverlay("OtherGridBlurred"); }
          AddLine("Required level: ", "DarkGray");
          AddText((mount.speed == 7 ? defines.lvlRequiredFastMounts : defines.lvlRequiredVeryFastMounts) + "", Coloring.ColorRequiredLevel(mount.speed == 7 ? defines.lvlRequiredFastMounts : defines.lvlRequiredVeryFastMounts));
          AddLine("Speed: ", "DarkGray");

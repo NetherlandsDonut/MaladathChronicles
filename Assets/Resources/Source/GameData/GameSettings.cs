@@ -8,19 +8,15 @@ public class GameSettings
     //This function generates default values for the game settings
     public void FillNulls()
     {
-        selectedRealm ??= "";
-        selectedRealmRanking ??= "";
-        selectedCharacter ??= "";
         pixelPerfectVision ??= new Bool(true);
-        music ??= new Bool(true);
-        ambience ??= new Bool(true);
-        soundEffects ??= new Bool(true);
+        music ??= new Bool(false);
+        ambience ??= new Bool(false);
+        soundEffects ??= new Bool(false);
         chartBigIcons ??= new Bool(true);
-        fastCascading ??= new Bool(true);
+        fastCascading ??= new Bool(false);
         onlyHavingMaterials ??= new Bool(false);
         onlySkillUp ??= new Bool(false);
         questLevel ??= new Bool(false);
-        sourcedMarket ??= new Bool(false);
         autoCloseLoot ??= new Bool(false);
         rarityIndicators ??= new Bool(true);
         bigRarityIndicators ??= new Bool(false);
@@ -30,14 +26,8 @@ public class GameSettings
         showLowLevelQuests ??= new Bool(true);
     }
 
-    //Currently selected realm in login screen
-    public string selectedRealm;
-
-    //Currently selected realm in ranking screen
-    public string selectedRealmRanking;
-
     //Currently character in the login screen
-    public string selectedCharacter;
+    public int lastActiveCharacter;
     
     //Indicates whether camera rendering is being sharp to keep the pixel ratio
     public Bool pixelPerfectVision;
@@ -62,9 +52,6 @@ public class GameSettings
 
     //Indicates whether low level quests are displayed on the map
     public Bool showLowLevelQuests;
-
-    //Indicates whether quest level is shown in the quest log list
-    public Bool sourcedMarket;
 
     //Indicates whether the items in the inventory show green arrows indicating that an item is an upgrade
     public Bool upgradeIndicators;

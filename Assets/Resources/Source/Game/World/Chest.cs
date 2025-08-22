@@ -75,7 +75,6 @@ public class Chest
         var zone = Zone.zones.Find(x => x.name == SiteArea.area.zone);
         var chestID = SiteArea.area.chestVariant != 0 ? SiteArea.area.chestVariant : (zone.chestVariant != 0 ? zone.chestVariant : 6);
         var chest = Object.Instantiate(Resources.Load<GameObject>("Prefabs/PrefabChest" + chestID));
-        //chest.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/ButtonsSpecial/Chest/" + chestTexture);
         chest.transform.parent = CDesktop.LBWindow().transform;
         chest.transform.position = position;
         chest.GetComponent<Highlightable>().Initialise(null,

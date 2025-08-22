@@ -24,7 +24,7 @@ public class Profession
         AddPaddingRegion(() =>
         {
             AddBigButton(profession.icon);
-            if (forWho.level < level.requiredLevel || level.requiredSkill > 0 && !forWho.professionSkills.ContainsKey(profession.name) || level.requiredSkill > 0 && forWho.professionSkills[profession.name].Item1 < level.requiredSkill) { SetBigButtonToRed(); AddBigButtonOverlay("OtherGridBlurred"); }
+            if (forWho.level < level.requiredLevel || level.requiredSkill > 0 && !forWho.professionSkills.ContainsKey(profession.name) || level.requiredSkill > 0 && forWho.professionSkills[profession.name].Item1 < level.requiredSkill) { SetBigButtonToRedscale(); AddBigButtonOverlay("OtherGridBlurred"); }
             AddLine("Required level: ", "DarkGray");
             AddText(level.requiredLevel + "", Coloring.ColorRequiredLevel(level.requiredLevel));
             if (level.requiredSkill > 0)

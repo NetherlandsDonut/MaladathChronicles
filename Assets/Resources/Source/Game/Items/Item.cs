@@ -38,6 +38,13 @@ public class Item
                         events = new(),
                         tags = new()
                     });
+        //if (type == "Recipe")
+        //{
+        //    var item = name.Split(":").Last().Trim();
+        //    var crafted = items.Find(x => x.name == item);
+        //    if (crafted != null && rarity != crafted.rarity)
+        //        Debug.Log(name + " - " + rarity + " <> " + crafted.rarity);
+        //}
     }
 
     //Position of the item in the inventory
@@ -935,7 +942,7 @@ public class Item
                             stockItem.amount -= 1;
                             if (stockItem.minutesLeft == 0) stockItem.minutesLeft = stockItem.restockSpeed;
                             currentSave.AddTime(10);
-                            currentSave.player.inventory.AddItem(item.CopyItem(1));
+                            currentSave.player.inventory.AddItem(item.CopyItem());
                             currentSave.player.inventory.money -= item.price * 4;
                             Respawn("Inventory");
                         }
@@ -969,7 +976,7 @@ public class Item
             AddBigButtonOverlay("QuestStarter" + (status == "Can" ? "" : (status == "Active" ? "Active" : "Off")), 0, 4);
         }
         if (item.amount == 0) SetBigButtonToGrayscale();
-        else if (item.IsWearable() && !item.HasProficiency(currentSave.player, true)) SetBigButtonToRed();
+        else if (item.IsWearable() && !item.HasProficiency(currentSave.player, true)) SetBigButtonToRedscale();
         if (stockItem != null || item.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.position + new Vector3(32, -27) + new Vector3(38, 0) * ((buyback != null ? currentSave.buyback.items.IndexOf(buyback) : currentSave.vendorStock[area.name + ":" + Person.person.name].FindIndex(x => x.item == item.name)) % 5), item.amount + (false && buyback == null ?  "/" + currentSave.vendorStock[area.name + ":" + Person.person.name].Find(x => x.item == item.name).maxAmount : ""), "", "", "Right");
         if (stockItem != null && item.amount == 0 && stockItem.minutesLeft > 0) AddBigButtonCooldownOverlay(stockItem.minutesLeft / (double)stockItem.restockSpeed);
         else if (buyback != null && buyback.minutesLeft > 0) AddBigButtonBuybackOverlay(buyback.minutesLeft / (double)defines.buybackDecay);

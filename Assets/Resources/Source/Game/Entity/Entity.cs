@@ -18,10 +18,11 @@ public class Entity
 
     public Entity() { }
 
-    public Entity(string name, string creationGender, Race race, Spec spec, List<string> items)
+    public Entity(string name, string creationGender, int creationPortrait, Race race, Spec spec, List<string> items)
     {
         level = 1;
         gender = creationGender;
+        portraitID = creationPortrait;
         unspentTalentPoints = level - 1;
         this.race = race.name;
         if (name != "") this.name = name;
@@ -66,7 +67,7 @@ public class Entity
         }
         equipment = new Dictionary<string, Item>();
         EquipAllItems();
-        actionBars = new() { { "Default", Ability.abilities.FindAll(x => abilities.ContainsKey(x.name) && x.cost != null).OrderBy(x => x.cost.Sum(y => y.Value)).OrderBy(x => x.putOnEnd).Select(x => x.name).Take(ActionBarsAmount()).ToList() } };
+        actionSets = new() { { "Default", Ability.abilities.FindAll(x => abilities.ContainsKey(x.name) && x.cost != null).OrderBy(x => x.cost.Sum(y => y.Value)).OrderBy(x => x.putOnEnd).Select(x => x.name).Take(ActionSetMaxLength()).ToList() } };
         InitialiseCombat();
     }
 
@@ -82,7 +83,7 @@ public class Entity
         equipment = new();
         worldBuffs = new();
         inventory = new Inventory(new List<string>());
-        actionBars = new() { { "Default", Ability.abilities.FindAll(x => abilities.ContainsKey(x.name) && x.cost != null).OrderBy(x => x.cost.Sum(y => y.Value)).OrderBy(x => x.putOnEnd).Select(x => x.name).ToList() } };
+        actionSets = new() { { "Default", Ability.abilities.FindAll(x => abilities.ContainsKey(x.name) && x.cost != null).OrderBy(x => x.cost.Sum(y => y.Value)).OrderBy(x => x.putOnEnd).Select(x => x.name).ToList() } };
         stats = new()
         {
             { "Stamina", (int)(5 * this.level * race.vitality) + 5 },
@@ -421,9 +422,8 @@ public class Entity
     //killing an enemy that was at given level
     public bool WillGetExperience(int level) => this.level - 5 <= level;
 
-    //Tells whether this entity will get experience from
-    //killing an enemy that was at given level
-    public int ActionBarsAmount()
+    //Tells how many action slots this entity has
+    public int ActionSetMaxLength()
     {
         return level >= 30 ? 7 : (level >= 20 ? 6 : (level >= 10 ? 5 : 4));
     }
@@ -955,7 +955,7 @@ public class Entity
                     if (talent.defaultTaken) abilities[talent.ability] = 0;
                     else abilities.Remove(talent.ability);
                 }
-        foreach (var actionSet in actionBars)
+        foreach (var actionSet in actionSets)
             for (int i = actionSet.Value.Count - 1; i >= 0; i--)
                 if (!abilities.ContainsKey(actionSet.Value[i]))
                     actionSet.Value.RemoveAt(i);
@@ -1351,7 +1351,7 @@ public class Entity
     //entity has in combat including passive ones
     public Dictionary<Ability, int> AbilitiesInCombat()
     {
-        var temp = Ability.abilities.FindAll(x => abilities.ContainsKey(x.name) && (x.cost == null || actionBars.Any(y => y.Value.Contains(x.name))) || actionBars.Any(y => y.Value.Contains(x.name)) && x.cost != null && !abilities.ContainsKey(x.name));
+        var temp = Ability.abilities.FindAll(x => abilities.ContainsKey(x.name) && (x.cost == null || actionSets.Any(y => y.Value.Contains(x.name))) || actionSets.Any(y => y.Value.Contains(x.name)) && x.cost != null && !abilities.ContainsKey(x.name));
         return temp.ToDictionary(x => x, x => abilities.ContainsKey(x.name) ? abilities[x.name] : 0);
     }
 
@@ -1467,6 +1467,9 @@ public class Entity
     //Gender of this entity
     public string gender;
 
+    //Portrait ID of this entity that works only with player races
+    public int portraitID;
+
     //Set hearthstone home location
     public string homeLocation;
 
@@ -1480,8 +1483,8 @@ public class Entity
     //Current action set
     public string currentActionSet;
 
-    //Set action bars in spellbook
-    public Dictionary<string, List<string>> actionBars;
+    //Different action sets of abilities to use during combat
+    public Dictionary<string, List<string>> actionSets;
 
     //"Naked" stats of the entity
     public Dictionary<string, int> stats;

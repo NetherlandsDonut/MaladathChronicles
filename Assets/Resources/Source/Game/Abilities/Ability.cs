@@ -206,7 +206,7 @@ public class Ability
             AddHeaderRegion(() =>
             {
                 AddLine(ability.name, "Gray");
-                if (item == null) AddText(" " + ToRoman(rank + 1));
+                if (item == null) AddText(" " + (rank + 1).ToRoman());
             });
             AddPaddingRegion(() =>
             {

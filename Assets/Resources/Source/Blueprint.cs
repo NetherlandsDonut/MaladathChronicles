@@ -47,10 +47,20 @@ public class Blueprint
         this.upperUI = upperUI;
     }
 
+    //Title of this blueprint and to-be window for referencing
     public string title;
-    public Action actions;
-    public bool upperUI;    
 
+    //Draw actions of the blueprint that create the window
+    public Action actions;
+
+    //Whether window built from this blueprint will appear in front of others
+    public bool upperUI;
+
+    //List of all window blueprints in the game excluding:
+    //1: Talent windows in talent screen
+    //2: Resource windows in combat
+    //3: Auction house price regions
+    //Because these are generated at the launch of the game in class Starter
     public static List<Blueprint> windowBlueprints = new()
     {
         //Bestiary
@@ -233,7 +243,7 @@ public class Blueprint
                     AddLine(participant.who.name);
                     SpawnFloatingText(new Vector3(34, -9), participant.who.level - 10 > currentSave.player.level ? "??" : "" + participant.who.level, ColorEntityLevel(currentSave.player, participant.who.level), "DimGray", "Right");
                     var race = races.Find(x => x.name == participant.who.race);
-                    AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? participant.who.gender : ""), (h) =>
+                    AddBigButton(participant.who.spec != null ? "Portrait" + participant.who.race.Clean() + participant.who.gender + participant.who.portraitID : (race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? participant.who.gender : "")), (h) =>
                     {
                         if (abilityTargetted != null) FinishTargettingAbility(participant);
                         else ChangeSpotlight(index);
@@ -260,7 +270,7 @@ public class Blueprint
                     else ChangeSpotlight(index);
                 },
                 (h) => ClearTargettingAbility());
-                foreach (var actionBar in participant.who.actionBars[participant.who.currentActionSet])
+                foreach (var actionBar in participant.who.actionSets[participant.who.currentActionSet])
                 {
                     var abilityObj = abilities.Find(x => x.name == actionBar);
                     if (abilityObj == null || abilityObj.cost == null) continue;
@@ -359,7 +369,7 @@ public class Blueprint
                     SpawnFloatingText(new Vector3(158, -9), participant.who.level + "", "Gray", "DimGray", "Left");
                     ReverseButtons();
                     if (participant.who.spec != null)
-                        AddBigButton(participant.who.Spec().icon, (h) =>
+                        AddBigButton("Portrait" + participant.who.race.Clean() + participant.who.gender + participant.who.portraitID, (h) =>
                         {
                             if (abilityTargetted != null) FinishTargettingAbility(participant);
                             else ChangeSpotlight(index);
@@ -396,7 +406,7 @@ public class Blueprint
                     else ChangeSpotlight(index);
                 },
                 (h) => ClearTargettingAbility());
-                foreach (var actionBar in participant.who.actionBars[board.participants[index].who.currentActionSet])
+                foreach (var actionBar in participant.who.actionSets[board.participants[index].who.currentActionSet])
                 {
                     var abilityObj = abilities.Find(x => x.name == actionBar);
                     if (abilityObj == null || abilityObj.cost == null) continue;
@@ -796,7 +806,7 @@ public class Blueprint
                 AddPaddingRegion(() =>
                 {
                     AddLine(foo.Key + ":", "Gray", "Left");
-                    AddLine(ToRoman(foo.Value) + "", rawStats[foo.Key] == foo.Value ? "Gray" : "Uncommon", "Right");
+                    AddLine(foo.Value.ToRoman(), rawStats[foo.Key] == foo.Value ? "Gray" : "Uncommon", "Right");
                     AddSmallButton("Element" + foo.Key.Split(" ")[0] + "Awakened");
                 });
         }, true),
@@ -864,105 +874,105 @@ public class Blueprint
                 SetRegionAsGroupExtender();
             });
         }, true),
-        new("CharacterRankingTop", () => 
-        {
-            SetAnchor(-293, 153);
-            DisableShadows();
-            AddHeaderGroup();
-            SetRegionGroupWidth(588);
-            AddHeaderRegion(() =>
-            {
-                AddLine("Ranking", "Gray", "Center");
-                AddSmallButton("OtherClose", (h) =>
-                {
-                    CloseDesktop("RankingScreen");
-                });
-            });
-            if (settings.selectedRealmRanking == "")
-                settings.selectedRealmRanking = Realm.realms[0].name;
-            foreach (var realmRef in Realm.realms)
-            {
-                var realm = realmRef;
-                AddRegionGroup();
-                SetRegionGroupWidth(147);
-                if (settings.selectedRealmRanking == realm.name)
-                    AddPaddingRegion(() =>
-                    {
-                        AddLine(realm.name, "", "Center");
-                    });
-                else
-                    AddButtonRegion(() =>
-                    {
-                        AddLine(realm.name, "", "Center");
-                    },
-                    (h) =>
-                    {
-                        settings.selectedRealmRanking = realm.name;
-                        Respawn("CharacterRankingList");
-                        Respawn("CharacterRankingListRight");
-                    });
-            }
-        }),
-        new("CharacterRankingList", () => 
-        {
-            SetAnchor(-293, 115);
-            DisableShadows();
-            AddRegionGroup();
-            SetRegionGroupWidth(550);
-            SetRegionGroupHeight(262);
-            var slots = saves[settings.selectedRealmRanking].OrderByDescending(x => x.Score()).ToList();
-            for (int i = 0; i < 7; i++)
-                if (i < slots.Count)
-                {
-                    var slot = slots[i];
-                    AddPaddingRegion(() =>
-                    {
-                        AddBigButton("Portrait" + slot.player.race.Clean() + (slot.player.Race().genderedPortrait ? slot.player.gender : ""));
-                        AddBigButton("Class" + slot.player.spec);
-                        AddLine(slot.player.name + ", a level " + slot.player.level + " ");
-                        AddText(slot.player.spec, slot.player.spec);
-                        AddLine("Score: " + slot.Score());
-                        if (slot.player.dead) AddText(", died fighting " + (slot.deathInfo.commonSource ? "a " : "") + slot.deathInfo.source + " in " + slot.deathInfo.area);
-                    });
-                }
-                else
-                    AddPaddingRegion(() =>
-                    {
-                        AddBigButton("OtherBlank");
-                        AddBigButton("OtherBlank");
-                    });
-        }),
-        new("CharacterRankingListRight", () => 
-        {
-            SetAnchor(257, 115);
-            DisableShadows();
-            AddRegionGroup();
-            SetRegionGroupWidth(38);
-            SetRegionGroupHeight(262);
-            var slots = saves[settings.selectedRealmRanking].OrderByDescending(x => x.Score()).ToList();
-            for (int i = 0; i < 7; i++)
-                if (i < slots.Count)
-                {
-                    var slot = slots[i];
-                    AddPaddingRegion(() =>
-                    {
-                        AddBigButton("PVP" + (slot.player.Side() == "Alliance" ? "A" : "H") + slot.player.Rank().rank);
-                    });
-                }
-                else
-                    AddPaddingRegion(() =>
-                    {
-                        AddBigButton("OtherBlank");
-                    });
-        }),
-        new("CharacterRankingShadow", () => 
-        {
-            SetAnchor(-293, 153);
-            AddRegionGroup();
-            SetRegionGroupWidth(588);
-            SetRegionGroupHeight(300);
-            AddPaddingRegion(() => { });
-        }),
+        //new("CharacterRankingTop", () => 
+        //{
+        //    SetAnchor(-293, 153);
+        //    DisableShadows();
+        //    AddHeaderGroup();
+        //    SetRegionGroupWidth(588);
+        //    AddHeaderRegion(() =>
+        //    {
+        //        AddLine("Ranking", "Gray", "Center");
+        //        AddSmallButton("OtherClose", (h) =>
+        //        {
+        //            CloseDesktop("RankingScreen");
+        //        });
+        //    });
+        //    if (settings.selectedRealmRanking == "")
+        //        settings.selectedRealmRanking = Realm.realms[0].name;
+        //    foreach (var realmRef in Realm.realms)
+        //    {
+        //        var realm = realmRef;
+        //        AddRegionGroup();
+        //        SetRegionGroupWidth(147);
+        //        if (settings.selectedRealmRanking == realm.name)
+        //            AddPaddingRegion(() =>
+        //            {
+        //                AddLine(realm.name, "", "Center");
+        //            });
+        //        else
+        //            AddButtonRegion(() =>
+        //            {
+        //                AddLine(realm.name, "", "Center");
+        //            },
+        //            (h) =>
+        //            {
+        //                settings.selectedRealmRanking = realm.name;
+        //                Respawn("CharacterRankingList");
+        //                Respawn("CharacterRankingListRight");
+        //            });
+        //    }
+        //}),
+        //new("CharacterRankingList", () => 
+        //{
+        //    SetAnchor(-293, 115);
+        //    DisableShadows();
+        //    AddRegionGroup();
+        //    SetRegionGroupWidth(550);
+        //    SetRegionGroupHeight(262);
+        //    var slots = saves[settings.selectedRealmRanking].OrderByDescending(x => x.Score()).ToList();
+        //    for (int i = 0; i < 7; i++)
+        //        if (i < slots.Count)
+        //        {
+        //            var slot = slots[i];
+        //            AddPaddingRegion(() =>
+        //            {
+        //                AddBigButton("Portrait" + slot.player.race.Clean() + (slot.player.Race().genderedPortrait ? slot.player.gender : ""));
+        //                AddBigButton("Class" + slot.player.spec);
+        //                AddLine(slot.player.name + ", a level " + slot.player.level + " ");
+        //                AddText(slot.player.spec, slot.player.spec);
+        //                AddLine("Score: " + slot.Score());
+        //                if (slot.player.dead) AddText(", died fighting " + (slot.deathInfo.commonSource ? "a " : "") + slot.deathInfo.source + " in " + slot.deathInfo.area);
+        //            });
+        //        }
+        //        else
+        //            AddPaddingRegion(() =>
+        //            {
+        //                AddBigButton("OtherBlank");
+        //                AddBigButton("OtherBlank");
+        //            });
+        //}),
+        //new("CharacterRankingListRight", () => 
+        //{
+        //    SetAnchor(257, 115);
+        //    DisableShadows();
+        //    AddRegionGroup();
+        //    SetRegionGroupWidth(38);
+        //    SetRegionGroupHeight(262);
+        //    var slots = saves[settings.selectedRealmRanking].OrderByDescending(x => x.Score()).ToList();
+        //    for (int i = 0; i < 7; i++)
+        //        if (i < slots.Count)
+        //        {
+        //            var slot = slots[i];
+        //            AddPaddingRegion(() =>
+        //            {
+        //                AddBigButton("PVP" + (slot.player.Side() == "Alliance" ? "A" : "H") + slot.player.Rank().rank);
+        //            });
+        //        }
+        //        else
+        //            AddPaddingRegion(() =>
+        //            {
+        //                AddBigButton("OtherBlank");
+        //            });
+        //}),
+        //new("CharacterRankingShadow", () => 
+        //{
+        //    SetAnchor(-293, 153);
+        //    AddRegionGroup();
+        //    SetRegionGroupWidth(588);
+        //    SetRegionGroupHeight(300);
+        //    AddPaddingRegion(() => { });
+        //}),
         new("ExperienceBar", () => {
             SetAnchor(Bottom);
             if (board != null && board.results != null && board.results.experience != null && board.results.experience.ContainsKey(currentSave.player) && board.results.experience[currentSave.player] > 0)
@@ -1041,8 +1051,8 @@ public class Blueprint
                     AddLine(area.name + " spoils:");
                     AddSmallButton("OtherClose", (h) =>
                     {
-                        var zone = Zone.zones.Find(x => x.name == SiteArea.area.zone);
-                        var chestID = SiteArea.area.chestVariant != 0 ? SiteArea.area.chestVariant : (zone.chestVariant != 0 ? zone.chestVariant : 6);
+                        var zone = zones.Find(x => x.name == area.zone);
+                        var chestID = area.chestVariant != 0 ? area.chestVariant : (zone.chestVariant != 0 ? zone.chestVariant : 6);
                         PlaySound("DesktopChest" + chestID + "Close");
                         CloseDesktop("ChestLoot");
                         Respawn("Chest");
@@ -1070,143 +1080,72 @@ public class Blueprint
         }),
 
         //Login Screen
-        new("CharacterRoster", () => {
-            if (settings.selectedCharacter != "") SetDesktopBackground(saves[settings.selectedRealm].Find(x => x.player.name == settings.selectedCharacter).LoginBackground(), true);
-            else SetDesktopBackground("Backgrounds/Sky", true);
-            SetAnchor(TopRight, -19, -19);
-            AddRegionGroup();
-            SetRegionGroupWidth(171);
-            AddHeaderRegion(() =>
-            {
-                AddLine("Realm:", "Gray");
-                AddSmallButton("OtherClose", (h) => CloseDesktop("LoginScreen"));
-            });
-            AddButtonRegion(() => AddLine(settings.selectedRealm), (h) => SpawnDesktopBlueprint("ChangeRealm"));
-            var aliveSlots = saves[settings.selectedRealm].FindAll(x => !x.player.dead);
-            AddHeaderRegion(() =>
-            {
-                AddLine("Characters:", "Gray");
-            });
-            foreach (var slot in aliveSlots)
-            {
-                AddPaddingRegion(() =>
-                {
-                    AddBigButton("Portrait" + slot.player.race.Clean() + (slot.player.Race().genderedPortrait ? slot.player.gender : ""), (h) =>
-                    {
-                        CloseWindow("RealmRoster");
-                        if (settings.selectedCharacter != slot.player.name)
-                        {
-                            settings.selectedCharacter = slot.player.name;
-                            SetDesktopBackground(slot.LoginBackground(), true);
-                            Respawn("CharacterInfo");
-                        }
-                    });
-                    if (settings.selectedCharacter != slot.player.name)
-                    {
-                        SetBigButtonToGrayscale();
-                        AddBigButtonOverlay("OtherGridBlurred");
-                    }
-                    AddLine(slot.player.name);
-                    AddLine("Level: ", "DarkGray");
-                    AddText(slot.player.level + " ", "Gray");
-                    AddText(slot.player.spec, slot.player.spec);
-                });
-            }
-            for (int i = 0; i < 6 - aliveSlots.Count; i++)
-                AddPaddingRegion(() => AddBigButton("OtherEmpty"));
-            if (aliveSlots.Count < 6)
-                AddButtonRegion(() => AddLine("Create new character", "", "Center"), (h) =>
-                {
-                    creationRace = "";
-                    creationSpec = "";
-                    creationGender = "";
-                    String.creationName.Set("");
-                    SpawnDesktopBlueprint("CharCreatorScreen");
-                });
-            else
-                AddHeaderRegion(() => AddLine("Create new character", "DarkGray", "Center"));
-            if (settings.selectedCharacter != "")
-                AddButtonRegion(() => AddLine("Delete character", "", "Center"), (h) =>
-                {
-                    String.promptConfirm.Set("");
-                    PlaySound("DesktopMenuOpen", 0.6f);
-                    SpawnWindowBlueprint("ConfirmDeleteCharacter");
-                    CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
-                });
-            else
-                AddHeaderRegion(() => AddLine("Delete character", "DarkGray", "Center"));
-        }, true),
-        new("RealmRoster", () => 
-        {
-            SetAnchor(Center);
-            AddHeaderGroup();
-            SetRegionGroupWidth(258);
-            AddHeaderRegion(() =>
-            {
-                AddLine("Realms:");
-                AddSmallButton("OtherClose", (h) => CloseDesktop("ChangeRealm"));
-            });
-            AddRegionGroup();
-            foreach (var realm in Realm.realms)
-            {
-                if (realm.name == settings.selectedRealm)
-                    AddHeaderRegion(() =>
-                    {
-                        AddLine(realm.name);
-                    });
-                else
-                    AddButtonRegion(() =>
-                    {
-                        AddLine(realm.name);
-                    },
-                    (h) =>
-                    {
-                        settings.selectedRealm = realm.name;
-                        if (saves[settings.selectedRealm].Count(x => !x.player.dead) > 0)
-                        {
-                            settings.selectedCharacter = saves[settings.selectedRealm].First(x => !x.player.dead).player.name;
-                            SpawnTransition();
-                        }
-                        else if (settings.selectedCharacter != "")
-                        {
-                            settings.selectedCharacter = "";
-                            SpawnTransition();
-                        }
-                        CloseDesktop("ChangeRealm");
-                        CloseDesktop("LoginScreen");
-                        SpawnDesktopBlueprint("LoginScreen");
-                    });
-            }
-            AddRegionGroup();
-            foreach (var realm in Realm.realms)
-            {
-                AddPaddingRegion(() =>
-                {
-                    AddLine(realm.pvp ? "PVP" : "PVE", realm.pvp ? "DangerousRed" : "Gray");
-                });
-            }
-            AddRegionGroup();
-            foreach (var realm in Realm.realms)
-            {
-                AddPaddingRegion(() =>
-                {
-                    AddLine(realm.hardcore ? "Hardcore" : "Softcore", realm.hardcore ? "DangerousRed" : "Gray");
-                });
-            }
-            AddRegionGroup();
-            SetRegionGroupWidth(95);
-            foreach (var realm in Realm.realms)
-            {
-                AddPaddingRegion(() =>
-                {
-                    var countAlive = saves[realm.name].Count(x => !x.player.dead);
-                    AddLine(countAlive + "", countAlive == 6 ? "DangerousRed" : "Gray");
-                    AddText(" / ", "DarkGray");
-                    AddText("6", countAlive == 6 ? "DangerousRed" : "Gray");
-                    AddText(" chars", "DarkGray");
-                });
-            }
-        }, true),
+        //new("CharacterRoster", () => {
+        //    if (settings.selectedCharacter != "") SetDesktopBackground(saves[settings.selectedRealm].Find(x => x.player.name == settings.selectedCharacter).LoginBackground(), true);
+        //    else SetDesktopBackground("Backgrounds/Sky", true);
+        //    SetAnchor(TopRight, -19, -19);
+        //    AddRegionGroup();
+        //    SetRegionGroupWidth(171);
+        //    AddHeaderRegion(() =>
+        //    {
+        //        AddLine("Realm:", "Gray");
+        //        AddSmallButton("OtherClose", (h) => CloseDesktop("LoginScreen"));
+        //    });
+        //    AddButtonRegion(() => AddLine(settings.selectedRealm), (h) => SpawnDesktopBlueprint("ChangeRealm"));
+        //    var aliveSlots = saves[settings.selectedRealm].FindAll(x => !x.player.dead);
+        //    AddHeaderRegion(() =>
+        //    {
+        //        AddLine("Characters:", "Gray");
+        //    });
+        //    foreach (var slot in aliveSlots)
+        //    {
+        //        AddPaddingRegion(() =>
+        //        {
+        //            AddBigButton("Portrait" + slot.player.race.Clean() + (slot.player.Race().genderedPortrait ? slot.player.gender : ""), (h) =>
+        //            {
+        //                CloseWindow("RealmRoster");
+        //                if (settings.selectedCharacter != slot.player.name)
+        //                {
+        //                    settings.selectedCharacter = slot.player.name;
+        //                    SetDesktopBackground(slot.LoginBackground(), true);
+        //                    Respawn("CharacterInfo");
+        //                }
+        //            });
+        //            if (settings.selectedCharacter != slot.player.name)
+        //            {
+        //                SetBigButtonToGrayscale();
+        //                AddBigButtonOverlay("OtherGridBlurred");
+        //            }
+        //            AddLine(slot.player.name);
+        //            AddLine("Level: ", "DarkGray");
+        //            AddText(slot.player.level + " ", "Gray");
+        //            AddText(slot.player.spec, slot.player.spec);
+        //        });
+        //    }
+        //    for (int i = 0; i < 6 - aliveSlots.Count; i++)
+        //        AddPaddingRegion(() => AddBigButton("OtherEmpty"));
+        //    if (aliveSlots.Count < 6)
+        //        AddButtonRegion(() => AddLine("Create new character", "", "Center"), (h) =>
+        //        {
+        //            creationRace = "";
+        //            creationSpec = "";
+        //            creationGender = "";
+        //            String.creationName.Set("");
+        //            SpawnDesktopBlueprint("CharCreatorScreen");
+        //        });
+        //    else
+        //        AddHeaderRegion(() => AddLine("Create new character", "DarkGray", "Center"));
+        //    if (settings.selectedCharacter != "")
+        //        AddButtonRegion(() => AddLine("Delete character", "", "Center"), (h) =>
+        //        {
+        //            String.promptConfirm.Set("");
+        //            PlaySound("DesktopMenuOpen", 0.6f);
+        //            SpawnWindowBlueprint("ConfirmDeleteCharacter");
+        //            CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
+        //        });
+        //    else
+        //        AddHeaderRegion(() => AddLine("Delete character", "DarkGray", "Center"));
+        //}, true),
         new("ConfirmDeleteCharacter", () => {
             SetAnchor(Center);
             AddRegionGroup();
@@ -1226,91 +1165,98 @@ public class Blueprint
                 AddInputLine(String.promptConfirm, "DangerousRed");
             });
         }, true),
-        new("CharacterInfo", () => {
-            SetAnchor(TopLeft, 19, -19);
-            AddRegionGroup();
-            SetRegionGroupWidth(171);
-            SetRegionGroupHeight(316);
-            if (settings.selectedCharacter != "")
-            {
-                var slot = saves[settings.selectedRealm].Find(x => x.player.name == settings.selectedCharacter);
-                var spec = slot.player.Spec();
-                AddHeaderRegion(() => 
-                {
-                    AddLine("Character:");
-                    AddSmallButton("OtherClose", (h) =>
-                    {
-                        settings.selectedCharacter = "";
-                        SetDesktopBackground("Backgrounds/Sky", true);
-                        Respawn("CharacterRoster");
-                        CloseWindow("CharacterInfo");
-                    });
-                });
-                AddPaddingRegion(() => 
-                {
-                    AddBigButton("Portrait" + slot.player.race.Clean() + (slot.player.Race().genderedPortrait ? slot.player.gender : ""));
-                    AddLine(slot.player.name, "Gray");
-                    AddLine("Level: ", "DarkGray");
-                    AddText(slot.player.level + " ", "Gray");
-                    AddText(spec.name, spec.name);
-                });
-                AddPaddingRegion(() =>
-                {
-                    AddLine("Total time played: ", "DarkGray");
-                    AddText((slot.timePlayed.Hours > 0 ? slot.timePlayed.Hours + "h " : "") + slot.timePlayed.Minutes + "m");
-                });
-                AddPaddingRegion(() =>
-                {
-                    AddLine("Elites killed: ", "DarkGray");
-                    AddText(slot.elitesKilled.Sum(x => x.Value) + "");
-                });
-                AddPaddingRegion(() =>
-                {
-                    AddLine("Rares killed: ", "DarkGray");
-                    AddText(slot.raresKilled.Sum(x => x.Value) + "");
-                });
-                AddPaddingRegion(() => SetRegionAsGroupExtender());
-                AddButtonRegion(() => AddLine("Enter World", "", "Center"),
-                (h) =>
-                {
-                    loadingBar = new GameObject[2];
-                    Login();
-                    SpawnDesktopBlueprint("Map");
-                    CloseDesktop("LoginScreen");
-                    CloseDesktop("TitleScreen");
-                    var find = FindSite(x => x.name == currentSave.currentSite);
-                    if (find != null) CDesktop.cameraDestination = new Vector2(find.x, find.y);
-                    Cursor.cursor.transform.position += (Vector3)CDesktop.cameraDestination - CDesktop.screen.transform.position;
-                    CDesktop.screen.transform.localPosition = CDesktop.cameraDestination;
-                });
-            }
-        }, true),
+        //new("CharacterInfo", () => {
+        //    SetAnchor(TopLeft, 19, -19);
+        //    AddRegionGroup();
+        //    SetRegionGroupWidth(171);
+        //    SetRegionGroupHeight(316);
+        //    if (settings.selectedCharacter != "")
+        //    {
+        //        var slot = saves[settings.selectedRealm].Find(x => x.player.name == settings.selectedCharacter);
+        //        var spec = slot.player.Spec();
+        //        AddHeaderRegion(() => 
+        //        {
+        //            AddLine("Character:");
+        //            AddSmallButton("OtherClose", (h) =>
+        //            {
+        //                settings.selectedCharacter = "";
+        //                SetDesktopBackground("Backgrounds/Sky", true);
+        //                Respawn("CharacterRoster");
+        //                CloseWindow("CharacterInfo");
+        //            });
+        //        });
+        //        AddPaddingRegion(() => 
+        //        {
+        //            AddBigButton("Portrait" + slot.player.race.Clean() + (slot.player.Race().genderedPortrait ? slot.player.gender : ""));
+        //            AddLine(slot.player.name, "Gray");
+        //            AddLine("Level: ", "DarkGray");
+        //            AddText(slot.player.level + " ", "Gray");
+        //            AddText(spec.name, spec.name);
+        //        });
+        //        AddPaddingRegion(() =>
+        //        {
+        //            AddLine("Total time played: ", "DarkGray");
+        //            AddText((slot.timePlayed.Hours > 0 ? slot.timePlayed.Hours + "h " : "") + slot.timePlayed.Minutes + "m");
+        //        });
+        //        AddPaddingRegion(() =>
+        //        {
+        //            AddLine("Elites killed: ", "DarkGray");
+        //            AddText(slot.elitesKilled.Sum(x => x.Value) + "");
+        //        });
+        //        AddPaddingRegion(() =>
+        //        {
+        //            AddLine("Rares killed: ", "DarkGray");
+        //            AddText(slot.raresKilled.Sum(x => x.Value) + "");
+        //        });
+        //        AddPaddingRegion(() => SetRegionAsGroupExtender());
+        //        AddButtonRegion(() => AddLine("Enter World", "", "Center"),
+        //        (h) =>
+        //        {
+        //            loadingBar = new GameObject[2];
+        //            Login();
+        //            SpawnDesktopBlueprint("Map");
+        //            CloseDesktop("LoginScreen");
+        //            CloseDesktop("TitleScreen");
+        //            var find = FindSite(x => x.name == currentSave.currentSite);
+        //            if (find != null) CDesktop.cameraDestination = new Vector2(find.x, find.y);
+        //            Cursor.cursor.transform.position += (Vector3)CDesktop.cameraDestination - CDesktop.screen.transform.position;
+        //            CDesktop.screen.transform.localPosition = CDesktop.cameraDestination;
+        //        });
+        //    }
+        //}, true),
         new("CharacterCreationFactionHorde", () => {
-            SetAnchor(BottomLeft, 19, 19);
+            SetAnchor(BottomLeft, 157, 19);
             AddRegionGroup();
             SetRegionGroupWidth(152);
             AddHeaderRegion(() =>
             {
+                AddLine("Horde Races:", "HalfGray", "Center");
+            });
+            AddHeaderRegion(() =>
+            {
+                ReverseButtons();
                 AddBigButton("TabardOrgrimmar",
                 (h) =>
                 {
                     if (creationRace == "Orc") return;
                     creationRace = "Orc";
                     creationSpec = "";
+                    creationPortrait = -1;
                     SpawnTransition();
                     SetDesktopBackground(FindSite(y => y.name == races.Find(x => x.name == "Orc").previewSite).Background());
-                    Respawn("CharacterCreationWho");
+                    Respawn("CharacterCreationMasculinePortraits");
+                    Respawn("CharacterCreationFemininePortraits");
                     Respawn("CharacterCreationFactionAlliance");
-                    CloseWindow("CharacterCreationFinish");
-                    SpawnWindowBlueprint("CharacterCreationFinish");
+                    CloseWindow("TitleScreenNewSaveFinish");
+                    SpawnWindowBlueprint("TitleScreenNewSaveFinish");
                     CloseWindow("CharacterCreationSpec");
                     SpawnWindowBlueprint("CharacterCreationSpec");
                 },
                 null, (h) => () =>
                 {
-                    SetAnchor(Bottom, 0, 95);
+                    SetAnchor(BottomLeft, 119, 173);
                     AddRegionGroup();
-                    SetRegionGroupWidth(296);
+                    SetRegionGroupWidth(400);
                     AddHeaderRegion(() => AddLine("Orcs of Orgrimmar", "", "Center"));
                     new Description()
                     { regions = new() { new() { regionType = "Padding", contents = new() { new ()
@@ -1319,7 +1265,7 @@ public class Blueprint
                             { "Align", "Center" },
                             { "Text", "Orcs are a proud and powerful race with warrior culture deeply rooted in honor and combat. Originally from the shattered world of Draenor, they now inhabit the harsh landscapes of Durotar, with their capital at Orgrimmar. They strive to overcome their dark past and build a new future for their people." }
                         }
-                    } } } }.Print(null, 258, null);
+                    } } } }.Print(null, 390, null);
                 });
                 if (creationRace != "Orc")
                 {
@@ -1332,20 +1278,22 @@ public class Blueprint
                     if (creationRace == "Troll") return;
                     creationRace = "Troll";
                     creationSpec = "";
+                    creationPortrait = -1;
                     SpawnTransition();
                     SetDesktopBackground(FindSite(y => y.name == races.Find(x => x.name == "Troll").previewSite).Background());
-                    Respawn("CharacterCreationWho");
+                    Respawn("CharacterCreationMasculinePortraits");
+                    Respawn("CharacterCreationFemininePortraits");
                     Respawn("CharacterCreationFactionAlliance");
-                    CloseWindow("CharacterCreationFinish");
-                    SpawnWindowBlueprint("CharacterCreationFinish");
+                    CloseWindow("TitleScreenNewSaveFinish");
+                    SpawnWindowBlueprint("TitleScreenNewSaveFinish");
                     CloseWindow("CharacterCreationSpec");
                     SpawnWindowBlueprint("CharacterCreationSpec");
                 },
                 null, (h) => () =>
                 {
-                    SetAnchor(Bottom, 0, 95);
+                    SetAnchor(BottomLeft, 119, 173);
                     AddRegionGroup();
-                    SetRegionGroupWidth(296);
+                    SetRegionGroupWidth(400);
                     AddHeaderRegion(() => AddLine("Trolls of the Darkspear Tribe", "", "Center"));
                     new Description()
                     { regions = new() { new() { regionType = "Padding", contents = new() { new ()
@@ -1354,7 +1302,7 @@ public class Blueprint
                             { "Align", "Center" },
                             { "Text", "Trolls are a fierce and agile race with a long history of mysticism and shamanism. The Darkspear Tribe, having allied with the Horde, has established itself in the Echo Isles and the coastal regions of Durotar. Known for their cunning and resourcefulness, they are formidable warriors and mystics." }
                         }
-                    } } } }.Print(null, 258, null);
+                    } } } }.Print(null, 390, null);
                 });
                 if (creationRace != "Troll")
                 {
@@ -1367,20 +1315,22 @@ public class Blueprint
                     if (creationRace == "Tauren") return;
                     creationRace = "Tauren";
                     creationSpec = "";
+                    creationPortrait = -1;
                     SpawnTransition();
                     SetDesktopBackground(FindSite(y => y.name == races.Find(x => x.name == "Tauren").previewSite).Background());
-                    Respawn("CharacterCreationWho");
+                    Respawn("CharacterCreationMasculinePortraits");
+                    Respawn("CharacterCreationFemininePortraits");
                     Respawn("CharacterCreationFactionAlliance");
-                    CloseWindow("CharacterCreationFinish");
-                    SpawnWindowBlueprint("CharacterCreationFinish");
+                    CloseWindow("TitleScreenNewSaveFinish");
+                    SpawnWindowBlueprint("TitleScreenNewSaveFinish");
                     CloseWindow("CharacterCreationSpec");
                     SpawnWindowBlueprint("CharacterCreationSpec");
                 },
                 null, (h) => () =>
                 {
-                    SetAnchor(Bottom, 0, 95);
+                    SetAnchor(BottomLeft, 119, 173);
                     AddRegionGroup();
-                    SetRegionGroupWidth(296);
+                    SetRegionGroupWidth(400);
                     AddHeaderRegion(() => AddLine("Tauren of Thunder Bluff", "", "Center"));
                     new Description()
                     { regions = new() { new() { regionType = "Padding", contents = new() { new ()
@@ -1389,7 +1339,7 @@ public class Blueprint
                             { "Align", "Center" },
                             { "Text", "Tauren are massive, bovine-like beings with a deep spiritual connection to nature and the Earth Mother. They dwell in the grassy plains of Mulgore, with their capital in Thunder Bluff. Renowned for their strength and wisdom, they serve as staunch protectors of the natural world." }
                         }
-                    } } } }.Print(null, 258, null);
+                    } } } }.Print(null, 390, null);
                 });
                 if (creationRace != "Tauren")
                 {
@@ -1402,29 +1352,31 @@ public class Blueprint
                     if (creationRace == "Forsaken") return;
                     creationRace = "Forsaken";
                     creationSpec = "";
+                    creationPortrait = -1;
                     SpawnTransition();
                     SetDesktopBackground(FindSite(y => y.name == races.Find(x => x.name == "Forsaken").previewSite).Background());
-                    Respawn("CharacterCreationWho");
+                    Respawn("CharacterCreationMasculinePortraits");
+                    Respawn("CharacterCreationFemininePortraits");
                     Respawn("CharacterCreationFactionAlliance");
-                    CloseWindow("CharacterCreationFinish");
-                    SpawnWindowBlueprint("CharacterCreationFinish");
+                    CloseWindow("TitleScreenNewSaveFinish");
+                    SpawnWindowBlueprint("TitleScreenNewSaveFinish");
                     CloseWindow("CharacterCreationSpec");
                     SpawnWindowBlueprint("CharacterCreationSpec");
                 },
                 null, (h) => () =>
                 {
-                    SetAnchor(Bottom, 0, 95);
+                    SetAnchor(BottomLeft, 119, 173);
                     AddRegionGroup();
-                    SetRegionGroupWidth(296);
+                    SetRegionGroupWidth(400);
                     AddHeaderRegion(() => AddLine("Forsaken of the Undercity", "", "Center"));
                     new Description()
                     { regions = new() { new() { regionType = "Padding", contents = new() { new ()
                         {
                             { "Color", "DarkGray" },
                             { "Align", "Center" },
-                            { "Text", "The Forsaken are former humans who have broken free from the Lich King's control, now seeking vengeance and a place in the world. They inhabit the eerie and decaying ruins of the Undercity, beneath the fallen kingdom of Lordaeron. Driven by a desire for autonomy and revenge, they are both feared and misunderstood by the living." }
+                            { "Text", "The Forsaken are undead humans who have broken free from the Lich King's control, now seeking vengeance and a place in the world. They inhabit the eerie and decaying ruins of the Undercity, beneath the fallen kingdom of Lordaeron. Driven by a desire for autonomy and revenge, they are both feared and misunderstood by the living." }
                         }
-                    } } } }.Print(null, 258, null);
+                    } } } }.Print(null, 390, null);
                 });
                 if (creationRace != "Forsaken")
                 {
@@ -1432,11 +1384,15 @@ public class Blueprint
                     SetBigButtonToGrayscale();
                 }
             });
-        }),
+        }, true),
         new("CharacterCreationFactionAlliance", () => {
-            SetAnchor(BottomRight, -19, 19);
+            SetAnchor(BottomRight, -157, 19);
             AddRegionGroup();
             SetRegionGroupWidth(152);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Alliance Races:", "HalfGray", "Center");
+            });
             AddHeaderRegion(() =>
             {
                 AddBigButton("TabardStormwind",
@@ -1445,21 +1401,23 @@ public class Blueprint
                     if (creationRace == "Human") return;
                     creationRace = "Human";
                     creationSpec = "";
+                    creationPortrait = -1;
                     SpawnTransition();
                     SetDesktopBackground(FindSite(y => y.name == races.Find(x => x.name == "Human").previewSite).Background());
-                    Respawn("CharacterCreationWho");
+                    Respawn("CharacterCreationMasculinePortraits");
+                    Respawn("CharacterCreationFemininePortraits");
                     Respawn("CharacterCreationFactionHorde");
-                    CloseWindow("CharacterCreationFinish");
-                    SpawnWindowBlueprint("CharacterCreationFinish");
+                    CloseWindow("TitleScreenNewSaveFinish");
+                    SpawnWindowBlueprint("TitleScreenNewSaveFinish");
                     CloseWindow("CharacterCreationSpec");
                     SpawnWindowBlueprint("CharacterCreationSpec");
 
                 },
                 null, (h) => () =>
                 {
-                    SetAnchor(Bottom, 0, 95);
+                    SetAnchor(BottomLeft, 119, 173);
                     AddRegionGroup();
-                    SetRegionGroupWidth(296);
+                    SetRegionGroupWidth(400);
                     AddHeaderRegion(() => AddLine("Humans of Stormwind", "", "Center"));
                     new Description()
                     { regions = new() { new() { regionType = "Padding", contents = new() { new ()
@@ -1468,7 +1426,7 @@ public class Blueprint
                             { "Align", "Center" },
                             { "Text", "Humans are a resilient and versatile race known for their unyielding spirit and strong sense of justice. They have a rich history of surviving numerous wars and catastrophes, making them natural leaders in the Alliance. Their capital city is Stormwind, a bustling hub of trade and governance." }
                         }
-                    } } } }.Print(null, 258, null);
+                    } } } }.Print(null, 390, null);
                 });
                 if (creationRace != "Human")
                 {
@@ -1481,20 +1439,22 @@ public class Blueprint
                     if (creationRace == "Dwarf") return;
                     creationRace = "Dwarf";
                     creationSpec = "";
+                    creationPortrait = -1;
                     SpawnTransition();
                     SetDesktopBackground(FindSite(y => y.name == races.Find(x => x.name == "Dwarf").previewSite).Background());
-                    Respawn("CharacterCreationWho");
+                    Respawn("CharacterCreationMasculinePortraits");
+                    Respawn("CharacterCreationFemininePortraits");
                     Respawn("CharacterCreationFactionHorde");
-                    CloseWindow("CharacterCreationFinish");
-                    SpawnWindowBlueprint("CharacterCreationFinish");
+                    CloseWindow("TitleScreenNewSaveFinish");
+                    SpawnWindowBlueprint("TitleScreenNewSaveFinish");
                     CloseWindow("CharacterCreationSpec");
                     SpawnWindowBlueprint("CharacterCreationSpec");
                 },
                 null, (h) => () =>
                 {
-                    SetAnchor(Bottom, 0, 95);
+                    SetAnchor(BottomLeft, 119, 173);
                     AddRegionGroup();
-                    SetRegionGroupWidth(296);
+                    SetRegionGroupWidth(400);
                     AddHeaderRegion(() => AddLine("Dwarfs of Ironforge", "", "Center"));
                     new Description()
                     { regions = new() { new() { regionType = "Padding", contents = new() { new ()
@@ -1503,7 +1463,7 @@ public class Blueprint
                             { "Align", "Center" },
                             { "Text", "Dwarves are hardy and stout creatures famed for their skills in mining and blacksmithing. They hail from the snowy peaks of Dun Morogh and are deeply connected to their ancestral homeland of Ironforge. Their adventurous nature drives them to uncover ancient relics and forgotten lore." }
                         }
-                    } } } }.Print(null, 258, null);
+                    } } } }.Print(null, 390, null);
                 });
                 if (creationRace != "Dwarf")
                 {
@@ -1516,20 +1476,22 @@ public class Blueprint
                     if (creationRace == "Gnome") return;
                     creationRace = "Gnome";
                     creationSpec = "";
+                    creationPortrait = -1;
                     SpawnTransition();
                     SetDesktopBackground(FindSite(y => y.name == races.Find(x => x.name == "Gnome").previewSite).Background());
-                    Respawn("CharacterCreationWho");
+                    Respawn("CharacterCreationMasculinePortraits");
+                    Respawn("CharacterCreationFemininePortraits");
                     Respawn("CharacterCreationFactionHorde");
-                    CloseWindow("CharacterCreationFinish");
-                    SpawnWindowBlueprint("CharacterCreationFinish");
+                    CloseWindow("TitleScreenNewSaveFinish");
+                    SpawnWindowBlueprint("TitleScreenNewSaveFinish");
                     CloseWindow("CharacterCreationSpec");
                     SpawnWindowBlueprint("CharacterCreationSpec");
                 },
                 null, (h) => () =>
                 {
-                    SetAnchor(Bottom, 0, 95);
+                    SetAnchor(BottomLeft, 119, 173);
                     AddRegionGroup();
-                    SetRegionGroupWidth(296);
+                    SetRegionGroupWidth(400);
                     AddHeaderRegion(() => AddLine("Gnomes of Gnomeregan", "", "Center"));
                     new Description()
                     { regions = new() { new() { regionType = "Padding", contents = new() { new ()
@@ -1538,7 +1500,7 @@ public class Blueprint
                             { "Align", "Center" },
                             { "Text", "Gnomes are brilliant inventors and tinkerers, known for their technological prowess and innovative gadgets. Originally from the subterranean city of Gnomeregan, many now reside with their Dwarven allies in Ironforge. Despite their small stature, they possess an insatiable curiosity and boundless energy." }
                         }
-                    } } } }.Print(null, 258, null);
+                    } } } }.Print(null, 390, null);
                 });
                 if (creationRace != "Gnome")
                 {
@@ -1551,20 +1513,22 @@ public class Blueprint
                     if (creationRace == "Night Elf") return;
                     creationRace = "Night Elf";
                     creationSpec = "";
+                    creationPortrait = -1;
                     SpawnTransition();
                     SetDesktopBackground(FindSite(y => y.name == races.Find(x => x.name == "Night Elf").previewSite).Background());
-                    Respawn("CharacterCreationWho");
+                    Respawn("CharacterCreationMasculinePortraits");
+                    Respawn("CharacterCreationFemininePortraits");
                     Respawn("CharacterCreationFactionHorde");
-                    CloseWindow("CharacterCreationFinish");
-                    SpawnWindowBlueprint("CharacterCreationFinish");
+                    CloseWindow("TitleScreenNewSaveFinish");
+                    SpawnWindowBlueprint("TitleScreenNewSaveFinish");
                     CloseWindow("CharacterCreationSpec");
                     SpawnWindowBlueprint("CharacterCreationSpec");
                 },
                 null, (h) => () =>
                 {
-                    SetAnchor(Bottom, 0, 95);
+                    SetAnchor(BottomLeft, 119, 173);
                     AddRegionGroup();
-                    SetRegionGroupWidth(296);
+                    SetRegionGroupWidth(400);
                     AddHeaderRegion(() => AddLine("Night Elfs of Darnassus", "", "Center"));
                     new Description()
                     { regions = new() { new() { regionType = "Padding", contents = new() { new ()
@@ -1573,7 +1537,7 @@ public class Blueprint
                             { "Align", "Center" },
                             { "Text", "Night Elves are an ancient and mystical race with a profound connection to nature and druidic magic. They once lived in isolation in the lush forests of Kalimdor with their majestic city of Darnassus. Renowned for their agility and wisdom, they strive to protect the world of nature from harm." }
                         }
-                    } } } }.Print(null, 258, null);
+                    } } } }.Print(null, 390, null);
                 });
                 if (creationRace != "Night Elf")
                 {
@@ -1581,10 +1545,15 @@ public class Blueprint
                     SetBigButtonToGrayscale();
                 }
             });
-        }),
+        }, true),
         new("CharacterCreationSpec", () => {
-            SetAnchor(Top, 0, -19);
+            if (creationRace == "") return;
+            SetAnchor(Bottom, 0, 95);
             AddRegionGroup();
+            AddHeaderRegion(() =>
+            {
+                AddLine("Available Classes:", "HalfGray", "Center");
+            });
             AddHeaderRegion(() =>
             {
                 var availableSpecs = specs.FindAll(x => x.startingEquipment.ContainsKey(creationRace));
@@ -1596,16 +1565,14 @@ public class Blueprint
                     {
                         if (creationSpec == spec.name) return;
                         creationSpec = spec.name;
-                        Respawn("CharacterCreationWho");
-                        Respawn("CharacterCreationFactionRaceChoice");
-                        CloseWindow("CharacterCreationFinish");
-                        SpawnWindowBlueprint("CharacterCreationFinish");
+                        CloseWindow("TitleScreenNewSaveFinish");
+                        SpawnWindowBlueprint("TitleScreenNewSaveFinish");
                     },
                     null, (h) => () =>
                     {
-                        SetAnchor(Top, 0, -76);
+                        SetAnchor(BottomLeft, 119, 173);
                         AddRegionGroup();
-                        SetRegionGroupWidth(296);
+                        SetRegionGroupWidth(400);
                         AddHeaderRegion(() => AddLine(spec.name, "", "Center"));
                         Description desc = null;
                         if (spec.name == "Warlock")
@@ -1689,7 +1656,7 @@ public class Blueprint
                                     { "Text", "Hunters are expert survivalists and marksmen, deeply attuned to the wilderness and the creatures that inhabit it. Often raised in the wilds, they form profound bonds with their animal companions and learn to navigate and master their environment. From the forests of Ashenvale to the savannas of the Barrens, hunters are the quintessential rangers and protectors of the natural world." }
                                 }
                             } } } };
-                        desc?.Print(null, 296, null);
+                        desc?.Print(null, 390, null);
                     });
                     if (creationSpec != spec.name)
                     {
@@ -1698,138 +1665,78 @@ public class Blueprint
                     }
                 }
             });
-        }),
-        new("CharacterCreationFinish", () => {
-            SetAnchor(Bottom, 0, 57);
+        }, true),
+        new("CharacterCreationMasculinePortraits", () => {
+            if (creationRace == "") return;
+            SetAnchor(BottomLeft, 119, 173);
             AddRegionGroup();
-            AddPaddingRegion(() =>
-            {
-                AddSmallButton("ActionReroll",
-                (h) =>
-                {
-                    var temp = random.Next(8);
-                    creationRace = temp == 0 ? "Orc" : (temp == 1 ? "Troll" : (temp == 2 ? "Tauren" : (temp == 3 ? "Forsaken" : (temp == 4 ? "Human" : (temp == 5 ? "Dwarf" : (temp == 6 ? "Gnome" : "Night Elf"))))));
-                    creationGender = random.Next(2) == 0 ? "Male" : "Female";
-                    var availableSpecs = specs.FindAll(x => x.startingEquipment.ContainsKey(creationRace));
-                    creationSpec = availableSpecs[random.Next(availableSpecs.Count)].name;
-                    var name = "";
-                    var race = races.Find(x => x.name == creationRace);
-                    do name = creationGender == "Female" ? race.femaleNames[random.Next(race.femaleNames.Count)] : race.maleNames[random.Next(race.maleNames.Count)];
-                    while (saves[settings.selectedRealm].Any(x => x.player.name == name));
-                    String.creationName.Set(name);
-                    SpawnTransition();
-                    SetDesktopBackground(FindSite(y => y.name == races.Find(x => x.name == creationRace).previewSite).Background());
-                    CloseWindow("CharacterCreationFactionHorde");
-                    CloseWindow("CharacterCreationFactionAlliance");
-                    CloseWindow("CharacterCreationFactionRaceChoice");
-                    CloseWindow("CharacterCreationFinish");
-                    CloseWindow("CharacterCreationSpec");
-                    CloseWindow("CharacterCreationWho");
-                    SpawnWindowBlueprint("CharacterCreationFactionHorde");
-                    SpawnWindowBlueprint("CharacterCreationFactionAlliance");
-                    SpawnWindowBlueprint("CharacterCreationFactionRaceChoice");
-                    SpawnWindowBlueprint("CharacterCreationFinish");
-                    SpawnWindowBlueprint("CharacterCreationSpec");
-                    SpawnWindowBlueprint("CharacterCreationWho");
-                    PlaySound("DesktopReroll" + random.Next(1, 3), 0.6f);
-                });
-            });     
-            AddRegionGroup();
-            SetRegionGroupWidth(114);
-            if (creationSpec != "" && creationGender != "" && creationRace != "" && String.creationName.Value().Length >= 3)
-            {
-                AddButtonRegion(() =>
-                {
-                    AddLine("Finish Creation", "", "Center");
-                },
-                (h) =>
-                {
-                    PlaySound("DesktopCreateCharacter");
-                    AddNewSave();
-                    CloseDesktop("CharCreatorScreen");
-                    CloseDesktop("LoginScreen");
-                    SpawnDesktopBlueprint("LoginScreen");
-                    SpawnTransition();
-                    SaveGames();
-                });
-            }
-            else AddPaddingRegion(() => AddLine("Finish Creation", "DimGray", "Center"));
-            AddRegionGroup();
-            AddPaddingRegion(() => AddSmallButton("OtherClose", (h) => CloseDesktop("CharCreatorScreen")));
-        }),
-        new("CharacterCreationWho", () => {
-            SetAnchor(Top, 0, -301);
-            if (creationSpec != "" && creationRace != "")
-            {
-                AddRegionGroup();
-                AddPaddingRegion(() =>
-                {
-                    AddBigButton("Portrait" + creationRace.Clean() + "Male",
-                    (h) =>
-                    {
-                        if (creationRace != "")
-                        {
-                            creationGender = "Male";
-                            var oldName = String.creationName.Value();
-                            var name = "";
-                            var race = races.Find(x => x.name == creationRace);
-                            do name = race.maleNames[random.Next(race.maleNames.Count)];
-                            while (name == oldName || saves[settings.selectedRealm].Any(x => x.player.name == name));
-                            String.creationName.Set(name);
-                            CloseWindow("CharacterCreationWho");
-                            Respawn("CharacterCreationWho");
-                            CloseWindow("CharacterCreationFinish");
-                            Respawn("CharacterCreationFinish");
-                        }
-                    });
-                    if (creationRace != "" && creationGender != "Male")
-                    {
-                        AddBigButtonOverlay("OtherGridBlurred");
-                        SetBigButtonToGrayscale();
-                    }
-                });
-            }
-            AddRegionGroup();
-            SetRegionGroupWidth(152);
             AddHeaderRegion(() =>
             {
-                if (creationRace == "") AddLine("Choose Race", "DarkGray", "Center");
-                else if (creationSpec == "") AddLine("Choose Class", "DarkGray", "Center");
-                else if (creationGender == "") AddLine("Choose Portrait", "DarkGray", "Center");
-                else AddInputLine(String.creationName, "White", "Center");
+                AddLine("Masculine Portraits:", "HalfGray", "Center");
             });
-            if (creationRace != "")
-                AddPaddingRegion(() => AddLine(creationRace != "" ? creationRace + (creationSpec != "" ? " " + creationSpec : "") : "", "", "Center"));
-            if (creationSpec != "" && creationRace != "")
+            AddPaddingRegion(() =>
             {
-                AddRegionGroup();
-                AddPaddingRegion(() =>
+                for (int i = 0; i < 5; i++)
                 {
-                    AddBigButton("Portrait" + creationRace.Clean() + "Female",
+                    var index = i;
+                    var a = "Portrait" + creationRace.Clean() + "Male" + index;
+                    index = i;
+                    AddBigButton("Portrait" + creationRace.Clean() + "Male" + index,
                     (h) =>
                     {
-                        if (creationRace != "")
-                        {
-                            creationGender = "Female";
-                            var oldName = String.creationName.Value();
-                            var name = "";
-                            var race = races.Find(x => x.name == creationRace);
-                            do name = race.femaleNames[random.Next(race.femaleNames.Count)];
-                            while (name == oldName || saves[settings.selectedRealm].Any(x => x.player.name == name));
-                            String.creationName.Set(name);
-                            CloseWindow("CharacterCreationWho");
-                            Respawn("CharacterCreationWho");
-                            CloseWindow("CharacterCreationFinish");
-                            Respawn("CharacterCreationFinish");
-                        }
+                        creationPortrait = index;
+                        creationGender = "Male";
+                        var oldName = String.creationName.Value();
+                        var name = "";
+                        var race = races.Find(x => x.name == creationRace);
+                        name = race.maleNames[random.Next(race.maleNames.Count)];
+                        String.creationName.Set(name);
+                        Respawn("CharacterCreationFemininePortraits");
+                        Respawn("TitleScreenNewSaveFinish");
                     });
-                    if (creationRace != "" && creationGender != "Female")
+                    if (creationPortrait != index || creationGender != "Male")
                     {
                         AddBigButtonOverlay("OtherGridBlurred");
                         SetBigButtonToGrayscale();
                     }
-                });
-            }
+                }
+            });
+        }),
+        new("CharacterCreationFemininePortraits", () => {
+            if (creationRace == "") return;
+            SetAnchor(BottomRight, -119, 173);
+            AddRegionGroup();
+            AddHeaderRegion(() =>
+            {
+                AddLine("Feminine Portraits:", "HalfGray", "Center");
+            });
+            AddPaddingRegion(() =>
+            {
+                for (int i = 0; i < 5; i++)
+                {
+                    var index = i;
+                    var a = "Portrait" + creationRace.Clean() + "Female" + index;
+                    index = i;
+                    AddBigButton("Portrait" + creationRace.Clean() + "Female" + index,
+                    (h) =>
+                    {
+                        creationPortrait = index;
+                        creationGender = "Female";
+                        var oldName = String.creationName.Value();
+                        var name = "";
+                        var race = races.Find(x => x.name == creationRace);
+                        name = race.femaleNames[random.Next(race.femaleNames.Count)];
+                        String.creationName.Set(name);
+                        Respawn("CharacterCreationMasculinePortraits");
+                        Respawn("TitleScreenNewSaveFinish");
+                    });
+                    if (creationPortrait != index || creationGender != "Female")
+                    {
+                        AddBigButtonOverlay("OtherGridBlurred");
+                        SetBigButtonToGrayscale();
+                    }
+                }
+            });
         }),
 
         //Crafting Screen
@@ -2950,8 +2857,7 @@ public class Blueprint
                 if (board.results.result == "Team1Won")
                     AddSmallButton("OtherClose", (h) =>
                     {
-                        var hard = Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore;
-                        if (hard && board.results.result == "Team2Won")
+                        if (currentSave.permadeath.Value() && board.results.result == "Team2Won")
                         {
                             CloseSave();
                             SaveGames();
@@ -3019,7 +2925,7 @@ public class Blueprint
                     if (board.results.inventory.items.Count > 0) AddLine("Show Loot", "", "Center");
                     else AddLine("OK", "", "Center");
                 }
-                else if (Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore)
+                else if (currentSave.permadeath.Value())
                 {
                     SetRegionBackground(ButtonRed);
                     AddLine("Game Over", "", "Center");
@@ -3028,8 +2934,7 @@ public class Blueprint
             },
             (h) =>
             {
-                var hardcore = Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore;
-                if (hardcore && board.results.result == "Team2Won")
+                if (currentSave.permadeath.Value() && board.results.result == "Team2Won")
                 {
                     CloseSave();
                     SaveGames();
@@ -3933,6 +3838,8 @@ public class Blueprint
                                     Person.person = person;
                                     CloseWindow(h.window.title);
                                     Respawn("Person");
+                                    CloseWindow("Instance");
+                                    CloseWindow("InstanceWing");
                                     CloseWindow("Complex");
                                     CloseWindow("QuestAdd");
                                     CloseWindow("QuestTurn");
@@ -3960,6 +3867,8 @@ public class Blueprint
                                 Person.person = person;
                                 CloseWindow(h.window.title);
                                 Respawn("Person");
+                                CloseWindow("Instance");
+                                CloseWindow("InstanceWing");
                                 CloseWindow("Complex");
                                 CloseWindow("QuestAdd");
                                 CloseWindow("QuestTurn");
@@ -4143,7 +4052,9 @@ public class Blueprint
             if (area == null || area.eliteEncounters == null || area.eliteEncounters.Count == 0) return;
             var boss = area.progression.Find(x => x.type == "Boss" && currentSave.siteProgress.ContainsKey(area.name) && x.point == currentSave.siteProgress[area.name]);
             if (boss == null) return;
-            var bossName = boss.bossName == "<RingofLaw>" ? currentSave.ringOfLaw : (boss.bossName == "<ForlornCloister>" ? currentSave.forlornCloister : boss.bossName);
+            var bossName = boss.bossName;
+            if (currentSave.generatedBossPools.ContainsKey(bossName))
+                bossName = currentSave.generatedBossPools[bossName];
             if (boss == null || currentSave.elitesKilled.ContainsKey(bossName)) return;
             var encounter = area.eliteEncounters.Find(x => x.who == bossName);
             if (encounter == null) return;
@@ -4335,7 +4246,7 @@ public class Blueprint
                         if (currentSave.player.inventory.CanAddItem(item))
                         {
                             PlaySound(item.ItemSound("PickUp"));
-                            currentSave.player.inventory.AddItem(item.CopyItem(1));
+                            currentSave.player.inventory.AddItem(item.CopyItem());
                         }
                         Respawn("ExperienceBarBorder");
                         Respawn("ExperienceBar");
@@ -4705,7 +4616,7 @@ public class Blueprint
                                 PrintMountTooltip(currentSave.player, mount);
                             }
                         );
-                        if (currentSave.player.level < (mount.speed == 7 ? defines.lvlRequiredFastMounts : defines.lvlRequiredVeryFastMounts)) { SetBigButtonToRed(); AddBigButtonOverlay("OtherGridBlurred"); }
+                        if (currentSave.player.level < (mount.speed == 7 ? defines.lvlRequiredFastMounts : defines.lvlRequiredVeryFastMounts)) { SetBigButtonToRedscale(); AddBigButtonOverlay("OtherGridBlurred"); }
                     }
                     else
                     {
@@ -4777,7 +4688,7 @@ public class Blueprint
                             );
                             if (currentSave.player.level < (mount.speed == 7 ? defines.lvlRequiredFastMounts : defines.lvlRequiredVeryFastMounts))
                             {
-                                SetBigButtonToRed();
+                                SetBigButtonToRedscale();
                                 AddBigButtonOverlay("OtherGridBlurred");
                             }
                         }
@@ -6129,16 +6040,16 @@ public class Blueprint
                     CDesktop.RespawnAll();
                 });
             });
-            AddButtonRegion(() =>
-            {
-                AddLine("Show sourced market", "Black");
-                AddCheckbox(settings.sourcedMarket);
-            },
-            (h) =>
-            {
-                settings.sourcedMarket.Invert();
-                CDesktop.RespawnAll();
-            });
+            //AddButtonRegion(() =>
+            //{
+            //    AddLine("Show sourced market", "Black");
+            //    AddCheckbox(settings.sourcedMarket);
+            //},
+            //(h) =>
+            //{
+            //    settings.sourcedMarket.Invert();
+            //    CDesktop.RespawnAll();
+            //});
         }),
         new("AuctionHouseBuy", () => {
             SetAnchor(Bottom, 0, 35);
@@ -6334,7 +6245,7 @@ public class Blueprint
                                     can = true;
                         if (!can)
                         {
-                            SetBigButtonToRed();
+                            SetBigButtonToRedscale();
                             AddBigButtonOverlay("OtherGridBlurred");
                         }
                     });
@@ -6439,7 +6350,7 @@ public class Blueprint
                                 can = true;
                         if (!can)
                         {
-                            SetBigButtonToRed();
+                            SetBigButtonToRedscale();
                             AddBigButtonOverlay("OtherGridBlurred");
                         }
                     });
@@ -7027,11 +6938,11 @@ public class Blueprint
             },
             (h) =>
             {
-                if (settings.selectedRealm != "" && settings.selectedCharacter != "" && saves[settings.selectedRealm].Find(x => x.player.name == settings.selectedCharacter).player.dead) settings.selectedCharacter = "";
-                else if (settings.selectedRealm == "" && settings.selectedCharacter != "") settings.selectedCharacter = "";
-                if (settings.selectedRealm != "" && saves[settings.selectedRealm].Count(x => !x.player.dead) == 0) settings.selectedRealm = "";
-                if (settings.selectedRealm == "") SpawnDesktopBlueprint("ChangeRealm");
-                else SpawnDesktopBlueprint("LoginScreen");
+                SpawnWindowBlueprint("TitleScreenSingleplayer");
+                var recentSave = saves.Count > 0 ? saves.OrderByDescending(x => x.lastLoaded).ToList()[0] : null;
+                if (recentSave != null && !recentSave.player.dead)
+                    SpawnWindowBlueprint("TitleScreenContinue");
+                CloseWindow(h.window);
             });
             AddButtonRegion(() =>
             {
@@ -7089,6 +7000,382 @@ public class Blueprint
             maladathIcon.GetComponent<SpriteRenderer>().sortingOrder = 1;
             maladathIcon.transform.parent = CDesktop.LBWindow().transform;
             maladathIcon.transform.localPosition = new Vector3(69, -145);
+        }, true),
+        new("TitleScreenSingleplayer", () => {
+            SetAnchor(Top, 0, -19);
+            AddRegionGroup();
+            SetRegionGroupWidth(130);
+            SetRegionGroupHeight(316);
+            AddPaddingRegion(() =>
+            {
+                AddLine("", "Gray", "Center");
+                AddLine("Maladath", "Epic", "Center");
+                AddLine("Chronicles", "Epic", "Center");
+                AddLine("0.7.45", "DimGray", "Center");
+                AddLine("", "Gray", "Center");
+                AddLine("", "Gray", "Center");
+                AddLine("", "Gray", "Center");
+                AddLine("", "Gray", "Center");
+                AddLine("", "Gray", "Center");
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Singleplayer", "Gray", "Center");
+            });
+            var recentSave = saves.Count > 0 ? saves.OrderByDescending(x => x.lastLoaded).ToList()[0] : null;
+            if (recentSave != null && !recentSave.player.dead)
+            {
+                AddButtonRegion(() =>
+                {
+                    AddLine("Continue game", "", "Center");
+                },
+                (h) =>
+                {
+                    loadingBar = new GameObject[2];
+                    selectedSave = recentSave;
+                    Login();
+                    SpawnDesktopBlueprint("Map");
+                    CloseDesktop("LoginScreen");
+                    CloseDesktop("TitleScreen");
+                    var find = FindSite(x => x.name == currentSave.currentSite);
+                    if (find != null) CDesktop.cameraDestination = new Vector2(find.x, find.y);
+                    Cursor.cursor.transform.position += (Vector3)CDesktop.cameraDestination - CDesktop.screen.transform.position;
+                    CDesktop.screen.transform.localPosition = CDesktop.cameraDestination;
+                });
+            }
+            AddButtonRegion(() =>
+            {
+                AddLine("Start new game", "", "Center");
+            },
+            (h) =>
+            {
+                creationRace = "";
+                creationSpec = "";
+                creationGender = "";
+                creationPortrait = -1;
+                creationPermadeath = new(false);
+                creationClassicItemStacking = new(false);
+                creationAutomaticallyDecidedBossLoot = new(false);
+                creationNoOpenWorldOppositeFactionEncounters = new(false);
+                String.creationName.Set("");
+                SetDesktopBackground("Backgrounds/Sky");
+                SpawnWindowBlueprint("CharacterCreationFactionHorde");
+                SpawnWindowBlueprint("CharacterCreationFactionHorde");
+                SpawnWindowBlueprint("CharacterCreationFactionAlliance");
+                SpawnWindowBlueprint("TitleScreenNewSaveBack");
+                SpawnWindowBlueprint("TitleScreenNewSaveRandomize");
+                SpawnWindowBlueprint("TitleScreenNewSaveConfig");
+                SpawnWindowBlueprint("TitleScreenNewSaveFinish");
+                CloseWindow("TitleScreenContinue");
+                CloseWindow(h.window);
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Load game", "", "Center");
+            },
+            (h) =>
+            {
+
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Quick battle", "", "Center");
+            },
+            (h) =>
+            {
+
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Back", "", "Center");
+            },
+            (h) =>
+            {
+                SpawnWindowBlueprint("TitleScreenMenu");
+                CloseWindow("TitleScreenContinue");
+                CloseWindow(h.window);
+            });
+            AddPaddingRegion(() => { });
+            var maladathIcon = new GameObject("MaladathIcon", typeof(SpriteRenderer));
+            maladathIcon.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/MaladathIcon");
+            maladathIcon.GetComponent<SpriteRenderer>().sortingLayerName = "Upper";
+            maladathIcon.GetComponent<SpriteRenderer>().sortingOrder = 1;
+            maladathIcon.transform.parent = CDesktop.LBWindow().transform;
+            maladathIcon.transform.localPosition = new Vector3(69, -145);
+        }, true),
+        new("TitleScreenContinue", () => {
+            SetAnchor(Top, 149, -168);
+            AddRegionGroup();
+            SetRegionGroupWidth(130);
+            var recentSave = saves.Count > 0 ? saves.OrderByDescending(x => x.lastLoaded).ToList()[0] : null;
+            if (recentSave != null && !recentSave.player.dead)
+            AddHeaderRegion(() =>
+            {
+                ReverseButtons();
+                AddLine(recentSave.player.name);
+                AddSmallButton("Portrait" + recentSave.player.race.Clean() + (recentSave.player.Race().genderedPortrait ? recentSave.player.gender : ""));
+            });
+            AddHeaderRegion(() =>
+            {
+                ReverseButtons();
+                AddLine("Level: ", "DarkGray");
+                AddText(recentSave.player.level + "", "Gray");
+                AddSmallButton("Class" + recentSave.player.spec);
+            });
+            var continueNotch = new GameObject("ContinueNotch", typeof(SpriteRenderer));
+            continueNotch.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/ContinueNotch");
+            continueNotch.GetComponent<SpriteRenderer>().sortingLayerName = "Upper";
+            continueNotch.GetComponent<SpriteRenderer>().sortingOrder = 1;
+            continueNotch.transform.parent = CDesktop.LBWindow().transform;
+            continueNotch.transform.localPosition = new Vector3(-7.5f, -21.5f);
+        }, true),
+        new("TitleScreenNewSaveBack", () => {
+            SetAnchor(BottomLeft, 19, 19);
+            AddRegionGroup();
+            SetRegionGroupWidth(119);
+            AddButtonRegion(() =>
+            {
+                AddLine("Back", "", "Center");
+            },
+            (h) =>
+            {
+                if (!WindowUp("TitleScreenNewSaveGameRules"))
+                {
+                    RemoveDesktopBackground();
+                    CloseWindow("CharacterCreationSpec");
+                    CloseWindow("CharacterCreationMasculinePortraits");
+                    CloseWindow("CharacterCreationFemininePortraits");
+                    CloseWindow("CharacterCreationFactionHorde");
+                    CloseWindow("CharacterCreationFactionAlliance");
+                    CloseWindow("TitleScreenNewSaveBack");
+                    CloseWindow("TitleScreenNewSaveRandomize");
+                    CloseWindow("TitleScreenNewSaveConfig");
+                    CloseWindow("TitleScreenNewSaveFinish");
+                    SpawnWindowBlueprint("TitleScreenSingleplayer");
+                    var recentSave = saves.Count > 0 ? saves.OrderByDescending(x => x.lastLoaded).ToList()[0] : null;
+                    if (recentSave != null && !recentSave.player.dead)
+                        SpawnWindowBlueprint("TitleScreenContinue");
+                }
+                else
+                {
+                    CloseWindow("TitleScreenNewSaveGameRules");
+                    CloseWindow("TitleScreenNewSaveSummary");
+                    Respawn("CharacterCreationSpec");
+                    Respawn("CharacterCreationMasculinePortraits");
+                    Respawn("CharacterCreationFemininePortraits");
+                    Respawn("CharacterCreationFactionHorde");
+                    Respawn("CharacterCreationFactionAlliance");
+                    Respawn("TitleScreenNewSaveRandomize");
+                    Respawn("TitleScreenNewSaveConfig");
+                    Respawn("TitleScreenNewSaveFinish");
+                }
+            });
+        }, true),
+        //new("TitleScreenNewSaveRandomize", () => {
+        //    SetAnchor(BottomLeft, 19, 38);
+        //    AddRegionGroup();
+        //    SetRegionGroupWidth(119);
+        //    AddButtonRegion(() =>
+        //    {
+        //        AddLine("Randomize", "", "Center");
+        //    },
+        //    (h) =>
+        //    {
+        //        var temp = random.Next(8);
+        //        creationRace = temp == 0 ? "Orc" : (temp == 1 ? "Troll" : (temp == 2 ? "Tauren" : (temp == 3 ? "Forsaken" : (temp == 4 ? "Human" : (temp == 5 ? "Dwarf" : (temp == 6 ? "Gnome" : "Night Elf"))))));
+        //        creationGender = random.Next(2) == 0 ? "Male" : "Female";
+        //        creationPortrait = random.Next(5);
+        //        var availableSpecs = specs.FindAll(x => x.startingEquipment.ContainsKey(creationRace));
+        //        creationSpec = availableSpecs[random.Next(availableSpecs.Count)].name;
+        //        var name = "";
+        //        var race = races.Find(x => x.name == creationRace);
+        //        name = creationGender == "Female" ? race.femaleNames[random.Next(race.femaleNames.Count)] : race.maleNames[random.Next(race.maleNames.Count)];
+        //        String.creationName.Set(name);
+        //        SpawnTransition();
+        //        SetDesktopBackground(FindSite(y => y.name == races.Find(x => x.name == creationRace).previewSite).Background());
+        //        Respawn("CharacterCreationFactionHorde");
+        //        Respawn("CharacterCreationFactionAlliance");
+        //        Respawn("CharacterCreationMasculinePortraits");
+        //        Respawn("CharacterCreationFemininePortraits");
+        //        Respawn("TitleScreenNewSaveFinish");
+        //        Respawn("CharacterCreationSpec");
+        //        PlaySound("DesktopReroll" + random.Next(1, 3), 0.6f);
+        //    });
+        //}, true),
+        new("TitleScreenNewSaveSummary", () => {
+            SetAnchor(Bottom, 0, 114);
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddBigButton(specs.Find(x => x.name == creationSpec).icon);
+            });
+            AddRegionGroup();
+            SetRegionGroupWidth(172);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Character Name:", "HalfGray", "Center");
+            });
+            AddPaddingRegion(() =>
+            {
+                AddInputLine(String.creationName, "", "Center");
+            });
+            AddRegionGroup();
+            AddPaddingRegion(() =>
+            {
+                AddBigButton("Portrait" + creationRace.Clean() + creationGender + creationPortrait);
+            });
+        }, true),
+        new("TitleScreenNewSaveGameRules", () => {
+            SetAnchor(Bottom, 0, 19);
+            AddRegionGroup();
+            SetRegionGroupWidth(324);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Game Rules:", "DarkGray");
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(creationPermadeath);
+                AddLine("Permadeath");
+            },
+            (h) =>
+            {
+                creationPermadeath.Invert();
+                CDesktop.RespawnAll();
+            },
+            null, (h) => () =>
+            {
+                SetAnchor(BottomLeft, 119, 173);
+                AddRegionGroup();
+                SetRegionGroupWidth(400);
+                AddHeaderRegion(() => AddLine("Permadeath", "", "Center"));
+                new Description()
+                { regions = new() { new() { regionType = "Padding", contents = new() { new ()
+                    {
+                        { "Color", "DarkGray" },
+                        { "Align", "Center" },
+                        { "Text", "When turned on, this setting makes your character die permanently the first time it dies. This means that you will no longer be able to play on that character and it will be visible only in the rankings menu. This setting is only for seasoned players and those who are not afraid of losing a lot of progress. Choose at your own discretion." }
+                    }
+                } } } }.Print(null, 390, null);
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(creationClassicItemStacking);
+                AddLine("Classic item stacking");
+            },
+            (h) =>
+            {
+                creationClassicItemStacking.Invert();
+                CDesktop.RespawnAll();
+            },
+            null, (h) => () =>
+            {
+                SetAnchor(BottomLeft, 119, 173);
+                AddRegionGroup();
+                SetRegionGroupWidth(400);
+                AddHeaderRegion(() => AddLine("Classic item stacking", "", "Center"));
+                new Description()
+                { regions = new() { new() { regionType = "Padding", contents = new() { new ()
+                    {
+                        { "Color", "DarkGray" },
+                        { "Align", "Center" },
+                        { "Text", "When turned on, this setting makes items stack with classic stack sizes from World of Warcraft. With the setting disabled same item types will stack up to 999 in a single slot." }
+                    }
+                } } } }.Print(null, 390, null);
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(creationAutomaticallyDecidedBossLoot);
+                AddLine("Automatically decided boss loot");
+            },
+            (h) =>
+            {
+                creationAutomaticallyDecidedBossLoot.Invert();
+                CDesktop.RespawnAll();
+            },
+            null, (h) => () =>
+            {
+                SetAnchor(BottomLeft, 119, 173);
+                AddRegionGroup();
+                SetRegionGroupWidth(400);
+                AddHeaderRegion(() => AddLine("Automatically decided boss loot", "", "Center"));
+                new Description()
+                { regions = new() { new() { regionType = "Padding", contents = new() { new ()
+                    {
+                        { "Color", "DarkGray" },
+                        { "Align", "Center" },
+                        { "Text", "When turned on, this setting makes boss loot automatically decided for the player, by choosing a random item from the possible item pool. Since in World of Warcraft there was an option to kill the same enemy multiple times because it would respawn, getting a random drop would not lock the player out of alternatives. In this game however, the elites are enemies which can be killed only ONCE PER RUN. That is why a system was introduced in which player can choose the item themselves from the pool." }
+                    }
+                } } } }.Print(null, 390, null);
+            });
+            //AddButtonRegion(() =>
+            //{
+            //    AddCheckbox(creationNoOpenWorldOppositeFactionEncounters);
+            //    AddLine("No open world opposite faction encounters");
+            //},
+            //(h) =>
+            //{
+            //    creationNoOpenWorldOppositeFactionEncounters.Invert();
+            //    CDesktop.RespawnAll();
+            //});
+        }, true),
+        new("TitleScreenNewSaveFinish", () => {
+            SetAnchor(BottomRight, -19, 19);
+            AddRegionGroup();
+            SetRegionGroupWidth(119);
+            if (WindowUp("TitleScreenNewSaveGameRules"))
+            {
+                if (String.creationName.Value().Length >= 3 && String.creationName.Value().Length < 13)
+                {
+                    AddButtonRegion(() =>
+                    {
+                        AddLine("Finish", "", "Center");
+                    },
+                    (h) =>
+                    {
+                        PlaySound("DesktopCreateCharacter");
+                        AddNewSave();
+                        SpawnTransition();
+                        SaveGames();
+                        RemoveDesktopBackground();
+                        CloseWindow("TitleScreenNewSaveBack");
+                        CloseWindow("TitleScreenNewSaveFinish");
+                        CloseWindow("TitleScreenNewSaveSummary");
+                        CloseWindow("TitleScreenNewSaveGameRules");
+                        SpawnWindowBlueprint("TitleScreenSingleplayer");
+                        var recentSave = saves.Count > 0 ? saves.OrderByDescending(x => x.lastLoaded).ToList()[0] : null;
+                        if (recentSave != null && !recentSave.player.dead)
+                            SpawnWindowBlueprint("TitleScreenContinue");
+                    });
+                }
+                else
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Finish", "DarkGray", "Center");
+                    });
+            }
+            else if (creationSpec != "" && creationGender != "" && creationRace != "")
+                AddButtonRegion(() =>
+                {
+                    AddLine("Next", "", "Center");
+                },
+                (h) =>
+                {
+                    CloseWindow("CharacterCreationSpec");
+                    CloseWindow("CharacterCreationFactionHorde");
+                    CloseWindow("CharacterCreationFactionAlliance");
+                    CloseWindow("CharacterCreationMasculinePortraits");
+                    CloseWindow("CharacterCreationFemininePortraits");
+                    CloseWindow("TitleScreenNewSaveRandomize");
+                    Respawn("TitleScreenNewSaveBack");
+                    Respawn("TitleScreenNewSaveSummary");
+                    Respawn("TitleScreenNewSaveGameRules");
+                });
+            else
+                AddHeaderRegion(() =>
+                {
+                    AddLine("Next", "DarkGray", "Center");
+                });
         }, true),
         new("GameMenu", () => {
             SetAnchor(Center);
@@ -7156,24 +7443,25 @@ public class Blueprint
                 AddPaddingRegion(() => AddLine("Save and exit", "DarkGray"));
             }
         }, true),
-        new("GameSettings", () => {
+        new("TitleScreenFirstLaunch", () => {
             SetAnchor(Center);
             AddHeaderGroup();
             SetRegionGroupWidth(190);
             AddHeaderRegion(() =>
             {
-                AddLine("Settings:", "Gray");
+                AddLine("First time configuration:", "Gray");
                 AddSmallButton("OtherClose", (h) =>
                 {
+                    Serialization.Serialize(settings, "settings", false, false, Serialization.prefix);
                     CloseWindow(h.window);
-                    Respawn(CDesktop.title == "GameMenu" ? "GameMenu" : "TitleScreenMenu");
+                    Respawn("TitleScreenMenu");
                 });
             });
             AddRegionGroup();
             SetRegionGroupWidth(190);
             AddPaddingRegion(() =>
             {
-                AddLine("Visuals", "HalfGray");
+                AddLine("Visuals:", "HalfGray");
             });
             AddButtonRegion(() =>
             {
@@ -7187,31 +7475,7 @@ public class Blueprint
             });
             AddPaddingRegion(() =>
             {
-                AddLine("Gameplay", "HalfGray");
-            });
-            AddButtonRegion(() =>
-            {
-                AddCheckbox(settings.fastCascading);
-                AddLine("Fast cascading");
-            },
-            (h) =>
-            {
-                settings.fastCascading.Invert();
-                CDesktop.RespawnAll();
-            });
-            AddButtonRegion(() =>
-            {
-                AddCheckbox(settings.autoCloseLoot);
-                AddLine("Automatically close loot");
-            },
-            (h) =>
-            {
-                settings.autoCloseLoot.Invert();
-                CDesktop.RespawnAll();
-            });
-            AddPaddingRegion(() =>
-            {
-                AddLine("Sound", "HalfGray");
+                AddLine("Sound:", "HalfGray");
             });
             AddButtonRegion(() =>
             {
@@ -7245,7 +7509,110 @@ public class Blueprint
             });
             AddPaddingRegion(() =>
             {
-                AddLine("Other", "HalfGray");
+                AddLine("Other:", "HalfGray");
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(settings.runsInBackground);
+                AddLine("Runs in background");
+            },
+            (h) =>
+            {
+                settings.runsInBackground.Invert();
+                Application.runInBackground = settings.runsInBackground.Value();
+                CDesktop.RespawnAll();
+            });
+        }, true),
+        new("GameSettings", () => {
+            SetAnchor(Center);
+            AddHeaderGroup();
+            SetRegionGroupWidth(190);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Settings:", "Gray");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow(h.window);
+                    Respawn(CDesktop.title == "GameMenu" ? "GameMenu" : "TitleScreenMenu");
+                });
+            });
+            AddRegionGroup();
+            SetRegionGroupWidth(190);
+            AddPaddingRegion(() =>
+            {
+                AddLine("Gameplay:", "HalfGray");
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(settings.fastCascading);
+                AddLine("Fast cascading");
+            },
+            (h) =>
+            {
+                settings.fastCascading.Invert();
+                CDesktop.RespawnAll();
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(settings.autoCloseLoot);
+                AddLine("Automatically close loot");
+            },
+            (h) =>
+            {
+                settings.autoCloseLoot.Invert();
+                CDesktop.RespawnAll();
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Visuals:", "HalfGray");
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(settings.pixelPerfectVision);
+                AddLine("Pixel perfect vision");
+            },
+            (h) =>
+            {
+                settings.pixelPerfectVision.Invert();
+                CDesktop.RespawnAll();
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Sound:", "HalfGray");
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(settings.music);
+                AddLine("Music");
+            },
+            (h) =>
+            {
+                settings.music.Invert();
+                CDesktop.RespawnAll();
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(settings.ambience);
+                AddLine("Ambience");
+            },
+            (h) =>
+            {
+                settings.ambience.Invert();
+                CDesktop.RespawnAll();
+            });
+            AddButtonRegion(() =>
+            {
+                AddCheckbox(settings.soundEffects);
+                AddLine("Sound effects");
+            },
+            (h) =>
+            {
+                settings.soundEffects.Invert();
+                CDesktop.RespawnAll();
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("Other:", "HalfGray");
             });
             AddButtonRegion(() =>
             {
@@ -7344,7 +7711,7 @@ public class Blueprint
                     Respawn("SpellbookAbilityListActivated");
                     PlaySound("DesktopInventorySort", 0.4f);
                 });
-                if (!WindowUp("AbilitiesSort") && !WindowUp("SwitchActionBars"))
+                if (!WindowUp("AbilitiesSort") && !WindowUp("SwitchActionSet"))
                     AddSmallButton("OtherSort", (h) =>
                     {
                         Respawn("AbilitiesSort");
@@ -7356,7 +7723,7 @@ public class Blueprint
             });
             var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             AddPaginationLine();
-            var bars = currentSave.player.actionBars[currentSave.player.currentActionSet];
+            var actionSet = currentSave.player.actionSets[currentSave.player.currentActionSet];
             for (int i = 0; i < rowAmount; i++)
             {
                 var index = i;
@@ -7366,14 +7733,14 @@ public class Blueprint
                         var key = activeAbilities.ToList()[index + thisWindow.pagination()];
                         AddLine(key.Key.name);
                         AddLine("Rank: ", "DarkGray");
-                        AddText("" + ToRoman(key.Value + 1));
+                        AddText((key.Value + 1).ToRoman());
                         AddBigButton(key.Key.icon,
                             (h) =>
                             {
                                 var key = activeAbilities.ToList()[index + thisWindow.pagination()];
-                                if (key.Key.name != currentSave.player.currentActionSet && !bars.Contains(key.Key.name) && bars.Count < currentSave.player.ActionBarsAmount())
+                                if (key.Key.name != currentSave.player.currentActionSet && !actionSet.Contains(key.Key.name) && actionSet.Count < currentSave.player.ActionSetMaxLength())
                                 {
-                                    bars.Add(key.Key.name);
+                                    actionSet.Add(key.Key.name);
                                     Respawn("PlayerSpellbookInfo");
                                     Respawn("SpellbookAbilityListActivated", true);
                                     PlaySound("DesktopActionBarAdd", 0.9f);
@@ -7387,12 +7754,12 @@ public class Blueprint
                                 PrintAbilityTooltip(currentSave.player, key, activeAbilities[key]);
                             }
                         );
-                        if (bars.Contains(key.Key.name) || key.Key.name == currentSave.player.currentActionSet)
+                        if (actionSet.Contains(key.Key.name) || key.Key.name == currentSave.player.currentActionSet)
                         {
                             SetBigButtonToGrayscale();
                             AddBigButtonOverlay("OtherGridBlurred");
                         }
-                        else if (bars.Count < currentSave.player.ActionBarsAmount())
+                        else if (actionSet.Count < currentSave.player.ActionSetMaxLength())
                             AddBigButtonOverlay("OtherGlowLearnable");
                     });
                 else AddPaddingRegion(() => AddBigButton("OtherDisabled"));
@@ -7427,7 +7794,7 @@ public class Blueprint
                     Respawn("SpellbookAbilityListPassive");
                     PlaySound("DesktopInventorySort", 0.4f);
                 });
-                if (!WindowUp("AbilitiesSort") && !WindowUp("SwitchActionBars"))
+                if (!WindowUp("AbilitiesSort") && !WindowUp("SwitchActionSet"))
                     AddSmallButton("OtherSort", (h) =>
                     {
                         Respawn("AbilitiesSort");
@@ -7448,7 +7815,7 @@ public class Blueprint
                         var key = passiveAbilities.ToList()[index + thisWindow.pagination()];
                         AddLine(key.Key.name);
                         AddLine("Rank: ", "DarkGray");
-                        AddText("" + ToRoman(key.Value + 1));
+                        AddText((key.Value + 1).ToRoman());
                         AddBigButton(key.Key.icon,
                             null,
                             null,
@@ -7517,13 +7884,13 @@ public class Blueprint
             SetRegionGroupHeight(148);
             AddHeaderRegion(() =>
             {
-                AddLine(currentSave.player.currentActionSet + " action bars:");
+                AddLine(currentSave.player.currentActionSet + " action set:");
                 var list = new List<string> { "Moonkin Form", "Bear Form", "Shadowform" };
                 if (currentSave.player.abilities.Any(x => list.Any(y => y == x.Key)))
-                    if (!WindowUp("AbilitiesSort") && !WindowUp("SwitchActionBars"))
+                    if (!WindowUp("AbilitiesSort") && !WindowUp("SwitchActionSet"))
                         AddSmallButton("OtherSwitch", (h) =>
                         {
-                            SpawnWindowBlueprint("SwitchActionBars");
+                            SpawnWindowBlueprint("SwitchActionSet");
                             CloseWindow("PlayerSpellbookInfo");
                             Respawn("PlayerSpellbookInfo");
                             if (CloseWindow("SpellbookAbilityListActivated"))
@@ -7534,12 +7901,12 @@ public class Blueprint
                     else
                         AddSmallButton("OtherSwitchOff");
             });
-            var bars = currentSave.player.actionBars[currentSave.player.currentActionSet];
-            int amount = currentSave.player.ActionBarsAmount();
-            for (int i = 0; i < amount; i++)
+            var actionSet = currentSave.player.actionSets[currentSave.player.currentActionSet];
+            int length = currentSave.player.ActionSetMaxLength();
+            for (int i = 0; i < length; i++)
             {
                 var index = i;
-                var abilityObj = bars.Count <= index ? null : abilities.Find(x => x.name == bars[index]);
+                var abilityObj = actionSet.Count <= index ? null : abilities.Find(x => x.name == actionSet[index]);
                 if (abilityObj != null)
                     AddButtonRegion(
                         () =>
@@ -7549,9 +7916,9 @@ public class Blueprint
                         },
                         (h) =>
                         {
-                            if (currentSave.player.abilities.ContainsKey(bars[index]))
+                            if (currentSave.player.abilities.ContainsKey(actionSet[index]))
                             {
-                                bars.RemoveAt(index);
+                                actionSet.RemoveAt(index);
                                 Respawn("SpellbookAbilityListActivated", true);
                                 Respawn("SpellbookAbilityListPassive", true);
                                 Respawn("PlayerSpellbookInfo");
@@ -7574,9 +7941,9 @@ public class Blueprint
                         }
                     );
             }
-            if (amount < 7) AddPaddingRegion(() => { });
+            if (length < 7) AddPaddingRegion(() => { });
         }),
-        new("SwitchActionBars", () => {
+        new("SwitchActionSet", () => {
             SetAnchor(Center);
             AddRegionGroup();
             SetRegionGroupWidth(182);
@@ -7585,7 +7952,7 @@ public class Blueprint
                 AddLine("Select action set:");
                 AddSmallButton("OtherClose", (h) =>
                 {
-                    CloseWindow("SwitchActionBars");
+                    CloseWindow("SwitchActionSet");
                     CDesktop.RespawnAll();
                 });
             });
@@ -7596,7 +7963,7 @@ public class Blueprint
             (h) =>
             {
                 currentSave.player.currentActionSet = "Default";
-                CloseWindow("SwitchActionBars");
+                CloseWindow("SwitchActionSet");
                 CDesktop.RespawnAll();
             });
             var list = new List<string> { "Moonkin Form", "Bear Form", "Shadowform" };
@@ -7609,14 +7976,14 @@ public class Blueprint
                     (h) =>
                     {
                         currentSave.player.currentActionSet = set;
-                        if (!currentSave.player.actionBars.ContainsKey(set))
+                        if (!currentSave.player.actionSets.ContainsKey(set))
                         {
-                            currentSave.player.actionBars.Add(set, new());
-                            if (set == "Bear Form") currentSave.player.actionBars[set].Add("Leave Bear Form");
-                            else if (set == "Moonkin Form") currentSave.player.actionBars[set].Add("Leave Moonkin Form");
-                            else if (set == "Shadowform") currentSave.player.actionBars[set].Add("Leave Shadowform");
+                            currentSave.player.actionSets.Add(set, new());
+                            if (set == "Bear Form") currentSave.player.actionSets[set].Add("Leave Bear Form");
+                            else if (set == "Moonkin Form") currentSave.player.actionSets[set].Add("Leave Moonkin Form");
+                            else if (set == "Shadowform") currentSave.player.actionSets[set].Add("Leave Shadowform");
                         }
-                        CloseWindow("SwitchActionBars");
+                        CloseWindow("SwitchActionSet");
                         CloseWindow("PlayerSpellbookInfo");
                         CDesktop.RespawnAll();
                         Respawn("PlayerSpellbookInfo");
@@ -7736,13 +8103,19 @@ public class Blueprint
         }, true),
     };
 
+    //List of all desktop blueprints that serve as playground for windows
     public static List<Blueprint> desktopBlueprints = new()
     {
         new("TitleScreen", () => 
         {
             StopAmbience(false);
             PlayMusic(new() { "MusicMainScreen" }, 0.2f, true);
-            SpawnWindowBlueprint("TitleScreenMenu");
+            if (firstLaunch)
+            {
+                firstLaunch = false;
+                SpawnWindowBlueprint("TitleScreenFirstLaunch");
+            }
+            else SpawnWindowBlueprint("TitleScreenMenu");
             AddHotkey("Open console", () =>
             {
                 if (debug && SpawnWindowBlueprint("Console") != null)
@@ -7758,8 +8131,20 @@ public class Blueprint
                     PlaySound("DesktopButtonClose");
                     SpawnWindowBlueprint("TitleScreenMenu");
                 }
+                else if (CloseWindow("TitleScreenFirstLaunch"))
+                {
+                    Serialization.Serialize(settings, "settings", false, false, Serialization.prefix);
+                    PlaySound("DesktopButtonClose");
+                    SpawnWindowBlueprint("TitleScreenMenu");
+                }
                 else if (CloseWindow("GameKeybinds"))
                 {
+                    PlaySound("DesktopButtonClose");
+                    SpawnWindowBlueprint("TitleScreenMenu");
+                }
+                else if (CloseWindow("TitleScreenSingleplayer"))
+                {
+                    CloseWindow("TitleScreenContinue");
                     PlaySound("DesktopButtonClose");
                     SpawnWindowBlueprint("TitleScreenMenu");
                 }
@@ -7811,28 +8196,6 @@ public class Blueprint
                 SpawnDesktopBlueprint("LoginScreen");
             });
         }),
-        new("CharCreatorScreen", () => 
-        {
-            SetDesktopBackground("Backgrounds/Sky");
-            SpawnWindowBlueprint("CharacterCreationFactionHorde");
-            SpawnWindowBlueprint("CharacterCreationFactionAlliance");
-            SpawnWindowBlueprint("CharacterCreationFactionRaceChoice");
-            SpawnWindowBlueprint("CharacterCreationFinish");
-            SpawnWindowBlueprint("CharacterCreationWho");
-            AddHotkey("Open console", () =>
-            {
-                if (debug && SpawnWindowBlueprint("Console") != null)
-                {
-                    PlaySound("DesktopTooltipShow", 0.4f);
-                    CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
-                }
-            });
-            AddHotkey("Open menu / Back", () =>
-            {
-                PlaySound("DesktopButtonClose");
-                CloseDesktop("CharCreatorScreen");
-            });
-        }),
         new("Map", () => 
         {
             PlaySound("DesktopOpenSave", 0.3f);
@@ -7845,15 +8208,15 @@ public class Blueprint
             loadingBar[1].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/LoadingBarStretch");
             loadingBar[1].transform.position = new Vector3(-1168, 854);
             OrderLoadingMap();
-            AddHotkey("Move camera north", () => { MoveCamera(new Vector2(0, EuelerGrowth())); }, false, false);
-            AddHotkey("Move camera west", () => { MoveCamera(new Vector2(-EuelerGrowth(), 0)); }, false, false);
-            AddHotkey("Move camera south", () => { MoveCamera(new Vector2(0, -EuelerGrowth())); }, false, false);
-            AddHotkey("Move camera east", () => { MoveCamera(new Vector2(EuelerGrowth(), 0)); }, false, false);
+            AddHotkey("Move camera north", () => { MoveCamera(new Vector2(0, Eueler())); }, false, false);
+            AddHotkey("Move camera west", () => { MoveCamera(new Vector2(-Eueler(), 0)); }, false, false);
+            AddHotkey("Move camera south", () => { MoveCamera(new Vector2(0, -Eueler())); }, false, false);
+            AddHotkey("Move camera east", () => { MoveCamera(new Vector2(Eueler(), 0)); }, false, false);
             AddHotkey(UpArrow, () =>
             {
                 if (!debug) return;
                 var site = FindSite(x => x.name == currentSave.currentSite);
-                site.y += (int)Math.Sqrt(EuelerGrowth());
+                site.y += (int)Math.Sqrt(Eueler());
                 var find = windowBlueprints.Find(x => x.title == "Site: " + site.name);
                 windowBlueprints.Remove(find);
                 windowBlueprints.Add(new Blueprint("Site: " + site.name, () => site.PrintSite()));
@@ -7864,7 +8227,7 @@ public class Blueprint
             {
                 if (!debug) return;
                 var site = FindSite(x => x.name == currentSave.currentSite);
-                site.x -= (int)Math.Sqrt(EuelerGrowth());
+                site.x -= (int)Math.Sqrt(Eueler());
                 var find = windowBlueprints.Find(x => x.title == "Site: " + site.name);
                 windowBlueprints.Add(new Blueprint("Site: " + site.name, () => site.PrintSite()));
                 CloseWindow("Site: " + site.name);
@@ -7874,7 +8237,7 @@ public class Blueprint
             {
                 if (!debug) return;
                 var site = FindSite(x => x.name == currentSave.currentSite);
-                site.y -= (int)Math.Sqrt(EuelerGrowth());
+                site.y -= (int)Math.Sqrt(Eueler());
                 var find = windowBlueprints.Find(x => x.title == "Site: " + site.name);
                 windowBlueprints.Add(new Blueprint("Site: " + site.name, () => site.PrintSite()));
                 CloseWindow("Site: " + site.name);
@@ -7884,7 +8247,7 @@ public class Blueprint
             {
                 if (!debug) return;
                 var site = FindSite(x => x.name == currentSave.currentSite);
-                site.x += (int)Math.Sqrt(EuelerGrowth());
+                site.x += (int)Math.Sqrt(Eueler());
                 var find = windowBlueprints.Find(x => x.title == "Site: " + site.name);
                 windowBlueprints.Add(new Blueprint("Site: " + site.name, () => site.PrintSite()));
                 CloseWindow("Site: " + site.name);
@@ -8236,8 +8599,8 @@ public class Blueprint
                 }
                 else
                 {
-                    var zone = Zone.zones.Find(x => x.name == SiteArea.area.zone);
-                    var chestID = SiteArea.area.chestVariant != 0 ? SiteArea.area.chestVariant : (zone.chestVariant != 0 ? zone.chestVariant : 6);
+                    var zone = zones.Find(x => x.name == area.zone);
+                    var chestID = area.chestVariant != 0 ? area.chestVariant : (zone.chestVariant != 0 ? zone.chestVariant : 6);
                     PlaySound("DesktopChest" + chestID + "Close");
                     CloseDesktop("ChestLoot");
                 }
@@ -8484,6 +8847,109 @@ public class Blueprint
                     Respawn("AreaQuestDone");
                     Respawn("InstanceWing", true);
                     Respawn("Instance");
+                }
+                else if (CloseWindow("BankSort"))
+                {
+                    PlaySound("DesktopInstanceClose");
+                }
+                else if (CloseWindow("MountCollection"))
+                {
+                    PlaySound("DesktopInstanceClose");
+                    CloseWindow("CurrentMount");
+                    Respawn("Person");
+                }
+                else if (CloseWindow("Inventory"))
+                {
+                    PlaySound("DesktopInventoryClose");
+                    CloseWindow("Bank");
+                    if (CloseWindow("Vendor"))
+                        PlaySound("DesktopCharacterSheetClose");
+                    CloseWindow("VendorBuyback");
+                    Respawn("PlayerMoney");
+                    Respawn("Person");
+                }
+                else if (CloseWindow("MakeInnHome"))
+                {
+                    PlaySound("DesktopInstanceClose");
+                    CloseWindow("MakeInnHome");
+                    Respawn("Person");
+                }
+                else if (CloseWindow("FlightMaster"))
+                {
+                    PlaySound("DesktopMenuClose");
+                    Respawn("Person");
+                }
+                else if (CloseWindow("ProfessionRecipeTrainer"))
+                {
+                    PlaySound("DesktopInstanceClose");
+                    CloseWindow("ProfessionRecipeTrainer");
+                    Respawn("Person");
+                }
+                else if (CloseWindow("ProfessionLevelTrainer"))
+                {
+                    PlaySound("DesktopInstanceClose");
+                    CloseWindow("ProfessionLevelTrainer");
+                    Respawn("Person");
+                }
+                else if (CloseWindow("AuctionHouseOffersGroups"))
+                {
+                    PlaySound("DesktopInstanceClose");
+                    CloseWindow("AuctionHouseFilteringMain");
+                    CloseWindow("AuctionHouseFilteringTwoHandedWeapons");
+                    CloseWindow("AuctionHouseFilteringOneHandedWeapons");
+                    CloseWindow("AuctionHouseFilteringOffHands");
+                    CloseWindow("AuctionHouseFilteringRangedWeapons");
+                    CloseWindow("AuctionHouseFilteringArmorClass");
+                    CloseWindow("AuctionHouseFilteringArmorType");
+                    CloseWindow("AuctionHouseFilteringJewelry");
+                    CloseWindow("AuctionHouseFilteringConsumeables");
+                    for (int i = 0; i < 12; i++) { var index = i; CloseWindow("AuctionHousePrice" + index); }
+                    Respawn("Person");
+                }
+                else if (CloseWindow("AuctionHouseOffers"))
+                {
+                    CloseWindow("AuctionHouseOffers");
+                    CloseWindow("AuctionHouseBuy");
+                    CloseWindow("AuctionHouseChosenItem");
+                    Respawn("AuctionHouseOffersGroups");
+                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                    PlaySound("DesktopInstanceClose");
+                }
+                else if (CloseWindow("Person"))
+                {
+                    PlaySound("DesktopInstanceClose");
+                    person = null;
+                    if (personCategory != null) Respawn("Persons");
+                    else CloseWindow("Persons");
+                    Respawn("Area");
+                    Respawn("Instance");
+                    Respawn("InstanceWing");
+                    Respawn("Quest");
+                    Respawn("QuestAdd");
+                    Respawn("QuestTurn");
+                    Respawn("AreaQuestAvailable");
+                    Respawn("AreaQuestDone");
+                    if (!WindowUp("Persons"))
+                    {
+                        Respawn("AreaProgress");
+                        Respawn("AreaElites");
+                        Respawn("Chest");
+                    }
+                }
+                else if (CloseWindow("Persons"))
+                {
+                    PlaySound("DesktopInstanceClose");
+                    personCategory = null;
+                    Respawn("Area");
+                    Respawn("Complex");
+                    Respawn("Quest");
+                    Respawn("QuestAdd");
+                    Respawn("QuestTurn");
+                    Respawn("AreaProgress");
+                    Respawn("AreaElites");
+                    Respawn("AreaQuestAvailable");
+                    Respawn("AreaQuestDone");
+                    Respawn("Chest");
                 }
                 else if (CloseWindow("Area"))
                 {
@@ -8993,6 +9459,7 @@ public class Blueprint
         })
     };
 
+    //Adds pagination hotkeys to the desktop to help in manouvering around the windows
     public static void AddPaginationHotkeys()
     {
         AddHotkey("Move camera east", () =>

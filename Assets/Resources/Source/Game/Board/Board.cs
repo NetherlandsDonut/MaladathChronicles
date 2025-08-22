@@ -93,7 +93,7 @@ public class Board
             if (!participants[0].combatAbilities.ContainsKey(a.Key))
             {
                 participants[0].combatAbilities.Add(a.Key, a.Value);
-                if (a.Key.cost != null) participants[0].who.actionBars["Default"].Add(a.Key.name);
+                if (a.Key.cost != null) participants[0].who.actionSets["Default"].Add(a.Key.name);
             }
         cooldowns = new() { { 0, new() }, { 1, new() } };
         participants[1].team = 2;
@@ -374,7 +374,32 @@ public class Board
                     var equipableDirect = wearableDirect.Where(x => x.CanEquip(currentSave.player, false, false, true)).ToList();
 
                     //One wearable item drop with priority on something you can equip
-                    if (equipableDirect.Count > 0)
+                    if (enemyRace.kind == "Elite" && wearableDirect.Count > 1 && !currentSave.automaticallyDecidedBossLoot.Value())
+                    {
+                        var highestRarity = "Common";
+                        if (wearableDirect.Any(x => x.rarity == "Epic")) highestRarity = "Epic";
+                        else if (wearableDirect.Any(x => x.rarity == "Rare")) highestRarity = "Rare";
+                        else if (wearableDirect.Any(x => x.rarity == "Uncommon")) highestRarity = "Uncommon";
+                        var timeWarpedGoods = new Item()
+                        {
+                            rarity = highestRarity,
+                            name = "Time Warped Goods, " + enemyRace.name,
+                            icon = "ItemMiscBagFelclothBag",
+                            detailedType = "Pouch",
+                            type = "Miscellaneous",
+                            source = "DirectDrop",
+                            ilvl = 1,
+                            amount = 1,
+                            maxStack = 1,
+                            itemsInside = new(),
+                            abilities = new() { { "Time Warped Goods", 1 } },
+                        };
+                        foreach (var dir in wearableDirect)
+                            timeWarpedGoods.itemsInside.Add(dir.CopyItem());
+                        Inventory.ApplySortOrder(timeWarpedGoods.itemsInside);
+                        results.inventory.AddItem(timeWarpedGoods);
+                    }
+                    else if (equipableDirect.Count > 0)
                     {
                         var item = equipableDirect[random.Next(equipableDirect.Count)];
                         results.inventory.AddItem(item.CopyItem());
@@ -397,7 +422,7 @@ public class Board
                         var dropPurple = everything.Where(x => x.rarity == "Epic").ToList();
                         if (dropPurple.Count > 0 && Roll(0.05))
                             results.inventory.AddItem(dropPurple[random.Next(dropPurple.Count)].CopyItem());
-                        else if (dropBlue.Count > 0 && Roll(1))
+                        else if (dropBlue.Count > 0 && (Roll(1) || enemyRace.kind == "Rare"))
                             results.inventory.AddItem(dropBlue[random.Next(dropBlue.Count)].CopyItem());
                         else if (dropGreen.Count > 0 && (enemy.kind != "Common" || Roll(8)))
                             results.inventory.AddItem(dropGreen[random.Next(dropGreen.Count)].CopyItem());
@@ -550,7 +575,7 @@ public class Board
                 StopMusic();
                 StopAmbience();
                 PlaySound("Death");
-                if (Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore)
+                if (currentSave.permadeath.Value())
                 {
                     var enemy = participants.Find(x => x.team == 2).who;
                     currentSave.deathInfo = new(enemy.name, enemy.Race().kind == "Common", area.name);
@@ -624,7 +649,7 @@ public class Board
             }
 
         //If all friendly entities died or the player died while on hardcore..
-        if ((participants.Where(x => x.team == 1).All(x => x.who.dead) || Realm.realms.Find(x => x.name == settings.selectedRealm).hardcore && currentSave.player.health <= 0) && window.desktop.title == "Game")
+        if ((participants.Where(x => x.team == 1).All(x => x.who.dead) || currentSave.permadeath.Value() && currentSave.player.health <= 0) && window.desktop.title == "Game")
             EndCombat("Team2Won");
 
         //If all enemies died..
@@ -721,7 +746,7 @@ public class Board
                             for (int i = 0, counted = 0; i < temp.Count; i++, whereToStart++)
                                 if (temp[i].currentHeight == 0 && ++counted / 2 == spotlightEnemy.Count - 1 - spotlightEnemy.IndexOf(whosTurn)) break;
                         if (whereToStart > 0) whereToStart++;
-                        cursorEnemy.Move(temp[whereToStart + 1 + participants[whosTurn].who.actionBars[participants[whosTurn].who.currentActionSet].IndexOf(abilityObj.name)].transform.position + new Vector3(139, -10));
+                        cursorEnemy.Move(temp[whereToStart + 1 + participants[whosTurn].who.actionSets[participants[whosTurn].who.currentActionSet].IndexOf(abilityObj.name)].transform.position + new Vector3(139, -10));
                         animationTime += defines.frameTime * 9;
                     });
                     board.actions.Add(() => { cursorEnemy.SetCursor(CursorType.Click); });
@@ -734,7 +759,7 @@ public class Board
                             for (int i = 0, counted = 0; i < temp.Count; i++, whereToStart++)
                                 if (temp[i].currentHeight == 0 && ++counted / 2 == spotlightEnemy.Count - 1 - spotlightEnemy.IndexOf(whosTurn)) break;
                         if (whereToStart > 0) whereToStart++;
-                        AddRegionOverlay(temp[whereToStart + 1 + participants[whosTurn].who.actionBars[participants[whosTurn].who.currentActionSet].IndexOf(abilityObj.name)], "Window", 10f);
+                        AddRegionOverlay(temp[whereToStart + 1 + participants[whosTurn].who.actionSets[participants[whosTurn].who.currentActionSet].IndexOf(abilityObj.name)], "Window", 10f);
                         animationTime += defines.frameTime;
                         foreach (var participant in participants)
                         {

@@ -1,7 +1,4 @@
 {
-  "selectedRealm": "Mograine",
-  "selectedRealmRanking": "Whitemane",
-  "selectedCharacter": "Erzi",
   "pixelPerfectVision": {
     "value": "True"
   },
@@ -26,9 +23,6 @@
   "showLowLevelQuests": {
     "value": "True"
   },
-  "sourcedMarket": {
-    "value": "True"
-  },
   "upgradeIndicators": {
     "value": "False"
   },
@@ -51,6 +45,6 @@
     "value": "False"
   },
   "runsInBackground": {
-    "value": "True"
+    "value": "False"
   }
 }

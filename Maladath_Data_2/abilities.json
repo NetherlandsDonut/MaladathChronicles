@@ -1796,6 +1796,42 @@
     }
   },
   {
+    "name": "Time Warped Goods",
+    "possibleTargets": "Self",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Loot"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "isExtender": true,
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: See what's inside. You get a feeling that you can take only one item out of this pouch."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "name": "Yellow Sack of Gems",
     "possibleTargets": "Self",
     "tags": [],
@@ -3817,7 +3853,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Scroll of Spirit II",
+            "WorldBuffName": "Scroll of Spirit II @ Scroll of Spirit",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "720",
             "SoundEffect": "ItemScroll"
@@ -3859,7 +3895,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Scroll of Spirit III",
+            "WorldBuffName": "Scroll of Spirit III @ Scroll of Spirit",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "720",
             "SoundEffect": "ItemScroll"
@@ -3901,7 +3937,7 @@
         "effects": [
           {
             "Effect": "AddWorldBuff",
-            "WorldBuffName": "Scroll of Spirit IV",
+            "WorldBuffName": "Scroll of Spirit IV @ Scroll of Spirit",
             "WorldBuffDurationUnits": "Combat",
             "WorldBuffDuration": "720",
             "SoundEffect": "ItemScroll"

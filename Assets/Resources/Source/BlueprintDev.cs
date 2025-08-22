@@ -2157,7 +2157,7 @@ public static class BlueprintDev
             AddButtonRegion(() => AddLine("By status", "Black"),
             (h) =>
             {
-                abilities = abilities.OrderBy(x => currentSave.player.actionBars[currentSave.player.currentActionSet].Contains(x.name)).ToList();
+                abilities = abilities.OrderBy(x => currentSave.player.actionSets[currentSave.player.currentActionSet].Contains(x.name)).ToList();
                 CloseWindow("AbilitiesSort");
                 CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.4f);

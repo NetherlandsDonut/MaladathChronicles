@@ -1,4 +1,5 @@
 using System.Linq;
+
 using UnityEngine;
 
 using static Root;
@@ -8,7 +9,6 @@ using static Cursor;
 using static String;
 using static Defines;
 using static SaveGame;
-using static GameSettings;
 
 public class InputLine : MonoBehaviour
 {
@@ -64,10 +64,8 @@ public class InputLine : MonoBehaviour
             {
                 if (foo.Value() == "DELETE")
                 {
-                    saves[settings.selectedRealm].RemoveAll(x => x.player.name == settings.selectedCharacter);
-                    if (saves[settings.selectedRealm].Count(x => !x.player.dead) > 0)
-                         settings.selectedCharacter = saves[settings.selectedRealm].Last(x => !x.player.dead).player.name;
-                    else settings.selectedCharacter = "";
+                    saves.Remove(selectedSave);
+                    selectedSave = null;
                     CloseWindow("ConfirmDeleteCharacter");
                     Sound.PlaySound("DesktopButtonClose");
                     RemoveDesktopBackground();
@@ -81,8 +79,8 @@ public class InputLine : MonoBehaviour
         }
         else if (foo == creationName)
         {
-            CloseWindow("CharacterCreationFinish");
-            Respawn("CharacterCreationFinish");
+            CloseWindow("TitleScreenNewSaveFinish");
+            Respawn("TitleScreenNewSaveFinish");
         }
         else if (foo == splitAmount)
         {

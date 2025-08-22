@@ -45322,7 +45322,7 @@
     "progression": [
       {
         "type": "Boss",
-        "bossName": "<RingofLaw>",
+        "bossName": "<Ring of Law>",
         "point": 2
       },
       {
@@ -45493,6 +45493,7 @@
     "noNightVariant": true
   },
   {
+    "chestVariant": 5,
     "commonEncounters": [
       {
         "who": "Twilight Emissary",
@@ -45528,7 +45529,6 @@
         "point": 3
       }
     ],
-    "chestVariant": 5,
     "name": "The Black Vault",
     "zone": "Blackrock Depths",
     "type": "HostileArea",
@@ -50049,6 +50049,7 @@
     "type": "HostileArea"
   },
   {
+    "chestVariant": 3,
     "chestBonus": {
       "Gnomish Tools": 1
     },
@@ -50078,7 +50079,6 @@
     ],
     "x": 2499,
     "y": -2508,
-    "chestVariant": 3,
     "name": "Scuttle Coast",
     "zone": "Durotar",
     "type": "HostileArea",
@@ -50197,6 +50197,7 @@
     "type": "HostileArea"
   },
   {
+    "chestVariant": 9,
     "commonEncounters": [
       {
         "who": "Kul Tiras Sailor",
@@ -50235,7 +50236,6 @@
     ],
     "x": 2483,
     "y": -2574,
-    "chestVariant": 9,
     "name": "Tiragarde Keep",
     "zone": "Durotar",
     "type": "HostileArea"
@@ -56654,6 +56654,7 @@
     "type": "HostileArea"
   },
   {
+    "chestVariant": 3,
     "commonEncounters": [
       {
         "who": "Dark Iron Sapper",
@@ -60479,7 +60480,7 @@
     "progression": [
       {
         "type": "Boss",
-        "bossName": "<ForlornCloister>",
+        "bossName": "<Forlorn Cloister>",
         "point": 2
       },
       {
@@ -71970,11 +71971,12 @@
         "who": "Deviate Viper",
         "levelMin": 19,
         "levelMax": 20
-      },
+      }
+    ],
+    "rareEncounters": [
       {
         "who": "Kresh",
-        "levelMin": 20,
-        "levelMax": 20
+        "levelMin": 20
       }
     ],
     "eliteEncounters": [
@@ -72256,16 +72258,23 @@
     ],
     "rareEncounters": [
       {
-        "who": "Trigore the Lasher",
-        "levelMin": 19
-      },
-      {
         "who": "Boahn",
         "levelMin": 20
       }
     ],
+    "eliteEncounters": [
+      {
+        "who": "Trigore the Lasher",
+        "levelMin": 19
+      }
+    ],
     "areaSize": 3,
     "progression": [
+      {
+        "type": "Boss",
+        "bossName": "Trigore the Lasher",
+        "point": 2
+      },
       {
         "type": "Area",
         "areaName": "Screaming Gully",

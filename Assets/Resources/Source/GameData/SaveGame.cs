@@ -42,6 +42,7 @@ public class SaveGame
             unlockedAreas = new(),
             vendorStock = new(),
             openedChests = new(),
+            generatedBossPools = new(),
             markets = new()
             {
                 new Market("Alliance Market"),
@@ -49,38 +50,28 @@ public class SaveGame
             },
             banks = new(),
             startDate = DateTime.Now,
+            permadeath = new Bool(creationPermadeath.Value()),
+            classicItemStacking = new Bool(creationClassicItemStacking.Value()),
+            automaticallyDecidedBossLoot = new Bool(creationAutomaticallyDecidedBossLoot.Value()),
+            noOpenWorldOppositeFactionEncounters = new Bool(creationNoOpenWorldOppositeFactionEncounters.Value()),
             player = new Entity
             (
                 String.creationName.Value(),
                 creationGender,
+                creationPortrait,
                 race,
                 spec,
                 spec.startingEquipment[creationRace]
             )
         };
-        var possibleBosses = new List<string>()
-        {
-            "Anub'shiah",
-            "Eviscerator",
-            "Gorosh the Dervish",
-            "Grizzle",
-            "Hedrum the Creeper",
-            "Ok'thor the Breaker"
-        };
-        newSlot.ringOfLaw = possibleBosses[random.Next(possibleBosses.Count)];
-        possibleBosses = new List<string>()
-        {
-            "Azshir the Sleepless",
-            "Fallen Champion",
-            "Ironspine"
-        };
-        newSlot.forlornCloister = possibleBosses[random.Next(possibleBosses.Count)];
+        foreach (var bossPool in BossPool.bossPools)
+            newSlot.generatedBossPools.Add(bossPool.id, bossPool.possibleBosses[random.Next(bossPool.possibleBosses.Count)]);
         newSlot.hour = 7;
         newSlot.currentSite = race.startingSite;
         newSlot.siteVisits = new() { { race.startingSite, 1 } };
         newSlot.playerSide = newSlot.player.Side();
-        saves[settings.selectedRealm].Add(newSlot);
-        settings.selectedCharacter = newSlot.player.name;
+        saves.Add(newSlot);
+        selectedSave = newSlot;
     }
 
     #endregion
@@ -215,7 +206,7 @@ public class SaveGame
     public string currentSite;
 
     //Randomly generated bosses for this run
-    public string ringOfLaw, forlornCloister;
+    public Dictionary<string, string> generatedBossPools;
 
     //Markets offering auctions
     public List<Market> markets;
@@ -264,6 +255,18 @@ public class SaveGame
     //List of items available for buying back from vendors
     public Inventory buyback;
 
+    //Whether this character is set to die permanently
+    public Bool permadeath;
+
+    //Whether the items have the classic stack sizes
+    public Bool classicItemStacking;
+
+    //Whether the boss loot is automatically chosen for the player from the available choices
+    public Bool automaticallyDecidedBossLoot;
+
+    //Whether player is not able to encounter opposite faction npc's generated as fake players
+    public Bool noOpenWorldOppositeFactionEncounters;
+
     #endregion
 
     #region Management
@@ -306,7 +309,7 @@ public class SaveGame
     public static void CloseSave()
     {
         if (currentSave == null) return;
-        if (currentSave.player.dead) settings.selectedCharacter = "";
+        //if (currentSave.player.dead) settings.selectedCharacter = "";
         Save();
         mapGrid.SwitchMapTexture(false);
         currentSave = null;
@@ -316,7 +319,7 @@ public class SaveGame
     //Map can now be opened to start playing
     public static void Login()
     {
-        currentSave = saves[settings.selectedRealm].Find(x => x.player.name == settings.selectedCharacter);
+        currentSave = selectedSave;
         currentSave.lastLoaded = DateTime.Now;
         currentSave.Initialise();
     }
@@ -400,5 +403,5 @@ public class SaveGame
     public static SaveGame currentSave;
 
     //EXTERNAL FILE: List containing all account characters
-    public static Dictionary<string, List<SaveGame>> saves;
+    public static List<SaveGame> saves;
 }

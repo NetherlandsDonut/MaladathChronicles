@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using static Quest;
 using static Defines;
+using static SaveGame;
 
 //Iventory is a space for storing money and items
 //It's used by entities and banks
@@ -106,7 +107,8 @@ public class Inventory
         if (item.type == "Currency") return true;
         if (items.Count < BagSpace()) return true;
         var find = items.FindAll(x => x.name == item.name);
-        if (find.Count > 0) return find.Sum(x => x.maxStack - x.amount) > 0;
+        if (find.Count > 0 && !currentSave.classicItemStacking.Value()) return true;
+        else if (find.Count > 0) return find.Sum(x => x.maxStack - x.amount) >= item.amount;
         else return false;
     }
 
@@ -123,7 +125,13 @@ public class Inventory
             if (item.type == "Currency") continue;
             var slots = copyInventory.FindAll(x => x.name == item.name);
             foreach (var depositSlot in slots)
-                if (depositSlot.amount < depositSlot.maxStack)
+                if (!currentSave.classicItemStacking.Value())
+                {
+                    depositSlot.amount += item.amount;
+                    item.amount = 0;
+                    break;
+                }
+                else if (depositSlot.amount < depositSlot.maxStack)
                 {
                     var howMuch = depositSlot.maxStack - depositSlot.amount;
                     if (howMuch <= item.amount)
@@ -162,19 +170,33 @@ public class Inventory
         var added = item.amount;
         var find = items.FindAll(x => x.name == item.name);
         foreach (var stack in find)
-        {
-            var free = stack.maxStack - stack.amount;
-            if (free > 0)
-                if (item.amount > free) (item.amount, stack.amount) = (item.amount - free, stack.maxStack);
-                else { (item.amount, stack.amount) = (0, stack.amount + item.amount); break; }
-        }
-        if (item.amount > 0 && (ignoreSpaceChecks || items.Count < BagSpace()))
-            AddNewItem(item.CopyItem(item.amount));
-        if (SaveGame.currentSave != null && SaveGame.currentSave.player.inventory == this)
+            if (!currentSave.classicItemStacking.Value())
+            {
+                stack.amount += item.amount;
+                item.amount = 0;
+            }
+            else
+            {
+                var free = stack.maxStack - stack.amount;
+                if (free > 0)
+                    if (item.amount > free)
+                    {
+                        stack.amount += free;
+                        item.amount -= free;
+                    }
+                    else
+                    {
+                        stack.amount += item.amount;
+                        item.amount = 0;
+                        break;
+                    }
+            }
+        if (item.amount > 0 && (ignoreSpaceChecks || items.Count < BagSpace())) AddNewItem(item);
+        if (currentSave != null && currentSave.player.inventory == this)
         {
             var changed = new List<ActiveQuest>();
             var output = item.name + ": ";
-            foreach (var quest in SaveGame.currentSave.player.currentQuests)
+            foreach (var quest in currentSave.player.currentQuests)
                 foreach (var con in quest.conditions)
                     if (con.type == "Item" && con.name == item.name)
                     {

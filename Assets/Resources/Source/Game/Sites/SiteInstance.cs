@@ -187,7 +187,7 @@ public class SiteInstance : Site
     //Returns path to a texture that is the background visual of this site
     public override string Background()
     {
-        var save = currentSave ?? saves[GameSettings.settings.selectedRealm].Find(x => x.player.name == GameSettings.settings.selectedCharacter);
+        var save = currentSave ?? selectedSave;
         return "Areas/Area" + name.Clean() + (save != null && save.IsNight() && !noNightVariant ? "Night" : "");
     }
 

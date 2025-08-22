@@ -1,0 +1,21 @@
+[
+  {
+    "id": "<Forlorn Cloister>",
+    "possibleBosses": [
+      "Azshir the Sleepless",
+      "Fallen Champion",
+      "Ironspine"
+    ]
+  },
+  {
+    "id": "<Ring of Law>",
+    "possibleBosses": [
+      "Anub'shiah",
+      "Eviscerator",
+      "Gorosh the Dervish",
+      "Grizzle",
+      "Hedrum the Creeper",
+      "Ok'thor the Breaker"
+    ]
+  }
+]
