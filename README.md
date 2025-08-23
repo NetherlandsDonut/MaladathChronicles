@@ -1063,6 +1063,105 @@ v0.7.44
           Added an option for paths being available only for a specific side
           Minor adjustments to map texture
           Added more images for github
-
+          Added a lot of music into the game
+          Player can now hold the spacebar instead of being forced to single click it
+          Auction house rework basis
+v0.7.45
+ 20.07.25 Fixed a bug that player couldn't drop items that were outside of their level range
+          Fixed Hakkar and Sulfuron Harbinger not having any loot
+          Fixed boss pool drop for the four flamewaker bosses in Molten Core
+          Fixed rounding of damage on most of the weapons
+v0.7.46
+ 21.07.25 Added two new effects into the game, AddItem and RemoveItem
+          Added a new condition check that counts specific items in player inventory
+          Added quote color
+          Quests can now appear depending on player getting unique items
+          Bags can no longer have more space than 30 as that would not show the items in the UI
+          Ammo pouches and quivers can now be equipped into the bag slots
+v0.7.47
+ 22.07.25 Fixed items generating a random enchantment more than once
+          Complex site tooltip no longer spoils what is inside that isn't unlocked
+          You can now peek at items with disenchant cursor to see what you can get
+          You can now disenchant items always but when looting spoils from disenchanting
+          Fixed a situation that two different type of essences could be gotten from disenchanting an item
+          Now only one dust, one essence, one shard and one crystal can drop at once
+          All greater essences can now be broken down and formed again
+          Added seven new portraits
+          Fixed auctioned items not to have random enchantments generated when they are expected to be there
+          Guaranteed disenchanting spoils prediction
+          Made it possible to find epic crafted items on the auction house but very rarely
+v0.7.48
+ 23.07.25 Improved the detail of the sound map for footsteps
+v0.7.49
+ 24.07.25 Changed icons for alchemy vials
+          Made questlog have a hole in the middle that peeks into the map
+          Added missing boss of the Burning Blade Coven in valley of trials
+          Removed side bridge to Orgrimmar and removed northern lift in Thunder Bluff, now all capitals have just one entrence
+v0.7.50
+ 25.07.25 Fixed time formatting for crafting
+          Added background blue tint to all professions
+          Added a real icon for First Aid profession
+          Fixed exception related to lacking zone in quests
+v0.7.51
+ 27.07.25 Fixed progressing quests not respawning sites properly
+          Removing items now shows messages regarding quest progress and actually respawns sites accordingly
+          Added green fabric icon for quest item from Kul Tiras soldiers
+          Items can now be disabled from dropping without a quest for them
+v0.7.52
+ 28.07.25 Split Echo Isles into two separate sites and added missing Durotar Tiger
+          Merged hostile areas and towns together into one type
+          Npc's of specific faction now only appear to players if they are at least neutral towards them
+          Shaft of Tsol no longer drops as it is not used for anything yet
+v0.7.53
+ 29.07.25 Fixed small bugs here and there
+          Added portrait for Burning Blade Acolytes
+v0.7.54
+ 30.07.25 Added new conditions for abilities regarding details of casted abilities
+          Empty windows are now automatically closed
+          Added one new portrait and updated two old ones
+          Changed tooltip for areas a bit
+          Added about 10 new merchants across the world
+          Changed icons for punch cards to be real punch cards and not silver bars
+          Added Crazy Grab Bag with full functionality
+v0.7.55
+ 31.07.25 Added 4 new portraits
+          Added more npcs around the world
+          Added 5 new sites
+          Undiscovered sites no longer have a tooltip
+          Fixed weird softlock after using ESC to leave combat results
+          Combat participants now lose all their resources on death
+          Fixed world buffs not appearing
+v0.7.56
+ 01.08.25 Merged SiteCapital with SiteComplex
+          Fixed calculation of level range for complexes
+          Fixed a lot of typos in the entity names
+          Added three new portraits
+          Added wind rider roost to Thunder Bluff
+          Upgraded the site tooltip for complexes
+          Added more than 10 new npcs
+v0.7.57
+ 02.08.25 Moved chest to left side of the screen so that player money can appear at all times on the right
+          Added icons for filters in auction house
+          Fixed auction house prices not refreshing
+          Added rarity indicator consequently to all item icons
+          Fixed world buffs appearing in the quest log
+v0.7.58
+ 03.08.25 Added more indicative quest markers
+          Added separate low level quest markers which can be hidden
+          Solved the issue of items having duplicated names being not distinguishable in the data
+v0.7.59
+ 04.08.25 Added dedicated loot to combat effect and also an option for the combat effect to utilise local common enemies
+          Added conditions for events related to currently visited sites
+          In case of quest conditions that lack auto markers you can now set in the quest condition the sites where the condition can be done
+v0.7.60
+ 05.08.25 Finally Grim Guzzler is in the game
+          Added five new portraits
+          Added 4 new sites to Kalimdor and one to Eastern Kingdoms
+          Added two npc's to Morgan's Vigil
+          Vendors can now specifically sell items with a reputation requirement, this allows different vendors to sell the same item but with different requirements
+v0.7.61
+ 11.08.25 Added varied chest appearances depending on areas each with specific sound effects attached
+          Fixed a little error with comparing item stats
+          Fixed the possibility of getting to fight the same rare mob twice
 ```
 </details>
