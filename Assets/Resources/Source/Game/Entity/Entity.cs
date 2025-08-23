@@ -1,16 +1,15 @@
 using System;
-using System.Linq;
 using System.Collections.Generic;
-
-using UnityEngine;
+using System.Linq;
 using UnityEditor;
-
-using static Root;
-using static Race;
-using static Spec;
-using static Quest;
-using static Sound;
+using UnityEngine;
 using static Defines;
+using static Quest;
+using static Race;
+using static Root;
+using static Sound;
+using static Spec;
+using static UnityEngine.Rendering.PostProcessing.HistogramMonitor;
 
 public class Entity
 {
@@ -158,6 +157,7 @@ public class Entity
         if (quest.providedItems != null)
             foreach (var item in quest.providedItems)
                 inventory.AddItem(Item.items.Find(x => x.name == item.Key).CopyItem(item.Value));
+        QuestInitialProgress(quest);
         quest.UpdateRelatedSites();
     }
 
@@ -165,6 +165,24 @@ public class Entity
     public bool CanTurnQuest(Quest quest) => quest.conditions.All(x => x.IsDone());
 
     //Adds new quest to the quest log
+    public void QuestInitialProgress(Quest quest)
+    {
+        bool changed = false;
+        var activeQuest = currentQuests.Find(x => x.questID == quest.questID);
+        foreach (var condition in activeQuest.conditions)
+            if (condition.type == "Explore")
+            {
+                var area = SiteArea.areas.Find(x => x.name == condition.name);
+                if (SaveGame.currentSave.siteProgress.ContainsKey(area.name) && area.areaSize <= SaveGame.currentSave.siteProgress[area.name])
+                {
+                    condition.status = "Done";
+                    changed = true;
+                }
+            }
+        if (changed) quest.UpdateRelatedSites();
+    }
+
+    //Turns in a quest
     public void TurnQuest(Quest quest)
     {
         if (quest.money > 0)
@@ -319,7 +337,7 @@ public class Entity
                     var yes = false;
                     if (condition.sites != null && condition.sites.Contains(area.name))
                         yes = true;
-                    else if (condition.type == "Visit" && condition.name == area.name)
+                    else if ((condition.type == "Visit" || condition.type == "Explore") && condition.name == area.name)
                         yes = true;
                     else if (condition.type == "Kill")
                     {
@@ -372,6 +390,22 @@ public class Entity
         foreach (var site in instance.wings.SelectMany(x => x.areas.Select(z => Site.FindSite(y => y.name == z["AreaName"]))))
             list = list.Concat(QuestsAt((SiteArea)site, oneIsEnough)).ToList();
         return list.Distinct().ToList();
+    }
+
+    public bool QuestExplore(string where)
+    {
+        var changed = new List<ActiveQuest>();
+        foreach (var quest in currentQuests)
+            foreach (var condition in quest.conditions)
+                if (condition.status != "Done" && condition.type == "Explore" && condition.name == where)
+                {
+                    condition.status = "Done";
+                    if (!changed.Contains(quest))
+                        changed.Add(quest);
+                }
+        foreach (var quest in changed.Select((x => quests.Find(y => y.questID == x.questID))))
+            quest.UpdateRelatedSites();
+        return changed.Count > 0;
     }
 
     public void QuestKill(string who)

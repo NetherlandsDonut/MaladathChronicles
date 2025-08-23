@@ -200,9 +200,13 @@ public class Quest
                     AddSmallButton("OtherClose", (h) =>
                     {
                         CloseWindow("Quest");
-                        Respawn("Chest");
-                        Respawn("Complex");
-                        Respawn("PlayerMoney", true);
+                        if (CDesktop.title != "Map")
+                        {
+                            Respawn("PlayerMoney");
+                            Respawn("InstanceWing");
+                            Respawn("Instance");
+                            Respawn("Complex");
+                        }
                         PlaySound("DesktopInstanceClose");
                     });
                     AddSmallButton("OtherTrashOff");
@@ -212,9 +216,13 @@ public class Quest
                     AddSmallButton("OtherClose", (h) =>
                     {
                         CloseWindow("Quest");
-                        Respawn("Chest");
-                        Respawn("Complex");
-                        Respawn("PlayerMoney", true);
+                        if (CDesktop.title != "Map")
+                        {
+                            Respawn("PlayerMoney");
+                            Respawn("InstanceWing");
+                            Respawn("Instance");
+                            Respawn("Complex");
+                        }
                         PlaySound("DesktopInstanceClose");
                     });
                     AddSmallButton("OtherTrash", (h) =>
@@ -229,11 +237,13 @@ public class Quest
                 {
                     CloseWindow("Quest" + f);
                     PlaySound("DesktopInstanceClose");
-                    Respawn("Chest");
-                    Respawn("PlayerMoney", true);
-                    Respawn("Complex");
-                    Respawn("InstanceWing", true);
-                    Respawn("Instance");
+                    if (CDesktop.title != "Map")
+                    {
+                        Respawn("PlayerMoney");
+                        Respawn("InstanceWing");
+                        Respawn("Instance");
+                        Respawn("Complex");
+                    }
                 });
         });
         if (color != null) SetRegionBackgroundAsImage("SkillUp" + color + "Long");
@@ -432,13 +442,17 @@ public class Quest
                     currentSave.player.TurnQuest(this);
                     PlaySound("QuestTurn");
                     CloseWindow(h.window);
-                    Respawn("AreaQuestAvailable", true);
-                    Respawn("AreaQuestDone", true);
-                    Respawn("Chest", true);
-                    Respawn("PlayerMoney", true);
-                    Respawn("InstanceWing", true);
-                    Respawn("Instance");
-                    Respawn("Complex");
+                    if (CDesktop.title != "Map")
+                    {
+                        Respawn("Area");
+                        Respawn("AreaQuestAvailable");
+                        Respawn("AreaQuestDone");
+                        Respawn("PlayerMoney");
+                        Respawn("InstanceWing");
+                        Respawn("Instance");
+                        Respawn("Complex");
+                    }
+                    else Respawn("QuestList");
                 }
             });
         if (f == "Add")
@@ -448,16 +462,19 @@ public class Quest
                 {
                     PlaySound("QuestAdd", 0.4f);
                     currentSave.player.AddQuest(quest);
+                    quest = null;
                     CloseWindow(h.window);
-                    Respawn("AreaQuestAvailable", true);
-                    Respawn("AreaQuestDone", true);
-                    Respawn("Area", true);
-                    Respawn("QuestList", true);
-                    Respawn("PlayerMoney", true);
-                    Respawn("Chest", true);
-                    Respawn("InstanceWing", true);
-                    Respawn("Instance");
-                    Respawn("Complex");
+                    if (CDesktop.title != "Map")
+                    {
+                        Respawn("Area");
+                        Respawn("AreaQuestAvailable");
+                        Respawn("AreaQuestDone");
+                        Respawn("PlayerMoney");
+                        Respawn("InstanceWing");
+                        Respawn("Instance");
+                        Respawn("Complex");
+                    }
+                    else Respawn("QuestList");
                 }
                 else
                 {

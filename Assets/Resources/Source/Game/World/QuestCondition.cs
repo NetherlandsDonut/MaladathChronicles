@@ -11,7 +11,7 @@ using static SiteArea;
 public class QuestCondition
 {
     //Type of the condition this is
-    //[Kill, Item, Visit]
+    //[Kill, Item, Visit, Explore]
     public string type;
 
     //Name of the thing that needs to be done
@@ -37,8 +37,7 @@ public class QuestCondition
     //Checks whether this condition is already fulfilled
     public bool IsDone()
     {
-        if (type == "Item")
-            return currentSave.player.inventory.items.Sum(x => x.name == name ? x.amount : 0) >= amount;
+        if (type == "Item") return currentSave.player.inventory.items.Sum(x => x.name == name ? x.amount : 0) >= amount;
         return status == "Done";
     }
 
@@ -53,7 +52,7 @@ public class QuestCondition
             var races = Item.items.Find(x => x.name == name).droppedBy;
             if (races != null) list = areas.FindAll(x => x.commonEncounters != null && x.commonEncounters.Any(x => races.Contains(x.who)) || x.rareEncounters != null && x.rareEncounters.Any(x => races.Contains(x.who)) || x.eliteEncounters != null && x.eliteEncounters.Any(x => races.Contains(x.who))).Select(x => (Site)x).ToList();
         }
-        else if (type == "Visit")
+        else if (type == "Visit" || type == "Explore")
         {
             var find = Site.FindSite(x => x.name == name);
             if (find != null) list = new() { find };
@@ -85,6 +84,7 @@ public class QuestCondition
         }
         else if (type == "Kill") (line, then) = (name + ": ", amountDone + "/" + amount);
         else if (type == "Visit") (line, then) = (name + " visited: ", (status == "Done" ? 1 : 0) + "/1");
+        else if (type == "Explore") (line, then) = (name + " explored: ", (status == "Done" ? 1 : 0) + "/1");
         AddPaddingRegion(() =>
         {
             AddLine(line, "DarkGray");

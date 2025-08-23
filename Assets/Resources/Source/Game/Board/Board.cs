@@ -1,18 +1,18 @@
 using System;
-using UnityEngine;
-using System.Linq;
 using System.Collections.Generic;
-
-using static Root;
-using static Sound;
-using static Shatter;
-using static Defines;
-using static SaveGame;
-using static SiteArea;
+using System.Linq;
+using System.Xml.Linq;
+using UnityEngine;
 using static BufferBoard;
-using static GameSettings;
 using static CursorRemote;
+using static Defines;
 using static FlyingMissile;
+using static GameSettings;
+using static Root;
+using static SaveGame;
+using static Shatter;
+using static SiteArea;
+using static Sound;
 
 public class Board
 {
@@ -475,10 +475,17 @@ public class Board
                 if (participants.Count(x => x.team == 2) > 0)
                 {
                     if (area != null && participants.First(x => x.team == 2).who.kind != "Elite" && progBosses.Count > 0 && progBosses.Any(x => currentSave.elitesKilled.ContainsKey(x.bossName)) || progBosses.Count == 0)
+                    {
                         if (!currentSave.siteProgress.ContainsKey(area.name)) currentSave.siteProgress.Add(area.name, 1);
                         else currentSave.siteProgress[area.name]++;
+                        if (area.areaSize <= currentSave.siteProgress[area.name])
+                        {
+                            currentSave.player.QuestExplore(area.name);
+                            SpawnFallingText(new Vector2(0, 34), "Explore " + area.name + " 1/1", "Yellow");
+                        }
+                    }
 
-                    //Unlock all areas that you were at that if you just killed a boss there
+                    //Unlock all areas that you were at, if you just killed a boss there
                     if (participants.Where(x => x.team == 2).Any(x => x.who.kind == "Elite"))
                         foreach (var unlockArea in progression.FindAll(x => x.type == "Area"))
                             if (!currentSave.unlockedAreas.Contains(unlockArea.areaName))

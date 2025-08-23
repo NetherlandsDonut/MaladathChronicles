@@ -3607,6 +3607,7 @@ public class Blueprint
         }),
         new("InstanceWing", () =>
         {
+            if (wing == null) return;
             if (WindowUp("Quest")) return;
             if (WindowUp("QuestAdd")) return;
             if (WindowUp("QuestTurn")) return;
@@ -8714,6 +8715,7 @@ public class Blueprint
                         Respawn("AreaQuestAvailable");
                         Respawn("AreaQuestDone");
                         Respawn("Complex");
+                        Respawn("PlayerMoney");
                     }
                     else if (CloseWindow("BankSort"))
                     {
@@ -8885,8 +8887,9 @@ public class Blueprint
                     Respawn("Area");
                     Respawn("AreaQuestAvailable");
                     Respawn("AreaQuestDone");
-                    Respawn("InstanceWing", true);
+                    Respawn("InstanceWing");
                     Respawn("Instance");
+                    Respawn("PlayerMoney");
                 }
                 else if (CloseWindow("BankSort"))
                 {
@@ -9059,6 +9062,7 @@ public class Blueprint
                     Respawn("AreaQuestAvailable");
                     Respawn("AreaQuestDone");
                     Respawn("Complex");
+                    Respawn("PlayerMoney");
                 }
                 else if (CloseWindow("BankSort"))
                 {
