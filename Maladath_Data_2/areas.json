@@ -60908,6 +60908,9 @@
         "point": 3
       }
     ],
+    "chestBonus": {
+      "Plans: Enchanted Thorium Leggings": 1
+    },
     "name": "The Great Ossuary",
     "zone": "Scholomance",
     "type": "HostileArea",
@@ -65594,6 +65597,9 @@
     "noNightVariant": true
   },
   {
+    "chestBonus": {
+      "Plans: Enchanted Thorium Helm": 1
+    },
     "commonEncounters": [
       {
         "who": "Wailing Banshee",
@@ -65816,16 +65822,16 @@
         "levelMin": 62
       }
     ],
-    "areaSize": 3,
+    "areaSize": 2,
     "progression": [
       {
         "type": "Boss",
         "bossName": "Baron Rivendare",
-        "point": 2
+        "point": 1
       },
       {
         "type": "Treasure",
-        "point": 3
+        "point": 2
       }
     ],
     "name": "The Slaughter House",
