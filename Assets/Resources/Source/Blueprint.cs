@@ -1165,65 +1165,6 @@ public class Blueprint
                 AddInputLine(String.promptConfirm, "DangerousRed");
             });
         }, true),
-        //new("CharacterInfo", () => {
-        //    SetAnchor(TopLeft, 19, -19);
-        //    AddRegionGroup();
-        //    SetRegionGroupWidth(171);
-        //    SetRegionGroupHeight(316);
-        //    if (settings.selectedCharacter != "")
-        //    {
-        //        var slot = saves[settings.selectedRealm].Find(x => x.player.name == settings.selectedCharacter);
-        //        var spec = slot.player.Spec();
-        //        AddHeaderRegion(() => 
-        //        {
-        //            AddLine("Character:");
-        //            AddSmallButton("OtherClose", (h) =>
-        //            {
-        //                settings.selectedCharacter = "";
-        //                SetDesktopBackground("Backgrounds/Sky", true);
-        //                Respawn("CharacterRoster");
-        //                CloseWindow("CharacterInfo");
-        //            });
-        //        });
-        //        AddPaddingRegion(() => 
-        //        {
-        //            AddBigButton("Portrait" + slot.player.race.Clean() + (slot.player.Race().genderedPortrait ? slot.player.gender : ""));
-        //            AddLine(slot.player.name, "Gray");
-        //            AddLine("Level: ", "DarkGray");
-        //            AddText(slot.player.level + " ", "Gray");
-        //            AddText(spec.name, spec.name);
-        //        });
-        //        AddPaddingRegion(() =>
-        //        {
-        //            AddLine("Total time played: ", "DarkGray");
-        //            AddText((slot.timePlayed.Hours > 0 ? slot.timePlayed.Hours + "h " : "") + slot.timePlayed.Minutes + "m");
-        //        });
-        //        AddPaddingRegion(() =>
-        //        {
-        //            AddLine("Elites killed: ", "DarkGray");
-        //            AddText(slot.elitesKilled.Sum(x => x.Value) + "");
-        //        });
-        //        AddPaddingRegion(() =>
-        //        {
-        //            AddLine("Rares killed: ", "DarkGray");
-        //            AddText(slot.raresKilled.Sum(x => x.Value) + "");
-        //        });
-        //        AddPaddingRegion(() => SetRegionAsGroupExtender());
-        //        AddButtonRegion(() => AddLine("Enter World", "", "Center"),
-        //        (h) =>
-        //        {
-        //            loadingBar = new GameObject[2];
-        //            Login();
-        //            SpawnDesktopBlueprint("Map");
-        //            CloseDesktop("LoginScreen");
-        //            CloseDesktop("TitleScreen");
-        //            var find = FindSite(x => x.name == currentSave.currentSite);
-        //            if (find != null) CDesktop.cameraDestination = new Vector2(find.x, find.y);
-        //            Cursor.cursor.transform.position += (Vector3)CDesktop.cameraDestination - CDesktop.screen.transform.position;
-        //            CDesktop.screen.transform.localPosition = CDesktop.cameraDestination;
-        //        });
-        //    }
-        //}, true),
         new("CharacterCreationFactionHorde", () => {
             SetAnchor(BottomLeft, 157, 19);
             AddRegionGroup();
@@ -7076,6 +7017,11 @@ public class Blueprint
                     CDesktop.screen.transform.localPosition = CDesktop.cameraDestination;
                 });
             }
+            else
+                AddPaddingRegion(() =>
+                {
+                    AddLine("Continue game", "HalfGray", "Center");
+                });
             AddButtonRegion(() =>
             {
                 AddLine("Start new game", "", "Center");
@@ -7102,14 +7048,26 @@ public class Blueprint
                 CloseWindow("TitleScreenContinue");
                 CloseWindow(h.window);
             });
-            AddButtonRegion(() =>
+            if (saves.Count(x => !x.player.dead) > 0)
             {
-                AddLine("Load game", "", "Center");
-            },
-            (h) =>
-            {
-
-            });
+                AddButtonRegion(() =>
+                {
+                    AddLine("Load game", "", "Center");
+                },
+                (h) =>
+                {
+                    CloseWindow("TitleScreenContinue");
+                    CloseWindow(h.window);
+                    SpawnWindowBlueprint("CharacterInfo0");
+                    SpawnWindowBlueprint("CharacterInfo1");
+                    SpawnWindowBlueprint("CharacterInfo2");
+                });
+            }
+            else
+                AddPaddingRegion(() =>
+                {
+                    AddLine("Load game", "HalfGray", "Center");
+                });
             AddButtonRegion(() =>
             {
                 AddLine("Quick battle", "", "Center");
@@ -7146,7 +7104,7 @@ public class Blueprint
             {
                 ReverseButtons();
                 AddLine(recentSave.player.name);
-                AddSmallButton("Portrait" + recentSave.player.race.Clean() + (recentSave.player.Race().genderedPortrait ? recentSave.player.gender : ""));
+                AddSmallButton("Portrait" + recentSave.player.race.Clean() + recentSave.player.gender + recentSave.player.portraitID);
             });
             AddHeaderRegion(() =>
             {
@@ -7204,37 +7162,6 @@ public class Blueprint
                 }
             });
         }, true),
-        //new("TitleScreenNewSaveRandomize", () => {
-        //    SetAnchor(BottomLeft, 19, 38);
-        //    AddRegionGroup();
-        //    SetRegionGroupWidth(119);
-        //    AddButtonRegion(() =>
-        //    {
-        //        AddLine("Randomize", "", "Center");
-        //    },
-        //    (h) =>
-        //    {
-        //        var temp = random.Next(8);
-        //        creationRace = temp == 0 ? "Orc" : (temp == 1 ? "Troll" : (temp == 2 ? "Tauren" : (temp == 3 ? "Forsaken" : (temp == 4 ? "Human" : (temp == 5 ? "Dwarf" : (temp == 6 ? "Gnome" : "Night Elf"))))));
-        //        creationGender = random.Next(2) == 0 ? "Male" : "Female";
-        //        creationPortrait = random.Next(5);
-        //        var availableSpecs = specs.FindAll(x => x.startingEquipment.ContainsKey(creationRace));
-        //        creationSpec = availableSpecs[random.Next(availableSpecs.Count)].name;
-        //        var name = "";
-        //        var race = races.Find(x => x.name == creationRace);
-        //        name = creationGender == "Female" ? race.femaleNames[random.Next(race.femaleNames.Count)] : race.maleNames[random.Next(race.maleNames.Count)];
-        //        String.creationName.Set(name);
-        //        SpawnTransition();
-        //        SetDesktopBackground(FindSite(y => y.name == races.Find(x => x.name == creationRace).previewSite).Background());
-        //        Respawn("CharacterCreationFactionHorde");
-        //        Respawn("CharacterCreationFactionAlliance");
-        //        Respawn("CharacterCreationMasculinePortraits");
-        //        Respawn("CharacterCreationFemininePortraits");
-        //        Respawn("TitleScreenNewSaveFinish");
-        //        Respawn("CharacterCreationSpec");
-        //        PlaySound("DesktopReroll" + random.Next(1, 3), 0.6f);
-        //    });
-        //}, true),
         new("TitleScreenNewSaveSummary", () => {
             SetAnchor(Bottom, 0, 114);
             AddRegionGroup();
@@ -7409,6 +7336,27 @@ public class Blueprint
                 {
                     AddLine("Next", "DarkGray", "Center");
                 });
+        }, true),
+        new("TitleScreenLoadGameConfirm", () => {
+            SetAnchor(BottomRight, -19, 19);
+            AddRegionGroup();
+            SetRegionGroupWidth(119);
+            AddButtonRegion(() =>
+            {
+                AddLine("Next", "", "Center");
+            },
+            (h) =>
+            {
+                CloseWindow("CharacterCreationSpec");
+                CloseWindow("CharacterCreationFactionHorde");
+                CloseWindow("CharacterCreationFactionAlliance");
+                CloseWindow("CharacterCreationMasculinePortraits");
+                CloseWindow("CharacterCreationFemininePortraits");
+                CloseWindow("TitleScreenNewSaveRandomize");
+                Respawn("TitleScreenNewSaveBack");
+                Respawn("TitleScreenNewSaveSummary");
+                Respawn("TitleScreenNewSaveGameRules");
+            });
         }, true),
         new("GameMenu", () => {
             SetAnchor(Center);
