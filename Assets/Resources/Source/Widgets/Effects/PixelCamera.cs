@@ -14,26 +14,26 @@ public class PixelCamera : MonoBehaviour
         cam = GetComponent<Camera>();
     }
 
-    void Update()
-    {
-        cam.orthographicSize = Root.screenY / 2 / (float)pixelsPerUnit;
-        int scale = Screen.height / Root.screenY;
-        actualHeight = Root.screenY * scale;
-        actualWidth = Root.screenX * scale;
-        Rect rect = cam.rect;
-        rect.width = (float)actualWidth / Screen.width;
-        rect.height = (float)actualHeight / Screen.height;
-        rect.x = (1 - rect.width) / 2;
-        rect.y = (1 - rect.height) / 2;
-        cam.rect = rect;
-    }
+    //void Update()
+    //{
+    //    cam.orthographicSize = Root.screenY / 2 / (float)pixelsPerUnit;
+    //    int scale = Screen.height / Root.screenY;
+    //    actualHeight = Root.screenY * scale;
+    //    actualWidth = Root.screenX * scale;
+    //    Rect rect = cam.rect;
+    //    rect.width = (float)actualWidth / Screen.width;
+    //    rect.height = (float)actualHeight / Screen.height;
+    //    rect.x = (1 - rect.width) / 2;
+    //    rect.y = (1 - rect.height) / 2;
+    //    cam.rect = rect;
+    //}
 
     void OnRenderImage(RenderTexture source, RenderTexture destination)
     {
         if (Root.screenX <= 0) return;
         RenderTexture buffer = RenderTexture.GetTemporary(Root.screenX, Root.screenY, -1);
-        buffer.filterMode = FilterMode.Bilinear;
-        source.filterMode = FilterMode.Bilinear;
+        buffer.filterMode = GameSettings.settings.pixelPerfectVision.Value() ? FilterMode.Point : FilterMode.Bilinear;
+        source.filterMode = GameSettings.settings.pixelPerfectVision.Value() ? FilterMode.Point : FilterMode.Bilinear;
         Graphics.Blit(source, buffer);
         Graphics.Blit(buffer, destination);
         RenderTexture.ReleaseTemporary(buffer);

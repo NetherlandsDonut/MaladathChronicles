@@ -565,7 +565,7 @@ public static class Root
         newDesktop.screen.clearFlags = CameraClearFlags.SolidColor;
         newDesktop.screen.backgroundColor = new Color32(0, 29, 41, 255);
         newDesktop.screen.orthographic = true;
-        if (settings.pixelPerfectVision.Value()) newDesktop.screen.gameObject.AddComponent<PixelCamera>();
+        newDesktop.screen.gameObject.AddComponent<PixelCamera>();
         var cameraBorder = new GameObject("CameraBorder", typeof(SpriteRenderer));
         var cameraShadow = new GameObject("CameraShadow", typeof(SpriteRenderer));
         cameraShadow.transform.parent = cameraBorder.transform.parent = newDesktop.screen.transform;
@@ -622,8 +622,6 @@ public static class Root
         if (windows != null)
             foreach (var window in windows)
                 Respawn(window, true);
-        if (!settings.pixelPerfectVision.Value() && CDesktop.screen.GetComponent<PixelCamera>() != null) UnityEngine.Object.Destroy(CDesktop.screen.GetComponent<PixelCamera>());
-        else if (settings.pixelPerfectVision.Value() && CDesktop.screen.GetComponent<PixelCamera>() == null) CDesktop.screen.gameObject.AddComponent<PixelCamera>();
     }
 
     public static void OrderLoadingMap()
