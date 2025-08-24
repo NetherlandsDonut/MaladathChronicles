@@ -65,14 +65,36 @@ public class InputLine : MonoBehaviour
                 if (foo.Value() == "DELETE")
                 {
                     saves.Remove(selectedSave);
-                    selectedSave = null;
                     CloseWindow("ConfirmDeleteCharacter");
                     Sound.PlaySound("DesktopButtonClose");
-                    RemoveDesktopBackground();
-                    Respawn("CharacterInfo");
-                    Respawn("CharacterRoster");
-                    SpawnTransition();
                     SaveGames();
+                    SpawnTransition();
+                    if (saves.Count(x => !x.player.dead) == 0)
+                    {
+                        RemoveDesktopBackground();
+                        CloseWindow("TitleScreenLoadGameCharacterHeader");
+                        CloseWindow("TitleScreenLoadGameCharacterInfo");
+                        CloseWindow("TitleScreenLoadGameBack");
+                        CloseWindow("TitleScreenLoadGameConfirm");
+                        CloseWindow("TitleScreenLoadGameScroller");
+                        SpawnWindowBlueprint("TitleScreenSingleplayer");
+                        var recentSave = saves.Count > 0 ? saves.OrderByDescending(x => x.lastLoaded).ToList()[0] : null;
+                        if (recentSave != null && !recentSave.player.dead)
+                            SpawnWindowBlueprint("TitleScreenContinue");
+                    }
+                    else
+                    {
+                        Sound.PlaySound("DesktopSwitchPage");
+                        selectedSave = saves.First(x => !x.player.dead);
+                        var site = Site.FindSite(x => x.name == selectedSave.currentSite);
+                        if (site != null) SetDesktopBackground(site.Background());
+                        else SetDesktopBackground("Backgrounds/Sky");
+                        Respawn("TitleScreenLoadGameCharacterHeader");
+                        Respawn("TitleScreenLoadGameCharacterInfo");
+                        Respawn("TitleScreenLoadGameBack");
+                        Respawn("TitleScreenLoadGameConfirm");
+                        Respawn("TitleScreenLoadGameScroller");
+                    }
                 }
                 else CloseWindow("ConfirmDeleteCharacter");
             }

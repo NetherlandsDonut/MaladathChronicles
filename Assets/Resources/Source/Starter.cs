@@ -387,64 +387,6 @@ public class Starter : MonoBehaviour
                 });
             }));
         }
-        for (int i = 0; i < 3; i++)
-        {
-            var index = i;
-            Blueprint.windowBlueprints.Add(new Blueprint("CharacterInfo" + index, () =>
-            {
-                if (index == 0 && characterLookedAt == 0) return;
-                else if (index == 2 && characterLookedAt == saves.Count - 1) return;
-                SetAnchor(Anchor.BottomLeft, 57, 19);
-                AddRegionGroup();
-                SetRegionGroupWidth(171);
-                SetRegionGroupHeight(316);
-                var slot = saves[characterLookedAt + index - 1];
-                if (slot == null) return;
-                var spec = slot.player.Spec();
-                AddHeaderRegion(() =>
-                {
-                    AddLine("Character:");
-                });
-                AddPaddingRegion(() =>
-                {
-                    AddBigButton("Portrait" + slot.player.race.Clean() + (slot.player.Race().genderedPortrait ? slot.player.gender : ""));
-                    AddLine(slot.player.name, "Gray");
-                    AddLine("Level: ", "DarkGray");
-                    AddText(slot.player.level + " ", "Gray");
-                    AddText(spec.name, spec.name);
-                });
-                AddPaddingRegion(() =>
-                {
-                    AddLine("Total time played: ", "DarkGray");
-                    AddText((slot.timePlayed.Hours > 0 ? slot.timePlayed.Hours + "h " : "") + slot.timePlayed.Minutes + "m");
-                });
-                AddPaddingRegion(() =>
-                {
-                    AddLine("Elites killed: ", "DarkGray");
-                    AddText(slot.elitesKilled.Sum(x => x.Value) + "");
-                });
-                AddPaddingRegion(() =>
-                {
-                    AddLine("Rares killed: ", "DarkGray");
-                    AddText(slot.raresKilled.Sum(x => x.Value) + "");
-                });
-                AddPaddingRegion(() => SetRegionAsGroupExtender());
-                AddButtonRegion(() => AddLine("Enter World", "", "Center"),
-                (h) =>
-                {
-                    loadingBar = new GameObject[2];
-                    selectedSave = slot;
-                    Login();
-                    SpawnDesktopBlueprint("Map");
-                    CloseDesktop("LoginScreen");
-                    CloseDesktop("TitleScreen");
-                    var find = Site.FindSite(x => x.name == currentSave.currentSite);
-                    if (find != null) CDesktop.cameraDestination = new Vector2(find.x, find.y);
-                    cursor.transform.position += (Vector3)CDesktop.cameraDestination - CDesktop.screen.transform.position;
-                    CDesktop.screen.transform.localPosition = CDesktop.cameraDestination;
-                });
-            }, true));
-        }
         for (int i = 0; i < 2; i++)
             for (int j = 0; j < 5; j++)
                 for (int k = 0; k < 3; k++)

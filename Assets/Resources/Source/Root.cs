@@ -45,9 +45,6 @@ public static class Root
     //Determines whether this is the first launch of the game
     public static bool firstLaunch;
 
-    //Index of the scroll through the saved games
-    public static int characterLookedAt;
-
     //Creation variables for character creation
     public static string creationRace;
     public static string creationSpec;
