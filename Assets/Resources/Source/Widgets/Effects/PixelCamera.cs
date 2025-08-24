@@ -32,8 +32,8 @@ public class PixelCamera : MonoBehaviour
     {
         if (Root.screenX <= 0) return;
         RenderTexture buffer = RenderTexture.GetTemporary(Root.screenX, Root.screenY, -1);
-        buffer.filterMode = FilterMode.Point;
-        source.filterMode = FilterMode.Point;
+        buffer.filterMode = FilterMode.Bilinear;
+        source.filterMode = FilterMode.Bilinear;
         Graphics.Blit(source, buffer);
         Graphics.Blit(buffer, destination);
         RenderTexture.ReleaseTemporary(buffer);

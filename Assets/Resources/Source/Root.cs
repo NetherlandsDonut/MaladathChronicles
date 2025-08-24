@@ -547,7 +547,7 @@ public static class Root
         LBDesktop = newDesktop;
         newDesktop.Initialise(title);
         desktops.Add(newDesktop);
-        newDesktop.screen = new GameObject("Camera", typeof(Camera), typeof(SpriteRenderer), typeof(BoxCollider2D)).GetComponent<Camera>();
+        newDesktop.screen = new GameObject("Camera", typeof(Camera), typeof(AspectRatioControl), typeof(SpriteRenderer), typeof(BoxCollider2D)).GetComponent<Camera>();
         newDesktop.screen.transform.parent = newDesktop.transform;
         var box2d = newDesktop.screen.GetComponent<BoxCollider2D>();
         box2d.offset = new(0, 0);
