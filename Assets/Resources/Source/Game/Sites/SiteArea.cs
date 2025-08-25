@@ -1,18 +1,16 @@
 using System;
-using System.Linq;
 using System.Collections.Generic;
-
+using System.Linq;
+using UnityEditor.PackageManager.Requests;
 using UnityEngine;
-
+using static Coloring;
+using static Faction;
+using static Quest;
+using static Race;
 using static Root;
 using static Root.Anchor;
-
-using static Race;
-using static Quest;
-using static Faction;
 using static SaveGame;
 using static SitePath;
-using static Coloring;
 
 public class SiteArea : Site
 {
@@ -214,12 +212,13 @@ public class SiteArea : Site
                     AddEmptyRegion();
                     foreach (var quest in q)
                     {
+                        var ogQuest = Quest.quests.Find(x => x.questID == quest.questID);
                         AddPaddingRegion(() =>
                         {
-                            AddLine(quest.name, "Black");
-                            AddSmallButton(quest.ZoneIcon());
+                            AddLine(ogQuest.name, "Black");
+                            AddSmallButton(ogQuest.ZoneIcon());
                         });
-                        var color = ColorQuestLevel(quest.questLevel);
+                        var color = ColorQuestLevel(ogQuest.questLevel);
                         if (color != null) SetRegionBackgroundAsImage("SkillUp" + color);
                         AddPaddingRegion(() =>
                         {
@@ -233,13 +232,14 @@ public class SiteArea : Site
                     AddEmptyRegion();
                     foreach (var quest in q)
                     {
-                        var con = quest.conditions.FindAll(x => !x.IsDone() && x.Where().Contains(this));
+                        var ogQuest = Quest.quests.Find(x => x.questID == quest.questID);
+                        var con = quest.conditions.FindAll(x => !x.IsDone() && x.Where(false).Contains(this));
                         AddPaddingRegion(() =>
                         {
-                            AddLine(quest.name, "Black");
-                            AddSmallButton(quest.ZoneIcon());
+                            AddLine(ogQuest.name, "Black");
+                            AddSmallButton(ogQuest.ZoneIcon());
                         });
-                        var color = ColorQuestLevel(quest.questLevel);
+                        var color = ColorQuestLevel(ogQuest.questLevel);
                         if (color != null) SetRegionBackgroundAsImage("SkillUp" + color);
                         if (con.Count > 0)
                             foreach (var condition in con)

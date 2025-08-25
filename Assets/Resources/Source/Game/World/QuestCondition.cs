@@ -45,7 +45,7 @@ public class QuestCondition
     }
 
     //Tell the player where this condition can be fulfilled
-    public List<Site> Where()
+    public List<Site> Where(bool local)
     {
         var list = new List<Site>();
         if (sites != null) list = sites.Select(x => Site.FindSite(y => y.name == x)).Distinct().ToList();
@@ -60,7 +60,10 @@ public class QuestCondition
             var find = Site.FindSite(x => x.name == name);
             if (find != null) list = new() { find };
         }
-        if (list.Count > 0)
+
+        //If we are not checking locally then let's get all the map destinations
+        //to avoid quest marker trying to be zoomed in to a site that is inside of another one
+        if (!local && list.Count > 0)
         {
             var convert = list.FindAll(x => x.convertDestinationTo != null);
             foreach (var conv in convert)
@@ -68,6 +71,9 @@ public class QuestCondition
             list.RemoveAll(x => x.convertDestinationTo != null);
             return list.FindAll(x => x != null);
         }
+
+        //If we are doing local quests then don't convert them
+        //to new destinations and instead just use the original ones
         else return list.Distinct().ToList();
     }
 
@@ -76,7 +82,7 @@ public class QuestCondition
     {
         var line = "";
         var then = "";
-        var where = markerButton ? Where() : new();
+        var where = markerButton ? Where(false) : new();
         if (type == "Item")
         {
             var sum = currentSave.player.inventory.items.Sum(x => x.name == name ? x.amount : 0);

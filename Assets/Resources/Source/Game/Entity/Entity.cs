@@ -286,7 +286,7 @@ public class Entity
         if (quest.conditions != null)
             foreach (var condition in quest.conditions)
                 if (!condition.IsDone() || ignoreCompletion)
-                    list.AddRange(condition.Where());
+                    list.AddRange(condition.Where(false));
         return list.Distinct().ToList();
     }
 
@@ -325,15 +325,15 @@ public class Entity
     }
 
     //Check if any quest can be handed in at a target site
-    public List<Quest> QuestsDoneAt(SiteArea area, bool oneIsEnough = false)
+    public List<ActiveQuest> QuestsDoneAt(SiteArea area, bool oneIsEnough = false)
     {
-        var list = new List<Quest>();
+        var list = new List<ActiveQuest>();
         foreach (var quest in currentQuests)
         {
             var questTemp = quests.Find(x => x.questID == quest.questID);
             if (quest.conditions.All(x => x.IsDone()) && questTemp.siteEnd == area.name)
             {
-                list.Add(questTemp);
+                list.Add(quest);
                 if (oneIsEnough)
                     return list;
             }
@@ -342,9 +342,9 @@ public class Entity
     }
 
     //Check if any quest can be done at a target site
-    public List<Quest> QuestsDoneAt(SiteComplex complex, bool oneIsEnough = false)
+    public List<ActiveQuest> QuestsDoneAt(SiteComplex complex, bool oneIsEnough = false)
     {
-        var list = new List<Quest>();
+        var list = new List<ActiveQuest>();
         foreach (var site in complex.sites.Select(x => (Site.FindSite(y => y.name == x["SiteName"]), x["SiteType"])))
             if (site.Item2 == "Dungeon" || site.Item2 == "Raid") list = list.Concat(QuestsDoneAt((SiteInstance)site.Item1, oneIsEnough)).ToList();
             else list = list.Concat(QuestsDoneAt((SiteArea)site.Item1, oneIsEnough)).ToList();
@@ -352,18 +352,18 @@ public class Entity
     }
 
     //Check if any quest can be done at a target site
-    public List<Quest> QuestsDoneAt(SiteInstance instance, bool oneIsEnough = false)
+    public List<ActiveQuest> QuestsDoneAt(SiteInstance instance, bool oneIsEnough = false)
     {
-        var list = new List<Quest>();
+        var list = new List<ActiveQuest>();
         foreach (var site in instance.wings.SelectMany(x => x.areas.Select(z => Site.FindSite(y => y.name == z["AreaName"]))))
             list = list.Concat(QuestsDoneAt((SiteArea)site, oneIsEnough)).ToList();
         return list.Distinct().ToList();
     }
 
     //Check if any quest can be done at a target site
-    public List<Quest> QuestsAt(SiteArea area, bool oneIsEnough = false)
+    public List<ActiveQuest> QuestsAt(SiteArea area, bool oneIsEnough = false)
     {
-        var list = new List<Quest>();
+        var list = new List<ActiveQuest>();
         foreach (var quest in currentQuests)
             foreach (var condition in quest.conditions)
                 if (!condition.IsDone())
@@ -398,7 +398,7 @@ public class Entity
                     }
                     if (yes)
                     {
-                        list.Add(quests.Find(x => x.questID == quest.questID));
+                        list.Add(quest);
                         break;
                     }
                     if (oneIsEnough && list.Count > 0)
@@ -408,9 +408,9 @@ public class Entity
     }
 
     //Check if any quest can be done at a target site
-    public List<Quest> QuestsAt(SiteComplex complex, bool oneIsEnough = false)
+    public List<ActiveQuest> QuestsAt(SiteComplex complex, bool oneIsEnough = false)
     {
-        var list = new List<Quest>();
+        var list = new List<ActiveQuest>();
         foreach (var site in complex.sites.Select(x => (Site.FindSite(y => y.name == x["SiteName"]), x["SiteType"])))
             if (site.Item2 == "Dungeon" || site.Item2 == "Raid") list = list.Concat(QuestsAt((SiteInstance)site.Item1, oneIsEnough)).ToList();
             else list = list.Concat(QuestsAt((SiteArea)site.Item1, oneIsEnough)).ToList();
@@ -418,9 +418,9 @@ public class Entity
     }
 
     //Check if any quest can be done at a target site
-    public List<Quest> QuestsAt(SiteInstance instance, bool oneIsEnough = false)
+    public List<ActiveQuest> QuestsAt(SiteInstance instance, bool oneIsEnough = false)
     {
-        var list = new List<Quest>();
+        var list = new List<ActiveQuest>();
         foreach (var site in instance.wings.SelectMany(x => x.areas.Select(z => Site.FindSite(y => y.name == z["AreaName"]))))
             list = list.Concat(QuestsAt((SiteArea)site, oneIsEnough)).ToList();
         return list.Distinct().ToList();

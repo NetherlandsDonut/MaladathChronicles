@@ -3970,11 +3970,12 @@ public class Blueprint
             var q = currentSave.player.QuestsAt(area);
             foreach (var quest in q)
             {
-                var con = quest.conditions.FindAll(x => !x.IsDone() && x.Where().Contains(area));
+                var ogQuest = Quest.quests.Find(x => x.questID == quest.questID);
+                var con = quest.conditions.FindAll(x => !x.IsDone() && x.Where(true).Contains(area));
                 AddButtonRegion(() =>
                 {
-                    AddLine(quest.name, "Black");
-                    AddSmallButton(quest.ZoneIcon());
+                    AddLine(ogQuest.name, "Black");
+                    AddSmallButton(ogQuest.ZoneIcon());
                 },
                 (h) =>
                 {
@@ -3983,12 +3984,12 @@ public class Blueprint
                     SetDesktopBackground("Backgrounds/RuggedLeather", true, true);
                     Respawn("QuestList");
                     Respawn("MapToolbar");
-                    Quest.quest = quest;
+                    Quest.quest = ogQuest;
                     if (staticPagination.ContainsKey("Quest"))
                         staticPagination.Remove("Quest");
                     Respawn("Quest");
                 });
-                var color = ColorQuestLevel(quest.questLevel);
+                var color = ColorQuestLevel(ogQuest.questLevel);
                 if (color != null) SetRegionBackgroundAsImage("SkillUp" + color);
                 if (con.Count > 0)
                     foreach (var condition in con)
@@ -4004,7 +4005,7 @@ public class Blueprint
         }),
         new("AreaQuestDone", () => 
         {
-            var quests = currentSave.player.QuestsDoneAt(area).OrderBy(x => x.questLevel).ToList();
+            var quests = currentSave.player.QuestsDoneAt(area).Select(x => Quest.quests.Find(y => y.questID == x.questID)).OrderBy(x => x.questLevel).ToList();
             if (quests.Count == 0) return;
             SetAnchor(Bottom, 0, 35);
             AddQuestList(quests, "Turn");
@@ -6944,10 +6945,6 @@ public class Blueprint
                     SpawnDesktopBlueprint("Map");
                     CloseDesktop("LoginScreen");
                     CloseDesktop("TitleScreen");
-                    var find = FindSite(x => x.name == currentSave.currentSite);
-                    if (find != null) CDesktop.cameraDestination = new Vector2(find.x, find.y);
-                    Cursor.cursor.transform.position += (Vector3)CDesktop.cameraDestination - CDesktop.screen.transform.position;
-                    CDesktop.screen.transform.localPosition = CDesktop.cameraDestination;
                 });
             else
                 AddPaddingRegion(() =>
@@ -7436,10 +7433,6 @@ public class Blueprint
                 Login();
                 SpawnDesktopBlueprint("Map");
                 CloseDesktop("TitleScreen");
-                var find = FindSite(x => x.name == currentSave.currentSite);
-                if (find != null) CDesktop.cameraDestination = new Vector2(find.x, find.y);
-                Cursor.cursor.transform.position += (Vector3)CDesktop.cameraDestination - CDesktop.screen.transform.position;
-                CDesktop.screen.transform.localPosition = CDesktop.cameraDestination;
             });
         }, true),
         new("TitleScreenLoadGameScroller", () => {
@@ -8324,6 +8317,10 @@ public class Blueprint
         new("Map", () => 
         {
             PlaySound("DesktopOpenSave", 0.3f);
+            var find = FindSite(x => x.name == currentSave.currentSite);
+            if (find != null) CDesktop.cameraDestination = new Vector2(find.x, find.y);
+            Cursor.cursor.transform.position += (Vector3)CDesktop.cameraDestination - CDesktop.screen.transform.position;
+            CDesktop.screen.transform.localPosition = CDesktop.cameraDestination;
             SetDesktopBackground("LoadingScreens/" + (CDesktop.cameraDestination.x < 2470 ? "Kalimdor" : "EasternKingdoms"));
             loadingBar = new GameObject[2];
             loadingBar[0] = new GameObject("LoadingBarBegin", typeof(SpriteRenderer));

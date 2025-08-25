@@ -253,7 +253,6 @@ public class Desktop : MonoBehaviour
                     Respawn("ExperienceBarBorder");
                     Respawn("ExperienceBar");
                     Respawn("WorldBuffs");
-                    Respawn("Skirmish");
                     mapGrid.SwitchMapTexture(currentSave.player.dead);
                     SpawnTransition(false);
                     SpawnTransition(false);

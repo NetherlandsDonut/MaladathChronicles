@@ -144,13 +144,14 @@ public class SiteInstance : Site
                     AddEmptyRegion();
                     foreach (var quest in q)
                     {
-                        var con = quest.conditions.FindAll(x => !x.IsDone() && x.Where().Contains(this));
+                        var ogQuest = Quest.quests.Find(x => x.questID == quest.questID);
+                        var con = quest.conditions.FindAll(x => !x.IsDone() && x.Where(false).Contains(this));
                         AddPaddingRegion(() =>
                         {
-                            AddLine(quest.name, "Black");
-                            AddSmallButton(quest.ZoneIcon());
+                            AddLine(ogQuest.name, "Black");
+                            AddSmallButton(ogQuest.ZoneIcon());
                         });
-                        var color = ColorQuestLevel(quest.questLevel);
+                        var color = ColorQuestLevel(ogQuest.questLevel);
                         if (color != null) SetRegionBackgroundAsImage("SkillUp" + color);
                         if (con.Count > 0)
                             foreach (var condition in con)
