@@ -32,12 +32,10 @@ public class Defines
             scoreForKilledRare = 5;
         if (scoreForKilledElite < 0)
             scoreForKilledElite = 10;
-        if (defaultStanding < 0)
-            defaultStanding = 4200;
         if (lvlRequiredFastMounts < 0)
-            lvlRequiredFastMounts = 40;
+            lvlRequiredFastMounts = 30;
         if (lvlRequiredVeryFastMounts < 0)
-            lvlRequiredVeryFastMounts = 60;
+            lvlRequiredVeryFastMounts = 50;
         if (maxPrimaryProfessions < 0)
             maxPrimaryProfessions = 2;
         if (expForExploration < 20)
@@ -103,9 +101,6 @@ public class Defines
 
     //Level required for using very fast mounts
     public int lvlRequiredVeryFastMounts;
-
-    //Default reputation standing for factions
-    public int defaultStanding;
 
     //Max amount of primary professions that player can have at once
     public int maxPrimaryProfessions;

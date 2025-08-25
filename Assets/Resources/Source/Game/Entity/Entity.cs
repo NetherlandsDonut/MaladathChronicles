@@ -935,12 +935,12 @@ public class Entity
         else return "Hated";
     }
 
-    public int Reputation(string faction) => faction != null && reputation.ContainsKey(faction) ? reputation[faction] : defines.defaultStanding;
+    public int Reputation(string faction) => faction != null && reputation.ContainsKey(faction) ? reputation[faction] : ReputationRankToAmount("Neutral");
 
     public void AddReputation(string faction, int amount)
     {
         if (!reputation.ContainsKey(faction))
-            reputation.Add(faction, defines.defaultStanding);
+            reputation.Add(faction, ReputationRankToAmount("Neutral"));
         var rank = ReputationRank(faction);
         reputation[faction] += amount;
         var newRank = ReputationRank(faction);
