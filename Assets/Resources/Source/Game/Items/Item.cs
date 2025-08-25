@@ -1445,13 +1445,14 @@ public class Item
             }
             else if (item.type == "Off Hand") AddLine(item.type + (item.detailedType != null ? " " + item.detailedType : ""), currentSave != null && !currentSave.player.abilities.ContainsKey(item.detailedType == "Shield" ? "Shield Proficiency" : "Off Hand Proficiency") ? "DangerousRed" : "Gray");
             else AddLine(item.type ?? "");
-            if (item.armor > 0) AddLine(item.armor + " Armor", "", "Right");
         });
-        if (item.stats != null && item.stats.Count > 0)
+        if (item.stats != null && item.stats.Count > 0 || item.armor > 0)
             AddPaddingRegion(() =>
             {
-                foreach (var stat in item.stats)
-                    AddLine("+" + stat.Value + " " + stat.Key);
+                if (item.armor > 0) AddLine(item.armor + " Armor");
+                if (item.stats != null && item.stats.Count > 0)
+                    foreach (var stat in item.stats)
+                        AddLine("+" + stat.Value + " " + stat.Key);
             });
         if (compare && item.IsWearable())
         {
@@ -1469,15 +1470,6 @@ public class Item
             AddPaddingRegion(() =>
             {
                 var statsRecorded = new List<string>();
-                var a1 = item.armor;
-                var a2 = current == null ? 0 : current.armor;
-                var a3 = currentSecond == null ? 0 : currentSecond.armor;
-                if (a1 - a2 - a3 != 0)
-                {
-                    var balance = a1 - a2 - a3;
-                    AddLine((balance > 0 ? "+" : "") + balance, balance > 0 ? "Uncommon" : "DangerousRed", "Right");
-                    AddText(" Armor");
-                }
                 if (item.type == "Ranged Weapon")
                 {
                     var newPower = item.minPower <= 0 ? 1 : Math.Round((item.minPower + item.maxPower) / 2, 2);
@@ -1486,7 +1478,7 @@ public class Item
                     {
                         var balance = Math.Round(newPower - oldPower, 2);
                         AddLine(((balance > 0 ? "+" : "") + balance).Replace(",", "."), balance > 0 ? "Uncommon" : "DangerousRed");
-                        AddText(" Power mod.");
+                        AddText(" Power modifier");
                     }
                 }
                 else if (item.type == "Off Hand" || item.type == "One Handed" || item.type == "Two Handed")
@@ -1514,8 +1506,17 @@ public class Item
                     {
                         var balance = Math.Round(bd - ad, 2);
                         AddLine(((balance > 0 ? "+" : "") + balance).Replace(",", "."), balance > 0 ? "Uncommon" : "DangerousRed");
-                        AddText(" Power mod.");
+                        AddText(" Power modifier");
                     }
+                }
+                var a1 = item.armor;
+                var a2 = current == null ? 0 : current.armor;
+                var a3 = currentSecond == null ? 0 : currentSecond.armor;
+                if (a1 - a2 - a3 != 0)
+                {
+                    var balance = a1 - a2 - a3;
+                    AddLine((balance > 0 ? "+" : "") + balance, balance > 0 ? "Uncommon" : "DangerousRed");
+                    AddText(" Armor");
                 }
                 a1 = item.block;
                 a2 = current == null ? 0 : current.block;

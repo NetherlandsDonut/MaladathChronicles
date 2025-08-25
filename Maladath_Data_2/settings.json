@@ -1,12 +1,12 @@
 {
   "pixelPerfectVision": {
-    "value": "False"
+    "value": "True"
   },
   "music": {
-    "value": "True"
+    "value": "False"
   },
   "ambience": {
-    "value": "True"
+    "value": "False"
   },
   "soundEffects": {
     "value": "True"
@@ -45,6 +45,6 @@
     "value": "False"
   },
   "runsInBackground": {
-    "value": "False"
+    "value": "True"
   }
 }

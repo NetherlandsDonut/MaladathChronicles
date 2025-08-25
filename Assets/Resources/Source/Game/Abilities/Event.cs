@@ -88,6 +88,7 @@ public class Event
                 else if (type == "RemoveItem") EffectRemoveItem();
                 else if (type == "Combat") EffectCombat();
                 else if (type == "Loot") EffectLoot();
+                else if (type == "SetFlag") EffectSetFlag();
 
                 ExecuteSoundEffect();
 
@@ -284,6 +285,14 @@ public class Event
                 if (itemAmount <= 0) return;
                 save.player.inventory.RemoveItem(itemName, itemAmount);
             }
+
+            //This effect sets a specific flag to a new value
+            void EffectSetFlag()
+            {
+                string flagName = effect.ContainsKey("FlagName") ? effect["FlagName"] : "";
+                string flagValue = effect.ContainsKey("FlagValue") ? effect["FlagValue"] : "";
+                SaveGame.currentSave.SetFlag(flagName, flagValue);
+            }
         }
     }
 
@@ -368,6 +377,7 @@ public class Event
                 else if (type == "ConsumeItem") EffectConsumeItem();
                 else if (type == "ChangeActionSet") EffectChangeActionSet();
                 else if (type == "Tame") EffectTame();
+                else if (type == "SetFlag") EffectSetFlag();
 
                 ExecuteShatter();
                 ExecuteSoundEffect();
@@ -409,7 +419,7 @@ public class Event
                 AddBigButtonOverlay(new Vector3(1, -1) + Board.board.PortraitPosition(Board.board.participants.IndexOf(target)), "OtherDamaged", 1f, -1);
                 SpawnFallingText(new Vector3(1, 0) + Board.board.PortraitPosition(Board.board.participants.IndexOf(target)), "" + amount, "White");
                 if (target.who == SaveGame.currentSave.player) board.log.damageTaken.Inc(sourceName, amount);
-                else if (!board.spotlightFriendly.Contains(board.participants.IndexOf(target))) board.log.damageDealt.Inc(sourceName, amount);
+                else if (!board.team1.Contains(board.participants.IndexOf(target))) board.log.damageDealt.Inc(sourceName, amount);
                 board.UpdateHealthBars();
             }
 
@@ -462,7 +472,7 @@ public class Event
                 if (affect != "Effector" && affect != "Other") return;
                 var target = affect == "Effector" ? effector : other;
                 var pos = new Vector3(1, -1) + Board.board.PortraitPosition(Board.board.participants.IndexOf(target));
-                if (target.team == 1 && Board.board.spotlightFriendly[0] != Board.board.participants.IndexOf(target) || target.team == 2 && Board.board.spotlightEnemy[0] != Board.board.participants.IndexOf(target)) pos *= 2;
+                if (target.team == 1 && Board.board.team1[0] != Board.board.participants.IndexOf(target) || target.team == 2 && Board.board.team2[0] != Board.board.participants.IndexOf(target)) pos *= 2;
                 target.who.AddBuff(buffs.Find(x => x.name == buffName), buffDuration, SpawnBuffObject(pos, icon, target.who), int.TryParse(trigger["AbilityRank"], out int parse) ? parse : 0);
                 foreach (var participant in board.participants)
                     if (participant == target) board.CallEvents(participant.who, new() { { "Trigger", "BuffAdd" }, { "Triggerer", "Effector" }, { "BuffName", buffName } });
@@ -538,6 +548,14 @@ public class Event
                     target.SwapTeam(1);
                 }
                 else SpawnFallingText(new Vector2(0, 34), "Taming failed", "Red");
+            }
+
+            //This effect sets a specific flag to a new value
+            void EffectSetFlag()
+            {
+                string flagName = effect.ContainsKey("FlagName") ? effect["FlagName"] : "";
+                string flagValue = effect.ContainsKey("FlagValue") ? effect["FlagValue"] : "";
+                SaveGame.currentSave.SetFlag(flagName, flagValue);
             }
 
             //This effect gives a specific amount of a resource to the targetted entity

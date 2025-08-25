@@ -11,11 +11,14 @@ using static SiteArea;
 public class QuestCondition
 {
     //Type of the condition this is
-    //[Kill, Item, Visit, Explore]
+    //[Kill, Item, Visit, Explore, Flag]
     public string type;
 
     //Name of the thing that needs to be done
     public string name;
+
+    //Required value on the flag
+    public string value;
 
     //Amount of progress required for completion
     public int amount;
@@ -44,9 +47,9 @@ public class QuestCondition
     //Tell the player where this condition can be fulfilled
     public List<Site> Where()
     {
-        if (sites != null) return sites.Select(x => Site.FindSite(y => y.name == x)).Distinct().ToList();
         var list = new List<Site>();
-        if (type == "Kill") list = areas.FindAll(x => x.commonEncounters != null && x.commonEncounters.Exists(x => x.who == name) || x.rareEncounters != null && x.rareEncounters.Exists(x => x.who == name) || x.eliteEncounters != null && x.eliteEncounters.Exists(x => x.who == name)).Select(x => (Site)x).ToList();
+        if (sites != null) list = sites.Select(x => Site.FindSite(y => y.name == x)).Distinct().ToList();
+        else if (type == "Kill") list = areas.FindAll(x => x.commonEncounters != null && x.commonEncounters.Exists(x => x.who == name) || x.rareEncounters != null && x.rareEncounters.Exists(x => x.who == name) || x.eliteEncounters != null && x.eliteEncounters.Exists(x => x.who == name)).Select(x => (Site)x).ToList();
         else if (type == "Item")
         {
             var races = Item.items.Find(x => x.name == name).droppedBy;
@@ -59,13 +62,10 @@ public class QuestCondition
         }
         if (list.Count > 0)
         {
-            var com = list.FindAll(x => x.complexPart);
-            var ins = list.FindAll(x => x.instancePart);
-            var instances = ins.Select(x => SiteInstance.instances.Find(y => y.wings.Any(z => z.areas.Any(c => c["AreaName"] == x.name)))).ToList();
-            var complexes = com.Concat(instances.Where(x => x.complexPart).Select(x => SiteComplex.complexes.Find(y => y.sites.Any(z => z["SiteName"] == x.name))));
-            instances.RemoveAll(x => x.complexPart);
-            list.RemoveAll(x => com.Contains(x) || ins.Contains(x));
-            list = list.Concat(complexes).Concat(instances).ToList();
+            var convert = list.FindAll(x => x.convertDestinationTo != null);
+            foreach (var conv in convert)
+                list.Add(Site.FindSite(x => x.name == conv.convertDestinationTo && x.x != 0 && x.y != 0));
+            list.RemoveAll(x => x.convertDestinationTo != null);
             return list.FindAll(x => x != null);
         }
         else return list.Distinct().ToList();
@@ -85,6 +85,7 @@ public class QuestCondition
         else if (type == "Kill") (line, then) = (name + ": ", amountDone + "/" + amount);
         else if (type == "Visit") (line, then) = (name + " visited: ", (status == "Done" ? 1 : 0) + "/1");
         else if (type == "Explore") (line, then) = (name + " explored: ", (status == "Done" ? 1 : 0) + "/1");
+        else if (type == "Flag") (line, then) = (name.Replace("_", " ") + ": ", (status == "Done" ? 1 : 0) + "/1");
         AddPaddingRegion(() =>
         {
             AddLine(line, "DarkGray");

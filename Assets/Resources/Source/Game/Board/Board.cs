@@ -1,18 +1,18 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Xml.Linq;
+using System.Collections.Generic;
+
 using UnityEngine;
+
+using static Root;
+using static Sound;
+using static Shatter;
+using static Defines;
+using static SaveGame;
+using static SiteArea;
 using static BufferBoard;
 using static CursorRemote;
-using static Defines;
 using static FlyingMissile;
-using static GameSettings;
-using static Root;
-using static SaveGame;
-using static Shatter;
-using static SiteArea;
-using static Sound;
 
 public class Board
 {
@@ -29,8 +29,8 @@ public class Board
         resourceBars = new();
         flyingMissiles = new();
         actions = new List<Action>();
-        spotlightFriendly = new() { };
-        spotlightEnemy = new() { };
+        team1 = new() { };
+        team2 = new() { };
         participants = new() { };
         var friendly = new List<Entity> { currentSave.player };
         if (currentSave.pet != null && !currentSave.pet.dead)
@@ -60,8 +60,8 @@ public class Board
         }
         participants = participants.OrderByDescending(x => x.who.Stats()["Agility"]).ToList();
         for (int i = 0; i < participants.Count; i++)
-            if (participants[i].team == 1) spotlightFriendly.Add(i);
-            else if (participants[i].team == 2) spotlightEnemy.Add(i);
+            if (participants[i].team == 1) team1.Add(i);
+            else if (participants[i].team == 2) team2.Add(i);
         cooldowns = new();
         foreach (var poo in participants)
             cooldowns.Add(participants.IndexOf(poo), new());
@@ -75,8 +75,8 @@ public class Board
     public Board(int x, int y, Dictionary<Ability, int> abilities)
     {
         turn = 1;
-        spotlightFriendly = new() { 0 };
-        spotlightEnemy = new() { 1 };
+        team1 = new() { 0 };
+        team2 = new() { 1 };
         field = new int[x, y];
         var possible = Race.races.Where(x => !x.genderedPortrait).ToList();
         participants = new() { new(), new() };
@@ -125,7 +125,7 @@ public class Board
         if (testingAbility.events != null)
             foreach (var participant in board.participants)
             {
-                if (participant == board.participants[board.spotlightFriendly[0]]) board.CallEvents(participant.who, new() { { "Trigger", "AbilityCast" }, { "IgnoreConditions", "Yes" }, { "Triggerer", "Effector" }, { "AbilityName", testingAbility.name }, { "AbilityRank", "0" } });
+                if (participant == board.participants[board.team1[0]]) board.CallEvents(participant.who, new() { { "Trigger", "AbilityCast" }, { "IgnoreConditions", "Yes" }, { "Triggerer", "Effector" }, { "AbilityName", testingAbility.name }, { "AbilityRank", "0" } });
                 else board.CallEvents(participant.who, new() { { "Trigger", "AbilityCast" }, { "IgnoreConditions", "Yes" }, { "Triggerer", "Other" }, { "AbilityName", testingAbility.name }, { "AbilityRank", "0" } });
             }
 
@@ -187,11 +187,8 @@ public class Board
     //Are where the combat takes place
     public SiteArea area;
 
-    //
-    public List<int> spotlightFriendly;
-
-    //
-    public List<int> spotlightEnemy;
+    //Order of the combatants on screen from both teams separately
+    public List<int> team1, team2;
 
     public Vector3 PortraitPosition(int participantIndex)
     {
@@ -200,7 +197,7 @@ public class Board
         var team2 = CDesktop.windows.Find(x => x.title == "EnemyBattleInfo").LBRegionGroup().regions.Where(x => x.bigButtons.Count == 1).ToList();
         var offset = new Vector3(19, -19);
         if (team == 1) offset += new Vector3(152, 0);
-        return offset + (team == 1 ? team1 : team2)[(team == 1 ? spotlightFriendly : spotlightEnemy).Count - 1 - (team == 1 ?spotlightFriendly : spotlightEnemy).IndexOf(participantIndex)].transform.position;
+        return offset + (team == 1 ? team1 : team2)[(team == 1 ? this.team1 : this.team2).Count - 1 - (team == 1 ? this.team1 : this.team2).IndexOf(participantIndex)].transform.position;
     }
 
     public void PutOnCooldown(int participant, Ability ability)
@@ -253,7 +250,7 @@ public class Board
         if (participantTargetted != null) return participantTargetted;
         else
         {
-            foreach (var participant in ofTeam == 1 ? spotlightEnemy : spotlightFriendly)
+            foreach (var participant in ofTeam == 1 ? team2 : team1)
                 if (participants[participant].who.CanBeTargetted(false))
                     return participants[participant];
         }
@@ -281,8 +278,8 @@ public class Board
 
         //Cooldown all abilities of the current entity
         if (Cooldown(whosTurn) > 0)
-            if (spotlightEnemy.Contains(whosTurn)) Respawn("EnemyBattleInfo");
-            else if (spotlightFriendly.Contains(whosTurn)) Respawn("FriendlyBattleInfo");
+            if (team2.Contains(whosTurn)) Respawn("EnemyBattleInfo");
+            else if (team1.Contains(whosTurn)) Respawn("FriendlyBattleInfo");
 
         //Call events for the turn begin
         CallEvents(participants[whosTurn].who, new() { { "Trigger", "TurnBegin" } });
@@ -556,25 +553,7 @@ public class Board
                         if (winParticipant.who.currentQuests != null)
                         {
                             var enemy = lossParticipant.who;
-                            var enemyRace = Race.races.Find(x => x.name == enemy.race);
-                            var output = enemy.name + ": ";
-                            foreach (var quest in winParticipant.who.currentQuests)
-                                foreach (var con in quest.conditions)
-                                    if (con.type == "Kill" && con.name == enemy.name)
-                                    {
-                                        foreach (var site in con.Where())
-                                            if (!Quest.sitesToRespawn.Contains(site))
-                                                Quest.sitesToRespawn.Add(site);
-                                        if (con.amountDone < con.amount)
-                                        {
-                                            if (output.EndsWith(" ")) output += con.amountDone + 1 + "/" + con.amount;
-                                            else output += ", " + con.amountDone + 1 + "/" + con.amount;
-                                        }
-                                        var end = Site.FindSite(x => x.name == Quest.quests.Find(y => y.questID == quest.questID).siteEnd);
-                                        if (!Quest.sitesToRespawn.Contains(end)) Quest.sitesToRespawn.Add(end);
-                                    }
                             winParticipant.who.QuestKill(enemy.name);
-                            if (!output.EndsWith(" ")) SpawnFallingText(new Vector2(0, 34), output, "Yellow");
                         }
             }
             else if (result == "Team2Won")
@@ -749,9 +728,9 @@ public class Board
                     {
                         var temp = CDesktop.windows.Find(x => x.title == "EnemyBattleInfo").regionGroups[0].regions;
                         var whereToStart = 0;
-                        if (spotlightEnemy.IndexOf(whosTurn) != spotlightEnemy.Count - 1)
+                        if (team2.IndexOf(whosTurn) != team2.Count - 1)
                             for (int i = 0, counted = 0; i < temp.Count; i++, whereToStart++)
-                                if (temp[i].currentHeight == 0 && ++counted / 2 == spotlightEnemy.Count - 1 - spotlightEnemy.IndexOf(whosTurn)) break;
+                                if (temp[i].currentHeight == 0 && ++counted / 2 == team2.Count - 1 - team2.IndexOf(whosTurn)) break;
                         if (whereToStart > 0) whereToStart++;
                         cursorEnemy.Move(temp[whereToStart + 1 + participants[whosTurn].who.actionSets[participants[whosTurn].who.currentActionSet].IndexOf(abilityObj.name)].transform.position + new Vector3(139, -10));
                         animationTime += defines.frameTime * 9;
@@ -762,9 +741,9 @@ public class Board
                         cursorEnemy.SetCursor(CursorType.Default);
                         var temp = CDesktop.windows.Find(x => x.title == "EnemyBattleInfo").regionGroups[0].regions;
                         var whereToStart = 0;
-                        if (spotlightEnemy.IndexOf(whosTurn) != spotlightEnemy.Count - 1)
+                        if (team2.IndexOf(whosTurn) != team2.Count - 1)
                             for (int i = 0, counted = 0; i < temp.Count; i++, whereToStart++)
-                                if (temp[i].currentHeight == 0 && ++counted / 2 == spotlightEnemy.Count - 1 - spotlightEnemy.IndexOf(whosTurn)) break;
+                                if (temp[i].currentHeight == 0 && ++counted / 2 == team2.Count - 1 - team2.IndexOf(whosTurn)) break;
                         if (whereToStart > 0) whereToStart++;
                         AddRegionOverlay(temp[whereToStart + 1 + participants[whosTurn].who.actionSets[participants[whosTurn].who.currentActionSet].IndexOf(abilityObj.name)], "Window", 10f);
                         animationTime += defines.frameTime;

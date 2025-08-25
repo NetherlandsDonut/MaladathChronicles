@@ -2069,6 +2069,58 @@
     }
   },
   {
+    "name": "Hexx's Key",
+    "possibleTargets": "Self",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "SetFlag",
+            "FlagName": "Sharpbeak_freed",
+            "FlagValue": "True",
+            "SoundEffect": "CageOpen"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "@currentarea == Sacrifice_Terrace",
+            "failedMessage": "You have to be at the Jintha'Alor's Sacrifice Terrace"
+          },
+          {
+            "condition": "@flag~Sharpbeak_freed <> True",
+            "failedMessage": "Sharpbeak's Cage is already opened and empty"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "isExtender": true,
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Unlock Sharpbeak's Cage at the Sacrifice Terrace in Jintha'Alor."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "name": "Encased Corrupt Ooze",
     "possibleTargets": "Self",
     "tags": [],
@@ -2601,20 +2653,15 @@
           },
           {
             "Effect": "RemoveItem",
-            "ItemName": "Left Binds of the Wind"
+            "ItemName": "Right Binds of the Wind"
           },
           {
-            "Effect": "RemoveItem",
-            "ItemName": "Right Binds of the Wind"
+            "Effect": "ConsumeItem"
           }
         ],
         "conditions": [
           {
             "condition": "@itemcount~Right_Binds_of_the_Wind >= 1",
-            "failedMessage": "You lack the required items"
-          },
-          {
-            "condition": "@itemcount~Left_Binds_of_the_Wind >= 1",
             "failedMessage": "You lack the required items"
           }
         ]
@@ -2668,15 +2715,10 @@
             "ItemName": "Left Binds of the Wind"
           },
           {
-            "Effect": "RemoveItem",
-            "ItemName": "Right Binds of the Wind"
+            "Effect": "ConsumeItem"
           }
         ],
         "conditions": [
-          {
-            "condition": "@itemcount~Right_Binds_of_the_Wind >= 1",
-            "failedMessage": "You lack the required items"
-          },
           {
             "condition": "@itemcount~Left_Binds_of_the_Wind >= 1",
             "failedMessage": "You lack the required items"

@@ -18,10 +18,10 @@ public class CombatParticipant
     public void SwapTeam(int newTeam)
     {
         var ind = Board.board.participants.IndexOf(this);
-        if (team == 1) Board.board.spotlightFriendly.Remove(ind);
-        else Board.board.spotlightEnemy.Remove(ind);
-        if (newTeam == 1) Board.board.spotlightFriendly.Add(ind);
-        else Board.board.spotlightEnemy.Add(ind);
+        if (team == 1) Board.board.team1.Remove(ind);
+        else Board.board.team2.Remove(ind);
+        if (newTeam == 1) Board.board.team1.Add(ind);
+        else Board.board.team2.Add(ind);
         team = newTeam;
         Root.Respawn("EnemyBattleInfo");
         Root.Respawn("FriendlyBattleInfo");

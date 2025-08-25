@@ -10603,6 +10603,17 @@
     "vitality": 3.0
   },
   {
+    "name": "Vile Priestess Hexx",
+    "category": "Humanoid",
+    "subcategory": "Troll",
+    "faction": "Vilebranch Tribe",
+    "portrait": "PortraitVilePriestessHexx",
+    "abilities": {},
+    "kind": "Elite",
+    "gender": "Female",
+    "vitality": 3.0
+  },
+  {
     "name": "Horde Deforester",
     "category": "Humanoid",
     "subcategory": "Orc",

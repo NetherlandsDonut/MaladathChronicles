@@ -36,14 +36,14 @@ public class FlyingBuff : MonoBehaviour
         if (participant.team == 1)
             if (stillActive)
             {
-                if (Board.board.spotlightFriendly[0] == onWho) transform.position = new Vector3(-302.5f + 23 * (Index() % rowAmount), -162.5f + 23 * (Index() / rowAmount));
+                if (Board.board.team1[0] == onWho) transform.position = new Vector3(-302.5f + 23 * (Index() % rowAmount), -162.5f + 23 * (Index() / rowAmount));
                 else transform.position = new Vector3(-474.5f + 23 * (Index() % rowAmount), -162.5f + 23 * (Index() / rowAmount));
             }
             else transform.position = new Vector3(-474.5f + 23 * (dyingIndex % rowAmount), -162.5f + 23 * (dyingIndex / rowAmount));
         else if (participant.team == 2)
             if (stillActive)
             {
-                if (Board.board.spotlightEnemy[0] == onWho) transform.position = new Vector3(302.5f - 23 * (Index() % rowAmount), -162.5f + 23 * (Index() / rowAmount));
+                if (Board.board.team2[0] == onWho) transform.position = new Vector3(302.5f - 23 * (Index() % rowAmount), -162.5f + 23 * (Index() / rowAmount));
                 else transform.position = new Vector3(474.5f - 23 * (Index() % rowAmount), -162.5f + 23 * (Index() / rowAmount));
             }
             else transform.position = new Vector3(474.5f - 23 * (dyingIndex % rowAmount), -162.5f + 23 * (dyingIndex / rowAmount));
@@ -57,7 +57,7 @@ public class FlyingBuff : MonoBehaviour
         var stillActive = Board.board.temporaryBuffs[onWho].Contains(gameObject);
         if (participant.team == 1)
             if (stillActive)
-                if (Board.board.spotlightFriendly[0] == onWho) transform.position = Vector3.Lerp(transform.position, new Vector3(-302.5f + 23 * (Index() % rowAmount), -162.5f + 23 * (Index() / rowAmount)), Time.deltaTime * flySpeed);
+                if (Board.board.team1[0] == onWho) transform.position = Vector3.Lerp(transform.position, new Vector3(-302.5f + 23 * (Index() % rowAmount), -162.5f + 23 * (Index() / rowAmount)), Time.deltaTime * flySpeed);
                 else transform.position = Vector3.Lerp(transform.position, new Vector3(-474.5f + 23 * (Index() % rowAmount), -162.5f + 23 * (Index() / rowAmount)), Time.deltaTime * flySpeed);
             else
             {
@@ -66,7 +66,7 @@ public class FlyingBuff : MonoBehaviour
             }
         else if (participant.team == 2)
             if (stillActive)
-                if (Board.board.spotlightEnemy[0] == onWho) transform.position = Vector3.Lerp(transform.position, new Vector3(302.5f - 23 * (Index() % rowAmount), -162.5f + 23 * (Index() / rowAmount)), Time.deltaTime * flySpeed);
+                if (Board.board.team2[0] == onWho) transform.position = Vector3.Lerp(transform.position, new Vector3(302.5f - 23 * (Index() % rowAmount), -162.5f + 23 * (Index() / rowAmount)), Time.deltaTime * flySpeed);
                 else transform.position = Vector3.Lerp(transform.position, new Vector3(474.5f - 23 * (Index() % rowAmount), -162.5f + 23 * (Index() / rowAmount)), Time.deltaTime * flySpeed);
             else
             {

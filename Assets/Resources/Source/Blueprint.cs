@@ -234,10 +234,10 @@ public class Blueprint
             SetAnchor(TopRight, 0, -8);
             AddRegionGroup();
             SetRegionGroupWidth(190);
-            for (int i = board.spotlightEnemy.Count - 1; i >= 0; i--)
+            for (int i = board.team2.Count - 1; i >= 0; i--)
             {
                 var index = i;
-                var participant = board.participants[board.spotlightEnemy[index]];
+                var participant = board.participants[board.team2[index]];
                 AddButtonRegion(() =>
                 {
                     AddLine(participant.who.name);
@@ -262,7 +262,7 @@ public class Blueprint
                         arrow.transform.localPosition = new Vector3(0.5f, -20.5f, 0);
                         arrow.transform.localEulerAngles = new Vector3(0, 0, -90);
                     }
-                    AddHealthBar(40, -19, board.spotlightEnemy[index], participant.who);
+                    AddHealthBar(40, -19, board.team2[index], participant.who);
                 },
                 (h) =>
                 {
@@ -278,26 +278,26 @@ public class Blueprint
                         () =>
                         {
                             ReverseButtons();
-                            if (board.cooldowns[board.spotlightEnemy[index]].ContainsKey(actionBar))
+                            if (board.cooldowns[board.team2[index]].ContainsKey(actionBar))
                             {
                                 AddLine(actionBar, "Black");
-                                AddText(" \\ " + board.cooldowns[board.spotlightEnemy[index]][actionBar], "DimGray");
+                                AddText(" \\ " + board.cooldowns[board.team2[index]][actionBar], "DimGray");
                             }
                             else AddLine(actionBar);
                             AddSmallButton(abilityObj.icon);
-                            if (!abilityObj.EnoughResources(board.participants[board.spotlightEnemy[index]].who))
+                            if (!abilityObj.EnoughResources(board.participants[board.team2[index]].who))
                             {
                                 SetSmallButtonToGrayscale();
                                 AddSmallButtonOverlay("OtherGridBlurred");
                             }
-                            if (board.CooldownOn(board.spotlightEnemy[index], actionBar) > 0)
+                            if (board.CooldownOn(board.team2[index], actionBar) > 0)
                                 AddSmallButtonOverlay("AutoCast");
                         },
                         (h) => ClearTargettingAbility(),
                         (h) => ClearTargettingAbility(),
                         (h) => () =>
                         {
-                            PrintAbilityTooltip(board.participants[board.spotlightEnemy[index]].who, abilityObj, board.participants[board.spotlightEnemy[index]].who.abilities[abilityObj.name]);
+                            PrintAbilityTooltip(board.participants[board.team2[index]].who, abilityObj, board.participants[board.team2[index]].who.abilities[abilityObj.name]);
                         }
                     );
                 }
@@ -309,9 +309,9 @@ public class Blueprint
                     AddButtonRegion(
                         () =>
                         {
-                            if (board.cooldowns[board.spotlightEnemy[index]].ContainsKey(ability.Key))
+                            if (board.cooldowns[board.team2[index]].ContainsKey(ability.Key))
                             {
-                                AddLine("" + board.cooldowns[board.spotlightEnemy[index]][ability.Key] + " / ", "DimGray", "Right");
+                                AddLine("" + board.cooldowns[board.team2[index]][ability.Key] + " / ", "DimGray", "Right");
                                 AddText(ability.Key, "Black");
                             }
                             else AddLine(ability.Key, "", "Right");
@@ -321,7 +321,7 @@ public class Blueprint
                                 SetSmallButtonToGrayscale();
                                 AddSmallButtonOverlay("OtherGridBlurred");
                             }
-                            if (board.CooldownOn(board.spotlightEnemy[index], ability.Key) > 0)
+                            if (board.CooldownOn(board.team2[index], ability.Key) > 0)
                                 AddSmallButtonOverlay("AutoCast");
                         },
                         null,
@@ -342,11 +342,11 @@ public class Blueprint
             void ChangeSpotlight(int index)
             {
                 if (index == 0) return;
-                var switchBuffsWith = board.spotlightEnemy[0];
-                var temp = board.spotlightEnemy[index];
-                board.spotlightEnemy.RemoveAt(index);
-                board.spotlightEnemy.Insert(0, temp);
-                foreach (var res in board.participants[board.spotlightEnemy[0]].who.resources)
+                var switchBuffsWith = board.team2[0];
+                var temp = board.team2[index];
+                board.team2.RemoveAt(index);
+                board.team2.Insert(0, temp);
+                foreach (var res in board.participants[board.team2[0]].who.resources)
                 {
                     CloseWindow("Enemy" + res.Key + "Resource");
                     SpawnWindowBlueprint("Enemy" + res.Key + "Resource");
@@ -359,10 +359,10 @@ public class Blueprint
             SetAnchor(TopLeft, 0, -8);
             AddRegionGroup();
             SetRegionGroupWidth(190);
-            for (int i = board.spotlightFriendly.Count - 1; i >= 0; i--)
+            for (int i = board.team1.Count - 1; i >= 0; i--)
             {
                 var index = i;
-                var participant = board.participants[board.spotlightFriendly[index]];
+                var participant = board.participants[board.team1[index]];
                 AddButtonRegion(() =>
                 {
                     AddLine(participant.who.name, "", "Right");
@@ -378,9 +378,9 @@ public class Blueprint
                     else
                     {
                         var race = races.Find(x => x.name == participant.who.race);
-                        AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? board.participants[board.spotlightFriendly[0]].who.gender : ""), (h) =>
+                        AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? board.participants[board.team1[0]].who.gender : ""), (h) =>
                         {
-                            if (abilityTargetted != null) FinishTargettingAbility(board.participants[board.spotlightFriendly[index]]);
+                            if (abilityTargetted != null) FinishTargettingAbility(board.participants[board.team1[index]]);
                             else ChangeSpotlight(index);
                         },
                         (h) => ClearTargettingAbility());
@@ -398,7 +398,7 @@ public class Blueprint
                         arrow.transform.localEulerAngles = new Vector3(0, 0, -90);
                         arrow.GetComponent<SpriteRenderer>().flipY = true;
                     }
-                    AddHealthBar(2, -19, board.spotlightFriendly[index], participant.who);
+                    AddHealthBar(2, -19, board.team1[index], participant.who);
                 },
                 (h) =>
                 {
@@ -413,29 +413,29 @@ public class Blueprint
                     AddButtonRegion(
                         () =>
                         {
-                            if (board.cooldowns[board.spotlightFriendly[index]].ContainsKey(actionBar))
+                            if (board.cooldowns[board.team1[index]].ContainsKey(actionBar))
                             {
-                                AddLine(board.cooldowns[board.spotlightFriendly[index]][actionBar] + " / ", "DimGray", "Right");
+                                AddLine(board.cooldowns[board.team1[index]][actionBar] + " / ", "DimGray", "Right");
                                 AddText(actionBar, "Black");
                             }
                             else AddLine(actionBar, "", "Right");
                             AddSmallButton(abilityObj.icon);
-                            if (!abilityObj.EnoughResources(board.participants[board.spotlightFriendly[index]].who))
+                            if (!abilityObj.EnoughResources(board.participants[board.team1[index]].who))
                             {
                                 SetSmallButtonToGrayscale();
                                 AddSmallButtonOverlay("OtherGridBlurred");
                             }
-                            if (board.CooldownOn(board.spotlightFriendly[index], actionBar) > 0)
+                            if (board.CooldownOn(board.team1[index], actionBar) > 0)
                                 AddSmallButtonOverlay("AutoCast");
                         },
                         (h) =>
                         {
-                            if (board.spotlightFriendly[index] == board.whosTurn)
+                            if (board.team1[index] == board.whosTurn)
                             {
                                 if (abilityTargetted != null)
                                     ClearTargettingAbility(true);
-                                else if (abilityObj.EnoughResources(board.participants[board.spotlightFriendly[index]].who))
-                                    if (board.CooldownOn(board.spotlightFriendly[index], actionBar) <= 0)
+                                else if (abilityObj.EnoughResources(board.participants[board.team1[index]].who))
+                                    if (board.CooldownOn(board.team1[index], actionBar) <= 0)
                                         StartTargettingAbility(abilityObj);
                             }
                             else ClearTargettingAbility();
@@ -443,7 +443,7 @@ public class Blueprint
                         (h) => ClearTargettingAbility(),
                         (h) => () =>
                         {
-                            PrintAbilityTooltip(board.participants[board.spotlightFriendly[index]].who, abilityObj, board.participants[board.spotlightFriendly[index]].who.abilities.ContainsKey(abilityObj.name) ? board.participants[board.spotlightFriendly[index]].who.abilities[abilityObj.name] : 0);
+                            PrintAbilityTooltip(board.participants[board.team1[index]].who, abilityObj, board.participants[board.team1[index]].who.abilities.ContainsKey(abilityObj.name) ? board.participants[board.team1[index]].who.abilities[abilityObj.name] : 0);
                         }
                     );
                 }
@@ -455,19 +455,19 @@ public class Blueprint
                     AddButtonRegion(
                         () =>
                         {
-                            if (board.cooldowns[board.spotlightFriendly[index]].ContainsKey(ability.Key))
+                            if (board.cooldowns[board.team1[index]].ContainsKey(ability.Key))
                             {
-                                AddLine("" + board.cooldowns[board.spotlightFriendly[index]][ability.Key] + " / ", "DimGray", "Right");
+                                AddLine("" + board.cooldowns[board.team1[index]][ability.Key] + " / ", "DimGray", "Right");
                                 AddText(ability.Key, "Black");
                             }
                             else AddLine(ability.Key, "", "Right");
                             AddSmallButton(item.icon);
-                            if (!abilityObj.EnoughResources(board.participants[board.spotlightFriendly[index]].who))
+                            if (!abilityObj.EnoughResources(board.participants[board.team1[index]].who))
                             {
                                 SetSmallButtonToGrayscale();
                                 AddSmallButtonOverlay("OtherGridBlurred");
                             }
-                            if (board.CooldownOn(board.spotlightFriendly[index], ability.Key) > 0)
+                            if (board.CooldownOn(board.team1[index], ability.Key) > 0)
                                 AddSmallButtonOverlay("AutoCast");
                         },
                         (h) =>
@@ -475,13 +475,13 @@ public class Blueprint
                             var temp = abilityTargetted;
                             if (abilityTargetted != null)
                                 ClearTargettingAbility(true);
-                            else if (abilityObj.EnoughResources(board.participants[board.spotlightFriendly[index]].who) && board.CooldownOn(board.spotlightFriendly[index], ability.Key) <= 0)
+                            else if (abilityObj.EnoughResources(board.participants[board.team1[index]].who) && board.CooldownOn(board.team1[index], ability.Key) <= 0)
                                 StartTargettingAbility(abilityObj);
                         },
                         null,
                         (h) => () =>
                         {
-                            PrintAbilityTooltip(board.participants[board.spotlightFriendly[index]].who, abilityObj, board.participants[board.spotlightFriendly[index]].who.abilities[abilityObj.name], item);
+                            PrintAbilityTooltip(board.participants[board.team1[index]].who, abilityObj, board.participants[board.team1[index]].who.abilities[abilityObj.name], item);
                         }
                     );
                 }
@@ -495,11 +495,11 @@ public class Blueprint
             void ChangeSpotlight(int index)
             {
                 if (index == 0) return;
-                var switchBuffsWith = board.spotlightFriendly[0];
-                var temp = board.spotlightFriendly[index];
-                board.spotlightFriendly.RemoveAt(index);
-                board.spotlightFriendly.Insert(0, temp);
-                foreach (var res in board.participants[board.spotlightFriendly[0]].who.resources)
+                var switchBuffsWith = board.team1[0];
+                var temp = board.team1[index];
+                board.team1.RemoveAt(index);
+                board.team1.Insert(0, temp);
+                foreach (var res in board.participants[board.team1[0]].who.resources)
                 {
                     CloseWindow("Friendly" + res.Key + "Resource");
                     SpawnWindowBlueprint("Friendly" + res.Key + "Resource");
@@ -9305,7 +9305,7 @@ public class Blueprint
                 SpawnWindowBlueprint("Enemy" + element + "Resource");
             }
             AddHotkey(PageUp, () => {
-                board.participants[board.spotlightFriendly[0]].who.resources = new Dictionary<string, int>
+                board.participants[board.team1[0]].who.resources = new Dictionary<string, int>
                 {
                     { "Earth", 99 },
                     { "Fire", 99 },
@@ -9319,10 +9319,10 @@ public class Blueprint
                     { "Shadow", 99 },
                 };
                 Respawn("FriendlyBattleInfo");
-                board.UpdateResourceBars(board.spotlightFriendly[0], elements);
+                board.UpdateResourceBars(board.team1[0], elements);
             });
             AddHotkey(PageDown, () => {
-                board.participants[board.spotlightEnemy[0]].who.resources = new Dictionary<string, int>
+                board.participants[board.team2[0]].who.resources = new Dictionary<string, int>
                 {
                     { "Earth", 99 },
                     { "Fire", 99 },
@@ -9336,7 +9336,7 @@ public class Blueprint
                     { "Shadow", 99 },
                 };
                 Respawn("EnemyBattleInfo");
-                board.UpdateResourceBars(board.spotlightEnemy[0], elements);
+                board.UpdateResourceBars(board.team2[0], elements);
             });
             AddHotkey("Open menu / Back", () =>
             {

@@ -2108,6 +2108,24 @@
       "Purple Lotus",
       "Star Lotus",
       "Sungrass"
+    ],
+    "musicDay": [
+      "MusicZulGurub1",
+      "MusicZulGurub2",
+      "MusicZulGurub3",
+      "MusicZulGurub4",
+      "MusicZulGurub5",
+      "MusicZulGurub6",
+      "MusicZulGurub7"
+    ],
+    "musicNight": [
+      "MusicZulGurub1",
+      "MusicZulGurub2",
+      "MusicZulGurub3",
+      "MusicZulGurub4",
+      "MusicZulGurub5",
+      "MusicZulGurub6",
+      "MusicZulGurub7"
     ]
   },
   {

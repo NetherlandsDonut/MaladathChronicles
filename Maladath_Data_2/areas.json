@@ -56087,8 +56087,19 @@
         "levelMax": 50
       }
     ],
+    "eliteEncounters": [
+      {
+        "who": "Vile Priestess Hexx",
+        "levelMin": 51
+      }
+    ],
     "areaSize": 3,
     "progression": [
+      {
+        "type": "Boss",
+        "bossName": "Vile Priestess Hexx",
+        "point": 2
+      },
       {
         "type": "Treasure",
         "point": 3

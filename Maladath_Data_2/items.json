@@ -185011,7 +185011,18 @@
     "maxStack": 1,
     "droppedBy": [
       "Vile Priestess Hexx"
-    ]
+    ],
+    "indestructible": true,
+    "unique": true,
+    "raceDropRestriction": [
+      "Gnome",
+      "Night Elf",
+      "Dwarf",
+      "Human"
+    ],
+    "abilities": {
+      "Hexx's Key": 1
+    }
   },
   {
     "rarity": "Common",

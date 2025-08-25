@@ -7,12 +7,12 @@ public class PixelCamera : MonoBehaviour
     public int actualWidth = 640;
     public int actualHeight = 360;
 
-    private Camera cam;
+    //private Camera cam;
 
-    void Awake()
-    {
-        cam = GetComponent<Camera>();
-    }
+    //void Awake()
+    //{
+    //    cam = GetComponent<Camera>();
+    //}
 
     //void Update()
     //{

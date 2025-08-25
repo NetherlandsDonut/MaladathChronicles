@@ -1,15 +1,16 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using UnityEditor;
+using System.Collections.Generic;
+
 using UnityEngine;
-using static Defines;
-using static Quest;
+using UnityEditor;
+
 using static Race;
 using static Root;
-using static Sound;
 using static Spec;
-using static UnityEngine.Rendering.PostProcessing.HistogramMonitor;
+using static Quest;
+using static Sound;
+using static Defines;
 
 public class Entity
 {
@@ -174,6 +175,39 @@ public class Entity
             {
                 var area = SiteArea.areas.Find(x => x.name == condition.name);
                 if (SaveGame.currentSave.siteProgress.ContainsKey(area.name) && area.areaSize <= SaveGame.currentSave.siteProgress[area.name])
+                {
+                    condition.status = "Done";
+                    changed = true;
+                }
+            }
+            else if (condition.type == "Kill")
+            {
+                var race = races.Find(x => x.name == condition.name);
+                if (race.kind == "Rare" && SaveGame.currentSave.raresKilled.ContainsKey(race.name))
+                {
+                    condition.amountDone = SaveGame.currentSave.raresKilled[race.name];
+                    if (condition.amountDone > condition.amount) condition.amountDone = condition.amount;
+                    condition.status = "Done";
+                    changed = true;
+                }
+                else if (race.kind == "Elite" && SaveGame.currentSave.elitesKilled.ContainsKey(race.name))
+                {
+                    condition.amountDone = SaveGame.currentSave.elitesKilled[race.name];
+                    if (condition.amountDone > condition.amount) condition.amountDone = condition.amount;
+                    condition.status = "Done";
+                    changed = true;
+                }
+                else if (race.kind == "Common" && SaveGame.currentSave.commonsKilled.ContainsKey(race.name))
+                {
+                    condition.amountDone = SaveGame.currentSave.commonsKilled[race.name];
+                    if (condition.amountDone > condition.amount) condition.amountDone = condition.amount;
+                    condition.status = "Done";
+                    changed = true;
+                }
+            }
+            else if (condition.type == "Flag")
+            {
+                if (SaveGame.currentSave.flags.ContainsKey(condition.name) && SaveGame.currentSave.flags[condition.name] == condition.value)
                 {
                     condition.status = "Done";
                     changed = true;
@@ -392,17 +426,46 @@ public class Entity
         return list.Distinct().ToList();
     }
 
-    public bool QuestExplore(string where)
+    public bool QuestFlag(string flag, string value)
     {
+        var offset = 0;
         var changed = new List<ActiveQuest>();
         foreach (var quest in currentQuests)
+        {
+            var fullyDone = quest.conditions.All(x => x.IsDone());
+            foreach (var condition in quest.conditions)
+                if (condition.status != "Done" && condition.type == "Flag" && condition.name == flag && condition.value == value)
+                {
+                    condition.status = "Done";
+                    SpawnFallingText(new UnityEngine.Vector2(0, 34 - 34 * offset++), flag.Replace("_", " ") + ": 1/1", "Yellow");
+                    if (!changed.Contains(quest)) changed.Add(quest);
+                }
+            if (!fullyDone && quest.conditions.All(x => x.IsDone()))
+                SpawnFallingText(new UnityEngine.Vector2(0, 34 - 15 * offset++), "Quest Complete!", "Yellow");
+        }
+        foreach (var quest in changed.Select((x => quests.Find(y => y.questID == x.questID))))
+            quest.UpdateRelatedSites();
+        return changed.Count > 0;
+    }
+
+    public bool QuestExplore(string where)
+    {
+        var offset = 0;
+        var changed = new List<ActiveQuest>();
+        foreach (var quest in currentQuests)
+        {
+            var fullyDone = quest.conditions.All(x => x.IsDone());
             foreach (var condition in quest.conditions)
                 if (condition.status != "Done" && condition.type == "Explore" && condition.name == where)
                 {
                     condition.status = "Done";
+                    SpawnFallingText(new UnityEngine.Vector2(0, 34 - 15 * offset++), where + " explored: 1/1", "Yellow");
                     if (!changed.Contains(quest))
                         changed.Add(quest);
                 }
+            if (!fullyDone && quest.conditions.All(x => x.IsDone()))
+                SpawnFallingText(new UnityEngine.Vector2(0, 34 - 15 * offset++), "Quest Complete!", "Yellow");
+        }
         foreach (var quest in changed.Select((x => quests.Find(y => y.questID == x.questID))))
             quest.UpdateRelatedSites();
         return changed.Count > 0;
@@ -410,12 +473,16 @@ public class Entity
 
     public void QuestKill(string who)
     {
+        var offset = 0;
         var changed = new List<ActiveQuest>();
         foreach (var quest in currentQuests)
+        {
+            var fullyDone = quest.conditions.All(x => x.IsDone());
             foreach (var condition in quest.conditions)
                 if (condition.status != "Done" && condition.type == "Kill" && condition.name == who)
                 {
-                    condition.amountDone++;
+                    if (condition.amount > condition.amountDone) condition.amountDone++;
+                    if (condition.status != "Done") SpawnFallingText(new Vector2(0, 34 - 15 * offset++), who + ": " + condition.amountDone + "/" + condition.amount, "Yellow");
                     if (condition.amount <= condition.amountDone)
                     {
                         condition.status = "Done";
@@ -423,21 +490,31 @@ public class Entity
                             changed.Add(quest);
                     }
                 }
+            if (!fullyDone && quest.conditions.All(x => x.IsDone()))
+                SpawnFallingText(new UnityEngine.Vector2(0, 34 - 15 * offset++), "Quest Complete!", "Yellow");
+        }
         foreach (var quest in changed.Select((x => quests.Find(y => y.questID == x.questID))))
             quest.UpdateRelatedSites();
     }
 
     public void QuestVisit(string site)
     {
+        var offset = 0;
         var changed = new List<ActiveQuest>();
         foreach (var quest in currentQuests)
+        {
+            var fullyDone = quest.conditions.All(x => x.IsDone());
             foreach (var condition in quest.conditions)
                 if (condition.type == "Visit" && condition.name == site)
                 {
                     condition.status = "Done";
+                    SpawnFallingText(new UnityEngine.Vector2(0, 34 - 15 * offset++), site + " visited: 1/1", "Yellow");
                     if (!changed.Contains(quest))
                         changed.Add(quest);
                 }
+            if (!fullyDone && quest.conditions.All(x => x.IsDone()))
+                SpawnFallingText(new UnityEngine.Vector2(0, 34 - 15 * offset++), "Quest Complete!", "Yellow");
+        }
         foreach (var quest in changed.Select((x => quests.Find(y => y.questID == x.questID))))
             quest.UpdateRelatedSites();
     }
@@ -1230,7 +1307,7 @@ public class Entity
     public double PhysicalResistance()
     {
         var temp = Spec();
-        if (temp == null) return Stats()["Armor"] * 0.01 / 100;
+        if (temp == null) return Stats()["Armor"] * 0.005 / 100;
         var sum = temp.rules["Physical Resistance per Armor"] * Stats()["Armor"] / 100;
         return sum;
     }

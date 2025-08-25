@@ -43,6 +43,7 @@ public class SaveGame
             vendorStock = new(),
             openedChests = new(),
             generatedBossPools = new(),
+            flags = new(),
             markets = new()
             {
                 new Market("Alliance Market"),
@@ -241,6 +242,25 @@ public class SaveGame
 
     //Stores information about all unlocked areas in instances
     public List<string> unlockedAreas;
+
+    //Flags set during the run like unlocking certain doors or rescuing NPCs
+    public Dictionary<string, string> flags;
+
+    //Sets a flag with a new value
+    public void SetFlag(string flag, string value)
+    {
+        if (flag == "" || flag == string.Empty || flag == null) return;
+        if (!flags.ContainsKey(flag)) flags.Add(flag, value);
+        else flags[flag] = value;
+        player.QuestFlag(flag, value);
+    }
+
+    //Gets a flag value
+    public string GetFlag(string flag)
+    {
+        if (!flags.ContainsKey(flag)) return "";
+        else return flags[flag];
+    }
 
     #endregion
 
