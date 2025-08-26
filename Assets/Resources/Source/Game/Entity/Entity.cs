@@ -549,6 +549,7 @@ public class Entity
             level++;
             unspentTalentPoints++;
             PlaySound("DesktopLevelUp", 0.5f);
+            health = MaxHealth();
             var newLevelQuests = quests.FindAll(x => x.requiredLevel == level);
             foreach (var newQuest in newLevelQuests)
             {
@@ -763,7 +764,6 @@ public class Entity
     //This value is 0 at default
     public void ResetResources()
     {
-        var stats = Stats();
         resources = new()
         {
             { "Earth", 0 },
@@ -1620,10 +1620,10 @@ public class Entity
     public bool dead;
 
     //Current health of the entity
-    [NonSerialized] public int health;
+    public int health;
 
     //Stores information about resources of the entity in combat
-    [NonSerialized] public Dictionary<string, int> resources;
+    public Dictionary<string, int> resources;
 
     //List of active buffs and debuffs on this entity
     [NonSerialized] public List<CombatBuff> buffs;

@@ -45,6 +45,9 @@ public static class Root
     //Determines whether this is the first launch of the game
     public static bool firstLaunch;
 
+    //List of the resource bars shown in the spellbook
+    public static Dictionary<string, FluidBar> spellbookResourceBars;
+
     //Creation variables for character creation
     public static string creationRace;
     public static string creationSpec;
@@ -1538,10 +1541,19 @@ public static class Root
         thisBar.Initialise(entity.MaxResource(resource) * 8, () => entity.MaxResource(resource), () => entity.resources[resource], true);
         thisBar.split.sprite = Resources.Load<Sprite>("Sprites/FluidBars/ResourceBar/Resource" + resource + "Bar/Splitter");
         thisBar.GetComponentsInChildren<SpriteRenderer>().First(x => x.name == "Capstone").sprite = Resources.Load<Sprite>("Sprites/FluidBars/ResourceBar/Resource" + resource + "Bar/Capstone");
-        if (board.resourceBars.ContainsKey(forWho))
-            if (board.resourceBars[forWho].ContainsKey(resource)) board.resourceBars[forWho][resource] = thisBar;
-            else board.resourceBars[forWho].Add(resource, thisBar);
-        else board.resourceBars.Add(forWho, new() { { resource, thisBar } });
+        if (forWho >= 0)
+        {
+            if (board.resourceBars.ContainsKey(forWho))
+                if (board.resourceBars[forWho].ContainsKey(resource)) board.resourceBars[forWho][resource] = thisBar;
+                else board.resourceBars[forWho].Add(resource, thisBar);
+            else board.resourceBars.Add(forWho, new() { { resource, thisBar } });
+        }
+        else
+        {
+            spellbookResourceBars ??= new();
+            if (spellbookResourceBars.ContainsKey(resource)) spellbookResourceBars[resource] = thisBar;
+            else spellbookResourceBars.Add(resource, thisBar);
+        }
         thisBar.UpdateFluidBar();
     }
 
@@ -1553,8 +1565,11 @@ public static class Root
         healthBar.transform.localPosition = new Vector3(x, y, 0);
         var thisBar = healthBar.GetComponent<FluidBar>();
         thisBar.Initialise(150, () => entity.MaxHealth(), () => entity.health, false);
-        if (board.healthBars.ContainsKey(forWho)) board.healthBars[forWho] = thisBar;
-        else board.healthBars.Add(forWho, thisBar);
+        if (forWho >= 0)
+        {
+            if (board.healthBars.ContainsKey(forWho)) board.healthBars[forWho] = thisBar;
+            else board.healthBars.Add(forWho, thisBar);
+        }
         thisBar.UpdateFluidBar();
     }
 

@@ -1,14 +1,12 @@
 using System;
-
+using System.Linq;
 using UnityEngine;
-
+using static Cursor;
 using static Root;
 using static Root.CursorType;
-
-using static Sound;
-using static Cursor;
 using static SaveGame;
 using static SitePath;
+using static Sound;
 
 public class Highlightable : MonoBehaviour
 {
@@ -68,7 +66,9 @@ public class Highlightable : MonoBehaviour
     {
         if (cursor.IsNow(None)) return;
         SetMouseOver(null);
-        CloseWindow("Tooltip");
+        if (CloseWindow("Tooltip") && spellbookResourceBars != null)
+            foreach (var bar in spellbookResourceBars)
+                if (bar.Value != null) bar.Value.UpdateFluidBar();
         Root.tooltip = null;
         if (cursor.IsNow(Click) || cursor.IsNow(Write) || cursor.IsNow(Hook))
             cursor.SetCursor(Default);
@@ -85,7 +85,9 @@ public class Highlightable : MonoBehaviour
     public void MouseDown(string key)
     {
         if (cursor.IsNow(None)) return;
-        CloseWindow("Tooltip");
+        if (CloseWindow("Tooltip") && spellbookResourceBars != null)
+            foreach (var bar in spellbookResourceBars)
+                if (bar.Value != null) bar.Value.UpdateFluidBar();
         Root.tooltip = null;
         cursor.SetCursor(Click);
         render.color = defaultColor - new Color(0.2f, 0.2f, 0.2f, 0);

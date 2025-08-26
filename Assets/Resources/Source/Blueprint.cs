@@ -6,15 +6,15 @@ using UnityEngine;
 
 using static UnityEngine.KeyCode;
 
-using static Root;
 using static Root.Anchor;
 using static Root.RegionBackgroundType;
 
 using static Item;
+using static Root;
 using static Race;
-using static Zone;
 using static Site;
 using static Spec;
+using static Zone;
 using static Quest;
 using static Sound;
 using static Mount;
@@ -22,21 +22,21 @@ using static Board;
 using static Recipe;
 using static Person;
 using static Defines;
+using static Enchant;
 using static Faction;
 using static Ability;
-using static Enchant;
 using static SitePath;
 using static SaveGame;
+using static SiteArea;
 using static Coloring;
 using static Inventory;
 using static PersonType;
 using static Profession;
+using static SiteComplex;
 using static FishingSpot;
+using static SiteInstance;
 using static GameSettings;
 using static PersonCategory;
-using static SiteInstance;
-using static SiteComplex;
-using static SiteArea;
 
 public class Blueprint
 {
@@ -450,7 +450,7 @@ public class Blueprint
                 var item = participant.who.equipment.ContainsKey("Trinket") ? participant.who.equipment["Trinket"] : null;
                 if (item != null && item.abilities != null && item.combatUse)
                 {
-                    var ability = item.abilities.ToList()[index];
+                    var ability = item.abilities.ToList()[0];
                     var abilityObj = abilities.Find(x => x.name == ability.Key);
                     AddButtonRegion(
                         () =>
@@ -2213,6 +2213,7 @@ public class Blueprint
             quest.Print("Turn");
         }, true),
         new("QuestConfirmAbandon", () => {
+            SetDesktopBackground("Backgrounds/RuggedLeatherFull", true, true);
             SetAnchor(Top, 0, -38);
             AddHeaderGroup();
             SetRegionGroupWidth(182);
@@ -2237,6 +2238,7 @@ public class Blueprint
                 CloseWindow("QuestConfirmAbandon");
                 CloseWindow("Quest");
                 Respawn("QuestList", true);
+                SetDesktopBackground("Backgrounds/RuggedLeather", true, true);
             });
             AddRegionGroup();
             SetRegionGroupWidth(91);
@@ -2247,9 +2249,11 @@ public class Blueprint
                 CloseWindow("QuestConfirmAbandon");
                 Respawn("QuestList", true);
                 Respawn("Quest", true);
+                SetDesktopBackground("Backgrounds/RuggedLeather", true, true);
             });
         }, true),
         new("QuestSort", () => {
+            SetDesktopBackground("Backgrounds/RuggedLeatherFull", true, true);
             SetAnchor(Center);
             AddRegionGroup();
             SetRegionGroupWidth(182);
@@ -2261,6 +2265,7 @@ public class Blueprint
                     CloseWindow("QuestSort");
                     Respawn("QuestList", true);
                     Respawn("Quest", true);
+                    SetDesktopBackground("Backgrounds/RuggedLeather", true, true);
                 });
             });
             AddButtonRegion(() => AddLine("By name", "Black"),
@@ -2271,6 +2276,7 @@ public class Blueprint
                 Respawn("QuestList", true);
                 Respawn("Quest", true);
                 PlaySound("DesktopInventorySort", 0.4f);
+                SetDesktopBackground("Backgrounds/RuggedLeather", true, true);
             });
             AddButtonRegion(() => AddLine("By quest level", "Black"),
             (h) =>
@@ -2280,6 +2286,7 @@ public class Blueprint
                 Respawn("QuestList", true);
                 Respawn("Quest", true);
                 PlaySound("DesktopInventorySort", 0.4f);
+                SetDesktopBackground("Backgrounds/RuggedLeather", true, true);
             });
             AddButtonRegion(() => AddLine("By zone", "Black"),
             (h) =>
@@ -2289,9 +2296,11 @@ public class Blueprint
                 Respawn("QuestList", true);
                 Respawn("Quest", true);
                 PlaySound("DesktopInventorySort", 0.4f);
+                SetDesktopBackground("Backgrounds/RuggedLeather", true, true);
             });
         }, true),
         new("QuestSettings", () => {
+            SetDesktopBackground("Backgrounds/RuggedLeatherFull", true, true);
             SetAnchor(Center);
             AddRegionGroup();
             SetRegionGroupWidth(182);
@@ -2303,6 +2312,7 @@ public class Blueprint
                     CloseWindow("QuestSettings");
                     Respawn("QuestList", true);
                     Respawn("Quest", true);
+                    SetDesktopBackground("Backgrounds/RuggedLeather", true, true);
                 });
             });
             AddButtonRegion(() =>
@@ -7462,7 +7472,6 @@ public class Blueprint
                     {
                         if (selectedSave != save)
                         {
-                            PlaySound("DesktopSwitchPage");
                             selectedSave = save;
                             var site = FindSite(x => x.name == selectedSave.currentSite);
                             if (site != null) SetDesktopBackground(site.Background());
@@ -7816,9 +7825,9 @@ public class Blueprint
             var activeAbilities = abilities.FindAll(x => x.icon != null && !x.hide && x.events.Any(y => y.triggers.Any(z => z["Trigger"] == "AbilityCast")) && x.cost != null && currentSave.player.abilities.ContainsKey(x.name)).ToDictionary(x => x, x => currentSave.player.abilities[x.name]);
             var list = activeAbilities.ToList();
             thisWindow.SetPagination(() => list.Count, rowAmount);
-            SetAnchor(TopRight, -19, -38);
+            SetAnchor(TopRight, 0, -38);
             AddHeaderGroup();
-            SetRegionGroupWidth(171);
+            SetRegionGroupWidth(190);
             SetRegionGroupHeight(288);
             AddHeaderRegion(() =>
             {
@@ -7867,8 +7876,15 @@ public class Blueprint
                             null,
                             (h) => () =>
                             {
-                                SetAnchor(Center);
                                 var key = activeAbilities.ToList()[index + thisWindow.pagination()].Key;
+                                currentSave.player.ResetResources();
+                                foreach (var res in key.cost)
+                                    if (res.Value < currentSave.player.MaxResource(res.Key))
+                                        currentSave.player.resources[res.Key] = res.Value;
+                                    else currentSave.player.resources[res.Key] = currentSave.player.MaxResource(res.Key);
+                                spellbookResourceBars.ToList().ForEach(x => x.Value.UpdateFluidBar());
+                                currentSave.player.ResetResources();
+                                SetAnchor(Center);
                                 PrintAbilityTooltip(currentSave.player, key, activeAbilities[key]);
                             }
                         );
@@ -7883,10 +7899,10 @@ public class Blueprint
                 else AddPaddingRegion(() => AddBigButton("OtherDisabled"));
             }
             AddRegionGroup();
-            SetRegionGroupWidth(86);
+            SetRegionGroupWidth(95);
             AddPaddingRegion(() => AddLine("Activated", "", "Center"));
             AddRegionGroup();
-            SetRegionGroupWidth(85);
+            SetRegionGroupWidth(95);
             AddButtonRegion(() => AddLine("Passive", "", "Center"), (h) =>
             {
                 CloseWindow("SpellbookAbilityListActivated");
@@ -7899,9 +7915,9 @@ public class Blueprint
             var passiveAbilities = abilities.FindAll(x => x.icon != null && !x.hide && x.cost == null && currentSave.player.abilities.ContainsKey(x.name)).ToDictionary(x => x, x => currentSave.player.abilities[x.name]);
             var list = passiveAbilities.ToList();
             thisWindow.SetPagination(() => list.Count, rowAmount);
-            SetAnchor(TopRight, -19, -38);
+            SetAnchor(TopRight, 0, -38);
             AddHeaderGroup();
-            SetRegionGroupWidth(171);
+            SetRegionGroupWidth(190);
             SetRegionGroupHeight(288);
             AddHeaderRegion(() =>
             {
@@ -7953,53 +7969,20 @@ public class Blueprint
                     });
             }
             AddRegionGroup();
-            SetRegionGroupWidth(86);
+            SetRegionGroupWidth(95);
             AddButtonRegion(() => AddLine("Activated", "", "Center"), (h) =>
             {
                 CloseWindow("SpellbookAbilityListPassive");
                 Respawn("SpellbookAbilityListActivated");
             });
             AddRegionGroup();
-            SetRegionGroupWidth(85);
+            SetRegionGroupWidth(95);
             AddPaddingRegion(() => AddLine("Passive", "", "Center"));
         }),
-        new("SpellbookResources", () => {
-            SetAnchor(-301, -29);
-            AddHeaderGroup();
-            SetRegionGroupWidth(171);
-            AddHeaderRegion(() => { AddLine("Starting elements:"); });
-            var elements = new List<string> { "Fire", "Water", "Earth", "Air", "Frost" };
-            AddRegionGroup();
-            foreach (var element in elements)
-                AddHeaderRegion(() => AddSmallButton("Element" + element + "Rousing"));
-            AddRegionGroup();
-            SetRegionGroupWidth(66);
-            foreach (var element in elements)
-                AddHeaderRegion(() =>
-                {
-                    var value = 0;
-                    AddLine(value + "", value == 0 ? "DarkGray" : (value > currentSave.player.MaxResource(element) ? "Red" : "Green"));
-                    AddText(" / " + currentSave.player.MaxResource(element), "DarkGray");
-                });
-            elements = new List<string> { "Lightning", "Arcane", "Decay", "Order", "Shadow" };
-            AddRegionGroup();
-            foreach (var element in elements)
-                AddHeaderRegion(() => AddSmallButton("Element" + element + "Rousing"));
-            AddRegionGroup();
-            SetRegionGroupWidth(67);
-            foreach (var element in elements)
-                AddHeaderRegion(() =>
-                {
-                    var value = 0;
-                    AddLine(value + "", value == 0 ? "DarkGray" : (value > currentSave.player.MaxResource(element) ? "Red" : "Green"));
-                    AddText(" / " + currentSave.player.MaxResource(element), "DarkGray");
-                });
-        }, true),
         new("PlayerSpellbookInfo", () => {
-            SetAnchor(TopLeft, 19, -38);
+            SetAnchor(TopLeft, 0, -38);
             AddRegionGroup();
-            SetRegionGroupWidth(171);
-            SetRegionGroupHeight(148);
+            SetRegionGroupWidth(190);
             AddHeaderRegion(() =>
             {
                 AddLine(currentSave.player.currentActionSet + " action set:");
@@ -8019,6 +8002,15 @@ public class Blueprint
                     else
                         AddSmallButton("OtherSwitchOff");
             });
+            AddButtonRegion(() =>
+            {
+                AddLine(currentSave.player.name, "", "Right");
+                SpawnFloatingText(new Vector3(158, -9), currentSave.player.level + "", "Gray", "DimGray", "Left");
+                ReverseButtons();
+                AddBigButton("Portrait" + currentSave.player.race.Clean() + currentSave.player.gender + currentSave.player.portraitID, (h) => { });
+                AddHealthBar(2, -19, -1, currentSave.player);
+            },
+            (h) => { });
             var actionSet = currentSave.player.actionSets[currentSave.player.currentActionSet];
             int length = currentSave.player.ActionSetMaxLength();
             for (int i = 0; i < length; i++)
@@ -8026,30 +8018,38 @@ public class Blueprint
                 var index = i;
                 var abilityObj = actionSet.Count <= index ? null : abilities.Find(x => x.name == actionSet[index]);
                 if (abilityObj != null)
-                    AddButtonRegion(
-                        () =>
+                AddButtonRegion(
+                    () =>
+                    {
+                        AddLine(abilityObj.name, "", "Right");
+                        AddSmallButton(abilityObj.icon);
+                    },
+                    (h) =>
+                    {
+                        if (currentSave.player.abilities.ContainsKey(actionSet[index]))
                         {
-                            AddLine(abilityObj.name, "", "Right");
-                            AddSmallButton(abilityObj.icon);
-                        },
-                        (h) =>
-                        {
-                            if (currentSave.player.abilities.ContainsKey(actionSet[index]))
-                            {
-                                actionSet.RemoveAt(index);
-                                Respawn("SpellbookAbilityListActivated", true);
-                                Respawn("SpellbookAbilityListPassive", true);
-                                Respawn("PlayerSpellbookInfo");
-                                PlaySound("DesktopActionBarRemove", 0.9f);
-                            }
-                            else PlaySound("DesktopCantClick");
-                        },
-                        null,
-                        (h) => () =>
-                        {
-                            PrintAbilityTooltip(currentSave.player, abilityObj, currentSave.player.abilities.ContainsKey(abilityObj.name) ? currentSave.player.abilities[abilityObj.name] : 0);
+                            actionSet.RemoveAt(index);
+                            Respawn("SpellbookAbilityListActivated", true);
+                            Respawn("SpellbookAbilityListPassive", true);
+                            Respawn("PlayerSpellbookInfo");
+                            PlaySound("DesktopActionBarRemove", 0.9f);
                         }
-                    );
+                        else PlaySound("DesktopCantClick");
+                    },
+                    null,
+                    (h) => () =>
+                    {
+                        currentSave.player.ResetResources();
+                        foreach (var res in abilityObj.cost)
+                            if (res.Value < currentSave.player.MaxResource(res.Key))
+                                currentSave.player.resources[res.Key] = res.Value;
+                            else currentSave.player.resources[res.Key] = currentSave.player.MaxResource(res.Key);
+                        spellbookResourceBars.ToList().ForEach(x => x.Value.UpdateFluidBar());
+                        currentSave.player.ResetResources();
+                        SetAnchor(Center);
+                        PrintAbilityTooltip(currentSave.player, abilityObj, currentSave.player.abilities.ContainsKey(abilityObj.name) ? currentSave.player.abilities[abilityObj.name] : 0);
+                    }
+                );
                 else
                     AddHeaderRegion(
                         () =>
@@ -8059,7 +8059,25 @@ public class Blueprint
                         }
                     );
             }
-            if (length < 7) AddPaddingRegion(() => { });
+            var item = currentSave.player.equipment.ContainsKey("Trinket") ? currentSave.player.equipment["Trinket"] : null;
+            if (item != null && item.abilities != null && item.combatUse)
+            {
+                var ability = item.abilities.ToList()[0];
+                var abilityObj = abilities.Find(x => x.name == ability.Key);
+                AddButtonRegion(
+                    () =>
+                    {
+                        AddLine(ability.Key, "", "Right");
+                        AddSmallButton(item.icon);
+                    },
+                    null,
+                    null,
+                    (h) => () =>
+                    {
+                        PrintAbilityTooltip(currentSave.player, abilityObj, currentSave.player.abilities.ContainsKey(abilityObj.name) ? currentSave.player.abilities[abilityObj.name] : 0, item);
+                    }
+                );
+            }
         }),
         new("SwitchActionSet", () => {
             SetAnchor(Center);
@@ -8102,9 +8120,11 @@ public class Blueprint
                             else if (set == "Shadowform") currentSave.player.actionSets[set].Add("Leave Shadowform");
                         }
                         CloseWindow("SwitchActionSet");
-                        CloseWindow("PlayerSpellbookInfo");
-                        CDesktop.RespawnAll();
+                        Respawn("SpellbookAbilityListActivated", true);
+                        Respawn("SpellbookAbilityListPassive", true);
                         Respawn("PlayerSpellbookInfo");
+                        foreach (var res in currentSave.player.resources)
+                        Respawn("Spellbook" + res.Key + "Resource");
                     });
         }),
 
@@ -8379,18 +8399,23 @@ public class Blueprint
             {
                 if (CloseWindow("QuestSort"))
                 {
+                    SetDesktopBackground("Backgrounds/RuggedLeather", true, true);
                     PlaySound("DesktopInstanceClose");
+                    Respawn("Quest", true);
                     Respawn("QuestList");
                 }
                 else if (CloseWindow("QuestSettings"))
                 {
+                    SetDesktopBackground("Backgrounds/RuggedLeather", true, true);
                     PlaySound("DesktopInstanceClose");
+                    Respawn("Quest", true);
                     Respawn("QuestList");
                 }
                 else if (CloseWindow("QuestConfirmAbandon"))
                 {
+                    SetDesktopBackground("Backgrounds/RuggedLeather", true, true);
                     PlaySound("DesktopMenuClose");
-                    Respawn("Quest");
+                    Respawn("Quest", true);
                     Respawn("QuestList");
                 }
                 else if (CloseWindow("Quest"))
@@ -9441,7 +9466,8 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockRight");
             SpawnWindowBlueprint("SpellbookAbilityListActivated");
             SpawnWindowBlueprint("PlayerSpellbookInfo");
-            SpawnWindowBlueprint("SpellbookResources");
+            foreach (var res in currentSave.player.resources)
+                SpawnWindowBlueprint("Spellbook" + res.Key + "Resource");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
             AddHotkey("Open menu / Back", () => { CloseDesktop("SpellbookScreen"); PlaySound("DesktopSpellbookClose"); });

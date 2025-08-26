@@ -356,12 +356,25 @@ public class Starter : MonoBehaviour
         var elements = new List<string> { "Fire", "Water", "Earth", "Air", "Frost", "Lightning", "Arcane", "Decay", "Order", "Shadow" };
         foreach (var element in elements)
         {
+            Blueprint.windowBlueprints.Add(new Blueprint("Spellbook" + element + "Resource", () =>
+            {
+                var spellbookFrame = CDesktop.windows.Find(x => x.title == "PlayerSpellbookInfo");
+                SetAnchor(-320 + 19 * elements.IndexOf(element), 180 - (spellbookFrame == null ? 0 : spellbookFrame.yOffset) - 38);
+                AddRegionGroup();
+                SetRegionGroupHeight(currentSave.player.MaxResource(element) * 8);
+                SetRegionGroupWidth(19);
+                AddPaddingRegion(() =>
+                {
+                    AddLine("");
+                    AddResourceBar(2, -2, element, -1, currentSave.player);
+                });
+            }));
             Blueprint.windowBlueprints.Add(new Blueprint("Friendly" + element + "Resource", () =>
             {
                 if (Board.board.team1.Count == 0) return;
                 var friendly = Board.board.participants[Board.board.team1[0]].who;
                 var friendlyBattleInfo = CDesktop.windows.Find(x => x.title == "FriendlyBattleInfo");
-                SetAnchor(-320 + 19 * elements.IndexOf(element), 180 - friendlyBattleInfo.yOffset - 8);
+                SetAnchor(-320 + 19 * elements.IndexOf(element), 180 - (friendlyBattleInfo == null ? 0 : friendlyBattleInfo.yOffset) - 8);
                 AddRegionGroup();
                 SetRegionGroupHeight(friendly.MaxResource(element) * 8);
                 SetRegionGroupWidth(19);

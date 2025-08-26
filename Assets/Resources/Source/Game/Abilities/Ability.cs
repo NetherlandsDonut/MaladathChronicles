@@ -232,7 +232,8 @@ public class Ability
                         AddHeaderRegion(() => AddSmallButton("Element" + cost.Key + "Rousing"));
                         AddRegionGroup();
                         SetRegionGroupWidth(33);
-                        AddHeaderRegion(() => AddLine(cost.Value + "", effector != null && effector.resources != null ? cost.Value > effector.resources[cost.Key] ? "Red" : "Green" : "Gray"));
+                        if (CDesktop.title == "SpellbookScreen") AddHeaderRegion(() => AddLine(cost.Value + "", effector != null ? cost.Value > effector.MaxResource(cost.Key) ? "Red" : "Green" : "Gray"));
+                        else AddHeaderRegion(() => AddLine(cost.Value + "", effector != null && effector.resources != null ? cost.Value > effector.resources[cost.Key] ? "Red" : "Green" : "Gray"));
                     }
             AddRegionGroup();
             SetRegionGroupWidth(width - (ability.cost == null ? 0 : ability.cost.Count(x => x.Value > 0)) * 52);

@@ -11086,18 +11086,20 @@
   },
   {
     "name": "Jom Gabbar",
-    "icon": "AbilityFireball",
-    "cooldown": 10,
     "hide": true,
+    "icon": "itemmiscenggizmos19",
+    "targettingSound": "PrecastFire",
     "possibleTargets": "Enemies",
     "tags": [
-      "Damage"
+      "BasicDamage"
     ],
     "cost": {
-      "Fire": 2
+      "Fire": 4
     },
     "ranks": [
-      {}
+      {
+        "#1": "2,0"
+      }
     ],
     "events": [
       {
@@ -11111,7 +11113,6 @@
         "effects": [
           {
             "SoundEffect": "AbilityFireballCast",
-            "ShatterType": "Directional",
             "ShatterTarget": "Effector",
             "ShatterDensity": "1",
             "ShatterSpeed": "3",
@@ -11124,9 +11125,8 @@
             "PowerType": "Spell",
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
-            "PowerScale": "1.1",
+            "PowerScale": "#1",
             "ShatterTarget": "Other",
-            "ShatterType": "Central",
             "ShatterDensity": "1",
             "ShatterSpeed": "30",
             "ShatterDegree": "40",
@@ -11135,9 +11135,6 @@
             "AnimationType": "Missile",
             "TrailStrength": "13",
             "AnimationSpeed": "1,1"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -11149,26 +11146,16 @@
           "contents": [
             {
               "Color": "Gray",
-              "Text": "Hurls a fiery ball that causes"
+              "Text": "Hurls a fiery ball at the target, dealing"
             },
             {
               "Color": "Spell",
-              "Text": "PowerRange(Effector, Spell, 1.1, 1)",
+              "Text": "PowerRange(Effector, Spell, #1, 1)",
               "Split": "No"
             },
             {
               "Color": "Gray",
               "Text": "damage."
-            }
-          ]
-        },
-        {
-          "regionType": "Padding",
-          "isExtender": true,
-          "contents": [
-            {
-              "Color": "Gray",
-              "Text": "This ability ends caster's turn."
             }
           ]
         }
