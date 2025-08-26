@@ -6402,6 +6402,9 @@ public class Blueprint
                 else
                 {
                     CloseDesktop(CDesktop.title);
+                    SwitchDesktop("Area");
+                    SwitchDesktop("Instance");
+                    SwitchDesktop("Complex");
                     PlaySound("DesktopTalentScreenClose");
                 }
             });
@@ -6428,6 +6431,9 @@ public class Blueprint
                 else
                 {
                     CloseDesktop(CDesktop.title);
+                    SwitchDesktop("Area");
+                    SwitchDesktop("Instance");
+                    SwitchDesktop("Complex");
                     PlaySound("DesktopSpellbookClose");
                 }
             });
@@ -6456,6 +6462,9 @@ public class Blueprint
                     else
                     {
                         CloseDesktop(CDesktop.title);
+                        SwitchDesktop("Area");
+                        SwitchDesktop("Instance");
+                        SwitchDesktop("Complex");
                         PlaySound("DesktopInventoryClose");
                     }
                 }
@@ -6483,6 +6492,9 @@ public class Blueprint
                 else
                 {
                     CloseDesktop(CDesktop.title);
+                    SwitchDesktop("Area");
+                    SwitchDesktop("Instance");
+                    SwitchDesktop("Complex");
                     PlaySound("DesktopInstanceClose");
                 }
             });
@@ -6509,6 +6521,9 @@ public class Blueprint
                 else
                 {
                     CloseDesktop(CDesktop.title);
+                    SwitchDesktop("Area");
+                    SwitchDesktop("Instance");
+                    SwitchDesktop("Complex");
                     PlaySound("DesktopSpellbookClose");
                 }
             });
@@ -6535,6 +6550,9 @@ public class Blueprint
                 else
                 {
                     CloseDesktop(CDesktop.title);
+                    SwitchDesktop("Area");
+                    SwitchDesktop("Instance");
+                    SwitchDesktop("Complex");
                     PlaySound("DesktopCharacterSheetClose");
                 }
             });
@@ -6546,9 +6564,6 @@ public class Blueprint
                 CloseDesktop("BestiaryScreen");
                 CloseDesktop("CraftingScreen");
                 CloseDesktop("CharacterSheet");
-                CloseDesktop("Area");
-                CloseDesktop("Instance");
-                CloseDesktop("Complex");
                 SwitchDesktop("Map");
                 if (WindowUp("QuestList"))
                 {
@@ -6562,6 +6577,9 @@ public class Blueprint
                     CloseWindow("QuestTurn");
                     CloseWindow("QuestConfirmAbandon");
                     Respawn("WorldBuffs");
+                    SwitchDesktop("Area");
+                    SwitchDesktop("Instance");
+                    SwitchDesktop("Complex");
                 }
                 else
                 {
@@ -6601,6 +6619,9 @@ public class Blueprint
                     else
                     {
                         CloseDesktop(CDesktop.title);
+                        SwitchDesktop("Area");
+                        SwitchDesktop("Instance");
+                        SwitchDesktop("Complex");
                         PlaySound("DesktopCharacterSheetClose");
                     }
                 });
@@ -6629,6 +6650,9 @@ public class Blueprint
                             else
                             {
                                 CloseDesktop(CDesktop.title);
+                                SwitchDesktop("Area");
+                                SwitchDesktop("Instance");
+                                SwitchDesktop("Complex");
                                 PlaySound("DesktopInventoryClose");
                             }
                     });
@@ -6656,6 +6680,9 @@ public class Blueprint
                     else
                     {
                         CloseDesktop(CDesktop.title);
+                        SwitchDesktop("Area");
+                        SwitchDesktop("Instance");
+                        SwitchDesktop("Complex");
                         PlaySound("DesktopSpellbookClose");
                     }
                 });
@@ -6685,6 +6712,9 @@ public class Blueprint
                     else
                     {
                         CloseDesktop(CDesktop.title);
+                        SwitchDesktop("Area");
+                        SwitchDesktop("Instance");
+                        SwitchDesktop("Complex");
                         PlaySound("DesktopTalentScreenClose");
                     }
                 });
@@ -6696,9 +6726,6 @@ public class Blueprint
                     CloseDesktop("BestiaryScreen");
                     CloseDesktop("CraftingScreen");
                     CloseDesktop("CharacterSheet");
-                    CloseDesktop("Area");
-                    CloseDesktop("Instance");
-                    CloseDesktop("Complex");
                     SwitchDesktop("Map");
                     if (WindowUp("QuestList"))
                     {
@@ -6712,6 +6739,9 @@ public class Blueprint
                         CloseWindow("QuestTurn");
                         CloseWindow("QuestConfirmAbandon");
                         Respawn("WorldBuffs");
+                        SwitchDesktop("Area");
+                        SwitchDesktop("Instance");
+                        SwitchDesktop("Complex");
                     }
                     else
                     {
@@ -6746,6 +6776,9 @@ public class Blueprint
                     else
                     {
                         CloseDesktop(CDesktop.title);
+                        SwitchDesktop("Area");
+                        SwitchDesktop("Instance");
+                        SwitchDesktop("Complex");
                         PlaySound("DesktopSpellbookClose");
                     }
                 });
@@ -6772,6 +6805,9 @@ public class Blueprint
                     else
                     {
                         CloseDesktop(CDesktop.title);
+                        SwitchDesktop("Area");
+                        SwitchDesktop("Instance");
+                        SwitchDesktop("Complex");
                         PlaySound("DesktopInstanceClose");
                     }
                 });
@@ -7986,7 +8022,7 @@ public class Blueprint
             AddHeaderRegion(() =>
             {
                 AddLine(currentSave.player.currentActionSet + " action set:");
-                var list = new List<string> { "Moonkin Form", "Bear Form", "Shadowform" };
+                var list = new List<string> { "Moonkin Form", "Bear Form", "Cat Form", "Shadowform" };
                 if (currentSave.player.abilities.Any(x => list.Any(y => y == x.Key)))
                     if (!WindowUp("AbilitiesSort") && !WindowUp("SwitchActionSet"))
                         AddSmallButton("OtherSwitch", (h) =>
@@ -7999,8 +8035,7 @@ public class Blueprint
                             if (CloseWindow("SpellbookAbilityListPassive"))
                                 Respawn("SpellbookAbilityListPassive");
                         });
-                    else
-                        AddSmallButton("OtherSwitchOff");
+                    else AddSmallButton("OtherSwitchOff");
             });
             AddButtonRegion(() =>
             {
@@ -8102,7 +8137,7 @@ public class Blueprint
                 CloseWindow("SwitchActionSet");
                 CDesktop.RespawnAll();
             });
-            var list = new List<string> { "Moonkin Form", "Bear Form", "Shadowform" };
+            var list = new List<string> { "Moonkin Form", "Bear Form", "Cat Form", "Shadowform" };
             foreach (var set in list)
                 if (currentSave.player.abilities.ContainsKey(set))
                     AddButtonRegion(() =>
@@ -8116,6 +8151,7 @@ public class Blueprint
                         {
                             currentSave.player.actionSets.Add(set, new());
                             if (set == "Bear Form") currentSave.player.actionSets[set].Add("Leave Bear Form");
+                            else if (set == "Cat Form") currentSave.player.actionSets[set].Add("Leave Cat Form");
                             else if (set == "Moonkin Form") currentSave.player.actionSets[set].Add("Leave Moonkin Form");
                             else if (set == "Shadowform") currentSave.player.actionSets[set].Add("Leave Shadowform");
                         }
@@ -8430,6 +8466,9 @@ public class Blueprint
                     RemoveDesktopBackground();
                     Respawn("MapToolbar");
                     Respawn("WorldBuffs");
+                    SwitchDesktop("Area");
+                    SwitchDesktop("Instance");
+                    SwitchDesktop("Complex");
                 }
                 else
                 {

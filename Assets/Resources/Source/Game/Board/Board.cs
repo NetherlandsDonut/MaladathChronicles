@@ -37,7 +37,7 @@ public class Board
             friendly.Add(currentSave.pet);
         foreach (var friend in friendly)
         {
-            friend.InitialiseCombat();
+            friend.CombatReset();
             var newParticipant = new CombatParticipant
             {
                 team = 1,
@@ -49,7 +49,7 @@ public class Board
         }
         foreach (var enemy in enemies)
         {
-            enemy.InitialiseCombat();
+            enemy.CombatReset();
             var newParticipant = new CombatParticipant
             {
                 team = 2,
@@ -83,7 +83,7 @@ public class Board
         participants[0].who = new Entity(60, null);
         participants[0].human = true;
         participants[0].team = 1;
-        participants[0].who.InitialiseCombat();
+        participants[0].who.CombatReset();
         participants[1].who = new Entity(60, possible[random.Next(possible.Count)]);
         whosTurn = 0;
         area = SiteArea.areas[random.Next(SiteArea.areas.Count)];
@@ -341,6 +341,9 @@ public class Board
 
     public void EndCombat(string result)
     {
+        foreach (var combatant in participants)
+            if (!combatant.who.dead)
+                combatant.who.CombatReset();
         cursorEnemy.fadeOut = true;
         if (result != "Quit")
         {

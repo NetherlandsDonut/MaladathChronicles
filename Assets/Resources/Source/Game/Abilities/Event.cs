@@ -227,6 +227,15 @@ public class Event
                 if (destination == "None") return;
                 else if (destination == "<HomeLocation>") destination = save.player.homeLocation;
                 CloseDesktop("EquipmentScreen");
+                CloseDesktop("Area");
+                SiteArea.area = null;
+                Person.person = null;
+                PersonCategory.personCategory = null;
+                CloseDesktop("Instance");
+                SiteInstance.instance = null;
+                SiteInstance.wing = null;
+                CloseDesktop("Complex");
+                SiteComplex.complex = null;
                 SwitchDesktop("Map");
                 var prevSite = save.currentSite;
                 var findDestination = Site.FindSite(x => x.name == destination);

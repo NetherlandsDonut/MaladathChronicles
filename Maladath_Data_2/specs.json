@@ -2176,7 +2176,12 @@
         "name": "Feral",
         "talents": [
           {
-            "col": 1,
+            "col": 0,
+            "ability": "Cat Form",
+            "defaultTaken": true
+          },
+          {
+            "col": 2,
             "ability": "Rake",
             "defaultTaken": true
           },

@@ -1436,6 +1436,9 @@
   {
     "name": "Leave Shadowform",
     "icon": "AbilityShadowform",
+    "allowedSets": [
+      "Shadowform"
+    ],
     "cooldown": 1,
     "hide": true,
     "possibleTargets": "Self",
@@ -1505,6 +1508,9 @@
   {
     "name": "Leave Moonkin Form",
     "icon": "AbilityMoonkinForm",
+    "allowedSets": [
+      "Moonkin Form"
+    ],
     "cooldown": 1,
     "hide": true,
     "possibleTargets": "Self",
@@ -1575,6 +1581,9 @@
     "name": "Leave Bear Form",
     "icon": "AbilityBearForm",
     "cooldown": 1,
+    "allowedSets": [
+      "Bear Form"
+    ],
     "hide": true,
     "possibleTargets": "Self",
     "tags": [],
@@ -1597,6 +1606,78 @@
           {
             "Effect": "RemoveBuff",
             "BuffName": "Bear Form",
+            "ShatterType": "Central",
+            "Affect": "Effector",
+            "ShatterTarget": "Effector"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Cat Form",
+    "icon": "AbilityCatForm",
+    "cooldown": 1,
+    "possibleTargets": "Self",
+    "tags": [],
+    "cost": {
+      "Earth": 2
+    },
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "AddBuff",
+            "BuffDuration": "0",
+            "ShatterType": "Central",
+            "ShatterTarget": "Effector",
+            "Affect": "Effector",
+            "BuffName": "Cat Form",
+            "AnimationType": "None"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Leave Cat Form",
+    "icon": "AbilityCatForm",
+    "allowedSets": [
+      "Cat Form"
+    ],
+    "cooldown": 1,
+    "hide": true,
+    "possibleTargets": "Self",
+    "tags": [],
+    "cost": {
+      "Earth": 2
+    },
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "RemoveBuff",
+            "BuffName": "Cat Form",
             "ShatterType": "Central",
             "Affect": "Effector",
             "ShatterTarget": "Effector"
@@ -13138,14 +13219,81 @@
     "events": []
   },
   {
-    "name": "Mangle",
-    "icon": "AbilityMangle",
-    "possibleTargets": "Self",
-    "tags": [],
-    "ranks": [
-      {}
+    "name": "Rake",
+    "icon": "AbilityRake",
+    "possibleTargets": "Enemies",
+    "allowedSets": [
+      "Cat Form"
     ],
-    "events": []
+    "tags": [
+      "BasicDamage"
+    ],
+    "cost": {
+      "Earth": 2,
+      "Shadow": 2
+    },
+    "ranks": [
+      {
+        "#1": "0,6"
+      },
+      {
+        "#1": "0,7"
+      },
+      {
+        "#1": "0,8"
+      },
+      {
+        "#1": "0,9"
+      }
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
+          }
+        ],
+        "effects": [
+          {
+            "SoundEffect": "AbilityRakeImpact",
+            "Effect": "Damage",
+            "Affect": "Other",
+            "PowerType": "Melee",
+            "WeaponUsed": "Melee",
+            "PowerSource": "Effector",
+            "PowerScale": "#1",
+            "ShatterTarget": "Other",
+            "ShatterSpeed": "10",
+            "ShatterDegree": "20",
+            "Await": "5"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Gray",
+              "Text": "Mangle the target, dealing"
+            },
+            {
+              "Color": "Spell",
+              "Text": "PowerRange(Effector, Melee, #1, 1)",
+              "Split": "No"
+            },
+            {
+              "Color": "Gray",
+              "Text": "damage."
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     "name": "Martyrdom",
@@ -14086,8 +14234,8 @@
     "events": []
   },
   {
-    "name": "Rake",
-    "icon": "AbilityRake",
+    "name": "Mangle",
+    "icon": "AbilityMangle",
     "possibleTargets": "Self",
     "tags": [],
     "ranks": [

@@ -68,7 +68,7 @@ public class Entity
         equipment = new Dictionary<string, Item>();
         EquipAllItems();
         actionSets = new() { { "Default", Ability.abilities.FindAll(x => abilities.ContainsKey(x.name) && x.cost != null).OrderBy(x => x.cost.Sum(y => y.Value)).OrderBy(x => x.putOnEnd).Select(x => x.name).Take(ActionSetMaxLength()).ToList() } };
-        InitialiseCombat();
+        CombatReset();
     }
 
     public Entity(int level, Race race)
@@ -104,7 +104,7 @@ public class Entity
             { "Shadow Mastery", random.Next(1, 6) },
             { "Order Mastery", random.Next(1, 6) },
         };
-        InitialiseCombat();
+        CombatReset();
     }
 
     #endregion
@@ -1345,7 +1345,7 @@ public class Entity
     }
 
     //Prepares this entity for combat
-    public void InitialiseCombat()
+    public void CombatReset()
     {
         health = MaxHealth();
         currentActionSet = "Default";

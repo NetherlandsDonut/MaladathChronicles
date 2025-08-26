@@ -2460,6 +2460,50 @@
     ]
   },
   {
+    "name": "Cat Form",
+    "icon": "AbilityCatForm",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "BuffAdd",
+            "Triggerer": "Effector"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "ChangeActionSet",
+            "ActionSet": "Cat Form",
+            "Affect": "Effector",
+            "ShatterType": "Central",
+            "ShatterTarget": "Effector"
+          }
+        ]
+      },
+      {
+        "triggers": [
+          {
+            "Trigger": "BuffRemove",
+            "Triggerer": "Effector"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "ChangeActionSet",
+            "ActionSet": "Default",
+            "Affect": "Effector",
+            "ShatterType": "Central",
+            "ShatterTarget": "Effector"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "name": "Moonkin Form",
     "icon": "AbilityMoonkinForm",
     "tags": [],

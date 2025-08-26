@@ -277,6 +277,9 @@ public class Ability
     //Tags to help AI in calculating priorities in combat
     public List<string> tags;
 
+    //Action sets in which this ability is allowed
+    public List<string> allowedSets;
+
     //Cost of the ability to cast
     //Keys provide information what type of resource is required
     //Values provide information how much of that resource entity needs

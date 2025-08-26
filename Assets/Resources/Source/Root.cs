@@ -621,8 +621,12 @@ public static class Root
         CloseWindow("Quest");
         CloseWindow("QuestAdd");
         CloseWindow("QuestTurn");
-        if (CDesktop.title == "Map") Respawn("WorldBuffs", true);
-        if (windows != null)
+        if (CDesktop.title == "Map")
+        {
+            Respawn("WorldBuffs", true);
+            Respawn("MapToolbar", true);
+        }
+        else if (windows != null)
             foreach (var window in windows)
                 Respawn(window, true);
     }
