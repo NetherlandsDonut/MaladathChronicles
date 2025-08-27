@@ -24,6 +24,9 @@ public class GameSettings
         newSlotIndicators ??= new Bool(false);
         runsInBackground ??= new Bool(false);
         showLowLevelQuests ??= new Bool(true);
+        showSpellbookResourceIcons ??= new Bool(true);
+        showSpellbookValidActionSets ??= new Bool(true);
+        hideSetInvalidAbilities ??= new Bool(false);
     }
 
     //Currently character in the login screen
@@ -76,6 +79,15 @@ public class GameSettings
 
     //Determines whether the program runs while in background
     public Bool runsInBackground;
+
+    //Determines whether spellbook list shows resource icons under ability names
+    public Bool showSpellbookResourceIcons;
+
+    //Determines whether spellbook list shows the icons of the sets an ability can be in
+    public Bool showSpellbookValidActionSets;
+
+    //Determines whether abilities not valid for the currently selected action set are visible
+    public Bool hideSetInvalidAbilities;
 
     //EXTERNAL FILE: Collection of all settings in game
     public static GameSettings settings;

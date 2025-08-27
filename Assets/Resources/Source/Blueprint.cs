@@ -7858,13 +7858,13 @@ public class Blueprint
         new("SpellbookAbilityListActivated", () => {
             var rowAmount = 6;
             var thisWindow = CDesktop.LBWindow();
-            var activeAbilities = abilities.FindAll(x => x.icon != null && !x.hide && x.events.Any(y => y.triggers.Any(z => z["Trigger"] == "AbilityCast")) && x.cost != null && currentSave.player.abilities.ContainsKey(x.name)).ToDictionary(x => x, x => currentSave.player.abilities[x.name]);
+            var activeAbilities = abilities.FindAll(x => x.icon != null && !x.hide && x.events.Any(y => y.triggers.Any(z => z["Trigger"] == "AbilityCast")) && x.cost != null && currentSave.player.abilities.ContainsKey(x.name)).Where(x => !settings.hideSetInvalidAbilities.Value() || ((x.allowedSets != null && x.allowedSets.Contains(currentSave.player.currentActionSet)) || (x.allowedSets == null && currentSave.player.currentActionSet == "Default"))).ToDictionary(x => x, x => currentSave.player.abilities[x.name]);
             var list = activeAbilities.ToList();
             thisWindow.SetPagination(() => list.Count, rowAmount);
             SetAnchor(TopRight, 0, -38);
             AddHeaderGroup();
             SetRegionGroupWidth(190);
-            SetRegionGroupHeight(288);
+            SetRegionGroupHeight(269);
             AddHeaderRegion(() =>
             {
                 AddLine("Active abilities:");
@@ -7874,7 +7874,7 @@ public class Blueprint
                     Respawn("SpellbookAbilityListActivated");
                     PlaySound("DesktopInventorySort", 0.4f);
                 });
-                if (!WindowUp("AbilitiesSort") && !WindowUp("SwitchActionSet"))
+                if (!WindowUp("AbilitiesSort") && !WindowUp("SwitchActionSet") && !WindowUp("SpellbookSettings"))
                     AddSmallButton("OtherSort", (h) =>
                     {
                         Respawn("AbilitiesSort");
@@ -7883,10 +7883,20 @@ public class Blueprint
                     });
                 else
                     AddSmallButton("OtherSortOff");
+                if (!WindowUp("AbilitiesSort") && !WindowUp("SwitchActionSet") && !WindowUp("SpellbookSettings"))
+                    AddSmallButton("OtherSettings", (h) =>
+                    {
+                        SpawnWindowBlueprint("SpellbookSettings");
+                        CloseWindow("PlayerSpellbookInfo");
+                        Respawn("PlayerSpellbookInfo");
+                    });
+                else
+                    AddSmallButton("OtherSettingsOff");
             });
             var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             AddPaginationLine();
             var actionSet = currentSave.player.actionSets[currentSave.player.currentActionSet];
+            AddRegionGroup();
             for (int i = 0; i < rowAmount; i++)
             {
                 var index = i;
@@ -7894,19 +7904,6 @@ public class Blueprint
                     AddPaddingRegion(() =>
                     {
                         var key = activeAbilities.ToList()[index + thisWindow.pagination()];
-                        AddLine(key.Key.name);
-                        AddLine("Rank: ", "DarkGray");
-                        AddText((key.Value + 1).ToRoman());
-                        if (key.Key.allowedSets != null)
-                            foreach (var set in key.Key.allowedSets)
-                                if (set == "Default") AddSmallButton("AbilityDefault");
-                                else
-                                {
-                                    var actionSet = ActionSet.actionSets.Find(x => x.name == set);
-                                    if (actionSet.alwaysVisible || currentSave.player.abilities.ContainsKey(actionSet.abilityForVisibility))
-                                        AddSmallButton(actionSet.icon);
-                                }
-                        else AddSmallButton("AbilityDefault");
                         AddBigButton(key.Key.icon,
                             (h) =>
                             {
@@ -7950,18 +7947,78 @@ public class Blueprint
                                 PrintAbilityTooltip(currentSave.player, key, activeAbilities[key]);
                             }
                         );
-                        if (actionSet.Contains(key.Key.name) || key.Key.name == currentSave.player.currentActionSet)
+                        if (actionSet.Contains(key.Key.name))
                         {
                             SetBigButtonToGrayscale();
                             AddBigButtonOverlay("OtherGridBlurred");
+                            AddBigButtonOverlay("OtherAvailable");
                         }
                         else if (key.Key.allowedSets == null && currentSave.player.currentActionSet != "Default" || key.Key.allowedSets != null && !key.Key.allowedSets.Contains(currentSave.player.currentActionSet))
+                        {
                             SetBigButtonToRedscale();
-                        else if (actionSet.Count < currentSave.player.ActionSetMaxLength())
-                            AddBigButtonOverlay("OtherGlowLearnable");
+                            AddBigButtonOverlay("OtherGridBlurred");
+                        }
+                        //else if (actionSet.Count < currentSave.player.ActionSetMaxLength())
+                        //    AddBigButtonOverlay("OtherGlowLearnable");
                     });
                 else AddPaddingRegion(() => AddBigButton("OtherDisabled"));
             }
+            AddRegionGroup();
+            SetRegionGroupWidth(152);
+            for (int i = 0; i < rowAmount; i++)
+            {
+                var index = i;
+                if (list.Count > index + thisWindow.pagination())
+                {
+                    var key = activeAbilities.ToList()[index + thisWindow.pagination()];
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine(key.Key.name);
+                        AddText(" " + (key.Value + 1).ToRoman());
+                        if (settings.showSpellbookValidActionSets.Value())
+                        {
+                            if (key.Key.allowedSets != null)
+                                foreach (var set in key.Key.allowedSets)
+                                    if (set == "Default") AddSmallButton("AbilityDefault");
+                                    else
+                                    {
+                                        var actionSet = ActionSet.actionSets.Find(x => x.name == set);
+                                        if (actionSet.alwaysVisible || currentSave.player.abilities.ContainsKey(actionSet.abilityForVisibility))
+                                            AddSmallButton(actionSet.icon);
+                                    }
+                            else AddSmallButton("AbilityDefault");
+                        }
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        int counter = 8;
+                        if (!settings.showSpellbookResourceIcons.Value() || key.Key.cost == null) AddLine();
+                        else
+                        {
+                            ReverseButtons();
+                            if (key.Key.cost.ContainsKey("Fire") && counter-- > 0) AddSmallButton("ElementFireRousing");
+                            if (key.Key.cost.ContainsKey("Water") && counter-- > 0) AddSmallButton("ElementWaterRousing");
+                            if (key.Key.cost.ContainsKey("Earth") && counter-- > 0) AddSmallButton("ElementEarthRousing");
+                            if (key.Key.cost.ContainsKey("Air") && counter-- > 0) AddSmallButton("ElementAirRousing");
+                            if (key.Key.cost.ContainsKey("Frost") && counter-- > 0) AddSmallButton("ElementFrostRousing");
+                            if (key.Key.cost.ContainsKey("Lightning") && counter-- > 0) AddSmallButton("ElementLightningRousing");
+                            if (key.Key.cost.ContainsKey("Arcane") && counter-- > 0) AddSmallButton("ElementArcaneRousing");
+                            if (key.Key.cost.ContainsKey("Decay") && counter-- > 0) AddSmallButton("ElementDecayRousing");
+                            if (key.Key.cost.ContainsKey("Order") && counter-- > 0) AddSmallButton("ElementOrderRousing");
+                            if (key.Key.cost.ContainsKey("Shadow") && counter-- > 0) AddSmallButton("ElementShadowRousing");
+                            if (counter == 8) AddLine();
+                        }
+                    });
+                }
+                else
+                {
+                    AddHeaderRegion(() => AddLine());
+                    AddPaddingRegion(() => AddLine());
+                }
+            }
+        }),
+        new("SpellbookAbilityListActivatedBottom", () => {
+            SetAnchor(BottomRight, 0, 35);
             AddRegionGroup();
             SetRegionGroupWidth(95);
             AddPaddingRegion(() => AddLine("Activated", "", "Center"));
@@ -7970,7 +8027,9 @@ public class Blueprint
             AddButtonRegion(() => AddLine("Passive", "", "Center"), (h) =>
             {
                 CloseWindow("SpellbookAbilityListActivated");
+                CloseWindow("SpellbookAbilityListActivatedBottom");
                 Respawn("SpellbookAbilityListPassive");
+                Respawn("SpellbookAbilityListPassiveBottom");
             });
         }),
         new("SpellbookAbilityListPassive", () => {
@@ -7982,7 +8041,7 @@ public class Blueprint
             SetAnchor(TopRight, 0, -38);
             AddHeaderGroup();
             SetRegionGroupWidth(190);
-            SetRegionGroupHeight(288);
+            SetRegionGroupHeight(269);
             AddHeaderRegion(() =>
             {
                 AddLine("Passive abilities:");
@@ -8004,6 +8063,7 @@ public class Blueprint
             });
             var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             AddPaginationLine();
+            AddRegionGroup();
             for (int i = 0; i < rowAmount; i++)
             {
                 var index = i;
@@ -8011,9 +8071,6 @@ public class Blueprint
                     AddPaddingRegion(() =>
                     {
                         var key = passiveAbilities.ToList()[index + thisWindow.pagination()];
-                        AddLine(key.Key.name);
-                        AddLine("Rank: ", "DarkGray");
-                        AddText((key.Value + 1).ToRoman());
                         AddBigButton(key.Key.icon,
                             null,
                             null,
@@ -8033,11 +8090,37 @@ public class Blueprint
                     });
             }
             AddRegionGroup();
+            SetRegionGroupWidth(152);
+            for (int i = 0; i < rowAmount; i++)
+            {
+                var index = i;
+                if (list.Count > index + thisWindow.pagination())
+                {
+                    var key = passiveAbilities.ToList()[index + thisWindow.pagination()];
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine(key.Key.name);
+                        AddText(" " + (key.Value + 1).ToRoman());
+                    });
+                    AddPaddingRegion(() => AddLine());
+                }
+                else
+                {
+                    AddHeaderRegion(() => AddLine());
+                    AddPaddingRegion(() => AddLine());
+                }
+            }
+        }),
+        new("SpellbookAbilityListPassiveBottom", () => {
+            SetAnchor(BottomRight, 0, 35);
+            AddRegionGroup();
             SetRegionGroupWidth(95);
             AddButtonRegion(() => AddLine("Activated", "", "Center"), (h) =>
             {
                 CloseWindow("SpellbookAbilityListPassive");
+                CloseWindow("SpellbookAbilityListPassiveBottom");
                 Respawn("SpellbookAbilityListActivated");
+                Respawn("SpellbookAbilityListActivatedBottom");
             });
             AddRegionGroup();
             SetRegionGroupWidth(95);
@@ -8052,7 +8135,7 @@ public class Blueprint
                 AddLine(currentSave.player.currentActionSet + " action set:");
                 var list = ActionSet.actionSets.Where(x => x.alwaysVisible || currentSave.player.abilities.ContainsKey(x.abilityForVisibility));
                 if (list.Count() > 0)
-                    if (!WindowUp("AbilitiesSort") && !WindowUp("SwitchActionSet"))
+                    if (!WindowUp("AbilitiesSort") && !WindowUp("SwitchActionSet") && !WindowUp("SpellbookSettings"))
                         AddSmallButton("OtherSwitch", (h) =>
                         {
                             SpawnWindowBlueprint("SwitchActionSet");
@@ -8197,6 +8280,112 @@ public class Blueprint
                     Respawn("Spellbook" + res.Key + "Resource");
                 });
         }),
+        new("AbilitiesSort", () => {
+            SetAnchor(Center);
+            AddRegionGroup();
+            SetRegionGroupWidth(182);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Sort abilities:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow("AbilitiesSort");
+                    CDesktop.RespawnAll();
+                });
+            });
+            AddButtonRegion(() => AddLine("By name", "Black"),
+            (h) =>
+            {
+                abilities = abilities.OrderBy(x => x.name).ToList();
+                CloseWindow("AbilitiesSort");
+                CDesktop.RespawnAll();
+                PlaySound("DesktopInventorySort", 0.4f);
+            });
+            AddButtonRegion(() => AddLine("By status", "Black"),
+            (h) =>
+            {
+                abilities = abilities.OrderBy(x => currentSave.player.actionSets[currentSave.player.currentActionSet].Contains(x.name)).ToList();
+                CloseWindow("AbilitiesSort");
+                CDesktop.RespawnAll();
+                PlaySound("DesktopInventorySort", 0.4f);
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("By rank", "Black");
+            },
+            (h) =>
+            {
+                abilities = abilities.OrderByDescending(x => currentSave.player.abilities.ContainsKey(x.name) ? currentSave.player.abilities[x.name] : 0).ToList();
+                CloseWindow("AbilitiesSort");
+                CDesktop.RespawnAll();
+                PlaySound("DesktopInventorySort", 0.4f);
+            });
+            AddButtonRegion(() => AddLine("By cost", "Black"),
+            (h) =>
+            {
+                abilities = abilities.OrderByDescending(x => x.cost == null ? -1 : x.cost.Sum(y => y.Value)).ToList();
+                CloseWindow("AbilitiesSort");
+                CDesktop.RespawnAll();
+                PlaySound("DesktopInventorySort", 0.4f);
+            });
+            AddButtonRegion(() => AddLine("By cooldown", "Black"),
+            (h) =>
+            {
+                abilities = abilities.OrderByDescending(x => x.cooldown).ToList();
+                CloseWindow("AbilitiesSort");
+                CDesktop.RespawnAll();
+                PlaySound("DesktopInventorySort", 0.4f);
+            });
+        }),
+        new("SpellbookSettings", () => {
+            SetAnchor(Center);
+            AddRegionGroup();
+            SetRegionGroupWidth(182);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Ability list settings:");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow("SpellbookSettings");
+                    Respawn("PlayerSpellbookInfo", true);
+                    Respawn("SpellbookAbilityListActivated", true);
+                    Respawn("SpellbookAbilityListPassive", true);
+                });
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Show resource icons", "Black");
+                AddCheckbox(settings.showSpellbookResourceIcons);
+            },
+            (h) =>
+            {
+                settings.showSpellbookResourceIcons.Invert();
+                Respawn("SpellbookAbilityListActivated", true);
+                Respawn("SpellbookAbilityListPassive", true);
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Show valid action sets", "Black");
+                AddCheckbox(settings.showSpellbookValidActionSets);
+            },
+            (h) =>
+            {
+                settings.showSpellbookValidActionSets.Invert();
+                Respawn("SpellbookAbilityListActivated", true);
+                Respawn("SpellbookAbilityListPassive", true);
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Hide set-invalid abilities", "Black");
+                AddCheckbox(settings.hideSetInvalidAbilities);
+            },
+            (h) =>
+            {
+                settings.hideSetInvalidAbilities.Invert();
+                Respawn("SpellbookAbilityListActivated", true);
+                Respawn("SpellbookAbilityListPassive", true);
+            });
+        }, true),
 
         //Talents
         new("TalentScreenHeader", () => {
@@ -9538,12 +9727,31 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbar");
             SpawnWindowBlueprint("MapToolbarClockRight");
             SpawnWindowBlueprint("SpellbookAbilityListActivated");
+            SpawnWindowBlueprint("SpellbookAbilityListActivatedBottom");
             SpawnWindowBlueprint("PlayerSpellbookInfo");
             foreach (var res in currentSave.player.resources)
                 SpawnWindowBlueprint("Spellbook" + res.Key + "Resource");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
-            AddHotkey("Open menu / Back", () => { CloseDesktop("SpellbookScreen"); PlaySound("DesktopSpellbookClose"); });
+            AddHotkey("Open menu / Back", () =>
+            {
+                if (CloseWindow("SpellbookSettings"))
+                {
+                    PlaySound("DesktopButtonClose");
+                    SpawnWindowBlueprint("TitleScreenMenu");
+                }
+                else if (CloseWindow("AbilitiesSort"))
+                {
+                    PlaySound("DesktopButtonClose");
+                    Respawn("SpellbookAbilityListActivated", true);
+                    Respawn("SpellbookAbilityListPassive", true);
+                }
+                else
+                {
+                    CloseDesktop("SpellbookScreen");
+                    PlaySound("DesktopSpellbookClose");
+                }
+            });
             AddPaginationHotkeys();
         }),
         new("EquipmentScreen", () => 

@@ -2133,63 +2133,6 @@ public static class BlueprintDev
             AddPaddingRegion(() => AddInputLine(String.objectName));
             AddPaddingRegion(() => { });
         }),
-        new("AbilitiesSort", () => {
-            SetAnchor(Center);
-            AddRegionGroup();
-            SetRegionGroupWidth(182);
-            AddHeaderRegion(() =>
-            {
-                AddLine("Sort abilities:");
-                AddSmallButton("OtherClose", (h) =>
-                {
-                    CloseWindow("AbilitiesSort");
-                    CDesktop.RespawnAll();
-                });
-            });
-            AddButtonRegion(() => AddLine("By name", "Black"),
-            (h) =>
-            {
-                abilities = abilities.OrderBy(x => x.name).ToList();
-                CloseWindow("AbilitiesSort");
-                CDesktop.RespawnAll();
-                PlaySound("DesktopInventorySort", 0.4f);
-            });
-            AddButtonRegion(() => AddLine("By status", "Black"),
-            (h) =>
-            {
-                abilities = abilities.OrderBy(x => currentSave.player.actionSets[currentSave.player.currentActionSet].Contains(x.name)).ToList();
-                CloseWindow("AbilitiesSort");
-                CDesktop.RespawnAll();
-                PlaySound("DesktopInventorySort", 0.4f);
-            });
-            AddButtonRegion(() =>
-            {
-                AddLine("By rank", "Black");
-            },
-            (h) =>
-            {
-                abilities = abilities.OrderByDescending(x => currentSave.player.abilities.ContainsKey(x.name) ? currentSave.player.abilities[x.name] : 0).ToList();
-                CloseWindow("AbilitiesSort");
-                CDesktop.RespawnAll();
-                PlaySound("DesktopInventorySort", 0.4f);
-            });
-            AddButtonRegion(() => AddLine("By cost", "Black"),
-            (h) =>
-            {
-                abilities = abilities.OrderByDescending(x => x.cost == null ? -1 : x.cost.Sum(y => y.Value)).ToList();
-                CloseWindow("AbilitiesSort");
-                CDesktop.RespawnAll();
-                PlaySound("DesktopInventorySort", 0.4f);
-            });
-            AddButtonRegion(() => AddLine("By cooldown", "Black"),
-            (h) =>
-            {
-                abilities = abilities.OrderByDescending(x => x.cooldown).ToList();
-                CloseWindow("AbilitiesSort");
-                CDesktop.RespawnAll();
-                PlaySound("DesktopInventorySort", 0.4f);
-            });
-        }),
         new("ObjectManagerCostManager", () => {
             SetAnchor(TopLeft);
             AddRegionGroup();
