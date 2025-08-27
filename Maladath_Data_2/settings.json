@@ -18,7 +18,7 @@
     "value": "False"
   },
   "questLevel": {
-    "value": "False"
+    "value": "True"
   },
   "showLowLevelQuests": {
     "value": "True"
@@ -27,7 +27,7 @@
     "value": "False"
   },
   "newSlotIndicators": {
-    "value": "False"
+    "value": "True"
   },
   "chartBigIcons": {
     "value": "True"

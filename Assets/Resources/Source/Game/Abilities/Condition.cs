@@ -155,6 +155,7 @@ public class Condition
                 "@class" => save != null ? save.player.spec : "",
                 "@lvl" => save != null ? save.player.level + "" : "",
                 "@itemcount" => save != null ? save.player.inventory.items.Sum(x => x.name == input.Split("~")[1].Replace("_", " ") ? x.amount : 0) + "" : "0",
+                "@killcount" => save != null ? (save.commonsKilled.ContainsKey(input.Split("~")[1].Replace("_", " ")) ? save.commonsKilled[input.Split("~")[1].Replace("_", " ")] : (save.raresKilled.ContainsKey(input.Split("~")[1].Replace("_", " ")) ? save.raresKilled[input.Split("~")[1].Replace("_", " ")] : (save.elitesKilled.ContainsKey(input.Split("~")[1].Replace("_", " ")) ? save.elitesKilled[input.Split("~")[1].Replace("_", " ")] : 0))) + "" : "0",
                 "@flag" => save != null && save.flags.ContainsKey(input.Split("~")[1]) ? save.flags[input.Split("~")[1]] : "",
 
                 //Game related

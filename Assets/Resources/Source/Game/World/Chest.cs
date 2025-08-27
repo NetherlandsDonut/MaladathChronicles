@@ -33,8 +33,6 @@ public class Chest
         else if (dropBlue.Count > 0 && Roll(5)) chest.inventory.AddItem(dropBlue[random.Next(dropBlue.Count)].CopyItem());
         else if (dropGreen.Count > 0) chest.inventory.AddItem(dropGreen[random.Next(dropGreen.Count)].CopyItem());
         else if (dropWhite.Count > 0) chest.inventory.AddItem(dropWhite[random.Next(dropWhite.Count)].CopyItem());
-        if (area.chestBonus != null) chest.inventory.items.AddRange(area.chestBonus.Select(x => Item.items.Find(y => y.name == x.Key).CopyItem(x.Value)));
-        chest.inventory.items.ForEach(x => x.SetRandomEnchantment());
         var dropsWithinLevelRange = GeneralDrop.generalDrops.FindAll(x => x.dropStart <= area.recommendedLevel[currentSave.playerSide] && x.dropEnd >= area.recommendedLevel[currentSave.playerSide]);
         if (dropsWithinLevelRange.Count > 0)
         {
@@ -67,6 +65,10 @@ public class Chest
                 if (find != null) chest.inventory.AddItem(Item.items.Find(x => x.name == find.item).CopyItem(random.Next(1, find.dropCount + 1)));
             }
         }
+        if (area.chestBonus != null)
+            foreach (var item in area.chestBonus.Select(x => Item.items.Find(y => y.name == x.Key).CopyItem(x.Value)).Where(x => !x.unique || !currentSave.player.uniquesGotten.Contains(x.name)).Where(x => x.specDropRestriction == null || x.specDropRestriction.Contains(currentSave.player.spec)).Where(x => x.raceDropRestriction == null || x.raceDropRestriction.Contains(currentSave.player.race)))
+                chest.inventory.AddItem(item);
+        chest.inventory.items.ForEach(x => x.SetRandomEnchantment());
         foreach (var item in chest.inventory.items)
             if (item.unique && !currentSave.player.uniquesGotten.Contains(item.name))
                 currentSave.player.uniquesGotten.Add(item.name);

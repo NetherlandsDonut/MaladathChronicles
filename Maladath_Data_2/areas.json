@@ -40779,6 +40779,9 @@
     "noNightVariant": true
   },
   {
+    "chestBonus": {
+      "Pattern: Black Dragonscale Breastplate": 1
+    },
     "commonEncounters": [
       {
         "who": "Bloodaxe Summoner",
@@ -40819,9 +40822,6 @@
         "point": 3
       }
     ],
-    "chestBonus": {
-      "Pattern: Black Dragonscale Breastplate": 1
-    },
     "name": "The Storehouse",
     "zone": "Lower Blackrock Spire",
     "type": "HostileArea",
@@ -53908,6 +53908,9 @@
     "type": "HostileArea"
   },
   {
+    "chestBonus": {
+      "Recipe: Elixir of the Mongoose": 1
+    },
     "commonEncounters": [
       {
         "who": "Cursed Ooze",
@@ -53936,9 +53939,6 @@
     "y": -1620,
     "name": "Ruins of Constellas",
     "zone": "Felwood",
-    "chestBonus": {
-      "Recipe: Elixir of the Mongoose": 1
-    },
     "type": "HostileArea"
   },
   {
@@ -54437,6 +54437,9 @@
     "type": "HostileArea"
   },
   {
+    "chestBonus": {
+      "Horn of Hatetalon": 1
+    },
     "commonEncounters": [
       {
         "who": "Northspring Roguefeather",
@@ -60884,6 +60887,9 @@
     "noNightVariant": true
   },
   {
+    "chestBonus": {
+      "Plans: Enchanted Thorium Leggings": 1
+    },
     "commonEncounters": [
       {
         "who": "Risen Construct",
@@ -60919,9 +60925,6 @@
         "point": 3
       }
     ],
-    "chestBonus": {
-      "Plans: Enchanted Thorium Leggings": 1
-    },
     "name": "The Great Ossuary",
     "zone": "Scholomance",
     "type": "HostileArea",
@@ -61381,6 +61384,9 @@
     "type": "HostileArea"
   },
   {
+    "chestBonus": {
+      "Recipe: Transmute Fire to Earth": 1
+    },
     "commonEncounters": [
       {
         "who": "Twilight Idolater",
@@ -61423,9 +61429,6 @@
     ],
     "x": 5240,
     "y": -3004,
-    "chestBonus": {
-      "Recipe: Transmute Fire to Earth": 1
-    },
     "name": "Firewatch Ridge",
     "zone": "Searing Gorge",
     "type": "HostileArea"
@@ -71157,6 +71160,9 @@
     "convertDestinationTo": "Tyr's Hand"
   },
   {
+    "chestBonus": {
+      "Recipe: Elixir of the Sages": 1
+    },
     "commonEncounters": [
       {
         "who": "Scarlet Cleric",
@@ -71182,9 +71188,6 @@
         "point": 3
       }
     ],
-    "chestBonus": {
-      "Recipe: Elixir of the Sages": 1
-    },
     "name": "Tyr's Hand Abbey",
     "zone": "Tyr's Hand",
     "type": "HostileArea",

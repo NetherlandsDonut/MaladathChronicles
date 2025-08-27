@@ -611,11 +611,10 @@ public static class Root
             Cursor.cursor.transform.position += (Vector3)CDesktop.cameraDestination - CDesktop.screen.transform.localPosition;
             CDesktop.screen.transform.localPosition = (Vector3)CDesktop.cameraDestination;
         }
-        if (WindowUp("Area"))
-        {
-            CloseWindow("AreaQuestTracker");
-            Respawn("Area");
-        }
+
+        //If area was open and area tracker as well then close the area tracker
+        if (WindowUp("Area") && CloseWindow("AreaQuestTracker")) Respawn("Area");
+
         Respawn("AreaQuestAvailable", true);
         Respawn("AreaQuestDone", true);
         CloseWindow("Quest");

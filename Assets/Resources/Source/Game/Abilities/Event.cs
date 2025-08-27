@@ -124,7 +124,6 @@ public class Event
                 int combatSpecialLootAmount = int.Parse(effect.ContainsKey("CombatSpecialLootAmount") ? effect["CombatSpecialLootAmount"] : "1");
                 string enemy = effect.ContainsKey("CombatEnemy") ? effect["CombatEnemy"] : "None";
                 int level = effect.ContainsKey("CombatEnemyLevel") ? int.Parse(effect["CombatEnemyLevel"]) : 0;
-                int killCap = effect.ContainsKey("CombatKillCap") ? int.Parse(effect["CombatKillCap"]) : 0;
                 var race = Race.races.Find(x => x.name == enemy);
                 if (race == null && sourceLocalEnemies == "True" && SiteArea.area != null)
                 {
@@ -138,17 +137,10 @@ public class Event
                 }
                 if (race != null)
                 {
-                    var can = false;
-                    if (race.kind == "Common" && (killCap <= 0 || (save.commonsKilled.ContainsKey(race.name) ? save.commonsKilled[race.name] : 0) < killCap)) can = true;
-                    else if (race.kind == "Rare" && (killCap <= 0 || (save.raresKilled.ContainsKey(race.name) ? save.raresKilled[race.name] : 0) < killCap)) can = true;
-                    else if (race.kind == "Elite" && (killCap <= 0 || (save.elitesKilled.ContainsKey(race.name) ? save.elitesKilled[race.name] : 0) < killCap)) can = true;
-                    if (can)
-                    {
-                        var entity = new Entity(level, race) { specialLoot = Item.items.Find(x => x.name == combatSpecialLoot).CopyItem(combatSpecialLootAmount) };
-                        Board.NewBoard(new() { entity }, SiteArea.areas.Find(x => x.name == save.currentSite));
-                        SpawnDesktopBlueprint("Game");
-                        CloseDesktop("EquipmentScreen");
-                    }
+                    var entity = new Entity(level, race) { specialLoot = Item.items.Find(x => x.name == combatSpecialLoot).CopyItem(combatSpecialLootAmount) };
+                    Board.NewBoard(new() { entity }, SiteArea.areas.Find(x => x.name == save.currentSite));
+                    SpawnDesktopBlueprint("Game");
+                    CloseDesktop("EquipmentScreen");
                 }
             }
 

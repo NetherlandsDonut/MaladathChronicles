@@ -1342,15 +1342,6 @@
     ]
   },
   {
-    "zoneDrops": [
-      "Ritssyn's Ring of Chaos",
-      "Anubisath Warhammer",
-      "Garb of Royal Ascension",
-      "Neretzek, The Blood Drinker",
-      "Gloves of the Immortal",
-      "Gloves of the Redeemed Prophecy",
-      "Shard of the Fallen Star"
-    ],
     "name": "Temple of Ahn'Qiraj",
     "icon": "Temple of Ahn'Qiraj",
     "continent": "Kalimdor",
@@ -1366,20 +1357,18 @@
       "MusicAhnQirajUnderground3"
     ],
     "ambienceDay": "AmbienceAhnQirajUndergrounds",
-    "ambienceNight": "AmbienceAhnQirajUndergrounds"
+    "ambienceNight": "AmbienceAhnQirajUndergrounds",
+    "zoneDrops": [
+      "Ritssyn's Ring of Chaos",
+      "Anubisath Warhammer",
+      "Garb of Royal Ascension",
+      "Neretzek, The Blood Drinker",
+      "Gloves of the Immortal",
+      "Gloves of the Redeemed Prophecy",
+      "Shard of the Fallen Star"
+    ]
   },
   {
-    "zoneDrops": [
-      "Silithid Husked Launcher",
-      "Antenna of Invigoration",
-      "The Lost Kris of Zedd",
-      "Helm of the Holy Avenger",
-      "Coif of Elemental Fury",
-      "Polished Obsidian Pauldrons",
-      "Gavel of Qiraji Authority",
-      "Fury of the Forgotten Swarm",
-      "Treads of the Wandering Nomad"
-    ],
     "name": "Ruins of Ahn'Qiraj",
     "icon": "Ruins of Ahn'Qiraj",
     "continent": "Kalimdor",
@@ -1397,7 +1386,18 @@
       "MusicAhnQirajExterior4"
     ],
     "ambienceDay": "AmbienceAhnQirajExterior",
-    "ambienceNight": "AmbienceAhnQirajExterior"
+    "ambienceNight": "AmbienceAhnQirajExterior",
+    "zoneDrops": [
+      "Silithid Husked Launcher",
+      "Antenna of Invigoration",
+      "The Lost Kris of Zedd",
+      "Helm of the Holy Avenger",
+      "Coif of Elemental Fury",
+      "Polished Obsidian Pauldrons",
+      "Gavel of Qiraji Authority",
+      "Fury of the Forgotten Swarm",
+      "Treads of the Wandering Nomad"
+    ]
   },
   {
     "name": "Onyxia's Lair",
@@ -1447,19 +1447,6 @@
     ]
   },
   {
-    "zoneDrops": [
-      "Redoubt Cloak",
-      "Gordok Bracers of Power",
-      "Rod of the Ogre Magi",
-      "Counterattack Lodestone",
-      "Barrier Shield",
-      "Ogre Forged Hauberk",
-      "Unyielding Maul",
-      "Mindsurge Robe",
-      "Tarnished Elven Ring",
-      "Cyclone Spaulders",
-      "Elemental Plate Girdle"
-    ],
     "name": "Dire Maul",
     "icon": "Dire Maul",
     "continent": "Kalimdor",
@@ -1480,6 +1467,19 @@
       "Dreamfoil",
       "Gromsblood",
       "Ghost Mushroom"
+    ],
+    "zoneDrops": [
+      "Redoubt Cloak",
+      "Gordok Bracers of Power",
+      "Rod of the Ogre Magi",
+      "Counterattack Lodestone",
+      "Barrier Shield",
+      "Ogre Forged Hauberk",
+      "Unyielding Maul",
+      "Mindsurge Robe",
+      "Tarnished Elven Ring",
+      "Cyclone Spaulders",
+      "Elemental Plate Girdle"
     ]
   },
   {
@@ -1554,20 +1554,6 @@
     ]
   },
   {
-    "zoneDrops": [
-      "Axe of the Enforcer",
-      "Crested Scepter",
-      "Martyr's Chain",
-      "Onyx Claymore",
-      "Grimclaw",
-      "Ring of Precision",
-      "Scholarly Robes",
-      "Doomspike",
-      "Tree Bark Jacket",
-      "Staff of the Friar",
-      "Staff of the Blessed Seer",
-      "Evocator's Blade"
-    ],
     "name": "Blackfathom Deeps",
     "icon": "Blackfathom Deeps",
     "continent": "Kalimdor",
@@ -1591,21 +1577,23 @@
     "herbs": [
       "Bruiseweed",
       "Stranglekelp"
+    ],
+    "zoneDrops": [
+      "Axe of the Enforcer",
+      "Crested Scepter",
+      "Martyr's Chain",
+      "Onyx Claymore",
+      "Grimclaw",
+      "Ring of Precision",
+      "Scholarly Robes",
+      "Doomspike",
+      "Tree Bark Jacket",
+      "Staff of the Friar",
+      "Staff of the Blessed Seer",
+      "Evocator's Blade"
     ]
   },
   {
-    "zoneDrops": [
-      "Vendetta",
-      "Avenger's Armor",
-      "Mantle of Thieves",
-      "Pugilist Bracers",
-      "Slaghammer",
-      "Plains Ring",
-      "Sword of Decay",
-      "Pysan's Old Greatsword",
-      "Wolfclaw Gloves",
-      "Staff of the Shade"
-    ],
     "name": "Razorfen Kraul",
     "icon": "Razorfen Kraul",
     "continent": "Kalimdor",
@@ -1630,20 +1618,21 @@
     "herbs": [
       "Briarthorn",
       "Fadeleaf"
+    ],
+    "zoneDrops": [
+      "Vendetta",
+      "Avenger's Armor",
+      "Mantle of Thieves",
+      "Pugilist Bracers",
+      "Slaghammer",
+      "Plains Ring",
+      "Sword of Decay",
+      "Pysan's Old Greatsword",
+      "Wolfclaw Gloves",
+      "Staff of the Shade"
     ]
   },
   {
-    "zoneDrops": [
-      "Corpseshroud",
-      "Death's Head Vestment",
-      "Manslayer",
-      "Freezing Shard",
-      "Quillward Harness",
-      "Quillshooter",
-      "Thoughtcast Boots",
-      "Ebony Boneclub",
-      "Boneslasher"
-    ],
     "name": "Razorfen Downs",
     "icon": "Razorfen Downs",
     "continent": "Kalimdor",
@@ -1669,6 +1658,17 @@
       "Goldthorn",
       "Grave Moss",
       "Arthas' Tears"
+    ],
+    "zoneDrops": [
+      "Corpseshroud",
+      "Death's Head Vestment",
+      "Manslayer",
+      "Freezing Shard",
+      "Quillward Harness",
+      "Quillshooter",
+      "Thoughtcast Boots",
+      "Ebony Boneclub",
+      "Boneslasher"
     ]
   },
   {
@@ -1732,6 +1732,25 @@
     ]
   },
   {
+    "name": "Molten Core",
+    "icon": "Molten Core",
+    "continent": "Eastern Kingdoms",
+    "chestVariant": 8,
+    "musicDay": [
+      "MusicHaunted1",
+      "MusicHaunted2",
+      "MusicHaunted3"
+    ],
+    "musicNight": [
+      "MusicHaunted1",
+      "MusicHaunted2",
+      "MusicHaunted3"
+    ],
+    "ambienceDay": "AmbienceMoltenCore",
+    "ambienceNight": "AmbienceMoltenCore",
+    "miningNodes": [
+      "Dark Iron Vein"
+    ],
     "zoneDrops": [
       "Arcanist Bindings",
       "Arcanist Belt",
@@ -1751,36 +1770,9 @@
       "Lawbringer Belt",
       "Bracers of Might",
       "Belt of Might"
-    ],
-    "name": "Molten Core",
-    "icon": "Molten Core",
-    "continent": "Eastern Kingdoms",
-    "chestVariant": 8,
-    "musicDay": [
-      "MusicHaunted1",
-      "MusicHaunted2",
-      "MusicHaunted3"
-    ],
-    "musicNight": [
-      "MusicHaunted1",
-      "MusicHaunted2",
-      "MusicHaunted3"
-    ],
-    "ambienceDay": "AmbienceMoltenCore",
-    "ambienceNight": "AmbienceMoltenCore",
-    "miningNodes": [
-      "Dark Iron Vein"
     ]
   },
   {
-    "zoneDrops": [
-      "Draconic Maul",
-      "Doom's Edge",
-      "Band of Dark Dominion",
-      "Essence Gatherer",
-      "Cloak of Draconic Might",
-      "Boots of Pure Thought"
-    ],
     "name": "Blackwing Lair",
     "icon": "Blackwing Lair",
     "continent": "Eastern Kingdoms",
@@ -1796,15 +1788,17 @@
       "MusicHaunted3"
     ],
     "ambienceDay": "AmbienceBlackwingLair",
-    "ambienceNight": "AmbienceBlackwingLair"
+    "ambienceNight": "AmbienceBlackwingLair",
+    "zoneDrops": [
+      "Draconic Maul",
+      "Doom's Edge",
+      "Band of Dark Dominion",
+      "Essence Gatherer",
+      "Cloak of Draconic Might",
+      "Boots of Pure Thought"
+    ]
   },
   {
-    "zoneDrops": [
-      "Blackwater Cutlass",
-      "Silk-threaded Trousers",
-      "Blackened Defias Leggings",
-      "Blackened Defias Gloves"
-    ],
     "name": "The Deadmines",
     "icon": "The Deadmines",
     "continent": "Eastern Kingdoms",
@@ -1825,27 +1819,15 @@
       "Copper Vein",
       "Silver Vein",
       "Tin Vein"
+    ],
+    "zoneDrops": [
+      "Blackwater Cutlass",
+      "Silk-threaded Trousers",
+      "Blackened Defias Leggings",
+      "Blackened Defias Gloves"
     ]
   },
   {
-    "zoneDrops": [
-      "Sceptre of Smiting",
-      "Zulian Hacker",
-      "Zulian Ceremonial Staff",
-      "Shadow Panther Hide Gloves",
-      "Shadow Panther Hide Belt",
-      "Gurubashi Helm",
-      "Cloak of the Hakkari Worshipers",
-      "Might of the Tribe",
-      "Zulian Scepter of Rites",
-      "Sacrificial Gauntlets",
-      "Gloves of the Tormented",
-      "Belt of Untapped Power",
-      "Blooddrenched Mask",
-      "Zulian Headdress",
-      "Band of Servitude",
-      "Seal of the Gurubashi Berserker"
-    ],
     "name": "Zul'Gurub",
     "icon": "Zul'Gurub",
     "continent": "Eastern Kingdoms",
@@ -1875,6 +1857,24 @@
       "Purple Lotus",
       "Mountain Silversage",
       "Sungrass"
+    ],
+    "zoneDrops": [
+      "Sceptre of Smiting",
+      "Zulian Hacker",
+      "Zulian Ceremonial Staff",
+      "Shadow Panther Hide Gloves",
+      "Shadow Panther Hide Belt",
+      "Gurubashi Helm",
+      "Cloak of the Hakkari Worshipers",
+      "Might of the Tribe",
+      "Zulian Scepter of Rites",
+      "Sacrificial Gauntlets",
+      "Gloves of the Tormented",
+      "Belt of Untapped Power",
+      "Blooddrenched Mask",
+      "Zulian Headdress",
+      "Band of Servitude",
+      "Seal of the Gurubashi Berserker"
     ]
   },
   {
@@ -1897,6 +1897,19 @@
     ]
   },
   {
+    "name": "Scarlet Monastery",
+    "icon": "Scarlet Monastery",
+    "continent": "Eastern Kingdoms",
+    "chestVariant": 6,
+    "ambienceDay": "AmbienceScary",
+    "ambienceNight": "AmbienceScary",
+    "herbs": [
+      "Fadeleaf",
+      "Grave Moss",
+      "Kingsblood",
+      "Goldthorn",
+      "Liferoot"
+    ],
     "zoneDrops": [
       "Scarlet Leggings",
       "Fight Club",
@@ -1917,19 +1930,6 @@
       "Chesterfall Musket",
       "Watchman Pauldrons",
       "Resplendent Guardian"
-    ],
-    "name": "Scarlet Monastery",
-    "icon": "Scarlet Monastery",
-    "continent": "Eastern Kingdoms",
-    "chestVariant": 6,
-    "ambienceDay": "AmbienceScary",
-    "ambienceNight": "AmbienceScary",
-    "herbs": [
-      "Fadeleaf",
-      "Grave Moss",
-      "Kingsblood",
-      "Goldthorn",
-      "Liferoot"
     ]
   },
   {
@@ -2028,21 +2028,6 @@
     "ambienceNight": "AmbienceGnomeregan"
   },
   {
-    "zoneDrops": [
-      "The Jackhammer",
-      "Spaulders of a Lost Age",
-      "Digmaster 5000",
-      "Pendulum of Doom",
-      "Miner's Hat of the Deep",
-      "Shadowforge Bushmaster",
-      "Papal Fez",
-      "Stonevault Bonebreaker",
-      "Skullplate Bracers",
-      "Ginn-su Sword",
-      "Monolithic Bow",
-      "Obsidian Cleaver",
-      "Annealed Blade"
-    ],
     "name": "Uldaman",
     "icon": "Uldaman",
     "continent": "Eastern Kingdoms",
@@ -2064,6 +2049,21 @@
       "Gold Vein",
       "Iron Vein",
       "Mithril Vein"
+    ],
+    "zoneDrops": [
+      "The Jackhammer",
+      "Spaulders of a Lost Age",
+      "Digmaster 5000",
+      "Pendulum of Doom",
+      "Miner's Hat of the Deep",
+      "Shadowforge Bushmaster",
+      "Papal Fez",
+      "Stonevault Bonebreaker",
+      "Skullplate Bracers",
+      "Ginn-su Sword",
+      "Monolithic Bow",
+      "Obsidian Cleaver",
+      "Annealed Blade"
     ]
   },
   {
@@ -2093,22 +2093,6 @@
     "icon": "Jintha'Alor",
     "continent": "Eastern Kingdoms",
     "chestVariant": 7,
-    "ambienceDay": "AmbienceForestNormalDay",
-    "ambienceNight": "AmbienceForestNormalNight",
-    "miningNodes": [
-      "Iron Vein",
-      "Gold Vein",
-      "Mithril Vein",
-      "Truesilver Vein",
-      "Thorium Vein"
-    ],
-    "herbs": [
-      "Golden Sansam",
-      "Goldthorn",
-      "Purple Lotus",
-      "Star Lotus",
-      "Sungrass"
-    ],
     "musicDay": [
       "MusicZulGurub1",
       "MusicZulGurub2",
@@ -2126,9 +2110,34 @@
       "MusicZulGurub5",
       "MusicZulGurub6",
       "MusicZulGurub7"
+    ],
+    "ambienceDay": "AmbienceForestNormalDay",
+    "ambienceNight": "AmbienceForestNormalNight",
+    "miningNodes": [
+      "Iron Vein",
+      "Gold Vein",
+      "Mithril Vein",
+      "Truesilver Vein",
+      "Thorium Vein"
+    ],
+    "herbs": [
+      "Golden Sansam",
+      "Goldthorn",
+      "Purple Lotus",
+      "Star Lotus",
+      "Sungrass"
     ]
   },
   {
+    "name": "Blackrock Depths",
+    "icon": "Blackrock Depths",
+    "continent": "Eastern Kingdoms",
+    "chestVariant": 3,
+    "ambienceDay": "AmbienceBlackrock",
+    "ambienceNight": "AmbienceBlackrock",
+    "miningNodes": [
+      "Dark Iron Vein"
+    ],
     "zoneDrops": [
       "Ironweave Mantle",
       "Swiftwalker Boots",
@@ -2162,15 +2171,6 @@
       "Braincage",
       "Searing Needle",
       "Funeral Pyre Vestment"
-    ],
-    "name": "Blackrock Depths",
-    "icon": "Blackrock Depths",
-    "continent": "Eastern Kingdoms",
-    "chestVariant": 3,
-    "ambienceDay": "AmbienceBlackrock",
-    "ambienceNight": "AmbienceBlackrock",
-    "miningNodes": [
-      "Dark Iron Vein"
     ]
   },
   {
@@ -2206,6 +2206,12 @@
     ]
   },
   {
+    "name": "Lower Blackrock Spire",
+    "icon": "Lower Blackrock Spire",
+    "continent": "Eastern Kingdoms",
+    "chestVariant": 3,
+    "ambienceDay": "AmbienceBlackrock",
+    "ambienceNight": "AmbienceBlackrock",
     "zoneDrops": [
       "Draconian Deflector",
       "Wildfire Cape",
@@ -2222,13 +2228,7 @@
       "Dreadmist Bracers",
       "Shadowcraft Belt",
       "Bracers of Valor"
-    ],
-    "name": "Lower Blackrock Spire",
-    "icon": "Lower Blackrock Spire",
-    "continent": "Eastern Kingdoms",
-    "chestVariant": 3,
-    "ambienceDay": "AmbienceBlackrock",
-    "ambienceNight": "AmbienceBlackrock"
+    ]
   },
   {
     "name": "Hearthglen",
@@ -2252,6 +2252,12 @@
     ]
   },
   {
+    "name": "Stratholme",
+    "icon": "Stratholme",
+    "continent": "Eastern Kingdoms",
+    "chestVariant": 2,
+    "ambienceDay": "AmbienceStratholme",
+    "ambienceNight": "AmbienceStratholme",
     "zoneDrops": [
       "Star of Mystaria",
       "Demonshear",
@@ -2277,13 +2283,7 @@
       "Devout Bracers",
       "Sacred Cloth Leggings",
       "Frayed Abomination Stitching"
-    ],
-    "name": "Stratholme",
-    "icon": "Stratholme",
-    "continent": "Eastern Kingdoms",
-    "chestVariant": 2,
-    "ambienceDay": "AmbienceStratholme",
-    "ambienceNight": "AmbienceStratholme"
+    ]
   },
   {
     "name": "Scholomance",

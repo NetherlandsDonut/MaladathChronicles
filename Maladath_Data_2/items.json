@@ -184996,9 +184996,28 @@
     "icon": "itempotion25",
     "detailedType": "Potion",
     "type": "Miscellaneous",
-    "source": "ZoneDrop",
+    "source": "DirectDrop",
     "ilvl": 1,
-    "maxStack": 20
+    "maxStack": 20,
+    "onlyWithQuest": true,
+    "droppedBy": [
+      "Theka the Martyr",
+      "Dustwraith",
+      "Sandfury Shadowhunter",
+      "Sandfury Blood Drinker",
+      "Sandfury Witch Doctor",
+      "Antu'sul",
+      "Zul'Farrak Zombie",
+      "Zul'Farrak Dead Hero",
+      "Witch Doctor Zum'rah",
+      "Zerillis",
+      "Hydromancer Velratha",
+      "Nekrum Gutchewer",
+      "Shadowpriest Sezz'ziz",
+      "Sandfury Guardian",
+      "Ruuzlu",
+      "Chief Ukorz Sandscalp"
+    ]
   },
   {
     "rarity": "Common",
@@ -185009,20 +185028,20 @@
     "source": "DirectDrop",
     "ilvl": 1,
     "maxStack": 1,
-    "droppedBy": [
-      "Vile Priestess Hexx"
-    ],
     "indestructible": true,
     "unique": true,
+    "abilities": {
+      "Hexx's Key": 1
+    },
     "raceDropRestriction": [
       "Gnome",
       "Night Elf",
       "Dwarf",
       "Human"
     ],
-    "abilities": {
-      "Hexx's Key": 1
-    }
+    "droppedBy": [
+      "Vile Priestess Hexx"
+    ]
   },
   {
     "rarity": "Common",
@@ -185084,7 +185103,16 @@
     "ilvl": 1,
     "maxStack": 1,
     "indestructible": true,
-    "unique": true
+    "unique": true,
+    "abilities": {
+      "Horn of Hatetalon": 0
+    },
+    "raceDropRestriction": [
+      "Forsaken",
+      "Orc",
+      "Tauren",
+      "Troll"
+    ]
   },
   {
     "rarity": "Common",

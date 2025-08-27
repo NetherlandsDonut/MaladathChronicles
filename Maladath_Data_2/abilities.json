@@ -1436,13 +1436,13 @@
   {
     "name": "Leave Shadowform",
     "icon": "AbilityShadowform",
-    "allowedSets": [
-      "Shadowform"
-    ],
     "cooldown": 1,
     "hide": true,
     "possibleTargets": "Self",
     "tags": [],
+    "allowedSets": [
+      "Shadowform"
+    ],
     "cost": {
       "Shadow": 6
     },
@@ -1508,13 +1508,13 @@
   {
     "name": "Leave Moonkin Form",
     "icon": "AbilityMoonkinForm",
-    "allowedSets": [
-      "Moonkin Form"
-    ],
     "cooldown": 1,
     "hide": true,
     "possibleTargets": "Self",
     "tags": [],
+    "allowedSets": [
+      "Moonkin Form"
+    ],
     "cost": {
       "Arcane": 2
     },
@@ -1581,12 +1581,12 @@
     "name": "Leave Bear Form",
     "icon": "AbilityBearForm",
     "cooldown": 1,
-    "allowedSets": [
-      "Bear Form"
-    ],
     "hide": true,
     "possibleTargets": "Self",
     "tags": [],
+    "allowedSets": [
+      "Bear Form"
+    ],
     "cost": {
       "Earth": 2
     },
@@ -1652,13 +1652,13 @@
   {
     "name": "Leave Cat Form",
     "icon": "AbilityCatForm",
-    "allowedSets": [
-      "Cat Form"
-    ],
     "cooldown": 1,
     "hide": true,
     "possibleTargets": "Self",
     "tags": [],
+    "allowedSets": [
+      "Cat Form"
+    ],
     "cost": {
       "Earth": 2
     },
@@ -2078,14 +2078,17 @@
           {
             "Effect": "Combat",
             "CombatEnemy": "Arikara",
-            "CombatEnemyLevel": "28",
-            "CombatKillCap": "1"
+            "CombatEnemyLevel": "28"
           }
         ],
         "conditions": [
           {
             "condition": "@currentarea == Darkcloud_Pinnacle",
             "failedMessage": "You have to be at the Darkcloud Pinnacle"
+          },
+          {
+            "condition": "@killcount~Arikara == 0",
+            "failedMessage": "Arikara has been already defeated"
           }
         ]
       }
@@ -2099,6 +2102,55 @@
             {
               "Color": "Uncommon",
               "Text": "Use: Toss the Incendia Powder into the sacred fire of life at the Darkcloud Pinnacle"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Horn of Hatetalon",
+    "possibleTargets": "Self",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "SoundEffect": "AbilitySoundHorn",
+            "Effect": "Combat",
+            "CombatEnemy": "Edana Hatetalon",
+            "CombatEnemyLevel": "50"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "@currentarea == Ruins_of_Ravenwind",
+            "failedMessage": "You have to be at the Ruins of Ravenwind"
+          },
+          {
+            "condition": "@killcount~Edana_Hatetalon == 0",
+            "failedMessage": "Edana Hatetalon has been already defeated"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "isExtender": true,
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Sound the Horn of Hatetalon to summon Edana Hatetalon at the Ruins of Ravenwind"
             }
           ]
         }
@@ -2121,6 +2173,7 @@
         ],
         "effects": [
           {
+            "SoundEffect": "AbilityShovel",
             "Effect": "Combat",
             "CombatEnemySourceLocal": "True",
             "CombatSpecialLoot": "Gordunni Cobalt"
@@ -2217,16 +2270,20 @@
         ],
         "effects": [
           {
+            "SoundEffect": "DesktopChest11Open",
             "Effect": "Combat",
             "CombatEnemy": "Gargantuan Ooze",
-            "CombatEnemyLevel": "56",
-            "CombatKillCap": "1"
+            "CombatEnemyLevel": "56"
           }
         ],
         "conditions": [
           {
             "condition": "@currentarea == Lakkari_Tar_Pits",
             "failedMessage": "You have to be at the Lakkari Tar Pits"
+          },
+          {
+            "condition": "@killcount~Gargantuan_Ooze == 0",
+            "failedMessage": "You already performed the experiment, the barrel is empty"
           }
         ]
       }
@@ -2239,7 +2296,7 @@
           "contents": [
             {
               "Color": "Uncommon",
-              "Text": "Use: Toss the Incendia Powder into the sacred fire of life at the Darkcloud Pinnacle"
+              "Text": "Use: Releases a captured Felwood ooze so it can interact with a primal ooze in Un'Goro Crater"
             }
           ]
         }
@@ -11167,9 +11224,9 @@
   },
   {
     "name": "Jom Gabbar",
-    "hide": true,
     "icon": "itemmiscenggizmos19",
     "targettingSound": "PrecastFire",
+    "hide": true,
     "possibleTargets": "Enemies",
     "tags": [
       "BasicDamage"
@@ -13222,11 +13279,11 @@
     "name": "Rake",
     "icon": "AbilityRake",
     "possibleTargets": "Enemies",
-    "allowedSets": [
-      "Cat Form"
-    ],
     "tags": [
       "BasicDamage"
+    ],
+    "allowedSets": [
+      "Cat Form"
     ],
     "cost": {
       "Earth": 2,
@@ -13282,7 +13339,7 @@
               "Text": "Mangle the target, dealing"
             },
             {
-              "Color": "Spell",
+              "Color": "Melee",
               "Text": "PowerRange(Effector, Melee, #1, 1)",
               "Split": "No"
             },
