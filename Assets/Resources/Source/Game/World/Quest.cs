@@ -439,8 +439,9 @@ public class Quest
 
                 void Foo()
                 {
-                    currentSave.player.TurnQuest(this);
                     PlaySound("QuestTurn");
+                    currentSave.player.TurnQuest(this);
+                    quest = null;
                     CloseWindow(h.window);
                     if (CDesktop.title != "Map")
                     {

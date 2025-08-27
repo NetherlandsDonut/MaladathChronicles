@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Bear Form",
+    "icon": "AbilityBearForm",
+    "abilityForVisibility": "Bear Form",
+    "forcedAbilities": [
+        "Leave Bear Form"
+    ]
+  },
+  {
+    "name": "Cat Form",
+    "icon": "AbilityCatForm",
+    "abilityForVisibility": "Cat Form",
+    "forcedAbilities": [
+        "Leave Cat Form"
+    ]
+  },
+  {
+    "name": "Moonkin Form",
+    "icon": "AbilityMoonkinForm",
+    "abilityForVisibility": "Moonkin Form",
+    "forcedAbilities": [
+        "Leave Moonkin Form"
+    ]
+  },
+  {
+    "name": "Shadowform",
+    "icon": "AbilityShadowform",
+    "abilityForVisibility": "Shadowform",
+    "forcedAbilities": [
+        "Leave Shadowform"
+    ]
+  }
+]

@@ -207,6 +207,16 @@ public class Ability
             {
                 AddLine(ability.name, "Gray");
                 if (item == null) AddText(" " + (rank + 1).ToRoman());
+                if (ability.allowedSets != null)
+                    foreach (var set in ability.allowedSets)
+                        if (set == "Default") AddSmallButton("AbilityDefault");
+                        else
+                        {
+                            var actionSet = ActionSet.actionSets.Find(x => x.name == set);
+                            if (actionSet.alwaysVisible || effector.abilities.ContainsKey(actionSet.abilityForVisibility))
+                                AddSmallButton(actionSet.icon);
+                        }
+                else AddSmallButton("AbilityDefault");
             });
             AddPaddingRegion(() =>
             {

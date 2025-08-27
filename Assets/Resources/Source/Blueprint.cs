@@ -7897,11 +7897,37 @@ public class Blueprint
                         AddLine(key.Key.name);
                         AddLine("Rank: ", "DarkGray");
                         AddText((key.Value + 1).ToRoman());
+                        if (key.Key.allowedSets != null)
+                            foreach (var set in key.Key.allowedSets)
+                                if (set == "Default") AddSmallButton("AbilityDefault");
+                                else
+                                {
+                                    var actionSet = ActionSet.actionSets.Find(x => x.name == set);
+                                    if (actionSet.alwaysVisible || currentSave.player.abilities.ContainsKey(actionSet.abilityForVisibility))
+                                        AddSmallButton(actionSet.icon);
+                                }
+                        else AddSmallButton("AbilityDefault");
                         AddBigButton(key.Key.icon,
                             (h) =>
                             {
                                 var key = activeAbilities.ToList()[index + thisWindow.pagination()];
-                                if (key.Key.name != currentSave.player.currentActionSet && !actionSet.Contains(key.Key.name) && actionSet.Count < currentSave.player.ActionSetMaxLength())
+                                var cur = ActionSet.actionSets.Find(x => x.name == currentSave.player.currentActionSet);
+                                if (key.Key.allowedSets == null && currentSave.player.currentActionSet != "Default" || key.Key.allowedSets != null && !key.Key.allowedSets.Contains(currentSave.player.currentActionSet))
+                                {
+                                    SpawnFallingText(new Vector2(0, 34), "This ability cannot be in this action set", "Red");
+                                    PlaySound("DesktopCantClick");
+                                }
+                                else if (currentSave.player.actionSets[currentSave.player.currentActionSet].Contains(key.Key.name))
+                                {
+                                    SpawnFallingText(new Vector2(0, 34), "This ability is already in this action set", "Red");
+                                    PlaySound("DesktopCantClick");
+                                }
+                                else if (actionSet.Count >= currentSave.player.ActionSetMaxLength())
+                                {
+                                    SpawnFallingText(new Vector2(0, 34), "Current action set is already full", "Red");
+                                    PlaySound("DesktopCantClick");
+                                }
+                                else
                                 {
                                     actionSet.Add(key.Key.name);
                                     Respawn("PlayerSpellbookInfo");
@@ -7929,6 +7955,8 @@ public class Blueprint
                             SetBigButtonToGrayscale();
                             AddBigButtonOverlay("OtherGridBlurred");
                         }
+                        else if (key.Key.allowedSets == null && currentSave.player.currentActionSet != "Default" || key.Key.allowedSets != null && !key.Key.allowedSets.Contains(currentSave.player.currentActionSet))
+                            SetBigButtonToRedscale();
                         else if (actionSet.Count < currentSave.player.ActionSetMaxLength())
                             AddBigButtonOverlay("OtherGlowLearnable");
                     });
@@ -8022,8 +8050,8 @@ public class Blueprint
             AddHeaderRegion(() =>
             {
                 AddLine(currentSave.player.currentActionSet + " action set:");
-                var list = new List<string> { "Moonkin Form", "Bear Form", "Cat Form", "Shadowform" };
-                if (currentSave.player.abilities.Any(x => list.Any(y => y == x.Key)))
+                var list = ActionSet.actionSets.Where(x => x.alwaysVisible || currentSave.player.abilities.ContainsKey(x.abilityForVisibility));
+                if (list.Count() > 0)
                     if (!WindowUp("AbilitiesSort") && !WindowUp("SwitchActionSet"))
                         AddSmallButton("OtherSwitch", (h) =>
                         {
@@ -8061,7 +8089,13 @@ public class Blueprint
                     },
                     (h) =>
                     {
-                        if (currentSave.player.abilities.ContainsKey(actionSet[index]))
+                        var temp = ActionSet.actionSets.Find(x => x.name == currentSave.player.currentActionSet);
+                        if (temp != null && temp.forcedAbilities.Contains(actionSet[index]))
+                        {
+                            SpawnFallingText(new Vector2(0, 34), "This ability is enforced for this action set", "Red");
+                            PlaySound("DesktopCantClick");
+                        }
+                        else
                         {
                             actionSet.RemoveAt(index);
                             Respawn("SpellbookAbilityListActivated", true);
@@ -8069,7 +8103,6 @@ public class Blueprint
                             Respawn("PlayerSpellbookInfo");
                             PlaySound("DesktopActionBarRemove", 0.9f);
                         }
-                        else PlaySound("DesktopCantClick");
                     },
                     null,
                     (h) => () =>
@@ -8129,7 +8162,8 @@ public class Blueprint
             });
             AddButtonRegion(() =>
             {
-                AddLine("Default", "Black", "Center");
+                AddLine("Default");
+                AddSmallButton("AbilityDefault");
             },
             (h) =>
             {
@@ -8137,31 +8171,31 @@ public class Blueprint
                 CloseWindow("SwitchActionSet");
                 CDesktop.RespawnAll();
             });
-            var list = new List<string> { "Moonkin Form", "Bear Form", "Cat Form", "Shadowform" };
+            var list = ActionSet.actionSets.Where(x => x.alwaysVisible || currentSave.player.abilities.ContainsKey(x.abilityForVisibility));
             foreach (var set in list)
-                if (currentSave.player.abilities.ContainsKey(set))
-                    AddButtonRegion(() =>
+                AddButtonRegion(() =>
+                {
+                    AddLine(set.name);
+                    AddSmallButton(set.icon);
+                },
+                (h) =>
+                {
+                    currentSave.player.currentActionSet = set.name;
+                    if (currentSave.player.actionSets.ContainsKey(set.name) && set.forcedAbilities.Any(x => !currentSave.player.actionSets[set.name].Contains(x)))
+                        currentSave.player.actionSets.Remove(set.name);
+                    if (!currentSave.player.actionSets.ContainsKey(set.name))
                     {
-                        AddLine(set, "Black", "Center");
-                    },
-                    (h) =>
-                    {
-                        currentSave.player.currentActionSet = set;
-                        if (!currentSave.player.actionSets.ContainsKey(set))
-                        {
-                            currentSave.player.actionSets.Add(set, new());
-                            if (set == "Bear Form") currentSave.player.actionSets[set].Add("Leave Bear Form");
-                            else if (set == "Cat Form") currentSave.player.actionSets[set].Add("Leave Cat Form");
-                            else if (set == "Moonkin Form") currentSave.player.actionSets[set].Add("Leave Moonkin Form");
-                            else if (set == "Shadowform") currentSave.player.actionSets[set].Add("Leave Shadowform");
-                        }
-                        CloseWindow("SwitchActionSet");
-                        Respawn("SpellbookAbilityListActivated", true);
-                        Respawn("SpellbookAbilityListPassive", true);
-                        Respawn("PlayerSpellbookInfo");
-                        foreach (var res in currentSave.player.resources)
-                        Respawn("Spellbook" + res.Key + "Resource");
-                    });
+                        currentSave.player.actionSets.Add(set.name, new());
+                        foreach (var ability in set.forcedAbilities)
+                            currentSave.player.actionSets[set.name].Add(ability);
+                    }
+                    CloseWindow("SwitchActionSet");
+                    Respawn("SpellbookAbilityListActivated", true);
+                    Respawn("SpellbookAbilityListPassive", true);
+                    Respawn("PlayerSpellbookInfo");
+                    foreach (var res in currentSave.player.resources)
+                    Respawn("Spellbook" + res.Key + "Resource");
+                });
         }),
 
         //Talents

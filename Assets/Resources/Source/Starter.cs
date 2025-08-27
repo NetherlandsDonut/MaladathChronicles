@@ -152,6 +152,8 @@ public class Starter : MonoBehaviour
         complexes ??= new();
         Deserialize(ref SiteArea.areas, "areas", false, prefix);
         SiteArea.areas ??= new();
+        Deserialize(ref ActionSet.actionSets, "actionsets", false, prefix);
+        ActionSet.actionSets ??= new();
         Deserialize(ref BossPool.bossPools, "bosspools", false, prefix);
         BossPool.bossPools ??= new();
         Deserialize(ref PersonType.personTypes, "persontypes", false, prefix);

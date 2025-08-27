@@ -137,7 +137,8 @@ public class Event
                 }
                 if (race != null)
                 {
-                    var entity = new Entity(level, race) { specialLoot = Item.items.Find(x => x.name == combatSpecialLoot).CopyItem(combatSpecialLootAmount) };
+                    var entity = new Entity(level, race);
+                    if (combatSpecialLoot != "") entity.specialLoot = Item.items.Find(x => x.name == combatSpecialLoot).CopyItem(combatSpecialLootAmount);
                     Board.NewBoard(new() { entity }, SiteArea.areas.Find(x => x.name == save.currentSite));
                     SpawnDesktopBlueprint("Game");
                     CloseDesktop("EquipmentScreen");
