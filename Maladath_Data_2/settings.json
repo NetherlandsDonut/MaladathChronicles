@@ -46,5 +46,14 @@
   },
   "runsInBackground": {
     "value": "True"
+  },
+  "showSpellbookResourceIcons": {
+    "value": "True"
+  },
+  "showSpellbookValidActionSets": {
+    "value": "True"
+  },
+  "hideSetInvalidAbilities": {
+    "value": "False"
   }
 }

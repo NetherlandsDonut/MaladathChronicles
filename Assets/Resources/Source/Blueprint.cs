@@ -406,7 +406,7 @@ public class Blueprint
                     else ChangeSpotlight(index);
                 },
                 (h) => ClearTargettingAbility());
-                foreach (var actionBar in participant.who.actionSets[board.participants[index].who.currentActionSet])
+                foreach (var actionBar in participant.who.actionSets[participant.who.currentActionSet])
                 {
                     var abilityObj = abilities.Find(x => x.name == actionBar);
                     if (abilityObj == null || abilityObj.cost == null) continue;

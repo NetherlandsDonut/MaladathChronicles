@@ -1356,9 +1356,9 @@
       "value": "False"
     },
     "startDate": "2025-08-26T12:08:21.1100687+02:00",
-    "lastLoaded": "2025-08-26T15:41:36.9281031+02:00",
-    "lastPlayed": "2025-08-26T15:42:00.261478+02:00",
-    "timePlayed": "00:36:55.8159968",
+    "lastLoaded": "2025-08-27T19:55:33.9408519+02:00",
+    "lastPlayed": "2025-08-27T19:57:04.2748524+02:00",
+    "timePlayed": "00:38:26.1499973",
     "lastVisitedTalents": 1
   },
   {
@@ -1585,9 +1585,9 @@
       "currentActionSet": "Default",
       "actionSets": {
         "Default": [
+          "Arcane Missiles",
           "Fireball",
-          "Frostbolt",
-          "Arcane Missiles"
+          "Frostbolt"
         ]
       },
       "stats": {
@@ -1699,7 +1699,7 @@
     },
     "hour": 7,
     "minute": 1,
-    "second": 39,
+    "second": 54,
     "currentSite": "Northshire Valley",
     "generatedBossPools": {
       "<Forlorn Cloister>": "Ironspine",
@@ -1730,7 +1730,7 @@
     "elitesKilled": {},
     "siteVisits": {
       "Northshire Abbey": 1,
-      "Northshire Valley": 1
+      "Northshire Valley": 2
     },
     "unlockedAreas": [],
     "flags": {},
@@ -1749,9 +1749,9 @@
       "value": "False"
     },
     "startDate": "2025-08-26T15:38:31.3848222+02:00",
-    "lastLoaded": "2025-08-26T15:40:37.317604+02:00",
-    "lastPlayed": "2025-08-26T15:41:33.6649533+02:00",
-    "timePlayed": "00:01:11.6389518"
+    "lastLoaded": "2025-08-27T19:57:14.052219+02:00",
+    "lastPlayed": "2025-08-27T19:59:04.5870122+02:00",
+    "timePlayed": "00:03:02.1737450"
   },
   {
     "playerSide": "Horde",
@@ -3317,6 +3317,7 @@
       "spec": "Druid",
       "gender": "Male",
       "portraitID": 3,
+      "homeLocation": "Aldrassil",
       "abilities": {
         "Two Handed Mace Proficiency": 0,
         "Staff Proficiency": 0,
@@ -3478,6 +3479,9 @@
     "noOpenWorldOppositeFactionEncounters": {
       "value": "False"
     },
-    "startDate": "2025-08-27T09:54:52.0461632+02:00"
+    "startDate": "2025-08-27T09:54:52.0461632+02:00",
+    "lastLoaded": "2025-08-27T19:57:07.9827857+02:00",
+    "lastPlayed": "2025-08-27T19:57:09.8097159+02:00",
+    "timePlayed": "00:00:01.8269302"
   }
 ]
