@@ -1163,5 +1163,50 @@ v0.7.61
  11.08.25 Added varied chest appearances depending on areas each with specific sound effects attached
           Fixed a little error with comparing item stats
           Fixed the possibility of getting to fight the same rare mob twice
+v0.7.62
+ 22.08.25 Auction house has now working filtering
+          Moved zone drops to actual zones from instances
+          Added 4 recipes into few chests around the map
+          Added 22 new portraits
+          Redesigned the character creation screen
+          Players can now choose from 5 times the amount of portraits
+          Added continue button to continue playing the last active game
+          Randomly chosen bosses are no longer hardcoded
+          First launch has disabled sound by default and shows a window to set it up
+          Rare mobs now have guarranteed blue drop if they don't have a direct drop
+v0.7.63
+ 23.08.25 Added all of the alliance portraits
+v0.7.64
+ 24.08.25 Limited amount of alive charaters to 25
+          Added loading game screen
+          Added all of the horde portraits
+          Added explore condition to quests which means players have to fully explore the site to complete that condition
+          Updated the general icon compression from 36 to 17
+v0.7.65
+ 25.08.25 Fixed local area quest tracker not showing conditions when it was a location inside of an instance or a complex
+          Fixed the Kalimdor loading screen appearing every time
+          Added flags to the game
+          Added ability condition that checks for flag value
+          Added a quest condition that checks for specific flag status
+          Added one new portrait and updated one old one
+          Fixed quest marker goto not working for complexes and instances with pre-provided list of sites to zoom to
+          Added cage sounds
+          Quests when completed now show a message
+          Added billinear graphics option. Game now let's you play not at perfect pixel scale
+          Forced aspect ratio to avoid revealing undesired areas of the screen
+v0.7.66
+ 26.08.25 Opening quest log no longer closes all the open screens
+          Teleport now properly closes all the open screens
+          Added starting Cat Form for druids
+          Redesign of spellbook screen
+v0.7.67
+ 27.08.25 Fixed bug where action set wasn't changed for friendly combatants
+          Changed how spells appear in the spellbook
+          Made action sets to not be hard coded
+          Added action set restrictions to make certain abilities available only for specific action sets
+          Removed kill cap for effect of combat and swapped that into a condition based on kill count
+          Sounds for harpies
+          Moved chest bonus to the end of the chest loot
+          Chest loot now looks at spec, race and unique restrictions
 ```
 </details>
