@@ -375,6 +375,31 @@
     "side": "Hostile"
   },
   {
+    "name": "Riverpaw Tribe",
+    "icon": "FactionRiverpaw",
+    "side": "Hostile"
+  },
+  {
+    "name": "Redridge Tribe",
+    "icon": "FactionRedridge",
+    "side": "Hostile"
+  },
+  {
+    "name": "Mudsnout Tribe",
+    "icon": "FactionMudsnout",
+    "side": "Hostile"
+  },
+  {
+    "name": "Palemane Tribe",
+    "icon": "FactionPalemane",
+    "side": "Hostile"
+  },
+  {
+    "name": "Shadowhide Tribe",
+    "icon": "FactionShadowhide",
+    "side": "Hostile"
+  },
+  {
     "name": "Scourge",
     "icon": "FactionScourge",
     "side": "Hostile"

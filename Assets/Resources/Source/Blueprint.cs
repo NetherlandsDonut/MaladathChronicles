@@ -243,7 +243,8 @@ public class Blueprint
                     AddLine(participant.who.name);
                     SpawnFloatingText(new Vector3(34, -9), participant.who.level - 10 > currentSave.player.level ? "??" : "" + participant.who.level, ColorEntityLevel(currentSave.player, participant.who.level), "DimGray", "Right");
                     var race = races.Find(x => x.name == participant.who.race);
-                    AddBigButton(participant.who.spec != null ? "Portrait" + participant.who.race.Clean() + participant.who.gender + participant.who.portraitID : (race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? participant.who.gender : "")), (h) =>
+                    var actionSet = participant.who.currentActionSet != "Default" ? ActionSet.actionSets.Find(x => x.name == participant.who.currentActionSet) : null;
+                    AddBigButton(actionSet != null && race.side == "Horde" && actionSet.hordePortraitReplacement != null ? actionSet.hordePortraitReplacement : (actionSet != null && race.side == "Alliance" && actionSet.alliancePortraitReplacement != null ? actionSet.alliancePortraitReplacement : (participant.who.spec != null ? "Portrait" + participant.who.race.Clean() + participant.who.gender + participant.who.portraitID : (race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? participant.who.gender : "")))), (h) =>
                     {
                         if (abilityTargetted != null) FinishTargettingAbility(participant);
                         else ChangeSpotlight(index);
@@ -365,11 +366,13 @@ public class Blueprint
                 var participant = board.participants[board.team1[index]];
                 AddButtonRegion(() =>
                 {
+                    ReverseButtons();
                     AddLine(participant.who.name, "", "Right");
                     SpawnFloatingText(new Vector3(158, -9), participant.who.level + "", "Gray", "DimGray", "Left");
-                    ReverseButtons();
+                    var race = races.Find(x => x.name == participant.who.race);
+                    var actionSet = participant.who.currentActionSet != "Default" ? ActionSet.actionSets.Find(x => x.name == participant.who.currentActionSet) : null;
                     if (participant.who.spec != null)
-                        AddBigButton("Portrait" + participant.who.race.Clean() + participant.who.gender + participant.who.portraitID, (h) =>
+                        AddBigButton(actionSet != null && race.side == "Horde" && actionSet.hordePortraitReplacement != null ? actionSet.hordePortraitReplacement : (actionSet != null && race.side == "Alliance" && actionSet.alliancePortraitReplacement != null ? actionSet.alliancePortraitReplacement : ("Portrait" + participant.who.race.Clean() + participant.who.gender + participant.who.portraitID)), (h) =>
                         {
                             if (abilityTargetted != null) FinishTargettingAbility(participant);
                             else ChangeSpotlight(index);
@@ -377,8 +380,7 @@ public class Blueprint
                         (h) => ClearTargettingAbility());
                     else
                     {
-                        var race = races.Find(x => x.name == participant.who.race);
-                        AddBigButton(race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? board.participants[board.team1[0]].who.gender : ""), (h) =>
+                        AddBigButton(actionSet != null && race.side == "Horde" && actionSet.hordePortraitReplacement != null ? actionSet.hordePortraitReplacement : (actionSet != null && race.side == "Alliance" && actionSet.alliancePortraitReplacement != null ? actionSet.alliancePortraitReplacement : (race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? board.participants[board.team1[0]].who.gender : ""))), (h) =>
                         {
                             if (abilityTargetted != null) FinishTargettingAbility(board.participants[board.team1[index]]);
                             else ChangeSpotlight(index);

@@ -12,7 +12,12 @@ public class Race
     //and remove empty collections to avoid serialising them later
     public void Initialise()
     {
-        side = Faction().side;
+        if (Faction() == null)
+        {
+            side = "Hostile";
+            Debug.Log("ERROR: Faction wasn't found: \"" + faction + "\"");
+        }
+        else side = Faction().side;
         droppedItems = Item.items.FindAll(x => x.droppedBy != null && x.droppedBy.Contains(name)).Select(x => x.name).ToList();
         if (category == null || category == string.Empty) Debug.Log("ERROR 018: Race lacks category: \"" + name + "\"");
     }

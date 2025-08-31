@@ -8,6 +8,9 @@ public class ActionSet
     //Icon for this action set
     public string icon;
 
+    //Portrait replacements for horde and alliance characters with this action set as current
+    public string hordePortraitReplacement, alliancePortraitReplacement;
+
     //The ability that makes this action set appear for the player in the spellbook
     public string abilityForVisibility;
 

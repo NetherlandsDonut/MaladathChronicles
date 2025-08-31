@@ -2,14 +2,18 @@
   {
     "name": "Bear Form",
     "icon": "AbilityBearForm",
+    "hordePortraitReplacement": "PortraitDruidHordeBearForm",
+    "alliancePortraitReplacement": "PortraitDruidAllianceBearForm",
     "abilityForVisibility": "Bear Form",
     "forcedAbilities": [
         "Leave Bear Form"
     ]
   },
-  {
+  {  
     "name": "Cat Form",
     "icon": "AbilityCatForm",
+    "hordePortraitReplacement": "PortraitDruidHordeCatForm",
+    "alliancePortraitReplacement": "PortraitDruidAllianceCatForm",
     "abilityForVisibility": "Cat Form",
     "forcedAbilities": [
         "Leave Cat Form"
@@ -18,6 +22,8 @@
   {
     "name": "Moonkin Form",
     "icon": "AbilityMoonkinForm",
+    "hordePortraitReplacement": "PortraitDruidHordeMoonkinForm",
+    "alliancePortraitReplacement": "PortraitDruidAllianceMoonkinForm",
     "abilityForVisibility": "Moonkin Form",
     "forcedAbilities": [
         "Leave Moonkin Form"

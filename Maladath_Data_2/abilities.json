@@ -2255,6 +2255,58 @@
     }
   },
   {
+    "name": "Glyph of Azora",
+    "possibleTargets": "Self",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "SetFlag",
+            "FlagName": "Glyph_of_Azora_placed",
+            "FlagValue": "True",
+            "SoundEffect": "AbilityTeleport"
+          },
+          {
+            "Effect": "ConsumeItem"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "@currentarea == Tower of Ilgalar",
+            "failedMessage": "You have to be at the Tower of Ilgalar"
+          },
+          {
+            "condition": "@flag~Glyph_of_Azora_placed <> True",
+            "failedMessage": "Glyph of Azora was already placed"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "isExtender": true,
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Place the Glyph of Azora at the lion statue near the Tower of Ilgalar."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "name": "Encased Corrupt Ooze",
     "possibleTargets": "Self",
     "tags": [],

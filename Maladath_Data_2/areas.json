@@ -52847,8 +52847,19 @@
         "levelMin": 10
       }
     ],
+    "eliteEncounters": [
+      {
+        "who": "Princess",
+        "levelMin": 9
+      }
+    ],
     "areaSize": 3,
     "progression": [
+      {
+        "type": "Boss",
+        "bossName": "Princess",
+        "point": 2
+      },
       {
         "type": "Treasure",
         "point": 3
@@ -52993,6 +53004,11 @@
         "who": "Riverpaw Outrunner",
         "levelMin": 9,
         "levelMax": 10
+      },
+      {
+        "who": "Longsnout",
+        "levelMin": 9,
+        "levelMax": 11
       }
     ],
     "rareEncounters": [
@@ -53021,6 +53037,9 @@
     ],
     "x": 4932,
     "y": -3722,
+    "chestBonus": {
+      "Gold Pickup Schedule": 1
+    },
     "name": "Forest's Edge",
     "zone": "Elwynn Forest",
     "type": "HostileArea"
@@ -58261,6 +58280,9 @@
     "noNightVariant": true
   },
   {
+    "chestBonus": {
+      "Pattern: Comfortable Leather Hat": 1
+    },
     "commonEncounters": [
       {
         "who": "Battle Boar Horror",
@@ -59246,23 +59268,18 @@
     "commonEncounters": [
       {
         "who": "Blackrock Sentry",
-        "levelMin": 21,
-        "levelMax": 22
+        "levelMin": 22,
+        "levelMax": 23
       },
       {
         "who": "Blackrock Shadowcaster",
-        "levelMin": 21,
-        "levelMax": 22
+        "levelMin": 23,
+        "levelMax": 24
       },
       {
         "who": "Blackrock Gladiator",
         "levelMin": 23,
         "levelMax": 25
-      },
-      {
-        "who": "Blackrock Hunter",
-        "levelMin": 23,
-        "levelMax": 24
       }
     ],
     "eliteEncounters": [
@@ -73014,6 +73031,9 @@
     ],
     "x": 4628,
     "y": -3848,
+    "chestBonus": {
+      "Captain Sander's Treasure Map": 1
+    },
     "name": "Longshore",
     "zone": "Westfall",
     "type": "HostileArea",
@@ -73102,6 +73122,11 @@
       },
       {
         "who": "Defias Smuggler",
+        "levelMin": 12,
+        "levelMax": 13
+      },
+      {
+        "who": "Young Goretusk",
         "levelMin": 12,
         "levelMax": 13
       }
@@ -73279,6 +73304,11 @@
         "who": "Coyote",
         "levelMin": 11,
         "levelMax": 12
+      },
+      {
+        "who": "Young Goretusk",
+        "levelMin": 12,
+        "levelMax": 13
       }
     ],
     "areaSize": 3,
@@ -73438,8 +73468,19 @@
         "levelMax": 19
       }
     ],
+    "eliteEncounters": [
+      {
+        "who": "Old Murk-Eye",
+        "levelMin": 20
+      }
+    ],
     "areaSize": 3,
     "progression": [
+      {
+        "type": "Boss",
+        "bossName": "Old Murk-Eye",
+        "point": 2
+      },
       {
         "type": "Treasure",
         "point": 3

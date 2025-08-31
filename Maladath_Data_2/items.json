@@ -119906,7 +119906,7 @@
     "rarity": "Common",
     "name": "Iron Strut",
     "icon": "itemspear05",
-    "detailedType": "Organ",
+    "detailedType": "Polearm",
     "type": "Miscellaneous",
     "source": "ZoneDrop",
     "ilvl": 32,
@@ -133377,11 +133377,14 @@
     "name": "Gooey Spider Leg",
     "icon": "itemmiscmonsterspidercarapace01",
     "type": "Trade Good",
-    "source": "RareDrop",
+    "source": "DirectDrop",
     "ilvl": 25,
     "lvl": 1,
     "maxStack": 10,
-    "price": 12
+    "price": 12,
+    "droppedBy": [
+      "Giant Plains Creeper", "Plains Creeper", "Wildthorn Lurker", "Elder Moss Creeper", "Wildthorn Venomspitter", "Giant Moss Creeper", "Carrion Recluse", "Naraxis", "Black Widow Hatchling", "Forest Moss Creeper", "Wildthorn Stalker", "Green Recluse", "Venom Web Spider", "Creepthess", "Leech Stalker", "Pygmy Venom Web Spider", "Cave Stalker", "Leech Widow", "Chatter"
+    ]
   },
   {
     "rarity": "Rare",
@@ -150826,18 +150829,6 @@
   },
   {
     "rarity": "Common",
-    "name": "Great Goretusk Snout",
-    "icon": "itemmischeadquillboar01",
-    "detailedType": "Organ",
-    "type": "Trade Good",
-    "source": "RareDrop",
-    "ilvl": 16,
-    "lvl": 1,
-    "maxStack": 10,
-    "price": 50
-  },
-  {
-    "rarity": "Common",
     "name": "Laminated Recurve Bow",
     "icon": "itembow01",
     "detailedType": "Bow",
@@ -151762,11 +151753,14 @@
     "name": "Crisp Spider Meat",
     "icon": "itemmiscmonsterspidercarapace01",
     "type": "Trade Good",
-    "source": "RareDrop",
+    "source": "DirectDrop",
     "ilvl": 15,
     "lvl": 1,
     "maxStack": 10,
-    "price": 50
+    "price": 50,
+    "droppedBy": [
+      "Giant Plains Creeper", "Plains Creeper", "Elder Moss Creeper", "Wildthorn Lurker", "Naraxis", "Carrion Recluse", "Deepmoss Matriarch", "Giant Moss Creeper", "Wildthorn Venomspitter", "Creepthess", "Black Widow Hatchling", "Forest Moss Creeper", "Greater Tarantula", "Pygmy Venom Web Spider", "Wildthorn Stalker", "Deepmoss Webspinner", "Green Recluse", "Leech Stalker", "Deepmoss Venomspitter", "Cave Stalker", "Deepmoss Creeper", "Tarantula", "Venom Web Spider", "Wood Lurker", "Leech Widow", "Chatter", "Shanda the Spinner", "Deepmoss Hatchling", "Cliff Lurker", "Forest Lurker", "Besseleth"
+    ]
   },
   {
     "rarity": "Common",
@@ -159602,10 +159596,11 @@
     "name": "Captain Sander's Treasure Map",
     "icon": "itemmiscmap01",
     "type": "Miscellaneous",
-    "source": "ZoneDrop",
+    "source": "ChestDrop",
     "ilvl": 10,
     "maxStack": 1,
-    "unique": true
+    "unique": true,
+    "indestructible": true
   },
   {
     "rarity": "Poor",
@@ -163930,10 +163925,14 @@
     "icon": "itemscroll03",
     "detailedType": "Scroll",
     "type": "Miscellaneous",
-    "source": "RareDrop",
+    "source": "ChestDrop",
     "ilvl": 7,
     "maxStack": 1,
-    "unique": true
+    "unique": true,
+    "indestructible": true,
+    "questsStarted": [
+      123
+    ]
   },
   {
     "rarity": "Common",
@@ -164713,11 +164712,31 @@
     "icon": "itemmiscfood14",
     "detailedType": "Food",
     "type": "Trade Good",
-    "source": "RareDrop",
+    "source": "DirectDrop",
     "ilvl": 5,
     "lvl": 1,
     "maxStack": 10,
-    "price": 3
+    "price": 3,
+    "droppedBy": [
+      "Dire Mottled Boar",
+      "Longsnout",
+      "Mountain Boar",
+      "Young Goretusk",
+      "Elder Mottled Boar",
+      "Mangy Mountain Boar",
+      "Elder Mountain Boar",
+      "Goretusk",
+      "Great Goretusk",
+      "Rockhide Boar",
+      "Porcine Entourage",
+      "Stonetusk Boar",
+      "Corrupted Mottled Boar",
+      "Scarred Crag Boar",
+      "Elder Crag Boar",
+      "Large Crag Boar",
+      "Crag Boar",
+      "Princess"
+    ]
   },
   {
     "rarity": "Common",
@@ -168489,9 +168508,13 @@
     "icon": "itemmiscmonsterclaw04",
     "detailedType": "Claw",
     "type": "Miscellaneous",
-    "source": "ZoneDrop",
+    "source": "DirectDrop",
+    "onlyWithQuest": true,
     "ilvl": 1,
-    "maxStack": 20
+    "maxStack": 20,
+    "droppedBy": [
+      "Riverpaw Shaman", "Riverpaw Gnoll", "Riverpaw Scout", "Riverpaw Mongrel", "Sergeant Brashclaw", "Riverpaw Herbalist", "Riverpaw Brute", "Riverpaw Bandit", "Riverpaw Miner", "Riverpaw Taskmaster", "Riverpaw Mystic", "Riverpaw Overseer"
+    ]
   },
   {
     "rarity": "Common",
@@ -168955,10 +168978,14 @@
     "name": "Brass Collar",
     "icon": "itemjewelryring03",
     "type": "Miscellaneous",
-    "source": "ZoneDrop",
+    "source": "DirectDrop",
     "ilvl": 1,
     "maxStack": 1,
-    "unique": true
+    "indestructible": true,
+    "unique": true,
+    "droppedBy": [
+      "Princess"
+    ]
   },
   {
     "rarity": "Common",
@@ -169001,9 +169028,13 @@
     "icon": "itemmiscgear06",
     "detailedType": "Tool",
     "type": "Miscellaneous",
-    "source": "ZoneDrop",
+    "source": "DirectDrop",
     "ilvl": 1,
-    "maxStack": 20
+    "maxStack": 20,
+    "onlyWithQuest": true,
+    "droppedBy": [
+      "Redridge Mystic"
+    ]
   },
   {
     "rarity": "Common",
@@ -169011,9 +169042,20 @@
     "icon": "itemjewelrytalisman04",
     "detailedType": "Talisman",
     "type": "Miscellaneous",
-    "source": "ZoneDrop",
+    "source": "DirectDrop",
+    "onlyWithQuest": true,
     "ilvl": 1,
-    "maxStack": 20
+    "maxStack": 20,
+    "droppedBy": [
+      "Shadowhide Assassin",
+      "Shadowhide Brute",
+      "Shadowhide Darkweaver",
+      "Shadowhide Gnoll",
+      "Shadowhide Slayer",
+      "Lieutenant Fangore",
+      "Shadowhide Warrior",
+      "Rohh the Silent"      
+    ]
   },
   {
     "rarity": "Common",
@@ -169021,8 +169063,12 @@
     "icon": "itempotion19",
     "detailedType": "Potion",
     "type": "Miscellaneous",
-    "source": "ZoneDrop",
+    "onlyWithQuest": true,
+    "source": "DirectDrop",
     "ilvl": 1,
+    "droppedBy": [
+      "Venom Web Spider", "Green Recluse", "Naraxis", "Pygmy Venom Web Spider", "Black Widow Hatchling", "Carrion Recluse"
+    ],
     "maxStack": 20
   },
   {
@@ -169030,9 +169076,13 @@
     "name": "Ghoul Fang",
     "icon": "itemmiscmonsterfang01",
     "type": "Miscellaneous",
-    "source": "ZoneDrop",
+    "onlyWithQuest": true,
+    "source": "DirectDrop",
     "ilvl": 1,
-    "maxStack": 20
+    "maxStack": 20,
+    "droppedBy": [
+      "Flesh Eater", "Rotted One", "Bone Chewer", "Fetid Corpse", "Plague Spreader", "Brain Eater"
+    ]
   },
   {
     "rarity": "Common",
@@ -169066,7 +169116,10 @@
     "ilvl": 1,
     "maxStack": 1,
     "indestructible": true,
-    "unique": true
+    "unique": true,
+    "abilities": {
+      "Glyph of Azora": 1
+    }
   },
   {
     "rarity": "Common",
@@ -169178,9 +169231,14 @@
     "icon": "itemmischerb04",
     "detailedType": "Flowers",
     "type": "Miscellaneous",
-    "source": "ZoneDrop",
+    "onlyWithQuest": true,
+    "source": "DirectDrop",
     "ilvl": 1,
-    "maxStack": 20
+    "maxStack": 20,
+    "droppedBy": [
+      "Murloc Steamrunner",
+      "Murloc"
+    ]
   },
   {
     "rarity": "Common",
@@ -169188,9 +169246,13 @@
     "icon": "itemmiscmonsterscales03",
     "detailedType": "Scale",
     "type": "Miscellaneous",
-    "source": "ZoneDrop",
+    "onlyWithQuest": true,
+    "source": "DirectDrop",
     "ilvl": 1,
-    "maxStack": 20
+    "maxStack": 20,
+    "droppedBy": [
+      "Black Dragon Whelp"
+    ]
   },
   {
     "rarity": "Common",
@@ -169812,6 +169874,7 @@
     "ilvl": 1,
     "maxStack": 1,
     "unique": true,
+    "indestructible": true,
     "droppedBy": [
       "Hogger"
     ]
@@ -170067,17 +170130,6 @@
   },
   {
     "rarity": "Common",
-    "name": "The Collector's Schedule",
-    "icon": "itemscroll03",
-    "detailedType": "Scroll",
-    "type": "Miscellaneous",
-    "ilvl": 1,
-    "maxStack": 1,
-    "indestructible": true,
-    "unique": true
-  },
-  {
-    "rarity": "Common",
     "name": "Dusky Crab Cakes",
     "icon": "itemmiscfood08",
     "detailedType": "Food",
@@ -170112,9 +170164,13 @@
     "icon": "itemmiscbone01",
     "detailedType": "Bones",
     "type": "Miscellaneous",
-    "source": "ZoneDrop",
+    "source": "DirectDrop",
+    "onlyWithQuest": true,
     "ilvl": 1,
-    "maxStack": 20
+    "maxStack": 20,
+    "droppedBy": [
+      "Skeletal Warrior", "Skeletal Mage", "Skeletal Horror", "Skeletal Fiend", "Skeletal Healer", "Skeletal Raider", "Skeletal Warder"
+    ]
   },
   {
     "rarity": "Poor",
@@ -171086,11 +171142,15 @@
     "rarity": "Common",
     "name": "Iron Pike",
     "icon": "itemspear05",
-    "detailedType": "Organ",
+    "detailedType": "Polearm",
     "type": "Miscellaneous",
-    "source": "ZoneDrop",
+    "onlyWithQuest": true,
+    "source": "DirectDrop",
     "ilvl": 1,
-    "maxStack": 20
+    "maxStack": 20,
+    "droppedBy": [
+      "Redridge Basher"
+    ]
   },
   {
     "rarity": "Common",
@@ -171664,9 +171724,14 @@
     "name": "Pyrewood Shackle",
     "icon": "itembracer03",
     "type": "Miscellaneous",
-    "source": "ZoneDrop",
+    "source": "DirectDrop",
     "ilvl": 1,
-    "maxStack": 20
+    "maxStack": 20,
+    "droppedBy": [
+      "Moonrage Bloodhowler",
+      "Moonrage Watcher",
+      "Moonrage Sentry"
+    ]
   },
   {
     "rarity": "Common",
@@ -174614,6 +174679,7 @@
     "icon": "itemmiscgemopal03",
     "detailedType": "Gem",
     "type": "Miscellaneous",
+    "source": "ChestDrop",
     "ilvl": 1,
     "maxStack": 1,
     "indestructible": true,
@@ -175851,6 +175917,7 @@
     "icon": "itemmiscwrench01",
     "detailedType": "Tool",
     "type": "Miscellaneous",
+    "source": "ChestDrop",
     "ilvl": 1,
     "maxStack": 20
   },
@@ -175860,10 +175927,14 @@
     "icon": "itemmiscmonsterclaw01",
     "detailedType": "Claw",
     "type": "Miscellaneous",
-    "source": "RareDrop",
+    "source": "DirectDrop",
     "ilvl": 1,
     "maxStack": 1,
-    "unique": true
+    "indestructible": true,
+    "unique": true,
+    "droppedBy": [
+      "Fizzle Darkstorm"
+    ]
   },
   {
     "rarity": "Common",
@@ -176001,7 +176072,7 @@
     "rarity": "Poor",
     "name": "Broken Spear",
     "icon": "itemspear05",
-    "detailedType": "Organ",
+    "detailedType": "Polearm",
     "type": "Miscellaneous",
     "source": "RareDrop",
     "ilvl": 1,
@@ -177591,13 +177662,10 @@
     "icon": "itemmiscbone06",
     "detailedType": "Bones",
     "type": "Miscellaneous",
-    "source": "DirectDrop",
+    "source": "RareDrop",
     "ilvl": 1,
     "maxStack": 10,
-    "price": 16,
-    "droppedBy": [
-      "Stonetusk Boar"
-    ]
+    "price": 16
   },
   {
     "rarity": "Common",
@@ -179466,17 +179534,6 @@
     ]
   },
   {
-    "rarity": "Poor",
-    "name": "Monster - Throwing Axe",
-    "icon": "itemaxe01",
-    "type": "Miscellaneous",
-    "ilvl": 1,
-    "minPower": 1.05,
-    "maxPower": 1.1,
-    "maxStack": 1,
-    "price": 3
-  },
-  {
     "rarity": "Common",
     "name": "Fuel Regulator Blueprints",
     "icon": "itemmiscnote04",
@@ -179496,18 +179553,6 @@
     "ilvl": 1,
     "maxStack": 1,
     "price": 37
-  },
-  {
-    "rarity": "Poor",
-    "name": "Monster - Throwing Spear",
-    "icon": "itemspear05",
-    "detailedType": "Organ",
-    "type": "Miscellaneous",
-    "ilvl": 1,
-    "minPower": 1.05,
-    "maxPower": 1.1,
-    "maxStack": 1,
-    "price": 3
   },
   {
     "rarity": "Common",
@@ -180078,9 +180123,10 @@
     "icon": "itemletter05",
     "detailedType": "Letter",
     "type": "Miscellaneous",
-    "source": "ZoneDrop",
+    "source": "ChestDrop",
     "ilvl": 1,
     "maxStack": 1,
+    "indestructible": true,
     "unique": true
   },
   {
@@ -180212,17 +180258,6 @@
     "lvl": 1,
     "maxStack": 1,
     "price": 1
-  },
-  {
-    "rarity": "Poor",
-    "name": "Monster - Torch Ranged",
-    "icon": "itemsword09",
-    "type": "Miscellaneous",
-    "ilvl": 1,
-    "minPower": 1.05,
-    "maxPower": 1.1,
-    "maxStack": 1,
-    "price": 2
   },
   {
     "rarity": "Common",
@@ -181942,17 +181977,6 @@
     "unique": true
   },
   {
-    "rarity": "Poor",
-    "name": "Monster - Throwing Knife",
-    "icon": "itemshortblade05",
-    "type": "Miscellaneous",
-    "ilvl": 1,
-    "minPower": 1.05,
-    "maxPower": 1.1,
-    "maxStack": 1,
-    "price": 18
-  },
-  {
     "rarity": "Common",
     "name": "Defias Script",
     "icon": "itemletter16",
@@ -182682,12 +182706,11 @@
     "icon": "itemmiscorb04",
     "detailedType": "Orb",
     "type": "Miscellaneous",
-    "source": "DirectDrop",
+    "source": "ChestDrop",
     "ilvl": 1,
     "maxStack": 1,
-    "droppedBy": [
-      "Burning Blade Summoner"
-    ]
+    "indestructible": true,
+    "unique": true
   },
   {
     "rarity": "Common",
@@ -182932,6 +182955,7 @@
     "source": "ZoneDrop",
     "ilvl": 1,
     "maxStack": 1,
+    "indestructible": true,
     "unique": true
   },
   {
@@ -182943,6 +182967,7 @@
     "source": "ZoneDrop",
     "ilvl": 1,
     "maxStack": 1,
+    "indestructible": true,
     "unique": true
   },
   {
@@ -182950,9 +182975,11 @@
     "name": "Agamand Family Weapons",
     "icon": "itembox03",
     "type": "Miscellaneous",
+    "source": "ChestDrop",
     "ilvl": 1,
     "maxStack": 1,
-    "indestructible": true
+    "indestructible": true,
+    "unique": true
   },
   {
     "rarity": "Common",
@@ -184003,8 +184030,11 @@
     "icon": "itemgizmo01",
     "detailedType": "Tool",
     "type": "Miscellaneous",
+    "source": "ChestDrop",
     "ilvl": 1,
-    "maxStack": 1
+    "maxStack": 1,
+    "indestructible": true,
+    "unique": true
   },
   {
     "rarity": "Common",
@@ -184607,7 +184637,7 @@
     "rarity": "Common",
     "name": "Nimboya's Laden Pike",
     "icon": "itemspear02",
-    "detailedType": "Organ",
+    "detailedType": "Polearm",
     "type": "Miscellaneous",
     "ilvl": 1,
     "maxStack": 1,
@@ -185099,7 +185129,7 @@
     "icon": "itemmischorn02",
     "detailedType": "Horn",
     "type": "Miscellaneous",
-    "source": "Quest",
+    "source": "ChestDrop",
     "ilvl": 1,
     "maxStack": 1,
     "indestructible": true,
@@ -189253,6 +189283,7 @@
     "icon": "itemstone05",
     "detailedType": "Rock",
     "type": "Miscellaneous",
+    "source": "ChestDrop",
     "ilvl": 1,
     "maxStack": 1,
     "indestructible": true,
@@ -189299,7 +189330,7 @@
     "rarity": "Common",
     "name": "Roughshod Pike",
     "icon": "itemspear01",
-    "detailedType": "Organ",
+    "detailedType": "Polearm",
     "type": "Miscellaneous",
     "ilvl": 1,
     "maxStack": 1,
@@ -189843,13 +189874,11 @@
     "icon": "itemcrate06",
     "detailedType": "Crate",
     "type": "Miscellaneous",
-    "source": "DirectDrop",
+    "source": "ChestDrop",
     "ilvl": 1,
     "maxStack": 1,
-    "unique": true,
-    "droppedBy": [
-      "Winterfall Runner"
-    ]
+    "indestructible": true,
+    "unique": true
   },
   {
     "rarity": "Common",
@@ -189885,7 +189914,7 @@
     "rarity": "Common",
     "name": "Blood Stained Pike",
     "icon": "itemspear06",
-    "detailedType": "Organ",
+    "detailedType": "Polearm",
     "type": "Miscellaneous",
     "ilvl": 1,
     "maxStack": 1,
@@ -189914,7 +189943,7 @@
     "rarity": "Common",
     "name": "Soul Stained Pike",
     "icon": "itemspear06",
-    "detailedType": "Organ",
+    "detailedType": "Polearm",
     "type": "Miscellaneous",
     "ilvl": 1,
     "maxStack": 1,
@@ -190213,18 +190242,6 @@
     "type": "Miscellaneous",
     "ilvl": 1,
     "maxStack": 1
-  },
-  {
-    "rarity": "Poor",
-    "name": "Monster - Spear Broad Notched",
-    "icon": "itemspear08",
-    "type": "Two Handed",
-    "ilvl": 1,
-    "lvl": 1,
-    "minPower": 1.05,
-    "maxPower": 1.1,
-    "maxStack": 1,
-    "price": 2
   },
   {
     "rarity": "Common",
@@ -191349,7 +191366,10 @@
     "ilvl": 1,
     "maxStack": 1,
     "indestructible": true,
-    "unique": true
+    "unique": true,
+    "droppedBy": [
+      "Araj the Summoner"
+    ]
   },
   {
     "rarity": "Common",
@@ -195090,15 +195110,6 @@
     "maxStack": 1,
     "indestructible": true,
     "unique": true
-  },
-  {
-    "rarity": "Common",
-    "name": "Monster - Fire Arrow",
-    "icon": "itemammoarrow02",
-    "detailedType": "Arrow",
-    "type": "Miscellaneous",
-    "ilvl": 1,
-    "maxStack": 200
   },
   {
     "rarity": "Common",
@@ -204496,7 +204507,7 @@
     "icon": "itemscroll03",
     "detailedType": "Scroll",
     "type": "Recipe",
-    "source": "RareDrop",
+    "source": "ChestDrop",
     "maxStack": 1,
     "price": 875
   },
@@ -206460,7 +206471,7 @@
     "icon": "itemscroll05",
     "detailedType": "Scroll",
     "type": "Recipe",
-    "source": "ZoneDrop",
+    "source": "ChestDrop",
     "maxStack": 1,
     "price": 15000
   },
@@ -206682,7 +206693,7 @@
     "icon": "itemscroll05",
     "detailedType": "Scroll",
     "type": "Recipe",
-    "source": "Quest",
+    "source": "ChestDrop",
     "maxStack": 1,
     "price": 15000
   },
@@ -207026,7 +207037,7 @@
     "icon": "itemscroll06",
     "detailedType": "Scroll",
     "type": "Recipe",
-    "source": "ZoneDrop",
+    "source": "ChestDrop",
     "maxStack": 1,
     "price": 3500
   },
@@ -207099,6 +207110,7 @@
     "icon": "itemscroll06",
     "detailedType": "Scroll",
     "type": "Recipe",
+    "source": "ChestDrop",
     "maxStack": 1,
     "price": 3750
   },
@@ -207196,7 +207208,7 @@
     "icon": "itemscroll06",
     "detailedType": "Scroll",
     "type": "Recipe",
-    "source": "ZoneDrop",
+    "source": "ChestDrop",
     "maxStack": 1,
     "price": 4000
   },
@@ -208187,6 +208199,7 @@
     "icon": "itemscroll03",
     "detailedType": "Scroll",
     "type": "Recipe",
+    "source": "ChestDrop",
     "maxStack": 1,
     "price": 5500
   },
@@ -209289,6 +209302,7 @@
     "icon": "itemscroll03",
     "detailedType": "Scroll",
     "type": "Recipe",
+    "source": "ChestDrop",
     "maxStack": 1,
     "price": 25000
   },
