@@ -11,8 +11,17 @@ public class CombatParticipant
     //Is this participant human controlled
     public bool human;
 
+    //Amount of threat generated
+    public int generatedThreat;
+
     //Abilities (Active and passive) that this participant has in the combat
     public Dictionary<Ability, int> combatAbilities;
+
+    //Last targetted participant
+    public CombatParticipant lastTarget;
+
+    //The base threat equilibrium point for this participant
+    public int BaseThreat() => who.MaxHealth();
 
     //Swaps this combatant's team in combat
     public void SwapTeam(int newTeam)

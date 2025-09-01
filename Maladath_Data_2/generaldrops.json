@@ -1,5 +1,306 @@
 [
   {
+    "item": "Elemental Earth",
+    "rarity": 10.0,
+    "subCategory": "Earth Elemental",
+    "dropStart": 1,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "CommonMaterial"
+    ]
+  },
+  {
+    "item": "Elemental Water",
+    "rarity": 10.0,
+    "subCategory": "Water Elemental",
+    "dropStart": 1,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "CommonMaterial"
+    ]
+  },
+  {
+    "item": "Elemental Fire",
+    "rarity": 10.0,
+    "subCategory": "Fire Elemental",
+    "dropStart": 1,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "CommonMaterial"
+    ]
+  },
+  {
+    "item": "Elemental Air",
+    "rarity": 10.0,
+    "subCategory": "Air Elemental",
+    "dropStart": 1,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "CommonMaterial"
+    ]
+  },
+  {
+    "item": "Core of Earth",
+    "rarity": 5.0,
+    "subCategory": "Earth Elemental",
+    "dropStart": 40,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "RareMaterial"
+    ]
+  },
+  {
+    "item": "Heart of Fire",
+    "rarity": 5.0,
+    "subCategory": "Fire Elemental",
+    "dropStart": 40,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "RareMaterial"
+    ]
+  },
+  {
+    "item": "Globe of Water",
+    "rarity": 5.0,
+    "subCategory": "Water Elemental",
+    "dropStart": 40,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "RareMaterial"
+    ]
+  },
+  {
+    "item": "Breath of Wind",
+    "rarity": 5.0,
+    "subCategory": "Air Elemental",
+    "dropStart": 40,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "RareMaterial"
+    ]
+  },
+  {
+    "item": "Heart of the Wild",
+    "rarity": 5.0,
+    "subCategory": "Ancient",
+    "dropStart": 50,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "RareMaterial"
+    ]
+  },
+  {
+    "item": "Heart of the Wild",
+    "rarity": 5.0,
+    "subCategory": "Lasher",
+    "dropStart": 50,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "RareMaterial"
+    ]
+  },
+  {
+    "item": "Heart of the Wild",
+    "rarity": 5.0,
+    "subCategory": "Treant",
+    "dropStart": 50,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "RareMaterial"
+    ]
+  },
+  {
+    "item": "Heart of the Wild",
+    "rarity": 5.0,
+    "subCategory": "Bog Beast",
+    "dropStart": 40,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "RareMaterial"
+    ]
+  },
+  {
+    "item": "Ichor of Undeath",
+    "rarity": 5.0,
+    "category": "Undead",
+    "dropStart": 40,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "RareMaterial"
+    ]
+  },
+  {
+    "item": "Essence of Earth",
+    "rarity": 3.0,
+    "subCategory": "Earth Elemental",
+    "dropStart": 50,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "RareMaterial"
+    ]
+  },
+  {
+    "item": "Essence of Undeath",
+    "rarity": 3.0,
+    "category": "Undead",
+    "dropStart": 55,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "RareMaterial"
+    ]
+  },
+  {
+    "item": "Living Essence",
+    "rarity": 3.0,
+    "subCategory": "Ancient",
+    "dropStart": 50,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "RareMaterial"
+    ]
+  },
+  {
+    "item": "Living Essence",
+    "rarity": 3.0,
+    "subCategory": "Lasher",
+    "dropStart": 50,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "RareMaterial"
+    ]
+  },
+  {
+    "item": "Living Essence",
+    "rarity": 3.0,
+    "subCategory": "Treant",
+    "dropStart": 50,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "RareMaterial"
+    ]
+  },
+  {
+    "item": "Living Essence",
+    "rarity": 3.0,
+    "subCategory": "Bog Beast",
+    "dropStart": 50,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "RareMaterial"
+    ]
+  },
+  {
+    "item": "Essence of Water",
+    "rarity": 3.0,
+    "subCategory": "Water Elemental",
+    "dropStart": 50,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "RareMaterial"
+    ]
+  },
+  {
+    "item": "Essence of Fire",
+    "rarity": 3.0,
+    "subCategory": "Fire Elemental",
+    "dropStart": 50,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "RareMaterial"
+    ]
+  },
+  {
+    "item": "Essence of Air",
+    "rarity": 3.0,
+    "subCategory": "Air Elemental",
+    "dropStart": 50,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "RareMaterial"
+    ]
+  },
+  {
+    "item": "Spider's Silk",
+    "rarity": 30.0,
+    "subCategory": "Spider",
+    "dropStart": 5,
+    "dropEnd": 20,
+    "dropCount": 1,
+    "tags": [
+      "Cloth",
+      "RareMaterial"
+    ]
+  },
+  {
+    "item": "Deeprock Salt",
+    "rarity": 20.0,
+    "subCategory": "Earth Elemental",
+    "dropStart": 35,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "RareMaterial"
+    ]
+  },
+  {
+    "item": "Shadow Silk",
+    "rarity": 30.0,
+    "subCategory": "Spider",
+    "dropStart": 35,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "Cloth",
+      "RareMaterial"
+    ]
+  },
+  {
+    "item": "Ironweb Spider Silk",
+    "rarity": 30.0,
+    "subCategory": "Spider",
+    "dropStart": 45,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "Cloth",
+      "RareMaterial"
+    ]
+  },
+  {
+    "item": "Thick Spider's Silk",
+    "rarity": 30.0,
+    "subCategory": "Spider",
+    "dropStart": 35,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "Cloth",
+      "RareMaterial"
+    ]
+  },
+  {
     "item": "Linen Cloth",
     "rarity": 50.0,
     "category": "Humanoid",

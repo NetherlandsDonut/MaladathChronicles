@@ -2700,7 +2700,7 @@ public static class BlueprintDev
                 (h) => () =>
                 {
                     SetAnchor(Center);
-                    PrintBuffTooltip(null, new CombatBuff(buffsSearch[index + thisWindow.pagination()], 0, null, 0));
+                    PrintBuffTooltip(null, new CombatBuff(buffsSearch[index + thisWindow.pagination()], 0, null, 0, null));
                 });
             }
             AddPaddingRegion(() =>

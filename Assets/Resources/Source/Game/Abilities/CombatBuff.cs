@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class CombatBuff
 {
-    public CombatBuff(Buff buff, int durationLeft, GameObject flyingBuff, int rank)
+    public CombatBuff(Buff buff, int durationLeft, GameObject flyingBuff, int rank, Entity source)
     {
         this.buff = buff;
         this.durationLeft = durationLeft;
         this.flyingBuff = flyingBuff;
         this.rank = rank;
+        this.source = new FrozenEntity(source);
     }
 
     public CombatBuff(CombatBuff combatBuff)
@@ -16,6 +17,7 @@ public class CombatBuff
         durationLeft = combatBuff.durationLeft;
         flyingBuff = combatBuff.flyingBuff;
         rank = combatBuff.rank;
+        source = combatBuff.source;
     }
 
     //What buff is it
@@ -29,4 +31,7 @@ public class CombatBuff
 
     //Rank of the buff applied
     public int rank;
+
+    //Entity who cast the buff with their stats frozen in time
+    public FrozenEntity source;
 }

@@ -245,16 +245,19 @@ public class Board
             buff.buff.ExecuteEvents(this, trigger, buff);
     }
 
-    public CombatParticipant Target(int ofTeam)
+    public CombatParticipant Target(CombatParticipant ofWho, string possibleTargets)
     {
-        if (participantTargetted != null) return participantTargetted;
+        if (possibleTargets == null) return null;
+        else if (ofWho.human && ofWho.lastTarget != null) return ofWho.lastTarget;
         else
         {
-            foreach (var participant in ofTeam == 1 ? team2 : team1)
-                if (participants[participant].who.CanBeTargetted(false))
-                    return participants[participant];
+            var possibleChoices = possibleTargets == "Self" ? new() { ofWho } : (possibleTargets == "Friendly" ? participants.FindAll(x => x.team == ofWho.team) : (possibleTargets == "Enemies" ? participants.FindAll(x => x.team != ofWho.team) : new())).OrderByDescending(x => x.generatedThreat + x.BaseThreat()).ToList();
+            if (possibleChoices.Count > 0)
+                foreach (var participant in possibleChoices)
+                    if (participant.who.CanBeTargetted(false))
+                        return participant;
+            return null;
         }
-        return null;
     }
 
     //Ends a turn for a participant and makes somebody else begin theirs
@@ -439,7 +442,7 @@ public class Board
                             results.inventory.AddItem(item.CopyItem());
 
                     //General drops
-                    var generalDrops = GeneralDrop.generalDrops.FindAll(x => x.DoesLevelFit(enemy.level) && (x.requiredProfession == null || (currentSave.player.professionSkills.ContainsKey(x.requiredProfession) && (x.requiredSkill == 0 || x.requiredSkill <= currentSave.player.professionSkills[x.requiredProfession].Item1))) && (x.category == null || x.category == enemy.Race().category) && x.inclusive);
+                    var generalDrops = GeneralDrop.generalDrops.FindAll(x => x.DoesLevelFit(enemy.level) && (x.requiredProfession == null || (currentSave.player.professionSkills.ContainsKey(x.requiredProfession) && (x.requiredSkill == 0 || x.requiredSkill <= currentSave.player.professionSkills[x.requiredProfession].Item1))) && (x.category == null || x.category == enemy.Race().category) && (x.subCategory == null || x.subCategory == enemy.Race().subcategory) && x.inclusive);
                     if (generalDrops.Count > 0)
                         foreach (var drop in generalDrops)
                             if (Roll(drop.rarity))
@@ -448,7 +451,7 @@ public class Board
                                 for (int i = 1; i < drop.dropCount; i++) amount += Roll(10) ? 1 : 0;
                                 results.inventory.AddItem(Item.items.Find(x => x.name == drop.item).CopyItem(amount));
                             }
-                    var possibleGeneralDrops = GeneralDrop.generalDrops.FindAll(x => x.DoesLevelFit(enemy.level) && (x.requiredProfession == null || currentSave.player.professionSkills.ContainsKey(x.requiredProfession) && (x.requiredSkill == 0 || x.requiredSkill <= currentSave.player.professionSkills[x.requiredProfession].Item1)) && (x.category == null || x.category == enemy.Race().category) && !x.inclusive);
+                    var possibleGeneralDrops = GeneralDrop.generalDrops.FindAll(x => x.DoesLevelFit(enemy.level) && (x.requiredProfession == null || currentSave.player.professionSkills.ContainsKey(x.requiredProfession) && (x.requiredSkill == 0 || x.requiredSkill <= currentSave.player.professionSkills[x.requiredProfession].Item1)) && (x.category == null || x.category == enemy.Race().category) && (x.subCategory == null || x.subCategory == enemy.Race().subcategory) && !x.inclusive);
                     possibleGeneralDrops.Shuffle();
                     if (possibleGeneralDrops.Count > 0)
                         foreach (var drop in possibleGeneralDrops.OrderBy(x => x.rarity))

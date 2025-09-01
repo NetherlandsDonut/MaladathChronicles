@@ -49550,24 +49550,6 @@
     }
   },
   {
-    "rarity": "Uncommon",
-    "name": "Tome of Tranquilizing Shot",
-    "icon": "itemmiscbook11",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "source": "DirectDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "indestructible": true,
-    "unique": true,
-    "specs": [
-      "Hunter"
-    ],
-    "droppedBy": [
-      "Lucifron"
-    ]
-  },
-  {
     "rarity": "Common",
     "name": "Demonic Figurine",
     "icon": "itemmiscorb05",
@@ -49873,11 +49855,17 @@
     "name": "Core Leather",
     "icon": "itemammofiretar",
     "type": "Trade Good",
-    "source": "ZoneDrop",
+    "source": "DirectDrop",
     "ilvl": 60,
     "lvl": 1,
     "maxStack": 20,
-    "price": 1000
+    "price": 1000,
+    "droppedBy": [
+      "Core Rager",
+      "Ancient Core Hound",
+      "Core Hound",
+      "Magmadar"
+    ]
   },
   {
     "rarity": "Rare",
@@ -81239,14 +81227,11 @@
     "icon": "itemmiscgembloodstone03",
     "detailedType": "Gem",
     "type": "Trade Good",
-    "source": "DirectDrop",
+    "source": "ZoneDrop",
     "ilvl": 50,
     "lvl": 1,
     "maxStack": 20,
-    "price": 750,
-    "droppedBy": [
-      "Molten Destroyer"
-    ]
+    "price": 750
   },
   {
     "rarity": "Common",
@@ -81622,7 +81607,7 @@
   {
     "rarity": "Common",
     "name": "Ironweb Spider Silk",
-    "icon": "abilityweb",
+    "icon": "itemweb",
     "type": "Trade Good",
     "source": "RareDrop",
     "ilvl": 50,
@@ -104219,7 +104204,7 @@
   {
     "rarity": "Common",
     "name": "Shadow Silk",
-    "icon": "abilityweb",
+    "icon": "itemweb",
     "type": "Trade Good",
     "source": "RareDrop",
     "ilvl": 40,
@@ -113190,7 +113175,7 @@
   {
     "rarity": "Common",
     "name": "Thick Spider's Silk",
-    "icon": "abilityweb",
+    "icon": "itemweb",
     "type": "Trade Good",
     "source": "RareDrop",
     "ilvl": 35,
@@ -143624,13 +143609,16 @@
   {
     "rarity": "Common",
     "name": "Spider's Silk",
-    "icon": "abilityweb",
+    "icon": "itemweb",
     "type": "Trade Good",
-    "source": "RareDrop",
+    "source": "DirectDrop",
     "ilvl": 20,
     "lvl": 1,
     "maxStack": 10,
-    "price": 387
+    "price": 387,
+    "droppedBy": [
+      "Giant Plains Creeper", "Naraxis", "Plains Creeper", "Elder Moss Creeper", "Wildthorn Lurker", "Chatter", "Black Widow Hatchling", "Cave Stalker", "Giant Moss Creeper", "Wildthorn Stalker", "Carrion Recluse", "Wildthorn Venomspitter", "Leech Widow", "Leech Stalker", "Forest Moss Creeper", "Green Recluse", "Deepmoss Matriarch", "Creepthess", "Deepmoss Venomspitter", "Pygmy Venom Web Spider", "Venom Web Spider", "Greater Tarantula", "Deepmoss Webspinner", "Besseleth", "Deepmoss Creeper"
+    ]
   },
   {
     "rarity": "Uncommon",
@@ -146403,7 +146391,7 @@
     "icon": "itemhammer11",
     "detailedType": "Mace",
     "type": "One Handed",
-    "source": "DirectDrop",
+    "source": "ZoneDrop",
     "ilvl": 19,
     "lvl": 14,
     "minPower": 1.67,
@@ -146413,10 +146401,7 @@
     "stats": {
       "Strength": 2,
       "Stamina": 2
-    },
-    "droppedBy": [
-      "Redridge Basher"
-    ]
+    }
   },
   {
     "rarity": "Uncommon",
@@ -165516,7 +165501,7 @@
   {
     "rarity": "Poor",
     "name": "Forest Spider Webbing",
-    "icon": "abilityweb",
+    "icon": "itemweb",
     "type": "Miscellaneous",
     "source": "RareDrop",
     "ilvl": 5,
@@ -172103,7 +172088,7 @@
   {
     "rarity": "Common",
     "name": "Webwood Spider Silk",
-    "icon": "abilityweb",
+    "icon": "itemweb",
     "type": "Miscellaneous",
     "source": "ZoneDrop",
     "ilvl": 1,
@@ -178574,7 +178559,7 @@
   {
     "rarity": "Poor",
     "name": "Sticky Spider Webbing",
-    "icon": "abilityweb",
+    "icon": "itemweb",
     "type": "Miscellaneous",
     "ilvl": 1,
     "maxStack": 10,
@@ -182561,7 +182546,7 @@
   {
     "rarity": "Common",
     "name": "Pristine Spider Silk",
-    "icon": "abilityweb",
+    "icon": "itemweb",
     "type": "Miscellaneous",
     "source": "ZoneDrop",
     "ilvl": 1,
@@ -194310,7 +194295,7 @@
   {
     "rarity": "Common",
     "name": "Lethtendris's Web",
-    "icon": "abilityweb",
+    "icon": "itemweb",
     "type": "Miscellaneous",
     "source": "DirectDrop",
     "ilvl": 1,

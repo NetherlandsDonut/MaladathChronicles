@@ -1616,14 +1616,16 @@
         "Wand Proficiency": 0,
         "Fireball": 0,
         "Frostbolt": 0,
-        "Arcane Missiles": 0
+        "Arcane Missiles": 0,
+        "Curse of Agony": 0
       },
       "currentActionSet": "Default",
       "actionSets": {
         "Default": [
           "Arcane Missiles",
           "Fireball",
-          "Frostbolt"
+          "Frostbolt",
+          "Curse of Agony"
         ]
       },
       "stats": {

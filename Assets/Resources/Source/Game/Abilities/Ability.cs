@@ -45,9 +45,9 @@ public class Ability
 
     #region Execution
 
-    public List<Condition> ConditionsNotMet(Dictionary<string, string> trigger, Ability ability, SaveGame save, Board board) => events.FindAll(x => x.triggers.Any(y => y["Trigger"] == trigger["Trigger"])).SelectMany(x => x.conditions == null ? new() : x.conditions.Where(y => !y.IsMet(ability, trigger, save, board)).ToList()).ToList();
+    public List<Condition> ConditionsNotMet(Dictionary<string, string> trigger, Ability ability, SaveGame save, Board board) => events.FindAll(x => x.triggers.Any(y => y["Trigger"] == trigger["Trigger"])).SelectMany(x => x.conditions == null ? new() : x.conditions.Where(y => !y.IsMet(ability, trigger, save, board, possibleTargets)).ToList()).ToList();
 
-    public bool AreConditionsMet(Dictionary<string, string> trigger, Event eve, SaveGame save, Board board) => eve.conditions == null || eve.conditions.Count == 0 || eve.conditions.All(x => x.IsMet(this, trigger, save, board));
+    public bool AreConditionsMet(Dictionary<string, string> trigger, Event eve, SaveGame save, Board board) => eve.conditions == null || eve.conditions.Count == 0 || eve.conditions.All(x => x.IsMet(this, trigger, save, board, possibleTargets));
 
     public void ExecuteEvents(SaveGame save, Dictionary<string, string> trigger, Item item)
     {
@@ -64,7 +64,7 @@ public class Ability
                         execute = item != null && item.GetHashCode() + "" == itemHash;
                     }
             if (execute && (trigger.ContainsKey("IgnoreConditions") && trigger["IgnoreConditions"] == "Yes" || AreConditionsMet(trigger, eve, save, null)))
-                eve.ExecuteEffects(save, item, trigger, RankVariables(trigger.ContainsKey("AbilityRank") && int.TryParse(trigger["AbilityRank"], out int parse) ? parse : 0), this);
+                eve.ExecuteEffects(save, item, trigger, RankVariables(trigger.ContainsKey("AbilityRank") && int.TryParse(trigger["AbilityRank"], out int parse) ? parse : 0));
         }
     }
 
@@ -151,7 +151,7 @@ public class Ability
                 {
                     board.PutOnCooldown(entitySource, this);
                     var rank = trigger.ContainsKey("AbilityRank") && int.TryParse(trigger["AbilityRank"], out int parse) ? parse : 0;
-                    eve.ExecuteEffects(board, icon, trigger, RankVariables(rank), name, rank);
+                    eve.ExecuteEffects(board, icon, trigger, RankVariables(rank), name, rank, possibleTargets);
                 }
         }
     }

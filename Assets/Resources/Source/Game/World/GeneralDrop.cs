@@ -27,6 +27,9 @@ public class GeneralDrop
     //Required enemy category for this item to drop
     public string category;
 
+    //Required enemy sub category for this item to drop
+    public string subCategory;
+
     //Determines whether this drops regardless of whether other items dropped
     public bool inclusive;
 

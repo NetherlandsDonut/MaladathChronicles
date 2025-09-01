@@ -15,13 +15,13 @@ public class Condition
     public List<Condition> subs;
 
     //Checks if condition is met
-    public bool IsMet(Ability ability, Dictionary<string, string> trigger, SaveGame save, Board board)
+    public bool IsMet(Ability ability, Dictionary<string, string> trigger, SaveGame save, Board board, string possibleTargets)
     {
         if (condition == null) return true;
         var c = condition;
         if (c == "") return true;
-        else if (c == "all") return subs == null || subs.Count == 0 || subs.All(x => x.IsMet(ability, trigger, save, board));
-        else if (c == "any") return subs == null || subs.Count == 0 || subs.Any(x => x.IsMet(ability, trigger, save, board));
+        else if (c == "all") return subs == null || subs.Count == 0 || subs.All(x => x.IsMet(ability, trigger, save, board, possibleTargets));
+        else if (c == "any") return subs == null || subs.Count == 0 || subs.Any(x => x.IsMet(ability, trigger, save, board, possibleTargets));
         else
         {
             var args = c.Split(" ").Select(x => Moo(x).Replace("_", " ")).ToList();
@@ -43,7 +43,7 @@ public class Condition
         string Moo(string input)
         {
             var effector = board?.participants[board.whosTurn];
-            var other = board?.Target(effector.team);
+            var other = board?.Target(effector, possibleTargets);
             if (!input.StartsWith("@")) return input;
             else return input.Split("~")[0] switch
             {

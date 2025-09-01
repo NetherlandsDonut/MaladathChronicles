@@ -1500,14 +1500,14 @@ public class Entity
     public void RemoveWorldBuff(WorldBuff worldBuff) => worldBuffs.Remove(worldBuff);
 
     //Adds a buff to this entity
-    public void AddBuff(Buff buff, int duration, GameObject buffObject, int rank)
+    public void AddBuff(Buff buff, int duration, GameObject buffObject, int rank, Entity source)
     {
         if (!buff.stackable)
         {
             var list = buffs.FindAll(x => x.buff == buff).ToList();
             for (int i = list.Count - 1; i >= 0; i--) RemoveBuff(list[i]);
         }
-        buffs.Add(new CombatBuff(buff, duration, buffObject, rank));
+        buffs.Add(new CombatBuff(buff, duration, buffObject, rank, source));
     }
 
     //Removes a buff from this entity

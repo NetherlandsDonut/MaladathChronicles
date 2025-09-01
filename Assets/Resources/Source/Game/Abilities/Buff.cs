@@ -126,10 +126,10 @@ public class Buff
                     else if (trigger["Trigger"] == "TurnBegin") execute = true;
                     else if (trigger["Trigger"] == "TurnEnd") execute = true;
                     if (execute)
-                        if (eve.conditions == null || eve.conditions.Count == 0 || eve.conditions.All(x => x.IsMet(null, trigger, SaveGame.currentSave, board)))
+                        if (eve.conditions == null || eve.conditions.Count == 0 || eve.conditions.All(x => x.IsMet(null, trigger, SaveGame.currentSave, board, "Self")))
                         {
                             if (board != null && entityBuff.flyingBuff != null) board.actions.Add(() => { if (entityBuff.flyingBuff != null) AddSmallButtonOverlay(entityBuff.flyingBuff, "OtherBlack", 1, 5); });
-                            eve.ExecuteEffects(board, icon, trigger, RankVariables(entityBuff.rank), name, entityBuff.rank);
+                            eve.ExecuteEffects(board, icon, trigger, RankVariables(entityBuff.rank), entityBuff);
                         }
                 }
     }

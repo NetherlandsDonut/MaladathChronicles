@@ -274,9 +274,6 @@ public static class Root
     //Item that is being moved
     public static Ability abilityTargetted;
 
-    //Participant targetted
-    public static CombatParticipant participantTargetted;
-
     //Tile on the board that is targetted
     public static (int, int) tileTargetted;
 
@@ -305,11 +302,11 @@ public static class Root
     public static void FinishTargettingAbility(CombatParticipant targetParticipant)
     {
         if (abilityTargetted == null) return;
-        participantTargetted = targetParticipant;
+        board.participants[board.whosTurn].lastTarget = targetParticipant;
         if (abilityTargetted.possibleTargets == "Tile") SpawnFallingText(new Vector2(0, 34), "This ability can only target the board", "Red");
-        else if (abilityTargetted.possibleTargets == "Enemies" && participantTargetted.team == board.participants[board.whosTurn].team) SpawnFallingText(new Vector2(0, 34), "This ability can only target enemies", "Red");
-        else if (abilityTargetted.possibleTargets == "Friendly" && participantTargetted.team != board.participants[board.whosTurn].team) SpawnFallingText(new Vector2(0, 34), "This ability can only target friendly targets", "Red");
-        else if (!participantTargetted.who.CanBeTargetted(true)) { }
+        else if (abilityTargetted.possibleTargets == "Enemies" && board.participants[board.whosTurn].lastTarget.team == board.participants[board.whosTurn].team) SpawnFallingText(new Vector2(0, 34), "This ability can only target enemies", "Red");
+        else if (abilityTargetted.possibleTargets == "Friendly" && board.participants[board.whosTurn].lastTarget.team != board.participants[board.whosTurn].team) SpawnFallingText(new Vector2(0, 34), "This ability can only target friendly targets", "Red");
+        else if (!board.participants[board.whosTurn].lastTarget.who.CanBeTargetted(true)) { }
         else
         {
             var notMet = abilityTargetted.ConditionsNotMet(new() { { "Trigger", "AbilityCast" }, { "Triggerer", "Other" }, { "AbilityName", abilityTargetted.name }, { "AbilityRank", board.participants[board.whosTurn].combatAbilities[abilityTargetted] + "" } }, abilityTargetted, currentSave, board);
@@ -327,7 +324,6 @@ public static class Root
             else SpawnFallingText(new Vector2(0, 34), notMet[0].failedMessage, "Red");
         }
         abilityTargetted = null;
-        participantTargetted = null;
         Respawn("EnemyBattleInfo");
         Respawn("FriendlyBattleInfo");
         //CloseWindow("TargettingInfo");
