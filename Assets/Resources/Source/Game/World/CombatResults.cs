@@ -2,6 +2,7 @@ using System.Linq;
 using System.Collections.Generic;
 
 using static Root;
+using UnityEngine.Rendering;
 
 public class CombatResults
 {
@@ -45,6 +46,13 @@ public class CombatResults
 
     //Stores whether the player skill was already modified after a successful gathering
     public List<bool> skinningSkillChange;
+
+    //Stores whether the player skill will be modified
+    public bool WillIncreaseSkinningSkill(int slot)
+    {
+        var s = SaveGame.currentSave.player.professionSkills["Skinning"];
+        return skinningNodes[slot].Item2 + 50 >= s.Item1 && s.Item1 < Profession.professions.Find(x => x.name == "Skinning").levels.FindAll(x => s.Item2.Contains(x.name)).Max(x => x.maxSkill);
+    }
 
     //Generates a skinning node and asignes it a generated loot based on the node
     public void GenerateSkinningNode()
@@ -92,6 +100,13 @@ public class CombatResults
     //Stores whether the player skill was already modified after a successful gathering
     public bool miningSkillChange;
 
+    //Stores whether the player skill will be modified
+    public bool WillIncreaseMiningSkill()
+    {
+        var s = SaveGame.currentSave.player.professionSkills["Mining"];
+        return miningNode.Item2 + 50 >= s.Item1 && s.Item1 < Profession.professions.Find(x => x.name == "Mining").levels.FindAll(x => s.Item2.Contains(x.name)).Max(x => x.maxSkill);
+    }
+
     //Generates a mining node and asignes it a generated loot based on the node
     public void GenerateMiningNode(string zone, int level)
     {
@@ -132,6 +147,13 @@ public class CombatResults
 
     //Stores whether the player skill was already modified after a successful gathering
     public bool herbalismSkillChange;
+
+    //Stores whether the player skill will be modified
+    public bool WillIncreaseHerbalismSkill()
+    {
+        var s = SaveGame.currentSave.player.professionSkills["Herbalism"];
+        return herb.Item2 + 50 >= s.Item1 && s.Item1 < Profession.professions.Find(x => x.name == "Herbalism").levels.FindAll(x => s.Item2.Contains(x.name)).Max(x => x.maxSkill);
+    }
 
     //Generates a herbalism node and asignes it a generated loot based on the node
     public void GenerateHerb(string zone, int level)

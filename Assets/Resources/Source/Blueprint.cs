@@ -2925,12 +2925,12 @@ public class Blueprint
             if (board.results.skinningNodes.Count == 3) SetAnchor(-301, 142);
             AddRegionGroup();
             SetRegionGroupWidth(186);
+            var can = currentSave.player.professionSkills.ContainsKey("Skinning") && board.results.skinningNodes[0].Item2 <= currentSave.player.professionSkills["Skinning"].Item1;
             AddHeaderRegion(() =>
             {
                 AddLine("Skinning");
                 AddSmallButton("TradeSkinning");
             });
-            var can = currentSave.player.professionSkills.ContainsKey("Skinning") && board.results.skinningNodes[0].Item2 <= currentSave.player.professionSkills["Skinning"].Item1;
             AddPaddingRegion(() =>
             {
                 var drop = GeneralDrop.generalDrops.Find(x => x.category == board.results.skinningNodes[0].Item1 && x.tags.Contains("Main"));
@@ -2939,6 +2939,8 @@ public class Blueprint
                 AddLine("Required skill: ", "DarkGray");
                 AddText("" + board.results.skinningNodes[0].Item2, can ? "Gray" : "DangerousRed");
                 AddBigButton(board.results.skinningNodes[0].Item3.Race().portrait);
+                if (can && !board.results.skinningSkillChange[0] && board.results.WillIncreaseSkinningSkill(0))
+                    AddBigButtonOverlay("OtherItemUpgrade");
             });
             if (can)
                 AddButtonRegion(() => AddLine("Gather"),
@@ -2958,12 +2960,12 @@ public class Blueprint
             if (board.results.skinningNodes.Count == 3) SetAnchor(-94, 142);
             AddRegionGroup();
             SetRegionGroupWidth(186);
+            var can = currentSave.player.professionSkills.ContainsKey("Skinning") && board.results.skinningNodes[1].Item2 <= currentSave.player.professionSkills["Skinning"].Item1;
             AddHeaderRegion(() =>
             {
                 AddLine("Skinning");
                 AddSmallButton("TradeSkinning");
             });
-            var can = currentSave.player.professionSkills.ContainsKey("Skinning") && board.results.skinningNodes[1].Item2 <= currentSave.player.professionSkills["Skinning"].Item1;
             AddPaddingRegion(() =>
             {
                 var drop = GeneralDrop.generalDrops.Find(x => x.category == board.results.skinningNodes[1].Item1 && x.tags.Contains("Main"));
@@ -2972,6 +2974,8 @@ public class Blueprint
                 AddLine("Required skill: ", "DarkGray");
                 AddText("" + board.results.skinningNodes[1].Item2, can ? "Gray" : "DangerousRed");
                 AddBigButton(board.results.skinningNodes[1].Item3.Race().portrait);
+                if (can && !board.results.skinningSkillChange[1] && board.results.WillIncreaseSkinningSkill(1))
+                    AddBigButtonOverlay("OtherItemUpgrade");
             });
             if (can)
                 AddButtonRegion(() => AddLine("Gather"),
@@ -2990,12 +2994,12 @@ public class Blueprint
             SetAnchor(111, 142);
             AddRegionGroup();
             SetRegionGroupWidth(186);
+            var can = currentSave.player.professionSkills.ContainsKey("Skinning") && board.results.skinningNodes[2].Item2 <= currentSave.player.professionSkills["Skinning"].Item1;
             AddHeaderRegion(() =>
             {
                 AddLine("Skinning");
                 AddSmallButton("TradeSkinning");
             });
-            var can = currentSave.player.professionSkills.ContainsKey("Skinning") && board.results.skinningNodes[2].Item2 <= currentSave.player.professionSkills["Skinning"].Item1;
             AddPaddingRegion(() =>
             {
                 var drop = GeneralDrop.generalDrops.Find(x => x.category == board.results.skinningNodes[2].Item1 && x.tags.Contains("Main"));
@@ -3004,6 +3008,8 @@ public class Blueprint
                 AddLine("Required skill: ", "DarkGray");
                 AddText("" + board.results.skinningNodes[2].Item2, can ? "Gray" : "DangerousRed");
                 AddBigButton(board.results.skinningNodes[2].Item3.Race().portrait);
+                if (can && !board.results.skinningSkillChange[2] && board.results.WillIncreaseSkinningSkill(2))
+                    AddBigButtonOverlay("OtherItemUpgrade");
             });
             if (can)
                 AddButtonRegion(() => AddLine("Gather"),
@@ -3023,18 +3029,20 @@ public class Blueprint
             else SetAnchor(-94, -67);
             AddRegionGroup();
             SetRegionGroupWidth(188);
+            var can = currentSave.player.professionSkills.ContainsKey("Mining") && board.results.miningNode.Item2 <= currentSave.player.professionSkills["Mining"].Item1;
             AddHeaderRegion(() =>
             {
                 AddLine("Mining");
                 AddSmallButton("TradeMining");
             });
-            var can = currentSave.player.professionSkills.ContainsKey("Mining") && board.results.miningNode.Item2 <= currentSave.player.professionSkills["Mining"].Item1;
             AddPaddingRegion(() =>
             {
                 AddLine(board.results.miningNode.Item1);
                 AddLine("Required skill: ", "DarkGray");
                 AddText("" + board.results.miningNode.Item2, can ? "Gray" : "DangerousRed");
                 AddBigButton("MiningNode" + board.results.miningNode.Item1.Clean());
+                if (can && !board.results.miningSkillChange && board.results.WillIncreaseMiningSkill())
+                    AddBigButtonOverlay("OtherItemUpgrade");
             });
             if (can)
             {
@@ -3075,18 +3083,20 @@ public class Blueprint
             else SetAnchor(-94, -67);
             AddRegionGroup();
             SetRegionGroupWidth(188);
+            var can = currentSave.player.professionSkills.ContainsKey("Herbalism") && board.results.herb.Item2 <= currentSave.player.professionSkills["Herbalism"].Item1;
             AddHeaderRegion(() =>
             {
                 AddLine("Herbalism");
                 AddSmallButton("TradeHerbalism");
             });
-            var can = currentSave.player.professionSkills.ContainsKey("Herbalism") && board.results.herb.Item2 <= currentSave.player.professionSkills["Herbalism"].Item1;
             AddPaddingRegion(() =>
             {
                 AddLine(board.results.herb.Item1);
                 AddLine("Required skill: ", "DarkGray");
                 AddText("" + board.results.herb.Item2, can ? "Gray" : "DangerousRed");
                 AddBigButton("Herb" + board.results.herb.Item1.Clean());
+                if (can && !board.results.herbalismSkillChange && board.results.WillIncreaseHerbalismSkill())
+                    AddBigButtonOverlay("OtherItemUpgrade");
             });
             if (can)
             {
@@ -8870,7 +8880,7 @@ public class Blueprint
             {
                 currentSave.AddTime(30);
                 board.results.miningSkillChange = true;
-                if (board.results.miningNode.Item2 + 50 >= s.Item1 && s.Item1 < professions.Find(x => x.name == "Mining").levels.FindAll(x => s.Item2.Contains(x.name)).Max(x => x.maxSkill))
+                if (board.results.WillIncreaseMiningSkill())
                 {
                     currentSave.player.professionSkills["Mining"] = (s.Item1 + 1, s.Item2);
                     SpawnFallingText(new Vector2(0, 34), "Mining increased to " + (s.Item1 + 1), "Blue");
@@ -8911,7 +8921,7 @@ public class Blueprint
                 var s = currentSave.player.professionSkills["Herbalism"];
                 currentSave.AddTime(30);
                 board.results.herbalismSkillChange = true;
-                if (board.results.herb.Item2 + 50 >= s.Item1 && s.Item1 < professions.Find(x => x.name == "Herbalism").levels.FindAll(x => s.Item2.Contains(x.name)).Max(x => x.maxSkill))
+                if (board.results.WillIncreaseHerbalismSkill())
                 {
                     currentSave.player.professionSkills["Herbalism"] = (s.Item1 + 1, s.Item2);
                     SpawnFallingText(new Vector2(0, 34), "Herbalism increased to " + (s.Item1 + 1), "Blue");
@@ -8952,7 +8962,7 @@ public class Blueprint
             {
                 currentSave.AddTime(30);
                 board.results.skinningSkillChange[board.results.selectedSkinningLoot] = true;
-                if (board.results.skinningNodes[board.results.selectedSkinningLoot].Item2 + 50 >= s.Item1 && s.Item1 < professions.Find(x => x.name == "Skinning").levels.FindAll(x => s.Item2.Contains(x.name)).Max(x => x.maxSkill))
+                if (board.results.WillIncreaseSkinningSkill(board.results.selectedSkinningLoot))
                 {
                     currentSave.player.professionSkills["Skinning"] = (s.Item1 + 1, s.Item2);
                     SpawnFallingText(new Vector2(0, 34), "Skinning increased to " + (s.Item1 + 1), "Blue");

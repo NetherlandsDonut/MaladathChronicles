@@ -1402,7 +1402,7 @@
         107
       ],
       "level": 22,
-      "experience": 2340,
+      "experience": 7800,
       "uniquesGotten": [],
       "reputation": {
         "Southsea Pirates": 0,
@@ -1876,9 +1876,9 @@
       }
     },
     "hour": 7,
-    "minute": 27,
-    "second": 52,
-    "currentSite": "Blackrock Mountain",
+    "minute": 33,
+    "second": 4,
+    "currentSite": "Northshire Valley",
     "generatedBossPools": {
       "<Forlorn Cloister>": "Ironspine",
       "<Ring of Law>": "Eviscerator"
@@ -1908,11 +1908,12 @@
     "fishingSpots": {},
     "fishingSpoils": {},
     "siteProgress": {
-      "Northshire Valley": 1,
+      "Northshire Valley": 2,
       "The Maclure Vineyards": 1,
       "Lakeridge Highway": 3,
       "The Broodmother's Lair": 1,
-      "The Furnace": 2
+      "The Furnace": 2,
+      "Gates of Blackrock": 1
     },
     "commonsKilled": {
       "Kobold Vermin": 1,
@@ -1924,13 +1925,15 @@
       "Rage Talon Dragon Guard": 1,
       "Rage Talon Fire Tongue": 1,
       "Blackhand Iron Guard": 1,
-      "Rage Talon Captain": 1
+      "Rage Talon Captain": 1,
+      "Flamescale Wyrmkin": 1,
+      "Young Wolf": 1
     },
     "raresKilled": {},
     "elitesKilled": {},
     "siteVisits": {
       "Northshire Abbey": 1,
-      "Northshire Valley": 2,
+      "Northshire Valley": 3,
       "Cold Hearth Manor": 1,
       "Raynewood Retreat": 1,
       "Shindigger's Camp": 1,
@@ -2148,7 +2151,7 @@
       "Altar of Storms": 1,
       "Blackrock Pass": 1,
       "Blackrock Stronghold": 1,
-      "Gates of Blackrock": 1,
+      "Gates of Blackrock": 2,
       "Draco'dar": 1,
       "Firegut Blockade": 1,
       "Dreadmaul Rock": 1,
@@ -2820,9 +2823,9 @@
       "value": "False"
     },
     "startDate": "2025-08-26T15:38:31.3848222+02:00",
-    "lastLoaded": "2025-09-02T16:15:28.2999175+02:00",
-    "lastPlayed": "2025-09-02T16:16:19.0846541+02:00",
-    "timePlayed": "01:43:39.5325937"
+    "lastLoaded": "2025-09-02T17:49:40.6313805+02:00",
+    "lastPlayed": "2025-09-02T17:51:22.6088811+02:00",
+    "timePlayed": "01:45:21.5100943"
   },
   {
     "playerSide": "Horde",
