@@ -73657,14 +73657,14 @@
         "levelMax": 61
       },
       {
-        "who": "Wyrmkin Firebrand",
-        "levelMin": 60,
-        "levelMax": 61
-      },
-      {
         "who": "Red Scalebane",
         "levelMin": 59,
         "levelMax": 60
+      },
+      {
+        "who": "Wyrmkin Firebrand",
+        "levelMin": 60,
+        "levelMax": 61
       }
     ],
     "eliteEncounters": [
@@ -74096,6 +74096,11 @@
         "who": "Highland Raptor",
         "levelMin": 23,
         "levelMax": 24
+      },
+      {
+        "who": "Flamesnorting Whelp",
+        "levelMin": 24,
+        "levelMax": 25
       }
     ],
     "areaSize": 3,

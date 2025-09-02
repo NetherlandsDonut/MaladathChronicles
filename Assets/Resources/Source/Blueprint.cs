@@ -2935,10 +2935,10 @@ public class Blueprint
             {
                 var drop = GeneralDrop.generalDrops.Find(x => x.category == board.results.skinningNodes[0].Item1 && x.tags.Contains("Main"));
                 var item = items.Find(x => x.name == drop.item);
-                AddLine(item.name.CutTail());
+                AddLine(board.results.skinningNodes[0].Item3.name);
                 AddLine("Required skill: ", "DarkGray");
                 AddText("" + board.results.skinningNodes[0].Item2, can ? "Gray" : "DangerousRed");
-                AddBigButton(item.icon);
+                AddBigButton(board.results.skinningNodes[0].Item3.Race().portrait);
             });
             if (can)
                 AddButtonRegion(() => AddLine("Gather"),
@@ -2968,10 +2968,10 @@ public class Blueprint
             {
                 var drop = GeneralDrop.generalDrops.Find(x => x.category == board.results.skinningNodes[1].Item1 && x.tags.Contains("Main"));
                 var item = items.Find(x => x.name == drop.item);
-                AddLine(item.name.CutTail());
+                AddLine(board.results.skinningNodes[1].Item3.name);
                 AddLine("Required skill: ", "DarkGray");
                 AddText("" + board.results.skinningNodes[1].Item2, can ? "Gray" : "DangerousRed");
-                AddBigButton(item.icon);
+                AddBigButton(board.results.skinningNodes[1].Item3.Race().portrait);
             });
             if (can)
                 AddButtonRegion(() => AddLine("Gather"),
@@ -3000,10 +3000,10 @@ public class Blueprint
             {
                 var drop = GeneralDrop.generalDrops.Find(x => x.category == board.results.skinningNodes[2].Item1 && x.tags.Contains("Main"));
                 var item = items.Find(x => x.name == drop.item);
-                AddLine(item.name.CutTail());
+                AddLine(board.results.skinningNodes[2].Item3.name);
                 AddLine("Required skill: ", "DarkGray");
                 AddText("" + board.results.skinningNodes[2].Item2, can ? "Gray" : "DangerousRed");
-                AddBigButton(item.icon);
+                AddBigButton(board.results.skinningNodes[2].Item3.Race().portrait);
             });
             if (can)
                 AddButtonRegion(() => AddLine("Gather"),
@@ -3253,7 +3253,7 @@ public class Blueprint
                     }
                     else if (CDesktop.title == "SkinningLoot")
                     {
-                        AddLine(board.participants[1].who.name + ":");
+                        AddLine(board.results.skinningNodes[board.results.selectedSkinningLoot].Item3.name + ":");
                         AddSmallButton("OtherClose", (h) =>
                         {
                             PlaySound("DesktopInventoryClose");

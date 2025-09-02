@@ -1,9 +1,31 @@
 [
   {
+    "item": "Slimy Murloc Scale",
+    "rarity": 20.0,
+    "subCategory": "Murloc",
+    "dropStart": 15,
+    "dropEnd": 27,
+    "dropCount": 2,
+    "tags": [
+      "Scale"
+    ]
+  },
+  {
+    "item": "Thick Murloc Scale",
+    "rarity": 20.0,
+    "subCategory": "Murloc",
+    "dropStart": 28,
+    "dropEnd": 40,
+    "dropCount": 2,
+    "tags": [
+      "Scale"
+    ]
+  },
+  {
     "item": "Elemental Earth",
     "rarity": 10.0,
     "subCategory": "Earth Elemental",
-    "dropStart": 1,
+    "dropStart": 20,
     "dropEnd": 60,
     "dropCount": 1,
     "tags": [
@@ -14,7 +36,7 @@
     "item": "Elemental Water",
     "rarity": 10.0,
     "subCategory": "Water Elemental",
-    "dropStart": 1,
+    "dropStart": 20,
     "dropEnd": 60,
     "dropCount": 1,
     "tags": [
@@ -25,7 +47,7 @@
     "item": "Elemental Fire",
     "rarity": 10.0,
     "subCategory": "Fire Elemental",
-    "dropStart": 1,
+    "dropStart": 20,
     "dropEnd": 60,
     "dropCount": 1,
     "tags": [
@@ -36,7 +58,7 @@
     "item": "Elemental Air",
     "rarity": 10.0,
     "subCategory": "Air Elemental",
-    "dropStart": 1,
+    "dropStart": 20,
     "dropEnd": 60,
     "dropCount": 1,
     "tags": [
@@ -374,13 +396,449 @@
   {
     "requiredProfession": "Skinning",
     "requiredSkill": 1,
+    "item": "Black Whelp Scale",
+    "rarity": 100.0,
+    "subCategory": "BlackWhelp",
+    "dropStart": 15,
+    "dropEnd": 40,
+    "dropCount": 1,
+    "tags": [
+      "Scale",
+      "RareMaterial",
+      "OnlySkinning"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
+    "item": "Core Leather",
+    "rarity": 100.0,
+    "subCategory": "Core Hound",
+    "dropStart": 1,
+    "dropEnd": 999,
+    "dropCount": 2,
+    "tags": [
+      "Leather",
+      "RareMaterial",
+      "OnlySkinning"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
+    "item": "Red Whelp Scale",
+    "rarity": 100.0,
+    "subCategory": "RedWhelp",
+    "dropStart": 15,
+    "dropEnd": 40,
+    "dropCount": 1,
+    "tags": [
+      "Scale",
+      "RareMaterial",
+      "OnlySkinning"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
+    "item": "Blue Whelp Scale",
+    "rarity": 100.0,
+    "subCategory": "BlueWhelp",
+    "dropStart": 15,
+    "dropEnd": 40,
+    "dropCount": 1,
+    "tags": [
+      "Scale",
+      "RareMaterial",
+      "OnlySkinning"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
+    "item": "Green Whelp Scale",
+    "rarity": 100.0,
+    "subCategory": "GreenWhelp",
+    "dropStart": 15,
+    "dropEnd": 40,
+    "dropCount": 1,
+    "tags": [
+      "Scale",
+      "RareMaterial",
+      "OnlySkinning"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
+    "item": "Worn Dragonscale",
+    "rarity": 100.0,
+    "subCategory": "BlackDragonspawn",
+    "dropStart": 40,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "Scale",
+      "RareMaterial",
+      "OnlySkinning"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
+    "item": "Worn Dragonscale",
+    "rarity": 100.0,
+    "subCategory": "RedDragonspawn",
+    "dropStart": 40,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "Scale",
+      "RareMaterial",
+      "OnlySkinning"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
+    "item": "Worn Dragonscale",
+    "rarity": 100.0,
+    "subCategory": "BlueDragonspawn",
+    "dropStart": 40,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "Scale",
+      "RareMaterial",
+      "OnlySkinning"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
+    "item": "Worn Dragonscale",
+    "rarity": 100.0,
+    "subCategory": "GreenDragonspawn",
+    "dropStart": 40,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "Scale",
+      "RareMaterial",
+      "OnlySkinning"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
+    "item": "Black Dragonscale",
+    "rarity": 100.0,
+    "subCategory": "BlackDraconid",
+    "dropStart": 40,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "Scale",
+      "RareMaterial",
+      "OnlySkinning"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
+    "item": "Red Dragonscale",
+    "rarity": 100.0,
+    "subCategory": "RedDraconid",
+    "dropStart": 40,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "Scale",
+      "RareMaterial",
+      "OnlySkinning"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
+    "item": "Blue Dragonscale",
+    "rarity": 100.0,
+    "subCategory": "BlueDraconid",
+    "dropStart": 40,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "Scale",
+      "RareMaterial",
+      "OnlySkinning"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
+    "item": "Green Dragonscale",
+    "rarity": 100.0,
+    "subCategory": "GreenDraconid",
+    "dropStart": 40,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "Scale",
+      "RareMaterial",
+      "OnlySkinning"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
+    "item": "Black Dragonscale",
+    "rarity": 100.0,
+    "subCategory": "BlackDrake",
+    "dropStart": 40,
+    "dropEnd": 60,
+    "dropCount": 2,
+    "tags": [
+      "Scale",
+      "RareMaterial",
+      "OnlySkinning"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
+    "item": "Red Dragonscale",
+    "rarity": 100.0,
+    "subCategory": "RedDrake",
+    "dropStart": 40,
+    "dropEnd": 60,
+    "dropCount": 2,
+    "tags": [
+      "Scale",
+      "RareMaterial",
+      "OnlySkinning"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
+    "item": "Blue Dragonscale",
+    "rarity": 100.0,
+    "subCategory": "BlueDrake",
+    "dropStart": 40,
+    "dropEnd": 60,
+    "dropCount": 2,
+    "tags": [
+      "Scale",
+      "RareMaterial",
+      "OnlySkinning"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
+    "item": "Green Dragonscale",
+    "rarity": 100.0,
+    "subCategory": "GreenDrake",
+    "dropStart": 40,
+    "dropEnd": 60,
+    "dropCount": 2,
+    "tags": [
+      "Scale",
+      "RareMaterial",
+      "OnlySkinning"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
+    "item": "Worn Dragonscale",
+    "rarity": 100.0,
+    "subCategory": "BlackDrake",
+    "dropStart": 40,
+    "dropEnd": 60,
+    "dropCount": 2,
+    "tags": [
+      "Scale",
+      "RareMaterial",
+      "OnlySkinning"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
+    "item": "Worn Dragonscale",
+    "rarity": 100.0,
+    "subCategory": "RedDrake",
+    "dropStart": 40,
+    "dropEnd": 60,
+    "dropCount": 2,
+    "tags": [
+      "Scale",
+      "RareMaterial",
+      "OnlySkinning"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
+    "item": "Worn Dragonscale",
+    "rarity": 100.0,
+    "subCategory": "BlueDrake",
+    "dropStart": 40,
+    "dropEnd": 60,
+    "dropCount": 2,
+    "tags": [
+      "Scale",
+      "RareMaterial",
+      "OnlySkinning"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
+    "item": "Worn Dragonscale",
+    "rarity": 100.0,
+    "subCategory": "GreenDrake",
+    "dropStart": 40,
+    "dropEnd": 60,
+    "dropCount": 2,
+    "tags": [
+      "Scale",
+      "RareMaterial",
+      "OnlySkinning"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
+    "item": "Black Dragonscale",
+    "rarity": 100.0,
+    "subCategory": "BlackDragon",
+    "dropStart": 40,
+    "dropEnd": 60,
+    "dropCount": 4,
+    "tags": [
+      "Scale",
+      "RareMaterial",
+      "OnlySkinning"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
+    "item": "Red Dragonscale",
+    "rarity": 100.0,
+    "subCategory": "RedDragon",
+    "dropStart": 40,
+    "dropEnd": 60,
+    "dropCount": 4,
+    "tags": [
+      "Scale",
+      "RareMaterial",
+      "OnlySkinning"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
+    "item": "Blue Dragonscale",
+    "rarity": 100.0,
+    "subCategory": "BlueDragon",
+    "dropStart": 40,
+    "dropEnd": 60,
+    "dropCount": 4,
+    "tags": [
+      "Scale",
+      "RareMaterial",
+      "OnlySkinning"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
+    "item": "Green Dragonscale",
+    "rarity": 100.0,
+    "subCategory": "GreenDragon",
+    "dropStart": 40,
+    "dropEnd": 60,
+    "dropCount": 4,
+    "tags": [
+      "Scale",
+      "RareMaterial",
+      "OnlySkinning"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
+    "item": "Worn Dragonscale",
+    "rarity": 100.0,
+    "subCategory": "BlackDragon",
+    "dropStart": 40,
+    "dropEnd": 60,
+    "dropCount": 3,
+    "tags": [
+      "Scale",
+      "RareMaterial",
+      "OnlySkinning"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
+    "item": "Worn Dragonscale",
+    "rarity": 100.0,
+    "subCategory": "RedDragon",
+    "dropStart": 40,
+    "dropEnd": 60,
+    "dropCount": 3,
+    "tags": [
+      "Scale",
+      "RareMaterial",
+      "OnlySkinning"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
+    "item": "Worn Dragonscale",
+    "rarity": 100.0,
+    "subCategory": "BlueDragon",
+    "dropStart": 40,
+    "dropEnd": 60,
+    "dropCount": 3,
+    "tags": [
+      "Scale",
+      "RareMaterial",
+      "OnlySkinning"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
+    "item": "Worn Dragonscale",
+    "rarity": 100.0,
+    "subCategory": "GreenDragon",
+    "dropStart": 40,
+    "dropEnd": 60,
+    "dropCount": 3,
+    "tags": [
+      "Scale",
+      "RareMaterial",
+      "OnlySkinning"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
     "item": "Ruined Leather Scraps",
-    "rarity": 50.0,
+    "rarity": 100.0,
     "category": "Light Leather",
     "dropStart": 1,
     "dropEnd": 13,
     "dropCount": 2,
     "tags": [
+      "Main",
       "Leather",
       "CommonMaterial"
     ]
@@ -532,29 +990,142 @@
   },
   {
     "requiredProfession": "Skinning",
-    "requiredSkill": 300,
+    "requiredSkill": 1,
     "item": "Scale of Onyxia",
     "rarity": 100.0,
     "category": "Onyxia",
-    "dropStart": 60,
-    "dropEnd": 60,
+    "dropStart": 1,
+    "dropEnd": 999,
     "dropCount": 8,
     "tags": [
-      "Main",
-      "Scale"
+      "Scale",
+      "OnlySkinning"
     ]
   },
   {
     "requiredProfession": "Skinning",
-    "requiredSkill": 300,
+    "requiredSkill": 1,
     "item": "Pristine Hide of the Beast",
     "rarity": 100.0,
     "category": "The Beast",
-    "dropStart": 60,
-    "dropEnd": 60,
+    "dropStart": 1,
+    "dropEnd": 999,
+    "dropCount": 3,
     "tags": [
-      "Main",
-      "Hide"
+      "Hide",
+      "OnlySkinning"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
+    "item": "Primal Bat Leather",
+    "rarity": 100.0,
+    "category": "Bloodseeker Bat",
+    "dropStart": 1,
+    "dropEnd": 999,
+    "dropCount": 2,
+    "tags": [
+      "Hide",
+      "OnlySkinning"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
+    "item": "Primal Tiger Leather",
+    "rarity": 100.0,
+    "category": "Zulian Tiger",
+    "dropStart": 1,
+    "dropEnd": 999,
+    "dropCount": 2,
+    "tags": [
+      "Hide",
+      "OnlySkinning"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
+    "item": "Heavy Scorpid Scale",
+    "rarity": 100.0,
+    "subCategory": "Scorpid",
+    "dropStart": 50,
+    "dropEnd": 999,
+    "dropCount": 2,
+    "tags": [
+      "Hide",
+      "OnlySkinning"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
+    "item": "Heavy Scorpid Scale",
+    "rarity": 100.0,
+    "subCategory": "Scorpid",
+    "dropStart": 51,
+    "dropEnd": 999,
+    "dropCount": 2,
+    "tags": [
+      "Hide",
+      "OnlySkinning"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
+    "item": "Devilsaur Leather",
+    "rarity": 100.0,
+    "subCategory": "Devilsaur",
+    "dropStart": 50,
+    "dropEnd": 999,
+    "dropCount": 2,
+    "tags": [
+      "Hide",
+      "OnlySkinning"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
+    "item": "Scorpid Scale",
+    "rarity": 100.0,
+    "subCategory": "Devilsaur",
+    "dropStart": 35,
+    "dropEnd": 50,
+    "dropCount": 2,
+    "tags": [
+      "Hide",
+      "OnlySkinning"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
+    "item": "Turtle Scale",
+    "rarity": 100.0,
+    "subCategory": "Turtle",
+    "dropStart": 30,
+    "dropEnd": 999,
+    "dropCount": 2,
+    "tags": [
+      "Hide",
+      "OnlySkinning"
+    ]
+  },
+  {
+    "requiredProfession": "Skinning",
+    "requiredSkill": 1,
+    "item": "Raptor Hide",
+    "rarity": 100.0,
+    "subCategory": "Raptor",
+    "dropStart": 25,
+    "dropEnd": 45,
+    "dropCount": 2,
+    "tags": [
+      "Hide",
+      "OnlySkinning"
     ]
   },
   {

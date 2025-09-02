@@ -1401,8 +1401,8 @@
         111,
         107
       ],
-      "level": 20,
-      "experience": 12020,
+      "level": 22,
+      "experience": 2340,
       "uniquesGotten": [],
       "reputation": {
         "Southsea Pirates": 0,
@@ -1531,7 +1531,7 @@
           ]
         },
         "Skinning": {
-          "Item1": 1,
+          "Item1": 300,
           "Item2": [
             "Amateur"
           ]
@@ -1599,7 +1599,7 @@
         ],
         "Herbalism": []
       },
-      "unspentTalentPoints": 19,
+      "unspentTalentPoints": 21,
       "faction": "Stormwind",
       "name": "Arlissa",
       "race": "Human",
@@ -1672,7 +1672,7 @@
             "source": "DirectDrop",
             "ilvl": 5,
             "lvl": 1,
-            "amount": 1,
+            "amount": 2,
             "maxStack": 10,
             "price": 3,
             "droppedBy": [
@@ -1714,6 +1714,93 @@
             "droppedBy": [
               "Stonetusk Boar"
             ]
+          },
+          {
+            "x": 3,
+            "rarity": "Common",
+            "name": "Medium Leather",
+            "icon": "itemmiscleatherscrap05",
+            "detailedType": "Leather",
+            "type": "Trade Good",
+            "ilvl": 20,
+            "lvl": 1,
+            "amount": 2,
+            "maxStack": 20,
+            "price": 50
+          },
+          {
+            "x": 4,
+            "rarity": "Common",
+            "name": "Black Whelp Scale",
+            "icon": "itemmiscmonsterscales19",
+            "detailedType": "Scale",
+            "type": "Miscellaneous",
+            "ilvl": 1,
+            "amount": 2,
+            "maxStack": 10,
+            "price": 25
+          },
+          {
+            "y": 1,
+            "rarity": "Common",
+            "name": "Light Leather",
+            "icon": "itemmiscleatherscrap03",
+            "detailedType": "Leather",
+            "type": "Trade Good",
+            "source": "Profession",
+            "ilvl": 10,
+            "lvl": 1,
+            "amount": 1,
+            "maxStack": 20,
+            "price": 15
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "rarity": "Common",
+            "name": "Wool Cloth",
+            "icon": "itemfabricwool01",
+            "detailedType": "Cloth",
+            "type": "Trade Good",
+            "source": "RareDrop",
+            "ilvl": 15,
+            "lvl": 1,
+            "amount": 1,
+            "maxStack": 20,
+            "price": 33
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "rarity": "Common",
+            "name": "Strange Dust",
+            "icon": "itemenchantduststrange",
+            "detailedType": "Dust",
+            "type": "Trade Good",
+            "ilvl": 10,
+            "lvl": 1,
+            "amount": 1,
+            "maxStack": 20,
+            "price": 65
+          },
+          {
+            "x": 3,
+            "y": 1,
+            "rarity": "Uncommon",
+            "name": "Scouting Cloak of the Falcon",
+            "icon": "itemmisccape02",
+            "type": "Back",
+            "source": "RareDrop",
+            "ilvl": 20,
+            "lvl": 15,
+            "armor": 17,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 558,
+            "stats": {
+              "Agility": 4,
+              "Intellect": 4
+            }
           }
         ],
         "bags": []
@@ -1774,7 +1861,7 @@
         }
       },
       "worldBuffs": [],
-      "health": 400,
+      "health": 430,
       "resources": {
         "Earth": 0,
         "Fire": 0,
@@ -1789,9 +1876,9 @@
       }
     },
     "hour": 7,
-    "minute": 13,
-    "second": 35,
-    "currentSite": "Lakeshire",
+    "minute": 27,
+    "second": 52,
+    "currentSite": "Blackrock Mountain",
     "generatedBossPools": {
       "<Forlorn Cloister>": "Ironspine",
       "<Ring of Law>": "Eviscerator"
@@ -1808,16 +1895,36 @@
         "hoursSinceUpdate": 24
       }
     ],
-    "openedChests": {},
+    "openedChests": {
+      "Lakeridge Highway": {
+        "area": "Lakeridge Highway",
+        "inventory": {
+          "items": [],
+          "bags": [],
+          "ignoreSpaceChecks": true
+        }
+      }
+    },
     "fishingSpots": {},
     "fishingSpoils": {},
     "siteProgress": {
       "Northshire Valley": 1,
-      "The Maclure Vineyards": 1
+      "The Maclure Vineyards": 1,
+      "Lakeridge Highway": 3,
+      "The Broodmother's Lair": 1,
+      "The Furnace": 2
     },
     "commonsKilled": {
       "Kobold Vermin": 1,
-      "Stonetusk Boar": 1
+      "Stonetusk Boar": 1,
+      "Black Dragon Whelp": 2,
+      "Great Goretusk": 1,
+      "Onyxian Lair Guard": 1,
+      "Onyxian Warder": 1,
+      "Rage Talon Dragon Guard": 1,
+      "Rage Talon Fire Tongue": 1,
+      "Blackhand Iron Guard": 1,
+      "Rage Talon Captain": 1
     },
     "raresKilled": {},
     "elitesKilled": {},
@@ -2318,7 +2425,7 @@
       "Galardell Valley": 1,
       "Ranthals Camp": 1,
       "Lake Everstill": 1,
-      "Lakeridge Highway": 1,
+      "Lakeridge Highway": 2,
       "Redridge Canyons": 1,
       "Render's Camp": 1,
       "Render's Valley": 1,
@@ -2614,11 +2721,11 @@
       "Blackfathom Deeps": 1,
       "Dire Maul": 1,
       "Zul'Farrak": 1,
-      "Onyxia's Lair": 1,
+      "Onyxia's Lair": 3,
       "Zul'Gurub": 1,
       "Ruins of Ahn'Qiraj": 1,
       "Temple of Ahn'Qiraj": 1,
-      "Blackrock Mountain": 1,
+      "Blackrock Mountain": 3,
       "Jintha'Alor": 1,
       "Tyr's Hand": 1,
       "Hearthglen": 1,
@@ -2713,9 +2820,9 @@
       "value": "False"
     },
     "startDate": "2025-08-26T15:38:31.3848222+02:00",
-    "lastLoaded": "2025-09-01T00:33:42.5421346+02:00",
-    "lastPlayed": "2025-09-01T01:13:46.8737596+02:00",
-    "timePlayed": "01:28:43.5023466"
+    "lastLoaded": "2025-09-02T16:15:28.2999175+02:00",
+    "lastPlayed": "2025-09-02T16:16:19.0846541+02:00",
+    "timePlayed": "01:43:39.5325937"
   },
   {
     "playerSide": "Horde",

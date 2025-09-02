@@ -10,7 +10,7 @@ public class GeneralDrop
     }
 
     //Is target's level appropriate for this item to drop
-    public bool DoesLevelFit(int level) => dropStart <= level && level <= dropEnd;
+    public bool DoesLevelFit(int level) => level >= dropStart && level <= dropEnd;
 
     //Required profession in order to drop this item
     public string requiredProfession;

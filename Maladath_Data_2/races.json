@@ -1308,7 +1308,7 @@
   {
     "name": "Broodlord Lashlayer",
     "category": "Dragonkin",
-    "subcategory": "Draconid",
+    "subcategory": "BlackDraconid",
     "portrait": "PortraitBlackDraconid",
     "abilities": {},
     "kind": "Elite",
@@ -1317,7 +1317,7 @@
   {
     "name": "Death Talon Overseer",
     "category": "Dragonkin",
-    "subcategory": "Draconid",
+    "subcategory": "BlackDraconid",
     "portrait": "PortraitBlackDraconid",
     "abilities": {},
     "kind": "Common",
@@ -1326,7 +1326,7 @@
   {
     "name": "Death Talon Wyrmguard",
     "category": "Dragonkin",
-    "subcategory": "Draconid",
+    "subcategory": "BlackDraconid",
     "portrait": "PortraitBlackDraconid",
     "abilities": {},
     "kind": "Common",
@@ -6147,7 +6147,7 @@
   {
     "name": "Devilsaur",
     "category": "Beast",
-    "subcategory": "TRex",
+    "subcategory": "Devilsaur",
     "portrait": "PortraitDevilsaur",
     "abilities": {},
     "kind": "Common",
@@ -6156,7 +6156,7 @@
   {
     "name": "King Mosh",
     "category": "Beast",
-    "subcategory": "TRex",
+    "subcategory": "Devilsaur",
     "portrait": "PortraitDevilsaurRed",
     "abilities": {},
     "kind": "Rare",
@@ -6165,7 +6165,7 @@
   {
     "name": "Tyrant Devilsaur",
     "category": "Beast",
-    "subcategory": "TRex",
+    "subcategory": "Devilsaur",
     "portrait": "PortraitDevilsaurRed",
     "abilities": {},
     "kind": "Common",
@@ -6674,7 +6674,7 @@
   {
     "name": "Emeriss",
     "category": "Dragonkin",
-    "subcategory": "Dragon",
+    "subcategory": "GreenDragon",
     "portrait": "PortraitEmeriss",
     "abilities": {
       "Tail Sweep": 0,
@@ -9734,6 +9734,15 @@
     "category": "Dragonkin",
     "subcategory": "GreenWhelp",
     "portrait": "PortraitGreenDragonWhelp",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
+  },
+  {
+    "name": "Flamesnorting Whelp",
+    "category": "Dragonkin",
+    "subcategory": "RedWhelp",
+    "portrait": "PortraitRedDragonWhelp",
     "abilities": {},
     "kind": "Common",
     "vitality": 1.0
@@ -14158,7 +14167,7 @@
   {
     "name": "Nefarian",
     "category": "Dragonkin",
-    "subcategory": "Dragon",
+    "subcategory": "BlackDragon",
     "portrait": "PortraitNefarian",
     "abilities": {
       "Shadowflame Breath": 0
@@ -15367,7 +15376,7 @@
   {
     "name": "Onyxia",
     "category": "Dragonkin",
-    "subcategory": "Dragon",
+    "subcategory": "BlackDragon",
     "portrait": "PortraitOnyxia",
     "abilities": {},
     "kind": "Elite",
@@ -19074,10 +19083,10 @@
   {
     "name": "Senegos",
     "category": "Dragonkin",
-    "subcategory": "Dragon",
+    "subcategory": "BlueDragon",
     "portrait": "PortraitSenegos",
     "abilities": {},
-    "kind": "Common",
+    "kind": "Elite",
     "vitality": 4.0
   },
   {
@@ -21026,7 +21035,7 @@
   {
     "name": "Taerar",
     "category": "Dragonkin",
-    "subcategory": "Dragon",
+    "subcategory": "GreenDragon",
     "portrait": "PortraitTaerar",
     "abilities": {
       "Tail Sweep": 0,
@@ -24598,7 +24607,7 @@
   {
     "name": "Ysondre",
     "category": "Dragonkin",
-    "subcategory": "Dragon",
+    "subcategory": "GreenDragon",
     "portrait": "PortraitYsondre",
     "abilities": {
       "Tail Sweep": 0,

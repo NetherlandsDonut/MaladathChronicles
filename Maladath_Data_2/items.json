@@ -48751,14 +48751,11 @@
     "icon": "itemmiscmonsterscales07",
     "detailedType": "Scale",
     "type": "Trade Good",
-    "source": "DirectDrop",
+    "source": "RareDrop",
     "ilvl": 60,
     "lvl": 1,
     "maxStack": 20,
-    "price": 5000,
-    "droppedBy": [
-      "Onyxia"
-    ]
+    "price": 5000
   },
   {
     "rarity": "Common",
@@ -49813,17 +49810,11 @@
     "name": "Core Leather",
     "icon": "itemammofiretar",
     "type": "Trade Good",
-    "source": "DirectDrop",
+    "source": "RareDrop",
     "ilvl": 60,
     "lvl": 1,
     "maxStack": 20,
-    "price": 1000,
-    "droppedBy": [
-      "Core Rager",
-      "Ancient Core Hound",
-      "Core Hound",
-      "Magmadar"
-    ]
+    "price": 1000
   },
   {
     "rarity": "Rare",
@@ -50258,17 +50249,6 @@
     "maxStack": 1,
     "indestructible": true,
     "unique": true
-  },
-  {
-    "rarity": "Rare",
-    "name": "Refined Scale of Onyxia",
-    "icon": "itemmiscmonsterscales07",
-    "detailedType": "Scale",
-    "type": "Trade Good",
-    "ilvl": 60,
-    "lvl": 1,
-    "maxStack": 20,
-    "price": 5000
   },
   {
     "rarity": "Rare",
@@ -53619,20 +53599,6 @@
     "unique": true
   },
   {
-    "rarity": "Rare",
-    "name": "Tablet of Healing Wave X",
-    "icon": "itemmiscstonetablet11",
-    "detailedType": "Rock",
-    "type": "Miscellaneous",
-    "source": "ZoneDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "specs": [
-      "Shaman"
-    ],
-    "price": 100000
-  },
-  {
     "rarity": "Uncommon",
     "name": "Combat Task Briefing XI",
     "icon": "itemscroll03",
@@ -53677,20 +53643,6 @@
     "unique": true
   },
   {
-    "rarity": "Rare",
-    "name": "Handbook of Backstab IX",
-    "icon": "itemmiscbook10",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "source": "ZoneDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "specs": [
-      "Rogue"
-    ],
-    "price": 100000
-  },
-  {
     "rarity": "Uncommon",
     "name": "Logistics Task Briefing VI!Horde",
     "icon": "itemscroll03",
@@ -53700,34 +53652,6 @@
     "maxStack": 1,
     "indestructible": true,
     "unique": true
-  },
-  {
-    "rarity": "Rare",
-    "name": "Book of Starfire VII",
-    "icon": "itemmiscbook11",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "source": "ZoneDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "specs": [
-      "Druid"
-    ],
-    "price": 100000
-  },
-  {
-    "rarity": "Rare",
-    "name": "Tablet of Grace of Air Totem III",
-    "icon": "itemmiscstonetablet11",
-    "detailedType": "Rock",
-    "type": "Miscellaneous",
-    "source": "ZoneDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "specs": [
-      "Shaman"
-    ],
-    "price": 100000
   },
   {
     "rarity": "Uncommon",
@@ -53741,20 +53665,6 @@
     "unique": true
   },
   {
-    "rarity": "Rare",
-    "name": "Guide: Multi-Shot V",
-    "icon": "itemmiscbook02",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "source": "ZoneDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "specs": [
-      "Hunter"
-    ],
-    "price": 100000
-  },
-  {
     "rarity": "Common",
     "name": "Tranquil Mechanical Yeti",
     "icon": "abilitypetgorilla",
@@ -53763,76 +53673,6 @@
     "ilvl": 60,
     "maxStack": 1,
     "price": 1250
-  },
-  {
-    "rarity": "Rare",
-    "name": "Manual of Battle Shout VII",
-    "icon": "itemmiscbook03",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "source": "ZoneDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "specs": [
-      "Warrior"
-    ],
-    "price": 100000
-  },
-  {
-    "rarity": "Rare",
-    "name": "Manual of Heroic Strike IX",
-    "icon": "itemmiscbook03",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "source": "ZoneDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "specs": [
-      "Warrior"
-    ],
-    "price": 100000
-  },
-  {
-    "rarity": "Rare",
-    "name": "Libram: Holy Light IX",
-    "icon": "itemmiscbook08",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "source": "ZoneDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "specs": [
-      "Paladin"
-    ],
-    "price": 100000
-  },
-  {
-    "rarity": "Rare",
-    "name": "Tablet of Strength of Earth Totem V",
-    "icon": "itemmiscstonetablet11",
-    "detailedType": "Rock",
-    "type": "Miscellaneous",
-    "source": "ZoneDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "specs": [
-      "Shaman"
-    ],
-    "price": 100000
-  },
-  {
-    "rarity": "Rare",
-    "name": "Libram: Blessing of Might VII",
-    "icon": "itemmiscbook08",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "source": "ZoneDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "specs": [
-      "Paladin"
-    ],
-    "price": 100000
   },
   {
     "rarity": "Uncommon",
@@ -53858,48 +53698,6 @@
   },
   {
     "rarity": "Rare",
-    "name": "Codex of Prayer of Healing V",
-    "icon": "itemmiscbook09",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "source": "ZoneDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "specs": [
-      "Priest"
-    ],
-    "price": 100000
-  },
-  {
-    "rarity": "Rare",
-    "name": "Book of Rejuvenation XI",
-    "icon": "itemmiscbook11",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "source": "ZoneDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "specs": [
-      "Druid"
-    ],
-    "price": 100000
-  },
-  {
-    "rarity": "Rare",
-    "name": "Handbook of Feint V",
-    "icon": "itemmiscbook10",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "source": "ZoneDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "specs": [
-      "Rogue"
-    ],
-    "price": 100000
-  },
-  {
-    "rarity": "Rare",
     "name": "Green Qiraji Resonating Crystal",
     "icon": "itemmiscqirajicrystal03",
     "detailedType": "Gem",
@@ -53908,34 +53706,6 @@
     "ilvl": 60,
     "maxStack": 1,
     "unique": true
-  },
-  {
-    "rarity": "Rare",
-    "name": "Guide: Serpent Sting IX",
-    "icon": "itemmiscbook02",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "source": "ZoneDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "specs": [
-      "Hunter"
-    ],
-    "price": 100000
-  },
-  {
-    "rarity": "Rare",
-    "name": "Guide: Aspect of the Hawk VII",
-    "icon": "itemmiscbook02",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "source": "ZoneDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "specs": [
-      "Hunter"
-    ],
-    "price": 100000
   },
   {
     "rarity": "Rare",
@@ -53948,20 +53718,6 @@
     "maxStack": 20,
     "specs": [
       "Rogue"
-    ],
-    "price": 100000
-  },
-  {
-    "rarity": "Rare",
-    "name": "Grimoire of Corruption VII",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "source": "ZoneDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "specs": [
-      "Warlock"
     ],
     "price": 100000
   },
@@ -53988,20 +53744,6 @@
     "unique": true
   },
   {
-    "rarity": "Rare",
-    "name": "Book of Healing Touch XI",
-    "icon": "itemmiscbook11",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "source": "ZoneDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "specs": [
-      "Druid"
-    ],
-    "price": 100000
-  },
-  {
     "rarity": "Uncommon",
     "name": "Logistics Task Briefing IV!Alliance",
     "icon": "itemscroll03",
@@ -54023,20 +53765,6 @@
     "maxStack": 1,
     "specs": [
       "Priest"
-    ],
-    "price": 100000
-  },
-  {
-    "rarity": "Rare",
-    "name": "Manual of Revenge VI",
-    "icon": "itemmiscbook03",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "source": "ZoneDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "specs": [
-      "Warrior"
     ],
     "price": 100000
   },
@@ -55976,40 +55704,6 @@
     "type": "Miscellaneous",
     "ilvl": 60,
     "maxStack": 1
-  },
-  {
-    "rarity": "Rare",
-    "name": "Manual of Eviscerate IX",
-    "icon": "itemmiscbook14",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "source": "DirectDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "specs": [
-      "Rogue"
-    ],
-    "price": 100000,
-    "droppedBy": [
-      "Blackhand Assassin"
-    ]
-  },
-  {
-    "rarity": "Rare",
-    "name": "Book of Ferocious Bite V",
-    "icon": "itemmiscbook02",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "source": "DirectDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "specs": [
-      "Druid"
-    ],
-    "price": 100000,
-    "droppedBy": [
-      "The Beast"
-    ]
   },
   {
     "rarity": "Epic",
@@ -123998,13 +123692,10 @@
     "icon": "itemmischeaddragon01",
     "detailedType": "Organ",
     "type": "Miscellaneous",
-    "source": "DirectDrop",
+    "source": "ZoneDrop",
     "ilvl": 30,
     "maxStack": 1,
-    "price": 2500,
-    "droppedBy": [
-      "Dreaming Whelp"
-    ]
+    "price": 2500
   },
   {
     "rarity": "Uncommon",
@@ -168386,7 +168077,7 @@
   {
     "rarity": "Common",
     "name": "Underbelly Whelp Scale",
-    "icon": "itemmiscmonsterscales03",
+    "icon": "itemmiscmonsterscales25",
     "detailedType": "Scale",
     "type": "Miscellaneous",
     "source": "DirectDrop",
@@ -175112,9 +174803,14 @@
     "icon": "itemmisceye01",
     "detailedType": "Organ",
     "type": "Miscellaneous",
-    "source": "ZoneDrop",
+    "source": "DirectDrop",
     "ilvl": 1,
-    "maxStack": 20
+    "onlyWithQuest": true,
+    "maxStack": 20,
+    "droppedBy": [
+      "Makrura Clacker",
+      "Makrura Shellhide"
+    ]
   },
   {
     "rarity": "Poor",
@@ -181786,7 +181482,7 @@
   {
     "rarity": "Common",
     "name": "Black Whelp Scale",
-    "icon": "itemmiscmonsterscales03",
+    "icon": "itemmiscmonsterscales19",
     "detailedType": "Scale",
     "type": "Miscellaneous",
     "ilvl": 1,
@@ -181864,7 +181560,18 @@
   {
     "rarity": "Common",
     "name": "Red Whelp Scale",
-    "icon": "itemmiscmonsterscales02",
+    "icon": "itemmiscmonsterscales21",
+    "detailedType": "Scale",
+    "type": "Miscellaneous",
+    "source": "ZoneDrop",
+    "ilvl": 1,
+    "maxStack": 5,
+    "price": 100
+  },
+  {
+    "rarity": "Common",
+    "name": "Blue Whelp Scale",
+    "icon": "itemmiscmonsterscales22",
     "detailedType": "Scale",
     "type": "Miscellaneous",
     "source": "ZoneDrop",
@@ -182031,7 +181738,7 @@
   {
     "rarity": "Common",
     "name": "Green Whelp Scale",
-    "icon": "itemmiscmonsterscales03",
+    "icon": "itemmiscmonsterscales20",
     "detailedType": "Scale",
     "type": "Miscellaneous",
     "ilvl": 1,
@@ -188775,11 +188482,12 @@
     "name": "Pristine Hide of the Beast",
     "icon": "itemmiscmonsterscales15",
     "detailedType": "Scale",
-    "type": "Miscellaneous",
-    "ilvl": 1,
-    "maxStack": 1,
-    "indestructible": true,
-    "unique": true
+    "type": "Trade Good",
+    "source": "RareDrop",
+    "ilvl": 60,
+    "lvl": 1,
+    "maxStack": 10,
+    "price": 5000
   },
   {
     "rarity": "Common",

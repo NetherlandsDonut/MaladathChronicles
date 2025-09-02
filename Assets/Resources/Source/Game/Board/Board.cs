@@ -86,7 +86,7 @@ public class Board
         participants[0].who.CombatReset();
         participants[1].who = new Entity(60, possible[random.Next(possible.Count)]);
         whosTurn = 0;
-        area = SiteArea.areas[random.Next(SiteArea.areas.Count)];
+        area = areas[random.Next(areas.Count)];
         participants[0].who.currentActionSet = "Default";
         participants[0].combatAbilities = participants[0].who.AbilitiesInCombat();
         foreach (var a in abilities)
@@ -445,7 +445,7 @@ public class Board
                             results.inventory.AddItem(item.CopyItem());
 
                     //General drops
-                    var generalDrops = GeneralDrop.generalDrops.FindAll(x => x.DoesLevelFit(enemy.level) && (x.requiredProfession == null || (currentSave.player.professionSkills.ContainsKey(x.requiredProfession) && (x.requiredSkill == 0 || x.requiredSkill <= currentSave.player.professionSkills[x.requiredProfession].Item1))) && (x.category == null || x.category == enemy.Race().category) && (x.subCategory == null || x.subCategory == enemy.Race().subcategory) && x.inclusive);
+                    var generalDrops = GeneralDrop.generalDrops.FindAll(x => x.DoesLevelFit(enemy.level) && (x.requiredProfession == null || (currentSave.player.professionSkills.ContainsKey(x.requiredProfession) && (x.requiredSkill == 0 || x.requiredSkill <= currentSave.player.professionSkills[x.requiredProfession].Item1))) && (x.category == null || x.category == enemy.Race().category) && (x.tags == null || !x.tags.Contains("OnlySkinning")) && (x.subCategory == null || x.subCategory == enemy.Race().subcategory) && x.inclusive);
                     if (generalDrops.Count > 0)
                         foreach (var drop in generalDrops)
                             if (Roll(drop.rarity))
@@ -454,7 +454,7 @@ public class Board
                                 for (int i = 1; i < drop.dropCount; i++) amount += Roll(10) ? 1 : 0;
                                 results.inventory.AddItem(Item.items.Find(x => x.name == drop.item).CopyItem(amount));
                             }
-                    var possibleGeneralDrops = GeneralDrop.generalDrops.FindAll(x => x.DoesLevelFit(enemy.level) && (x.requiredProfession == null || currentSave.player.professionSkills.ContainsKey(x.requiredProfession) && (x.requiredSkill == 0 || x.requiredSkill <= currentSave.player.professionSkills[x.requiredProfession].Item1)) && (x.category == null || x.category == enemy.Race().category) && (x.subCategory == null || x.subCategory == enemy.Race().subcategory) && !x.inclusive);
+                    var possibleGeneralDrops = GeneralDrop.generalDrops.FindAll(x => x.DoesLevelFit(enemy.level) && (x.requiredProfession == null || currentSave.player.professionSkills.ContainsKey(x.requiredProfession) && (x.requiredSkill == 0 || x.requiredSkill <= currentSave.player.professionSkills[x.requiredProfession].Item1)) && (x.category == null || x.category == enemy.Race().category) && (x.tags == null || !x.tags.Contains("OnlySkinning")) && (x.subCategory == null || x.subCategory == enemy.Race().subcategory) && !x.inclusive);
                     possibleGeneralDrops.Shuffle();
                     if (possibleGeneralDrops.Count > 0)
                         foreach (var drop in possibleGeneralDrops.OrderBy(x => x.rarity))

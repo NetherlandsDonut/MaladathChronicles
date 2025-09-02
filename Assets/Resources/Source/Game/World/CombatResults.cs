@@ -61,11 +61,10 @@ public class CombatResults
                 var common = possibleNodes.Where(x => x.tags.Contains("CommonMaterial")).ToList();
                 var rare = possibleNodes.Where(x => x.tags.Contains("RareMaterial")).ToList();
                 GeneralDrop r = null;
-                if (possibleNodes.Any(x => x.category == skinningTarget.who.name)) r = possibleNodes.First(x => x.category == skinningTarget.who.name);
-                else if (rare.Count > 0 && Roll(possibleNodes.Count == 1 ? 5 : (possibleNodes.Count == 2 ? 4 : (possibleNodes.Count == 3 ? 3 : (possibleNodes.Count == 4 ? 2 : 1))))) r = rare[random.Next(rare.Count)];
+                if (rare.Count > 0 && Roll(possibleNodes.Count == 1 ? 5 : (possibleNodes.Count == 2 ? 4 : (possibleNodes.Count == 3 ? 3 : (possibleNodes.Count == 4 ? 2 : 1))))) r = rare[random.Next(rare.Count)];
                 else r = common[random.Next(common.Count)];
                 skinningNodes.Add((r.category, r.requiredSkill, skinningTarget.who));
-                var drops = GeneralDrop.generalDrops.FindAll(x => x.category == r.category && x.DoesLevelFit(skinningTarget.who.level));
+                var drops = GeneralDrop.generalDrops.FindAll(x => (x.requiredProfession == "Skinning" && (x.category == skinningTarget.who.name || x.subCategory == skinningTarget.who.Race().subcategory) || x.category == r.category) && x.DoesLevelFit(skinningTarget.who.level)).OrderBy(x => !x.tags.Contains("Main")).ToList();
                 skinningLoots.Add(new Inventory(true));
                 skinningSkillChange.Add(false);
                 if (drops.Count > 0)
