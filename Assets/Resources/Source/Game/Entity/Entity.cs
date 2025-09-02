@@ -1341,6 +1341,30 @@ public class Entity
         else if (foo == "Sayaad") foo = "Succubus";
         else if (foo == "Imp") foo = "Grell";
         else if (foo == "FelGuard") foo = "DoomGuard";
+        else if (foo == "BlackDrake") foo = "Drake";
+        else if (foo == "RedDrake") foo = "Drake";
+        else if (foo == "BlueDrake") foo = "Drake";
+        else if (foo == "GreenDrake") foo = "Drake";
+        else if (foo == "BronzeDrake") foo = "Drake";
+        else if (foo == "ChromaticDrake") foo = "Drake";
+        else if (foo == "BlackWhelp") foo = "Whelp";
+        else if (foo == "RedWhelp") foo = "Whelp";
+        else if (foo == "BlueWhelp") foo = "Whelp";
+        else if (foo == "GreenWhelp") foo = "Whelp";
+        else if (foo == "BronzeWhelp") foo = "Whelp";
+        else if (foo == "ChromaticWhelp") foo = "Whelp";
+        else if (foo == "BlackDragonspawn") foo = "Dragonspawn";
+        else if (foo == "RedDragonspawn") foo = "Dragonspawn";
+        else if (foo == "BlueDragonspawn") foo = "Dragonspawn";
+        else if (foo == "GreenDragonspawn") foo = "Dragonspawn";
+        else if (foo == "BronzeDragonspawn") foo = "Dragonspawn";
+        else if (foo == "ChromaticDragonspawn") foo = "Dragonspawn";
+        else if (foo == "BlackDragon") foo = "Dragon";
+        else if (foo == "RedDragon") foo = "Dragon";
+        else if (foo == "BlueDragon") foo = "Dragon";
+        else if (foo == "GreenDragon") foo = "Dragon";
+        else if (foo == "BronzeDragon") foo = "Dragon";
+        else if (foo == "ChromaticDragon") foo = "Dragon";
         return foo + gender + type;
     }
 

@@ -1335,7 +1335,7 @@
   {
     "name": "General Drakkisath",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "BlackDragonspawn",
     "portrait": "PortraitBlackDragonSpawn",
     "abilities": {},
     "kind": "Elite",
@@ -1344,7 +1344,7 @@
   {
     "name": "Black Dragonspawn",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "BlackDragonspawn",
     "portrait": "PortraitBlackDragonSpawn",
     "abilities": {},
     "kind": "Common",
@@ -1353,7 +1353,7 @@
   {
     "name": "Death Talon Dragonspawn",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "BlackDragonspawn",
     "portrait": "PortraitBlackDragonSpawn",
     "abilities": {},
     "kind": "Common",
@@ -1362,7 +1362,7 @@
   {
     "name": "Death Talon Seether",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "BlackDragonspawn",
     "portrait": "PortraitBlackDragonSpawn",
     "abilities": {},
     "kind": "Common",
@@ -1371,7 +1371,7 @@
   {
     "name": "Firemane Scout",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "BlackDragonspawn",
     "portrait": "PortraitBlackDragonSpawn",
     "abilities": {},
     "kind": "Common",
@@ -1380,7 +1380,7 @@
   {
     "name": "Flamescale Dragonspawn",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "BlackDragonspawn",
     "portrait": "PortraitBlackDragonSpawn",
     "abilities": {},
     "kind": "Common",
@@ -1389,7 +1389,7 @@
   {
     "name": "Onyxian Lair Guard",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "BlackDragonspawn",
     "portrait": "PortraitBlackDragonSpawn",
     "abilities": {},
     "kind": "Common",
@@ -1398,7 +1398,7 @@
   {
     "name": "Rage Talon Dragon Guard",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "BlackDragonspawn",
     "portrait": "PortraitBlackDragonSpawn",
     "abilities": {},
     "kind": "Common",
@@ -1407,7 +1407,7 @@
   {
     "name": "Rage Talon Dragonspawn",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "BlackDragonspawn",
     "portrait": "PortraitBlackDragonSpawn",
     "abilities": {},
     "kind": "Common",
@@ -1416,7 +1416,7 @@
   {
     "name": "Lord Captain Wyrmak",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "BlackDragonspawn",
     "portrait": "PortraitBlackDragonSpawnArmored",
     "abilities": {},
     "kind": "Rare",
@@ -1425,7 +1425,7 @@
   {
     "name": "Overlord Wyrmthalak",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "BlackDragonspawn",
     "portrait": "PortraitBlackDragonSpawnArmored",
     "abilities": {},
     "kind": "Elite",
@@ -1434,7 +1434,7 @@
   {
     "name": "Solakar Flamewreath",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "BlackDragonspawn",
     "portrait": "PortraitBlackDragonSpawnArmored",
     "abilities": {},
     "kind": "Elite",
@@ -1443,7 +1443,7 @@
   {
     "name": "Death Talon Flamescale",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "BlackDragonspawn",
     "portrait": "PortraitBlackDragonSpawnArmored",
     "abilities": {},
     "kind": "Common",
@@ -1452,7 +1452,7 @@
   {
     "name": "Onyxian Warder",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "BlackDragonspawn",
     "portrait": "PortraitBlackDragonSpawnArmored",
     "abilities": {},
     "kind": "Common",
@@ -1461,7 +1461,7 @@
   {
     "name": "Rage Talon Captain",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "BlackDragonspawn",
     "portrait": "PortraitBlackDragonSpawnArmored",
     "abilities": {},
     "kind": "Common",
@@ -1470,7 +1470,7 @@
   {
     "name": "Death Talon Captain",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "BlackDragonspawn",
     "portrait": "PortraitBlackDragonSpawnCaptain",
     "abilities": {},
     "kind": "Common",
@@ -1479,7 +1479,7 @@
   {
     "name": "Black Wyrmkin",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "BlackDragonspawn",
     "portrait": "PortraitBlackDragonSpawnFemale",
     "abilities": {},
     "kind": "Common",
@@ -1488,7 +1488,7 @@
   {
     "name": "Death Talon Hatcher",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "BlackDragonspawn",
     "portrait": "PortraitBlackDragonSpawnFemale",
     "abilities": {},
     "kind": "Common",
@@ -1497,7 +1497,7 @@
   {
     "name": "Death Talon Wyrmkin",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "BlackDragonspawn",
     "portrait": "PortraitBlackDragonSpawnFemale",
     "abilities": {},
     "kind": "Common",
@@ -1506,7 +1506,7 @@
   {
     "name": "Firemane Ash Tail",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "BlackDragonspawn",
     "portrait": "PortraitBlackDragonSpawnFemale",
     "abilities": {},
     "kind": "Common",
@@ -1515,7 +1515,7 @@
   {
     "name": "Firemane Flamecaller",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "BlackDragonspawn",
     "portrait": "PortraitBlackDragonSpawnFemale",
     "abilities": {},
     "kind": "Common",
@@ -1524,7 +1524,7 @@
   {
     "name": "Flamescale Wyrmkin",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "BlackDragonspawn",
     "portrait": "PortraitBlackDragonSpawnFemale",
     "abilities": {},
     "kind": "Common",
@@ -1533,7 +1533,7 @@
   {
     "name": "Rage Talon Fire Tongue",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "BlackDragonspawn",
     "portrait": "PortraitBlackDragonSpawnFemale",
     "abilities": {},
     "kind": "Common",
@@ -1542,7 +1542,7 @@
   {
     "name": "Rage Talon Flamescale",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "BlackDragonspawn",
     "portrait": "PortraitBlackDragonSpawnFemale",
     "abilities": {},
     "kind": "Common",
@@ -1551,7 +1551,7 @@
   {
     "name": "Snarlflare",
     "category": "Dragonkin",
-    "subcategory": "Dragon",
+    "subcategory": "BlackWhelp",
     "portrait": "PortraitBlackDragonWhelp",
     "abilities": {},
     "kind": "Rare",
@@ -1560,7 +1560,7 @@
   {
     "name": "Black Broodling",
     "category": "Dragonkin",
-    "subcategory": "Dragon",
+    "subcategory": "BlackWhelp",
     "portrait": "PortraitBlackDragonWhelp",
     "abilities": {},
     "kind": "Common",
@@ -1569,7 +1569,7 @@
   {
     "name": "Black Dragon Whelp",
     "category": "Dragonkin",
-    "subcategory": "Dragon",
+    "subcategory": "BlackWhelp",
     "portrait": "PortraitBlackDragonWhelp",
     "abilities": {},
     "kind": "Common",
@@ -1578,7 +1578,7 @@
   {
     "name": "Flamescale Broodling",
     "category": "Dragonkin",
-    "subcategory": "Dragon",
+    "subcategory": "BlackWhelp",
     "portrait": "PortraitBlackDragonWhelp",
     "abilities": {},
     "kind": "Common",
@@ -1587,7 +1587,7 @@
   {
     "name": "Rookery Whelp",
     "category": "Dragonkin",
-    "subcategory": "Dragon",
+    "subcategory": "BlackWhelp",
     "portrait": "PortraitBlackDragonWhelp",
     "abilities": {},
     "kind": "Common",
@@ -1596,7 +1596,7 @@
   {
     "name": "Scalding Whelp",
     "category": "Dragonkin",
-    "subcategory": "Dragon",
+    "subcategory": "BlackWhelp",
     "portrait": "PortraitBlackDragonWhelp",
     "abilities": {},
     "kind": "Common",
@@ -1605,7 +1605,7 @@
   {
     "name": "Searing Whelp",
     "category": "Dragonkin",
-    "subcategory": "Dragon",
+    "subcategory": "BlackWhelp",
     "portrait": "PortraitBlackDragonWhelp",
     "abilities": {},
     "kind": "Common",
@@ -1614,7 +1614,7 @@
   {
     "name": "Brimgore",
     "category": "Dragonkin",
-    "subcategory": "Drake",
+    "subcategory": "BlackDrake",
     "portrait": "PortraitBlackDrake",
     "abilities": {},
     "kind": "Rare",
@@ -1623,7 +1623,7 @@
   {
     "name": "Ebonroc",
     "category": "Dragonkin",
-    "subcategory": "Drake",
+    "subcategory": "BlackDrake",
     "portrait": "PortraitBlackDrake",
     "abilities": {},
     "kind": "Elite",
@@ -1632,7 +1632,7 @@
   {
     "name": "Emberstrife",
     "category": "Dragonkin",
-    "subcategory": "Drake",
+    "subcategory": "BlackDrake",
     "portrait": "PortraitBlackDrake",
     "abilities": {},
     "kind": "Elite",
@@ -1641,7 +1641,7 @@
   {
     "name": "Firemaw",
     "category": "Dragonkin",
-    "subcategory": "Drake",
+    "subcategory": "BlackDrake",
     "portrait": "PortraitBlackDrake",
     "abilities": {},
     "kind": "Elite",
@@ -1650,7 +1650,7 @@
   {
     "name": "Flamegor",
     "category": "Dragonkin",
-    "subcategory": "Drake",
+    "subcategory": "BlackDrake",
     "portrait": "PortraitBlackDrake",
     "abilities": {},
     "kind": "Elite",
@@ -1659,7 +1659,7 @@
   {
     "name": "Teremus the Devourer",
     "category": "Dragonkin",
-    "subcategory": "Drake",
+    "subcategory": "BlackDrake",
     "portrait": "PortraitBlackDrake",
     "abilities": {},
     "kind": "Elite",
@@ -1668,7 +1668,7 @@
   {
     "name": "Hematos",
     "category": "Dragonkin",
-    "subcategory": "Drake",
+    "subcategory": "BlackDrake",
     "portrait": "PortraitBlackDrake",
     "abilities": {},
     "kind": "Rare",
@@ -1677,7 +1677,7 @@
   {
     "name": "Scorched Guardian",
     "category": "Dragonkin",
-    "subcategory": "Drake",
+    "subcategory": "BlackDrake",
     "portrait": "PortraitBlackDrake",
     "abilities": {},
     "kind": "Common",
@@ -1686,7 +1686,7 @@
   {
     "name": "Searscale Drake",
     "category": "Dragonkin",
-    "subcategory": "Drake",
+    "subcategory": "BlackDrake",
     "portrait": "PortraitBlackDrake",
     "abilities": {},
     "kind": "Common",
@@ -2193,7 +2193,7 @@
   {
     "name": "Dragonic Magelord",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "BlueDragonspawn",
     "portrait": "PortraitBlueDragonSpawn",
     "abilities": {},
     "kind": "Common",
@@ -2202,7 +2202,7 @@
   {
     "name": "General Colbatann",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "BlueDragonspawn",
     "portrait": "PortraitBlueDragonSpawnArmored",
     "abilities": {},
     "kind": "Rare",
@@ -2211,7 +2211,7 @@
   {
     "name": "Blue Scalebane",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "BlueDragonspawn",
     "portrait": "PortraitBlueDragonSpawnArmored",
     "abilities": {},
     "kind": "Common",
@@ -2220,7 +2220,7 @@
   {
     "name": "Cobalt Scalebane",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "BlueDragonspawn",
     "portrait": "PortraitBlueDragonSpawnArmored",
     "abilities": {},
     "kind": "Common",
@@ -2229,7 +2229,7 @@
   {
     "name": "Cobalt Wyrmkin",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "BlueDragonspawn",
     "portrait": "PortraitBlueDragonSpawnFemale",
     "abilities": {},
     "kind": "Common",
@@ -2238,7 +2238,7 @@
   {
     "name": "Draconic Mageweaver",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "BlueDragonspawn",
     "portrait": "PortraitBlueDragonSpawnFemale",
     "abilities": {},
     "kind": "Common",
@@ -2247,7 +2247,7 @@
   {
     "name": "Manaclaw",
     "category": "Dragonkin",
-    "subcategory": "Drake",
+    "subcategory": "BlueDrake",
     "portrait": "PortraitBlueDrake",
     "abilities": {},
     "kind": "Elite",
@@ -2256,7 +2256,7 @@
   {
     "name": "Scryer",
     "category": "Dragonkin",
-    "subcategory": "Drake",
+    "subcategory": "BlueDrake",
     "portrait": "PortraitBlueDrake",
     "abilities": {},
     "kind": "Elite",
@@ -2265,7 +2265,7 @@
   {
     "name": "Azurous",
     "category": "Dragonkin",
-    "subcategory": "Drake",
+    "subcategory": "BlueDrake",
     "portrait": "PortraitBlueDrake",
     "abilities": {},
     "kind": "Rare",
@@ -4102,16 +4102,16 @@
   {
     "name": "Chromaggus",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "Drakeadon",
     "portrait": "PortraitChromaggus",
     "abilities": {},
     "kind": "Elite",
-    "vitality": 1.0
+    "vitality": 3.0
   },
   {
     "name": "Chromatic Dragonspawn",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "ChromaticDragonspawn",
     "portrait": "PortraitChromaticDragonSpawn",
     "abilities": {},
     "kind": "Common",
@@ -4120,7 +4120,7 @@
   {
     "name": "Chromatic Elite Guard",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "ChromaticDragonspawn",
     "portrait": "PortraitChromaticDragonSpawnArmored",
     "abilities": {},
     "kind": "Common",
@@ -4129,7 +4129,7 @@
   {
     "name": "Gyth",
     "category": "Dragonkin",
-    "subcategory": "Drake",
+    "subcategory": "ChromaticDrake",
     "portrait": "PortraitChromaticDrake",
     "abilities": {},
     "kind": "Elite",
@@ -8758,8 +8758,8 @@
     "name": "Rot Hide Savage",
     "category": "Humanoid",
     "subcategory": "Gnoll",
-    "portrait": "PortraitGnollBrown",
     "faction": "Rot Hide Tribe",
+    "portrait": "PortraitGnollBrown",
     "abilities": {},
     "kind": "Common",
     "vitality": 1.0
@@ -9558,7 +9558,7 @@
   {
     "name": "Gorosh the Dervish",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Orc",
     "portrait": "PortraitGorosh",
     "abilities": {},
     "kind": "Elite",
@@ -9578,7 +9578,7 @@
   {
     "name": "Great Father Arctikus",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Troll",
     "portrait": "PortraitGreatFatherArctikus",
     "abilities": {},
     "kind": "Rare",
@@ -9588,7 +9588,7 @@
   {
     "name": "Shade of Eranikus",
     "category": "Dragonkin",
-    "subcategory": "Dragon",
+    "subcategory": "GreenDragon",
     "portrait": "PortraitGreenDragon",
     "abilities": {},
     "kind": "Elite",
@@ -9597,7 +9597,7 @@
   {
     "name": "Nightmare Wanderer",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "GreenDragonspawn",
     "portrait": "PortraitGreenDragonSpawn",
     "abilities": {},
     "kind": "Common",
@@ -9606,7 +9606,7 @@
   {
     "name": "Elder Dragonkin",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "GreenDragonspawn",
     "portrait": "PortraitGreenDragonSpawn",
     "abilities": {},
     "kind": "Common",
@@ -9615,7 +9615,7 @@
   {
     "name": "Emeraldon Tree Watcher",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "GreenDragonspawn",
     "portrait": "PortraitGreenDragonSpawn",
     "abilities": {},
     "kind": "Common",
@@ -9624,7 +9624,7 @@
   {
     "name": "Jademir Boughguard",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "GreenDragonspawn",
     "portrait": "PortraitGreenDragonSpawn",
     "abilities": {},
     "kind": "Common",
@@ -9633,7 +9633,7 @@
   {
     "name": "Jademir Tree Watcher",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "GreenDragonspawn",
     "portrait": "PortraitGreenDragonSpawn",
     "abilities": {},
     "kind": "Common",
@@ -9642,7 +9642,7 @@
   {
     "name": "Verdantine Tree Warder",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "GreenDragonspawn",
     "portrait": "PortraitGreenDragonSpawn",
     "abilities": {},
     "kind": "Common",
@@ -9651,7 +9651,7 @@
   {
     "name": "Emeraldon Bough Guard",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "GreenDragonspawn",
     "portrait": "PortraitGreenDragonSpawnArmored",
     "abilities": {},
     "kind": "Common",
@@ -9660,7 +9660,7 @@
   {
     "name": "Nightmare Scalebane",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "GreenDragonspawn",
     "portrait": "PortraitGreenDragonSpawnArmored",
     "abilities": {},
     "kind": "Common",
@@ -9669,7 +9669,7 @@
   {
     "name": "Scalebane Captain",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "GreenDragonspawn",
     "portrait": "PortraitGreenDragonSpawnArmored",
     "abilities": {},
     "kind": "Common",
@@ -9678,7 +9678,7 @@
   {
     "name": "Verdantine Bough Guard",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "GreenDragonspawn",
     "portrait": "PortraitGreenDragonSpawnArmored",
     "abilities": {},
     "kind": "Common",
@@ -9687,7 +9687,7 @@
   {
     "name": "Emeraldon Oracle",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "GreenDragonspawn",
     "portrait": "PortraitGreenDragonSpawnFemale",
     "abilities": {},
     "kind": "Common",
@@ -9696,7 +9696,7 @@
   {
     "name": "Jademir Oracle",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "GreenDragonspawn",
     "portrait": "PortraitGreenDragonSpawnFemale",
     "abilities": {},
     "kind": "Common",
@@ -9705,7 +9705,7 @@
   {
     "name": "Nightmare Wyrmkin",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "GreenDragonspawn",
     "portrait": "PortraitGreenDragonSpawnFemale",
     "abilities": {},
     "kind": "Common",
@@ -9714,7 +9714,7 @@
   {
     "name": "Verdantine Oracle",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "GreenDragonspawn",
     "portrait": "PortraitGreenDragonSpawnFemale",
     "abilities": {},
     "kind": "Common",
@@ -9723,7 +9723,7 @@
   {
     "name": "Wyrmkin Dreamwalker",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "GreenDragonspawn",
     "portrait": "PortraitGreenDragonSpawnFemale",
     "abilities": {},
     "kind": "Common",
@@ -9732,7 +9732,7 @@
   {
     "name": "Adolescent Whelp",
     "category": "Dragonkin",
-    "subcategory": "Dragon",
+    "subcategory": "GreenWhelp",
     "portrait": "PortraitGreenDragonWhelp",
     "abilities": {},
     "kind": "Common",
@@ -9741,7 +9741,7 @@
   {
     "name": "Dreaming Whelp",
     "category": "Dragonkin",
-    "subcategory": "Dragon",
+    "subcategory": "GreenWhelp",
     "portrait": "PortraitGreenDragonWhelp",
     "abilities": {},
     "kind": "Common",
@@ -9749,8 +9749,8 @@
   },
   {
     "name": "Lethlas",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Dragonkin",
+    "subcategory": "GreenDrake",
     "portrait": "PortraitGreenDrake",
     "abilities": {},
     "kind": "Elite",
@@ -9759,8 +9759,8 @@
   },
   {
     "name": "Dreamroarer",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Dragonkin",
+    "subcategory": "GreenDrake",
     "portrait": "PortraitGreenDrake",
     "abilities": {},
     "kind": "Elite",
@@ -9769,8 +9769,8 @@
   },
   {
     "name": "Dream Tracker",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Dragonkin",
+    "subcategory": "GreenDrake",
     "portrait": "PortraitGreenDrake",
     "abilities": {},
     "kind": "Elite",
@@ -9779,8 +9779,8 @@
   },
   {
     "name": "Dreamscythe",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Dragonkin",
+    "subcategory": "GreenDrake",
     "portrait": "PortraitGreenDrake",
     "abilities": {},
     "kind": "Elite",
@@ -9789,8 +9789,8 @@
   },
   {
     "name": "Dreamstalker",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Dragonkin",
+    "subcategory": "GreenDrake",
     "portrait": "PortraitGreenDrake",
     "abilities": {},
     "kind": "Elite",
@@ -9799,8 +9799,8 @@
   },
   {
     "name": "Hazzas",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Dragonkin",
+    "subcategory": "GreenDrake",
     "portrait": "PortraitGreenDrake",
     "abilities": {},
     "kind": "Elite",
@@ -9809,8 +9809,8 @@
   },
   {
     "name": "Jade",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Dragonkin",
+    "subcategory": "GreenDrake",
     "portrait": "PortraitGreenDrake",
     "abilities": {},
     "kind": "Elite",
@@ -9819,8 +9819,8 @@
   },
   {
     "name": "Morphaz",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Dragonkin",
+    "subcategory": "GreenDrake",
     "portrait": "PortraitGreenDrake",
     "abilities": {},
     "kind": "Rare",
@@ -9829,8 +9829,8 @@
   },
   {
     "name": "Phantim",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Dragonkin",
+    "subcategory": "GreenDrake",
     "portrait": "PortraitGreenDrake",
     "abilities": {},
     "kind": "Elite",
@@ -9839,8 +9839,8 @@
   },
   {
     "name": "Rothos",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Dragonkin",
+    "subcategory": "GreenDrake",
     "portrait": "PortraitGreenDrake",
     "abilities": {},
     "kind": "Elite",
@@ -9849,8 +9849,8 @@
   },
   {
     "name": "Somnus",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Dragonkin",
+    "subcategory": "GreenDrake",
     "portrait": "PortraitGreenDrake",
     "abilities": {},
     "kind": "Elite",
@@ -9859,8 +9859,8 @@
   },
   {
     "name": "Weaver",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Dragonkin",
+    "subcategory": "GreenDrake",
     "portrait": "PortraitGreenDrake",
     "abilities": {},
     "kind": "Elite",
@@ -15969,7 +15969,7 @@
   {
     "name": "Plagued Hatchling",
     "category": "Dragonkin",
-    "subcategory": "Dragon",
+    "subcategory": "Whelp",
     "faction": "Scourge",
     "portrait": "PortraitPlagueDragonWhelp",
     "abilities": {},
@@ -17351,7 +17351,7 @@
   {
     "name": "Vaelastrasz the Corrupt",
     "category": "Dragonkin",
-    "subcategory": "Dragon",
+    "subcategory": "RedDragon",
     "portrait": "PortraitRedDragon",
     "abilities": {},
     "kind": "Elite",
@@ -17360,7 +17360,7 @@
   {
     "name": "Firemane Scalebane",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "RedDragonspawn",
     "portrait": "PortraitRedDragonSpawnArmored",
     "abilities": {},
     "kind": "Common",
@@ -17369,7 +17369,7 @@
   {
     "name": "Red Scalebane",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "RedDragonspawn",
     "portrait": "PortraitRedDragonSpawnArmored",
     "abilities": {},
     "kind": "Common",
@@ -17378,7 +17378,7 @@
   {
     "name": "Scalebane Lieutenant",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "RedDragonspawn",
     "portrait": "PortraitRedDragonSpawnArmored",
     "abilities": {},
     "kind": "Common",
@@ -17387,7 +17387,7 @@
   {
     "name": "Scalebane Royal Guard",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "RedDragonspawn",
     "portrait": "PortraitRedDragonSpawnArmored",
     "abilities": {},
     "kind": "Common",
@@ -17396,7 +17396,7 @@
   {
     "name": "Wyrmkin Firebrand",
     "category": "Dragonkin",
-    "subcategory": "Dragonspawn",
+    "subcategory": "RedDragonspawn",
     "portrait": "PortraitRedDragonSpawnFemale",
     "abilities": {},
     "kind": "Common",

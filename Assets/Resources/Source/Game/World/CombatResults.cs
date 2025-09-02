@@ -34,8 +34,8 @@ public class CombatResults
 
     #region Skinning
 
-    //Found skinning node in the area after combat (node name, skill required)
-    public List<(string, int)> skinningNodes;
+    //Found skinning node in the area after combat (node name, skill required, entity from which items will be skinned)
+    public List<(string, int, Entity)> skinningNodes;
 
     //Generated skinning loot based on player skill in skinning and the node found
     public List<Inventory> skinningLoots;
@@ -64,7 +64,7 @@ public class CombatResults
                 if (possibleNodes.Any(x => x.category == skinningTarget.who.name)) r = possibleNodes.First(x => x.category == skinningTarget.who.name);
                 else if (rare.Count > 0 && Roll(possibleNodes.Count == 1 ? 5 : (possibleNodes.Count == 2 ? 4 : (possibleNodes.Count == 3 ? 3 : (possibleNodes.Count == 4 ? 2 : 1))))) r = rare[random.Next(rare.Count)];
                 else r = common[random.Next(common.Count)];
-                skinningNodes.Add((r.category, r.requiredSkill));
+                skinningNodes.Add((r.category, r.requiredSkill, skinningTarget.who));
                 var drops = GeneralDrop.generalDrops.FindAll(x => x.category == r.category && x.DoesLevelFit(skinningTarget.who.level));
                 skinningLoots.Add(new Inventory(true));
                 skinningSkillChange.Add(false);

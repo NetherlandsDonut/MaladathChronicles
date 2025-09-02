@@ -375,21 +375,6 @@
     "requiredProfession": "Skinning",
     "requiredSkill": 1,
     "item": "Ruined Leather Scraps",
-    "rarity": 100.0,
-    "category": "Ruined Leather Scraps",
-    "dropStart": 1,
-    "dropEnd": 13,
-    "dropCount": 2,
-    "tags": [
-      "Main",
-      "Leather",
-      "CommonMaterial"
-    ]
-  },
-  {
-    "requiredProfession": "Skinning",
-    "requiredSkill": 1,
-    "item": "Ruined Leather Scraps",
     "rarity": 50.0,
     "category": "Light Leather",
     "dropStart": 1,
@@ -523,7 +508,7 @@
     "rarity": 100.0,
     "category": "Rugged Leather",
     "dropStart": 46,
-    "dropEnd": 60,
+    "dropEnd": 999,
     "dropCount": 2,
     "tags": [
       "Main",
@@ -538,7 +523,7 @@
     "rarity": 15.0,
     "category": "Rugged Leather",
     "dropStart": 46,
-    "dropEnd": 60,
+    "dropEnd": 999,
     "dropCount": 2,
     "tags": [
       "Hide",

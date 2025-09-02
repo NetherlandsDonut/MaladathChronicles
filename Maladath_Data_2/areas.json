@@ -52994,6 +52994,9 @@
     "fishing": true
   },
   {
+    "chestBonus": {
+      "Gold Pickup Schedule": 1
+    },
     "commonEncounters": [
       {
         "who": "Riverpaw Runt",
@@ -53037,9 +53040,6 @@
     ],
     "x": 4932,
     "y": -3722,
-    "chestBonus": {
-      "Gold Pickup Schedule": 1
-    },
     "name": "Forest's Edge",
     "zone": "Elwynn Forest",
     "type": "HostileArea"
@@ -72994,6 +72994,9 @@
     "type": "HostileArea"
   },
   {
+    "chestBonus": {
+      "Captain Sander's Treasure Map": 1
+    },
     "commonEncounters": [
       {
         "who": "Sand Crawler",
@@ -73031,9 +73034,6 @@
     ],
     "x": 4628,
     "y": -3848,
-    "chestBonus": {
-      "Captain Sander's Treasure Map": 1
-    },
     "name": "Longshore",
     "zone": "Westfall",
     "type": "HostileArea",

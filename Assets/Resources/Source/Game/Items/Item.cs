@@ -1412,12 +1412,12 @@ public class Item
         var split = item.name.Split(", ");
         AddHeaderRegion(() =>
         {
-            AddLine(split[0], item.rarity);
+            AddLine(split[0].CutTail(), item.rarity);
             AddSmallButton(item.icon);
             if (settings.rarityIndicators.Value())
                 AddSmallButtonOverlay("OtherRarity" + item.rarity, 0, 2);
         });
-        if (split.Length > 1) AddHeaderRegion(() => { AddLine("\"" + split[1] + "\"", item.rarity); });
+        if (split.Length > 1) AddHeaderRegion(() => { AddLine("\"" + split[1].CutTail() + "\"", item.rarity); });
         AddPaddingRegion(() =>
         {
             if (item.armorClass != null)

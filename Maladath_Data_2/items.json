@@ -49155,20 +49155,6 @@
     "unique": true
   },
   {
-    "rarity": "Common",
-    "name": "Grimoire of Torment (Rank 6)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 60,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 6500
-  },
-  {
     "rarity": "Rare",
     "name": "Sergeant Major's Cape!3",
     "icon": "itemmisccape21",
@@ -49207,20 +49193,6 @@
       "Stamina": 15,
       "Spirit": 3
     }
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Suffering (Rank 4)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 60,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 6500
   },
   {
     "rarity": "Rare",
@@ -49389,20 +49361,6 @@
       "Intellect": 7,
       "Stamina": 13
     }
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Lash of Pain (Rank 6)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 60,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 6500
   },
   {
     "rarity": "Rare",
@@ -53500,20 +53458,6 @@
     }
   },
   {
-    "rarity": "Rare",
-    "name": "Tome of Frostbolt XI",
-    "icon": "itemmiscbook07",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "source": "ZoneDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "specs": [
-      "Mage"
-    ],
-    "price": 100000
-  },
-  {
     "rarity": "Common",
     "name": "Qiraji Lord's Insignia",
     "icon": "itemzulgurubtrinket",
@@ -53651,34 +53595,6 @@
     "ilvl": 60,
     "maxStack": 1,
     "unique": true
-  },
-  {
-    "rarity": "Rare",
-    "name": "Grimoire of Shadow Bolt X",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "source": "ZoneDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 100000
-  },
-  {
-    "rarity": "Rare",
-    "name": "Tome of Fireball XII",
-    "icon": "itemmiscbook07",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "source": "ZoneDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "specs": [
-      "Mage"
-    ],
-    "price": 100000
   },
   {
     "rarity": "Uncommon",
@@ -53892,20 +53808,6 @@
   },
   {
     "rarity": "Rare",
-    "name": "Tome of Arcane Missiles VIII",
-    "icon": "itemmiscbook07",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "source": "ZoneDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "specs": [
-      "Mage"
-    ],
-    "price": 100000
-  },
-  {
-    "rarity": "Rare",
     "name": "Tablet of Strength of Earth Totem V",
     "icon": "itemmiscstonetablet11",
     "detailedType": "Rock",
@@ -54096,20 +53998,6 @@
     "maxStack": 1,
     "specs": [
       "Druid"
-    ],
-    "price": 100000
-  },
-  {
-    "rarity": "Rare",
-    "name": "Grimoire of Immolate VIII",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "source": "ZoneDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "specs": [
-      "Warlock"
     ],
     "price": 100000
   },
@@ -55895,23 +55783,6 @@
   },
   {
     "rarity": "Rare",
-    "name": "Tome of Polymorph Turtle",
-    "icon": "itemmiscbook07",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "source": "DirectDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "specs": [
-      "Mage"
-    ],
-    "price": 14750,
-    "droppedBy": [
-      "Gahz'ranka"
-    ]
-  },
-  {
-    "rarity": "Rare",
     "name": "Supply Bag",
     "icon": "itemmiscbag17",
     "type": "Bag",
@@ -55936,40 +55807,6 @@
       "Mage"
     ],
     "price": 10000
-  },
-  {
-    "rarity": "Rare",
-    "name": "Tome of Conjure Food VII",
-    "icon": "itemmiscbook07",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "source": "DirectDrop",
-    "ilvl": 60,
-    "maxStack": 20,
-    "specs": [
-      "Mage"
-    ],
-    "price": 10000,
-    "droppedBy": [
-      "Archivist Galford"
-    ]
-  },
-  {
-    "rarity": "Rare",
-    "name": "Grimoire of Shadow Ward IV",
-    "icon": "itemmiscbook07",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "source": "DirectDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 10000,
-    "droppedBy": [
-      "Onyxia"
-    ]
   },
   {
     "rarity": "Common",
@@ -61052,48 +60889,6 @@
     "lvl": 1,
     "maxStack": 1,
     "price": 1250
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Firebolt (Rank 7)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 58,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 6000
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Consume Shadows (Rank 6)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 58,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 6000
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Soothing Kiss (Rank 4)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 58,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 6000
   },
   {
     "rarity": "Rare",
@@ -66331,34 +66126,6 @@
     "lvl": 51,
     "maxStack": 1,
     "price": 9614
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Sacrifice (Rank 6)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 56,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 5500
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Tainted Blood (Rank 4)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 56,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 5500
   },
   {
     "rarity": "Common",
@@ -72638,34 +72405,6 @@
     }
   },
   {
-    "rarity": "Common",
-    "name": "Grimoire of Fire Shield (Rank 5)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 54,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 5000
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Devour Magic (Rank 4)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 54,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 5000
-  },
-  {
     "rarity": "Uncommon",
     "name": "Encrusted Crystal Fragment",
     "icon": "abilityfrost",
@@ -77166,34 +76905,6 @@
     "price": 19739
   },
   {
-    "rarity": "Common",
-    "name": "Grimoire of Spell Lock (Rank 2)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 52,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 4500
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Lash of Pain (Rank 5)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 52,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 4500
-  },
-  {
     "rarity": "Uncommon",
     "name": "Furbolg Medicine Pouch",
     "icon": "itemmiscbag11",
@@ -80445,23 +80156,6 @@
     "price": 250
   },
   {
-    "rarity": "Uncommon",
-    "name": "Grimoire of Inferno",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "source": "DirectDrop",
-    "ilvl": 50,
-    "maxStack": 1,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 2500,
-    "droppedBy": [
-      "Scarshield Warlock"
-    ]
-  },
-  {
     "rarity": "Common",
     "name": "Elixir of Demonslaying",
     "icon": "itempotion27",
@@ -82211,20 +81905,6 @@
     "price": 1240
   },
   {
-    "rarity": "Common",
-    "name": "Grimoire of Blood Pact (Rank 5)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 50,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 3750
-  },
-  {
     "rarity": "Rare",
     "name": "Sergeant's Cloak!2",
     "icon": "itemmisccape07",
@@ -82238,34 +81918,6 @@
     "stats": {
       "Stamina": 14
     }
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Torment (Rank 5)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 50,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 3750
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Consume Shadows (Rank 5)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 50,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 3750
   },
   {
     "rarity": "Common",
@@ -86158,62 +85810,6 @@
     "armor": 164,
     "maxStack": 1,
     "price": 5896
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Firebolt (Rank 6)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 48,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 3500
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Sacrifice (Rank 5)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 48,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 3500
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Suffering (Rank 3)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 48,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 3500
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Tainted Blood (Rank 3)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 48,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 3500
   },
   {
     "rarity": "Uncommon",
@@ -90185,34 +89781,6 @@
     "lvl": 41,
     "maxStack": 1,
     "price": 7469
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Devour Magic (Rank 3)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 46,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 3250
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Soothing Kiss (Rank 3)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 46,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 3250
   },
   {
     "rarity": "Rare",
@@ -95503,34 +95071,6 @@
     }
   },
   {
-    "rarity": "Common",
-    "name": "Grimoire of Fire Shield (Rank 4)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 44,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 3000
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Lash of Pain (Rank 4)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 44,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 3000
-  },
-  {
     "rarity": "Epic",
     "name": "Ardent Custodian",
     "icon": "itemmace13",
@@ -100017,20 +99557,6 @@
   {
     "rarity": "Common",
     "name": "Grimoire of Paranoia",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 42,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 2750
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Consume Shadows (Rank 4)",
     "icon": "itemmiscbook06",
     "detailedType": "Book",
     "type": "Miscellaneous",
@@ -105245,20 +104771,6 @@
   },
   {
     "rarity": "Common",
-    "name": "Grimoire of Torment (Rank 4)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 40,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 2750
-  },
-  {
-    "rarity": "Common",
     "name": "Knight-Lieutenant's Steed",
     "icon": "abilitymountridinghorse",
     "type": "Miscellaneous",
@@ -105266,34 +104778,6 @@
     "maxStack": 1,
     "indestructible": true,
     "unique": true
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Sacrifice (Rank 4)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 40,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 2750
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Tainted Blood (Rank 2)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 40,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 2750
   },
   {
     "rarity": "Common",
@@ -108532,48 +108016,6 @@
     "lvl": 33,
     "maxStack": 1,
     "price": 4848
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Blood Pact (Rank 4)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 38,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 2500
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Firebolt (Rank 5)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 38,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 2500
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Devour Magic (Rank 2)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 38,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 2500
   },
   {
     "rarity": "Uncommon",
@@ -112445,48 +111887,6 @@
     "lvl": 31,
     "maxStack": 1,
     "price": 4146
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Lash of Pain (Rank 3)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 36,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 2250
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Suffering (Rank 2)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 36,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 2250
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Spell Lock (Rank 1)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 36,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 2250
   },
   {
     "rarity": "Uncommon",
@@ -117181,48 +116581,6 @@
   },
   {
     "rarity": "Common",
-    "name": "Grimoire of Fire Shield (Rank 3)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 34,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 2000
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Soothing Kiss (Rank 2)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 34,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 2000
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Consume Shadows (Rank 3)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 34,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 2000
-  },
-  {
-    "rarity": "Common",
     "name": "Metal Buckler",
     "icon": "itemshield10",
     "detailedType": "Shield",
@@ -121166,35 +120524,7 @@
   },
   {
     "rarity": "Common",
-    "name": "Grimoire of Sacrifice (Rank 3)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 32,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 1750
-  },
-  {
-    "rarity": "Common",
     "name": "Grimoire of Lesser Invisibility",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 32,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 1750
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Tainted Blood (Rank 1)",
     "icon": "itemmiscbook06",
     "detailedType": "Book",
     "type": "Miscellaneous",
@@ -125515,20 +124845,6 @@
     "price": 2500
   },
   {
-    "rarity": "Common",
-    "name": "Grimoire of Torment (Rank 3)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 30,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 1500
-  },
-  {
     "rarity": "Rare",
     "name": "Sergeant Major's Cape!1",
     "icon": "itemmisccape21",
@@ -128873,34 +128189,6 @@
       "Stamina": 4,
       "Spirit": 4
     }
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Firebolt (Rank 4)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 28,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 1250
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Lash of Pain (Rank 2)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 28,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 1250
   },
   {
     "rarity": "Common",
@@ -132674,35 +131962,7 @@
   },
   {
     "rarity": "Common",
-    "name": "Grimoire of Blood Pact (Rank 3)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 26,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 1000
-  },
-  {
-    "rarity": "Common",
     "name": "Grimoire of Seduction",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 26,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 1000
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Consume Shadows (Rank 2)",
     "icon": "itemmiscbook06",
     "detailedType": "Book",
     "type": "Miscellaneous",
@@ -133368,7 +132628,25 @@
     "maxStack": 10,
     "price": 12,
     "droppedBy": [
-      "Giant Plains Creeper", "Plains Creeper", "Wildthorn Lurker", "Elder Moss Creeper", "Wildthorn Venomspitter", "Giant Moss Creeper", "Carrion Recluse", "Naraxis", "Black Widow Hatchling", "Forest Moss Creeper", "Wildthorn Stalker", "Green Recluse", "Venom Web Spider", "Creepthess", "Leech Stalker", "Pygmy Venom Web Spider", "Cave Stalker", "Leech Widow", "Chatter"
+      "Giant Plains Creeper",
+      "Plains Creeper",
+      "Wildthorn Lurker",
+      "Elder Moss Creeper",
+      "Wildthorn Venomspitter",
+      "Giant Moss Creeper",
+      "Carrion Recluse",
+      "Naraxis",
+      "Black Widow Hatchling",
+      "Forest Moss Creeper",
+      "Wildthorn Stalker",
+      "Green Recluse",
+      "Venom Web Spider",
+      "Creepthess",
+      "Leech Stalker",
+      "Pygmy Venom Web Spider",
+      "Cave Stalker",
+      "Leech Widow",
+      "Chatter"
     ]
   },
   {
@@ -137648,48 +136926,6 @@
     "price": 1171
   },
   {
-    "rarity": "Common",
-    "name": "Grimoire of Fire Shield (Rank 2)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 24,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 750
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Suffering (Rank 1)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 24,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 750
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Sacrifice (Rank 2)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 24,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 750
-  },
-  {
     "rarity": "Uncommon",
     "name": "Slatemetal Cutlass",
     "icon": "itemsword33",
@@ -141487,20 +140723,6 @@
     "price": 1168
   },
   {
-    "rarity": "Common",
-    "name": "Grimoire of Soothing Kiss (Rank 1)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 22,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 625
-  },
-  {
     "rarity": "Uncommon",
     "name": "Rockslicer",
     "icon": "itemthrowingaxe01",
@@ -143611,14 +142833,11 @@
     "name": "Spider's Silk",
     "icon": "itemweb",
     "type": "Trade Good",
-    "source": "DirectDrop",
+    "source": "RareDrop",
     "ilvl": 20,
     "lvl": 1,
     "maxStack": 10,
-    "price": 387,
-    "droppedBy": [
-      "Giant Plains Creeper", "Naraxis", "Plains Creeper", "Elder Moss Creeper", "Wildthorn Lurker", "Chatter", "Black Widow Hatchling", "Cave Stalker", "Giant Moss Creeper", "Wildthorn Stalker", "Carrion Recluse", "Wildthorn Venomspitter", "Leech Widow", "Leech Stalker", "Forest Moss Creeper", "Green Recluse", "Deepmoss Matriarch", "Creepthess", "Deepmoss Venomspitter", "Pygmy Venom Web Spider", "Venom Web Spider", "Greater Tarantula", "Deepmoss Webspinner", "Besseleth", "Deepmoss Creeper"
-    ]
+    "price": 387
   },
   {
     "rarity": "Uncommon",
@@ -145926,20 +145145,6 @@
     "droppedBy": [
       "Sharptalon"
     ]
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Torment (Rank 2)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 20,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 500
   },
   {
     "rarity": "Common",
@@ -149305,34 +148510,6 @@
   },
   {
     "rarity": "Common",
-    "name": "Grimoire of Firebolt (Rank 3)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 18,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 375
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Consume Shadows (Rank 1)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 18,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 375
-  },
-  {
-    "rarity": "Common",
     "name": "Heavy Weave Shoes",
     "icon": "itemboots05",
     "type": "Feet",
@@ -151535,20 +150712,6 @@
     "price": 363
   },
   {
-    "rarity": "Common",
-    "name": "Grimoire of Sacrifice (Rank 1)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 16,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 300
-  },
-  {
     "rarity": "Uncommon",
     "name": "Aquarius Belt",
     "icon": "itembelt26",
@@ -151744,7 +150907,37 @@
     "maxStack": 10,
     "price": 50,
     "droppedBy": [
-      "Giant Plains Creeper", "Plains Creeper", "Elder Moss Creeper", "Wildthorn Lurker", "Naraxis", "Carrion Recluse", "Deepmoss Matriarch", "Giant Moss Creeper", "Wildthorn Venomspitter", "Creepthess", "Black Widow Hatchling", "Forest Moss Creeper", "Greater Tarantula", "Pygmy Venom Web Spider", "Wildthorn Stalker", "Deepmoss Webspinner", "Green Recluse", "Leech Stalker", "Deepmoss Venomspitter", "Cave Stalker", "Deepmoss Creeper", "Tarantula", "Venom Web Spider", "Wood Lurker", "Leech Widow", "Chatter", "Shanda the Spinner", "Deepmoss Hatchling", "Cliff Lurker", "Forest Lurker", "Besseleth"
+      "Giant Plains Creeper",
+      "Plains Creeper",
+      "Elder Moss Creeper",
+      "Wildthorn Lurker",
+      "Naraxis",
+      "Carrion Recluse",
+      "Deepmoss Matriarch",
+      "Giant Moss Creeper",
+      "Wildthorn Venomspitter",
+      "Creepthess",
+      "Black Widow Hatchling",
+      "Forest Moss Creeper",
+      "Greater Tarantula",
+      "Pygmy Venom Web Spider",
+      "Wildthorn Stalker",
+      "Deepmoss Webspinner",
+      "Green Recluse",
+      "Leech Stalker",
+      "Deepmoss Venomspitter",
+      "Cave Stalker",
+      "Deepmoss Creeper",
+      "Tarantula",
+      "Venom Web Spider",
+      "Wood Lurker",
+      "Leech Widow",
+      "Chatter",
+      "Shanda the Spinner",
+      "Deepmoss Hatchling",
+      "Cliff Lurker",
+      "Forest Lurker",
+      "Besseleth"
     ]
   },
   {
@@ -155982,34 +155175,6 @@
   },
   {
     "rarity": "Common",
-    "name": "Grimoire of Blood Pact (Rank 2)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 14,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 225
-  },
-  {
-    "rarity": "Common",
-    "name": "Grimoire of Fire Shield (Rank 1)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 14,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 225
-  },
-  {
-    "rarity": "Common",
     "name": "Banded Buckler",
     "icon": "itemshield03",
     "detailedType": "Shield",
@@ -159584,8 +158749,8 @@
     "source": "ChestDrop",
     "ilvl": 10,
     "maxStack": 1,
-    "unique": true,
-    "indestructible": true
+    "indestructible": true,
+    "unique": true
   },
   {
     "rarity": "Poor",
@@ -163815,20 +162980,6 @@
   },
   {
     "rarity": "Common",
-    "name": "Grimoire of Firebolt (Rank 2)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 8,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 25
-  },
-  {
-    "rarity": "Common",
     "name": "Round Buckler",
     "icon": "itemshield09",
     "detailedType": "Shield",
@@ -163913,8 +163064,8 @@
     "source": "ChestDrop",
     "ilvl": 7,
     "maxStack": 1,
-    "unique": true,
     "indestructible": true,
+    "unique": true,
     "questsStarted": [
       123
     ]
@@ -167776,20 +166927,6 @@
     "price": 16
   },
   {
-    "rarity": "Common",
-    "name": "Grimoire of Blood Pact (Rank 1)",
-    "icon": "itemmiscbook06",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "ilvl": 4,
-    "maxStack": 1,
-    "unique": true,
-    "specs": [
-      "Warlock"
-    ],
-    "price": 25
-  },
-  {
     "rarity": "Poor",
     "name": "Ragged Leather Boots",
     "icon": "itemboots06",
@@ -168494,11 +167631,22 @@
     "detailedType": "Claw",
     "type": "Miscellaneous",
     "source": "DirectDrop",
-    "onlyWithQuest": true,
     "ilvl": 1,
     "maxStack": 20,
+    "onlyWithQuest": true,
     "droppedBy": [
-      "Riverpaw Shaman", "Riverpaw Gnoll", "Riverpaw Scout", "Riverpaw Mongrel", "Sergeant Brashclaw", "Riverpaw Herbalist", "Riverpaw Brute", "Riverpaw Bandit", "Riverpaw Miner", "Riverpaw Taskmaster", "Riverpaw Mystic", "Riverpaw Overseer"
+      "Riverpaw Shaman",
+      "Riverpaw Gnoll",
+      "Riverpaw Scout",
+      "Riverpaw Mongrel",
+      "Sergeant Brashclaw",
+      "Riverpaw Herbalist",
+      "Riverpaw Brute",
+      "Riverpaw Bandit",
+      "Riverpaw Miner",
+      "Riverpaw Taskmaster",
+      "Riverpaw Mystic",
+      "Riverpaw Overseer"
     ]
   },
   {
@@ -169028,9 +168176,9 @@
     "detailedType": "Talisman",
     "type": "Miscellaneous",
     "source": "DirectDrop",
-    "onlyWithQuest": true,
     "ilvl": 1,
     "maxStack": 20,
+    "onlyWithQuest": true,
     "droppedBy": [
       "Shadowhide Assassin",
       "Shadowhide Brute",
@@ -169039,7 +168187,7 @@
       "Shadowhide Slayer",
       "Lieutenant Fangore",
       "Shadowhide Warrior",
-      "Rohh the Silent"      
+      "Rohh the Silent"
     ]
   },
   {
@@ -169048,25 +168196,35 @@
     "icon": "itempotion19",
     "detailedType": "Potion",
     "type": "Miscellaneous",
-    "onlyWithQuest": true,
     "source": "DirectDrop",
     "ilvl": 1,
+    "maxStack": 20,
+    "onlyWithQuest": true,
     "droppedBy": [
-      "Venom Web Spider", "Green Recluse", "Naraxis", "Pygmy Venom Web Spider", "Black Widow Hatchling", "Carrion Recluse"
-    ],
-    "maxStack": 20
+      "Venom Web Spider",
+      "Green Recluse",
+      "Naraxis",
+      "Pygmy Venom Web Spider",
+      "Black Widow Hatchling",
+      "Carrion Recluse"
+    ]
   },
   {
     "rarity": "Common",
     "name": "Ghoul Fang",
     "icon": "itemmiscmonsterfang01",
     "type": "Miscellaneous",
-    "onlyWithQuest": true,
     "source": "DirectDrop",
     "ilvl": 1,
     "maxStack": 20,
+    "onlyWithQuest": true,
     "droppedBy": [
-      "Flesh Eater", "Rotted One", "Bone Chewer", "Fetid Corpse", "Plague Spreader", "Brain Eater"
+      "Flesh Eater",
+      "Rotted One",
+      "Bone Chewer",
+      "Fetid Corpse",
+      "Plague Spreader",
+      "Brain Eater"
     ]
   },
   {
@@ -169216,10 +168374,10 @@
     "icon": "itemmischerb04",
     "detailedType": "Flowers",
     "type": "Miscellaneous",
-    "onlyWithQuest": true,
     "source": "DirectDrop",
     "ilvl": 1,
     "maxStack": 20,
+    "onlyWithQuest": true,
     "droppedBy": [
       "Murloc Steamrunner",
       "Murloc"
@@ -169231,10 +168389,10 @@
     "icon": "itemmiscmonsterscales03",
     "detailedType": "Scale",
     "type": "Miscellaneous",
-    "onlyWithQuest": true,
     "source": "DirectDrop",
     "ilvl": 1,
     "maxStack": 20,
+    "onlyWithQuest": true,
     "droppedBy": [
       "Black Dragon Whelp"
     ]
@@ -169858,8 +169016,8 @@
     "source": "DirectDrop",
     "ilvl": 1,
     "maxStack": 1,
-    "unique": true,
     "indestructible": true,
+    "unique": true,
     "droppedBy": [
       "Hogger"
     ]
@@ -170150,11 +169308,17 @@
     "detailedType": "Bones",
     "type": "Miscellaneous",
     "source": "DirectDrop",
-    "onlyWithQuest": true,
     "ilvl": 1,
     "maxStack": 20,
+    "onlyWithQuest": true,
     "droppedBy": [
-      "Skeletal Warrior", "Skeletal Mage", "Skeletal Horror", "Skeletal Fiend", "Skeletal Healer", "Skeletal Raider", "Skeletal Warder"
+      "Skeletal Warrior",
+      "Skeletal Mage",
+      "Skeletal Horror",
+      "Skeletal Fiend",
+      "Skeletal Healer",
+      "Skeletal Raider",
+      "Skeletal Warder"
     ]
   },
   {
@@ -171129,10 +170293,10 @@
     "icon": "itemspear05",
     "detailedType": "Polearm",
     "type": "Miscellaneous",
-    "onlyWithQuest": true,
     "source": "DirectDrop",
     "ilvl": 1,
     "maxStack": 20,
+    "onlyWithQuest": true,
     "droppedBy": [
       "Redridge Basher"
     ]
