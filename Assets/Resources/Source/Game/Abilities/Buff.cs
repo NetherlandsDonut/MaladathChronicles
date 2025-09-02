@@ -30,6 +30,9 @@ public class Buff
     //Dispel type that let's an entity dispel a buff with proper ability
     public string dispelType;
 
+    //Does this buff flare at the end of the turn
+    public bool endFlare;
+
     //Indicates whether the buff is removed after death
     public bool deathResistant;
 

@@ -6,6 +6,9 @@ public class FrozenEntity
 {
     public FrozenEntity(Entity entity)
     {
+        var participant = Board.board.participants.Find(x => x.who == entity);
+        team = participant.team;
+        human = participant.human;
         name = entity.name ?? entity.race;
         level = entity.level;
         weaponMod = entity.WeaponDamage("Melee");
@@ -16,7 +19,7 @@ public class FrozenEntity
         rangedAttackPower = entity.RangedAttackPower();
         physicalResistance = entity.PhysicalResistance();
         magicResistance = entity.MagicResistance();
-        participantID = Board.board.participants.FindIndex(x => x.who == entity);
+        participantID = Board.board.participants.IndexOf(participant);
     }
 
     public double RollWeaponDamage(string type)
@@ -24,6 +27,12 @@ public class FrozenEntity
         var damage = type == "Ranged" ? weaponModRanged : weaponMod;
         return random.Next((int)(damage.Item1 * 100), (int)(damage.Item2 * 100) + 1) / 100.0;
     }
+
+    //Team of the entity
+    public int team;
+
+    //Whether controller of the entity is human controlled
+    public bool human;
 
     //Name of the entity
     public string name;

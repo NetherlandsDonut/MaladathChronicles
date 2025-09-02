@@ -678,8 +678,7 @@
             "ShatterTarget": "Effector",
             "ShatterDensity": "1",
             "ShatterSpeed": "3",
-            "ShatterDegree": "5",
-            "Await": "0"
+            "ShatterDegree": "5"
           },
           {
             "Effect": "Damage",
@@ -782,8 +781,7 @@
             "ShatterTarget": "Effector",
             "ShatterDensity": "1",
             "ShatterSpeed": "3",
-            "ShatterDegree": "5",
-            "Await": "0"
+            "ShatterDegree": "5"
           },
           {
             "Effect": "Damage",
@@ -8195,9 +8193,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -8272,9 +8267,6 @@
             "ShatterDensity": "2",
             "SoundEffect": "AmbienceAhnQirajExterior",
             "Effect": "Damage"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -8325,9 +8317,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -8431,9 +8420,6 @@
             "SoundEffect": "AbilityArcaneMissilesImpact1",
             "TrailStrength": "5",
             "AnimationSpeed": "1,6"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -8523,9 +8509,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -8556,9 +8539,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -8754,9 +8734,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -8857,8 +8834,7 @@
             "ShatterDegree": "6",
             "ShatterDensity": "1",
             "ShatterSpeed": "6",
-            "ShatterTarget": "Effector",
-            "Await": "0"
+            "ShatterTarget": "Effector"
           },
           {
             "Effect": "Damage",
@@ -8877,10 +8853,6 @@
             "AnimationArc": "10",
             "ShatterDegree": "40",
             "ShatterSpeed": "20"
-          },
-          {
-            "Effect": "EndTurn",
-            "AnimationType": "None"
           }
         ]
       }
@@ -9068,9 +9040,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -9121,9 +9090,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -9288,9 +9254,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -9336,7 +9299,6 @@
             "PowerSource": "Effector",
             "PowerType": "Spell",
             "WeaponUsed": "Melee",
-            "Await": "0",
             "TrailStrength": "10",
             "AnimationSpeed": "1,6",
             "ShatterSpeed": "20",
@@ -9356,9 +9318,6 @@
             "ElementShatterDensity": "1",
             "ElementShatterDegree": "5",
             "SoundEffect": "ChainLightningImpact1"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -9414,9 +9373,6 @@
             "TrailStrength": "0,65",
             "ShatterSpeed": "5",
             "ShatterDegree": "0,8"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -9474,8 +9430,7 @@
             "ShatterDegree": "0,3",
             "ShatterDensity": "1",
             "ShatterSpeed": "4",
-            "AnimationSpeed": "1,6",
-            "Await": "0"
+            "AnimationSpeed": "1,6"
           },
           {
             "AnimationType": "Missile",
@@ -9487,10 +9442,6 @@
             "ShatterSpeed": "2",
             "AnimationSpeed": "1,6",
             "Await": "5"
-          },
-          {
-            "Affect": "None",
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -9536,9 +9487,6 @@
             "ShatterDensity": "2",
             "Await": "5",
             "ShatterDegree": "0,5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -9569,9 +9517,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -9602,9 +9547,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -9645,9 +9587,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -9740,9 +9679,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -9920,9 +9856,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -9964,9 +9897,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -10075,9 +10005,6 @@
             "ShatterSpeed": "30",
             "ShatterDegree": "40",
             "AnimationArc": "15"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -10252,10 +10179,6 @@
             "ShatterSpeed": "10",
             "Await": "12",
             "ElementFrom": "Water"
-          },
-          {
-            "Effect": "EndTurn",
-            "Await": "0"
           }
         ]
       }
@@ -10286,9 +10209,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -10319,9 +10239,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -10604,9 +10521,6 @@
             "ShatterDensity": "1",
             "ShatterDegree": "20",
             "ShatterSpeed": "8"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -10798,9 +10712,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -10970,9 +10881,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -11033,9 +10941,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -11066,9 +10971,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -11109,9 +11011,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -11228,8 +11127,7 @@
             "ShatterTarget": "Effector",
             "ShatterDensity": "1",
             "ShatterSpeed": "3",
-            "ShatterDegree": "5",
-            "Await": "0"
+            "ShatterDegree": "5"
           },
           {
             "Effect": "Damage",
@@ -11306,8 +11204,7 @@
             "ShatterTarget": "Effector",
             "ShatterDensity": "1",
             "ShatterSpeed": "3",
-            "ShatterDegree": "5",
-            "Await": "0"
+            "ShatterDegree": "5"
           },
           {
             "Effect": "Damage",
@@ -11449,9 +11346,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -11505,9 +11399,6 @@
             "PowerScale": "3",
             "ShatterDegree": "40",
             "ShatterSpeed": "20"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -11568,9 +11459,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -11756,10 +11644,6 @@
             "ShatterDegree": "10",
             "ShatterSpeed": "6",
             "Await": "12"
-          },
-          {
-            "Effect": "EndTurn",
-            "Await": "0"
           }
         ]
       }
@@ -11790,9 +11674,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -11833,9 +11714,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -11870,8 +11748,7 @@
             "ShatterTarget": "Effector",
             "ShatterDegree": "5",
             "ShatterDensity": "1",
-            "ShatterSpeed": "3",
-            "Await": "0"
+            "ShatterSpeed": "3"
           },
           {
             "Effect": "Damage",
@@ -12003,9 +11880,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -12051,6 +11925,7 @@
             "PowerSource": "Effector",
             "PowerScale": "1.5",
             "BuffName": "Hammer of Justice",
+            "BuffDuration": 2,
             "Await": "5",
             "AnimationType": "Missile",
             "ShatterType": "Central",
@@ -12059,9 +11934,62 @@
             "ShatterDegree": "40",
             "ShatterSpeed": "25",
             "TrailStrength": "5"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mind Control",
+    "icon": "AbilityMindControl",
+    "cooldown": 5,
+    "possibleTargets": "Enemies",
+    "tags": [
+      "MindControl"
+    ],
+    "cost": {
+      "Order": 1
+    },
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "AbilityCast",
+            "Triggerer": "Effector",
+            "AbilityName": "This"
+          }
+        ],
+        "effects": [
+          {
+            "SoundEffect": "AbilitySmiteCast",
+            "ShatterType": "Directional",
+            "ShatterDegree": "5",
+            "ShatterSpeed": "3",
+            "ShatterTarget": "Effector"
           },
           {
-            "Effect": "EndTurn"
+            "Effect": "AddBuff",
+            "Affect": "Other",
+            "PowerSource": "Effector",
+            "BuffName": "Mind Control",
+            "BuffDuration": 2,
+            "Await": "5",
+            "AnimationType": "Missile",
+            "ShatterType": "Central",
+            "ShatterTarget": "Other",
+            "SoundEffect": "AbilityConvoketheSpiritsCast",
+            "ShatterDegree": "40",
+            "ShatterSpeed": "25",
+            "TrailStrength": "5"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "@effectormindcontrol == 0",
+            "failedMessage": "Cannot mind control while being mind controlled"
           }
         ]
       }
@@ -12122,9 +12050,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -12155,9 +12080,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -12280,9 +12202,6 @@
             "ShatterTarget": "Other",
             "ShatterDegree": "40",
             "ShatterSpeed": "15"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -12562,9 +12481,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -12601,9 +12517,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -12686,9 +12599,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -12893,8 +12803,7 @@
             "ShatterTarget": "Effector",
             "ShatterDegree": "1",
             "ShatterDensity": "5",
-            "ShatterSpeed": "4",
-            "Await": "0"
+            "ShatterSpeed": "4"
           },
           {
             "Effect": "Damage",
@@ -12913,10 +12822,6 @@
             "ShatterSpeed": "20",
             "Await": "5",
             "ShatterDegree": "30"
-          },
-          {
-            "Effect": "EndTurn",
-            "Await": "0"
           }
         ]
       }
@@ -13040,9 +12945,6 @@
             "ShatterSpeed": "30",
             "AbilityName": "Shadow Bolt",
             "PowerScale": "4,2"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -13165,9 +13067,6 @@
             "ShatterSpeed": "15",
             "AnimationArc": "15",
             "ShatterDegree": "50"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -13299,9 +13198,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -13475,9 +13371,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -13569,9 +13462,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -13732,9 +13622,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -13909,9 +13796,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -13942,9 +13826,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -13975,9 +13856,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -14076,9 +13954,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -14217,9 +14092,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -14260,9 +14132,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -14303,9 +14172,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -14518,9 +14384,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -14591,9 +14454,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -14779,9 +14639,6 @@
             "Await": "5",
             "ShatterDensity": "3",
             "BuffDuration": "15"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -14872,9 +14729,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -14916,7 +14770,6 @@
         "effects": [
           {
             "SoundEffect": "AbilityShadowBoltCast",
-            "Await": "0",
             "ShatterType": "Central",
             "ShatterTarget": "Effector",
             "ShatterDegree": "6",
@@ -14939,10 +14792,6 @@
             "AnimationType": "Missile",
             "TrailStrength": "10",
             "AnimationSpeed": "1"
-          },
-          {
-            "Effect": "EndTurn",
-            "Await": "0"
           }
         ]
       }
@@ -15109,9 +14958,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -15237,8 +15083,7 @@
             "ShatterTarget": "Effector",
             "ShatterDegree": "4",
             "ShatterDensity": "1",
-            "ShatterSpeed": "4",
-            "Await": "0"
+            "ShatterSpeed": "4"
           },
           {
             "Effect": "Damage",
@@ -15259,9 +15104,6 @@
             "Await": "5",
             "ShatterSpeed": "6",
             "AbilityName": "Smite"
-          },
-          {
-            "Effect": "None"
           }
         ]
       }
@@ -15552,9 +15394,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -15642,9 +15481,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -15682,9 +15518,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -15739,9 +15572,6 @@
             "Affect": "Effector",
             "ShatterDensity": "1",
             "ShatterSpeed": "3"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -15778,9 +15608,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -15811,9 +15638,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -15977,8 +15801,7 @@
             "ElementTo": "Lightning",
             "ElementShatterDegree": "4",
             "ElementShatterSpeed": "3",
-            "SoundEffect": "AbilityThunderstormImpact4",
-            "Await": "0"
+            "SoundEffect": "AbilityThunderstormImpact4"
           },
           {
             "Effect": "Damage",
@@ -15988,10 +15811,6 @@
             "Affect": "Other",
             "PowerSource": "Effector",
             "PowerType": "Spell"
-          },
-          {
-            "Effect": "EndTurn",
-            "Affect": "Effector"
           }
         ]
       }
@@ -16029,9 +15848,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -16295,9 +16111,6 @@
             "ShatterType": "Central",
             "ShatterDensity": "2",
             "SoundEffect": "AbilityDemonSkinCast"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -16334,9 +16147,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -16397,9 +16207,6 @@
             "ShatterDensity": "2",
             "SoundEffect": "AbilityVenomousBiteImpact",
             "Await": "5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -16450,9 +16257,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -16492,9 +16296,6 @@
             "ShatterType": "Directional",
             "ShatterDensity": "2",
             "SoundEffect": "AbilityWitheringCloudCast"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -16576,9 +16377,6 @@
             "ShatterDensity": "2",
             "SoundEffect": "AbilityWebBurstImpact",
             "Await": "5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -16639,9 +16437,6 @@
             "WeaponUsed": "Melee",
             "PowerSource": "Effector",
             "PowerScale": "1.5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -16680,9 +16475,6 @@
             "ShatterType": "Central",
             "ShatterDensity": "2",
             "SoundEffect": "AbilityWitheringCloudCast"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -16728,8 +16520,7 @@
             "ShatterTarget": "Effector",
             "ShatterDensity": "1",
             "ShatterSpeed": "3",
-            "ShatterDegree": "5",
-            "Await": "0"
+            "ShatterDegree": "5"
           },
           {
             "Effect": "Damage",
@@ -16843,7 +16634,6 @@
             "AnimationType": "Missile",
             "ShatterType": "Central",
             "ShatterTarget": "Other",
-            "Await": "0",
             "AnimationSpeed": "1,95",
             "SoundEffect": "AbilityRendImpact",
             "AnimationArc": "10",
@@ -16855,9 +16645,6 @@
             "Await": "5",
             "Affect": "Other",
             "Effect": "Damage"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -16908,9 +16695,6 @@
             "ShatterDegree": "10",
             "ShatterSpeed": "6",
             "Await": "12"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -16964,9 +16748,6 @@
             "ShatterDegree": "50",
             "ShatterSpeed": "15",
             "Await": "5"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }
@@ -17047,9 +16828,6 @@
             "ShatterDegree": "20",
             "ChanceScale": "None",
             "SoundEffect": "AbilityRendImpact"
-          },
-          {
-            "Effect": "EndTurn"
           }
         ]
       }

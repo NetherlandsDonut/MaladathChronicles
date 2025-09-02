@@ -65,6 +65,7 @@ public class Condition
                 "@castedabilitycostorder" => Ability.abilities.Find(x => x.name == trigger["AbilityName"]).cost["Order"] + "",
 
                 //Caster related
+                "@effectormindcontrol" => effector.who.Stats().Get("MindControl") + "",
                 "@effectorteam" => effector.team + "",
                 "@effectorhealth%" => (int)((double)effector.who.health / effector.who.MaxHealth() * 100) + "",
                 "@effectorhealth" => effector.who.health + "",
@@ -108,6 +109,7 @@ public class Condition
                 "@effectororder%" => ((double)effector.who.resources["Order"] / effector.who.MaxResource("Order") * 100) + "",
 
                 //Target related
+                "@othermindcontrol" => other.who.Stats().Get("MindControl") + "",
                 "@otherteam" => other.team + "",
                 "@otherhealth%" => (int)((double)other.who.health / other.who.MaxHealth() * 100) + "",
                 "@otherhealth" => other.who.health + "",

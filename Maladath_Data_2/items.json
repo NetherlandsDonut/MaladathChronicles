@@ -166311,6 +166311,7 @@
     "icon": "itemsword06",
     "detailedType": "Sword",
     "type": "Two Handed",
+    "source": "RareDrop",
     "ilvl": 4,
     "lvl": 1,
     "minPower": 1.17,
@@ -166376,16 +166377,13 @@
     "icon": "itemaxe19",
     "detailedType": "Axe",
     "type": "One Handed",
-    "source": "DirectDrop",
+    "source": "RareDrop",
     "ilvl": 4,
     "lvl": 1,
     "minPower": 1.1,
     "maxPower": 1.2,
     "maxStack": 1,
-    "price": 16,
-    "droppedBy": [
-      "Rockjaw Raider"
-    ]
+    "price": 16
   },
   {
     "rarity": "Common",
@@ -166421,15 +166419,12 @@
     "icon": "itemchestcloth22",
     "type": "Chest",
     "armorClass": "Cloth",
-    "source": "DirectDrop",
+    "source": "RareDrop",
     "ilvl": 4,
     "lvl": 1,
     "armor": 8,
     "maxStack": 1,
-    "price": 6,
-    "droppedBy": [
-      "Frostmane Novice"
-    ]
+    "price": 6
   },
   {
     "rarity": "Common",
@@ -166450,6 +166445,7 @@
     "icon": "itemaxe19",
     "detailedType": "Axe",
     "type": "One Handed",
+    "source": "RareDrop",
     "ilvl": 4,
     "lvl": 1,
     "minPower": 1.1,

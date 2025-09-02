@@ -89,6 +89,7 @@ public static class Extensions
     //key it returns the default value of the type
     public static TValue Get<TKey, TValue>(this Dictionary<TKey, TValue> dic, TKey source)
     {
+        if (dic == null) return default;
         if (dic.ContainsKey(source)) return dic[source];
         else return default;
     }

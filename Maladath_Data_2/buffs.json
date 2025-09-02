@@ -1698,13 +1698,34 @@
         ],
         "effects": [
           {
-            "Effect": "Damage",
-            "Affect": "Other",
-            "PowerType": "Spell",
-            "PowerSource": "Effector",
-            "PowerScale": "1.5"
+            "Effect": "EndTurn"
           }
         ]
+      }
+    ]
+  },
+  {
+    "name": "Mind Control",
+    "icon": "AbilityMindControl",
+    "dispelType": "None",
+    "endFlare": true,
+    "tags": [
+      "MindControl"
+    ],
+    "ranks": [
+      {}
+    ],
+    "gains": {
+      "MindControl": 1
+    },
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "TurnBegin"
+          }
+        ],
+        "effects": []
       }
     ]
   },
@@ -2239,11 +2260,7 @@
         ],
         "effects": [
           {
-            "Effect": "Damage",
-            "Affect": "Other",
-            "PowerType": "Spell",
-            "PowerSource": "Effector",
-            "PowerScale": "1.5"
+            "Effect": "EndTurn"
           }
         ]
       }

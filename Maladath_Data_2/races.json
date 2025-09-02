@@ -21999,9 +21999,16 @@
     "category": "Humanoid",
     "subcategory": "Trogg",
     "portrait": "PortraitTrogg",
-    "abilities": {},
+    "abilities": {
+      "Mind Control": 0,
+      "Shadow Bolt": 0
+    },
     "kind": "Common",
-    "vitality": 1.0
+    "vitality": 1.0,
+    "abilityAITags": {
+      "Mind Control": "Core",
+      "Shadow Bolt": "Filler"
+    }
   },
   {
     "name": "Rockjaw Skullthumper",

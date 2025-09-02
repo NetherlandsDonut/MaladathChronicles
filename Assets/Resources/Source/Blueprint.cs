@@ -259,7 +259,7 @@ public class Blueprint
                     if (participant.who.dead) SetBigButtonToGrayscale();
                     if (participant == board.participants[board.whosTurn])
                     {
-                        var arrow = AddSmallButtonOverlay(CDesktop.LBWindow().LBRegionGroup().LBRegion().gameObject, "EnemyLocationFromBelow", 0, 1);
+                        var arrow = AddSmallButtonOverlay(CDesktop.LBWindow().LBRegionGroup().LBRegion().gameObject, participant.who.IsControlledByHuman() ? "PlayerLocationFromBelow" : (participant.who.IsControlledByOppositeTeam()  ? "FriendLocationFromBelow" : "EnemyLocationFromBelow"), 0, 1);
                         arrow.transform.localPosition = new Vector3(0.5f, -20.5f, 0);
                         arrow.transform.localEulerAngles = new Vector3(0, 0, -90);
                     }
@@ -294,7 +294,18 @@ public class Blueprint
                             if (board.CooldownOn(board.team2[index], actionBar) > 0)
                                 AddSmallButtonOverlay("AutoCast");
                         },
-                        (h) => ClearTargettingAbility(),
+                        (h) =>
+                        {
+                            if (board.team2[index] == board.whosTurn)
+                            {
+                                if (abilityTargetted != null)
+                                    ClearTargettingAbility(true);
+                                else if (abilityObj.EnoughResources(board.participants[board.team2[index]].who))
+                                    if (board.CooldownOn(board.team2[index], actionBar) <= 0)
+                                        StartTargettingAbility(abilityObj);
+                            }
+                            else ClearTargettingAbility();
+                        },
                         (h) => ClearTargettingAbility(),
                         (h) => () =>
                         {
@@ -395,7 +406,7 @@ public class Blueprint
                     if (participant.who.dead) SetBigButtonToGrayscale();
                     if (participant == board.participants[board.whosTurn])
                     {
-                        var arrow = AddSmallButtonOverlay(CDesktop.LBWindow().LBRegionGroup().LBRegion().gameObject, board.participants[board.whosTurn].human ? "PlayerLocationFromBelow" : "FriendLocationFromBelow", 0, 1);
+                        var arrow = AddSmallButtonOverlay(CDesktop.LBWindow().LBRegionGroup().LBRegion().gameObject, participant.who.IsControlledByHuman() ? "PlayerLocationFromBelow" : (participant.who.IsControlledByOppositeTeam()  ? "EnemyLocationFromBelow" : "FriendLocationFromBelow"), 0, 1);
                         arrow.transform.localPosition = new Vector3(191.5f, -20.5f, 0);
                         arrow.transform.localEulerAngles = new Vector3(0, 0, -90);
                         arrow.GetComponent<SpriteRenderer>().flipY = true;

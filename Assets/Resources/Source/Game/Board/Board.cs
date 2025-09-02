@@ -263,18 +263,18 @@ public class Board
     //Ends a turn for a participant and makes somebody else begin theirs
     public void EndTurn()
     {
-        //Increase turns by one as we are entering another
-        turn++;
+        //Who had their turn now
+        var whosTurnItWas = whosTurn;
+
+        //Flare all of the end of turn buffs for the current participant
+        board.actions.Add(() => participants[whosTurnItWas].who.FlareBuffs(true));
 
         //Call events for the participant that was moving now with TurnEnd trigger
-        CallEvents(participants[whosTurn].who, new() { { "Trigger", "TurnEnd" } });
+        CallEvents(participants[whosTurnItWas].who, new() { { "Trigger", "TurnEnd" } });
 
         //Change turns to next participants until one of them isn't dead
         do { whosTurn++; whosTurn %= participants.Count; }
         while (participants[whosTurn].who.dead);
-
-        //Update AI cursor
-        UpdateTheSecondaryCursor();
 
         //Set status of finished moving to false because we have just began a new turn
         finishedMoving = false;
@@ -299,6 +299,9 @@ public class Board
             for (int i = 0; i < field.GetLength(0); i++)
                 field[i, field.GetLength(1) - 1] = -1;
             bufferBoard.Generate("IllegalFirstRow");
+
+            //Increase turns by one as we are entering another
+            turn++;
         }
 
         //Respawn information about both teams to update visuals
@@ -310,14 +313,21 @@ public class Board
     public void UpdateTheSecondaryCursor()
     {
         //If it's not player's turn.. change color of the remote cursor based on whether it is an ally using it or an enemy
-        if (!participants[whosTurn].human)
-            cursorEnemy.SetColor(participants[whosTurn].team == participants.Find(x => x.who == currentSave.player).team ? "CursorFriend" : "CursorEnemy");
+        if (!participants[whosTurn].who.IsControlledByHuman()) cursorEnemy.SetColor(participants[whosTurn].team == participants.Find(x => x.who == currentSave.player).team ^ participants[whosTurn].who.IsControlledByOppositeTeam() ? "CursorFriend" : "CursorEnemy");
 
         //If the current participant is human controlled fade out the enemy cursor
-        if (participants[whosTurn].human) cursorEnemy.fadeOut = true;
+        if (participants[whosTurn].who.IsControlledByHuman())
+        {
+            cursorEnemy.fadeIn = false;
+            cursorEnemy.fadeOut = true;
+        }
 
         //Otherwise fade it in so we can see how enemy moves
-        else cursorEnemy.fadeIn = true;
+        else
+        {
+            cursorEnemy.fadeIn = true;
+            cursorEnemy.fadeOut = false;
+        }
     }
 
     //RESETS THE BOARD TO BE EMPTY AND REFILLED AGAIN
@@ -652,7 +662,7 @@ public class Board
             EndCombat("Team1Won");
 
         //If the entity is not controlled by a human..
-        else if (!participants[whosTurn].human)
+        else if (!participants[whosTurn].who.IsControlledByHuman())
         {
             //If entity finished moving end it's turn
             if (finishedMoving)
@@ -669,6 +679,9 @@ public class Board
             //Do a moment of waiting for the entity to "think"
             else if (!breakForMove)
             {
+                //Update AI cursor
+                UpdateTheSecondaryCursor();
+
                 animationTime = (float)(random.Next(3, 5) / 10.0) + 0.3f;
                 breakForMove = true;
             }
@@ -676,6 +689,9 @@ public class Board
             //If entity was already on a break before moving
             else
             {
+                //Update AI cursor
+                UpdateTheSecondaryCursor();
+
                 //Reset whether this entity had a break before moving
                 breakForMove = false;
 
@@ -800,23 +816,32 @@ public class Board
             }
         }
 
-        //IF IT's PLAYER'S TURN..
+        //If it's a human moving..
         else
         {
-            //IF PLAYER FINISHED MOVING TURN END THEIR TURN
+            //If the human finished moving end their turn
             if (finishedMoving)
 
-                //UNLESS THEY SCORED A BONUS MOVE
+                //Unless they scored a bonus move
                 if (bonusTurnStreak > 0)
                 {
                     bonusTurnStreak = 0;
                     finishedMoving = false;
                     canUnlockScreen = true;
                 }
+
+                //Otherwise end it
                 else EndTurn();
 
-            //IF PLAYER IS STILL GOING TO MOVE UNLOCK THE SCREEN
-            else canUnlockScreen = true;
+            //If the player is still moving..
+            else
+            {
+                //Update AI cursor
+                UpdateTheSecondaryCursor();
+
+                //Unlock the screen
+                canUnlockScreen = true;
+            }
         }
     }
 

@@ -1441,6 +1441,32 @@ public class Entity
         return !dead && Stats().Where(x => x.Key == "Stealth").Sum(x => x.Value) > 0;
     }
 
+    //Tells whether the entity is controlled by a human
+    public bool IsControlledByHuman()
+    {
+        if (Board.board == null) return false;
+        if (Board.board.participants == null) return false;
+        var participant = Board.board.participants.Find(x => x.who == this);
+        var mindControlling = buffs.FindAll(x => x.buff.gains.Get("MindControl") > 0).OrderByDescending(x => x.buff.gains.Get("MindControl")).ToList();
+        if (mindControlling.Count == 0) return participant.human;
+        var strongestBuff = mindControlling[0];
+        var controller = strongestBuff.source;
+        return controller.human;
+    }
+
+    //Tells whether the entity is controlled by the enemy team
+    public bool IsControlledByOppositeTeam()
+    {
+        if (Board.board == null) return false;
+        if (Board.board.participants == null) return false;
+        var participant = Board.board.participants.Find(x => x.who == this);
+        var mindControlling = buffs.FindAll(x => x.buff.gains.Get("MindControl") > 0).OrderByDescending(x => x.buff.gains.Get("MindControl")).ToList();
+        if (mindControlling.Count == 0) return false;
+        var strongestBuff = mindControlling[0];
+        var controller = strongestBuff.source;
+        return controller.team != participant.team;
+    }
+
     //Kills this entity in combat
     public void Die()
     {
@@ -1493,18 +1519,21 @@ public class Entity
     //Pops all buffs on this entity activating
     //their effects and reducing duration by 1 turn
     //If duration reaches 0 it removes the buff
-    public void FlareBuffs()
+    public void FlareBuffs(bool endFlare = false)
     {
         for (int i = buffs.Count - 1; i >= 0; i--)
         {
             var index = i;
-            buffs[index].durationLeft--;
-            if (buffs[index].durationLeft == 0)
+            if (buffs[index].buff.endFlare == endFlare)
             {
-                foreach (var participant in Board.board.participants)
-                    if (participant.who == this) Board.board.CallEvents(participant.who, new() { { "Trigger", "BuffRemove" }, { "Triggerer", "Effector" }, { "BuffName", buffs[index].buff.name } });
-                    else Board.board.CallEvents(participant.who, new() { { "Trigger", "BuffRemove" }, { "Triggerer", "Other" }, { "BuffName", buffs[index].buff.name } });
-                RemoveBuff(buffs[index]);
+                buffs[index].durationLeft--;
+                if (buffs[index].durationLeft == 0)
+                {
+                    foreach (var participant in Board.board.participants)
+                        if (participant.who == this) Board.board.CallEvents(participant.who, new() { { "Trigger", "BuffRemove" }, { "Triggerer", "Effector" }, { "BuffName", buffs[index].buff.name } });
+                        else Board.board.CallEvents(participant.who, new() { { "Trigger", "BuffRemove" }, { "Triggerer", "Other" }, { "BuffName", buffs[index].buff.name } });
+                    RemoveBuff(buffs[index]);
+                }
             }
         }
     }
