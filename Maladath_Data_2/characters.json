@@ -5021,8 +5021,8 @@
       }
     },
     "hour": 7,
-    "minute": 21,
-    "second": 24,
+    "minute": 26,
+    "second": 30,
     "currentSite": "Coldridge Pass",
     "generatedBossPools": {
       "<Forlorn Cloister>": "Azshir the Sleepless",
@@ -5322,7 +5322,7 @@
       "Valley of Bones": 1,
       "Valley of Spears": 1,
       "Chill Breeze Valley": 1,
-      "Coldridge Pass": 5,
+      "Coldridge Pass": 7,
       "Coldridge Valley": 4,
       "Gnomeregan Outskirts": 1,
       "Frostmane Hold": 1,
@@ -5925,9 +5925,9 @@
       "value": "False"
     },
     "startDate": "2025-09-01T01:14:05.3019419+02:00",
-    "lastLoaded": "2025-09-03T17:23:17.9537509+02:00",
-    "lastPlayed": "2025-09-03T17:23:29.14466+02:00",
-    "timePlayed": "00:14:56.0014279",
+    "lastLoaded": "2025-09-03T18:04:27.6926371+02:00",
+    "lastPlayed": "2025-09-03T18:06:26.443076+02:00",
+    "timePlayed": "00:16:54.7518668",
     "lastVisitedTalents": 2
   },
   {

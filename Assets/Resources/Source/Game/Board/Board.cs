@@ -323,7 +323,7 @@ public class Board
         if (!humanControlled) cursorEnemy.SetColor(participants[whosTurn].team == participants.Find(x => x.who == currentSave.player).team ^ participants[whosTurn].who.IsControlledByOppositeTeam() ? "CursorFriend" : "CursorEnemy");
 
         //If the current participant is human controlled fade out the enemy cursor
-        if (humanControlled)
+        if (humanControlled || finishedMoving)
         {
             cursorEnemy.fadeIn = false;
             cursorEnemy.fadeOut = true;
@@ -367,6 +367,7 @@ public class Board
         foreach (var combatant in participants)
             if (!combatant.who.dead)
                 combatant.who.CombatReset();
+        cursorEnemy.fadeIn = false;
         cursorEnemy.fadeOut = true;
         if (result != "Quit")
         {
@@ -664,6 +665,9 @@ public class Board
         //If the entity is not controlled by a human..
         else if (!participants[whosTurn].who.IsControlledByHuman())
         {
+            //Update AI cursor
+            UpdateTheSecondaryCursor();
+
             //If entity finished moving end it's turn
             if (finishedMoving)
             {
@@ -679,9 +683,6 @@ public class Board
             //Do a moment of waiting for the entity to "think"
             else if (!breakForMove)
             {
-                //Update AI cursor
-                UpdateTheSecondaryCursor();
-
                 animationTime = (float)(random.Next(3, 5) / 10.0) + 0.3f;
                 breakForMove = true;
             }
@@ -689,9 +690,6 @@ public class Board
             //If entity was already on a break before moving
             else
             {
-                //Update AI cursor
-                UpdateTheSecondaryCursor();
-
                 //Reset whether this entity had a break before moving
                 breakForMove = false;
 
@@ -836,9 +834,6 @@ public class Board
             //If the player is still moving..
             else
             {
-                //Update AI cursor
-                UpdateTheSecondaryCursor();
-
                 //Unlock the screen
                 canUnlockScreen = true;
             }

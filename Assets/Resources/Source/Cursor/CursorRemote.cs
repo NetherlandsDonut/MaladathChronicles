@@ -24,9 +24,6 @@ public class CursorRemote : MonoBehaviour
 
     void Update()
     {
-        //Don't update the cursor if any tile on the board is empty or if they are falling elements, 
-        if (Board.board != null && Board.board.field[0, 0] == -1 || FallingElement.fallingElements.Count > 0) return;
-
         if (fadeOut)
         {
             render.color = new Color(render.color.r, render.color.g, render.color.b, render.color.a - 0.04f);
