@@ -49776,6 +49776,9 @@
     "fishing": true
   },
   {
+    "chestBonus": {
+      "Minshina's Skull": 1
+    },
     "commonEncounters": [
       {
         "who": "Voodoo Troll",

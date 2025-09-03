@@ -69,7 +69,6 @@ public class Board
         foreach (var poo in participants)
             temporaryBuffs.Add(participants.IndexOf(poo), new());
         Reset();
-        UpdateTheSecondaryCursor();
     }
 
     public Board(int x, int y, Dictionary<Ability, int> abilities)
@@ -307,16 +306,24 @@ public class Board
         //Respawn information about both teams to update visuals
         Respawn("EnemyBattleInfo");
         Respawn("FriendlyBattleInfo");
+
+        //Respawn usable items at the bottom of the screen for the current entity
+        Respawn("ItemQuickUse");
+        CDesktop.LBWindow().GetComponentsInChildren<Renderer>().ToList().ForEach(x => x.gameObject.AddComponent<FadeIn>());
+        CDesktop.LBWindow().gameObject.AddComponent<MoveAwayQuickUse>();
+
     }
 
     //Updates the visibility and color of the secondary cursor
     public void UpdateTheSecondaryCursor()
     {
+        var humanControlled = participants[whosTurn].who.IsControlledByHuman();
+
         //If it's not player's turn.. change color of the remote cursor based on whether it is an ally using it or an enemy
-        if (!participants[whosTurn].who.IsControlledByHuman()) cursorEnemy.SetColor(participants[whosTurn].team == participants.Find(x => x.who == currentSave.player).team ^ participants[whosTurn].who.IsControlledByOppositeTeam() ? "CursorFriend" : "CursorEnemy");
+        if (!humanControlled) cursorEnemy.SetColor(participants[whosTurn].team == participants.Find(x => x.who == currentSave.player).team ^ participants[whosTurn].who.IsControlledByOppositeTeam() ? "CursorFriend" : "CursorEnemy");
 
         //If the current participant is human controlled fade out the enemy cursor
-        if (participants[whosTurn].who.IsControlledByHuman())
+        if (humanControlled)
         {
             cursorEnemy.fadeIn = false;
             cursorEnemy.fadeOut = true;
@@ -533,10 +540,7 @@ public class Board
                 }
 
                 //Exit board view
-                if (area != null && area.instancePart) SwitchDesktop("Instance");
-                else if (area != null && area.complexPart) SwitchDesktop("Complex");
-                else SwitchDesktop("Area");
-                CDesktop.RespawnAll();
+                SwitchToMostImportantDesktop();
 
                 //Grant experience for defeating the enemy
                 foreach (var winParticipant in participants.Where(x => x.team == 1))
@@ -600,11 +604,7 @@ public class Board
             else if (result == "Fled")
             {
                 PlaySound("RunAwayBitch");
-                if (area != null && area.instancePart) SwitchDesktop("Instance");
-                else if (area != null && area.complexPart) SwitchDesktop("Complex");
-                else SwitchDesktop("Area");
-                Respawn("MapToolbarClockLeft");
-                Respawn("MapToolbarClockRight");
+                SwitchToMostImportantDesktop();
             }
         }
         else CloseDesktop("GameSimulation");

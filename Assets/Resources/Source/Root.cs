@@ -532,7 +532,7 @@ public static class Root
         if (find == null) return false;
         desktops.Remove(find);
         if (find == CDesktop)
-            if (desktops.Count > 0) SwitchDesktop(desktops[0].title, transition);
+            if (desktops.Count > 0) SwitchToMostImportantDesktop(transition);
             else CDesktop = null;
         UnityEngine.Object.Destroy(find.gameObject);
         return true;
@@ -580,6 +580,12 @@ public static class Root
         newDesktop.screenlock.transform.parent = newDesktop.screen.transform;
         newDesktop.UnlockScreen();
         newObject.SetActive(false);
+    }
+
+    public static void SwitchToMostImportantDesktop(bool transition = true)
+    {
+        var order = desktops.OrderBy(x => desktopBlueprints.FindIndex(y => y.title == x.title)).ToList();
+        if (order.Count > 0) SwitchDesktop(order[0].title, transition);
     }
 
     public static void SwitchDesktop(string name, bool transition = true)
@@ -1569,6 +1575,17 @@ public static class Root
             if (board.healthBars.ContainsKey(forWho)) board.healthBars[forWho] = thisBar;
             else board.healthBars.Add(forWho, thisBar);
         }
+        thisBar.UpdateFluidBar();
+    }
+
+    public static void AddBigHealthBar(int x, int y, Entity entity)
+    {
+        var healthBar = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/PrefabHealthBarBig"));
+        healthBar.name += " " + entity.name;
+        healthBar.transform.parent = CDesktop.LBWindow().LBRegionGroup().LBRegion().transform;
+        healthBar.transform.localPosition = new Vector3(x, y, 0);
+        var thisBar = healthBar.GetComponent<FluidBar>();
+        thisBar.Initialise(188, () => entity.MaxHealth(), () => entity.health, false);
         thisBar.UpdateFluidBar();
     }
 

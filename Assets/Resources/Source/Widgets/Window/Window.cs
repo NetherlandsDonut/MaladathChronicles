@@ -400,7 +400,7 @@ public class Window : MonoBehaviour
                                 region.borders[i + 4] = new GameObject("BorderCorner", typeof(SpriteRenderer));
                                 region.borders[i + 4].transform.parent = region.transform;
                                 region.borders[i + 4].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/PremadeBorders/RegionBorderCorner");
-                                region.borders[i + 4].GetComponent<SpriteRenderer>().sortingLayerName = "Upper";
+                                region.borders[i + 4].GetComponent<SpriteRenderer>().sortingLayerName = layer == "Upper" ? "UpperBorderCorners" : "BorderCorners";
                                 if (i == 1 || i == 3) region.borders[i + 4].GetComponent<SpriteRenderer>().flipX = true;
                                 if (i == 2 || i == 3) region.borders[i + 4].GetComponent<SpriteRenderer>().flipY = true;
                             }

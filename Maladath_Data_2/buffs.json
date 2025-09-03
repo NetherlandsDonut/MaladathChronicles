@@ -7,7 +7,7 @@
       {}
     ],
     "gains": {
-      "Agility": 4
+      "Agility": "4"
     },
     "events": []
   },
@@ -19,7 +19,7 @@
       {}
     ],
     "gains": {
-      "Strength": 4
+      "Strength": "4"
     },
     "events": []
   },
@@ -31,7 +31,7 @@
       {}
     ],
     "gains": {
-      "Strength": 8
+      "Strength": "8"
     },
     "events": []
   },
@@ -43,7 +43,7 @@
       {}
     ],
     "gains": {
-      "Intellect": 6
+      "Intellect": "6"
     },
     "events": []
   },
@@ -55,7 +55,7 @@
       {}
     ],
     "gains": {
-      "Fire Mastery": 1
+      "Fire Mastery": "1"
     },
     "events": []
   },
@@ -67,7 +67,7 @@
       {}
     ],
     "gains": {
-      "Agility": 8
+      "Agility": "8"
     },
     "events": []
   },
@@ -79,7 +79,7 @@
       {}
     ],
     "gains": {
-      "Strength": 8
+      "Strength": "8"
     },
     "events": []
   },
@@ -91,7 +91,7 @@
       {}
     ],
     "gains": {
-      "Agility": 15
+      "Agility": "15"
     },
     "events": []
   },
@@ -103,7 +103,7 @@
       {}
     ],
     "gains": {
-      "Frost Mastery": 1
+      "Frost Mastery": "1"
     },
     "events": []
   },
@@ -115,7 +115,7 @@
       {}
     ],
     "gains": {
-      "Arcane Mastery": 1
+      "Arcane Mastery": "1"
     },
     "events": []
   },
@@ -127,7 +127,7 @@
       {}
     ],
     "gains": {
-      "Intellect": 25
+      "Intellect": "25"
     },
     "events": []
   },
@@ -139,7 +139,7 @@
       {}
     ],
     "gains": {
-      "Strength": 25
+      "Strength": "25"
     },
     "events": []
   },
@@ -151,7 +151,7 @@
       {}
     ],
     "gains": {
-      "Agility": 25
+      "Agility": "25"
     },
     "events": []
   },
@@ -163,7 +163,7 @@
       {}
     ],
     "gains": {
-      "Spirit": 25
+      "Spirit": "25"
     },
     "events": []
   },
@@ -175,7 +175,7 @@
       {}
     ],
     "gains": {
-      "Fire Mastery": 2
+      "Fire Mastery": "2"
     },
     "events": []
   },
@@ -197,7 +197,7 @@
       {}
     ],
     "gains": {
-      "Shadow Mastery": 2
+      "Shadow Mastery": "2"
     },
     "events": []
   },
@@ -209,8 +209,8 @@
       {}
     ],
     "gains": {
-      "Intellect": 18,
-      "Spirit": 18
+      "Intellect": "18",
+      "Spirit": "18"
     },
     "events": []
   },
@@ -222,8 +222,8 @@
       {}
     ],
     "gains": {
-      "Strength": 18,
-      "Stamina": 18
+      "Strength": "18",
+      "Stamina": "18"
     },
     "events": []
   },
@@ -235,7 +235,7 @@
       {}
     ],
     "gains": {
-      "Attack Power": 35
+      "Attack Power": "35"
     },
     "events": []
   },
@@ -247,7 +247,7 @@
       {}
     ],
     "gains": {
-      "Strength": 25
+      "Strength": "25"
     },
     "events": []
   },
@@ -259,7 +259,7 @@
       {}
     ],
     "gains": {
-      "Agility": 25
+      "Agility": "25"
     },
     "events": []
   },
@@ -271,7 +271,7 @@
       {}
     ],
     "gains": {
-      "Spirit": 25
+      "Spirit": "25"
     },
     "events": []
   },
@@ -283,8 +283,8 @@
       {}
     ],
     "gains": {
-      "Agility": 25,
-      "Critical Strike Chance": 2
+      "Agility": "25",
+      "Critical Strike Chance": "2"
     },
     "events": []
   },
@@ -296,7 +296,7 @@
       {}
     ],
     "gains": {
-      "Arcane Mastery": 2
+      "Arcane Mastery": "2"
     },
     "events": []
   },
@@ -311,7 +311,7 @@
       {}
     ],
     "gains": {
-      "Intellect": 4
+      "Intellect": "4"
     },
     "events": [],
     "description": {
@@ -340,7 +340,7 @@
       {}
     ],
     "gains": {
-      "Intellect": 8
+      "Intellect": "8"
     },
     "events": []
   },
@@ -355,7 +355,7 @@
       {}
     ],
     "gains": {
-      "Intellect": 12
+      "Intellect": "12"
     },
     "events": []
   },
@@ -370,7 +370,7 @@
       {}
     ],
     "gains": {
-      "Intellect": 16
+      "Intellect": "16"
     },
     "events": []
   },
@@ -385,7 +385,7 @@
       {}
     ],
     "gains": {
-      "Strength": 5
+      "Strength": "5"
     },
     "events": []
   },
@@ -400,7 +400,7 @@
       {}
     ],
     "gains": {
-      "Strength": 9
+      "Strength": "9"
     },
     "events": []
   },
@@ -415,7 +415,7 @@
       {}
     ],
     "gains": {
-      "Strength": 13
+      "Strength": "13"
     },
     "events": []
   },
@@ -430,7 +430,7 @@
       {}
     ],
     "gains": {
-      "Strength": 17
+      "Strength": "17"
     },
     "events": []
   },
@@ -445,7 +445,7 @@
       {}
     ],
     "gains": {
-      "Agility": 5
+      "Agility": "5"
     },
     "events": []
   },
@@ -460,7 +460,7 @@
       {}
     ],
     "gains": {
-      "Agility": 9
+      "Agility": "9"
     },
     "events": []
   },
@@ -475,7 +475,7 @@
       {}
     ],
     "gains": {
-      "Agility": 13
+      "Agility": "13"
     },
     "events": []
   },
@@ -490,7 +490,7 @@
       {}
     ],
     "gains": {
-      "Agility": 17
+      "Agility": "17"
     },
     "events": []
   },
@@ -505,7 +505,7 @@
       {}
     ],
     "gains": {
-      "Stamina": 4
+      "Stamina": "4"
     },
     "events": []
   },
@@ -520,7 +520,7 @@
       {}
     ],
     "gains": {
-      "Stamina": 8
+      "Stamina": "8"
     },
     "events": []
   },
@@ -535,7 +535,7 @@
       {}
     ],
     "gains": {
-      "Stamina": 12
+      "Stamina": "12"
     },
     "events": []
   },
@@ -550,7 +550,7 @@
       {}
     ],
     "gains": {
-      "Stamina": 16
+      "Stamina": "16"
     },
     "events": []
   },
@@ -565,7 +565,7 @@
       {}
     ],
     "gains": {
-      "Armor": 60
+      "Armor": "60"
     },
     "events": []
   },
@@ -580,7 +580,7 @@
       {}
     ],
     "gains": {
-      "Armor": 120
+      "Armor": "120"
     },
     "events": []
   },
@@ -595,7 +595,7 @@
       {}
     ],
     "gains": {
-      "Armor": 180
+      "Armor": "180"
     },
     "events": []
   },
@@ -610,7 +610,7 @@
       {}
     ],
     "gains": {
-      "Armor": 240
+      "Armor": "240"
     },
     "events": []
   },
@@ -625,7 +625,7 @@
       {}
     ],
     "gains": {
-      "Spirit": 3
+      "Spirit": "3"
     },
     "events": []
   },
@@ -640,7 +640,7 @@
       {}
     ],
     "gains": {
-      "Spirit": 7
+      "Spirit": "7"
     },
     "events": []
   },
@@ -655,7 +655,7 @@
       {}
     ],
     "gains": {
-      "Spirit": 11
+      "Spirit": "11"
     },
     "events": []
   },
@@ -670,7 +670,7 @@
       {}
     ],
     "gains": {
-      "Spirit": 15
+      "Spirit": "15"
     },
     "events": []
   },
@@ -685,7 +685,7 @@
       {}
     ],
     "gains": {
-      "Stamina": 10
+      "Stamina": "10"
     },
     "events": []
   },
@@ -700,7 +700,7 @@
       {}
     ],
     "gains": {
-      "Agility": 10
+      "Agility": "10"
     },
     "events": []
   },
@@ -715,7 +715,7 @@
       {}
     ],
     "gains": {
-      "Stamina": 25
+      "Stamina": "25"
     },
     "events": []
   },
@@ -730,8 +730,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 12,
-      "Spirit": 12
+      "Stamina": "12",
+      "Spirit": "12"
     },
     "events": []
   },
@@ -746,8 +746,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 12,
-      "Spirit": 12
+      "Stamina": "12",
+      "Spirit": "12"
     },
     "events": []
   },
@@ -762,8 +762,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 12,
-      "Spirit": 12
+      "Stamina": "12",
+      "Spirit": "12"
     },
     "events": []
   },
@@ -778,8 +778,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 12,
-      "Spirit": 12
+      "Stamina": "12",
+      "Spirit": "12"
     },
     "events": []
   },
@@ -794,7 +794,7 @@
       {}
     ],
     "gains": {
-      "Spirit": 10
+      "Spirit": "10"
     },
     "events": []
   },
@@ -809,7 +809,7 @@
       {}
     ],
     "gains": {
-      "Stamina": 10
+      "Stamina": "10"
     },
     "events": []
   },
@@ -824,8 +824,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 12,
-      "Spirit": 12
+      "Stamina": "12",
+      "Spirit": "12"
     },
     "events": []
   },
@@ -840,7 +840,7 @@
       {}
     ],
     "gains": {
-      "Spirit": 14
+      "Spirit": "14"
     },
     "events": []
   },
@@ -855,8 +855,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 12,
-      "Spirit": 12
+      "Stamina": "12",
+      "Spirit": "12"
     },
     "events": []
   },
@@ -871,8 +871,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 8,
-      "Spirit": 8
+      "Stamina": "8",
+      "Spirit": "8"
     },
     "events": []
   },
@@ -887,8 +887,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 8,
-      "Spirit": 8
+      "Stamina": "8",
+      "Spirit": "8"
     },
     "events": []
   },
@@ -903,8 +903,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 8,
-      "Spirit": 8
+      "Stamina": "8",
+      "Spirit": "8"
     },
     "events": []
   },
@@ -919,8 +919,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 8,
-      "Spirit": 8
+      "Stamina": "8",
+      "Spirit": "8"
     },
     "events": []
   },
@@ -935,8 +935,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 8,
-      "Spirit": 8
+      "Stamina": "8",
+      "Spirit": "8"
     },
     "events": []
   },
@@ -951,8 +951,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 8,
-      "Spirit": 8
+      "Stamina": "8",
+      "Spirit": "8"
     },
     "events": []
   },
@@ -967,8 +967,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 8,
-      "Spirit": 8
+      "Stamina": "8",
+      "Spirit": "8"
     },
     "events": []
   },
@@ -983,8 +983,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 8,
-      "Spirit": 8
+      "Stamina": "8",
+      "Spirit": "8"
     },
     "events": []
   },
@@ -999,8 +999,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 8,
-      "Spirit": 8
+      "Stamina": "8",
+      "Spirit": "8"
     },
     "events": []
   },
@@ -1015,8 +1015,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 6,
-      "Spirit": 6
+      "Stamina": "6",
+      "Spirit": "6"
     },
     "events": []
   },
@@ -1031,8 +1031,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 6,
-      "Spirit": 6
+      "Stamina": "6",
+      "Spirit": "6"
     },
     "events": []
   },
@@ -1047,8 +1047,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 6,
-      "Spirit": 6
+      "Stamina": "6",
+      "Spirit": "6"
     },
     "events": []
   },
@@ -1063,8 +1063,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 6,
-      "Spirit": 6
+      "Stamina": "6",
+      "Spirit": "6"
     },
     "events": []
   },
@@ -1079,8 +1079,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 6,
-      "Spirit": 6
+      "Stamina": "6",
+      "Spirit": "6"
     },
     "events": []
   },
@@ -1095,8 +1095,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 6,
-      "Spirit": 6
+      "Stamina": "6",
+      "Spirit": "6"
     },
     "events": []
   },
@@ -1111,8 +1111,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 6,
-      "Spirit": 6
+      "Stamina": "6",
+      "Spirit": "6"
     },
     "events": []
   },
@@ -1127,8 +1127,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 6,
-      "Spirit": 6
+      "Stamina": "6",
+      "Spirit": "6"
     },
     "events": []
   },
@@ -1143,8 +1143,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 6,
-      "Spirit": 6
+      "Stamina": "6",
+      "Spirit": "6"
     },
     "events": []
   },
@@ -1159,8 +1159,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 6,
-      "Spirit": 6
+      "Stamina": "6",
+      "Spirit": "6"
     },
     "events": []
   },
@@ -1175,8 +1175,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 6,
-      "Spirit": 6
+      "Stamina": "6",
+      "Spirit": "6"
     },
     "events": []
   },
@@ -1191,7 +1191,7 @@
       {}
     ],
     "gains": {
-      "Spirit": 8
+      "Spirit": "8"
     },
     "events": []
   },
@@ -1206,8 +1206,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 6,
-      "Spirit": 6
+      "Stamina": "6",
+      "Spirit": "6"
     },
     "events": []
   },
@@ -1222,8 +1222,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 4,
-      "Spirit": 4
+      "Stamina": "4",
+      "Spirit": "4"
     },
     "events": []
   },
@@ -1238,8 +1238,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 4,
-      "Spirit": 4
+      "Stamina": "4",
+      "Spirit": "4"
     },
     "events": []
   },
@@ -1254,8 +1254,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 4,
-      "Spirit": 4
+      "Stamina": "4",
+      "Spirit": "4"
     },
     "events": []
   },
@@ -1270,8 +1270,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 4,
-      "Spirit": 4
+      "Stamina": "4",
+      "Spirit": "4"
     },
     "events": []
   },
@@ -1286,8 +1286,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 4,
-      "Spirit": 4
+      "Stamina": "4",
+      "Spirit": "4"
     },
     "events": []
   },
@@ -1302,8 +1302,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 4,
-      "Spirit": 4
+      "Stamina": "4",
+      "Spirit": "4"
     },
     "events": []
   },
@@ -1318,8 +1318,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 4,
-      "Spirit": 4
+      "Stamina": "4",
+      "Spirit": "4"
     },
     "events": []
   },
@@ -1334,8 +1334,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 4,
-      "Spirit": 4
+      "Stamina": "4",
+      "Spirit": "4"
     },
     "events": []
   },
@@ -1350,8 +1350,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 4,
-      "Spirit": 4
+      "Stamina": "4",
+      "Spirit": "4"
     },
     "events": []
   },
@@ -1366,8 +1366,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 2,
-      "Spirit": 2
+      "Stamina": "2",
+      "Spirit": "2"
     },
     "events": []
   },
@@ -1382,8 +1382,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 2,
-      "Spirit": 2
+      "Stamina": "2",
+      "Spirit": "2"
     },
     "events": []
   },
@@ -1398,8 +1398,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 2,
-      "Spirit": 2
+      "Stamina": "2",
+      "Spirit": "2"
     },
     "events": []
   },
@@ -1414,8 +1414,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 2,
-      "Spirit": 2
+      "Stamina": "2",
+      "Spirit": "2"
     },
     "events": []
   },
@@ -1430,8 +1430,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 8,
-      "Spirit": 8
+      "Stamina": "8",
+      "Spirit": "8"
     },
     "events": []
   },
@@ -1446,8 +1446,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 2,
-      "Spirit": 2
+      "Stamina": "2",
+      "Spirit": "2"
     },
     "events": []
   },
@@ -1462,7 +1462,7 @@
       {}
     ],
     "gains": {
-      "Strength": 10
+      "Strength": "10"
     },
     "events": []
   },
@@ -1477,8 +1477,8 @@
       {}
     ],
     "gains": {
-      "Stamina": 2,
-      "Spirit": 2
+      "Stamina": "2",
+      "Spirit": "2"
     },
     "events": []
   },
@@ -1493,7 +1493,7 @@
       {}
     ],
     "gains": {
-      "Intellect": 10
+      "Intellect": "10"
     },
     "events": []
   },
@@ -1535,7 +1535,7 @@
       {}
     ],
     "gains": {
-      "Stealth": 1
+      "Stealth": "1"
     },
     "events": []
   },
@@ -1620,12 +1620,48 @@
       "Defensive"
     ],
     "ranks": [
-      {}
+      {
+        "#1": "40"
+      },
+      {
+        "#1": "70"
+      },
+      {
+        "#1": "100"
+      },
+      {
+        "#1": "130"
+      }
     ],
     "gains": {
-      "Armor": 20
+      "Armor": "#1",
+      "Stamina": "100",
+      "Intellect": "100"
     },
-    "events": []
+    "events": [],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Gray",
+              "Text": "Increases the caster's armor by"
+            },
+            {
+              "Color": "Uncommon",
+              "Text": "v(#1)",
+              "Split": "No",
+              "Spacing": "No"
+            },
+            {
+              "Color": "Gray",
+              "Text": "."
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     "name": "Fel Armor",
@@ -1635,12 +1671,46 @@
       "Defensive"
     ],
     "ranks": [
-      {}
+      {
+        "#1": "40"
+      },
+      {
+        "#1": "70"
+      },
+      {
+        "#1": "100"
+      },
+      {
+        "#1": "130"
+      }
     ],
     "gains": {
-      "Armor": 50
+      "Armor": "#1"
     },
-    "events": []
+    "events": [],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "contents": [
+            {
+              "Color": "Gray",
+              "Text": "Increases the caster's armor by"
+            },
+            {
+              "Color": "Uncommon",
+              "Text": "v(#1)",
+              "Split": "No",
+              "Spacing": "No"
+            },
+            {
+              "Color": "Gray",
+              "Text": "."
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     "name": "Foresight",
@@ -1716,7 +1786,7 @@
       {}
     ],
     "gains": {
-      "MindControl": 1
+      "MindControl": "1"
     },
     "events": [
       {
@@ -1725,7 +1795,11 @@
             "Trigger": "TurnBegin"
           }
         ],
-        "effects": []
+        "effects": [
+          {
+            "Await": "5"
+          }
+        ]
       }
     ]
   },

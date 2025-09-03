@@ -199,6 +199,7 @@ public class Quest
                 {
                     AddSmallButton("OtherClose", (h) =>
                     {
+                        quest = null;
                         CloseWindow("Quest");
                         if (CDesktop.title != "Map")
                         {
@@ -215,6 +216,7 @@ public class Quest
                 {
                     AddSmallButton("OtherClose", (h) =>
                     {
+                        quest = null;
                         CloseWindow("Quest");
                         if (CDesktop.title != "Map")
                         {
@@ -235,6 +237,7 @@ public class Quest
             else
                 AddSmallButton("OtherClose", (h) =>
                 {
+                    quest = null;
                     CloseWindow("Quest" + f);
                     PlaySound("DesktopInstanceClose");
                     if (CDesktop.title != "Map")

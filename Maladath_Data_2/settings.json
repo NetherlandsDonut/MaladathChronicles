@@ -42,7 +42,7 @@
     "value": "False"
   },
   "autoCloseLoot": {
-    "value": "False"
+    "value": "True"
   },
   "runsInBackground": {
     "value": "True"

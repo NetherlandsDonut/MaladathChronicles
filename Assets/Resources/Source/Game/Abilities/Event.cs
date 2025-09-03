@@ -516,7 +516,9 @@ public class Event
                 itemUsed.amount--;
                 if (itemUsed.amount == 0)
                     target.who.inventory.items.Remove(itemUsed);
-                Respawn("PlayerQuickUse", true);
+                Respawn("ItemQuickUse");
+                CDesktop.LBWindow().GetComponentsInChildren<Renderer>().ToList().ForEach(x => x.gameObject.AddComponent<FadeIn>());
+                CDesktop.LBWindow().gameObject.AddComponent<MoveAwayQuickUse>();
             }
 
             //This effect changes the action set that the entity has in combat
@@ -826,7 +828,9 @@ public class Event
                 itemUsed.amount--;
                 if (itemUsed.amount == 0)
                     target.who.inventory.items.Remove(itemUsed);
-                Respawn("PlayerQuickUse", true);
+                Respawn("ItemQuickUse");
+                CDesktop.LBWindow().GetComponentsInChildren<Renderer>().ToList().ForEach(x => x.gameObject.AddComponent<FadeIn>());
+                CDesktop.LBWindow().gameObject.AddComponent<MoveAwayQuickUse>();
             }
 
             //This effect changes the action set that the entity has in combat

@@ -4616,7 +4616,7 @@
       "currentQuests": [],
       "completedQuests": [],
       "level": 8,
-      "experience": 500,
+      "experience": 1400,
       "uniquesGotten": [],
       "reputation": {
         "Southsea Pirates": 0,
@@ -4756,13 +4756,13 @@
           ]
         },
         "Mining": {
-          "Item1": 1,
+          "Item1": 2,
           "Item2": [
             "Amateur"
           ]
         },
         "Herbalism": {
-          "Item1": 1,
+          "Item1": 2,
           "Item2": [
             "Amateur"
           ]
@@ -4854,7 +4854,6 @@
         "Default": [
           "Judgement",
           "Consecration",
-          "Stoneform",
           "Hammer of Justice",
           "Mind Control"
         ]
@@ -4892,6 +4891,64 @@
             "abilities": {
               "Hearthstone": 1
             }
+          },
+          {
+            "x": 1,
+            "rarity": "Common",
+            "name": "Silverleaf",
+            "icon": "itemmischerb10",
+            "detailedType": "Flowers",
+            "type": "Trade Good",
+            "source": "RareDrop",
+            "ilvl": 5,
+            "lvl": 1,
+            "amount": 2,
+            "maxStack": 20,
+            "price": 10
+          },
+          {
+            "x": 2,
+            "rarity": "Common",
+            "name": "Rough Stone",
+            "icon": "itemstone06",
+            "detailedType": "Rock",
+            "type": "Trade Good",
+            "source": "RareDrop",
+            "ilvl": 5,
+            "lvl": 1,
+            "amount": 2,
+            "maxStack": 20,
+            "price": 2
+          },
+          {
+            "x": 3,
+            "rarity": "Common",
+            "name": "Copper Ore",
+            "icon": "itemorecopper01",
+            "detailedType": "Ore",
+            "type": "Trade Good",
+            "source": "RareDrop",
+            "ilvl": 10,
+            "lvl": 1,
+            "amount": 2,
+            "maxStack": 10,
+            "price": 5
+          },
+          {
+            "x": 4,
+            "rarity": "Common",
+            "name": "Major Healing Potion",
+            "icon": "itempotion54",
+            "combatUse": true,
+            "detailedType": "Potion",
+            "type": "Miscellaneous",
+            "ilvl": 55,
+            "amount": 1,
+            "maxStack": 5,
+            "abilities": {
+              "Major Healing Potion": 1
+            },
+            "price": 1000
           }
         ],
         "bags": []
@@ -4964,8 +5021,8 @@
       }
     },
     "hour": 7,
-    "minute": 8,
-    "second": 42,
+    "minute": 21,
+    "second": 24,
     "currentSite": "Coldridge Pass",
     "generatedBossPools": {
       "<Forlorn Cloister>": "Azshir the Sleepless",
@@ -4986,12 +5043,16 @@
     "openedChests": {},
     "fishingSpots": {},
     "fishingSpoils": {},
-    "siteProgress": {},
-    "commonsKilled": {},
+    "siteProgress": {
+      "Coldridge Pass": 1
+    },
+    "commonsKilled": {
+      "Rockjaw Raider": 1
+    },
     "raresKilled": {},
     "elitesKilled": {},
     "siteVisits": {
-      "Anvilmar": 1,
+      "Anvilmar": 2,
       "Cold Hearth Manor": 1,
       "Raynewood Retreat": 1,
       "Shindigger's Camp": 1,
@@ -5261,7 +5322,7 @@
       "Valley of Bones": 1,
       "Valley of Spears": 1,
       "Chill Breeze Valley": 1,
-      "Coldridge Pass": 2,
+      "Coldridge Pass": 5,
       "Coldridge Valley": 4,
       "Gnomeregan Outskirts": 1,
       "Frostmane Hold": 1,
@@ -5805,8 +5866,52 @@
     },
     "unlockedAreas": [],
     "flags": {},
-    "vendorStock": {},
+    "vendorStock": {
+      "Anvilmar:Adlin Pridedrift": [
+        {
+          "item": "Refreshing Spring Water",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Rough Arrow",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Light Shot",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Small Throwing Knife",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Crude Throwing Axe",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Tough Hunk of Bread",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+      ]
+    },
     "banks": {},
+    "buyback": {
+      "items": [],
+      "bags": [],
+      "ignoreSpaceChecks": true
+    },
     "permadeath": {
       "value": "False"
     },
@@ -5820,9 +5925,685 @@
       "value": "False"
     },
     "startDate": "2025-09-01T01:14:05.3019419+02:00",
-    "lastLoaded": "2025-09-02T19:52:21.0591434+02:00",
-    "lastPlayed": "2025-09-02T19:52:49.5609273+02:00",
-    "timePlayed": "00:04:42.0022375",
+    "lastLoaded": "2025-09-03T17:23:17.9537509+02:00",
+    "lastPlayed": "2025-09-03T17:23:29.14466+02:00",
+    "timePlayed": "00:14:56.0014279",
     "lastVisitedTalents": 2
+  },
+  {
+    "playerSide": "Horde",
+    "player": {
+      "currentQuests": [
+        {
+          "questID": 790,
+          "conditions": [
+            {
+              "type": "Item",
+              "name": "Sarkoth's Mangled Claw",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "questID": 794,
+          "conditions": [
+            {
+              "type": "Item",
+              "name": "Burning Blade Medallion",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "questID": 792,
+          "conditions": [
+            {
+              "type": "Kill",
+              "name": "Vile Familiar",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "completedQuests": [
+        4641,
+        788,
+        789
+      ],
+      "level": 4,
+      "experience": 1828,
+      "uniquesGotten": [],
+      "reputation": {
+        "Southsea Pirates": 0,
+        "Razormane Tribe": 0,
+        "Pandaren": 0,
+        "Grimtotem Tribe": 0,
+        "Woodpaw Tribe": 0,
+        "The Burning Legion": 0,
+        "Darkspear Tribe": 4250,
+        "Stormwind": 0,
+        "Timbermaw Tribe": 4050,
+        "Magram Clan": 0,
+        "Gelkis Clan": 0,
+        "Kolkar Clan": 0,
+        "Orgrimmar": 5175,
+        "Frostwolf Clan": 4250,
+        "The Defiler's": 4250,
+        "Thunder Bluff": 4250,
+        "Undercity": 4250,
+        "Ironforge": 0,
+        "Stromgarde": 0,
+        "Dark Iron Clan": 0,
+        "Wildhammer Clan": 0,
+        "Winterfall Tribe": 0,
+        "Gnomeregan": 0,
+        "Darnassus": 0,
+        "Bloodsail Buccaneers": 0,
+        "Syndicate": 0,
+        "Warsong Outriders": 4250,
+        "Stormpike Guard": 0,
+        "Silverwing Sentinels": 0,
+        "The League of Arathor": 0,
+        "Defias Brotherhood": 0,
+        "Dalaran": 0,
+        "Burning Blade Clan": 0,
+        "Burning Legion": 0,
+        "Shadow Council": 0,
+        "Gordunni Ogres": 0,
+        "Blackrock Clan": 0,
+        "Dragonmaw Clan": 0,
+        "Black Tooth Grin Clan": 0,
+        "Gurubashi Tribe": 0,
+        "Sandfury Tribe": 0,
+        "Twilight's Hammer": 0,
+        "Grimtotem Clan": 0,
+        "Razorfen Tribe": 0,
+        "Stonemaul Ogres": 4250,
+        "Dustbelcher Ogres": 0,
+        "Deadwind Ogres": 0,
+        "Venture Co.": 0,
+        "Southsea Freebooters": 0,
+        "Atal'ai Tribe": 0,
+        "Qiraji Empire": 0,
+        "Scarlet Crusade": 0,
+        "Vilebranch Tribe": 0,
+        "Witherbark Tribe": 0,
+        "Mossflayer Tribe": 0,
+        "Frostmane Tribe": 0,
+        "Bloodscalp Tribe": 0,
+        "Skullsplitter Tribe": 0,
+        "Shatterspear Tribe": 0,
+        "Rot Hide Tribe": 0,
+        "Riverpaw Tribe": 0,
+        "Redridge Tribe": 0,
+        "Mudsnout Tribe": 0,
+        "Palemane Tribe": 0,
+        "Shadowhide Tribe": 0,
+        "Scourge": 0,
+        "Smolderthorn Tribe": 0,
+        "Revantusk Tribe": 4250,
+        "Blackpaw Tribe": 0,
+        "Maraudine Clan": 0,
+        "Mosshide Tribe": 0,
+        "Deadwood Tribe": 0,
+        "Bloodtooth Tribe": 0,
+        "Bristleback Tribe": 0,
+        "Darkspear Trolls": 4775
+      },
+      "professionSkills": {
+        "Leatherworking": {
+          "Item1": 3,
+          "Item2": [
+            "Amateur"
+          ]
+        },
+        "Blacksmithing": {
+          "Item1": 12,
+          "Item2": [
+            "Amateur"
+          ]
+        },
+        "Alchemy": {
+          "Item1": 3,
+          "Item2": [
+            "Amateur"
+          ]
+        },
+        "Tailoring": {
+          "Item1": 1,
+          "Item2": [
+            "Amateur"
+          ]
+        },
+        "Enchanting": {
+          "Item1": 1,
+          "Item2": [
+            "Amateur"
+          ]
+        },
+        "Engineering": {
+          "Item1": 1,
+          "Item2": [
+            "Amateur"
+          ]
+        },
+        "Cooking": {
+          "Item1": 1,
+          "Item2": [
+            "Amateur"
+          ]
+        },
+        "Fishing": {
+          "Item1": 1,
+          "Item2": [
+            "Amateur"
+          ]
+        },
+        "First Aid": {
+          "Item1": 1,
+          "Item2": [
+            "Amateur"
+          ]
+        },
+        "Skinning": {
+          "Item1": 8,
+          "Item2": [
+            "Amateur"
+          ]
+        },
+        "Mining": {
+          "Item1": 15,
+          "Item2": [
+            "Amateur"
+          ]
+        },
+        "Herbalism": {
+          "Item1": 8,
+          "Item2": [
+            "Amateur"
+          ]
+        }
+      },
+      "learnedRecipes": {
+        "Leatherworking": [
+          "Light Leather",
+          "Light Armor Kit",
+          "Handstitched Leather Vest",
+          "Handstitched Leather Cloak",
+          "Handstitched Leather Bracers",
+          "Handstitched Leather Boots"
+        ],
+        "Blacksmithing": [
+          "Rough Sharpening Stone",
+          "Rough Weightstone",
+          "Rough Copper Vest",
+          "Copper Bracers"
+        ],
+        "Alchemy": [
+          "Minor Healing Potion",
+          "Elixir of Lion's Strength",
+          "Elixir of Minor Defense"
+        ],
+        "Tailoring": [
+          "Bolt of Linen Cloth",
+          "Brown Linen Shirt",
+          "Linen Cloak",
+          "Simple Linen Pants"
+        ],
+        "Enchanting": [
+          "Runed Copper Rod",
+          "Enchant Bracer - Minor Deflect",
+          "Enchant Bracer - Minor Health"
+        ],
+        "Engineering": [
+          "Rough Blasting Powder",
+          "Rough Dynamite",
+          "Crafted Light Shot"
+        ],
+        "Cooking": [
+          "Charred Wolf Meat",
+          "Roasted Boar Meat"
+        ],
+        "Fishing": [],
+        "First Aid": [
+          "Linen Bandage"
+        ],
+        "Skinning": [],
+        "Mining": [
+          "Smelt Copper"
+        ],
+        "Herbalism": []
+      },
+      "unspentTalentPoints": 1,
+      "faction": "Orgrimmar",
+      "name": "Kemgorm",
+      "race": "Orc",
+      "spec": "Warlock",
+      "gender": "Male",
+      "portraitID": 2,
+      "homeLocation": "The Den",
+      "abilities": {
+        "Staff Proficiency": 0,
+        "Cloth Proficiency": 0,
+        "One Handed Sword Proficiency": 0,
+        "Off Hand Proficiency": 0,
+        "Dagger Proficiency": 0,
+        "Wand Proficiency": 0,
+        "Corruption": 0,
+        "Summon Imp": 0,
+        "Shadow Bolt": 0,
+        "Demon Skin": 0,
+        "Curse of Agony": 0
+      },
+      "currentActionSet": "Default",
+      "actionSets": {
+        "Default": [
+          "Shadow Bolt",
+          "Corruption",
+          "Curse of Agony",
+          "Demon Skin"
+        ]
+      },
+      "stats": {
+        "Stamina": 23,
+        "Strength": 23,
+        "Agility": 17,
+        "Intellect": 19,
+        "Spirit": 25,
+        "Earth Mastery": 3,
+        "Fire Mastery": 3,
+        "Air Mastery": 2,
+        "Water Mastery": 1,
+        "Frost Mastery": 1,
+        "Lightning Mastery": 3,
+        "Arcane Mastery": 1,
+        "Decay Mastery": 2,
+        "Shadow Mastery": 2,
+        "Order Mastery": 1
+      },
+      "inventory": {
+        "money": 30,
+        "items": [
+          {
+            "rarity": "Common",
+            "name": "Hearthstone",
+            "icon": "itemmiscrune01",
+            "detailedType": "Rune",
+            "type": "Miscellaneous",
+            "ilvl": 1,
+            "amount": 1,
+            "maxStack": 1,
+            "indestructible": true,
+            "unique": true,
+            "abilities": {
+              "Hearthstone": 1
+            }
+          },
+          {
+            "x": 1,
+            "rarity": "Common",
+            "name": "Peacebloom",
+            "icon": "itemmiscflower02",
+            "detailedType": "Flowers",
+            "type": "Trade Good",
+            "source": "RareDrop",
+            "ilvl": 5,
+            "lvl": 1,
+            "amount": 11,
+            "maxStack": 20,
+            "price": 10
+          },
+          {
+            "x": 3,
+            "rarity": "Common",
+            "name": "Copper Ore",
+            "icon": "itemorecopper01",
+            "detailedType": "Ore",
+            "type": "Trade Good",
+            "source": "RareDrop",
+            "ilvl": 10,
+            "lvl": 1,
+            "amount": 7,
+            "maxStack": 10,
+            "price": 5
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "rarity": "Uncommon",
+            "name": "Tigerseye",
+            "icon": "itemmiscgemopal03",
+            "detailedType": "Gem",
+            "type": "Trade Good",
+            "source": "RareDrop",
+            "ilvl": 15,
+            "lvl": 1,
+            "amount": 1,
+            "maxStack": 20,
+            "price": 100
+          },
+          {
+            "x": 4,
+            "rarity": "Common",
+            "name": "Light Leather",
+            "icon": "itemmiscleatherscrap03",
+            "detailedType": "Leather",
+            "type": "Trade Good",
+            "source": "Profession",
+            "ilvl": 10,
+            "lvl": 1,
+            "amount": 2,
+            "maxStack": 20,
+            "price": 15
+          },
+          {
+            "y": 1,
+            "rarity": "Common",
+            "name": "Silverleaf",
+            "icon": "itemmischerb10",
+            "detailedType": "Flowers",
+            "type": "Trade Good",
+            "source": "RareDrop",
+            "ilvl": 5,
+            "lvl": 1,
+            "amount": 2,
+            "maxStack": 20,
+            "price": 10
+          },
+          {
+            "x": 2,
+            "rarity": "Common",
+            "name": "Ruined Leather Scraps",
+            "icon": "itemmiscpeltbearruin05",
+            "detailedType": "Organ",
+            "type": "Trade Good",
+            "source": "RareDrop",
+            "ilvl": 5,
+            "lvl": 1,
+            "amount": 4,
+            "maxStack": 20,
+            "price": 7
+          },
+          {
+            "x": 3,
+            "y": 1,
+            "rarity": "Common",
+            "name": "Minor Healing Potion",
+            "icon": "itempotion49",
+            "combatUse": true,
+            "detailedType": "Potion",
+            "type": "Miscellaneous",
+            "source": "Profession",
+            "ilvl": 5,
+            "amount": 2,
+            "maxStack": 5,
+            "abilities": {
+              "Minor Healing Potion": 1
+            },
+            "price": 5
+          }
+        ],
+        "bags": []
+      },
+      "mounts": [],
+      "equipment": {
+        "Main Hand": {
+          "rarity": "Common",
+          "name": "Worn Dagger",
+          "icon": "itemshortblade05",
+          "detailedType": "Dagger",
+          "type": "One Handed",
+          "ilvl": 2,
+          "lvl": 1,
+          "minPower": 1.06,
+          "maxPower": 1.12,
+          "amount": 1,
+          "maxStack": 1,
+          "price": 7
+        },
+        "Feet": {
+          "x": 2,
+          "rarity": "Common",
+          "name": "Soft Wool Boots",
+          "icon": "itemboots05",
+          "type": "Feet",
+          "armorClass": "Cloth",
+          "source": "Quest",
+          "ilvl": 5,
+          "lvl": 1,
+          "armor": 7,
+          "amount": 1,
+          "maxStack": 1,
+          "price": 7
+        },
+        "Legs": {
+          "rarity": "Poor",
+          "name": "Acolyte's Pants",
+          "icon": "itempants01",
+          "type": "Legs",
+          "armorClass": "Cloth",
+          "ilvl": 1,
+          "lvl": 1,
+          "armor": 2,
+          "amount": 1,
+          "maxStack": 1,
+          "price": 1
+        },
+        "Chest": {
+          "y": 1,
+          "rarity": "Common",
+          "name": "Light Magesmith Robe",
+          "icon": "itemchestcloth22",
+          "type": "Chest",
+          "armorClass": "Cloth",
+          "source": "RareDrop",
+          "ilvl": 4,
+          "lvl": 1,
+          "armor": 8,
+          "amount": 1,
+          "maxStack": 1,
+          "price": 6
+        },
+        "Waist": {
+          "x": 2,
+          "y": 1,
+          "rarity": "Common",
+          "name": "Soft Wool Belt",
+          "icon": "itembelt03",
+          "type": "Waist",
+          "armorClass": "Cloth",
+          "source": "Quest",
+          "ilvl": 5,
+          "lvl": 1,
+          "armor": 6,
+          "amount": 1,
+          "maxStack": 1,
+          "price": 5
+        }
+      },
+      "worldBuffs": [],
+      "health": 175,
+      "resources": {
+        "Earth": 0,
+        "Fire": 0,
+        "Air": 0,
+        "Water": 0,
+        "Frost": 0,
+        "Lightning": 0,
+        "Arcane": 0,
+        "Decay": 0,
+        "Order": 0,
+        "Shadow": 0
+      }
+    },
+    "hour": 8,
+    "minute": 29,
+    "second": 55,
+    "currentSite": "The Placid Dune",
+    "generatedBossPools": {
+      "<Forlorn Cloister>": "Fallen Champion",
+      "<Ring of Law>": "Eviscerator"
+    },
+    "markets": [
+      {
+        "name": "Alliance Market",
+        "auctions": [],
+        "hoursSinceUpdate": 25
+      },
+      {
+        "name": "Horde Market",
+        "auctions": [],
+        "hoursSinceUpdate": 25
+      }
+    ],
+    "openedChests": {
+      "Valley of Trials": {
+        "area": "Valley of Trials",
+        "inventory": {
+          "items": [],
+          "bags": [],
+          "ignoreSpaceChecks": true
+        }
+      }
+    },
+    "fishingSpots": {},
+    "fishingSpoils": {},
+    "siteProgress": {
+      "Valley of Trials": 7,
+      "Darkspear Strand": 1
+    },
+    "commonsKilled": {
+      "Mottled Boar": 3,
+      "Scorpid Worker": 4,
+      "Makrura Clacker": 1
+    },
+    "raresKilled": {},
+    "elitesKilled": {},
+    "siteVisits": {
+      "The Den": 8,
+      "Valley of Trials": 5,
+      "Sen'jin Village": 3,
+      "Echo Isles": 0,
+      "Zalazane Camp": 1,
+      "Darkspear Strand": 1,
+      "Orgrimmar": 3,
+      "The Placid Dune": 3,
+      "Razor Hill": 0,
+      "Rocky Desert": 2
+    },
+    "unlockedAreas": [],
+    "flags": {},
+    "vendorStock": {
+      "The Den:Kzan Thornslash": [
+        {
+          "item": "Bastard Sword",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Club",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Shortsword",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Short Staff",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Hand Axe",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Dirk",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Broad Axe",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Large Club",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+      ],
+      "The Drag:Kor'geld": [
+        {
+          "item": "Empty Vial",
+          "maxAmount": 2,
+          "minutesLeft": 17,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Leaded Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Recipe: Free Action Potion",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Crystal Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Recipe: Elixir of Superior Defense",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Imbued Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+      ]
+    },
+    "banks": {},
+    "buyback": {
+      "items": [],
+      "bags": [],
+      "ignoreSpaceChecks": true
+    },
+    "permadeath": {
+      "value": "False"
+    },
+    "classicItemStacking": {
+      "value": "False"
+    },
+    "automaticallyDecidedBossLoot": {
+      "value": "False"
+    },
+    "noOpenWorldOppositeFactionEncounters": {
+      "value": "False"
+    },
+    "startDate": "2025-09-03T12:18:02.1902436+02:00",
+    "lastLoaded": "2025-09-03T17:23:08.6657431+02:00",
+    "lastPlayed": "2025-09-03T17:23:14.1863448+02:00",
+    "timePlayed": "01:30:54.1185428"
   }
 ]

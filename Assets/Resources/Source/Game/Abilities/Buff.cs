@@ -46,7 +46,18 @@ public class Buff
     public List<Dictionary<string, string>> ranks;
 
     //Stats provided by this buff
-    public Dictionary<string, int> gains;
+    public Dictionary<string, string> gains;
+
+    //Provides stats offered by this buff but in a numerical form
+    public Dictionary<string, int> RankedGains(Dictionary<string, string> variables)
+    {
+        if (gains == null) return new();
+        var finalGains = new Dictionary<string, int>();
+        foreach (var gain in gains)
+            if (int.TryParse(gain.Value.StartsWith("#") ? variables[gain.Value] : gain.Value, out var newValue))
+                finalGains.Add(gain.Key, newValue);
+        return finalGains;
+    }
 
     //List of events this buff has
     //This is essentially all the buff's effects with it's triggerers that make them happen

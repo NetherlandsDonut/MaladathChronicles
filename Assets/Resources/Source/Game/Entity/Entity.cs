@@ -1,16 +1,15 @@
 using System;
-using System.Linq;
 using System.Collections.Generic;
-
-using UnityEngine;
+using System.Linq;
+using System.Reflection;
 using UnityEditor;
-
+using UnityEngine;
+using static Defines;
+using static Quest;
 using static Race;
 using static Root;
-using static Spec;
-using static Quest;
 using static Sound;
-using static Defines;
+using static Spec;
 
 public class Entity
 {
@@ -187,21 +186,21 @@ public class Entity
                 {
                     condition.amountDone = SaveGame.currentSave.raresKilled[race.name];
                     if (condition.amountDone > condition.amount) condition.amountDone = condition.amount;
-                    condition.status = "Done";
+                    if (condition.amountDone == condition.amount) condition.status = "Done";
                     changed = true;
                 }
                 else if (race.kind == "Elite" && SaveGame.currentSave.elitesKilled.ContainsKey(race.name))
                 {
                     condition.amountDone = SaveGame.currentSave.elitesKilled[race.name];
                     if (condition.amountDone > condition.amount) condition.amountDone = condition.amount;
-                    condition.status = "Done";
+                    if (condition.amountDone == condition.amount) condition.status = "Done";
                     changed = true;
                 }
                 else if (race.kind == "Common" && SaveGame.currentSave.commonsKilled.ContainsKey(race.name))
                 {
                     condition.amountDone = SaveGame.currentSave.commonsKilled[race.name];
                     if (condition.amountDone > condition.amount) condition.amountDone = condition.amount;
-                    condition.status = "Done";
+                    if (condition.amountDone == condition.amount) condition.status = "Done";
                     changed = true;
                 }
             }
@@ -1252,12 +1251,12 @@ public class Entity
         if (worldBuffs != null)
             foreach (var worldBuff in worldBuffs)
                 if (worldBuff.Buff.gains != null)
-                    foreach (var stat in worldBuff.Buff.gains)
+                    foreach (var stat in worldBuff.Buff.RankedGains(worldBuff.Buff.RankVariables(worldBuff.rank)))
                         stats.Inc(stat.Key, stat.Value);
         if (buffs != null)
             foreach (var buff in buffs)
                 if (buff.buff != null && buff.buff.gains != null)
-                    foreach (var stat in buff.buff.gains)
+                    foreach (var stat in buff.buff.RankedGains(buff.buff.RankVariables(buff.rank)))
                         stats.Inc(stat.Key, stat.Value);
         return stats;
     }
@@ -1323,6 +1322,34 @@ public class Entity
     #endregion
 
     #region Combat
+
+    public void PrintEntityTooltip()
+    {
+        AddHeaderGroup();
+        var width = 220;
+        SetAnchor(Anchor.Top, 0, -34);
+        //DisableShadows();
+        width = 228;
+        SetRegionGroupHeight(195);
+        SetRegionGroupWidth(width);
+        AddHeaderRegion(() =>
+        {
+            AddLine(name ?? race, "Gray");
+        });
+        AddPaddingRegion(() =>
+        {
+            var temp = Race();
+            var actionSet = currentActionSet != "Default" ? ActionSet.actionSets.Find(x => x.name == currentActionSet) : null;
+            if (spec != null) AddBigButton(actionSet != null && temp.side == "Horde" && actionSet.hordePortraitReplacement != null ? actionSet.hordePortraitReplacement : (actionSet != null && temp.side == "Alliance" && actionSet.alliancePortraitReplacement != null ? actionSet.alliancePortraitReplacement : ("Portrait" + race.Clean() + gender + portraitID)));
+            else AddBigButton(actionSet != null && temp.side == "Horde" && actionSet.hordePortraitReplacement != null ? actionSet.hordePortraitReplacement : (actionSet != null && temp.side == "Alliance" && actionSet.alliancePortraitReplacement != null ? actionSet.alliancePortraitReplacement : (temp.portrait == "" ? "OtherUnknown" : temp.portrait + (temp.genderedPortrait ? gender : ""))));
+            AddBigHealthBar(40, -19, this);
+            AddLine("Health: ", "DarkGray");
+            AddText(health + " / " + MaxHealth(), "Gray");
+            AddLine((int)((double)health / MaxHealth() * 100) + "", "Gray", "Right");
+        });
+        AddRegionGroup();
+        AddPaddingRegion(() => AddLine());
+    }
 
     //Play a sound by this entityin combat
     public string EnemyLine(string type)
@@ -1447,7 +1474,7 @@ public class Entity
         if (Board.board == null) return false;
         if (Board.board.participants == null) return false;
         var participant = Board.board.participants.Find(x => x.who == this);
-        var mindControlling = buffs.FindAll(x => x.buff.gains.Get("MindControl") > 0).OrderByDescending(x => x.buff.gains.Get("MindControl")).ToList();
+        var mindControlling = buffs.FindAll(x => x.buff.RankedGains(x.buff.RankVariables(x.rank)).Get("MindControl") > 0).OrderByDescending(x => x.buff.gains.Get("MindControl")).ToList();
         if (mindControlling.Count == 0) return participant.human;
         var strongestBuff = mindControlling[0];
         var controller = strongestBuff.source;
@@ -1460,7 +1487,7 @@ public class Entity
         if (Board.board == null) return false;
         if (Board.board.participants == null) return false;
         var participant = Board.board.participants.Find(x => x.who == this);
-        var mindControlling = buffs.FindAll(x => x.buff.gains.Get("MindControl") > 0).OrderByDescending(x => x.buff.gains.Get("MindControl")).ToList();
+        var mindControlling = buffs.FindAll(x => x.buff.RankedGains(x.buff.RankVariables(x.rank)).Get("MindControl") > 0).OrderByDescending(x => x.buff.gains.Get("MindControl")).ToList();
         if (mindControlling.Count == 0) return false;
         var strongestBuff = mindControlling[0];
         var controller = strongestBuff.source;

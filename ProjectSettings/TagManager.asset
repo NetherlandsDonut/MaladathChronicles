@@ -56,8 +56,8 @@ TagManager:
   - name: ScaledBars
     uniqueID: 2262292729
     locked: 0
-  - name: ScaledBarsSecond
-    uniqueID: 2180983635
+  - name: BorderCorners
+    uniqueID: 607516141
     locked: 0
   - name: DesktopBackgroundUpper
     uniqueID: 499479879
@@ -67,6 +67,12 @@ TagManager:
     locked: 0
   - name: Upper
     uniqueID: 143456597
+    locked: 0
+  - name: ScaledBarsUpper
+    uniqueID: 2588486615
+    locked: 0
+  - name: UpperBorderCorners
+    uniqueID: 232684243
     locked: 0
   - name: Missile
     uniqueID: 1043226619

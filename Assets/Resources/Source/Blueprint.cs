@@ -171,7 +171,7 @@ public class Blueprint
             var mask = boardBackground.GetComponent<SpriteMask>();
             mask.sprite = Resources.Load<Sprite>("Sprites/BoardFrames/BoardMask" + board.field.GetLength(0) + "x" + board.field.GetLength(1));
             mask.isCustomRangeActive = true;
-            mask.frontSortingLayerID = SortingLayer.NameToID("Missile");
+            mask.frontSortingLayerID = SortingLayer.NameToID("ScaledBarsUpper");
             mask.backSortingLayerID = SortingLayer.NameToID("Default");
             boardBackground = new GameObject("BoardInShadow", typeof(SpriteRenderer));
             boardBackground.transform.parent = CDesktop.LBWindow().transform;
@@ -249,7 +249,7 @@ public class Blueprint
                         if (abilityTargetted != null) FinishTargettingAbility(participant);
                         else ChangeSpotlight(index);
                     },
-                    (h) => ClearTargettingAbility());
+                    (h) => ClearTargettingAbility(), (h) => () => participant.who.PrintEntityTooltip());
                     if (participant.who.IsStealthed())
                     {
                         var button = CDesktop.LBWindow().LBRegionGroup().LBRegion().LBBigButton().gameObject;
@@ -270,7 +270,8 @@ public class Blueprint
                     if (abilityTargetted != null) FinishTargettingAbility(participant);
                     else ChangeSpotlight(index);
                 },
-                (h) => ClearTargettingAbility());
+                (h) => ClearTargettingAbility(),
+                (h) => () => participant.who.PrintEntityTooltip());
                 foreach (var actionBar in participant.who.actionSets[participant.who.currentActionSet])
                 {
                     var abilityObj = abilities.Find(x => x.name == actionBar);
@@ -388,15 +389,15 @@ public class Blueprint
                             if (abilityTargetted != null) FinishTargettingAbility(participant);
                             else ChangeSpotlight(index);
                         },
-                        (h) => ClearTargettingAbility());
+                        (h) => ClearTargettingAbility(), (h) => () => participant.who.PrintEntityTooltip());
                     else
                     {
-                        AddBigButton(actionSet != null && race.side == "Horde" && actionSet.hordePortraitReplacement != null ? actionSet.hordePortraitReplacement : (actionSet != null && race.side == "Alliance" && actionSet.alliancePortraitReplacement != null ? actionSet.alliancePortraitReplacement : (race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? board.participants[board.team1[0]].who.gender : ""))), (h) =>
+                        AddBigButton(actionSet != null && race.side == "Horde" && actionSet.hordePortraitReplacement != null ? actionSet.hordePortraitReplacement : (actionSet != null && race.side == "Alliance" && actionSet.alliancePortraitReplacement != null ? actionSet.alliancePortraitReplacement : (race.portrait == "" ? "OtherUnknown" : race.portrait + (race.genderedPortrait ? participant.who.gender : ""))), (h) =>
                         {
                             if (abilityTargetted != null) FinishTargettingAbility(board.participants[board.team1[index]]);
                             else ChangeSpotlight(index);
                         },
-                        (h) => ClearTargettingAbility());
+                        (h) => ClearTargettingAbility(), (h) => () => participant.who.PrintEntityTooltip());
                     }
                     if (participant.who.IsStealthed())
                     {
@@ -418,7 +419,8 @@ public class Blueprint
                     if (abilityTargetted != null) FinishTargettingAbility(participant);
                     else ChangeSpotlight(index);
                 },
-                (h) => ClearTargettingAbility());
+                (h) => ClearTargettingAbility(),
+                (h) => () => participant.who.PrintEntityTooltip());
                 foreach (var actionBar in participant.who.actionSets[participant.who.currentActionSet])
                 {
                     var abilityObj = abilities.Find(x => x.name == actionBar);
@@ -521,12 +523,17 @@ public class Blueprint
                 board.temporaryBuffs[temp].ForEach(x => x.GetComponent<FlyingBuff>().InstantMove());
             }
         }),
-        new("PlayerQuickUse", () => {
-            SetAnchor(Bottom, 0, 9);
+        new("ItemQuickUse", () => {
             var entity = board.participants[board.whosTurn].who;
-            if (entity.inventory.items.FindAll(x => x.combatUse).Count == 0) return;
+            if (entity.inventory.items.FindAll(x => x.combatUse).Count == 0)
+            {
+                SetAnchor(Bottom, 0, -31);
+                AddRegionGroup();
+                AddPaddingRegion(() => AddLine("No items here :3"));
+            }
             else
             {
+                SetAnchor(Bottom, 0, 7);
                 AddRegionGroup();
                 AddPaddingRegion(() =>
                 {
@@ -3744,6 +3751,7 @@ public class Blueprint
                                 },
                                 (h) =>
                                 {
+                                    quest = null;
                                     Person.person = person;
                                     CloseWindow(h.window.title);
                                     Respawn("Person");
@@ -3772,6 +3780,7 @@ public class Blueprint
                             },
                             (h) =>
                             {
+                                quest = null;
                                 personCategory = null;
                                 Person.person = person;
                                 CloseWindow(h.window.title);
@@ -4307,6 +4316,7 @@ public class Blueprint
                 AddSmallButton("OtherReverse",
                 (h) =>
                 {
+                    quest = null;
                     personCategory = null;
                     CloseWindow(h.window.title);
                     Respawn("Area");
@@ -4333,6 +4343,7 @@ public class Blueprint
                 },
                 (h) =>
                 {
+                    quest = null;
                     Person.person = person;
                     Respawn("Person");
                     CloseWindow("Complex");
@@ -6171,7 +6182,7 @@ public class Blueprint
                                     }
                                     else SpawnFallingText(new Vector2(0, 34), "Not enough money", "Red");
                                 }
-                                else SpawnFallingText(new Vector2(0, 34), "Level too low", "Red");
+                                else SpawnFallingText(new Vector2(0, 34), "You don't meet the level requirements", "Red");
                             },
                             null,
                             (h) => () =>
@@ -6408,6 +6419,7 @@ public class Blueprint
                 CloseDesktop("CharacterSheet");
                 if (WindowUp("QuestList"))
                 {
+                    quest = null;
                     RemoveDesktopBackground();
                     CloseWindow("QuestList");
                     CloseWindow("QuestSettings");
@@ -6425,9 +6437,7 @@ public class Blueprint
                 else
                 {
                     CloseDesktop(CDesktop.title);
-                    SwitchDesktop("Area");
-                    SwitchDesktop("Instance");
-                    SwitchDesktop("Complex");
+                    SwitchToMostImportantDesktop();
                     PlaySound("DesktopTalentScreenClose");
                 }
             });
@@ -6440,6 +6450,7 @@ public class Blueprint
                 CloseDesktop("CharacterSheet");
                 if (WindowUp("QuestList"))
                 {
+                    quest = null;
                     RemoveDesktopBackground();
                     CloseWindow("QuestList");
                     CloseWindow("QuestSettings");
@@ -6454,9 +6465,7 @@ public class Blueprint
                 else
                 {
                     CloseDesktop(CDesktop.title);
-                    SwitchDesktop("Area");
-                    SwitchDesktop("Instance");
-                    SwitchDesktop("Complex");
+                    SwitchToMostImportantDesktop();
                     PlaySound("DesktopSpellbookClose");
                 }
             });
@@ -6469,6 +6478,7 @@ public class Blueprint
                 CloseDesktop("CharacterSheet");
                 if (WindowUp("QuestList"))
                 {
+                    quest = null;
                     RemoveDesktopBackground();
                     CloseWindow("QuestList");
                     CloseWindow("QuestSettings");
@@ -6485,9 +6495,7 @@ public class Blueprint
                     else
                     {
                         CloseDesktop(CDesktop.title);
-                        SwitchDesktop("Area");
-                        SwitchDesktop("Instance");
-                        SwitchDesktop("Complex");
+                        SwitchToMostImportantDesktop();
                         PlaySound("DesktopInventoryClose");
                     }
                 }
@@ -6501,6 +6509,7 @@ public class Blueprint
                 CloseDesktop("CharacterSheet");
                 if (WindowUp("QuestList"))
                 {
+                    quest = null;
                     RemoveDesktopBackground();
                     CloseWindow("QuestList");
                     CloseWindow("QuestSettings");
@@ -6515,9 +6524,7 @@ public class Blueprint
                 else
                 {
                     CloseDesktop(CDesktop.title);
-                    SwitchDesktop("Area");
-                    SwitchDesktop("Instance");
-                    SwitchDesktop("Complex");
+                    SwitchToMostImportantDesktop();
                     PlaySound("DesktopInstanceClose");
                 }
             });
@@ -6530,6 +6537,7 @@ public class Blueprint
                 CloseDesktop("CharacterSheet");
                 if (WindowUp("QuestList"))
                 {
+                    quest = null;
                     RemoveDesktopBackground();
                     CloseWindow("QuestList");
                     CloseWindow("QuestSettings");
@@ -6544,9 +6552,7 @@ public class Blueprint
                 else
                 {
                     CloseDesktop(CDesktop.title);
-                    SwitchDesktop("Area");
-                    SwitchDesktop("Instance");
-                    SwitchDesktop("Complex");
+                    SwitchToMostImportantDesktop();
                     PlaySound("DesktopSpellbookClose");
                 }
             });
@@ -6559,6 +6565,7 @@ public class Blueprint
                 CloseDesktop("CraftingScreen");
                 if (WindowUp("QuestList"))
                 {
+                    quest = null;
                     RemoveDesktopBackground();
                     CloseWindow("QuestList");
                     CloseWindow("QuestSettings");
@@ -6573,9 +6580,7 @@ public class Blueprint
                 else
                 {
                     CloseDesktop(CDesktop.title);
-                    SwitchDesktop("Area");
-                    SwitchDesktop("Instance");
-                    SwitchDesktop("Complex");
+                    SwitchToMostImportantDesktop();
                     PlaySound("DesktopCharacterSheetClose");
                 }
             });
@@ -6590,6 +6595,7 @@ public class Blueprint
                 SwitchDesktop("Map");
                 if (WindowUp("QuestList"))
                 {
+                    quest = null;
                     PlaySound("DesktopSpellbookClose");
                     RemoveDesktopBackground();
                     CloseWindow("QuestList");
@@ -6600,9 +6606,8 @@ public class Blueprint
                     CloseWindow("QuestTurn");
                     CloseWindow("QuestConfirmAbandon");
                     Respawn("WorldBuffs");
-                    SwitchDesktop("Area");
-                    SwitchDesktop("Instance");
-                    SwitchDesktop("Complex");
+                    SwitchToMostImportantDesktop();
+                    SwitchDesktop("CombatResults");
                 }
                 else
                 {
@@ -6628,6 +6633,7 @@ public class Blueprint
                     CloseDesktop("CraftingScreen");
                     if (WindowUp("QuestList"))
                     {
+                        quest = null;
                         RemoveDesktopBackground();
                         CloseWindow("QuestList");
                         CloseWindow("QuestSettings");
@@ -6642,9 +6648,7 @@ public class Blueprint
                     else
                     {
                         CloseDesktop(CDesktop.title);
-                        SwitchDesktop("Area");
-                        SwitchDesktop("Instance");
-                        SwitchDesktop("Complex");
+                        SwitchToMostImportantDesktop();
                         PlaySound("DesktopCharacterSheetClose");
                     }
                 });
@@ -6658,6 +6662,7 @@ public class Blueprint
                         CloseDesktop("CharacterSheet");
                         if (WindowUp("QuestList"))
                         {
+                            quest = null;
                             RemoveDesktopBackground();
                             CloseWindow("QuestList");
                             CloseWindow("QuestSettings");
@@ -6673,9 +6678,7 @@ public class Blueprint
                             else
                             {
                                 CloseDesktop(CDesktop.title);
-                                SwitchDesktop("Area");
-                                SwitchDesktop("Instance");
-                                SwitchDesktop("Complex");
+                                SwitchToMostImportantDesktop();
                                 PlaySound("DesktopInventoryClose");
                             }
                     });
@@ -6689,6 +6692,7 @@ public class Blueprint
                     CloseDesktop("CharacterSheet");
                     if (WindowUp("QuestList"))
                     {
+                        quest = null;
                         RemoveDesktopBackground();
                         CloseWindow("QuestList");
                         CloseWindow("QuestSettings");
@@ -6703,9 +6707,7 @@ public class Blueprint
                     else
                     {
                         CloseDesktop(CDesktop.title);
-                        SwitchDesktop("Area");
-                        SwitchDesktop("Instance");
-                        SwitchDesktop("Complex");
+                        SwitchToMostImportantDesktop();
                         PlaySound("DesktopSpellbookClose");
                     }
                 });
@@ -6718,6 +6720,7 @@ public class Blueprint
                     CloseDesktop("CharacterSheet");
                     if (WindowUp("QuestList"))
                     {
+                        quest = null;
                         RemoveDesktopBackground();
                         CloseWindow("QuestList");
                         CloseWindow("QuestSettings");
@@ -6735,9 +6738,7 @@ public class Blueprint
                     else
                     {
                         CloseDesktop(CDesktop.title);
-                        SwitchDesktop("Area");
-                        SwitchDesktop("Instance");
-                        SwitchDesktop("Complex");
+                        SwitchToMostImportantDesktop();
                         PlaySound("DesktopTalentScreenClose");
                     }
                 });
@@ -6752,6 +6753,7 @@ public class Blueprint
                     SwitchDesktop("Map");
                     if (WindowUp("QuestList"))
                     {
+                        quest = null;
                         PlaySound("DesktopSpellbookClose");
                         RemoveDesktopBackground();
                         CloseWindow("QuestList");
@@ -6762,9 +6764,7 @@ public class Blueprint
                         CloseWindow("QuestTurn");
                         CloseWindow("QuestConfirmAbandon");
                         Respawn("WorldBuffs");
-                        SwitchDesktop("Area");
-                        SwitchDesktop("Instance");
-                        SwitchDesktop("Complex");
+                        SwitchToMostImportantDesktop();
                     }
                     else
                     {
@@ -6785,6 +6785,7 @@ public class Blueprint
                     CloseDesktop("CharacterSheet");
                     if (WindowUp("QuestList"))
                     {
+                        quest = null;
                         RemoveDesktopBackground();
                         CloseWindow("QuestList");
                         CloseWindow("QuestSettings");
@@ -6799,9 +6800,7 @@ public class Blueprint
                     else
                     {
                         CloseDesktop(CDesktop.title);
-                        SwitchDesktop("Area");
-                        SwitchDesktop("Instance");
-                        SwitchDesktop("Complex");
+                        SwitchToMostImportantDesktop();
                         PlaySound("DesktopSpellbookClose");
                     }
                 });
@@ -6814,6 +6813,7 @@ public class Blueprint
                     CloseDesktop("CharacterSheet");
                     if (WindowUp("QuestList"))
                     {
+                        quest = null;
                         RemoveDesktopBackground();
                         CloseWindow("QuestList");
                         CloseWindow("QuestSettings");
@@ -6828,9 +6828,7 @@ public class Blueprint
                     else
                     {
                         CloseDesktop(CDesktop.title);
-                        SwitchDesktop("Area");
-                        SwitchDesktop("Instance");
-                        SwitchDesktop("Complex");
+                        SwitchToMostImportantDesktop();
                         PlaySound("DesktopInstanceClose");
                     }
                 });
@@ -8526,299 +8524,36 @@ public class Blueprint
     //List of all desktop blueprints that serve as playground for windows
     public static List<Blueprint> desktopBlueprints = new()
     {
-        new("TitleScreen", () => 
+        new("GameMenu", () =>
         {
-            StopAmbience(false);
-            PlayMusic(new() { "MusicMainScreen" }, 0.2f, true);
-            if (firstLaunch)
-            {
-                firstLaunch = false;
-                SpawnWindowBlueprint("TitleScreenFirstLaunch");
-            }
-            else SpawnWindowBlueprint("TitleScreenMenu");
-            AddHotkey("Open console", () =>
-            {
-                if (debug && SpawnWindowBlueprint("Console") != null)
-                {
-                    PlaySound("DesktopTooltipShow", 0.4f);
-                    CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
-                }
-            });
+            SetDesktopBackground("Backgrounds/StoneFull");
+            SpawnWindowBlueprint("GameMenu");
             AddHotkey("Open menu / Back", () =>
             {
-                if (CloseWindow("GameSettings"))
+                if (CloseWindow("Settings"))
                 {
                     PlaySound("DesktopButtonClose");
-                    SpawnWindowBlueprint("TitleScreenMenu");
-                }
-                else if (CloseWindow("TitleScreenFirstLaunch"))
-                {
-                    Serialization.Serialize(settings, "settings", false, false, Serialization.prefix);
-                    PlaySound("DesktopButtonClose");
-                    SpawnWindowBlueprint("TitleScreenMenu");
+                    SpawnWindowBlueprint("GameMenu");
                 }
                 else if (CloseWindow("GameKeybinds"))
                 {
                     PlaySound("DesktopButtonClose");
-                    SpawnWindowBlueprint("TitleScreenMenu");
-                }
-                else if (CloseWindow("TitleScreenSingleplayer"))
-                {
-                    CloseWindow("TitleScreenContinue");
-                    PlaySound("DesktopButtonClose");
-                    SpawnWindowBlueprint("TitleScreenMenu");
-                }
-            });
-        }),
-        new("LoginScreen", () => 
-        {
-            SpawnWindowBlueprint("CharacterRoster");
-            SpawnWindowBlueprint("CharacterInfo");
-            AddHotkey("Open console", () =>
-            {
-                if (debug && SpawnWindowBlueprint("Console") != null)
-                {
-                    PlaySound("DesktopTooltipShow", 0.4f);
-                    CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
-                }
-            });
-            AddHotkey("Open menu / Back", () =>
-            {
-                if (CloseWindow("ConfirmDeleteCharacter"))
-                {
-                    PlaySound("DesktopButtonClose");
-                    CDesktop.RespawnAll();
+                    SpawnWindowBlueprint("GameMenu");
                 }
                 else
                 {
-                    PlaySound("DesktopButtonClose");
-                    CloseDesktop("LoginScreen");
-                }
-            });
-        }),
-        new("ChangeRealm", () => 
-        {
-            SetDesktopBackground("Backgrounds/Sky");
-            SpawnWindowBlueprint("RealmRoster");
-            AddHotkey("Open console", () =>
-            {
-                if (debug && SpawnWindowBlueprint("Console") != null)
-                {
-                    PlaySound("DesktopTooltipShow", 0.4f);
-                    CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
-                }
-            });
-            AddHotkey("Open menu / Back", () =>
-            {
-                PlaySound("DesktopButtonClose");
-                CloseDesktop("ChangeRealm");
-                CloseDesktop("LoginScreen");
-                SpawnDesktopBlueprint("LoginScreen");
-            });
-        }),
-        new("Map", () => 
-        {
-            PlaySound("DesktopOpenSave", 0.3f);
-            var find = FindSite(x => x.name == currentSave.currentSite);
-            if (find != null) CDesktop.cameraDestination = new Vector2(find.x, find.y);
-            Cursor.cursor.transform.position += (Vector3)CDesktop.cameraDestination - CDesktop.screen.transform.position;
-            CDesktop.screen.transform.localPosition = CDesktop.cameraDestination;
-            SetDesktopBackground("LoadingScreens/" + (CDesktop.cameraDestination.x < 2470 ? "Kalimdor" : "EasternKingdoms"));
-            loadingBar = new GameObject[2];
-            loadingBar[0] = new GameObject("LoadingBarBegin", typeof(SpriteRenderer));
-            loadingBar[0].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/LoadingBarEnd");
-            loadingBar[0].transform.position = new Vector3(-1171, 854);
-            loadingBar[1] = new GameObject("LoadingBar", typeof(SpriteRenderer));
-            loadingBar[1].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/LoadingBarStretch");
-            loadingBar[1].transform.position = new Vector3(-1168, 854);
-            OrderLoadingMap();
-            AddHotkey("Move camera north", () => { MoveCamera(new Vector2(0, Eueler())); }, false, false);
-            AddHotkey("Move camera west", () => { MoveCamera(new Vector2(-Eueler(), 0)); }, false, false);
-            AddHotkey("Move camera south", () => { MoveCamera(new Vector2(0, -Eueler())); }, false, false);
-            AddHotkey("Move camera east", () => { MoveCamera(new Vector2(Eueler(), 0)); }, false, false);
-            AddHotkey(UpArrow, () =>
-            {
-                if (!debug) return;
-                var site = FindSite(x => x.name == currentSave.currentSite);
-                site.y += (int)Math.Sqrt(Eueler());
-                var find = windowBlueprints.Find(x => x.title == "Site: " + site.name);
-                windowBlueprints.Remove(find);
-                windowBlueprints.Add(new Blueprint("Site: " + site.name, () => site.PrintSite()));
-                CloseWindow("Site: " + site.name);
-                SpawnWindowBlueprint("Site: " + site.name);
-            }, false);
-            AddHotkey(LeftArrow, () =>
-            {
-                if (!debug) return;
-                var site = FindSite(x => x.name == currentSave.currentSite);
-                site.x -= (int)Math.Sqrt(Eueler());
-                var find = windowBlueprints.Find(x => x.title == "Site: " + site.name);
-                windowBlueprints.Add(new Blueprint("Site: " + site.name, () => site.PrintSite()));
-                CloseWindow("Site: " + site.name);
-                SpawnWindowBlueprint("Site: " + site.name);
-            }, false);
-            AddHotkey(DownArrow, () =>
-            {
-                if (!debug) return;
-                var site = FindSite(x => x.name == currentSave.currentSite);
-                site.y -= (int)Math.Sqrt(Eueler());
-                var find = windowBlueprints.Find(x => x.title == "Site: " + site.name);
-                windowBlueprints.Add(new Blueprint("Site: " + site.name, () => site.PrintSite()));
-                CloseWindow("Site: " + site.name);
-                SpawnWindowBlueprint("Site: " + site.name);
-            }, false);
-            AddHotkey(RightArrow, () =>
-            {
-                if (!debug) return;
-                var site = FindSite(x => x.name == currentSave.currentSite);
-                site.x += (int)Math.Sqrt(Eueler());
-                var find = windowBlueprints.Find(x => x.title == "Site: " + site.name);
-                windowBlueprints.Add(new Blueprint("Site: " + site.name, () => site.PrintSite()));
-                CloseWindow("Site: " + site.name);
-                SpawnWindowBlueprint("Site: " + site.name);
-            }, false);
-            AddHotkey("Open menu / Back", () =>
-            {
-                if (CloseWindow("QuestSort"))
-                {
-                    SetDesktopBackground("Backgrounds/RuggedLeather", true, true);
-                    PlaySound("DesktopInstanceClose");
-                    Respawn("Quest", true);
-                    Respawn("QuestList");
-                }
-                else if (CloseWindow("QuestSettings"))
-                {
-                    SetDesktopBackground("Backgrounds/RuggedLeather", true, true);
-                    PlaySound("DesktopInstanceClose");
-                    Respawn("Quest", true);
-                    Respawn("QuestList");
-                }
-                else if (CloseWindow("QuestConfirmAbandon"))
-                {
-                    SetDesktopBackground("Backgrounds/RuggedLeather", true, true);
                     PlaySound("DesktopMenuClose");
-                    Respawn("Quest", true);
-                    Respawn("QuestList");
-                }
-                else if (CloseWindow("Quest"))
-                {
-                    quest = null;
-                    Respawn("QuestList");
-                    PlaySound("DesktopInstanceClose");
-                }
-                else if (CloseWindow("QuestList"))
-                {
-                    PlaySound("DesktopSpellbookClose");
-                    RemoveDesktopBackground();
-                    Respawn("MapToolbar");
-                    Respawn("WorldBuffs");
-                    SwitchDesktop("Area");
-                    SwitchDesktop("Instance");
-                    SwitchDesktop("Complex");
-                }
-                else
-                {
-                    PlaySound("DesktopMenuOpen", 0.6f);
-                    SpawnDesktopBlueprint("GameMenu");
-                }
-            });
-            AddHotkey(Delete, () =>
-            {
-                if (sitePathBuilder != null)
-                {
-                    UnityEngine.Object.Destroy(pathTest.Item2);
-                    sitePathBuilder = null;
-                }
-            });
-            AddHotkey("Open console", () =>
-            {
-                if (debug && SpawnWindowBlueprint("Console") != null)
-                {
-                    PlaySound("DesktopTooltipShow", 0.4f);
-                    CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
-                }
-            });
-            AddHotkey("Focus camera on player", () =>
-            {
-                var whereTo = FindSite(x => x.name == currentSave.currentSite);
-                CDesktop.cameraDestination = new Vector2(whereTo.x, whereTo.y);
-            }, false);
-
-            void MoveCamera(Vector2 amount)
-            {
-                if (WindowUp("QuestList")) return;
-                var temp = CDesktop.cameraDestination + amount * 2;
-                CDesktop.cameraDestination = new Vector2(temp.x, temp.y);
-            }
-        }),
-        new("CombatResults", () => 
-        {
-            SetDesktopBackground(board.area.Background());
-            SpawnWindowBlueprint("MapToolbarShadow");
-            SpawnWindowBlueprint("MapToolbarClockLeft");
-            SpawnWindowBlueprint("MapToolbar");
-            SpawnWindowBlueprint("MapToolbarClockRight");
-            SpawnWindowBlueprint("CombatResults");
-            SpawnWindowBlueprint("CombatResultsChartButton");
-            SpawnWindowBlueprint("CombatResultsMining");
-            SpawnWindowBlueprint("CombatResultsHerbalism");
-            SpawnWindowBlueprint("CombatResultsSkinning1");
-            SpawnWindowBlueprint("CombatResultsSkinning2");
-            SpawnWindowBlueprint("CombatResultsSkinning3");
-            SpawnWindowBlueprint("ExperienceBarBorder");
-            SpawnWindowBlueprint("ExperienceBar");
-            AddHotkey("Open menu / Back", () =>
-            {
-                if (board.results.result == "Team1Won")
-                {
-                    PlaySound("DesktopInstanceClose");
-                    CloseDesktop("CombatResults");
-                    board = null;
-                    Respawn("ExperienceBar", true);
-                    Respawn("AreaElites");
+                    CloseDesktop("GameMenu");
+                    if (CDesktop.title == "EquipmentScreen")
+                    {
+                        Respawn("PlayerEquipmentInfo");
+                        Respawn("PlayerWeaponsInfo");
+                        Respawn("Inventory");
+                    }
                 }
             });
         }),
-        new("CombatLog", () => 
-        {
-            SetDesktopBackground(board.area.Background());
-            SpawnWindowBlueprint("MapToolbarShadow");
-            SpawnWindowBlueprint("MapToolbarClockLeft");
-            SpawnWindowBlueprint("MapToolbar");
-            SpawnWindowBlueprint("MapToolbarClockRight");
-            SpawnWindowBlueprint("CombatResultsChart");
-            SpawnWindowBlueprint("CombatResultsChartLeftArrow");
-            SpawnWindowBlueprint("CombatResultsChartRightArrow");
-            FillChart();
-            SpawnWindowBlueprint("ExperienceBarBorder");
-            SpawnWindowBlueprint("ExperienceBar");
-            AddHotkey("Move camera west", () =>
-            {
-                PlaySound("DesktopChartSwitch");
-                if (chartPage == "Damage Taken") chartPage = "Damage Dealt";
-                else if (chartPage == "Healing Received") chartPage = "Damage Taken";
-                else if (chartPage == "Elements Used") chartPage = "Healing Received";
-                else if (chartPage == "Damage Dealt") chartPage = "Elements Used";
-                CloseDesktop("CombatLog");
-                SpawnDesktopBlueprint("CombatLog");
-            });
-            AddHotkey("Move camera east", () =>
-            {
-                PlaySound("DesktopChartSwitch");
-                if (chartPage == "Damage Dealt") chartPage = "Damage Taken";
-                else if (chartPage == "Damage Taken") chartPage = "Healing Received";
-                else if (chartPage == "Healing Received") chartPage = "Elements Used";
-                else if (chartPage == "Elements Used") chartPage = "Damage Dealt";
-                CloseDesktop("CombatLog");
-                SpawnDesktopBlueprint("CombatLog");
-            });
-            AddHotkey("Open menu / Back", () =>
-            {
-                PlaySound("DesktopInstanceClose");
-                CloseDesktop("CombatLog");
-            });
-        }),
-        new("CombatResultsLoot", () => 
+        new("CombatResultsLoot", () =>
         {
             SetDesktopBackground(board.area.Background());
             SpawnWindowBlueprint("MapToolbarShadow");
@@ -8849,7 +8584,7 @@ public class Blueprint
                 }
             });
         }),
-        new("ContainerLoot", () => 
+        new("ContainerLoot", () =>
         {
             SetDesktopBackground("Backgrounds/Leather");
             SpawnWindowBlueprint("MapToolbarShadow");
@@ -8882,7 +8617,7 @@ public class Blueprint
                 }
             });
         }),
-        new("MiningLoot", () => 
+        new("MiningLoot", () =>
         {
             SetDesktopBackground(board.area.Background());
             SpawnWindowBlueprint("MiningLoot");
@@ -8923,7 +8658,7 @@ public class Blueprint
                 }
             });
         }),
-        new("HerbalismLoot", () => 
+        new("HerbalismLoot", () =>
         {
             SetDesktopBackground(board.area.Background());
             SpawnWindowBlueprint("HerbalismLoot");
@@ -8964,7 +8699,7 @@ public class Blueprint
                 }
             });
         }),
-        new("SkinningLoot", () => 
+        new("SkinningLoot", () =>
         {
             SetDesktopBackground(board.area.Background());
             SpawnWindowBlueprint("SkinningLoot");
@@ -9007,7 +8742,7 @@ public class Blueprint
                 }
             });
         }),
-        new("ChestLoot", () => 
+        new("ChestLoot", () =>
         {
             SetDesktopBackground(area.Background());
             SpawnWindowBlueprint("MapToolbarShadow");
@@ -9038,7 +8773,7 @@ public class Blueprint
                 }
             });
         }),
-        new("DisenchantLoot", () => 
+        new("DisenchantLoot", () =>
         {
             SetDesktopBackground("Backgrounds/Leather");
             SpawnWindowBlueprint("DisenchantLoot");
@@ -9079,177 +8814,167 @@ public class Blueprint
                 }
             });
         }),
-        new("Area", () => 
+        new("CombatLog", () =>
         {
-            personCategory = null;
-            SetDesktopBackground(area.Background());
-            if (currentSave.player.Reputation(area.faction) >= ReputationRankToAmount("Neutral"))
+            SetDesktopBackground(board.area.Background());
+            SpawnWindowBlueprint("MapToolbarShadow");
+            SpawnWindowBlueprint("MapToolbarClockLeft");
+            SpawnWindowBlueprint("MapToolbar");
+            SpawnWindowBlueprint("MapToolbarClockRight");
+            SpawnWindowBlueprint("CombatResultsChart");
+            SpawnWindowBlueprint("CombatResultsChartLeftArrow");
+            SpawnWindowBlueprint("CombatResultsChartRightArrow");
+            FillChart();
+            SpawnWindowBlueprint("ExperienceBarBorder");
+            SpawnWindowBlueprint("ExperienceBar");
+            AddHotkey("Move camera west", () =>
             {
-                SpawnWindowBlueprint("Area");
-                AddHotkey(Tab, () =>
-                {
-                    if (CloseWindow("Vendor"))
-                    {
-                        PlaySound("VendorSwitchTab");
-                        Respawn("VendorBuyback");
-                    }
-                    else if (CloseWindow("VendorBuyback"))
-                    {
-                        PlaySound("VendorSwitchTab");
-                        Respawn("Vendor");
-                    }
-                });
-                AddHotkey("Open menu / Back", () =>
-                {
-                    if (CloseWindow("AreaQuestTracker"))
-                    {
-                        PlaySound("DesktopButtonClose");
-                        Respawn("Area");
-                        Respawn("AreaQuestAvailable");
-                    }
-                    else if (CloseWindow("QuestAdd") || CloseWindow("QuestTurn"))
-                    {
-                        PlaySound("DesktopButtonClose");
-                        Respawn("Area");
-                        Respawn("AreaQuestAvailable");
-                        Respawn("AreaQuestDone");
-                        Respawn("Complex");
-                        Respawn("PlayerMoney");
-                    }
-                    else if (CloseWindow("BankSort"))
-                    {
-                        PlaySound("DesktopInstanceClose");
-                    }
-                    else if (CloseWindow("MountCollection"))
-                    {
-                        PlaySound("DesktopInstanceClose");
-                        CloseWindow("CurrentMount");
-                        Respawn("Person");
-                    }
-                    else if (CloseWindow("Inventory"))
-                    {
-                        PlaySound("DesktopInventoryClose");
-                        CloseWindow("Bank");
-                        if (CloseWindow("Vendor"))
-                            PlaySound("DesktopCharacterSheetClose");
-                        CloseWindow("VendorBuyback");
-                        Respawn("PlayerMoney");
-                        Respawn("Person");
-                    }
-                    else if (CloseWindow("MakeInnHome"))
-                    {
-                        PlaySound("DesktopInstanceClose");
-                        CloseWindow("MakeInnHome");
-                        Respawn("Person");
-                    }
-                    else if (CloseWindow("FlightMaster"))
-                    {
-                        PlaySound("DesktopMenuClose");
-                        Respawn("Person");
-                    }
-                    else if (CloseWindow("ProfessionRecipeTrainer"))
-                    {
-                        PlaySound("DesktopInstanceClose");
-                        CloseWindow("ProfessionRecipeTrainer");
-                        Respawn("Person");
-                    }
-                    else if (CloseWindow("ProfessionLevelTrainer"))
-                    {
-                        PlaySound("DesktopInstanceClose");
-                        CloseWindow("ProfessionLevelTrainer");
-                        Respawn("Person");
-                    }
-                    else if (CloseWindow("AuctionHouseFilteringTwoHandedWeapons") || CloseWindow("AuctionHouseFilteringOneHandedWeapons") || CloseWindow("AuctionHouseFilteringOffHands") || CloseWindow("AuctionHouseFilteringRangedWeapons") || CloseWindow("AuctionHouseFilteringArmorClass") || CloseWindow("AuctionHouseFilteringArmorType") || CloseWindow("AuctionHouseFilteringJewelry") || CloseWindow("AuctionHouseFilteringConsumeables"))
-                    {
-                        auctionCategory = "";
-                        UpdateAuctionGroupList();
-                        Respawn("AuctionHouseOffersGroups", true);
-                        Respawn("AuctionHouseFilteringMain");
-                        for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
-                    }
-                    else if (CloseWindow("AuctionHouseOffersGroups"))
-                    {
-                        PlaySound("DesktopInstanceClose");
-                        CloseWindow("AuctionHouseFilteringMain");
-                        CloseWindow("AuctionHouseFilteringTwoHandedWeapons");
-                        CloseWindow("AuctionHouseFilteringOneHandedWeapons");
-                        CloseWindow("AuctionHouseFilteringOffHands");
-                        CloseWindow("AuctionHouseFilteringRangedWeapons");
-                        CloseWindow("AuctionHouseFilteringArmorClass");
-                        CloseWindow("AuctionHouseFilteringArmorType");
-                        CloseWindow("AuctionHouseFilteringJewelry");
-                        CloseWindow("AuctionHouseFilteringConsumeables");
-                        for (int i = 0; i < 12; i++) { var index = i; CloseWindow("AuctionHousePrice" + index); }
-                        Respawn("Person");
-                    }
-                    else if (CloseWindow("AuctionHouseOffers"))
-                    {
-                        CloseWindow("AuctionHouseOffers");
-                        CloseWindow("AuctionHouseBuy");
-                        CloseWindow("AuctionHouseChosenItem");
-                        Respawn("AuctionHouseOffersGroups");
-                        for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
-                        PlaySound("DesktopInstanceClose");
-                    }
-                    else if (CloseWindow("Person"))
-                    {
-                        PlaySound("DesktopInstanceClose");
-                        person = null;
-                        if (personCategory != null) Respawn("Persons");
-                        else CloseWindow("Persons");
-                        Respawn("Area");
-                        Respawn("Complex");
-                        Respawn("Quest");
-                        Respawn("QuestAdd");
-                        Respawn("QuestTurn");
-                        Respawn("AreaQuestAvailable");
-                        Respawn("AreaQuestDone");
-                        if (!WindowUp("Persons"))
-                        {
-                            Respawn("AreaProgress");
-                            Respawn("AreaElites");
-                            Respawn("Chest");
-                        }
-                    }
-                    else if (CloseWindow("Persons"))
-                    {
-                        PlaySound("DesktopInstanceClose");
-                        personCategory = null;
-                        Respawn("Area");
-                        Respawn("Complex");
-                        Respawn("Quest");
-                        Respawn("QuestAdd");
-                        Respawn("QuestTurn");
-                        Respawn("AreaProgress");
-                        Respawn("AreaElites");
-                        Respawn("AreaQuestAvailable");
-                        Respawn("AreaQuestDone");
-                        Respawn("Chest");
-                    }
-                    else
-                    {
-                        PlaySound("DesktopInstanceClose");
-                        CloseDesktop("Area");
-                        area = null;
-                        if (complex != null)
-                            SwitchDesktop("Complex");
-                    }
-                });
-            }
-            else
+                PlaySound("DesktopChartSwitch");
+                if (chartPage == "Damage Taken") chartPage = "Damage Dealt";
+                else if (chartPage == "Healing Received") chartPage = "Damage Taken";
+                else if (chartPage == "Elements Used") chartPage = "Healing Received";
+                else if (chartPage == "Damage Dealt") chartPage = "Elements Used";
+                CloseDesktop("CombatLog");
+                SpawnDesktopBlueprint("CombatLog");
+            });
+            AddHotkey("Move camera east", () =>
             {
-                SpawnWindowBlueprint("AreaHostile");
-                AddHotkey("Open menu / Back", () =>
+                PlaySound("DesktopChartSwitch");
+                if (chartPage == "Damage Dealt") chartPage = "Damage Taken";
+                else if (chartPage == "Damage Taken") chartPage = "Healing Received";
+                else if (chartPage == "Healing Received") chartPage = "Elements Used";
+                else if (chartPage == "Elements Used") chartPage = "Damage Dealt";
+                CloseDesktop("CombatLog");
+                SpawnDesktopBlueprint("CombatLog");
+            });
+            AddHotkey("Open menu / Back", () =>
+            {
+                PlaySound("DesktopInstanceClose");
+                CloseDesktop("CombatLog");
+            });
+        }),
+        new("CombatResults", () =>
+        {
+            SetDesktopBackground(board.area.Background());
+            SpawnWindowBlueprint("MapToolbarShadow");
+            SpawnWindowBlueprint("MapToolbarClockLeft");
+            SpawnWindowBlueprint("MapToolbar");
+            SpawnWindowBlueprint("MapToolbarClockRight");
+            SpawnWindowBlueprint("CombatResults");
+            SpawnWindowBlueprint("CombatResultsChartButton");
+            SpawnWindowBlueprint("CombatResultsMining");
+            SpawnWindowBlueprint("CombatResultsHerbalism");
+            SpawnWindowBlueprint("CombatResultsSkinning1");
+            SpawnWindowBlueprint("CombatResultsSkinning2");
+            SpawnWindowBlueprint("CombatResultsSkinning3");
+            SpawnWindowBlueprint("ExperienceBarBorder");
+            SpawnWindowBlueprint("ExperienceBar");
+            AddHotkey("Open menu / Back", () =>
+            {
+                if (board.results.result == "Team1Won")
                 {
                     PlaySound("DesktopInstanceClose");
-                    area = null;
-                    CloseDesktop("Area");
-                });
+                    CloseDesktop("CombatResults");
+                    board = null;
+                    Respawn("ExperienceBar", true);
+                    Respawn("AreaElites");
+                }
+            });
+        }),
+        new("Game", () =>
+        {
+            SpawnTransition();
+            PlaySound("DesktopEnterCombat");
+            SetDesktopBackground(board.area.Background());
+            board.Reset();
+            SpawnWindowBlueprint("BoardFrame");
+            SpawnWindowBlueprint("Board");
+            SpawnWindowBlueprint("BufferBoard");
+            SpawnWindowBlueprint("FriendlyBattleInfo");
+            SpawnWindowBlueprint("LocationInfo");
+            SpawnWindowBlueprint("EnemyBattleInfo");
+            SpawnWindowBlueprint("ItemQuickUse");
+            CDesktop.LBWindow().gameObject.AddComponent<MoveAwayQuickUse>();
+            var elements = new List<string> { "Fire", "Water", "Earth", "Air", "Frost", "Lightning", "Arcane", "Decay", "Order", "Shadow" };
+            foreach (var element in elements)
+            {
+                SpawnWindowBlueprint("Friendly" + element + "Resource");
+                SpawnWindowBlueprint("Enemy" + element + "Resource");
             }
-            SpawnWindowBlueprint("AreaProgress");
-            SpawnWindowBlueprint("AreaElites");
-            SpawnWindowBlueprint("AreaQuestAvailable");
-            SpawnWindowBlueprint("AreaQuestDone");
+            AddHotkey(PageUp, () => {
+                board.participants[board.team1[0]].who.resources = new Dictionary<string, int>
+                {
+                    { "Earth", 99 },
+                    { "Fire", 99 },
+                    { "Air", 99 },
+                    { "Water", 99 },
+                    { "Frost", 99 },
+                    { "Lightning", 99 },
+                    { "Arcane", 99 },
+                    { "Decay", 99 },
+                    { "Order", 99 },
+                    { "Shadow", 99 },
+                };
+                Respawn("FriendlyBattleInfo");
+                board.UpdateResourceBars(board.team1[0], elements);
+            });
+            AddHotkey(PageDown, () => {
+                board.participants[board.team2[0]].who.resources = new Dictionary<string, int>
+                {
+                    { "Earth", 99 },
+                    { "Fire", 99 },
+                    { "Air", 99 },
+                    { "Water", 99 },
+                    { "Frost", 99 },
+                    { "Lightning", 99 },
+                    { "Arcane", 99 },
+                    { "Decay", 99 },
+                    { "Order", 99 },
+                    { "Shadow", 99 },
+                };
+                Respawn("EnemyBattleInfo");
+                board.UpdateResourceBars(board.team2[0], elements);
+            });
+            AddHotkey("Open menu / Back", () =>
+            {
+                if (abilityTargetted != null)
+                {
+                    PlaySound("DesktopInstanceClose");
+                    Cursor.cursor.SetCursor(CursorType.Default);
+                    Cursor.cursor.iconAttached.SetActive(false);
+                    abilityTargetted = null;
+                }
+                else
+                {
+                    PlaySound("DesktopMenuOpen", 0.6f);
+                    SpawnDesktopBlueprint("GameMenu");
+                }
+            });
+            AddHotkey("Open console", () => { SpawnDesktopBlueprint("DevPanel"); });
+            AddHotkey(KeypadMultiply, () => { board.EndCombat("Team1Won"); });
+            AddHotkey(KeypadDivide, () => { currentSave.player.Die(); board.EndCombat("Team2Won"); });
+        }),
+        new("FishingGame", () =>
+        {
+            SpawnTransition();
+            PlaySound("DesktopEnterCombat");
+            SetDesktopBackground(FindSite(x => x.name == fishingSpot.name).Background());
+            SpawnWindowBlueprint("FishingBoardFrame");
+            SpawnWindowBlueprint("FishingSpotInfo");
+            SpawnWindowBlueprint("FisherInfo");
+            SpawnWindowBlueprint("LocationInfo");
+            AddHotkey("Open menu / Back", () =>
+            {
+                PlaySound("DesktopMenuOpen", 0.6f);
+                SpawnDesktopBlueprint("GameMenu");
+            });
+            AddHotkey(KeypadMultiply, () => { fishingSpot.EndFishing("Team1Won"); });
+            AddHotkey(KeypadDivide, () => { fishingSpot.EndFishing("Team2Won"); });
+        }),
+        new("Complex", () =>
+        {
+            SetDesktopBackground(complex.Background());
+            SpawnWindowBlueprint("Complex");
             SpawnWindowBlueprint("PlayerMoney");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
@@ -9257,10 +8982,154 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockRight");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
-            SpawnWindowBlueprint("Chest");
+            AddHotkey("Open menu / Back", () =>
+            {
+                if (CloseWindow("AreaQuestTracker"))
+                {
+                    PlaySound("DesktopButtonClose");
+                    Respawn("Area");
+                    Respawn("AreaQuestAvailable");
+                }
+                else if (CloseWindow("QuestAdd") || CloseWindow("QuestTurn"))
+                {
+                    quest = null;
+                    PlaySound("DesktopButtonClose");
+                    Respawn("Area");
+                    Respawn("AreaQuestAvailable");
+                    Respawn("AreaQuestDone");
+                    Respawn("Complex");
+                    Respawn("PlayerMoney");
+                }
+                else if (CloseWindow("BankSort"))
+                {
+                    PlaySound("DesktopInstanceClose");
+                }
+                else if (CloseWindow("MountCollection"))
+                {
+                    PlaySound("DesktopInstanceClose");
+                    CloseWindow("CurrentMount");
+                    Respawn("Person");
+                }
+                else if (CloseWindow("Inventory"))
+                {
+                    PlaySound("DesktopInventoryClose");
+                    CloseWindow("Bank");
+                    if (CloseWindow("Vendor"))
+                        PlaySound("DesktopCharacterSheetClose");
+                    CloseWindow("VendorBuyback");
+                    Respawn("PlayerMoney");
+                    Respawn("Person");
+                }
+                else if (CloseWindow("MakeInnHome"))
+                {
+                    PlaySound("DesktopInstanceClose");
+                    CloseWindow("MakeInnHome");
+                    Respawn("Person");
+                }
+                else if (CloseWindow("FlightMaster"))
+                {
+                    PlaySound("DesktopMenuClose");
+                    Respawn("Person");
+                }
+                else if (CloseWindow("ProfessionRecipeTrainer"))
+                {
+                    PlaySound("DesktopInstanceClose");
+                    CloseWindow("ProfessionRecipeTrainer");
+                    Respawn("Person");
+                }
+                else if (CloseWindow("ProfessionLevelTrainer"))
+                {
+                    PlaySound("DesktopInstanceClose");
+                    CloseWindow("ProfessionLevelTrainer");
+                    Respawn("Person");
+                }
+                else if (CloseWindow("AuctionHouseFilteringTwoHandedWeapons") || CloseWindow("AuctionHouseFilteringOneHandedWeapons") || CloseWindow("AuctionHouseFilteringOffHands") || CloseWindow("AuctionHouseFilteringRangedWeapons") || CloseWindow("AuctionHouseFilteringArmorClass") || CloseWindow("AuctionHouseFilteringArmorType") || CloseWindow("AuctionHouseFilteringJewelry") || CloseWindow("AuctionHouseFilteringConsumeables"))
+                {
+                    auctionCategory = "";
+                    UpdateAuctionGroupList();
+                    Respawn("AuctionHouseOffersGroups", true);
+                    Respawn("AuctionHouseFilteringMain");
+                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                }
+                else if (CloseWindow("AuctionHouseOffersGroups"))
+                {
+                    PlaySound("DesktopInstanceClose");
+                    CloseWindow("AuctionHouseFilteringMain");
+                    CloseWindow("AuctionHouseFilteringTwoHandedWeapons");
+                    CloseWindow("AuctionHouseFilteringOneHandedWeapons");
+                    CloseWindow("AuctionHouseFilteringOffHands");
+                    CloseWindow("AuctionHouseFilteringRangedWeapons");
+                    CloseWindow("AuctionHouseFilteringArmorClass");
+                    CloseWindow("AuctionHouseFilteringArmorType");
+                    CloseWindow("AuctionHouseFilteringJewelry");
+                    CloseWindow("AuctionHouseFilteringConsumeables");
+                    for (int i = 0; i < 12; i++) { var index = i; CloseWindow("AuctionHousePrice" + index); }
+                    Respawn("Person");
+                }
+                else if (CloseWindow("AuctionHouseOffers"))
+                {
+                    CloseWindow("AuctionHouseOffers");
+                    CloseWindow("AuctionHouseBuy");
+                    CloseWindow("AuctionHouseChosenItem");
+                    Respawn("AuctionHouseOffersGroups");
+                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                    PlaySound("DesktopInstanceClose");
+                }
+                else if (CloseWindow("Person"))
+                {
+                    PlaySound("DesktopInstanceClose");
+                    person = null;
+                    if (personCategory != null) Respawn("Persons");
+                    else CloseWindow("Persons");
+                    Respawn("Area");
+                    Respawn("Complex");
+                    Respawn("Quest");
+                    Respawn("QuestAdd");
+                    Respawn("QuestTurn");
+                    Respawn("AreaQuestAvailable");
+                    Respawn("AreaQuestDone");
+                    if (!WindowUp("Persons"))
+                    {
+                        Respawn("AreaProgress");
+                        Respawn("AreaElites");
+                        Respawn("Chest");
+                    }
+                }
+                else if (CloseWindow("Persons"))
+                {
+                    PlaySound("DesktopInstanceClose");
+                    personCategory = null;
+                    Respawn("Area");
+                    Respawn("Complex");
+                    Respawn("Quest");
+                    Respawn("QuestAdd");
+                    Respawn("QuestTurn");
+                    Respawn("AreaProgress");
+                    Respawn("AreaElites");
+                    Respawn("AreaQuestAvailable");
+                    Respawn("AreaQuestDone");
+                    Respawn("Chest");
+                }
+                else if (CloseWindow("Area"))
+                {
+                    area = null;
+                    PlaySound("DesktopButtonClose");
+                    CloseWindow("AreaQuestAvailable");
+                    CloseWindow("AreaQuestDone");
+                    CloseWindow("AreaProgress");
+                    CloseWindow("AreaElites");
+                    CloseWindow("Chest");
+                    SetDesktopBackground(complex.Background());
+                }
+                else
+                {
+                    PlaySound("DesktopInstanceClose");
+                    CloseDesktop("Complex");
+                }
+            });
             AddPaginationHotkeys();
         }),
-        new("Instance", () => 
+        new("Instance", () =>
         {
             SetDesktopBackground(instance.Background());
             if (wing != null) SpawnWindowBlueprint("InstanceWing");
@@ -9282,6 +9151,7 @@ public class Blueprint
                 }
                 else if (CloseWindow("QuestAdd") || CloseWindow("QuestTurn"))
                 {
+                    quest = null;
                     PlaySound("DesktopButtonClose");
                     Respawn("Area");
                     Respawn("AreaQuestAvailable");
@@ -9435,10 +9305,178 @@ public class Blueprint
             });
             AddPaginationHotkeys();
         }),
-        new("Complex", () => 
+        new("Area", () =>
         {
-            SetDesktopBackground(complex.Background());
-            SpawnWindowBlueprint("Complex");
+            personCategory = null;
+            SetDesktopBackground(area.Background());
+            if (currentSave.player.Reputation(area.faction) >= ReputationRankToAmount("Neutral"))
+            {
+                SpawnWindowBlueprint("Area");
+                AddHotkey(Tab, () =>
+                {
+                    if (CloseWindow("Vendor"))
+                    {
+                        PlaySound("VendorSwitchTab");
+                        Respawn("VendorBuyback");
+                    }
+                    else if (CloseWindow("VendorBuyback"))
+                    {
+                        PlaySound("VendorSwitchTab");
+                        Respawn("Vendor");
+                    }
+                });
+                AddHotkey("Open menu / Back", () =>
+                {
+                    if (CloseWindow("AreaQuestTracker"))
+                    {
+                        PlaySound("DesktopButtonClose");
+                        Respawn("Area");
+                        Respawn("AreaQuestAvailable");
+                    }
+                    else if (CloseWindow("QuestAdd") || CloseWindow("QuestTurn"))
+                    {
+                        quest = null;
+                        PlaySound("DesktopButtonClose");
+                        Respawn("Area");
+                        Respawn("AreaQuestAvailable");
+                        Respawn("AreaQuestDone");
+                        Respawn("Complex");
+                        Respawn("PlayerMoney");
+                    }
+                    else if (CloseWindow("BankSort"))
+                    {
+                        PlaySound("DesktopInstanceClose");
+                    }
+                    else if (CloseWindow("MountCollection"))
+                    {
+                        PlaySound("DesktopInstanceClose");
+                        CloseWindow("CurrentMount");
+                        Respawn("Person");
+                    }
+                    else if (CloseWindow("Inventory"))
+                    {
+                        PlaySound("DesktopInventoryClose");
+                        CloseWindow("Bank");
+                        if (CloseWindow("Vendor"))
+                            PlaySound("DesktopCharacterSheetClose");
+                        CloseWindow("VendorBuyback");
+                        Respawn("PlayerMoney");
+                        Respawn("Person");
+                    }
+                    else if (CloseWindow("MakeInnHome"))
+                    {
+                        PlaySound("DesktopInstanceClose");
+                        CloseWindow("MakeInnHome");
+                        Respawn("Person");
+                    }
+                    else if (CloseWindow("FlightMaster"))
+                    {
+                        PlaySound("DesktopMenuClose");
+                        Respawn("Person");
+                    }
+                    else if (CloseWindow("ProfessionRecipeTrainer"))
+                    {
+                        PlaySound("DesktopInstanceClose");
+                        CloseWindow("ProfessionRecipeTrainer");
+                        Respawn("Person");
+                    }
+                    else if (CloseWindow("ProfessionLevelTrainer"))
+                    {
+                        PlaySound("DesktopInstanceClose");
+                        CloseWindow("ProfessionLevelTrainer");
+                        Respawn("Person");
+                    }
+                    else if (CloseWindow("AuctionHouseFilteringTwoHandedWeapons") || CloseWindow("AuctionHouseFilteringOneHandedWeapons") || CloseWindow("AuctionHouseFilteringOffHands") || CloseWindow("AuctionHouseFilteringRangedWeapons") || CloseWindow("AuctionHouseFilteringArmorClass") || CloseWindow("AuctionHouseFilteringArmorType") || CloseWindow("AuctionHouseFilteringJewelry") || CloseWindow("AuctionHouseFilteringConsumeables"))
+                    {
+                        auctionCategory = "";
+                        UpdateAuctionGroupList();
+                        Respawn("AuctionHouseOffersGroups", true);
+                        Respawn("AuctionHouseFilteringMain");
+                        for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                    }
+                    else if (CloseWindow("AuctionHouseOffersGroups"))
+                    {
+                        PlaySound("DesktopInstanceClose");
+                        CloseWindow("AuctionHouseFilteringMain");
+                        CloseWindow("AuctionHouseFilteringTwoHandedWeapons");
+                        CloseWindow("AuctionHouseFilteringOneHandedWeapons");
+                        CloseWindow("AuctionHouseFilteringOffHands");
+                        CloseWindow("AuctionHouseFilteringRangedWeapons");
+                        CloseWindow("AuctionHouseFilteringArmorClass");
+                        CloseWindow("AuctionHouseFilteringArmorType");
+                        CloseWindow("AuctionHouseFilteringJewelry");
+                        CloseWindow("AuctionHouseFilteringConsumeables");
+                        for (int i = 0; i < 12; i++) { var index = i; CloseWindow("AuctionHousePrice" + index); }
+                        Respawn("Person");
+                    }
+                    else if (CloseWindow("AuctionHouseOffers"))
+                    {
+                        CloseWindow("AuctionHouseOffers");
+                        CloseWindow("AuctionHouseBuy");
+                        CloseWindow("AuctionHouseChosenItem");
+                        Respawn("AuctionHouseOffersGroups");
+                        for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                        PlaySound("DesktopInstanceClose");
+                    }
+                    else if (CloseWindow("Person"))
+                    {
+                        PlaySound("DesktopInstanceClose");
+                        person = null;
+                        if (personCategory != null) Respawn("Persons");
+                        else CloseWindow("Persons");
+                        Respawn("Area");
+                        Respawn("Complex");
+                        Respawn("Quest");
+                        Respawn("QuestAdd");
+                        Respawn("QuestTurn");
+                        Respawn("AreaQuestAvailable");
+                        Respawn("AreaQuestDone");
+                        if (!WindowUp("Persons"))
+                        {
+                            Respawn("AreaProgress");
+                            Respawn("AreaElites");
+                            Respawn("Chest");
+                        }
+                    }
+                    else if (CloseWindow("Persons"))
+                    {
+                        PlaySound("DesktopInstanceClose");
+                        personCategory = null;
+                        Respawn("Area");
+                        Respawn("Complex");
+                        Respawn("Quest");
+                        Respawn("QuestAdd");
+                        Respawn("QuestTurn");
+                        Respawn("AreaProgress");
+                        Respawn("AreaElites");
+                        Respawn("AreaQuestAvailable");
+                        Respawn("AreaQuestDone");
+                        Respawn("Chest");
+                    }
+                    else
+                    {
+                        PlaySound("DesktopInstanceClose");
+                        CloseDesktop("Area");
+                        area = null;
+                        if (complex != null)
+                            SwitchDesktop("Complex");
+                    }
+                });
+            }
+            else
+            {
+                SpawnWindowBlueprint("AreaHostile");
+                AddHotkey("Open menu / Back", () =>
+                {
+                    PlaySound("DesktopInstanceClose");
+                    area = null;
+                    CloseDesktop("Area");
+                });
+            }
+            SpawnWindowBlueprint("AreaProgress");
+            SpawnWindowBlueprint("AreaElites");
+            SpawnWindowBlueprint("AreaQuestAvailable");
+            SpawnWindowBlueprint("AreaQuestDone");
             SpawnWindowBlueprint("PlayerMoney");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
@@ -9446,242 +9484,10 @@ public class Blueprint
             SpawnWindowBlueprint("MapToolbarClockRight");
             SpawnWindowBlueprint("ExperienceBarBorder");
             SpawnWindowBlueprint("ExperienceBar");
-            AddHotkey("Open menu / Back", () =>
-            {
-                if (CloseWindow("AreaQuestTracker"))
-                {
-                    PlaySound("DesktopButtonClose");
-                    Respawn("Area");
-                    Respawn("AreaQuestAvailable");
-                }
-                else if (CloseWindow("QuestAdd") || CloseWindow("QuestTurn"))
-                {
-                    PlaySound("DesktopButtonClose");
-                    Respawn("Area");
-                    Respawn("AreaQuestAvailable");
-                    Respawn("AreaQuestDone");
-                    Respawn("Complex");
-                    Respawn("PlayerMoney");
-                }
-                else if (CloseWindow("BankSort"))
-                {
-                    PlaySound("DesktopInstanceClose");
-                }
-                else if (CloseWindow("MountCollection"))
-                {
-                    PlaySound("DesktopInstanceClose");
-                    CloseWindow("CurrentMount");
-                    Respawn("Person");
-                }
-                else if (CloseWindow("Inventory"))
-                {
-                    PlaySound("DesktopInventoryClose");
-                    CloseWindow("Bank");
-                    if (CloseWindow("Vendor"))
-                        PlaySound("DesktopCharacterSheetClose");
-                    CloseWindow("VendorBuyback");
-                    Respawn("PlayerMoney");
-                    Respawn("Person");
-                }
-                else if (CloseWindow("MakeInnHome"))
-                {
-                    PlaySound("DesktopInstanceClose");
-                    CloseWindow("MakeInnHome");
-                    Respawn("Person");
-                }
-                else if (CloseWindow("FlightMaster"))
-                {
-                    PlaySound("DesktopMenuClose");
-                    Respawn("Person");
-                }
-                else if (CloseWindow("ProfessionRecipeTrainer"))
-                {
-                    PlaySound("DesktopInstanceClose");
-                    CloseWindow("ProfessionRecipeTrainer");
-                    Respawn("Person");
-                }
-                else if (CloseWindow("ProfessionLevelTrainer"))
-                {
-                    PlaySound("DesktopInstanceClose");
-                    CloseWindow("ProfessionLevelTrainer");
-                    Respawn("Person");
-                }
-                else if (CloseWindow("AuctionHouseFilteringTwoHandedWeapons") || CloseWindow("AuctionHouseFilteringOneHandedWeapons") || CloseWindow("AuctionHouseFilteringOffHands") || CloseWindow("AuctionHouseFilteringRangedWeapons") || CloseWindow("AuctionHouseFilteringArmorClass") || CloseWindow("AuctionHouseFilteringArmorType") || CloseWindow("AuctionHouseFilteringJewelry") || CloseWindow("AuctionHouseFilteringConsumeables"))
-                {
-                    auctionCategory = "";
-                    UpdateAuctionGroupList();
-                    Respawn("AuctionHouseOffersGroups", true);
-                    Respawn("AuctionHouseFilteringMain");
-                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
-                }
-                else if (CloseWindow("AuctionHouseOffersGroups"))
-                {
-                    PlaySound("DesktopInstanceClose");
-                    CloseWindow("AuctionHouseFilteringMain");
-                    CloseWindow("AuctionHouseFilteringTwoHandedWeapons");
-                    CloseWindow("AuctionHouseFilteringOneHandedWeapons");
-                    CloseWindow("AuctionHouseFilteringOffHands");
-                    CloseWindow("AuctionHouseFilteringRangedWeapons");
-                    CloseWindow("AuctionHouseFilteringArmorClass");
-                    CloseWindow("AuctionHouseFilteringArmorType");
-                    CloseWindow("AuctionHouseFilteringJewelry");
-                    CloseWindow("AuctionHouseFilteringConsumeables");
-                    for (int i = 0; i < 12; i++) { var index = i; CloseWindow("AuctionHousePrice" + index); }
-                    Respawn("Person");
-                }
-                else if (CloseWindow("AuctionHouseOffers"))
-                {
-                    CloseWindow("AuctionHouseOffers");
-                    CloseWindow("AuctionHouseBuy");
-                    CloseWindow("AuctionHouseChosenItem");
-                    Respawn("AuctionHouseOffersGroups");
-                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
-                    PlaySound("DesktopInstanceClose");
-                }
-                else if (CloseWindow("Person"))
-                {
-                    PlaySound("DesktopInstanceClose");
-                    person = null;
-                    if (personCategory != null) Respawn("Persons");
-                    else CloseWindow("Persons");
-                    Respawn("Area");
-                    Respawn("Complex");
-                    Respawn("Quest");
-                    Respawn("QuestAdd");
-                    Respawn("QuestTurn");
-                    Respawn("AreaQuestAvailable");
-                    Respawn("AreaQuestDone");
-                    if (!WindowUp("Persons"))
-                    {
-                        Respawn("AreaProgress");
-                        Respawn("AreaElites");
-                        Respawn("Chest");
-                    }
-                }
-                else if (CloseWindow("Persons"))
-                {
-                    PlaySound("DesktopInstanceClose");
-                    personCategory = null;
-                    Respawn("Area");
-                    Respawn("Complex");
-                    Respawn("Quest");
-                    Respawn("QuestAdd");
-                    Respawn("QuestTurn");
-                    Respawn("AreaProgress");
-                    Respawn("AreaElites");
-                    Respawn("AreaQuestAvailable");
-                    Respawn("AreaQuestDone");
-                    Respawn("Chest");
-                }
-                else if (CloseWindow("Area"))
-                {
-                    area = null;
-                    PlaySound("DesktopButtonClose");
-                    CloseWindow("AreaQuestAvailable");
-                    CloseWindow("AreaQuestDone");
-                    CloseWindow("AreaProgress");
-                    CloseWindow("AreaElites");
-                    CloseWindow("Chest");
-                    SetDesktopBackground(complex.Background());
-                }
-                else
-                {
-                    PlaySound("DesktopInstanceClose");
-                    CloseDesktop("Complex");
-                }
-            });
+            SpawnWindowBlueprint("Chest");
             AddPaginationHotkeys();
         }),
-        new("Game", () => 
-        {
-            SpawnTransition();
-            PlaySound("DesktopEnterCombat");
-            SetDesktopBackground(board.area.Background());
-            board.Reset();
-            SpawnWindowBlueprint("BoardFrame");
-            SpawnWindowBlueprint("Board");
-            SpawnWindowBlueprint("BufferBoard");
-            SpawnWindowBlueprint("FriendlyBattleInfo");
-            SpawnWindowBlueprint("LocationInfo");
-            SpawnWindowBlueprint("EnemyBattleInfo");
-            SpawnWindowBlueprint("PlayerQuickUse");
-            var elements = new List<string> { "Fire", "Water", "Earth", "Air", "Frost", "Lightning", "Arcane", "Decay", "Order", "Shadow" };
-            foreach (var element in elements)
-            {
-                SpawnWindowBlueprint("Friendly" + element + "Resource");
-                SpawnWindowBlueprint("Enemy" + element + "Resource");
-            }
-            AddHotkey(PageUp, () => {
-                board.participants[board.team1[0]].who.resources = new Dictionary<string, int>
-                {
-                    { "Earth", 99 },
-                    { "Fire", 99 },
-                    { "Air", 99 },
-                    { "Water", 99 },
-                    { "Frost", 99 },
-                    { "Lightning", 99 },
-                    { "Arcane", 99 },
-                    { "Decay", 99 },
-                    { "Order", 99 },
-                    { "Shadow", 99 },
-                };
-                Respawn("FriendlyBattleInfo");
-                board.UpdateResourceBars(board.team1[0], elements);
-            });
-            AddHotkey(PageDown, () => {
-                board.participants[board.team2[0]].who.resources = new Dictionary<string, int>
-                {
-                    { "Earth", 99 },
-                    { "Fire", 99 },
-                    { "Air", 99 },
-                    { "Water", 99 },
-                    { "Frost", 99 },
-                    { "Lightning", 99 },
-                    { "Arcane", 99 },
-                    { "Decay", 99 },
-                    { "Order", 99 },
-                    { "Shadow", 99 },
-                };
-                Respawn("EnemyBattleInfo");
-                board.UpdateResourceBars(board.team2[0], elements);
-            });
-            AddHotkey("Open menu / Back", () =>
-            {
-                if (abilityTargetted != null)
-                {
-                    PlaySound("DesktopInstanceClose");
-                    Cursor.cursor.SetCursor(CursorType.Default);
-                    Cursor.cursor.iconAttached.SetActive(false);
-                    abilityTargetted = null;
-                }
-                else
-                {
-                    PlaySound("DesktopMenuOpen", 0.6f);
-                    SpawnDesktopBlueprint("GameMenu");
-                }
-            });
-            AddHotkey("Open console", () => { SpawnDesktopBlueprint("DevPanel"); });
-            AddHotkey(KeypadMultiply, () => { board.EndCombat("Team1Won"); });
-            AddHotkey(KeypadDivide, () => { currentSave.player.Die(); board.EndCombat("Team2Won"); });
-        }),
-        new("FishingGame", () => 
-        {
-            SpawnTransition();
-            PlaySound("DesktopEnterCombat");
-            SetDesktopBackground(FindSite(x => x.name == fishingSpot.name).Background());
-            SpawnWindowBlueprint("FishingBoardFrame");
-            SpawnWindowBlueprint("FishingSpotInfo");
-            SpawnWindowBlueprint("FisherInfo");
-            SpawnWindowBlueprint("LocationInfo");
-            AddHotkey("Open menu / Back", () =>
-            {
-                PlaySound("DesktopMenuOpen", 0.6f);
-                SpawnDesktopBlueprint("GameMenu");
-            });
-            AddHotkey(KeypadMultiply, () => { fishingSpot.EndFishing("Team1Won"); });
-            AddHotkey(KeypadDivide, () => { fishingSpot.EndFishing("Team2Won"); });
-        }),
-        new("CharacterSheet", () => 
+        new("CharacterSheet", () =>
         {
             PlaySound("DesktopCharacterSheetOpen");
             SetDesktopBackground("Backgrounds/RedWood");
@@ -9702,7 +9508,7 @@ public class Blueprint
                 CloseDesktop("CharacterSheet");
             });
         }),
-        new("TalentScreen", () => 
+        new("TalentScreen", () =>
         {
             SetDesktopBackground("Backgrounds/Stone");
             SpawnWindowBlueprint("MapToolbarClockLeft");
@@ -9740,7 +9546,7 @@ public class Blueprint
             });
             AddHotkey("Open menu / Back", () => { CloseDesktop("TalentScreen"); PlaySound("DesktopTalentScreenClose"); });
         }),
-        new("SpellbookScreen", () => 
+        new("SpellbookScreen", () =>
         {
             currentSave.player.currentActionSet = "Default";
             PlaySound("DesktopSpellbookOpen");
@@ -9777,7 +9583,7 @@ public class Blueprint
             });
             AddPaginationHotkeys();
         }),
-        new("EquipmentScreen", () => 
+        new("EquipmentScreen", () =>
         {
             openedItem = null;
             itemToDestroy = null;
@@ -9841,7 +9647,7 @@ public class Blueprint
                 }
             });
         }),
-        new("BestiaryScreen", () => 
+        new("BestiaryScreen", () =>
         {
             PlaySound("DesktopInstanceOpen");
             SetDesktopBackground("Backgrounds/SkinDark");
@@ -9859,7 +9665,7 @@ public class Blueprint
                 CloseDesktop("BestiaryScreen");
             });
         }),
-        new("CraftingScreen", () => 
+        new("CraftingScreen", () =>
         {
             PlaySound("DesktopSpellbookOpen");
             SetDesktopBackground("Backgrounds/Professions");
@@ -9894,34 +9700,138 @@ public class Blueprint
             });
             AddPaginationHotkeys();
         }),
-        new("GameMenu", () => 
+        new("Map", () => 
         {
-            SetDesktopBackground("Backgrounds/StoneFull");
-            SpawnWindowBlueprint("GameMenu");
+            PlaySound("DesktopOpenSave", 0.3f);
+            var find = FindSite(x => x.name == currentSave.currentSite);
+            if (find != null) CDesktop.cameraDestination = new Vector2(find.x, find.y);
+            Cursor.cursor.transform.position += (Vector3)CDesktop.cameraDestination - CDesktop.screen.transform.position;
+            CDesktop.screen.transform.localPosition = CDesktop.cameraDestination;
+            SetDesktopBackground("LoadingScreens/" + (CDesktop.cameraDestination.x < 2470 ? "Kalimdor" : "EasternKingdoms"));
+            loadingBar = new GameObject[2];
+            loadingBar[0] = new GameObject("LoadingBarBegin", typeof(SpriteRenderer));
+            loadingBar[0].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/LoadingBarEnd");
+            loadingBar[0].transform.position = new Vector3(-1171, 854);
+            loadingBar[1] = new GameObject("LoadingBar", typeof(SpriteRenderer));
+            loadingBar[1].GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Other/LoadingBarStretch");
+            loadingBar[1].transform.position = new Vector3(-1168, 854);
+            OrderLoadingMap();
+            AddHotkey("Move camera north", () => { MoveCamera(new Vector2(0, Eueler())); }, false, false);
+            AddHotkey("Move camera west", () => { MoveCamera(new Vector2(-Eueler(), 0)); }, false, false);
+            AddHotkey("Move camera south", () => { MoveCamera(new Vector2(0, -Eueler())); }, false, false);
+            AddHotkey("Move camera east", () => { MoveCamera(new Vector2(Eueler(), 0)); }, false, false);
+            AddHotkey(UpArrow, () =>
+            {
+                if (!debug) return;
+                var site = FindSite(x => x.name == currentSave.currentSite);
+                site.y += (int)Math.Sqrt(Eueler());
+                var find = windowBlueprints.Find(x => x.title == "Site: " + site.name);
+                windowBlueprints.Remove(find);
+                windowBlueprints.Add(new Blueprint("Site: " + site.name, () => site.PrintSite()));
+                CloseWindow("Site: " + site.name);
+                SpawnWindowBlueprint("Site: " + site.name);
+            }, false);
+            AddHotkey(LeftArrow, () =>
+            {
+                if (!debug) return;
+                var site = FindSite(x => x.name == currentSave.currentSite);
+                site.x -= (int)Math.Sqrt(Eueler());
+                var find = windowBlueprints.Find(x => x.title == "Site: " + site.name);
+                windowBlueprints.Add(new Blueprint("Site: " + site.name, () => site.PrintSite()));
+                CloseWindow("Site: " + site.name);
+                SpawnWindowBlueprint("Site: " + site.name);
+            }, false);
+            AddHotkey(DownArrow, () =>
+            {
+                if (!debug) return;
+                var site = FindSite(x => x.name == currentSave.currentSite);
+                site.y -= (int)Math.Sqrt(Eueler());
+                var find = windowBlueprints.Find(x => x.title == "Site: " + site.name);
+                windowBlueprints.Add(new Blueprint("Site: " + site.name, () => site.PrintSite()));
+                CloseWindow("Site: " + site.name);
+                SpawnWindowBlueprint("Site: " + site.name);
+            }, false);
+            AddHotkey(RightArrow, () =>
+            {
+                if (!debug) return;
+                var site = FindSite(x => x.name == currentSave.currentSite);
+                site.x += (int)Math.Sqrt(Eueler());
+                var find = windowBlueprints.Find(x => x.title == "Site: " + site.name);
+                windowBlueprints.Add(new Blueprint("Site: " + site.name, () => site.PrintSite()));
+                CloseWindow("Site: " + site.name);
+                SpawnWindowBlueprint("Site: " + site.name);
+            }, false);
             AddHotkey("Open menu / Back", () =>
             {
-                if (CloseWindow("Settings"))
+                if (CloseWindow("QuestSort"))
                 {
-                    PlaySound("DesktopButtonClose");
-                    SpawnWindowBlueprint("GameMenu");
+                    SetDesktopBackground("Backgrounds/RuggedLeather", true, true);
+                    PlaySound("DesktopInstanceClose");
+                    Respawn("Quest", true);
+                    Respawn("QuestList");
                 }
-                else if (CloseWindow("GameKeybinds"))
+                else if (CloseWindow("QuestSettings"))
                 {
-                    PlaySound("DesktopButtonClose");
-                    SpawnWindowBlueprint("GameMenu");
+                    SetDesktopBackground("Backgrounds/RuggedLeather", true, true);
+                    PlaySound("DesktopInstanceClose");
+                    Respawn("Quest", true);
+                    Respawn("QuestList");
+                }
+                else if (CloseWindow("QuestConfirmAbandon"))
+                {
+                    SetDesktopBackground("Backgrounds/RuggedLeather", true, true);
+                    PlaySound("DesktopMenuClose");
+                    Respawn("Quest", true);
+                    Respawn("QuestList");
+                }
+                else if (CloseWindow("Quest"))
+                {
+                    quest = null;
+                    Respawn("QuestList");
+                    PlaySound("DesktopInstanceClose");
+                }
+                else if (CloseWindow("QuestList"))
+                {
+                    PlaySound("DesktopSpellbookClose");
+                    RemoveDesktopBackground();
+                    Respawn("MapToolbar");
+                    Respawn("WorldBuffs");
+                    SwitchToMostImportantDesktop();
                 }
                 else
                 {
-                    PlaySound("DesktopMenuClose");
-                    CloseDesktop("GameMenu");
-                    if (CDesktop.title == "EquipmentScreen")
-                    {
-                        Respawn("PlayerEquipmentInfo");
-                        Respawn("PlayerWeaponsInfo");
-                        Respawn("Inventory");
-                    }
+                    PlaySound("DesktopMenuOpen", 0.6f);
+                    SpawnDesktopBlueprint("GameMenu");
                 }
             });
+            AddHotkey(Delete, () =>
+            {
+                if (sitePathBuilder != null)
+                {
+                    UnityEngine.Object.Destroy(pathTest.Item2);
+                    sitePathBuilder = null;
+                }
+            });
+            AddHotkey("Open console", () =>
+            {
+                if (debug && SpawnWindowBlueprint("Console") != null)
+                {
+                    PlaySound("DesktopTooltipShow", 0.4f);
+                    CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
+                }
+            });
+            AddHotkey("Focus camera on player", () =>
+            {
+                var whereTo = FindSite(x => x.name == currentSave.currentSite);
+                CDesktop.cameraDestination = new Vector2(whereTo.x, whereTo.y);
+            }, false);
+
+            void MoveCamera(Vector2 amount)
+            {
+                if (WindowUp("QuestList")) return;
+                var temp = CDesktop.cameraDestination + amount * 2;
+                CDesktop.cameraDestination = new Vector2(temp.x, temp.y);
+            }
         }),
         new("RankingScreen", () => 
         {
@@ -9934,6 +9844,76 @@ public class Blueprint
             {
                 PlaySound("DesktopButtonClose");
                 CloseDesktop("RankingScreen");
+            });
+        }),
+        new("LoginScreen", () =>
+        {
+            SpawnWindowBlueprint("CharacterRoster");
+            SpawnWindowBlueprint("CharacterInfo");
+            AddHotkey("Open console", () =>
+            {
+                if (debug && SpawnWindowBlueprint("Console") != null)
+                {
+                    PlaySound("DesktopTooltipShow", 0.4f);
+                    CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
+                }
+            });
+            AddHotkey("Open menu / Back", () =>
+            {
+                if (CloseWindow("ConfirmDeleteCharacter"))
+                {
+                    PlaySound("DesktopButtonClose");
+                    CDesktop.RespawnAll();
+                }
+                else
+                {
+                    PlaySound("DesktopButtonClose");
+                    CloseDesktop("LoginScreen");
+                }
+            });
+        }),
+        new("TitleScreen", () =>
+        {
+            StopAmbience(false);
+            PlayMusic(new() { "MusicMainScreen" }, 0.2f, true);
+            if (firstLaunch)
+            {
+                firstLaunch = false;
+                SpawnWindowBlueprint("TitleScreenFirstLaunch");
+            }
+            else SpawnWindowBlueprint("TitleScreenMenu");
+            AddHotkey("Open console", () =>
+            {
+                if (debug && SpawnWindowBlueprint("Console") != null)
+                {
+                    PlaySound("DesktopTooltipShow", 0.4f);
+                    CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
+                }
+            });
+            AddHotkey("Open menu / Back", () =>
+            {
+                if (CloseWindow("GameSettings"))
+                {
+                    PlaySound("DesktopButtonClose");
+                    SpawnWindowBlueprint("TitleScreenMenu");
+                }
+                else if (CloseWindow("TitleScreenFirstLaunch"))
+                {
+                    Serialization.Serialize(settings, "settings", false, false, Serialization.prefix);
+                    PlaySound("DesktopButtonClose");
+                    SpawnWindowBlueprint("TitleScreenMenu");
+                }
+                else if (CloseWindow("GameKeybinds"))
+                {
+                    PlaySound("DesktopButtonClose");
+                    SpawnWindowBlueprint("TitleScreenMenu");
+                }
+                else if (CloseWindow("TitleScreenSingleplayer"))
+                {
+                    CloseWindow("TitleScreenContinue");
+                    PlaySound("DesktopButtonClose");
+                    SpawnWindowBlueprint("TitleScreenMenu");
+                }
             });
         })
     };

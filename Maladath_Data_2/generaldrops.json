@@ -1,5 +1,137 @@
 [
   {
+    "item": "Big-mouth Clam",
+    "rarity": 50.0,
+    "subCategory": "Makrura",
+    "dropStart": 38,
+    "dropEnd": 999,
+    "dropCount": 1,
+    "tags": [
+      "Clam"
+    ]
+  },
+  {
+    "item": "Big-mouth Clam",
+    "rarity": 50.0,
+    "subCategory": "Sea Giant",
+    "dropStart": 38,
+    "dropEnd": 999,
+    "dropCount": 1,
+    "tags": [
+      "Clam"
+    ]
+  },
+  {
+    "item": "Big-mouth Clam",
+    "rarity": 50.0,
+    "subCategory": "Murloc",
+    "dropStart": 38,
+    "dropEnd": 999,
+    "dropCount": 1,
+    "tags": [
+      "Clam"
+    ]
+  },
+  {
+    "item": "Big-mouth Clam",
+    "rarity": 50.0,
+    "subCategory": "Naga",
+    "dropStart": 38,
+    "dropEnd": 999,
+    "dropCount": 1,
+    "tags": [
+      "Clam"
+    ]
+  },
+  {
+    "item": "Thick-shelled Clam",
+    "rarity": 50.0,
+    "subCategory": "Makrura",
+    "dropStart": 20,
+    "dropEnd": 37,
+    "dropCount": 1,
+    "tags": [
+      "Clam"
+    ]
+  },
+  {
+    "item": "Thick-shelled Clam",
+    "rarity": 50.0,
+    "subCategory": "Sea Giant",
+    "dropStart": 20,
+    "dropEnd": 37,
+    "dropCount": 1,
+    "tags": [
+      "Clam"
+    ]
+  },
+  {
+    "item": "Thick-shelled Clam",
+    "rarity": 50.0,
+    "subCategory": "Murloc",
+    "dropStart": 20,
+    "dropEnd": 37,
+    "dropCount": 1,
+    "tags": [
+      "Clam"
+    ]
+  },
+  {
+    "item": "Thick-shelled Clam",
+    "rarity": 50.0,
+    "subCategory": "Naga",
+    "dropStart": 20,
+    "dropEnd": 37,
+    "dropCount": 1,
+    "tags": [
+      "Clam"
+    ]
+  },
+  {
+    "item": "Small Barnacled Clam",
+    "rarity": 50.0,
+    "subCategory": "Makrura",
+    "dropStart": 9,
+    "dropEnd": 19,
+    "dropCount": 1,
+    "tags": [
+      "Clam"
+    ]
+  },
+  {
+    "item": "Small Barnacled Clam",
+    "rarity": 50.0,
+    "subCategory": "Sea Giant",
+    "dropStart": 9,
+    "dropEnd": 19,
+    "dropCount": 1,
+    "tags": [
+      "Clam"
+    ]
+  },
+  {
+    "item": "Small Barnacled Clam",
+    "rarity": 50.0,
+    "subCategory": "Murloc",
+    "dropStart": 9,
+    "dropEnd": 19,
+    "dropCount": 1,
+    "tags": [
+      "Clam"
+    ]
+  },
+  {
+    "item": "Small Barnacled Clam",
+    "rarity": 50.0,
+    "subCategory": "Naga",
+    "dropStart": 9,
+    "dropEnd": 19,
+    "dropCount": 1,
+    "tags": [
+      "Clam"
+    ]
+  },
+  {
     "item": "Slimy Murloc Scale",
     "rarity": 20.0,
     "subCategory": "Murloc",
