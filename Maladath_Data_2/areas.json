@@ -40839,8 +40839,7 @@
     "rareEncounters": [
       {
         "who": "Crystal Fang",
-        "levelMin": 58,
-        "levelMax": 59
+        "levelMin": 60
       }
     ],
     "eliteEncounters": [
@@ -44454,6 +44453,10 @@
       {
         "who": "7:XT",
         "levelMin": 41
+      },
+      {
+        "who": "Barnabus",
+        "levelMin": 39
       }
     ],
     "areaSize": 3,
@@ -57887,6 +57890,10 @@
       },
       {
         "who": "The Rake",
+        "levelMin": 10
+      },
+      {
+        "who": "Arra'chea",
         "levelMin": 10
       }
     ],
@@ -74165,8 +74172,19 @@
         "levelMax": 26
       }
     ],
+    "eliteEncounters": [
+      {
+        "who": "Sarltooth",
+        "levelMin": 29
+      }
+    ],
     "areaSize": 3,
     "progression": [
+      {
+        "type": "Boss",
+        "bossName": "Sarltooth",
+        "point": 2
+      },
       {
         "type": "Treasure",
         "point": 3

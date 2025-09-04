@@ -47839,6 +47839,8 @@
     "ilvl": 60,
     "lvl": 55,
     "maxStack": 1,
+    "indestructible": true,
+    "unique": true,
     "price": 9633,
     "droppedBy": [
       "Mother Smolderweb"
@@ -53162,10 +53164,13 @@
     "icon": "itemmiscfood70",
     "detailedType": "Food",
     "type": "Trade Good",
-    "source": "ZoneDrop",
+    "source": "DirectDrop",
     "ilvl": 60,
     "lvl": 1,
-    "maxStack": 20
+    "maxStack": 20,
+    "droppedBy": [
+      "Arcane Chimaerok", "Chimaerok Devourer", "Chimaerok", "Lord Lakmaeran"
+    ]
   },
   {
     "rarity": "Uncommon",
@@ -103756,50 +103761,7 @@
     "maxStack": 10,
     "price": 150,
     "droppedBy": [
-      "Giant Ember Worg",
-      "Plaguehound Runt",
-      "Frenzied Plaguehound",
-      "Plaguehound",
-      "Diseased Wolf",
-      "Felpaw Ravager",
-      "Ember Worg",
-      "Slavering Ember Worg",
-      "Death Howl",
-      "Scarshield Worg",
-      "Bloodaxe Worg",
-      "Bloodaxe Worg Pup",
-      "Rabid Longtooth",
-      "Blackrock Worg",
-      "Deathmaw",
-      "Blighthound",
-      "Silvermane Stalker",
-      "Felpaw Scavenger",
-      "Bloodhound Mastiff",
-      "Felpaw Wolf",
-      "Silvermane Howler",
-      "Vilebranch Wolf Pup",
-      "Snarler",
-      "Bloodhound",
-      "Snickerfang Hyena",
-      "Vilebranch Raiding Wolf",
-      "Longtooth Howler",
-      "Rabid Crag Coyote",
-      "Rabid Blisterpaw",
-      "Silvermane Wolf",
-      "Frostwolf Bloodhound",
-      "Ravage",
-      "Starving Snickerfang",
-      "Blisterpaw Hyena",
-      "Draka",
-      "Old Cliff Jumper",
-      "Longtooth Runner",
-      "Gordok Hyena",
-      "Verek",
-      "Duros",
-      "Murderous Blisterpaw",
-      "Mangy Silvermane",
-      "Starving Blisterpaw",
-      "Barnabus"
+      "Death Howl", "Felpaw Scavenger", "Bloodhound", "Snickerfang Hyena", "Vilebranch Raiding Wolf", "Ravage", "Felpaw Ravager", "Ember Worg", "Bloodaxe Worg Pup", "Gordok Hyena", "Deathmaw", "Plaguehound Runt", "Diseased Wolf", "Slavering Ember Worg", "Scarshield Worg", "Frostwolf Bloodhound", "Blackrock Worg", "Bloodhound Mastiff", "Verek", "Giant Ember Worg", "Plaguehound", "Bloodaxe Worg", "Frenzied Plaguehound", "Blighthound", "Halycon", "Draka", "Duros", "Gizrul the Slavener"
     ]
   },
   {
@@ -103822,11 +103784,14 @@
     "icon": "itemmiscfood51",
     "detailedType": "Food",
     "type": "Trade Good",
-    "source": "RareDrop",
+    "source": "DirectDrop",
     "ilvl": 40,
     "lvl": 1,
     "maxStack": 10,
-    "price": 112
+    "price": 112,
+    "droppedBy": [
+      "Monstrous Crawler", "Southern Sand Crawler", "Silt Crawler"
+    ]
   },
   {
     "rarity": "Common",
@@ -112041,11 +112006,14 @@
     "icon": "itemmiscmonsterscales02",
     "detailedType": "Scale",
     "type": "Trade Good",
-    "source": "RareDrop",
+    "source": "DirectDrop",
     "ilvl": 35,
     "lvl": 1,
     "maxStack": 10,
-    "price": 181
+    "price": 181,
+    "droppedBy": [
+      "Sharptalon", "Young Mesa Buzzard", "Dread Swoop", "Mesa Buzzard", "Starving Buzzard", "Carrion Horror", "Dread Flyer", "Elder Mesa Buzzard", "Buzzard", "Dread Ripper", "Giant Buzzard", "Roc", "Fire Roc", "Greater Firebird", "Black Slayer", "Searing Roc", "Carrion Vulture", "Spiteflayer", "Zaricotl", "Sky Shadow"
+    ]
   },
   {
     "rarity": "Uncommon",
@@ -113989,11 +113957,14 @@
     "icon": "itemmiscfood70",
     "detailedType": "Food",
     "type": "Trade Good",
-    "source": "ZoneDrop",
+    "source": "DirectDrop",
     "ilvl": 35,
     "lvl": 1,
     "maxStack": 10,
-    "price": 112
+    "price": 112,
+    "droppedBy": [
+      "Ancient Kodo", "Dying Kodo", "Aged Kodo"
+    ]
   },
   {
     "rarity": "Common",
@@ -124245,6 +124216,9 @@
       "Spire Scorpid",
       "Deathlash Scorpid",
       "Cleft Scorpid",
+      "Ironfur Patriarch",
+      "Old Grizzlegut",
+      "Grizzled Ironfur Bear",
       "Venomtip Scorpid",
       "Scorpashi Venomlash",
       "Scorpid Hunter",
@@ -124252,6 +124226,7 @@
       "Firetail Scorpid",
       "Rabid Bonepaw",
       "Scorpok Stinger",
+      "Ironfur Bear",
       "Scorpid Tail Lasher",
       "Deep Stinger",
       "Snickerfang Hyena",
@@ -124275,7 +124250,6 @@
       "Maraudine Bonepaw",
       "Carrion Vulture",
       "Buzzard",
-      "Saltwater Crocolisk",
       "Dread Flyer",
       "Venomlash Scorpid",
       "Elder Mesa Buzzard",
@@ -124294,7 +124268,6 @@
       "Scorpid Reaver",
       "Mesa Buzzard",
       "Scorpashi Snapper",
-      "Elder Saltwater Crocolisk",
       "Young Mesa Buzzard",
       "River Crocolisk",
       "Salt Flats Vulture",
@@ -124324,11 +124297,14 @@
     "icon": "itemmiscfood69",
     "detailedType": "Food",
     "type": "Trade Good",
-    "source": "RareDrop",
+    "source": "DirectDrop",
     "ilvl": 30,
     "lvl": 1,
     "maxStack": 10,
-    "price": 87
+    "price": 87,
+    "droppedBy": [
+      "Highland Strider", "Young Stranglethorn Raptor", "Razormaw Matriarch", "Stranglethorn Raptor", "Highland Thrasher", "Young Lashtail Raptor", "Bloodfen Raptor", "Lashtail Raptor", "Bloodfen Screecher", "Young Jungle Stalker", "Highland Fleshstalker", "Bloodfen Scytheclaw", "Dart", "Bloodfen Razormaw", "Jungle Stalker", "Bloodfen Lashtail", "Tethis", "Ravasaur", "Ravasaur Runner", "Ravasaur Hunter", "Lar'korwi Mate", "Ravasaur Matriarch", "Venomhide Ravasaur", "Lar'korwi"
+    ]
   },
   {
     "rarity": "Common",
@@ -124342,63 +124318,7 @@
     "maxStack": 10,
     "price": 87,
     "droppedBy": [
-      "Longtooth Howler",
-      "Silvermane Howler",
-      "Rabid Longtooth",
-      "Rabid Crag Coyote",
-      "Plaguehound Runt",
-      "Silvermane Stalker",
-      "Longtooth Runner",
-      "Plaguehound",
-      "Diseased Wolf",
-      "Vilebranch Wolf Pup",
-      "Frenzied Plaguehound",
-      "Bloodaxe Worg",
-      "Felpaw Ravager",
-      "Mangy Silvermane",
-      "Silvermane Wolf",
-      "Bloodaxe Worg Pup",
-      "Giant Ember Worg",
-      "Felpaw Wolf",
-      "Scarshield Worg",
-      "Felpaw Scavenger",
-      "Ember Worg",
-      "Blackrock Worg",
-      "Slavering Ember Worg",
-      "Bloodhound",
-      "Snickerfang Hyena",
-      "Magram Bonepaw",
-      "Elder Crag Coyote",
-      "Starving Snickerfang",
-      "Crag Coyote",
-      "Starving Blisterpaw",
-      "Feral Crag Coyote",
-      "Bloodhound Mastiff",
-      "Ravage",
-      "Deathmaw",
-      "Barnabus",
-      "Blisterpaw Hyena",
-      "Maraudine Bonepaw",
-      "Old Cliff Jumper",
-      "Death Howl",
-      "Rabid Blisterpaw",
-      "Vilebranch Raiding Wolf",
-      "Gordok Hyena",
-      "Scarlet Tracking Hound",
-      "Rabid Bonepaw",
-      "Duros",
-      "Snarler",
-      "Frostwolf Bloodhound",
-      "Starving Bonepaw",
-      "Draka",
-      "Blighthound",
-      "Verek",
-      "Giggler",
-      "Murderous Blisterpaw",
-      "Steelsnap",
-      "Halycon",
-      "Gizrul the Slavener",
-      "Bonepaw Hyena"
+      "Steelsnap", "Starving Bonepaw", "Scarlet Tracking Hound", "Bonepaw Hyena", "Giggler", "Crag Coyote", "Rabid Bonepaw", "Feral Crag Coyote", "Magram Bonepaw", "Maraudine Bonepaw", "Barnabus", "Elder Crag Coyote", "Longtooth Runner", "Starving Blisterpaw", "Mangy Silvermane", "Snarler", "Old Cliff Jumper", "Rabid Crag Coyote", "Murderous Blisterpaw", "Longtooth Howler", "Silvermane Wolf", "Blisterpaw Hyena", "Starving Snickerfang", "Silvermane Howler", "Vilebranch Wolf Pup", "Felpaw Wolf", "Rabid Longtooth", "Rabid Blisterpaw", "Silvermane Stalker"
     ]
   },
   {
@@ -132601,25 +132521,7 @@
     "maxStack": 10,
     "price": 12,
     "droppedBy": [
-      "Giant Plains Creeper",
-      "Plains Creeper",
-      "Wildthorn Lurker",
-      "Elder Moss Creeper",
-      "Wildthorn Venomspitter",
-      "Giant Moss Creeper",
-      "Carrion Recluse",
-      "Naraxis",
-      "Black Widow Hatchling",
-      "Forest Moss Creeper",
-      "Wildthorn Stalker",
-      "Green Recluse",
-      "Venom Web Spider",
-      "Creepthess",
-      "Leech Stalker",
-      "Pygmy Venom Web Spider",
-      "Cave Stalker",
-      "Leech Widow",
-      "Chatter"
+      "Leech Stalker", "Cave Stalker", "Leech Widow", "Pygmy Venom Web Spider", "Venom Web Spider", "Green Recluse", "Black Widow Hatchling", "Carrion Recluse", "Naraxis", "Wildthorn Stalker", "Wildthorn Venomspitter", "Wildthorn Lurker"
     ]
   },
   {
@@ -132927,6 +132829,83 @@
     "detailedType": "Drink",
     "type": "Trade Good",
     "ilvl": 25,
+    "lvl": 1,
+    "maxStack": 20,
+    "price": 10
+  },
+  {
+    "rarity": "Common",
+    "name": "Minor Alchemical Vial",
+    "icon": "ItemPotion84",
+    "detailedType": "Drink",
+    "type": "Trade Good",
+    "ilvl": 5,
+    "lvl": 1,
+    "maxStack": 20,
+    "price": 10
+  },
+  {
+    "rarity": "Common",
+    "name": "Lesser Alchemical Vial",
+    "icon": "ItemPotion85",
+    "detailedType": "Drink",
+    "type": "Trade Good",
+    "ilvl": 13,
+    "lvl": 1,
+    "maxStack": 20,
+    "price": 10
+  },
+  {
+    "rarity": "Common",
+    "name": "Alchemical Vial",
+    "icon": "ItemPotion86",
+    "detailedType": "Drink",
+    "type": "Trade Good",
+    "ilvl": 22,
+    "lvl": 1,
+    "maxStack": 20,
+    "price": 10
+  },
+  {
+    "rarity": "Common",
+    "name": "Greater Alchemical Vial",
+    "icon": "ItemPotion87",
+    "detailedType": "Drink",
+    "type": "Trade Good",
+    "ilvl": 31,
+    "lvl": 1,
+    "maxStack": 20,
+    "price": 10
+  },
+  {
+    "rarity": "Common",
+    "name": "Superior Alchemical Vial",
+    "icon": "ItemPotion88",
+    "detailedType": "Drink",
+    "type": "Trade Good",
+    "ilvl": 45,
+    "lvl": 1,
+    "maxStack": 20,
+    "price": 10
+  },
+  {
+    "rarity": "Common",
+    "name": "Major Alchemical Vial",
+    "icon": "ItemPotion88",
+    "detailedType": "Drink",
+    "type": "Trade Good",
+    "ilvl": 55,
+    "lvl": 1,
+    "maxStack": 20,
+    "price": 10
+  },
+  {
+    "rarity": "Common",
+    "name": "Alchemical Flask",
+    "icon": "ItemPotion88",
+    "detailedType": "Drink",
+    "type": "Trade Good",
+    "ilvl": 60,
     "lvl": 1,
     "maxStack": 20,
     "price": 10
@@ -135623,7 +135602,7 @@
     "icon": "itemshortblade26",
     "detailedType": "Sword",
     "type": "One Handed",
-    "source": "DirectDrop",
+    "source": "RareDrop",
     "ilvl": 24,
     "lvl": 19,
     "minPower": 1.86,
@@ -135632,10 +135611,7 @@
     "price": 2461,
     "stats": {
       "Strength": 3
-    },
-    "droppedBy": [
-      "Bluegill Warrior"
-    ]
+    }
   },
   {
     "rarity": "Rare",
@@ -137311,7 +137287,7 @@
     "icon": "itempants02",
     "type": "Legs",
     "armorClass": "Leather",
-    "source": "DirectDrop",
+    "source": "RareDrop",
     "ilvl": 23,
     "lvl": 18,
     "armor": 72,
@@ -137319,10 +137295,7 @@
     "price": 1085,
     "stats": {
       "Agility": 8
-    },
-    "droppedBy": [
-      "Bluegill Muckdweller"
-    ]
+    }
   },
   {
     "rarity": "Uncommon",
@@ -137437,11 +137410,14 @@
     "icon": "itemmiscfood14",
     "detailedType": "Food",
     "type": "Trade Good",
-    "source": "RareDrop",
+    "source": "DirectDrop",
     "ilvl": 23,
     "lvl": 1,
     "maxStack": 10,
-    "price": 25
+    "price": 25,
+    "droppedBy": [
+      "Drywallow Daggermaw", "Sawtooth Snapper", "Mottled Drywallow Crocolisk", "Ripscale", "Drywallow Vicejaw", "Drywallow Snapper", "Sawtooth Crocolisk", "Saltwater Crocolisk", "Young Sawtooth Crocolisk", "Drywallow Crocolisk", "Snapjaw Crocolisk", "Wetlands Crocolisk", "River Crocolisk", "Elder Saltwater Crocolisk", "Young Wetlands Crocolisk", "Giant Wetlands Crocolisk"
+    ]
   },
   {
     "rarity": "Common",
@@ -137449,11 +137425,14 @@
     "icon": "itemmiscfood71",
     "detailedType": "Food",
     "type": "Trade Good",
-    "source": "RareDrop",
+    "source": "DirectDrop",
     "ilvl": 23,
     "lvl": 1,
     "maxStack": 10,
-    "price": 55
+    "price": 55,
+    "droppedBy": [
+      "Mountain Lion", "Hulking Mountain Lion", "Feral Mountain Lion", "Humar the Pridelord", "Starving Mountain Lion", "Shadumbra", "Echeyakee"
+    ]
   },
   {
     "rarity": "Uncommon",
@@ -137666,11 +137645,14 @@
     "icon": "itemmiscpeltwolfruin03",
     "detailedType": "Leather",
     "type": "Trade Good",
-    "source": "RareDrop",
+    "source": "DirectDrop",
     "ilvl": 23,
     "lvl": 1,
     "maxStack": 10,
-    "price": 30
+    "price": 30,
+    "droppedBy": [
+      "Elder Shadowhorn Stag", "Mosshoof Runner", "Mosshoof Courser", "Mosshoof Stag", "Shadowhorn Stag", "Wild Buck", "Great Courser", "Antlered Courser"
+    ]
   },
   {
     "rarity": "Common",
@@ -139649,32 +139631,11 @@
     "icon": "itemegg03",
     "detailedType": "Egg",
     "type": "Trade Good",
-    "source": "DirectDrop",
+    "source": "ZoneDrop",
     "ilvl": 22,
     "lvl": 1,
     "maxStack": 10,
-    "price": 71,
-    "droppedBy": [
-      "Lashtail Raptor",
-      "Highland Fleshstalker",
-      "Young Jungle Stalker",
-      "Young Lashtail Raptor",
-      "Highland Razormaw",
-      "Elder Razormaw",
-      "Stranglethorn Raptor",
-      "Mottled Razormaw",
-      "Highland Thrasher",
-      "Young Stranglethorn Raptor",
-      "Highland Strider",
-      "Mottled Scytheclaw",
-      "Highland Raptor",
-      "Highland Scytheclaw",
-      "Highland Lashtail",
-      "Mottled Screecher",
-      "Razormaw Matriarch",
-      "Mottled Raptor",
-      "Sarltooth"
-    ]
+    "price": 71
   },
   {
     "rarity": "Uncommon",
@@ -139956,11 +139917,14 @@
     "icon": "itemmiscbone04",
     "detailedType": "Bones",
     "type": "Trade Good",
-    "source": "RareDrop",
+    "source": "DirectDrop",
     "ilvl": 22,
     "lvl": 1,
     "maxStack": 10,
-    "price": 28
+    "price": 28,
+    "droppedBy": [
+      "Raging Cliff Stormer", "Thunderhead", "Stormhide", "Stormsnout", "Cliff Stormer", "Thunderstomp", "Owatanka", "Skum"
+    ]
   },
   {
     "rarity": "Common",
@@ -140806,7 +140770,7 @@
     "icon": "itemspear06",
     "detailedType": "Polearm",
     "type": "Two Handed",
-    "source": "DirectDrop",
+    "source": "RareDrop",
     "ilvl": 21,
     "lvl": 20,
     "minPower": 2.09,
@@ -140816,10 +140780,7 @@
     "stats": {
       "Agility": 6,
       "Stamina": 3
-    },
-    "droppedBy": [
-      "Murloc Nightcrawler"
-    ]
+    }
   },
   {
     "rarity": "Rare",
@@ -140845,7 +140806,7 @@
     "icon": "itembootsfabric01",
     "type": "Feet",
     "armorClass": "Cloth",
-    "source": "DirectDrop",
+    "source": "RareDrop",
     "ilvl": 21,
     "lvl": 16,
     "armor": 24,
@@ -140854,10 +140815,7 @@
     "stats": {
       "Intellect": 2,
       "Spirit": 4
-    },
-    "droppedBy": [
-      "Bluegill Puddlejumper"
-    ]
+    }
   },
   {
     "rarity": "Poor",
@@ -141288,7 +141246,10 @@
     "ilvl": 21,
     "lvl": 1,
     "maxStack": 10,
-    "price": 45
+    "price": 45,
+    "droppedBy": [
+      "Ashenvale Bear", "Gray Bear", "Vicious Gray Bear", "Ursangous", "Elder Ashenvale Bear", "Elder Gray Bear", "Big Samras", "Giant Ashenvale Bear", "Ursol'lok"
+    ]
   },
   {
     "rarity": "Uncommon",
@@ -145504,11 +145465,14 @@
     "icon": "itemmiscfood14",
     "detailedType": "Food",
     "type": "Trade Good",
-    "source": "RareDrop",
+    "source": "DirectDrop",
     "ilvl": 19,
     "lvl": 1,
     "maxStack": 10,
-    "price": 24
+    "price": 24,
+    "droppedBy": [
+      "Ghostpaw Alpha", "Black Ravager", "Black Ravager Mastiff", "Young Black Ravager", "Ghostpaw Howler", "Rabid Dire Wolf", "Ghostpaw Runner", "Starving Dire Wolf", "Lupine Horror", "Lupos", "Mist Howler", "Bleak Worg", "Slavering Worg", "Fenrus the Devourer"
+    ]
   },
   {
     "rarity": "Uncommon",
@@ -145533,7 +145497,7 @@
     "icon": "itemboots01",
     "type": "Feet",
     "armorClass": "Mail",
-    "source": "DirectDrop",
+    "source": "RareDrop",
     "ilvl": 19,
     "lvl": 14,
     "armor": 113,
@@ -145542,10 +145506,7 @@
     "stats": {
       "Strength": 3,
       "Stamina": 3
-    },
-    "droppedBy": [
-      "Blackrock Grunt"
-    ]
+    }
   },
   {
     "rarity": "Uncommon",
@@ -145553,7 +145514,7 @@
     "icon": "itemstaff08",
     "detailedType": "Staff",
     "type": "Two Handed",
-    "source": "DirectDrop",
+    "source": "RareDrop",
     "ilvl": 19,
     "lvl": 14,
     "minPower": 2.0,
@@ -145562,10 +145523,7 @@
     "price": 1497,
     "stats": {
       "Spirit": 6
-    },
-    "droppedBy": [
-      "Murloc Tidecaller"
-    ]
+    }
   },
   {
     "rarity": "Uncommon",
@@ -145573,7 +145531,7 @@
     "icon": "itemsword24",
     "detailedType": "Sword",
     "type": "One Handed",
-    "source": "ZoneDrop",
+    "source": "RareDrop",
     "ilvl": 19,
     "lvl": 14,
     "minPower": 1.65,
@@ -149873,11 +149831,14 @@
     "icon": "itemmiscmonsterscales02",
     "detailedType": "Scale",
     "type": "Trade Good",
-    "source": "RareDrop",
+    "source": "DirectDrop",
     "ilvl": 16,
     "lvl": 1,
     "maxStack": 10,
-    "price": 28
+    "price": 28,
+    "droppedBy": [
+      "Bluegill Raider", "Bluegill Warrior", "Bluegill Muckdweller", "Bluegill Oracle", "Bluegill Puddlejumper", "Bluegill Murloc", "Saltspittle Puddlejumper", "Saltspittle Warrior", "Bluegill Forager", "Murloc Nightcrawler", "Saltspittle Muckdweller", "Blindlight Muckdweller", "Murloc Tidecaller", "Murloc Flesheater", "Murloc Scout", "Blindlight Oracle", "Saltspittle Oracle", "Blindlight Murloc", "Murloc Minor Tidecaller", "Murloc Shorestriker", "Mugglefin", "Gobbler", "Squiddic", "Gelihast", "Mutanus the Devourer"
+    ]
   },
   {
     "rarity": "Poor",
@@ -150901,37 +150862,7 @@
     "maxStack": 10,
     "price": 50,
     "droppedBy": [
-      "Giant Plains Creeper",
-      "Plains Creeper",
-      "Elder Moss Creeper",
-      "Wildthorn Lurker",
-      "Naraxis",
-      "Carrion Recluse",
-      "Deepmoss Matriarch",
-      "Giant Moss Creeper",
-      "Wildthorn Venomspitter",
-      "Creepthess",
-      "Black Widow Hatchling",
-      "Forest Moss Creeper",
-      "Greater Tarantula",
-      "Pygmy Venom Web Spider",
-      "Wildthorn Stalker",
-      "Deepmoss Webspinner",
-      "Green Recluse",
-      "Leech Stalker",
-      "Deepmoss Venomspitter",
-      "Cave Stalker",
-      "Deepmoss Creeper",
-      "Tarantula",
-      "Venom Web Spider",
-      "Wood Lurker",
-      "Leech Widow",
-      "Chatter",
-      "Shanda the Spinner",
-      "Deepmoss Hatchling",
-      "Cliff Lurker",
-      "Forest Lurker",
-      "Besseleth"
+      "Deepmoss Hatchling", "Deepmoss Creeper", "Deepmoss Venomspitter", "Deepmoss Webspinner", "Besseleth", "Deepmoss Matriarch", "Tarantula", "Greater Tarantula", "Chatter", "Cliff Lurker", "Wood Lurker", "Shanda the Spinner", "Giant Moss Creeper", "Forest Moss Creeper", "Creepthess", "Elder Moss Creeper", "Plains Creeper", "Giant Plains Creeper"
     ]
   },
   {
@@ -154479,11 +154410,14 @@
     "icon": "itemmiscfood14",
     "detailedType": "Food",
     "type": "Trade Good",
-    "source": "RareDrop",
+    "source": "DirectDrop",
     "ilvl": 14,
     "lvl": 1,
     "maxStack": 10,
-    "price": 16
+    "price": 16,
+    "droppedBy": [
+      "Loch Crocolisk", "Large Loch Crocolisk", "Deviate Crocolisk"
+    ]
   },
   {
     "rarity": "Common",
@@ -156298,17 +156232,6 @@
   },
   {
     "rarity": "Common",
-    "name": "Goretusk Snout",
-    "icon": "abilitypolymorphpig",
-    "type": "Trade Good",
-    "source": "ZoneDrop",
-    "ilvl": 12,
-    "lvl": 1,
-    "maxStack": 10,
-    "price": 27
-  },
-  {
-    "rarity": "Common",
     "name": "Goretusk Liver",
     "icon": "itemmiscorgan04",
     "detailedType": "Organ",
@@ -157694,11 +157617,14 @@
     "icon": "itemmiscfood71",
     "detailedType": "Food",
     "type": "Trade Good",
-    "source": "RareDrop",
+    "source": "DirectDrop",
     "ilvl": 11,
     "lvl": 1,
     "maxStack": 10,
-    "price": 15
+    "price": 15,
+    "droppedBy": [
+      "Black Bear Patriarch", "Grizzled Thistle Bear", "Rabid Thistle Bear", "Thistle Bear", "Grizzled Black Bear", "Elder Black Bear", "Giant Grizzled Bear", "Ferocious Grizzled Bear", "Den Mother", "Old Vicejaw", "Bjarn", "Mangeclaw", "Ol' Sooty"
+    ]
   },
   {
     "rarity": "Uncommon",
@@ -158496,11 +158422,14 @@
     "icon": "itemmiscfood16",
     "detailedType": "Food",
     "type": "Trade Good",
-    "source": "RareDrop",
+    "source": "DirectDrop",
     "ilvl": 10,
     "lvl": 1,
     "maxStack": 10,
-    "price": 17
+    "price": 17,
+    "droppedBy": [
+      "Salt Flats Vulture", "Salt Flats Scavenger", "Greater Fleshripper", "Vultros", "Fleshripper", "Young Fleshripper"
+    ]
   },
   {
     "rarity": "Poor",
@@ -159386,11 +159315,18 @@
     "icon": "itemmiscfood69",
     "detailedType": "Food",
     "type": "Trade Good",
-    "source": "ZoneDrop",
+    "source": "DirectDrop",
     "ilvl": 10,
     "lvl": 1,
     "maxStack": 10,
-    "price": 10
+    "price": 10,
+    "droppedBy": [
+      "Coyote",
+      "Crag Coyote",
+      "Rabid Crag Coyote",
+      "Elder Crag Coyote",
+      "Feral Crag Coyote"
+    ]
   },
   {
     "rarity": "Poor",
@@ -159620,18 +159556,6 @@
   },
   {
     "rarity": "Common",
-    "name": "Spider Ichor",
-    "icon": "itemmiscslime01",
-    "detailedType": "Potion",
-    "type": "Trade Good",
-    "source": "RareDrop",
-    "ilvl": 10,
-    "lvl": 1,
-    "maxStack": 10,
-    "price": 16
-  },
-  {
-    "rarity": "Common",
     "name": "Warm Winter Robe",
     "icon": "itemchestcloth41",
     "type": "Chest",
@@ -159662,11 +159586,14 @@
     "icon": "itemmiscorgan05",
     "detailedType": "Organ",
     "type": "Trade Good",
-    "source": "RareDrop",
+    "source": "DirectDrop",
     "ilvl": 10,
     "lvl": 1,
     "maxStack": 10,
-    "price": 18
+    "price": 18,
+    "droppedBy": [
+      "Mangy Mountain Boar", "Elder Mountain Boar", "Mountain Boar", "Withered Battle Boar", "Battle Boar Horror", "Rotting Agam'ar", "Raging Agam'ar", "Agam'ar", "Agathelos the Raging", "Bellygrub", "Great Goretusk", "Goretusk", "Young Goretusk"
+    ]
   },
   {
     "rarity": "Common",
@@ -160187,11 +160114,14 @@
     "icon": "itemmiscfood14",
     "detailedType": "Food",
     "type": "Trade Good",
-    "source": "RareDrop",
+    "source": "DirectDrop",
     "ilvl": 10,
     "lvl": 1,
     "maxStack": 10,
-    "price": 7
+    "price": 7,
+    "droppedBy": [
+      "Greater Barrens Kodo", "Wooly Kodo", "Barrens Kodo", "Brontus", "Lakota'mani", "Kodo Matriarch", "Lost Barrens Kodo", "Kodo Calf", "Kodo Bull", "Arra'chea"
+    ]
   },
   {
     "rarity": "Common",
@@ -160212,11 +160142,14 @@
     "icon": "itemmiscfood16",
     "detailedType": "Food",
     "type": "Trade Good",
-    "source": "RareDrop",
+    "source": "DirectDrop",
     "ilvl": 10,
     "lvl": 1,
     "maxStack": 10,
-    "price": 9
+    "price": 9,
+    "droppedBy": [
+      "Ornery Plainstrider", "Foreststrider", "Giant Foreststrider", "Greater Plainstrider", "Foreststrider Fledgling", "Fleeting Plainstrider", "Strider Clutchmother"
+    ]
   },
   {
     "rarity": "Common",
@@ -161252,16 +161185,13 @@
     "icon": "itemsword47",
     "detailedType": "Sword",
     "type": "One Handed",
-    "source": "DirectDrop",
+    "source": "RareDrop",
     "ilvl": 9,
     "lvl": 4,
     "minPower": 1.24,
     "maxPower": 1.52,
     "maxStack": 1,
-    "price": 113,
-    "droppedBy": [
-      "Rockjaw Ambusher"
-    ]
+    "price": 113
   },
   {
     "rarity": "Common",
@@ -161269,15 +161199,12 @@
     "icon": "itemchestleather10",
     "type": "Chest",
     "armorClass": "Leather",
-    "source": "DirectDrop",
+    "source": "RareDrop",
     "ilvl": 9,
     "lvl": 4,
     "armor": 49,
     "maxStack": 1,
-    "price": 54,
-    "droppedBy": [
-      "Scarred Crag Boar"
-    ]
+    "price": 54
   },
   {
     "rarity": "Common",
@@ -161586,15 +161513,12 @@
     "icon": "itemchestcloth34",
     "type": "Chest",
     "armorClass": "Cloth",
-    "source": "DirectDrop",
+    "source": "RareDrop",
     "ilvl": 9,
     "lvl": 4,
     "armor": 17,
     "maxStack": 1,
-    "price": 46,
-    "droppedBy": [
-      "Vicious Night Web Spider"
-    ]
+    "price": 46
   },
   {
     "rarity": "Common",
@@ -162771,11 +162695,14 @@
     "name": "Scorpid Stinger",
     "icon": "abilitynullifypoison",
     "type": "Trade Good",
-    "source": "RareDrop",
+    "source": "DirectDrop",
     "ilvl": 8,
     "lvl": 1,
     "maxStack": 10,
-    "price": 8
+    "price": 8,
+    "droppedBy": [
+      "Armored Scorpid", "Corrupted Scorpid", "Venomtail Scorpid", "Clattering Scorpid", "Death Flayer"
+    ]
   },
   {
     "rarity": "Common",
@@ -163893,10 +163820,6 @@
       "Porcine Entourage",
       "Stonetusk Boar",
       "Corrupted Mottled Boar",
-      "Scarred Crag Boar",
-      "Elder Crag Boar",
-      "Large Crag Boar",
-      "Crag Boar",
       "Princess"
     ]
   },
@@ -164737,11 +164660,14 @@
     "icon": "itemmiscfood14",
     "detailedType": "Food",
     "type": "Trade Good",
-    "source": "RareDrop",
+    "source": "DirectDrop",
     "ilvl": 5,
     "lvl": 1,
     "maxStack": 10,
-    "price": 4
+    "price": 4,
+    "droppedBy": [
+      "Prowler", "Ravenous Darkhound", "Prairie Wolf Alpha", "Worg", "Mottled Worg", "Winter Wolf", "Cursed Darkhound", "Gray Forest Wolf", "Prairie Stalker", "Starving Winter Wolf", "Snow Tracker Wolf", "Bloodsnout Worg", "Mangy Wolf", "Decrepit Darkhound", "Prairie Wolf", "Gorefang", "Bayne", "Timber", "Ghost Howl"
+    ]
   },
   {
     "rarity": "Common",
@@ -164803,7 +164729,10 @@
     "ilvl": 5,
     "lvl": 1,
     "maxStack": 10,
-    "price": 5
+    "price": 5,
+    "droppedBy": [
+      "Scarred Crag Boar", "Elder Crag Boar", "Large Crag Boar", "Crag Boar"
+    ]
   },
   {
     "rarity": "Common",
@@ -165596,66 +165525,7 @@
     "maxStack": 10,
     "price": 3,
     "droppedBy": [
-      "Mother Fang",
-      "Cliff Lurker",
-      "Moss Stalker",
-      "Mist Creeper",
-      "Wood Lurker",
-      "Giant Webwood Spider",
-      "Shanda the Spinner",
-      "Mine Spider",
-      "Webwood Silkspinner",
-      "Forest Lurker",
-      "Webwood Venomfang",
-      "Forest Spider",
-      "Webwood Lurker",
-      "Deepmoss Hatchling",
-      "Krethis Shadowspinner",
-      "Sri'skulk",
-      "Vicious Night Web Spider",
-      "Lady Sathrah",
-      "Porcine Entourage",
-      "Feral Nightsaber",
-      "Nightsaber",
-      "Nightsaber Stalker",
-      "Rageclaw",
-      "Shadow Sprite",
-      "Gnarlpine Mystic",
-      "Juvenile Snow Leopard",
-      "Rascal Sprite",
-      "Strigid Owl",
-      "Gnarlpine Ambusher",
-      "Gnarlpine Augur",
-      "Elder Nightsaber",
-      "Mottled Worg",
-      "Darkeye Bonecaster",
-      "Rockhide Boar",
-      "Timberling Mire Beast",
-      "Dark Sprite",
-      "Prowler",
-      "Crag Boar",
-      "Dire Mottled Boar",
-      "Mangy Wolf",
-      "Burning Blade Fanatic",
-      "Gnarlpine Defender",
-      "Gnarlpine Shaman",
-      "Young Black Bear",
-      "Gnarlpine Warrior",
-      "Bloodfeather Wind Witch",
-      "Stonetusk Boar",
-      "Defias Bandit",
-      "Timberling",
-      "Murloc Forager",
-      "Foreststrider Fledgling",
-      "Sand Crawler",
-      "Timberling Trampler",
-      "Tunnel Rat Scout",
-      "Coyote",
-      "Gray Forest Wolf",
-      "Large Crag Boar",
-      "Riverpaw Outrunner",
-      "Snow Leopard",
-      "Thistle Bear"
+      "Mother Fang", "Moss Stalker", "Mist Creeper", "Giant Webwood Spider", "Mine Spider", "Webwood Silkspinner", "Forest Lurker", "Webwood Venomfang", "Forest Spider", "Webwood Lurker", "Sri'skulk", "Krethis Shadowspinner", "Vicious Night Web Spider", "Lady Sathrah"
     ]
   },
   {
@@ -166430,11 +166300,14 @@
     "icon": "itemmiscpeltbearruin05",
     "detailedType": "Organ",
     "type": "Trade Good",
-    "source": "RareDrop",
+    "source": "DirectDrop",
     "ilvl": 5,
     "lvl": 1,
     "maxStack": 10,
-    "price": 4
+    "price": 4,
+    "droppedBy": [
+      "Blood Seeker", "Ressan the Needler", "Vile Bat", "Vampiric Duskbat", "Greater Duskbat"
+    ]
   },
   {
     "rarity": "Common",
@@ -169988,10 +169861,7 @@
     "type": "Miscellaneous",
     "source": "DirectDrop",
     "ilvl": 1,
-    "maxStack": 20,
-    "droppedBy": [
-      "Bluegill Raider"
-    ]
+    "maxStack": 20
   },
   {
     "rarity": "Common",
@@ -170443,6 +170313,7 @@
     "type": "Miscellaneous",
     "source": "DirectDrop",
     "ilvl": 1,
+    "onlyWithQuest": true,
     "maxStack": 20,
     "droppedBy": [
       "Vicious Night Web Spider"
@@ -172726,21 +172597,25 @@
     "icon": "itemmiscbone06",
     "detailedType": "Bones",
     "type": "Miscellaneous",
-    "source": "ZoneDrop",
+    "source": "DirectDrop",
     "ilvl": 1,
-    "maxStack": 20
+    "onlyWithQuest": true,
+    "maxStack": 20,
+    "directDrop": [
+      "Shadowmaw Panther",
+      "Elder Shadowmaw Panther"
+    ]
   },
   {
     "rarity": "Common",
-    "name": "Pristine Tigress Fang",
+    "name": "Tigress Fang",
     "icon": "itemmiscbone08",
     "detailedType": "Bones",
     "type": "Miscellaneous",
     "source": "DirectDrop",
     "ilvl": 1,
     "maxStack": 1,
-    "indestructible": true,
-    "unique": true,
+    "onlyWithQuest": true,
     "droppedBy": [
       "Stranglethorn Tigress"
     ]
@@ -173398,11 +173273,12 @@
   {
     "rarity": "Common",
     "name": "Elder Crocolisk Skin",
-    "icon": "itemmiscmonsterscales01",
+    "icon": "ItemMiscMonsterScales04",
     "detailedType": "Scale",
     "type": "Miscellaneous",
     "source": "DirectDrop",
     "ilvl": 1,
+    "onlyWithQuest": true,
     "maxStack": 20,
     "droppedBy": [
       "Elder Saltwater Crocolisk"
@@ -175045,6 +174921,7 @@
     "detailedType": "Claw",
     "type": "Miscellaneous",
     "source": "DirectDrop",
+    "onlyWithQuest": true,
     "ilvl": 1,
     "maxStack": 20,
     "droppedBy": [
@@ -179842,6 +179719,7 @@
     "type": "Miscellaneous",
     "source": "DirectDrop",
     "ilvl": 1,
+    "onlyWithQuest": true,
     "maxStack": 20,
     "droppedBy": [
       "Sawtooth Snapper"
@@ -181674,12 +181552,12 @@
     "icon": "itemmiscahnqirajtrinket02",
     "detailedType": "Tool",
     "type": "Miscellaneous",
+    "onlyWithQuest": true,
     "source": "DirectDrop",
     "ilvl": 1,
     "maxStack": 3,
     "droppedBy": [
       "Silithid Harvester",
-      "Silithid Larva",
       "Silithid Swarmer"
     ]
   },
@@ -184013,6 +183891,8 @@
     "source": "DirectDrop",
     "ilvl": 1,
     "maxStack": 1,
+    "indestructible": true,
+    "unique": true,
     "droppedBy": [
       "Shadra"
     ]
@@ -184050,13 +183930,14 @@
   },
   {
     "rarity": "Common",
-    "name": "Undamaged Venom Sac",
+    "name": "Witherbark Venom Sac",
     "icon": "itemmiscorgan02",
     "detailedType": "Organ",
     "type": "Miscellaneous",
     "source": "DirectDrop",
     "ilvl": 1,
     "maxStack": 20,
+    "onlyWithQuest": true,
     "droppedBy": [
       "Witherbark Broodguard"
     ]
@@ -185113,9 +184994,16 @@
     "type": "Miscellaneous",
     "source": "Quest",
     "ilvl": 1,
+    "onlyWithQuest": true,
     "maxStack": 1,
-    "indestructible": true,
-    "unique": true
+    "abilities": {
+      "Fresh Zhevra Carcass": 0
+    },
+    "droppedBy": [
+      "Zhevra Courser",
+      "Zhevra Charger",
+      "Zhevra Runner"
+    ]
   },
   {
     "rarity": "Common",
@@ -187070,10 +186958,13 @@
     "icon": "itemmiscfood13",
     "detailedType": "Food",
     "type": "Miscellaneous",
-    "source": "RareDrop",
+    "source": "DirectDrop",
     "ilvl": 1,
     "maxStack": 10,
-    "price": 503
+    "price": 503,
+    "droppedBy": [
+      "Diseased Grizzly", "Angerclaw Grizzly", "Diseased Black Bear", "Angerclaw Bear", "Angerclaw Mauler", "Mongress"
+    ]
   },
   {
     "rarity": "Poor",
@@ -187511,11 +187402,12 @@
   {
     "rarity": "Common",
     "name": "Solid Crystal Leg Shaft",
-    "icon": "itemmiscmonsterspidercarapace01",
+    "icon": "itemshortblade16",
     "type": "Miscellaneous",
     "source": "DirectDrop",
     "ilvl": 1,
     "maxStack": 20,
+    "onlyWithQuest": true,
     "droppedBy": [
       "Glassweb Spider"
     ]
@@ -188693,9 +188585,13 @@
     "icon": "itemmiscfood14",
     "detailedType": "Food",
     "type": "Miscellaneous",
-    "source": "ZoneDrop",
+    "source": "DirectDrop",
     "ilvl": 1,
-    "maxStack": 10
+    "maxStack": 10,
+    "onlyWithQuest": true,
+    "droppedBy": [
+      "Ursius", "Elder Shardtooth", "Shardtooth Mauler", "Shardtooth Bear", "Rabid Shardtooth"
+    ]
   },
   {
     "rarity": "Common",
@@ -195861,6 +195757,7 @@
     "detailedType": "Organ",
     "type": "Miscellaneous",
     "ilvl": 1,
+    "onlyWithQuest": true,
     "maxStack": 20
   },
   {
@@ -203749,6 +203646,8 @@
     "type": "Miscellaneous",
     "source": "DirectDrop",
     "maxStack": 1,
+    "indestructible": true,
+    "unique": true,
     "droppedBy": [
       "Lady Sathrah"
     ]
@@ -209571,6 +209470,7 @@
     "type": "Miscellaneous",
     "source": "DirectDrop",
     "maxStack": 20,
+    "onlyWithQuest": true,
     "droppedBy": [
       "Sand Skitterer"
     ]
@@ -209687,6 +209587,7 @@
     "icon": "itemmiscmonsterfang01",
     "type": "Miscellaneous",
     "source": "DirectDrop",
+    "onlyWithQuest": true,
     "maxStack": 20,
     "droppedBy": [
       "Rock Stalker"

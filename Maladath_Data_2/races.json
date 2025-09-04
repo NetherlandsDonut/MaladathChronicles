@@ -11787,6 +11787,15 @@
     "vitality": 2.0
   },
   {
+    "name": "Arra'chea",
+    "category": "Beast",
+    "subcategory": "Kodo",
+    "portrait": "PortraitKodo",
+    "abilities": {},
+    "kind": "Rare",
+    "vitality": 2.0
+  },
+  {
     "name": "Warleader Krazzilak",
     "category": "Humanoid",
     "subcategory": "Human",
@@ -17006,6 +17015,15 @@
     "vitality": 1.0
   },
   {
+    "name": "Ishamuhale",
+    "category": "Beast",
+    "subcategory": "Raptor",
+    "portrait": "PortraitRaptor",
+    "abilities": {},
+    "kind": "Elite",
+    "vitality": 3.0
+  },
+  {
     "name": "Deviate Creeper",
     "category": "Beast",
     "subcategory": "Raptor",
@@ -17076,6 +17094,15 @@
     "abilities": {},
     "kind": "Common",
     "vitality": 1.0
+  },
+  {
+    "name": "Sarltooth",
+    "category": "Beast",
+    "subcategory": "Raptor",
+    "portrait": "PortraitRaptorBlue",
+    "abilities": {},
+    "kind": "Elite",
+    "vitality": 3.0
   },
   {
     "name": "Deviate Slayer",
@@ -20615,6 +20642,15 @@
     "vitality": 1.0
   },
   {
+    "name": "Shadra",
+    "category": "Beast",
+    "subcategory": "Spider",
+    "portrait": "PortraitSpiderBloody",
+    "abilities": {},
+    "kind": "Elite",
+    "vitality": 3.0
+  },
+  {
     "name": "Leech Stalker",
     "category": "Beast",
     "subcategory": "Spider",
@@ -23801,6 +23837,15 @@
     "abilities": {},
     "kind": "Common",
     "vitality": 1.0
+  },
+  {
+    "name": "Barnabus",
+    "category": "Beast",
+    "subcategory": "Worg",
+    "portrait": "PortraitWorgBrown",
+    "abilities": {},
+    "kind": "Rare",
+    "vitality": 2.0
   },
   {
     "name": "Scarshield Worg",

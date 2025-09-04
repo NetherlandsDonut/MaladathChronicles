@@ -1,5 +1,181 @@
 [
   {
+    "item": "Small Flame Sac",
+    "rarity": 20.0,
+    "subCategory": "RedWhelp",
+    "dropStart": 1,
+    "dropEnd": 999,
+    "dropCount": 1,
+    "tags": [
+      "Meat"
+    ]
+  },
+  {
+    "item": "Small Flame Sac",
+    "rarity": 20.0,
+    "subCategory": "BlueWhelp",
+    "dropStart": 1,
+    "dropEnd": 999,
+    "dropCount": 1,
+    "tags": [
+      "Meat"
+    ]
+  },
+  {
+    "item": "Small Flame Sac",
+    "rarity": 20.0,
+    "subCategory": "GreenWhelp",
+    "dropStart": 1,
+    "dropEnd": 999,
+    "dropCount": 1,
+    "tags": [
+      "Meat"
+    ]
+  },
+  {
+    "item": "Small Flame Sac",
+    "rarity": 20.0,
+    "subCategory": "BlackWhelp",
+    "dropStart": 1,
+    "dropEnd": 999,
+    "dropCount": 1,
+    "tags": [
+      "Meat"
+    ]
+  },
+  {
+    "item": "Small Flame Sac",
+    "rarity": 30.0,
+    "subCategory": "Faerie Dragon",
+    "dropStart": 1,
+    "dropEnd": 999,
+    "dropCount": 1,
+    "tags": [
+      "Meat"
+    ]
+  },
+  {
+    "item": "Crawler Claw",
+    "rarity": 50.0,
+    "subCategory": "Crab",
+    "dropStart": 9,
+    "dropEnd": 32,
+    "dropCount": 1,
+    "tags": [
+      "Meat"
+    ]
+  },
+  {
+    "item": "Murloc Eye",
+    "rarity": 50.0,
+    "subCategory": "Murloc",
+    "dropStart": 11,
+    "dropEnd": 29,
+    "dropCount": 1,
+    "tags": [
+      "Meat"
+    ]
+  },
+  {
+    "item": "Small Spider Leg",
+    "rarity": 100.0,
+    "subCategory": "Spider",
+    "dropStart": 5,
+    "dropEnd": 14,
+    "dropCount": 1,
+    "tags": [
+      "Meat"
+    ]
+  },
+  {
+    "item": "Spider Ichor",
+    "rarity": 50.0,
+    "subCategory": "Spider",
+    "dropStart": 10,
+    "dropEnd": 24,
+    "dropCount": 1,
+    "tags": [
+      "Fluid"
+    ]
+  },
+  {
+    "item": "Raptor Egg",
+    "rarity": 50.0,
+    "subCategory": "Raptor",
+    "dropStart": 20,
+    "dropEnd": 39,
+    "dropCount": 1,
+    "tags": [
+      "Egg"
+    ]
+  },
+  {
+    "item": "Small Egg",
+    "rarity": 50.0,
+    "subCategory": "Owl",
+    "dropStart": 5,
+    "dropEnd": 19,
+    "dropCount": 1,
+    "tags": [
+      "Egg"
+    ]
+  },
+  {
+    "item": "Small Egg",
+    "rarity": 50.0,
+    "subCategory": "Wildkin",
+    "dropStart": 5,
+    "dropEnd": 19,
+    "dropCount": 1,
+    "tags": [
+      "Egg"
+    ]
+  },
+  {
+    "item": "Small Egg",
+    "rarity": 50.0,
+    "subCategory": "Carrion Bird",
+    "dropStart": 5,
+    "dropEnd": 19,
+    "dropCount": 1,
+    "tags": [
+      "Egg"
+    ]
+  },
+  {
+    "item": "Giant Egg",
+    "rarity": 50.0,
+    "subCategory": "Owl",
+    "dropStart": 40,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "Egg"
+    ]
+  },
+  {
+    "item": "Giant Egg",
+    "rarity": 50.0,
+    "subCategory": "Carrion Bird",
+    "dropStart": 40,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "Egg"
+    ]
+  },
+  {
+    "item": "Giant Egg",
+    "rarity": 50.0,
+    "subCategory": "Wildkin",
+    "dropStart": 40,
+    "dropEnd": 60,
+    "dropCount": 1,
+    "tags": [
+      "Egg"
+    ]
+  },
+  {
     "item": "Big-mouth Clam",
     "rarity": 50.0,
     "subCategory": "Makrura",

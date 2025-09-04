@@ -4616,7 +4616,7 @@
       "currentQuests": [],
       "completedQuests": [],
       "level": 8,
-      "experience": 1400,
+      "experience": 5000,
       "uniquesGotten": [],
       "reputation": {
         "Southsea Pirates": 0,
@@ -5021,9 +5021,9 @@
       }
     },
     "hour": 7,
-    "minute": 26,
-    "second": 30,
-    "currentSite": "Coldridge Pass",
+    "minute": 36,
+    "second": 6,
+    "currentSite": "Lower Wilds",
     "generatedBossPools": {
       "<Forlorn Cloister>": "Azshir the Sleepless",
       "<Ring of Law>": "Hedrum the Creeper"
@@ -5044,10 +5044,13 @@
     "fishingSpots": {},
     "fishingSpoils": {},
     "siteProgress": {
-      "Coldridge Pass": 1
+      "Coldridge Pass": 1,
+      "Lower Wilds": 2
     },
     "commonsKilled": {
-      "Rockjaw Raider": 1
+      "Rockjaw Raider": 1,
+      "Longtooth Runner": 1,
+      "Ironfur Bear": 1
     },
     "raresKilled": {},
     "elitesKilled": {},
@@ -5468,7 +5471,7 @@
       "High Wilderness": 1,
       "Isle of Dread": 1,
       "Lariss Pavillion": 1,
-      "Lower Wilds": 1,
+      "Lower Wilds": 2,
       "Oneiros": 1,
       "Rage Scar Hold": 1,
       "Ruins of Isildien": 1,
@@ -5732,7 +5735,7 @@
       "Shimmering Flats": 1,
       "Splithoof Crag": 1,
       "Tahonda Ruins": 1,
-      "The Great Lift": 1,
+      "The Great Lift": 2,
       "Razorfen Outskirts": 1,
       "Weazel's Crater": 1,
       "Windbreak Canyon": 1,
@@ -5925,9 +5928,9 @@
       "value": "False"
     },
     "startDate": "2025-09-01T01:14:05.3019419+02:00",
-    "lastLoaded": "2025-09-03T18:04:27.6926371+02:00",
-    "lastPlayed": "2025-09-03T18:06:26.443076+02:00",
-    "timePlayed": "00:16:54.7518668",
+    "lastLoaded": "2025-09-04T16:51:44.0519202+02:00",
+    "lastPlayed": "2025-09-04T16:53:10.1921614+02:00",
+    "timePlayed": "00:18:20.8911074",
     "lastVisitedTalents": 2
   },
   {

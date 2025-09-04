@@ -241,6 +241,7 @@ public class Blueprint
                 AddButtonRegion(() =>
                 {
                     AddLine(participant.who.name);
+                    AddLine(board.team2[index] + 1 + "", "DarkGray", "Right");
                     SpawnFloatingText(new Vector3(34, -9), participant.who.level - 10 > currentSave.player.level ? "??" : "" + participant.who.level, ColorEntityLevel(currentSave.player, participant.who.level), "DimGray", "Right");
                     var race = races.Find(x => x.name == participant.who.race);
                     var actionSet = participant.who.currentActionSet != "Default" ? ActionSet.actionSets.Find(x => x.name == participant.who.currentActionSet) : null;
@@ -380,6 +381,7 @@ public class Blueprint
                 {
                     ReverseButtons();
                     AddLine(participant.who.name, "", "Right");
+                    AddLine(board.team1[index] + 1 + "", "DarkGray");
                     SpawnFloatingText(new Vector3(158, -9), participant.who.level + "", "Gray", "DimGray", "Left");
                     var race = races.Find(x => x.name == participant.who.race);
                     var actionSet = participant.who.currentActionSet != "Default" ? ActionSet.actionSets.Find(x => x.name == participant.who.currentActionSet) : null;
@@ -529,7 +531,7 @@ public class Blueprint
             {
                 SetAnchor(Bottom, 0, -31);
                 AddRegionGroup();
-                AddPaddingRegion(() => AddLine("No items here :3"));
+                AddPaddingRegion(() => AddLine(""));
             }
             else
             {

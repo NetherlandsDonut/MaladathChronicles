@@ -2107,6 +2107,54 @@
     }
   },
   {
+    "name": "Fresh Zhevra Carcass",
+    "possibleTargets": "Self",
+    "tags": [],
+    "ranks": [
+      {}
+    ],
+    "events": [
+      {
+        "triggers": [
+          {
+            "Trigger": "ItemUsed"
+          }
+        ],
+        "effects": [
+          {
+            "Effect": "Combat",
+            "CombatEnemy": "Ishamuhale",
+            "CombatEnemyLevel": "19"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "@currentarea == Eastern_Gold_Road",
+            "failedMessage": "You have to be at the Darkcloud Pinnacle"
+          },
+          {
+            "condition": "@killcount~Ishamuhale == 0",
+            "failedMessage": "Ishamuhale has been already defeated"
+          }
+        ]
+      }
+    ],
+    "description": {
+      "regions": [
+        {
+          "regionType": "Padding",
+          "isExtender": true,
+          "contents": [
+            {
+              "Color": "Uncommon",
+              "Text": "Use: Toss the Incendia Powder into the sacred fire of life at the Darkcloud Pinnacle"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "name": "Horn of Hatetalon",
     "possibleTargets": "Self",
     "tags": [],

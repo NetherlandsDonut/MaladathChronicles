@@ -1,15 +1,16 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
+using System.Collections.Generic;
+
 using UnityEditor;
 using UnityEngine;
-using static Defines;
-using static Quest;
+
 using static Race;
 using static Root;
-using static Sound;
 using static Spec;
+using static Quest;
+using static Sound;
+using static Defines;
 
 public class Entity
 {
@@ -1326,12 +1327,10 @@ public class Entity
     public void PrintEntityTooltip()
     {
         AddHeaderGroup();
-        var width = 220;
         SetAnchor(Anchor.Top, 0, -34);
-        //DisableShadows();
-        width = 228;
+        DisableShadows();
         SetRegionGroupHeight(195);
-        SetRegionGroupWidth(width);
+        SetRegionGroupWidth(228);
         AddHeaderRegion(() =>
         {
             AddLine(name ?? race, "Gray");
@@ -1345,9 +1344,11 @@ public class Entity
             AddBigHealthBar(40, -19, this);
             AddLine("Health: ", "DarkGray");
             AddText(health + " / " + MaxHealth(), "Gray");
-            AddLine((int)((double)health / MaxHealth() * 100) + "", "Gray", "Right");
+            AddLine((int)((double)health / MaxHealth() * 100) + "%", "Gray", "Right");
         });
+        AddPaddingRegion(() => SetRegionAsGroupExtender());
         AddRegionGroup();
+        SetRegionGroupWidth(228);
         AddPaddingRegion(() => AddLine());
     }
 
@@ -1392,6 +1393,12 @@ public class Entity
         else if (foo == "GreenDragon") foo = "Dragon";
         else if (foo == "BronzeDragon") foo = "Dragon";
         else if (foo == "ChromaticDragon") foo = "Dragon";
+        else if (foo == "BlackDraconid") foo = "Draconid";
+        else if (foo == "RedDraconid") foo = "Draconid";
+        else if (foo == "BlueDraconid") foo = "Draconid";
+        else if (foo == "GreenDraconid") foo = "Draconid";
+        else if (foo == "BronzeDraconid") foo = "Draconid";
+        else if (foo == "ChromaticDraconid") foo = "Draconid";
         return foo + gender + type;
     }
 
