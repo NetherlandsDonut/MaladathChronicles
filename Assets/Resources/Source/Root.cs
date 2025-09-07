@@ -737,6 +737,7 @@ public static class Root
         }
         if (blueprint.title == "AuctionHouseOffersGroups" || blueprint.title == "AuctionHouseOffers")
             for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+        if (blueprint.title != "PersonTypeLine" && WindowUp("PersonTypeLine")) Respawn("PersonTypeLine");
         return lb;
     }
 
@@ -895,12 +896,12 @@ public static class Root
             var thisWindow = CDesktop.LBWindow();
             AddLine("Page: ", "DarkGray");
             if (thisWindow.paginateFullPages)
-                AddText((thisWindow.pagination() + 1) / thisWindow.perPage + 1 + "");
-            else AddText(thisWindow.pagination() + 1 + "");
-            AddText(" / ", "DarkGray");
+                AddText((thisWindow.pagination() + 1) / thisWindow.perPage + 1 + "", "Gray");
+            else AddText(thisWindow.pagination() + 1 + "", "Gray");
+            AddText(" / ", "Gray");
             if (thisWindow.paginateFullPages)
-                AddText(Math.Ceiling((double)thisWindow.maxPagination() / thisWindow.perPage) + 1 + "");
-            else AddText(thisWindow.maxPagination() + 1 + "");
+                AddText(Math.Ceiling((double)thisWindow.maxPagination() / thisWindow.perPage) + 1 + "", "Gray");
+            else AddText(thisWindow.maxPagination() + 1 + "", "Gray");
             AddSmallButton("OtherNextPage", (h) =>
             {
                 if (thisWindow.pagination() < thisWindow.maxPagination())

@@ -5081,9 +5081,9 @@
     },
     "day": 1,
     "hour": 23,
-    "minute": 9,
-    "second": 23,
-    "currentSite": "Steelgrill's Depot",
+    "minute": 10,
+    "second": 33,
+    "currentSite": "Gadgetspring Hut",
     "generatedBossPools": {
       "<Forlorn Cloister>": "Azshir the Sleepless",
       "<Ring of Law>": "Hedrum the Creeper"
@@ -5218,7 +5218,7 @@
       "Farstrider Lodge": 1,
       "Dun Garok": 1,
       "Brewnall Village": 1,
-      "Kharanos": 1,
+      "Kharanos": 3,
       "Amberstill Ranch": 1,
       "Algaz Station": 1,
       "The Den": 1,
@@ -5343,7 +5343,7 @@
       "Bay of Storms": 1,
       "Bitter Reaches": 1,
       "Haldarr Encampment": 1,
-      "Hetaera's Clutch": 5,
+      "Hetaera's Clutch": 6,
       "Jagged Reef": 1,
       "Lake Mennar": 1,
       "Legash Encampment": 1,
@@ -5357,7 +5357,7 @@
       "Thalassian Base Camp": 1,
       "The Ruined Reaches": 2,
       "The Shattered Strand": 2,
-      "Gadgetspring Hut": 8,
+      "Gadgetspring Hut": 10,
       "Tower of Eldara": 1,
       "Ursolan": 1,
       "Agmond's End": 1,
@@ -6306,6 +6306,124 @@
           "maxAmount": 2,
           "restockSpeed": 40
         }
+      ],
+      "Kharanos:Hegnar Rumbleshot": [
+        {
+          "item": "Ornate Blunderbuss",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Solid Blunderbuss",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Light Shot",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Heavy Shot",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Small Shot Pouch",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+      ],
+      "Kharanos:Golorn Frostbeard": [
+        {
+          "item": "Coarse Thread",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bleach",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Red Dye",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mild Spices",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Weak Flux",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mining Pick",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Empty Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Salt",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Blacksmith Hammer",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Copper Rod",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Fishing Pole",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Blue Dye",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Shiny Bauble",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Skinning Knife",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
       ]
     },
     "banks": {},
@@ -6327,9 +6445,9 @@
       "value": "False"
     },
     "startDate": "2025-09-01T01:14:05.3019419+02:00",
-    "lastLoaded": "2025-09-07T02:07:59.876382+02:00",
-    "lastPlayed": "2025-09-07T02:12:44.0378265+02:00",
-    "timePlayed": "01:06:49.2060204",
+    "lastLoaded": "2025-09-07T13:45:01.2073139+02:00",
+    "lastPlayed": "2025-09-07T13:47:45.8444478+02:00",
+    "timePlayed": "01:09:33.8431543",
     "lastVisitedTalents": 2
   },
   {

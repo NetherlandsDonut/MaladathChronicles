@@ -932,6 +932,7 @@ public class Item
                                     currentSave.player.inventory.money -= item.price * amount * 4;
                                     Respawn("Inventory");
                                     Respawn("Vendor");
+                                    Respawn("PersonTypeLine");
                                 }
                                 else SpawnFallingText(new Vector2(0, 34), "Not enough money", "Red");
                             };
@@ -1075,6 +1076,7 @@ public class Item
                                 Respawn("Inventory");
                                 CloseWindow("Vendor");
                                 Respawn("VendorBuyback");
+                                Respawn("PersonTypeLine");
                             };
                         }
                         else
@@ -1090,6 +1092,7 @@ public class Item
                             currentSave.player.inventory.items.Remove(item);
                             CloseWindow("Vendor");
                             Respawn("VendorBuyback");
+                            Respawn("PersonTypeLine");
                         }
                 }
                 else if (WindowUp("Bank"))

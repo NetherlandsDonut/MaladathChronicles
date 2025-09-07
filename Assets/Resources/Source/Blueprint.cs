@@ -3757,6 +3757,7 @@ public class Blueprint
                                     Person.person = person;
                                     CloseWindow(h.window.title);
                                     Respawn("Person");
+                                    Respawn("PersonTypeLine");
                                     CloseWindow("Instance");
                                     CloseWindow("InstanceWing");
                                     CloseWindow("Complex");
@@ -3787,6 +3788,7 @@ public class Blueprint
                                 Person.person = person;
                                 CloseWindow(h.window.title);
                                 Respawn("Person");
+                                Respawn("PersonTypeLine");
                                 CloseWindow("Instance");
                                 CloseWindow("InstanceWing");
                                 CloseWindow("Complex");
@@ -4061,9 +4063,8 @@ public class Blueprint
             var type = personTypes.Find(x => x.type == person.type);
             AddHeaderRegion(() =>
             {
-                AddLine(person.type + " ", "Gray");
-                AddText(person.name);
-                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == area.faction).side : ""));
+                AddLine(person.name);
+                AddBigButton("Portrait" + person.name.Clean());
             });
             if (type.category == "Class Trainer")
             {
@@ -4287,6 +4288,7 @@ public class Blueprint
             AddButtonRegion(() => AddLine("Goodbye"),
             (h) =>
             {
+                CloseWindow("PersonTypeLine");
                 PlayVoiceLine(person.VoiceLine("Farewell"));
                 PlaySound("DesktopInstanceClose");
                 person = null;
@@ -4306,6 +4308,18 @@ public class Blueprint
                     Respawn("AreaElites");
                     Respawn("Chest");
                 }
+            });
+        }, true),
+        new("PersonTypeLine", () => {
+            SetAnchor(TopLeft, 57, -57);
+            AddHeaderGroup();
+            DisableShadows();
+            SetRegionGroupWidth(152);
+            AddHeaderRegion(() =>
+            {
+                var type = personTypes.Find(x => x.type == person.type);
+                AddLine(person.type, "DarkGray");
+                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == area.faction).side : ""));
             });
         }, true),
         new("Persons", () => {
@@ -4348,6 +4362,7 @@ public class Blueprint
                     quest = null;
                     Person.person = person;
                     Respawn("Person");
+                    Respawn("PersonTypeLine");
                     CloseWindow("Complex");
                     CloseWindow("Persons");
                     CloseWindow("Area");
@@ -4363,16 +4378,19 @@ public class Blueprint
             }
         }, true),
         new("Vendor", () => {
+            var slotAmount = 25;
+            var thisWindow = CDesktop.LBWindow();
+            var list = currentSave.vendorStock[area.name + ":" + person.name];
+            thisWindow.SetPagination(() => list.Count, slotAmount);
             currentSave.buyback ??= new(true);
             SetAnchor(TopLeft, 19, -38);
             AddHeaderGroup();
             SetRegionGroupWidth(190);
-            var items = currentSave.vendorStock[area.name + ":" + person.name];
             AddHeaderRegion(() =>
             {
                 var type = personTypes.Find(x => x.type == person.type);
-                AddLine(person.type + " ", "Gray");
-                AddText(person.name);
+                AddLine(person.name);
+                AddBigButton("Portrait" + person.name.Clean());
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseWindow("Vendor");
@@ -4387,19 +4405,22 @@ public class Blueprint
             {
                 AddLine("Vendor goods:");
             });
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 5; i++)
             {
                 var index = i;
                 AddPaddingRegion(
                     () =>
                     {
                         for (int j = 0; j < 5; j++)
-                            if (index * 5 + j >= 999) AddBigButton("OtherNoSlot");
-                            else if (items.Count > index * 5 + j) PrintVendorItem(items[index * 5 + j], null);
-                            else AddBigButton("OtherEmpty");
+                        {
+                            var index2 = index * 5 + j + thisWindow.pagination();
+                            if (list.Count > index2) PrintVendorItem(list[index2], null);
+                            else AddBigButton("OtherDisabled");
+                        }
                     }
                 );
             }
+            AddPaginationLine();
             AddRegionGroup();
             SetRegionGroupWidth(95);
             AddPaddingRegion(() => AddLine("Merchant", "", "Center"));
@@ -4408,6 +4429,10 @@ public class Blueprint
             AddButtonRegion(() => AddLine("Buyback", "", "Center"), (h) => { CloseWindow("Vendor"); SpawnWindowBlueprint("VendorBuyback"); PlaySound("VendorSwitchTab"); });
         }, true),
         new("VendorBuyback", () => {
+            var slotAmount = 25;
+            var thisWindow = CDesktop.LBWindow();
+            var list = currentSave.buyback.items;
+            thisWindow.SetPagination(() => list.Count, slotAmount);
             SetAnchor(TopLeft, 19, -38);
             AddHeaderGroup();
             SetRegionGroupWidth(190);
@@ -4415,8 +4440,8 @@ public class Blueprint
             AddHeaderRegion(() =>
             {
                 var type = personTypes.Find(x => x.type == person.type);
-                AddLine(person.type + " ", "Gray");
-                AddText(person.name);
+                AddLine(person.name);
+                AddBigButton("Portrait" + person.name.Clean());
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseWindow("VendorBuyback");
@@ -4431,18 +4456,22 @@ public class Blueprint
             {
                 AddLine("Buyback stock:");
             });
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 5; i++)
             {
                 var index = i;
                 AddPaddingRegion(
                     () =>
                     {
                         for (int j = 0; j < 5; j++)
-                            if (currentSave.buyback.items.Count > index * 5 + j) PrintVendorItem(null, currentSave.buyback.items[index * 5 + j]);
+                        {
+                            var index2 = index * 5 + j + thisWindow.pagination();
+                            if (list.Count > index2) PrintVendorItem(null, list[index2]);
                             else AddBigButton("OtherEmpty");
+                        }
                     }
                 );
             }
+            AddPaginationLine();
             AddRegionGroup();
             SetRegionGroupWidth(95);
             AddButtonRegion(() => AddLine("Merchant", "", "Center"), (h) => { CloseWindow("VendorBuyback"); SpawnWindowBlueprint("Vendor"); PlaySound("VendorSwitchTab"); });
@@ -4457,9 +4486,8 @@ public class Blueprint
             var type = personTypes.Find(x => x.type == person.type);
             AddHeaderRegion(() =>
             {
-                AddLine(person.type + " ", "Gray");
-                AddText(person.name);
-                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == area.faction).side : ""));
+                AddLine(person.name);
+                AddBigButton("Portrait" + person.name.Clean());
             });
             AddPaddingRegion(() =>
             {
@@ -4469,7 +4497,6 @@ public class Blueprint
                 AddLine("to ", "DarkGray");
                 AddText(area.name, "LightGray");
                 AddText("?", "DarkGray");
-                AddLine("");
             });
             AddRegionGroup();
             SetRegionGroupWidth(95);
@@ -4509,8 +4536,8 @@ public class Blueprint
             var type = personTypes.Find(x => x.type == person.type);
             AddHeaderRegion(() =>
             {
-                AddLine(person.type + " ", "Gray");
-                AddText(person.name);
+                AddLine(person.name);
+                AddBigButton("Portrait" + person.name.Clean());
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseWindow("MountCollection");
@@ -4594,8 +4621,8 @@ public class Blueprint
             AddHeaderRegion(() =>
             {
                 var type = personTypes.Find(x => x.type == person.type);
-                AddLine(person.type + " ", "Gray");
-                AddText(person.name);
+                AddLine(person.name);
+                AddBigButton("Portrait" + person.name.Clean());
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseWindow("MountVendor");
@@ -4732,8 +4759,8 @@ public class Blueprint
             AddHeaderRegion(() =>
             {
                 var type = personTypes.Find(x => x.type == person.type);
-                AddLine(person.type + " ", "Gray");
-                AddText(person.name);
+                AddLine(person.name);
+                AddBigButton("Portrait" + person.name.Clean());
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseWindow("Bank");
@@ -4865,8 +4892,8 @@ public class Blueprint
             AddHeaderRegion(() =>
             {
                 var type = personTypes.Find(x => x.type == person.type);
-                AddLine(person.type + " ", "Gray");
-                AddText(person.name);
+                AddLine(person.name);
+                AddBigButton("Portrait" + person.name.Clean());
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseWindow("FlightMaster");
@@ -4985,8 +5012,8 @@ public class Blueprint
             AddHeaderRegion(() =>
             {
                 var type = personTypes.Find(x => x.type == person.type);
-                AddLine(person.type + " ", "Gray");
-                AddText(person.name);
+                AddLine(person.name);
+                AddBigButton("Portrait" + person.name.Clean());
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseWindow("AuctionHouseOffersGroups");
@@ -5917,8 +5944,8 @@ public class Blueprint
             AddHeaderRegion(() =>
             {
                 var type = personTypes.Find(x => x.type == person.type);
-                AddLine(person.type + " ", "Gray");
-                AddText(person.name);
+                AddLine(person.name);
+                AddBigButton("Portrait" + person.name.Clean());
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseWindow("AuctionHouseOffers");
@@ -6112,8 +6139,8 @@ public class Blueprint
             SetRegionGroupHeight(288);
             AddHeaderRegion(() =>
             {
-                AddLine(person.type + " ", "Gray");
-                AddText(person.name);
+                AddLine(person.name);
+                AddBigButton("Portrait" + person.name.Clean());
                 AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == area.faction).side : ""));
             });
             AddHeaderRegion(() =>
@@ -6228,8 +6255,8 @@ public class Blueprint
             SetRegionGroupHeight(288);
             AddHeaderRegion(() =>
             {
-                AddLine(person.type + " ", "Gray");
-                AddText(person.name);
+                AddLine(person.name);
+                AddBigButton("Portrait" + person.name.Clean());
                 AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == area.faction).side : ""));
             });
             AddHeaderRegion(() =>
@@ -7917,7 +7944,6 @@ public class Blueprint
                     AddSmallButton("OtherSettingsOff");
             });
             var regionGroup = CDesktop.LBWindow().LBRegionGroup();
-            AddPaginationLine();
             var actionSet = currentSave.player.actionSets[currentSave.player.currentActionSet];
             AddRegionGroup();
             for (int i = 0; i < rowAmount; i++)
@@ -8042,6 +8068,9 @@ public class Blueprint
         }),
         new("SpellbookAbilityListActivatedBottom", () => {
             SetAnchor(BottomRight, 0, 35);
+            AddHeaderGroup();
+            SetRegionGroupWidth(190);
+            AddPaginationLine();
             AddRegionGroup();
             SetRegionGroupWidth(95);
             AddPaddingRegion(() => AddLine("Activated", "", "Center"));
@@ -8085,7 +8114,6 @@ public class Blueprint
                     AddSmallButton("OtherSortOff");
             });
             var regionGroup = CDesktop.LBWindow().LBRegionGroup();
-            AddPaginationLine();
             AddRegionGroup();
             for (int i = 0; i < rowAmount; i++)
             {
@@ -8136,6 +8164,9 @@ public class Blueprint
         }),
         new("SpellbookAbilityListPassiveBottom", () => {
             SetAnchor(BottomRight, 0, 35);
+            AddHeaderGroup();
+            SetRegionGroupWidth(190);
+            AddPaginationLine();
             AddRegionGroup();
             SetRegionGroupWidth(95);
             AddButtonRegion(() => AddLine("Activated", "", "Center"), (h) =>
@@ -9079,6 +9110,7 @@ public class Blueprint
                 }
                 else if (CloseWindow("Person"))
                 {
+                    CloseWindow("PersonTypeLine");
                     PlaySound("DesktopInstanceClose");
                     person = null;
                     if (personCategory != null) Respawn("Persons");
@@ -9239,6 +9271,7 @@ public class Blueprint
                 }
                 else if (CloseWindow("Person"))
                 {
+                    CloseWindow("PersonTypeLine");
                     PlaySound("DesktopInstanceClose");
                     person = null;
                     if (personCategory != null) Respawn("Persons");
@@ -9422,6 +9455,7 @@ public class Blueprint
                     }
                     else if (CloseWindow("Person"))
                     {
+                        CloseWindow("PersonTypeLine");
                         PlaySound("DesktopInstanceClose");
                         person = null;
                         if (personCategory != null) Respawn("Persons");
