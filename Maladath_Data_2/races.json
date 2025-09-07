@@ -20201,6 +20201,16 @@
     "vitality": 1.0
   },
   {
+    "name": "Skeletal Fiend",
+    "category": "Undead",
+    "subcategory": "Skeleton",
+    "faction": "Scourge",
+    "portrait": "PortraitSkeleton",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
+  },
+  {
     "name": "Undead Ravager",
     "category": "Undead",
     "subcategory": "Skeleton",

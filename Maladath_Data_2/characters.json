@@ -4614,9 +4614,17 @@
     "playerSide": "Alliance",
     "player": {
       "currentQuests": [],
-      "completedQuests": [],
-      "level": 8,
-      "experience": 5000,
+      "completedQuests": [
+        40,
+        35,
+        37,
+        45,
+        71,
+        39,
+        59
+      ],
+      "level": 13,
+      "experience": 1964,
       "uniquesGotten": [],
       "reputation": {
         "Southsea Pirates": 0,
@@ -4626,7 +4634,7 @@
         "Woodpaw Tribe": 0,
         "The Burning Legion": 0,
         "Darkspear Tribe": 0,
-        "Stormwind": 4250,
+        "Stormwind": 4835,
         "Timbermaw Tribe": 4050,
         "Magram Clan": 0,
         "Gelkis Clan": 0,
@@ -4756,7 +4764,7 @@
           ]
         },
         "Mining": {
-          "Item1": 2,
+          "Item1": 4,
           "Item2": [
             "Amateur"
           ]
@@ -4818,7 +4826,7 @@
         ],
         "Herbalism": []
       },
-      "unspentTalentPoints": 3,
+      "unspentTalentPoints": 7,
       "faction": "Ironforge",
       "name": "Brudriak",
       "race": "Dwarf",
@@ -4847,7 +4855,8 @@
         "Seal of Protection": 0,
         "Barricade of Faith": 0,
         "Hammer of Justice": 0,
-        "Mind Control": 0
+        "Mind Control": 0,
+        "Resolute Defender": 0
       },
       "currentActionSet": "Default",
       "actionSets": {
@@ -4876,6 +4885,7 @@
         "Order Mastery": 3
       },
       "inventory": {
+        "money": 700,
         "items": [
           {
             "rarity": "Common",
@@ -4921,20 +4931,6 @@
             "price": 2
           },
           {
-            "x": 3,
-            "rarity": "Common",
-            "name": "Copper Ore",
-            "icon": "itemorecopper01",
-            "detailedType": "Ore",
-            "type": "Trade Good",
-            "source": "RareDrop",
-            "ilvl": 10,
-            "lvl": 1,
-            "amount": 2,
-            "maxStack": 10,
-            "price": 5
-          },
-          {
             "x": 4,
             "rarity": "Common",
             "name": "Major Healing Potion",
@@ -4949,6 +4945,66 @@
               "Major Healing Potion": 1
             },
             "price": 1000
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "rarity": "Common",
+            "name": "Kingsblood",
+            "icon": "itemmischerb03",
+            "detailedType": "Flowers",
+            "type": "Trade Good",
+            "source": "RareDrop",
+            "ilvl": 24,
+            "lvl": 1,
+            "amount": 2,
+            "maxStack": 20,
+            "price": 30
+          },
+          {
+            "x": 3,
+            "y": 1,
+            "rarity": "Uncommon",
+            "name": "Schematic: Spellpower Goggles Xtreme Plus",
+            "icon": "itemscroll06",
+            "detailedType": "Scroll",
+            "type": "Recipe",
+            "source": "DirectDrop",
+            "amount": 1,
+            "maxStack": 1,
+            "price": 4000,
+            "droppedBy": [
+              "Spitelash Siren"
+            ]
+          },
+          {
+            "y": 1,
+            "rarity": "Poor",
+            "name": "Squire's Pants",
+            "icon": "itempants02",
+            "type": "Legs",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 2,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "rarity": "Common",
+            "name": "Copper Bar",
+            "icon": "itemingot02",
+            "detailedType": "Ingot",
+            "type": "Trade Good",
+            "source": "Profession",
+            "ilvl": 10,
+            "lvl": 1,
+            "amount": 2,
+            "maxStack": 20,
+            "price": 10
           }
         ],
         "bags": []
@@ -4981,17 +5037,20 @@
           "price": 1
         },
         "Legs": {
-          "rarity": "Poor",
-          "name": "Squire's Pants",
+          "x": 1,
+          "y": 1,
+          "rarity": "Common",
+          "name": "Patched Pants",
           "icon": "itempants02",
           "type": "Legs",
-          "armorClass": "Cloth",
-          "ilvl": 1,
+          "armorClass": "Leather",
+          "source": "Quest",
+          "ilvl": 10,
           "lvl": 1,
-          "armor": 2,
+          "armor": 46,
           "amount": 1,
           "maxStack": 1,
-          "price": 1
+          "price": 75
         },
         "Chest": {
           "rarity": "Common",
@@ -5006,7 +5065,7 @@
         }
       },
       "worldBuffs": [],
-      "health": 240,
+      "health": 315,
       "resources": {
         "Earth": 0,
         "Fire": 0,
@@ -5020,10 +5079,11 @@
         "Shadow": 0
       }
     },
-    "hour": 7,
-    "minute": 36,
-    "second": 6,
-    "currentSite": "Lower Wilds",
+    "day": 1,
+    "hour": 23,
+    "minute": 9,
+    "second": 23,
+    "currentSite": "Steelgrill's Depot",
     "generatedBossPools": {
       "<Forlorn Cloister>": "Azshir the Sleepless",
       "<Ring of Law>": "Hedrum the Creeper"
@@ -5032,27 +5092,79 @@
       {
         "name": "Alliance Market",
         "auctions": [],
-        "hoursSinceUpdate": 24
+        "hoursSinceUpdate": 64
       },
       {
         "name": "Horde Market",
         "auctions": [],
-        "hoursSinceUpdate": 24
+        "hoursSinceUpdate": 64
       }
     ],
-    "openedChests": {},
+    "openedChests": {
+      "Lower Wilds": {
+        "area": "Lower Wilds",
+        "inventory": {
+          "items": [],
+          "bags": [],
+          "ignoreSpaceChecks": true
+        }
+      },
+      "The Ruined Reaches": {
+        "area": "The Ruined Reaches",
+        "inventory": {
+          "items": [
+            {
+              "rarity": "Uncommon",
+              "name": "Lesser Eternal Essence",
+              "icon": "itemenchantessenceeternalsmall",
+              "detailedType": "Essence",
+              "type": "Trade Good",
+              "ilvl": 50,
+              "lvl": 1,
+              "amount": 2,
+              "maxStack": 10,
+              "abilities": {
+                "Form Greater Eternal Essence": 1
+              },
+              "price": 1240
+            },
+            {
+              "x": 1,
+              "rarity": "Rare",
+              "name": "Small Brilliant Shard",
+              "icon": "itemenchantshardbrilliantsmall",
+              "detailedType": "Shard",
+              "type": "Trade Good",
+              "source": "RareDrop",
+              "ilvl": 50,
+              "lvl": 1,
+              "amount": 1,
+              "maxStack": 20,
+              "price": 2180
+            }
+          ],
+          "bags": [],
+          "ignoreSpaceChecks": true
+        }
+      }
+    },
     "fishingSpots": {},
     "fishingSpoils": {},
     "siteProgress": {
       "Coldridge Pass": 1,
-      "Lower Wilds": 2
+      "Lower Wilds": 3,
+      "The Ruined Reaches": 6
     },
     "commonsKilled": {
       "Rockjaw Raider": 1,
       "Longtooth Runner": 1,
-      "Ironfur Bear": 1
+      "Ironfur Bear": 2,
+      "Spitelash Siren": 2,
+      "Spitelash Myrmidon": 3
     },
-    "raresKilled": {},
+    "raresKilled": {
+      "Monnos the Elder": 1
+    },
     "elitesKilled": {},
     "siteVisits": {
       "Anvilmar": 2,
@@ -5069,7 +5181,7 @@
       "Dabyrie's Farmstead": 1,
       "Azurelode Mine": 1,
       "Westbrook Garrison": 1,
-      "Goldshire": 1,
+      "Goldshire": 4,
       "Lakeshire": 1,
       "Northshire Abbey": 1,
       "Southshore": 1,
@@ -5117,7 +5229,7 @@
       "Valormok": 1,
       "The Mor'shan Rampart": 1,
       "Grom'gol Base Camp": 1,
-      "Splintertree Post": 1,
+      "Splintertree Post": 2,
       "Kargath": 1,
       "Stonard": 1,
       "Brackenwall Village": 1,
@@ -5213,7 +5325,7 @@
       "Night Run": 1,
       "Shael'dryn Moonwell": 1,
       "Central Nightsong Woods": 1,
-      "Eastern Nightsong Woods": 1,
+      "Eastern Nightsong Woods": 2,
       "Northern Nightsong Woods": 1,
       "Ruins of Ordil'Aran": 1,
       "Ruins of Stardust": 1,
@@ -5231,21 +5343,21 @@
       "Bay of Storms": 1,
       "Bitter Reaches": 1,
       "Haldarr Encampment": 1,
-      "Hetaera's Clutch": 1,
+      "Hetaera's Clutch": 5,
       "Jagged Reef": 1,
       "Lake Mennar": 1,
       "Legash Encampment": 1,
       "Legash Head Camp": 1,
       "Ravencrest Monument": 1,
       "Rethress Sanctum": 1,
-      "Ruins of Eldarath": 1,
+      "Ruins of Eldarath": 3,
       "Shadowsong Shrine": 1,
-      "Southridge Beach": 1,
+      "Southridge Beach": 3,
       "Temple of Arkkoran": 1,
       "Thalassian Base Camp": 1,
-      "The Ruined Reaches": 1,
-      "The Shattered Strand": 1,
-      "Gadgetspring Hut": 1,
+      "The Ruined Reaches": 2,
+      "The Shattered Strand": 2,
+      "Gadgetspring Hut": 8,
       "Tower of Eldara": 1,
       "Ursolan": 1,
       "Agmond's End": 1,
@@ -5429,13 +5541,13 @@
       "Thondroril River": 1,
       "Zul'Mashar": 1,
       "Brackwell Pumpkin Patch": 1,
-      "Eastvale Logging Camp": 1,
+      "Eastvale Logging Camp": 2,
       "Echo Ridge Mine": 1,
       "Fargodeep Mine": 1,
       "Crystal Lake": 1,
       "Forest's Edge": 1,
-      "Stone Cairn Lake": 1,
-      "Southern Stone Cairn Lake": 1,
+      "Stone Cairn Lake": 3,
+      "Southern Stone Cairn Lake": 4,
       "Heroes' Vigil": 1,
       "Jasperlode Mine": 1,
       "Mirror Lake": 1,
@@ -5446,7 +5558,7 @@
       "Stonefield Farm": 1,
       "The Maclure Vineyards": 1,
       "Jerod's Landing": 1,
-      "East Elwynn Bridge": 1,
+      "East Elwynn Bridge": 6,
       "Tower of Azora": 1,
       "Bloodvenom Falls": 1,
       "Bloodvenom River": 1,
@@ -5471,7 +5583,7 @@
       "High Wilderness": 1,
       "Isle of Dread": 1,
       "Lariss Pavillion": 1,
-      "Lower Wilds": 2,
+      "Lower Wilds": 4,
       "Oneiros": 1,
       "Rage Scar Hold": 1,
       "Ruins of Isildien": 1,
@@ -5785,7 +5897,7 @@
       "Jangolode Mine": 1,
       "Riverpaw Camp": 1,
       "Alexton Farmstead": 1,
-      "Jansen Stead": 1,
+      "Jansen Stead": 5,
       "Longshore": 1,
       "Northern Longshore": 1,
       "Defias Watchtower": 1,
@@ -5863,9 +5975,10 @@
       "Orgrimmar": 1,
       "Undercity": 1,
       "Thunder Bluff": 1,
-      "Stormwind City": 1,
+      "Stormwind City": 5,
       "Ironforge": 1,
-      "Darnassus": 1
+      "Darnassus": 1,
+      "Steelgrill's Depot": 2
     },
     "unlockedAreas": [],
     "flags": {},
@@ -5907,6 +6020,292 @@
           "maxAmount": 2,
           "restockSpeed": 40
         }
+      ],
+      "Gadgetspring Hut:Blimo Gadgetspring": [
+        {
+          "item": "Coarse Thread",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Fine Thread",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Black Dye",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Red Dye",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mild Spices",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Hot Spices",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Weak Flux",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mining Pick",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Dust of Decay",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Empty Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Leaded Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Strong Flux",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Soothing Spices",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Coal",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Salt",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Silken Thread",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Gray Dye",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Yellow Dye",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Purple Dye",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Wooden Stock",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Heavy Stock",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Copper Rod",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Fishing Pole",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Nightcrawlers",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bright Baubles",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Skinning Knife",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Heavy Silken Thread",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Crystal Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Pattern: Chimeric Gloves",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Pattern: Blue Dragonscale Breastplate",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+      ],
+      "Gadgetspring Hut:Jubie Gadgetspring": [
+        {
+          "item": "Weak Flux",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mining Pick",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Strong Flux",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Rough Blasting Powder",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Copper Tube",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Copper Modulator",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Coarse Blasting Powder",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bronze Tube",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bronze Framework",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Gyrochronatom",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Wooden Stock",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Heavy Stock",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Silver Contact",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Blacksmith Hammer",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Schematic: Deepdive Helmet",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Engineer's Ink",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Blank Parchment",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
       ]
     },
     "banks": {},
@@ -5928,9 +6327,9 @@
       "value": "False"
     },
     "startDate": "2025-09-01T01:14:05.3019419+02:00",
-    "lastLoaded": "2025-09-04T16:51:44.0519202+02:00",
-    "lastPlayed": "2025-09-04T16:53:10.1921614+02:00",
-    "timePlayed": "00:18:20.8911074",
+    "lastLoaded": "2025-09-07T02:07:59.876382+02:00",
+    "lastPlayed": "2025-09-07T02:12:44.0378265+02:00",
+    "timePlayed": "01:06:49.2060204",
     "lastVisitedTalents": 2
   },
   {

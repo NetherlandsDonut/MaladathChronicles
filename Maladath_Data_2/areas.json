@@ -22881,13 +22881,6 @@
         "type": "Cook"
       },
       {
-        "name": "Yarr Hammerstone",
-        "gender": "Male",
-        "voiceVariant": 3,
-        "race": "Dwarf",
-        "type": "Miner"
-      },
-      {
         "name": "Thamner Pol",
         "gender": "Male",
         "voiceVariant": 2,
@@ -22900,13 +22893,6 @@
         "voiceVariant": 3,
         "race": "Dwarf",
         "type": "Journeyman Blacksmith"
-      },
-      {
-        "name": "Bronk Guzzlegear",
-        "gender": "Male",
-        "voiceVariant": 1,
-        "race": "Dwarf",
-        "type": "Journeyman Engineer"
       },
       {
         "name": "Thrawn Boltar",
@@ -23182,6 +23168,29 @@
     "x": 5159,
     "y": -2807,
     "name": "Kharanos",
+    "zone": "Dun Morogh",
+    "faction": "Ironforge"
+  },
+  {
+    "people": [
+      {
+        "name": "Yarr Hammerstone",
+        "gender": "Male",
+        "voiceVariant": 3,
+        "race": "Dwarf",
+        "type": "Miner"
+      },
+      {
+        "name": "Bronk Guzzlegear",
+        "gender": "Male",
+        "voiceVariant": 1,
+        "race": "Dwarf",
+        "type": "Journeyman Engineer"
+      }
+    ],
+    "x": 5196,
+    "y": -2792,
+    "name": "Steelgrill's Depot",
     "zone": "Dun Morogh",
     "faction": "Ironforge"
   },
@@ -43305,6 +43314,9 @@
     "type": "HostileArea"
   },
   {
+    "chestBonus": {
+      "Schematic: Spellpower Goggles Xtreme Plus": 1
+    },
     "commonEncounters": [
       {
         "who": "Son of Arkkoroc",
@@ -50751,9 +50763,9 @@
         "levelMax": 27
       },
       {
-        "who": "Plague Spreader",
-        "levelMin": 26,
-        "levelMax": 27
+        "who": "Skeletal Fiend",
+        "levelMin": 25,
+        "levelMax": 26
       },
       {
         "who": "Bone Chewer",
@@ -72805,6 +72817,9 @@
     "type": "HostileArea"
   },
   {
+    "chestBonus": {
+      "Furlbrow's Pocket Watch": 1
+    },
     "commonEncounters": [
       {
         "who": "Harvest Watcher",

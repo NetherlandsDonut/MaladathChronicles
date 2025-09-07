@@ -53169,7 +53169,10 @@
     "lvl": 1,
     "maxStack": 20,
     "droppedBy": [
-      "Arcane Chimaerok", "Chimaerok Devourer", "Chimaerok", "Lord Lakmaeran"
+      "Arcane Chimaerok",
+      "Chimaerok Devourer",
+      "Chimaerok",
+      "Lord Lakmaeran"
     ]
   },
   {
@@ -56841,7 +56844,7 @@
   {
     "rarity": "Common",
     "name": "Major Mana Potion",
-    "icon": "itempotion76",
+    "icon": "ItemPotion75",
     "detailedType": "Potion",
     "type": "Miscellaneous",
     "ilvl": 59,
@@ -103761,7 +103764,34 @@
     "maxStack": 10,
     "price": 150,
     "droppedBy": [
-      "Death Howl", "Felpaw Scavenger", "Bloodhound", "Snickerfang Hyena", "Vilebranch Raiding Wolf", "Ravage", "Felpaw Ravager", "Ember Worg", "Bloodaxe Worg Pup", "Gordok Hyena", "Deathmaw", "Plaguehound Runt", "Diseased Wolf", "Slavering Ember Worg", "Scarshield Worg", "Frostwolf Bloodhound", "Blackrock Worg", "Bloodhound Mastiff", "Verek", "Giant Ember Worg", "Plaguehound", "Bloodaxe Worg", "Frenzied Plaguehound", "Blighthound", "Halycon", "Draka", "Duros", "Gizrul the Slavener"
+      "Death Howl",
+      "Felpaw Scavenger",
+      "Bloodhound",
+      "Snickerfang Hyena",
+      "Vilebranch Raiding Wolf",
+      "Ravage",
+      "Felpaw Ravager",
+      "Ember Worg",
+      "Bloodaxe Worg Pup",
+      "Gordok Hyena",
+      "Deathmaw",
+      "Plaguehound Runt",
+      "Diseased Wolf",
+      "Slavering Ember Worg",
+      "Scarshield Worg",
+      "Frostwolf Bloodhound",
+      "Blackrock Worg",
+      "Bloodhound Mastiff",
+      "Verek",
+      "Giant Ember Worg",
+      "Plaguehound",
+      "Bloodaxe Worg",
+      "Frenzied Plaguehound",
+      "Blighthound",
+      "Halycon",
+      "Draka",
+      "Duros",
+      "Gizrul the Slavener"
     ]
   },
   {
@@ -103790,7 +103820,9 @@
     "maxStack": 10,
     "price": 112,
     "droppedBy": [
-      "Monstrous Crawler", "Southern Sand Crawler", "Silt Crawler"
+      "Monstrous Crawler",
+      "Southern Sand Crawler",
+      "Silt Crawler"
     ]
   },
   {
@@ -112012,7 +112044,26 @@
     "maxStack": 10,
     "price": 181,
     "droppedBy": [
-      "Sharptalon", "Young Mesa Buzzard", "Dread Swoop", "Mesa Buzzard", "Starving Buzzard", "Carrion Horror", "Dread Flyer", "Elder Mesa Buzzard", "Buzzard", "Dread Ripper", "Giant Buzzard", "Roc", "Fire Roc", "Greater Firebird", "Black Slayer", "Searing Roc", "Carrion Vulture", "Spiteflayer", "Zaricotl", "Sky Shadow"
+      "Sharptalon",
+      "Young Mesa Buzzard",
+      "Dread Swoop",
+      "Mesa Buzzard",
+      "Starving Buzzard",
+      "Carrion Horror",
+      "Dread Flyer",
+      "Elder Mesa Buzzard",
+      "Buzzard",
+      "Dread Ripper",
+      "Giant Buzzard",
+      "Roc",
+      "Fire Roc",
+      "Greater Firebird",
+      "Black Slayer",
+      "Searing Roc",
+      "Carrion Vulture",
+      "Spiteflayer",
+      "Zaricotl",
+      "Sky Shadow"
     ]
   },
   {
@@ -113963,7 +114014,9 @@
     "maxStack": 10,
     "price": 112,
     "droppedBy": [
-      "Ancient Kodo", "Dying Kodo", "Aged Kodo"
+      "Ancient Kodo",
+      "Dying Kodo",
+      "Aged Kodo"
     ]
   },
   {
@@ -124303,7 +124356,30 @@
     "maxStack": 10,
     "price": 87,
     "droppedBy": [
-      "Highland Strider", "Young Stranglethorn Raptor", "Razormaw Matriarch", "Stranglethorn Raptor", "Highland Thrasher", "Young Lashtail Raptor", "Bloodfen Raptor", "Lashtail Raptor", "Bloodfen Screecher", "Young Jungle Stalker", "Highland Fleshstalker", "Bloodfen Scytheclaw", "Dart", "Bloodfen Razormaw", "Jungle Stalker", "Bloodfen Lashtail", "Tethis", "Ravasaur", "Ravasaur Runner", "Ravasaur Hunter", "Lar'korwi Mate", "Ravasaur Matriarch", "Venomhide Ravasaur", "Lar'korwi"
+      "Highland Strider",
+      "Young Stranglethorn Raptor",
+      "Razormaw Matriarch",
+      "Stranglethorn Raptor",
+      "Highland Thrasher",
+      "Young Lashtail Raptor",
+      "Bloodfen Raptor",
+      "Lashtail Raptor",
+      "Bloodfen Screecher",
+      "Young Jungle Stalker",
+      "Highland Fleshstalker",
+      "Bloodfen Scytheclaw",
+      "Dart",
+      "Bloodfen Razormaw",
+      "Jungle Stalker",
+      "Bloodfen Lashtail",
+      "Tethis",
+      "Ravasaur",
+      "Ravasaur Runner",
+      "Ravasaur Hunter",
+      "Lar'korwi Mate",
+      "Ravasaur Matriarch",
+      "Venomhide Ravasaur",
+      "Lar'korwi"
     ]
   },
   {
@@ -124318,7 +124394,35 @@
     "maxStack": 10,
     "price": 87,
     "droppedBy": [
-      "Steelsnap", "Starving Bonepaw", "Scarlet Tracking Hound", "Bonepaw Hyena", "Giggler", "Crag Coyote", "Rabid Bonepaw", "Feral Crag Coyote", "Magram Bonepaw", "Maraudine Bonepaw", "Barnabus", "Elder Crag Coyote", "Longtooth Runner", "Starving Blisterpaw", "Mangy Silvermane", "Snarler", "Old Cliff Jumper", "Rabid Crag Coyote", "Murderous Blisterpaw", "Longtooth Howler", "Silvermane Wolf", "Blisterpaw Hyena", "Starving Snickerfang", "Silvermane Howler", "Vilebranch Wolf Pup", "Felpaw Wolf", "Rabid Longtooth", "Rabid Blisterpaw", "Silvermane Stalker"
+      "Steelsnap",
+      "Starving Bonepaw",
+      "Scarlet Tracking Hound",
+      "Bonepaw Hyena",
+      "Giggler",
+      "Crag Coyote",
+      "Rabid Bonepaw",
+      "Feral Crag Coyote",
+      "Magram Bonepaw",
+      "Maraudine Bonepaw",
+      "Barnabus",
+      "Elder Crag Coyote",
+      "Longtooth Runner",
+      "Starving Blisterpaw",
+      "Mangy Silvermane",
+      "Snarler",
+      "Old Cliff Jumper",
+      "Rabid Crag Coyote",
+      "Murderous Blisterpaw",
+      "Longtooth Howler",
+      "Silvermane Wolf",
+      "Blisterpaw Hyena",
+      "Starving Snickerfang",
+      "Silvermane Howler",
+      "Vilebranch Wolf Pup",
+      "Felpaw Wolf",
+      "Rabid Longtooth",
+      "Rabid Blisterpaw",
+      "Silvermane Stalker"
     ]
   },
   {
@@ -132521,7 +132625,18 @@
     "maxStack": 10,
     "price": 12,
     "droppedBy": [
-      "Leech Stalker", "Cave Stalker", "Leech Widow", "Pygmy Venom Web Spider", "Venom Web Spider", "Green Recluse", "Black Widow Hatchling", "Carrion Recluse", "Naraxis", "Wildthorn Stalker", "Wildthorn Venomspitter", "Wildthorn Lurker"
+      "Leech Stalker",
+      "Cave Stalker",
+      "Leech Widow",
+      "Pygmy Venom Web Spider",
+      "Venom Web Spider",
+      "Green Recluse",
+      "Black Widow Hatchling",
+      "Carrion Recluse",
+      "Naraxis",
+      "Wildthorn Stalker",
+      "Wildthorn Venomspitter",
+      "Wildthorn Lurker"
     ]
   },
   {
@@ -137416,7 +137531,22 @@
     "maxStack": 10,
     "price": 25,
     "droppedBy": [
-      "Drywallow Daggermaw", "Sawtooth Snapper", "Mottled Drywallow Crocolisk", "Ripscale", "Drywallow Vicejaw", "Drywallow Snapper", "Sawtooth Crocolisk", "Saltwater Crocolisk", "Young Sawtooth Crocolisk", "Drywallow Crocolisk", "Snapjaw Crocolisk", "Wetlands Crocolisk", "River Crocolisk", "Elder Saltwater Crocolisk", "Young Wetlands Crocolisk", "Giant Wetlands Crocolisk"
+      "Drywallow Daggermaw",
+      "Sawtooth Snapper",
+      "Mottled Drywallow Crocolisk",
+      "Ripscale",
+      "Drywallow Vicejaw",
+      "Drywallow Snapper",
+      "Sawtooth Crocolisk",
+      "Saltwater Crocolisk",
+      "Young Sawtooth Crocolisk",
+      "Drywallow Crocolisk",
+      "Snapjaw Crocolisk",
+      "Wetlands Crocolisk",
+      "River Crocolisk",
+      "Elder Saltwater Crocolisk",
+      "Young Wetlands Crocolisk",
+      "Giant Wetlands Crocolisk"
     ]
   },
   {
@@ -137431,7 +137561,13 @@
     "maxStack": 10,
     "price": 55,
     "droppedBy": [
-      "Mountain Lion", "Hulking Mountain Lion", "Feral Mountain Lion", "Humar the Pridelord", "Starving Mountain Lion", "Shadumbra", "Echeyakee"
+      "Mountain Lion",
+      "Hulking Mountain Lion",
+      "Feral Mountain Lion",
+      "Humar the Pridelord",
+      "Starving Mountain Lion",
+      "Shadumbra",
+      "Echeyakee"
     ]
   },
   {
@@ -137651,7 +137787,14 @@
     "maxStack": 10,
     "price": 30,
     "droppedBy": [
-      "Elder Shadowhorn Stag", "Mosshoof Runner", "Mosshoof Courser", "Mosshoof Stag", "Shadowhorn Stag", "Wild Buck", "Great Courser", "Antlered Courser"
+      "Elder Shadowhorn Stag",
+      "Mosshoof Runner",
+      "Mosshoof Courser",
+      "Mosshoof Stag",
+      "Shadowhorn Stag",
+      "Wild Buck",
+      "Great Courser",
+      "Antlered Courser"
     ]
   },
   {
@@ -139923,7 +140066,14 @@
     "maxStack": 10,
     "price": 28,
     "droppedBy": [
-      "Raging Cliff Stormer", "Thunderhead", "Stormhide", "Stormsnout", "Cliff Stormer", "Thunderstomp", "Owatanka", "Skum"
+      "Raging Cliff Stormer",
+      "Thunderhead",
+      "Stormhide",
+      "Stormsnout",
+      "Cliff Stormer",
+      "Thunderstomp",
+      "Owatanka",
+      "Skum"
     ]
   },
   {
@@ -141248,7 +141398,15 @@
     "maxStack": 10,
     "price": 45,
     "droppedBy": [
-      "Ashenvale Bear", "Gray Bear", "Vicious Gray Bear", "Ursangous", "Elder Ashenvale Bear", "Elder Gray Bear", "Big Samras", "Giant Ashenvale Bear", "Ursol'lok"
+      "Ashenvale Bear",
+      "Gray Bear",
+      "Vicious Gray Bear",
+      "Ursangous",
+      "Elder Ashenvale Bear",
+      "Elder Gray Bear",
+      "Big Samras",
+      "Giant Ashenvale Bear",
+      "Ursol'lok"
     ]
   },
   {
@@ -145471,7 +145629,20 @@
     "maxStack": 10,
     "price": 24,
     "droppedBy": [
-      "Ghostpaw Alpha", "Black Ravager", "Black Ravager Mastiff", "Young Black Ravager", "Ghostpaw Howler", "Rabid Dire Wolf", "Ghostpaw Runner", "Starving Dire Wolf", "Lupine Horror", "Lupos", "Mist Howler", "Bleak Worg", "Slavering Worg", "Fenrus the Devourer"
+      "Ghostpaw Alpha",
+      "Black Ravager",
+      "Black Ravager Mastiff",
+      "Young Black Ravager",
+      "Ghostpaw Howler",
+      "Rabid Dire Wolf",
+      "Ghostpaw Runner",
+      "Starving Dire Wolf",
+      "Lupine Horror",
+      "Lupos",
+      "Mist Howler",
+      "Bleak Worg",
+      "Slavering Worg",
+      "Fenrus the Devourer"
     ]
   },
   {
@@ -149837,7 +150008,31 @@
     "maxStack": 10,
     "price": 28,
     "droppedBy": [
-      "Bluegill Raider", "Bluegill Warrior", "Bluegill Muckdweller", "Bluegill Oracle", "Bluegill Puddlejumper", "Bluegill Murloc", "Saltspittle Puddlejumper", "Saltspittle Warrior", "Bluegill Forager", "Murloc Nightcrawler", "Saltspittle Muckdweller", "Blindlight Muckdweller", "Murloc Tidecaller", "Murloc Flesheater", "Murloc Scout", "Blindlight Oracle", "Saltspittle Oracle", "Blindlight Murloc", "Murloc Minor Tidecaller", "Murloc Shorestriker", "Mugglefin", "Gobbler", "Squiddic", "Gelihast", "Mutanus the Devourer"
+      "Bluegill Raider",
+      "Bluegill Warrior",
+      "Bluegill Muckdweller",
+      "Bluegill Oracle",
+      "Bluegill Puddlejumper",
+      "Bluegill Murloc",
+      "Saltspittle Puddlejumper",
+      "Saltspittle Warrior",
+      "Bluegill Forager",
+      "Murloc Nightcrawler",
+      "Saltspittle Muckdweller",
+      "Blindlight Muckdweller",
+      "Murloc Tidecaller",
+      "Murloc Flesheater",
+      "Murloc Scout",
+      "Blindlight Oracle",
+      "Saltspittle Oracle",
+      "Blindlight Murloc",
+      "Murloc Minor Tidecaller",
+      "Murloc Shorestriker",
+      "Mugglefin",
+      "Gobbler",
+      "Squiddic",
+      "Gelihast",
+      "Mutanus the Devourer"
     ]
   },
   {
@@ -150862,7 +151057,24 @@
     "maxStack": 10,
     "price": 50,
     "droppedBy": [
-      "Deepmoss Hatchling", "Deepmoss Creeper", "Deepmoss Venomspitter", "Deepmoss Webspinner", "Besseleth", "Deepmoss Matriarch", "Tarantula", "Greater Tarantula", "Chatter", "Cliff Lurker", "Wood Lurker", "Shanda the Spinner", "Giant Moss Creeper", "Forest Moss Creeper", "Creepthess", "Elder Moss Creeper", "Plains Creeper", "Giant Plains Creeper"
+      "Deepmoss Hatchling",
+      "Deepmoss Creeper",
+      "Deepmoss Venomspitter",
+      "Deepmoss Webspinner",
+      "Besseleth",
+      "Deepmoss Matriarch",
+      "Tarantula",
+      "Greater Tarantula",
+      "Chatter",
+      "Cliff Lurker",
+      "Wood Lurker",
+      "Shanda the Spinner",
+      "Giant Moss Creeper",
+      "Forest Moss Creeper",
+      "Creepthess",
+      "Elder Moss Creeper",
+      "Plains Creeper",
+      "Giant Plains Creeper"
     ]
   },
   {
@@ -154416,7 +154628,9 @@
     "maxStack": 10,
     "price": 16,
     "droppedBy": [
-      "Loch Crocolisk", "Large Loch Crocolisk", "Deviate Crocolisk"
+      "Loch Crocolisk",
+      "Large Loch Crocolisk",
+      "Deviate Crocolisk"
     ]
   },
   {
@@ -157623,7 +157837,19 @@
     "maxStack": 10,
     "price": 15,
     "droppedBy": [
-      "Black Bear Patriarch", "Grizzled Thistle Bear", "Rabid Thistle Bear", "Thistle Bear", "Grizzled Black Bear", "Elder Black Bear", "Giant Grizzled Bear", "Ferocious Grizzled Bear", "Den Mother", "Old Vicejaw", "Bjarn", "Mangeclaw", "Ol' Sooty"
+      "Black Bear Patriarch",
+      "Grizzled Thistle Bear",
+      "Rabid Thistle Bear",
+      "Thistle Bear",
+      "Grizzled Black Bear",
+      "Elder Black Bear",
+      "Giant Grizzled Bear",
+      "Ferocious Grizzled Bear",
+      "Den Mother",
+      "Old Vicejaw",
+      "Bjarn",
+      "Mangeclaw",
+      "Ol' Sooty"
     ]
   },
   {
@@ -158428,7 +158654,12 @@
     "maxStack": 10,
     "price": 17,
     "droppedBy": [
-      "Salt Flats Vulture", "Salt Flats Scavenger", "Greater Fleshripper", "Vultros", "Fleshripper", "Young Fleshripper"
+      "Salt Flats Vulture",
+      "Salt Flats Scavenger",
+      "Greater Fleshripper",
+      "Vultros",
+      "Fleshripper",
+      "Young Fleshripper"
     ]
   },
   {
@@ -159592,7 +159823,19 @@
     "maxStack": 10,
     "price": 18,
     "droppedBy": [
-      "Mangy Mountain Boar", "Elder Mountain Boar", "Mountain Boar", "Withered Battle Boar", "Battle Boar Horror", "Rotting Agam'ar", "Raging Agam'ar", "Agam'ar", "Agathelos the Raging", "Bellygrub", "Great Goretusk", "Goretusk", "Young Goretusk"
+      "Mangy Mountain Boar",
+      "Elder Mountain Boar",
+      "Mountain Boar",
+      "Withered Battle Boar",
+      "Battle Boar Horror",
+      "Rotting Agam'ar",
+      "Raging Agam'ar",
+      "Agam'ar",
+      "Agathelos the Raging",
+      "Bellygrub",
+      "Great Goretusk",
+      "Goretusk",
+      "Young Goretusk"
     ]
   },
   {
@@ -160120,7 +160363,16 @@
     "maxStack": 10,
     "price": 7,
     "droppedBy": [
-      "Greater Barrens Kodo", "Wooly Kodo", "Barrens Kodo", "Brontus", "Lakota'mani", "Kodo Matriarch", "Lost Barrens Kodo", "Kodo Calf", "Kodo Bull", "Arra'chea"
+      "Greater Barrens Kodo",
+      "Wooly Kodo",
+      "Barrens Kodo",
+      "Brontus",
+      "Lakota'mani",
+      "Kodo Matriarch",
+      "Lost Barrens Kodo",
+      "Kodo Calf",
+      "Kodo Bull",
+      "Arra'chea"
     ]
   },
   {
@@ -160148,7 +160400,13 @@
     "maxStack": 10,
     "price": 9,
     "droppedBy": [
-      "Ornery Plainstrider", "Foreststrider", "Giant Foreststrider", "Greater Plainstrider", "Foreststrider Fledgling", "Fleeting Plainstrider", "Strider Clutchmother"
+      "Ornery Plainstrider",
+      "Foreststrider",
+      "Giant Foreststrider",
+      "Greater Plainstrider",
+      "Foreststrider Fledgling",
+      "Fleeting Plainstrider",
+      "Strider Clutchmother"
     ]
   },
   {
@@ -162701,7 +162959,11 @@
     "maxStack": 10,
     "price": 8,
     "droppedBy": [
-      "Armored Scorpid", "Corrupted Scorpid", "Venomtail Scorpid", "Clattering Scorpid", "Death Flayer"
+      "Armored Scorpid",
+      "Corrupted Scorpid",
+      "Venomtail Scorpid",
+      "Clattering Scorpid",
+      "Death Flayer"
     ]
   },
   {
@@ -164666,7 +164928,25 @@
     "maxStack": 10,
     "price": 4,
     "droppedBy": [
-      "Prowler", "Ravenous Darkhound", "Prairie Wolf Alpha", "Worg", "Mottled Worg", "Winter Wolf", "Cursed Darkhound", "Gray Forest Wolf", "Prairie Stalker", "Starving Winter Wolf", "Snow Tracker Wolf", "Bloodsnout Worg", "Mangy Wolf", "Decrepit Darkhound", "Prairie Wolf", "Gorefang", "Bayne", "Timber", "Ghost Howl"
+      "Prowler",
+      "Ravenous Darkhound",
+      "Prairie Wolf Alpha",
+      "Worg",
+      "Mottled Worg",
+      "Winter Wolf",
+      "Cursed Darkhound",
+      "Gray Forest Wolf",
+      "Prairie Stalker",
+      "Starving Winter Wolf",
+      "Snow Tracker Wolf",
+      "Bloodsnout Worg",
+      "Mangy Wolf",
+      "Decrepit Darkhound",
+      "Prairie Wolf",
+      "Gorefang",
+      "Bayne",
+      "Timber",
+      "Ghost Howl"
     ]
   },
   {
@@ -164731,7 +165011,10 @@
     "maxStack": 10,
     "price": 5,
     "droppedBy": [
-      "Scarred Crag Boar", "Elder Crag Boar", "Large Crag Boar", "Crag Boar"
+      "Scarred Crag Boar",
+      "Elder Crag Boar",
+      "Large Crag Boar",
+      "Crag Boar"
     ]
   },
   {
@@ -165525,7 +165808,20 @@
     "maxStack": 10,
     "price": 3,
     "droppedBy": [
-      "Mother Fang", "Moss Stalker", "Mist Creeper", "Giant Webwood Spider", "Mine Spider", "Webwood Silkspinner", "Forest Lurker", "Webwood Venomfang", "Forest Spider", "Webwood Lurker", "Sri'skulk", "Krethis Shadowspinner", "Vicious Night Web Spider", "Lady Sathrah"
+      "Mother Fang",
+      "Moss Stalker",
+      "Mist Creeper",
+      "Giant Webwood Spider",
+      "Mine Spider",
+      "Webwood Silkspinner",
+      "Forest Lurker",
+      "Webwood Venomfang",
+      "Forest Spider",
+      "Webwood Lurker",
+      "Sri'skulk",
+      "Krethis Shadowspinner",
+      "Vicious Night Web Spider",
+      "Lady Sathrah"
     ]
   },
   {
@@ -166306,7 +166602,11 @@
     "maxStack": 10,
     "price": 4,
     "droppedBy": [
-      "Blood Seeker", "Ressan the Needler", "Vile Bat", "Vampiric Duskbat", "Greater Duskbat"
+      "Blood Seeker",
+      "Ressan the Needler",
+      "Vile Bat",
+      "Vampiric Duskbat",
+      "Greater Duskbat"
     ]
   },
   {
@@ -167641,6 +167941,16 @@
   {
     "rarity": "Common",
     "name": "Rolf and Malakai's Medallions",
+    "icon": "itemjewelryamulet03",
+    "type": "Miscellaneous",
+    "ilvl": 1,
+    "maxStack": 1,
+    "indestructible": true,
+    "unique": true
+  },
+  {
+    "rarity": "Common",
+    "name": "Malakai's Medallion",
     "icon": "itemjewelryamulet03",
     "type": "Miscellaneous",
     "ilvl": 1,
@@ -170313,8 +170623,8 @@
     "type": "Miscellaneous",
     "source": "DirectDrop",
     "ilvl": 1,
-    "onlyWithQuest": true,
     "maxStack": 20,
+    "onlyWithQuest": true,
     "droppedBy": [
       "Vicious Night Web Spider"
     ]
@@ -172599,12 +172909,8 @@
     "type": "Miscellaneous",
     "source": "DirectDrop",
     "ilvl": 1,
-    "onlyWithQuest": true,
     "maxStack": 20,
-    "directDrop": [
-      "Shadowmaw Panther",
-      "Elder Shadowmaw Panther"
-    ]
+    "onlyWithQuest": true
   },
   {
     "rarity": "Common",
@@ -173278,8 +173584,8 @@
     "type": "Miscellaneous",
     "source": "DirectDrop",
     "ilvl": 1,
-    "onlyWithQuest": true,
     "maxStack": 20,
+    "onlyWithQuest": true,
     "droppedBy": [
       "Elder Saltwater Crocolisk"
     ]
@@ -174921,9 +175227,9 @@
     "detailedType": "Claw",
     "type": "Miscellaneous",
     "source": "DirectDrop",
-    "onlyWithQuest": true,
     "ilvl": 1,
     "maxStack": 20,
+    "onlyWithQuest": true,
     "droppedBy": [
       "Prairie Stalker"
     ]
@@ -179719,8 +180025,8 @@
     "type": "Miscellaneous",
     "source": "DirectDrop",
     "ilvl": 1,
-    "onlyWithQuest": true,
     "maxStack": 20,
+    "onlyWithQuest": true,
     "droppedBy": [
       "Sawtooth Snapper"
     ]
@@ -181552,10 +181858,10 @@
     "icon": "itemmiscahnqirajtrinket02",
     "detailedType": "Tool",
     "type": "Miscellaneous",
-    "onlyWithQuest": true,
     "source": "DirectDrop",
     "ilvl": 1,
     "maxStack": 3,
+    "onlyWithQuest": true,
     "droppedBy": [
       "Silithid Harvester",
       "Silithid Swarmer"
@@ -184994,8 +185300,8 @@
     "type": "Miscellaneous",
     "source": "Quest",
     "ilvl": 1,
-    "onlyWithQuest": true,
     "maxStack": 1,
+    "onlyWithQuest": true,
     "abilities": {
       "Fresh Zhevra Carcass": 0
     },
@@ -186963,7 +187269,12 @@
     "maxStack": 10,
     "price": 503,
     "droppedBy": [
-      "Diseased Grizzly", "Angerclaw Grizzly", "Diseased Black Bear", "Angerclaw Bear", "Angerclaw Mauler", "Mongress"
+      "Diseased Grizzly",
+      "Angerclaw Grizzly",
+      "Diseased Black Bear",
+      "Angerclaw Bear",
+      "Angerclaw Mauler",
+      "Mongress"
     ]
   },
   {
@@ -188590,7 +188901,11 @@
     "maxStack": 10,
     "onlyWithQuest": true,
     "droppedBy": [
-      "Ursius", "Elder Shardtooth", "Shardtooth Mauler", "Shardtooth Bear", "Rabid Shardtooth"
+      "Ursius",
+      "Elder Shardtooth",
+      "Shardtooth Mauler",
+      "Shardtooth Bear",
+      "Rabid Shardtooth"
     ]
   },
   {
@@ -195757,8 +196072,8 @@
     "detailedType": "Organ",
     "type": "Miscellaneous",
     "ilvl": 1,
-    "onlyWithQuest": true,
-    "maxStack": 20
+    "maxStack": 20,
+    "onlyWithQuest": true
   },
   {
     "rarity": "Common",
@@ -195876,6 +196191,7 @@
     "source": "DirectDrop",
     "ilvl": 1,
     "maxStack": 20,
+    "onlyWithQuest": true,
     "droppedBy": [
       "Spitelash Siren"
     ]
@@ -207735,12 +208051,9 @@
     "icon": "itemscroll06",
     "detailedType": "Scroll",
     "type": "Recipe",
-    "source": "DirectDrop",
+    "source": "ChestDrop",
     "maxStack": 1,
-    "price": 4000,
-    "droppedBy": [
-      "Spitelash Siren"
-    ]
+    "price": 4000
   },
   {
     "rarity": "Uncommon",
@@ -209587,8 +209900,8 @@
     "icon": "itemmiscmonsterfang01",
     "type": "Miscellaneous",
     "source": "DirectDrop",
-    "onlyWithQuest": true,
     "maxStack": 20,
+    "onlyWithQuest": true,
     "droppedBy": [
       "Rock Stalker"
     ]
