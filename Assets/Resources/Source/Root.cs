@@ -1015,12 +1015,13 @@ public static class Root
         }
     }
 
-    public static void PrintEquipmentSlot(string slot, Item item)
+    public static void PrintEquipmentSlot(string slot, Item item, string efficiency = "")
     {
         if (item != null)
             AddHeaderRegion(() =>
             {
                 ReverseButtons();
+                if (efficiency != "") AddLine(efficiency, "DimGray", "Right");
                 AddLine(item.name.CutTail(), item.rarity, "Left");
                 AddSmallButton(item.icon,
                 (h) =>

@@ -2433,9 +2433,9 @@ public class Blueprint
             AddHeaderRegion(() => AddLine("Weapons:"));
             var main = currentSave.player.GetItemInSlot("Main Hand");
             var off = currentSave.player.GetItemInSlot("Off Hand");
-            PrintEquipmentSlot("Main Hand", main);
+            PrintEquipmentSlot("Main Hand", main, off != null && off.minPower != 0 ? "52.5%" : "100%");
             bool showOff = main == null || main != null && main.type != "Two Handed";
-            if (showOff) PrintEquipmentSlot("Off Hand", off);
+            if (showOff) PrintEquipmentSlot("Off Hand", off, off != null && off.minPower != 0 ? "52.5%" : "");
             var mainPower = Math.Round(main == null ? (off == null || off.minPower == 0 ? 1 : 0) : (main.minPower + main.maxPower) / 2, 2);
             if (off != null)
             {
@@ -2446,7 +2446,7 @@ public class Blueprint
             var hasCrossbowProficiency = currentSave.player.abilities.ContainsKey("Crossbow Proficiency");
             var hasGunProficiency = currentSave.player.abilities.ContainsKey("Gun Proficiency");
             if (hasBowProficiency || hasCrossbowProficiency || hasGunProficiency)
-                PrintEquipmentSlot("Ranged Weapon", currentSave.player.GetItemInSlot("Ranged Weapon"));
+                PrintEquipmentSlot("Ranged Weapon", currentSave.player.GetItemInSlot("Ranged Weapon"), "100%");
         }),
         new("Inventory", () => {
             if (CDesktop.title == "Map") return;
