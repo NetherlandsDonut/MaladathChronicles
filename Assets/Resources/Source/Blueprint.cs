@@ -961,11 +961,19 @@ public class Blueprint
                     var slot = slots[i];
                     AddPaddingRegion(() =>
                     {
+                        SetRegionHeight(19);
                         AddBigButton("Portrait" + slot.player.race.Clean() + (slot.player.Race().genderedPortrait ? slot.player.gender + slot.player.portraitID : ""));
-                        //AddBigButton("Class" + slot.player.spec);
-                        AddLine(slot.player.name + ", a level " + slot.player.level + " ");
+                        AddLine(slot.player.name);
+                        AddText(" a level ", "DarkGray");
+                        AddText(slot.player.level + " ", "Gray");
                         AddText(slot.player.spec, slot.player.spec);
-                        AddLine("Score: " + slot.Score());
+                    });
+                    AddPaddingRegion(() =>
+                    {
+                        SetRegionHeight(19);
+                        SetRegionTextOffset(38, 0);
+                        AddLine("Score:", "HalfGray");
+                        AddText(" " + slot.Score(), "Gray");
                         if (slot.player.dead) AddText(", died fighting " + (slot.deathInfo.commonSource ? "a " : "") + slot.deathInfo.source + " in " + slot.deathInfo.area);
                     });
                 }

@@ -6992,7 +6992,7 @@
       "Echo Isles": 0,
       "Zalazane Camp": 1,
       "Darkspear Strand": 1,
-      "Orgrimmar": 9,
+      "Orgrimmar": 10,
       "The Placid Dune": 3,
       "Razor Hill": 0,
       "Rocky Desert": 2
@@ -7108,8 +7108,8 @@
       "value": "False"
     },
     "startDate": "2025-09-03T12:18:02.1902436+02:00",
-    "lastLoaded": "2025-09-09T13:51:09.6379579+02:00",
-    "lastPlayed": "2025-09-09T13:51:12.0151051+02:00",
-    "timePlayed": "01:52:34.7334614"
+    "lastLoaded": "2025-09-09T14:26:37.1034775+02:00",
+    "lastPlayed": "2025-09-09T14:26:42.8815023+02:00",
+    "timePlayed": "01:52:40.5114862"
   }
 ]
