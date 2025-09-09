@@ -41,6 +41,9 @@
   "onlySkillUp": {
     "value": "False"
   },
+  "onlyEnoughSkill": {
+    "value": "False"
+  },
   "autoCloseLoot": {
     "value": "False"
   },

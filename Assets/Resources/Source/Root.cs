@@ -268,6 +268,7 @@ public static class Root
     public static float animatedSpriteTime;
     public static bool awaitingNewBind;
     public static string newBindFor;
+    public static string selectedRankingTab;
 
     #region Spell Targeting
 

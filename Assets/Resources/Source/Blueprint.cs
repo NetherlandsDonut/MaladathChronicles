@@ -896,105 +896,116 @@ public class Blueprint
                 SetRegionAsGroupExtender();
             });
         }, true),
-        //new("CharacterRankingTop", () => 
-        //{
-        //    SetAnchor(-293, 153);
-        //    DisableShadows();
-        //    AddHeaderGroup();
-        //    SetRegionGroupWidth(588);
-        //    AddHeaderRegion(() =>
-        //    {
-        //        AddLine("Ranking", "Gray", "Center");
-        //        AddSmallButton("OtherClose", (h) =>
-        //        {
-        //            CloseDesktop("RankingScreen");
-        //        });
-        //    });
-        //    if (settings.selectedRealmRanking == "")
-        //        settings.selectedRealmRanking = Realm.realms[0].name;
-        //    foreach (var realmRef in Realm.realms)
-        //    {
-        //        var realm = realmRef;
-        //        AddRegionGroup();
-        //        SetRegionGroupWidth(147);
-        //        if (settings.selectedRealmRanking == realm.name)
-        //            AddPaddingRegion(() =>
-        //            {
-        //                AddLine(realm.name, "", "Center");
-        //            });
-        //        else
-        //            AddButtonRegion(() =>
-        //            {
-        //                AddLine(realm.name, "", "Center");
-        //            },
-        //            (h) =>
-        //            {
-        //                settings.selectedRealmRanking = realm.name;
-        //                Respawn("CharacterRankingList");
-        //                Respawn("CharacterRankingListRight");
-        //            });
-        //    }
-        //}),
-        //new("CharacterRankingList", () => 
-        //{
-        //    SetAnchor(-293, 115);
-        //    DisableShadows();
-        //    AddRegionGroup();
-        //    SetRegionGroupWidth(550);
-        //    SetRegionGroupHeight(262);
-        //    var slots = saves[settings.selectedRealmRanking].OrderByDescending(x => x.Score()).ToList();
-        //    for (int i = 0; i < 7; i++)
-        //        if (i < slots.Count)
-        //        {
-        //            var slot = slots[i];
-        //            AddPaddingRegion(() =>
-        //            {
-        //                AddBigButton("Portrait" + slot.player.race.Clean() + (slot.player.Race().genderedPortrait ? slot.player.gender : ""));
-        //                AddBigButton("Class" + slot.player.spec);
-        //                AddLine(slot.player.name + ", a level " + slot.player.level + " ");
-        //                AddText(slot.player.spec, slot.player.spec);
-        //                AddLine("Score: " + slot.Score());
-        //                if (slot.player.dead) AddText(", died fighting " + (slot.deathInfo.commonSource ? "a " : "") + slot.deathInfo.source + " in " + slot.deathInfo.area);
-        //            });
-        //        }
-        //        else
-        //            AddPaddingRegion(() =>
-        //            {
-        //                AddBigButton("OtherBlank");
-        //                AddBigButton("OtherBlank");
-        //            });
-        //}),
-        //new("CharacterRankingListRight", () => 
-        //{
-        //    SetAnchor(257, 115);
-        //    DisableShadows();
-        //    AddRegionGroup();
-        //    SetRegionGroupWidth(38);
-        //    SetRegionGroupHeight(262);
-        //    var slots = saves[settings.selectedRealmRanking].OrderByDescending(x => x.Score()).ToList();
-        //    for (int i = 0; i < 7; i++)
-        //        if (i < slots.Count)
-        //        {
-        //            var slot = slots[i];
-        //            AddPaddingRegion(() =>
-        //            {
-        //                AddBigButton("PVP" + (slot.player.Side() == "Alliance" ? "A" : "H") + slot.player.Rank().rank);
-        //            });
-        //        }
-        //        else
-        //            AddPaddingRegion(() =>
-        //            {
-        //                AddBigButton("OtherBlank");
-        //            });
-        //}),
-        //new("CharacterRankingShadow", () => 
-        //{
-        //    SetAnchor(-293, 153);
-        //    AddRegionGroup();
-        //    SetRegionGroupWidth(588);
-        //    SetRegionGroupHeight(300);
-        //    AddPaddingRegion(() => { });
-        //}),
+        new("CharacterRankingTop", () =>
+        {
+            SetAnchor(-293, 153);
+            DisableShadows();
+            AddHeaderGroup();
+            SetRegionGroupWidth(588);
+            AddHeaderRegion(() =>
+            {
+                AddLine("Ranking", "Gray", "Center");
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseDesktop("RankingScreen");
+                });
+            });
+            AddRegionGroup();
+            SetRegionGroupWidth(294);
+            if (selectedRankingTab != "Hardcore")
+                AddPaddingRegion(() =>
+                {
+                    AddLine("Softcore", "", "Center");
+                });
+            else
+                AddButtonRegion(() =>
+                {
+                    AddLine("Softcore", "", "Center");
+                },
+                (h) =>
+                {
+                    selectedRankingTab = null;
+                    Respawn("CharacterRankingList");
+                    Respawn("CharacterRankingListRight");
+                });
+            AddRegionGroup();
+            SetRegionGroupWidth(294);
+            if (selectedRankingTab == "Hardcore")
+                AddPaddingRegion(() =>
+                {
+                    AddLine("Hardcore", "", "Center");
+                });
+            else
+                AddButtonRegion(() =>
+                {
+                    AddLine("Hardcore", "", "Center");
+                },
+                (h) =>
+                {
+                    selectedRankingTab = "Hardcore";
+                    Respawn("CharacterRankingList");
+                    Respawn("CharacterRankingListRight");
+                });
+        }),
+        new("CharacterRankingList", () =>
+        {
+            SetAnchor(-293, 115);
+            DisableShadows();
+            AddRegionGroup();
+            SetRegionGroupWidth(550);
+            SetRegionGroupHeight(262);
+            var slots = saves.Where(x => x.permadeath.Value() == (selectedRankingTab == "Hardcore")).OrderByDescending(x => x.Score()).ToList();
+            for (int i = 0; i < 7; i++)
+                if (i < slots.Count)
+                {
+                    var slot = slots[i];
+                    AddPaddingRegion(() =>
+                    {
+                        AddBigButton("Portrait" + slot.player.race.Clean() + (slot.player.Race().genderedPortrait ? slot.player.gender + slot.player.portraitID : ""));
+                        //AddBigButton("Class" + slot.player.spec);
+                        AddLine(slot.player.name + ", a level " + slot.player.level + " ");
+                        AddText(slot.player.spec, slot.player.spec);
+                        AddLine("Score: " + slot.Score());
+                        if (slot.player.dead) AddText(", died fighting " + (slot.deathInfo.commonSource ? "a " : "") + slot.deathInfo.source + " in " + slot.deathInfo.area);
+                    });
+                }
+                else
+                    AddPaddingRegion(() =>
+                    {
+                        AddBigButton("OtherBlank");
+                    });
+        }),
+        new("CharacterRankingListRight", () =>
+        {
+            SetAnchor(257, 115);
+            DisableShadows();
+            AddRegionGroup();
+            SetRegionGroupWidth(38);
+            SetRegionGroupHeight(262);
+            var slots = saves.Where(x => x.permadeath.Value() == (selectedRankingTab == "Hardcore")).OrderByDescending(x => x.Score()).ToList();
+            for (int i = 0; i < 7; i++)
+                if (i < slots.Count)
+                {
+                    var slot = slots[i];
+                    AddPaddingRegion(() =>
+                    {
+                        AddBigButton("PVP" + (slot.player.Side() == "Alliance" ? "A" : "H") + slot.player.Rank().rank);
+                    });
+                }
+                else
+                    AddPaddingRegion(() =>
+                    {
+                        AddBigButton("OtherBlank");
+                    });
+        }),
+        new("CharacterRankingShadow", () =>
+        {
+            SetAnchor(-293, 153);
+            AddRegionGroup();
+            SetRegionGroupWidth(588);
+            SetRegionGroupHeight(300);
+            AddPaddingRegion(() => { });
+        }),
         new("ExperienceBar", () => {
             SetAnchor(Bottom);
             if (board != null && board.results != null && board.results.experience != null && board.results.experience.ContainsKey(currentSave.player) && board.results.experience[currentSave.player] > 0)
