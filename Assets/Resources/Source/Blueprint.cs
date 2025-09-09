@@ -1756,8 +1756,7 @@ public class Blueprint
         new("CraftingList", () => {
             var rowAmount = 11;
             var thisWindow = CDesktop.LBWindow();
-            var recipes = currentSave.player.learnedRecipes[profession.name].Select(x => Recipe.recipes.Find(y => y.name == x)).Where(x => (!settings.onlyHavingMaterials.Value() || currentSave.player.CanCraft(x, true, true) > 0) && (!settings.onlySkillUp.Value() || x.skillUpGray > currentSave.player.professionSkills[profession.name].Item1)).ToList();
-            var list = recipes;
+            var list = currentSave.player.learnedRecipes[profession.name].Select(x => Recipe.recipes.Find(y => y.name == x)).Where(x => (!settings.onlyHavingMaterials.Value() || currentSave.player.CanCraft(x, true, true) > 0) && (!settings.onlySkillUp.Value() || x.skillUpGray > currentSave.player.professionSkills[profession.name].Item1)).ToList();
             thisWindow.SetPagination(() => list.Count, rowAmount);
             SetAnchor(TopLeft, 19, -38);
             AddRegionGroup();
@@ -1815,37 +1814,46 @@ public class Blueprint
             for (int i = 0; i < 11; i++)
             {
                 var index = i;
-                if (recipes.Count > index + thisWindow.pagination())
+                if (list.Count > index + thisWindow.pagination())
                 {
                     AddButtonRegion(() =>
                     {
-                        var recipe = recipes[index + thisWindow.pagination()];
+                        var recipe = list[index + thisWindow.pagination()];
                         AddLine(recipe.name, "Black");
                         var amountPossible = currentSave.player.CanCraft(recipe, false, true);
                         AddText(amountPossible > 0 ? " [" + amountPossible + "]" : "", "Black");
-                        AddSmallButton(recipe.Icon());
+                        var icon = recipe.Icon();
+                        AddSmallButton(icon.Item1);
                         if (settings.rarityIndicators.Value() && recipe.results.Count > 0)
-                            AddSmallButtonOverlay("OtherRarity" + items.Find(x => x.name == recipe.results.ToList()[0].Key), 0, 2);
+                            AddSmallButtonOverlay("OtherRarity" + icon.Item2.rarity, 0, 2);
                     },
                     (h) =>
                     {
-                        recipe = recipes[index + thisWindow.pagination()];
+                        recipe = list[index + thisWindow.pagination()];
                         enchant = recipe.enchantment ? enchants.Find(x => x.name == recipe.name) : null;
                         if (enchantmentTarget != null && (enchant == null || enchant.type != enchantmentTarget.type))
                             enchantmentTarget = null;
                         Respawn("CraftingRecipe");
                         PlaySound("DesktopInstanceOpen");
+                    },
+                    null,
+                    (h) => () =>
+                    {
+                        var key = list[index + thisWindow.pagination()];
+                        if (Input.GetKey(LeftControl) && key.results.Count > 0)
+                            PrintItemTooltip(items.Find(x => x.name == key.results.First().Key), Input.GetKey(LeftShift));
+                        else PrintRecipeTooltip(currentSave.player, key);
                     });
                     var skill = currentSave.player.professionSkills[profession.name].Item1;
-                    if (recipes[index + thisWindow.pagination()].skillUpYellow > skill)
+                    if (list[index + thisWindow.pagination()].skillUpYellow > skill)
                         SetRegionBackgroundAsImage("SkillUpOrange");
-                    else if (recipes[index + thisWindow.pagination()].skillUpGreen > skill)
+                    else if (list[index + thisWindow.pagination()].skillUpGreen > skill)
                         SetRegionBackgroundAsImage("SkillUpYellow");
-                    else if (recipes[index + thisWindow.pagination()].skillUpGray > skill)
+                    else if (list[index + thisWindow.pagination()].skillUpGray > skill)
                         SetRegionBackgroundAsImage("SkillUpGreen");
                     else SetRegionBackgroundAsImage("SkillUpGray");
                 }
-                else if (recipes.Count == index + thisWindow.pagination())
+                else if (list.Count == index + thisWindow.pagination())
                 {
                     AddPaddingRegion(() =>
                     {
@@ -2106,7 +2114,7 @@ public class Blueprint
                 });
             });
             var regionGroup = CDesktop.LBWindow().LBRegionGroup();
-            for (int i = 0; i < 12; i++)
+            for (int i = 0; i < 10; i++)
             {
                 var index = i;
                 if (possibleItems.Count > index + thisWindow.pagination())
@@ -3757,7 +3765,6 @@ public class Blueprint
                                     Person.person = person;
                                     CloseWindow(h.window.title);
                                     Respawn("Person");
-                                    Respawn("PersonTypeLine");
                                     CloseWindow("Instance");
                                     CloseWindow("InstanceWing");
                                     CloseWindow("Complex");
@@ -3788,7 +3795,6 @@ public class Blueprint
                                 Person.person = person;
                                 CloseWindow(h.window.title);
                                 Respawn("Person");
-                                Respawn("PersonTypeLine");
                                 CloseWindow("Instance");
                                 CloseWindow("InstanceWing");
                                 CloseWindow("Complex");
@@ -4063,8 +4069,15 @@ public class Blueprint
             var type = personTypes.Find(x => x.type == person.type);
             AddHeaderRegion(() =>
             {
+                SetRegionHeight(19);
                 AddLine(person.name);
                 AddBigButton("Portrait" + person.name.Clean());
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionTextOffset(38, 19);
+                AddLine(person.type, "DarkGray");
+                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == area.faction).side : ""));
             });
             if (type.category == "Class Trainer")
             {
@@ -4113,13 +4126,23 @@ public class Blueprint
                 (h) =>
                 {
                     if (!currentSave.banks.ContainsKey(area.name))
-                        currentSave.banks.Add(area.name, new() { items = new() });
+                        currentSave.banks.Add(area.name, new() { bank = true });
                     PlaySound("DesktopBankOpen", 0.4f);
                     CloseWindow(h.window);
                     CloseWindow("Area");
                     SpawnWindowBlueprint("Bank");
                     SpawnWindowBlueprint("Inventory");
                     Respawn("PlayerMoney");
+                });
+                AddButtonRegion(() =>
+                {
+                    AddLine("I want to expand my deposit");
+                },
+                (h) =>
+                {
+                    PlaySound("DesktopInstanceOpen");
+                    CloseWindow(h.window);
+                    Respawn("BankDeposit");
                 });
             }
             else if (type.category == "Auctioneer")
@@ -4166,7 +4189,7 @@ public class Blueprint
                     showPotions = new(true);
                     showBattleElixirs = new(true);
                     SpawnWindowBlueprint("AuctionHouseOffersGroups");
-                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                    for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
                     SpawnWindowBlueprint("AuctionHouseFilteringMain");
                     CloseWindow(h.window);
                     CloseWindow("Area");
@@ -4288,7 +4311,6 @@ public class Blueprint
             AddButtonRegion(() => AddLine("Goodbye"),
             (h) =>
             {
-                CloseWindow("PersonTypeLine");
                 PlayVoiceLine(person.VoiceLine("Farewell"));
                 PlaySound("DesktopInstanceClose");
                 person = null;
@@ -4308,18 +4330,6 @@ public class Blueprint
                     Respawn("AreaElites");
                     Respawn("Chest");
                 }
-            });
-        }, true),
-        new("PersonTypeLine", () => {
-            SetAnchor(TopLeft, 57, -57);
-            AddHeaderGroup();
-            DisableShadows();
-            SetRegionGroupWidth(152);
-            AddHeaderRegion(() =>
-            {
-                var type = personTypes.Find(x => x.type == person.type);
-                AddLine(person.type, "DarkGray");
-                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == area.faction).side : ""));
             });
         }, true),
         new("Persons", () => {
@@ -4362,7 +4372,6 @@ public class Blueprint
                     quest = null;
                     Person.person = person;
                     Respawn("Person");
-                    Respawn("PersonTypeLine");
                     CloseWindow("Complex");
                     CloseWindow("Persons");
                     CloseWindow("Area");
@@ -4386,9 +4395,11 @@ public class Blueprint
             SetAnchor(TopLeft, 19, -38);
             AddHeaderGroup();
             SetRegionGroupWidth(190);
+            var type = personTypes.Find(x => x.type == person.type);
             AddHeaderRegion(() =>
             {
-                var type = personTypes.Find(x => x.type == person.type);
+                SetRegionHeight(19);
+                SetRegionTextOffset(38, 19);
                 AddLine(person.name);
                 AddBigButton("Portrait" + person.name.Clean());
                 AddSmallButton("OtherClose", (h) =>
@@ -4400,6 +4411,12 @@ public class Blueprint
                     Respawn("Person");
                     PlaySound("DesktopInventoryClose");
                 });
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionTextOffset(38, 19);
+                AddLine(person.type, "DarkGray");
+                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == area.faction).side : ""));
             });
             AddHeaderRegion(() =>
             {
@@ -4436,10 +4453,11 @@ public class Blueprint
             SetAnchor(TopLeft, 19, -38);
             AddHeaderGroup();
             SetRegionGroupWidth(190);
-            var items = new List<Item>();
+            var type = personTypes.Find(x => x.type == person.type);
             AddHeaderRegion(() =>
             {
-                var type = personTypes.Find(x => x.type == person.type);
+                SetRegionHeight(19);
+                SetRegionTextOffset(38, 19);
                 AddLine(person.name);
                 AddBigButton("Portrait" + person.name.Clean());
                 AddSmallButton("OtherClose", (h) =>
@@ -4451,6 +4469,12 @@ public class Blueprint
                     Respawn("Person");
                     PlaySound("DesktopInventoryClose");
                 });
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionTextOffset(38, 19);
+                AddLine(person.type, "DarkGray");
+                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == area.faction).side : ""));
             });
             AddHeaderRegion(() =>
             {
@@ -4486,8 +4510,15 @@ public class Blueprint
             var type = personTypes.Find(x => x.type == person.type);
             AddHeaderRegion(() =>
             {
+                SetRegionHeight(19);
                 AddLine(person.name);
                 AddBigButton("Portrait" + person.name.Clean());
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionTextOffset(38, 19);
+                AddLine(person.type, "DarkGray");
+                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == area.faction).side : ""));
             });
             AddPaddingRegion(() =>
             {
@@ -4524,8 +4555,60 @@ public class Blueprint
                 Respawn("Person");
             });
         }),
+        new("BankDeposit", () => {
+            SetAnchor(TopLeft, 19, -38);
+            AddHeaderGroup();
+            SetRegionGroupWidth(190);
+            var type = personTypes.Find(x => x.type == person.type);
+            AddHeaderRegion(() =>
+            {
+                SetRegionHeight(19);
+                AddLine(person.name);
+                AddBigButton("Portrait" + person.name.Clean());
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionTextOffset(38, 19);
+                AddLine(person.type, "DarkGray");
+                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == area.faction).side : ""));
+            });
+            AddPaddingRegion(() =>
+            {
+                AddLine("You are currently ", "DarkGray");
+                AddLine("home from ", "DarkGray");
+                AddText(currentSave.player.homeLocation, "LightGray");
+                AddLine("to ", "DarkGray");
+                AddText(area.name, "LightGray");
+                AddText("?", "DarkGray");
+            });
+            AddRegionGroup();
+            SetRegionGroupWidth(95);
+            AddButtonRegion(() =>
+            {
+                AddLine("Cancel", "", "Center");
+            },
+            (h) =>
+            {
+                PlaySound("DesktopInstanceClose");
+                CloseWindow("BankDeposit");
+                Respawn("Person");
+            });
+            AddRegionGroup();
+            SetRegionGroupWidth(95);
+            AddButtonRegion(() =>
+            {
+                AddLine("Yes", "", "Center");
+            },
+            (h) =>
+            {
+                PlaySound("DesktopTransportPay");
+                currentSave.banks[area.name].depositUpgrades++;
+                CloseWindow("BankDeposit");
+                Respawn("Person");
+            });
+        }),
         new("MountCollection", () => {
-            var rowAmount = 6;
+            var rowAmount = 5;
             var thisWindow = CDesktop.LBWindow();
             var list = currentSave.player.mounts;
             thisWindow.SetPagination(() => list.Count, rowAmount);
@@ -4536,6 +4619,8 @@ public class Blueprint
             var type = personTypes.Find(x => x.type == person.type);
             AddHeaderRegion(() =>
             {
+                SetRegionHeight(19);
+                SetRegionTextOffset(38, 19);
                 AddLine(person.name);
                 AddBigButton("Portrait" + person.name.Clean());
                 AddSmallButton("OtherClose", (h) =>
@@ -4545,6 +4630,12 @@ public class Blueprint
                     Respawn("Person");
                     PlaySound("DesktopInventoryClose");
                 });
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionTextOffset(38, 19);
+                AddLine(person.type, "DarkGray");
+                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == area.faction).side : ""));
             });
             AddHeaderRegion(() =>
             {
@@ -4565,10 +4656,9 @@ public class Blueprint
                     AddSmallButton("OtherSortOff");
             });
             var regionGroup = CDesktop.LBWindow().LBRegionGroup();
-            AddPaginationLine();
             var mounts = currentSave.player.mounts.Select(x => Mount.mounts.Find(y => y.name == x)).ToList();
             mounts.RemoveAll(x => x.name == currentSave.player.mount);
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 5; i++)
             {
                 var index = i;
                 AddPaddingRegion(() =>
@@ -4607,9 +4697,10 @@ public class Blueprint
                     }
                 });
             }
+            AddPaginationLine();
         }),
         new("MountVendor", () => {
-            var rowAmount = 6;
+            var rowAmount = 5;
             var thisWindow = CDesktop.LBWindow();
             var mounts = Mount.mounts.FindAll(x => !currentSave.player.mounts.Contains(x.name) && x.factions != null && x.factions.Contains(person.faction == null ? area.faction : person.faction)).OrderBy(x => x.speed).ThenBy(x => x.price).ThenBy(x => x.name).ToList();
             var list = mounts;
@@ -4618,9 +4709,11 @@ public class Blueprint
             AddRegionGroup();
             SetRegionGroupWidth(190);
             SetRegionGroupHeight(285);
+            var type = personTypes.Find(x => x.type == person.type);
             AddHeaderRegion(() =>
             {
-                var type = personTypes.Find(x => x.type == person.type);
+                SetRegionHeight(19);
+                SetRegionTextOffset(38, 19);
                 AddLine(person.name);
                 AddBigButton("Portrait" + person.name.Clean());
                 AddSmallButton("OtherClose", (h) =>
@@ -4632,11 +4725,16 @@ public class Blueprint
             });
             AddHeaderRegion(() =>
             {
+                SetRegionTextOffset(38, 19);
+                AddLine(person.type, "DarkGray");
+                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == area.faction).side : ""));
+            });
+            AddHeaderRegion(() =>
+            {
                 AddLine("Available mounts:");
             });
             var regionGroup = CDesktop.LBWindow().LBRegionGroup();
-            AddPaginationLine();
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 5; i++)
             {
                 var index = i;
                 if (mounts.Count >= index + thisWindow.pagination())
@@ -4681,6 +4779,7 @@ public class Blueprint
                         }
                     });
             }
+            AddPaginationLine();
         }),
         new("MountsSort", () => {
             SetAnchor(Center);
@@ -4752,13 +4851,18 @@ public class Blueprint
                 });
         }),
         new("Bank", () => {
+            var slotAmount = 25;
+            var thisWindow = CDesktop.LBWindow();
+            var list = currentSave.banks[area.name].items;
+            thisWindow.SetPagination(() => currentSave.banks[area.name].depositUpgrades * 25 + 25, slotAmount);
             SetAnchor(TopLeft, 19, -38);
             AddHeaderGroup();
             SetRegionGroupHeight(281);
-            var items = currentSave.banks[area.name].items;
+            var type = personTypes.Find(x => x.type == person.type);
             AddHeaderRegion(() =>
             {
-                var type = personTypes.Find(x => x.type == person.type);
+                SetRegionHeight(19);
+                SetRegionTextOffset(38, 19);
                 AddLine(person.name);
                 AddBigButton("Portrait" + person.name.Clean());
                 AddSmallButton("OtherClose", (h) =>
@@ -4773,7 +4877,13 @@ public class Blueprint
             });
             AddHeaderRegion(() =>
             {
-                AddLine("Bank:");
+                SetRegionTextOffset(38, 19);
+                AddLine(person.type, "DarkGray");
+                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == area.faction).side : ""));
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Deposit contents:");
                 if (!WindowUp("InventorySettings") && !WindowUp("InventorySort") && !WindowUp("BankSort"))
                     AddSmallButton("OtherSort", (h) =>
                     {
@@ -4784,7 +4894,7 @@ public class Blueprint
                 else
                     AddSmallButton("OtherSortOff");
             });
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 5; i++)
             {
                 var index = i;
                 AddPaddingRegion(
@@ -4792,14 +4902,15 @@ public class Blueprint
                     {
                         for (int j = 0; j < 5; j++)
                         {
-                            var findItem = items.Find(x => x.y == index && x.x == j);
+                            var findItem = list.Find(x => x.y == index + thisWindow.pagination() && x.x == j);
                             if (findItem != null) PrintBankItem(findItem);
-                            else if (movingItem != null) AddBigButton("OtherEmpty", (h) => PutDownMovingItem(h));
+                            else if (movingItem != null) AddBigButton("OtherEmpty", (h) => PutDownMovingItem(h, thisWindow.pagination()));
                             else AddBigButton("OtherEmpty");
                         }
                     }
                 );
             }
+            AddPaginationLine();
             AddHeaderRegion(() =>
             {
                 AddLine("");
@@ -4880,7 +4991,7 @@ public class Blueprint
             });
         }),
         new("FlightMaster", () => {
-            var rowAmount = 12;
+            var rowAmount = 11;
             var thisWindow = CDesktop.LBWindow();
             var side = currentSave.playerSide;
             var list = area.flightPaths[side].FindAll(x => x != area).OrderBy(x => !currentSave.siteVisits.ContainsKey(x.convertDestinationTo ?? x.name)).ThenBy(x => x.zone).ThenBy(x => x.name).ToList();
@@ -4889,9 +5000,11 @@ public class Blueprint
             AddRegionGroup();
             SetRegionGroupWidth(190);
             SetRegionGroupHeight(281);
+            var type = personTypes.Find(x => x.type == person.type);
             AddHeaderRegion(() =>
             {
-                var type = personTypes.Find(x => x.type == person.type);
+                SetRegionHeight(19);
+                SetRegionTextOffset(38, 19);
                 AddLine(person.name);
                 AddBigButton("Portrait" + person.name.Clean());
                 AddSmallButton("OtherClose", (h) =>
@@ -4900,6 +5013,12 @@ public class Blueprint
                     Respawn("Person");
                     PlaySound("DesktopMenuClose");
                 });
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionTextOffset(38, 19);
+                AddLine(person.type, "DarkGray");
+                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == area.faction).side : ""));
             });
             AddHeaderRegion(() =>
             {
@@ -5001,7 +5120,7 @@ public class Blueprint
             AddPaginationLine();
         }),
         new("AuctionHouseOffersGroups", () => {
-            var rowAmount = 6;
+            var rowAmount = 5;
             var thisWindow = CDesktop.LBWindow();
             var list = Market.exploredAuctionsGroups.ToList();
             thisWindow.SetPagination(() => list.Count, rowAmount);
@@ -5009,9 +5128,11 @@ public class Blueprint
             AddRegionGroup();
             SetRegionGroupWidth(190);
             SetRegionGroupHeight(281);
+            var type = personTypes.Find(x => x.type == person.type);
             AddHeaderRegion(() =>
             {
-                var type = personTypes.Find(x => x.type == person.type);
+                SetRegionHeight(19);
+                SetRegionTextOffset(38, 19);
                 AddLine(person.name);
                 AddBigButton("Portrait" + person.name.Clean());
                 AddSmallButton("OtherClose", (h) =>
@@ -5026,10 +5147,16 @@ public class Blueprint
                     CloseWindow("AuctionHouseFilteringArmorType");
                     CloseWindow("AuctionHouseFilteringJewelry");
                     CloseWindow("AuctionHouseFilteringConsumeables");
-                    for (int i = 0; i < 12; i++) { var index = i; CloseWindow("AuctionHousePrice" + index); }
+                    for (int i = 0; i < 10; i++) { var index = i; CloseWindow("AuctionHousePrice" + index); }
                     Respawn("Person");
                     PlaySound("DesktopInstanceClose");
                 });
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionTextOffset(38, 19);
+                AddLine(person.type, "DarkGray");
+                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == area.faction).side : ""));
             });
             AddHeaderRegion(() =>
             {
@@ -5039,7 +5166,7 @@ public class Blueprint
                     {
                         SpawnWindowBlueprint("AuctionHouseOffersSort");
                         Respawn("AuctionHouseOffersGroups", true);
-                        for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                        for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
                     });
                 else
                     AddSmallButton("OtherSortOff");
@@ -5048,13 +5175,13 @@ public class Blueprint
                 //    {
                 //        SpawnWindowBlueprint("AuctionHouseOffersSettings");
                 //        Respawn("AuctionHouseOffersGroups", true);
-                //        for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                //        for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
                 //    });
                 //else
                 //    AddSmallButton("OtherSettingsOff");
             });
-            auctionPriceToDisplay = new int[12];
-            auctionAmountToDisplay = new int[12];
+            auctionPriceToDisplay = new int[10];
+            auctionAmountToDisplay = new int[10];
             var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             for (int i = 0; i < rowAmount; i++)
             {
@@ -5081,7 +5208,7 @@ public class Blueprint
                         String.splitAmount.Set("1");
                         SpawnWindowBlueprint("AuctionHouseBuy");
                         SpawnWindowBlueprint("AuctionHouseChosenItem");
-                        for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                        for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
                     },
                     null, (h) => () =>
                     {
@@ -5115,7 +5242,7 @@ public class Blueprint
                 Respawn("AuctionHouseOffersGroups", true);
                 CloseWindow("AuctionHouseFilteringMain");
                 Respawn("AuctionHouseFilteringTwoHandedWeapons");
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddButtonRegion(() =>
             {
@@ -5128,7 +5255,7 @@ public class Blueprint
                 Respawn("AuctionHouseOffersGroups", true);
                 CloseWindow("AuctionHouseFilteringMain");
                 Respawn("AuctionHouseFilteringOneHandedWeapons");
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddButtonRegion(() =>
             {
@@ -5141,7 +5268,7 @@ public class Blueprint
                 Respawn("AuctionHouseOffersGroups", true);
                 CloseWindow("AuctionHouseFilteringMain");
                 Respawn("AuctionHouseFilteringOffHands");
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddButtonRegion(() =>
             {
@@ -5154,7 +5281,7 @@ public class Blueprint
                 Respawn("AuctionHouseOffersGroups", true);
                 CloseWindow("AuctionHouseFilteringMain");
                 Respawn("AuctionHouseFilteringRangedWeapons");
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddButtonRegion(() =>
             {
@@ -5167,7 +5294,7 @@ public class Blueprint
                 Respawn("AuctionHouseOffersGroups", true);
                 CloseWindow("AuctionHouseFilteringMain");
                 Respawn("AuctionHouseFilteringArmorClass");
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddButtonRegion(() =>
             {
@@ -5180,7 +5307,7 @@ public class Blueprint
                 Respawn("AuctionHouseOffersGroups", true);
                 CloseWindow("AuctionHouseFilteringMain");
                 Respawn("AuctionHouseFilteringJewelry");
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddButtonRegion(() =>
             {
@@ -5193,7 +5320,7 @@ public class Blueprint
                 Respawn("AuctionHouseOffersGroups", true);
                 CloseWindow("AuctionHouseFilteringMain");
                 Respawn("AuctionHouseFilteringConsumeables");
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddButtonRegion(() =>
             {
@@ -5204,7 +5331,7 @@ public class Blueprint
                 auctionCategory = "Profession recipes";
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddButtonRegion(() =>
             {
@@ -5215,7 +5342,7 @@ public class Blueprint
                 auctionCategory = "Trade goods";
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddButtonRegion(() =>
             {
@@ -5226,7 +5353,7 @@ public class Blueprint
                 auctionCategory = "Other";
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddPaddingRegion(() =>
             {
@@ -5249,7 +5376,7 @@ public class Blueprint
                     CloseWindow(h.window.title);
                     Respawn("AuctionHouseOffersGroups", true);
                     Respawn("AuctionHouseFilteringMain");
-                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                    for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
                 });
             });
             AddHeaderRegion(() =>
@@ -5267,7 +5394,7 @@ public class Blueprint
                 showSwords.Invert();
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddButtonRegion(() =>
             {
@@ -5280,7 +5407,7 @@ public class Blueprint
                 showAxes.Invert();
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddButtonRegion(() =>
             {
@@ -5293,7 +5420,7 @@ public class Blueprint
                 showMaces.Invert();
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddButtonRegion(() =>
             {
@@ -5306,7 +5433,7 @@ public class Blueprint
                 showPolearms.Invert();
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddButtonRegion(() =>
             {
@@ -5319,7 +5446,7 @@ public class Blueprint
                 showStaves.Invert();
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddPaddingRegion(() =>
             {
@@ -5342,7 +5469,7 @@ public class Blueprint
                     CloseWindow(h.window.title);
                     Respawn("AuctionHouseOffersGroups", true);
                     Respawn("AuctionHouseFilteringMain");
-                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                    for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
                 });
             });
             AddHeaderRegion(() =>
@@ -5360,7 +5487,7 @@ public class Blueprint
                 showSwords.Invert();
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddButtonRegion(() =>
             {
@@ -5373,7 +5500,7 @@ public class Blueprint
                 showAxes.Invert();
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddButtonRegion(() =>
             {
@@ -5386,7 +5513,7 @@ public class Blueprint
                 showMaces.Invert();
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddButtonRegion(() =>
             {
@@ -5399,7 +5526,7 @@ public class Blueprint
                 showDaggers.Invert();
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddButtonRegion(() =>
             {
@@ -5412,7 +5539,7 @@ public class Blueprint
                 showWands.Invert();
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddPaddingRegion(() =>
             {
@@ -5435,7 +5562,7 @@ public class Blueprint
                     CloseWindow(h.window.title);
                     Respawn("AuctionHouseOffersGroups", true);
                     Respawn("AuctionHouseFilteringMain");
-                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                    for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
                 });
             });
             AddHeaderRegion(() =>
@@ -5453,7 +5580,7 @@ public class Blueprint
                 showNonShield.Invert();
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddButtonRegion(() =>
             {
@@ -5466,7 +5593,7 @@ public class Blueprint
                 showShield.Invert();
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddPaddingRegion(() =>
             {
@@ -5489,7 +5616,7 @@ public class Blueprint
                     CloseWindow(h.window.title);
                     Respawn("AuctionHouseOffersGroups", true);
                     Respawn("AuctionHouseFilteringMain");
-                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                    for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
                 });
             });
             AddHeaderRegion(() =>
@@ -5507,7 +5634,7 @@ public class Blueprint
                 showBows.Invert();
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddButtonRegion(() =>
             {
@@ -5520,7 +5647,7 @@ public class Blueprint
                 showCrossbows.Invert();
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddButtonRegion(() =>
             {
@@ -5533,7 +5660,7 @@ public class Blueprint
                 showGuns.Invert();
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddPaddingRegion(() =>
             {
@@ -5556,7 +5683,7 @@ public class Blueprint
                     CloseWindow(h.window.title);
                     Respawn("AuctionHouseOffersGroups", true);
                     Respawn("AuctionHouseFilteringMain");
-                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                    for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
                 });
             });
             AddHeaderRegion(() =>
@@ -5574,7 +5701,7 @@ public class Blueprint
                 showCloth.Invert();
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddButtonRegion(() =>
             {
@@ -5587,7 +5714,7 @@ public class Blueprint
                 showLeather.Invert();
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddButtonRegion(() =>
             {
@@ -5600,7 +5727,7 @@ public class Blueprint
                 showMail.Invert();
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddButtonRegion(() =>
             {
@@ -5613,7 +5740,7 @@ public class Blueprint
                 showPlate.Invert();
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddPaddingRegion(() =>
             {
@@ -5646,7 +5773,7 @@ public class Blueprint
                     CloseWindow(h.window.title);
                     Respawn("AuctionHouseOffersGroups", true);
                     Respawn("AuctionHouseFilteringMain");
-                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                    for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
                 });
             });
             AddHeaderRegion(() =>
@@ -5664,7 +5791,7 @@ public class Blueprint
                 showHead.Invert();
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddButtonRegion(() =>
             {
@@ -5677,7 +5804,7 @@ public class Blueprint
                 showShoulders.Invert();
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddButtonRegion(() =>
             {
@@ -5690,7 +5817,7 @@ public class Blueprint
                 showBack.Invert();
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddButtonRegion(() =>
             {
@@ -5703,7 +5830,7 @@ public class Blueprint
                 showChest.Invert();
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddButtonRegion(() =>
             {
@@ -5716,7 +5843,7 @@ public class Blueprint
                 showWrists.Invert();
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddButtonRegion(() =>
             {
@@ -5729,7 +5856,7 @@ public class Blueprint
                 showHands.Invert();
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddButtonRegion(() =>
             {
@@ -5742,7 +5869,7 @@ public class Blueprint
                 showWaist.Invert();
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddButtonRegion(() =>
             {
@@ -5755,7 +5882,7 @@ public class Blueprint
                 showLegs.Invert();
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddButtonRegion(() =>
             {
@@ -5768,7 +5895,7 @@ public class Blueprint
                 showFeet.Invert();
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddPaddingRegion(() =>
             {
@@ -5801,7 +5928,7 @@ public class Blueprint
                     CloseWindow(h.window.title);
                     Respawn("AuctionHouseOffersGroups", true);
                     Respawn("AuctionHouseFilteringMain");
-                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                    for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
                 });
             });
             AddHeaderRegion(() =>
@@ -5819,7 +5946,7 @@ public class Blueprint
                 showNeck.Invert();
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddButtonRegion(() =>
             {
@@ -5832,7 +5959,7 @@ public class Blueprint
                 showFinger.Invert();
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddButtonRegion(() =>
             {
@@ -5845,7 +5972,7 @@ public class Blueprint
                 showTrinket.Invert();
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddPaddingRegion(() =>
             {
@@ -5868,7 +5995,7 @@ public class Blueprint
                     CloseWindow(h.window.title);
                     Respawn("AuctionHouseOffersGroups", true);
                     Respawn("AuctionHouseFilteringMain");
-                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                    for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
                 });
             });
             AddHeaderRegion(() =>
@@ -5886,7 +6013,7 @@ public class Blueprint
                 showFood.Invert();
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddButtonRegion(() =>
             {
@@ -5899,7 +6026,7 @@ public class Blueprint
                 showScrolls.Invert();
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddButtonRegion(() =>
             {
@@ -5912,7 +6039,7 @@ public class Blueprint
                 showPotions.Invert();
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddButtonRegion(() =>
             {
@@ -5925,7 +6052,7 @@ public class Blueprint
                 showBattleElixirs.Invert();
                 UpdateAuctionGroupList();
                 Respawn("AuctionHouseOffersGroups", true);
-                for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             });
             AddPaddingRegion(() =>
             {
@@ -5933,7 +6060,7 @@ public class Blueprint
             });
         }),
         new("AuctionHouseOffers", () => {
-            var rowAmount = 12;
+            var rowAmount = 10;
             var thisWindow = CDesktop.LBWindow();
             var list = Market.exploredAuctions;
             thisWindow.SetPagination(() => list.Count, rowAmount);
@@ -5941,9 +6068,11 @@ public class Blueprint
             AddRegionGroup();
             SetRegionGroupWidth(190);
             SetRegionGroupHeight(281);
+            var type = personTypes.Find(x => x.type == person.type);
             AddHeaderRegion(() =>
             {
-                var type = personTypes.Find(x => x.type == person.type);
+                SetRegionHeight(19);
+                SetRegionTextOffset(38, 19);
                 AddLine(person.name);
                 AddBigButton("Portrait" + person.name.Clean());
                 AddSmallButton("OtherClose", (h) =>
@@ -5952,17 +6081,23 @@ public class Blueprint
                     CloseWindow("AuctionHouseBuy");
                     CloseWindow("AuctionHouseChosenItem");
                     Respawn("AuctionHouseOffersGroups");
-                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                    for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
                     PlaySound("DesktopInstanceClose");
                 });
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionTextOffset(38, 19);
+                AddLine(person.type, "DarkGray");
+                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == area.faction).side : ""));
             });
             AddHeaderRegion(() =>
             {
                 AddLine("Available auctions:");
                 AddLine("x" + Market.exploredAuctions.Sum(x => x.item.amount), "DarkGray", "Right");
             });
-            auctionPriceToDisplay = new int[12];
-            auctionAmountToDisplay = new int[12];
+            auctionPriceToDisplay = new int[10];
+            auctionAmountToDisplay = new int[10];
             for (int i = 0; i < rowAmount; i++)
             {
                 var index = i;
@@ -6000,7 +6135,7 @@ public class Blueprint
                 CDesktop.RespawnAll();
                 PlaySound("DesktopInventorySort", 0.4f);
             });
-            AddButtonRegion(() => AddLine("By minimum unit price", "Black"),
+            AddButtonRegion(() => AddLine("By unit price", "Black"),
             (h) =>
             {
                 Market.exploredAuctionsGroups = Market.exploredAuctionsGroups.OrderByDescending(x => x.Value.Min(y => y.price)).ToDictionary(x => x.Key, x => x.Value);
@@ -6124,7 +6259,7 @@ public class Blueprint
             PrintPriceRegion(currentPrice, 38, 38, 49);
         }),
         new("ProfessionLevelTrainer", () => {
-            var rowAmount = 6;
+            var rowAmount = 4;
             var thisWindow = CDesktop.LBWindow();
             var type = personTypes.Find(x => x.type == person.type);
             var profession = professions.Find(x => x.name == type.profession);
@@ -6139,19 +6274,26 @@ public class Blueprint
             SetRegionGroupHeight(288);
             AddHeaderRegion(() =>
             {
+                SetRegionHeight(19);
+                SetRegionTextOffset(38, 19);
                 AddLine(person.name);
                 AddBigButton("Portrait" + person.name.Clean());
-                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == area.faction).side : ""));
-            });
-            AddHeaderRegion(() =>
-            {
-                AddLine("Learnable levels:");
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseWindow(h.window.title);
                     Respawn("Person");
                     PlaySound("DesktopInstanceClose");
                 });
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionTextOffset(38, 19);
+                AddLine(person.type, "DarkGray");
+                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == area.faction).side : ""));
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Learnable levels:");
             });
             var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             for (int i = 0; i < rowAmount; i++)
@@ -6241,7 +6383,7 @@ public class Blueprint
             AddPaginationLine();
         }),
         new("ProfessionRecipeTrainer", () => {
-            var rowAmount = 6;
+            var rowAmount = 4;
             var thisWindow = CDesktop.LBWindow();
             var type = personTypes.Find(x => x.type == person.type);
             var profession = professions.Find(x => x.name == type.profession);
@@ -6255,13 +6397,10 @@ public class Blueprint
             SetRegionGroupHeight(288);
             AddHeaderRegion(() =>
             {
+                SetRegionHeight(19);
+                SetRegionTextOffset(38, 19);
                 AddLine(person.name);
                 AddBigButton("Portrait" + person.name.Clean());
-                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == area.faction).side : ""));
-            });
-            AddHeaderRegion(() =>
-            {
-                AddLine("Learnable " + profession.recipeType.ToLower() + (profession.recipeType.Last() == 's' ? ":" : "s:"), "Gray");
                 AddSmallButton("OtherClose", (h) =>
                 {
                     CloseWindow(h.window.title);
@@ -6269,22 +6408,34 @@ public class Blueprint
                     PlaySound("DesktopInstanceClose");
                 });
             });
+            AddHeaderRegion(() =>
+            {
+                SetRegionTextOffset(38, 19);
+                AddLine(person.type, "DarkGray");
+                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == area.faction).side : ""));
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine("Learnable " + profession.recipeType.ToLower() + (profession.recipeType.Last() == 's' ? ":" : "s:"), "Gray");
+            });
             var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             for (int i = 0; i < rowAmount; i++)
             {
                 var index = i;
                 if (list.Count > index + thisWindow.pagination())
+                {
                     AddPaddingRegion(() =>
                     {
                         var key = list[index + thisWindow.pagination()];
                         AddLine(key.name, key.NameColor());
-                        AddLine("", "DarkGray");
-                        if (key.learnedAt > 0)
-                        {
-                            AddText("Required skill: ", "DarkGray");
-                            AddText(key.learnedAt + " ", ColorProfessionRequiredSkill(key.profession, key.learnedAt));
-                        }
-                        AddBigButton(key.Icon(),
+                        SetRegionHeight(19);
+                        //if (key.learnedAt > 0)
+                        //{
+                        //    AddLine("Required skill: ", "DarkGray");
+                        //    AddText(key.learnedAt + " ", ColorProfessionRequiredSkill(key.profession, key.learnedAt));
+                        //}
+                        var icon = key.Icon();
+                        AddBigButton(icon.Item1,
                             (h) =>
                             {
                                 var key = list[index + thisWindow.pagination()];
@@ -6335,7 +6486,18 @@ public class Blueprint
                             SetBigButtonToRedscale();
                             AddBigButtonOverlay("OtherGridBlurred");
                         }
+                        if (settings.rarityIndicators.Value() && icon.Item2 != null)
+                            AddBigButtonOverlay("OtherRarity" + icon.Item2.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 3);
                     });
+                    AddPaddingRegion(() =>
+                    {
+                        var key = list[index + thisWindow.pagination()];
+                        AddLine("Required skill: ", "DarkGray");
+                        AddText(key.learnedAt + " ", ColorProfessionRequiredSkill(key.profession, key.learnedAt));
+                        SetRegionHeight(19);
+                        SetRegionTextOffset(38, 0);
+                    });
+                }
                 else
                     AddPaddingRegion(() =>
                     {
@@ -7516,8 +7678,8 @@ public class Blueprint
             {
                 String.promptConfirm.Set("");
                 PlaySound("DesktopMenuOpen", 0.6f);
-                SpawnWindowBlueprint("ConfirmDeleteCharacter");
-                CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
+                var win = SpawnWindowBlueprint("ConfirmDeleteCharacter");
+                win.LBRegionGroup().LBRegion().inputLine.Activate();
             });
             AddButtonRegion(() =>
             {
@@ -7943,6 +8105,7 @@ public class Blueprint
                 else
                     AddSmallButton("OtherSettingsOff");
             });
+            AddPaginationLine();
             var regionGroup = CDesktop.LBWindow().LBRegionGroup();
             var actionSet = currentSave.player.actionSets[currentSave.player.currentActionSet];
             AddRegionGroup();
@@ -8007,8 +8170,6 @@ public class Blueprint
                             SetBigButtonToRedscale();
                             AddBigButtonOverlay("OtherGridBlurred");
                         }
-                        //else if (actionSet.Count < currentSave.player.ActionSetMaxLength())
-                        //    AddBigButtonOverlay("OtherGlowLearnable");
                     });
                 else AddPaddingRegion(() => AddBigButton("OtherDisabled"));
             }
@@ -8068,9 +8229,6 @@ public class Blueprint
         }),
         new("SpellbookAbilityListActivatedBottom", () => {
             SetAnchor(BottomRight, 0, 35);
-            AddHeaderGroup();
-            SetRegionGroupWidth(190);
-            AddPaginationLine();
             AddRegionGroup();
             SetRegionGroupWidth(95);
             AddPaddingRegion(() => AddLine("Activated", "", "Center"));
@@ -8113,7 +8271,7 @@ public class Blueprint
                 else
                     AddSmallButton("OtherSortOff");
             });
-            var regionGroup = CDesktop.LBWindow().LBRegionGroup();
+            AddPaginationLine();
             AddRegionGroup();
             for (int i = 0; i < rowAmount; i++)
             {
@@ -8164,9 +8322,6 @@ public class Blueprint
         }),
         new("SpellbookAbilityListPassiveBottom", () => {
             SetAnchor(BottomRight, 0, 35);
-            AddHeaderGroup();
-            SetRegionGroupWidth(190);
-            AddPaginationLine();
             AddRegionGroup();
             SetRegionGroupWidth(95);
             AddButtonRegion(() => AddLine("Activated", "", "Center"), (h) =>
@@ -9082,7 +9237,7 @@ public class Blueprint
                     UpdateAuctionGroupList();
                     Respawn("AuctionHouseOffersGroups", true);
                     Respawn("AuctionHouseFilteringMain");
-                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                    for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
                 }
                 else if (CloseWindow("AuctionHouseOffersGroups"))
                 {
@@ -9096,7 +9251,7 @@ public class Blueprint
                     CloseWindow("AuctionHouseFilteringArmorType");
                     CloseWindow("AuctionHouseFilteringJewelry");
                     CloseWindow("AuctionHouseFilteringConsumeables");
-                    for (int i = 0; i < 12; i++) { var index = i; CloseWindow("AuctionHousePrice" + index); }
+                    for (int i = 0; i < 10; i++) { var index = i; CloseWindow("AuctionHousePrice" + index); }
                     Respawn("Person");
                 }
                 else if (CloseWindow("AuctionHouseOffers"))
@@ -9105,12 +9260,11 @@ public class Blueprint
                     CloseWindow("AuctionHouseBuy");
                     CloseWindow("AuctionHouseChosenItem");
                     Respawn("AuctionHouseOffersGroups");
-                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                    for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
                     PlaySound("DesktopInstanceClose");
                 }
                 else if (CloseWindow("Person"))
                 {
-                    CloseWindow("PersonTypeLine");
                     PlaySound("DesktopInstanceClose");
                     person = null;
                     if (personCategory != null) Respawn("Persons");
@@ -9243,7 +9397,7 @@ public class Blueprint
                     UpdateAuctionGroupList();
                     Respawn("AuctionHouseOffersGroups", true);
                     Respawn("AuctionHouseFilteringMain");
-                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                    for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
                 }
                 else if (CloseWindow("AuctionHouseOffersGroups"))
                 {
@@ -9257,7 +9411,7 @@ public class Blueprint
                     CloseWindow("AuctionHouseFilteringArmorType");
                     CloseWindow("AuctionHouseFilteringJewelry");
                     CloseWindow("AuctionHouseFilteringConsumeables");
-                    for (int i = 0; i < 12; i++) { var index = i; CloseWindow("AuctionHousePrice" + index); }
+                    for (int i = 0; i < 10; i++) { var index = i; CloseWindow("AuctionHousePrice" + index); }
                     Respawn("Person");
                 }
                 else if (CloseWindow("AuctionHouseOffers"))
@@ -9266,12 +9420,11 @@ public class Blueprint
                     CloseWindow("AuctionHouseBuy");
                     CloseWindow("AuctionHouseChosenItem");
                     Respawn("AuctionHouseOffersGroups");
-                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                    for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
                     PlaySound("DesktopInstanceClose");
                 }
                 else if (CloseWindow("Person"))
                 {
-                    CloseWindow("PersonTypeLine");
                     PlaySound("DesktopInstanceClose");
                     person = null;
                     if (personCategory != null) Respawn("Persons");
@@ -9427,7 +9580,7 @@ public class Blueprint
                         UpdateAuctionGroupList();
                         Respawn("AuctionHouseOffersGroups", true);
                         Respawn("AuctionHouseFilteringMain");
-                        for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                        for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
                     }
                     else if (CloseWindow("AuctionHouseOffersGroups"))
                     {
@@ -9441,7 +9594,7 @@ public class Blueprint
                         CloseWindow("AuctionHouseFilteringArmorType");
                         CloseWindow("AuctionHouseFilteringJewelry");
                         CloseWindow("AuctionHouseFilteringConsumeables");
-                        for (int i = 0; i < 12; i++) { var index = i; CloseWindow("AuctionHousePrice" + index); }
+                        for (int i = 0; i < 10; i++) { var index = i; CloseWindow("AuctionHousePrice" + index); }
                         Respawn("Person");
                     }
                     else if (CloseWindow("AuctionHouseOffers"))
@@ -9450,12 +9603,11 @@ public class Blueprint
                         CloseWindow("AuctionHouseBuy");
                         CloseWindow("AuctionHouseChosenItem");
                         Respawn("AuctionHouseOffersGroups");
-                        for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                        for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
                         PlaySound("DesktopInstanceClose");
                     }
                     else if (CloseWindow("Person"))
                     {
-                        CloseWindow("PersonTypeLine");
                         PlaySound("DesktopInstanceClose");
                         person = null;
                         if (personCategory != null) Respawn("Persons");
@@ -9853,7 +10005,7 @@ public class Blueprint
                 if (debug && SpawnWindowBlueprint("Console") != null)
                 {
                     PlaySound("DesktopTooltipShow", 0.4f);
-                    CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
+                    CDesktop.windows.Find(x => x.title == "Console").LBRegionGroup().LBRegion().inputLine.Activate();
                 }
             });
             AddHotkey("Focus camera on player", () =>
@@ -9891,7 +10043,7 @@ public class Blueprint
                 if (debug && SpawnWindowBlueprint("Console") != null)
                 {
                     PlaySound("DesktopTooltipShow", 0.4f);
-                    CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
+                    CDesktop.windows.Find(x => x.title == "Console").LBRegionGroup().LBRegion().inputLine.Activate();
                 }
             });
             AddHotkey("Open menu / Back", () =>
@@ -9923,7 +10075,7 @@ public class Blueprint
                 if (debug && SpawnWindowBlueprint("Console") != null)
                 {
                     PlaySound("DesktopTooltipShow", 0.4f);
-                    CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
+                    CDesktop.windows.Find(x => x.title == "Console").LBRegionGroup().LBRegion().inputLine.Activate();
                 }
             });
             AddHotkey("Open menu / Back", () =>
@@ -9967,7 +10119,7 @@ public class Blueprint
             {
                 PlaySound("DesktopChangePage", 0.6f);
                 if (WindowUp("AuctionHouseOffers") || WindowUp("AuctionHouseOffersGroups"))
-                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                    for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             }
             window.Respawn();
         });
@@ -9981,7 +10133,7 @@ public class Blueprint
             {
                 PlaySound("DesktopChangePage", 0.6f);
                 if (WindowUp("AuctionHouseOffers") || WindowUp("AuctionHouseOffersGroups"))
-                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                    for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             }
             window.Respawn();
         }, false);
@@ -9995,7 +10147,7 @@ public class Blueprint
             {
                 PlaySound("DesktopChangePage", 0.6f);
                 if (WindowUp("AuctionHouseOffers") || WindowUp("AuctionHouseOffersGroups"))
-                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                    for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             }
             window.Respawn();
         });
@@ -10009,7 +10161,7 @@ public class Blueprint
             {
                 PlaySound("DesktopChangePage", 0.6f);
                 if (WindowUp("AuctionHouseOffers") || WindowUp("AuctionHouseOffersGroups"))
-                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                    for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             }
             window.Respawn();
         }, false);
@@ -10030,7 +10182,7 @@ public class Blueprint
                 PlaySound("DesktopChangePage", 0.6f);
                 window.Respawn();
                 if (WindowUp("AuctionHouseOffers") || WindowUp("AuctionHouseOffersGroups"))
-                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                    for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             }
         });
         AddHotkey(PageDown, () =>
@@ -10050,7 +10202,7 @@ public class Blueprint
                 PlaySound("DesktopChangePage", 0.6f);
                 window.Respawn();
                 if (WindowUp("AuctionHouseOffers") || WindowUp("AuctionHouseOffersGroups"))
-                    for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
+                    for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
             }
         });
     }

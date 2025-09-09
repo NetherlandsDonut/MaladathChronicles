@@ -13,7 +13,6 @@ public class Inventory
 
     public Inventory()
     {
-        bags ??= new();
         items ??= new();
     }
 
@@ -217,13 +216,13 @@ public class Inventory
 
     //Extension method for adding new items to the list of items
     //This extension automatically asigns a spot in the inventory for the item
-    public void AddNewItem(Item item)
+    public void AddNewItem(Item item, int ySize = 6, int xSize = 5)
     {
         item.x = -1;
         item.y = -1;
         items.Add(item);
-        for (int j = 0; j < 6; j++)
-            for (int i = 0; i < 5; i++)
+        for (int j = 0; j < ySize; j++)
+            for (int i = 0; i < xSize; i++)
                 if (items.All(x => x.x != i || x.y != j))
                 {
                     (item.x, item.y) = (i, j);
@@ -265,6 +264,12 @@ public class Inventory
     //Amount of money in the bags
     public int money;
 
+    //Is this inventory a bank deposit
+    public bool bank;
+
+    //Amount of upgrades for the deposit in this bank
+    public int depositUpgrades;
+
     //List of all items contained in the bags
     public List<Item> items;
 
@@ -278,6 +283,7 @@ public class Inventory
     //Returns the amount of bag space inventory has
     public int BagSpace()
     {
+        if (bank) return 25 + 25 * depositUpgrades;
         var theorySpace = bags.Sum(x => x.bagSpace) + defines.backpackSpace;
         return theorySpace > 30 ? 30 : theorySpace;
     }

@@ -502,12 +502,12 @@ public class InputLine : MonoBehaviour
                     if (item.indestructible == true) continue;
                     if (item.price == 0) continue;
                     if (item.source == "Quest") continue;
-                    if (item.source == "DirectDrop") continue;
                     if (item.type == "Miscellaneous" && (item.abilities == null || item.abilities.Count == 0)) continue;
                     if (item.type == "Currency") continue;
                     if (item.rarity == "Poor") continue;
                     if (item.questsStarted != null) continue;
-                    if (item.droppedBy != null) continue;
+                    if (item.source == "DirectDrop" && item.maxStack == 1) continue;
+                    if (item.droppedBy != null && item.maxStack == 1) continue;
                     if (item.name.Contains("!")) continue;
                     if (item.name == "Crazy Grab Bag") continue;
                     if (item.name == "Red Sack of Gems") continue;

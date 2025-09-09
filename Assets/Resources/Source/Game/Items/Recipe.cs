@@ -26,18 +26,18 @@ public class Recipe
     }
 
     //Provides an icon for the recipe in the interface
-    public string Icon()
+    public (string, Item) Icon()
     {
         if (results.Count == 0)
         {
-            if (enchantment) return "AbilityGreaterHeal";
-            else return "OtherUnknown";
+            if (enchantment) return ("AbilityGreaterHeal", null);
+            else return ("OtherUnknown", null);
         }
         else
         {
             var find = Item.items.Find(x => x.name == results.Keys.First());
-            if (find != null) return find.icon;
-            return "OtherUnknown";
+            if (find != null) return (find.icon, find);
+            return ("OtherUnknown", null);
         }
     }
 
@@ -51,17 +51,28 @@ public class Recipe
         AddHeaderRegion(() =>
         {
             AddLine(recipe.name, recipe.NameColor());
-            AddSmallButton(recipe.Icon());
+            var icon = recipe.Icon();
+            AddSmallButton(icon.Item1);
+            if (GameSettings.settings.rarityIndicators.Value() && icon.Item2 != null)
+                AddSmallButtonOverlay("OtherRarity" + icon.Item2.rarity, 0, 2);
         });
-        AddPaddingRegion(() => AddLine(recipe.profession + " " + Profession.professions.Find(x => x.name == recipe.profession).recipeType));
+        AddPaddingRegion(() => AddLine(recipe.profession + " " + Profession.professions.Find(x => x.name == recipe.profession).recipeType.ToLower(), SaveGame.currentSave != null && SaveGame.currentSave.player.professionSkills.ContainsKey(recipe.profession) ? "HalfGray" : "DangerousRed"));
         if (recipe.results.Count > 0)
         {
             AddHeaderRegion(() => AddLine("Results:", "DarkGray"));
-            AddPaddingRegion(() =>
+            foreach (var result in recipe.results)
             {
-                foreach (var result in recipe.results)
-                    AddLine(result.Key + " x" + result.Value);
-            });
+                var resultItem = Item.items.Find(x => x.name == result.Key);
+                AddPaddingRegion(() =>
+                {
+                    SetRegionTextOffset(0, 19);
+                    AddLine("x" + result.Value, "DarkGray", "Right");
+                    AddLine(result.Key, resultItem.rarity);
+                    AddSmallButton(resultItem.icon);
+                    if (GameSettings.settings.rarityIndicators.Value())
+                        AddSmallButtonOverlay("OtherRarity" + resultItem.rarity, 0, 2);
+                });
+            }
         }
         else if (recipe.enchantment)
         {
@@ -74,11 +85,19 @@ public class Recipe
             });
         }
         AddHeaderRegion(() => AddLine("Reagents:", "DarkGray"));
-        AddPaddingRegion(() =>
+        foreach (var reagent in recipe.reagents)
         {
-            foreach (var reagent in recipe.reagents)
-                AddLine(reagent.Key + " x" + reagent.Value);
-        });
+            var reagentItem = Item.items.Find(x => x.name == reagent.Key);
+            AddPaddingRegion(() =>
+            {
+                SetRegionTextOffset(0, 19);
+                AddLine("x" + reagent.Value, "DarkGray", "Right");
+                AddLine(reagent.Key, reagentItem.rarity);
+                AddSmallButton(reagentItem.icon);
+                if (GameSettings.settings.rarityIndicators.Value())
+                    AddSmallButtonOverlay("OtherRarity" + reagentItem.rarity, 0, 2);
+            });
+        }
         AddHeaderRegion(() =>
         {
             AddLine("Required skill: ", "DarkGray");

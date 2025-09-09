@@ -383,12 +383,12 @@ public static class Root
     }
 
     //Pick up an item to move it
-    public static void PickUpMovingItem(string window, Highlightable h, int amount = 0)
+    public static void PickUpMovingItem(string window, Highlightable h, int amount = 0, int yOffset = 0)
     {
         movingItemFrom = window;
         var bigButtonIndex = h == null ? movingItemX : h.region.bigButtons.IndexOf(h.GetComponent<LineBigButton>());
         var regionIndex = h == null ? movingItemY : h.window.headerGroup.regions.IndexOf(h.region) - (movingItemFrom == "Bank" ? 2 : 1);
-        movingItem = (movingItemFrom == "Bank" ? currentSave.banks[SiteArea.area.name].items : currentSave.player.inventory.items).Find(x => x.x == bigButtonIndex && x.y == regionIndex);
+        movingItem = (movingItemFrom == "Bank" ? currentSave.banks[SiteArea.area.name].items : currentSave.player.inventory.items).Find(x => x.x == bigButtonIndex && x.y == regionIndex + yOffset);
         movingItemSplitOff = false;
         if (amount != 0 && amount < movingItem.amount)
         {
@@ -406,7 +406,7 @@ public static class Root
     }
 
     //Put down an item into an inventory
-    public static void PutDownMovingItem(Highlightable h)
+    public static void PutDownMovingItem(Highlightable h, int yOffset = 0)
     {
         if (h.window.title == "PlayerEquipmentInfo")
         {
@@ -441,12 +441,12 @@ public static class Root
         }
         else
         {
-            if (h.window.title == "Bank") currentSave.banks[SiteArea.area.name].AddNewItem(movingItem);
+            if (h.window.title == "Bank") currentSave.banks[SiteArea.area.name].AddNewItem(movingItem, 15, 5);
             else currentSave.player.inventory.AddNewItem(movingItem);
             var bigButtonIndex = h.region.bigButtons.IndexOf(h.GetComponent<LineBigButton>());
             var regionIndex = h.window.headerGroup.regions.IndexOf(h.region) - (h.window.title == "Bank" ? 2 : 1);
             movingItem.x = bigButtonIndex;
-            movingItem.y = regionIndex;
+            movingItem.y = regionIndex + yOffset;
             PlaySound(movingItem.ItemSound("PutDown"), 0.8f);
             movingItem = null;
             Cursor.cursor.iconAttached.SetActive(false);
@@ -458,11 +458,11 @@ public static class Root
     //Swap moving item with the one at clicked position
     //If they can stack together, do that
     //If moving a split off you have to put it on a free space or same item type
-    public static void SwapMovingItem(Highlightable h)
+    public static void SwapMovingItem(Highlightable h, int yOffset = 0)
     {
         var bigButtonIndex = h.region.bigButtons.IndexOf(h.GetComponent<LineBigButton>());
         var regionIndex = h.window.headerGroup.regions.IndexOf(h.region) - (h.window.title == "Bank" ? 2 : 1);
-        var temp = (h.window.title == "Bank" ? currentSave.banks[SiteArea.area.name].items : currentSave.player.inventory.items).Find(x => x.x == bigButtonIndex && x.y == regionIndex);
+        var temp = (h.window.title == "Bank" ? currentSave.banks[SiteArea.area.name].items : currentSave.player.inventory.items).Find(x => x.x == bigButtonIndex && x.y == regionIndex + yOffset);
         PlaySound(movingItem.ItemSound("PutDown"), 0.8f);
         if (temp.name == movingItem.name && (!currentSave.classicItemStacking.Value() || temp.amount + movingItem.amount <= temp.maxStack))
         {
@@ -477,10 +477,10 @@ public static class Root
         }
         else if (!movingItemSplitOff)
         {
-            if (h.window.title == "Bank") currentSave.banks[SiteArea.area.name].AddNewItem(movingItem);
+            if (h.window.title == "Bank") currentSave.banks[SiteArea.area.name].AddNewItem(movingItem, 15, 5);
             else currentSave.player.inventory.AddNewItem(movingItem);
             movingItem.x = bigButtonIndex;
-            movingItem.y = regionIndex;
+            movingItem.y = regionIndex + yOffset;
             movingItem = temp;
             if (h.window.title == "Bank") currentSave.banks[SiteArea.area.name].items.Remove(movingItem);
             else currentSave.player.inventory.items.Remove(movingItem);
@@ -736,8 +736,7 @@ public static class Root
             return null;
         }
         if (blueprint.title == "AuctionHouseOffersGroups" || blueprint.title == "AuctionHouseOffers")
-            for (int i = 0; i < 12; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
-        if (blueprint.title != "PersonTypeLine" && WindowUp("PersonTypeLine")) Respawn("PersonTypeLine");
+            for (int i = 0; i < 10; i++) { var index = i; Respawn("AuctionHousePrice" + index); }
         return lb;
     }
 
@@ -847,6 +846,17 @@ public static class Root
         region.Initialise(regionGroup, backgroundType, draw);
         if (pressEvent != null || rightPressEvent != null || middlePressEvent != null || tooltip != null)
             region.background.AddComponent<Highlightable>().Initialise(region, pressEvent, rightPressEvent, tooltip, middlePressEvent);
+    }
+
+    public static void SetRegionHeight(int height)
+    {
+        CDesktop.LBWindow().LBRegionGroup().LBRegion().setHeight = height < 0 ? 0 : height;
+    }
+
+    public static void SetRegionTextOffset(int left, int right)
+    {
+        CDesktop.LBWindow().LBRegionGroup().LBRegion().setOffsetLeft = left < 0 ? 0 : left;
+        CDesktop.LBWindow().LBRegionGroup().LBRegion().setOffsetRight = right < 0 ? 0 : right;
     }
 
     public static void AddRegionOverlay(Region onWhat, string overlay, float time = 0)

@@ -161,11 +161,13 @@ public class Window : MonoBehaviour
             {
                 var maxHeight = 0;
                 var groups = region.lines.GroupBy(x => x.align);
-                foreach (var group in groups)
+                var spaceEaten = groups.Count() == 0 ? new int[0] : new int[groups.Max(x => x.Count())];
+                foreach (var groupT in groups)
                 {
+                    var group = groupT.ToList();
                     foreach (var line in group)
                     {
-                        var objectOffset = (region.checkbox != null ? 15 : 0) + (region.reverseButtons ? region.smallButtons.Count * 19 : region.bigButtons.Count * 38);
+                        var objectOffset = region.setOffsetLeft != 0 ? region.setOffsetLeft : (region.checkbox != null ? 15 : 0) + (region.reverseButtons ? region.smallButtons.Count * 19 : region.bigButtons.Count * 38);
                         int length = 0;
                         if (regionGroup.setWidth == 0)
                             foreach (var text in line.texts)
@@ -176,7 +178,8 @@ public class Window : MonoBehaviour
                             }
                         else
                         {
-                            var emptySpace = regionGroup.setWidth - (defines.textPaddingLeft + defines.textPaddingRight + objectOffset + (region.reverseButtons ? region.bigButtons.Count * 38 : region.smallButtons.Count * 19));
+                            var emptySpace = regionGroup.setWidth - (defines.textPaddingLeft + defines.textPaddingRight + objectOffset + (region.reverseButtons ? region.bigButtons.Count * 38 : region.smallButtons.Count * 19)) - spaceEaten[group.IndexOf(line)];
+                            if (emptySpace <= 0) continue;
                             var fullText = string.Join("", line.texts.Select(x => x.text));
                             var toPrint = 0;
                             var useWrapper = false;
@@ -223,10 +226,11 @@ public class Window : MonoBehaviour
                         else if (line.align == "Right")
                             line.transform.localPosition = new Vector3(-defines.textPaddingLeft + autoWidth - (region.reverseButtons ? region.bigButtons.Count * 38 : region.smallButtons.Count * 19) - length, -region.currentHeight - 3, 0);
                         region.currentHeight += 15;
+                        spaceEaten[group.IndexOf(line)] += length;
                     }
                     if (region.currentHeight > maxHeight)
                         maxHeight = region.currentHeight;
-                    region.currentHeight = groups.Last().Key == group.Key ? maxHeight : 0;
+                    region.currentHeight = groups.Last().Key == groupT.Key ? maxHeight : 0;
                 }
             }
 
@@ -310,7 +314,7 @@ public class Window : MonoBehaviour
             foreach (var region in regionGroup.regions)
                 if (region.inputLine != null)
                 {
-                    var objectOffset = (region.checkbox != null ? 15 : 0) + region.bigButtons.Count * 38;
+                    var objectOffset = region.setOffsetLeft != 0 ? region.setOffsetLeft : (region.checkbox != null ? 15 : 0) + region.bigButtons.Count * 38;
                     if (region.lines.Count > 0)
                         region.inputLine.transform.localPosition = new Vector3(11 + region.lines[0].Length(), -region.currentHeight + 12, 0);
                     else
@@ -354,7 +358,7 @@ public class Window : MonoBehaviour
                     if (regionGroup.stretchRegion == region || regionGroup.stretchRegion == null && region == regionGroup.regions.Last())
                         region.yExtend = regionGroup.setHeight - plannedHeight + (region.lines.Count > 0 ? 4 : 0);
                 if (region.yExtend > 0) extendOffset += region.yExtend;
-                regionGroup.currentHeight += 4 + region.currentHeight;
+                regionGroup.currentHeight += 4 + region.AutoHeight();
             }
 
             #endregion
@@ -447,11 +451,24 @@ public class Window : MonoBehaviour
                         if (autoWidth + region.xExtend - 1.5f - 19 * region.smallButtons.Count < 0 || 3.5f + 38 * region.bigButtons.Count >= autoWidth + region.xExtend)
                             for (int i = 0; i < 4; i++)
                                 region.borders[i + 4].GetComponent<SpriteRenderer>().sprite = null;
+                        else if (region.setOffsetLeft != 0)
+                        {
+                            region.borders[4].transform.localPosition = new Vector3(3.5f + region.setOffsetLeft, -3.5f, 0.05f);
+                            region.borders[6].transform.localPosition = new Vector3(3.5f + region.setOffsetLeft, -region.AutoHeight() - 2.5f - region.yExtend, 0.05f);
+                        }
                         else
                         {
                             region.borders[4].transform.localPosition = new Vector3(3.5f + (region.reverseButtons ? 19 * region.smallButtons.Count : 38 * region.bigButtons.Count), -3.5f, 0.05f);
-                            region.borders[5].transform.localPosition = new Vector3(autoWidth + region.xExtend - 1.5f - (region.reverseButtons ? region.bigButtons.Count * 38 : 19 * region.smallButtons.Count), -3.5f, 0.05f);
                             region.borders[6].transform.localPosition = new Vector3(3.5f + (region.reverseButtons ? 19 * region.smallButtons.Count : 38 * region.bigButtons.Count), -region.AutoHeight() - 2.5f - region.yExtend, 0.05f);
+                        }
+                        if (region.setOffsetRight != 0)
+                        {
+                            region.borders[5].transform.localPosition = new Vector3(autoWidth + region.xExtend - 1.5f - region.setOffsetRight, -3.5f, 0.05f);
+                            region.borders[7].transform.localPosition = new Vector3(autoWidth + region.xExtend - 1.5f - region.setOffsetRight, -region.AutoHeight() - 2.5f - region.yExtend, 0.05f);
+                        }
+                        else
+                        {
+                            region.borders[5].transform.localPosition = new Vector3(autoWidth + region.xExtend - 1.5f - (region.reverseButtons ? region.bigButtons.Count * 38 : 19 * region.smallButtons.Count), -3.5f, 0.05f);
                             region.borders[7].transform.localPosition = new Vector3(autoWidth + region.xExtend - 1.5f - (region.reverseButtons ? region.bigButtons.Count * 38 : (region.bigButtons.Count > 0 || region.lines.Count > 1 ? 0 : 19 * region.smallButtons.Count)), -region.AutoHeight() - 2.5f - region.yExtend, 0.05f);
                         }
                     }

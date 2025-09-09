@@ -23,6 +23,12 @@ public class Region : MonoBehaviour
     public GameObject[] borders;
     public GameObject[] shadows;
 
+    //Set height of the region
+    public int setHeight;
+
+    //Set custom offset for text in this region
+    public int setOffsetLeft, setOffsetRight;
+
     //If true small buttons appear on the left side and big ones on the right
     public bool reverseButtons;
 
@@ -41,6 +47,7 @@ public class Region : MonoBehaviour
 
     public int PlannedHeight()
     {
+        if (setHeight > 0) return setHeight;
         var content = (lines.Count > 0 ? 2 : 0) + (lines.Count == 0 ? 0 : lines.GroupBy(x => x.align).Max(x => x.Count())) * 15 + (inputLine != null && lines.Count == 0 ? 17 : 0);
         if (content < 36 && bigButtons.Count > 0) content = 36;
         else if (content < 17 && smallButtons.Count > 0) content = 17;
@@ -53,7 +60,7 @@ public class Region : MonoBehaviour
 
     public LineSmallButton LBSmallButton() => smallButtons.SafeLast();
 
-    public int AutoHeight() => currentHeight;
+    public int AutoHeight() => setHeight > 0 ? setHeight - 4 : currentHeight;
 
     public int AutoWidth()
     {

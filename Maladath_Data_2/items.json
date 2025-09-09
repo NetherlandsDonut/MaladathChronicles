@@ -68402,14 +68402,11 @@
     "icon": "itemfabricpurplefire02",
     "detailedType": "Cloth",
     "type": "Trade Good",
-    "source": "DirectDrop",
+    "source": "Profession",
     "ilvl": 55,
     "lvl": 1,
     "maxStack": 10,
-    "price": 2000,
-    "droppedBy": [
-      "Fyldren Moonfeather"
-    ]
+    "price": 2000
   },
   {
     "rarity": "Uncommon",

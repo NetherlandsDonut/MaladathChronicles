@@ -330,15 +330,15 @@ public class Starter : MonoBehaviour
             paths[i].Initialise();
         for (int i = 0; i < transportRoutes.Count; i++)
             transportRoutes[i].Initialise();
-        for (int i = 0; i < 12; i++)
+        for (int i = 0; i < 10; i++)
         {
             var index = i;
-            if (index >= 6)
+            if (index >= 5)
                 Blueprint.windowBlueprints.Add(new("AuctionHousePrice" + index, () =>
                 {
                     if (auctionPriceToDisplay == null || auctionPriceToDisplay.Length <= index) return;
                     if (!WindowUp("AuctionHouseOffers")) return;
-                    SetAnchor(-301, 104 - 19 * index);
+                    SetAnchor(-301, 85 - 19 * index);
                     DisableShadows();
                     PrintPriceRegion(auctionPriceToDisplay[index], 38, 38, 57, false);
                     if (auctionAmountToDisplay[index] > 0)
@@ -348,7 +348,7 @@ public class Starter : MonoBehaviour
                 Blueprint.windowBlueprints.Add(new("AuctionHousePrice" + index, () =>
                 {
                     if (auctionPriceToDisplay == null || auctionPriceToDisplay.Length <= index) return;
-                    SetAnchor(-301, WindowUp("AuctionHouseOffers") ? 104 - 19 * index : 85 - 38 * index);
+                    SetAnchor(-301, WindowUp("AuctionHouseOffers") ? 85 - 19 * index : 66 - 38 * index);
                     DisableShadows();
                     PrintPriceRegion(auctionPriceToDisplay[index], 38, 38, 57, false);
                     if (auctionAmountToDisplay[index] > 0)

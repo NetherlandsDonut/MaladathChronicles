@@ -1,12 +1,14 @@
 using System;
-using System.Linq;
+
 using UnityEngine;
-using static Cursor;
+
 using static Root;
 using static Root.CursorType;
+
+using static Sound;
+using static Cursor;
 using static SaveGame;
 using static SitePath;
-using static Sound;
 
 public class Highlightable : MonoBehaviour
 {

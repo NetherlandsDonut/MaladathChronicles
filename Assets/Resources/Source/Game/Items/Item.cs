@@ -767,23 +767,22 @@ public class Item
                     if (item.amount > 1 && Input.GetKey(KeyCode.LeftShift))
                     {
                         String.splitAmount.Set("");
-                        SpawnWindowBlueprint("SplitItem");
-                        CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
+                        var win = SpawnWindowBlueprint("SplitItem");
+                        win.LBRegionGroup().LBRegion().inputLine.Activate();
                         movingItemX = h.region.bigButtons.IndexOf(h.GetComponent<LineBigButton>());
                         movingItemY = h.window.headerGroup.regions.IndexOf(h.region) - 2;
                         splitDelegate = () =>
                         {
                             var amount = int.Parse(String.splitAmount.value == "" ? "0" : String.splitAmount.value);
                             if (amount >= item.amount) PickUpMovingItem("Bank", null);
-                            else PickUpMovingItem("Bank", null, amount);
+                            else PickUpMovingItem("Bank", null, amount, h.window.pagination());
                             Respawn("Bank", true);
                             Respawn("Inventory", true);
                         };
                     }
-                    else PickUpMovingItem("Bank", h);
+                    else PickUpMovingItem("Bank", h, 0, h.window.pagination());
                 }
-                else if (movingItem != null)
-                    SwapMovingItem(h);
+                else if (movingItem != null) SwapMovingItem(h, h.window.pagination());
             },
             (h) =>
             {
@@ -796,8 +795,8 @@ public class Item
                     if (item.amount > 1 && Input.GetKey(KeyCode.LeftShift))
                     {
                         String.splitAmount.Set("");
-                        SpawnWindowBlueprint("SplitItem");
-                        CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
+                        var win = SpawnWindowBlueprint("SplitItem");
+                        win.LBRegionGroup().LBRegion().inputLine.Activate();
                         splitDelegate = () =>
                         {
                             var amount = int.Parse(String.splitAmount.value == "" ? "0" : String.splitAmount.value);
@@ -858,8 +857,8 @@ public class Item
                         if (item.amount > 1 && Input.GetKey(KeyCode.LeftShift))
                         {
                             String.splitAmount.Set("1");
-                            SpawnWindowBlueprint("SplitItem");
-                            CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
+                            var win = SpawnWindowBlueprint("SplitItem");
+                            win.LBRegionGroup().LBRegion().inputLine.Activate();
                             splitDelegate = () =>
                             {
                                 var amount = int.Parse(String.splitAmount.value == "" ? "0" : String.splitAmount.value);
@@ -911,8 +910,8 @@ public class Item
                         else if (item.amount > 1 && Input.GetKey(KeyCode.LeftShift))
                         {
                             String.splitAmount.Set(item.amount + "");
-                            SpawnWindowBlueprint("SplitItem");
-                            CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
+                            var win = SpawnWindowBlueprint("SplitItem");
+                            win.LBRegionGroup().LBRegion().inputLine.Activate();
                             splitDelegate = () =>
                             {
                                 var amount = int.Parse(String.splitAmount.value == "" ? "0" : String.splitAmount.value);
@@ -932,7 +931,6 @@ public class Item
                                     currentSave.player.inventory.money -= item.price * amount * 4;
                                     Respawn("Inventory");
                                     Respawn("Vendor");
-                                    Respawn("PersonTypeLine");
                                 }
                                 else SpawnFallingText(new Vector2(0, 34), "Not enough money", "Red");
                             };
@@ -1015,8 +1013,8 @@ public class Item
                     if (item.amount > 1 && Input.GetKey(KeyCode.LeftShift))
                     {
                         String.splitAmount.Set("");
-                        SpawnWindowBlueprint("SplitItem");
-                        CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
+                        var win = SpawnWindowBlueprint("SplitItem");
+                        win.LBRegionGroup().LBRegion().inputLine.Activate();
                         movingItemX = h.region.bigButtons.IndexOf(h.GetComponent<LineBigButton>());
                         movingItemY = h.window.headerGroup.regions.IndexOf(h.region) - 1;
                         splitDelegate = () =>
@@ -1047,8 +1045,8 @@ public class Item
                         if (item.amount > 1 && Input.GetKey(KeyCode.LeftShift))
                         {
                             String.splitAmount.Set("1");
-                            SpawnWindowBlueprint("SplitItem");
-                            CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
+                            var win = SpawnWindowBlueprint("SplitItem");
+                            win.LBRegionGroup().LBRegion().inputLine.Activate();
                             splitDelegate = () =>
                             {
                                 var amount = int.Parse(String.splitAmount.value == "" ? "0" : String.splitAmount.value);
@@ -1076,7 +1074,6 @@ public class Item
                                 Respawn("Inventory");
                                 CloseWindow("Vendor");
                                 Respawn("VendorBuyback");
-                                Respawn("PersonTypeLine");
                             };
                         }
                         else
@@ -1092,7 +1089,6 @@ public class Item
                             currentSave.player.inventory.items.Remove(item);
                             CloseWindow("Vendor");
                             Respawn("VendorBuyback");
-                            Respawn("PersonTypeLine");
                         }
                 }
                 else if (WindowUp("Bank"))
@@ -1102,8 +1098,8 @@ public class Item
                         if (item.amount > 1 && Input.GetKey(KeyCode.LeftShift))
                         {
                             String.splitAmount.Set("1");
-                            SpawnWindowBlueprint("SplitItem");
-                            CDesktop.LBWindow().LBRegionGroup().LBRegion().inputLine.Activate();
+                            var win = SpawnWindowBlueprint("SplitItem");
+                            win.LBRegionGroup().LBRegion().inputLine.Activate();
                             splitDelegate = () =>
                             {
                                 var amount = int.Parse(String.splitAmount.value == "" ? "0" : String.splitAmount.value);
@@ -1427,12 +1423,12 @@ public class Item
             {
                 var copy = item.CopyItem(1);
                 copy.specs = null;
-                AddLine(item.armorClass + " ", currentSave != null && !copy.HasProficiency(currentSave.player, true) ? "DangerousRed" : "Gray");
+                AddLine(item.armorClass + " ", currentSave != null && !copy.HasProficiency(currentSave.player, true) ? "DangerousRed" : "HalfGray");
                 AddText(item.type);
             }
             else if (item.minPower > 0)
             {
-                AddLine(item.type + " " + item.detailedType, currentSave != null && !currentSave.player.abilities.ContainsKey((new List<string> { "Polearm", "Staff", "Bow", "Crossbow", "Gun", "Dagger", "Fist Weapon", "Wand" }.Contains(item.detailedType) ? item.detailedType : item.type + " " + item.detailedType) + " Proficiency") ? "DangerousRed" : "Gray");
+                AddLine(item.type + " " + item.detailedType, currentSave != null && !currentSave.player.abilities.ContainsKey((new List<string> { "Polearm", "Staff", "Bow", "Crossbow", "Gun", "Dagger", "Fist Weapon", "Wand" }.Contains(item.detailedType) ? item.detailedType : item.type + " " + item.detailedType) + " Proficiency") ? "DangerousRed" : "HalfGray");
                 AddLine((item.minPower + "").Replace(",", "."), "Gray");
                 AddText(" - ", "HalfGray");
                 AddText((item.maxPower + "").Replace(",", "."), "Gray");
@@ -1440,14 +1436,14 @@ public class Item
                 AddLine("Average modifier: ", "HalfGray");
                 AddText((Math.Round((item.minPower + item.maxPower) / 2, 2) + "").Replace(",", "."), "Gray");
             }
-            else if (item.bagSpace != 0) AddLine(item.bagSpace + " Slot Bag");
+            else if (item.bagSpace != 0) AddLine(item.bagSpace + " Slot Bag", "HalfGray");
             else if (item.type == "Recipe")
             {
                 var recipe = Recipe.recipes.Find(x => item.name.Contains(x.name));
-                AddLine(recipe.profession + " " + item.name.Split(':')[0].ToLower(), currentSave != null && currentSave.player.professionSkills.ContainsKey(recipe.profession) ? "Gray" : "DangerousRed");
+                AddLine(recipe.profession + " " + item.name.Split(':')[0].ToLower(), currentSave != null && currentSave.player.professionSkills.ContainsKey(recipe.profession) ? "HalfGray" : "DangerousRed");
             }
-            else if (item.type == "Off Hand") AddLine(item.type + (item.detailedType != null ? " " + item.detailedType : ""), currentSave != null && !currentSave.player.abilities.ContainsKey(item.detailedType == "Shield" ? "Shield Proficiency" : "Off Hand Proficiency") ? "DangerousRed" : "Gray");
-            else AddLine(item.type ?? "");
+            else if (item.type == "Off Hand") AddLine(item.type + (item.detailedType != null ? " " + item.detailedType : ""), currentSave != null && !currentSave.player.abilities.ContainsKey(item.detailedType == "Shield" ? "Shield Proficiency" : "Off Hand Proficiency") ? "DangerousRed" : "HalfGray");
+            else AddLine(item.type ?? "", "HalfGray");
         });
         if (item.stats != null && item.stats.Count > 0 || item.armor > 0)
             AddPaddingRegion(() =>
@@ -1613,11 +1609,19 @@ public class Item
                 {
                     AddLine("Results:", "DarkGray");
                 });
-                AddPaddingRegion(() =>
+                foreach (var result in recipe.results)
                 {
-                    foreach (var result in recipe.results)
-                        AddLine(result.Key + " x" + result.Value);
-                });
+                    var resultItem = items.Find(x => x.name == result.Key);
+                    AddPaddingRegion(() =>
+                    {
+                        SetRegionTextOffset(0, 19);
+                        AddLine("x" + result.Value, "DarkGray", "Right");
+                        AddLine(result.Key, resultItem.rarity);
+                        AddSmallButton(resultItem.icon);
+                        if (settings.rarityIndicators.Value())
+                            AddSmallButtonOverlay("OtherRarity" + resultItem.rarity, 0, 2);
+                    });
+                }
             }
             else if (recipe.enchantment)
             {
@@ -1636,11 +1640,19 @@ public class Item
             {
                 AddLine("Reagents:", "DarkGray");
             });
-            AddPaddingRegion(() =>
+            foreach (var reagent in recipe.reagents)
             {
-                foreach (var reagent in recipe.reagents)
-                    AddLine(reagent.Key + " x" + reagent.Value);
-            });
+                var reagentItem = items.Find(x => x.name == reagent.Key);
+                AddPaddingRegion(() =>
+                {
+                    SetRegionTextOffset(0, 19);
+                    AddLine("x" + reagent.Value, "DarkGray", "Right");
+                    AddLine(reagent.Key, reagentItem.rarity);
+                    AddSmallButton(reagentItem.icon);
+                    if (settings.rarityIndicators.Value())
+                        AddSmallButtonOverlay("OtherRarity" + reagentItem.rarity, 0, 2);
+                });
+            }
             AddHeaderRegion(() =>
             {
                 AddLine("Required skill: ", "DarkGray");

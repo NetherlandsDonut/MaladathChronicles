@@ -3471,7 +3471,10 @@ public static class BlueprintDev
                         SetRegionBackground(Button);
                         var foo = recipesSearch[index + thisWindow.pagination()];
                         AddLine(foo.name);
-                        AddSmallButton(foo.Icon());
+                        var icon = foo.Icon();
+                        AddSmallButton(icon.Item1);
+                        if (GameSettings.settings.rarityIndicators.Value() && icon.Item2 != null)
+                            AddSmallButtonOverlay("OtherRarity" + icon.Item2.rarity, 0, 2);
                     }
                     else
                     {

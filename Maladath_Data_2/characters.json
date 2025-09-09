@@ -6445,9 +6445,9 @@
       "value": "False"
     },
     "startDate": "2025-09-01T01:14:05.3019419+02:00",
-    "lastLoaded": "2025-09-07T13:45:01.2073139+02:00",
-    "lastPlayed": "2025-09-07T13:47:45.8444478+02:00",
-    "timePlayed": "01:09:33.8431543",
+    "lastLoaded": "2025-09-07T14:43:17.2041053+02:00",
+    "lastPlayed": "2025-09-07T14:43:21.9184152+02:00",
+    "timePlayed": "01:09:45.0258295",
     "lastVisitedTalents": 2
   },
   {
@@ -6817,20 +6817,6 @@
             "price": 15
           },
           {
-            "y": 1,
-            "rarity": "Common",
-            "name": "Silverleaf",
-            "icon": "itemmischerb10",
-            "detailedType": "Flowers",
-            "type": "Trade Good",
-            "source": "RareDrop",
-            "ilvl": 5,
-            "lvl": 1,
-            "amount": 2,
-            "maxStack": 20,
-            "price": 10
-          },
-          {
             "x": 2,
             "rarity": "Common",
             "name": "Ruined Leather Scraps",
@@ -6957,9 +6943,9 @@
       }
     },
     "hour": 8,
-    "minute": 29,
-    "second": 55,
-    "currentSite": "The Placid Dune",
+    "minute": 31,
+    "second": 33,
+    "currentSite": "Orgrimmar",
     "generatedBossPools": {
       "<Forlorn Cloister>": "Fallen Champion",
       "<Ring of Law>": "Eviscerator"
@@ -7006,7 +6992,7 @@
       "Echo Isles": 0,
       "Zalazane Camp": 1,
       "Darkspear Strand": 1,
-      "Orgrimmar": 3,
+      "Orgrimmar": 6,
       "The Placid Dune": 3,
       "Razor Hill": 0,
       "Rocky Desert": 2
@@ -7068,7 +7054,7 @@
         {
           "item": "Empty Vial",
           "maxAmount": 2,
-          "minutesLeft": 17,
+          "minutesLeft": 15,
           "restockSpeed": 40
         },
         {
@@ -7103,7 +7089,8 @@
         }
       ]
     },
-    "banks": {},
+    "banks": {
+    },
     "buyback": {
       "items": [],
       "bags": [],
@@ -7122,8 +7109,8 @@
       "value": "False"
     },
     "startDate": "2025-09-03T12:18:02.1902436+02:00",
-    "lastLoaded": "2025-09-03T17:23:08.6657431+02:00",
-    "lastPlayed": "2025-09-03T17:23:14.1863448+02:00",
-    "timePlayed": "01:30:54.1185428"
+    "lastLoaded": "2025-09-08T01:49:27.667792+02:00",
+    "lastPlayed": "2025-09-08T02:08:34.6966945+02:00",
+    "timePlayed": "01:50:32.5206569"
   }
 ]

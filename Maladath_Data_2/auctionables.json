@@ -1410,12 +1410,6 @@
     "frequency": 0.8
   },
   {
-    "item": "Cenarion Reservist's Pants",
-    "minPrice": 136201,
-    "maxPrice": 358078,
-    "frequency": 0.8
-  },
-  {
     "item": "Ironweave Robe",
     "minPrice": 144546,
     "maxPrice": 380018,
@@ -2862,6 +2856,12 @@
     "frequency": 12.0
   },
   {
+    "item": "Guardian Stone",
+    "minPrice": 62000,
+    "maxPrice": 163000,
+    "frequency": 12.0
+  },
+  {
     "item": "Darkspear",
     "minPrice": 388275,
     "maxPrice": 1020787,
@@ -2884,6 +2884,12 @@
     "minPrice": 64641,
     "maxPrice": 169943,
     "frequency": 0.8
+  },
+  {
+    "item": "Black Lotus",
+    "minPrice": 6200,
+    "maxPrice": 16300,
+    "frequency": 12.0
   },
   {
     "item": "Formal Dangui",
@@ -3048,6 +3054,12 @@
     "frequency": 1.5
   },
   {
+    "item": "Scale of Onyxia",
+    "minPrice": 31000,
+    "maxPrice": 81500,
+    "frequency": 5.0
+  },
+  {
     "item": "Supreme Bracers",
     "minPrice": 65217,
     "maxPrice": 171459,
@@ -3126,10 +3138,10 @@
     "frequency": 0.05
   },
   {
-    "item": "Refined Scale of Onyxia",
-    "minPrice": 31000,
-    "maxPrice": 81500,
-    "frequency": 5.0
+    "item": "Sulfuron Ingot",
+    "minPrice": 620000,
+    "maxPrice": 1630000,
+    "frequency": 2.0
   },
   {
     "item": "Charged Scale of Onyxia",
@@ -3220,6 +3232,12 @@
     "minPrice": 88244,
     "maxPrice": 231997,
     "frequency": 0.8
+  },
+  {
+    "item": "Elementium Ore",
+    "minPrice": 620000,
+    "maxPrice": 1630000,
+    "frequency": 1.0
   },
   {
     "item": "Elemental Flux",
@@ -4138,6 +4156,12 @@
     "minPrice": 215164,
     "maxPrice": 565675,
     "frequency": 0.8
+  },
+  {
+    "item": "Icecap",
+    "minPrice": 1550,
+    "maxPrice": 4075,
+    "frequency": 20.0
   },
   {
     "item": "Brightcloth Pants",
@@ -5274,6 +5298,12 @@
     "frequency": 20.0
   },
   {
+    "item": "Elixir of the Mongoose",
+    "minPrice": 7750,
+    "maxPrice": 20375,
+    "frequency": 10.0
+  },
+  {
     "item": "Runecloth Boots",
     "minPrice": 59228,
     "maxPrice": 155713,
@@ -5904,6 +5934,12 @@
     "frequency": 2.5
   },
   {
+    "item": "Bolt of Runecloth",
+    "minPrice": 12400,
+    "maxPrice": 32600,
+    "frequency": 10.0
+  },
+  {
     "item": "Brightcloth Cloak",
     "minPrice": 60239,
     "maxPrice": 158370,
@@ -6490,6 +6526,12 @@
     "minPrice": 620,
     "maxPrice": 1630,
     "frequency": 20.0
+  },
+  {
+    "item": "Elixir of the Sages",
+    "minPrice": 7750,
+    "maxPrice": 20375,
+    "frequency": 10.0
   },
   {
     "item": "Cindercloth Gloves",
@@ -8400,6 +8442,18 @@
     "frequency": 20.0
   },
   {
+    "item": "Elixir of Demonslaying",
+    "minPrice": 4340,
+    "maxPrice": 11410,
+    "frequency": 10.0
+  },
+  {
+    "item": "Elixir of Shadow Power",
+    "minPrice": 217,
+    "maxPrice": 570,
+    "frequency": 10.0
+  },
+  {
     "item": "Spellshock Leggings",
     "minPrice": 67964,
     "maxPrice": 178680,
@@ -8554,6 +8608,12 @@
     "minPrice": 3100,
     "maxPrice": 8150,
     "frequency": 10.0
+  },
+  {
+    "item": "Blood of the Mountain",
+    "minPrice": 4650,
+    "maxPrice": 12225,
+    "frequency": 12.0
   },
   {
     "item": "Dark Iron Bar",
@@ -9490,6 +9550,12 @@
     "minPrice": 37088,
     "maxPrice": 97506,
     "frequency": 1.5
+  },
+  {
+    "item": "Elixir of Greater Agility",
+    "minPrice": 3720,
+    "maxPrice": 9780,
+    "frequency": 10.0
   },
   {
     "item": "Elixir of Giants",
@@ -11934,18 +12000,6 @@
     "frequency": 2.5
   },
   {
-    "item": "Goblin Radio",
-    "minPrice": 4650,
-    "maxPrice": 12225,
-    "frequency": 10.0
-  },
-  {
-    "item": "Gnomish Ham Radio",
-    "minPrice": 4650,
-    "maxPrice": 12225,
-    "frequency": 10.0
-  },
-  {
     "item": "Lodestone Necklace",
     "minPrice": 48942,
     "maxPrice": 128672,
@@ -13834,6 +13888,12 @@
     "minPrice": 26275,
     "maxPrice": 69079,
     "frequency": 1.5
+  },
+  {
+    "item": "Truesilver Ore",
+    "minPrice": 3100,
+    "maxPrice": 8150,
+    "frequency": 6.0
   },
   {
     "item": "Steel Breastplate",
@@ -16602,6 +16662,12 @@
     "frequency": 5.0
   },
   {
+    "item": "Vision Dust",
+    "minPrice": 2852,
+    "maxPrice": 7498,
+    "frequency": 20.0
+  },
+  {
     "item": "Greater Mystic Wand",
     "minPrice": 32630,
     "maxPrice": 85786,
@@ -18520,6 +18586,12 @@
     "minPrice": 8029,
     "maxPrice": 21108,
     "frequency": 2.5
+  },
+  {
+    "item": "Gold Bar",
+    "minPrice": 3720,
+    "maxPrice": 9780,
+    "frequency": 12.0
   },
   {
     "item": "Iron Bar",
@@ -21162,6 +21234,12 @@
     "frequency": 1.5
   },
   {
+    "item": "Soul Dust",
+    "minPrice": 1364,
+    "maxPrice": 3586,
+    "frequency": 20.0
+  },
+  {
     "item": "Greater Astral Essence",
     "minPrice": 2418,
     "maxPrice": 6357,
@@ -21364,6 +21442,12 @@
     "minPrice": 5350,
     "maxPrice": 14066,
     "frequency": 0.8
+  },
+  {
+    "item": "Bluegill Kukri",
+    "minPrice": 15258,
+    "maxPrice": 40114,
+    "frequency": 1.5
   },
   {
     "item": "Skeletal Club",
@@ -21759,6 +21843,12 @@
     "item": "Short Ash Bow",
     "minPrice": 9982,
     "maxPrice": 26243,
+    "frequency": 1.5
+  },
+  {
+    "item": "Bluegill Breeches",
+    "minPrice": 6727,
+    "maxPrice": 17685,
     "frequency": 1.5
   },
   {
@@ -22230,6 +22320,12 @@
     "frequency": 10.0
   },
   {
+    "item": "Wild Steelbloom",
+    "minPrice": 310,
+    "maxPrice": 815,
+    "frequency": 20.0
+  },
+  {
     "item": "Rough Bronze Shoulders",
     "minPrice": 3298,
     "maxPrice": 8671,
@@ -22500,10 +22596,22 @@
     "frequency": 1.5
   },
   {
+    "item": "Pearl-encrusted Spear",
+    "minPrice": 12889,
+    "maxPrice": 33887,
+    "frequency": 1.5
+  },
+  {
     "item": "Face Smasher",
     "minPrice": 12555,
     "maxPrice": 33007,
     "frequency": 0.8
+  },
+  {
+    "item": "Bluegill Sandals",
+    "minPrice": 3180,
+    "maxPrice": 8361,
+    "frequency": 1.5
   },
   {
     "item": "Espadon",
@@ -22924,6 +23032,12 @@
     "minPrice": 155,
     "maxPrice": 407,
     "frequency": 10.0
+  },
+  {
+    "item": "Bronze Bar",
+    "minPrice": 310,
+    "maxPrice": 815,
+    "frequency": 20.0
   },
   {
     "item": "Dust of Decay",
@@ -23358,9 +23472,27 @@
     "frequency": 10.0
   },
   {
+    "item": "Blackrock Boots",
+    "minPrice": 3521,
+    "maxPrice": 9258,
+    "frequency": 1.5
+  },
+  {
+    "item": "Riverside Staff",
+    "minPrice": 9281,
+    "maxPrice": 24401,
+    "frequency": 1.5
+  },
+  {
     "item": "Scimitar of Atun",
     "minPrice": 7316,
     "maxPrice": 19234,
+    "frequency": 1.5
+  },
+  {
+    "item": "Gnoll Skull Basher",
+    "minPrice": 7626,
+    "maxPrice": 20049,
     "frequency": 1.5
   },
   {
@@ -24288,12 +24420,6 @@
     "frequency": 3.0
   },
   {
-    "item": "Great Goretusk Snout",
-    "minPrice": 310,
-    "maxPrice": 815,
-    "frequency": 10.0
-  },
-  {
     "item": "Laminated Recurve Bow",
     "minPrice": 2170,
     "maxPrice": 5705,
@@ -24525,6 +24651,12 @@
     "item": "Scroll of Intellect",
     "minPrice": 229,
     "maxPrice": 603,
+    "frequency": 10.0
+  },
+  {
+    "item": "Tough Condor Meat",
+    "minPrice": 483,
+    "maxPrice": 1271,
     "frequency": 10.0
   },
   {
@@ -25548,12 +25680,6 @@
     "frequency": 3.0
   },
   {
-    "item": "Goretusk Snout",
-    "minPrice": 167,
-    "maxPrice": 440,
-    "frequency": 10.0
-  },
-  {
     "item": "Goretusk Liver",
     "minPrice": 93,
     "maxPrice": 244,
@@ -26448,12 +26574,6 @@
     "frequency": 1.5
   },
   {
-    "item": "Spider Ichor",
-    "minPrice": 99,
-    "maxPrice": 260,
-    "frequency": 10.0
-  },
-  {
     "item": "Silver-lined Bracers",
     "minPrice": 173,
     "maxPrice": 456,
@@ -26844,6 +26964,18 @@
     "frequency": 3.0
   },
   {
+    "item": "Rockjaw Blade",
+    "minPrice": 700,
+    "maxPrice": 1841,
+    "frequency": 3.0
+  },
+  {
+    "item": "Lumberjack Jerkin",
+    "minPrice": 334,
+    "maxPrice": 880,
+    "frequency": 3.0
+  },
+  {
     "item": "Frostmane Hand Axe",
     "minPrice": 657,
     "maxPrice": 1727,
@@ -26955,6 +27087,12 @@
     "item": "Gray Fur Booties",
     "minPrice": 254,
     "maxPrice": 668,
+    "frequency": 3.0
+  },
+  {
+    "item": "Spider Web Robe",
+    "minPrice": 285,
+    "maxPrice": 749,
     "frequency": 3.0
   },
   {
@@ -27984,6 +28122,12 @@
     "frequency": 3.0
   },
   {
+    "item": "Trogg Hand Axe",
+    "minPrice": 99,
+    "maxPrice": 260,
+    "frequency": 3.0
+  },
+  {
     "item": "Small Wooden Hammer",
     "minPrice": 99,
     "maxPrice": 260,
@@ -27993,6 +28137,12 @@
     "item": "Pitted Defias Shortsword",
     "minPrice": 99,
     "maxPrice": 260,
+    "frequency": 3.0
+  },
+  {
+    "item": "Light Magesmith Robe",
+    "minPrice": 37,
+    "maxPrice": 97,
     "frequency": 3.0
   },
   {
@@ -28464,6 +28614,12 @@
     "frequency": 3.0
   },
   {
+    "item": "Pristine Hide of the Beast",
+    "minPrice": 31000,
+    "maxPrice": 81500,
+    "frequency": 1.0
+  },
+  {
     "item": "Huge Venom Sac",
     "minPrice": 9300,
     "maxPrice": 24450,
@@ -28581,6 +28737,12 @@
     "item": "Large Obsidian Shard",
     "minPrice": 31000,
     "maxPrice": 81500,
+    "frequency": 10.0
+  },
+  {
+    "item": "Small Obsidian Shard",
+    "minPrice": 15500,
+    "maxPrice": 40750,
     "frequency": 10.0
   },
   {
@@ -30414,6 +30576,12 @@
     "frequency": 1.5
   },
   {
+    "item": "Plans: Enchanted Thorium Leggings",
+    "minPrice": 93000,
+    "maxPrice": 244500,
+    "frequency": 0.8
+  },
+  {
     "item": "Plans: Storm Gauntlets",
     "minPrice": 62000,
     "maxPrice": 163000,
@@ -30442,6 +30610,12 @@
     "minPrice": 62000,
     "maxPrice": 163000,
     "frequency": 1.5
+  },
+  {
+    "item": "Plans: Enchanted Thorium Helm",
+    "minPrice": 93000,
+    "maxPrice": 244500,
+    "frequency": 0.8
   },
   {
     "item": "Plans: Thorium Greatsword",
@@ -30552,6 +30726,12 @@
     "frequency": 3.0
   },
   {
+    "item": "Recipe: Elixir of the Sages",
+    "minPrice": 21700,
+    "maxPrice": 57050,
+    "frequency": 1.5
+  },
+  {
     "item": "Recipe: Major Healing Potion",
     "minPrice": 23250,
     "maxPrice": 61125,
@@ -30582,6 +30762,12 @@
     "frequency": 1.5
   },
   {
+    "item": "Recipe: Transmute Fire to Earth",
+    "minPrice": 23250,
+    "maxPrice": 61125,
+    "frequency": 1.5
+  },
+  {
     "item": "Recipe: Greater Holy Protection Potion",
     "minPrice": 37200,
     "maxPrice": 97800,
@@ -30609,6 +30795,12 @@
     "item": "Recipe: Greater Arcane Elixir",
     "minPrice": 31000,
     "maxPrice": 81500,
+    "frequency": 1.5
+  },
+  {
+    "item": "Recipe: Elixir of the Mongoose",
+    "minPrice": 24800,
+    "maxPrice": 65200,
     "frequency": 1.5
   },
   {
@@ -31066,6 +31258,12 @@
     "minPrice": 24800,
     "maxPrice": 65200,
     "frequency": 3.0
+  },
+  {
+    "item": "Schematic: Spellpower Goggles Xtreme Plus",
+    "minPrice": 24800,
+    "maxPrice": 65200,
+    "frequency": 1.5
   },
   {
     "item": "Manual: Heavy Silk Bandage",
@@ -32332,23 +32530,5 @@
     "minPrice": 77500,
     "maxPrice": 203750,
     "frequency": 3.0
-  },
-  {
-    "item": "Copper",
-    "minPrice": 6,
-    "maxPrice": 16,
-    "frequency": 20.0
-  },
-  {
-    "item": "Silver",
-    "minPrice": 6,
-    "maxPrice": 16,
-    "frequency": 20.0
-  },
-  {
-    "item": "Gold",
-    "minPrice": 6,
-    "maxPrice": 16,
-    "frequency": 20.0
   }
 ]
