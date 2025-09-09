@@ -3008,7 +3008,7 @@
           ]
         },
         "Enchanting": {
-          "Item1": 1,
+          "Item1": 2,
           "Item2": [
             "Amateur"
           ]
@@ -3191,26 +3191,6 @@
           },
           {
             "x": 3,
-            "y": 1,
-            "rarity": "Rare",
-            "name": "Princess Theradras' Scepter",
-            "icon": "itemhammer10",
-            "detailedType": "Mace",
-            "type": "Two Handed",
-            "source": "DirectDrop",
-            "ilvl": 54,
-            "lvl": 49,
-            "minPower": 4.71,
-            "maxPower": 6.59,
-            "amount": 1,
-            "maxStack": 1,
-            "price": 44863,
-            "droppedBy": [
-              "Princess Theradras"
-            ]
-          },
-          {
-            "x": 3,
             "rarity": "Epic",
             "name": "Blade of Eternal Darkness",
             "icon": "itemsword09",
@@ -3290,41 +3270,7 @@
             }
           },
           {
-            "x": 2,
-            "y": 1,
-            "rarity": "Rare",
-            "name": "Claw of Celebras",
-            "icon": "abilitywhirlwind",
-            "detailedType": "Fist Weapon",
-            "type": "One Handed",
-            "source": "DirectDrop",
-            "ilvl": 52,
-            "lvl": 47,
-            "minPower": 3.39,
-            "maxPower": 5.5,
-            "amount": 1,
-            "maxStack": 1,
-            "price": 33351,
-            "droppedBy": [
-              "Celebras the Cursed"
-            ]
-          },
-          {
             "x": 1,
-            "y": 1,
-            "rarity": "Common",
-            "name": "Dented Buckler",
-            "icon": "itemshield09",
-            "detailedType": "Shield",
-            "type": "Off Hand",
-            "ilvl": 3,
-            "lvl": 1,
-            "armor": 29,
-            "amount": 1,
-            "maxStack": 1,
-            "price": 6
-          },
-          {
             "y": 1,
             "rarity": "Common",
             "name": "Hand Axe",
@@ -3339,9 +3285,104 @@
             "amount": 1,
             "maxStack": 1,
             "price": 16
+          },
+          {
+            "y": 1,
+            "rarity": "Rare",
+            "name": "Princess Theradras' Scepter",
+            "icon": "itemhammer10",
+            "detailedType": "Mace",
+            "type": "Two Handed",
+            "source": "DirectDrop",
+            "ilvl": 54,
+            "lvl": 49,
+            "minPower": 4.71,
+            "maxPower": 6.59,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 44863,
+            "droppedBy": [
+              "Princess Theradras"
+            ]
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "rarity": "Rare",
+            "name": "Small Brilliant Shard",
+            "icon": "itemenchantshardbrilliantsmall",
+            "detailedType": "Shard",
+            "type": "Trade Good",
+            "source": "RareDrop",
+            "ilvl": 50,
+            "lvl": 1,
+            "amount": 1,
+            "maxStack": 20,
+            "price": 2180
+          },
+          {
+            "x": 3,
+            "y": 1,
+            "rarity": "Uncommon",
+            "name": "Lesser Eternal Essence",
+            "icon": "itemenchantessenceeternalsmall",
+            "detailedType": "Essence",
+            "type": "Trade Good",
+            "ilvl": 50,
+            "lvl": 1,
+            "amount": 1,
+            "maxStack": 10,
+            "abilities": {
+              "Form Greater Eternal Essence": 1
+            },
+            "price": 1240
+          },
+          {
+            "x": 4,
+            "y": 1,
+            "rarity": "Common",
+            "name": "Dream Dust",
+            "icon": "itemenchantdustdream",
+            "detailedType": "Dust",
+            "type": "Trade Good",
+            "ilvl": 45,
+            "lvl": 1,
+            "amount": 2,
+            "maxStack": 20,
+            "price": 940
+          },
+          {
+            "y": 2,
+            "rarity": "Common",
+            "name": "Mageweave Cloth",
+            "icon": "itemfabricmageweave01",
+            "detailedType": "Cloth",
+            "type": "Trade Good",
+            "source": "Quest",
+            "ilvl": 40,
+            "lvl": 1,
+            "amount": 1,
+            "maxStack": 20,
+            "price": 250
           }
         ],
-        "bags": []
+        "bags": [
+          {
+            "x": -1,
+            "y": -1,
+            "rarity": "Common",
+            "name": "Large Knapsack",
+            "icon": "itemmiscbag07red",
+            "type": "Bag",
+            "source": "GeneralDrop",
+            "ilvl": 35,
+            "lvl": 1,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 5000,
+            "bagSpace": 5
+          }
+        ]
       },
       "mounts": [],
       "equipment": {
@@ -3527,7 +3568,7 @@
         }
       },
       "worldBuffs": [],
-      "health": 1435,
+      "health": 1520,
       "resources": {
         "Earth": 0,
         "Fire": 0,
@@ -3542,9 +3583,9 @@
       }
     },
     "hour": 7,
-    "minute": 26,
-    "second": 8,
-    "currentSite": "Maraudon",
+    "minute": 30,
+    "second": 59,
+    "currentSite": "Valley of Spears",
     "generatedBossPools": {
       "<Forlorn Cloister>": "Fallen Champion",
       "<Ring of Law>": "Eviscerator"
@@ -3576,16 +3617,20 @@
     "siteProgress": {
       "Ruins of Ravenwind": 4,
       "Zaetar's Grave": 2,
-      "Poison Falls": 2
+      "Poison Falls": 2,
+      "Earth Song Falls": 1,
+      "Valley of Spears": 1
     },
     "commonsKilled": {
       "Northspring Windcaller": 1,
       "Northspring Slayer": 2,
-      "Primordial Behemoth": 1,
+      "Primordial Behemoth": 2,
       "Subterranean Diemetradon": 2,
       "Deep Borer": 1,
       "Celebrian Dryad": 2,
-      "Cavern Lurker": 1
+      "Cavern Lurker": 1,
+      "Theradrim Guardian": 1,
+      "Maraudine Marauder": 1
     },
     "raresKilled": {
       "Meshlok the Harvester": 1
@@ -3864,7 +3909,7 @@
       "Northern Wastes": 1,
       "Thunder Axe Fortress": 1,
       "Valley of Bones": 1,
-      "Valley of Spears": 1,
+      "Valley of Spears": 2,
       "Chill Breeze Valley": 1,
       "Coldridge Pass": 1,
       "Coldridge Valley": 1,
@@ -4378,7 +4423,7 @@
       "Gnomeregan": 1,
       "Shadowfang Keep": 1,
       "Scholomance": 1,
-      "Maraudon": 3,
+      "Maraudon": 4,
       "Stratholme": 1,
       "Wailing Caverns": 1,
       "Uldaman": 1,
@@ -4430,7 +4475,7 @@
           "item": "Shortsword",
           "amount": 1,
           "maxAmount": 2,
-          "minutesLeft": 38,
+          "minutesLeft": 34,
           "restockSpeed": 40
         },
         {
@@ -4443,7 +4488,7 @@
           "item": "Hand Axe",
           "amount": 1,
           "maxAmount": 2,
-          "minutesLeft": 38,
+          "minutesLeft": 34,
           "restockSpeed": 40
         },
         {
@@ -4462,7 +4507,7 @@
           "item": "Large Club",
           "amount": 1,
           "maxAmount": 2,
-          "minutesLeft": 38,
+          "minutesLeft": 34,
           "restockSpeed": 40
         }
       ],
@@ -4719,7 +4764,7 @@
           "item": "Dented Buckler",
           "amount": 1,
           "maxAmount": 2,
-          "minutesLeft": 37,
+          "minutesLeft": 33,
           "restockSpeed": 40
         }
       ]
@@ -4737,7 +4782,7 @@
           "ilvl": 40,
           "lvl": 1,
           "amount": 6,
-          "minutesLeft": 27,
+          "minutesLeft": 23,
           "maxStack": 20,
           "price": 250
         },
@@ -4751,7 +4796,7 @@
           "ilvl": 50,
           "lvl": 1,
           "amount": 1,
-          "minutesLeft": 27,
+          "minutesLeft": 23,
           "maxStack": 20,
           "price": 500
         },
@@ -4765,7 +4810,7 @@
           "source": "RareDrop",
           "ilvl": 55,
           "amount": 1,
-          "minutesLeft": 27,
+          "minutesLeft": 23,
           "maxStack": 5,
           "abilities": {
             "Scroll of Spirit IV": 1
@@ -4789,9 +4834,9 @@
       "value": "False"
     },
     "startDate": "2025-08-27T08:06:53.5797226+02:00",
-    "lastLoaded": "2025-09-09T18:03:53.1568247+02:00",
-    "lastPlayed": "2025-09-09T18:06:56.7130277+02:00",
-    "timePlayed": "00:22:01.0314058"
+    "lastLoaded": "2025-09-10T00:12:07.876041+02:00",
+    "lastPlayed": "2025-09-10T00:15:41.9876323+02:00",
+    "timePlayed": "00:25:35.1429971"
   },
   {
     "playerSide": "Alliance",
