@@ -2905,8 +2905,8 @@
       "completedQuests": [
         3062
       ],
-      "level": 50,
-      "experience": 136822,
+      "level": 60,
+      "experience": 932212,
       "uniquesGotten": [
         "Horn of Hatetalon",
         "Edana's Dark Heart"
@@ -3106,7 +3106,7 @@
         ],
         "Herbalism": []
       },
-      "unspentTalentPoints": 49,
+      "unspentTalentPoints": 59,
       "faction": "Thunder Bluff",
       "name": "Montarr",
       "race": "Tauren",
@@ -3191,21 +3191,127 @@
           },
           {
             "x": 3,
-            "rarity": "Common",
-            "name": "Battleworn Hammer",
-            "icon": "itemhammer15",
+            "y": 1,
+            "rarity": "Rare",
+            "name": "Princess Theradras' Scepter",
+            "icon": "itemhammer10",
             "detailedType": "Mace",
             "type": "Two Handed",
-            "ilvl": 2,
-            "lvl": 1,
-            "minPower": 1.1,
-            "maxPower": 1.17,
+            "source": "DirectDrop",
+            "ilvl": 54,
+            "lvl": 49,
+            "minPower": 4.71,
+            "maxPower": 6.59,
             "amount": 1,
             "maxStack": 1,
-            "price": 9
+            "price": 44863,
+            "droppedBy": [
+              "Princess Theradras"
+            ]
+          },
+          {
+            "x": 3,
+            "rarity": "Epic",
+            "name": "Blade of Eternal Darkness",
+            "icon": "itemsword09",
+            "detailedType": "Dagger",
+            "type": "One Handed",
+            "source": "DirectDrop",
+            "ilvl": 54,
+            "lvl": 49,
+            "minPower": 3.27,
+            "maxPower": 5.67,
+            "amount": 1,
+            "maxStack": 1,
+            "unique": true,
+            "price": 46796,
+            "droppedBy": [
+              "Princess Theradras"
+            ]
           },
           {
             "x": 2,
+            "rarity": "Rare",
+            "name": "Bloomsprout Headpiece",
+            "icon": "itemhelmet17",
+            "type": "Head",
+            "armorClass": "Mail",
+            "source": "DirectDrop",
+            "ilvl": 51,
+            "lvl": 46,
+            "armor": 249,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 13610,
+            "stats": {
+              "Stamina": 18
+            },
+            "droppedBy": [
+              "Meshlok the Harvester"
+            ]
+          },
+          {
+            "x": 4,
+            "rarity": "Rare",
+            "name": "Time Warped Goods, Celebras the Cursed",
+            "icon": "ItemMiscBagFelclothBag",
+            "detailedType": "Pouch",
+            "type": "Miscellaneous",
+            "source": "DirectDrop",
+            "ilvl": 1,
+            "amount": 1,
+            "maxStack": 1,
+            "itemsInside": [
+              {
+                "rarity": "Rare",
+                "name": "Soothsayer's Headdress",
+                "icon": "itemhelmet12",
+                "type": "Head",
+                "armorClass": "Leather",
+                "source": "DirectDrop",
+                "ilvl": 52,
+                "lvl": 47,
+                "armor": 122,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 11401,
+                "stats": {
+                  "Intellect": 25,
+                  "Stamina": 7,
+                  "Spirit": 8
+                },
+                "droppedBy": [
+                  "Celebras the Cursed"
+                ]
+              }
+            ],
+            "abilities": {
+              "Time Warped Goods": 1
+            }
+          },
+          {
+            "x": 2,
+            "y": 1,
+            "rarity": "Rare",
+            "name": "Claw of Celebras",
+            "icon": "abilitywhirlwind",
+            "detailedType": "Fist Weapon",
+            "type": "One Handed",
+            "source": "DirectDrop",
+            "ilvl": 52,
+            "lvl": 47,
+            "minPower": 3.39,
+            "maxPower": 5.5,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 33351,
+            "droppedBy": [
+              "Celebras the Cursed"
+            ]
+          },
+          {
+            "x": 1,
+            "y": 1,
             "rarity": "Common",
             "name": "Dented Buckler",
             "icon": "itemshield09",
@@ -3221,32 +3327,18 @@
           {
             "y": 1,
             "rarity": "Common",
-            "name": "Large Club",
-            "icon": "itemmace06",
-            "detailedType": "Mace",
-            "type": "Two Handed",
-            "ilvl": 3,
-            "lvl": 1,
-            "minPower": 1.12,
-            "maxPower": 1.19,
-            "amount": 1,
-            "maxStack": 1,
-            "price": 14
-          },
-          {
-            "x": 4,
-            "rarity": "Common",
-            "name": "Shortsword",
-            "icon": "itemsword04",
-            "detailedType": "Sword",
+            "name": "Hand Axe",
+            "icon": "itemaxe19",
+            "detailedType": "Axe",
             "type": "One Handed",
-            "ilvl": 3,
+            "source": "RareDrop",
+            "ilvl": 4,
             "lvl": 1,
-            "minPower": 1.08,
-            "maxPower": 1.15,
+            "minPower": 1.1,
+            "maxPower": 1.2,
             "amount": 1,
             "maxStack": 1,
-            "price": 10
+            "price": 16
           }
         ],
         "bags": []
@@ -3273,17 +3365,27 @@
           }
         },
         "Legs": {
-          "rarity": "Poor",
-          "name": "Brawler's Pants",
-          "icon": "itempants02",
+          "x": 2,
+          "y": 1,
+          "rarity": "Rare",
+          "name": "Elemental Rockridge Leggings",
+          "icon": "itempants04",
           "type": "Legs",
-          "armorClass": "Cloth",
-          "ilvl": 1,
-          "lvl": 1,
-          "armor": 2,
+          "armorClass": "Plate",
+          "source": "DirectDrop",
+          "ilvl": 54,
+          "lvl": 49,
+          "armor": 496,
           "amount": 1,
           "maxStack": 1,
-          "price": 1
+          "price": 14244,
+          "stats": {
+            "Strength": 20,
+            "Stamina": 18
+          },
+          "droppedBy": [
+            "Princess Theradras"
+          ]
         },
         "Chest": {
           "rarity": "Common",
@@ -3297,23 +3399,27 @@
           "price": 1
         },
         "Head": {
-          "x": 3,
-          "rarity": "Uncommon",
-          "name": "Protector Helm",
-          "icon": "itemhelmet10",
+          "x": 2,
+          "rarity": "Rare",
+          "name": "Eye of Theradras",
+          "icon": "itemcrown01",
           "type": "Head",
-          "armorClass": "Mail",
-          "source": "RareDrop",
-          "ilvl": 53,
-          "lvl": 48,
-          "armor": 234,
+          "armorClass": "Cloth",
+          "source": "DirectDrop",
+          "ilvl": 54,
+          "lvl": 49,
+          "armor": 63,
           "amount": 1,
           "maxStack": 1,
-          "price": 12690,
+          "price": 10225,
           "stats": {
-            "Stamina": 20,
-            "Spirit": 7
-          }
+            "Intellect": 20,
+            "Stamina": 13,
+            "Spirit": 11
+          },
+          "droppedBy": [
+            "Princess Theradras"
+          ]
         },
         "Hands": {
           "y": 1,
@@ -3334,25 +3440,94 @@
             "Stamina": 11
           }
         },
-        "Main Hand": {
-          "x": 4,
-          "rarity": "Common",
-          "name": "Hand Axe",
-          "icon": "itemaxe19",
-          "detailedType": "Axe",
+        "Off Hand": {
+          "y": 1,
+          "rarity": "Epic",
+          "name": "Widow's Remorse",
+          "icon": "itemsword60",
+          "detailedType": "Sword",
           "type": "One Handed",
-          "source": "RareDrop",
-          "ilvl": 4,
-          "lvl": 1,
-          "minPower": 1.1,
-          "maxPower": 1.2,
+          "source": "DirectDrop",
+          "ilvl": 81,
+          "lvl": 60,
+          "minPower": 5.38,
+          "maxPower": 9.19,
+          "armor": 100,
           "amount": 1,
           "maxStack": 1,
-          "price": 16
+          "unique": true,
+          "price": 182204,
+          "stats": {
+            "Stamina": 17
+          },
+          "droppedBy": [
+            "Grand Widow Faerlina"
+          ]
+        },
+        "Neck": {
+          "x": 3,
+          "rarity": "Rare",
+          "name": "Gemshard Heart",
+          "icon": "itemstone01",
+          "type": "Neck",
+          "source": "DirectDrop",
+          "ilvl": 54,
+          "lvl": 49,
+          "amount": 1,
+          "maxStack": 1,
+          "price": 11631,
+          "stats": {
+            "Intellect": 10,
+            "Stamina": 10,
+            "Spirit": 6
+          },
+          "droppedBy": [
+            "Princess Theradras"
+          ]
+        },
+        "Finger": {
+          "x": 3,
+          "rarity": "Rare",
+          "name": "Blackstone Ring",
+          "icon": "itemjewelryring17",
+          "type": "Finger",
+          "source": "DirectDrop",
+          "ilvl": 54,
+          "lvl": 49,
+          "amount": 1,
+          "maxStack": 1,
+          "unique": true,
+          "price": 14641,
+          "stats": {
+            "Stamina": 6
+          },
+          "droppedBy": [
+            "Princess Theradras"
+          ]
+        },
+        "Back": {
+          "y": 1,
+          "rarity": "Rare",
+          "name": "Grovekeeper's Drape",
+          "icon": "itemmisccape17",
+          "type": "Back",
+          "source": "DirectDrop",
+          "ilvl": 52,
+          "lvl": 47,
+          "armor": 37,
+          "amount": 1,
+          "maxStack": 1,
+          "price": 9100,
+          "stats": {
+            "Stamina": 12
+          },
+          "droppedBy": [
+            "Celebras the Cursed"
+          ]
         }
       },
       "worldBuffs": [],
-      "health": 1035,
+      "health": 1435,
       "resources": {
         "Earth": 0,
         "Fire": 0,
@@ -3367,9 +3542,9 @@
       }
     },
     "hour": 7,
-    "minute": 24,
-    "second": 38,
-    "currentSite": "Camp Narache",
+    "minute": 26,
+    "second": 8,
+    "currentSite": "Maraudon",
     "generatedBossPools": {
       "<Forlorn Cloister>": "Fallen Champion",
       "<Ring of Law>": "Eviscerator"
@@ -3399,15 +3574,26 @@
     "fishingSpots": {},
     "fishingSpoils": {},
     "siteProgress": {
-      "Ruins of Ravenwind": 4
+      "Ruins of Ravenwind": 4,
+      "Zaetar's Grave": 2,
+      "Poison Falls": 2
     },
     "commonsKilled": {
       "Northspring Windcaller": 1,
-      "Northspring Slayer": 2
+      "Northspring Slayer": 2,
+      "Primordial Behemoth": 1,
+      "Subterranean Diemetradon": 2,
+      "Deep Borer": 1,
+      "Celebrian Dryad": 2,
+      "Cavern Lurker": 1
     },
-    "raresKilled": {},
+    "raresKilled": {
+      "Meshlok the Harvester": 1
+    },
     "elitesKilled": {
-      "Edana Hatetalon": 1
+      "Edana Hatetalon": 1,
+      "Princess Theradras": 1,
+      "Celebras the Cursed": 1
     },
     "siteVisits": {
       "Camp Narache": 3,
@@ -4192,7 +4378,7 @@
       "Gnomeregan": 1,
       "Shadowfang Keep": 1,
       "Scholomance": 1,
-      "Maraudon": 1,
+      "Maraudon": 3,
       "Stratholme": 1,
       "Wailing Caverns": 1,
       "Uldaman": 1,
@@ -4222,7 +4408,9 @@
       "Ironforge": 1,
       "Darnassus": 1
     },
-    "unlockedAreas": [],
+    "unlockedAreas": [
+      "Earth Song Falls"
+    ],
     "flags": {},
     "vendorStock": {
       "Camp Narache:Marjak Keenblade": [
@@ -4242,7 +4430,7 @@
           "item": "Shortsword",
           "amount": 1,
           "maxAmount": 2,
-          "minutesLeft": 40,
+          "minutesLeft": 38,
           "restockSpeed": 40
         },
         {
@@ -4255,7 +4443,7 @@
           "item": "Hand Axe",
           "amount": 1,
           "maxAmount": 2,
-          "minutesLeft": 40,
+          "minutesLeft": 38,
           "restockSpeed": 40
         },
         {
@@ -4274,7 +4462,7 @@
           "item": "Large Club",
           "amount": 1,
           "maxAmount": 2,
-          "minutesLeft": 40,
+          "minutesLeft": 38,
           "restockSpeed": 40
         }
       ],
@@ -4531,7 +4719,7 @@
           "item": "Dented Buckler",
           "amount": 1,
           "maxAmount": 2,
-          "minutesLeft": 39,
+          "minutesLeft": 37,
           "restockSpeed": 40
         }
       ]
@@ -4549,7 +4737,7 @@
           "ilvl": 40,
           "lvl": 1,
           "amount": 6,
-          "minutesLeft": 29,
+          "minutesLeft": 27,
           "maxStack": 20,
           "price": 250
         },
@@ -4563,7 +4751,7 @@
           "ilvl": 50,
           "lvl": 1,
           "amount": 1,
-          "minutesLeft": 29,
+          "minutesLeft": 27,
           "maxStack": 20,
           "price": 500
         },
@@ -4577,7 +4765,7 @@
           "source": "RareDrop",
           "ilvl": 55,
           "amount": 1,
-          "minutesLeft": 29,
+          "minutesLeft": 27,
           "maxStack": 5,
           "abilities": {
             "Scroll of Spirit IV": 1
@@ -4601,9 +4789,9 @@
       "value": "False"
     },
     "startDate": "2025-08-27T08:06:53.5797226+02:00",
-    "lastLoaded": "2025-09-09T17:50:56.0891502+02:00",
-    "lastPlayed": "2025-09-09T17:51:24.3080143+02:00",
-    "timePlayed": "00:10:40.7807145"
+    "lastLoaded": "2025-09-09T18:03:53.1568247+02:00",
+    "lastPlayed": "2025-09-09T18:06:56.7130277+02:00",
+    "timePlayed": "00:22:01.0314058"
   },
   {
     "playerSide": "Alliance",

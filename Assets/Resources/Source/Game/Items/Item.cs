@@ -1593,8 +1593,8 @@ public class Item
                     }
                 }
                 var a1 = item.armor;
-                var a2 = current == null ? 0 : current.armor;
-                var a3 = currentSecond == null ? 0 : currentSecond.armor;
+                var a2 = current == null ? 0 : ((item.type != "Two Handed" && item.type != "One Handed" && item.type != "Off Hand") || (item.type == "Two Handed" || item.type == "One Handed" && (!Input.GetKey(KeyCode.LeftAlt) || !currentSave.player.abilities.ContainsKey("Dual Wielding Proficiency"))) ? current.armor : 0);
+                var a3 = currentSecond == null ? 0 : (item.type == "Two Handed" || item.type == "Off Hand" || item.type == "One Handed" && Input.GetKey(KeyCode.LeftAlt) && currentSave.player.abilities.ContainsKey("Dual Wielding Proficiency") ? currentSecond.armor : 0);
                 if (a1 - a2 - a3 != 0)
                 {
                     var balance = a1 - a2 - a3;
@@ -1602,8 +1602,8 @@ public class Item
                     AddText(" Armor");
                 }
                 a1 = item.block;
-                a2 = current == null ? 0 : current.block;
-                a3 = currentSecond == null ? 0 : currentSecond.block;
+                a2 = current == null ? 0 : ((item.type != "Two Handed" && item.type != "One Handed" && item.type != "Off Hand") || (item.type == "Two Handed" || item.type == "One Handed" && (!Input.GetKey(KeyCode.LeftAlt) || !currentSave.player.abilities.ContainsKey("Dual Wielding Proficiency"))) ? current.block : 0);
+                a3 = currentSecond == null ? 0 : (item.type == "Two Handed" || item.type == "Off Hand" || item.type == "One Handed" && Input.GetKey(KeyCode.LeftAlt) && currentSave.player.abilities.ContainsKey("Dual Wielding Proficiency") ? currentSecond.block : 0);
                 if (a1 - a2 - a3 != 0)
                 {
                     var balance = a1 - a2 - a3;
@@ -1614,8 +1614,8 @@ public class Item
                     foreach (var stat in item.stats)
                     {
                         statsRecorded.Add(stat.Key);
-                        a2 = current != null && current.stats != null ? current.stats.Get(stat.Key) : 0;
-                        a3 = currentSecond != null && currentSecond.stats != null ? currentSecond.stats.Get(stat.Key) : 0;
+                        a2 = current == null || current.stats == null ? 0 : ((item.type != "Two Handed" && item.type != "One Handed" && item.type != "Off Hand") || item.type == "Two Handed" || item.type == "One Handed" && (!Input.GetKey(KeyCode.LeftAlt) || !currentSave.player.abilities.ContainsKey("Dual Wielding Proficiency")) ? current.stats.Get(stat.Key) : 0);
+                        a3 = currentSecond == null || currentSecond.stats == null ? 0 : (item.type == "Two Handed" || item.type == "Off Hand" || item.type == "One Handed" && Input.GetKey(KeyCode.LeftAlt) && currentSave.player.abilities.ContainsKey("Dual Wielding Proficiency") ? currentSecond.stats.Get(stat.Key) : 0);
                         var balance = stat.Value - a2 - a3;
                         if (balance != 0)
                         {
@@ -1624,11 +1624,11 @@ public class Item
                         }
                     }
                 var fullLostStats = new Dictionary<string, int>();
-                if (current != null && current.stats != null)
+                if (current != null && current.stats != null && ((item.type != "Two Handed" && item.type != "One Handed" && item.type != "Off Hand") || item.type == "Two Handed" || item.type == "One Handed" && (!Input.GetKey(KeyCode.LeftAlt) || !currentSave.player.abilities.ContainsKey("Dual Wielding Proficiency"))))
                     foreach (var stat in current.stats)
                         if (!statsRecorded.Contains(stat.Key))
                             fullLostStats.Inc(stat.Key, stat.Value);
-                if (currentSecond != null && currentSecond.stats != null)
+                if (currentSecond != null && currentSecond.stats != null && (item.type == "Two Handed" || item.type == "Off Hand" || item.type == "One Handed" && Input.GetKey(KeyCode.LeftAlt) && currentSave.player.abilities.ContainsKey("Dual Wielding Proficiency")))
                     foreach (var stat in currentSecond.stats)
                         if (!statsRecorded.Contains(stat.Key))
                             fullLostStats.Inc(stat.Key, stat.Value);
