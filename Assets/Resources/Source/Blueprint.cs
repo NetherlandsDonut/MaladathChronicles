@@ -1756,7 +1756,7 @@ public class Blueprint
         new("CraftingList", () => {
             var rowAmount = 11;
             var thisWindow = CDesktop.LBWindow();
-            var list = currentSave.player.learnedRecipes[profession.name].Select(x => Recipe.recipes.Find(y => y.name == x)).Where(x => (!settings.onlyHavingMaterials.Value() || currentSave.player.CanCraft(x, true, true) > 0) && (!settings.onlySkillUp.Value() || x.skillUpGray > currentSave.player.professionSkills[profession.name].Item1)).ToList();
+            var list = currentSave.player.learnedRecipes[profession.name].Select(x => recipes.Find(y => y.name == x)).Where(x => (!settings.onlyEnoughSkill.Value() || currentSave.player.professionSkills[x.profession].Item1 > x.learnedAt) && (!settings.onlyHavingMaterials.Value() || currentSave.player.CanCraft(x, true, true) > 0) && (!settings.onlySkillUp.Value() || x.skillUpGray > currentSave.player.professionSkills[profession.name].Item1)).ToList();
             thisWindow.SetPagination(() => list.Count, rowAmount);
             SetAnchor(TopLeft, 19, -38);
             AddRegionGroup();
@@ -1764,6 +1764,8 @@ public class Blueprint
             SetRegionGroupHeight(281);
             AddHeaderRegion(() =>
             {
+                SetRegionHeight(19);
+                SetRegionTextOffset(38, 19);
                 var maxSkill = profession.levels.Where(x => currentSave.player.professionSkills[profession.name].Item2.Contains(x.name)).Max(x => x.maxSkill);
                 var skill = currentSave.player.professionSkills[profession.name].Item1;
                 AddLine(profession.name + " " + skill);
@@ -1780,6 +1782,11 @@ public class Blueprint
                     SetDesktopBackground("Backgrounds/Professions");
                 });
                 AddSkillBar(40, -19, profession, currentSave.player);
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionHeight(19);
+                SetRegionTextOffset(38, 0);
             });
             AddHeaderRegion(() =>
             {
@@ -1818,10 +1825,11 @@ public class Blueprint
                 {
                     AddButtonRegion(() =>
                     {
+                        SetRegionTextOffset(0, 19);
                         var recipe = list[index + thisWindow.pagination()];
-                        AddLine(recipe.name, "Black");
                         var amountPossible = currentSave.player.CanCraft(recipe, false, true);
-                        AddText(amountPossible > 0 ? " [" + amountPossible + "]" : "", "Black");
+                        if (amountPossible > 0) AddLine("x" + amountPossible, "Black", "Right");
+                        AddLine(recipe.name, "Black");
                         var icon = recipe.Icon();
                         AddSmallButton(icon.Item1);
                         if (settings.rarityIndicators.Value() && recipe.results.Count > 0)
@@ -1845,7 +1853,9 @@ public class Blueprint
                         else PrintRecipeTooltip(currentSave.player, key);
                     });
                     var skill = currentSave.player.professionSkills[profession.name].Item1;
-                    if (list[index + thisWindow.pagination()].skillUpYellow > skill)
+                    if (list[index + thisWindow.pagination()].skillUpOrange > skill)
+                        SetRegionBackgroundAsImage("SkillUpRed");
+                    else if (list[index + thisWindow.pagination()].skillUpYellow > skill)
                         SetRegionBackgroundAsImage("SkillUpOrange");
                     else if (list[index + thisWindow.pagination()].skillUpGreen > skill)
                         SetRegionBackgroundAsImage("SkillUpYellow");
@@ -2020,7 +2030,7 @@ public class Blueprint
                     SpawnFallingText(new Vector2(0, 34), "Inventory is full", "Red");
                 });
             else
-                AddPaddingRegion(() => AddLine(recipe.enchantment ? "Enchant" : "Craft"));
+                AddPaddingRegion(() => AddLine(recipe.enchantment ? "Enchant" : "Craft", "DarkGray"));
         }),
         new("CraftingSort", () => {
             SetAnchor(Center);
@@ -2091,6 +2101,16 @@ public class Blueprint
             (h) =>
             {
                 settings.onlySkillUp.Invert();
+                CDesktop.RespawnAll();
+            });
+            AddButtonRegion(() =>
+            {
+                AddLine("Has enough skill", "Black");
+                AddCheckbox(settings.onlyEnoughSkill);
+            },
+            (h) =>
+            {
+                settings.onlyEnoughSkill.Invert();
                 CDesktop.RespawnAll();
             });
         }),

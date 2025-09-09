@@ -616,11 +616,11 @@ public class Item
                     if (showWhyNot)
                         SpawnFallingText(new Vector2(0, 34), "You don't know the required profession", "Red");
                 }
-                else if (entity.professionSkills[recipe.profession].Item1 < recipe.learnedAt)
-                {
-                    if (showWhyNot)
-                        SpawnFallingText(new Vector2(0, 34), "Not enough skill in the profession", "Red");
-                }
+                //else if (entity.professionSkills[recipe.profession].Item1 < recipe.learnedAt)
+                //{
+                //    if (showWhyNot)
+                //        SpawnFallingText(new Vector2(0, 34), "Not enough skill in the profession", "Red");
+                //}
                 else if (entity.learnedRecipes[recipe.profession].Contains(recipe.name))
                 {
                     if (showWhyNot)

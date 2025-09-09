@@ -16,6 +16,7 @@ public class GameSettings
         fastCascading ??= new Bool(false);
         onlyHavingMaterials ??= new Bool(false);
         onlySkillUp ??= new Bool(false);
+        onlyEnoughSkill ??= new Bool(false);
         questLevel ??= new Bool(false);
         autoCloseLoot ??= new Bool(false);
         rarityIndicators ??= new Bool(true);
@@ -73,6 +74,9 @@ public class GameSettings
 
     //Tells whether player sees only recipes that can improve their skill in the profession
     public Bool onlySkillUp;
+
+    //Tells whether player sees only recipes that they can actually craft with their skill
+    public Bool onlyEnoughSkill;
 
     //Tells whether the loot windows will close automatically after taking all the items
     public Bool autoCloseLoot;

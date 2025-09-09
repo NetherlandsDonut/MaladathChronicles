@@ -6742,7 +6742,7 @@
         "Order Mastery": 1
       },
       "inventory": {
-        "money": 30,
+        "money": 123153,
         "items": [
           {
             "rarity": "Common",
@@ -6992,7 +6992,7 @@
       "Echo Isles": 0,
       "Zalazane Camp": 1,
       "Darkspear Strand": 1,
-      "Orgrimmar": 6,
+      "Orgrimmar": 8,
       "The Placid Dune": 3,
       "Razor Hill": 0,
       "Rocky Desert": 2
@@ -7089,8 +7089,7 @@
         }
       ]
     },
-    "banks": {
-    },
+    "banks": {},
     "buyback": {
       "items": [],
       "bags": [],
@@ -7109,8 +7108,8 @@
       "value": "False"
     },
     "startDate": "2025-09-03T12:18:02.1902436+02:00",
-    "lastLoaded": "2025-09-08T01:49:27.667792+02:00",
-    "lastPlayed": "2025-09-08T02:08:34.6966945+02:00",
-    "timePlayed": "01:50:32.5206569"
+    "lastLoaded": "2025-09-09T03:28:37.2479362+02:00",
+    "lastPlayed": "2025-09-09T03:28:51.8763108+02:00",
+    "timePlayed": "01:50:47.1490315"
   }
 ]

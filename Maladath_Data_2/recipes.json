@@ -2165,7 +2165,7 @@
     "skillUpYellow": 30,
     "skillUpGreen": 45,
     "skillUpGray": 60,
-    "learnedAt": 30,
+    "learnedAt": 1,
     "reagents": {
       "Rough Blasting Powder": 1,
       "Copper Bar": 1
