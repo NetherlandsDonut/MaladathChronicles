@@ -905,47 +905,28 @@ public class Blueprint
             AddHeaderRegion(() =>
             {
                 AddLine("Ranking", "Gray", "Center");
-                AddSmallButton("OtherClose", (h) =>
-                {
-                    CloseDesktop("RankingScreen");
-                });
+                AddSmallButton("OtherClose", (h) => CloseDesktop("RankingScreen"));
             });
             AddRegionGroup();
             SetRegionGroupWidth(294);
-            if (selectedRankingTab != "Hardcore")
-                AddPaddingRegion(() =>
-                {
-                    AddLine("Softcore", "", "Center");
-                });
-            else
-                AddButtonRegion(() =>
-                {
-                    AddLine("Softcore", "", "Center");
-                },
-                (h) =>
-                {
-                    selectedRankingTab = null;
-                    Respawn("CharacterRankingList");
-                    Respawn("CharacterRankingListRight");
-                });
+            if (selectedRankingTab != "Hardcore") AddPaddingRegion(() => AddLine("Softcore", "", "Center"));
+            else AddButtonRegion(() => AddLine("Softcore", "", "Center"),
+            (h) =>
+            {
+                selectedRankingTab = null;
+                Respawn("CharacterRankingList");
+                Respawn("CharacterRankingListRight");
+            });
             AddRegionGroup();
             SetRegionGroupWidth(294);
-            if (selectedRankingTab == "Hardcore")
-                AddPaddingRegion(() =>
-                {
-                    AddLine("Hardcore", "", "Center");
-                });
-            else
-                AddButtonRegion(() =>
-                {
-                    AddLine("Hardcore", "", "Center");
-                },
-                (h) =>
-                {
-                    selectedRankingTab = "Hardcore";
-                    Respawn("CharacterRankingList");
-                    Respawn("CharacterRankingListRight");
-                });
+            if (selectedRankingTab == "Hardcore") AddPaddingRegion(() => AddLine("Hardcore", "", "Center"));
+            else AddButtonRegion(() => AddLine("Hardcore", "", "Center"),
+            (h) =>
+            {
+                selectedRankingTab = "Hardcore";
+                Respawn("CharacterRankingList");
+                Respawn("CharacterRankingListRight");
+            });
         }),
         new("CharacterRankingList", () =>
         {
@@ -977,11 +958,7 @@ public class Blueprint
                         if (slot.player.dead) AddText(", died fighting " + (slot.deathInfo.commonSource ? "a " : "") + slot.deathInfo.source + " in " + slot.deathInfo.area);
                     });
                 }
-                else
-                    AddPaddingRegion(() =>
-                    {
-                        AddBigButton("OtherBlank");
-                    });
+                else AddPaddingRegion(() => AddBigButton("OtherBlank"));
         }),
         new("CharacterRankingListRight", () =>
         {
@@ -1000,11 +977,7 @@ public class Blueprint
                         AddBigButton("PVP" + (slot.player.Side() == "Alliance" ? "A" : "H") + slot.player.Rank().rank);
                     });
                 }
-                else
-                    AddPaddingRegion(() =>
-                    {
-                        AddBigButton("OtherBlank");
-                    });
+                else AddPaddingRegion(() => AddBigButton("OtherBlank"));
         }),
         new("CharacterRankingShadow", () =>
         {
@@ -2790,7 +2763,6 @@ public class Blueprint
             }
         }),
         new("PlayerMoney", () => {
-            if (WindowUp("TownHostile")) return;
             if (WindowUp("Inventory")) return;
             if (WindowUp("Quest")) return;
             if (WindowUp("QuestAdd")) return;
@@ -4911,6 +4883,7 @@ public class Blueprint
                     CloseWindow("Inventory");
                     CloseWindow("InventorySort");
                     Respawn("Person");
+                    Respawn("PlayerMoney");
                     PlaySound("DesktopInventoryClose");
                 });
             });

@@ -2900,34 +2900,16 @@
               "amount": 1
             }
           ]
-        },
-        {
-          "questID": 3062,
-          "conditions": [
-            {
-              "type": "Item",
-              "name": "Edana's Dark Heart",
-              "amount": 1,
-              "sites": [
-                "Ruins of Ravenwind"
-              ]
-            },
-            {
-              "type": "Item",
-              "name": "Horn of Hatetalon",
-              "amount": 1,
-              "sites": [
-                "Ruins of Ravenwind"
-              ]
-            }
-          ]
         }
       ],
-      "completedQuests": [],
-      "level": 49,
-      "experience": 98669,
+      "completedQuests": [
+        3062
+      ],
+      "level": 50,
+      "experience": 136822,
       "uniquesGotten": [
-        "Horn of Hatetalon"
+        "Horn of Hatetalon",
+        "Edana's Dark Heart"
       ],
       "reputation": {
         "Southsea Pirates": 0,
@@ -2945,7 +2927,7 @@
         "Orgrimmar": 4250,
         "Frostwolf Clan": 4250,
         "The Defiler's": 4250,
-        "Thunder Bluff": 4600,
+        "Thunder Bluff": 4950,
         "Undercity": 4250,
         "Ironforge": 0,
         "Stromgarde": 0,
@@ -3124,7 +3106,7 @@
         ],
         "Herbalism": []
       },
-      "unspentTalentPoints": 48,
+      "unspentTalentPoints": 49,
       "faction": "Thunder Bluff",
       "name": "Montarr",
       "race": "Tauren",
@@ -3175,6 +3157,7 @@
         "Order Mastery": 2
       },
       "inventory": {
+        "money": 1916,
         "items": [
           {
             "rarity": "Common",
@@ -3207,99 +3190,104 @@
             }
           },
           {
+            "x": 3,
+            "rarity": "Common",
+            "name": "Battleworn Hammer",
+            "icon": "itemhammer15",
+            "detailedType": "Mace",
+            "type": "Two Handed",
+            "ilvl": 2,
+            "lvl": 1,
+            "minPower": 1.1,
+            "maxPower": 1.17,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 9
+          },
+          {
             "x": 2,
             "rarity": "Common",
-            "name": "Mageweave Cloth",
-            "icon": "itemfabricmageweave01",
-            "detailedType": "Cloth",
-            "type": "Trade Good",
-            "source": "Quest",
-            "ilvl": 40,
+            "name": "Dented Buckler",
+            "icon": "itemshield09",
+            "detailedType": "Shield",
+            "type": "Off Hand",
+            "ilvl": 3,
             "lvl": 1,
-            "amount": 4,
-            "maxStack": 20,
-            "price": 250
+            "armor": 29,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 6
           },
           {
             "x": 4,
             "rarity": "Common",
-            "name": "Rugged Leather",
-            "icon": "itemmiscleatherscrap02",
-            "detailedType": "Leather",
-            "type": "Trade Good",
-            "ilvl": 50,
+            "name": "Hand Axe",
+            "icon": "itemaxe19",
+            "detailedType": "Axe",
+            "type": "One Handed",
+            "source": "RareDrop",
+            "ilvl": 4,
             "lvl": 1,
+            "minPower": 1.1,
+            "maxPower": 1.2,
             "amount": 1,
-            "maxStack": 20,
-            "price": 500
+            "maxStack": 1,
+            "price": 16
           },
           {
             "y": 1,
             "rarity": "Common",
-            "name": "Firebloom",
-            "icon": "itemmischerb19",
-            "detailedType": "Flowers",
-            "type": "Trade Good",
-            "source": "RareDrop",
-            "ilvl": 41,
+            "name": "Large Club",
+            "icon": "itemmace06",
+            "detailedType": "Mace",
+            "type": "Two Handed",
+            "ilvl": 3,
             "lvl": 1,
-            "amount": 2,
-            "maxStack": 20,
-            "price": 250
+            "minPower": 1.12,
+            "maxPower": 1.19,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 14
           },
           {
             "x": 1,
             "y": 1,
             "rarity": "Common",
-            "name": "Scroll of Spirit IV",
-            "icon": "itemscroll01",
-            "detailedType": "Scroll",
-            "type": "Miscellaneous",
-            "source": "RareDrop",
-            "ilvl": 55,
-            "amount": 1,
-            "maxStack": 5,
-            "abilities": {
-              "Scroll of Spirit IV": 1
-            },
-            "price": 100
-          },
-          {
-            "x": 2,
-            "y": 1,
-            "rarity": "Common",
-            "name": "Horn of Hatetalon",
-            "icon": "itemmischorn02",
-            "detailedType": "Horn",
-            "type": "Miscellaneous",
-            "source": "Quest",
-            "ilvl": 1,
+            "name": "Shortsword",
+            "icon": "itemsword04",
+            "detailedType": "Sword",
+            "type": "One Handed",
+            "ilvl": 3,
+            "lvl": 1,
+            "minPower": 1.08,
+            "maxPower": 1.15,
             "amount": 1,
             "maxStack": 1,
-            "indestructible": true,
-            "unique": true,
-            "abilities": {
-              "Horn of Hatetalon": 0
-            }
+            "price": 10
           }
         ],
         "bags": []
       },
       "mounts": [],
       "equipment": {
-        "Main Hand": {
-          "rarity": "Common",
-          "name": "Battleworn Hammer",
-          "icon": "itemhammer15",
-          "detailedType": "Mace",
-          "type": "Two Handed",
-          "ilvl": 2,
-          "lvl": 1,
-          "minPower": 1.1,
-          "maxPower": 1.17,
+        "Waist": {
+          "y": 1,
+          "rarity": "Uncommon",
+          "name": "Heavy Lamellar Girdle of the Bear",
+          "icon": "itembelt10",
+          "type": "Waist",
+          "armorClass": "Plate",
+          "source": "RareDrop",
+          "ilvl": 51,
+          "lvl": 46,
+          "armor": 275,
           "amount": 1,
           "maxStack": 1,
-          "price": 9
+          "price": 5035,
+          "stats": {
+            "Stamina": 13,
+            "Strength": 13
+          }
         },
         "Legs": {
           "rarity": "Poor",
@@ -3343,10 +3331,29 @@
             "Stamina": 20,
             "Spirit": 7
           }
+        },
+        "Hands": {
+          "y": 1,
+          "rarity": "Uncommon",
+          "name": "Wingcrest Gloves",
+          "icon": "itemgauntlets18",
+          "type": "Hands",
+          "armorClass": "Cloth",
+          "source": "Quest",
+          "ilvl": 50,
+          "lvl": 1,
+          "armor": 41,
+          "amount": 1,
+          "maxStack": 1,
+          "price": 4826,
+          "stats": {
+            "Intellect": 10,
+            "Stamina": 11
+          }
         }
       },
       "worldBuffs": [],
-      "health": 855,
+      "health": 1035,
       "resources": {
         "Earth": 0,
         "Fire": 0,
@@ -3361,9 +3368,9 @@
       }
     },
     "hour": 7,
-    "minute": 22,
-    "second": 58,
-    "currentSite": "Ruins of Ravenwind",
+    "minute": 24,
+    "second": 38,
+    "currentSite": "Camp Narache",
     "generatedBossPools": {
       "<Forlorn Cloister>": "Fallen Champion",
       "<Ring of Law>": "Eviscerator"
@@ -3393,16 +3400,18 @@
     "fishingSpots": {},
     "fishingSpoils": {},
     "siteProgress": {
-      "Ruins of Ravenwind": 3
+      "Ruins of Ravenwind": 4
     },
     "commonsKilled": {
       "Northspring Windcaller": 1,
       "Northspring Slayer": 2
     },
     "raresKilled": {},
-    "elitesKilled": {},
+    "elitesKilled": {
+      "Edana Hatetalon": 1
+    },
     "siteVisits": {
-      "Camp Narache": 1,
+      "Camp Narache": 3,
       "Cold Hearth Manor": 1,
       "Raynewood Retreat": 1,
       "Shindigger's Camp": 1,
@@ -3474,7 +3483,7 @@
       "Revantusk Village": 1,
       "Malaka'jin": 1,
       "Bloodhoof Village": 1,
-      "Camp Mojache": 5,
+      "Camp Mojache": 8,
       "Camp Taurajo": 1,
       "Freewind Post": 1,
       "Whitereach Post": 1,
@@ -3822,7 +3831,7 @@
       "Oneiros": 1,
       "Rage Scar Hold": 1,
       "Ruins of Isildien": 1,
-      "Ruins of Ravenwind": 3,
+      "Ruins of Ravenwind": 4,
       "Crystal Fields": 1,
       "Ruins of Solarsal": 1,
       "Sardor Isle": 1,
@@ -4216,8 +4225,370 @@
     },
     "unlockedAreas": [],
     "flags": {},
-    "vendorStock": {},
+    "vendorStock": {
+      "Camp Narache:Marjak Keenblade": [
+        {
+          "item": "Bastard Sword",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Club",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Shortsword",
+          "amount": 1,
+          "maxAmount": 2,
+          "minutesLeft": 40,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Short Staff",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Hand Axe",
+          "amount": 1,
+          "maxAmount": 2,
+          "minutesLeft": 40,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Dirk",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Broad Axe",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Large Club",
+          "amount": 1,
+          "maxAmount": 2,
+          "minutesLeft": 40,
+          "restockSpeed": 40
+        }
+      ],
+      "Camp Mojache:Sheendra Tallgrass": [
+        {
+          "item": "Coarse Thread",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Fine Thread",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bleach",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Black Dye",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Red Dye",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mild Spices",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Hot Spices",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Weak Flux",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Mining Pick",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Dust of Decay",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Empty Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Leaded Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Strong Flux",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Soothing Spices",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Coal",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Salt",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Silken Thread",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Gray Dye",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Yellow Dye",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Purple Dye",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Wooden Stock",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Heavy Stock",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Blacksmith Hammer",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Copper Rod",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Fishing Pole",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Nightcrawlers",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Bright Baubles",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Skinning Knife",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Heavy Silken Thread",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Crystal Vial",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Recipe: Hot Wolf Ribs",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Recipe: Lobster Stew",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Recipe: Mightfish Steak",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Recipe: Baked Salmon",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        }
+      ],
+      "Camp Narache:Bronk Steelrage": [
+        {
+          "item": "Large Wooden Shield",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Rusted Chain Vest",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Rusted Chain Belt",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Rusted Chain Leggings",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Rusted Chain Boots",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Rusted Chain Bracers",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Rusted Chain Gloves",
+          "amount": 2,
+          "maxAmount": 2,
+          "restockSpeed": 40
+        },
+        {
+          "item": "Dented Buckler",
+          "amount": 1,
+          "maxAmount": 2,
+          "minutesLeft": 39,
+          "restockSpeed": 40
+        }
+      ]
+    },
     "banks": {},
+    "buyback": {
+      "items": [
+        {
+          "rarity": "Common",
+          "name": "Mageweave Cloth",
+          "icon": "itemfabricmageweave01",
+          "detailedType": "Cloth",
+          "type": "Trade Good",
+          "source": "Quest",
+          "ilvl": 40,
+          "lvl": 1,
+          "amount": 6,
+          "minutesLeft": 29,
+          "maxStack": 20,
+          "price": 250
+        },
+        {
+          "x": 1,
+          "rarity": "Common",
+          "name": "Rugged Leather",
+          "icon": "itemmiscleatherscrap02",
+          "detailedType": "Leather",
+          "type": "Trade Good",
+          "ilvl": 50,
+          "lvl": 1,
+          "amount": 1,
+          "minutesLeft": 29,
+          "maxStack": 20,
+          "price": 500
+        },
+        {
+          "x": 2,
+          "rarity": "Common",
+          "name": "Scroll of Spirit IV",
+          "icon": "itemscroll01",
+          "detailedType": "Scroll",
+          "type": "Miscellaneous",
+          "source": "RareDrop",
+          "ilvl": 55,
+          "amount": 1,
+          "minutesLeft": 29,
+          "maxStack": 5,
+          "abilities": {
+            "Scroll of Spirit IV": 1
+          },
+          "price": 100
+        }
+      ],
+      "bags": [],
+      "ignoreSpaceChecks": true
+    },
     "permadeath": {
       "value": "False"
     },
@@ -4231,9 +4602,9 @@
       "value": "False"
     },
     "startDate": "2025-08-27T08:06:53.5797226+02:00",
-    "lastLoaded": "2025-08-27T12:15:30.3522079+02:00",
-    "lastPlayed": "2025-08-27T12:15:34.7604871+02:00",
-    "timePlayed": "00:07:16.6582526"
+    "lastLoaded": "2025-09-09T15:57:40.5682656+02:00",
+    "lastPlayed": "2025-09-09T15:58:58.0135189+02:00",
+    "timePlayed": "00:10:12.5618504"
   },
   {
     "playerSide": "Alliance",
@@ -7108,8 +7479,421 @@
       "value": "False"
     },
     "startDate": "2025-09-03T12:18:02.1902436+02:00",
-    "lastLoaded": "2025-09-09T14:26:37.1034775+02:00",
-    "lastPlayed": "2025-09-09T14:26:42.8815023+02:00",
-    "timePlayed": "01:52:40.5114862"
+    "lastLoaded": "2025-09-09T16:59:18.6874676+02:00",
+    "lastPlayed": "2025-09-09T16:59:22.3371958+02:00",
+    "timePlayed": "01:52:44.1612144"
+  },
+  {
+    "playerSide": "Horde",
+    "player": {
+      "currentQuests": [],
+      "completedQuests": [],
+      "level": 1,
+      "uniquesGotten": [],
+      "reputation": {
+        "Southsea Pirates": 0,
+        "Razormane Tribe": 0,
+        "Pandaren": 0,
+        "Grimtotem Tribe": 0,
+        "Woodpaw Tribe": 0,
+        "The Burning Legion": 0,
+        "Darkspear Tribe": 4600,
+        "Stormwind": 0,
+        "Timbermaw Tribe": 4050,
+        "Magram Clan": 0,
+        "Gelkis Clan": 0,
+        "Kolkar Clan": 0,
+        "Orgrimmar": 4250,
+        "Frostwolf Clan": 4250,
+        "The Defiler's": 4250,
+        "Thunder Bluff": 4250,
+        "Undercity": 4250,
+        "Ironforge": 0,
+        "Stromgarde": 0,
+        "Dark Iron Clan": 0,
+        "Wildhammer Clan": 0,
+        "Winterfall Tribe": 0,
+        "Gnomeregan": 0,
+        "Darnassus": 0,
+        "Bloodsail Buccaneers": 0,
+        "Syndicate": 0,
+        "Warsong Outriders": 4250,
+        "Stormpike Guard": 0,
+        "Silverwing Sentinels": 0,
+        "The League of Arathor": 0,
+        "Defias Brotherhood": 0,
+        "Dalaran": 0,
+        "Burning Blade Clan": 0,
+        "Burning Legion": 0,
+        "Shadow Council": 0,
+        "Gordunni Ogres": 0,
+        "Blackrock Clan": 0,
+        "Dragonmaw Clan": 0,
+        "Black Tooth Grin Clan": 0,
+        "Gurubashi Tribe": 0,
+        "Sandfury Tribe": 0,
+        "Twilight's Hammer": 0,
+        "Grimtotem Clan": 0,
+        "Razorfen Tribe": 0,
+        "Stonemaul Ogres": 4250,
+        "Dustbelcher Ogres": 0,
+        "Deadwind Ogres": 0,
+        "Venture Co.": 0,
+        "Southsea Freebooters": 0,
+        "Atal'ai Tribe": 0,
+        "Qiraji Empire": 0,
+        "Scarlet Crusade": 0,
+        "Vilebranch Tribe": 0,
+        "Witherbark Tribe": 0,
+        "Mossflayer Tribe": 0,
+        "Frostmane Tribe": 0,
+        "Bloodscalp Tribe": 0,
+        "Skullsplitter Tribe": 0,
+        "Shatterspear Tribe": 0,
+        "Rot Hide Tribe": 0,
+        "Riverpaw Tribe": 0,
+        "Redridge Tribe": 0,
+        "Mudsnout Tribe": 0,
+        "Palemane Tribe": 0,
+        "Shadowhide Tribe": 0,
+        "Scourge": 0,
+        "Smolderthorn Tribe": 0,
+        "Revantusk Tribe": 4250,
+        "Blackpaw Tribe": 0,
+        "Maraudine Clan": 0,
+        "Mosshide Tribe": 0,
+        "Deadwood Tribe": 0,
+        "Bloodtooth Tribe": 0,
+        "Bristleback Tribe": 0
+      },
+      "professionSkills": {
+        "Leatherworking": {
+          "Item1": 1,
+          "Item2": [
+            "Amateur"
+          ]
+        },
+        "Blacksmithing": {
+          "Item1": 1,
+          "Item2": [
+            "Amateur"
+          ]
+        },
+        "Alchemy": {
+          "Item1": 1,
+          "Item2": [
+            "Amateur"
+          ]
+        },
+        "Tailoring": {
+          "Item1": 1,
+          "Item2": [
+            "Amateur"
+          ]
+        },
+        "Enchanting": {
+          "Item1": 1,
+          "Item2": [
+            "Amateur"
+          ]
+        },
+        "Engineering": {
+          "Item1": 1,
+          "Item2": [
+            "Amateur"
+          ]
+        },
+        "Cooking": {
+          "Item1": 1,
+          "Item2": [
+            "Amateur"
+          ]
+        },
+        "Fishing": {
+          "Item1": 1,
+          "Item2": [
+            "Amateur"
+          ]
+        },
+        "First Aid": {
+          "Item1": 1,
+          "Item2": [
+            "Amateur"
+          ]
+        },
+        "Skinning": {
+          "Item1": 1,
+          "Item2": [
+            "Amateur"
+          ]
+        },
+        "Mining": {
+          "Item1": 1,
+          "Item2": [
+            "Amateur"
+          ]
+        },
+        "Herbalism": {
+          "Item1": 1,
+          "Item2": [
+            "Amateur"
+          ]
+        }
+      },
+      "learnedRecipes": {
+        "Leatherworking": [
+          "Light Leather",
+          "Light Armor Kit",
+          "Handstitched Leather Vest",
+          "Handstitched Leather Cloak",
+          "Handstitched Leather Bracers",
+          "Handstitched Leather Boots"
+        ],
+        "Blacksmithing": [
+          "Rough Sharpening Stone",
+          "Rough Weightstone",
+          "Rough Copper Vest",
+          "Copper Bracers"
+        ],
+        "Alchemy": [
+          "Minor Healing Potion",
+          "Elixir of Lion's Strength",
+          "Elixir of Minor Defense"
+        ],
+        "Tailoring": [
+          "Bolt of Linen Cloth",
+          "Brown Linen Shirt",
+          "Linen Cloak",
+          "Simple Linen Pants"
+        ],
+        "Enchanting": [
+          "Runed Copper Rod",
+          "Enchant Bracer - Minor Deflect",
+          "Enchant Bracer - Minor Health"
+        ],
+        "Engineering": [
+          "Rough Blasting Powder",
+          "Rough Dynamite",
+          "Crafted Light Shot"
+        ],
+        "Cooking": [
+          "Charred Wolf Meat",
+          "Roasted Boar Meat"
+        ],
+        "Fishing": [],
+        "First Aid": [
+          "Linen Bandage"
+        ],
+        "Skinning": [],
+        "Mining": [
+          "Smelt Copper"
+        ],
+        "Herbalism": []
+      },
+      "faction": "Darkspear Tribe",
+      "name": "Xinwu",
+      "race": "Troll",
+      "spec": "Hunter",
+      "gender": "Female",
+      "portraitID": 1,
+      "homeLocation": "The Den",
+      "abilities": {
+        "Dual Wielding Proficiency": 0,
+        "Two Handed Axe Proficiency": 0,
+        "Two Handed Sword Proficiency": 0,
+        "Polearm Proficiency": 0,
+        "Quiver Proficiency": 0,
+        "Pouch Proficiency": 0,
+        "Bow Proficiency": 0,
+        "Crossbow Proficiency": 0,
+        "Gun Proficiency": 0,
+        "Leather Proficiency": 0,
+        "Mail Proficiency": 0,
+        "One Handed Axe Proficiency": 0,
+        "One Handed Mace Proficiency": 0,
+        "One Handed Sword Proficiency": 0,
+        "Fist Weapon Proficiency": 0,
+        "Off Hand Proficiency": 0,
+        "Dagger Proficiency": 0,
+        "Aimed Shot": 0,
+        "Tame Beast": 0,
+        "Raptor Strike": 0
+      },
+      "currentActionSet": "Default",
+      "actionSets": {
+        "Default": [
+          "Aimed Shot",
+          "Tame Beast"
+        ]
+      },
+      "stats": {
+        "Stamina": 22,
+        "Strength": 21,
+        "Agility": 25,
+        "Intellect": 16,
+        "Spirit": 22,
+        "Earth Mastery": 2,
+        "Fire Mastery": 3,
+        "Air Mastery": 2,
+        "Water Mastery": 1,
+        "Frost Mastery": 3,
+        "Lightning Mastery": 2,
+        "Arcane Mastery": 1,
+        "Decay Mastery": 1,
+        "Shadow Mastery": 3,
+        "Order Mastery": 1
+      },
+      "inventory": {
+        "items": [
+          {
+            "rarity": "Common",
+            "name": "Hearthstone",
+            "icon": "itemmiscrune01",
+            "detailedType": "Rune",
+            "type": "Miscellaneous",
+            "ilvl": 1,
+            "amount": 1,
+            "maxStack": 1,
+            "indestructible": true,
+            "unique": true,
+            "abilities": {
+              "Hearthstone": 1
+            }
+          },
+          {
+            "x": 1,
+            "rarity": "Common",
+            "name": "Worn Axe",
+            "icon": "itemaxe11",
+            "detailedType": "Axe",
+            "type": "One Handed",
+            "ilvl": 2,
+            "lvl": 1,
+            "minPower": 1.05,
+            "maxPower": 1.15,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 7
+          },
+          {
+            "x": 2,
+            "rarity": "Common",
+            "name": "Trapper's Shirt",
+            "icon": "itemshirt07",
+            "type": "Chest",
+            "ilvl": 1,
+            "lvl": 1,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1
+          },
+          {
+            "x": 3,
+            "rarity": "Poor",
+            "name": "Trapper's Pants",
+            "icon": "itempants02",
+            "type": "Legs",
+            "armorClass": "Cloth",
+            "ilvl": 1,
+            "lvl": 1,
+            "armor": 2,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1
+          }
+        ],
+        "bags": [
+          {
+            "rarity": "Common",
+            "name": "Light Quiver",
+            "icon": "itemmiscquiver09",
+            "type": "Bag",
+            "ilvl": 1,
+            "amount": 1,
+            "maxStack": 1,
+            "price": 1
+          }
+        ]
+      },
+      "mounts": [],
+      "equipment": {
+        "Ranged Weapon": {
+          "rarity": "Common",
+          "name": "Worn Shortbow",
+          "icon": "itembow05",
+          "detailedType": "Bow",
+          "type": "Ranged Weapon",
+          "ilvl": 2,
+          "lvl": 1,
+          "minPower": 1.09,
+          "maxPower": 1.22,
+          "amount": 1,
+          "maxStack": 1,
+          "price": 5
+        }
+      },
+      "worldBuffs": [],
+      "health": 125,
+      "resources": {
+        "Earth": 0,
+        "Fire": 0,
+        "Air": 0,
+        "Water": 0,
+        "Frost": 0,
+        "Lightning": 0,
+        "Arcane": 0,
+        "Decay": 0,
+        "Order": 0,
+        "Shadow": 0
+      }
+    },
+    "hour": 7,
+    "currentSite": "The Den",
+    "generatedBossPools": {
+      "<Forlorn Cloister>": "Fallen Champion",
+      "<Ring of Law>": "Eviscerator"
+    },
+    "markets": [
+      {
+        "name": "Alliance Market",
+        "auctions": [],
+        "hoursSinceUpdate": 24
+      },
+      {
+        "name": "Horde Market",
+        "auctions": [],
+        "hoursSinceUpdate": 24
+      }
+    ],
+    "openedChests": {},
+    "fishingSpots": {},
+    "fishingSpoils": {},
+    "siteProgress": {},
+    "commonsKilled": {},
+    "raresKilled": {},
+    "elitesKilled": {},
+    "siteVisits": {
+      "The Den": 3
+    },
+    "unlockedAreas": [],
+    "flags": {},
+    "vendorStock": {},
+    "banks": {},
+    "permadeath": {
+      "value": "False"
+    },
+    "classicItemStacking": {
+      "value": "False"
+    },
+    "automaticallyDecidedBossLoot": {
+      "value": "False"
+    },
+    "noOpenWorldOppositeFactionEncounters": {
+      "value": "False"
+    },
+    "startDate": "2025-09-09T15:59:09.4962433+02:00",
+    "lastLoaded": "2025-09-09T16:59:04.0561296+02:00",
+    "lastPlayed": "2025-09-09T16:59:15.3866411+02:00",
+    "timePlayed": "00:02:00.2826685"
   }
 ]

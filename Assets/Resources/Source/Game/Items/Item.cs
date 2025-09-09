@@ -1413,6 +1413,90 @@ public class Item
         {
             AddLine(split[0].CutTail(), item.rarity);
             AddSmallButton(item.icon);
+            if (compare && WindowUp("PlayerWeaponsInfo"))
+            {
+                var overlays = new List<GameObject>();
+                if (item.type == "Head") overlays.Add(AddSmallButtonOverlay(CDesktop.windows.Find(x => x.title == "PlayerEquipmentInfo").regionGroups[0].regions[1].gameObject, "OtherCompareSlot", 0, 2));
+                else if (item.type == "Shoulders") overlays.Add(AddSmallButtonOverlay(CDesktop.windows.Find(x => x.title == "PlayerEquipmentInfo").regionGroups[0].regions[2].gameObject, "OtherCompareSlot", 0, 2));
+                else if (item.type == "Back") overlays.Add(AddSmallButtonOverlay(CDesktop.windows.Find(x => x.title == "PlayerEquipmentInfo").regionGroups[0].regions[3].gameObject, "OtherCompareSlot", 0, 2));
+                else if (item.type == "Chest") overlays.Add(AddSmallButtonOverlay(CDesktop.windows.Find(x => x.title == "PlayerEquipmentInfo").regionGroups[0].regions[4].gameObject, "OtherCompareSlot", 0, 2));
+                else if (item.type == "Wrists") overlays.Add(AddSmallButtonOverlay(CDesktop.windows.Find(x => x.title == "PlayerEquipmentInfo").regionGroups[0].regions[5].gameObject, "OtherCompareSlot", 0, 2));
+                else if (item.type == "Hands") overlays.Add(AddSmallButtonOverlay(CDesktop.windows.Find(x => x.title == "PlayerEquipmentInfo").regionGroups[0].regions[6].gameObject, "OtherCompareSlot", 0, 2));
+                else if (item.type == "Waist") overlays.Add(AddSmallButtonOverlay(CDesktop.windows.Find(x => x.title == "PlayerEquipmentInfo").regionGroups[0].regions[7].gameObject, "OtherCompareSlot", 0, 2));
+                else if (item.type == "Legs") overlays.Add(AddSmallButtonOverlay(CDesktop.windows.Find(x => x.title == "PlayerEquipmentInfo").regionGroups[0].regions[8].gameObject, "OtherCompareSlot", 0, 2));
+                else if (item.type == "Feet") overlays.Add(AddSmallButtonOverlay(CDesktop.windows.Find(x => x.title == "PlayerEquipmentInfo").regionGroups[0].regions[9].gameObject, "OtherCompareSlot", 0, 2));
+                else if (item.type == "Neck") overlays.Add(AddSmallButtonOverlay(CDesktop.windows.Find(x => x.title == "PlayerEquipmentInfo").regionGroups[0].regions[12].gameObject, "OtherCompareSlot", 0, 2));
+                else if (item.type == "Finger") overlays.Add(AddSmallButtonOverlay(CDesktop.windows.Find(x => x.title == "PlayerEquipmentInfo").regionGroups[0].regions[13].gameObject, "OtherCompareSlot", 0, 2));
+                else if (item.type == "Trinket") overlays.Add(AddSmallButtonOverlay(CDesktop.windows.Find(x => x.title == "PlayerEquipmentInfo").regionGroups[0].regions[14].gameObject, "OtherCompareSlot", 0, 2));
+                else if (item.type == "Two Handed")
+                {
+                    var group = CDesktop.windows.Find(x => x.title == "PlayerWeaponsInfo").regionGroups[0];
+                    var hasBowProficiency = currentSave.player.abilities.ContainsKey("Bow Proficiency");
+                    var hasCrossbowProficiency = currentSave.player.abilities.ContainsKey("Crossbow Proficiency");
+                    var hasGunProficiency = currentSave.player.abilities.ContainsKey("Gun Proficiency");
+                    if (hasBowProficiency || hasCrossbowProficiency || hasGunProficiency)
+                        if (group.regions.Count == 4)
+                        {
+                            overlays.Add(AddSmallButtonOverlay(CDesktop.windows.Find(x => x.title == "PlayerWeaponsInfo").regionGroups[0].regions[1].gameObject, "OtherCompareSlot", 0, 2));
+                            overlays.Add(AddSmallButtonOverlay(CDesktop.windows.Find(x => x.title == "PlayerWeaponsInfo").regionGroups[0].regions[2].gameObject, "OtherCompareSlot", 0, 2));
+                        }
+                        else overlays.Add(AddSmallButtonOverlay(CDesktop.windows.Find(x => x.title == "PlayerWeaponsInfo").regionGroups[0].regions[1].gameObject, "OtherCompareSlot", 0, 2));
+                    else
+                    {
+                        if (group.regions.Count == 3)
+                        {
+                            overlays.Add(AddSmallButtonOverlay(CDesktop.windows.Find(x => x.title == "PlayerWeaponsInfo").regionGroups[0].regions[1].gameObject, "OtherCompareSlot", 0, 2));
+                            overlays.Add(AddSmallButtonOverlay(CDesktop.windows.Find(x => x.title == "PlayerWeaponsInfo").regionGroups[0].regions[2].gameObject, "OtherCompareSlot", 0, 2));
+                        }
+                        else overlays.Add(AddSmallButtonOverlay(CDesktop.windows.Find(x => x.title == "PlayerWeaponsInfo").regionGroups[0].regions[1].gameObject, "OtherCompareSlot", 0, 2));
+                    }
+                }
+                else if (item.type == "One Handed")
+                {
+                    var group = CDesktop.windows.Find(x => x.title == "PlayerWeaponsInfo").regionGroups[0];
+                    var hasBowProficiency = currentSave.player.abilities.ContainsKey("Bow Proficiency");
+                    var hasCrossbowProficiency = currentSave.player.abilities.ContainsKey("Crossbow Proficiency");
+                    var hasGunProficiency = currentSave.player.abilities.ContainsKey("Gun Proficiency");
+                    if (!Input.GetKey(KeyCode.LeftAlt)) overlays.Add(AddSmallButtonOverlay(CDesktop.windows.Find(x => x.title == "PlayerWeaponsInfo").regionGroups[0].regions[1].gameObject, "OtherCompareSlot", 0, 2));
+                    else if (hasBowProficiency || hasCrossbowProficiency || hasGunProficiency)
+                        if (group.regions.Count == 4) overlays.Add(AddSmallButtonOverlay(CDesktop.windows.Find(x => x.title == "PlayerWeaponsInfo").regionGroups[0].regions[2].gameObject, "OtherCompareSlot", 0, 2));
+                        else overlays.Add(AddSmallButtonOverlay(CDesktop.windows.Find(x => x.title == "PlayerWeaponsInfo").regionGroups[0].regions[1].gameObject, "OtherCompareSlot", 0, 2));
+                    else
+                    {
+                        if (group.regions.Count == 3) overlays.Add(AddSmallButtonOverlay(CDesktop.windows.Find(x => x.title == "PlayerWeaponsInfo").regionGroups[0].regions[2].gameObject, "OtherCompareSlot", 0, 2));
+                        else overlays.Add(AddSmallButtonOverlay(CDesktop.windows.Find(x => x.title == "PlayerWeaponsInfo").regionGroups[0].regions[1].gameObject, "OtherCompareSlot", 0, 2));
+                    }
+                }
+                else if (item.type == "Off Hand")
+                {
+                    var group = CDesktop.windows.Find(x => x.title == "PlayerWeaponsInfo").regionGroups[0];
+                    var hasBowProficiency = currentSave.player.abilities.ContainsKey("Bow Proficiency");
+                    var hasCrossbowProficiency = currentSave.player.abilities.ContainsKey("Crossbow Proficiency");
+                    var hasGunProficiency = currentSave.player.abilities.ContainsKey("Gun Proficiency");
+                    if (hasBowProficiency || hasCrossbowProficiency || hasGunProficiency)
+                        if (group.regions.Count == 4) overlays.Add(AddSmallButtonOverlay(CDesktop.windows.Find(x => x.title == "PlayerWeaponsInfo").regionGroups[0].regions[2].gameObject, "OtherCompareSlot", 0, 2));
+                        else overlays.Add(AddSmallButtonOverlay(CDesktop.windows.Find(x => x.title == "PlayerWeaponsInfo").regionGroups[0].regions[1].gameObject, "OtherCompareSlot", 0, 2));
+                    else
+                    {
+                        if (group.regions.Count == 3) overlays.Add(AddSmallButtonOverlay(CDesktop.windows.Find(x => x.title == "PlayerWeaponsInfo").regionGroups[0].regions[2].gameObject, "OtherCompareSlot", 0, 2));
+                        else overlays.Add(AddSmallButtonOverlay(CDesktop.windows.Find(x => x.title == "PlayerWeaponsInfo").regionGroups[0].regions[1].gameObject, "OtherCompareSlot", 0, 2));
+                    }
+                }
+                else if (item.type == "Ranged Weapon")
+                {
+                    var hasBowProficiency = currentSave.player.abilities.ContainsKey("Bow Proficiency");
+                    var hasCrossbowProficiency = currentSave.player.abilities.ContainsKey("Crossbow Proficiency");
+                    var hasGunProficiency = currentSave.player.abilities.ContainsKey("Gun Proficiency");
+                    if (hasBowProficiency || hasCrossbowProficiency || hasGunProficiency)
+                        overlays.Add(AddSmallButtonOverlay(CDesktop.windows.Find(x => x.title == "PlayerWeaponsInfo").regionGroups[0].regions.Last().gameObject, "OtherCompareSlot", 0, 2));
+                }
+                var button = CDesktop.LBWindow().LBRegionGroup().LBRegion().LBSmallButton();
+                foreach (var overlay in overlays)
+                {
+                    overlay.transform.SetParent(button.transform, true);
+                    overlay.transform.position += new Vector3(-81.5f, -131.5f);
+                }
+            }
             if (settings.rarityIndicators.Value())
                 AddSmallButtonOverlay("OtherRarity" + item.rarity, 0, 2);
         });
@@ -1458,11 +1542,19 @@ public class Item
             Item current = null;
             Item currentSecond = null;
             if (currentSave != null)
-                if (item.type == "Two Handed" || item.type == "One Handed" && Input.GetKey(KeyCode.LeftAlt) || item.type == "Off Hand")
+                if (item.type == "Two Handed" || item.type == "Off Hand")
                 {
                     current = currentSave.player.equipment.Get("Main Hand");
                     currentSecond = currentSave.player.equipment.Get("Off Hand");
                 }
+                else if (item.type == "One Handed" && Input.GetKey(KeyCode.LeftAlt))
+                {
+                    current = currentSave.player.equipment.Get("Main Hand");
+                    if (current != null && current.type != "Two Handed") current = null;
+                    currentSecond = currentSave.player.equipment.Get("Off Hand");
+                }
+                else if (item.type == "One Handed" && !Input.GetKey(KeyCode.LeftAlt))
+                    current = currentSave.player.equipment.Get("Main Hand");
                 else if (currentSave.player.equipment.ContainsKey(item.type))
                     current = currentSave.player.equipment[item.type];
             AddHeaderRegion(() => AddLine("Stat changes on equip:", "DarkGray"));
