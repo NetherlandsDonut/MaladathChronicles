@@ -52,6 +52,11 @@ public class Highlightable : MonoBehaviour
         else if (pressedState != "None") cursor.SetCursor(Click);
         else if (gameObject.name == "FishingPool") cursor.SetCursor(Hook);
         render.color = defaultColor - new Color(0.1f, 0.1f, 0.1f, 0);
+        HoverOverSite();
+    }
+
+    public void HoverOverSite()
+    {
         if (window != null && window.title.StartsWith("Site: "))
         {
             if (debug && Input.GetKey(KeyCode.LeftAlt))
@@ -68,10 +73,10 @@ public class Highlightable : MonoBehaviour
     {
         if (cursor.IsNow(None)) return;
         SetMouseOver(null);
+        Root.tooltip = null;
         if (CloseWindow("Tooltip") && spellbookResourceBars != null)
             foreach (var bar in spellbookResourceBars)
                 if (bar.Value != null) bar.Value.UpdateFluidBar();
-        Root.tooltip = null;
         if (cursor.IsNow(Click) || cursor.IsNow(Write) || cursor.IsNow(Hook))
             cursor.SetCursor(Default);
         render.color = defaultColor;

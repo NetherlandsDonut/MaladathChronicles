@@ -152,6 +152,7 @@ public class SiteArea : Site
             },
             (h) =>
             {
+                if (!canDrawPaths) return;
                 if (sitePathBuilder != null) return;
                 if (h == null) LeadPath();
                 else ExecutePath("Area");
@@ -234,7 +235,7 @@ public class SiteArea : Site
                     AddEmptyRegion();
                     foreach (var quest in q)
                     {
-                        var ogQuest = Quest.quests.Find(x => x.questID == quest.questID);
+                        var ogQuest = quests.Find(x => x.questID == quest.questID);
                         var con = quest.conditions.FindAll(x => !x.IsDone() && x.Where(false).Contains(this));
                         AddPaddingRegion(() =>
                         {
@@ -251,8 +252,7 @@ public class SiteArea : Site
             },
             (h) =>
             {
-                if (debug)
-                    BuildPath();
+                if (debug) BuildPath();
             });
             var news = currentSave.player.AvailableQuestsAt(this);
             sitesWithQuestMarkers.Remove(this);

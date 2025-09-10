@@ -109,6 +109,7 @@ public class SiteComplex : Site
             },
             (h) =>
             {
+                if (!canDrawPaths) return;
                 if (sitePathBuilder != null) return;
                 if (h == null) LeadPath();
                 else ExecutePath("Complex");

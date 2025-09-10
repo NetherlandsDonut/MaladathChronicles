@@ -3670,9 +3670,9 @@
       }
     },
     "hour": 7,
-    "minute": 32,
-    "second": 29,
-    "currentSite": "Shadowfang Keep",
+    "minute": 39,
+    "second": 1,
+    "currentSite": "Dalaran Mage Camp",
     "generatedBossPools": {
       "<Forlorn Cloister>": "Fallen Champion",
       "<Ring of Law>": "Eviscerator"
@@ -4566,7 +4566,7 @@
           "item": "Shortsword",
           "amount": 1,
           "maxAmount": 2,
-          "minutesLeft": 32,
+          "minutesLeft": 25,
           "restockSpeed": 40
         },
         {
@@ -4579,7 +4579,7 @@
           "item": "Hand Axe",
           "amount": 1,
           "maxAmount": 2,
-          "minutesLeft": 32,
+          "minutesLeft": 25,
           "restockSpeed": 40
         },
         {
@@ -4598,7 +4598,7 @@
           "item": "Large Club",
           "amount": 1,
           "maxAmount": 2,
-          "minutesLeft": 32,
+          "minutesLeft": 25,
           "restockSpeed": 40
         }
       ],
@@ -4855,7 +4855,7 @@
           "item": "Dented Buckler",
           "amount": 1,
           "maxAmount": 2,
-          "minutesLeft": 31,
+          "minutesLeft": 24,
           "restockSpeed": 40
         }
       ]
@@ -4873,7 +4873,7 @@
           "ilvl": 40,
           "lvl": 1,
           "amount": 6,
-          "minutesLeft": 21,
+          "minutesLeft": 14,
           "maxStack": 20,
           "price": 250
         },
@@ -4887,7 +4887,7 @@
           "ilvl": 50,
           "lvl": 1,
           "amount": 1,
-          "minutesLeft": 21,
+          "minutesLeft": 14,
           "maxStack": 20,
           "price": 500
         },
@@ -4901,7 +4901,7 @@
           "source": "RareDrop",
           "ilvl": 55,
           "amount": 1,
-          "minutesLeft": 21,
+          "minutesLeft": 14,
           "maxStack": 5,
           "abilities": {
             "Scroll of Spirit IV": 1
@@ -4925,9 +4925,9 @@
       "value": "False"
     },
     "startDate": "2025-08-27T08:06:53.5797226+02:00",
-    "lastLoaded": "2025-09-10T17:23:16.3248115+02:00",
-    "lastPlayed": "2025-09-10T17:26:06.4362675+02:00",
-    "timePlayed": "00:38:13.7424084"
+    "lastLoaded": "2025-09-10T17:51:55.4657564+02:00",
+    "lastPlayed": "2025-09-10T17:53:51.9844199+02:00",
+    "timePlayed": "00:40:10.2610719"
   },
   {
     "playerSide": "Alliance",

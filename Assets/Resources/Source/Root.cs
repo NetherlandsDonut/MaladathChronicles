@@ -42,8 +42,11 @@ public static class Root
     //Row for the icons in the chart
     public static Region iconRow;
 
-    //Determines whether this is the first launch of the game
+    //Informs whether this is the first launch of the game
     public static bool firstLaunch;
+
+    //Whether paths can be drawn
+    public static bool canDrawPaths = true;
 
     //List of the resource bars shown in the spellbook
     public static Dictionary<string, FluidBar> spellbookResourceBars;

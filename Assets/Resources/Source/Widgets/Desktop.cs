@@ -396,6 +396,17 @@ public class Desktop : MonoBehaviour
                 else
                 {
                     if (!disableCameraBounds) mapGrid.EnforceBoundary();
+                    var distance = Vector3.Distance(temp, cameraDestination);
+                    if (distance > 10) canDrawPaths = false;
+                    else
+                    {
+                        if (!canDrawPaths && mouseOver != null)
+                        {
+                            canDrawPaths = true;
+                            mouseOver.HoverOverSite();
+                        }
+                        else canDrawPaths = true;
+                    }
                     var newPosition = Vector3.Lerp(temp, cameraDestination, Time.deltaTime * 5);
                     cursor.transform.position += newPosition - temp;
                     screen.transform.localPosition = newPosition;
