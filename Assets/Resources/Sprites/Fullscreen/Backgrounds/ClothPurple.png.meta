@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ed95fc4723ef5cb4ca4754e77aada9de
+guid: 62e796b73f4d25a488035bc78940e5fb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,6 +129,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
     nameFileIdTable:
       PortraitZombiePale_0: 4910016540568515610
   mipmapLimitGroupName: 

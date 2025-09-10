@@ -3482,7 +3482,8 @@
           }
         },
         "Off Hand": {
-          "y": 1,
+          "x": -1,
+          "y": -1,
           "rarity": "Epic",
           "name": "Widow's Remorse",
           "icon": "itemsword60",
@@ -3583,8 +3584,8 @@
       }
     },
     "hour": 7,
-    "minute": 30,
-    "second": 59,
+    "minute": 31,
+    "second": 14,
     "currentSite": "Valley of Spears",
     "generatedBossPools": {
       "<Forlorn Cloister>": "Fallen Champion",
@@ -3909,7 +3910,7 @@
       "Northern Wastes": 1,
       "Thunder Axe Fortress": 1,
       "Valley of Bones": 1,
-      "Valley of Spears": 2,
+      "Valley of Spears": 3,
       "Chill Breeze Valley": 1,
       "Coldridge Pass": 1,
       "Coldridge Valley": 1,
@@ -4475,7 +4476,7 @@
           "item": "Shortsword",
           "amount": 1,
           "maxAmount": 2,
-          "minutesLeft": 34,
+          "minutesLeft": 33,
           "restockSpeed": 40
         },
         {
@@ -4488,7 +4489,7 @@
           "item": "Hand Axe",
           "amount": 1,
           "maxAmount": 2,
-          "minutesLeft": 34,
+          "minutesLeft": 33,
           "restockSpeed": 40
         },
         {
@@ -4507,7 +4508,7 @@
           "item": "Large Club",
           "amount": 1,
           "maxAmount": 2,
-          "minutesLeft": 34,
+          "minutesLeft": 33,
           "restockSpeed": 40
         }
       ],
@@ -4764,7 +4765,7 @@
           "item": "Dented Buckler",
           "amount": 1,
           "maxAmount": 2,
-          "minutesLeft": 33,
+          "minutesLeft": 32,
           "restockSpeed": 40
         }
       ]
@@ -4782,7 +4783,7 @@
           "ilvl": 40,
           "lvl": 1,
           "amount": 6,
-          "minutesLeft": 23,
+          "minutesLeft": 22,
           "maxStack": 20,
           "price": 250
         },
@@ -4796,7 +4797,7 @@
           "ilvl": 50,
           "lvl": 1,
           "amount": 1,
-          "minutesLeft": 23,
+          "minutesLeft": 22,
           "maxStack": 20,
           "price": 500
         },
@@ -4810,7 +4811,7 @@
           "source": "RareDrop",
           "ilvl": 55,
           "amount": 1,
-          "minutesLeft": 23,
+          "minutesLeft": 22,
           "maxStack": 5,
           "abilities": {
             "Scroll of Spirit IV": 1
@@ -4834,9 +4835,9 @@
       "value": "False"
     },
     "startDate": "2025-08-27T08:06:53.5797226+02:00",
-    "lastLoaded": "2025-09-10T00:12:07.876041+02:00",
-    "lastPlayed": "2025-09-10T00:15:41.9876323+02:00",
-    "timePlayed": "00:25:35.1429971"
+    "lastLoaded": "2025-09-10T15:05:44.6386534+02:00",
+    "lastPlayed": "2025-09-10T15:06:49.2299712+02:00",
+    "timePlayed": "00:26:39.7343149"
   },
   {
     "playerSide": "Alliance",

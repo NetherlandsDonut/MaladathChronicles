@@ -6311,8 +6311,8 @@
   {
     "name": "Doomwarder Captain",
     "category": "Demon",
-    "subcategory": "Doom Guard",
-    "portrait": "PortraitDoomguard",
+    "subcategory": "Fel Guard",
+    "portrait": "PortraitFelGuardYellow",
     "abilities": {},
     "kind": "Common",
     "vitality": 1.0
@@ -6773,7 +6773,7 @@
   {
     "name": "Felguard",
     "category": "Demon",
-    "subcategory": "Doom Guard",
+    "subcategory": "Fel Guard",
     "portrait": "PortraitFelGuard",
     "abilities": {},
     "kind": "Common",
@@ -6782,7 +6782,7 @@
   {
     "name": "Felguard Elite",
     "category": "Demon",
-    "subcategory": "Doom Guard",
+    "subcategory": "Fel Guard",
     "faction": "The Burning Legion",
     "portrait": "PortraitFelGuard",
     "abilities": {},
@@ -6792,7 +6792,7 @@
   {
     "name": "Jaedenar Legionnaire",
     "category": "Demon",
-    "subcategory": "Doom Guard",
+    "subcategory": "Fel Guard",
     "faction": "Shadow Council",
     "portrait": "PortraitFelGuard",
     "abilities": {},
@@ -6802,7 +6802,7 @@
   {
     "name": "Lesser Felguard",
     "category": "Demon",
-    "subcategory": "Doom Guard",
+    "subcategory": "Fel Guard",
     "portrait": "PortraitFelGuard",
     "abilities": {},
     "kind": "Common",
@@ -6811,7 +6811,7 @@
   {
     "name": "Kaskk",
     "category": "Demon",
-    "subcategory": "Doom Guard",
+    "subcategory": "Fel Guard",
     "portrait": "PortraitFelGuardBlack",
     "abilities": {},
     "kind": "Rare",
@@ -6820,8 +6820,7 @@
   {
     "name": "Taragaman the Hungerer",
     "category": "Demon",
-    "subcategory": "Doom Guard",
-    "faction": "Burning Blade Clan",
+    "subcategory": "Fel Guard",
     "portrait": "PortraitFelGuardBlack",
     "abilities": {},
     "kind": "Elite",
@@ -6830,7 +6829,7 @@
   {
     "name": "Rathorian",
     "category": "Demon",
-    "subcategory": "Doom Guard",
+    "subcategory": "Fel Guard",
     "portrait": "PortraitFelGuardBlack",
     "abilities": {},
     "kind": "Rare",
@@ -6839,7 +6838,7 @@
   {
     "name": "Hederine Slayer",
     "category": "Demon",
-    "subcategory": "Doom Guard",
+    "subcategory": "Fel Guard",
     "faction": "The Burning Legion",
     "portrait": "PortraitFelGuardYellow",
     "abilities": {},
@@ -11892,17 +11891,18 @@
     "portrait": "PortraitLadyIlluciaBarov",
     "abilities": {},
     "kind": "Elite",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 3.0
   },
   {
     "name": "Lady Moongazer",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Ghost",
     "portrait": "PortraitLadyMoongazer",
+    "voice": "Night Elf",
     "abilities": {},
     "kind": "Rare",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 2.0
   },
   {
@@ -12173,8 +12173,8 @@
   },
   {
     "name": "Lethon",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Dragonkin",
+    "subcategory": "GreenDragon",
     "portrait": "PortraitLethon",
     "abilities": {
       "Tail Sweep": 0,
@@ -12190,7 +12190,7 @@
   {
     "name": "Lethtendris",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Blood Elf",
     "portrait": "PortraitLethtendris",
     "abilities": {},
     "kind": "Elite",
@@ -12199,8 +12199,8 @@
   },
   {
     "name": "Amnennar the Coldbringer",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Lich",
     "faction": "Scourge",
     "portrait": "PortraitLich",
     "abilities": {},
@@ -12210,8 +12210,8 @@
   },
   {
     "name": "Araj the Summoner",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Lich",
     "faction": "Scourge",
     "portrait": "PortraitLich",
     "abilities": {},
@@ -12221,8 +12221,8 @@
   },
   {
     "name": "Ras Frostwhisper",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Lich",
     "faction": "Scourge",
     "portrait": "PortraitLich",
     "abilities": {},
@@ -12242,8 +12242,8 @@
   },
   {
     "name": "The Rake",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Beast",
+    "subcategory": "Cat",
     "portrait": "PortraitLion",
     "abilities": {},
     "kind": "Rare",
@@ -12284,8 +12284,9 @@
   {
     "name": "Lord Kazzak",
     "category": "Demon",
-    "subcategory": "Doom Guard",
+    "subcategory": "Doom Lord",
     "faction": "The Burning Legion",
+    "voice": "Doom Guard",
     "portrait": "PortraitLordKazzak",
     "abilities": {},
     "kind": "Elite",
@@ -12296,6 +12297,7 @@
     "name": "Lord Maldazzar",
     "category": "Humanoid",
     "subcategory": "Human",
+    "faction": "Scourge",
     "portrait": "PortraitLordMaldazzar",
     "abilities": {},
     "kind": "Rare",
@@ -12314,7 +12316,7 @@
   },
   {
     "name": "Lord Serpentis",
-    "category": "Beast",
+    "category": "Humanoid",
     "subcategory": "Night Elf",
     "portrait": "PortraitLordSerpentis",
     "abilities": {},
@@ -12323,8 +12325,8 @@
   },
   {
     "name": "Lord Victor Nefarius",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Dragonkin",
+    "subcategory": "BlackDragon",
     "portrait": "PortraitLordVictorNefarius",
     "abilities": {},
     "kind": "Elite",
@@ -12333,8 +12335,8 @@
   },
   {
     "name": "Lord Vyletongue",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Demon",
+    "subcategory": "Satyr",
     "portrait": "PortraitLordVyletongue",
     "abilities": {},
     "kind": "Elite",
@@ -14097,8 +14099,8 @@
   },
   {
     "name": "Balnazzar",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Demon",
+    "subcategory": "Dread Lord",
     "faction": "Scourge",
     "portrait": "PortraitNatherezim",
     "abilities": {},
@@ -14108,8 +14110,8 @@
   },
   {
     "name": "Diathorus the Seeker",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Demon",
+    "subcategory": "Dread Lord",
     "portrait": "PortraitNatherezim",
     "abilities": {},
     "kind": "Elite",
@@ -14118,8 +14120,8 @@
   },
   {
     "name": "Lord Banehollow",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Demon",
+    "subcategory": "Dread Lord",
     "faction": "Shadow Council",
     "portrait": "PortraitNatherezim",
     "abilities": {},
@@ -14129,8 +14131,8 @@
   },
   {
     "name": "Dreadlord",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Demon",
+    "subcategory": "Dread Lord",
     "portrait": "PortraitNatherezim",
     "abilities": {},
     "kind": "Common",

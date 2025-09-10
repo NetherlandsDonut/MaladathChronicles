@@ -3322,6 +3322,7 @@ public class Blueprint
                             openedItem = null;
                             PlaySound("DesktopInventoryClose");
                             CloseDesktop("ContainerLoot");
+                            SpawnDesktopBlueprint("EquipmentScreen");
                         });
                     }
                     else if (CDesktop.title == "DisenchantLoot")
@@ -6691,16 +6692,13 @@ public class Blueprint
                     CloseWindow("QuestTurn");
                     CloseWindow("QuestConfirmAbandon");
                 }
-                if (CDesktop.title != "ContainerLoot")
+                if (CDesktop.title != "EquipmentScreen")
+                    SpawnDesktopBlueprint("EquipmentScreen");
+                else
                 {
-                    if (CDesktop.title != "EquipmentScreen")
-                        SpawnDesktopBlueprint("EquipmentScreen");
-                    else
-                    {
-                        CloseDesktop(CDesktop.title);
-                        SwitchToMostImportantDesktop();
-                        PlaySound("DesktopInventoryClose");
-                    }
+                    CloseDesktop(CDesktop.title);
+                    SwitchToMostImportantDesktop();
+                    PlaySound("DesktopInventoryClose");
                 }
             });
             AddHotkey("Open bestiary", () =>
@@ -6855,8 +6853,7 @@ public class Blueprint
                         PlaySound("DesktopCharacterSheetClose");
                     }
                 });
-                if (CDesktop.title != "ContainerLoot")
-                    AddSmallButton(CDesktop.title == "EquipmentScreen" ? "OtherClose" : "MenuInventory", (h) =>
+                AddSmallButton(CDesktop.title == "EquipmentScreen" ? "OtherClose" : "MenuInventory", (h) =>
                     {
                         CloseDesktop("BestiaryScreen");
                         CloseDesktop("SpellbookScreen");
@@ -6885,7 +6882,6 @@ public class Blueprint
                                 PlaySound("DesktopInventoryClose");
                             }
                     });
-                else AddSmallButton("OtherCloseOff");
                 AddSmallButton(CDesktop.title == "SpellbookScreen" ? "OtherClose" : "MenuSpellbook", (h) =>
                 {
                     CloseDesktop("BestiaryScreen");
@@ -8787,6 +8783,7 @@ public class Blueprint
         new("ContainerLoot", () =>
         {
             SetDesktopBackground("Backgrounds/Leather");
+            PlaySound("DesktopInventoryOpen");
             SpawnWindowBlueprint("MapToolbarShadow");
             SpawnWindowBlueprint("MapToolbarClockLeft");
             SpawnWindowBlueprint("MapToolbar");
