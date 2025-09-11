@@ -3670,9 +3670,9 @@
       }
     },
     "hour": 7,
-    "minute": 39,
-    "second": 1,
-    "currentSite": "Dalaran Mage Camp",
+    "minute": 41,
+    "second": 21,
+    "currentSite": "The Undercroft",
     "generatedBossPools": {
       "<Forlorn Cloister>": "Fallen Champion",
       "<Ring of Law>": "Eviscerator"
@@ -4100,7 +4100,7 @@
       "Terrorweb Tunnel": 1,
       "The Infectis Scar": 1,
       "The Marris Stead": 1,
-      "The Undercroft": 1,
+      "The Undercroft": 4,
       "The Noxious Glade": 1,
       "Thondroril River": 1,
       "Zul'Mashar": 1,
@@ -4566,7 +4566,7 @@
           "item": "Shortsword",
           "amount": 1,
           "maxAmount": 2,
-          "minutesLeft": 25,
+          "minutesLeft": 23,
           "restockSpeed": 40
         },
         {
@@ -4579,7 +4579,7 @@
           "item": "Hand Axe",
           "amount": 1,
           "maxAmount": 2,
-          "minutesLeft": 25,
+          "minutesLeft": 23,
           "restockSpeed": 40
         },
         {
@@ -4598,7 +4598,7 @@
           "item": "Large Club",
           "amount": 1,
           "maxAmount": 2,
-          "minutesLeft": 25,
+          "minutesLeft": 23,
           "restockSpeed": 40
         }
       ],
@@ -4855,7 +4855,7 @@
           "item": "Dented Buckler",
           "amount": 1,
           "maxAmount": 2,
-          "minutesLeft": 24,
+          "minutesLeft": 22,
           "restockSpeed": 40
         }
       ]
@@ -4873,7 +4873,7 @@
           "ilvl": 40,
           "lvl": 1,
           "amount": 6,
-          "minutesLeft": 14,
+          "minutesLeft": 12,
           "maxStack": 20,
           "price": 250
         },
@@ -4887,7 +4887,7 @@
           "ilvl": 50,
           "lvl": 1,
           "amount": 1,
-          "minutesLeft": 14,
+          "minutesLeft": 12,
           "maxStack": 20,
           "price": 500
         },
@@ -4901,7 +4901,7 @@
           "source": "RareDrop",
           "ilvl": 55,
           "amount": 1,
-          "minutesLeft": 14,
+          "minutesLeft": 12,
           "maxStack": 5,
           "abilities": {
             "Scroll of Spirit IV": 1
@@ -4925,9 +4925,9 @@
       "value": "False"
     },
     "startDate": "2025-08-27T08:06:53.5797226+02:00",
-    "lastLoaded": "2025-09-10T17:51:55.4657564+02:00",
-    "lastPlayed": "2025-09-10T17:53:51.9844199+02:00",
-    "timePlayed": "00:40:10.2610719"
+    "lastLoaded": "2025-09-11T00:46:07.2988066+02:00",
+    "lastPlayed": "2025-09-11T00:47:56.1816703+02:00",
+    "timePlayed": "00:41:59.1439356"
   },
   {
     "playerSide": "Alliance",

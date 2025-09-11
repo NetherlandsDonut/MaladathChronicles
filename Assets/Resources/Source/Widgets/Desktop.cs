@@ -150,6 +150,7 @@ public class Desktop : MonoBehaviour
     {
         if (GetKey(KeyCode.LeftControl) && GetKeyDown(KeyCode.S)) GameSettings.settings.soundEffects.Invert();
         if (GetKey(KeyCode.LeftControl) && GetKeyDown(KeyCode.M)) GameSettings.settings.music.Invert();
+        var wasTooltipThere = WindowUp("Tooltip");
         if (GetKeyDown(KeyCode.LeftShift) || GetKeyUp(KeyCode.LeftShift) || GetKeyDown(KeyCode.LeftControl) || GetKeyUp(KeyCode.LeftControl) || GetKeyDown(KeyCode.LeftAlt) || GetKeyUp(KeyCode.LeftAlt)) CloseWindow("Tooltip");
         if (mouseOver != null)
         {
@@ -506,7 +507,7 @@ public class Desktop : MonoBehaviour
                 {
                     tooltipChanneling -= Time.deltaTime;
                     if (tooltipChanneling <= 0 && tooltip.caller != null && tooltip.caller() != null)
-                        tooltip.SpawnTooltip();
+                        tooltip.SpawnTooltip(wasTooltipThere);
                 }
                 if (keyTimer > 0) keyTimer -= Time.deltaTime;
                 if (inputLineWindow != null)

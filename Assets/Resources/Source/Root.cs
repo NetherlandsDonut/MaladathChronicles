@@ -684,8 +684,6 @@ public static class Root
         if (sprite == null) Debug.Log("ERROR 004: Desktop background not found: \"Sprites/Fullscreen/" + texture + "\"");
         else if (temp.sprite != sprite)
         {
-            if (temp.sprite != null)
-                SpawnTransition();
             temp.sprite = sprite;
             temp.sortingLayerName = "DesktopBackground" + (upperBackground ? "Upper" : "");
             if (followCamera) temp.GetComponent<BoxCollider2D>().enabled = upperBackground;
@@ -771,6 +769,8 @@ public static class Root
     public static bool CloseWindow(Window window, bool resetPagination = true)
     {
         if (window == null) return false;
+        if (window.title == "Tooltip" && WindowUp("QuestList"))
+            SetDesktopBackground("Backgrounds/RuggedLeather", true, true);
         if (resetPagination && staticPagination.ContainsKey(window.title))
             staticPagination.Remove(window.title);
         CDesktop.windows.Remove(window);

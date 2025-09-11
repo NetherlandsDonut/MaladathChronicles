@@ -49978,20 +49978,6 @@
   },
   {
     "rarity": "Rare",
-    "name": "Codex: Prayer of Fortitude II",
-    "icon": "itemmiscbook09",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "source": "RareDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "specs": [
-      "Priest"
-    ],
-    "price": 14750
-  },
-  {
-    "rarity": "Rare",
     "name": "Knight-Captain's Dreadweave Belt",
     "icon": "itembelt22",
     "type": "Waist",
@@ -54949,20 +54935,6 @@
       "Mage",
       "Warlock"
     ]
-  },
-  {
-    "rarity": "Rare",
-    "name": "Codex: Prayer of Shadow Protection",
-    "icon": "itemmiscbook09",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "source": "RareDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "specs": [
-      "Priest"
-    ],
-    "price": 14750
   },
   {
     "rarity": "Rare",
@@ -65887,20 +65859,6 @@
       "Agility": 12,
       "Stamina": 6
     }
-  },
-  {
-    "rarity": "Rare",
-    "name": "Tome of Arcane Brilliance",
-    "icon": "itemmiscbook07",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "source": "RareDrop",
-    "ilvl": 56,
-    "maxStack": 1,
-    "specs": [
-      "Mage"
-    ],
-    "price": 12000
   },
   {
     "rarity": "Rare",
@@ -85558,20 +85516,6 @@
     "ilvl": 48,
     "maxStack": 20,
     "price": 175
-  },
-  {
-    "rarity": "Rare",
-    "name": "Codex: Prayer of Fortitude",
-    "icon": "itemmiscbook09",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "source": "RareDrop",
-    "ilvl": 48,
-    "maxStack": 1,
-    "specs": [
-      "Priest"
-    ],
-    "price": 7750
   },
   {
     "rarity": "Uncommon",

@@ -1382,7 +1382,7 @@ public class Item
         if (WindowUp("InventorySort")) return;
         if (WindowUp("BankSort")) return;
         if (CDesktop.title == "Game") SetAnchor(Anchor.Bottom, 0, 37);
-        else SetAnchor(-92, 142);
+        else SetAnchor(Anchor.Top, 0, -38);
         AddHeaderGroup();
         SetRegionGroupWidth(182);
         if (Input.GetKey(KeyCode.LeftControl) && item.type == "Recipe")

@@ -534,7 +534,7 @@
   {
     "name": "Athrikus Narassin",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Night Elf",
     "portrait": "PortraitAthrikusNarassin",
     "abilities": {},
     "kind": "Elite",
@@ -543,18 +543,19 @@
   },
   {
     "name": "Azshir the Sleepless",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Ghost",
     "portrait": "PortraitAzshir",
     "abilities": {},
     "kind": "Elite",
+    "voice": "Human",
     "gender": "Male",
     "vitality": 3.0
   },
   {
     "name": "Bael'dun Appraiser",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Dwarf",
     "portrait": "PortraitBaeldunAppraiser",
     "abilities": {},
     "kind": "Common",
@@ -564,7 +565,7 @@
   {
     "name": "Bael'dun Digger",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Dwarf",
     "portrait": "PortraitBaeldunDigger",
     "abilities": {},
     "kind": "Common",
@@ -574,8 +575,7 @@
   {
     "name": "Bael'dun Excavator",
     "category": "Humanoid",
-    "subcategory": "Human",
-    "faction": "Dark Iron Clan",
+    "subcategory": "Dwarf",
     "portrait": "PortraitBaeldunExcavator",
     "abilities": {},
     "kind": "Common",
@@ -585,8 +585,7 @@
   {
     "name": "Bael'dun Foreman",
     "category": "Humanoid",
-    "subcategory": "Human",
-    "faction": "Dark Iron Clan",
+    "subcategory": "Dwarf",
     "portrait": "PortraitBaeldunForeman",
     "abilities": {},
     "kind": "Common",
@@ -596,8 +595,7 @@
   {
     "name": "Bael'dun Officer",
     "category": "Humanoid",
-    "subcategory": "Human",
-    "faction": "Dark Iron Clan",
+    "subcategory": "Dwarf",
     "portrait": "PortraitBaeldunOfficer",
     "abilities": {},
     "kind": "Common",
@@ -607,8 +605,7 @@
   {
     "name": "Bael'dun Rifleman",
     "category": "Humanoid",
-    "subcategory": "Human",
-    "faction": "Dark Iron Clan",
+    "subcategory": "Dwarf",
     "portrait": "PortraitBaeldunRifleman",
     "abilities": {},
     "kind": "Common",
@@ -618,8 +615,7 @@
   {
     "name": "Bael'dun Soldier",
     "category": "Humanoid",
-    "subcategory": "Human",
-    "faction": "Dark Iron Clan",
+    "subcategory": "Dwarf",
     "portrait": "PortraitBaeldunSoldier",
     "abilities": {},
     "kind": "Common",
@@ -743,22 +739,22 @@
   },
   {
     "name": "Baron Rivendare",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Death Knight",
     "faction": "Scourge",
     "portrait": "PortraitBaronRivendare",
     "abilities": {},
     "kind": "Elite",
-    "gender": "Male",
-    "vitality": 3.0
+    "vitality": 5.0
   },
   {
     "name": "Baron Silverlaine",
-    "category": "Humanoid",
-    "subcategory": "Human",
+    "category": "Undead",
+    "subcategory": "Ghost",
     "portrait": "PortraitBaronSilverlaine",
     "abilities": {},
     "kind": "Elite",
+    "voice": "Human",
     "gender": "Male",
     "vitality": 3.0
   },
@@ -1269,15 +1265,6 @@
   },
   {
     "name": "Elder Gray Bear",
-    "category": "Beast",
-    "subcategory": "Bear",
-    "portrait": "PortraitBearGray",
-    "abilities": {},
-    "kind": "Common",
-    "vitality": 1.0
-  },
-  {
-    "name": "Goblin",
     "category": "Beast",
     "subcategory": "Bear",
     "portrait": "PortraitBearGray",
@@ -14643,7 +14630,7 @@
     "name": "Gordunni Battlemaster",
     "category": "Humanoid",
     "subcategory": "Ogre",
-    "portrait": "PortraitOgrePaleArmored",
+    "portrait": "PortraitOgreBlue",
     "abilities": {},
     "kind": "Common",
     "vitality": 1.0
@@ -14724,7 +14711,7 @@
     "name": "Spirestone Warlord",
     "category": "Humanoid",
     "subcategory": "Ogre",
-    "portrait": "PortraitOgre",
+    "portrait": "PortraitOgreAlternate",
     "abilities": {},
     "kind": "Common",
     "vitality": 1.0
@@ -14733,16 +14720,16 @@
     "name": "Splinter Fist Enslaver",
     "category": "Humanoid",
     "subcategory": "Ogre",
-    "portrait": "PortraitOgre",
+    "portrait": "PortraitOgreAlternateTwoheads",
     "abilities": {},
     "kind": "Common",
     "vitality": 1.0
   },
   {
-    "name": "Splinter Fist Fire Monger",
+    "name": "Splinter Fist Firemonger",
     "category": "Humanoid",
     "subcategory": "Ogre",
-    "portrait": "PortraitOgre",
+    "portrait": "PortraitOgreAlternateTwoheads",
     "abilities": {},
     "kind": "Common",
     "vitality": 1.0
@@ -14751,7 +14738,7 @@
     "name": "Splinter Fist Fire Weaver",
     "category": "Humanoid",
     "subcategory": "Ogre",
-    "portrait": "PortraitOgre",
+    "portrait": "PortraitOgreAlternateTwoheads",
     "abilities": {},
     "kind": "Common",
     "vitality": 1.0
@@ -14760,7 +14747,7 @@
     "name": "Splinter Fist Ogre",
     "category": "Humanoid",
     "subcategory": "Ogre",
-    "portrait": "PortraitOgre",
+    "portrait": "PortraitOgreAlternate",
     "abilities": {},
     "kind": "Common",
     "vitality": 1.0
@@ -14769,7 +14756,7 @@
     "name": "Splinter Fist Taskmaster",
     "category": "Humanoid",
     "subcategory": "Ogre",
-    "portrait": "PortraitOgre",
+    "portrait": "PortraitOgreAlternate",
     "abilities": {},
     "kind": "Common",
     "vitality": 1.0
@@ -14778,7 +14765,7 @@
     "name": "Splinter Fist Warrior",
     "category": "Humanoid",
     "subcategory": "Ogre",
-    "portrait": "PortraitOgre",
+    "portrait": "PortraitOgreAlternate",
     "abilities": {},
     "kind": "Common",
     "vitality": 1.0
@@ -24768,6 +24755,7 @@
     "name": "Zekkis",
     "category": "Humanoid",
     "subcategory": "Troll",
+    "faction": "Atal'ai Tribe",
     "portrait": "PortraitZekkis",
     "abilities": {},
     "kind": "Elite",
@@ -24778,6 +24766,7 @@
     "name": "Zerillis",
     "category": "Humanoid",
     "subcategory": "Troll",
+    "faction": "Sandfury Tribe",
     "portrait": "PortraitZerillis",
     "abilities": {},
     "kind": "Rare",
@@ -25011,6 +25000,8 @@
     "faction": "Sandfury Tribe",
     "portrait": "PortraitZulFarrakDeadHero",
     "abilities": {},
+    "voice": "Troll",
+    "gender": "Male",
     "kind": "Common",
     "vitality": 1.0
   },
@@ -25019,8 +25010,10 @@
     "category": "Undead",
     "subcategory": "Zombie",
     "faction": "Mossflayer Tribe",
-    "portrait": "PortraitZulFarrakZombie",
+    "portrait": "PortraitInfectedMossflayer",
     "abilities": {},
+    "voice": "Troll",
+    "gender": "Male",
     "kind": "Common",
     "vitality": 1.0
   },
@@ -25029,8 +25022,10 @@
     "category": "Undead",
     "subcategory": "Zombie",
     "faction": "Mossflayer Tribe",
-    "portrait": "PortraitZulFarrakZombie",
+    "portrait": "PortraitMossflayerZombie",
     "abilities": {},
+    "voice": "Troll",
+    "gender": "Male",
     "kind": "Common",
     "vitality": 1.0
   },
@@ -25039,8 +25034,10 @@
     "category": "Undead",
     "subcategory": "Zombie",
     "faction": "Atal'ai Tribe",
-    "portrait": "PortraitZulFarrakZombie",
+    "portrait": "PortraitMummifiedAtalai",
     "abilities": {},
+    "voice": "Troll",
+    "gender": "Female",
     "kind": "Common",
     "vitality": 1.0
   },
@@ -25049,8 +25046,10 @@
     "category": "Undead",
     "subcategory": "Zombie",
     "faction": "Mossflayer Tribe",
-    "portrait": "PortraitZulFarrakZombie",
+    "portrait": "PortraitInfectedMossflayer",
     "abilities": {},
+    "voice": "Troll",
+    "gender": "Male",
     "kind": "Common",
     "vitality": 1.0
   },
@@ -25062,6 +25061,8 @@
     "portrait": "PortraitZulFarrakZombie",
     "abilities": {},
     "kind": "Common",
+    "voice": "Troll",
+    "gender": "Male",
     "vitality": 1.0
   },
   {

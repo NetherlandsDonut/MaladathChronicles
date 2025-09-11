@@ -6854,34 +6854,33 @@ public class Blueprint
                     }
                 });
                 AddSmallButton(CDesktop.title == "EquipmentScreen" ? "OtherClose" : "MenuInventory", (h) =>
+                {
+                    CloseDesktop("BestiaryScreen");
+                    CloseDesktop("SpellbookScreen");
+                    CloseDesktop("TalentScreen");
+                    CloseDesktop("CraftingScreen");
+                    CloseDesktop("CharacterSheet");
+                    if (WindowUp("QuestList"))
                     {
-                        CloseDesktop("BestiaryScreen");
-                        CloseDesktop("SpellbookScreen");
-                        CloseDesktop("TalentScreen");
-                        CloseDesktop("CraftingScreen");
-                        CloseDesktop("CharacterSheet");
-                        if (WindowUp("QuestList"))
-                        {
-                            quest = null;
-                            RemoveDesktopBackground();
-                            CloseWindow("QuestList");
-                            CloseWindow("QuestSettings");
-                            CloseWindow("QuestSort");
-                            CloseWindow("Quest");
-                            CloseWindow("QuestAdd");
-                            CloseWindow("QuestTurn");
-                            CloseWindow("QuestConfirmAbandon");
-                        }
-                        if (desktops.All(x => x.title != "ContainerLoot"))
-                            if (CDesktop.title != "EquipmentScreen")
-                                SpawnDesktopBlueprint("EquipmentScreen");
-                            else
-                            {
-                                CloseDesktop(CDesktop.title);
-                                SwitchToMostImportantDesktop();
-                                PlaySound("DesktopInventoryClose");
-                            }
-                    });
+                        quest = null;
+                        RemoveDesktopBackground();
+                        CloseWindow("QuestList");
+                        CloseWindow("QuestSettings");
+                        CloseWindow("QuestSort");
+                        CloseWindow("Quest");
+                        CloseWindow("QuestAdd");
+                        CloseWindow("QuestTurn");
+                        CloseWindow("QuestConfirmAbandon");
+                    }
+                    if (CDesktop.title != "EquipmentScreen")
+                        SpawnDesktopBlueprint("EquipmentScreen");
+                    else
+                    {
+                        CloseDesktop(CDesktop.title);
+                        SwitchToMostImportantDesktop();
+                        PlaySound("DesktopInventoryClose");
+                    }
+                });
                 AddSmallButton(CDesktop.title == "SpellbookScreen" ? "OtherClose" : "MenuSpellbook", (h) =>
                 {
                     CloseDesktop("BestiaryScreen");
@@ -9782,7 +9781,6 @@ public class Blueprint
         }),
         new("EquipmentScreen", () =>
         {
-            openedItem = null;
             itemToDestroy = null;
             itemToDisenchant = null;
             PlaySound("DesktopInventoryOpen");
@@ -10093,6 +10091,61 @@ public class Blueprint
                 {
                     PlaySound("DesktopButtonClose");
                     SpawnWindowBlueprint("TitleScreenMenu");
+                }
+                else if (CloseWindow("TitleScreenLoadGameCharacterHeader"))
+                {
+                    PlaySound("DesktopButtonClose");
+                    SpawnTransition();
+                    RemoveDesktopBackground();
+                    CloseWindow("TitleScreenLoadGameCharacterInfo");
+                    CloseWindow("TitleScreenLoadGameBack");
+                    CloseWindow("TitleScreenLoadGameConfirm");
+                    CloseWindow("TitleScreenLoadGameScroller");
+                    SpawnWindowBlueprint("TitleScreenSingleplayer");
+                    var recentSave = saves.Count > 0 ? saves.OrderByDescending(x => x.lastLoaded).ToList()[0] : null;
+                    if (recentSave != null && !recentSave.player.dead)
+                        SpawnWindowBlueprint("TitleScreenContinue");
+                }
+                else if (CloseWindow("CharacterCreationSpec"))
+                {
+                    PlaySound("DesktopButtonClose");
+                    SpawnTransition();
+                    RemoveDesktopBackground();
+                    CloseWindow("CharacterCreationMasculinePortraits");
+                    CloseWindow("CharacterCreationFemininePortraits");
+                    CloseWindow("CharacterCreationFactionHorde");
+                    CloseWindow("CharacterCreationFactionAlliance");
+                    CloseWindow("TitleScreenNewSaveBack");
+                    CloseWindow("TitleScreenNewSaveFinish");
+                    SpawnWindowBlueprint("TitleScreenSingleplayer");
+                    var recentSave = saves.Count > 0 ? saves.OrderByDescending(x => x.lastLoaded).ToList()[0] : null;
+                    if (recentSave != null && !recentSave.player.dead)
+                        SpawnWindowBlueprint("TitleScreenContinue");
+                }
+                else if (CloseWindow("TitleScreenNewSaveGameRules"))
+                {
+                    PlaySound("DesktopButtonClose");
+                    SpawnTransition();
+                    CloseWindow("TitleScreenNewSaveGameRules");
+                    CloseWindow("TitleScreenNewSaveSummary");
+                    Respawn("CharacterCreationSpec");
+                    Respawn("CharacterCreationMasculinePortraits");
+                    Respawn("CharacterCreationFemininePortraits");
+                    Respawn("CharacterCreationFactionHorde");
+                    Respawn("CharacterCreationFactionAlliance");
+                    Respawn("TitleScreenNewSaveFinish");
+                }
+                else if (CloseWindow("TitleScreenNewSaveGameRules"))
+                {
+                    PlaySound("DesktopButtonClose");
+                    SpawnTransition();
+                    CloseWindow("TitleScreenNewSaveSummary");
+                    Respawn("CharacterCreationSpec");
+                    Respawn("CharacterCreationMasculinePortraits");
+                    Respawn("CharacterCreationFemininePortraits");
+                    Respawn("CharacterCreationFactionHorde");
+                    Respawn("CharacterCreationFactionAlliance");
+                    Respawn("TitleScreenNewSaveFinish");
                 }
                 else if (CloseWindow("TitleScreenFirstLaunch"))
                 {

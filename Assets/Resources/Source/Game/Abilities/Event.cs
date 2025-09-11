@@ -148,6 +148,16 @@ public class Event
             //This effect generates loot and opens it
             void EffectLoot()
             {
+                if (Item.openedItem == itemUsed)
+                {
+                    SpawnFallingText(new Vector2(0, 34), "You are already using this item", "Red");
+                    return;
+                }
+                if (Item.openedItem != null)
+                {
+                    SpawnFallingText(new Vector2(0, 34), "You are already using a different item", "Red");
+                    return;
+                }
                 var target = effector;
                 if (itemUsed.itemsInside == null)
                 {
@@ -219,6 +229,7 @@ public class Event
                 string destination = effect.ContainsKey("TeleportDestinaton") ? effect["TeleportDestinaton"] : "None";
                 if (destination == "None") return;
                 else if (destination == "<HomeLocation>") destination = save.player.homeLocation;
+                Item.openedItem = null;
                 CloseDesktop("EquipmentScreen");
                 CloseDesktop("Area");
                 SiteArea.area = null;
