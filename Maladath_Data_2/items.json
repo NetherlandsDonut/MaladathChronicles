@@ -15221,7 +15221,7 @@
     "icon": "itemaxe21",
     "detailedType": "Axe",
     "type": "Two Handed",
-    "source": "DirectDrop",
+    "source": "ZoneDrop",
     "ilvl": 71,
     "lvl": 60,
     "minPower": 6.44,
@@ -15231,10 +15231,7 @@
     "stats": {
       "Strength": 21,
       "Stamina": 18
-    },
-    "droppedBy": [
-      "Death Talon Wyrmguard"
-    ]
+    }
   },
   {
     "rarity": "Epic",
@@ -43477,7 +43474,7 @@
   {
     "rarity": "Rare",
     "name": "Red Dragonscale Breastplate",
-    "icon": "itemchestchain06",
+    "icon": "itemchestchain07",
     "type": "Chest",
     "armorClass": "Mail",
     "source": "Profession",
@@ -43486,6 +43483,32 @@
     "armor": 360,
     "maxStack": 1,
     "price": 29836
+  },
+  {
+    "rarity": "Rare",
+    "name": "Red Dragonscale Gauntlets",
+    "icon": "itemgauntlets33",
+    "type": "Hands",
+    "armorClass": "Mail",
+    "source": "Profession",
+    "ilvl": 63,
+    "lvl": 58,
+    "armor": 231,
+    "maxStack": 1,
+    "price": 24312
+  },
+  {
+    "rarity": "Rare",
+    "name": "Red Dragonscale Girdle",
+    "icon": "itembelt36",
+    "type": "Waist",
+    "armorClass": "Mail",
+    "source": "Profession",
+    "ilvl": 59,
+    "lvl": 54,
+    "armor": 202,
+    "maxStack": 1,
+    "price": 20578
   },
   {
     "rarity": "Uncommon",
@@ -51416,21 +51439,6 @@
     "maxStack": 1
   },
   {
-    "rarity": "Rare",
-    "name": "Top Half of Advanced Armorsmithing Volume III",
-    "icon": "itemmiscnote04",
-    "detailedType": "Note",
-    "type": "Miscellaneous",
-    "source": "DirectDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "indestructible": true,
-    "unique": true,
-    "droppedBy": [
-      "Urok Doomhowl"
-    ]
-  },
-  {
     "rarity": "Epic",
     "name": "Swift Blue Raptor",
     "icon": "abilitymountraptor",
@@ -51454,21 +51462,6 @@
     "type": "Miscellaneous",
     "ilvl": 60,
     "maxStack": 1
-  },
-  {
-    "rarity": "Rare",
-    "name": "Bottom Half of Advanced Armorsmithing Volume II",
-    "icon": "itemmiscnote03",
-    "detailedType": "Note",
-    "type": "Miscellaneous",
-    "source": "DirectDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "indestructible": true,
-    "unique": true,
-    "droppedBy": [
-      "Crimson Hammersmith"
-    ]
   },
   {
     "rarity": "Epic",
@@ -51495,42 +51488,12 @@
     "maxStack": 1
   },
   {
-    "rarity": "Rare",
-    "name": "Bottom Half of Advanced Armorsmithing Volume III",
-    "icon": "itemmiscnote04",
-    "detailedType": "Note",
-    "type": "Miscellaneous",
-    "source": "DirectDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "indestructible": true,
-    "unique": true,
-    "droppedBy": [
-      "Black Guard Swordsmith"
-    ]
-  },
-  {
     "rarity": "Epic",
     "name": "Swift Brown Ram",
     "icon": "abilitymountmountainram",
     "type": "Miscellaneous",
     "ilvl": 60,
     "maxStack": 1
-  },
-  {
-    "rarity": "Rare",
-    "name": "Top Half of Advanced Armorsmithing Volume II",
-    "icon": "itemmiscnote03",
-    "detailedType": "Note",
-    "type": "Miscellaneous",
-    "source": "DirectDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "indestructible": true,
-    "unique": true,
-    "droppedBy": [
-      "Rattlegore"
-    ]
   },
   {
     "rarity": "Epic",
@@ -51548,21 +51511,6 @@
     "source": "Quest",
     "ilvl": 60,
     "maxStack": 1
-  },
-  {
-    "rarity": "Rare",
-    "name": "Bottom Half of Advanced Armorsmithing Volume I",
-    "icon": "itemmiscnote06",
-    "detailedType": "Note",
-    "type": "Miscellaneous",
-    "source": "DirectDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "indestructible": true,
-    "unique": true,
-    "droppedBy": [
-      "Goraluk Anvilcrack"
-    ]
   },
   {
     "rarity": "Epic",
@@ -51628,21 +51576,6 @@
     "type": "Miscellaneous",
     "ilvl": 60,
     "maxStack": 1
-  },
-  {
-    "rarity": "Rare",
-    "name": "Top Half of Advanced Armorsmithing Volume I",
-    "icon": "itemmiscnote06",
-    "detailedType": "Note",
-    "type": "Miscellaneous",
-    "source": "DirectDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "indestructible": true,
-    "unique": true,
-    "droppedBy": [
-      "King Gordok"
-    ]
   },
   {
     "rarity": "Epic",
@@ -53749,20 +53682,6 @@
     "unique": true
   },
   {
-    "rarity": "Rare",
-    "name": "Codex of Renew X",
-    "icon": "itemmiscbook09",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "source": "ZoneDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "specs": [
-      "Priest"
-    ],
-    "price": 100000
-  },
-  {
     "rarity": "Uncommon",
     "name": "Logistics Task Briefing IV!Horde",
     "icon": "itemscroll03",
@@ -53783,34 +53702,6 @@
     "ilvl": 60,
     "maxStack": 1,
     "unique": true
-  },
-  {
-    "rarity": "Rare",
-    "name": "Codex of Greater Heal V",
-    "icon": "itemmiscbook09",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "source": "ZoneDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "specs": [
-      "Priest"
-    ],
-    "price": 100000
-  },
-  {
-    "rarity": "Rare",
-    "name": "Libram: Blessing of Wisdom VI",
-    "icon": "itemmiscbook08",
-    "detailedType": "Book",
-    "type": "Miscellaneous",
-    "source": "ZoneDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "specs": [
-      "Paladin"
-    ],
-    "price": 100000
   },
   {
     "rarity": "Uncommon",
@@ -54384,7 +54275,7 @@
   {
     "rarity": "Epic",
     "name": "Feralheart Vest",
-    "icon": "itemchestplate06",
+    "icon": "itemchestplate17",
     "type": "Chest",
     "armorClass": "Leather",
     "set": "Feralheart Raiment",
@@ -55617,23 +55508,6 @@
     "maxStack": 3,
     "indestructible": true,
     "unique": true
-  },
-  {
-    "rarity": "Rare",
-    "name": "Tablet of Flame Shock VI",
-    "icon": "itemmiscstonetablet11",
-    "detailedType": "Rock",
-    "type": "Miscellaneous",
-    "source": "DirectDrop",
-    "ilvl": 60,
-    "maxStack": 1,
-    "specs": [
-      "Shaman"
-    ],
-    "price": 100000,
-    "droppedBy": [
-      "Pyroguard Emberseer"
-    ]
   },
   {
     "rarity": "Epic",
@@ -57380,7 +57254,7 @@
   {
     "rarity": "Uncommon",
     "name": "Traphook Jerkin",
-    "icon": "itemchestplate06",
+    "icon": "itemchestplate17",
     "type": "Chest",
     "armorClass": "Leather",
     "source": "Quest",
@@ -62121,7 +61995,6 @@
     "icon": "itemhelmet41",
     "type": "Head",
     "armorClass": "Leather",
-    "source": "DirectDrop",
     "ilvl": 57,
     "lvl": 52,
     "armor": 132,
@@ -62132,8 +62005,9 @@
       "Agility": 19,
       "Stamina": 18
     },
+    "source": "DirectDrop",
     "droppedBy": [
-      "Anger'rel"
+      "The Seven"
     ]
   },
   {
@@ -62142,7 +62016,6 @@
     "icon": "itemchestchain07",
     "type": "Chest",
     "armorClass": "Mail",
-    "source": "DirectDrop",
     "ilvl": 57,
     "lvl": 52,
     "armor": 338,
@@ -62152,8 +62025,9 @@
       "Strength": 8,
       "Stamina": 8
     },
+    "source": "DirectDrop",
     "droppedBy": [
-      "Doom'rel"
+      "The Seven"
     ]
   },
   {
@@ -62162,7 +62036,6 @@
     "icon": "itemshortblade15",
     "detailedType": "Dagger",
     "type": "One Handed",
-    "source": "ZoneDrop",
     "ilvl": 57,
     "lvl": 52,
     "minPower": 3.6,
@@ -62171,7 +62044,11 @@
     "price": 43491,
     "stats": {
       "Stamina": 12
-    }
+    },
+    "source": "DirectDrop",
+    "droppedBy": [
+      "The Seven"
+    ]
   },
   {
     "rarity": "Rare",
@@ -62179,14 +62056,14 @@
     "icon": "itempants04",
     "type": "Legs",
     "armorClass": "Plate",
-    "source": "DirectDrop",
     "ilvl": 57,
     "lvl": 52,
     "armor": 742,
     "maxStack": 1,
     "price": 16456,
+    "source": "DirectDrop",
     "droppedBy": [
-      "Doom'rel"
+      "The Seven"
     ]
   },
   {
@@ -62195,7 +62072,6 @@
     "icon": "itempants11",
     "type": "Legs",
     "armorClass": "Cloth",
-    "source": "DirectDrop",
     "ilvl": 57,
     "lvl": 52,
     "armor": 71,
@@ -62205,8 +62081,9 @@
       "Intellect": 12,
       "Spirit": 28
     },
+    "source": "DirectDrop",
     "droppedBy": [
-      "Anger'rel"
+      "The Seven"
     ]
   },
   {
@@ -62220,7 +62097,11 @@
     "minPower": 3.63,
     "maxPower": 5.89,
     "maxStack": 1,
-    "price": 43648
+    "price": 43648,
+    "source": "DirectDrop",
+    "droppedBy": [
+      "The Seven"
+    ]
   },
   {
     "rarity": "Rare",
@@ -62228,14 +62109,17 @@
     "icon": "itemhammer08",
     "detailedType": "Mace",
     "type": "Two Handed",
-    "source": "ZoneDrop",
     "ilvl": 57,
     "lvl": 52,
     "minPower": 4.89,
     "maxPower": 6.89,
     "armor": 30,
     "maxStack": 1,
-    "price": 54167
+    "price": 54167,
+    "source": "DirectDrop",
+    "droppedBy": [
+      "The Seven"
+    ]
   },
   {
     "rarity": "Uncommon",
@@ -64743,13 +64627,16 @@
     "icon": "itemaxe13",
     "detailedType": "Axe",
     "type": "One Handed",
-    "source": "ZoneDrop",
     "ilvl": 56,
     "lvl": 51,
     "minPower": 3.59,
     "maxPower": 5.82,
     "maxStack": 1,
-    "price": 40732
+    "price": 40732,
+    "source": "DirectDrop",
+    "droppedBy": [
+      "The Seven"
+    ]
   },
   {
     "rarity": "Uncommon",
@@ -71381,7 +71268,7 @@
   {
     "rarity": "Rare",
     "name": "Hydralick Armor",
-    "icon": "itemchestplate06",
+    "icon": "itemchestplate17",
     "type": "Chest",
     "armorClass": "Plate",
     "source": "RareDrop",
@@ -76327,7 +76214,7 @@
   {
     "rarity": "Rare",
     "name": "Green Dragonscale Breastplate",
-    "icon": "itemchestchain06",
+    "icon": "itemchestchain18",
     "type": "Chest",
     "armorClass": "Mail",
     "set": "Green Dragon Mail",
@@ -77388,7 +77275,7 @@
   {
     "rarity": "Rare",
     "name": "Dragonscale Breastplate",
-    "icon": "itemchestchain07",
+    "icon": "itemchestchain06",
     "type": "Chest",
     "armorClass": "Mail",
     "source": "Profession",
@@ -201709,6 +201596,31 @@
     "price": 100
   },
   {
+    "rarity": "Epic",
+    "name": "Codex: Elementium Smelting",
+    "recipeConnected": "Smelt Elementium",
+    "icon": "itemmiscbook11",
+    "source": "ChestDrop",
+    "detailedType": "Scroll",
+    "type": "Recipe",
+    "maxStack": 1,
+    "price": 20000
+  },
+  {
+    "rarity": "Epic",
+    "name": "Codex: Dark Iron Smelting",
+    "recipeConnected": "Smelt Dark Iron",
+    "icon": "itemmiscbook10",
+    "detailedType": "Scroll",
+    "type": "Recipe",
+    "maxStack": 1,
+    "price": 15000,
+    "source": "DirectDrop",
+    "droppedBy": [
+      "The Seven"
+    ]
+  },
+  {
     "rarity": "Common",
     "name": "Recipe: Redridge Goulash",
     "icon": "itemscroll03",
@@ -207625,6 +207537,26 @@
     ]
   },
   {
+    "rarity": "Rare",
+    "name": "Pattern: Red Dragonscale Gauntlets",
+    "icon": "itemscroll03",
+    "detailedType": "Scroll",
+    "type": "Recipe",
+    "source": "ChestDrop",
+    "maxStack": 1,
+    "price": 3000
+  },
+  {
+    "rarity": "Rare",
+    "name": "Pattern: Red Dragonscale Girdle",
+    "icon": "itemscroll03",
+    "detailedType": "Scroll",
+    "type": "Recipe",
+    "source": "ChestDrop",
+    "maxStack": 1,
+    "price": 3000
+  },
+  {
     "rarity": "Uncommon",
     "name": "Pattern: Heavy Scorpid Belt",
     "icon": "itemscroll03",
@@ -208376,6 +208308,7 @@
     "name": "Formula: Enchant Weapon - Crusader",
     "icon": "itemmiscnote01",
     "detailedType": "Note",
+    "unique": true,
     "type": "Recipe",
     "source": "DirectDrop",
     "maxStack": 1,
@@ -208391,6 +208324,7 @@
     "detailedType": "Note",
     "type": "Recipe",
     "source": "DirectDrop",
+    "unique": true,
     "maxStack": 1,
     "price": 7500,
     "droppedBy": [
@@ -208404,6 +208338,7 @@
     "detailedType": "Note",
     "type": "Recipe",
     "source": "DirectDrop",
+    "unique": true,
     "maxStack": 1,
     "price": 3000,
     "droppedBy": [
@@ -208426,6 +208361,7 @@
     "detailedType": "Note",
     "type": "Recipe",
     "source": "DirectDrop",
+    "unique": true,
     "maxStack": 1,
     "price": 6000,
     "droppedBy": [
@@ -208449,6 +208385,7 @@
     "detailedType": "Scroll",
     "type": "Recipe",
     "source": "DirectDrop",
+    "unique": true,
     "maxStack": 1,
     "price": 5000,
     "droppedBy": [

@@ -26232,13 +26232,6 @@
         "voiceVariant": 3,
         "race": "Orc",
         "type": "Stable Master"
-      },
-      {
-        "name": "Thorkaf Dragoneye",
-        "gender": "Male",
-        "voiceVariant": 2,
-        "race": "Orc",
-        "type": "Master Dragonscale Leatherworker"
       }
     ],
     "x": 5510,
@@ -40716,6 +40709,9 @@
         "levelMax": 59
       }
     ],
+    "chestBonus": {
+      "Pattern: Red Dragonscale Gauntlets": 1
+    },
     "eliteEncounters": [
       {
         "who": "Overlord Wyrmthalak",
@@ -43271,18 +43267,6 @@
     "type": "HostileArea"
   },
   {
-    "areaSize": 3,
-    "progression": [
-      {
-        "type": "Treasure",
-        "point": 3
-      }
-    ],
-    "name": "Forlorn Ridge",
-    "zone": "Azshara",
-    "type": "HostileArea"
-  },
-  {
     "commonEncounters": [
       {
         "who": "Haldarr Satyr",
@@ -43342,6 +43326,21 @@
     "zone": "Azshara",
     "type": "HostileArea",
     "fishing": true
+  },
+  {
+    "people": [
+      {
+        "name": "Spirit of The Forlorn",
+        "voiceVariant": 1,
+        "race": "Ghost",
+        "type": "Arena Master"
+      }
+    ],
+    "x": 2430,
+    "y": -1932,
+    "name": "The Forlorn Ridge",
+    "zone": "Azshara",
+    "faction": "Neutral"
   },
   {
     "commonEncounters": [
@@ -44349,6 +44348,15 @@
     "type": "HostileArea"
   },
   {
+    "people": [
+      {
+        "name": "Thorkaf Dragoneye",
+        "gender": "Male",
+        "voiceVariant": 2,
+        "race": "Orc",
+        "type": "Master Dragonscale Leatherworker"
+      }
+    ],
     "commonEncounters": [
       {
         "who": "Ridge Stalker",
@@ -46202,6 +46210,9 @@
         "point": 7
       }
     ],
+    "chestBonus": {
+      "Codex: Elementium Smelting": 1
+    },
     "name": "Crimson Laboratories",
     "zone": "Blackwing Lair",
     "type": "HostileArea",
@@ -46804,6 +46815,9 @@
     ],
     "x": 5368,
     "y": -3242,
+    "chestBonus": {
+      "Pattern: Red Dragonscale Girdle": 1
+    },
     "name": "Blackrock Stronghold",
     "zone": "Burning Steppes",
     "type": "HostileArea"
@@ -52679,7 +52693,7 @@
         "levelMax": 55
       }
     ],
-    "rareEncounters": [
+    "eliteEncounters": [
       {
         "who": "Zaeldar the Outcast",
         "levelMin": 55
@@ -52687,6 +52701,11 @@
     ],
     "areaSize": 3,
     "progression": [
+      {
+        "type": "Boss",
+        "bossName": "Zaeldar the Outcast",
+        "point": 2
+      },
       {
         "type": "Treasure",
         "point": 3
@@ -52829,7 +52848,7 @@
         "levelMin": 60
       },
       {
-        "who": "Warlord Tresh'jin",
+        "who": "Warlord Thresh'jin",
         "levelMin": 60
       }
     ],
@@ -56782,8 +56801,8 @@
       },
       {
         "who": "Loch Crocolisk",
-        "levelMin": 16,
-        "levelMax": 17
+        "levelMin": 17,
+        "levelMax": 18
       }
     ],
     "rareEncounters": [

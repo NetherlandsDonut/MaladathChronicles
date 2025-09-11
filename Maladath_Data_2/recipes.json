@@ -12328,7 +12328,7 @@
     "skillUpGray": 230,
     "learnedAt": 230,
     "reagents": {
-      "Dark Iron Ore": 8
+      "Dark Iron Ore": 4
     },
     "results": {
       "Dark Iron Bar": 1
@@ -19521,12 +19521,46 @@
     "skillUpGray": 340,
     "learnedAt": 300,
     "reagents": {
-      "Rugged Leather": 40,
-      "Red Dragonscale": 30,
-      "Rune Thread": 1
+      "Rugged Leather": 30,
+      "Red Dragonscale": 25,
+      "Rune Thread": 2
     },
     "results": {
       "Red Dragonscale Breastplate": 1
+    }
+  },
+  {
+    "name": "Red Dragonscale Gauntlets",
+    "profession": "Leatherworking",
+    "skillUpOrange": 300,
+    "skillUpYellow": 320,
+    "skillUpGreen": 330,
+    "skillUpGray": 340,
+    "learnedAt": 300,
+    "reagents": {
+      "Rugged Leather": 40,
+      "Red Dragonscale": 30,
+      "Rune Thread": 2
+    },
+    "results": {
+      "Red Dragonscale Gauntlets": 1
+    }
+  },
+  {
+    "name": "Red Dragonscale Girdle",
+    "profession": "Leatherworking",
+    "skillUpOrange": 300,
+    "skillUpYellow": 320,
+    "skillUpGreen": 330,
+    "skillUpGray": 340,
+    "learnedAt": 300,
+    "reagents": {
+      "Rugged Leather": 30,
+      "Red Dragonscale": 20,
+      "Rune Thread": 1
+    },
+    "results": {
+      "Red Dragonscale Girdle": 1
     }
   },
   {

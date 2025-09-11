@@ -2906,10 +2906,13 @@
         3062
       ],
       "level": 60,
-      "experience": 932212,
+      "experience": 932252,
       "uniquesGotten": [
         "Horn of Hatetalon",
-        "Edana's Dark Heart"
+        "Edana's Dark Heart",
+        "Blood of the Black Dragon Champion",
+        "Gemstone of Bloodaxe",
+        "General Drakkisath's Command"
       ],
       "reputation": {
         "Southsea Pirates": 0,
@@ -3063,7 +3066,8 @@
           "Handstitched Leather Vest",
           "Handstitched Leather Cloak",
           "Handstitched Leather Bracers",
-          "Handstitched Leather Boots"
+          "Handstitched Leather Boots",
+          "Dragonscale Breastplate"
         ],
         "Blacksmithing": [
           "Rough Sharpening Stone",
@@ -3074,7 +3078,8 @@
         "Alchemy": [
           "Minor Healing Potion",
           "Elixir of Lion's Strength",
-          "Elixir of Minor Defense"
+          "Elixir of Minor Defense",
+          "Flask of the Titans"
         ],
         "Tailoring": [
           "Bolt of Linen Cloth",
@@ -3085,7 +3090,8 @@
         "Enchanting": [
           "Runed Copper Rod",
           "Enchant Bracer - Minor Deflect",
-          "Enchant Bracer - Minor Health"
+          "Enchant Bracer - Minor Health",
+          "Enchant Weapon - Superior Striking"
         ],
         "Engineering": [
           "Rough Blasting Powder",
@@ -3270,74 +3276,6 @@
             }
           },
           {
-            "x": 1,
-            "y": 1,
-            "rarity": "Common",
-            "name": "Hand Axe",
-            "icon": "itemaxe19",
-            "detailedType": "Axe",
-            "type": "One Handed",
-            "source": "RareDrop",
-            "ilvl": 4,
-            "lvl": 1,
-            "minPower": 1.1,
-            "maxPower": 1.2,
-            "amount": 1,
-            "maxStack": 1,
-            "price": 16
-          },
-          {
-            "y": 1,
-            "rarity": "Rare",
-            "name": "Princess Theradras' Scepter",
-            "icon": "itemhammer10",
-            "detailedType": "Mace",
-            "type": "Two Handed",
-            "source": "DirectDrop",
-            "ilvl": 54,
-            "lvl": 49,
-            "minPower": 4.71,
-            "maxPower": 6.59,
-            "amount": 1,
-            "maxStack": 1,
-            "price": 44863,
-            "droppedBy": [
-              "Princess Theradras"
-            ]
-          },
-          {
-            "x": 2,
-            "y": 1,
-            "rarity": "Rare",
-            "name": "Small Brilliant Shard",
-            "icon": "itemenchantshardbrilliantsmall",
-            "detailedType": "Shard",
-            "type": "Trade Good",
-            "source": "RareDrop",
-            "ilvl": 50,
-            "lvl": 1,
-            "amount": 1,
-            "maxStack": 20,
-            "price": 2180
-          },
-          {
-            "x": 3,
-            "y": 1,
-            "rarity": "Uncommon",
-            "name": "Lesser Eternal Essence",
-            "icon": "itemenchantessenceeternalsmall",
-            "detailedType": "Essence",
-            "type": "Trade Good",
-            "ilvl": 50,
-            "lvl": 1,
-            "amount": 1,
-            "maxStack": 10,
-            "abilities": {
-              "Form Greater Eternal Essence": 1
-            },
-            "price": 1240
-          },
-          {
             "x": 4,
             "y": 1,
             "rarity": "Common",
@@ -3404,52 +3342,681 @@
             }
           },
           {
-            "x": 3,
-            "y": 2,
-            "rarity": "Uncommon",
-            "name": "Butcher's Slicer",
-            "icon": "itemsword16",
-            "detailedType": "Sword",
-            "type": "One Handed",
+            "x": 2,
+            "y": 1,
+            "rarity": "Common",
+            "name": "Blood of the Black Dragon Champion",
+            "icon": "itempotion27",
+            "detailedType": "Potion",
+            "type": "Miscellaneous",
             "source": "DirectDrop",
-            "ilvl": 23,
-            "lvl": 18,
-            "minPower": 1.79,
-            "maxPower": 2.52,
+            "ilvl": 1,
             "amount": 1,
             "maxStack": 1,
-            "price": 2131,
-            "stats": {
-              "Strength": 2,
-              "Stamina": 2
-            },
+            "indestructible": true,
+            "unique": true,
             "droppedBy": [
-              "Razorclaw the Butcher"
+              "General Drakkisath"
+            ]
+          },
+          {
+            "x": 3,
+            "y": 1,
+            "rarity": "Epic",
+            "name": "Time Warped Goods, General Drakkisath",
+            "icon": "ItemMiscBagFelclothBag",
+            "detailedType": "Pouch",
+            "type": "Miscellaneous",
+            "source": "DirectDrop",
+            "ilvl": 1,
+            "amount": 1,
+            "maxStack": 1,
+            "itemsInside": [
+              {
+                "rarity": "Rare",
+                "name": "Draconian Deflector",
+                "icon": "itemshield20",
+                "detailedType": "Shield",
+                "type": "Off Hand",
+                "source": "DirectDrop",
+                "ilvl": 63,
+                "lvl": 58,
+                "armor": 2153,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 35212,
+                "stats": {
+                  "Stamina": 7
+                },
+                "droppedBy": [
+                  "General Drakkisath"
+                ]
+              },
+              {
+                "x": 1,
+                "rarity": "Epic",
+                "name": "Blackblade of Shahram",
+                "icon": "itemsword29",
+                "detailedType": "Sword",
+                "type": "Two Handed",
+                "source": "DirectDrop",
+                "ilvl": 63,
+                "lvl": 58,
+                "minPower": 5.74,
+                "maxPower": 8.14,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 95241,
+                "droppedBy": [
+                  "General Drakkisath"
+                ]
+              },
+              {
+                "x": 2,
+                "rarity": "Rare",
+                "name": "Painweaver Band",
+                "icon": "itemjewelryring18",
+                "type": "Finger",
+                "source": "DirectDrop",
+                "ilvl": 63,
+                "lvl": 58,
+                "amount": 1,
+                "maxStack": 1,
+                "unique": true,
+                "price": 15282,
+                "stats": {
+                  "Stamina": 7
+                },
+                "droppedBy": [
+                  "General Drakkisath"
+                ]
+              },
+              {
+                "x": 3,
+                "rarity": "Rare",
+                "name": "Brigam Girdle",
+                "icon": "itembelt33",
+                "type": "Waist",
+                "armorClass": "Plate",
+                "source": "DirectDrop",
+                "ilvl": 63,
+                "lvl": 58,
+                "armor": 369,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 11642,
+                "stats": {
+                  "Strength": 15,
+                  "Stamina": 16
+                },
+                "droppedBy": [
+                  "General Drakkisath"
+                ]
+              },
+              {
+                "x": 4,
+                "rarity": "Rare",
+                "name": "Tooth of Gnarr",
+                "icon": "itemjewelrynecklace09",
+                "type": "Neck",
+                "source": "DirectDrop",
+                "ilvl": 63,
+                "lvl": 58,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 12093,
+                "stats": {
+                  "Intellect": 14,
+                  "Stamina": 8
+                },
+                "droppedBy": [
+                  "General Drakkisath"
+                ]
+              },
+              {
+                "y": 1,
+                "rarity": "Rare",
+                "name": "Vest of Elements",
+                "icon": "itemchestchain11",
+                "type": "Chest",
+                "armorClass": "Mail",
+                "set": "The Elements",
+                "source": "DirectDrop",
+                "ilvl": 63,
+                "lvl": 58,
+                "armor": 370,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 35962,
+                "stats": {
+                  "Intellect": 20,
+                  "Stamina": 13,
+                  "Spirit": 20
+                },
+                "droppedBy": [
+                  "General Drakkisath"
+                ]
+              },
+              {
+                "x": 1,
+                "y": 1,
+                "rarity": "Rare",
+                "name": "Devout Robe",
+                "icon": "itemchestcloth11",
+                "type": "Chest",
+                "armorClass": "Cloth",
+                "set": "Vestments of the Devout",
+                "source": "DirectDrop",
+                "ilvl": 63,
+                "lvl": 58,
+                "armor": 89,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 22616,
+                "stats": {
+                  "Intellect": 24,
+                  "Stamina": 13,
+                  "Spirit": 15
+                },
+                "droppedBy": [
+                  "General Drakkisath"
+                ]
+              },
+              {
+                "x": 2,
+                "y": 1,
+                "rarity": "Rare",
+                "name": "Beaststalker's Tunic",
+                "icon": "itemchestchain03",
+                "type": "Chest",
+                "armorClass": "Mail",
+                "set": "Beaststalker Armor",
+                "source": "DirectDrop",
+                "ilvl": 63,
+                "lvl": 58,
+                "armor": 370,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 34435,
+                "stats": {
+                  "Strength": 5,
+                  "Agility": 21,
+                  "Intellect": 13,
+                  "Stamina": 16,
+                  "Spirit": 6
+                },
+                "droppedBy": [
+                  "General Drakkisath"
+                ]
+              },
+              {
+                "x": 3,
+                "y": 1,
+                "rarity": "Rare",
+                "name": "Wildheart Vest",
+                "icon": "itemchestplate06",
+                "type": "Chest",
+                "armorClass": "Leather",
+                "set": "Wildheart Raiment",
+                "source": "DirectDrop",
+                "ilvl": 63,
+                "lvl": 58,
+                "armor": 176,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 27841,
+                "stats": {
+                  "Intellect": 20,
+                  "Stamina": 13,
+                  "Spirit": 20
+                },
+                "droppedBy": [
+                  "General Drakkisath"
+                ]
+              },
+              {
+                "x": 4,
+                "y": 1,
+                "rarity": "Rare",
+                "name": "Magister's Robes",
+                "icon": "itemchestcloth25",
+                "type": "Chest",
+                "armorClass": "Cloth",
+                "set": "Magister's Regalia",
+                "source": "DirectDrop",
+                "ilvl": 63,
+                "lvl": 58,
+                "armor": 89,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 22445,
+                "stats": {
+                  "Intellect": 31,
+                  "Stamina": 9,
+                  "Spirit": 8
+                },
+                "droppedBy": [
+                  "General Drakkisath"
+                ]
+              },
+              {
+                "y": 2,
+                "rarity": "Rare",
+                "name": "Dreadmist Robe",
+                "icon": "itemchestcloth49",
+                "type": "Chest",
+                "armorClass": "Cloth",
+                "set": "Dreadmist Raiment",
+                "source": "DirectDrop",
+                "ilvl": 63,
+                "lvl": 58,
+                "armor": 89,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 24071,
+                "stats": {
+                  "Intellect": 21,
+                  "Stamina": 20,
+                  "Spirit": 13
+                },
+                "droppedBy": [
+                  "General Drakkisath"
+                ]
+              },
+              {
+                "x": 1,
+                "y": 2,
+                "rarity": "Rare",
+                "name": "Lightforge Breastplate",
+                "icon": "itemchestplate03",
+                "type": "Chest",
+                "armorClass": "Plate",
+                "set": "Lightforge Armor",
+                "source": "DirectDrop",
+                "ilvl": 63,
+                "lvl": 58,
+                "armor": 657,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 22270,
+                "stats": {
+                  "Strength": 13,
+                  "Intellect": 16,
+                  "Stamina": 21,
+                  "Spirit": 8
+                },
+                "droppedBy": [
+                  "General Drakkisath"
+                ]
+              },
+              {
+                "x": 2,
+                "y": 2,
+                "rarity": "Rare",
+                "name": "Shadowcraft Tunic",
+                "icon": "itemchestleather07",
+                "type": "Chest",
+                "armorClass": "Leather",
+                "set": "Shadowcraft Armor",
+                "source": "DirectDrop",
+                "ilvl": 63,
+                "lvl": 58,
+                "armor": 176,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 30190,
+                "stats": {
+                  "Agility": 26,
+                  "Stamina": 13,
+                  "Spirit": 12
+                },
+                "droppedBy": [
+                  "General Drakkisath"
+                ]
+              },
+              {
+                "x": 3,
+                "y": 2,
+                "rarity": "Rare",
+                "name": "Breastplate of Valor",
+                "icon": "itemchestplate03",
+                "type": "Chest",
+                "armorClass": "Plate",
+                "set": "Battlegear of Valor",
+                "source": "DirectDrop",
+                "ilvl": 63,
+                "lvl": 58,
+                "armor": 657,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 22609,
+                "stats": {
+                  "Strength": 15,
+                  "Agility": 10,
+                  "Stamina": 24,
+                  "Spirit": 6
+                },
+                "droppedBy": [
+                  "General Drakkisath"
+                ]
+              },
+              {
+                "x": 4,
+                "y": 2,
+                "rarity": "Rare",
+                "name": "Draconic Infused Emblem",
+                "icon": "itemjewelrytalisman09",
+                "type": "Trinket",
+                "source": "DirectDrop",
+                "ilvl": 63,
+                "lvl": 58,
+                "amount": 1,
+                "maxStack": 1,
+                "unique": true,
+                "price": 66290,
+                "droppedBy": [
+                  "General Drakkisath"
+                ]
+              },
+              {
+                "y": 3,
+                "rarity": "Rare",
+                "name": "Spellweaver's Turban",
+                "icon": "itemhelmet62",
+                "type": "Head",
+                "armorClass": "Cloth",
+                "source": "DirectDrop",
+                "ilvl": 63,
+                "lvl": 60,
+                "armor": 73,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 17870,
+                "stats": {
+                  "Intellect": 9
+                },
+                "droppedBy": [
+                  "General Drakkisath"
+                ]
+              },
+              {
+                "x": 1,
+                "y": 3,
+                "rarity": "Rare",
+                "name": "Shadow Prowler's Cloak",
+                "icon": "itemmisccape20",
+                "type": "Back",
+                "source": "DirectDrop",
+                "ilvl": 63,
+                "lvl": 58,
+                "armor": 45,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 16476,
+                "stats": {
+                  "Agility": 17,
+                  "Stamina": 7
+                },
+                "droppedBy": [
+                  "General Drakkisath"
+                ]
+              },
+              {
+                "x": 2,
+                "y": 3,
+                "rarity": "Rare",
+                "name": "Tome of the Lost",
+                "icon": "itemmiscbook06",
+                "detailedType": "Book",
+                "type": "Off Hand",
+                "source": "DirectDrop",
+                "ilvl": 63,
+                "lvl": 58,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 34450,
+                "stats": {
+                  "Intellect": 7,
+                  "Stamina": 6
+                },
+                "droppedBy": [
+                  "General Drakkisath"
+                ]
+              }
+            ],
+            "abilities": {
+              "Time Warped Goods": 1
+            }
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "rarity": "Common",
+            "name": "Runecloth",
+            "icon": "itemfabricpurplefire01",
+            "detailedType": "Cloth",
+            "type": "Trade Good",
+            "source": "RareDrop",
+            "ilvl": 50,
+            "lvl": 1,
+            "amount": 8,
+            "maxStack": 20,
+            "price": 400
+          },
+          {
+            "y": 1,
+            "rarity": "Uncommon",
+            "name": "Formula: Enchant Weapon - Superior Striking",
+            "icon": "itemmiscnote01",
+            "detailedType": "Note",
+            "type": "Recipe",
+            "source": "DirectDrop",
+            "amount": 1,
+            "maxStack": 1,
+            "price": 7500,
+            "droppedBy": [
+              "Spirestone Warlord"
+            ]
+          },
+          {
+            "x": 3,
+            "y": 2,
+            "rarity": "Common",
+            "name": "General Drakkisath's Command",
+            "icon": "itemletter17",
+            "detailedType": "Letter",
+            "type": "Miscellaneous",
+            "source": "DirectDrop",
+            "ilvl": 1,
+            "amount": 1,
+            "maxStack": 1,
+            "indestructible": true,
+            "unique": true,
+            "droppedBy": [
+              "Overlord Wyrmthalak"
             ]
           },
           {
             "x": 2,
             "y": 2,
-            "rarity": "Rare",
-            "name": "Butcher's Cleaver",
-            "icon": "itemaxe23",
-            "detailedType": "Axe",
-            "type": "One Handed",
+            "rarity": "Epic",
+            "name": "Time Warped Goods, Overlord Wyrmthalak",
+            "icon": "ItemMiscBagFelclothBag",
+            "detailedType": "Pouch",
+            "type": "Miscellaneous",
             "source": "DirectDrop",
-            "ilvl": 25,
-            "lvl": 20,
-            "minPower": 2.35,
-            "maxPower": 2.88,
+            "ilvl": 1,
             "amount": 1,
             "maxStack": 1,
-            "price": 3300,
-            "stats": {
-              "Strength": 5,
-              "Agility": 2
-            },
-            "droppedBy": [
-              "Razorclaw the Butcher"
-            ]
+            "itemsInside": [
+              {
+                "rarity": "Rare",
+                "name": "Relentless Scythe",
+                "icon": "itemsword18",
+                "detailedType": "Sword",
+                "type": "Two Handed",
+                "source": "DirectDrop",
+                "ilvl": 62,
+                "lvl": 57,
+                "minPower": 5.24,
+                "maxPower": 7.36,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 69537,
+                "stats": {
+                  "Strength": 20,
+                  "Agility": 8,
+                  "Stamina": 8
+                },
+                "droppedBy": [
+                  "Overlord Wyrmthalak"
+                ]
+              },
+              {
+                "x": 1,
+                "rarity": "Rare",
+                "name": "Reiver Claws",
+                "icon": "itemgauntlets29",
+                "type": "Hands",
+                "armorClass": "Plate",
+                "source": "DirectDrop",
+                "ilvl": 61,
+                "lvl": 56,
+                "armor": 398,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 10558,
+                "stats": {
+                  "Strength": 9,
+                  "Stamina": 15
+                },
+                "droppedBy": [
+                  "Overlord Wyrmthalak"
+                ]
+              },
+              {
+                "x": 2,
+                "rarity": "Rare",
+                "name": "Heart of the Scale",
+                "icon": "itemmiscgembloodstone01",
+                "type": "Trinket",
+                "source": "DirectDrop",
+                "ilvl": 61,
+                "lvl": 56,
+                "amount": 1,
+                "maxStack": 1,
+                "unique": true,
+                "price": 10539,
+                "droppedBy": [
+                  "Overlord Wyrmthalak"
+                ]
+              },
+              {
+                "x": 3,
+                "rarity": "Epic",
+                "name": "Mark of the Dragon Lord",
+                "icon": "itemjewelryring17",
+                "type": "Finger",
+                "source": "DirectDrop",
+                "ilvl": 61,
+                "lvl": 56,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 21372,
+                "droppedBy": [
+                  "Overlord Wyrmthalak"
+                ]
+              },
+              {
+                "x": 4,
+                "rarity": "Rare",
+                "name": "Chillpike",
+                "icon": "itemspear05",
+                "detailedType": "Polearm",
+                "type": "Two Handed",
+                "source": "DirectDrop",
+                "ilvl": 61,
+                "lvl": 56,
+                "minPower": 5.18,
+                "maxPower": 7.29,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 62629,
+                "droppedBy": [
+                  "Overlord Wyrmthalak"
+                ]
+              },
+              {
+                "y": 1,
+                "rarity": "Rare",
+                "name": "Trindlehaven Staff",
+                "icon": "itemstaff29",
+                "detailedType": "Staff",
+                "type": "Two Handed",
+                "source": "DirectDrop",
+                "ilvl": 61,
+                "lvl": 56,
+                "minPower": 5.14,
+                "maxPower": 7.29,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 65749,
+                "stats": {
+                  "Intellect": 25,
+                  "Stamina": 12
+                },
+                "droppedBy": [
+                  "Overlord Wyrmthalak"
+                ]
+              },
+              {
+                "x": 1,
+                "y": 1,
+                "rarity": "Rare",
+                "name": "Heart of Wyrmthalak",
+                "icon": "itemmiscgembloodstone01",
+                "type": "Trinket",
+                "source": "DirectDrop",
+                "ilvl": 61,
+                "lvl": 56,
+                "amount": 1,
+                "maxStack": 1,
+                "unique": true,
+                "price": 10539,
+                "droppedBy": [
+                  "Overlord Wyrmthalak"
+                ]
+              },
+              {
+                "x": 2,
+                "y": 1,
+                "rarity": "Rare",
+                "name": "Beaststalker's Mantle",
+                "icon": "itemshoulder10",
+                "type": "Shoulders",
+                "armorClass": "Mail",
+                "set": "Beaststalker Armor",
+                "source": "DirectDrop",
+                "ilvl": 60,
+                "lvl": 55,
+                "armor": 266,
+                "amount": 1,
+                "maxStack": 1,
+                "price": 22822,
+                "stats": {
+                  "Agility": 11,
+                  "Intellect": 7,
+                  "Stamina": 17,
+                  "Spirit": 4
+                },
+                "droppedBy": [
+                  "Overlord Wyrmthalak"
+                ]
+              }
+            ],
+            "abilities": {
+              "Time Warped Goods": 1
+            }
           }
         ],
         "bags": [
@@ -3670,9 +4237,9 @@
       }
     },
     "hour": 7,
-    "minute": 41,
+    "minute": 45,
     "second": 21,
-    "currentSite": "The Undercroft",
+    "currentSite": "Blackrock Mountain",
     "generatedBossPools": {
       "<Forlorn Cloister>": "Fallen Champion",
       "<Ring of Law>": "Eviscerator"
@@ -3707,7 +4274,10 @@
       "Poison Falls": 2,
       "Earth Song Falls": 1,
       "Valley of Spears": 1,
-      "Kitchen": 2
+      "Kitchen": 2,
+      "Spire Throne": 2,
+      "Chamber of Battle": 2,
+      "Crimson Laboratories": 7
     },
     "commonsKilled": {
       "Northspring Windcaller": 1,
@@ -3719,7 +4289,17 @@
       "Cavern Lurker": 1,
       "Theradrim Guardian": 1,
       "Maraudine Marauder": 1,
-      "Haunted Servitor": 4
+      "Haunted Servitor": 4,
+      "Rage Talon Captain": 1,
+      "Rage Talon Fire Tongue": 2,
+      "Chromatic Elite Guard": 1,
+      "Smolderthorn Berserker": 1,
+      "Spirestone Warlord": 2,
+      "Bloodaxe Veteran": 1,
+      "Blackwing Spellbinder": 2,
+      "Death Talon Overseer": 6,
+      "Death Talon Wyrmguard": 3,
+      "Blackwing Warlock": 3
     },
     "raresKilled": {
       "Meshlok the Harvester": 1
@@ -3728,7 +4308,12 @@
       "Edana Hatetalon": 1,
       "Princess Theradras": 1,
       "Celebras the Cursed": 1,
-      "Razorclaw the Butcher": 1
+      "Razorclaw the Butcher": 1,
+      "General Drakkisath": 1,
+      "Overlord Wyrmthalak": 1,
+      "Firemaw": 1,
+      "Ebonroc": 1,
+      "Flamegor": 1
     },
     "siteVisits": {
       "Camp Narache": 3,
@@ -4527,7 +5112,7 @@
       "Zul'Gurub": 1,
       "Ruins of Ahn'Qiraj": 1,
       "Temple of Ahn'Qiraj": 1,
-      "Blackrock Mountain": 1,
+      "Blackrock Mountain": 5,
       "Jintha'Alor": 1,
       "Tyr's Hand": 1,
       "Hearthglen": 1,
@@ -4541,11 +5126,14 @@
       "Thunder Bluff": 1,
       "Stormwind City": 1,
       "Ironforge": 1,
-      "Darnassus": 1
+      "Darnassus": 1,
+      "Steelgrill's Depot": 1,
+      "The Forlorn Ridge": 4
     },
     "unlockedAreas": [
       "Earth Song Falls",
-      "Dining Hall"
+      "Dining Hall",
+      "Chromaggus' Lair"
     ],
     "flags": {},
     "vendorStock": {
@@ -4566,7 +5154,7 @@
           "item": "Shortsword",
           "amount": 1,
           "maxAmount": 2,
-          "minutesLeft": 23,
+          "minutesLeft": 19,
           "restockSpeed": 40
         },
         {
@@ -4579,7 +5167,7 @@
           "item": "Hand Axe",
           "amount": 1,
           "maxAmount": 2,
-          "minutesLeft": 23,
+          "minutesLeft": 19,
           "restockSpeed": 40
         },
         {
@@ -4598,7 +5186,7 @@
           "item": "Large Club",
           "amount": 1,
           "maxAmount": 2,
-          "minutesLeft": 23,
+          "minutesLeft": 19,
           "restockSpeed": 40
         }
       ],
@@ -4855,7 +5443,7 @@
           "item": "Dented Buckler",
           "amount": 1,
           "maxAmount": 2,
-          "minutesLeft": 22,
+          "minutesLeft": 18,
           "restockSpeed": 40
         }
       ]
@@ -4873,7 +5461,7 @@
           "ilvl": 40,
           "lvl": 1,
           "amount": 6,
-          "minutesLeft": 12,
+          "minutesLeft": 8,
           "maxStack": 20,
           "price": 250
         },
@@ -4887,7 +5475,7 @@
           "ilvl": 50,
           "lvl": 1,
           "amount": 1,
-          "minutesLeft": 12,
+          "minutesLeft": 8,
           "maxStack": 20,
           "price": 500
         },
@@ -4901,7 +5489,7 @@
           "source": "RareDrop",
           "ilvl": 55,
           "amount": 1,
-          "minutesLeft": 12,
+          "minutesLeft": 8,
           "maxStack": 5,
           "abilities": {
             "Scroll of Spirit IV": 1
@@ -4925,9 +5513,9 @@
       "value": "False"
     },
     "startDate": "2025-08-27T08:06:53.5797226+02:00",
-    "lastLoaded": "2025-09-11T00:46:07.2988066+02:00",
-    "lastPlayed": "2025-09-11T00:47:56.1816703+02:00",
-    "timePlayed": "00:41:59.1439356"
+    "lastLoaded": "2025-09-11T15:46:12.0179222+02:00",
+    "lastPlayed": "2025-09-11T15:55:50.2762619+02:00",
+    "timePlayed": "00:55:17.4121799"
   },
   {
     "playerSide": "Alliance",

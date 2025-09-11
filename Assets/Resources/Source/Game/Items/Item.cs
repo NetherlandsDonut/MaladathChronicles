@@ -85,6 +85,9 @@ public class Item
     //Source where this item can be gotten from
     public string source;
 
+    //Specific recipe connected to this item
+    public string recipeConnected;
+
     //Reputation standing required from the player to use this item
     public string reputationRequired;
 
@@ -609,6 +612,7 @@ public class Item
         else if (type == "Recipe")
         {
             var recipe = Recipe.recipes.Find(x => name.Contains(x.name));
+            if (recipeConnected != null) recipe = Recipe.recipes.Find(x => x.name == recipeConnected);
             if (recipe != null)
             {
                 if (!entity.professionSkills.ContainsKey(recipe.profession))
@@ -671,6 +675,8 @@ public class Item
         else if (type == "Recipe")
         {
             var recipe = Recipe.recipes.Find(x => name.Contains(x.name));
+            if (recipeConnected != null) recipe = Recipe.recipes.Find(x => x.name == recipeConnected);
+            if (recipe == null) return;
             entity.LearnRecipe(recipe);
             PlaySound("DesktopSkillLearned");
             SpawnFallingText(new Vector2(0, 34), "New recipe learned", "Blue");
@@ -1388,6 +1394,7 @@ public class Item
         if (Input.GetKey(KeyCode.LeftControl) && item.type == "Recipe")
         {
             var recipe = Recipe.recipes.Find(x => item.name.Contains(x.name));
+            if (item.recipeConnected != null) recipe = Recipe.recipes.Find(x => x.name == item.recipeConnected);
             if (recipe != null) item = items.Find(x => x.name == recipe.results.First().Key).CopyItem(recipe.results.First().Value);
         }
         if (Cursor.cursor.color == "Pink" && item.IsDisenchantable())
@@ -1524,7 +1531,9 @@ public class Item
             else if (item.type == "Recipe")
             {
                 var recipe = Recipe.recipes.Find(x => item.name.Contains(x.name));
-                AddLine(recipe.profession + " " + item.name.Split(':')[0].ToLower(), currentSave != null && currentSave.player.professionSkills.ContainsKey(recipe.profession) ? "HalfGray" : "DangerousRed");
+                if (item.recipeConnected != null) recipe = Recipe.recipes.Find(x => x.name == item.recipeConnected);
+                if (recipe == null) AddLine("?", "HalfGray");
+                else AddLine(recipe.profession + " " + item.name.Split(':')[0].ToLower(), currentSave != null && currentSave.player.professionSkills.ContainsKey(recipe.profession) ? "HalfGray" : "DangerousRed");
             }
             else if (item.type == "Off Hand") AddLine(item.type + (item.detailedType != null ? " " + item.detailedType : ""), currentSave != null && !currentSave.player.abilities.ContainsKey(item.detailedType == "Shield" ? "Shield Proficiency" : "Off Hand Proficiency") ? "DangerousRed" : "HalfGray");
             else AddLine(item.type ?? "", "HalfGray");
@@ -1687,61 +1696,65 @@ public class Item
         if (item.type == "Recipe")
         {
             var recipe = Recipe.recipes.Find(x => item.name.Contains(x.name));
-            if (recipe.results.Count > 0)
+            if (item.recipeConnected != null) recipe = Recipe.recipes.Find(x => x.name == item.recipeConnected);
+            if (recipe != null)
             {
+                if (recipe.results.Count > 0)
+                {
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Results:", "DarkGray");
+                    });
+                    foreach (var result in recipe.results)
+                    {
+                        var resultItem = items.Find(x => x.name == result.Key);
+                        AddPaddingRegion(() =>
+                        {
+                            SetRegionTextOffset(0, 19);
+                            AddLine("x" + result.Value, "DarkGray", "Right");
+                            AddLine(result.Key, resultItem.rarity);
+                            AddSmallButton(resultItem.icon);
+                            if (settings.rarityIndicators.Value())
+                                AddSmallButtonOverlay("OtherRarity" + resultItem.rarity, 0, 2);
+                        });
+                    }
+                }
+                else if (recipe.enchantment)
+                {
+                    AddHeaderRegion(() =>
+                    {
+                        AddLine("Enchantment:", "DarkGray");
+                    });
+                    var e = Enchant.enchants.Find(x => x.name == recipe.name);
+                    AddPaddingRegion(() =>
+                    {
+                        AddLine(e.type);
+                        AddLine(e.Name());
+                    });
+                }
                 AddHeaderRegion(() =>
                 {
-                    AddLine("Results:", "DarkGray");
+                    AddLine("Reagents:", "DarkGray");
                 });
-                foreach (var result in recipe.results)
+                foreach (var reagent in recipe.reagents)
                 {
-                    var resultItem = items.Find(x => x.name == result.Key);
+                    var reagentItem = items.Find(x => x.name == reagent.Key);
                     AddPaddingRegion(() =>
                     {
                         SetRegionTextOffset(0, 19);
-                        AddLine("x" + result.Value, "DarkGray", "Right");
-                        AddLine(result.Key, resultItem.rarity);
-                        AddSmallButton(resultItem.icon);
+                        AddLine("x" + reagent.Value, "DarkGray", "Right");
+                        AddLine(reagent.Key, reagentItem.rarity);
+                        AddSmallButton(reagentItem.icon);
                         if (settings.rarityIndicators.Value())
-                            AddSmallButtonOverlay("OtherRarity" + resultItem.rarity, 0, 2);
+                            AddSmallButtonOverlay("OtherRarity" + reagentItem.rarity, 0, 2);
                     });
                 }
-            }
-            else if (recipe.enchantment)
-            {
                 AddHeaderRegion(() =>
                 {
-                    AddLine("Enchantment:", "DarkGray");
-                });
-                var e = Enchant.enchants.Find(x => x.name == recipe.name);
-                AddPaddingRegion(() =>
-                {
-                    AddLine(e.type);
-                    AddLine(e.Name());
+                    AddLine("Required skill: ", "DarkGray");
+                    AddText(recipe.learnedAt + "", currentSave.player.professionSkills.ContainsKey(recipe.profession) && recipe.learnedAt <= currentSave.player.professionSkills[recipe.profession].Item1 ? "Uncommon" : "DangerousRed");
                 });
             }
-            AddHeaderRegion(() =>
-            {
-                AddLine("Reagents:", "DarkGray");
-            });
-            foreach (var reagent in recipe.reagents)
-            {
-                var reagentItem = items.Find(x => x.name == reagent.Key);
-                AddPaddingRegion(() =>
-                {
-                    SetRegionTextOffset(0, 19);
-                    AddLine("x" + reagent.Value, "DarkGray", "Right");
-                    AddLine(reagent.Key, reagentItem.rarity);
-                    AddSmallButton(reagentItem.icon);
-                    if (settings.rarityIndicators.Value())
-                        AddSmallButtonOverlay("OtherRarity" + reagentItem.rarity, 0, 2);
-                });
-            }
-            AddHeaderRegion(() =>
-            {
-                AddLine("Required skill: ", "DarkGray");
-                AddText(recipe.learnedAt + "", currentSave.player.professionSkills.ContainsKey(recipe.profession) && recipe.learnedAt <= currentSave.player.professionSkills[recipe.profession].Item1 ? "Uncommon" : "DangerousRed");
-            });
         }
         if (item.enchant != null)
         {
