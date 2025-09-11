@@ -2906,7 +2906,7 @@
         3062
       ],
       "level": 60,
-      "experience": 932252,
+      "experience": 932332,
       "uniquesGotten": [
         "Horn of Hatetalon",
         "Edana's Dark Heart",
@@ -4237,9 +4237,9 @@
       }
     },
     "hour": 7,
-    "minute": 45,
-    "second": 21,
-    "currentSite": "Blackrock Mountain",
+    "minute": 51,
+    "second": 39,
+    "currentSite": "Braug's Hut",
     "generatedBossPools": {
       "<Forlorn Cloister>": "Fallen Champion",
       "<Ring of Law>": "Eviscerator"
@@ -4347,7 +4347,7 @@
       "Aldrassil": 1,
       "Rut'theran Village": 1,
       "Dolanaar": 1,
-      "Maneweaver Hut": 1,
+      "Maneweaver Hut": 2,
       "Maestra's Post": 1,
       "Astranaar": 1,
       "Starfall Village": 1,
@@ -4492,7 +4492,7 @@
       "Bay of Storms": 1,
       "Bitter Reaches": 1,
       "Haldarr Encampment": 1,
-      "Hetaera's Clutch": 1,
+      "Hetaera's Clutch": 2,
       "Jagged Reef": 1,
       "Lake Mennar": 1,
       "Legash Encampment": 1,
@@ -4504,7 +4504,7 @@
       "Southridge Beach": 1,
       "Temple of Arkkoran": 1,
       "Thalassian Base Camp": 1,
-      "The Ruined Reaches": 1,
+      "The Ruined Reaches": 2,
       "The Shattered Strand": 1,
       "Gadgetspring Hut": 1,
       "Tower of Eldara": 1,
@@ -5123,12 +5123,16 @@
       "Alcaz Island": 1,
       "Orgrimmar": 1,
       "Undercity": 1,
-      "Thunder Bluff": 1,
+      "Thunder Bluff": 2,
       "Stormwind City": 1,
       "Ironforge": 1,
       "Darnassus": 1,
       "Steelgrill's Depot": 1,
-      "The Forlorn Ridge": 4
+      "The Forlorn Ridge": 4,
+      "Mistwing Vale": 1,
+      "Galen's Camp": 2,
+      "Thunder Plateau": 2,
+      "Braug's Hut": 4
     },
     "unlockedAreas": [
       "Earth Song Falls",
@@ -5154,7 +5158,7 @@
           "item": "Shortsword",
           "amount": 1,
           "maxAmount": 2,
-          "minutesLeft": 19,
+          "minutesLeft": 13,
           "restockSpeed": 40
         },
         {
@@ -5167,7 +5171,7 @@
           "item": "Hand Axe",
           "amount": 1,
           "maxAmount": 2,
-          "minutesLeft": 19,
+          "minutesLeft": 13,
           "restockSpeed": 40
         },
         {
@@ -5186,7 +5190,7 @@
           "item": "Large Club",
           "amount": 1,
           "maxAmount": 2,
-          "minutesLeft": 19,
+          "minutesLeft": 13,
           "restockSpeed": 40
         }
       ],
@@ -5443,7 +5447,7 @@
           "item": "Dented Buckler",
           "amount": 1,
           "maxAmount": 2,
-          "minutesLeft": 18,
+          "minutesLeft": 12,
           "restockSpeed": 40
         }
       ]
@@ -5461,7 +5465,7 @@
           "ilvl": 40,
           "lvl": 1,
           "amount": 6,
-          "minutesLeft": 8,
+          "minutesLeft": 2,
           "maxStack": 20,
           "price": 250
         },
@@ -5475,7 +5479,7 @@
           "ilvl": 50,
           "lvl": 1,
           "amount": 1,
-          "minutesLeft": 8,
+          "minutesLeft": 2,
           "maxStack": 20,
           "price": 500
         },
@@ -5489,7 +5493,7 @@
           "source": "RareDrop",
           "ilvl": 55,
           "amount": 1,
-          "minutesLeft": 8,
+          "minutesLeft": 2,
           "maxStack": 5,
           "abilities": {
             "Scroll of Spirit IV": 1
@@ -5513,9 +5517,9 @@
       "value": "False"
     },
     "startDate": "2025-08-27T08:06:53.5797226+02:00",
-    "lastLoaded": "2025-09-11T15:46:12.0179222+02:00",
-    "lastPlayed": "2025-09-11T15:55:50.2762619+02:00",
-    "timePlayed": "00:55:17.4121799"
+    "lastLoaded": "2025-09-11T18:17:40.8543124+02:00",
+    "lastPlayed": "2025-09-11T18:20:41.2854743+02:00",
+    "timePlayed": "01:06:02.1288137"
   },
   {
     "playerSide": "Alliance",

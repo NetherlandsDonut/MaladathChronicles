@@ -2266,6 +2266,15 @@
     "vitality": 2.0
   },
   {
+    "name": "Azuregos",
+    "category": "Dragonkin",
+    "subcategory": "BlueDragon",
+    "portrait": "PortraitAzuregos",
+    "abilities": {},
+    "kind": "Elite",
+    "vitality": 5.0
+  },
+  {
     "name": "Boahn",
     "category": "Humanoid",
     "subcategory": "Night Elf",
@@ -4041,6 +4050,15 @@
   },
   {
     "name": "Chimaerok Devourer",
+    "category": "Beast",
+    "subcategory": "Chimaera",
+    "portrait": "PortraitChimaera",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
+  },
+  {
+    "name": "Mistwing Rogue",
     "category": "Beast",
     "subcategory": "Chimaera",
     "portrait": "PortraitChimaera",
@@ -10631,6 +10649,15 @@
     "vitality": 1.0
   },
   {
+    "name": "Thunderhead Patriarch",
+    "category": "Beast",
+    "subcategory": "Hippogryph",
+    "portrait": "PortraitHippogryph",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
+  },
+  {
     "name": "Thunderhead Stagwing",
     "category": "Beast",
     "subcategory": "Hippogryph",
@@ -15507,6 +15534,15 @@
   },
   {
     "name": "Devouring Ectoplasm",
+    "category": "Elemental",
+    "subcategory": "Ooze",
+    "portrait": "PortraitOozeBlack",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
+  },
+  {
+    "name": "Forest Ooze",
     "category": "Elemental",
     "subcategory": "Ooze",
     "portrait": "PortraitOozeBlack",
@@ -20840,6 +20876,15 @@
     "vitality": 1.0
   },
   {
+    "name": "Mosshoof Courser",
+    "category": "Beast",
+    "subcategory": "Stag",
+    "portrait": "PortraitStag",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
+  },
+  {
     "name": "Stalvan Mistmantle",
     "category": "Undead",
     "subcategory": "Forsaken",
@@ -23808,7 +23853,7 @@
     "name": "Slavering Worg",
     "category": "Beast",
     "subcategory": "Worg",
-    "portrait": "PortraitWorg",
+    "portrait": "PortraitWorgBlack",
     "abilities": {},
     "kind": "Common",
     "vitality": 1.0
@@ -23906,7 +23951,7 @@
   {
     "name": "Nefaru",
     "category": "Beast",
-    "subcategory": "Worg",
+    "subcategory": "Worgen",
     "portrait": "PortraitWorgen",
     "abilities": {},
     "kind": "Rare",
@@ -23915,7 +23960,7 @@
   {
     "name": "Eviscerator",
     "category": "Beast",
-    "subcategory": "Worg",
+    "subcategory": "Worgen",
     "portrait": "PortraitWorgen",
     "abilities": {},
     "kind": "Elite",
@@ -23924,7 +23969,7 @@
   {
     "name": "Grimson the Pale",
     "category": "Beast",
-    "subcategory": "Worg",
+    "subcategory": "Worgen",
     "portrait": "PortraitWorgen",
     "abilities": {},
     "kind": "Elite",
@@ -23933,7 +23978,7 @@
   {
     "name": "Moonrage Bloodhowler",
     "category": "Beast",
-    "subcategory": "Worg",
+    "subcategory": "Worgen",
     "portrait": "PortraitWorgen",
     "abilities": {},
     "kind": "Common",
@@ -23942,7 +23987,7 @@
   {
     "name": "Moonrage Darkrunner",
     "category": "Beast",
-    "subcategory": "Worg",
+    "subcategory": "Worgen",
     "portrait": "PortraitWorgen",
     "abilities": {},
     "kind": "Common",
@@ -23951,7 +23996,7 @@
   {
     "name": "Moonrage Darksouk",
     "category": "Beast",
-    "subcategory": "Worg",
+    "subcategory": "Worgen",
     "portrait": "PortraitWorgen",
     "abilities": {},
     "kind": "Common",
@@ -23960,7 +24005,7 @@
   {
     "name": "Moonrage Darksoul",
     "category": "Beast",
-    "subcategory": "Worg",
+    "subcategory": "Worgen",
     "portrait": "PortraitWorgen",
     "abilities": {},
     "kind": "Common",
@@ -23969,7 +24014,7 @@
   {
     "name": "Moonrage Glutton",
     "category": "Beast",
-    "subcategory": "Worg",
+    "subcategory": "Worgen",
     "portrait": "PortraitWorgen",
     "abilities": {},
     "kind": "Common",
@@ -23978,7 +24023,7 @@
   {
     "name": "Moonrage Sentry",
     "category": "Beast",
-    "subcategory": "Worg",
+    "subcategory": "Worgen",
     "portrait": "PortraitWorgen",
     "abilities": {},
     "kind": "Common",
@@ -23987,7 +24032,7 @@
   {
     "name": "Moonrage Watcher",
     "category": "Beast",
-    "subcategory": "Worg",
+    "subcategory": "Worgen",
     "portrait": "PortraitWorgen",
     "abilities": {},
     "kind": "Common",
@@ -23996,7 +24041,7 @@
   {
     "name": "Moonrage Whitescalp",
     "category": "Beast",
-    "subcategory": "Worg",
+    "subcategory": "Worgen",
     "portrait": "PortraitWorgen",
     "abilities": {},
     "kind": "Common",
@@ -24005,7 +24050,7 @@
   {
     "name": "Razorclaw the Butcher",
     "category": "Beast",
-    "subcategory": "Worg",
+    "subcategory": "Worgen",
     "portrait": "PortraitWorgenBrown",
     "abilities": {},
     "kind": "Elite",
@@ -24014,7 +24059,7 @@
   {
     "name": "Rethilgore",
     "category": "Beast",
-    "subcategory": "Worg",
+    "subcategory": "Worgen",
     "portrait": "PortraitWorgenBrown",
     "abilities": {},
     "kind": "Elite",
@@ -24023,7 +24068,7 @@
   {
     "name": "Wolf Master Nandos",
     "category": "Beast",
-    "subcategory": "Worg",
+    "subcategory": "Worgen",
     "portrait": "PortraitWorgenBrown",
     "abilities": {},
     "kind": "Elite",
@@ -24032,7 +24077,7 @@
   {
     "name": "Fenros",
     "category": "Beast",
-    "subcategory": "Worg",
+    "subcategory": "Worgen",
     "portrait": "PortraitWorgenDark",
     "abilities": {},
     "kind": "Rare",
@@ -24041,16 +24086,25 @@
   {
     "name": "Odo the Blindwatcher",
     "category": "Beast",
-    "subcategory": "Worg",
+    "subcategory": "Worgen",
     "portrait": "PortraitWorgenDark",
     "abilities": {},
     "kind": "Elite",
     "vitality": 3.0
   },
   {
+    "name": "Shadowfang Darksoul",
+    "category": "Beast",
+    "subcategory": "Worgen",
+    "portrait": "PortraitWorgenDark",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
+  },
+  {
     "name": "Gutspill",
     "category": "Beast",
-    "subcategory": "Worg",
+    "subcategory": "Worgen",
     "portrait": "PortraitWorgenDark",
     "abilities": {},
     "kind": "Rare",
@@ -24059,7 +24113,7 @@
   {
     "name": "Terrorwulf Packlord",
     "category": "Beast",
-    "subcategory": "Worg",
+    "subcategory": "Worgen",
     "portrait": "PortraitWorgenDark",
     "abilities": {},
     "kind": "Rare",
@@ -24068,7 +24122,7 @@
   {
     "name": "Nightbane Dark Runner",
     "category": "Beast",
-    "subcategory": "Worg",
+    "subcategory": "Worgen",
     "portrait": "PortraitWorgenDark",
     "abilities": {},
     "kind": "Common",
@@ -24077,7 +24131,7 @@
   {
     "name": "Nightbane Shadow Weaver",
     "category": "Beast",
-    "subcategory": "Worg",
+    "subcategory": "Worgen",
     "portrait": "PortraitWorgenDark",
     "abilities": {},
     "kind": "Common",
@@ -24086,7 +24140,7 @@
   {
     "name": "Nightbane Tainted One",
     "category": "Beast",
-    "subcategory": "Worg",
+    "subcategory": "Worgen",
     "portrait": "PortraitWorgenDark",
     "abilities": {},
     "kind": "Common",
@@ -24095,7 +24149,7 @@
   {
     "name": "Nightbane Vile Fang",
     "category": "Beast",
-    "subcategory": "Worg",
+    "subcategory": "Worgen",
     "portrait": "PortraitWorgenDark",
     "abilities": {},
     "kind": "Common",
@@ -24104,7 +24158,7 @@
   {
     "name": "Shadowfang Glutton",
     "category": "Beast",
-    "subcategory": "Worg",
+    "subcategory": "Worgen",
     "portrait": "PortraitWorgenDark",
     "abilities": {},
     "kind": "Common",
@@ -24113,7 +24167,7 @@
   {
     "name": "Shadowfang Moonwalker",
     "category": "Beast",
-    "subcategory": "Worg",
+    "subcategory": "Worgen",
     "portrait": "PortraitWorgenDark",
     "abilities": {},
     "kind": "Common",
@@ -24122,7 +24176,7 @@
   {
     "name": "Shadowfang Ragetooth",
     "category": "Beast",
-    "subcategory": "Worg",
+    "subcategory": "Worgen",
     "portrait": "PortraitWorgenDark",
     "abilities": {},
     "kind": "Common",
@@ -24131,7 +24185,7 @@
   {
     "name": "Shadowfang Whitescalp",
     "category": "Beast",
-    "subcategory": "Worg",
+    "subcategory": "Worgen",
     "portrait": "PortraitWorgenDark",
     "abilities": {},
     "kind": "Common",
@@ -24140,7 +24194,7 @@
   {
     "name": "Son of Arugal",
     "category": "Beast",
-    "subcategory": "Worg",
+    "subcategory": "Worgen",
     "portrait": "PortraitWorgenDark",
     "abilities": {},
     "kind": "Common",
@@ -24149,7 +24203,7 @@
   {
     "name": "Terrorwulf Fleshripper",
     "category": "Beast",
-    "subcategory": "Worg",
+    "subcategory": "Worgen",
     "portrait": "PortraitWorgenDark",
     "abilities": {},
     "kind": "Common",
@@ -24158,7 +24212,7 @@
   {
     "name": "Terrorwulf Shadow Reaver",
     "category": "Beast",
-    "subcategory": "Worg",
+    "subcategory": "Worgen",
     "portrait": "PortraitWorgenDark",
     "abilities": {},
     "kind": "Common",
@@ -24461,6 +24515,15 @@
     "abilities": {},
     "kind": "Rare",
     "vitality": 2.0
+  },
+  {
+    "name": "Young Pridewing",
+    "category": "Beast",
+    "subcategory": "Wyvern",
+    "portrait": "PortraitWyvern",
+    "abilities": {},
+    "kind": "Common",
+    "vitality": 1.0
   },
   {
     "name": "Highperch Consort",

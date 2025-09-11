@@ -61995,6 +61995,7 @@
     "icon": "itemhelmet41",
     "type": "Head",
     "armorClass": "Leather",
+    "source": "DirectDrop",
     "ilvl": 57,
     "lvl": 52,
     "armor": 132,
@@ -62005,7 +62006,6 @@
       "Agility": 19,
       "Stamina": 18
     },
-    "source": "DirectDrop",
     "droppedBy": [
       "The Seven"
     ]
@@ -62016,6 +62016,7 @@
     "icon": "itemchestchain07",
     "type": "Chest",
     "armorClass": "Mail",
+    "source": "DirectDrop",
     "ilvl": 57,
     "lvl": 52,
     "armor": 338,
@@ -62025,7 +62026,6 @@
       "Strength": 8,
       "Stamina": 8
     },
-    "source": "DirectDrop",
     "droppedBy": [
       "The Seven"
     ]
@@ -62036,6 +62036,7 @@
     "icon": "itemshortblade15",
     "detailedType": "Dagger",
     "type": "One Handed",
+    "source": "DirectDrop",
     "ilvl": 57,
     "lvl": 52,
     "minPower": 3.6,
@@ -62045,7 +62046,6 @@
     "stats": {
       "Stamina": 12
     },
-    "source": "DirectDrop",
     "droppedBy": [
       "The Seven"
     ]
@@ -62056,12 +62056,12 @@
     "icon": "itempants04",
     "type": "Legs",
     "armorClass": "Plate",
+    "source": "DirectDrop",
     "ilvl": 57,
     "lvl": 52,
     "armor": 742,
     "maxStack": 1,
     "price": 16456,
-    "source": "DirectDrop",
     "droppedBy": [
       "The Seven"
     ]
@@ -62072,6 +62072,7 @@
     "icon": "itempants11",
     "type": "Legs",
     "armorClass": "Cloth",
+    "source": "DirectDrop",
     "ilvl": 57,
     "lvl": 52,
     "armor": 71,
@@ -62081,7 +62082,6 @@
       "Intellect": 12,
       "Spirit": 28
     },
-    "source": "DirectDrop",
     "droppedBy": [
       "The Seven"
     ]
@@ -62092,13 +62092,13 @@
     "icon": "itemhammer07",
     "detailedType": "Mace",
     "type": "One Handed",
+    "source": "DirectDrop",
     "ilvl": 57,
     "lvl": 52,
     "minPower": 3.63,
     "maxPower": 5.89,
     "maxStack": 1,
     "price": 43648,
-    "source": "DirectDrop",
     "droppedBy": [
       "The Seven"
     ]
@@ -62109,6 +62109,7 @@
     "icon": "itemhammer08",
     "detailedType": "Mace",
     "type": "Two Handed",
+    "source": "DirectDrop",
     "ilvl": 57,
     "lvl": 52,
     "minPower": 4.89,
@@ -62116,7 +62117,6 @@
     "armor": 30,
     "maxStack": 1,
     "price": 54167,
-    "source": "DirectDrop",
     "droppedBy": [
       "The Seven"
     ]
@@ -64627,13 +64627,13 @@
     "icon": "itemaxe13",
     "detailedType": "Axe",
     "type": "One Handed",
+    "source": "DirectDrop",
     "ilvl": 56,
     "lvl": 51,
     "minPower": 3.59,
     "maxPower": 5.82,
     "maxStack": 1,
     "price": 40732,
-    "source": "DirectDrop",
     "droppedBy": [
       "The Seven"
     ]
@@ -201598,24 +201598,24 @@
   {
     "rarity": "Epic",
     "name": "Codex: Elementium Smelting",
-    "recipeConnected": "Smelt Elementium",
     "icon": "itemmiscbook11",
-    "source": "ChestDrop",
     "detailedType": "Scroll",
     "type": "Recipe",
+    "source": "ChestDrop",
+    "recipeConnected": "Smelt Elementium",
     "maxStack": 1,
     "price": 20000
   },
   {
     "rarity": "Epic",
     "name": "Codex: Dark Iron Smelting",
-    "recipeConnected": "Smelt Dark Iron",
     "icon": "itemmiscbook10",
     "detailedType": "Scroll",
     "type": "Recipe",
+    "source": "DirectDrop",
+    "recipeConnected": "Smelt Dark Iron",
     "maxStack": 1,
     "price": 15000,
-    "source": "DirectDrop",
     "droppedBy": [
       "The Seven"
     ]
@@ -208308,10 +208308,10 @@
     "name": "Formula: Enchant Weapon - Crusader",
     "icon": "itemmiscnote01",
     "detailedType": "Note",
-    "unique": true,
     "type": "Recipe",
     "source": "DirectDrop",
     "maxStack": 1,
+    "unique": true,
     "price": 7500,
     "droppedBy": [
       "Scarlet Spellbinder"
@@ -208324,8 +208324,8 @@
     "detailedType": "Note",
     "type": "Recipe",
     "source": "DirectDrop",
-    "unique": true,
     "maxStack": 1,
+    "unique": true,
     "price": 7500,
     "droppedBy": [
       "Spirestone Warlord"
@@ -208338,8 +208338,8 @@
     "detailedType": "Note",
     "type": "Recipe",
     "source": "DirectDrop",
-    "unique": true,
     "maxStack": 1,
+    "unique": true,
     "price": 3000,
     "droppedBy": [
       "Vilebranch Shadowcaster"
@@ -208361,8 +208361,8 @@
     "detailedType": "Note",
     "type": "Recipe",
     "source": "DirectDrop",
-    "unique": true,
     "maxStack": 1,
+    "unique": true,
     "price": 6000,
     "droppedBy": [
       "Deadwind Warlock"
@@ -208385,8 +208385,8 @@
     "detailedType": "Scroll",
     "type": "Recipe",
     "source": "DirectDrop",
-    "unique": true,
     "maxStack": 1,
+    "unique": true,
     "price": 5000,
     "droppedBy": [
       "Crimson Inquisitor"

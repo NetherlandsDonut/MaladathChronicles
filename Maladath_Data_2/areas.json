@@ -20234,13 +20234,6 @@
         "type": "Flight Master"
       },
       {
-        "name": "Peter Galen",
-        "gender": "Male",
-        "voiceVariant": 1,
-        "race": "Human",
-        "type": "Master Dragonscale Leatherworker"
-      },
-      {
         "name": "Brinna Valanaar",
         "gender": "Female",
         "voiceVariant": 3,
@@ -40692,6 +40685,9 @@
     "noNightVariant": true
   },
   {
+    "chestBonus": {
+      "Pattern: Red Dragonscale Gauntlets": 1
+    },
     "commonEncounters": [
       {
         "who": "Bloodaxe Veteran",
@@ -40709,9 +40705,6 @@
         "levelMax": 59
       }
     ],
-    "chestBonus": {
-      "Pattern: Red Dragonscale Gauntlets": 1
-    },
     "eliteEncounters": [
       {
         "who": "Overlord Wyrmthalak",
@@ -43618,6 +43611,104 @@
   {
     "commonEncounters": [
       {
+        "who": "Thunderhead Stagwing",
+        "levelMin": 47,
+        "levelMax": 48
+      },
+      {
+        "who": "Mistwing Rogue",
+        "levelMin": 49,
+        "levelMax": 50
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ],
+    "x": 2388,
+    "y": -1993,
+    "name": "Mistwing Vale",
+    "zone": "Azshara",
+    "type": "HostileArea"
+  },
+  {
+    "people": [
+      {
+        "name": "Peter Galen",
+        "gender": "Male",
+        "voiceVariant": 1,
+        "race": "Human",
+        "type": "Master Dragonscale Leatherworker"
+      }
+    ],
+    "commonEncounters": [
+      {
+        "who": "Mosshoof Courser",
+        "levelMin": 51,
+        "levelMax": 52
+      },
+      {
+        "who": "Forest Ooze",
+        "levelMin": 52,
+        "levelMax": 53
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ],
+    "x": 2494,
+    "y": -1902,
+    "name": "Galen's Camp",
+    "zone": "Azshara",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Cliff Breaker",
+        "levelMin": 53,
+        "levelMax": 54
+      },
+      {
+        "who": "Thunderhead Patriarch",
+        "levelMin": 52,
+        "levelMax": 53
+      },
+      {
+        "who": "Mosshoof Courser",
+        "levelMin": 52,
+        "levelMax": 53
+      }
+    ],
+    "eliteEncounters": [
+      {
+        "who": "Azuregos",
+        "levelMin": 60
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ],
+    "x": 2660,
+    "y": -2000,
+    "name": "Thunder Plateau",
+    "zone": "Azshara",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
         "who": "Spitelash Siren",
         "levelMin": 51,
         "levelMax": 52
@@ -43737,8 +43828,8 @@
         "point": 3
       }
     ],
-    "x": 2683,
-    "y": -2051,
+    "x": 2631,
+    "y": -2077,
     "name": "The Ruined Reaches",
     "zone": "Azshara",
     "type": "HostileArea",
@@ -46151,6 +46242,9 @@
     "noNightVariant": true
   },
   {
+    "chestBonus": {
+      "Codex: Elementium Smelting": 1
+    },
     "commonEncounters": [
       {
         "who": "Death Talon Wyrmguard",
@@ -46210,9 +46304,6 @@
         "point": 7
       }
     ],
-    "chestBonus": {
-      "Codex: Elementium Smelting": 1
-    },
     "name": "Crimson Laboratories",
     "zone": "Blackwing Lair",
     "type": "HostileArea",
@@ -46783,6 +46874,9 @@
     "type": "HostileArea"
   },
   {
+    "chestBonus": {
+      "Pattern: Red Dragonscale Girdle": 1
+    },
     "commonEncounters": [
       {
         "who": "Blackrock Slayer",
@@ -46815,9 +46909,6 @@
     ],
     "x": 5368,
     "y": -3242,
-    "chestBonus": {
-      "Pattern: Red Dragonscale Girdle": 1
-    },
     "name": "Blackrock Stronghold",
     "zone": "Burning Steppes",
     "type": "HostileArea"
@@ -61909,16 +62000,16 @@
         "levelMin": 26
       }
     ],
-    "areaSize": 3,
+    "areaSize": 2,
     "progression": [
       {
         "type": "Boss",
         "bossName": "Archmage Arugal",
-        "point": 2
+        "point": 1
       },
       {
         "type": "Treasure",
-        "point": 3
+        "point": 2
       }
     ],
     "name": "Arugal Chamber",
@@ -61935,8 +62026,13 @@
       },
       {
         "who": "Shadowfang Glutton",
-        "levelMin": 20,
-        "levelMax": 21
+        "levelMin": 21,
+        "levelMax": 22
+      },
+      {
+        "who": "Shadowfang Darksoul",
+        "levelMin": 22,
+        "levelMax": 23
       }
     ],
     "eliteEncounters": [
@@ -62014,6 +62110,11 @@
         "who": "Haunted Servitor",
         "levelMin": 20,
         "levelMax": 21
+      },
+      {
+        "who": "Shadowfang Glutton",
+        "levelMin": 20,
+        "levelMax": 21
       }
     ],
     "eliteEncounters": [
@@ -62022,21 +62123,21 @@
         "levelMin": 22
       }
     ],
-    "areaSize": 3,
+    "areaSize": 2,
     "progression": [
       {
         "type": "Boss",
         "bossName": "Razorclaw the Butcher",
-        "point": 2
+        "point": 1
       },
       {
         "type": "Area",
         "areaName": "Dining Hall",
-        "point": 2
+        "point": 1
       },
       {
         "type": "Treasure",
-        "point": 3
+        "point": 2
       }
     ],
     "name": "Kitchen",
@@ -62202,17 +62303,17 @@
   {
     "commonEncounters": [
       {
+        "who": "Wolfguard Worg",
+        "levelMin": 24,
+        "levelMax": 25
+      },
+      {
         "who": "Son of Arugal",
         "levelMin": 24,
         "levelMax": 25
       },
       {
         "who": "Lupine Horror",
-        "levelMin": 24,
-        "levelMax": 25
-      },
-      {
-        "who": "Wolfguard Worg",
         "levelMin": 24,
         "levelMax": 25
       }
@@ -64227,6 +64328,32 @@
     "x": 1534,
     "y": -2318,
     "name": "Windshear Mine",
+    "zone": "Stonetalon Mountains",
+    "type": "HostileArea"
+  },
+  {
+    "commonEncounters": [
+      {
+        "who": "Young Pridewing",
+        "levelMin": 21,
+        "levelMax": 22
+      },
+      {
+        "who": "Deepmoss Webspinner",
+        "levelMin": 21,
+        "levelMax": 22
+      }
+    ],
+    "areaSize": 3,
+    "progression": [
+      {
+        "type": "Treasure",
+        "point": 3
+      }
+    ],
+    "x": 1571,
+    "y": -2226,
+    "name": "Braug's Hut",
     "zone": "Stonetalon Mountains",
     "type": "HostileArea"
   },
