@@ -113,9 +113,9 @@ public class Event
             //This effect starts a combat with a specific enemy
             void EffectCombat()
             {
-                if (desktops.Exists(x => x.title == "CombatResults"))
+                if (desktops.Exists(x => x.title == "CombatResults" || x.title == "ContainerLoot" || x.title == "DisenchantLoot" || x.title == "ChestLoot"))
                 {
-                    SpawnFallingText(new Vector2(0, 34), "Can't do that right now", "Red");
+                    SpawnFallingText(new Vector2(0, 34), "Can't do that while looting", "Red");
                     return;
                 }
                 var target = effector;
@@ -226,10 +226,14 @@ public class Event
             //This effect consumes one stack of the item
             void EffectTeleportPlayer()
             {
+                if (desktops.Exists(x => x.title == "CombatResults" || x.title == "ContainerLoot" || x.title == "DisenchantLoot" || x.title == "ChestLoot"))
+                {
+                    SpawnFallingText(new Vector2(0, 34), "Can't do that while looting", "Red");
+                    return;
+                }
                 string destination = effect.ContainsKey("TeleportDestinaton") ? effect["TeleportDestinaton"] : "None";
                 if (destination == "None") return;
                 else if (destination == "<HomeLocation>") destination = save.player.homeLocation;
-                Item.openedItem = null;
                 CloseDesktop("EquipmentScreen");
                 CloseDesktop("Area");
                 SiteArea.area = null;
