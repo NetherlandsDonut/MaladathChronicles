@@ -52224,6 +52224,11 @@
         "who": "Diseased Flayer",
         "levelMin": 58,
         "levelMax": 59
+      },
+      {
+        "who": "Dread Weaver",
+        "levelMin": 58,
+        "levelMax": 59
       }
     ],
     "areaSize": 3,
@@ -52454,19 +52459,9 @@
         "levelMax": 57
       },
       {
-        "who": "Hate Shrieker",
-        "levelMin": 57,
-        "levelMax": 58
-      },
-      {
         "who": "Death Cultist",
         "levelMin": 53,
         "levelMax": 54
-      },
-      {
-        "who": "Cannibal Ghoul",
-        "levelMin": 54,
-        "levelMax": 55
       }
     ],
     "areaSize": 3,
@@ -52484,16 +52479,6 @@
   },
   {
     "commonEncounters": [
-      {
-        "who": "Scourge Warder",
-        "levelMin": 53,
-        "levelMax": 54
-      },
-      {
-        "who": "Putrid Gargoyle",
-        "levelMin": 53,
-        "levelMax": 54
-      },
       {
         "who": "Necromancer",
         "levelMin": 55,
@@ -52540,6 +52525,11 @@
         "who": "Plaguebat",
         "levelMin": 52,
         "levelMax": 53
+      },
+      {
+        "who": "Scourge Warder",
+        "levelMin": 53,
+        "levelMax": 54
       }
     ],
     "areaSize": 3,
@@ -52811,16 +52801,6 @@
   {
     "commonEncounters": [
       {
-        "who": "Dread Weaver",
-        "levelMin": 58,
-        "levelMax": 59
-      },
-      {
-        "who": "Death Singer",
-        "levelMin": 57,
-        "levelMax": 59
-      },
-      {
         "who": "Dark Adept",
         "levelMin": 58,
         "levelMax": 59
@@ -52835,17 +52815,7 @@
         "levelMin": 60
       },
       {
-        "who": "Abomination",
-        "levelMin": 59,
-        "levelMax": 60
-      },
-      {
         "who": "Scourge Champion",
-        "levelMin": 59,
-        "levelMax": 60
-      },
-      {
-        "who": "Diseased Flayer",
         "levelMin": 59,
         "levelMax": 60
       },

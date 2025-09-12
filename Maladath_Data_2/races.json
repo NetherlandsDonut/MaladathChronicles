@@ -94,15 +94,6 @@
     "vitality": 3.5
   },
   {
-    "name": "Abomination",
-    "category": "Undead",
-    "subcategory": "Abomination",
-    "portrait": "PortraitAbomination",
-    "abilities": {},
-    "kind": "Common",
-    "vitality": 1.5
-  },
-  {
     "name": "Bile Spewer",
     "category": "Undead",
     "subcategory": "Abomination",

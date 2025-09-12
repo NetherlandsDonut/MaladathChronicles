@@ -1648,8 +1648,10 @@ public class Blueprint
                     {
                         var maxSkill = primary[index].levels.Where(x => currentSave.player.professionSkills[primary[index].name].Item2.Contains(x.name)).Max(x => x.maxSkill);
                         var skill = currentSave.player.professionSkills[primary[index].name].Item1;
-                        AddLine(primary[index].name + " " + skill);
-                        AddLine(maxSkill + "", "DimGray", "Right");
+                        AddLine(skill + "", "Gray", "Right");
+                        AddText(" / ", "DarkGray");
+                        AddText(maxSkill + "", "Gray");
+                        AddLine(primary[index].name);
                         AddBigButton(primary[index].icon,
                         (h) =>
                         {
@@ -1669,7 +1671,7 @@ public class Blueprint
             }
         }),
         new("ProfessionListGathering", () => {
-            SetAnchor(TopRight, -19, -38);
+            SetAnchor(BottomRight, -19, 35);
             AddHeaderGroup();
             SetRegionGroupWidth(190);
             var professions = Profession.professions.FindAll(x => currentSave.player.professionSkills.ContainsKey(x.name));
@@ -1687,8 +1689,10 @@ public class Blueprint
                     {
                         var maxSkill = gathering[index].levels.Where(x => currentSave.player.professionSkills[gathering[index].name].Item2.Contains(x.name)).Max(x => x.maxSkill);
                         var skill = currentSave.player.professionSkills[gathering[index].name].Item1;
-                        AddLine(gathering[index].name + " " + skill);
-                        AddLine(maxSkill + "", "DimGray", "Right");
+                        AddLine(skill + "", "Gray", "Right");
+                        AddText(" / ", "DarkGray");
+                        AddText(maxSkill + "", "Gray");
+                        AddLine(gathering[index].name);
                         AddBigButton(gathering[index].icon,
                         (h) =>
                         {
@@ -1708,12 +1712,12 @@ public class Blueprint
             }
         }),
         new("ProfessionListSecondary", () => {
-            SetAnchor(BottomRight, -19, 35);
+            SetAnchor(TopRight, -19, -38);
             AddHeaderGroup();
             SetRegionGroupWidth(190);
             AddHeaderRegion(() =>
             {
-                AddLine("Secondary professions:");
+                AddLine("Refining professions:");
             });
             var secondary = professions.Where(x => !x.primary).ToList();
             for (int i = 0; i < secondary.Count(); i++)
@@ -1725,8 +1729,10 @@ public class Blueprint
                     {
                         var maxSkill = secondary[index].levels.Where(x => currentSave.player.professionSkills[secondary[index].name].Item2.Contains(x.name)).Max(x => x.maxSkill);
                         var skill = currentSave.player.professionSkills[secondary[index].name].Item1;
-                        AddLine(secondary[index].name + " " + skill);
-                        AddLine(maxSkill + "", "DimGray", "Right");
+                        AddLine(skill + "", "Gray", "Right");
+                        AddText(" / ", "DarkGray");
+                        AddText(maxSkill + "", "Gray");
+                        AddLine(secondary[index].name);
                         AddBigButton(secondary[index].icon,
                         (h) =>
                         {
@@ -1760,8 +1766,10 @@ public class Blueprint
                 SetRegionTextOffset(38, 19);
                 var maxSkill = profession.levels.Where(x => currentSave.player.professionSkills[profession.name].Item2.Contains(x.name)).Max(x => x.maxSkill);
                 var skill = currentSave.player.professionSkills[profession.name].Item1;
-                AddLine(profession.name + " " + skill);
-                //AddLine(maxSkill + "", "DimGray", "Right");
+                AddLine(skill + "", "Gray", "Right");
+                AddText(" / ", "DarkGray");
+                AddText(maxSkill + "", "Gray");
+                AddLine(profession.name);
                 AddBigButton(profession.icon);
                 AddSmallButton("OtherClose", (h) =>
                 {
@@ -1974,8 +1982,8 @@ public class Blueprint
             });
             AddHeaderRegion(() =>
             {
-                AddLine("Time required:", "Gray");
                 AddLine(FormatTime(60 * recipe.reagents.Sum(x => x.Value)), "Gray", "Right");
+                AddLine("Time required:", "Gray");
             });
             var canCraft = currentSave.player.CanCraft(recipe, true, false) > 0;
             var canCraftWithSpace = currentSave.player.CanCraft(recipe, true, true) > 0;

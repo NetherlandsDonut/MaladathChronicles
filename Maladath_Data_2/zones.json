@@ -2357,5 +2357,13 @@
       "Shadowcraft Belt",
       "Bracers of Valor"
     ]
+  },
+  {
+    "name": "Naxxramas",
+    "icon": "Naxxramas",
+    "continent": "Eastern Kingdoms",
+    "chestVariant": 5,
+    "ambienceDay": "AmbienceUndercity",
+    "ambienceNight": "AmbienceUndercity"
   }
 ]

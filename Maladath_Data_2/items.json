@@ -69147,21 +69147,6 @@
     }
   },
   {
-    "rarity": "Common",
-    "name": "Blackhand's Command",
-    "icon": "itemletter17",
-    "detailedType": "Letter",
-    "type": "Miscellaneous",
-    "source": "DirectDrop",
-    "ilvl": 55,
-    "maxStack": 1,
-    "indestructible": true,
-    "unique": true,
-    "droppedBy": [
-      "Scarshield Quartermaster"
-    ]
-  },
-  {
     "rarity": "Uncommon",
     "name": "Dimensional Ripper - Everlook",
     "icon": "itemmiscenggizmos07",
@@ -189014,6 +188999,12 @@
     "maxStack": 1,
     "indestructible": true,
     "unique": true,
+    "raceDropRestriction": [
+      "Gnome",
+      "Night Elf",
+      "Dwarf",
+      "Human"
+    ],
     "droppedBy": [
       "Overlord Wyrmthalak"
     ]

@@ -2109,7 +2109,7 @@
   },
   {
     "name": "Smelt Copper",
-    "profession": "Mining",
+    "profession": "Smelting",
     "skillUpYellow": 25,
     "skillUpGreen": 47,
     "skillUpGray": 70,
@@ -3065,7 +3065,7 @@
   },
   {
     "name": "Smelt Bronze",
-    "profession": "Mining",
+    "profession": "Smelting",
     "skillUpOrange": 65,
     "skillUpYellow": 65,
     "skillUpGreen": 90,
@@ -3082,7 +3082,7 @@
   },
   {
     "name": "Smelt Tin",
-    "profession": "Mining",
+    "profession": "Smelting",
     "skillUpGreen": 65,
     "skillUpGray": 75,
     "price": 50,
@@ -3419,7 +3419,7 @@
   },
   {
     "name": "Smelt Silver",
-    "profession": "Mining",
+    "profession": "Smelting",
     "skillUpOrange": 75,
     "skillUpYellow": 100,
     "skillUpGreen": 112,
@@ -5623,7 +5623,7 @@
   },
   {
     "name": "Smelt Iron",
-    "profession": "Mining",
+    "profession": "Smelting",
     "skillUpOrange": 125,
     "skillUpYellow": 130,
     "skillUpGreen": 135,
@@ -7231,7 +7231,7 @@
   },
   {
     "name": "Smelt Gold",
-    "profession": "Mining",
+    "profession": "Smelting",
     "skillUpOrange": 155,
     "skillUpYellow": 170,
     "skillUpGreen": 177,
@@ -7680,7 +7680,7 @@
   },
   {
     "name": "Smelt Steel",
-    "profession": "Mining",
+    "profession": "Smelting",
     "skillUpOrange": 165,
     "skillUpYellow": 165,
     "skillUpGreen": 165,
@@ -8363,7 +8363,7 @@
   },
   {
     "name": "Smelt Mithril",
-    "profession": "Mining",
+    "profession": "Smelting",
     "skillUpOrange": 175,
     "skillUpYellow": 175,
     "skillUpGreen": 175,
@@ -12308,7 +12308,7 @@
   },
   {
     "name": "Smelt Truesilver",
-    "profession": "Mining",
+    "profession": "Smelting",
     "skillUpYellow": 230,
     "skillUpGreen": 230,
     "skillUpGray": 230,
@@ -12322,7 +12322,7 @@
   },
   {
     "name": "Smelt Dark Iron",
-    "profession": "Mining",
+    "profession": "Smelting",
     "skillUpYellow": 230,
     "skillUpGreen": 230,
     "skillUpGray": 230,
@@ -13947,7 +13947,7 @@
   },
   {
     "name": "Smelt Thorium",
-    "profession": "Mining",
+    "profession": "Smelting",
     "skillUpOrange": 250,
     "skillUpYellow": 250,
     "skillUpGreen": 250,
@@ -21319,7 +21319,7 @@
   },
   {
     "name": "Smelt Elementium",
-    "profession": "Mining",
+    "profession": "Smelting",
     "skillUpYellow": 310,
     "skillUpGreen": 315,
     "skillUpGray": 320,

@@ -275,6 +275,48 @@
     ]
   },
   {
+    "name": "Smelting",
+    "icon": "TradeSmelting",
+    "recipeType": "Pattern",
+    "defaultRecipes": [
+      "Smelt Copper"
+    ],
+    "levels": [
+      {
+        "name": "Amateur",
+        "requiredLevel": 1,
+        "maxSkill": 15
+      },
+      {
+        "name": "Apprentice",
+        "price": 10,
+        "requiredLevel": 5,
+        "maxSkill": 75
+      },
+      {
+        "name": "Journeyman",
+        "price": 500,
+        "requiredLevel": 10,
+        "requiredSkill": 50,
+        "maxSkill": 150
+      },
+      {
+        "name": "Expert",
+        "price": 5000,
+        "requiredLevel": 20,
+        "requiredSkill": 125,
+        "maxSkill": 225
+      },
+      {
+        "name": "Artisan",
+        "price": 50000,
+        "requiredLevel": 35,
+        "requiredSkill": 200,
+        "maxSkill": 300
+      }
+    ]
+  },
+  {
     "name": "Cooking",
     "icon": "TradeCooking",
     "recipeType": "Recipe",
@@ -319,50 +361,10 @@
   },
   {
     "name": "Fishing",
+    "primary": true,
+    "gathering": true,
     "icon": "TradeFishing",
     "defaultRecipes": [],
-    "levels": [
-      {
-        "name": "Amateur",
-        "requiredLevel": 1,
-        "maxSkill": 15
-      },
-      {
-        "name": "Apprentice",
-        "price": 10,
-        "requiredLevel": 5,
-        "maxSkill": 75
-      },
-      {
-        "name": "Journeyman",
-        "price": 500,
-        "requiredLevel": 10,
-        "requiredSkill": 50,
-        "maxSkill": 150
-      },
-      {
-        "name": "Expert",
-        "price": 5000,
-        "requiredLevel": 20,
-        "requiredSkill": 125,
-        "maxSkill": 225
-      },
-      {
-        "name": "Artisan",
-        "price": 50000,
-        "requiredLevel": 35,
-        "requiredSkill": 200,
-        "maxSkill": 300
-      }
-    ]
-  },
-  {
-    "name": "First Aid",
-    "icon": "TradeFirstAid",
-    "recipeType": "Pattern",
-    "defaultRecipes": [
-      "Linen Bandage"
-    ],
     "levels": [
       {
         "name": "Amateur",
@@ -445,9 +447,7 @@
     "recipeType": "Pattern",
     "primary": true,
     "gathering": true,
-    "defaultRecipes": [
-      "Smelt Copper"
-    ],
+    "defaultRecipes": [],
     "levels": [
       {
         "name": "Amateur",
