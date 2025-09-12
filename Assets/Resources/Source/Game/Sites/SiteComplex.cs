@@ -38,7 +38,7 @@ public class SiteComplex : Site
         if (sites != null)
             foreach (var site in sites)
                 if (site != null && site.ContainsKey("SiteType") && site.ContainsKey("SiteName"))
-                    if (site["SiteType"] == "HostileArea")
+                    if (site["SiteType"] == "Area")
                     {
                         if (!areas.Exists(x => x.name == site["SiteName"]))
                             areas.Insert(0, new SiteArea()
@@ -47,7 +47,7 @@ public class SiteComplex : Site
                                 commonEncounters = new(),
                                 rareEncounters = new(),
                                 eliteEncounters = new(),
-                                type = "HostileArea",
+                                type = "Area",
                                 zone = name
                             });
                     }
@@ -72,7 +72,7 @@ public class SiteComplex : Site
                             });
                     }
         instances.FindAll(x => sites.Exists(y => (y["SiteType"] == "Raid" || y["SiteType"] == "Dungeon") && y["SiteName"] == x.name)).ForEach(x => x.complexPart = true);
-        areas.FindAll(x => sites.Exists(y => y["SiteType"] == "HostileArea" && y["SiteName"] == x.name)).ForEach(x => x.complexPart = true);
+        areas.FindAll(x => sites.Exists(y => y["SiteType"] == "Area" && y["SiteName"] == x.name)).ForEach(x => x.complexPart = true);
         SitePath.pathsConnectedToSite.Remove(name);
         if (x != 0 && y != 0)
             Blueprint.windowBlueprints.Add(new Blueprint("Site: " + name, () => PrintSite()));
@@ -114,7 +114,7 @@ public class SiteComplex : Site
                 if (h == null) LeadPath();
                 else ExecutePath("Complex");
             },
-            //!currentSave.siteVisits.ContainsKey(name) ? null :
+            !currentSave.siteVisits.ContainsKey(name) ? null :
             (h) => () =>
             {
                 if (!currentSave.siteVisits.ContainsKey(name)) return;
@@ -155,7 +155,7 @@ public class SiteComplex : Site
                         }
                     }
                     var range = (99, 0);
-                    var areas1 = complex.sites.Where(x => x["SiteType"] == "HostileArea").Select(x => areas.Find(y => y.name == x["SiteName"]).recommendedLevel).Where(x => x[currentSave.playerSide] > 0).ToList();
+                    var areas1 = complex.sites.Where(x => x["SiteType"] == "Area").Select(x => areas.Find(y => y.name == x["SiteName"]).recommendedLevel).Where(x => x[currentSave.playerSide] > 0).ToList();
                     if (areas1.Count > 0)
                     {
                         var min = areas1.Min(x => x[currentSave.playerSide]);
@@ -205,7 +205,7 @@ public class SiteComplex : Site
                 else
                 {
                     var range = (99, 0);
-                    var areas1 = complex.sites.Where(x => x["SiteType"] == "HostileArea").Select(x => areas.Find(y => y.name == x["SiteName"]).recommendedLevel).Where(x => x[currentSave.playerSide] > 0).ToList();
+                    var areas1 = complex.sites.Where(x => x["SiteType"] == "Area").Select(x => areas.Find(y => y.name == x["SiteName"]).recommendedLevel).Where(x => x[currentSave.playerSide] > 0).ToList();
                     if (areas1.Count > 0)
                     {
                         var min = areas1.Min(x => x[currentSave.playerSide]);
@@ -300,8 +300,7 @@ public class SiteComplex : Site
             },
             (h) =>
             {
-                if (debug)
-                    BuildPath();
+                if (debug) BuildPath();
             });
             var news = currentSave.player.AvailableQuestsAt(this);
             sitesWithQuestMarkers.Remove(this);
@@ -331,9 +330,12 @@ public class SiteComplex : Site
             },
             (h) =>
             {
-                if (site["SiteType"] == "HostileArea")
+                PersonCategory.personCategory = null;
+                if (site["SiteType"] == "Area")
                 {
                     area = areas.Find(x => x.name == site["SiteName"]);
+                    CloseWindow("Person");
+                    CloseWindow("Persons");
                     if (currentSave.player.QuestsAt(area).Count == 0)
                         CloseWindow("AreaQuestTracker");
                     else Respawn("AreaQuestTracker", true);
@@ -344,8 +346,6 @@ public class SiteComplex : Site
                     Respawn("AreaProgress");
                     Respawn("AreaElites");
                     Respawn("Chest");
-                    CloseWindow("Person");
-                    CloseWindow("Persons");
                     SetDesktopBackground(area.Background());
                 }
                 else

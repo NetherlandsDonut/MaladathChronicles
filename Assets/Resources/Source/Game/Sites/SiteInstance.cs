@@ -43,7 +43,7 @@ public class SiteInstance : Site
                                     commonEncounters = new(),
                                     rareEncounters = new(),
                                     eliteEncounters = new(),
-                                    type = "HostileArea",
+                                    type = "Area",
                                     zone = name
                                 });
         var localAreas = wings.SelectMany(x => x.areas.Select(y => y.ContainsKey("AreaName") ? y["AreaName"] : ""));

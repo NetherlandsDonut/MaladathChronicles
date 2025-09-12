@@ -47850,6 +47850,7 @@
     "type": "Miscellaneous",
     "ilvl": 60,
     "maxStack": 1,
+    "indestructible": true,
     "unique": true,
     "price": 250000
   },
@@ -47862,7 +47863,6 @@
     "ilvl": 60,
     "lvl": 55,
     "maxStack": 1,
-    "indestructible": true,
     "unique": true,
     "price": 9633,
     "droppedBy": [
@@ -144254,13 +144254,9 @@
     "name": "Parrot Cage (Green Wing Macaw)",
     "icon": "abilityforceofnature",
     "type": "Miscellaneous",
-    "source": "DirectDrop",
     "ilvl": 20,
     "maxStack": 1,
-    "price": 1000,
-    "droppedBy": [
-      "Defias Pirate"
-    ]
+    "price": 1000
   },
   {
     "rarity": "Uncommon",
@@ -149988,6 +149984,15 @@
     "maxStack": 1,
     "indestructible": true,
     "unique": true,
+    "questsStarted": [
+      373
+    ],
+    "raceDropRestriction": [
+      "Gnome",
+      "Night Elf",
+      "Dwarf",
+      "Human"
+    ],
     "droppedBy": [
       "Edwin VanCleef"
     ]
@@ -172093,10 +172098,16 @@
     "detailedType": "Organ",
     "type": "Miscellaneous",
     "source": "DirectDrop",
-    "ilvl": 1,
+    "ilvl": 16,
     "maxStack": 1,
     "indestructible": true,
     "unique": true,
+    "raceDropRestriction": [
+      "Gnome",
+      "Night Elf",
+      "Dwarf",
+      "Human"
+    ],
     "droppedBy": [
       "Edwin VanCleef"
     ]
@@ -174676,6 +174687,7 @@
     "detailedType": "Feather",
     "type": "Miscellaneous",
     "source": "DirectDrop",
+    "onlyWithQuest": true,
     "ilvl": 1,
     "maxStack": 20,
     "droppedBy": [
@@ -174689,6 +174701,7 @@
     "detailedType": "Food",
     "type": "Miscellaneous",
     "source": "DirectDrop",
+    "onlyWithQuest": true,
     "ilvl": 1,
     "maxStack": 20,
     "droppedBy": [
@@ -174725,9 +174738,15 @@
     "name": "Plainstrider Talon",
     "icon": "abilitynatureswrath",
     "type": "Miscellaneous",
-    "source": "ZoneDrop",
+    "onlyWithQuest": true,
+    "source": "DirectDrop",
     "ilvl": 1,
-    "maxStack": 20
+    "maxStack": 20,
+    "droppedBy": [
+      "Adult Plainstrider",
+      "Elder Plainstrider",
+      "Mazzranache"
+    ]
   },
   {
     "rarity": "Common",
@@ -174744,9 +174763,15 @@
     "name": "Windfury Talon",
     "icon": "abilitynatureswrath",
     "type": "Miscellaneous",
-    "source": "ZoneDrop",
+    "onlyWithQuest": true,
+    "source": "DirectDrop",
     "ilvl": 1,
-    "maxStack": 20
+    "maxStack": 20,
+    "droppedBy": [
+      "Windfury Matriarch",
+      "Windfury Sorceress",
+      "Sister Hatelash"
+    ]
   },
   {
     "rarity": "Poor",

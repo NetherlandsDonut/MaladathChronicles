@@ -50,6 +50,7 @@ public class SaveGame
                 new Market("Horde Market")
             },
             banks = new(),
+            collectorStash = new() { ignoreSpaceChecks = true },
             startDate = DateTime.Now,
             permadeath = new Bool(creationPermadeath.Value()),
             classicItemStacking = new Bool(creationClassicItemStacking.Value()),
@@ -271,6 +272,10 @@ public class SaveGame
     
     //Stores all bank accounts of this character in areas
     public Dictionary<string, Inventory> banks;
+    
+    //Stores all unique items that are no longer available so that they
+    //can be bought from the ethereal collectors in capital cities
+    public Inventory collectorStash;
 
     //List of items available for buying back from vendors
     public Inventory buyback;

@@ -1694,17 +1694,7 @@ public class Blueprint
                         AddText(maxSkill + "", "Gray");
                         AddLine(gathering[index].name);
                         AddBigButton(gathering[index].icon,
-                        (h) =>
-                        {
-                            profession = gathering[index];
-                            if (profession.recipeType == null) return;
-                            CloseWindow("ProfessionListPrimary");
-                            CloseWindow("ProfessionListSecondary");
-                            CloseWindow("ProfessionListGathering");
-                            Respawn("CraftingList");
-                            PlaySound("DesktopInstanceOpen");
-                            SetDesktopBackground("Backgrounds/Profession");
-                        });
+                        (h) => SpawnFallingText(new Vector2(0, 34), "Gathering professions don't have crafting", "Red"));
                         AddSkillBar(40, -19, gathering[index], currentSave.player);
                     }
                     else AddBigButton("OtherDisabled");
@@ -2804,6 +2794,12 @@ public class Blueprint
                         }
                         else
                         {
+                            foreach (var item in board.results.inventory.items)
+                                if (item.indestructible)
+                                {
+                                    if (item.price == 0) item.price = 50 * item.ilvl;
+                                    currentSave.collectorStash.AddItem(item);
+                                }
                             if (area.instancePart)
                             {
                                 CloseDesktop("Instance");
@@ -3398,7 +3394,7 @@ public class Blueprint
                 });
             });
             var range = (99, 0);
-            var areas = complex.sites.Where(x => x["SiteType"] == "HostileArea").Select(x => SiteArea.areas.Find(y => y.name == x["SiteName"]).recommendedLevel).Where(x => x[currentSave.playerSide] > 0).ToList();
+            var areas = complex.sites.Where(x => x["SiteType"] == "Area").Select(x => SiteArea.areas.Find(y => y.name == x["SiteName"]).recommendedLevel).Where(x => x[currentSave.playerSide] > 0).ToList();
             if (areas.Count > 0)
             {
                 var min = areas.Min(x => x[currentSave.playerSide]);
@@ -4306,6 +4302,26 @@ public class Blueprint
                         SpawnWindowBlueprint("CurrentMount");
                 });
             }
+            else if (type.category == "Collector")
+            {
+                AddButtonRegion(() =>
+                {
+                    AddLine("I want to see your collection");
+                },
+                (h) =>
+                {
+                    PlayVoiceLine(person.VoiceLine("Vendor"));
+                    PlaySound("DesktopInventoryOpen");
+                    PlaySound("DesktopCharacterSheetOpen");
+                    CloseWindow(h.window);
+                    CloseWindow("Area");
+                    SpawnWindowBlueprint("Collector");
+                    SpawnWindowBlueprint("Inventory");
+                    Respawn("PlayerMoney");
+                    Respawn("ExperienceBarBorder");
+                    Respawn("ExperienceBar");
+                });
+            }
             if (person.itemsSold != null && person.itemsSold.Count > 0)
             {
                 AddButtonRegion(() =>
@@ -4522,6 +4538,64 @@ public class Blueprint
             AddRegionGroup();
             SetRegionGroupWidth(95);
             AddPaddingRegion(() => AddLine("Buyback", "", "Center"));
+        }, true),
+        new("Collector", () => {
+            var slotAmount = 25;
+            var thisWindow = CDesktop.LBWindow();
+            var list = currentSave.collectorStash.items;
+            thisWindow.SetPagination(() => list.Count, slotAmount);
+            SetAnchor(TopLeft, 19, -38);
+            AddHeaderGroup();
+            SetRegionGroupWidth(190);
+            var type = personTypes.Find(x => x.type == person.type);
+            AddHeaderRegion(() =>
+            {
+                SetRegionHeight(19);
+                SetRegionTextOffset(38, 19);
+                AddLine(person.name);
+                AddBigButton("Portrait" + person.name.Clean());
+                AddSmallButton("OtherClose", (h) =>
+                {
+                    CloseWindow("Collector");
+                    CloseWindow("Inventory");
+                    CloseWindow("InventorySort");
+                    Respawn("PlayerMoney");
+                    Respawn("Person");
+                    PlaySound("DesktopInventoryClose");
+                });
+            });
+            AddHeaderRegion(() =>
+            {
+                SetRegionTextOffset(38, 19);
+                AddLine(person.type, "DarkGray");
+                AddSmallButton(type.icon + (type.factionVariant ? factions.Find(x => x.name == area.faction).side : ""));
+            });
+            AddHeaderRegion(() =>
+            {
+                AddLine(person.name + "'s collection:");
+            });
+            for (int i = 0; i < 5; i++)
+            {
+                var index = i;
+                AddPaddingRegion(
+                    () =>
+                    {
+                        for (int j = 0; j < 5; j++)
+                        {
+                            var index2 = index * 5 + j + thisWindow.pagination();
+                            if (list.Count > index2) PrintCollectorItem(list[index2]);
+                            else AddBigButton("OtherDisabled");
+                        }
+                    }
+                );
+            }
+            AddPaginationLine();
+            AddRegionGroup();
+            SetRegionGroupWidth(95);
+            AddPaddingRegion(() => AddLine("Merchant", "", "Center"));
+            AddRegionGroup();
+            SetRegionGroupWidth(95);
+            AddButtonRegion(() => { SetRegionBackground(ButtonRed); AddLine("Buyback", "", "Center"); } , (h) => { PlaySound("DesktopCantClick"); });
         }, true),
         new("MakeInnHome", () => {
             SetAnchor(TopLeft, 19, -38);
@@ -9077,11 +9151,41 @@ public class Blueprint
             {
                 if (board.results.result == "Team1Won")
                 {
+                    foreach (var item in board.results.inventory.items)
+                        if (item.indestructible)
+                        {
+                            if (item.price == 0) item.price = 50 * item.ilvl;
+                            currentSave.collectorStash.AddItem(item);
+                        }
                     PlaySound("DesktopInstanceClose");
+                    if (area.instancePart)
+                    {
+                        CloseDesktop("Instance");
+                        SpawnDesktopBlueprint("Instance");
+                        Respawn("Area");
+                        Respawn("AreaProgress");
+                        Respawn("AreaElites");
+                        Respawn("Chest");
+                        SetDesktopBackground(area.Background());
+                    }
+                    else if (area.complexPart)
+                    {
+                        CloseDesktop("Complex");
+                        SpawnDesktopBlueprint("Complex");
+                        Respawn("Area");
+                        Respawn("AreaProgress");
+                        Respawn("AreaElites");
+                        Respawn("Chest");
+                        SetDesktopBackground(area.Background());
+                    }
+                    else
+                    {
+                        CloseDesktop("Area");
+                        SpawnDesktopBlueprint("Area");
+                    }
                     CloseDesktop("CombatResults");
                     board = null;
                     Respawn("ExperienceBar", true);
-                    Respawn("AreaElites");
                 }
             });
         }),
@@ -9218,9 +9322,9 @@ public class Blueprint
                 {
                     PlaySound("DesktopInventoryClose");
                     CloseWindow("Bank");
-                    if (CloseWindow("Vendor"))
-                        PlaySound("DesktopCharacterSheetClose");
-                    CloseWindow("VendorBuyback");
+                    if (CloseWindow("Vendor")) PlaySound("DesktopCharacterSheetClose");
+                    if (CloseWindow("VendorBuyback")) PlaySound("DesktopCharacterSheetClose");
+                    if (CloseWindow("Collector")) PlaySound("DesktopCharacterSheetClose");
                     Respawn("PlayerMoney");
                     Respawn("Person");
                 }
@@ -9378,9 +9482,9 @@ public class Blueprint
                 {
                     PlaySound("DesktopInventoryClose");
                     CloseWindow("Bank");
-                    if (CloseWindow("Vendor"))
-                        PlaySound("DesktopCharacterSheetClose");
-                    CloseWindow("VendorBuyback");
+                    if (CloseWindow("Vendor")) PlaySound("DesktopCharacterSheetClose");
+                    if (CloseWindow("VendorBuyback")) PlaySound("DesktopCharacterSheetClose");
+                    if (CloseWindow("Collector")) PlaySound("DesktopCharacterSheetClose");
                     Respawn("PlayerMoney");
                     Respawn("Person");
                 }
@@ -9528,6 +9632,7 @@ public class Blueprint
                         PlaySound("VendorSwitchTab");
                         Respawn("Vendor");
                     }
+                    else if (WindowUp("Collector")) PlaySound("DesktopCantClick");
                 });
                 AddHotkey("Open menu / Back", () =>
                 {
@@ -9561,9 +9666,9 @@ public class Blueprint
                     {
                         PlaySound("DesktopInventoryClose");
                         CloseWindow("Bank");
-                        if (CloseWindow("Vendor"))
-                            PlaySound("DesktopCharacterSheetClose");
-                        CloseWindow("VendorBuyback");
+                        if (CloseWindow("Vendor")) PlaySound("DesktopCharacterSheetClose");
+                        if (CloseWindow("VendorBuyback")) PlaySound("DesktopCharacterSheetClose");
+                        if (CloseWindow("Collector")) PlaySound("DesktopCharacterSheetClose");
                         Respawn("PlayerMoney");
                         Respawn("Person");
                     }

@@ -28,7 +28,7 @@ public class Site
     public string zone;
 
     //Sub type of the site.
-    //Hostiles areas for example can be an "Emerald Bough".
+    //Areas for example can be an "Emerald Bough".
     public string type;
 
     //Faction that controls this site.

@@ -34,19 +34,19 @@
   {
     "sites": [
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Vilebranch Commons"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Upper City"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Sacrifice Terrace"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Keepers' Shrine"
       }
     ],
@@ -59,19 +59,19 @@
   {
     "sites": [
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Town Square"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Tyr's Hand Abbey"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Tyr's Hand Keep"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Scarlet Basilica"
       }
     ],
@@ -84,15 +84,15 @@
   {
     "sites": [
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Hearthglen Town"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Hearthglen Mine"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Mardenholde Keep"
       }
     ],
@@ -105,29 +105,29 @@
   {
     "sites": [
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "North Town",
         "SiteIcon": "FactionAlliance"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "The Sanctum",
         "SiteIcon": "FactionAlliance"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Eastern Town"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Western Town"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Tower of Arathor"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Stromgarde Keep"
       }
     ],
@@ -140,15 +140,15 @@
   {
     "sites": [
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Town Center"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Alterac Chapel"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Alterac Keep"
       }
     ],
@@ -161,15 +161,15 @@
   {
     "sites": [
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Whispering Gardens"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Terrace of Repose"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "The Grand Vestibule"
       },
       {
@@ -186,11 +186,11 @@
   {
     "sites": [
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Jaedenar"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Shrine of the Deceiver"
       },
       {
@@ -207,11 +207,11 @@
   {
     "sites": [
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Alcaz Compound"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Alcaz Dungeon"
       }
     ],
@@ -224,37 +224,37 @@
   {
     "sites": [
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "The Valley of Strength",
         "SiteIcon": "FactionHorde"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "The Valley of Spirits",
         "SiteIcon": "FactionHorde"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "The Valley of Honor",
         "SiteIcon": "FactionHorde"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "The Valley of Wisdom",
         "SiteIcon": "FactionHorde"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "The Drag",
         "SiteIcon": "FactionHorde"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "The Cleft of Shadow",
         "SiteIcon": "FactionHorde"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Grommash Hold",
         "SiteIcon": "FactionHorde"
       },
@@ -273,32 +273,32 @@
   {
     "sites": [
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "The Trade Quarter",
         "SiteIcon": "FactionHorde"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "The War Quarter",
         "SiteIcon": "FactionHorde"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "The Magic Quarter",
         "SiteIcon": "FactionHorde"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "The Rogues' Quarter",
         "SiteIcon": "FactionHorde"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "The Apothecarium",
         "SiteIcon": "FactionHorde"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "The Royal Quarter",
         "SiteIcon": "FactionHorde"
       }
@@ -313,42 +313,42 @@
   {
     "sites": [
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Lower Rise",
         "SiteIcon": "FactionHorde"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Spirit Rise",
         "SiteIcon": "FactionHorde"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "The Pools of Vision",
         "SiteIcon": "FactionHorde"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Middle Rise",
         "SiteIcon": "FactionHorde"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Hunter Rise",
         "SiteIcon": "FactionHorde"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Elder Rise",
         "SiteIcon": "FactionHorde"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Higher Rise",
         "SiteIcon": "FactionHorde"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Wind Rider Roost",
         "SiteIcon": "FactionHorde"
       }
@@ -363,42 +363,42 @@
   {
     "sites": [
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Trade District",
         "SiteIcon": "FactionAlliance"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Mage Quarter",
         "SiteIcon": "FactionAlliance"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "The Park",
         "SiteIcon": "FactionAlliance"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Old Town",
         "SiteIcon": "FactionAlliance"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Dwarven District",
         "SiteIcon": "FactionAlliance"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Cathedral Square",
         "SiteIcon": "FactionAlliance"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "The Canals",
         "SiteIcon": "FactionAlliance"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Stormwind Keep",
         "SiteIcon": "FactionAlliance"
       },
@@ -417,42 +417,42 @@
   {
     "sites": [
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "The Commons",
         "SiteIcon": "FactionAlliance"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "The Mystic Ward",
         "SiteIcon": "FactionAlliance"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "The Military Ward",
         "SiteIcon": "FactionAlliance"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "The Forlorn Cavern",
         "SiteIcon": "FactionAlliance"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Hall of Explorers",
         "SiteIcon": "FactionAlliance"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Tinker Town",
         "SiteIcon": "FactionAlliance"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "The Great Forge",
         "SiteIcon": "FactionAlliance"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "The High Seat",
         "SiteIcon": "FactionAlliance"
       }
@@ -467,32 +467,32 @@
   {
     "sites": [
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Warrior's Terrace",
         "SiteIcon": "FactionAlliance"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Craftsmen's Terrace",
         "SiteIcon": "FactionAlliance"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Tradesmen's Terrace",
         "SiteIcon": "FactionAlliance"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "The Temple Gardens",
         "SiteIcon": "FactionAlliance"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "Cenarion Enclave",
         "SiteIcon": "FactionAlliance"
       },
       {
-        "SiteType": "HostileArea",
+        "SiteType": "Area",
         "SiteName": "The Temple of The Moon",
         "SiteIcon": "FactionAlliance"
       }

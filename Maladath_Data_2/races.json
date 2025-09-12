@@ -5826,12 +5826,11 @@
   {
     "name": "Defias Miner",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Peasant",
     "faction": "Defias Brotherhood",
     "portrait": "PortraitDefiasDigger",
     "abilities": {},
     "kind": "Common",
-    "gender": "Male",
     "vitality": 1.0
   },
   {
@@ -5922,11 +5921,10 @@
   {
     "name": "Miner Johnson",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Peasant",
     "portrait": "PortraitMinerJohnson",
     "abilities": {},
     "kind": "Rare",
-    "gender": "Male",
     "vitality": 2.0
   },
   {
@@ -6047,7 +6045,7 @@
     "portrait": "PortraitDefiasRenegadeMage",
     "abilities": {},
     "kind": "Common",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 1.0
   },
   {
@@ -6102,18 +6100,17 @@
     "portrait": "PortraitDefiasSquallshaper",
     "abilities": {},
     "kind": "Common",
-    "gender": "Male",
+    "gender": "Female",
     "vitality": 1.0
   },
   {
     "name": "Defias Strip Miner",
     "category": "Humanoid",
-    "subcategory": "Human",
+    "subcategory": "Peasant",
     "faction": "Defias Brotherhood",
     "portrait": "PortraitDefiasStripMiner",
     "abilities": {},
     "kind": "Common",
-    "gender": "Male",
     "vitality": 1.0
   },
   {

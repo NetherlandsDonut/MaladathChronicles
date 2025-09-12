@@ -48,5 +48,10 @@
     "category": "Profession Trainer",
     "icon": "TradeTrainerProfession",
     "priority": 5
+  },
+  {
+    "category": "Collector",
+    "icon": "ItemMiscBag23",
+    "priority": 6
   }
 ]

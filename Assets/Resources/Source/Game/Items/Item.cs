@@ -987,6 +987,90 @@ public class Item
         else if (buyback != null && buyback.minutesLeft > 0) AddBigButtonBuybackOverlay(buyback.minutesLeft / (double)defines.buybackDecay);
     }
 
+    public static void PrintCollectorItem(Item item)
+    {
+        AddBigButton(item.icon,
+            null,
+            (h) =>
+            {
+                if (WindowUp("ConfirmItemDestroy")) return;
+                if (WindowUp("InventorySort")) return;
+                if (movingItem == null && currentSave.player.inventory.CanAddItem(item))
+                {
+                    if (item.reputationRequired != null && Person.person.faction != null && currentSave.player.Reputation(Person.person.faction) < ReputationRankToAmount(item.reputationRequired)) SpawnFallingText(new Vector2(0, 34), "You need to be " + item.reputationRequired.ToLower() + " with " + Person.person.faction, "Red");
+                    else if (item.amount > 1 && Input.GetKey(KeyCode.LeftShift))
+                    {
+                        String.splitAmount.Set(item.amount + "");
+                        var win = SpawnWindowBlueprint("SplitItem");
+                        win.LBRegionGroup().LBRegion().inputLine.Activate();
+                        splitDelegate = () =>
+                        {
+                            var amount = int.Parse(String.splitAmount.value == "" ? "0" : String.splitAmount.value);
+                            if (amount <= 0)
+                            {
+                                SpawnFallingText(new Vector2(0, 34), "Invalid amount", "Red");
+                                return;
+                            }
+                            if (amount > item.amount) amount = item.amount;
+                            if (currentSave.player.inventory.money >= item.price * amount)
+                            {
+                                PlaySound("DesktopTransportPay");
+                                item.amount -= amount;
+                                if (item.amount == 0) currentSave.collectorStash.RemoveItem(item);
+                                currentSave.AddTime(10);
+                                var copy = item.CopyItem(amount);
+                                copy.price = 0;
+                                currentSave.player.inventory.AddItem(copy);
+                                currentSave.player.inventory.money -= item.price * amount;
+                                Respawn("Inventory");
+                                Respawn("Collector");
+                            }
+                            else SpawnFallingText(new Vector2(0, 34), "Not enough money", "Red");
+                        };
+                    }
+                    else if (item.amount > 0 && currentSave.player.inventory.money >= item.price)
+                    {
+                        PlaySound("DesktopTransportPay");
+                        item.amount -= 1;
+                        if (item.amount == 0) currentSave.collectorStash.RemoveItem(item);
+                        currentSave.AddTime(10);
+                        var copy = item.CopyItem();
+                        copy.price = 0;
+                        currentSave.player.inventory.AddItem(copy);
+                        currentSave.player.inventory.money -= item.price;
+                        Respawn("Inventory");
+                    }
+                    else SpawnFallingText(new Vector2(0, 34), "Not enough money", "Red");
+                }
+                else SpawnFallingText(new Vector2(0, 34), "Inventory is full", "Red");
+            },
+            (h) => () =>
+            {
+                if (item == null) return;
+                if (WindowUp("InventorySort")) return;
+                PrintItemTooltip(item, Input.GetKey(KeyCode.LeftShift));
+            }
+        );
+        if (settings.rarityIndicators.Value())
+            AddBigButtonOverlay("OtherRarity" + item.rarity + (settings.bigRarityIndicators.Value() ? "Big" : ""), 0, 3);
+        if (item.questsStarted != null)
+        {
+            var all = Quest.quests.FindAll(x => item.questsStarted.Contains(x.questID)).ToList();
+            var status = "Cant";
+            foreach (var quest in all)
+            {
+                if (currentSave.player.completedQuests.Contains(quest.questID)) continue;
+                if (quest.requiredLevel > currentSave.player.level) continue;
+                if (currentSave.player.currentQuests.Exists(x => x.questID == quest.questID))
+                { status = "Active"; break; }
+                status = "Can"; break;
+            }
+            AddBigButtonOverlay("QuestStarter" + (status == "Can" ? "" : (status == "Active" ? "Active" : "Off")), 0, 4);
+        }
+        if (item.IsWearable() && !item.HasProficiency(currentSave.player, true)) SetBigButtonToRedscale();
+        if (item.maxStack > 1) SpawnFloatingText(CDesktop.LBWindow().LBRegionGroup().LBRegion().transform.position + new Vector3(32, -27) + new Vector3(38, 0) * item.x, item.amount + "", "", "", "Right");
+    }
+
     public static void PrintInventoryItem(Item item)
     {
         AddBigButton(item.icon,

@@ -444,7 +444,6 @@
   {
     "name": "Mining",
     "icon": "TradeMining",
-    "recipeType": "Pattern",
     "primary": true,
     "gathering": true,
     "defaultRecipes": [],

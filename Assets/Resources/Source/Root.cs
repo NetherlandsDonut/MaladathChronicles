@@ -912,7 +912,7 @@ public static class Root
             if (thisWindow.paginateFullPages)
                 AddText((thisWindow.pagination() + 1) / thisWindow.perPage + 1 + "", "Gray");
             else AddText(thisWindow.pagination() + 1 + "", "Gray");
-            AddText(" / ", "Gray");
+            AddText(" / ", "DarkGray");
             if (thisWindow.paginateFullPages)
                 AddText(Math.Ceiling((double)thisWindow.maxPagination() / thisWindow.perPage) + 1 + "", "Gray");
             else AddText(thisWindow.maxPagination() + 1 + "", "Gray");

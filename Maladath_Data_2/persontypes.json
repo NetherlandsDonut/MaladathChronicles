@@ -612,6 +612,11 @@
     "category": "Class Trainer"
   },
   {
+    "type": "Collector",
+    "icon": "ItemMiscBag23",
+    "category": "Collector"
+  },
+  {
     "type": "Banker",
     "icon": "TradeBank",
     "category": "Banker"
